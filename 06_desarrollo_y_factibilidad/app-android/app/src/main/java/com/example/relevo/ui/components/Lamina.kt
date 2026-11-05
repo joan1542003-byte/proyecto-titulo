@@ -19,7 +19,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.InlineTextContent
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -61,27 +60,6 @@ import com.example.relevo.theme.Relevo
 
 private val Ink = Color(0xFF141312)
 
-/** Anillo de tinta por fuera de una ficha elegida, separado por una franja de papel, sin mover nada. */
-fun Modifier.outerRing(show: Boolean, radius: Dp, color: Color, gap: Dp = 4.dp, width: Dp = 2.dp): Modifier = drawBehind {
-  if (!show) return@drawBehind
-  val stroke = width.toPx()
-  val offset = gap.toPx() + stroke / 2
-  drawRoundRect(
-    color, topLeft = Offset(-offset, -offset), size = Size(size.width + offset * 2, size.height + offset * 2),
-    cornerRadius = CornerRadius(radius.toPx() + offset), style = Stroke(stroke),
-  )
-}
-
-/** Cuadrito de cielo: la actividad en pequeño, al comienzo de una fila o en una opción rápida. */
-@Composable
-fun SkySquare(sky: Sky, size: Dp = 45.dp, radius: Dp = 14.dp, variant: Int = 0, modifier: Modifier = Modifier) {
-  Box(modifier.size(size).clip(RoundedCornerShape(radius)).drawBehind { drawSky(sky, grain = size >= 30.dp, variant = variant) })
-}
-
-/** Cuadrito de cielo de una actividad, por su ícono. */
-@Composable
-fun SkySquare(icon: KitIcon, size: Dp = 45.dp, radius: Dp = 14.dp, variant: Int = 0, modifier: Modifier = Modifier) = SkySquare(skyFor(icon), size, radius, variant, modifier)
-
 /**
  * Tarjeta de vidrio claro (la del mensaje de «Suena» y las filas que flotan en la bienvenida): blanco
  * translúcido con un borde blanco, sobre el color de una actividad.
@@ -91,7 +69,7 @@ fun GlassCard(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Comp
   val colors = Relevo.colors
   val shape = RoundedCornerShape(28.dp)
   Column(
-    modifier.fillMaxWidth().shadow(18.dp, shape, ambientColor = Color.Black.copy(alpha = .05f), spotColor = Color.Black.copy(alpha = .18f))
+    modifier.fillMaxWidth().shadow(6.dp, shape, ambientColor = Color.Black.copy(alpha = .04f), spotColor = Color.Black.copy(alpha = .1f))
       .clip(shape).background(colors.card.copy(alpha = if (colors.isDark) .9f else .84f))
       .border(1.dp, Color.White.copy(alpha = if (colors.isDark) .12f else .85f), shape)
       .padding(padding),
@@ -101,34 +79,33 @@ fun GlassCard(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Comp
 }
 
 /**
- * El Tag de la lámina: un disco claro con su botón al centro y el orificio del llavero. Cuando suena, el
- * sonido se dibuja en anillos de tinta que se abren; no hay luz, porque el Tag no se ilumina.
+ * El Tag, dibujado plano (4.1, D-156): un disco blanco con su contorno, el botón al centro y el orificio del
+ * llavero. Sin brillos ni sombras que imiten volumen: la interfaz no usa efectos 3D. Cuando suena, el sonido
+ * se dibuja en anillos de tinta que se abren; no hay luz, porque el Tag no se ilumina.
  */
 @Composable
 fun TagObject(modifier: Modifier = Modifier, size: Dp = 96.dp, sounding: Boolean = false) {
+  val line = Relevo.colors.line
   Box(modifier.size(size), contentAlignment = Alignment.Center) {
     if (sounding) SoundRings(Modifier.size(size), color = Ink)
-    Canvas(Modifier.size(size).shadow(size / 5, CircleShape, ambientColor = Color.Black.copy(alpha = .08f), spotColor = Color.Black.copy(alpha = .28f))) {
+    Canvas(Modifier.size(size)) {
       val r = this.size.minDimension / 2
       val c = Offset(r, r)
-      drawCircle(
-        Brush.radialGradient(0f to Color.White, .16f to Color.White, .52f to Color(0xFFF5F2ED), 1f to Color(0xFFE4DED5), center = Offset(r * .72f, r * .6f), radius = r * 1.3f),
-        radius = r, center = c,
-      )
-      drawCircle(Brush.radialGradient(0f to Color.White, 1f to Color(0xFFEFEBE5), center = Offset(r * .92f, r * .9f), radius = r * .4f), radius = r * .38f, center = c)
-      drawCircle(Ink.copy(alpha = .1f), radius = r * .38f, center = c, style = Stroke(1.2f))
-      drawCircle(Color(0xFFEEE9E3), radius = r * .11f, center = Offset(r, r * .25f))
-      drawCircle(Ink.copy(alpha = .14f), radius = r * .11f, center = Offset(r, r * .25f), style = Stroke(1f))
+      val stroke = 1.5.dp.toPx()
+      drawCircle(Color.White, radius = r, center = c)
+      drawCircle(line, radius = r - stroke / 2, center = c, style = Stroke(stroke))
+      drawCircle(Ink.copy(alpha = .16f), radius = r * .36f, center = c, style = Stroke(stroke))
+      drawCircle(Ink.copy(alpha = .22f), radius = r * .09f, center = Offset(r, r * .24f), style = Stroke(stroke * .8f))
     }
   }
 }
 
-/** Disco blanco con el ícono de lo que suena (parlante, reloj, teléfono), del mismo tamaño que el Tag. */
+/** Disco blanco y plano con el ícono de lo que suena (parlante, reloj, teléfono), del tamaño del Tag. */
 @Composable
 fun SoundObject(icon: KitIcon, modifier: Modifier = Modifier, size: Dp = 96.dp, sounding: Boolean = false) {
   Box(modifier.size(size), contentAlignment = Alignment.Center) {
     if (sounding) SoundRings(Modifier.size(size), color = Ink)
-    Box(Modifier.size(size).shadow(size / 5, CircleShape, ambientColor = Color.Black.copy(alpha = .08f), spotColor = Color.Black.copy(alpha = .25f)).clip(CircleShape).background(Color.White), contentAlignment = Alignment.Center) {
+    Box(Modifier.size(size).clip(CircleShape).background(Color.White).border(1.5.dp, Relevo.colors.line, CircleShape), contentAlignment = Alignment.Center) {
       RelevoIcon(icon, size = size * .44f, tint = Ink, background = Color.White)
     }
   }
@@ -150,17 +127,6 @@ fun BigCounter(seconds: Int, modifier: Modifier = Modifier, color: Color = Relev
   Text(
     styled, modifier = modifier.semantics { contentDescription = text },
     style = Relevo.type.title.copy(fontSize = 72.sp, lineHeight = 76.sp, fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = color,
-  )
-}
-
-/** Nota breve en una tarjeta clara, como «Mientras más pequeño, menos cuesta empezar.» en la lámina. */
-@Composable
-fun TipCard(text: String, modifier: Modifier = Modifier) {
-  val colors = Relevo.colors
-  Text(
-    text, style = Relevo.type.callout, color = colors.ink,
-    modifier = modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(colors.card.copy(alpha = .7f))
-      .border(1.dp, colors.card, RoundedCornerShape(22.dp)).padding(horizontal = 18.dp, vertical = 15.dp),
   )
 }
 

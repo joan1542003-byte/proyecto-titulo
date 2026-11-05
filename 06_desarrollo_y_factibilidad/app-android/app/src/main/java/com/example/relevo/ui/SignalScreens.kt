@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -26,6 +26,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -72,7 +73,6 @@ internal fun SignalScreen(
   studyActive: Boolean,
   onTestSound: (SignalRoute?) -> Boolean,
   onContinue: () -> Unit,
-  guided: Boolean = false,
 ) {
   val sounding = reminder.signalDelivered && !reminder.signalEnded
   var tested by rememberSaveable { mutableStateOf<Boolean?>(null) }
@@ -96,10 +96,6 @@ internal fun SignalScreen(
           else SoundObject(routeIcon(reminder.signalRoute), size = 112.dp, sounding = sounding)
         }
         GlassCard(Modifier.appear(1), padding = 20.dp) {
-          if (guided) {
-            GuideTip("Así suena Relevo. Toca «Silenciar y continuar» y después dinos qué hiciste.")
-            Spacer(Modifier.height(4.dp))
-          }
           Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
             when {
               !reminder.signalDelivered -> StatusChip(KitIcon.ERROR, "No sonó")
@@ -119,7 +115,7 @@ internal fun SignalScreen(
           if (!reminder.signalDelivered) {
             // Solo se ofrece el teléfono cuando se puede usar: durante la prueba, la semana decide dónde suena.
             Notice(
-              routeFailure(reminder.signalRoute) + if (!studyActive && reminder.signalRoute != SignalRoute.PHONE) " También puedes hacerlo sonar en el teléfono." else "",
+              routeFailure(reminder.signalRoute),
               title = "Se cumplió el tiempo", tone = Tone.Error,
             ) {
               PlainAction("Probar otra vez", { tested = onTestSound(null) }, icon = KitIcon.PROBAR)
@@ -130,7 +126,7 @@ internal fun SignalScreen(
           Spacer(Modifier.height(2.dp))
           RelevoButton(if (sounding) "Silenciar y continuar" else "Continuar", onContinue, icon = if (sounding) KitIcon.SILENCIAR else null)
           if (sounding && reminder.signalRoute == SignalRoute.TAG) {
-            Text("Para callarlo en el Tag, toca su botón una vez.", style = Relevo.type.footnote, color = colors.ink, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+            Text("Un toque al botón del Tag también lo calla.", style = Relevo.type.footnote, color = colors.ink, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
           }
         }
       }
@@ -144,7 +140,7 @@ internal fun SignalScreen(
  * lugar; tocar una la marca y termina. Todo se puede saltar.
  */
 @Composable
-internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, guided: Boolean = false, onAnswer: (String, String?, String?, String?, String?) -> Unit) {
+internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActivity>, askSignalQuestions: Boolean, onAnswer: (String, String?, String?, String?, String?) -> Unit) {
   var noticed by rememberSaveable { mutableStateOf<String?>(null) }
   var knew by rememberSaveable { mutableStateOf<String?>(null) }
   var recalled by rememberSaveable { mutableStateOf<String?>(null) }
@@ -153,11 +149,10 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
   // Al responder, el relevo se reinicia mientras la pantalla todavía sale; se sigue mostrando el último
   // relevo con actividad para no dejar ver «Vuelve a .» vacío (defecto de 2.10).
   val lastShown = remember { arrayOf(reminder) }
-  val lastFlags = remember { booleanArrayOf(askSignalQuestions, guided) }
-  if (reminder.activity.isNotBlank()) { lastShown[0] = reminder; lastFlags[0] = askSignalQuestions; lastFlags[1] = guided }
+  val lastFlags = remember { booleanArrayOf(askSignalQuestions) }
+  if (reminder.activity.isNotBlank()) { lastShown[0] = reminder; lastFlags[0] = askSignalQuestions }
   val shownReminder = lastShown[0]
   val ask = lastFlags[0]
-  val showTip = lastFlags[1]
   var phase by rememberSaveable { mutableIntStateOf(if (askSignalQuestions) 0 else 1) }
   val scope = rememberCoroutineScope()
   val colors = Relevo.colors
@@ -174,11 +169,6 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     title = if (phase == 0) "Cuatro preguntas de un toque" else null,
     bottom = if (phase == 0) ({ RelevoButton("Seguir", { phase = 1 }) }) else null,
   ) {
-    // La nota de la guía va una sola vez: con las preguntas si las hay; si no, con «¿Qué decidiste?».
-    if (showTip && (phase == 0 || !ask)) {
-      GuideTip("Responde lo que pasó de verdad. No hay respuestas buenas ni malas; todas nos ayudan a mejorar Relevo.")
-      Spacer(Modifier.height(Gap.block))
-    }
     if (phase == 0) {
       // Percibir la señal es el primer paso para recordar (protocolo 02); compara el teléfono con el objeto (2.33).
       Question("¿Notaste el aviso apenas sonó?") {
@@ -197,7 +187,7 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
     } else {
       val icon = pictureIcon(activityPicture(shownReminder.activity, customActivities))
       Column(Modifier.fillMaxWidth().padding(top = 12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-        ActivityRing(icon, 88.dp, variant = activityVariant(shownReminder.activity))
+        ActivityRing(icon, 88.dp)
         Spacer(Modifier.height(16.dp))
         Text(shownReminder.activity.trim(), style = Relevo.type.title, color = colors.ink, textAlign = TextAlign.Center)
         Spacer(Modifier.height(6.dp))
@@ -208,13 +198,16 @@ internal fun DecideScreen(reminder: Reminder, customActivities: List<CustomActiv
         )
         Spacer(Modifier.height(22.dp))
         Text("¿Qué decidiste?", style = Relevo.type.title2.copy(fontWeight = FontWeight.Medium), color = colors.ink, textAlign = TextAlign.Center)
+        // Criterio 4 de la memoria: las tres respuestas valen lo mismo. Se dice siempre, no solo la primera vez.
+        Spacer(Modifier.height(4.dp))
+        Text("Ninguna respuesta es mejor que otra.", style = Relevo.type.subhead, color = colors.graphite, textAlign = TextAlign.Center)
       }
       Spacer(Modifier.height(Gap.block))
       // Las tres respuestas pesan lo mismo: misma tarjeta, mismo ícono en tinta y mismo tamaño.
       Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-        OptionRow("Comencé la actividad", chosen == "started", { choose("started") }, icon = KitIcon.COMENCE)
-        OptionRow("La dejé para después", chosen == "later", { choose("later") }, icon = KitIcon.DESPUES)
-        OptionRow("Cambié de idea", chosen == "changed", { choose("changed") }, icon = KitIcon.CAMBIE)
+        OptionRow("Comencé la actividad", chosen == "started", { choose("started") }, icon = KitIcon.COMENCE, haptic = HapticFeedbackType.Confirm)
+        OptionRow("La dejé para después", chosen == "later", { choose("later") }, icon = KitIcon.DESPUES, haptic = HapticFeedbackType.Confirm)
+        OptionRow("Cambié de idea", chosen == "changed", { choose("changed") }, icon = KitIcon.CAMBIE, haptic = HapticFeedbackType.Confirm)
       }
     }
   }

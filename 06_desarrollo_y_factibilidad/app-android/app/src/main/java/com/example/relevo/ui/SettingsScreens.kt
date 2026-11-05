@@ -21,7 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -54,7 +54,6 @@ import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
@@ -76,7 +75,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import java.util.UUID
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.RowShape
-import com.example.relevo.ui.components.SkySquare
 import com.example.relevo.ui.components.ToggleRow
 import com.example.relevo.ui.components.pictureIcon
 
@@ -218,7 +216,7 @@ internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<C
           ListRow(
             entry.activity,
             subtitle = listOfNotNull(entry.appLabel.takeIf { it.isNotBlank() }, formatDuration(entry.seconds), outcomeLabel(entry.outcome) ?: if (entry.signalDelivered) "Sonó" else "Terminó antes de sonar").joinToString(" · "),
-            leading = { ActivityRing(activityIcon(entry.activity, customActivities), 40.dp, variant = activityVariant(entry.activity)) },
+            leading = { ActivityRing(activityIcon(entry.activity, customActivities), 40.dp) },
             trailing = { RelevoIcon(outcomeIcon(entry.outcome), size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
           )
         }

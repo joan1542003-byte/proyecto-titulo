@@ -28,7 +28,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -63,7 +63,7 @@ private class GuideStep(val title: String, val text: String, val gesture: TagGes
 private val guideSteps = listOf(
   GuideStep("Este es tu Tag", "Es redondo y su botón no se ve: es el centro de la cara de arriba. Al apretarlo firme se siente un clic. Relevo lo hace sonar por Bluetooth.", TagGesture.IDLE, "El centro es el botón"),
   GuideStep("Enciéndelo", "Mantén apretado el botón 3 segundos, hasta que pite dos veces. Queda encendido: no hay que hacerlo cada vez.", TagGesture.HOLD_ON, "3 segundos · pita dos veces"),
-  GuideStep("Búscalo en Relevo", "Con el Tag cerca del teléfono, toca «Buscar el Tag» y elígelo en la lista. Va a pitar una vez para confirmarlo.", TagGesture.LINK, "Cerca del teléfono"),
+  GuideStep("Búscalo en Relevo", "Ten el Tag cerca del teléfono y elígelo cuando aparezca en la lista. Pita una vez para confirmarlo.", TagGesture.LINK, "Cerca del teléfono"),
   GuideStep("Déjalo en su lugar", "Ponlo donde te indica Relevo esta semana. Sonará cuando sumes el tiempo que elegiste en tus apps.", TagGesture.PLACE, "Donde te indica la semana"),
   GuideStep("Para callarlo, un toque", "Cuando suene, toca el botón una vez. No lo mantengas apretado: así se apaga.", TagGesture.TAP, "Un toque"),
   GuideStep("Para apagarlo", "Mantén apretado el botón 3 segundos, hasta que dé un pitido largo. Durante la prueba, mejor déjalo encendido.", TagGesture.HOLD_OFF, "3 segundos · pitido largo"),

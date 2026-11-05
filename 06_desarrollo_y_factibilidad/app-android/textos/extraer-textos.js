@@ -29,22 +29,23 @@ const PANTALLAS = [
   ['04', 'Para saber cuándo avisarte (permisos de la primera vez)', ['PermissionScreen', 'PermissionEnd']],
   ['05', 'Tu perfil (primera vez)', ['ProfileSetupScreen', 'InterestGrid']],
   ['06', 'Tu primer relevo', ['FirstRelevoScreen']],
-  ['07', 'Inicio', ['HomeTab', 'BellButton', 'AvatarButton', 'CreateActivityRow', 'AcknowledgementToast', 'ActiveCard', 'SoundRow', 'ReturnCard', 'NextStepCard', 'StudyCards', 'StudyCard', 'QuickFeedbackCard', 'ratingFaces', 'HomeActions']],
+  ['07', 'Inicio', ['HomeTab', 'BellButton', 'AvatarButton', 'CreateActivityRow', 'AcknowledgementToast', 'ActiveCard', 'SoundRow', 'ReturnCard', 'NextStepCard', 'StudyCards', 'StudyCard', 'QuickFeedbackCard', 'ratingFaces', 'HomeActions', 'PrepareBlock', 'QuickActivities', 'WeekBanner']],
   ['08', 'Preparar un relevo', ['PrepareScreen', 'guideTipFor', 'titleFor', 'missingFor', 'ActivityHeader', 'ActivityStep', 'TileGroup', 'PlaceStep', 'SuggestionChips', 'UsageStep', 'SoundStep', 'tagSubtitle', 'tagProblem', 'TagPanel', 'TagHeardQuestion', 'SoundOption', 'AppPickerSheet', 'TagProtocol']],
   ['09', 'Cómo usar el Tag', ['TagGuideSheet', 'GuideStep', 'TagArt', 'guideSteps']],
   ['10', 'Hojas sobre Inicio', ['FirstRelevoActiveSheet', 'NextStepSheet', 'TurnOffReturnSheet']],
   ['11', 'Tu relevo (contando)', ['ActiveScreen']],
   ['12', 'Suena', ['SignalScreen']],
   ['13', 'Preguntas y ¿Qué decidiste?', ['DecideScreen', 'Question', 'feelingFaces', 'starFaces', 'Face']],
-  ['14', 'Ruta', ['RouteTab', 'StepTimeline', 'NowChip', 'RouteActions']],
+  // Desde 4.0, la pestaña Ruta y la lista de actividades son la pestaña Actividades.
+  ['14', 'Actividades (antes Ruta)', ['RouteTab', 'StepTimeline', 'NowChip', 'RouteActions', 'ActivitiesTab', 'ActivitiesSection', 'MineSection', 'IdeasSection', 'ActivitySheet', 'StepsSection', 'StepSheet', 'ActivitiesScreen']],
   ['15', 'Editar la ruta', ['RouteEditScreen', 'StepEditorSheet']],
-  ['16', 'Perfil', ['ProfileTab', 'ProfileHeader', 'WeekSummary', 'WeekNoteSheet', 'countLine', 'weekLine']],
+  ['16', 'Perfil', ['ProfileTab', 'ProfileHeader', 'WeekSummary', 'WeekNoteSheet', 'countLine', 'weekLine', 'GearButton']],
   ['17', 'Editar el perfil', ['ProfileEditScreen']],
   ['18', 'Avisos y resúmenes', ['NoticesScreen']],
   ['19', 'Apariencia', ['AppearanceScreen']],
   ['20', 'Permisos', ['PermissionsScreen']],
   ['21', 'Tus relevos', ['HistoryScreen']],
-  ['22', 'Tus actividades', ['ActivitiesScreen']],
+  ['22', 'Ajustes', ['SettingsScreen']],
   ['23', 'Crear o editar una actividad', ['ActivityEditScreen']],
   ['24', 'Privacidad y datos', ['PrivacyScreen', 'RelevoViewModel', 'backupStatusText', 'syncStatusText']],
   ['25', 'Lo que aceptaste', ['ConsentDetailsScreen']],
@@ -276,7 +277,9 @@ function principal() {
     }
     md.push(`| ${f.id} | ${f.tipo} | ${f.texto.replace(/\|/g, '\\|')} | \`${path.basename(f.archivo)}:${f.linea}\` |`);
   }
-  md.push('', '## Registro de cambios (disclaimer)', '', '### 2026-10-24 — Creación', '', '- **Qué cambió:** se creó el inventario, generado desde el código.', '- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin.', '- **Por qué:** el autor pidió estudiar y documentar cada palabra de la app antes de actualizar los textos.', '');
+  md.push('', '## Registro de cambios (disclaimer)', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.1', '', '- **Qué cambió:** se volvió a generar con el código de 4.1 (D-155 y D-156).', '- **Cómo estaba antes:** tenía los textos de 3.3, con las notas de guía de la primera vez y los textos del aura.', '- **Por qué:** 4.0 y 4.1 quitaron y acortaron textos; el inventario se rehace cada vez que cambian.', '');
+  md.push('### 2026-10-24 — Creación', '', '- **Qué cambió:** se creó el inventario, generado desde el código.', '- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin.', '- **Por qué:** el autor pidió estudiar y documentar cada palabra de la app antes de actualizar los textos.', '');
   fs.writeFileSync(path.join(AQUI, `inventario-de-textos${sufijo}.md`), md.join('\n'));
   const porTipo = {};
   for (const f of filas) porTipo[f.tipo] = (porTipo[f.tipo] || 0) + 1;

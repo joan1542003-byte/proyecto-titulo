@@ -43,7 +43,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
@@ -100,10 +100,10 @@ internal fun HowItWorksScreen(
   onPage: (String) -> Unit = {},
 ) {
   val pages = buildList {
-    add(GuidePage("video", "Esto es Relevo", "Mira este video corto. Después te contamos cómo funciona y hacemos juntos tu primer relevo.") {
+    add(GuidePage("video", "Esto es Relevo", "" ) {
       IntroVideo(Modifier.fillMaxWidth(.78f), onVideo)
     })
-    add(GuidePage("para_que", "¿Te ha pasado?", "Relevo te avisa a tiempo, en el lugar donde empiezas, para que no quede esperando.") {
+    add(GuidePage("para_que", "¿Te ha pasado?", "Relevo suena a tiempo, donde empiezas, para que no quede esperando.") {
       GuidePanel {
         Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { ActivityRing(KitIcon.TIEMPO, 88.dp) }
         Spacer(Modifier.height(16.dp))
@@ -112,7 +112,7 @@ internal fun HowItWorksScreen(
         Text("Se pasa el rato y lo que querías hacer queda esperando.", style = Relevo.type.body, color = Relevo.colors.graphite)
       }
     })
-    add(GuidePage("sistema", "Cómo funciona", "Cuando suene, dinos qué hiciste con un toque. Ninguna respuesta es mejor que otra.") {
+    add(GuidePage("sistema", "Cómo funciona", "" ) {
       // 4.0: las cuatro partes en un grupo, con íconos iguales.
       ListSection {
         ListRow("Cuenta tu tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges")
@@ -121,7 +121,7 @@ internal fun HowItWorksScreen(
         ListRow("Tú decides", icon = KitIcon.DECISION, subtitle = "Empezar, dejarlo o cambiar de idea")
       }
     })
-    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Lo cambias cuando quieras en Perfil › Ajustes.") {
+    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Puedes apagarlo cuando quieras.") {
       GuidePanel {
         StatusChip(KitIcon.AVISOS, "Relevo")
         Spacer(Modifier.height(10.dp))
@@ -167,8 +167,10 @@ internal fun HowItWorksScreen(
       val shown = pages[current.coerceIn(0, pages.lastIndex)]
       Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         shown.example()
-        Spacer(Modifier.height(Gap.section))
-        Text(shown.text, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.fillMaxWidth())
+        if (shown.text.isNotBlank()) {
+          Spacer(Modifier.height(Gap.section))
+          Text(shown.text.trim(), style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.fillMaxWidth())
+        }
       }
     }
   }
@@ -185,15 +187,14 @@ internal fun FirstRelevoScreen(
 ) {
   RelevoScreen(
     title = "Tu primer relevo",
-    subtitle = if (suggestion != null && routeTitle != null) "${if (name.isBlank()) "" else "${name.trim()}, "}empecemos por ${routeTitle.replaceFirstChar { it.lowercase() }}. Te guiamos."
-      else "Te guiamos. Toma un par de minutos.",
+    subtitle = null,
     bottom = {
       RelevoButton("Preparar un relevo", onStart)
       RelevoButton("Lo hago después", onLater, kind = ButtonKind.Secondary)
     },
   ) {
     Column(Modifier.fillMaxWidth().padding(vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-      ActivityRing(pictureIcon(picture), 96.dp, variant = suggestion?.let { activityVariant(it) } ?: 0)
+      ActivityRing(pictureIcon(picture), 96.dp)
       Spacer(Modifier.height(12.dp))
       Text(suggestion ?: "Tu actividad", style = Relevo.type.title2, color = Relevo.colors.ink)
     }
@@ -204,8 +205,6 @@ internal fun FirstRelevoScreen(
         if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
       }
     }
-    Spacer(Modifier.height(Gap.block))
-    Text("Puedes cambiar todo antes de activarlo.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
   }
 }
 
@@ -215,21 +214,6 @@ private fun GuidePanel(content: @Composable ColumnScope.() -> Unit) {
   Panel(Modifier.fillMaxWidth()) { content() }
 }
 
-/**
- * Nota de la guía dentro de una pantalla real (preparar, señal, respuesta), solo hasta completar el
- * primer relevo. Dice qué hacer en esa pantalla y para qué, en una o dos frases.
- */
-@Composable
-internal fun GuideTip(text: String, modifier: Modifier = Modifier) {
-  Row(
-    modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(Relevo.colors.voiceSoft).padding(horizontal = 16.dp, vertical = 12.dp),
-    verticalAlignment = Alignment.Top,
-  ) {
-    RelevoIcon(KitIcon.AYUDA, size = 20.dp, tint = Relevo.colors.voice, background = Relevo.colors.voiceSoft)
-    Spacer(Modifier.width(10.dp))
-    Text(text, style = Relevo.type.subhead, color = Relevo.colors.ink)
-  }
-}
 
 /**
  * Video vertical de 30 segundos. Se reproduce en un TextureView para que respete las esquinas

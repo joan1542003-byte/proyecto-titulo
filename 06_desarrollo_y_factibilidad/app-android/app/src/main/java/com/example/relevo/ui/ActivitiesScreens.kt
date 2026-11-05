@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -138,7 +138,7 @@ private fun MineSection(customActivities: List<CustomActivity>, actions: Activit
   val cells: List<CustomActivity?> = customActivities + null
   RingGrid(cells, Modifier.appear(0), columns = 3) { custom ->
     if (custom == null) AddRingCell("Nueva", actions.onNewActivity, size = 72.dp)
-    else RingCell(activityIcon(custom.name, customActivities), custom.name, { shown = custom.id }, size = 72.dp, variant = activityVariant(custom.name))
+    else RingCell(activityIcon(custom.name, customActivities), custom.name, { shown = custom.id }, size = 72.dp)
   }
   val selected = customActivities.firstOrNull { it.id == shown }
   if (selected != null) {
@@ -158,9 +158,9 @@ private fun IdeasSection(customActivities: List<CustomActivity>, actions: Activi
   Column(Modifier.appear(0), verticalArrangement = Arrangement.spacedBy(Gap.section)) {
     ideasByFamily.forEach { (sky, ideas) ->
       Column {
-        SectionLabel(sky.familyName, Modifier.padding(start = 4.dp, bottom = 14.dp))
+        SectionLabel(sky.familyName, Modifier.padding(bottom = 14.dp))
         RingGrid(ideas, columns = 3) { idea ->
-          RingCell(pictureIcon(idea.picture), idea.activity, { shown = idea.activity }, size = 72.dp, variant = activityVariant(idea.activity))
+          RingCell(pictureIcon(idea.picture), idea.activity, { shown = idea.activity }, size = 72.dp)
         }
       }
     }
@@ -189,7 +189,7 @@ private fun ActivitySheet(
 ) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-      ActivityRing(icon, 80.dp, variant = activityVariant(name))
+      ActivityRing(icon, 80.dp)
       Spacer(Modifier.height(14.dp))
       Text(name, style = Relevo.type.title2, color = Relevo.colors.ink, textAlign = TextAlign.Center)
     }
@@ -228,7 +228,7 @@ private fun StepsSection(
   if (track == null) {
     Panel(Modifier.appear(0)) {
       Text("¿Qué te gustaría hacer más seguido?", style = Relevo.type.headline, color = Relevo.colors.ink)
-      Text("Elige tus intereses y te sugerimos pasos pequeños para empezar. Los puedes cambiar.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+      Text("Elige tus intereses y te sugerimos pasos pequeños.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       Spacer(Modifier.height(6.dp))
       RelevoButton("Elegir intereses", actions.onChooseInterests, icon = KitIcon.AGREGAR)
     }
@@ -269,12 +269,12 @@ private fun StepsSection(
     }
     Spacer(Modifier.height(Gap.block))
     if (activeRelevo) {
-      Text("Tienes un relevo activo. Cuando termine, puedes preparar este paso.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+      Text("Cuando termine tu relevo, podrás preparar este paso.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
     } else {
       RelevoButton("Preparar este paso", { actions.onPrepareStep(track.interest, now.id, photoKey("ruta", now.id)) })
     }
     Spacer(Modifier.height(4.dp))
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
       PlainAction("Editar los pasos", { actions.onEditRoute(track.interest) })
       Text("·", style = Relevo.type.callout, color = Relevo.colors.graphite)
       PlainAction("Cambiar intereses", actions.onChooseInterests)
@@ -292,7 +292,7 @@ private fun StepSheet(track: RouteTrack, step: RouteStep, customActivities: List
   val isCurrent = index == track.currentIndex
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-      ActivityRing(activityIcon(step.activity, customActivities), 80.dp, variant = activityVariant(step.activity))
+      ActivityRing(activityIcon(step.activity, customActivities), 80.dp)
       Spacer(Modifier.height(12.dp))
       Text(if (isCurrent) "Ahora" else "Paso ${index + 1} de ${track.steps.size}", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       Text(step.activity, style = Relevo.type.title2, color = Relevo.colors.ink, textAlign = TextAlign.Center)
@@ -355,7 +355,7 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
     },
   ) {
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-      RingCell(icon, null, { picking = true }, size = 96.dp, variant = activityVariant(name), description = "Cambiar el ícono")
+      RingCell(icon, null, { picking = true }, size = 96.dp, description = "Cambiar el ícono")
       PlainAction("Cambiar el ícono", { picking = true })
     }
     Spacer(Modifier.height(Gap.block))

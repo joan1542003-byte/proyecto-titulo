@@ -39,7 +39,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -50,6 +50,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -82,7 +83,6 @@ import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Photo
 import kotlinx.coroutines.delay
 import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.QuickChoice
 import com.example.relevo.ui.components.RadioMark
@@ -100,7 +100,6 @@ import com.example.relevo.ui.components.key
 import com.example.relevo.ui.components.pressScale
 import com.example.relevo.ui.components.rememberReduceMotion
 import com.example.relevo.ui.components.sharedPhoto
-import com.example.relevo.ui.components.SkyLabel
 import com.example.relevo.ui.components.pictureIcon
 import androidx.compose.foundation.shape.RoundedCornerShape
 import java.util.UUID
@@ -110,11 +109,9 @@ import com.example.relevo.ui.components.SectionLabel
 import com.example.relevo.ui.components.ActivityRing
 import com.example.relevo.ui.components.RingCell
 import com.example.relevo.ui.components.RingGrid
-import com.example.relevo.ui.components.SkySquare
 import com.example.relevo.ui.components.TagObject
 import com.example.relevo.ui.components.DurationButtons
 import com.example.relevo.ui.components.familyName
-import com.example.relevo.ui.components.TipCard
 
 private enum class PrepareStep(val title: String) {
   ACTIVITY("¿Qué quieres hacer?"),
@@ -123,20 +120,6 @@ private enum class PrepareStep(val title: String) {
   USAGE("¿Cuándo suena?"),
   SOUND("¿Dónde suena?"),
   REVIEW("Todo listo"),
-}
-
-/** Nota de la guía para cada paso del primer relevo. */
-private fun guideTipFor(step: PrepareStep, condition: StudyCondition?, reminder: Reminder): String = when (step) {
-  PrepareStep.ACTIVITY -> if (reminder.activity.isNotBlank()) "Te propusimos «${reminder.activity.trim()}». Déjala o escribe otra."
-    else "Escribe algo concreto o toca una idea: «leer 10 páginas» mejor que «leer más»."
-  PrepareStep.START -> if (reminder.howToStart.isNotBlank()) "Para empezar: «${reminder.howToStart.trim().replaceFirstChar { it.lowercase() }}». Mientras más pequeño, menos cuesta."
-    else "Toca una opción o escribe la tuya: algo que tome segundos."
-  PrepareStep.PLACE -> if (condition == StudyCondition.NEUTRAL) "Esta semana deja lo que suena en otro lugar de tu casa y anota dónde."
-    else "Toca el que más se parezca o escríbelo como lo dirías."
-  PrepareStep.USAGE -> "Elige las apps donde se te pasa el rato. Para probar ya, toca «Probar con 15 segundos»."
-  PrepareStep.SOUND -> if (condition != null) "Elige el que tienes y pruébalo antes de seguir."
-    else "Elige con qué suena. El Tag, el parlante o el reloj van donde empiezas."
-  PrepareStep.REVIEW -> "Toca un dato para cambiarlo. Después, «Activar el relevo»."
 }
 
 /** En la semana del parlante en otro lugar, el lugar que se anota es el del parlante, no el del comienzo. */
@@ -176,7 +159,7 @@ internal class PrepareActions(
 
 /** Qué falta para seguir en cada paso; null si está completo. Se muestra al tocar «Seguir» (2.18). */
 private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boolean, condition: StudyCondition?, tagLinked: Boolean): String? = when (step) {
-  PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o toca una idea." else null
+  PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o elige una idea." else null
   PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas: lo primero que harías." else null
   PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null
     else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas lo que suena." else "Escribe dónde empiezas."
@@ -279,16 +262,12 @@ internal fun PrepareScreen(
             actions.onSaveCustom(CustomActivity(UUID.randomUUID().toString(), reminder.activity.trim(), reminder.howToStart.trim(), reminder.place.trim(), image, 0))
           }
           actions.onActivate()
-        }, missing = missing, onMissing = onMissing)
+        }, missing = missing, onMissing = onMissing, haptic = HapticFeedbackType.Confirm)
       } else {
         GuardedButton(if (fromReview) "Listo" else "Seguir", { next(PrepareStep.entries[step.ordinal + 1]) }, missing = missing, onMissing = onMissing)
       }
     },
   ) {
-    if (guided) {
-      GuideTip(guideTipFor(step, studyCondition, reminder))
-      Spacer(Modifier.height(Gap.block))
-    }
     AnimatedContent(
       targetState = step,
       transitionSpec = {
@@ -304,12 +283,8 @@ internal fun PrepareScreen(
           PrepareStep.START -> {
             SuggestionChips(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
             Spacer(Modifier.height(Gap.block))
-            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "O escríbelo aquí", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.PRIMER_PASO)
-            // En el primer relevo guiado, la nota de la guía ya lo dice.
-            if (!guided) {
-              Spacer(Modifier.height(Gap.block))
-              TipCard("Mientras más pequeño, menos cuesta empezar.")
-            }
+            // La ayuda dice lo que importa (criterio 2): algo pequeño, que se hace enseguida.
+            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "Algo que tome segundos", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.PRIMER_PASO)
           }
           PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
@@ -322,8 +297,8 @@ internal fun PrepareScreen(
             val apps = reminder.selectedApps.joinToString(" y ") { it.label }
             ListSection {
               // 2.30: la actividad también se cambia desde aquí, sin volver atrás.
-              FactRow(KitIcon.ACTIVIDAD, "Qué quieres hacer", reminder.activity, leading = {
-                ActivityRing(pictureIcon(picture), 40.dp, variant = activityVariant(reminder.activity))
+              FactRow(KitIcon.ACTIVIDAD, "Actividad", reminder.activity, leading = {
+                ActivityRing(pictureIcon(picture), 40.dp)
               }) { edit(PrepareStep.ACTIVITY) }
               FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { edit(PrepareStep.START) }
               FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Dónde dejas lo que suena" else "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
@@ -362,7 +337,7 @@ internal fun PrepareScreen(
 private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED_PARAMETER") photoKey: String?, onEdit: () -> Unit) {
   ListRow(
     activity.trim(), subtitle = "Tu actividad",
-    leading = { ActivityRing(pictureIcon(picture), 42.dp, variant = activityVariant(activity)) },
+    leading = { ActivityRing(pictureIcon(picture), 42.dp) },
     trailing = { RelevoIcon(KitIcon.EDITAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
     onClick = onEdit,
   )
@@ -371,7 +346,7 @@ private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED
 /** Paso 1: el renglón para escribir y, debajo, los pasos de la ruta, ideas con foto y las actividades propias. */
 @Composable
 private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivity>, routes: List<RouteTrack>, actions: PrepareActions, onNext: () -> Unit) {
-  RenglonField("Qué quieres hacer", reminder.activity, actions.onActivity, placeholder = "Escríbelo o toca una idea", imeAction = ImeAction.Next, onImeAction = onNext)
+  RenglonField("Actividad", reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas", imeAction = ImeAction.Next, onImeAction = onNext)
   val steps = routes.mapNotNull { track -> track.currentStep?.let { track to it } }
   if (steps.isNotEmpty()) {
     TileGroup("Tus pasos", steps.map { (track, step) ->
@@ -401,9 +376,9 @@ private class Tile(val label: String, val icon: KitIcon, val selected: Boolean, 
 @Composable
 private fun TileGroup(label: String, tiles: List<Tile>) {
   Spacer(Modifier.height(Gap.section))
-  SectionLabel(label, Modifier.padding(start = 4.dp, bottom = 14.dp))
+  SectionLabel(label, Modifier.padding(bottom = 14.dp))
   RingGrid(tiles, columns = 4) { tile ->
-    RingCell(tile.icon, tile.label, tile.onClick, size = 58.dp, variant = activityVariant(tile.label), selected = tile.selected)
+    RingCell(tile.icon, tile.label, tile.onClick, size = 58.dp, selected = tile.selected)
   }
 }
 
@@ -430,7 +405,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
       else -> "Dónde empiezas"
     },
     reminder.place, actions.onPlace,
-    placeholder = "O escríbelo aquí",
+    placeholder = "Ej.: en el velador",
     onImeAction = onNext,
     icon = KitIcon.LUGAR,
   )
@@ -497,22 +472,17 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
     ListRow(reminder.place.trim(), icon = KitIcon.LUGAR, subtitle = "El lugar donde empiezas")
     Spacer(Modifier.height(Gap.block))
   }
-  Text(
-    when (studyCondition) {
-      // Dice lo que la persona eligió, no siempre el Tag (3.3).
-      null -> if (!reminder.routeChosen) "Elige con qué suena." else "Suena " + when (reminder.signalRoute) {
-        SignalRoute.TAG -> "en el Tag"
-        SignalRoute.BLUETOOTH -> "en el parlante"
-        SignalRoute.WATCH -> "en el reloj"
-        SignalRoute.PHONE -> "en el teléfono"
-      } + ". Si prefieres otra cosa, elígela."
-      StudyCondition.PHONE -> "Esta semana suena en el teléfono."
-      StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
-      StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
-    },
-    style = Relevo.type.subhead, color = Relevo.colors.graphite,
-  )
-  Spacer(Modifier.height(Gap.block))
+  // Solo la semana de la prueba agrega algo; sin ella, la pregunta del título basta y lo elegido ya se ve.
+  val weekNote = when (studyCondition) {
+    null -> null
+    StudyCondition.PHONE -> "Esta semana suena en el teléfono."
+    StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
+    StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
+  }
+  if (weekNote != null) {
+    Text(weekNote, style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(Gap.block))
+  }
   Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
     OptionRow("En tu Tag", reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, { actions.onRoute(SignalRoute.TAG) },
       icon = KitIcon.OBJETO, subtitle = tagSubtitle(tag, tagStatus), enabled = objectChoice)
@@ -536,7 +506,7 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   Spacer(Modifier.height(12.dp))
   AnimatedVisibility(tested != 0, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
     when (tested) {
-      1 -> Text("Así va a sonar.", style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp))
+      1 -> Text("Sonó " + routeName(reminder.signalRoute).replaceFirstChar { it.lowercase() }.replaceFirst("el ", "en el ") + ".", style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp))
       else -> Notice(routeFailure(reminder.signalRoute), tone = Tone.Error)
     }
   }
@@ -639,7 +609,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   if (tag.linkedName == null) {
     Text(
       if (tag.searching) "Buscando Tags cerca. Si el tuyo está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces."
-      else "Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después toca el tuyo en la lista.",
+      else "Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después elige el tuyo en la lista.",
       style = Relevo.type.body, color = Relevo.colors.graphite,
     )
     Spacer(Modifier.height(8.dp))
@@ -660,7 +630,7 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
       SectionGap()
       ListSection(
         title = if (tag.searchedAll) "Aparatos cerca" else "Tags cerca",
-        footer = if (tag.searchedAll) "Toca tu Tag. Si es compatible, va a pitar una vez." else "Toca el tuyo. Va a pitar una vez para confirmarlo.",
+        footer = if (tag.searchedAll) "Si es compatible, pita una vez al elegirlo." else "Al elegirlo, pita una vez para confirmarlo.",
       ) {
         tag.found.forEach { found ->
           ListRow(found.name, icon = KitIcon.OBJETO, subtitle = TagProtocol.strength(found.rssi), chevron = true, onClick = { actions.onTagLink(found) })
@@ -692,13 +662,6 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     kind = ButtonKind.Secondary, icon = KitIcon.PROBAR, enabled = tag.test != TagTest.WORKING && tag.test != TagTest.ASKING,
   )
   Spacer(Modifier.height(12.dp))
-  if (!tag.heard && tag.test == TagTest.IDLE) {
-    Text(
-      "Pruébalo y dinos si lo escuchas pitar: así Relevo sabe cómo hacerlo sonar.",
-      style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
-    )
-    Spacer(Modifier.height(8.dp))
-  }
   // Con el Bluetooth apagado basta el aviso de arriba.
   AnimatedVisibility(
     tag.test == TagTest.ASKING || tag.test == TagTest.SOUNDED || (tag.test == TagTest.FAILED && tag.problem != TagLink.Problem.BLUETOOTH_OFF),
@@ -707,8 +670,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     when {
       tag.test == TagTest.ASKING -> TagHeardQuestion(tag.retry, actions.onTagHeard)
       tag.test == TagTest.SOUNDED -> Column(verticalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.padding(horizontal = 4.dp)) {
-        Text("Así va a sonar: cuando se cumpla el tiempo, pitará seguido hasta 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
-        if (tag.button) Text("Para callarlo, toca su botón una vez. Si lo mantienes apretado, se apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+        Text("Sonó. Al cumplirse el tiempo, pita hasta 30 segundos.", style = Relevo.type.body, color = Relevo.colors.ink)
+        if (tag.button) Text("Un toque a su botón lo calla; mantenerlo apretado lo apaga.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         if (!tag.linkLossOff) {
           Text("Este Tag mantiene su alarma de alejamiento: si el teléfono se aleja mucho mientras espera, puede pitar solo. Para callarlo, tócalo una vez.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
         }

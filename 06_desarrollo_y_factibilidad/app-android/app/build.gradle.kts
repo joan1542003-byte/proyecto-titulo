@@ -16,8 +16,8 @@ android {
         applicationId = "cl.udp.relevo"
         minSdk = 31
         targetSdk = 36
-        versionCode = 50
-        versionName = "4.0"
+        versionCode = 51
+        versionName = "4.1"
         manifestPlaceholders["appLabel"] = "@string/app_name"
         // 4.0: para revisar un rediseño en un teléfono que ya tiene Relevo, sin reemplazarlo ni tocar sus datos,
         // se instala aparte: ./gradlew assembleDebug -PrelevoSuffix=.revision

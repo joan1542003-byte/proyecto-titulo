@@ -1,5 +1,7 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -14,15 +16,19 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.drawscope.translate
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -34,29 +40,39 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
+import kotlin.math.max
+import kotlin.math.round
 
 private val Ink = Color(0xFF141312)
 
 /**
- * El anillo de una actividad (4.0, D-155): un círculo blanco con su ícono en tinta, rodeado por un anillo
- * con el color de su familia. Es la única pieza de color de la interfaz: el color dice qué actividad es, y
- * todo lo demás va en papel y tinta. Nace del selector de íconos de la 3.3, que el autor prefirió a las
- * fichas de cielo con cápsula.
+ * El anillo de una actividad (4.0, D-155; simétrico desde la 4.1, D-156): un círculo claro con su ícono
+ * en tinta, rodeado por un anillo con el color de su familia. Todo se dibuja en un solo lienzo y con un
+ * mismo centro, para que el anillo mida lo mismo en todo el contorno: antes el círculo interior se
+ * centraba redondeando a píxeles y podía quedar uno corrido. El degradado es igual a la izquierda y a la
+ * derecha (arriba, los lados y abajo), con colores de una misma luminancia, y el ícono va a su centro
+ * óptico. El grosor es el 7,5 % del diámetro, redondeado a píxeles enteros.
  */
 @Composable
-fun ActivityRing(icon: KitIcon, size: Dp, modifier: Modifier = Modifier, variant: Int = 0, description: String? = null) {
-  val sky = skyFor(icon)
-  val ring = (size * 0.075f).coerceAtLeast(2.5.dp)
-  Box(
-    modifier.size(size).clip(CircleShape).drawBehind { drawSky(sky, grain = size >= 48.dp, variant = variant) }
-      .then(if (description != null) Modifier.semantics { contentDescription = description } else Modifier),
-    contentAlignment = Alignment.Center,
-  ) {
-    // En el tema oscuro, el círculo es apenas tibio para no encandilar; el ícono sigue en tinta.
-    val disc = if (Relevo.colors.isDark) Color(0xFFECE7E1) else Color.White
-    Box(Modifier.size(size - ring * 2).clip(CircleShape).background(disc), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = size * 0.42f, tint = Ink, background = disc)
-    }
+fun ActivityRing(icon: KitIcon, size: Dp, modifier: Modifier = Modifier, description: String? = null) {
+  val colors = skyFor(icon).ring
+  // En el tema oscuro, el círculo es apenas tibio para no encandilar; el ícono sigue en tinta.
+  val disc = if (Relevo.colors.isDark) Color(0xFFECE7E1) else Color.White
+  val geometry = remember(icon) { kitGeometry(icon) }
+  val iconSide = size * 0.42f
+  val stroke = opticalStroke(iconSide)
+  Canvas(modifier.size(size).then(if (description != null) Modifier.semantics { contentDescription = description } else Modifier)) {
+    val diameter = this.size.minDimension
+    val radius = diameter / 2f
+    val ring = max(round(diameter * 0.075f), round(2.5.dp.toPx()))
+    val brush = Brush.sweepGradient(
+      0f to colors[1], 0.25f to colors[2], 0.5f to colors[1], 0.75f to colors[0], 1f to colors[1],
+      center = center,
+    )
+    drawCircle(brush, radius = radius - ring / 2f, center = center, style = Stroke(width = ring))
+    drawCircle(disc, radius = radius - ring + 0.5f, center = center)
+    val side = iconSide.toPx()
+    translate(center.x - side / 2f, center.y - side / 2f) { drawKitIcon(icon, geometry, side, Ink, disc, stroke) }
   }
 }
 
@@ -73,24 +89,37 @@ fun RingCell(
   onClick: (() -> Unit)?,
   modifier: Modifier = Modifier,
   size: Dp = 64.dp,
-  variant: Int = 0,
   selected: Boolean = false,
   count: Int? = null,
   description: String = label.orEmpty(),
 ) {
   val interaction = remember { MutableInteractionSource() }
+  val haptics = LocalHapticFeedback.current
+  // El anillo de tinta de la elegida aparece desde adentro, con un resorte sin rebote.
+  val chosen by animateFloatAsState(if (selected) 1f else 0f, Motion.smooth(stiffness = 700f), label = "ring_selected")
+  val ink = Relevo.colors.ink
   Column(
     modifier
       .then(
         if (onClick != null) Modifier.pressScale(interaction, 0.94f)
-          .clickable(interactionSource = interaction, indication = null, role = if (label == null) Role.RadioButton else Role.Button, onClick = onClick)
+          .clickable(interactionSource = interaction, indication = null, role = if (label == null) Role.RadioButton else Role.Button) {
+            if (label == null) haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
+            onClick()
+          }
         else Modifier,
       )
       .semantics(mergeDescendants = true) { if (onClick != null) this.selected = selected; contentDescription = description },
     horizontalAlignment = Alignment.CenterHorizontally,
   ) {
-    Box(Modifier.size(size).outerRing(selected, size / 2, Relevo.colors.ink, gap = 3.dp, width = 2.dp)) {
-      ActivityRing(icon, size, variant = variant)
+    Box(
+      Modifier.size(size).drawBehind {
+        if (chosen > 0f) {
+          val width = 2.dp.toPx()
+          drawCircle(ink.copy(alpha = chosen), radius = this.size.minDimension / 2f + 3.dp.toPx() + width / 2f - (1f - chosen) * 3.dp.toPx(), style = Stroke(width))
+        }
+      },
+    ) {
+      ActivityRing(icon, size)
       if (count != null && count > 1) {
         Box(
           Modifier.align(Alignment.TopEnd).offset(x = 4.dp, y = (-2).dp).size(22.dp).clip(CircleShape).background(Relevo.colors.ink),

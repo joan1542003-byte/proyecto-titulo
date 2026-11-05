@@ -34,7 +34,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -306,30 +305,6 @@ private object PhotoCache {
   fun put(key: Int, value: ImageBitmap) { cache.put(key, value) }
 }
 
-/**
- * La imagen de una actividad (D-126): el cielo de su familia, con grano y volumen, y su ícono en tinta
- * sobre un círculo blanco, que se lee igual sobre cualquier cielo. El nombre nunca va en blanco sobre
- * el cielo: va debajo o en una banda clara.
- */
-@Composable
-fun ActivityArt(icon: KitIcon, modifier: Modifier = Modifier, iconSize: Dp? = null, showIcon: Boolean = true, variant: Int = 0) {
-  val colors = Relevo.colors
-  val sky = skyFor(icon)
-  var side by remember { mutableIntStateOf(0) }
-  val density = LocalDensity.current
-  val auto = with(density) { (side * 0.2f).toDp() }.coerceIn(18.dp, 56.dp)
-  val glyph = iconSize ?: auto
-  Box(
-    modifier.onSizeChanged { side = minOf(it.width, it.height) }.drawBehind { drawSky(sky, variant = variant) },
-    // Un poco sobre el centro: en las fichas grandes, la banda de texto ocupa la parte de abajo.
-    contentAlignment = androidx.compose.ui.BiasAlignment(0f, -0.35f),
-  ) {
-    if (showIcon) Box(Modifier.size(glyph * 1.7f).clip(CircleShape).background(Color.White.copy(alpha = .92f)), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = glyph, tint = colors.onTile, background = Color.White)
-    }
-  }
-}
-
 /** Escenas para las transiciones compartidas entre pantallas (la foto viaja de la tarjeta al detalle). */
 @OptIn(ExperimentalSharedTransitionApi::class)
 val LocalSharedScope = compositionLocalOf<SharedTransitionScope?> { null }
@@ -345,33 +320,9 @@ fun Modifier.sharedPhoto(key: String?): Modifier {
   return with(shared) { this@sharedPhoto.sharedElement(rememberSharedContentState(key), scope) }
 }
 
-/** Contenido de una ficha: el cielo de la actividad, con su ícono o sin él. */
-@Composable
-fun PictureContent(picture: Picture?, modifier: Modifier = Modifier, iconSize: Dp = 36.dp, fallback: KitIcon = KitIcon.ACTIVIDAD, size: PhotoSize = PhotoSize.Full, wide: Boolean = false, showIcon: Boolean = true, variant: Int = 0) {
-  ActivityArt(pictureIcon(picture, fallback), modifier, iconSize = iconSize, showIcon = showIcon, variant = variant)
-}
-
 /** El ícono de una imagen guardada: el de la foto o el del kit. */
 internal fun pictureIcon(picture: Picture?, fallback: KitIcon = KitIcon.ACTIVIDAD): KitIcon =
   when (picture) { is Picture.OfPhoto -> picture.photo.icon; is Picture.OfIcon -> picture.icon; null -> fallback }
-
-/**
- * Nombre sobre un cielo (D-126): cápsula blanca con letra de tinta. El texto blanco directo no
- * alcanzaba 4,5:1 en los cielos claros; en la cápsula supera 15:1 sobre cualquiera.
- */
-@Composable
-fun SkyLabel(text: String, modifier: Modifier = Modifier, large: Boolean = false) {
-  // Radio de media línea: una cápsula si el nombre cabe en una línea; si es largo, pasa a dos sin cortarse.
-  val shape = RoundedCornerShape(if (large) 15.dp else 13.dp)
-  Text(
-    text,
-    style = (if (large) Relevo.type.headline else Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, lineHeight = Relevo.type.subhead.fontSize * 1.3f)),
-    color = Color(0xFF141312), maxLines = 2, overflow = TextOverflow.Ellipsis,
-    modifier = modifier.shadow(2.dp, shape, ambientColor = Color.Black.copy(alpha = .06f), spotColor = Color.Black.copy(alpha = .16f))
-      .clip(shape).background(Color.White.copy(alpha = .94f))
-      .padding(horizontal = if (large) 14.dp else 12.dp, vertical = if (large) 5.dp else 3.dp),
-  )
-}
 
 /**
  * Imagen de la persona: el emoji que eligió (P2), en un círculo. Sin emoji, la inicial de su nombre

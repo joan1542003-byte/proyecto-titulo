@@ -349,7 +349,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       study = study, usageAccess = usageAccess, backgroundUnrestricted = backgroundUnrestricted, profile = profile,
                       routes = routes, settings = settings, acknowledgement = acknowledgement, returnDismissedFor = returnDismissedFor,
                       quickFeedbackDue = quickFeedbackDue, onQuickFeedback = viewModel::submitQuickFeedback, onFeedback = { push(Route.FEEDBACK) },
-                      guided = guide.prepare,
                       autoMode = autoMode, onAutoModeOff = { viewModel.setAutoMode(false) },
                       changedRouteInterest = changedRouteInterest, reselect = reselect, actions = homeActions,
                       onChangeRoute = { interest -> viewModel.clearChangedRoute(); acknowledgement = null; routeEditInterest = interest; push(Route.ROUTE_EDIT) },
@@ -434,10 +433,10 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   },
                 )
                 Route.SIGNAL -> SignalScreen(
-                  reminder = reminder, customActivities = customActivities, studyActive = study.condition != null, guided = guide.signal,
+                  reminder = reminder, customActivities = customActivities, studyActive = study.condition != null,
                   onTestSound = { viewModel.testSignal(it) }, onContinue = viewModel::silence,
                 )
-                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered, guided = guide.decide) { outcome, knew, recalled, feeling, noticed ->
+                Route.DECIDE -> DecideScreen(reminder, customActivities, askSignalQuestions = reminder.signalDelivered) { outcome, knew, recalled, feeling, noticed ->
                   viewModel.completeEvaluation(outcome, knew, recalled, feeling, noticed)
                   acknowledgement = if (settings.acknowledgements) acknowledgementFor(outcome) else null
                   viewModel.reset()

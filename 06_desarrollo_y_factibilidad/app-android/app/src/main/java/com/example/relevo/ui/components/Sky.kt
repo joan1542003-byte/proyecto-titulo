@@ -45,6 +45,22 @@ enum class Sky(internal val base: Color, internal val blobs: List<SkyBlob>) {
 
   /** Tres colores representativos, para ilustraciones que usan la familia (la guía del Tag). */
   internal val palette: List<Color> get() = blobs.map { it.color.copy(alpha = 1f) }.take(3)
+
+  /**
+   * Los tres colores del anillo de una actividad (4.1, D-156): arriba, a los lados y abajo. Salen de las
+   * luces de la familia, llevadas a una misma luminancia para que el anillo pese igual en todo su
+   * contorno; las luces casi blancas del cielo hacían que un lado pareciera más delgado.
+   */
+  internal val ring: List<Color> get() = when (this) {
+    MENTA -> listOf(Color(0xFF3FB482), Color(0xFF3FB487), Color(0xFF3DAEC3))
+    CIELO -> listOf(Color(0xFF2A6DD4), Color(0xFF356ADA), Color(0xFF3B6BD2))
+    ATARDECER -> listOf(Color(0xFFEE6C23), Color(0xFFE8698E), Color(0xFFA080EE))
+    AMBAR -> listOf(Color(0xFFE79A0B), Color(0xFFE39A4F), Color(0xFFBF98F1))
+    BRASA -> listOf(Color(0xFFDB5D10), Color(0xFFE8501E), Color(0xFFE6522A))
+    NOCHE -> listOf(Color(0xFF36457C), Color(0xFF34457A), Color(0xFF25419A))
+    ROSA -> listOf(Color(0xFFDA4265), Color(0xFFD24A6F), Color(0xFFD8426F))
+    ARENA -> listOf(Color(0xFFB49972), Color(0xFFB09A7B), Color(0xFFB09A77))
+  }
 }
 
 /** La familia de una actividad, por su ícono. Las que la app no reconoce toman la arena. */

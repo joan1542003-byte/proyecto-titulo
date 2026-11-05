@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -24,8 +23,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
-import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
@@ -50,11 +47,10 @@ private val TabWidth = 92.dp
 @Composable
 fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifier: Modifier = Modifier) {
   val colors = Relevo.colors
-  val haptics = LocalHapticFeedback.current
   val reduce = rememberReduceMotion()
   Row(
     modifier.height(TabBarHeight)
-      .then(if (colors.isDark) Modifier else Modifier.shadow(18.dp, Relevo.controlShape, ambientColor = Color.Black.copy(alpha = .05f), spotColor = Color.Black.copy(alpha = .14f)))
+      .then(if (colors.isDark) Modifier else Modifier.shadow(10.dp, Relevo.controlShape, ambientColor = Color.Black.copy(alpha = .04f), spotColor = Color.Black.copy(alpha = .1f)))
       .glass(Relevo.controlShape, blur = BarBlur).padding(5.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
@@ -69,12 +65,12 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
           bump.animateTo(1f, Motion.smooth(stiffness = 600f))
         }
       }
+      // Responde al apoyar el dedo (se hunde) y, al elegir, el ícono da un pequeño salto, como los símbolos de
+      // iOS. Cambiar de pestaña no vibra: es moverse, no confirmar algo (4.1, D-156).
+      val interaction = remember { MutableInteractionSource() }
       Column(
-        Modifier.width(TabWidth).fillMaxHeight().clip(Relevo.controlShape).background(fill)
-          .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Tab) {
-            haptics.performHapticFeedback(HapticFeedbackType.SegmentTick)
-            onSelect(index)
-          }
+        Modifier.width(TabWidth).fillMaxHeight().pressScale(interaction, 0.92f).clip(Relevo.controlShape).background(fill)
+          .clickable(interactionSource = interaction, indication = null, role = Role.Tab) { onSelect(index) }
           .semantics { this.selected = active }
           .graphicsLayer { scaleX = bump.value; scaleY = bump.value },
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -24,7 +24,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -77,6 +77,7 @@ import com.example.relevo.ui.components.pressScale
 import androidx.compose.foundation.layout.width
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.ui.text.font.FontWeight
 import com.example.relevo.ui.components.rememberReduceMotion
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -172,7 +173,7 @@ private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: ()
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Editar el perfil", onClick = onEdit),
     horizontalAlignment = Alignment.CenterHorizontally,
   ) {
-    Box(Modifier.size(92.dp).shadow(14.dp, CircleShape, ambientColor = Color.Black.copy(alpha = .05f), spotColor = Color.Black.copy(alpha = .18f)).clip(CircleShape).background(Relevo.colors.card), contentAlignment = Alignment.Center) {
+    Box(Modifier.size(92.dp).clip(CircleShape).background(Relevo.colors.card).border(1.dp, Relevo.colors.line, CircleShape), contentAlignment = Alignment.Center) {
       Avatar(profile.image, profile.name, 92.dp, background = Relevo.colors.card)
     }
     Spacer(Modifier.height(12.dp))
@@ -229,9 +230,9 @@ internal fun ProfileSetupScreen(
     bottom = {
       when (step) {
         0 -> GuardedButton("Seguir", { onName(name.trim()); go(1) }, missing = if (name.isBlank()) "Escribe tu nombre." else null)
-        1 -> GuardedButton("Seguir", { onImage(image); go(2) }, missing = if (image.isBlank()) "Elige un emoji o toca «Saltar»." else null)
+        1 -> GuardedButton("Seguir", { onImage(image); go(2) }, missing = if (image.isBlank()) "Elige uno o salta este paso." else null)
         else -> GuardedButton("Listo", { onInterests(interests, other); onFinish(true) }, missing = when {
-          interests.isEmpty() -> "Elige al menos un interés o toca «Saltar»."
+          interests.isEmpty() -> "Elige al menos uno o salta este paso."
           Interests.OTHER in interests && other.isBlank() -> "Escribe cuál es tu otro interés."
           else -> null
         })
@@ -276,7 +277,7 @@ internal fun ProfileSetupScreen(
 /** El emoji en un círculo blanco con sombra suave, como en la lámina «Tu perfil». */
 @Composable
 private fun WhiteAvatar(image: String, name: String) {
-  Box(Modifier.size(96.dp).shadow(14.dp, CircleShape, ambientColor = Color.Black.copy(alpha = .05f), spotColor = Color.Black.copy(alpha = .18f)).clip(CircleShape).background(Relevo.colors.card), contentAlignment = Alignment.Center) {
+  Box(Modifier.size(96.dp).clip(CircleShape).background(Relevo.colors.card).border(1.dp, Relevo.colors.line, CircleShape), contentAlignment = Alignment.Center) {
     Avatar(image, name, 96.dp, background = Relevo.colors.card)
   }
 }

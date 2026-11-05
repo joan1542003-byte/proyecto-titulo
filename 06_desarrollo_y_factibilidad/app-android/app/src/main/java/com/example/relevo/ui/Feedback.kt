@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -88,7 +88,6 @@ internal fun FacePicker(faces: List<Face>, selected: String?, onSelect: (String?
 internal fun QuickFeedbackCard(onAnswer: (Int?) -> Unit, onMore: () -> Unit) {
   Panel {
     Text("¿Qué tal te va con Relevo?", style = Relevo.type.headline, color = Relevo.colors.ink)
-    Text("Toca una cara. Nos ayuda a mejorarlo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(4.dp))
     FacePicker(ratingFaces, null, { value -> value?.toIntOrNull()?.let(onAnswer) }, size = 36.dp)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {

@@ -26,7 +26,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -61,7 +61,6 @@ import com.example.relevo.ui.components.Motion
 import com.example.relevo.ui.components.Panel
 import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
 import com.example.relevo.ui.components.QuickChoice
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
@@ -108,7 +107,6 @@ internal fun RouteEditScreen(track: RouteTrack, customActivities: List<CustomAct
   var menuFor by remember { mutableStateOf<String?>(null) }
   RelevoScreen(
     title = draft.title,
-    subtitle = "Toca un paso para cambiarlo. Con los tres puntos, puedes moverlo o borrarlo.",
     onBack = onBack, backLabel = "Cancelar",
     bottom = { GuardedButton("Guardar", { onSave(draft) }, missing = if (draft == track) "No hay cambios que guardar." else null) },
   ) {
@@ -198,7 +196,7 @@ internal fun NextStepSheet(suggestion: RouteSuggestion, onAccept: () -> Unit, on
     Spacer(Modifier.height(16.dp))
     Panel(padding = 14.dp) {
       Row(verticalAlignment = Alignment.CenterVertically) {
-        ActivityRing(iconForActivity(suggestion.next.activity, emptyList()).takeIf { it != KitIcon.ACTIVIDAD } ?: interestIcon(suggestion.interest), 52.dp, variant = activityVariant(suggestion.next.activity))
+        ActivityRing(iconForActivity(suggestion.next.activity, emptyList()).takeIf { it != KitIcon.ACTIVIDAD } ?: interestIcon(suggestion.interest), 52.dp)
         Spacer(Modifier.width(14.dp))
         Column(Modifier.weight(1f)) {
           Text(suggestion.next.activity, style = Relevo.type.headline, color = Relevo.colors.ink)

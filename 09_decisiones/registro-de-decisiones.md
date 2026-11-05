@@ -2051,7 +2051,32 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:** la memoria v6 todavía describe las seis fichas de papel y el cielo con cápsula (sección «Color e imagen», «Color» y Figura 15). Si el autor adopta la 4.0, esas partes y el [documento 42](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) deben actualizarse.
 - **Documentos:** [Android 4.0](../06_desarrollo_y_factibilidad/app-android/version-4.0-rediseno-2026-11-05.md).
 
+## D-156 — Android 4.1: anillos simétricos, textos con función, sin viudas y movimiento al tacto
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.1, `versionCode` 51), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono.
+- **Contexto:** al revisar la 4.0, el autor sintió que los íconos circulares no eran simétricos; pidió quitar mensajes como «Así suena Relevo», que no tienen sentido, y que no haya viudas, y fijó como estándar las pautas de Apple: microinteracciones y animaciones que se sientan bien al tocarlas, actuales, sin efectos triviales como el 3D. Cada decisión debe responder a la memoria y estar fundamentada.
+- **Decisión:**
+  - **Anillos:** se dibujan en un solo lienzo con un mismo centro; el grosor es el 7,5 % del diámetro en píxeles enteros, y el color, un degradado igual a ambos lados con tres colores de la familia llevados a la misma luminancia, la regla de las fichas de la memoria (Albers, 2013). El ícono va en su centro óptico: el centro de su dibujo, más un cuarto de la distancia al centro de la tinta, con un tope de 0,6 unidades. Vale para todos los íconos de la app.
+  - **Textos:** salen los que narran la pantalla o hablan de la app: las notas de guía de la primera vez, «Así suena Relevo» y los «Toca…» cuando el botón ya está a la vista. La ayuda pasa a los campos como ejemplo («Ej.: …»), según la regla de campos del estudio de los textos. Se mantienen las instrucciones del Tag físico y los textos del protocolo y del consentimiento.
+  - **Viudas:** toda la app usa un `Text` que une las dos últimas palabras de cada párrafo (D-135); los títulos y el texto centrado se parten en líneas parejas.
+  - **Movimiento y tacto:** todo responde al apoyar el dedo; los resortes no rebotan, salvo la hoja que se suelta con impulso, que vuelve con la velocidad del dedo; el impulso proyectado decide si la hoja se cierra; vibra solo lo que confirma o cambia algo; las cifras que bajan se deslizan; los objetos se dibujan planos, y las áreas táctiles miden 48 dp.
+  - **Alineación:** las acciones de texto quedan en la columna de su texto; los títulos de las listas agrupadas, donde empieza el contenido de las filas, y la barra de «Tu relevo», al ancho de la tarjeta de abajo.
+- **Alternativas descartadas:**
+  - Engrosar solo el lado pálido del anillo: el contorno seguiría cambiando de peso con el color.
+  - Centrar los íconos solo por su dibujo: la campana y la escalera se seguían viendo caídas.
+  - Acortar las notas de la primera vez en vez de quitarlas: la memoria registra que la primera vez resultó larga, y el documento 43 propone enseñar haciéndolo.
+  - Corregir las viudas pantalla por pantalla: depende de recordarlo en cada texto nuevo.
+- **Consecuencias:** el inventario de textos se volvió a generar con 4.1 (1237 textos y 5212 palabras; en 3.3 eran 1287 y 5837). Dos pares de ideas comparten ícono, «Leer» y «Leer manga», y «Hacer manualidades» y «Armar una maqueta», porque el kit no tiene uno propio para ellas.
+- **Documentos:** [Android 4.1](../06_desarrollo_y_factibilidad/app-android/version-4.1-anillos-textos-y-movimiento-2026-11-05.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-156
+
+- **Qué cambió:** se registró D-156.
+- **Cómo estaba antes:** la última decisión era D-155.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-05 — D-155
 

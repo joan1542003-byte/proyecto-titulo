@@ -41,7 +41,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -78,8 +78,9 @@ enum class ButtonKind { Primary, Secondary, Destructive }
 
 /**
  * Botón en cápsula (D-083): 56 dp de alto y ancho completo, o compacto dentro de una tarjeta. El
- * principal va en tinta; el secundario, desde 3.0, blanco con un contorno de tinta. Al presionar se hunde un
- * poco, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
+ * principal va en tinta; el secundario, desde 3.0, blanco con un contorno de tinta. Responde al apoyar el
+ * dedo, no al soltarlo: se hunde un poco y se oscurece, y vuelve con un resorte sin rebote (4.1, D-156).
+ * La vibración queda para lo que la merece, como activar un relevo ([haptic]): si todo vibra, nada avisa.
  */
 @Composable
 fun RelevoButton(
@@ -92,6 +93,8 @@ fun RelevoButton(
   compact: Boolean = false,
   /** Se ve apagado pero responde: lo usa [GuardedButton] para decir qué falta. */
   muted: Boolean = false,
+  /** Vibración al confirmar una acción que importa, como activar el relevo. Por omisión, ninguna. */
+  haptic: HapticFeedbackType? = null,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
@@ -117,7 +120,7 @@ fun RelevoButton(
       .clip(Relevo.controlShape).background(background)
       .then(if (outlined) Modifier.border(2.dp, colors.ink, Relevo.controlShape) else Modifier)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
-        if (kind == ButtonKind.Primary && !muted) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+        if (haptic != null && !muted) haptics.performHapticFeedback(haptic)
         onClick()
       }
       .padding(horizontal = if (compact) 18.dp else 22.dp),
@@ -146,6 +149,7 @@ fun GuardedButton(
   kind: ButtonKind = ButtonKind.Primary,
   icon: KitIcon? = null,
   onMissing: (String) -> Unit = {},
+  haptic: HapticFeedbackType? = null,
 ) {
   val haptics = LocalHapticFeedback.current
   val scope = rememberCoroutineScope()
@@ -162,11 +166,11 @@ fun GuardedButton(
         // Si el aviso ya estaba a la vista, crece un instante para que se note.
         val again = shown == missing
         shown = missing
-        haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+        haptics.performHapticFeedback(HapticFeedbackType.Reject)
         if (again) scope.launch { bump.animateTo(1.04f, tween(110)); bump.animateTo(1f, tween(170)) }
         onMissing(missing)
       } else onClick()
-    }, kind = kind, icon = icon, muted = missing != null)
+    }, kind = kind, icon = icon, muted = missing != null, haptic = haptic)
   }
 }
 
@@ -197,10 +201,10 @@ fun PlainAction(
 ) {
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
+  // Sin relleno a los lados: el texto queda en la misma columna que el texto vecino. El área táctil igual mide 48 dp.
   Row(
-    modifier.heightIn(min = 48.dp).clip(Relevo.controlShape)
-      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick)
-      .padding(horizontal = 4.dp),
+    modifier.minimumInteractiveComponentSize()
+      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     val tint = if (!enabled) Relevo.colors.gray else color.copy(alpha = if (pressed) .5f else 1f)
@@ -219,7 +223,7 @@ fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier
   val pressed by interaction.collectIsPressedAsState()
   val colors = Relevo.colors
   Box(
-    modifier.size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
+    modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
       .background(if (filled || pressed) colors.mist else Color.Transparent)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = description },
@@ -244,7 +248,7 @@ fun SegmentedControl(
   val haptics = LocalHapticFeedback.current
   val reduce = rememberReduceMotion()
   val index = options.indexOfFirst { it.first == selected }
-  BoxWithConstraints(modifier.fillMaxWidth().height(46.dp).clip(Relevo.controlShape).background(colors.card).border(1.5.dp, colors.line, Relevo.controlShape).padding(4.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(48.dp).clip(Relevo.controlShape).background(colors.card).border(1.5.dp, colors.line, Relevo.controlShape).padding(4.dp)) {
     val segment = maxWidth / options.size
     val offset by animateDpAsState(segment * index.coerceAtLeast(0), if (reduce) snap() else Motion.smooth(), label = "segment_offset")
     val thumbAlpha by animateFloatAsState(if (index >= 0) 1f else 0f, Motion.standard(Motion.SHORT), label = "segment_thumb")
@@ -353,7 +357,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
+    Modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -364,22 +368,19 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
 
 /** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. */
 @Composable
-fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null, sky: Sky? = null) {
+fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val background by animateColorAsState(if (selected) colors.ink else colors.card, Motion.standard(Motion.SHORT), label = "chip")
   val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
-    modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
+    modifier.minimumInteractiveComponentSize().heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
       .then(if (selected) Modifier else Modifier.border(1.5.dp, colors.line, Relevo.controlShape))
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
-    if (sky != null) {
-      SkySquare(sky, size = 18.dp, radius = 6.dp)
-      Spacer(Modifier.width(8.dp))
-    } else if (icon != null) {
+    if (icon != null) {
       RelevoIcon(icon, size = 18.dp, tint = content, background = background)
       Spacer(Modifier.width(8.dp))
     }

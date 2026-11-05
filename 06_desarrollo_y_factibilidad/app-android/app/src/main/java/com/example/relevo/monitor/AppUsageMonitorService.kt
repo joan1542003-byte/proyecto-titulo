@@ -354,7 +354,7 @@ class AppUsageMonitorService : Service() {
         .setSmallIcon(R.drawable.ic_stat_relevo)
         .setContentTitle("Dejó de contar")
         .setContentText("Falta el permiso de Tiempo de uso")
-        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Toca para darlo o para desactivar el relevo."))
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Sin él, Relevo no puede contar."))
         .setContentIntent(openAppIntent())
         .setAutoCancel(true)
         .build(),
@@ -408,10 +408,10 @@ class AppUsageMonitorService : Service() {
       .build()
     val text = when {
       // 4.0 (R11): lo útil primero y en menos de 40 caracteres; la frase genérica del protocolo se mantiene.
-      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No sonó en el parlante. Toca para revisar"
-      !audible && reminder.signalRoute == SignalRoute.WATCH -> "No sonó en el reloj. Toca para revisar"
-      !audible && reminder.signalRoute == SignalRoute.TAG -> "No sonó en el Tag. Toca para revisar"
-      !audible -> "No sonó en el teléfono. Toca para revisar"
+      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No sonó en el parlante"
+      !audible && reminder.signalRoute == SignalRoute.WATCH -> "No sonó en el reloj"
+      !audible && reminder.signalRoute == SignalRoute.TAG -> "No sonó en el Tag"
+      !audible -> "No sonó en el teléfono"
       generic -> GENERIC_SIGNAL_TEXT
       reminder.howToStart.isBlank() -> GENERIC_SIGNAL_TEXT
       else -> "Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}"

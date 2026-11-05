@@ -24,7 +24,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.mutableStateOf
@@ -75,12 +74,13 @@ fun ListSection(
 ) {
   val colors = Relevo.colors
   Column(modifier.fillMaxWidth()) {
-    if (title != null) SectionLabel(title, Modifier.padding(start = 4.dp, bottom = 8.dp))
+    // El título y la nota empiezan donde empieza el contenido de las filas (14 dp), como en las listas agrupadas de iOS.
+    if (title != null) SectionLabel(title, Modifier.padding(start = 14.dp, bottom = 8.dp))
     CompositionLocalProvider(LocalInGroup provides true) {
       GroupedRows(Modifier.fillMaxWidth().clip(RowShape).background(colors.card), colors.line, dividerInset, content)
     }
     if (footer != null) {
-      Text(footer, style = Relevo.type.footnote, color = colors.graphite, modifier = Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp))
+      Text(footer, style = Relevo.type.footnote, color = colors.graphite, modifier = Modifier.padding(start = 14.dp, end = 14.dp, top = 8.dp))
     }
   }
 }
@@ -227,6 +227,8 @@ fun OptionRow(
   icon: KitIcon? = null,
   subtitle: String? = null,
   enabled: Boolean = true,
+  /** Elegir una opción marca un tic; una respuesta que cierra algo, como «¿Qué decidiste?», confirma. */
+  haptic: HapticFeedbackType = HapticFeedbackType.SegmentTick,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
@@ -237,7 +239,7 @@ fun OptionRow(
     modifier.fillMaxWidth().heightIn(min = 60.dp).pressScale(interaction, 0.985f).clip(RoundedCornerShape(20.dp)).background(colors.card)
       .border(width, ring, RoundedCornerShape(20.dp))
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.RadioButton) {
-        haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onClick()
+        haptics.performHapticFeedback(haptic); onClick()
       }
       .semantics { this.selected = selected }
       .padding(start = if (icon != null) 12.dp else 18.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
@@ -293,7 +295,7 @@ fun ToggleRow(title: String, checked: Boolean, onChange: (Boolean) -> Unit, modi
   val haptics = LocalHapticFeedback.current
   ListRow(
     title, modifier.semantics { stateDescription = if (checked) "Encendido" else "Apagado" }, icon = icon, subtitle = subtitle,
-    onClick = { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(!checked) },
+    onClick = { haptics.performHapticFeedback(if (checked) HapticFeedbackType.ToggleOff else HapticFeedbackType.ToggleOn); onChange(!checked) },
     trailing = { Toggle(checked) },
   )
 }

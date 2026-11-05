@@ -20,7 +20,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -64,6 +64,7 @@ import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RingCell
+import com.example.relevo.ui.components.RollingContent
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.SectionHeader
 import com.example.relevo.ui.components.appear
@@ -97,7 +98,7 @@ internal class HomeActions(
 internal const val ACTIVE_PHOTO = "activo"
 
 /** Aviso de batería: qué hacer y para qué, en una frase. */
-internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen días, quítale la restricción de batería."
+internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen días."
 
 /**
  * Inicio de la 4.0 (D-155), de arriba abajo: la fecha y el saludo; lo de la prueba si toca; lo más
@@ -126,7 +127,6 @@ internal fun HomeTab(
   quickFeedbackDue: Boolean = false,
   onQuickFeedback: (Int?) -> Unit = {},
   onFeedback: () -> Unit = {},
-  guided: Boolean = false,
   autoMode: Boolean = false,
   onAutoModeOff: () -> Unit = {},
 ) {
@@ -151,10 +151,6 @@ internal fun HomeTab(
 
   RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", scrollState = scroll) {
     StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing, firstRelevoDone = history.isNotEmpty())
-    if (guided && !active && history.isEmpty()) {
-      GuideTip("Empieza aquí: toca «Preparar un relevo».")
-      Spacer(Modifier.height(Gap.block))
-    }
     if (quickFeedbackDue && !active) {
       QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
       Spacer(Modifier.height(Gap.block))
@@ -213,7 +209,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
         val key = photoKey("ruta", step.id)
         ListRow(
           step.activity, subtitle = "Tu paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
-          leading = { ActivityRing(activityIcon(step.activity, customActivities), 42.dp, variant = activityVariant(step.activity)) },
+          leading = { ActivityRing(activityIcon(step.activity, customActivities), 42.dp) },
           chevron = true, onClick = { actions.onRouteStep(nextTrack.interest, step.id, key) },
         )
       }
@@ -221,7 +217,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
         val key = photoKey("ultima", lastReminder.activity)
         ListRow(
           lastReminder.activity, subtitle = "Repetir el último · ${formatDuration(lastReminder.requiredUsageSeconds)}",
-          leading = { ActivityRing(activityIcon(lastReminder.activity, customActivities), 42.dp, variant = activityVariant(lastReminder.activity)) },
+          leading = { ActivityRing(activityIcon(lastReminder.activity, customActivities), 42.dp) },
           chevron = true, onClick = { actions.onRepeat(key) },
         )
       }
@@ -257,7 +253,7 @@ private fun WeekBanner(history: List<HistoryEntry>, customActivities: List<Custo
       Carousel(spacing = 14.dp) {
         items(byActivity, key = { it.first }) { (activity, count) ->
           RingCell(
-            activityIcon(activity, customActivities), activity, onClick = null, size = 52.dp, variant = activityVariant(activity), count = count,
+            activityIcon(activity, customActivities), activity, onClick = null, size = 52.dp, count = count,
             description = "$activity, ${countWord(count, "vez", "veces")}",
           )
         }
@@ -279,7 +275,7 @@ private fun QuickActivities(customActivities: List<CustomActivity>, actions: Hom
       items(customActivities, key = { it.id }) { custom ->
         RingCell(
           activityIcon(custom.name, customActivities), custom.name, onClick = { actions.onCustom(custom, photoKey("propia", custom.id)) },
-          variant = activityVariant(custom.name), description = "Preparar «${custom.name}»",
+          description = "Preparar «${custom.name}»",
         )
       }
       item(key = "nueva") { AddRingCell("Nueva", actions.onNewActivity) }
@@ -317,7 +313,7 @@ private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, o
         }
         if (changedRouteInterest != null) {
           Text("¿Cambias este paso por otra actividad?", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-          Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+          Row(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
             RelevoButton("Cambiar", { onChangeRoute(changedRouteInterest) }, kind = ButtonKind.Secondary, compact = true)
             PlainAction("Ahora no", onDismiss, color = Relevo.colors.graphite)
           }
@@ -344,7 +340,7 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
       .padding(18.dp),
   ) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      ActivityRing(activityIcon(reminder.activity, customActivities), 48.dp, variant = activityVariant(reminder.activity))
+      ActivityRing(activityIcon(reminder.activity, customActivities), 48.dp)
       Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f)) {
         Text(reminder.activity.trim(), style = Relevo.type.title2, color = colors.ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
@@ -357,7 +353,9 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
     Row(verticalAlignment = Alignment.CenterVertically) {
       Chip(if (usageAccess) "Contando" else "En pausa", background = colors.mist)
       Spacer(Modifier.weight(1f))
-      Text("Faltan ${formatDuration(remaining)}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = colors.ink)
+      RollingContent(remaining) { left ->
+        Text("Faltan ${formatDuration(left)}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = colors.ink)
+      }
     }
   }
 }
@@ -369,14 +367,12 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
-    Text("Tu primer relevo está activo", style = Relevo.type.title2, color = Relevo.colors.ink)
+    Text("Tu relevo está contando", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))
     Text(
-      "Usa el teléfono como siempre. Al sumar ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(", ") { it.label }}, suena ${soundWhere(reminder)}.",
+      "Suena ${soundWhere(reminder)} cuando sumes ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(" y ") { it.label }}.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
-    Spacer(Modifier.height(8.dp))
-    Text("Lo ves o lo desactivas en Inicio.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(22.dp))
     RelevoButton("Entendido", onDismiss)
   }
@@ -388,7 +384,7 @@ private fun ReturnCard(last: HistoryEntry, lastReminder: Reminder?, customActivi
   val key = lastReminder?.let { photoKey("regreso", it.activity) }
   Panel(padding = 18.dp) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      ActivityRing(activityIcon(last.activity, customActivities), 48.dp, variant = activityVariant(last.activity))
+      ActivityRing(activityIcon(last.activity, customActivities), 48.dp)
       Spacer(Modifier.width(14.dp))
       Column(Modifier.weight(1f)) {
         Text("La última vez", style = Relevo.type.subhead, color = Relevo.colors.graphite)
@@ -397,7 +393,7 @@ private fun ReturnCard(last: HistoryEntry, lastReminder: Reminder?, customActivi
     }
     Spacer(Modifier.height(8.dp))
     if (lastReminder != null) RelevoButton("Preparar de nuevo", { actions.onRepeat(key) }, icon = KitIcon.REINTENTAR)
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
       PlainAction("Elegir otra", actions.onPrepare)
       Text("·", style = Relevo.type.callout, color = Relevo.colors.graphite)
       PlainAction("Ahora no", { actions.onDismissReturn(last.completedAt) }, color = Relevo.colors.graphite)
@@ -436,18 +432,19 @@ internal fun ActiveScreen(
     bottom = { RelevoButton("Cambiar o desactivar", { options = true }, kind = ButtonKind.Secondary) },
   ) {
     Column(Modifier.fillMaxWidth().padding(top = 28.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-      ActivityRing(activityIcon(reminder.activity, customActivities), 112.dp, variant = activityVariant(reminder.activity), modifier = Modifier.appear(0))
+      ActivityRing(activityIcon(reminder.activity, customActivities), 112.dp, modifier = Modifier.appear(0))
       Spacer(Modifier.height(20.dp))
       Text(reminder.activity.trim(), style = Relevo.type.title, color = colors.ink, textAlign = TextAlign.Center)
       Spacer(Modifier.height(36.dp))
       Text("Faltan", style = Relevo.type.subhead, color = colors.graphite)
-      BigCounter(remaining)
+      RollingContent(remaining) { BigCounter(it) }
       Text(
         "de ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(" y ") { it.label }.ifBlank { "las apps que elegiste" }}",
         style = Relevo.type.subhead, color = colors.graphite, textAlign = TextAlign.Center,
       )
       Spacer(Modifier.height(18.dp))
-      ProgressLine(progress, Modifier.padding(horizontal = 24.dp))
+      // Mismo ancho que la tarjeta de abajo: los bordes de la pantalla quedan en una sola columna.
+      ProgressLine(progress)
       if (reminder.autoActivated) {
         Spacer(Modifier.height(14.dp))
         Text("Se activó solo.", style = Relevo.type.footnote, color = colors.graphite)
