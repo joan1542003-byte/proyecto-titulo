@@ -117,9 +117,18 @@ El 4 de noviembre, el autor entregó el PDF que editó en Affinity y envió al p
 - **Repuesto:** The Tangible Reminder, Wobble y Keppel et al. (2025) en el capítulo 5, porque el 8 los cita; la cita de Peña-Albert et al. (2026); el método en el Resumen y la Introducción; «Material Design completo» como opción descartada; «Está decidiendo por mí» queda como percepción del autor.
 - **Referencias:** 80, todas citadas. Entran Android Developers (s. f.), Android Open Source Project (s. f.) y Apple (s. f.-b); sale Luffarelli et al. (2019).
 
+## Novena ronda: términos de los autores, logros y análisis visual (D-154)
+
+El mismo 4 de noviembre, el autor pidió evitar términos propios, hablar de lo que se hizo y no de lo que falta, y menos tecnicismo y más análisis visual, a partir del documento 43.
+
+- **Términos:** salen «decisión renovada», «arquitectura de atención», «puntos de cierre», «señal situada» y «lugar neutro»; quedan los de Lukoff et al. (2018), Grüning et al. (2023), Montag et al. (2019) y Stapley et al. (2022).
+- **Logros:** la prueba dice qué condiciones daban el ciclo por logrado y que se cumplieron; los resultados se leen contra los criterios; las conclusiones suman el avance del prototipo. Salen las frases sobre lo que falta.
+- **Análisis visual (documento 43):** la forma que se repite, el desenfoque solo en la navegación, el color que sube con el momento (Figura 15, nueva), las fichas de igual luminosidad y poca saturación, la simulación de daltonismo, los íconos y cómo se llegó a la identidad. Entran Albers (2013), Machado et al. (2009) y Wilms y Oberfeld (2018); sale Android Developers (s. f.).
+- **Figuras:** 24; desde la 15, cada una sube un número.
+
 ## Extensión
 
-Capítulos 1 a 14: 16 137 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 137. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 478 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 491. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -142,12 +151,19 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre, y actualizar el Resumen, el Abstract y las Conclusiones.
-- **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 20; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 16 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
+- **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
+- **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
 - **Fuentes por conseguir (tarea 14, punto H):** McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019), la versión publicada de Sohn et al. (2005) y la edición de Norman que se usó.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Novena ronda
+
+- **Qué cambió:** se añadió la novena ronda; la extensión y lo pendiente siguen a la v6 actual, con la nueva numeración de figuras.
+- **Cómo estaba antes:** la última ronda era la octava, con 16 137 palabras y 23 figuras.
+- **Por qué:** pedido del autor del 4 de noviembre de 2026 (D-154).
 
 ### 2026-11-04 — Octava ronda
 

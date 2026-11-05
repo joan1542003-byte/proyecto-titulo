@@ -212,6 +212,7 @@
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
+| 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
 
 ## Lo que muestra el registro
 
@@ -222,6 +223,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Términos de los autores y análisis visual
+
+- **Qué cambió:** se registró el pedido de usar los términos de los autores, hablar de lo logrado y sumar análisis visual.
+- **Cómo estaba antes:** el último pedido era el de las ediciones del autor en el PDF.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-04 — Ediciones del autor en el PDF
 

@@ -6,7 +6,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 ## Documentos activos
 
-- [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-153). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 137 palabras.
+- [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-154). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 478 palabras.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 62 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas, ninguna figura que corte la lectura y ninguna columna de texto sola. Reemplaza a la versión A3.
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
@@ -91,6 +91,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-04 — Novena ronda de la v6
+
+- **Cambio:** la v6 usa los términos de los autores, cuenta lo logrado, suma análisis visual y pasa a 24 figuras y 16 478 palabras.
+- **Versión anterior:** 23 figuras y 16 137 palabras.
+- **Motivo:** novena ronda de la v6, pedida por el autor (D-154).
 
 ### 2026-11-04 — Octava ronda de la v6
 
