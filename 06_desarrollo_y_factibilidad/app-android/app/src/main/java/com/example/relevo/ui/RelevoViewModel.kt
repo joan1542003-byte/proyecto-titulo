@@ -472,6 +472,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Carga la última configuración usada para revisarla y activarla de nuevo. No la activa por sí sola. */
   fun repeatLast(): Boolean {
+    if (_reminder.value.status == ReminderStatus.WAITING) return false
     val last = _lastReminder.value ?: return false
     clearCarried()
     log("repetir_ultimo", last.activity)
@@ -552,6 +553,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) {
+    // Mientras un relevo cuenta no se prepara otro: lo dejaría como borrador sin avisar (4.2.1).
+    if (_reminder.value.status == ReminderStatus.WAITING) return
     log("actividad_elegida", activity)
     routeStore.setPreparedStep(null)
     update {
@@ -944,6 +947,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Prepara un relevo con un paso de la ruta; su respuesta cuenta para ofrecer el siguiente (R3). */
   fun prepareFromStep(interest: String, stepId: String): Boolean {
+    if (_reminder.value.status == ReminderStatus.WAITING) return false
     val step = _routes.value.firstOrNull { it.interest == interest }?.steps?.firstOrNull { it.id == stepId } ?: return false
     applyPreset(step.activity, step.firstStep, step.place)
     routeStore.setPreparedStep(step.id)

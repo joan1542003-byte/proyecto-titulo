@@ -175,6 +175,9 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   var acknowledgement by rememberSaveable { mutableStateOf<String?>(null) }
   /** Foto que viaja de la tarjeta tocada a la pantalla siguiente. */
   var photoKey by rememberSaveable { mutableStateOf<String?>(null) }
+  // Desde dónde abre Preparar (4.2.1): «Preparar un relevo» sin nada elegido y el primer relevo guiado
+  // empiezan por el paso 1; una idea, una actividad, un paso o un relevo repetido abren en lo que falta.
+  var prepareFromStart by rememberSaveable { mutableStateOf(false) }
   var routeEditInterest by rememberSaveable { mutableStateOf("") }
   var editingActivityId by rememberSaveable { mutableStateOf<String?>(null) }
   var routeInterest by rememberSaveable { mutableStateOf<String?>(null) }
@@ -239,6 +242,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
     if (current !in firstRun && viewModel.prepareFromReturnNotice()) {
       tab = Tab.HOME
       photoKey = null
+      prepareFromStart = false
       replace(listOf(Route.TABS, Route.PREPARE))
     }
   }
@@ -246,6 +250,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   fun startPrepare(key: String?) {
     viewModel.onPrepareOpened(key?.substringBefore(':')?.ifBlank { null } ?: "nuevo")
     photoKey = key
+    prepareFromStart = key == null
     push(Route.PREPARE)
   }
 
@@ -331,6 +336,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                       viewModel.onPrepareOpened("primer_relevo")
                       tab = Tab.HOME
                       photoKey = null
+                      prepareFromStart = true
                       replace(listOf(Route.TABS, Route.PREPARE))
                     },
                     onLater = { viewModel.logScreen("primer_relevo_despues"); tab = Tab.HOME; replace(listOf(Route.TABS)) },
@@ -389,7 +395,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.PREPARE -> PrepareScreen(
                   editing = editing,
                   reminder = reminder, apps = apps, customActivities = customActivities, routes = routes, usageAccess = usageAccess,
-                  backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, guided = guide.prepare,
+                  backgroundUnrestricted = backgroundUnrestricted, studyCondition = study.condition, photoKey = photoKey, fromStart = prepareFromStart,
                   tag = tag, tagStatus = tagStatus,
                   actions = PrepareActions(
                     onActivity = viewModel::updateActivity,
@@ -427,6 +433,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     if (viewModel.editActive()) {
                       viewModel.onPrepareOpened("editar")
                       photoKey = null
+                      prepareFromStart = false
                       replace(listOf(Route.TABS, Route.PREPARE))
                     }
                   },

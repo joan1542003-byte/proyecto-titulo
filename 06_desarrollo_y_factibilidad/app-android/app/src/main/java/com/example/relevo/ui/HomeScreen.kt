@@ -199,7 +199,7 @@ internal fun HomeTab(
       WeekBanner(history, customActivities, settings, Modifier.appear(1))
     }
     SectionGap()
-    QuickActivities(customActivities, actions, Modifier.appear(2))
+    QuickActivities(customActivities, active, actions, Modifier.appear(2))
   }
 }
 
@@ -344,20 +344,29 @@ private fun WeekBanner(history: List<HistoryEntry>, customActivities: List<Custo
   }
 }
 
-/** Tus actividades a un toque. Sin actividades, la invitación a crear la primera y las ideas. */
+/**
+ * Tus actividades a un toque. Sin actividades, la invitación a crear la primera y las ideas. Mientras un
+ * relevo cuenta, las actividades no preparan otro, que lo dejaría como borrador (4.2.1): se dice cuándo se
+ * podrá, y «Nueva» sigue disponible.
+ */
 @Composable
-private fun QuickActivities(customActivities: List<CustomActivity>, actions: HomeActions, modifier: Modifier = Modifier) {
+private fun QuickActivities(customActivities: List<CustomActivity>, active: Boolean, actions: HomeActions, modifier: Modifier = Modifier) {
   Column(modifier) {
     SectionHeader("Tus actividades", action = "Ver todas", onAction = { actions.onOpenActivities(ActivitiesSection.MINE) })
     Spacer(Modifier.height(6.dp))
     Carousel(spacing = 14.dp) {
       items(customActivities, key = { it.id }) { custom ->
         RingCell(
-          activityIcon(custom.name, customActivities), custom.name, onClick = { actions.onCustom(custom, photoKey("propia", custom.id)) },
-          description = "Preparar «${custom.name}»",
+          activityIcon(custom.name, customActivities), custom.name,
+          onClick = if (active) null else ({ actions.onCustom(custom, photoKey("propia", custom.id)) }),
+          description = if (active) custom.name else "Preparar «${custom.name}»",
         )
       }
       item(key = "nueva") { AddRingCell("Nueva", actions.onNewActivity) }
+    }
+    if (active && customActivities.isNotEmpty()) {
+      Spacer(Modifier.height(10.dp))
+      Text("Cuando termine tu relevo, podrás preparar otra.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     }
     if (customActivities.isEmpty()) {
       Spacer(Modifier.height(10.dp))

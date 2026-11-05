@@ -178,8 +178,8 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
     !reminder.routeChosen -> "Falta elegir dónde suena."
     reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Falta elegir el Tag."
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
-    reminder.howToStart.isBlank() -> "Falta cómo empiezas."
-    reminder.place.isBlank() -> "Falta dónde empiezas."
+    reminder.howToStart.isBlank() -> "Falta cómo empiezas la actividad."
+    reminder.place.isBlank() -> "Falta en qué lugar empieza."
     reminder.selectedApps.isEmpty() -> "Faltan las apps que cuentan."
     else -> null
   }
@@ -201,8 +201,11 @@ internal fun PrepareScreen(
   studyCondition: StudyCondition?,
   photoKey: String?,
   actions: PrepareActions,
-  /** Guía del primer relevo (D-088): una nota por paso que dice qué hacer y para qué. */
-  guided: Boolean = false,
+  /**
+   * Empezar por el paso 1 aunque ya haya datos: «Preparar un relevo» sin nada elegido y el primer relevo
+   * guiado (D-088). Con una idea, una actividad o un paso elegidos, abre en lo primero que falta (4.2.1).
+   */
+  fromStart: Boolean = false,
   /** Llavero (D-109): el vinculado, la búsqueda y la conexión. */
   tag: TagUi = TagUi(),
   tagStatus: TagLink.Status = TagLink.Status(),
@@ -213,8 +216,9 @@ internal fun PrepareScreen(
   var step by rememberSaveable {
     mutableStateOf(
       when {
-        // En el primer relevo guiado se recorren todos los pasos, aunque vengan completos desde la ruta.
-        guided -> PrepareStep.ACTIVITY
+        // Antes, mientras no se activaba el primer relevo, Preparar empezaba siempre por el paso 1: elegir una
+        // idea parecía empezar de cero (4.2.1). Ahora solo el primer relevo guiado recorre todos los pasos.
+        fromStart -> PrepareStep.ACTIVITY
         reminder.hasRequiredContent -> PrepareStep.REVIEW
         reminder.activity.isNotBlank() && reminder.howToStart.isNotBlank() && reminder.place.isNotBlank() -> PrepareStep.USAGE
         else -> PrepareStep.ACTIVITY

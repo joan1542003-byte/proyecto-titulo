@@ -116,9 +116,9 @@ internal fun ActivitiesTab(
     ) { shown ->
       Column(Modifier.fillMaxWidth()) {
         when (shown) {
-          ActivitiesSection.MINE -> MineSection(customActivities, actions)
+          ActivitiesSection.MINE -> MineSection(customActivities, activeRelevo, actions)
           ActivitiesSection.STEPS -> StepsSection(routes, customActivities, routeInterest, onRouteInterest, activeRelevo, actions)
-          ActivitiesSection.IDEAS -> IdeasSection(customActivities, actions)
+          ActivitiesSection.IDEAS -> IdeasSection(customActivities, activeRelevo, actions)
         }
       }
     }
@@ -127,7 +127,7 @@ internal fun ActivitiesTab(
 
 /** Tus actividades: anillos de a tres y «Nueva» al final. Tocar una abre su hoja. */
 @Composable
-private fun MineSection(customActivities: List<CustomActivity>, actions: ActivitiesActions) {
+private fun MineSection(customActivities: List<CustomActivity>, activeRelevo: Boolean, actions: ActivitiesActions) {
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   if (customActivities.isEmpty()) {
     Panel(Modifier.appear(0)) {
@@ -148,7 +148,7 @@ private fun MineSection(customActivities: List<CustomActivity>, actions: Activit
     ActivitySheet(
       name = selected.name, icon = activityIcon(selected.name, customActivities), firstStep = selected.firstStep, place = selected.place,
       onDismiss = { shown = null },
-      primary = "Preparar un relevo" to { shown = null; actions.onPrepareCustom(selected) },
+      primary = ("Preparar un relevo" to { shown = null; actions.onPrepareCustom(selected) }).takeUnless { activeRelevo },
       secondary = "Editar" to { shown = null; actions.onEditActivity(selected.id) },
     )
   }
@@ -156,7 +156,7 @@ private fun MineSection(customActivities: List<CustomActivity>, actions: Activit
 
 /** Ideas de las entrevistas, por familia: moverte, leer y aprender, crear, jugar, en casa y descansar. */
 @Composable
-private fun IdeasSection(customActivities: List<CustomActivity>, actions: ActivitiesActions) {
+private fun IdeasSection(customActivities: List<CustomActivity>, activeRelevo: Boolean, actions: ActivitiesActions) {
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   Column(Modifier.appear(0), verticalArrangement = Arrangement.spacedBy(Gap.section)) {
     ideasByFamily.forEach { (sky, ideas) ->
@@ -173,13 +173,16 @@ private fun IdeasSection(customActivities: List<CustomActivity>, actions: Activi
     ActivitySheet(
       name = idea.activity, icon = pictureIcon(idea.picture), firstStep = idea.start, place = idea.place,
       onDismiss = { shown = null },
-      primary = "Preparar un relevo" to { shown = null; actions.onPrepareIdea(idea) },
+      primary = ("Preparar un relevo" to { shown = null; actions.onPrepareIdea(idea) }).takeUnless { activeRelevo },
       secondary = null,
     )
   }
 }
 
-/** Hoja de una actividad: su anillo, el nombre, cómo empieza y dónde, y lo que se puede hacer con ella. */
+/**
+ * Hoja de una actividad: su anillo, el nombre, cómo empieza y dónde, y lo que se puede hacer con ella. Sin
+ * [primary], hay un relevo contando: se dice cuándo se podrá preparar, como en «Paso a paso» (4.2.1).
+ */
 @Composable
 private fun ActivitySheet(
   name: String,
@@ -187,7 +190,7 @@ private fun ActivitySheet(
   firstStep: String,
   place: String,
   onDismiss: () -> Unit,
-  primary: Pair<String, () -> Unit>,
+  primary: Pair<String, () -> Unit>?,
   secondary: Pair<String, () -> Unit>?,
 ) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
@@ -204,7 +207,8 @@ private fun ActivitySheet(
       }
     }
     Spacer(Modifier.height(22.dp))
-    RelevoButton(primary.first, primary.second)
+    if (primary != null) RelevoButton(primary.first, primary.second)
+    else Text("Cuando termine tu relevo, podrás prepararla.", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
     if (secondary != null) {
       Spacer(Modifier.height(8.dp))
       RelevoButton(secondary.first, secondary.second, kind = ButtonKind.Secondary, icon = KitIcon.EDITAR)
