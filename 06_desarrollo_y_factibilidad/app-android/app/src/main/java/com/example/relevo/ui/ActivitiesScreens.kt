@@ -1,6 +1,9 @@
 package com.example.relevo.ui
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.slideInHorizontally
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
@@ -64,7 +67,7 @@ import com.example.relevo.ui.components.rememberReduceMotion
 import java.util.UUID
 
 /** Las tres partes de Actividades (4.0): lo tuyo, tu ruta paso a paso y las ideas. */
-internal enum class ActivitiesSection(val label: String) { MINE("Tuyas"), STEPS("Paso a paso"), IDEAS("Ideas") }
+internal enum class ActivitiesSection(val label: String) { MINE("Creadas por ti"), STEPS("Paso a paso"), IDEAS("Ideas") }
 
 /** Lo que se puede hacer desde Actividades. */
 internal class ActivitiesActions(
@@ -80,7 +83,7 @@ internal class ActivitiesActions(
 
 /**
  * Actividades (4.0, D-155): todo lo que la persona quiere hacer, en un solo lugar y en tres partes que no
- * se mezclan. «Tuyas» son las que guardó; «Paso a paso», su ruta por interés (antes, la pestaña Ruta);
+ * se mezclan. «Creadas por ti» son las que guardó (antes, «Tuyas»); «Paso a paso», su ruta por interés (antes, la pestaña Ruta);
  * «Ideas», las de las entrevistas, por familia. Cada actividad es un anillo con su color y su ícono, la
  * pieza que el autor prefirió a las fichas de cielo con cápsula.
  */
@@ -196,8 +199,8 @@ private fun ActivitySheet(
     if (firstStep.isNotBlank() || place.isNotBlank()) {
       Spacer(Modifier.height(18.dp))
       ListSection {
-        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
-        if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
+        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
     Spacer(Modifier.height(22.dp))
@@ -300,8 +303,8 @@ private fun StepSheet(track: RouteTrack, step: RouteStep, customActivities: List
     if (step.firstStep.isNotBlank() || step.place.isNotBlank()) {
       Spacer(Modifier.height(16.dp))
       ListSection {
-        if (step.firstStep.isNotBlank()) ListRow(step.firstStep.trim(), icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
-        if (step.place.isNotBlank()) ListRow(step.place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
+        if (step.firstStep.isNotBlank()) ListRow(step.firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (step.place.isNotBlank()) ListRow(step.place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
     Spacer(Modifier.height(22.dp))
@@ -325,8 +328,12 @@ internal val activityIcons = listOf(
 
 /**
  * Crear o editar una actividad propia (4.0): arriba su anillo, que se cambia en una hoja de anillos (la
- * pieza que dio origen al rediseño), y tres renglones: la actividad, cómo empieza y dónde. Si la persona no
- * elige un ícono, lo sugieren las palabras del nombre.
+ * pieza que dio origen al rediseño), y tres renglones: la actividad, cómo empieza y en qué lugar. Si la
+ * persona no elige un ícono, lo sugieren las palabras del nombre.
+ *
+ * Una actividad nueva empieza por las predefinidas (4.2, D-157), como «Agregar un modo de concentración» en
+ * iOS: las ideas de las entrevistas por familia, sin las que ya están guardadas, y abajo «Crear una propia».
+ * Elegir una abre el formulario lleno, para ajustar cómo empieza y dónde; volver regresa a la lista.
  */
 @Composable
 internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomActivity>, onSave: (CustomActivity) -> Unit, onDelete: (String) -> Unit, onBack: () -> Unit) {
@@ -334,13 +341,87 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
   var first by rememberSaveable { mutableStateOf(initial?.firstStep.orEmpty()) }
   var place by rememberSaveable { mutableStateOf(initial?.place.orEmpty()) }
   var image by rememberSaveable { mutableStateOf(initial?.icon?.let { Picture.parse(it) }?.let { pictureIcon(it).key }.orEmpty()) }
+  var choosing by rememberSaveable { mutableStateOf(initial == null) }
+  val reduce = rememberReduceMotion()
+  BackHandler(enabled = initial == null && !choosing) { choosing = true }
+  AnimatedContent(
+    targetState = choosing,
+    transitionSpec = {
+      // Como los pasos de Preparar: el formulario entra desde la derecha y, al volver, la lista desde la izquierda.
+      if (reduce) EnterTransition.None togetherWith ExitTransition.None
+      else if (!targetState) (slideInHorizontally(Motion.smooth()) { it / 4 } + fadeIn(Motion.standard())) togetherWith (slideOutHorizontally(Motion.smooth()) { -it / 4 } + fadeOut(Motion.standard(Motion.SHORT)))
+      else (slideInHorizontally(Motion.smooth()) { -it / 4 } + fadeIn(Motion.standard())) togetherWith (slideOutHorizontally(Motion.smooth()) { it / 4 } + fadeOut(Motion.standard(Motion.SHORT)))
+    },
+    label = "new_activity",
+  ) { picking ->
+    if (picking) {
+      PresetPicker(
+        existing, onClose = onBack,
+        onPreset = { idea -> name = idea.activity; first = idea.start; place = idea.place; image = pictureIcon(idea.picture).key; choosing = false },
+        onCustom = { name = ""; first = ""; place = ""; image = ""; choosing = false },
+      )
+    } else {
+      ActivityForm(
+        initial, existing, name, first, place, image,
+        onName = { name = it }, onFirst = { first = it }, onPlace = { place = it }, onImage = { image = it },
+        onSave = onSave, onDelete = onDelete,
+        onBack = if (initial == null) ({ choosing = true }) else onBack,
+      )
+    }
+  }
+}
+
+/** Las actividades predefinidas, por familia, para empezar una nueva; abajo, siempre a la vista, «Crear una propia». */
+@Composable
+private fun PresetPicker(existing: List<CustomActivity>, onClose: () -> Unit, onPreset: (ActivityIdea) -> Unit, onCustom: () -> Unit) {
+  val saved = existing.map { it.name.trim().lowercase() }.toSet()
+  val families = ideasByFamily.map { (sky, ideas) -> sky to ideas.filter { it.activity.trim().lowercase() !in saved } }.filter { it.second.isNotEmpty() }
+  RelevoScreen(
+    title = "Nueva actividad",
+    onBack = onClose, closeIcon = true, backLabel = "Cancelar",
+    bottom = { RelevoButton("Crear una propia", onCustom, kind = ButtonKind.Secondary, icon = KitIcon.AGREGAR) },
+  ) {
+    if (families.isEmpty()) {
+      Text("Ya guardaste todas las predefinidas.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    }
+    Column(Modifier.appear(0), verticalArrangement = Arrangement.spacedBy(Gap.section)) {
+      families.forEach { (sky, ideas) ->
+        Column {
+          SectionLabel(sky.familyName, Modifier.padding(bottom = 14.dp))
+          RingGrid(ideas, columns = 3) { idea ->
+            RingCell(pictureIcon(idea.picture), idea.activity, { onPreset(idea) }, size = 72.dp)
+          }
+        }
+      }
+    }
+  }
+}
+
+/** El formulario de una actividad: el anillo, que se cambia en una hoja, y sus tres renglones. */
+@Composable
+private fun ActivityForm(
+  initial: CustomActivity?,
+  existing: List<CustomActivity>,
+  name: String,
+  first: String,
+  place: String,
+  image: String,
+  onName: (String) -> Unit,
+  onFirst: (String) -> Unit,
+  onPlace: (String) -> Unit,
+  onImage: (String) -> Unit,
+  onSave: (CustomActivity) -> Unit,
+  onDelete: (String) -> Unit,
+  onBack: () -> Unit,
+) {
   var confirmDelete by rememberSaveable { mutableStateOf(false) }
   var picking by rememberSaveable { mutableStateOf(false) }
-  val duplicate = activityIdeas.any { it.activity.equals(name.trim(), true) } || existing.any { it.id != initial?.id && it.name.equals(name.trim(), true) }
+  // Una predefinida se guarda con su nombre (4.2); lo que no se repite es el nombre de otra ya guardada.
+  val duplicate = existing.any { it.id != initial?.id && it.name.equals(name.trim(), true) }
   val icon = pictureIcon(Picture.parse(image) ?: pictureForActivity(name, emptyList()))
   RelevoScreen(
     title = if (initial == null) "Nueva actividad" else "Editar la actividad",
-    onBack = onBack, closeIcon = initial == null, backLabel = "Cancelar",
+    onBack = onBack, backLabel = if (initial == null) "Volver" else "Cancelar",
     bottom = {
       GuardedButton("Guardar", {
         onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), first.trim(), place.trim(), image.ifBlank { icon.key }, 0))
@@ -348,8 +429,8 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
         name.trim().length < 2 -> "Escribe el nombre de la actividad."
         name.trim().length > 60 -> "Usa hasta 60 caracteres en el nombre."
         duplicate -> "Ya tienes una actividad con ese nombre."
-        first.isBlank() -> "Escribe cómo empiezas."
-        place.isBlank() -> "Escribe dónde empiezas."
+        first.isBlank() -> "Escribe cómo empiezas la actividad."
+        place.isBlank() -> "Escribe en qué lugar empieza."
         else -> null
       })
     },
@@ -359,12 +440,12 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
       PlainAction("Cambiar el ícono", { picking = true })
     }
     Spacer(Modifier.height(Gap.block))
-    RenglonField("Actividad", name, { name = it.take(60) }, placeholder = "Ej.: practicar guitarra")
+    RenglonField("Actividad", name, { onName(it.take(60)) }, placeholder = "Ej.: practicar guitarra")
     if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya tienes una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
     Spacer(Modifier.height(Gap.list))
-    RenglonField("Para empezar", first, { first = it.take(120) }, placeholder = "Ej.: sacar la guitarra del estuche", icon = KitIcon.PRIMER_PASO)
+    RenglonField(START_QUESTION, first, { onFirst(it.take(120)) }, placeholder = "Ej.: sacar la guitarra del estuche", icon = KitIcon.PRIMER_PASO)
     Spacer(Modifier.height(Gap.list))
-    RenglonField("Dónde empiezas", place, { place = it.take(120) }, placeholder = "Ej.: junto a la guitarra", icon = KitIcon.LUGAR)
+    RenglonField(PLACE_QUESTION, place, { onPlace(it.take(120)) }, placeholder = "Ej.: junto a la guitarra", icon = KitIcon.LUGAR)
     if (initial != null) {
       SectionGap()
       RelevoButton("Borrar la actividad", { confirmDelete = true }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
@@ -374,7 +455,7 @@ internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomA
     RelevoSheet(onDismiss = { picking = false }, title = "Elige un ícono", done = "Listo", tall = true) {
       Spacer(Modifier.height(6.dp))
       RingGrid(activityIcons, columns = 4) { option ->
-        RingCell(option, null, { image = option.key }, size = 60.dp, selected = icon == option, description = option.label)
+        RingCell(option, null, { onImage(option.key) }, size = 60.dp, selected = icon == option, description = option.label)
       }
       Spacer(Modifier.height(12.dp))
     }

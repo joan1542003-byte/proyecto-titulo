@@ -165,6 +165,8 @@ fun ListRow(
   selected: Boolean = false,
   /** Una fila sin fondo y con borde fino, para agregar algo («Agregar un paso»). */
   outlined: Boolean = false,
+  /** Qué es el dato, arriba y en pequeño, como el rótulo de un campo (4.2): «¿Cómo empiezas la actividad?». */
+  overline: String? = null,
 ) {
   val colors = Relevo.colors
   val grouped = LocalInGroup.current && !selected && !outlined
@@ -173,7 +175,7 @@ fun ListRow(
   val base = if (outlined || grouped) Color.Transparent else colors.card
   val background by animateColorAsState(if (pressed && onClick != null) colors.mist else base, Motion.standard(90), label = "row")
   Row(
-    modifier.fillMaxWidth().heightIn(min = if (subtitle != null) 62.dp else 54.dp)
+    modifier.fillMaxWidth().heightIn(min = if (subtitle != null || overline != null) 62.dp else 54.dp)
       .then(if (grouped) Modifier else Modifier.pressScale(interaction, 0.985f).clip(RowShape))
       .background(background)
       .then(if (selected) Modifier.border(2.dp, colors.ink, RowShape) else if (outlined) Modifier.border(1.5.dp, colors.line, RowShape) else Modifier)
@@ -188,6 +190,7 @@ fun ListRow(
       else -> Spacer(Modifier.width(2.dp))
     }
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
+      if (overline != null) Text(overline, style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = colors.graphite)
       Text(title, style = Relevo.type.headline.copy(fontWeight = FontWeight.Medium), color = titleColor, maxLines = 3, overflow = TextOverflow.Ellipsis)
       if (subtitle != null) Text(subtitle, style = Relevo.type.subhead, color = colors.graphite)
     }
@@ -204,11 +207,11 @@ fun ListRow(
   }
 }
 
-/** Dato con su rótulo, como en «Todo listo»: el dato en tinta y, debajo, qué es. Si se puede cambiar, lleva un lápiz. */
+/** Dato con su rótulo, como en «Todo listo»: arriba, la pregunta que responde; debajo, el dato en tinta. Si se puede cambiar, lleva un lápiz. */
 @Composable
 fun FactRow(icon: KitIcon, label: String, value: String, @Suppress("UNUSED_PARAMETER") valueIsVoice: Boolean = true, leading: (@Composable () -> Unit)? = null, onClick: (() -> Unit)? = null) {
   ListRow(
-    title = value.ifBlank { "Sin completar" }, subtitle = label, icon = icon, leading = leading,
+    title = value.ifBlank { "Sin completar" }, overline = label, icon = icon, leading = leading,
     titleColor = if (value.isBlank()) Relevo.colors.graphite else Relevo.colors.ink, onClick = onClick,
     trailing = if (onClick != null) ({ RelevoIcon(KitIcon.EDITAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) }) else null,
   )

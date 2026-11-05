@@ -1033,11 +1033,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     syncRemote()
   }
 
-  fun submitWeekNote(text: String) {
-    text.trim().takeIf { it.isNotEmpty() }?.let { researchLog.recordAnswer(_reminder.value.participantCode, "tu_semana_ayudo", it) }
-    syncRemote()
-  }
-
   private fun technicalLog(): String {
     val status = _syncStatus.value
     val reminder = _reminder.value

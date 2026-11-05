@@ -171,9 +171,9 @@ private fun StepEditorSheet(step: RouteStep, isNew: Boolean, onDismiss: () -> Un
     Spacer(Modifier.height(4.dp))
     RenglonField("Actividad", activity, { activity = it }, placeholder = "Ej.: caminar 30 minutos")
     Spacer(Modifier.height(20.dp))
-    RenglonField("Para empezar", first, { first = it }, placeholder = "Ej.: ponerte las zapatillas")
+    RenglonField(START_QUESTION, first, { first = it }, placeholder = "Ej.: ponerte las zapatillas")
     Spacer(Modifier.height(20.dp))
-    RenglonField("Dónde empiezas", place, { place = it }, placeholder = "Ej.: junto a la puerta")
+    RenglonField(PLACE_QUESTION, place, { place = it }, placeholder = "Ej.: junto a la puerta")
     Spacer(Modifier.height(24.dp))
     GuardedButton("Guardar el paso", { onSave(step.copy(activity = activity.trim(), firstStep = first.trim(), place = place.trim())) },
       missing = if (activity.isBlank()) "Escribe la actividad del paso." else null)

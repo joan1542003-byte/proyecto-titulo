@@ -201,8 +201,8 @@ internal fun FirstRelevoScreen(
     if (firstStep.isNotBlank() || place.isNotBlank()) {
       Spacer(Modifier.height(Gap.block))
       ListSection {
-        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
-        if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
+        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
   }

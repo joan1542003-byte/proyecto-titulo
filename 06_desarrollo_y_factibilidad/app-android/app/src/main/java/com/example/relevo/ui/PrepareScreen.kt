@@ -115,8 +115,8 @@ import com.example.relevo.ui.components.familyName
 
 private enum class PrepareStep(val title: String) {
   ACTIVITY("¿Qué quieres hacer?"),
-  START("¿Cómo empiezas?"),
-  PLACE("¿Dónde empiezas?"),
+  START(START_QUESTION),
+  PLACE(PLACE_QUESTION),
   USAGE("¿Cuándo suena?"),
   SOUND("¿Dónde suena?"),
   REVIEW("Todo listo"),
@@ -160,11 +160,11 @@ internal class PrepareActions(
 /** Qué falta para seguir en cada paso; null si está completo. Se muestra al tocar «Seguir» (2.18). */
 private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boolean, condition: StudyCondition?, tagLinked: Boolean): String? = when (step) {
   PrepareStep.ACTIVITY -> if (reminder.activity.isBlank()) "Escribe qué quieres hacer o elige una idea." else null
-  PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas: lo primero que harías." else null
+  PrepareStep.START -> if (reminder.howToStart.isBlank()) "Escribe cómo empiezas la actividad: lo primero que harías." else null
   PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null
-    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas lo que suena." else "Escribe dónde empiezas."
+    else if (condition == StudyCondition.NEUTRAL) "Escribe dónde dejas lo que suena." else "Escribe en qué lugar empieza."
   PrepareStep.USAGE -> when {
-    !usageAccess -> "Falta el permiso de Tiempo de uso. Tócalo arriba para darlo."
+    !usageAccess -> "Da el permiso de Tiempo de uso."
     reminder.selectedApps.isEmpty() -> "Elige al menos una app que cuente."
     else -> null
   }
@@ -284,7 +284,7 @@ internal fun PrepareScreen(
             SuggestionChips(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
             Spacer(Modifier.height(Gap.block))
             // La ayuda dice lo que importa (criterio 2): algo pequeño, que se hace enseguida.
-            RenglonField("Para empezar", reminder.howToStart, actions.onStart, placeholder = "Algo que tome segundos", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.PRIMER_PASO)
+            RenglonField(START_QUESTION, reminder.howToStart, actions.onStart, placeholder = "Algo que tome segundos", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.PRIMER_PASO, showLabel = false)
           }
           PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
@@ -297,13 +297,14 @@ internal fun PrepareScreen(
             val apps = reminder.selectedApps.joinToString(" y ") { it.label }
             ListSection {
               // 2.30: la actividad también se cambia desde aquí, sin volver atrás.
-              FactRow(KitIcon.ACTIVIDAD, "Actividad", reminder.activity, leading = {
+              // 4.2: cada dato lleva arriba la pregunta de su paso; tocarlo vuelve a ese paso.
+              FactRow(KitIcon.ACTIVIDAD, PrepareStep.ACTIVITY.title, reminder.activity, leading = {
                 ActivityRing(pictureIcon(picture), 40.dp)
               }) { edit(PrepareStep.ACTIVITY) }
-              FactRow(KitIcon.PRIMER_PASO, "Para empezar", reminder.howToStart) { edit(PrepareStep.START) }
-              FactRow(KitIcon.LUGAR, if (studyCondition == StudyCondition.NEUTRAL) "Dónde dejas lo que suena" else "Dónde empiezas", reminder.place) { edit(PrepareStep.PLACE) }
-              FactRow(KitIcon.TIEMPO, "Cuándo suena", if (apps.isBlank()) "" else "${formatDuration(reminder.requiredUsageSeconds)} en $apps") { edit(PrepareStep.USAGE) }
-              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, "Dónde suena", if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
+              FactRow(KitIcon.PRIMER_PASO, START_QUESTION, reminder.howToStart) { edit(PrepareStep.START) }
+              FactRow(KitIcon.LUGAR, PrepareStep.PLACE.titleFor(studyCondition), reminder.place) { edit(PrepareStep.PLACE) }
+              FactRow(KitIcon.TIEMPO, PrepareStep.USAGE.title, if (apps.isBlank()) "" else "${formatDuration(reminder.requiredUsageSeconds)} en $apps") { edit(PrepareStep.USAGE) }
+              FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, PrepareStep.SOUND.title, if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
             }
             if (!isKnown && reminder.activity.isNotBlank()) {
               Spacer(Modifier.height(Gap.block))
@@ -346,7 +347,7 @@ private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED
 /** Paso 1: el renglón para escribir y, debajo, los pasos de la ruta, ideas con foto y las actividades propias. */
 @Composable
 private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivity>, routes: List<RouteTrack>, actions: PrepareActions, onNext: () -> Unit) {
-  RenglonField("Actividad", reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas", imeAction = ImeAction.Next, onImeAction = onNext)
+  RenglonField(PrepareStep.ACTIVITY.title, reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas", imeAction = ImeAction.Next, onImeAction = onNext, showLabel = false)
   val steps = routes.mapNotNull { track -> track.currentStep?.let { track to it } }
   if (steps.isNotEmpty()) {
     TileGroup("Tus pasos", steps.map { (track, step) ->
@@ -360,9 +361,12 @@ private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivi
       }
     })
   }
-  // Las ideas van agrupadas por familia (3.2): el color del anillo dice qué tipo de actividad es.
+  // Las ideas van agrupadas por familia (3.2): el color del anillo dice qué tipo de actividad es. Una idea
+  // que la persona ya guardó aparece solo en «Tus actividades», con su forma de empezar (4.2).
+  val saved = customActivities.map { it.name.trim().lowercase() }.toSet()
   ideasByFamily.forEach { (sky, ideas) ->
-    TileGroup(sky.familyName, ideas.map { idea ->
+    val shown = ideas.filter { it.activity.trim().lowercase() !in saved }
+    if (shown.isNotEmpty()) TileGroup(sky.familyName, shown.map { idea ->
       Tile(idea.activity, pictureIcon(idea.picture), reminder.activity.equals(idea.activity, true)) { actions.onIdea(idea.activity, idea.start, idea.place) }
     })
   }
@@ -400,14 +404,12 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
   )
   Spacer(Modifier.height(Gap.block))
   RenglonField(
-    when (studyCondition) {
-      StudyCondition.NEUTRAL -> "Dónde dejas lo que suena"
-      else -> "Dónde empiezas"
-    },
+    PrepareStep.PLACE.titleFor(studyCondition),
     reminder.place, actions.onPlace,
     placeholder = "Ej.: en el velador",
     onImeAction = onNext,
     icon = KitIcon.LUGAR,
+    showLabel = false,
   )
 }
 

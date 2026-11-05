@@ -46,13 +46,13 @@ const PANTALLAS = [
   ['20', 'Permisos', ['PermissionsScreen']],
   ['21', 'Tus relevos', ['HistoryScreen']],
   ['22', 'Ajustes', ['SettingsScreen']],
-  ['23', 'Crear o editar una actividad', ['ActivityEditScreen']],
+  ['23', 'Crear o editar una actividad', ['ActivityEditScreen', 'PresetPicker', 'ActivityForm']],
   ['24', 'Privacidad y datos', ['PrivacyScreen', 'RelevoViewModel', 'backupStatusText', 'syncStatusText']],
   ['25', 'Lo que aceptaste', ['ConsentDetailsScreen']],
   ['26', 'Prueba de 21 días (investigador)', ['StudyScreen', 'StudyPlan']],
   ['27', '¿Cómo te fue esta semana?', ['WeekReviewScreen']],
   ['28', 'Cierre de la prueba', ['ClosingScreen']],
-  ['29', 'Opinar sobre Relevo', ['FeedbackScreen']],
+  ['29', 'Envíanos un comentario (antes, Opinar sobre Relevo)', ['FeedbackScreen']],
   ['30', 'Reportar un problema', ['ReportScreen']],
   ['31', 'Notificaciones', ['AppUsageMonitorService', 'ProjectMessages', 'ReturnNotice']],
 ];
@@ -278,6 +278,7 @@ function principal() {
     md.push(`| ${f.id} | ${f.tipo} | ${f.texto.replace(/\|/g, '\\|')} | \`${path.basename(f.archivo)}:${f.linea}\` |`);
   }
   md.push('', '## Registro de cambios (disclaimer)', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.2', '', '- **Qué cambió:** se volvió a generar con el código de 4.2 (D-157).', '- **Cómo estaba antes:** tenía los textos de 4.1, con «Para empezar», «Dónde empiezas», «Tuyas» y «¿Qué te ayudó?».', '- **Por qué:** el autor cambió esos textos al ver la 4.1.', '');
   if (!RAMA) md.push('### 2026-11-05 — Textos de 4.1', '', '- **Qué cambió:** se volvió a generar con el código de 4.1 (D-155 y D-156).', '- **Cómo estaba antes:** tenía los textos de 3.3, con las notas de guía de la primera vez y los textos del aura.', '- **Por qué:** 4.0 y 4.1 quitaron y acortaron textos; el inventario se rehace cada vez que cambian.', '');
   md.push('### 2026-10-24 — Creación', '', '- **Qué cambió:** se creó el inventario, generado desde el código.', '- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin.', '- **Por qué:** el autor pidió estudiar y documentar cada palabra de la app antes de actualizar los textos.', '');
   fs.writeFileSync(path.join(AQUI, `inventario-de-textos${sufijo}.md`), md.join('\n'));

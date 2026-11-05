@@ -2070,7 +2070,31 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:** el inventario de textos se volvió a generar con 4.1 (1237 textos y 5212 palabras; en 3.3 eran 1287 y 5837). Dos pares de ideas comparten ícono, «Leer» y «Leer manga», y «Hacer manualidades» y «Armar una maqueta», porque el kit no tiene uno propio para ellas.
 - **Documentos:** [Android 4.1](../06_desarrollo_y_factibilidad/app-android/version-4.1-anillos-textos-y-movimiento-2026-11-05.md).
 
+## D-157 — Android 4.2: un solo comentario, las preguntas de cada actividad, predefinidas primero, el borde como en iOS e Inicio con color
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.2, `versionCode` 52), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono.
+- **Contexto:** al ver la 4.1 en el emulador, el autor pidió que «¿Qué te ayudó?» diga «Envíanos un comentario»; un desenfoque progresivo al nivel del de Apple; «¿Cómo empiezas la actividad?» en vez de «Para empezar» y «¿En qué lugar empieza?» en vez de «Dónde empiezas»; que agregar una actividad empiece por las predefinidas, con la opción de hacer una propia; un Inicio más atractivo, y «Creadas por ti» en vez de «Tuyas».
+- **Decisión:**
+  - **Comentario:** una sola fila en Perfil, «Envíanos un comentario», siempre a la vista, que abre la pantalla de opinión con ese título: primero el comentario y después estrellas opcionales. Reemplaza a «¿Qué te ayudó esta semana?» y a «Opinar sobre Relevo»; `tu_semana_ayudo` deja de registrarse en esta rama.
+  - **Preguntas:** las del autor, con una sola forma en toda la app; en las hojas y en «Todo listo», la pregunta va arriba del dato. En Preparar, el título de cada paso es la pregunta y el campo no la repite a la vista. «Tuyas» pasa a «Creadas por ti».
+  - **Nueva actividad:** primero las predefinidas, por familia y sin las ya guardadas; elegir una abre el formulario lleno, y «Crear una propia» queda siempre a la vista. Una predefinida se puede guardar con su nombre.
+  - **Borde:** desenfoque variable a resolución completa, pleno bajo las barras y con una rampa de curva suave, bajo un velo de papel de hasta el 55 %, como el borde suave de iOS 26 (Apple, 2025).
+  - **Inicio:** lo más próximo va en una tarjeta con el color de su actividad: el cielo de su familia arriba, el anillo sobre su borde y, en papel, el texto y la acción. Es la tarjeta de la memoria v6 (Figura 15): «en Inicio, la actividad se presenta en una tarjeta con su degradado».
+- **Alternativas descartadas:**
+  - Mantener «Opinar sobre Relevo» junto a «Envíanos un comentario»: dos filas para lo mismo.
+  - Dejar el borde en la opción rápida con menos velo: la doble imagen de la rampa venía de la máscara, no del velo.
+  - Dar a Inicio un fondo de color completo: el color a pantalla completa es de la señal; Inicio es el paso intermedio.
+- **Consecuencias:** Inicio vuelve a coincidir con la Figura 15 de la memoria. El desenfoque variable cuesta más que la máscara; hay que confirmar en un teléfono que no baja de los 60 cuadros por segundo.
+- **Documentos:** [Android 4.2](../06_desarrollo_y_factibilidad/app-android/version-4.2-comentario-preguntas-borde-e-inicio-2026-11-05.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-157
+
+- **Qué cambió:** se registró D-157.
+- **Cómo estaba antes:** la última decisión era D-156.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-05 — D-156
 

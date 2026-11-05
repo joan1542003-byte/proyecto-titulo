@@ -30,6 +30,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.example.relevo.ui.components.StarGlyphInset
+import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
@@ -311,14 +313,17 @@ private fun copy(context: Context, text: String) {
 internal fun FeedbackScreen(onSend: (Int?, String) -> Unit, onBack: () -> Unit) {
   var stars by rememberSaveable { mutableStateOf<Int?>(null) }
   var comment by rememberSaveable { mutableStateOf("") }
+  // 4.2 (D-157): el comentario va primero, porque es lo que la persona vino a hacer; las estrellas son opcionales.
   RelevoScreen(
-    title = "¿Cómo te resultó Relevo?",
+    title = "Envíanos un comentario",
     onBack = onBack, closeIcon = true, backLabel = "Cerrar",
-    bottom = { GuardedButton("Enviar", { onSend(stars, comment) }, missing = if (stars == null && comment.isBlank()) "Elige las estrellas o escribe un comentario." else null, icon = KitIcon.ENVIAR) },
+    bottom = { GuardedButton("Enviar", { onSend(stars, comment) }, missing = if (stars == null && comment.isBlank()) "Escribe un comentario o elige las estrellas." else null, icon = KitIcon.ENVIAR) },
   ) {
-    StarRating(stars) { stars = it }
+    RenglonArea("Comentario", comment, { comment = it }, "Ej.: me gustaría elegir otro sonido")
     SectionGap()
-    RenglonArea("Comentario", comment, { comment = it }, "¿Qué cambiarías?")
+    Text("¿Cómo te resultó Relevo?", style = Relevo.type.headline, color = Relevo.colors.ink)
+    Spacer(Modifier.height(8.dp))
+    StarRating(stars, { stars = it }, Modifier.offset(x = -StarGlyphInset))
   }
 }
 

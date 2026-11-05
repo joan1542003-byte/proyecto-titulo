@@ -371,7 +371,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                     )
                     Tab.PROFILE -> ProfileTab(
                       profile = profile, routes = routes, history = history,
-                      participation = participation, customCount = customActivities.size, reselect = reselect,
+                      customCount = customActivities.size, reselect = reselect,
                       actions = ProfileActions(
                         onEdit = { push(Route.PROFILE_EDIT) },
                         onSettings = { push(Route.SETTINGS) },
@@ -381,7 +381,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                         onStudy = { push(Route.STUDY) },
                         onFeedback = { push(Route.FEEDBACK) },
                         onReport = { push(Route.REPORT) },
-                        onWeekNote = viewModel::submitWeekNote,
                         onHowItWorks = { howFromProfile = true; push(Route.HOW_IT_WORKS) },
                       ),
                     )

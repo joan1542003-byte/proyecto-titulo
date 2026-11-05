@@ -94,8 +94,8 @@ internal fun WelcomeScreen(onStart: () -> Unit) {
       Text("Leer", style = Relevo.type.headline, color = Relevo.colors.ink)
       Spacer(Modifier.height(16.dp))
       ListSection {
-        ListRow("Abrir el libro", icon = KitIcon.PRIMER_PASO, subtitle = "Para empezar")
-        ListRow("En el velador", icon = KitIcon.LUGAR, subtitle = "Dónde empiezas")
+        ListRow("Abrir el libro", icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        ListRow("En el velador", icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
   }

@@ -30,6 +30,13 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.example.relevo.ui.components.skyFor
+import com.example.relevo.ui.components.SkyBackground
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
@@ -104,7 +111,8 @@ internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen d�
  * Inicio de la 4.0 (D-155), de arriba abajo: la fecha y el saludo; lo de la prueba si toca; lo más
  * próximo (el relevo que cuenta, el regreso tras unos días o «Preparar un relevo» con el paso sugerido);
  * un resumen de la semana que solo cuenta hechos, y tus actividades en anillos, a un toque. Sin campana
- * ni ajustes: esos viven en Perfil.
+ * ni ajustes: esos viven en Perfil. Desde 4.2 (D-157), lo más próximo va en una tarjeta con el color de su
+ * actividad ([ActivityHero]) y la opinión rápida, debajo de ella.
  */
 @Composable
 internal fun HomeTab(
@@ -151,10 +159,6 @@ internal fun HomeTab(
 
   RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", scrollState = scroll) {
     StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing, firstRelevoDone = history.isNotEmpty())
-    if (quickFeedbackDue && !active) {
-      QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
-      Spacer(Modifier.height(Gap.block))
-    }
     // D-095: con la activación automática, Inicio recuerda qué se activará y cómo apagarla.
     if (autoMode && !active && lastReminder != null) {
       Notice(
@@ -185,6 +189,11 @@ internal fun HomeTab(
         else -> PrepareBlock(nextTrack, lastReminder, customActivities, actions)
       }
     }
+    // 4.2: la opinión rápida va después de lo más próximo, que es lo que la persona viene a ver.
+    if (quickFeedbackDue && !active) {
+      SectionGap()
+      QuickFeedbackCard(onQuickFeedback, { onQuickFeedback(null); onFeedback() })
+    }
     if (settings.weeklySummary) {
       SectionGap()
       WeekBanner(history, customActivities, settings, Modifier.appear(1))
@@ -195,35 +204,105 @@ internal fun HomeTab(
 }
 
 /**
- * Lo que se puede preparar ahora: el botón principal y, debajo, dos atajos en un mismo grupo: el paso
- * sugerido de tu ruta y el último relevo.
+ * Lo que se puede preparar ahora (4.2): el paso sugerido de tu ruta, en la tarjeta con su color, con
+ * «Preparar un relevo» y «Elegir otra»; debajo, repetir el último. Sin un paso sugerido, el último relevo
+ * ocupa la tarjeta; sin ninguno de los dos, queda el botón.
  */
 @Composable
 private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, customActivities: List<CustomActivity>, actions: HomeActions) {
-  RelevoButton("Preparar un relevo", actions.onPrepare, icon = KitIcon.AGREGAR)
   val step = nextTrack?.currentStep
-  if (step != null || lastReminder != null) {
-    Spacer(Modifier.height(Gap.block))
-    ListSection(dividerInset = 70.dp) {
-      if (nextTrack != null && step != null) {
-        val key = photoKey("ruta", step.id)
-        ListRow(
-          step.activity, subtitle = "Tu paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
-          leading = { ActivityRing(activityIcon(step.activity, customActivities), 42.dp) },
-          chevron = true, onClick = { actions.onRouteStep(nextTrack.interest, step.id, key) },
-        )
+  when {
+    nextTrack != null && step != null -> {
+      val key = photoKey("ruta", step.id)
+      ActivityHero(
+        activityIcon(step.activity, customActivities), step.activity,
+        eyebrow = "Tu paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
+        detail = startSentence(step.firstStep, step.place),
+      ) {
+        Spacer(Modifier.height(16.dp))
+        RelevoButton("Preparar un relevo", { actions.onRouteStep(nextTrack.interest, step.id, key) }, icon = KitIcon.AGREGAR)
+        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { PlainAction("Elegir otra", actions.onPrepare) }
       }
-      if (lastReminder != null) {
-        val key = photoKey("ultima", lastReminder.activity)
-        ListRow(
-          lastReminder.activity, subtitle = "Repetir el último · ${formatDuration(lastReminder.requiredUsageSeconds)}",
-          leading = { ActivityRing(activityIcon(lastReminder.activity, customActivities), 42.dp) },
-          chevron = true, onClick = { actions.onRepeat(key) },
-        )
+      if (lastReminder != null && !lastReminder.activity.trim().equals(step.activity.trim(), true)) {
+        val lastKey = photoKey("ultima", lastReminder.activity)
+        Spacer(Modifier.height(Gap.list))
+        ListSection(dividerInset = 70.dp) {
+          ListRow(
+            lastReminder.activity, subtitle = "Repetir el último · ${formatDuration(lastReminder.requiredUsageSeconds)}",
+            leading = { ActivityRing(activityIcon(lastReminder.activity, customActivities), 42.dp) },
+            chevron = true, onClick = { actions.onRepeat(lastKey) },
+          )
+        }
       }
+    }
+    lastReminder != null -> {
+      val key = photoKey("ultima", lastReminder.activity)
+      ActivityHero(
+        activityIcon(lastReminder.activity, customActivities), lastReminder.activity,
+        eyebrow = "Tu último relevo", detail = startSentence(lastReminder.howToStart, lastReminder.place),
+      ) {
+        Spacer(Modifier.height(16.dp))
+        RelevoButton("Preparar de nuevo", { actions.onRepeat(key) }, icon = KitIcon.REINTENTAR)
+        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { PlainAction("Elegir otra", actions.onPrepare) }
+      }
+    }
+    else -> RelevoButton("Preparar un relevo", actions.onPrepare, icon = KitIcon.AGREGAR)
+  }
+}
+
+/**
+ * Lo más próximo, en una tarjeta con el color de su actividad (4.2, D-157). Es la tarjeta de la memoria v6
+ * (Figura 15b): «en Inicio, la actividad se presenta en una tarjeta con su degradado», el paso intermedio de
+ * «el color sube con el momento», entre el papel de Preparar y el cielo a pantalla completa de la señal. La
+ * 4.0 la había dejado en papel y tinta, e Inicio quedó sin un punto donde mirar. Arriba va el cielo de la
+ * familia; sobre su borde, el anillo con un aro de papel, alineado con el texto, y abajo, en papel, el texto
+ * y la acción, que se leen con el contraste de siempre. En el tema oscuro el cielo baja un poco su luz.
+ */
+@Composable
+private fun ActivityHero(
+  icon: KitIcon,
+  activity: String,
+  eyebrow: String,
+  detail: String?,
+  onClick: (() -> Unit)? = null,
+  clickLabel: String? = null,
+  content: @Composable ColumnScope.() -> Unit,
+) {
+  val colors = Relevo.colors
+  val interaction = remember { MutableInteractionSource() }
+  val dim = if (colors.isDark) Color.Black.copy(alpha = .2f) else Color.Transparent
+  Column(
+    Modifier.fillMaxWidth()
+      .then(if (onClick != null) Modifier.pressScale(interaction, 0.985f) else Modifier)
+      .clip(Relevo.panelShape).background(colors.card)
+      .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = clickLabel, onClick = onClick) else Modifier),
+  ) {
+    Box(Modifier.fillMaxWidth().height(HeroSky + HeroHalo / 2)) {
+      SkyBackground(skyFor(icon), Modifier.fillMaxWidth().height(HeroSky).drawWithContent { drawContent(); drawRect(dim) }, variant = activityVariant(activity))
+      Box(
+        Modifier.align(Alignment.BottomStart).padding(start = HeroInset - HeroHaloWidth).size(HeroHalo).clip(CircleShape).background(colors.card),
+        contentAlignment = Alignment.Center,
+      ) { ActivityRing(icon, HeroRing) }
+    }
+    Column(Modifier.fillMaxWidth().padding(start = HeroInset, end = HeroInset, top = 10.dp, bottom = 20.dp)) {
+      Text(eyebrow, style = Relevo.type.subhead, color = colors.graphite)
+      Spacer(Modifier.height(2.dp))
+      Text(activity.trim(), style = Relevo.type.title2, color = colors.ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
+      if (detail != null) {
+        Spacer(Modifier.height(4.dp))
+        Text(detail, style = Relevo.type.subhead, color = colors.graphite)
+      }
+      content()
     }
   }
 }
+
+/** Medidas de la tarjeta: el cielo, el anillo y su aro de papel; el borde del anillo cae en la columna del texto. */
+private val HeroSky = 104.dp
+private val HeroRing = 64.dp
+private val HeroHaloWidth = 5.dp
+private val HeroHalo = HeroRing + HeroHaloWidth * 2
+private val HeroInset = 20.dp
 
 /**
  * Tu semana (4.0): un resumen de las actividades que hiciste esta semana, de lunes a hoy. Solo cuenta
@@ -325,36 +404,24 @@ private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, o
 }
 
 /**
- * El relevo que cuenta, en Inicio: su anillo, la actividad, dónde suena, el avance y cuánto falta. Tocarla
- * abre el relevo.
+ * El relevo que cuenta, en Inicio (4.2): la tarjeta con el color de su actividad, dónde suena, el avance y
+ * cuánto falta. Tocarla abre el relevo.
  */
 @Composable
 private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivities: List<CustomActivity>, onOpen: () -> Unit) {
-  val colors = Relevo.colors
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   val remaining = (reminder.requiredUsageSeconds - reminder.observedUsageSeconds).coerceAtLeast(0)
-  val interaction = remember { MutableInteractionSource() }
-  Column(
-    Modifier.fillMaxWidth().pressScale(interaction, 0.985f).clip(Relevo.panelShape).background(colors.card)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Ver tu relevo", onClick = onOpen)
-      .padding(18.dp),
+  ActivityHero(
+    activityIcon(reminder.activity, customActivities), reminder.activity,
+    eyebrow = if (usageAccess) "Contando" else "En pausa", detail = "Suena " + soundWhere(reminder),
+    onClick = onOpen, clickLabel = "Ver tu relevo",
   ) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-      ActivityRing(activityIcon(reminder.activity, customActivities), 48.dp)
-      Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) {
-        Text(reminder.activity.trim(), style = Relevo.type.title2, color = colors.ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
-        Text("Suena " + soundWhere(reminder), style = Relevo.type.subhead, color = colors.graphite, maxLines = 2)
-      }
-    }
     Spacer(Modifier.height(16.dp))
-    ProgressLine(progress)
-    Spacer(Modifier.height(12.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
-      Chip(if (usageAccess) "Contando" else "En pausa", background = colors.mist)
-      Spacer(Modifier.weight(1f))
+      ProgressLine(progress, Modifier.weight(1f))
+      Spacer(Modifier.width(14.dp))
       RollingContent(remaining) { left ->
-        Text("Faltan ${formatDuration(left)}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = colors.ink)
+        Text("Faltan ${formatDuration(left)}", style = Relevo.type.subhead.copy(fontWeight = FontWeight.SemiBold, fontFeatureSettings = "tnum"), color = Relevo.colors.ink)
       }
     }
   }
@@ -378,20 +445,12 @@ internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
   }
 }
 
-/** V1: «Hola de nuevo». La última actividad con su anillo; las opciones pesan lo mismo y «Ahora no» la oculta. */
+/** V1: «Hola de nuevo». La última actividad en su tarjeta de color; las opciones pesan lo mismo y «Ahora no» la oculta. */
 @Composable
 private fun ReturnCard(last: HistoryEntry, lastReminder: Reminder?, customActivities: List<CustomActivity>, actions: HomeActions) {
   val key = lastReminder?.let { photoKey("regreso", it.activity) }
-  Panel(padding = 18.dp) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-      ActivityRing(activityIcon(last.activity, customActivities), 48.dp)
-      Spacer(Modifier.width(14.dp))
-      Column(Modifier.weight(1f)) {
-        Text("La última vez", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-        Text(last.activity, style = Relevo.type.title2, color = Relevo.colors.ink, maxLines = 2, overflow = TextOverflow.Ellipsis)
-      }
-    }
-    Spacer(Modifier.height(8.dp))
+  ActivityHero(activityIcon(last.activity, customActivities), last.activity, eyebrow = "La última vez", detail = null) {
+    Spacer(Modifier.height(16.dp))
     if (lastReminder != null) RelevoButton("Preparar de nuevo", { actions.onRepeat(key) }, icon = KitIcon.REINTENTAR)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
       PlainAction("Elegir otra", actions.onPrepare)

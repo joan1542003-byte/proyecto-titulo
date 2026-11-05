@@ -104,13 +104,15 @@ fun RelevoButton(
     !enabled || muted -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
-    else -> Color.Transparent to colors.ink
+    // El secundario es blanco, como dice su descripción: transparente, sobre el borde desenfocado de abajo
+    // dejaba ver los colores que pasaban detrás (4.2).
+    else -> colors.card to colors.ink
   }
   val outlined = kind == ButtonKind.Secondary && enabled && !muted
   val pressedColor = when (kind) {
     ButtonKind.Primary -> colors.slate
     ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .24f else .15f)
-    ButtonKind.Secondary -> colors.ink.copy(alpha = .08f)
+    ButtonKind.Secondary -> colors.mist
   }
   val background by animateColorAsState(if (pressed && enabled) pressedColor else container, Motion.standard(120), label = "button_background")
   Row(
@@ -293,9 +295,9 @@ fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", hi
  * Tocar la estrella elegida la quita.
  */
 @Composable
-fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
+fun StarRating(value: Int?, onChange: (Int?) -> Unit, modifier: Modifier = Modifier) {
   val haptics = LocalHapticFeedback.current
-  Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
+  Row(modifier, horizontalArrangement = Arrangement.spacedBy(2.dp)) {
     (1..5).forEach { star ->
       val filled = (value ?: 0) >= star
       val scale by animateFloatAsState(if (filled) 1f else .9f, Motion.smooth(stiffness = 700f), label = "star")
@@ -316,6 +318,13 @@ fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
     }
   }
 }
+
+/**
+ * Cuánto entra la punta izquierda de la primera estrella desde el borde de su celda: 10 dp entre la celda
+ * de 54 y el ícono de 34, y 6 dp hasta la punta, que empieza en 4,2 de 24. Con este corrimiento la estrella
+ * queda en la columna del texto que la pregunta (4.2).
+ */
+val StarGlyphInset = 16.dp
 
 /** Solo los botones − y + del tiempo, para ponerlos al final de una fila (3.2). */
 @Composable

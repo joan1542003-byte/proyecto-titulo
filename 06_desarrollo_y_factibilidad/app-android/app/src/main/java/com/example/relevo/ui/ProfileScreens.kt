@@ -102,21 +102,20 @@ internal class ProfileActions(
   val onStudy: () -> Unit,
   val onFeedback: () -> Unit,
   val onReport: () -> Unit,
-  val onWeekNote: (String) -> Unit,
   val onHowItWorks: () -> Unit,
 )
 
 /**
  * Perfil (4.0, D-155): la persona arriba —su emoji, su nombre y sus intereses—, lo suyo en un grupo y la
  * ayuda en otro. Los ajustes se abren con la tuerca de arriba a la derecha y ya no están en Inicio. Todos
- * los íconos van iguales, en tinta sobre piedra.
+ * los íconos van iguales, en tinta sobre piedra. Desde 4.2 (D-157), «Envíanos un comentario» reúne en una
+ * sola fila lo que antes eran «¿Qué te ayudó esta semana?» y «Opinar sobre Relevo».
  */
 @Composable
 internal fun ProfileTab(
   profile: Profile,
   routes: List<RouteTrack>,
   history: List<HistoryEntry>,
-  participation: ParticipationMode,
   customCount: Int,
   reselect: Int,
   actions: ProfileActions,
@@ -124,11 +123,8 @@ internal fun ProfileTab(
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
   LaunchedEffect(reselect) { if (reselect != firstReselect) scroll.animateScrollTo(0) else firstReselect = reselect }
-  var noting by rememberSaveable { mutableStateOf(false) }
   var tagGuide by rememberSaveable { mutableStateOf(false) }
   if (tagGuide) TagGuideSheet(onDismiss = { tagGuide = false })
-  val facts = weekFacts(history)
-  val canTell = participation == ParticipationMode.STUDY && facts.prepared > 0
   RelevoScreen(scrollState = scroll, barTitle = "Perfil", trailing = { GearButton(actions.onSettings) }) {
     ProfileHeader(profile, routes, actions.onEdit, Modifier.appear(0))
     Spacer(Modifier.height(Gap.section))
@@ -136,13 +132,12 @@ internal fun ProfileTab(
       ListRow("Tus relevos", icon = KitIcon.RELEVOS, subtitle = countLine(history.size, "relevo terminado", "relevos terminados", "Todavía no terminas ninguno"), chevron = true, onClick = actions.onHistory)
       ListRow("Tus actividades", icon = KitIcon.ACTIVIDADES, subtitle = countLine(customCount, "actividad guardada", "actividades guardadas", "Guarda las que haces seguido"), chevron = true, onClick = actions.onActivities)
       ListRow("Tus pasos", icon = KitIcon.RUTA, subtitle = routes.firstNotNullOfOrNull { it.currentStep?.activity }?.let { "Ahora: $it" } ?: "Elige tus intereses", chevron = true, onClick = actions.onRoute)
-      if (canTell) ListRow("¿Qué te ayudó esta semana?", icon = KitIcon.COMENTARIO, chevron = true, onClick = { noting = true })
+      ListRow("Envíanos un comentario", icon = KitIcon.COMENTARIO, chevron = true, onClick = actions.onFeedback)
     }
     Spacer(Modifier.height(Gap.section))
     ListSection(Modifier.appear(2), title = "Ayuda") {
       ListRow("Cómo funciona Relevo", icon = KitIcon.AYUDA, chevron = true, onClick = actions.onHowItWorks)
       ListRow("Cómo usar el Tag", icon = KitIcon.OBJETO, chevron = true, onClick = { tagGuide = true })
-      ListRow("Opinar sobre Relevo", icon = KitIcon.ESTRELLA, chevron = true, onClick = actions.onFeedback)
       ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
     }
     Spacer(Modifier.height(20.dp))
@@ -153,7 +148,6 @@ internal fun ProfileTab(
       modifier = Modifier.fillMaxWidth().pointerInput(Unit) { detectTapGestures(onLongPress = { actions.onStudy() }) },
     )
   }
-  if (noting) WeekNoteSheet(onDismiss = { noting = false }, onSend = { actions.onWeekNote(it); noting = false })
 }
 
 /** La tuerca de los ajustes, arriba a la derecha de Perfil: un círculo blanco como el de volver. */
@@ -188,18 +182,6 @@ private fun countLine(count: Int, one: String, many: String, none: String): Stri
   0 -> none
   1 -> "1 $one"
   else -> "$count $many"
-}
-
-@Composable
-private fun WeekNoteSheet(onDismiss: () -> Unit, onSend: (String) -> Unit) {
-  var text by rememberSaveable { mutableStateOf("") }
-  RelevoSheet(onDismiss = onDismiss, title = "¿Qué te ayudó?") {
-    Text("Nos ayuda a mejorar Relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-    Spacer(Modifier.height(16.dp))
-    RenglonArea("Tu respuesta", text, { text = it }, "Escribe aquí")
-    Spacer(Modifier.height(22.dp))
-    GuardedButton("Enviar", { onSend(text) }, missing = if (text.isBlank()) "Escribe qué te ayudó." else null)
-  }
 }
 
 /** P1 a P3 en tres pasos, que se pueden saltar. Los intereses arman la ruta sugerida (R1). */

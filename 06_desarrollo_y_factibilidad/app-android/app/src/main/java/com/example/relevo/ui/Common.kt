@@ -47,6 +47,13 @@ import java.util.Locale
 
 private val spanish: Locale = Locale.forLanguageTag("es")
 
+/**
+ * Las dos preguntas de cada actividad (4.2, D-157), como las escribió el autor: el primer paso y el lugar.
+ * Tienen una sola forma en toda la app: en los campos, en las hojas de las actividades y en «Todo listo».
+ */
+internal const val START_QUESTION = "¿Cómo empiezas la actividad?"
+internal const val PLACE_QUESTION = "¿En qué lugar empieza?"
+
 /** Idea de actividad: un atajo editable, nunca una categoría cerrada. El nombre completa «Vuelve a ___.». */
 data class ActivityIdea(val activity: String, val start: String, val place: String, val icon: KitIcon, val photo: Photo? = null) {
   val picture: Picture get() = photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(icon)

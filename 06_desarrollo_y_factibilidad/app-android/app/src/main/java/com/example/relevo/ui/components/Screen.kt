@@ -153,7 +153,7 @@ fun RelevoScreen(
     }
 
     // Arriba: el borde con desenfoque progresivo aparece apenas algo pasa por debajo.
-    if (backdrop == null && topEdge > 0.01f) ScrollEdge(haze, top = true, height = topSpace + 24.dp, visible = topEdge)
+    if (backdrop == null && topEdge > 0.01f) ScrollEdge(haze, top = true, solid = topSpace, visible = topEdge)
     if (hasBar) {
       Box(Modifier.fillMaxWidth().statusBarsPadding().height(BarHeight).padding(horizontal = Relevo.margin)) {
         if (barTitle != null) {
@@ -182,7 +182,7 @@ fun RelevoScreen(
     // Abajo: los botones flotan sobre el mismo borde; en las pestañas, el borde queda detrás de la barra.
     if (bottom != null) {
       if (backdrop == null && bottomEdge > 0.01f) {
-        ScrollEdge(haze, top = false, height = with(density) { bottomHeight.toDp() } + 26.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
+        ScrollEdge(haze, top = false, solid = with(density) { bottomHeight.toDp() }, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
       }
       Column(
         Modifier.align(Alignment.BottomCenter).fillMaxWidth().onSizeChanged { bottomHeight = it.height }
@@ -191,7 +191,7 @@ fun RelevoScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
       ) { bottom() }
     } else if (dock > 0.dp && backdrop == null && bottomEdge > 0.01f) {
-      ScrollEdge(haze, top = false, height = dock + navBottom + 30.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
+      ScrollEdge(haze, top = false, solid = dock + navBottom, ramp = 36.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
     }
   }
 }

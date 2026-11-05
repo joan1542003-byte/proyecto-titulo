@@ -1,5 +1,7 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -61,6 +63,11 @@ fun RenglonField(
   maxLength: Int = 120,
   /** El ícono a la izquierda, como en las filas: siempre en tinta sobre piedra (4.0). */
   icon: KitIcon? = null,
+  /**
+   * false cuando el título de la pantalla ya hace la pregunta (Preparar, 4.2): el rótulo no se repite a la
+   * vista y queda para el lector de pantalla.
+   */
+  showLabel: Boolean = true,
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
@@ -78,7 +85,7 @@ fun RenglonField(
     interactionSource = interaction,
     keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
     keyboardActions = KeyboardActions(onAny = { onImeAction() }),
-    modifier = modifier.fillMaxWidth(),
+    modifier = modifier.fillMaxWidth().then(if (showLabel) Modifier else Modifier.semantics { contentDescription = label }),
     decorationBox = { inner ->
       androidx.compose.foundation.layout.Row(
         Modifier.fillMaxWidth().heightIn(min = 64.dp).background(colors.card, shape).border(lineWidth, lineColor, shape)
@@ -90,7 +97,7 @@ fun RenglonField(
           Spacer(Modifier.width(14.dp))
         }
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-          if (label.isNotBlank()) Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = colors.graphite)
+          if (showLabel && label.isNotBlank()) Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = colors.graphite)
           Box {
             if (value.isEmpty() && placeholder.isNotEmpty()) Text(placeholder, style = Relevo.type.body, color = colors.graphite)
             inner()
