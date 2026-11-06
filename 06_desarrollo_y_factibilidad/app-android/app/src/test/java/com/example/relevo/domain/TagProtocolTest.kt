@@ -17,7 +17,6 @@ class TagProtocolTest {
     assertEquals(UUID.fromString("0000ffe2-0000-1000-8000-00805f9b34fb"), TagProtocol.LINK_LOSS_SWITCH)
     assertEquals(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"), TagProtocol.CLIENT_CONFIG)
     assertEquals(UUID.fromString("00001803-0000-1000-8000-00805f9b34fb"), TagProtocol.LINK_LOSS_SERVICE)
-    assertEquals(0x02.toByte(), TagProtocol.ALERT_HIGH)
     assertEquals(0x00.toByte(), TagProtocol.ALERT_OFF)
   }
 

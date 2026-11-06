@@ -69,7 +69,7 @@ El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta 
 
 ## 3. App: actualizar los textos según el estudio
 
-**Estado:** en espera de la indicación del autor. **Anotada:** 24 de octubre de 2026.
+**Estado:** aplicada. La 4.0 a la 4.3 aplicaron las propuestas que no tocaban la prueba (D-155 a D-158). La 4.4 suma las que dependían de quitarla y la ruta llamada «Actividades» (D-159). **Anotada:** 24 de octubre de 2026.
 
 ### Por qué
 
@@ -261,12 +261,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### La aplicación, según lo que mostró la prueba
 
-- [ ] **El onboarding es muy largo**, aunque las tres personas lo completaron. Partirlo: una parte al empezar y el resto después.
-- [ ] **La pantalla del relevo tiene demasiada información.**
+- [x] **El onboarding es muy largo**, aunque las tres personas lo completaron. Partirlo: una parte al empezar y el resto después. Hecho en la 4.4: tres pantallas antes del primer relevo y el perfil después (D-159).
+- [x] **La pantalla del relevo tiene demasiada información.** Hecho en la 4.0: la actividad, cuánto falta y una acción (D-155).
 - [ ] **Separar los problemas técnicos de los de usabilidad:** los pitidos del Tag son lo primero y están condicionados por el objeto comprado.
-- [ ] **Cambiar el texto de «Elige tu emoji».** Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
-- [ ] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso.
-- [ ] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto.
+- [x] **Cambiar el texto de «Elige tu emoji».** Hecho en la 4.0: «¿Con qué te identificas?». Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
+- [x] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso. Hecho en la 4.4: lo busca a un minuto y medio del final; falta probarlo con un Tag real (D-159).
+- [x] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto. Hecho en la 4.4, con una búsqueda en Mercado Libre y las notificaciones mientras tanto (D-159).
 - [x] **Registro de todas las pantallas de la aplicación.** Las 39 pantallas de la versión 2.32, en *wireframes*, están en el Anexo F; la memoria muestra solo el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 13; D-150).
 - [x] **Esquema de jerarquía y arquitectura de información** de la aplicación. Figura 14 de la v6.
 
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Android 4.4
+
+- **Qué cambió:** la tarea 3 queda aplicada, y la tarea 10 marca como hechos la primera vez más corta, la pantalla del relevo, «¿Con qué te identificas?», la búsqueda del Tag antes de sonar y «¿Tienes un Tag?».
+- **Cómo estaba antes:** esos puntos estaban por hacer.
+- **Por qué:** la 4.4 junta el rediseño de la 4.x con lo de la 1.0.0 (D-159).
 
 ### 2026-10-29 — Séptima ronda de la v6
 

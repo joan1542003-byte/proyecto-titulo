@@ -28,7 +28,6 @@ import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.SignalRoute
-import com.example.relevo.domain.StudyCondition
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.Picture
@@ -84,11 +83,6 @@ internal val activityIdeas = listOf(
 )
 
 /** Lugares de la casa para elegir con un toque, sin escribir. */
-/** Lugares concretos, donde se puede dejar el Tag: nunca una habitación entera, que es ambigua (2.28). */
-internal val commonPlaces = listOf(
-  "En el velador", "En el escritorio", "En la mesa", "En el sillón", "Junto a la cama", "Junto a la tele", "En el mesón de la cocina", "Junto a la puerta",
-)
-
 private fun sameActivity(a: String, b: String): Boolean = plain(a).trim() == plain(b).trim()
 
 /** Todos los relevos conocidos: ideas y pasos de las rutas, como (actividad, primer paso, lugar). */
@@ -214,15 +208,15 @@ internal val ideasByFamily: List<Pair<Sky, List<ActivityIdea>>> =
 internal fun photoKey(source: String, name: String) = "$source:${name.trim().lowercase(spanish)}"
 
 /**
- * Une el primer paso y el lugar en una frase (D-084): «Empieza por ponerte las zapatillas, junto a
- * la puerta.». Reemplaza los rótulos «Empiezas» y «Lugar», que se entendían mal. Sin datos, null.
+ * La línea de cuando suena, con el rótulo fijo de la app (R1 del estudio de los textos): «Para empezar:
+ * abrir el libro, en el velador.». Sin datos, null.
  */
-internal fun startSentence(firstStep: String, place: String): String? {
-  val first = firstStep.trim().trimEnd('.')
+internal fun startLine(firstStep: String, place: String): String? {
+  val first = firstStep.trim().trimEnd('.').replaceFirstChar { it.lowercase(spanish) }
   val where = place.trim().trimEnd('.').takeIf { it.isNotEmpty() }?.let(::placePhrase)
   return when {
-    first.isNotEmpty() && where != null -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}, $where."
-    first.isNotEmpty() -> "Empieza por ${first.replaceFirstChar { it.lowercase(spanish) }}."
+    first.isNotEmpty() && where != null -> "Para empezar: $first, $where."
+    first.isNotEmpty() -> "Para empezar: $first."
     where != null -> "Empieza $where."
     else -> null
   }
@@ -256,14 +250,17 @@ internal fun requestNotificationPermission(context: Context) {
   }
 }
 
-/** Hay un parlante Bluetooth multimedia conectado. No prueba que suene: para eso está «Probar el sonido». */
-internal fun bluetoothSpeakerConnected(context: Context): Boolean =
+/**
+ * Hay un dispositivo de audio Bluetooth conectado, como un parlante o unos audífonos. No prueba que suene:
+ * para eso está «Probar el sonido».
+ */
+internal fun audioDeviceConnected(context: Context): Boolean =
   context.getSystemService(AudioManager::class.java)?.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
-    ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER } == true
+    ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER || it.type == AudioDeviceInfo.TYPE_BLE_HEADSET } == true
 
+/** El nombre de cada salida. Como opción de «¿Dónde suena?», el teléfono se llama «Notificaciones» ([routeLabel]). */
 internal fun routeName(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "Dispositivo de audio"
-  SignalRoute.WATCH -> "Reloj"
   SignalRoute.TAG -> "Tag"
   SignalRoute.PHONE -> "Teléfono"
 }
@@ -283,28 +280,20 @@ internal fun routeWhere(route: SignalRoute): String = when (route) {
 
 internal fun routeIcon(route: SignalRoute): KitIcon = when (route) {
   SignalRoute.BLUETOOTH -> KitIcon.PARLANTE
-  SignalRoute.WATCH -> KitIcon.TIEMPO
   SignalRoute.TAG -> KitIcon.OBJETO
   SignalRoute.PHONE -> KitIcon.AVISOS
 }
 
 internal fun routeFailure(route: SignalRoute): String = when (route) {
   SignalRoute.BLUETOOTH -> "No sonó en el dispositivo de audio. Revisa que esté encendido y conectado."
-  SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado y con las llamadas por Bluetooth activadas."
   SignalRoute.TAG -> "No sonó en el Tag. Revisa que esté encendido y cerca del teléfono."
   SignalRoute.PHONE -> "No sonó en tu teléfono. Revisa el volumen."
 }
-
-/** Hay un reloj u otro equipo conectado que puede recibir audio de llamada (D-093). */
-internal fun callDeviceConnected(context: Context): Boolean =
-  context.getSystemService(AudioManager::class.java)?.availableCommunicationDevices
-    ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_SCO || it.type == AudioDeviceInfo.TYPE_BLE_HEADSET } == true
 
 internal fun syncStatusText(status: SyncStatus): String = buildString {
   append(if (status.pending == 0) "Todo está enviado." else "Algunos datos se enviarán cuando haya internet.")
   if (status.lastSuccessAt > 0L) append(" Último envío: ${formatMoment(status.lastSuccessAt)}.")
   if (status.rejected > 0) append(" ${status.rejected} no se aceptaron y quedan en el teléfono.")
-  status.lastError?.let { append(" Detalle técnico: $it") }
 }
 
 internal fun backupStatusText(status: SyncStatus): String =
@@ -333,10 +322,13 @@ internal fun outcomeIcon(outcome: String): KitIcon = when (outcome) {
   else -> KitIcon.HISTORIAL
 }
 
-/** Reconocimiento breve tras la respuesta (B5). Las tres pesan lo mismo; omitir no recibe mensaje. */
+/**
+ * Unas palabras tras la respuesta (B5). Las tres pesan lo mismo; saltar no recibe mensaje. «Contar» queda
+ * solo para el tiempo (R3).
+ */
 internal fun acknowledgementFor(outcome: String): String? = when (outcome) {
-  "started" -> "Gracias por contarlo."
-  "later" -> "Queda guardado. Puedes prepararlo cuando quieras."
+  "started" -> "Queda anotado. Gracias por decirlo."
+  "later" -> "Queda anotado. Puedes prepararlo cuando quieras."
   "changed" -> "Está bien. Puedes elegir otra actividad cuando quieras."
   else -> null
 }
@@ -359,37 +351,10 @@ internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate
  */
 internal fun soundPlace(reminder: Reminder): String = routeLabel(reminder.signalRoute) + when {
   reminder.signalRoute == SignalRoute.PHONE -> ""
-  reminder.studyCondition == StudyCondition.NEUTRAL.code.toString() -> ", en otro lugar de la casa"
   else -> ", donde empiezas"
 }
 
-/** Dónde sonará, en una frase: «en el reloj, en el velador» o «en el teléfono». Se usa en Inicio y en el relevo activo. */
+/** Dónde sonará, en una frase: «en el Tag, en el velador» o «en el teléfono». */
 internal fun soundWhere(reminder: Reminder): String =
   if (reminder.signalRoute == SignalRoute.PHONE) routeWhere(SignalRoute.PHONE)
   else routeWhere(reminder.signalRoute) + ", " + placePhrase(reminder.place)
-
-/** Nombre de la condición para la persona, en palabras de todos los días (D-084). */
-internal fun conditionName(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Suena donde empiezas"
-  StudyCondition.NEUTRAL -> "Suena en otro lugar"
-  StudyCondition.PHONE -> "Suena en tu teléfono"
-}
-
-/** Lo que la app pide al comenzar cada semana, con las palabras del protocolo 02. */
-internal fun conditionInstruction(condition: StudyCondition): String = when (condition) {
-  StudyCondition.SITUATED -> "Esta semana deja el parlante, el reloj o el Tag junto a lo que usas para empezar."
-  StudyCondition.NEUTRAL -> "Esta semana déjalo en otro lugar de tu casa, que no tenga que ver con la actividad."
-  StudyCondition.PHONE -> "Esta semana suena en tu teléfono."
-}
-
-internal fun conditionDetail(condition: StudyCondition): String? = when (condition) {
-  StudyCondition.NEUTRAL -> "Un lugar visible, a más de un metro de lo que necesitas para empezar y fuera de tu camino."
-  StudyCondition.PHONE -> "No necesitas el parlante, el reloj ni el Tag: puedes apagar el Tag manteniendo apretado su centro 3 segundos. La notificación solo dirá «Es momento de volver a elegir»."
-  StudyCondition.SITUATED -> null
-}
-
-internal fun conditionIcon(condition: StudyCondition): KitIcon = when (condition) {
-  StudyCondition.SITUATED -> KitIcon.LUGAR
-  StudyCondition.NEUTRAL -> KitIcon.PARLANTE
-  StudyCondition.PHONE -> KitIcon.TELEFONO
-}

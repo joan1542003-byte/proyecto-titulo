@@ -1,49 +1,27 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.InlineTextContent
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.text.Placeholder
-import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.foundation.text.appendInlineContent
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.Dp
@@ -76,28 +54,6 @@ fun GlassCard(modifier: Modifier = Modifier, padding: Dp = 18.dp, content: @Comp
     verticalArrangement = Arrangement.spacedBy(9.dp),
     content = content,
   )
-}
-
-/**
- * El Tag, dibujado plano (4.1, D-156): un disco blanco con su contorno, el botón al centro y el orificio del
- * llavero. Sin brillos ni sombras que imiten volumen: la interfaz no usa efectos 3D. Cuando suena, el sonido
- * se dibuja en anillos de tinta que se abren; no hay luz, porque el Tag no se ilumina.
- */
-@Composable
-fun TagObject(modifier: Modifier = Modifier, size: Dp = 96.dp, sounding: Boolean = false) {
-  val line = Relevo.colors.line
-  Box(modifier.size(size), contentAlignment = Alignment.Center) {
-    if (sounding) SoundRings(Modifier.size(size), color = Ink)
-    Canvas(Modifier.size(size)) {
-      val r = this.size.minDimension / 2
-      val c = Offset(r, r)
-      val stroke = 1.5.dp.toPx()
-      drawCircle(Color.White, radius = r, center = c)
-      drawCircle(line, radius = r - stroke / 2, center = c, style = Stroke(stroke))
-      drawCircle(Ink.copy(alpha = .16f), radius = r * .36f, center = c, style = Stroke(stroke))
-      drawCircle(Ink.copy(alpha = .22f), radius = r * .09f, center = Offset(r, r * .24f), style = Stroke(stroke * .8f))
-    }
-  }
 }
 
 /** Disco blanco y plano con el ícono de lo que suena (parlante, reloj, teléfono), del tamaño del Tag. */

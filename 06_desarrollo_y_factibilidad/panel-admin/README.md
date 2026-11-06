@@ -121,7 +121,7 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - **Semanas anteriores:** las escalas `semanas_previas_*` se leen «Semanas anteriores: …».
 - **Tras cada relevo:** `percepcion_senal` se lee «Notó el aviso (enseguida, un rato después o no)».
 - **Día 7 y cierre:** `semana1_comparacion`, `cierre_por_que_ayudo` y `cierre_prefiere_que_suene` se muestran con palabras.
-- **Versión de referencia:** el aviso de versión compara contra la 2.33.
+- **Versión de referencia:** el aviso de versión compara contra la 4.4, la más nueva desde el 5 de noviembre de 2026, y dice «la más nueva es la 4.4». Las salidas se nombran como en la app: Tag, notificación en el teléfono y dispositivo de audio; el reloj, hasta la 3.3.
 
 ## Desde la app 2.32
 
@@ -135,6 +135,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - **Versión de referencia:** el aviso de versión compara contra la 2.31.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Android 4.4
+
+- **Qué cambió:** el panel compara contra la 4.4 y nombra las salidas como la app.
+- **Cómo estaba antes:** comparaba contra la 2.33 y hablaba de parlante y reloj.
+- **Por qué:** la 4.4 es la versión actualizable (D-159).
 
 ### 2026-10-20 — Android 2.33
 

@@ -46,9 +46,6 @@ class TagStore(context: Context) {
   /** La última carga de pila que informó el Tag, en porcentaje, o null si nunca la informó (2.31). */
   val battery: Int? get() = preferences.getInt("battery", -1).takeIf { it in 0..100 }
 
-  /** Cuándo la informó, en milisegundos, o 0. */
-  val batteryAt: Long get() = preferences.getLong("battery_at", 0L)
-
   fun saveBattery(percent: Int) {
     preferences.edit().putInt("battery", percent).putLong("battery_at", System.currentTimeMillis()).apply()
   }

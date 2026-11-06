@@ -48,7 +48,6 @@ import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.Profile
 import com.example.relevo.data.Settings
 import com.example.relevo.domain.Reminder
-import com.example.relevo.domain.ReminderStatus
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.ActivityRing
@@ -96,20 +95,22 @@ internal class HomeActions(
   val onUsageSettings: () -> Unit,
   val onBackground: () -> Unit,
   val onDismissAcknowledgement: () -> Unit,
-  val onDismissInstruction: (Int) -> Unit,
-  val onWeekReview: () -> Unit,
-  val onClosing: () -> Unit,
   val onDismissReturn: (Long) -> Unit,
+  /** Lo que quedó para después (4.4): activarlo con un toque u ocultarlo. */
+  val onLaterActivate: () -> Unit,
+  val onLaterDismiss: () -> Unit,
+  /** La pregunta del tiempo tras 3 veces que sonó (4.4): true para cambiarlo. */
+  val onLimitReview: (Boolean) -> Unit,
+  val onProfileSetup: () -> Unit,
 )
-
-internal const val ACTIVE_PHOTO = "activo"
 
 /** Aviso de batería: qué hacer y para qué, en una frase. */
 internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen días."
 
 /**
- * Inicio de la 4.0 (D-155), de arriba abajo: la fecha y el saludo; lo de la prueba si toca; lo más
- * próximo (el relevo que cuenta, el regreso tras unos días o «Preparar un relevo» con el paso sugerido);
+ * Inicio de la 4.0 (D-155), de arriba abajo: la fecha y el saludo; lo que pide una respuesta (el perfil o
+ * el tiempo, desde la 4.4); lo más próximo (el relevo que cuenta, lo que quedó para después, el regreso tras
+ * unos días o «Preparar un relevo» con el paso sugerido);
  * un resumen de la semana que solo cuenta hechos, y tus actividades en anillos, a un toque. Sin campana
  * ni ajustes: esos viven en Perfil. Desde 4.2 (D-157), lo más próximo va en una tarjeta con el color de su
  * actividad ([ActivityHero]) y la opinión rápida, debajo de ella.
@@ -121,7 +122,6 @@ internal fun HomeTab(
   history: List<HistoryEntry>,
   customActivities: List<CustomActivity>,
   lastReminder: Reminder?,
-  study: StudyState,
   usageAccess: Boolean,
   backgroundUnrestricted: Boolean,
   profile: Profile,
@@ -138,6 +138,10 @@ internal fun HomeTab(
   onFeedback: () -> Unit = {},
   autoMode: Boolean = false,
   onAutoModeOff: () -> Unit = {},
+  laterPending: Boolean = false,
+  limitReviewDue: Boolean = false,
+  quiet: Boolean = false,
+  quietUntil: Int = 8,
 ) {
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
@@ -149,8 +153,10 @@ internal fun HomeTab(
   val daysSinceLast = last?.let {
     ChronoUnit.DAYS.between(Instant.ofEpochMilli(it.completedAt).atZone(ZoneId.systemDefault()).toLocalDate(), LocalDate.now())
   } ?: 0L
+  // 4.4: «La dejé para después» con «Dejarla lista» deja el relevo a un toque.
+  val later = laterPending && !active && lastReminder != null
   // V1: dos días o más después del último relevo; no dice cuántos pasaron ni sugiere una falta.
-  val returning = !active && last != null && daysSinceLast >= 2 && returnDismissedFor != last.completedAt
+  val returning = !active && !later && last != null && daysSinceLast >= 2 && returnDismissedFor != last.completedAt
   val name = profile.name.trim()
   val greeting = when {
     returning && name.isNotEmpty() -> "Hola de nuevo, $name"
@@ -159,9 +165,23 @@ internal fun HomeTab(
     else -> "Hola"
   }
   val nextTrack = routes.firstOrNull { it.currentStep != null }
+  // 4.4: el perfil se pide después del primer relevo, no antes.
+  val profileDue = !profile.setupSeen && (history.isNotEmpty() || active)
 
   RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", scrollState = scroll) {
-    StudyCards(study, actions.onDismissInstruction, actions.onWeekReview, actions.onClosing, firstRelevoDone = history.isNotEmpty())
+    if (profileDue) {
+      Notice("El nombre y lo que te gustaría hacer más seguido. Toma un minuto.", title = "Completa el perfil", icon = KitIcon.PERFIL) {
+        PlainAction("Completar", actions.onProfileSetup)
+      }
+      Spacer(Modifier.height(Gap.block))
+    }
+    if (limitReviewDue && !active) {
+      Notice("Ya sonó 3 veces. Si al sonar ya llevas mucho rato en una app, prueba con menos tiempo.", title = "¿El tiempo queda bien?", icon = KitIcon.TIEMPO) {
+        PlainAction("Cambiar el tiempo", { actions.onLimitReview(true) })
+        PlainAction("Está bien así", { actions.onLimitReview(false) }, color = Relevo.colors.graphite)
+      }
+      Spacer(Modifier.height(Gap.block))
+    }
     // D-095: con la activación automática, Inicio recuerda qué se activará y cómo apagarla.
     if (autoMode && !active && lastReminder != null) {
       Notice(
@@ -174,7 +194,11 @@ internal fun HomeTab(
     Column(Modifier.appear(0)) {
       when {
         active -> {
-          ActiveCard(counting.first(), usageAccess, customActivities) { actions.onOpenActive(counting.first().sessionId) }
+          ActiveCard(counting.first(), usageAccess && !quiet, customActivities) { actions.onOpenActive(counting.first().sessionId) }
+          if (quiet) {
+            Spacer(Modifier.height(Gap.list))
+            Text("Horas sin sonar: vuelve a contar a las $quietUntil:00", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+          }
           if (counting.size > 1) {
             Spacer(Modifier.height(Gap.list))
             ListSection(dividerInset = 70.dp) {
@@ -202,7 +226,8 @@ internal fun HomeTab(
             }
           }
         }
-        returning && last != null -> ReturnCard(last, lastReminder, customActivities, actions)
+        later -> LaterCard(lastReminder, customActivities, actions)
+        returning -> ReturnCard(last, lastReminder, customActivities, actions)
         else -> PrepareBlock(nextTrack, lastReminder, customActivities, actions)
       }
     }
@@ -234,7 +259,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
       ActivityHero(
         activityIcon(step.activity, customActivities), step.activity,
         eyebrow = "Siguiente paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
-        detail = startSentence(step.firstStep, step.place),
+        detail = startLine(step.firstStep, step.place),
       ) {
         Spacer(Modifier.height(16.dp))
         RelevoButton("Preparar un relevo", { actions.onRouteStep(nextTrack.interest, step.id, key) }, icon = KitIcon.AGREGAR)
@@ -256,7 +281,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
       val key = photoKey("ultima", lastReminder.activity)
       ActivityHero(
         activityIcon(lastReminder.activity, customActivities), lastReminder.activity,
-        eyebrow = "Último relevo", detail = startSentence(lastReminder.howToStart, lastReminder.place),
+        eyebrow = "Último relevo", detail = startLine(lastReminder.howToStart, lastReminder.place),
       ) {
         Spacer(Modifier.height(16.dp))
         RelevoButton("Preparar de nuevo", { actions.onRepeat(key) }, icon = KitIcon.REINTENTAR)
@@ -426,12 +451,12 @@ private fun AcknowledgementToast(text: String?, changedRouteInterest: String?, o
  * cuánto falta. Tocarla abre el relevo.
  */
 @Composable
-private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivities: List<CustomActivity>, onOpen: () -> Unit) {
+private fun ActiveCard(reminder: Reminder, counting: Boolean, customActivities: List<CustomActivity>, onOpen: () -> Unit) {
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   val remaining = (reminder.requiredUsageSeconds - reminder.observedUsageSeconds).coerceAtLeast(0)
   ActivityHero(
     activityIcon(reminder.activity, customActivities), reminder.activity,
-    eyebrow = if (usageAccess) "Contando" else "En pausa", detail = "Suena " + soundWhere(reminder),
+    eyebrow = if (counting) "Contando" else "En pausa", detail = "Suena " + soundWhere(reminder),
     onClick = onOpen, clickLabel = "Ver el relevo",
   ) {
     Spacer(Modifier.height(16.dp))
@@ -450,7 +475,7 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
  * Cierra la guía del primer relevo.
  */
 @Composable
-internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
+internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit, onProfile: (() -> Unit)? = null) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
     Text("El relevo está contando", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))
@@ -459,7 +484,32 @@ internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     Spacer(Modifier.height(22.dp))
-    RelevoButton("Entendido", onDismiss)
+    if (onProfile != null) {
+      // 4.4: el perfil se pide aquí, después del primer relevo, y no antes.
+      Text("Mientras tanto, puedes completar el perfil: el nombre y lo que te gustaría hacer más seguido.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+      Spacer(Modifier.height(14.dp))
+      RelevoButton("Completar el perfil", onProfile)
+      Spacer(Modifier.height(10.dp))
+      RelevoButton("Más tarde", onDismiss, kind = ButtonKind.Secondary)
+    } else {
+      RelevoButton("Entendido", onDismiss)
+    }
+  }
+}
+
+/**
+ * Lo que quedó para después (4.4, desde la 1.0.0): la persona respondió «La dejé para después» y pidió
+ * dejarlo listo. Se activa con un toque, tal como estaba; no suena solo. «Ahora no» lo oculta.
+ */
+@Composable
+private fun LaterCard(lastReminder: Reminder, customActivities: List<CustomActivity>, actions: HomeActions) {
+  ActivityHero(
+    activityIcon(lastReminder.activity, customActivities), lastReminder.activity, eyebrow = "Para después",
+    detail = "${formatDuration(lastReminder.requiredUsageSeconds)} en ${lastReminder.selectedApps.joinToString(" y ") { it.label }} · suena ${soundWhere(lastReminder)}",
+  ) {
+    Spacer(Modifier.height(16.dp))
+    RelevoButton("Activar ahora", actions.onLaterActivate)
+    Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { PlainAction("Ahora no", actions.onLaterDismiss, color = Relevo.colors.graphite) }
   }
 }
 
@@ -490,6 +540,8 @@ internal fun ActiveScreen(
   usageAccess: Boolean,
   backgroundUnrestricted: Boolean,
   @Suppress("UNUSED_PARAMETER") photoKey: String?,
+  quiet: Boolean = false,
+  quietUntil: Int = 8,
   onBack: () -> Unit,
   onDisarm: () -> Unit,
   onUsageSettings: () -> Unit,
@@ -505,7 +557,7 @@ internal fun ActiveScreen(
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   RelevoScreen(
     onBack = onBack, backLabel = "Inicio", barTitle = null,
-    trailing = { Chip(if (usageAccess) "Contando" else "En pausa", background = colors.mist) },
+    trailing = { Chip(if (usageAccess && !quiet) "Contando" else "En pausa", background = colors.mist) },
     bottom = { RelevoButton("Cambiar o desactivar", { options = true }, kind = ButtonKind.Secondary) },
   ) {
     Column(Modifier.fillMaxWidth().padding(top = 28.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -525,6 +577,10 @@ internal fun ActiveScreen(
       if (reminder.autoActivated) {
         Spacer(Modifier.height(14.dp))
         Text("Se activó solo.", style = Relevo.type.footnote, color = colors.graphite)
+      }
+      if (quiet) {
+        Spacer(Modifier.height(14.dp))
+        Text("Horas sin sonar: vuelve a contar a las $quietUntil:00", style = Relevo.type.subhead, color = colors.graphite, textAlign = TextAlign.Center)
       }
     }
     if (!usageAccess) {

@@ -52,24 +52,20 @@ class AutoModeTest {
   }
 
   @Test
-  fun armsTheLastRelevoWithTodaysConditionAndMarksItAsAutomatic() {
-    val armed = AutoMode.fromLast(last, participantCode = "K4MX", condition = StudyCondition.PHONE, studyDay = 9, sessionId = "s-1")
+  fun armsTheLastRelevoAndMarksItAsAutomatic() {
+    val armed = AutoMode.fromLast(last, participantCode = "K4MX", sessionId = "s-1")
     assertEquals(ReminderStatus.WAITING, armed.status)
     assertTrue(armed.autoActivated)
     assertEquals("s-1", armed.sessionId)
     assertEquals("K4MX", armed.participantCode)
-    assertEquals(SignalRoute.PHONE, armed.signalRoute)
-    assertEquals(StudyCondition.PHONE.code.toString(), armed.studyCondition)
-    assertEquals(9, armed.studyDay)
     assertEquals(0, armed.observedUsageSeconds)
     assertEquals(last.activity, armed.activity)
   }
 
   @Test
-  fun outsideTheTestKeepsTheLastRoute() {
-    val armed = AutoMode.fromLast(last, participantCode = "K4MX", condition = null, studyDay = -1, sessionId = "s-2")
+  fun keepsTheRouteOfTheLastRelevo() {
+    val armed = AutoMode.fromLast(last, participantCode = "K4MX", sessionId = "s-2")
     assertEquals(SignalRoute.BLUETOOTH, armed.signalRoute)
-    assertEquals("", armed.studyCondition)
-    assertEquals(-1, armed.studyDay)
+    assertFalse(armed.soundedOnPhone)
   }
 }

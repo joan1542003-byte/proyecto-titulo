@@ -47,7 +47,6 @@ object TagProtocol {
   val USER_DESCRIPTION: UUID = uuid16(0x2901)
 
   const val ALERT_OFF: Byte = 0x00
-  const val ALERT_HIGH: Byte = 0x02
 
   /**
    * Niveles de alerta que la prueba recorre, en orden, hasta que la persona escucha el pitido: medio y alto.

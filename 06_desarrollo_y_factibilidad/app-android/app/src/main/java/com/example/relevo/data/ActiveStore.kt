@@ -3,7 +3,6 @@ package com.example.relevo.data
 import android.content.Context
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.ReminderStatus
-import com.example.relevo.domain.SignalRoute
 import com.example.relevo.domain.TrackedApp
 import org.json.JSONArray
 import org.json.JSONObject
@@ -59,7 +58,7 @@ class ActiveStore(context: Context) {
       val current = store.load()
       if (current.status != ReminderStatus.WAITING || current.sessionId.isBlank()) return
       ActiveStore(context).add(current)
-      store.save(Reminder(participantCode = current.participantCode, consentAccepted = current.consentAccepted, localOnly = current.localOnly))
+      store.save(Reminder(participantCode = current.participantCode, consentAccepted = current.consentAccepted))
     }
   }
 }
@@ -72,8 +71,9 @@ internal fun Reminder.toJson(): JSONObject = JSONObject()
   .put("session_id", sessionId).put("status", status.name).put("signal_delivered", signalDelivered)
   .put("signal_route", signalRoute.name)
   .put("target_apps", JSONArray().apply { targetApps.forEach { put(JSONObject().put("package", it.packageName).put("label", it.label)) } })
-  .put("study_condition", studyCondition).put("route_chosen", routeChosen).put("study_day", studyDay)
-  .put("signal_at", signalAt).put("signal_ended", signalEnded).put("local_only", localOnly).put("auto_activated", autoActivated)
+  .put("route_chosen", routeChosen)
+  .put("signal_at", signalAt).put("signal_ended", signalEnded).put("auto_activated", autoActivated)
+  .put("sounded_on_phone", soundedOnPhone)
 
 internal fun reminderFromJson(o: JSONObject): Reminder = Reminder(
   activity = o.optString("activity"), howToStart = o.optString("how_to_start"), place = o.optString("place"),
@@ -83,9 +83,9 @@ internal fun reminderFromJson(o: JSONObject): Reminder = Reminder(
   sessionId = o.optString("session_id"),
   status = runCatching { ReminderStatus.valueOf(o.optString("status")) }.getOrDefault(ReminderStatus.WAITING),
   signalDelivered = o.optBoolean("signal_delivered"),
-  signalRoute = runCatching { SignalRoute.valueOf(o.optString("signal_route")) }.getOrDefault(SignalRoute.BLUETOOTH),
+  signalRoute = signalRouteOf(o.optString("signal_route")),
   targetApps = o.optJSONArray("target_apps")?.let { array -> List(array.length()) { array.getJSONObject(it).let { app -> TrackedApp(app.getString("package"), app.getString("label")) } } }.orEmpty(),
-  studyCondition = o.optString("study_condition"), routeChosen = o.optBoolean("route_chosen", true), studyDay = o.optInt("study_day", -1),
-  signalAt = o.optLong("signal_at"), signalEnded = o.optBoolean("signal_ended"), localOnly = o.optBoolean("local_only"),
-  autoActivated = o.optBoolean("auto_activated"),
+  routeChosen = o.optBoolean("route_chosen", true),
+  signalAt = o.optLong("signal_at"), signalEnded = o.optBoolean("signal_ended"),
+  autoActivated = o.optBoolean("auto_activated"), soundedOnPhone = o.optBoolean("sounded_on_phone"),
 )

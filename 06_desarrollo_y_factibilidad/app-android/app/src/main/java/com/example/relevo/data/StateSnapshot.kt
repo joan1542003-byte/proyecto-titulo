@@ -11,20 +11,18 @@ import com.example.relevo.monitor.UsageAccess
 import com.example.relevo.signal.TagLink
 import org.json.JSONArray
 import org.json.JSONObject
-import java.time.LocalDate
 
 /**
  * Todo lo que el teléfono sabe de la persona, en un solo registro para el panel (D-097): perfil sin el
  * nombre (que va aparte, D-089), ruta, actividades propias, ajustes, activación automática, permisos,
- * equipo, último relevo, relevo en curso, prueba y apps elegidas alguna vez.
+ * equipo, último relevo, relevo en curso y apps elegidas alguna vez. Desde 1.0.0 no hay prueba de 21
+ * días: la clave «prueba» queda vacía, para que el panel lea igual los registros nuevos y los antiguos.
  */
 object StateSnapshot {
   fun build(context: Context, log: ResearchLogStore): JSONObject {
     val app = context.applicationContext
     val profile = ProfileStore(app).load()
     val settings = SettingsStore(app).load()
-    val plan = StudyStore(app).plan()
-    val today = LocalDate.now()
     return JSONObject()
       .put("perfil", JSONObject().put("imagen", profile.image).put("intereses", JSONArray(profile.interests)).put("otro_interes", profile.otherInterest))
       .put("ruta", JSONArray().apply {
@@ -40,7 +38,9 @@ object StateSnapshot {
       .put("ajustes", JSONObject()
         .put("tema", settings.theme.name.lowercase()).put("texto_grande", settings.largeText).put("resumen_semanal", settings.weeklySummary)
         .put("aviso_semanal", settings.returnNotice).put("mensaje_despues_de_responder", settings.acknowledgements)
-        .put("veces_por_semana", settings.constancy).put("activacion_automatica", AutoModeStore(app).enabled))
+        .put("veces_por_semana", settings.constancy).put("activacion_automatica", AutoModeStore(app).enabled)
+        .put("horas_sin_sonar", if (settings.quietHours) "${settings.quietFrom}-${settings.quietUntil}" else JSONObject.NULL)
+        .put("volumen", settings.volume.name.lowercase()))
       .put("permisos", JSONObject()
         .put("tiempo_de_uso", UsageAccess.isGranted(app))
         .put("notificaciones", NotificationManagerCompat.from(app).areNotificationsEnabled())
@@ -51,8 +51,7 @@ object StateSnapshot {
         .put("llavero_vinculado", TagStore(app).linked))
       .put("ultimo_relevo", reminderJson(ReminderStore(app, ReminderStore.LAST_CONFIGURATION).load()))
       .put("relevo_actual", reminderJson(ReminderStore(app).load()))
-      .put("prueba", if (plan == null) JSONObject.NULL else JSONObject().put("secuencia", plan.sequence).put("dia0", plan.day0.toString())
-        .put("dia", plan.day(today)).put("condicion", plan.condition(today)?.code?.toString() ?: JSONObject.NULL))
+      .put("prueba", JSONObject.NULL)
       .put("apps_elegidas", JSONArray().apply { selectedApps(app, log).forEach { (pkg, label) -> put(JSONObject().put("paquete", pkg).put("nombre", label)) } })
   }
 

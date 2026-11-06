@@ -2110,7 +2110,55 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:** las sugerencias dependen del catastro, que debe crecer cuando aparezcan actividades nuevas. Si se cumplen dos relevos seguidos, suenan por turno. El sonido elegido queda en el registro de la investigación y debe leerse junto a los datos de la señal. Los cuatro sonidos no se han escuchado en una casa.
 - **Documentos:** [Android 4.3](../06_desarrollo_y_factibilidad/app-android/version-4.3-sugerencias-relevos-y-sonido-2026-11-05.md) y [El sonido de Relevo](../06_desarrollo_y_factibilidad/app-android/sonido-de-relevo-2026-11-05.md).
 
+## D-159 — Android 4.4: la 4.3 del autor, actualizable, con lo relevante de la 1.0.0
+
+- **Fecha:** 2026-11-05.
+- **Estado:** hecha en la rama `android-4.4` (4.4, `versionCode` 55). Compila y pasan 90 pruebas unitarias. Se probó en el emulador sobre los datos del autor y simulando a quien viene de la 3.3. Falta probarla en un teléfono real y con un Tag real.
+- **Contexto:**
+  - El 4 de noviembre se hizo la 1.0.0 en una rama local, `android-1.0.0`. Quitaba la prueba de 21 días, acortaba la primera vez y sumaba lo que pidió la revisión del 28 de octubre y las mejoras de la Tabla 4. Sus decisiones se numeraron D-153 y D-154, que en `main` ya eran de la memoria.
+  - El 5 de noviembre, en su Mac, el autor hizo el rediseño 4.0 a 4.3 (D-155 a D-158) a partir de la 3.3, sin la 1.0.0.
+  - El APK de la 4.3 se instalaba aparte, con otra firma y sin la dirección de Supabase.
+  - El autor indicó que la 4.3 es la buena, que sus cambios tienen prioridad y que lo relevante de la 1.0.0 debía sumarse a ella, para que fuera la versión actualizable.
+- **Decisión:**
+  - **Base:** el código de la 4.3. Donde la 4.3 y la 1.0.0 resolvieron lo mismo de forma distinta, manda la 4.3: diseño, pantallas y textos.
+  - **Desde la 1.0.0:**
+    - sin la prueba de 21 días, con el consentimiento v14 (D-160);
+    - la primera vez en tres pantallas, con el perfil después del primer relevo;
+    - el Tag buscado a 90 segundos del final y el teléfono si no responde;
+    - «¿No tienes un Tag?»;
+    - las horas sin sonar, el volumen, «Dejarla lista» y la revisión del tiempo tras 3 sonidos;
+    - un límite breve al empezar, sin «Probar con 15 segundos»;
+    - la guía del Tag sin dibujos;
+    - sin el reloj ni su permiso.
+  - **Con los varios relevos de la 4.3:** las horas sin sonar detienen todos los relevos. La búsqueda del Tag se hace por relevo. Un relevo que se cumple durante las horas sin sonar espera a que terminen.
+  - **APK:** paquete `cl.udp.relevo`, `versionCode` 55 y la clave de firma de siempre, con Supabase configurado. La 4.3 de revisión queda como antecedente.
+  - **Números:** el contenido de D-153 y D-154 de la rama local queda en D-159 y D-160. Esa rama se conserva sin subir.
+- **Alternativas descartadas:**
+  - **Fusionar `android-1.0.0` en la 4.3:** chocaba en 25 archivos de código, y en las pantallas habría impuesto el diseño de la 1.0.0.
+  - **Recompilar la 4.3 sin cambios:** era actualizable, pero seguía con la prueba de 21 días y sin lo que pidió la revisión.
+  - **Llamarla 4.3:** el APK de revisión de la 4.3 ya existe con `versionCode` 54. Una versión distinta con el mismo nombre confundiría la trazabilidad.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md).
+
+## D-160 — En la 4.4, el consentimiento pasa a la v14, sin la prueba, y los datos se siguen registrando igual
+
+- **Fecha:** 2026-11-05. Es la decisión que en la rama local `android-1.0.0` se numeró D-154 el 4 de noviembre.
+- **Estado:** hecha en la 4.4. Pendiente de revisión docente, como las versiones anteriores del consentimiento.
+- **Contexto:** el consentimiento v13 describía la prueba de 21 días. El autor decidió el 4 de noviembre que los datos se sigan recibiendo igual y que quien ya estaba registrado los conserve intactos.
+- **Decisión:**
+  - **Texto:** versión `2026-11-04-v14`. Dice lo mismo sobre qué se guarda, dónde, qué no se ve, los mensajes, el código y el plazo —se borra a más tardar el 30 de diciembre de 2026—, sin la prueba de 21 días y en listas.
+  - **Quien aceptó la v13:** ve «Relevo cambió», conserva su código y sus datos, y los relevos que contaban siguen contando después de aceptar.
+  - **Si no acepta:** Relevo deja de contar, y sus datos anteriores siguen guardados hasta que pida borrarlos o hasta el plazo.
+  - **Los datos:** son los mismos, en las mismas tablas de Supabase. Los relevos nuevos dejan vacías las columnas de la prueba.
+- **Alternativas descartadas:** conservar la v13, que describe semanas e instrucciones que ya no existen; dejar de enviar datos, porque el autor decidió seguir registrándolos.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md) y `FirstRunScreens.kt`.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-159 y D-160
+
+- **Qué cambió:** se registraron D-159 y D-160. El contenido de D-153 y D-154 de la rama local `android-1.0.0`, que nunca se subió, queda con estos números.
+- **Cómo estaba antes:** la última decisión era D-158.
+- **Por qué:** el autor pidió que la 4.3 fuera la versión actualizable, con lo relevante de la 1.0.0.
 
 ### 2026-11-05 — D-158
 

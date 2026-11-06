@@ -1,5 +1,7 @@
 # Entregables de Android
 
+La **versión actualizable** es la **4.4**, del 5 de noviembre de 2026: la 4.3 del autor, con lo relevante de la 1.0.0 y lista para instalarse encima de la app que ya tiene cada persona (D-159 y D-160; [detalle](../version-4.4-la-version-actualizable-2026-11-05.md)). [APK 4.4](relevo-android-4.4-2026-11-05.apk), 10,6 MB, `versionCode` 55, paquete `cl.udp.relevo`, firmada con el certificado de siempre (`fdbe6bbe…`): se instala encima de la 2.33, la 3.3 o la 1.0.0 sin perder datos. SHA-256: `57F21B32DA469B942A86C55FC230879AAC07E5B052385CD0116DC20F63D12A09`. Los APK de la 4.0 a la 4.3 que terminan en `-revision` son para revisar el diseño: se instalan aparte, como otra app, y no envían datos.
+
 La versión para el testeo es la **2.33**, compilada el 20 de octubre de 2026: la 2.32 con una semana para comparar con la señal en el teléfono y las preguntas para conocer la experiencia (D-138; [detalle](../version-2.33-semana-de-comparacion-2026-10-20.md)). Se instala encima de la 2.32 o la 2.31 sin perder datos. Versión optimizada, 87 pruebas unitarias; revisada en el emulador. La tiene la participante que pasó a la semana con el teléfono, que el 21 de octubre completó con ella dos relevos. SHA-256 del [APK 2.33](relevo-android-2.33-2026-10-20.apk): `0BE7CA0505542FD7E89F33EC92DC8A31FCE720A361A37BD948F902F8F6D0800A` (12,2 MB).
 
 La **2.32**, del 17 de octubre: la 2.31 sin cortes con la alarma del Tag encendida, con más paciencia con un Tag lento, una conexión rápida y la guía del botón (D-137; [detalle](../version-2.32-el-tag-no-se-corta-2026-10-17.md)). Se instala encima de la 2.31 sin perder datos. Versión optimizada, 86 pruebas unitarias; revisada en el emulador. En la prueba, el Tag sonó en sus seis ciclos; falta probarla después de horas sin uso, el caso que la originó. SHA-256 del [APK 2.32](relevo-android-2.32-2026-10-17.apk): `F5D4209327ACC55FBB8F3B3C686F5CCF1B17FFD0F4CE121D854052D337A42751` (12,1 MB).
@@ -82,6 +84,12 @@ El APK 2.10 salió de una compilación limpia y el código pasó 58 pruebas unit
 **Antecedente 2.6:** APK `8AA57837E74DC1B30711E9D52A1859365F0CAB6F702E811354C42831D1CEC3B3`; ZIP `85A573FA9A7F31B385B6680955093AA1434658D7223E22F373E404C10AEBB420`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Android 4.4
+
+- **Qué cambió:** se suma el APK 4.4, con su SHA-256, y se explica qué son los APK de revisión.
+- **Cómo estaba antes:** la versión más reciente descrita era la 2.33; los APK de revisión de la 4.x no se explicaban.
+- **Por qué:** el autor pidió que la 4.3 fuera la versión buena y actualizable (D-159).
 
 ### 2026-10-24 — Tabla completa y uso real
 

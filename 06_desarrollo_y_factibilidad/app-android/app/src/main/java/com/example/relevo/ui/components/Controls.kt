@@ -1,6 +1,5 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.expandVertically
@@ -17,9 +16,6 @@ import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -52,7 +48,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.BlurredEdgeTreatment
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathMeasure
@@ -274,18 +269,6 @@ fun SegmentedControl(
           Text(label, style = Relevo.type.subhead.copy(fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium), color = textColor, maxLines = 1)
         }
       }
-    }
-  }
-}
-
-/** Escala de 1 a 5 con sus extremos nombrados. */
-@Composable
-fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", high: String = "Mucho") {
-  Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-    SegmentedControl((1..5).map { it.toString() to it.toString() }, value?.toString(), { onChange(it?.toInt()) })
-    Row(Modifier.fillMaxWidth().padding(horizontal = 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-      Text("1 · $low", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-      Text("5 · $high", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     }
   }
 }

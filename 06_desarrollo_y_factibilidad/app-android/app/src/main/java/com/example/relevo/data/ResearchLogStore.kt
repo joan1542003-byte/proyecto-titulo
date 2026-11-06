@@ -215,11 +215,8 @@ class ResearchLogStore(context: Context) :
       put("target_apps", JSONArray().apply { reminder.selectedApps.forEach { app -> put(JSONObject().put("package", app.packageName).put("label", app.label)) } }.toString())
       put("threshold_seconds", reminder.requiredUsageSeconds); put("started_at", System.currentTimeMillis())
       put("consent_version", CONSENT_VERSION); put("synced", PENDING)
-      if (reminder.studyCondition.isNotBlank()) put("study_condition", reminder.studyCondition)
-      if (reminder.studyDay >= 0) put("study_day", reminder.studyDay)
       put("signal_route", when (reminder.signalRoute) {
         com.example.relevo.domain.SignalRoute.PHONE -> "phone"
-        com.example.relevo.domain.SignalRoute.WATCH -> "watch"
         com.example.relevo.domain.SignalRoute.TAG -> "tag"
         com.example.relevo.domain.SignalRoute.BLUETOOTH -> "bluetooth"
       })
@@ -406,8 +403,8 @@ class ResearchLogStore(context: Context) :
   private fun Cursor.stringOrNull(name: String) = getColumnIndexOrThrow(name).let { if (isNull(it)) null else getString(it) }
 
   companion object {
-    /** Consentimiento de la prueba de 21 días (protocolo 02). Cambiarlo pide aceptar de nuevo. */
-    const val CONSENT_VERSION = "2026-10-06-v13"
+    /** Versión del consentimiento (desde 1.0.0, sin la prueba de 21 días). Cambiarla pide aceptar de nuevo. */
+    const val CONSENT_VERSION = "2026-11-04-v14"
     const val PENDING = 0
     const val SYNCED = 1
     const val REJECTED = 2

@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.33';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.4';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -630,7 +630,7 @@ select json_build_object(
   ];
 
   const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
-  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj', tag: 'Tag' };
+  const ROUTES = { bluetooth: 'dispositivo de audio', phone: 'notificación en el teléfono', watch: 'reloj', tag: 'Tag' };
   const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas', deleted: 'Lo eliminó' };
   const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
   const FEELING = { good: '😄 Bien', neutral: '😐 Normal', bad: '😞 Mal' };
@@ -851,7 +851,7 @@ select json_build_object(
     if (perm.notificaciones === false) out.push({ text: 'Tiene las notificaciones apagadas: los mensajes no le llegan', tpl: null });
     if (perm.bateria_sin_restriccion === false) out.push({ text: 'La batería está con restricción', tpl: 'bateria' });
     if (p.contact && Date.now() - new Date(p.contact).getTime() > 24 * 3600e3) out.push({ text: 'No llegan datos desde ' + when(p.contact), tpl: 'sin_datos' });
-    if (p.version && !versionAtLeast(p.version, LATEST)) out.push({ text: 'Usa la app ' + p.version + '; usa la ' + LATEST + ' para el testeo', tpl: 'version' });
+    if (p.version && !versionAtLeast(p.version, LATEST)) out.push({ text: 'Usa la app ' + p.version + '; la más nueva es la ' + LATEST, tpl: 'version' });
     return out;
   }
 
@@ -1226,7 +1226,7 @@ select json_build_object(
       el('p', { class: 'note', text: 'Un cambio negativo significa que, después de la señal, usó menos sus apps elegidas.' }));
     const routeCount = (r) => S.filter((x) => x.signal_route === r).length;
     $('r-routes').replaceChildren(...[
-      ['En el parlante', routeCount('bluetooth')], ['En el reloj', routeCount('watch')], ['En el Tag', routeCount('tag')], ['En el teléfono', routeCount('phone')],
+      ['En el Tag', routeCount('tag')], ['En el teléfono (notificación)', routeCount('phone')], ['En un dispositivo de audio', routeCount('bluetooth')], ['En el reloj (hasta la 3.3)', routeCount('watch')],
       ['Se activó a mano', all.relevos - all.automaticos], ['Se activó solo', all.automaticos],
       ['La silenció en el teléfono', all.calladas], ['La calló tocando el Tag', all.calladas_objeto], ['Terminó sola a los 30 s', all.solas], ['Se cortó', all.cortadas]
     ].filter(([, n], i) => i >= 4 || n > 0).map(([k, n]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { class: 'num', text: String(n) })])));
@@ -1251,7 +1251,7 @@ select json_build_object(
     ['Relevos', 'threshold_seconds', 'Tiempo en las apps para que suene (segundos)'], ['Relevos', 'observed_seconds', 'Tiempo contado (segundos)'],
     ['Relevos', 'started_at', 'Cuándo se activó'], ['Relevos', 'signal_at', 'Cuándo sonó la señal (vacío: no sonó)'], ['Relevos', 'closed_at', 'Cuándo se cerró'],
     ['Relevos', 'study_condition', 'Condición de la semana: A junto al primer paso, B otro lugar, C teléfono'], ['Relevos', 'study_day', 'Día de la prueba (0 a 21)'],
-    ['Relevos', 'signal_route', 'Dónde sonó: bluetooth (parlante), watch (reloj), tag (Tag), phone (teléfono)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
+    ['Relevos', 'signal_route', 'Dónde sonó: tag (Tag), phone (notificación en el teléfono, también cuando el Tag no respondió), bluetooth (dispositivo de audio, antes parlante), watch (reloj, hasta la 3.3)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
     ['Relevos', 'signal_end', 'Cómo terminó: silenced (la silenció), object (tocó el Tag), auto (sola a los 30 s), interrupted (se cortó)'],
     ['Relevos', 'response_seconds', 'Segundos entre la señal y su primera acción'], ['Relevos', 'knew_intention', '¿Supo qué quería hacer? yes, partly, no'],
     ['Relevos', 'recalled_first_step', '¿Recordó cómo empezar? yes, no'], ['Relevos', 'outcome', 'Qué hizo: started, later, changed, not_answered, deleted'],

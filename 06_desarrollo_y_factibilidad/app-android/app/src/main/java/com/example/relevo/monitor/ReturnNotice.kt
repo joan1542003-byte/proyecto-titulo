@@ -18,7 +18,7 @@ import com.example.relevo.data.SettingsStore
 import com.example.relevo.domain.ReminderStatus
 
 /**
- * V2: aviso de regreso opcional. Empieza apagado y se activa en «Avisos y resúmenes». Llega como
+ * V2: aviso de regreso opcional. Empieza apagado y se enciende en «Ajustes de tus relevos». Llega como
  * máximo una vez por semana y solo si la persona no abrió Relevo en ese tiempo. No dice cuántos días
  * pasaron ni sugiere una falta; tras dos «Ahora no» seguidos, la app pregunta una vez si se apaga.
  */
@@ -56,7 +56,7 @@ object ReturnNotice {
 
   fun check(context: Context, now: Long = System.currentTimeMillis()) {
     val settings = SettingsStore(context)
-    if (!settings.load().returnNotice || !Participation.canUse(context)) return
+    if (!settings.load().returnNotice || !Participation.participating(context)) return
     val status = ReminderStore(context).load().status
     if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED || ActiveStore(context).load().isNotEmpty()) return
     if (!due(now, settings.lastOpenedAt, settings.lastReturnNoticeAt)) return

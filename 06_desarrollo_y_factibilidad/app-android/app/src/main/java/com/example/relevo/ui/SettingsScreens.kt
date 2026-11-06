@@ -10,7 +10,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,11 +19,12 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
 import com.example.relevo.ui.components.OptionRow
 import com.example.relevo.signal.Sonido
+import com.example.relevo.data.SignalVolume
+import com.example.relevo.domain.QuietHours
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -57,30 +57,23 @@ import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Panel
-import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RenglonArea
-import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.SegmentedControl
 import com.example.relevo.ui.components.StarRating
 import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.formatDuration
-import com.example.relevo.ui.components.key
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import java.util.UUID
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.RowShape
 import com.example.relevo.ui.components.ToggleRow
-import com.example.relevo.ui.components.pictureIcon
 
 /** Una opción de ajuste: qué es, en una línea, y sus valores en un control segmentado. */
 @Composable
@@ -108,20 +101,51 @@ internal fun SettingsScreen(
   onPrivacy: () -> Unit,
   onBack: () -> Unit,
   onSound: (Sonido) -> Unit = {},
+  onChange: (Settings.() -> Settings) -> Unit = {},
 ) {
   val theme = when (settings.theme) { ThemeMode.LIGHT -> "Claro"; ThemeMode.DARK -> "Oscuro"; ThemeMode.SYSTEM -> "Automático" }
   val sound = Sonido.from(settings.sound)
   var choosingSound by rememberSaveable { mutableStateOf(false) }
+  var choosingQuiet by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(title = "Ajustes", onBack = onBack, backLabel = "Perfil") {
     ListSection {
-      ListRow("Sonido", icon = KitIcon.SUENA, subtitle = sound.label, chevron = true, onClick = { choosingSound = true })
+      ListRow("Sonido", icon = KitIcon.SUENA, subtitle = "${sound.label} · volumen ${volumeLabel(settings.volume).lowercase()}", chevron = true, onClick = { choosingSound = true })
+      ListRow("Horas sin sonar", icon = KitIcon.PAUSAR, subtitle = if (settings.quietHours) QuietHours.label(settings.quietFrom, settings.quietUntil) else "Apagadas", chevron = true, onClick = { choosingQuiet = true })
       ListRow("Avisos", icon = KitIcon.AVISOS, subtitle = if (settings.returnNotice) "Aviso semanal encendido" else "Aviso semanal apagado", chevron = true, onClick = onNotices)
       ListRow("Apariencia", icon = KitIcon.TEMA, subtitle = theme + if (settings.largeText) " · letra grande" else "", chevron = true, onClick = onAppearance)
       ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Todo listo para contar" else "Falta Tiempo de uso", chevron = true, onClick = onPermissions)
       ListRow("Datos", icon = KitIcon.PRIVACIDAD, subtitle = "Privacidad, código y borrado", chevron = true, onClick = onPrivacy)
     }
   }
-  if (choosingSound) SoundSheet(sound, onSound, onDismiss = { choosingSound = false })
+  if (choosingSound) SoundSheet(sound, settings.volume, onSound, { volume -> onChange { copy(volume = volume) } }, onDismiss = { choosingSound = false })
+  if (choosingQuiet) QuietSheet(settings, onChange, onDismiss = { choosingQuiet = false })
+}
+
+private fun volumeLabel(volume: SignalVolume): String = when (volume) {
+  SignalVolume.SOFT -> "Suave"
+  SignalVolume.MEDIUM -> "Medio"
+  SignalVolume.LOUD -> "Fuerte"
+}
+
+/**
+ * Horas sin sonar (4.4, Tabla 4 de la memoria): en ese tramo Relevo no cuenta ni suena, ni se activa solo; el
+ * relevo sigue activo y retoma al terminar. Empiezan apagadas y, al encenderlas, proponen de 23:00 a 8:00.
+ */
+@Composable
+private fun QuietSheet(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onDismiss: () -> Unit) {
+  RelevoSheet(onDismiss = onDismiss, title = "Horas sin sonar", done = "Listo") {
+    ListSection(footer = "En esas horas Relevo no cuenta ni suena. El relevo sigue activo y retoma al terminar.") {
+      ToggleRow("Horas sin sonar", settings.quietHours, { on -> onChange { copy(quietHours = on) } }, icon = KitIcon.PAUSAR)
+    }
+    if (settings.quietHours) {
+      Spacer(Modifier.height(Gap.list))
+      Panel {
+        CountStepper(settings.quietFrom, { value -> onChange { copy(quietFrom = value) } }, 0..23, "Desde las ${settings.quietFrom}:00")
+        CountStepper(settings.quietUntil, { value -> onChange { copy(quietUntil = value) } }, 0..23, "Hasta las ${settings.quietUntil}:00")
+      }
+    }
+    Spacer(Modifier.height(12.dp))
+  }
 }
 
 /**
@@ -129,7 +153,7 @@ internal fun SettingsScreen(
  * como al elegir un tono en el teléfono. Los fundamentos están en `sonido-de-relevo-2026-11-05.md`.
  */
 @Composable
-private fun SoundSheet(current: Sonido, onSound: (Sonido) -> Unit, onDismiss: () -> Unit) {
+private fun SoundSheet(current: Sonido, volume: SignalVolume, onSound: (Sonido) -> Unit, onVolume: (SignalVolume) -> Unit, onDismiss: () -> Unit) {
   RelevoSheet(onDismiss = onDismiss, title = "Sonido", done = "Listo") {
     Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
       Sonido.entries.forEach { option ->
@@ -137,8 +161,15 @@ private fun SoundSheet(current: Sonido, onSound: (Sonido) -> Unit, onDismiss: ()
         OptionRow(option.label, option == current, { onSound(option) }, subtitle = option.description)
       }
     }
+    Spacer(Modifier.height(Gap.block))
+    // Volumen (4.4): para el teléfono y el dispositivo de audio. El volumen multimedia del teléfono sigue mandando.
+    SettingPanel(
+      "Volumen", "El volumen multimedia del teléfono también cuenta.",
+      listOf(SignalVolume.SOFT.name to "Suave", SignalVolume.MEDIUM.name to "Medio", SignalVolume.LOUD.name to "Fuerte"), volume.name,
+      { onVolume(SignalVolume.valueOf(it)) },
+    )
     Spacer(Modifier.height(12.dp))
-    Text("En el Tag suena siempre su propio pitido.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+    Text("En el Tag suena siempre su propio pitido, con su volumen.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
     Spacer(Modifier.height(12.dp))
   }
 }
@@ -276,7 +307,7 @@ internal fun PrivacyScreen(
   var copied by remember { mutableStateOf(false) }
   var exportMessage by rememberSaveable { mutableStateOf<String?>(null) }
   val deleted = deletionStatus == RelevoViewModel.DELETED_MESSAGE
-  val participating = participation == ParticipationMode.STUDY
+  val participating = participation == ParticipationMode.ACCEPTED
   val exporter = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
     if (uri != null) onExport(uri) { ok -> exportMessage = if (ok) "Tus datos quedaron en el archivo que elegiste." else "No se pudo guardar el archivo. Prueba otra vez." }
   }

@@ -14,7 +14,6 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,7 +35,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
@@ -47,51 +45,36 @@ import androidx.compose.ui.unit.dp
 import cl.udp.relevo.BuildConfig
 import com.example.relevo.data.HistoryEntry
 import com.example.relevo.data.Profile
-import com.example.relevo.data.Settings
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.RouteTrack
 import com.example.relevo.theme.Relevo
 import com.example.relevo.ui.components.CircleButton
 import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.Avatar
-import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.Emoji
 import com.example.relevo.ui.components.EmojiGroup
 import com.example.relevo.ui.components.EmojiTile
-import com.example.relevo.ui.components.GlassTextButton
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Motion
-import com.example.relevo.ui.components.Panel
-import com.example.relevo.ui.components.Photo
-import com.example.relevo.ui.components.Picture
 import com.example.relevo.ui.components.PlainAction
-import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
-import com.example.relevo.ui.components.RenglonArea
 import com.example.relevo.ui.components.RingCell
 import com.example.relevo.ui.components.RingGrid
 import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
 import com.example.relevo.ui.components.pressScale
-import androidx.compose.foundation.layout.width
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.ui.text.font.FontWeight
 import com.example.relevo.ui.components.rememberReduceMotion
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import com.example.relevo.ui.components.Gap
-import com.example.relevo.ui.components.QuickChoice
-import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.SkyOrder
 import com.example.relevo.ui.components.SectionLabel
 import com.example.relevo.ui.components.skyFor
@@ -102,7 +85,6 @@ internal class ProfileActions(
   val onHistory: () -> Unit,
   val onActivities: () -> Unit,
   val onRoute: () -> Unit,
-  val onStudy: () -> Unit,
   val onFeedback: () -> Unit,
   val onReport: () -> Unit,
   val onToggleApp: (InstalledApp) -> Unit,
@@ -162,8 +144,7 @@ internal fun ProfileTab(
     Text(
       "Relevo ${BuildConfig.VERSION_NAME} · Proyecto de Título de Diseño, Universidad Diego Portales",
       style = Relevo.type.footnote, color = Relevo.colors.graphite, textAlign = TextAlign.Center,
-      // Mantener presionado abre la configuración de las tres semanas, solo para el investigador (D-087).
-      modifier = Modifier.fillMaxWidth().pointerInput(Unit) { detectTapGestures(onLongPress = { actions.onStudy() }) },
+      modifier = Modifier.fillMaxWidth(),
     )
   }
 }
@@ -210,6 +191,8 @@ internal fun ProfileSetupScreen(
   onImage: (String) -> Unit,
   onInterests: (List<String>, String) -> Unit,
   onFinish: (showRoute: Boolean) -> Unit,
+  /** Desde Inicio o la hoja del primer relevo (4.4), el perfil se puede cerrar y completar después. */
+  onClose: (() -> Unit)? = null,
 ) {
   var step by rememberSaveable { mutableIntStateOf(0) }
   var forward by remember { mutableStateOf(true) }
@@ -226,7 +209,7 @@ internal fun ProfileSetupScreen(
   RelevoScreen(
     scrollState = stepScroll,
     title = when (step) { 0 -> "¿Cómo te llamas?"; 1 -> "¿Con qué te identificas?"; else -> "¿Qué te gustaría hacer más seguido?" },
-    onBack = if (step > 0) ({ go(step - 1) }) else null,
+    onBack = if (step > 0) ({ go(step - 1) }) else onClose,
     step = "${step + 1} de 3",
     progress = (step + 1) / 3f,
     // El nombre es obligatorio desde 2.13 (D-089); el emoji y los intereses se pueden saltar.
