@@ -213,6 +213,10 @@
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 4 nov. | Consulta | Pidió leer el repositorio completo y entenderlo, para tener todo el contexto del proyecto. | Lectura de `main` y de las cinco solicitudes de cambio en borrador (PR #15 a #19), sin cambios en el proyecto. Dos observaciones para aclarar con el autor: el PDF enviado al profesor el 30 de octubre tiene texto que el borrador v6 del repositorio no tiene, y los datos del cierre de la prueba aún no están en `datos_sensibles/`. | — |
 | 4 nov. | Encargo | Actualizar solo documentos, sin fusionar todavía las ramas a `main`, con trazabilidad de qué es cada cosa, para no perder trabajo ni repetir lo ya hecho. | [Estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, qué contiene cada rama, los choques medidos al fusionarlas y cómo resolverlos, lo que ya existe, los pendientes que se repiten entre listas y lo que hay que aclarar. El README, el traspaso y los índices de gobernanza remiten a la v6 y a ese estado. Todo en la rama `estado-del-proyecto-2026-11-04`. | Sin fusionar a `main` hasta que el autor lo decida |
+| 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
+| 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
+| 5 nov. | Encargo | Pidió buscar la versión más reciente de la app, que había llegado al repositorio como APK, instalarla y dejarla como la más reciente en este computador. | Es la 4.3, de la rama `android-4.0-rediseno` (D-158), que otra sesión subió el mismo día. La copia local quedó en esa rama, con `main` al día, y su APK se instaló en el emulador como «Relevo 4.3», aparte de la app principal y sus datos. La 4.3 parte de la 3.3: no incluye la 1.0.0, que sigue solo en este computador, en la rama `android-1.0.0`. | — |
+| 5 nov. | Encargo | Pidió fusionar `main` en la rama de este estado (PR #20) y resolver sus choques. | Se fusionó `main` en `estado-del-proyecto-2026-11-04`. Solo chocó este registro: se conservaron las filas de ambos lados, por orden de hora. El [estado del proyecto](estado-del-proyecto-2026-11-04.md) suma lo que pasó después: D-153 y D-154 de la memoria y la rama de la 4.3. | — |
 
 ## Lo que muestra el registro
 
@@ -223,6 +227,24 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Fusión con main y la versión más reciente de la app
+
+- **Qué cambió:** se fusionó `main` en la rama del PR #20, conservando las filas de ambos lados, y se registraron los pedidos de instalar la 4.3 y de resolver los choques.
+- **Cómo estaba antes:** la rama no tenía las filas de D-153 y D-154 de la memoria, y `main` no tenía las de la lectura del repositorio y el estado al 4 de noviembre.
+- **Por qué:** el autor pidió fusionar la rama base y resolver los choques, y la regla pide registrar cada pedido el mismo día.
+
+### 2026-11-04 — Términos de los autores y análisis visual
+
+- **Qué cambió:** se registró el pedido de usar los términos de los autores, hablar de lo logrado y sumar análisis visual.
+- **Cómo estaba antes:** el último pedido era el de las ediciones del autor en el PDF.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-04 — Ediciones del autor en el PDF
+
+- **Qué cambió:** se registró el pedido de pasar al borrador las ediciones del PDF del 30 de octubre y arreglar lo anotado en Por hacer.
+- **Cómo estaba antes:** el último pedido era el de subir el IDML.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-04 — Lectura del repositorio y estado al 4 de noviembre
 

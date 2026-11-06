@@ -1995,7 +1995,54 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 14 481 palabras en los capítulos 1 a 14 (15 572 con las páginas iniciales y los índices; el instructivo sugiere de 15 000 a 20 000); 78 referencias, todas citadas; 11 marcadores «Confirmar»; 62 páginas, sin avisos del generador; 8,1 palabras por línea; PDF de 7,2 MB (el máximo es 15); el IDML enlaza sus 60 imágenes. La pestaña de la Biblioteca quedó abierta, pero el inicio de sesión no se completó (la página respondió «Nombre de usuario o contraseña incorrecto»), así que no se leyeron memorias aprobadas.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-153 — El borrador recoge las ediciones del autor y cierra lo que anotó en Por hacer
+
+- **Fecha:** 2026-11-04.
+- **Estado:** hecha en el borrador v6. El PDF y el IDML no se regeneraron, por pedido del autor.
+- **Contexto:** el autor entregó el PDF que editó en Affinity y envió al profesor el 30 de octubre (58 láminas, sin glosario, anexos ni contraportada). Pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo que marcó en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos. Las tareas 11 a 14, el documento 43 y la comparación con otra memoria viven en ramas sin fusionar; por decisión del autor del mismo día, ninguna rama se fusiona todavía.
+- **Decisión:**
+  - **Base:** el texto del autor manda. Sus cambios de redacción, de subtítulos, de títulos de figuras y de celdas pasan al borrador; se corrigen solo erratas, frases rotas y lo que contradice una fuente o el resto de la memoria.
+  - **Pregunta:** la redacción aprobada el 30 de octubre. La pregunta pide condiciones; una de ellas, el criterio 8, se formula como hipótesis y se prueba frente a una notificación (opción C de la tarea 11).
+  - **Formulación y método:** objetivo general sin «el funcionamiento»; qué aportó la investigación a través del diseño, con los criterios de Zimmerman et al. (2007); qué habría mostrado que el diseño no sirve; la prueba no examinó el supuesto del lugar.
+  - **Capítulos 1 a 6:** el texto de la fundamentación del 2 de noviembre, ya verificado contra las fuentes. «Está decidiendo por mí» queda como percepción del autor y no como hecho.
+  - **Capítulo 7:** límites de la pauta de entrevistas, la encuesta como contraste y el rango de edad como límite.
+  - **Capítulo 8:** Relevo sale del mapa y la oportunidad se lee en el cuadrante vacío; vuelve la cita de Peña-Albert et al. (2026).
+  - **Capítulo 11:** por qué Apple y no Material Design, con la escala de letra; el sonido elegido pese a la preferencia declarada; las áreas táctiles de 48 dp como error por corregir; el objeto con su botón, su salida de sonido y su tapa.
+  - **Capítulo 12:** el piloto con su costo y quiénes hacen posible el proyecto, con las disciplinas que toma prestadas (subcriterio 8.1).
+  - **Capítulo 13:** lo que se dijo frente a lo que se hizo (Figura 5) y la semana con el teléfono, terminada el 30 de octubre, con sus resultados por informar.
+  - **Uso de inteligencia artificial:** la lista completa de usos y el párrafo de autoría vuelven, porque una declaración incompleta no calza con el registro de pedidos.
+  - **Glosario:** se mantiene, con *descarga de intenciones*.
+- **Alternativas descartadas:** volver al texto de la v6 donde el autor lo cambió; aplicar sin revisar las propuestas de las ramas; regenerar el PDF.
+- **Verificación:** 16 137 palabras en los capítulos 1 a 14 (17 137 con las páginas iniciales y los índices); 80 referencias, todas citadas; 23 figuras y 4 tablas, todas mencionadas en el texto; 2 marcadores «Confirmar»; la referencia de Jonauskaite et al. (2024), comprobada en Crossref.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
+
+## D-154 — La memoria habla con los términos de los autores, cuenta lo logrado y analiza lo visual
+
+- **Fecha:** 2026-11-04.
+- **Estado:** hecha en el borrador v6. El PDF y el IDML no se regeneraron.
+- **Contexto:** sobre D-153, el autor pidió evitar los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de los avances y los resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo en el repositorio: el [documento 43](https://github.com/joan1542003-byte/proyecto-titulo/blob/decisiones-de-diseno/10_recursos_visuales/43_decisiones-de-diseno-2026-11-02.md), del 2 de noviembre, en la rama `decisiones-de-diseno`.
+- **Decisión:**
+  - **Términos:** salen «decisión renovada», «arquitectura de atención», «puntos de cierre», «señal situada» y «lugar neutro», del texto y del glosario. En su lugar, lo que dicen los autores: el propósito que se debilita y el hábito (Lukoff et al., 2018), la ocasión de reconsiderar (Grüning et al., 2023), los patrones que orientan la interacción (Montag et al., 2019) y los tipos ideales (Stapley et al., 2022) para las dos situaciones de uso.
+  - **Lo que se hizo:** salen las frases sobre lo que falta o lo que no se probó; la pauta de entrevistas se presenta como una de tres fuentes que se complementan; la prueba declara qué condiciones daban el ciclo por logrado y que se cumplieron; «Límites» pasa a «Seguridad y alcance», y «Límites de esta etapa», a «Alcance de esta etapa».
+  - **Análisis de resultados y avances:** los resultados se leen contra los criterios 2, 4, 6 y 8, y las conclusiones suman el avance del prototipo entre septiembre y octubre.
+  - **Análisis visual:** del documento 43 entran la forma que se repite en todas las escalas, el desenfoque solo en la navegación, el color que sube con el momento —con una figura nueva de tres capturas, la Figura 15—, los degradados de las actividades, las seis fichas de igual luminosidad (Albers, 2013), su baja saturación (Wilms y Oberfeld, 2018), la simulación de daltonismo (Machado et al., 2009), los íconos que dibujan las ideas de Relevo y cómo se llegó a la identidad.
+  - **Menos tecnicismo:** la comparación con Material Design se dice sin cifras de interlineado, y sale el error de las áreas táctiles, con su fila de la Tabla 4 y su referencia.
+- **Verificación:** 16 478 palabras en los capítulos 1 a 14 (17 491 con las páginas iniciales y los índices); 24 figuras y 4 tablas, todas mencionadas en orden; 82 referencias, todas citadas; 2 marcadores «Confirmar». Wilms y Oberfeld (2018) se comprobó en Europe PMC: los colores saturados y brillantes se asocian a más activación, y la activación sube del azul y el verde al rojo; Machado et al. (2009) y Wilms y Oberfeld (2018), en Crossref.
+- **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — D-154
+
+- **Qué cambió:** se registró D-154.
+- **Cómo estaba antes:** la última decisión era D-153.
+- **Por qué:** pedido del autor.
+
+### 2026-11-04 — D-153
+
+- **Qué cambió:** se registró D-153.
+- **Cómo estaba antes:** la última decisión era D-152.
+- **Por qué:** pedido del autor.
 
 ### 2026-10-29 — D-152
 

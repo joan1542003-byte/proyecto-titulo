@@ -4,6 +4,8 @@
 
 Por decisión del autor del 4 de noviembre, ninguna rama se fusiona a `main` todavía. Este documento sirve para hacerlo después sin perder nada.
 
+> **Al 5 de noviembre:** esta rama ya tiene `main` al día. Lo que cambió después del corte está en la [sección 7](#7-después-del-corte-5-de-noviembre).
+
 ## 1. Dónde está cada cosa
 
 | Qué | Dónde | Estado al 4 de noviembre |
@@ -100,7 +102,24 @@ Son observaciones, no conclusiones.
 
 Cierre interno el 15 de noviembre, Pase el 25 de noviembre, memoria el 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre ([calendario oficial](calendario-oficial-segundo-semestre-2026.md)). El calendario de la tarea 13 (#15) dejaba el objeto para el 31 de octubre al 2 de noviembre y el cierre de los datos para el 3 al 7 de noviembre.
 
+## 7. Después del corte (5 de noviembre)
+
+El 5 de noviembre se fusionó `main` (`f34f668`) en esta rama. Solo chocó el registro de pedidos, y se conservaron las filas de los dos lados.
+
+| Qué | Dónde | Qué cambia en este estado |
+| --- | --- | --- |
+| Memoria, D-153 y D-154 (4 de noviembre, noche) | `main` | El [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) recoge las ediciones del PDF del 30 de octubre, la pregunta aprobada y las tareas 11 a 14. Después usa los términos de los autores, cuenta lo logrado y suma el análisis visual del documento 43. Tiene 16 478 palabras en los capítulos, 82 referencias y 2 marcadores «Confirmar». El PDF y el IDML no se regeneraron. Quedan resueltos los puntos 1 y 3 de la sección 5. |
+| App 4.0 a 4.3, D-155 a D-158 (5 de noviembre) | Rama `android-4.0-rediseno`, en GitHub, sin PR | Otra sesión rediseñó la app desde la 3.3: papel y tinta, actividades en anillos y sin aura. Suma varios relevos a la vez, sugerencias según lo que se escribe y sonidos a elección. Conserva la prueba de 21 días y el consentimiento v13. Su APK se instala aparte, como «Relevo 4.3». |
+| App 1.0.0 (4 de noviembre) | Rama `android-1.0.0`, solo en el computador del autor | Quita la prueba de 21 días y pasa al consentimiento v14. Suma horas sin sonar y el teléfono como respaldo cuando el Tag no responde, y acorta la primera vez. El autor pidió dejarla local. La 4.3 no la incluye. Sus decisiones se numeraron D-153 y D-154, que en `main` ya son de la memoria: hay que renumerarlas antes de subirla. |
+| Decisiones | [Registro de decisiones](../09_decisiones/registro-de-decisiones.md) | En `main` la última es D-154; en `android-4.0-rediseno`, D-158. La siguiente libre es D-159. |
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Fusión con main
+
+- **Qué cambió:** se agregó la sección 7, con lo que entró al fusionar `main` (D-153 y D-154 de la memoria), las ramas de la app 4.3 y 1.0.0 y la siguiente decisión libre. Un aviso al inicio remite a ella.
+- **Cómo estaba antes:** el estado describía `main` en `c213b28` y daba D-153 como la siguiente decisión.
+- **Por qué:** el autor pidió fusionar la rama base en esta rama y resolver los choques. Sin esta sección, el estado habría quedado desactualizado frente a lo que trae la fusión.
 
 ### 2026-11-04 — Creación
 
