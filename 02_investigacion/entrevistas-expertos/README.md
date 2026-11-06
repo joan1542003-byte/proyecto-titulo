@@ -1,6 +1,6 @@
 # Entrevistas a expertos
 
-**Creada:** 2 de noviembre de 2026. **Estado al 6 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Denis Parra respondió por escrito las cuatro preguntas de [su correo](guion-parra.md#correo-con-las-preguntas) y autorizó la cita con su nombre; el análisis está en [su ficha](ficha-parra.md). **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
+**Creada:** 2 de noviembre de 2026. **Estado al 6 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Denis Parra respondió por escrito las cuatro preguntas de [su correo](guion-parra.md#correo-con-las-preguntas) y autorizó la cita con su nombre; el análisis está en [su ficha](ficha-parra.md). Para validar la propuesta, y no solo su teoría, se sumaron tres perfiles con [correos de consulta](correos-de-validacion.md). **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
 
 ## Para qué
 
@@ -15,6 +15,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 | [Guía de entrevista](guia-de-entrevista.md) | Lo que pide la guía de los profesores, método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
+| [Correos para validar la propuesta](correos-de-validacion.md) | Consulta escrita, sin entrevista, a Daniela Quiñones, Francisco J. Gutiérrez y Macarena Valenzuela-Zubiaur: tres preguntas cada una, empezando por las fortalezas y debilidades de la propuesta. |
 | [Ficha de Parra](ficha-parra.md) | Su respuesta escrita: ideas principales, citas autorizadas, matriz de análisis, lo que valida y lo que no, y dónde va en la memoria. |
 | [Video de Relevo](video-de-relevo/relevo-en-un-minuto.mp4) | Video de 53 segundos, sin sonido, preparado para Denis Parra; no se envió, porque el autor decidió mandarle solo texto. Lo genera [`generar-video.js`](video-de-relevo/generar-video.js). Qué muestra y de dónde sale cada dato está en [su guion](guion-parra.md#video-que-no-se-envía). |
 
@@ -32,7 +33,8 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 1. **2 o 3 de noviembre:** el autor envía los [mensajes breves](correos-de-invitacion.md) a las cinco personas en Chile, desde su correo de la Universidad Diego Portales y sin adjuntos.
 2. **5 o 6 de noviembre:** un solo recordatorio. Si el lunes 9 nadie aceptó, buscar más perfiles en Chile. La reserva de otros países se usa solo si el autor cambia la decisión.
 3. **3 al 13 de noviembre:** entrevistas por videollamada, de tú, cada una con su guion. La ficha y la matriz de análisis de la guía se llenan el mismo día.
-4. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
+4. **Desde el 6 de noviembre:** las consultas nuevas son por correo, sin entrevista, con tres preguntas: una de juicio sobre la propuesta y dos de la especialidad de la persona. Un recordatorio el 12 de noviembre.
+5. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
 
 ## Reglas
 
@@ -42,6 +44,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Consulta por correo para validar
+
+- **Qué cambió:** el estado y el contenido suman los correos para validar la propuesta, y los pasos dicen que las consultas nuevas son por correo.
+- **Cómo estaba antes:** solo había invitaciones a entrevistas por videollamada.
+- **Por qué:** el autor pidió validar la propuesta con otras personas expertas y consultarlas por correo, que es menos invasivo.
 
 ### 2026-11-06 — Respuesta escrita de Parra
 

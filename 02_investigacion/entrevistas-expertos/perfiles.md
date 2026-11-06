@@ -40,6 +40,23 @@ Escribir a las cinco el mismo día. Christian Salas y Francisco J. Parada van pr
 - **Zamorano:** su ficha está en el sitio actual de la UDD, y una ficha de transferencia tecnológica de la UDD de noviembre de 2024 lo nombra docente investigador de la Facultad de Diseño, a cargo de TAMI. No se encontró actividad de 2025 o 2026. Si el correo rebota, buscarle por su nombre en LinkedIn y confirmar que es la misma persona antes de escribirle.
 - **Parra:** su sitio dice que su año sabático en Europa fue de abril a septiembre de 2023, así que hoy está en la UC.
 
+## Perfiles para validar la propuesta
+
+**Fecha:** 6 de noviembre de 2026. Parra respaldó el razonamiento del proyecto, pero no evaluó la propuesta ([ficha](ficha-parra.md)). El autor pidió sumar personas que la validen como diseño, más que su teoría, y consultarlas por correo. Se eligieron tres miradas complementarias: la experiencia de uso, la interacción y el objeto. Sus correos están en [Correos para validar la propuesta](correos-de-validacion.md).
+
+| N.º | Persona | Disciplina | Institución | Qué valida | Vigencia | Correo publicado en |
+| --- | --- | --- | --- | --- | --- | --- |
+| 6 | Daniela Quiñones | Ingeniería informática; evaluación de la experiencia de usuario | Escuela de Ingeniería Informática, Pontificia Universidad Católica de Valparaíso | La experiencia de uso completa, entre el teléfono y el objeto | Alta | [Quiñones et al. (2026), *Biomimetics*](https://doi.org/10.3390/biomimetics11030182) |
+| 7 | Francisco J. Gutiérrez | Ciencia de la computación; interacción humano-computador | Profesor asistente, Departamento de Ciencias de la Computación, Universidad de Chile | La interacción: qué decide la persona y qué el sistema, y cómo probarlo | Alta | [Ficha del DCC](https://www.dcc.uchile.cl/nosotros/academico/fgutierrez/) |
+| 8 | Macarena Valenzuela-Zubiaur | Diseño industrial; interfaces tangibles, productos inteligentes y fabricación digital | Departamento de Diseño, Universidad Tecnológica Metropolitana | El objeto: forma, botón y fabricación | Alta | [Segeur Villanueva et al. (2025), *Inmaterial*](https://doi.org/10.46516/inmaterial.v10.329) |
+
+**Vigencia comprobada el 6 de noviembre de 2026:**
+
+- **Quiñones:** el correo figura en su artículo de marzo de 2026, con la afiliación a la Escuela de Ingeniería Informática de la PUCV. Las páginas de la PUCV rechazan las consultas automáticas, así que no se pudo ver su ficha institucional.
+- **Gutiérrez:** el correo figura en su ficha del Departamento, que también muestra que en la primavera de 2026 dicta el Taller Interdisciplinario en Interacción Humano-Computador.
+- **Valenzuela-Zubiaur:** el correo figura en su artículo de diciembre de 2025. Su registro ORCID y un artículo de la conferencia DRS de junio de 2026 la sitúan en el Departamento de Diseño de la UTEM.
+- Los tres dominios (pucv.cl, dcc.uchile.cl y utem.cl) tienen registros MX, es decir, reciben correo. No se envió ningún correo de prueba.
+
 ## Reserva fuera de Chile
 
 No se contactarán mientras el autor mantenga la decisión de entrevistar solo en Chile. Sus correos se verificaron el 2 de noviembre de 2026, pero no se comprobó su vigencia como en la lista de Chile.
@@ -66,6 +83,12 @@ No se contactarán mientras el autor mantenga la decisión de entrevistar solo e
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Perfiles para validar la propuesta
+
+- **Qué cambió:** se sumaron tres personas en Chile para validar la propuesta como diseño: Daniela Quiñones (experiencia de usuario), Francisco J. Gutiérrez (interacción humano-computador) y Macarena Valenzuela-Zubiaur (diseño industrial y objeto), con la fuente de su correo y su vigencia.
+- **Cómo estaba antes:** la lista activa tenía cinco personas, elegidas sobre todo por su teoría.
+- **Por qué:** el autor pidió buscar personas expertas que validen la propuesta más que su teoría.
 
 ### 2026-11-06 — Respuesta escrita de Parra
 

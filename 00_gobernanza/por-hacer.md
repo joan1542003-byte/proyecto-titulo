@@ -278,7 +278,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Entrevistas
 
 - [ ] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.]
-- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria.
+- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria. Como no evaluó la propuesta, se sumaron tres perfiles para validarla por correo ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)); falta que el autor los envíe.
 
 ### La memoria diseñada
 
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Perfiles para validar
+
+- **Qué cambió:** la tarea de perfiles suma los tres correos para validar la propuesta.
+- **Cómo estaba antes:** terminaba en la respuesta de Parra.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-06 — Respuesta de Parra
 

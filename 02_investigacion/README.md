@@ -9,7 +9,7 @@ Construir la base teórica y empírica que permita explicar por qué Relevo debe
 - `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
 - [Síntesis de las anotaciones del 23 de septiembre](sintesis-anotaciones-2026-09-23.md): posición del proyecto, usuarios, continuidad, hábitos y criterios escritos para evaluar la interfaz; propuestas, no resultados.
 - [Hábitos, reconocimiento positivo, rachas y premios](habitos-reconocimiento-y-rachas-2026-09-23.md): revisión de estudios, límites de transferencia a Relevo y recomendación para discutir la memoria; no cambia el producto.
-- [Entrevistas a expertos](entrevistas-expertos/README.md): cinco personas en Chile para entrevistar, con la vigencia de su correo, y ocho de otros países en reserva; la guía de entrevista, el material para mostrar y los correos de invitación. Al 6 de noviembre de 2026 respondieron Francisco J. Parada y Denis Parra; Parra contestó por escrito y su análisis está en [su ficha](entrevistas-expertos/ficha-parra.md).
+- [Entrevistas a expertos](entrevistas-expertos/README.md): cinco personas en Chile para entrevistar, con la vigencia de su correo, y ocho de otros países en reserva; la guía de entrevista, el material para mostrar y los correos de invitación. Al 6 de noviembre de 2026 respondieron Francisco J. Parada y Denis Parra; Parra contestó por escrito y su análisis está en [su ficha](entrevistas-expertos/ficha-parra.md). Para validar la propuesta se sumaron tres perfiles, con [correos de consulta](entrevistas-expertos/correos-de-validacion.md).
 
 ## Orden interno previsto
 
@@ -36,6 +36,13 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-11-06 — Perfiles para validar la propuesta
+
+- **Cambio:** la carpeta de entrevistas suma tres perfiles y sus correos para validar la propuesta.
+- **Antes:** solo enlazaba la ficha de Parra.
+- **Motivo:** pedido del autor.
+- **Alcance:** índice documental.
 
 ### 2026-11-06 — Respuesta escrita de Parra
 
