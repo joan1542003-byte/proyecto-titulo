@@ -241,6 +241,7 @@
 | 6 nov. | Encargo | Buscar otra persona experta que ayude a validar la propuesta más que su teoría: perfiles, correos y mensajes redactados. | Tres perfiles en Chile, con su correo comprobado en fuentes oficiales o artículos de 2025 y 2026: Daniela Quiñones (PUCV, experiencia de usuario), Francisco J. Gutiérrez (Universidad de Chile, interacción humano-computador) y Macarena Valenzuela-Zubiaur (UTEM, diseño industrial). Un [correo](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) para cada una, con una pregunta de juicio sobre la propuesta y dos de su especialidad. Los correos electrónicos quedan fuera de GitHub. | Consulta por correo, sin entrevista |
 | 6 nov. | Corrección | Quitar frases como «En corto», el plazo, «dos o tres líneas», la oferta del video y el envío del párrafo, y revisar que el contexto del proyecto se entienda para que nadie deje de entender las preguntas. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) explican paso a paso cómo funciona la propuesta, cómo se apaga el aviso y qué se midió; cada pregunta usa solo lo que el correo ya contó, y se precisaron cinco preguntas. | — |
 | 6 nov. | Corrección | No sirve decir que el objeto es un llavero Bluetooth, y dejar el objeto junto al libro necesita contexto: la persona quiere leer, pero el teléfono está hecho para que siga y nunca logra leer; pone el objeto junto al libro o en el punto clave para empezar. Explicar mejor y con menos tecnicismos. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) cuentan esa situación y luego cómo ayuda la propuesta, sin el llavero, la placa ni los milímetros; se simplificaron cuatro preguntas. | — |
+| 6 nov. | Corrección y encargo | El proyecto parte de situaciones comunes, con un ejemplo. La persona registra que quiere volver a leer, marca las aplicaciones que consumen su tiempo y elige un lugar relacionado con la actividad, como el velador junto al libro. Más preguntas, fáciles de entender, del área de cada persona y que ayuden a validar. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) toman ese contexto y pasan de tres a cinco preguntas: juicio de la propuesta, tres de su especialidad y la única cosa que cambiarían. | — |
 
 ## Lo que muestra el registro
 
@@ -251,6 +252,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Cinco preguntas de validación
+
+- **Qué cambió:** se registró la corrección del contexto y el pedido de más preguntas en los correos de validación.
+- **Cómo estaba antes:** el último pedido era contar el contexto como una situación concreta.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Correos de validación como situación concreta
 

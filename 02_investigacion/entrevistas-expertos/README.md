@@ -15,7 +15,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 | [Guía de entrevista](guia-de-entrevista.md) | Lo que pide la guía de los profesores, método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
-| [Correos para validar la propuesta](correos-de-validacion.md) | Consulta escrita, sin entrevista, a Daniela Quiñones, Francisco J. Gutiérrez y Macarena Valenzuela-Zubiaur: tres preguntas cada una, empezando por las fortalezas y debilidades de la propuesta. |
+| [Correos para validar la propuesta](correos-de-validacion.md) | Consulta escrita, sin entrevista, a Daniela Quiñones, Francisco J. Gutiérrez y Macarena Valenzuela-Zubiaur: cinco preguntas cada una: las fortalezas y debilidades de la propuesta, tres de su especialidad y la única cosa que cambiarían. |
 | [Ficha de Parra](ficha-parra.md) | Su respuesta escrita: ideas principales, citas autorizadas, matriz de análisis, lo que valida y lo que no, y dónde va en la memoria. |
 | [Video de Relevo](video-de-relevo/relevo-en-un-minuto.mp4) | Video de 53 segundos, sin sonido, preparado para Denis Parra; no se envió, porque el autor decidió mandarle solo texto. Lo genera [`generar-video.js`](video-de-relevo/generar-video.js). Qué muestra y de dónde sale cada dato está en [su guion](guion-parra.md#video-que-no-se-envía). |
 
@@ -33,7 +33,7 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 1. **2 o 3 de noviembre:** el autor envía los [mensajes breves](correos-de-invitacion.md) a las cinco personas en Chile, desde su correo de la Universidad Diego Portales y sin adjuntos.
 2. **5 o 6 de noviembre:** un solo recordatorio. Si el lunes 9 nadie aceptó, buscar más perfiles en Chile. La reserva de otros países se usa solo si el autor cambia la decisión.
 3. **3 al 13 de noviembre:** entrevistas por videollamada, de tú, cada una con su guion. La ficha y la matriz de análisis de la guía se llenan el mismo día.
-4. **Desde el 6 de noviembre:** las consultas nuevas son por correo, sin entrevista, con tres preguntas: una de juicio sobre la propuesta y dos de la especialidad de la persona. Un recordatorio el 12 de noviembre.
+4. **Desde el 6 de noviembre:** las consultas nuevas son por correo, sin entrevista, con cinco preguntas: una de juicio sobre la propuesta, tres de la especialidad de la persona y la única cosa que cambiaría. Un recordatorio el 12 de noviembre.
 5. **Hasta el 15 de noviembre:** llevar a la memoria lo que la persona autorizó, como indica la guía, y enviarle el párrafo para que lo revise.
 
 ## Reglas
@@ -44,6 +44,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Cinco preguntas por correo
+
+- **Qué cambió:** la fila de los correos de validación y el paso 4 dicen que cada consulta tiene cinco preguntas.
+- **Cómo estaba antes:** decían tres.
+- **Por qué:** el autor pidió más preguntas que ayuden a validar.
 
 ### 2026-11-06 — Consulta por correo para validar
 
