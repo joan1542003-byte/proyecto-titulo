@@ -1,7 +1,7 @@
 package com.example.relevo.ui.components
 
 // Generado a partir de 10_recursos_visuales/marca-a-tiempo/iconos (kit D-073): 97 iconos
-// en retícula de 24, trazo redondeado. No editar a mano; volver a generar desde los SVG.
+// en retícula de 24, trazo redondeado. Desde la 4.0 se agregan a mano los que faltan, con su SVG en el kit.
 
 internal enum class KitFill { NONE, INK, PAPER }
 
@@ -789,6 +789,122 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M12.9 7.6A3.5 3.5 0 1 0 19.9 7.6A3.5 3.5 0 1 0 12.9 7.6Z", true, KitFill.NONE),
       KitShape("M4.1 16.4A3.5 3.5 0 1 0 11.1 16.4A3.5 3.5 0 1 0 4.1 16.4Z", true, KitFill.NONE),
       KitShape("M12.9 16.4A3.5 3.5 0 1 0 19.9 16.4A3.5 3.5 0 1 0 12.9 16.4Z", true, KitFill.NONE),
+    ),
+  ),
+  // 4.3 (D-158): trece íconos nuevos para las actividades, dibujados con la misma retícula de 24 y trazo
+  // redondeado; sus SVG están en 10_recursos_visuales/marca-a-tiempo/iconos.
+  PERRO(
+    "Perro",
+    listOf(
+      KitShape("M8 9.4c0-2.4 1.8-4.2 4-4.2s4 1.8 4 4.2v4.4c0 2.5-1.8 4.6-4 4.6s-4-2.1-4-4.6z", true, KitFill.NONE),
+      KitShape("M8.6 6.3C6.6 5.9 5 7 4.6 9.2c-.3 1.9.2 3.8 1.2 4.6.6.5 1.5.2 1.7-.6L8 11.6", true, KitFill.NONE),
+      KitShape("M15.4 6.3c2-.4 3.6.7 4 2.9.3 1.9-.2 3.8-1.2 4.6-.6.5-1.5.2-1.7-.6L16 11.6", true, KitFill.NONE),
+      KitShape("M12 15.4v1.1", true, KitFill.NONE),
+      KitShape("M10.7 14.6a1.3 1 0 1 0 2.6 0a1.3 1 0 1 0 -2.6 0z", false, KitFill.INK),
+      KitShape("M9.5 10.7a.8 .8 0 1 0 1.6 0a.8 .8 0 1 0 -1.6 0z", false, KitFill.INK),
+      KitShape("M12.9 10.7a.8 .8 0 1 0 1.6 0a.8 .8 0 1 0 -1.6 0z", false, KitFill.INK),
+    ),
+  ),
+  CORRER(
+    "Correr",
+    listOf(
+      KitShape("M3.5 18.2v-7.8c0-.6.6-1.1 1.2-.9l2.7.9c.5.2 1.1 0 1.4-.4l1.3-1.9c.3-.4.9-.5 1.3-.2l2 1.3c2.2 1.5 4.8 2.5 7.3 2.9.7.1 1.3.7 1.3 1.4v4.7z", true, KitFill.NONE),
+      KitShape("M3.5 14.9h17", true, KitFill.NONE),
+      KitShape("M11.4 10.6l1 1", true, KitFill.NONE),
+      KitShape("M13.6 11.9l.9 1", true, KitFill.NONE),
+    ),
+  ),
+  NADAR(
+    "Nadar",
+    listOf(
+      KitShape("M3 15.8c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1", true, KitFill.NONE),
+      KitShape("M3 19.3c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1", true, KitFill.NONE),
+      KitShape("M14.2 7.6a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0z", true, KitFill.NONE),
+      KitShape("M5.5 12.6l4.4-3.4c.5-.4 1.2-.4 1.7 0l3.7 3.4", true, KitFill.NONE),
+    ),
+  ),
+  PELOTA(
+    "Pelota",
+    listOf(
+      KitShape("M3.5 12a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0 -17 0z", true, KitFill.NONE),
+      KitShape("M12 8.7l3 2.2-1.1 3.5h-3.8L9 10.9z", true, KitFill.NONE),
+      KitShape("M12 8.7V3.6M15 10.9l4.6-1.6M13.9 14.4l2.8 3.9M10.1 14.4l-2.8 3.9M9 10.9L4.4 9.3", true, KitFill.NONE),
+    ),
+  ),
+  PELICULA(
+    "Ver una película",
+    listOf(
+      KitShape("M3.5 10h17v8.5c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5z", true, KitFill.NONE),
+      KitShape("M3.5 10V6.5C3.5 5.7 4.2 5 5 5h14c.8 0 1.5.7 1.5 1.5V10", true, KitFill.NONE),
+      KitShape("M8.5 5L7 10M13 5l-1.5 5M17.5 5L16 10", true, KitFill.NONE),
+    ),
+  ),
+  MANGA(
+    "Leer manga",
+    listOf(
+      KitShape("M6.5 3.5h11c.8 0 1.5.7 1.5 1.5v14c0 .8-.7 1.5-1.5 1.5h-11c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
+      KitShape("M5 11.5h14M12 11.5v9", true, KitFill.NONE),
+      KitShape("M8.6 5.9h5.6c.5 0 .9.4.9.9v1.1c0 .5-.4.9-.9.9h-2.7l-1.6 1.3V8.8h-1.3c-.5 0-.9-.4-.9-.9V6.8c0-.5.4-.9.9-.9z", true, KitFill.NONE),
+    ),
+  ),
+  MAQUETA(
+    "Armar una maqueta",
+    listOf(
+      KitShape("M12 3.5l7.5 4.3v8.4L12 20.5l-7.5-4.3V7.8z", true, KitFill.NONE),
+      KitShape("M4.5 7.8L12 12l7.5-4.2M12 12v8.5", true, KitFill.NONE),
+    ),
+  ),
+  TEJER(
+    "Tejer o coser",
+    listOf(
+      KitShape("M4 14a6.2 6.2 0 1 0 12.4 0a6.2 6.2 0 1 0 -12.4 0z", true, KitFill.NONE),
+      KitShape("M5.2 11.3c2.6-.4 6.4.8 9.6 4.2", true, KitFill.NONE),
+      KitShape("M4.6 14.9c2.5-.4 5.8.5 8.4 3.3", true, KitFill.NONE),
+      KitShape("M7.6 8.6c2.7.9 5.4 3.2 7.4 6.4", true, KitFill.NONE),
+      KitShape("M14.6 9.4L20.5 3.5", true, KitFill.NONE),
+    ),
+  ),
+  PIANO(
+    "Tocar el piano",
+    listOf(
+      KitShape("M3.5 6.5h17v11c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5z", true, KitFill.NONE),
+      KitShape("M8.2 13.2V19M12 13.2V19M15.8 13.2V19", true, KitFill.NONE),
+      KitShape("M7 6.5h2.4v6.7H7zM10.8 6.5h2.4v6.7h-2.4zM14.6 6.5H17v6.7h-2.4z", false, KitFill.INK),
+    ),
+  ),
+  MEDITAR(
+    "Meditar",
+    listOf(
+      KitShape("M12 6.3c1.8 1.6 2.7 3.6 2.7 5.8S13.8 16.3 12 17.9c-1.8-1.6-2.7-3.6-2.7-5.8S10.2 7.9 12 6.3z", true, KitFill.NONE),
+      KitShape("M12 17.9c-3.3-.1-6.2-2.3-7.5-5.5 1.9-.3 3.6.1 5 .8", true, KitFill.NONE),
+      KitShape("M12 17.9c3.3-.1 6.2-2.3 7.5-5.5-1.9-.3-3.6.1-5 .8", true, KitFill.NONE),
+      KitShape("M7.5 20.5h9", true, KitFill.NONE),
+    ),
+  ),
+  IDIOMAS(
+    "Aprender un idioma",
+    listOf(
+      KitShape("M4.5 3.5h7c.8 0 1.5.7 1.5 1.5v4.5c0 .8-.7 1.5-1.5 1.5H8l-2.5 2.2V11h-1c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
+      KitShape("M15 9.5h4.5c.8 0 1.5.7 1.5 1.5v4.5c0 .8-.7 1.5-1.5 1.5h-.5v2.2L16.5 17h-3c-.8 0-1.5-.7-1.5-1.5v-2", true, KitFill.NONE),
+      KitShape("M5.6 9.2l2-4.1 2 4.1M6.3 7.8h2.6", true, KitFill.NONE),
+      KitShape("M14.6 13.3h3.4", true, KitFill.NONE),
+    ),
+  ),
+  CARTAS(
+    "Jugar a las cartas",
+    listOf(
+      KitShape("M9.5 6.5h8c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-8c-.8 0-1.5-.7-1.5-1.5V8c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
+      KitShape("M8 16.5H6.5c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5h8c.8 0 1.5.7 1.5 1.5v1.5", true, KitFill.NONE),
+      KitShape("M13.5 10.6l2 2.5-2 2.5-2-2.5z", true, KitFill.NONE),
+    ),
+  ),
+  COMPARTIR(
+    "Con otras personas",
+    listOf(
+      KitShape("M6.3 8.2a2.6 2.6 0 1 0 5.2 0a2.6 2.6 0 1 0 -5.2 0z", true, KitFill.NONE),
+      KitShape("M3.8 19.5c0-3.1 2.3-5.6 5.1-5.6s5.1 2.5 5.1 5.6", true, KitFill.NONE),
+      KitShape("M14.6 7.6a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0z", true, KitFill.NONE),
+      KitShape("M15.6 13.7c.4-.1.9-.2 1.3-.2 2.6 0 4.6 2.4 4.6 5.4", true, KitFill.NONE),
     ),
   ),
 }

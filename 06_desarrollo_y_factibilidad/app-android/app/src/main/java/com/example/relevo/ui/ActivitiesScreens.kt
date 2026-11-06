@@ -20,6 +20,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
+import com.example.relevo.ui.components.FamilyLabel
+import com.example.relevo.ui.components.Sky
+import com.example.relevo.ui.components.FactRow
+import com.example.relevo.ui.components.Suggestions
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -95,7 +100,6 @@ internal fun ActivitiesTab(
   routes: List<RouteTrack>,
   routeInterest: String?,
   onRouteInterest: (String) -> Unit,
-  activeRelevo: Boolean,
   reselect: Int,
   actions: ActivitiesActions,
 ) {
@@ -116,9 +120,9 @@ internal fun ActivitiesTab(
     ) { shown ->
       Column(Modifier.fillMaxWidth()) {
         when (shown) {
-          ActivitiesSection.MINE -> MineSection(customActivities, activeRelevo, actions)
-          ActivitiesSection.STEPS -> StepsSection(routes, customActivities, routeInterest, onRouteInterest, activeRelevo, actions)
-          ActivitiesSection.IDEAS -> IdeasSection(customActivities, activeRelevo, actions)
+          ActivitiesSection.MINE -> MineSection(customActivities, actions)
+          ActivitiesSection.STEPS -> StepsSection(routes, customActivities, routeInterest, onRouteInterest, actions)
+          ActivitiesSection.IDEAS -> IdeasSection(customActivities, actions)
         }
       }
     }
@@ -127,7 +131,7 @@ internal fun ActivitiesTab(
 
 /** Tus actividades: anillos de a tres y «Nueva» al final. Tocar una abre su hoja. */
 @Composable
-private fun MineSection(customActivities: List<CustomActivity>, activeRelevo: Boolean, actions: ActivitiesActions) {
+private fun MineSection(customActivities: List<CustomActivity>, actions: ActivitiesActions) {
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   if (customActivities.isEmpty()) {
     Panel(Modifier.appear(0)) {
@@ -148,7 +152,7 @@ private fun MineSection(customActivities: List<CustomActivity>, activeRelevo: Bo
     ActivitySheet(
       name = selected.name, icon = activityIcon(selected.name, customActivities), firstStep = selected.firstStep, place = selected.place,
       onDismiss = { shown = null },
-      primary = ("Preparar un relevo" to { shown = null; actions.onPrepareCustom(selected) }).takeUnless { activeRelevo },
+      primary = "Preparar un relevo" to { shown = null; actions.onPrepareCustom(selected) },
       secondary = "Editar" to { shown = null; actions.onEditActivity(selected.id) },
     )
   }
@@ -156,7 +160,7 @@ private fun MineSection(customActivities: List<CustomActivity>, activeRelevo: Bo
 
 /** Ideas de las entrevistas, por familia: moverte, leer y aprender, crear, jugar, en casa y descansar. */
 @Composable
-private fun IdeasSection(customActivities: List<CustomActivity>, activeRelevo: Boolean, actions: ActivitiesActions) {
+private fun IdeasSection(customActivities: List<CustomActivity>, actions: ActivitiesActions) {
   var shown by rememberSaveable { mutableStateOf<String?>(null) }
   Column(Modifier.appear(0), verticalArrangement = Arrangement.spacedBy(Gap.section)) {
     ideasByFamily.forEach { (sky, ideas) ->
@@ -173,16 +177,13 @@ private fun IdeasSection(customActivities: List<CustomActivity>, activeRelevo: B
     ActivitySheet(
       name = idea.activity, icon = pictureIcon(idea.picture), firstStep = idea.start, place = idea.place,
       onDismiss = { shown = null },
-      primary = ("Preparar un relevo" to { shown = null; actions.onPrepareIdea(idea) }).takeUnless { activeRelevo },
+      primary = "Preparar un relevo" to { shown = null; actions.onPrepareIdea(idea) },
       secondary = null,
     )
   }
 }
 
-/**
- * Hoja de una actividad: su anillo, el nombre, cómo empieza y dónde, y lo que se puede hacer con ella. Sin
- * [primary], hay un relevo contando: se dice cuándo se podrá preparar, como en «Paso a paso» (4.2.1).
- */
+/** Hoja de una actividad: su anillo, el nombre, cómo empieza y dónde, y lo que se puede hacer con ella. */
 @Composable
 private fun ActivitySheet(
   name: String,
@@ -202,13 +203,12 @@ private fun ActivitySheet(
     if (firstStep.isNotBlank() || place.isNotBlank()) {
       Spacer(Modifier.height(18.dp))
       ListSection {
-        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.COMENCE, overline = START_QUESTION)
         if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
     Spacer(Modifier.height(22.dp))
     if (primary != null) RelevoButton(primary.first, primary.second)
-    else Text("Cuando termine tu relevo, podrás prepararla.", style = Relevo.type.subhead, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
     if (secondary != null) {
       Spacer(Modifier.height(8.dp))
       RelevoButton(secondary.first, secondary.second, kind = ButtonKind.Secondary, icon = KitIcon.EDITAR)
@@ -227,7 +227,6 @@ private fun StepsSection(
   customActivities: List<CustomActivity>,
   selected: String?,
   onSelect: (String) -> Unit,
-  activeRelevo: Boolean,
   actions: ActivitiesActions,
 ) {
   val track = routes.firstOrNull { it.interest == selected } ?: routes.firstOrNull()
@@ -235,7 +234,7 @@ private fun StepsSection(
   if (track == null) {
     Panel(Modifier.appear(0)) {
       Text("¿Qué te gustaría hacer más seguido?", style = Relevo.type.headline, color = Relevo.colors.ink)
-      Text("Elige tus intereses y te sugerimos pasos pequeños.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+      Text("Elige intereses y te sugerimos pasos pequeños.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       Spacer(Modifier.height(6.dp))
       RelevoButton("Elegir intereses", actions.onChooseInterests, icon = KitIcon.AGREGAR)
     }
@@ -275,11 +274,7 @@ private fun StepsSection(
       }
     }
     Spacer(Modifier.height(Gap.block))
-    if (activeRelevo) {
-      Text("Cuando termine tu relevo, podrás preparar este paso.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
-    } else {
-      RelevoButton("Preparar este paso", { actions.onPrepareStep(track.interest, now.id, photoKey("ruta", now.id)) })
-    }
+    RelevoButton("Preparar este paso", { actions.onPrepareStep(track.interest, now.id, photoKey("ruta", now.id)) })
     Spacer(Modifier.height(4.dp))
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.CenterVertically) {
       PlainAction("Editar los pasos", { actions.onEditRoute(track.interest) })
@@ -289,12 +284,12 @@ private fun StepsSection(
   }
 
   val tapped = track.steps.firstOrNull { it.id == openStep }
-  if (tapped != null) StepSheet(track, tapped, customActivities, activeRelevo, onDismiss = { openStep = null }, actions)
+  if (tapped != null) StepSheet(track, tapped, customActivities, onDismiss = { openStep = null }, actions)
 }
 
 /** Un paso: su anillo, cómo y dónde empezar, prepararlo y moverse a él. */
 @Composable
-private fun StepSheet(track: RouteTrack, step: RouteStep, customActivities: List<CustomActivity>, activeRelevo: Boolean, onDismiss: () -> Unit, actions: ActivitiesActions) {
+private fun StepSheet(track: RouteTrack, step: RouteStep, customActivities: List<CustomActivity>, onDismiss: () -> Unit, actions: ActivitiesActions) {
   val index = track.steps.indexOf(step)
   val isCurrent = index == track.currentIndex
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
@@ -307,28 +302,34 @@ private fun StepSheet(track: RouteTrack, step: RouteStep, customActivities: List
     if (step.firstStep.isNotBlank() || step.place.isNotBlank()) {
       Spacer(Modifier.height(16.dp))
       ListSection {
-        if (step.firstStep.isNotBlank()) ListRow(step.firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (step.firstStep.isNotBlank()) ListRow(step.firstStep.trim(), icon = KitIcon.COMENCE, overline = START_QUESTION)
         if (step.place.isNotBlank()) ListRow(step.place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
     Spacer(Modifier.height(22.dp))
-    if (!activeRelevo) {
-      RelevoButton("Preparar este paso", { onDismiss(); actions.onPrepareStep(track.interest, step.id, photoKey("ruta", step.id)) })
-      Spacer(Modifier.height(8.dp))
-    }
+    RelevoButton("Preparar este paso", { onDismiss(); actions.onPrepareStep(track.interest, step.id, photoKey("ruta", step.id)) })
+    Spacer(Modifier.height(8.dp))
     if (!isCurrent) {
       RelevoButton(if (index > track.currentIndex) "Pasar a este paso" else "Volver a este paso", { actions.onSetCurrent(track.interest, index); onDismiss() }, kind = ButtonKind.Secondary)
     }
   }
 }
 
-/** Íconos que se pueden elegir para una actividad propia (21, del grupo «Actividades» del kit). */
-internal val activityIcons = listOf(
-  KitIcon.LEER, KitIcon.ESCRIBIR, KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.GUITARRA, KitIcon.MUSICA, KitIcon.CAMINAR,
-  KitIcon.BICICLETA, KitIcon.EJERCICIO, KitIcon.ESTIRAR, KitIcon.COCINAR, KitIcon.PLANTAS, KitIcon.DORMIR, KitIcon.LLAMAR,
-  KitIcon.CARTA, KitIcon.ORDENAR, KitIcon.ESTUDIAR, KitIcon.FOTOGRAFIA, KitIcon.MANUALIDADES, KitIcon.JUEGO_DE_MESA, KitIcon.SALIR,
-  KitIcon.VIDEOJUEGOS, KitIcon.REPRODUCIR,
+/**
+ * Íconos que se pueden elegir para una actividad propia, por familia (4.3, D-158): 34, con los trece nuevos
+ * del kit. Ordenarlos como las ideas hace que el color del anillo y su grupo digan lo mismo.
+ */
+internal val iconFamilies: List<Pair<Sky, List<KitIcon>>> = listOf(
+  Sky.MENTA to listOf(KitIcon.CAMINAR, KitIcon.CORRER, KitIcon.BICICLETA, KitIcon.EJERCICIO, KitIcon.NADAR, KitIcon.PELOTA, KitIcon.PERRO, KitIcon.PLANTAS),
+  Sky.CIELO to listOf(KitIcon.LEER, KitIcon.MANGA, KitIcon.ESTUDIAR, KitIcon.IDIOMAS, KitIcon.ESCRIBIR, KitIcon.CARTA),
+  Sky.ATARDECER to listOf(KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.TEJER, KitIcon.MAQUETA, KitIcon.FOTOGRAFIA),
+  Sky.AMBAR to listOf(KitIcon.VIDEOJUEGOS, KitIcon.JUEGO_DE_MESA, KitIcon.CARTAS, KitIcon.MUSICA, KitIcon.GUITARRA, KitIcon.PIANO, KitIcon.PELICULA),
+  Sky.BRASA to listOf(KitIcon.COCINAR, KitIcon.ORDENAR),
+  Sky.NOCHE to listOf(KitIcon.DORMIR, KitIcon.MEDITAR, KitIcon.ESTIRAR),
+  Sky.ROSA to listOf(KitIcon.LLAMAR, KitIcon.COMPARTIR),
 )
+
+internal val activityIcons: List<KitIcon> = iconFamilies.flatMap { it.second }
 
 /**
  * Crear o editar una actividad propia (4.0): arriba su anillo, que se cambia en una hoja de anillos (la
@@ -420,6 +421,8 @@ private fun ActivityForm(
 ) {
   var confirmDelete by rememberSaveable { mutableStateOf(false) }
   var picking by rememberSaveable { mutableStateOf(false) }
+  // Qué dato se está editando en su hoja: «start», «place» o nada (4.3).
+  var editing by rememberSaveable { mutableStateOf<String?>(null) }
   // Una predefinida se guarda con su nombre (4.2); lo que no se repite es el nombre de otra ya guardada.
   val duplicate = existing.any { it.id != initial?.id && it.name.equals(name.trim(), true) }
   val icon = pictureIcon(Picture.parse(image) ?: pictureForActivity(name, emptyList()))
@@ -446,20 +449,37 @@ private fun ActivityForm(
     Spacer(Modifier.height(Gap.block))
     RenglonField("Actividad", name, { onName(it.take(60)) }, placeholder = "Ej.: practicar guitarra")
     if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya tienes una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
-    Spacer(Modifier.height(Gap.list))
-    RenglonField(START_QUESTION, first, { onFirst(it.take(120)) }, placeholder = "Ej.: sacar la guitarra del estuche", icon = KitIcon.PRIMER_PASO)
-    Spacer(Modifier.height(Gap.list))
-    RenglonField(PLACE_QUESTION, place, { onPlace(it.take(120)) }, placeholder = "Ej.: junto a la guitarra", icon = KitIcon.LUGAR)
+    Spacer(Modifier.height(Gap.block))
+    // 4.3 (D-158): el primer paso y el lugar se eligen en una hoja con sugerencias de esta actividad y un
+    // campo debajo para escribir el propio, en vez de obligar a escribir.
+    ListSection {
+      FactRow(KitIcon.COMENCE, START_QUESTION, first) { editing = "start" }
+      FactRow(KitIcon.LUGAR, PLACE_QUESTION, place) { editing = "place" }
+    }
     if (initial != null) {
       SectionGap()
       RelevoButton("Borrar la actividad", { confirmDelete = true }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
     }
   }
+  when (editing) {
+    "start" -> ChoiceSheet(START_QUESTION, startSuggestions(name), first, { onFirst(it.take(120)) }, example = "Ej.: sacar la guitarra del estuche", onDone = { editing = null })
+    "place" -> ChoiceSheet(PLACE_QUESTION, placeSuggestions(name), place, { onPlace(it.take(120)) }, example = "Ej.: junto a la guitarra", onDone = { editing = null })
+  }
   if (picking) {
+    // Por familia (4.3): al elegir, el nombre de su familia late con su degradado.
     RelevoSheet(onDismiss = { picking = false }, title = "Elige un ícono", done = "Listo", tall = true) {
+      var pulsed by remember { mutableStateOf<Sky?>(null) }
+      var pulse by remember { mutableIntStateOf(0) }
       Spacer(Modifier.height(6.dp))
-      RingGrid(activityIcons, columns = 4) { option ->
-        RingCell(option, null, { onImage(option.key) }, size = 60.dp, selected = icon == option, description = option.label)
+      Column(verticalArrangement = Arrangement.spacedBy(Gap.block)) {
+        iconFamilies.forEach { (sky, icons) ->
+          Column {
+            FamilyLabel(sky, if (pulsed == sky) pulse else 0, Modifier.padding(bottom = 10.dp))
+            RingGrid(icons, columns = 4) { option ->
+              RingCell(option, null, { onImage(option.key); pulsed = sky; pulse++ }, size = 60.dp, selected = icon == option, description = option.label)
+            }
+          }
+        }
       }
       Spacer(Modifier.height(12.dp))
     }
@@ -468,11 +488,25 @@ private fun ActivityForm(
     RelevoSheet(onDismiss = { confirmDelete = false }, scrollable = false) {
       Text("¿Borrar «${initial.name}»?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se quita de tus actividades. Los relevos que ya hiciste se mantienen.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Se quita de «Creadas por ti». Los relevos que ya hiciste se mantienen.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar", { confirmDelete = false; onDelete(initial.id) }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
       Spacer(Modifier.height(8.dp))
       RelevoButton("Cancelar", { confirmDelete = false }, kind = ButtonKind.Secondary)
     }
+  }
+}
+
+/**
+ * Hoja para elegir un dato de la actividad (4.3, D-158): arriba las sugerencias de esta actividad, que se
+ * eligen con un toque y cierran la hoja, y debajo un campo para escribir el propio. «Listo» guarda lo escrito.
+ */
+@Composable
+private fun ChoiceSheet(question: String, options: List<String>, current: String, onChange: (String) -> Unit, example: String, onDone: () -> Unit) {
+  RelevoSheet(onDismiss = onDone, title = question, done = "Listo") {
+    Suggestions(options, current, { onChange(it); onDone() })
+    if (options.isNotEmpty()) Spacer(Modifier.height(Gap.block))
+    RenglonField("O escríbelo", current, onChange, placeholder = example, onImeAction = onDone)
+    Spacer(Modifier.height(12.dp))
   }
 }

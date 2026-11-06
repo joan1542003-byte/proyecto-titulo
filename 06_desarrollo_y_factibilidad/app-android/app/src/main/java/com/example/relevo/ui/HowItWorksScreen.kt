@@ -45,6 +45,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -81,7 +82,7 @@ private class GuidePage(val key: String, val title: String, val text: String, va
 
 /**
  * Guía de la primera vez (D-088, D-090). Antes del consentimiento, pocas pantallas dan el contexto:
- * qué es Relevo (el video), para qué sirve —la intención que queda esperando mientras se usa el
+ * para qué sirve —la intención que queda esperando mientras se usa el
  * teléfono (memoria, secciones 3 y 7)— y cómo funciona el sistema: la app, el parlante y la persona,
  * que decide (sección 11). Lo demás se aprende haciendo el primer relevo, guiado paso a paso, para no
  * cargar la primera vez (criterio 6). La primera vez termina preguntando por el aviso semanal, sin
@@ -92,18 +93,13 @@ internal fun HowItWorksScreen(
   onContinue: () -> Unit,
   continueLabel: String = "Entendido",
   onBack: (() -> Unit)? = null,
-  /** Registro de uso: segundos vistos, si llegó al final y si activó el sonido. */
-  onVideo: (seconds: Int, completed: Boolean, soundOn: Boolean) -> Unit = { _, _, _ -> },
   /** Solo la primera vez: la respuesta al aviso semanal. */
   onReturnNotice: ((Boolean) -> Unit)? = null,
   /** Registro de uso: la pantalla de la guía que se muestra. */
   onPage: (String) -> Unit = {},
 ) {
   val pages = buildList {
-    add(GuidePage("video", "Esto es Relevo", "" ) {
-      IntroVideo(Modifier.fillMaxWidth(.78f), onVideo)
-    })
-    add(GuidePage("para_que", "¿Te ha pasado?", "Relevo suena a tiempo, donde empiezas, para que no quede esperando.") {
+    add(GuidePage("para_que", "¿Te ha pasado?", "Cuando se cumple el tiempo que elegiste en tus apps, Relevo suena donde empieza lo que querías hacer.") {
       GuidePanel {
         Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { ActivityRing(KitIcon.TIEMPO, 88.dp) }
         Spacer(Modifier.height(16.dp))
@@ -115,13 +111,13 @@ internal fun HowItWorksScreen(
     add(GuidePage("sistema", "Cómo funciona", "" ) {
       // 4.0: las cuatro partes en un grupo, con íconos iguales.
       ListSection {
-        ListRow("Cuenta tu tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges")
-        ListRow("Te recuerda cómo empezar", icon = KitIcon.PRIMER_PASO, subtitle = "Algo pequeño, de segundos")
-        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag, el parlante o el reloj")
+        ListRow("Cuenta el tiempo", icon = KitIcon.TIEMPO, subtitle = "En las apps que eliges")
+        ListRow("Te recuerda cómo empezar", icon = KitIcon.COMENCE, subtitle = "Con un primer paso, como abrir el libro")
+        ListRow("Suena donde empiezas", icon = KitIcon.LUGAR, subtitle = "En el Tag o en un dispositivo de audio, junto a lo que quieres hacer")
         ListRow("Tú decides", icon = KitIcon.DECISION, subtitle = "Empezar, dejarlo o cambiar de idea")
       }
     })
-    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "Una última pregunta", "Si pasas una semana sin abrir Relevo, ¿quieres que te avise una vez? Puedes apagarlo cuando quieras.") {
+    if (onReturnNotice != null) add(GuidePage("aviso_semanal", "¿Te avisamos si pasa una semana?", "Si pasas una semana sin abrir Relevo, te llega este aviso una sola vez. Puedes apagarlo cuando quieras.") {
       GuidePanel {
         StatusChip(KitIcon.AVISOS, "Relevo")
         Spacer(Modifier.height(10.dp))
@@ -137,7 +133,11 @@ internal fun HowItWorksScreen(
   fun go(to: Int) { forward = to > index; index = to.coerceIn(0, pages.lastIndex) }
   LaunchedEffect(page.key) { onPage(page.key) }
   BackHandler(enabled = index > 0) { go(index - 1) }
+  val scroll = rememberScrollState()
+  // Cada paso empieza arriba (4.3): el desplazamiento de un paso no se arrastra al siguiente.
+  LaunchedEffect(index) { scroll.scrollTo(0) }
   RelevoScreen(
+    scrollState = scroll,
     title = page.title,
     onBack = if (index > 0) ({ go(index - 1) }) else onBack,
     step = "${index + 1} de ${pages.size}",
@@ -148,7 +148,7 @@ internal fun HowItWorksScreen(
         !last -> RelevoButton("Seguir", { go(index + 1) })
         onReturnNotice != null -> {
           // Las dos respuestas pesan lo mismo: ninguna viene sugerida.
-          RelevoButton("Sí, avísame", { onReturnNotice(true); onContinue() }, kind = ButtonKind.Secondary)
+          RelevoButton("Sí, quiero el aviso", { onReturnNotice(true); onContinue() }, kind = ButtonKind.Secondary)
           RelevoButton("No, gracias", { onReturnNotice(false); onContinue() }, kind = ButtonKind.Secondary)
         }
         else -> RelevoButton(continueLabel, onContinue)
@@ -186,7 +186,7 @@ internal fun FirstRelevoScreen(
   firstStep: String = "", place: String = "",
 ) {
   RelevoScreen(
-    title = "Tu primer relevo",
+    title = "Primer relevo",
     subtitle = null,
     bottom = {
       RelevoButton("Preparar un relevo", onStart)
@@ -196,12 +196,12 @@ internal fun FirstRelevoScreen(
     Column(Modifier.fillMaxWidth().padding(vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
       ActivityRing(pictureIcon(picture), 96.dp)
       Spacer(Modifier.height(12.dp))
-      Text(suggestion ?: "Tu actividad", style = Relevo.type.title2, color = Relevo.colors.ink)
+      Text(suggestion ?: "Actividad", style = Relevo.type.title2, color = Relevo.colors.ink)
     }
     if (firstStep.isNotBlank() || place.isNotBlank()) {
       Spacer(Modifier.height(Gap.block))
       ListSection {
-        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        if (firstStep.isNotBlank()) ListRow(firstStep.trim(), icon = KitIcon.COMENCE, overline = START_QUESTION)
         if (place.isNotBlank()) ListRow(place.trim(), icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }
@@ -212,82 +212,4 @@ internal fun FirstRelevoScreen(
 @Composable
 private fun GuidePanel(content: @Composable ColumnScope.() -> Unit) {
   Panel(Modifier.fillMaxWidth()) { content() }
-}
-
-
-/**
- * Video vertical de 30 segundos. Se reproduce en un TextureView para que respete las esquinas
- * redondeadas. Empieza sin sonido; con «Reducir movimiento» activo no empieza solo. Tocarlo lo pausa
- * o lo retoma; al terminar, se puede ver de nuevo.
- */
-@Composable
-private fun IntroVideo(modifier: Modifier = Modifier, onVideo: (Int, Boolean, Boolean) -> Unit = { _, _, _ -> }) {
-  val reduce = rememberReduceMotion()
-  var player by remember { mutableStateOf<MediaPlayer?>(null) }
-  var playing by remember { mutableStateOf(false) }
-  var ended by remember { mutableStateOf(false) }
-  var muted by remember { mutableStateOf(true) }
-  var watchedMs by remember { mutableStateOf(0) }
-  var completedOnce by remember { mutableStateOf(false) }
-  var soundOnce by remember { mutableStateOf(false) }
-  fun track(mp: MediaPlayer?) { mp?.let { runCatching { watchedMs = maxOf(watchedMs, it.currentPosition) } } }
-
-  fun play() { player?.let { if (ended) it.seekTo(0); it.start(); playing = true; ended = false } }
-  fun pause() { track(player); player?.pause(); playing = false }
-
-  LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { pause() }
-  DisposableEffect(Unit) {
-    onDispose {
-      track(player)
-      onVideo(watchedMs / 1000, completedOnce, soundOnce)
-      player?.release(); player = null
-    }
-  }
-
-  Box(
-    modifier
-      .aspectRatio(9f / 16f)
-      .clip(RoundedCornerShape(28.dp))
-      .background(Relevo.colors.mist)
-      .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, role = Role.Button) { if (playing) pause() else play() }
-      .semantics { contentDescription = "Video de 30 segundos que explica Relevo. Tócalo para ${if (playing) "pausarlo" else "reproducirlo"}." },
-  ) {
-    AndroidView(
-      factory = { context ->
-        TextureView(context).apply {
-          surfaceTextureListener = object : TextureView.SurfaceTextureListener {
-            override fun onSurfaceTextureAvailable(texture: SurfaceTexture, width: Int, height: Int) {
-              val created = MediaPlayer.create(context, R.raw.relevo_como_funciona) ?: return
-              created.setSurface(Surface(texture))
-              created.setVolume(if (muted) 0f else 1f, if (muted) 0f else 1f)
-              created.setOnCompletionListener { mp -> watchedMs = maxOf(watchedMs, mp.duration); completedOnce = true; playing = false; ended = true }
-              player = created
-              if (!reduce) { created.start(); playing = true } else created.seekTo(1)
-            }
-            override fun onSurfaceTextureSizeChanged(texture: SurfaceTexture, width: Int, height: Int) = Unit
-            override fun onSurfaceTextureDestroyed(texture: SurfaceTexture): Boolean {
-              track(player); player?.release(); player = null; playing = false
-              return true
-            }
-            override fun onSurfaceTextureUpdated(texture: SurfaceTexture) = Unit
-          }
-        }
-      },
-      modifier = Modifier.matchParentSize(),
-    )
-    Row(Modifier.align(Alignment.BottomEnd).padding(10.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-      IconAction(
-        if (muted) KitIcon.SILENCIAR else KitIcon.PARLANTE,
-        if (muted) "Activar el sonido" else "Quitar el sonido",
-        { muted = !muted; if (!muted) soundOnce = true; player?.setVolume(if (muted) 0f else 1f, if (muted) 0f else 1f) },
-        filled = true,
-      )
-      IconAction(
-        when { ended -> KitIcon.REINTENTAR; playing -> KitIcon.PAUSAR; else -> KitIcon.REPRODUCIR },
-        when { ended -> "Ver de nuevo"; playing -> "Pausar"; else -> "Reproducir" },
-        { if (playing) pause() else play() },
-        filled = true,
-      )
-    }
-  }
 }

@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import cl.udp.relevo.BuildConfig
+import com.example.relevo.data.ActiveStore
 import com.example.relevo.data.AutoModeStore
 import com.example.relevo.data.CustomActivity
 import com.example.relevo.data.CustomActivityStore
@@ -68,6 +69,8 @@ data class RouteSuggestion(val interest: String, val current: RouteStep, val nex
 
 class RelevoViewModel(application: Application) : AndroidViewModel(application) {
   private val store = ReminderStore(application)
+  /** Relevos que cuentan, varios a la vez (4.3, D-158). Se crea antes que [_reminder]: mueve el de la 4.2. */
+  private val activeStore = ActiveStore(application).also { ActiveStore.migrate(application) }
   private val researchLog = ResearchLogStore(application)
   private val remoteSync = RemoteSync(application, researchLog)
   val remoteConfigured: Boolean get() = remoteSync.configured
@@ -82,7 +85,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val appsRepository = InstalledAppsRepository(application)
   private val experiencePreferences = application.getSharedPreferences("relevo_experience", Application.MODE_PRIVATE)
   private val _reminder = MutableStateFlow(store.load())
+  /** El borrador que se prepara, o el relevo que suena y espera la respuesta. */
   val reminder: StateFlow<Reminder> = _reminder.asStateFlow()
+  private val _actives = MutableStateFlow(activeStore.load())
+  /** Los relevos que están contando (4.3). */
+  val actives: StateFlow<List<Reminder>> = _actives.asStateFlow()
 
   private val _customActivities = MutableStateFlow(customActivityStore.load())
   val customActivities: StateFlow<List<CustomActivity>> = _customActivities.asStateFlow()
@@ -265,11 +272,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun onPrepareStep(step: String) { lastPrepareStep = step; log("preparar_paso", step) }
   fun onPrepareClosed() { log("preparar_cerrado", "paso=${lastPrepareStep.orEmpty()}") }
 
-  /** Cuánto se vio del video de «Cómo funciona». Antes de aceptar se guarda en memoria. */
-  fun onTutorialVideo(seconds: Int, completed: Boolean, soundOn: Boolean) {
-    val detail = "segundos=$seconds;completo=${if (completed) "si" else "no"};sonido=${if (soundOn) "si" else "no"}"
-    log("video_como_funciona", detail)
-  }
 
   /** Permisos que tiene Relevo; se registra cuando cambian. */
   private fun logPermissions() {
@@ -317,7 +319,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (settingsStore.returnNotNow >= 2 && !settingsStore.turnOffAsked && _settings.value.returnNotice) _askTurnOffReturn.value = true
     refreshStudy()
     val current = _reminder.value
-    if (current.status == ReminderStatus.WAITING && _usageAccessGranted.value && Participation.canUse(getApplication()) && !AppUsageMonitorService.isCounting) {
+    _actives.value = activeStore.load()
+    if (_actives.value.isNotEmpty() && _usageAccessGranted.value && Participation.canUse(getApplication()) && !AppUsageMonitorService.isCounting) {
       ContextCompat.startForegroundService(
         getApplication(),
         Intent(getApplication(), AppUsageMonitorService::class.java).setAction(AppUsageMonitorService.ACTION_RESTORE),
@@ -327,7 +330,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     if (current.status == ReminderStatus.SIGNALLED && !current.signalEnded && !AppUsageMonitorService.isCounting) {
       updateValue(current.endSignal())
     }
-    if (current.status != ReminderStatus.WAITING) startWatchingIfNeeded()
+    if (_actives.value.isEmpty()) startWatchingIfNeeded()
     if (hasCurrentConsent()) {
       viewModelScope.launch(Dispatchers.IO) {
         UsageAfterSignal.update(getApplication(), researchLog)
@@ -350,9 +353,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _autoMode.value = enabled
     log("activacion_automatica", if (enabled) "si;${last?.activity.orEmpty()};${last?.selectedApps?.joinToString(",") { it.label }.orEmpty()}" else "no")
     if (enabled) startWatchingIfNeeded()
-    else if (_reminder.value.status != ReminderStatus.WAITING) {
-      getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
-    }
+    else stopServiceIfIdle()
     return true
   }
 
@@ -472,7 +473,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Carga la última configuración usada para revisarla y activarla de nuevo. No la activa por sí sola. */
   fun repeatLast(): Boolean {
-    if (_reminder.value.status == ReminderStatus.WAITING) return false
     val last = _lastReminder.value ?: return false
     clearCarried()
     log("repetir_ultimo", last.activity)
@@ -553,8 +553,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   fun applyPreset(activity: String, firstStep: String, place: String) {
-    // Mientras un relevo cuenta no se prepara otro: lo dejaría como borrador sin avisar (4.2.1).
-    if (_reminder.value.status == ReminderStatus.WAITING) return
     log("actividad_elegida", activity)
     routeStore.setPreparedStep(null)
     update {
@@ -573,6 +571,28 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   fun deleteCustomActivity(id: String) {
     log("actividad_propia_borrada", _customActivities.value.firstOrNull { it.id == id }?.name)
     _customActivities.value = customActivityStore.delete(id)
+  }
+
+  /** Marca o desmarca una de las apps de la persona, en Perfil (4.3). */
+  fun togglePreferredApp(app: InstalledApp) {
+    val current = _profile.value.apps
+    val next = if (current.any { it.packageName == app.packageName }) current.filterNot { it.packageName == app.packageName }
+      else current + com.example.relevo.domain.TrackedApp(app.packageName, app.label)
+    log("perfil_apps", next.size.toString())
+    updateProfile { copy(apps = next) }
+  }
+
+  /**
+   * Al abrir Preparar, un relevo sin apps toma las de Perfil que sigan instaladas (4.3). No toca uno que ya
+   * tiene apps ni uno que está contando.
+   */
+  fun applyPreferredApps() {
+    val draft = _reminder.value
+    if (draft.selectedApps.isNotEmpty()) return
+    val installed = _installedApps.value.map { it.packageName }.toSet()
+    val apps = _profile.value.apps.filter { installed.isEmpty() || it.packageName in installed }
+    if (apps.isEmpty()) return
+    update { copy(targetApps = apps, targetPackage = apps.first().packageName, targetAppLabel = apps.first().label) }
   }
 
   fun selectTargetApp(app: InstalledApp) =
@@ -632,19 +652,21 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     val armed = prepared.arm(UUID.randomUUID().toString())
     val next = if (carried > 0 && armed.status == ReminderStatus.WAITING) armed.copy(observedUsageSeconds = carried.coerceAtMost(armed.requiredUsageSeconds - 1)) else armed
     if (next.status == ReminderStatus.WAITING) clearCarried()
-    updateValue(next)
-    if (next.status == ReminderStatus.WAITING) {
-      if (_guide.value.prepare) _firstActivated.value = true
-      markGuide("guide_prepare_done")
-      researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
-      researchLog.startSession(next)
-      syncRemote()
-      ContextCompat.startForegroundService(
-        getApplication(),
-        Intent(getApplication(), AppUsageMonitorService::class.java),
-      )
-    }
-    return next.status == ReminderStatus.WAITING
+    if (next.status != ReminderStatus.WAITING) { updateValue(next); return false }
+    // 4.3 (D-158): el relevo pasa a los activos y el borrador queda libre para preparar otro.
+    activeStore.add(next)
+    _actives.value = activeStore.load()
+    updateValue(restoreDraft(next))
+    if (_guide.value.prepare) _firstActivated.value = true
+    markGuide("guide_prepare_done")
+    researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
+    researchLog.startSession(next)
+    syncRemote()
+    ContextCompat.startForegroundService(
+      getApplication(),
+      Intent(getApplication(), AppUsageMonitorService::class.java),
+    )
+    return true
   }
 
   /** Prueba de sonido: una firma, que termina sola. [route] permite probar otra salida (E1). */
@@ -772,32 +794,33 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Olvida el llavero vinculado, por ejemplo para elegir otro. No se usa con un relevo activo. */
   fun forgetTag() {
-    if (_reminder.value.status == ReminderStatus.WAITING && _reminder.value.signalRoute == SignalRoute.TAG) return
+    if (_actives.value.any { it.signalRoute == SignalRoute.TAG }) return
     tagStore.clear()
     TagLink.idle()
     log("llavero_olvidado")
     _tag.value = TagUi()
   }
 
-  fun disarm() {
-    // Con la activación automática, el servicio no se detiene: al ver el relevo desactivado vuelve a esperar.
-    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
+  /** El relevo activo de una sesión, si sigue activo. */
+  private fun activeOf(sessionId: String): Reminder? = activeStore.load().firstOrNull { it.sessionId == sessionId }
+
+  /**
+   * Desactiva un relevo antes de que suene. Como antes, pasa a «¿Qué decidiste?»: queda en primer plano con
+   * su respuesta pendiente; si había un borrador a medias, se guarda y vuelve al terminar (4.3).
+   */
+  fun disarm(sessionId: String) {
+    val current = activeOf(sessionId) ?: return
     markRelevoClosed()
-    signalPlayer.stop()
-    val current = _reminder.value
     historyStore.add(current)
     _history.value = historyStore.load()
-    researchLog.record(
-      current.sessionId,
-      current.participantCode,
-      "disarmed",
-      current.targetPackage,
-      current.observedUsageSeconds,
-    )
+    researchLog.record(current.sessionId, current.participantCode, "disarmed", current.targetPackage, current.observedUsageSeconds)
     val closedAt = System.currentTimeMillis()
     viewModelScope.launch(Dispatchers.IO) { researchLog.markAppSeconds(current.sessionId, closedAt) }
-    updateValue(_reminder.value.disarm())
-    _remainingSeconds.value = 0
+    activeStore.remove(sessionId)
+    _actives.value = activeStore.load()
+    parkDraft()
+    updateValue(current.disarm())
+    stopServiceIfIdle()
   }
 
   /**
@@ -808,32 +831,56 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /**
    * 2.30: editar un relevo activo sin borrarlo ni crearlo de nuevo. Mientras se edita deja de contar; la
    * sesión anterior queda como `deleted`, con el evento `relevo_editado`, y al activarlo empieza otra.
-   * Si cuenta las mismas apps, sigue con el tiempo que ya llevaba.
+   * Si cuenta las mismas apps, sigue con el tiempo que ya llevaba. Desde 4.3 ocupa el borrador; si había
+   * otro a medias, se guarda y vuelve después.
    */
-  fun editActive(): Boolean {
-    val current = _reminder.value
-    if (current.status != ReminderStatus.WAITING) return false
+  fun editActive(sessionId: String): Boolean {
+    val current = activeOf(sessionId) ?: return false
     researchLog.record(current.sessionId, current.participantCode, "disarmed", current.targetPackage, current.observedUsageSeconds)
     researchLog.completeSession(current, "deleted")
     log("relevo_editado", "${current.activity};segundos=${current.observedUsageSeconds}")
-    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     markRelevoClosed()
+    activeStore.remove(sessionId)
+    _actives.value = activeStore.load()
+    parkDraft()
     carriedCount = CarriedCount(current.selectedApps.map { it.packageName }.toSet(), current.observedUsageSeconds)
     _editing.value = true
     updateValue(current.copy(status = ReminderStatus.DRAFT, sessionId = "", signalDelivered = false, signalAt = 0L, signalEnded = false, autoActivated = false))
-    _remainingSeconds.value = 0
+    stopServiceIfIdle()
     syncRemote()
     return true
   }
 
-  fun deleteActive() {
-    val current = _reminder.value
-    if (current.status != ReminderStatus.WAITING) return
+  fun deleteActive(sessionId: String) {
+    val current = activeOf(sessionId) ?: return
     researchLog.record(current.sessionId, current.participantCode, "disarmed", current.targetPackage, current.observedUsageSeconds)
     researchLog.completeSession(current, "deleted")
     log("relevo_eliminado", "${current.activity};segundos=${current.observedUsageSeconds};${if (current.autoActivated) "solo" else "a_mano"}")
-    reset(keepAsLast = false)
+    activeStore.remove(sessionId)
+    _actives.value = activeStore.load()
+    stopServiceIfIdle()
     syncRemote()
+  }
+
+  /** Guarda el borrador que se estaba preparando, si tiene algo, para devolverlo después (4.3). */
+  private fun parkDraft() {
+    val draft = _reminder.value
+    if (draft.status == ReminderStatus.DRAFT || draft.status == ReminderStatus.READY) {
+      if (draft.activity.isNotBlank() || draft.selectedApps.isNotEmpty()) activeStore.park(draft)
+    }
+  }
+
+  /** El borrador que vuelve: el que se guardó, o uno vacío con el código y el consentimiento de [base]. */
+  private fun restoreDraft(base: Reminder): Reminder =
+    activeStore.takeParked()?.copy(status = ReminderStatus.DRAFT)
+      ?: Reminder(participantCode = base.participantCode, consentAccepted = hasCurrentConsent(), localOnly = base.localOnly)
+
+  /** Sin relevos activos ni activación automática, el servicio se detiene; con alguno, sigue contando. */
+  private fun stopServiceIfIdle() {
+    if (_actives.value.isNotEmpty() || autoModeStore.enabled) return
+    val focus = _reminder.value.status
+    if (focus == ReminderStatus.SIGNALLED) return
+    getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
   }
 
   /**
@@ -889,7 +936,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Vuelve a Inicio sin relevo. [keepAsLast]: el relevo terminado pasa a ser el último, para repetirlo. */
   fun reset(keepAsLast: Boolean = true) {
     clearCarried()
-    if (!autoModeStore.enabled) getApplication<Application>().stopService(Intent(getApplication(), AppUsageMonitorService::class.java))
     if (_reminder.value.sessionId.isNotBlank()) markRelevoClosed()
     signalPlayer.stop()
     _reminder.value.takeIf { keepAsLast && it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
@@ -902,13 +948,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     }
     routeStore.setPreparedStep(null)
     store.clear()
-    _reminder.value = Reminder(
-      participantCode = experiencePreferences.getString("participant_code", null).orEmpty(),
-      consentAccepted = hasCurrentConsent(),
-      localOnly = false,
-    )
+    _reminder.value = restoreDraft(Reminder(participantCode = experiencePreferences.getString("participant_code", null).orEmpty()))
     store.save(_reminder.value)
     _remainingSeconds.value = 0
+    _actives.value = activeStore.load()
+    stopServiceIfIdle()
     refreshStudy()
     startWatchingIfNeeded()
   }
@@ -947,7 +991,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   /** Prepara un relevo con un paso de la ruta; su respuesta cuenta para ofrecer el siguiente (R3). */
   fun prepareFromStep(interest: String, stepId: String): Boolean {
-    if (_reminder.value.status == ReminderStatus.WAITING) return false
     val step = _routes.value.firstOrNull { it.interest == interest }?.steps?.firstOrNull { it.id == stepId } ?: return false
     applyPreset(step.activity, step.firstStep, step.place)
     routeStore.setPreparedStep(step.id)
@@ -977,6 +1020,13 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   }
 
   // ---- Ajustes (S2 y apariencia) ----
+
+  /** Elige el sonido de la señal y lo hace sonar una vez en el teléfono (4.3). Queda en el registro, por D-078. */
+  fun chooseSound(sonido: com.example.relevo.signal.Sonido) {
+    log("sonido", sonido.id)
+    updateSettings { copy(sound = sonido.id) }
+    signalPlayer.play(SignalRoute.PHONE, SignalPlayer.Pattern.TEST)
+  }
 
   fun updateSettings(transform: Settings.() -> Settings) {
     val previous = _settings.value
@@ -1153,6 +1203,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
         while (true) {
           val persisted = store.load()
           if (persisted != _reminder.value) _reminder.value = persisted
+          val actives = activeStore.load()
+          if (actives != _actives.value) _actives.value = actives
           _remainingSeconds.value =
             (persisted.requiredUsageSeconds - persisted.observedUsageSeconds).coerceAtLeast(0)
           delay(500)

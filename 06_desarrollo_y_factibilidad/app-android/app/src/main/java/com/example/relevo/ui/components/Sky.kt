@@ -65,13 +65,15 @@ enum class Sky(internal val base: Color, internal val blobs: List<SkyBlob>) {
 
 /** La familia de una actividad, por su ícono. Las que la app no reconoce toman la arena. */
 fun skyFor(icon: KitIcon): Sky = when (icon) {
-  KitIcon.CAMINAR, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.SALIR, KitIcon.PLANTAS -> Sky.MENTA
-  KitIcon.LEER, KitIcon.ESTUDIAR, KitIcon.ESCRIBIR, KitIcon.TEXTO -> Sky.CIELO
-  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.FOTOGRAFIA -> Sky.ATARDECER
-  KitIcon.VIDEOJUEGOS, KitIcon.JUEGO_DE_MESA, KitIcon.MUSICA, KitIcon.GUITARRA, KitIcon.REPRODUCIR -> Sky.AMBAR
+  KitIcon.CAMINAR, KitIcon.CORRER, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.NADAR, KitIcon.PELOTA, KitIcon.PERRO, KitIcon.SALIR,
+  KitIcon.PLANTAS -> Sky.MENTA
+  KitIcon.LEER, KitIcon.MANGA, KitIcon.ESTUDIAR, KitIcon.IDIOMAS, KitIcon.ESCRIBIR, KitIcon.CARTA, KitIcon.TEXTO -> Sky.CIELO
+  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.TEJER, KitIcon.MAQUETA, KitIcon.FOTOGRAFIA -> Sky.ATARDECER
+  KitIcon.VIDEOJUEGOS, KitIcon.JUEGO_DE_MESA, KitIcon.CARTAS, KitIcon.MUSICA, KitIcon.GUITARRA, KitIcon.PIANO, KitIcon.PELICULA,
+  KitIcon.REPRODUCIR -> Sky.AMBAR
   KitIcon.COCINAR, KitIcon.ORDENAR -> Sky.BRASA
-  KitIcon.DORMIR, KitIcon.ESTIRAR -> Sky.NOCHE
-  KitIcon.LLAMAR -> Sky.ROSA
+  KitIcon.DORMIR, KitIcon.MEDITAR, KitIcon.ESTIRAR -> Sky.NOCHE
+  KitIcon.LLAMAR, KitIcon.COMPARTIR -> Sky.ROSA
   else -> Sky.ARENA
 }
 

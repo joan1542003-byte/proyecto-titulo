@@ -145,3 +145,19 @@ fun RenglonArea(label: String, value: String, onValueChange: (String) -> Unit, p
 
 @Composable
 internal fun VerticalSpace(height: androidx.compose.ui.unit.Dp) = Spacer(Modifier.height(height))
+
+/**
+ * Sugerencias de un toque, con su rótulo «Sugerencias» (4.3, D-158): así se distinguen de lo que la persona
+ * escribe. La elegida queda marcada y se puede cambiar o escribir encima. Sin sugerencias, no se muestra nada.
+ */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+@Composable
+fun Suggestions(options: List<String>, current: String, onPick: (String) -> Unit, modifier: Modifier = Modifier) {
+  if (options.isEmpty()) return
+  Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text("Sugerencias", style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = Relevo.colors.graphite)
+    androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      options.forEach { option -> QuickChoice(option, current.trim().equals(option, ignoreCase = true), { onPick(option) }) }
+    }
+  }
+}

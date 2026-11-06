@@ -91,7 +91,7 @@ internal class HomeActions(
   val onCustom: (CustomActivity, String?) -> Unit,
   val onRouteStep: (interest: String, stepId: String, photoKey: String?) -> Unit,
   val onNewActivity: () -> Unit,
-  val onOpenActive: () -> Unit,
+  val onOpenActive: (sessionId: String) -> Unit,
   val onOpenActivities: (ActivitiesSection) -> Unit,
   val onUsageSettings: () -> Unit,
   val onBackground: () -> Unit,
@@ -117,6 +117,7 @@ internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen d�
 @Composable
 internal fun HomeTab(
   reminder: Reminder,
+  actives: List<Reminder>,
   history: List<HistoryEntry>,
   customActivities: List<CustomActivity>,
   lastReminder: Reminder?,
@@ -141,7 +142,9 @@ internal fun HomeTab(
   val scroll = rememberScrollState()
   var firstReselect by remember { mutableStateOf(reselect) }
   LaunchedEffect(reselect) { if (reselect != firstReselect) scroll.animateScrollTo(0) else firstReselect = reselect }
-  val active = reminder.status == ReminderStatus.WAITING
+  // Desde 4.3 (D-158) puede haber varios relevos contando; el que sonará primero va en la tarjeta.
+  val counting = actives.sortedBy { it.requiredUsageSeconds - it.observedUsageSeconds }
+  val active = counting.isNotEmpty()
   val last = history.firstOrNull()
   val daysSinceLast = last?.let {
     ChronoUnit.DAYS.between(Instant.ofEpochMilli(it.completedAt).atZone(ZoneId.systemDefault()).toLocalDate(), LocalDate.now())
@@ -171,7 +174,21 @@ internal fun HomeTab(
     Column(Modifier.appear(0)) {
       when {
         active -> {
-          ActiveCard(reminder, usageAccess, customActivities, actions.onOpenActive)
+          ActiveCard(counting.first(), usageAccess, customActivities) { actions.onOpenActive(counting.first().sessionId) }
+          if (counting.size > 1) {
+            Spacer(Modifier.height(Gap.list))
+            ListSection(dividerInset = 70.dp) {
+              counting.drop(1).forEach { other ->
+                ListRow(
+                  other.activity.trim(), subtitle = "Faltan ${formatDuration((other.requiredUsageSeconds - other.observedUsageSeconds).coerceAtLeast(0))}",
+                  leading = { ActivityRing(activityIcon(other.activity, customActivities), 42.dp) },
+                  chevron = true, onClick = { actions.onOpenActive(other.sessionId) },
+                )
+              }
+            }
+          }
+          Spacer(Modifier.height(Gap.list))
+          RelevoButton("Preparar otro relevo", actions.onPrepare, kind = ButtonKind.Secondary, icon = KitIcon.AGREGAR)
           if (!usageAccess) {
             Spacer(Modifier.height(Gap.list))
             Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar", icon = KitIcon.ADVERTENCIA) {
@@ -199,7 +216,7 @@ internal fun HomeTab(
       WeekBanner(history, customActivities, settings, Modifier.appear(1))
     }
     SectionGap()
-    QuickActivities(customActivities, active, actions, Modifier.appear(2))
+    QuickActivities(customActivities, actions, Modifier.appear(2))
   }
 }
 
@@ -216,7 +233,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
       val key = photoKey("ruta", step.id)
       ActivityHero(
         activityIcon(step.activity, customActivities), step.activity,
-        eyebrow = "Tu paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
+        eyebrow = "Siguiente paso en ${nextTrack.title.replaceFirstChar { it.lowercase() }}",
         detail = startSentence(step.firstStep, step.place),
       ) {
         Spacer(Modifier.height(16.dp))
@@ -239,7 +256,7 @@ private fun PrepareBlock(nextTrack: RouteTrack?, lastReminder: Reminder?, custom
       val key = photoKey("ultima", lastReminder.activity)
       ActivityHero(
         activityIcon(lastReminder.activity, customActivities), lastReminder.activity,
-        eyebrow = "Tu último relevo", detail = startSentence(lastReminder.howToStart, lastReminder.place),
+        eyebrow = "Último relevo", detail = startSentence(lastReminder.howToStart, lastReminder.place),
       ) {
         Spacer(Modifier.height(16.dp))
         RelevoButton("Preparar de nuevo", { actions.onRepeat(key) }, icon = KitIcon.REINTENTAR)
@@ -317,7 +334,7 @@ private fun WeekBanner(history: List<HistoryEntry>, customActivities: List<Custo
   val byActivity = thisWeek.groupBy { it.activity.trim() }.map { (activity, entries) -> activity to entries.size }.sortedByDescending { it.second }
   Panel(modifier, padding = 18.dp) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      Text("Tu semana", style = Relevo.type.headline, color = colors.ink, modifier = Modifier.weight(1f))
+      Text("Esta semana", style = Relevo.type.headline, color = colors.ink, modifier = Modifier.weight(1f))
       if (thisWeek.isNotEmpty()) {
         Text(
           "${countWord(thisWeek.size, "relevo", "relevos")} · ${countWord(byActivity.size, "actividad", "actividades")}",
@@ -344,29 +361,21 @@ private fun WeekBanner(history: List<HistoryEntry>, customActivities: List<Custo
   }
 }
 
-/**
- * Tus actividades a un toque. Sin actividades, la invitación a crear la primera y las ideas. Mientras un
- * relevo cuenta, las actividades no preparan otro, que lo dejaría como borrador (4.2.1): se dice cuándo se
- * podrá, y «Nueva» sigue disponible.
- */
+/** Tus actividades a un toque, aunque haya otros relevos contando (4.3). Sin actividades, la invitación a crear la primera y las ideas. */
 @Composable
-private fun QuickActivities(customActivities: List<CustomActivity>, active: Boolean, actions: HomeActions, modifier: Modifier = Modifier) {
+private fun QuickActivities(customActivities: List<CustomActivity>, actions: HomeActions, modifier: Modifier = Modifier) {
   Column(modifier) {
-    SectionHeader("Tus actividades", action = "Ver todas", onAction = { actions.onOpenActivities(ActivitiesSection.MINE) })
+    SectionHeader("Actividades", action = "Ver todas", onAction = { actions.onOpenActivities(ActivitiesSection.MINE) })
     Spacer(Modifier.height(6.dp))
     Carousel(spacing = 14.dp) {
       items(customActivities, key = { it.id }) { custom ->
         RingCell(
           activityIcon(custom.name, customActivities), custom.name,
-          onClick = if (active) null else ({ actions.onCustom(custom, photoKey("propia", custom.id)) }),
-          description = if (active) custom.name else "Preparar «${custom.name}»",
+          onClick = { actions.onCustom(custom, photoKey("propia", custom.id)) },
+          description = "Preparar «${custom.name}»",
         )
       }
       item(key = "nueva") { AddRingCell("Nueva", actions.onNewActivity) }
-    }
-    if (active && customActivities.isNotEmpty()) {
-      Spacer(Modifier.height(10.dp))
-      Text("Cuando termine tu relevo, podrás preparar otra.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     }
     if (customActivities.isEmpty()) {
       Spacer(Modifier.height(10.dp))
@@ -423,7 +432,7 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
   ActivityHero(
     activityIcon(reminder.activity, customActivities), reminder.activity,
     eyebrow = if (usageAccess) "Contando" else "En pausa", detail = "Suena " + soundWhere(reminder),
-    onClick = onOpen, clickLabel = "Ver tu relevo",
+    onClick = onOpen, clickLabel = "Ver el relevo",
   ) {
     Spacer(Modifier.height(16.dp))
     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -443,7 +452,7 @@ private fun ActiveCard(reminder: Reminder, usageAccess: Boolean, customActivitie
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
-    Text("Tu relevo está contando", style = Relevo.type.title2, color = Relevo.colors.ink)
+    Text("El relevo está contando", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))
     Text(
       "Suena ${soundWhere(reminder)} cuando sumes ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(" y ") { it.label }}.",
@@ -533,7 +542,7 @@ internal fun ActiveScreen(
   }
   if (options) {
     RelevoSheet(onDismiss = { options = false }, scrollable = false) {
-      Text("Tu relevo", style = Relevo.type.title2, color = colors.ink)
+      Text("Relevo", style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(16.dp))
       ListSection {
         ListRow("Editar", icon = KitIcon.EDITAR, subtitle = "Mientras lo editas no cuenta.", chevron = true, onClick = { options = false; onEdit() })
@@ -546,7 +555,7 @@ internal fun ActiveScreen(
     RelevoSheet(onDismiss = { confirmingDelete = false }, scrollable = false) {
       Text("¿Eliminar este relevo?", style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Deja de contar, no suena y no queda en tus relevos.", style = Relevo.type.body, color = colors.graphite)
+      Text("Deja de contar, no suena y no queda en Relevos.", style = Relevo.type.body, color = colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Eliminar", { confirmingDelete = false; onDelete() }, kind = ButtonKind.Destructive)
       Spacer(Modifier.height(10.dp))

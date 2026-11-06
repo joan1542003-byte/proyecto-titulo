@@ -191,7 +191,7 @@ fun RelevoScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
       ) { bottom() }
     } else if (dock > 0.dp && backdrop == null && bottomEdge > 0.01f) {
-      ScrollEdge(haze, top = false, solid = dock + navBottom, ramp = 36.dp, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
+      ScrollEdge(haze, top = false, solid = dock + navBottom, modifier = Modifier.align(Alignment.BottomCenter), visible = bottomEdge)
     }
   }
 }

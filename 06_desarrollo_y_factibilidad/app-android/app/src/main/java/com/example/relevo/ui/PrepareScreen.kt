@@ -41,6 +41,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -112,6 +113,9 @@ import com.example.relevo.ui.components.RingGrid
 import com.example.relevo.ui.components.TagObject
 import com.example.relevo.ui.components.DurationButtons
 import com.example.relevo.ui.components.familyName
+import com.example.relevo.ui.components.Suggestions
+import com.example.relevo.ui.components.FamilyLabel
+import com.example.relevo.ui.components.Sky
 
 private enum class PrepareStep(val title: String) {
   ACTIVITY("¿Qué quieres hacer?"),
@@ -170,7 +174,7 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
   }
   PrepareStep.SOUND -> when {
     !reminder.routeChosen -> "Elige dónde quieres que suene."
-    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige tu Tag, o elige otra forma de avisar."
+    reminder.signalRoute == SignalRoute.TAG && !tagLinked -> "Busca y elige el Tag, o elige otra forma de avisar."
     else -> null
   }
   PrepareStep.REVIEW -> when {
@@ -247,7 +251,11 @@ internal fun PrepareScreen(
   val isKnown = activityIdeas.any { it.activity.equals(reminder.activity.trim(), true) } || customActivities.any { it.name.equals(reminder.activity.trim(), true) }
   val picture = activityPicture(reminder.activity, customActivities)
 
+  val scroll = rememberScrollState()
+  // Cada paso empieza arriba (4.3): el desplazamiento de un paso no se arrastra al siguiente.
+  LaunchedEffect(step) { scroll.scrollTo(0) }
   RelevoScreen(
+    scrollState = scroll,
     title = step.titleFor(studyCondition),
     onBack = { back() },
     closeIcon = step == PrepareStep.ACTIVITY,
@@ -285,10 +293,10 @@ internal fun PrepareScreen(
         when (current) {
           PrepareStep.ACTIVITY -> ActivityStep(reminder, customActivities, routes, actions, onNext = { if (reminder.activity.isNotBlank()) next(PrepareStep.START) })
           PrepareStep.START -> {
-            SuggestionChips(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
+            Suggestions(startSuggestions(reminder.activity), reminder.howToStart, actions.onStart)
             Spacer(Modifier.height(Gap.block))
             // La ayuda dice lo que importa (criterio 2): algo pequeño, que se hace enseguida.
-            RenglonField(START_QUESTION, reminder.howToStart, actions.onStart, placeholder = "Algo que tome segundos", imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.PRIMER_PASO, showLabel = false)
+            RenglonField(START_QUESTION, reminder.howToStart, actions.onStart, placeholder = startExample(reminder.activity), imeAction = ImeAction.Next, onImeAction = { if (canContinue) next(PrepareStep.PLACE) }, icon = KitIcon.COMENCE, showLabel = false)
           }
           PrepareStep.PLACE -> PlaceStep(reminder, studyCondition, actions, onNext = { if (canContinue) next(PrepareStep.USAGE) })
           PrepareStep.USAGE -> UsageStep(reminder, usageAccess, actions, onPick = { picking = true })
@@ -305,7 +313,7 @@ internal fun PrepareScreen(
               FactRow(KitIcon.ACTIVIDAD, PrepareStep.ACTIVITY.title, reminder.activity, leading = {
                 ActivityRing(pictureIcon(picture), 40.dp)
               }) { edit(PrepareStep.ACTIVITY) }
-              FactRow(KitIcon.PRIMER_PASO, START_QUESTION, reminder.howToStart) { edit(PrepareStep.START) }
+              FactRow(KitIcon.COMENCE, START_QUESTION, reminder.howToStart) { edit(PrepareStep.START) }
               FactRow(KitIcon.LUGAR, PrepareStep.PLACE.titleFor(studyCondition), reminder.place) { edit(PrepareStep.PLACE) }
               FactRow(KitIcon.TIEMPO, PrepareStep.USAGE.title, if (apps.isBlank()) "" else "${formatDuration(reminder.requiredUsageSeconds)} en $apps") { edit(PrepareStep.USAGE) }
               FactRow(if (reminder.routeChosen) routeIcon(reminder.signalRoute) else KitIcon.AVISOS, PrepareStep.SOUND.title, if (reminder.routeChosen) soundPlace(reminder) else "") { edit(PrepareStep.SOUND) }
@@ -319,7 +327,7 @@ internal fun PrepareScreen(
               ) {
                 CheckMark(saveActivity, square = true)
                 Spacer(Modifier.width(12.dp))
-                Text("Guardar en tus actividades para la próxima vez", style = Relevo.type.callout, color = Relevo.colors.ink)
+                Text("Guardar la actividad para la próxima vez", style = Relevo.type.callout, color = Relevo.colors.ink)
               }
             }
             if (!backgroundUnrestricted) {
@@ -341,7 +349,7 @@ internal fun PrepareScreen(
 @Composable
 private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED_PARAMETER") photoKey: String?, onEdit: () -> Unit) {
   ListRow(
-    activity.trim(), subtitle = "Tu actividad",
+    activity.trim(), subtitle = "Actividad",
     leading = { ActivityRing(pictureIcon(picture), 42.dp) },
     trailing = { RelevoIcon(KitIcon.EDITAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
     onClick = onEdit,
@@ -354,12 +362,12 @@ private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivi
   RenglonField(PrepareStep.ACTIVITY.title, reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas", imeAction = ImeAction.Next, onImeAction = onNext, showLabel = false)
   val steps = routes.mapNotNull { track -> track.currentStep?.let { track to it } }
   if (steps.isNotEmpty()) {
-    TileGroup("Tus pasos", steps.map { (track, step) ->
+    TileGroup("Pasos", steps.map { (track, step) ->
       Tile(step.activity, pictureIcon(activityPictureFor(step.activity, customActivities, routes)), reminder.activity.equals(step.activity, true)) { actions.onRouteStep(track.interest, step.id) }
     })
   }
   if (customActivities.isNotEmpty()) {
-    TileGroup("Tus actividades", customActivities.map { custom ->
+    TileGroup("Creadas por ti", customActivities.map { custom ->
       Tile(custom.name, pictureIcon(Picture.parse(custom.icon) ?: pictureForActivity(custom.name, emptyList())), reminder.activity.equals(custom.name, true)) {
         actions.onIdea(custom.name, custom.firstStep, custom.place)
       }
@@ -370,7 +378,7 @@ private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivi
   val saved = customActivities.map { it.name.trim().lowercase() }.toSet()
   ideasByFamily.forEach { (sky, ideas) ->
     val shown = ideas.filter { it.activity.trim().lowercase() !in saved }
-    if (shown.isNotEmpty()) TileGroup(sky.familyName, shown.map { idea ->
+    if (shown.isNotEmpty()) TileGroup(sky.familyName, sky = sky, tiles = shown.map { idea ->
       Tile(idea.activity, pictureIcon(idea.picture), reminder.activity.equals(idea.activity, true)) { actions.onIdea(idea.activity, idea.start, idea.place) }
     })
   }
@@ -380,13 +388,17 @@ private fun activityPictureFor(name: String, custom: List<CustomActivity>, route
 
 private class Tile(val label: String, val icon: KitIcon, val selected: Boolean, val onClick: () -> Unit)
 
-/** Un grupo de actividades con su rótulo, en anillos de a cuatro (4.0). La elegida lleva un anillo de tinta. */
+/**
+ * Un grupo de actividades con su rótulo, en anillos de a cuatro (4.0). La elegida lleva un anillo de tinta. Si
+ * el grupo es una familia, su nombre late con su degradado al elegir una de sus actividades (4.3).
+ */
 @Composable
-private fun TileGroup(label: String, tiles: List<Tile>) {
+private fun TileGroup(label: String, tiles: List<Tile>, sky: Sky? = null) {
+  var pulse by remember { mutableIntStateOf(0) }
   Spacer(Modifier.height(Gap.section))
-  SectionLabel(label, Modifier.padding(bottom = 14.dp))
+  if (sky != null) FamilyLabel(sky, pulse, Modifier.padding(bottom = 14.dp)) else SectionLabel(label, Modifier.padding(bottom = 14.dp))
   RingGrid(tiles, columns = 4) { tile ->
-    RingCell(tile.icon, tile.label, tile.onClick, size = 58.dp, selected = tile.selected)
+    RingCell(tile.icon, tile.label, { pulse++; tile.onClick() }, size = 58.dp, selected = tile.selected)
   }
 }
 
@@ -402,7 +414,7 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     conditionDetail(studyCondition)?.let { Spacer(Modifier.height(6.dp)); Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite) }
     Spacer(Modifier.height(Gap.block))
   }
-  SuggestionChips(
+  Suggestions(
     if (studyCondition == StudyCondition.NEUTRAL) commonPlaces else placeSuggestions(reminder.activity),
     reminder.place, actions.onPlace,
   )
@@ -415,15 +427,6 @@ private fun PlaceStep(reminder: Reminder, studyCondition: StudyCondition?, actio
     icon = KitIcon.LUGAR,
     showLabel = false,
   )
-}
-
-/** Opciones de un toque; la elegida queda marcada y se puede cambiar o escribir encima. */
-@OptIn(ExperimentalLayoutApi::class)
-@Composable
-private fun SuggestionChips(options: List<String>, current: String, onPick: (String) -> Unit) {
-  FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    options.forEach { option -> QuickChoice(option, current.trim().equals(option, ignoreCase = true), { onPick(option) }) }
-  }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -466,38 +469,32 @@ private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: Prepare
 private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: TagUi, tagStatus: TagLink.Status, actions: PrepareActions) {
   val context = LocalContext.current
   var speakerConnected by remember { mutableStateOf(bluetoothSpeakerConnected(context)) }
-  var watchConnected by remember { mutableStateOf(callDeviceConnected(context)) }
   var tested by rememberSaveable { mutableIntStateOf(0) } // 0 sin probar, 1 sonó, 2 falló
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
     speakerConnected = bluetoothSpeakerConnected(context)
-    watchConnected = callDeviceConnected(context)
   }
   // En las semanas A y B se elige el objeto (parlante, reloj o llavero); en la C suena en el teléfono.
   val objectChoice = studyCondition == null || studyCondition != StudyCondition.PHONE
-  if (reminder.place.isNotBlank() && studyCondition != StudyCondition.NEUTRAL) {
-    ListRow(reminder.place.trim(), icon = KitIcon.LUGAR, subtitle = "El lugar donde empiezas")
-    Spacer(Modifier.height(Gap.block))
-  }
   // Solo la semana de la prueba agrega algo; sin ella, la pregunta del título basta y lo elegido ya se ve.
   val weekNote = when (studyCondition) {
     null -> null
-    StudyCondition.PHONE -> "Esta semana suena en el teléfono."
-    StudyCondition.SITUATED -> "Esta semana suena donde empiezas. Elige con qué: el parlante, el reloj o el Tag."
-    StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de tu casa. Elige con qué: el parlante, el reloj o el Tag."
+    StudyCondition.PHONE -> "Esta semana suena en tu teléfono."
+    StudyCondition.SITUATED -> "Esta semana suena donde empiezas: en el Tag o en un dispositivo de audio."
+    StudyCondition.NEUTRAL -> "Esta semana suena en otro lugar de la casa: en el Tag o en un dispositivo de audio."
   }
   if (weekNote != null) {
     Text(weekNote, style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(Gap.block))
   }
   Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
-    OptionRow("En tu Tag", reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, { actions.onRoute(SignalRoute.TAG) },
+    // 4.3 (D-158): tres respuestas con nombre directo. El reloj ya no es una opción: «Notificaciones» llega al
+    // teléfono y al reloj que las reciba. Solo el Tag lleva una línea más, cuando ya hay uno elegido.
+    OptionRow(routeLabel(SignalRoute.TAG), reminder.routeChosen && reminder.signalRoute == SignalRoute.TAG, { actions.onRoute(SignalRoute.TAG) },
       icon = KitIcon.OBJETO, subtitle = tagSubtitle(tag, tagStatus), enabled = objectChoice)
-    OptionRow("En el parlante", reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, { actions.onRoute(SignalRoute.BLUETOOTH) },
-      icon = KitIcon.PARLANTE, subtitle = if (speakerConnected) "Conectado por Bluetooth" else "Sin parlante conectado", enabled = objectChoice)
-    OptionRow("En el reloj", reminder.routeChosen && reminder.signalRoute == SignalRoute.WATCH, { actions.onRoute(SignalRoute.WATCH) },
-      icon = KitIcon.TIEMPO, subtitle = if (watchConnected) "Suena como una llamada" else "Sin reloj conectado para llamadas", enabled = objectChoice)
-    OptionRow("En el teléfono", reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, { actions.onRoute(SignalRoute.PHONE) },
-      icon = KitIcon.TELEFONO, subtitle = "Suena donde esté el teléfono", enabled = studyCondition == null)
+    OptionRow(routeLabel(SignalRoute.BLUETOOTH), reminder.routeChosen && reminder.signalRoute == SignalRoute.BLUETOOTH, { actions.onRoute(SignalRoute.BLUETOOTH) },
+      icon = KitIcon.PARLANTE, enabled = objectChoice)
+    OptionRow(routeLabel(SignalRoute.PHONE), reminder.routeChosen && reminder.signalRoute == SignalRoute.PHONE, { actions.onRoute(SignalRoute.PHONE) },
+      icon = routeIcon(SignalRoute.PHONE), enabled = studyCondition == null)
   }
   // Sin elección todavía: nada más que elegir.
   if (!reminder.routeChosen) return
@@ -512,25 +509,24 @@ private fun SoundStep(reminder: Reminder, studyCondition: StudyCondition?, tag: 
   Spacer(Modifier.height(12.dp))
   AnimatedVisibility(tested != 0, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
     when (tested) {
-      1 -> Text("Sonó " + routeName(reminder.signalRoute).replaceFirstChar { it.lowercase() }.replaceFirst("el ", "en el ") + ".", style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp))
+      1 -> Text("Sonó ${routeWhere(reminder.signalRoute)}.", style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.padding(horizontal = 4.dp))
       else -> Notice(routeFailure(reminder.signalRoute), tone = Tone.Error)
     }
   }
   if (reminder.signalRoute == SignalRoute.BLUETOOTH) {
     Spacer(Modifier.height(8.dp))
-    Text("Si tu parlante se apaga solo, no sonará.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
-  }
-  if (reminder.signalRoute == SignalRoute.WATCH) {
-    Spacer(Modifier.height(8.dp))
-    Text("Deja el reloj donde empiezas, con las llamadas por Bluetooth activadas.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+    Text(
+      if (speakerConnected) "Si el dispositivo de audio se apaga solo, no sonará." else "Conecta un parlante o audífonos por Bluetooth para que suene.",
+      style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp),
+    )
   }
 }
 
 /** Con la carga de la pila, si el Tag la informó (2.31). */
-private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String {
+private fun tagSubtitle(tag: TagUi, status: TagLink.Status): String? {
   val battery = (status.battery ?: tag.battery)?.let { " · " + TagProtocol.batteryLabel(it) }.orEmpty()
   return when {
-    tag.linkedName == null -> "Un Tag que pita"
+    tag.linkedName == null -> null
     status.phase == TagLink.Phase.CONNECTED -> "${tag.linkedName}, conectado$battery"
     else -> "${tag.linkedName}, elegido$battery"
   }
@@ -552,9 +548,10 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   val context = LocalContext.current
   var pending by remember { mutableStateOf<(() -> Unit)?>(null) }
   var denied by rememberSaveable { mutableStateOf(false) }
-  // La primera vez que se elige el Tag, la guía se abre sola; después, desde «Cómo usar el Tag».
+  // La guía se abre solo si la persona la pide, con «Cómo usar el Tag» (4.3): abrirse sola la primera vez
+  // demoraba la búsqueda con ocho pasos que no siempre hacen falta.
   val tagStore = remember { TagStore(context) }
-  var guide by rememberSaveable { mutableStateOf(!tagStore.guideSeen) }
+  var guide by rememberSaveable { mutableStateOf(false) }
   val permissions = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
     denied = result.values.any { !it }
     if (!denied) pending?.invoke()
@@ -614,8 +611,8 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
   }
   if (tag.linkedName == null) {
     Text(
-      if (tag.searching) "Buscando Tags cerca. Si el tuyo está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces."
-      else "Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después elige el tuyo en la lista.",
+      if (tag.searching) "Buscando Tags cerca. Si está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces."
+      else "Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después elígelo en la lista.",
       style = Relevo.type.body, color = Relevo.colors.graphite,
     )
     Spacer(Modifier.height(8.dp))
@@ -747,7 +744,7 @@ private fun SoundOption(icon: KitIcon, title: String, subtitle: String, selected
 
 /** Selector de apps en una hoja alta, con buscador y marca redonda. */
 @Composable
-private fun AppPickerSheet(apps: List<InstalledApp>, selected: Set<String>, onToggle: (InstalledApp) -> Unit, onDismiss: () -> Unit) {
+internal fun AppPickerSheet(apps: List<InstalledApp>, selected: Set<String>, onToggle: (InstalledApp) -> Unit, onDismiss: () -> Unit) {
   var query by rememberSaveable { mutableStateOf("") }
   val visible = remember(apps, query) { apps.filter { it.label.contains(query.trim(), ignoreCase = true) } }
   val colors = Relevo.colors
@@ -761,3 +758,10 @@ private fun AppPickerSheet(apps: List<InstalledApp>, selected: Set<String>, onTo
     }
   }
 }
+
+/**
+ * Ejemplo para el campo del primer paso (4.3): el primero que sugiere el catastro para esta actividad o, si
+ * no hay, uno de leer. Reemplaza a «Algo que tome segundos», que el autor encontró demasiado abierta.
+ */
+private fun startExample(activity: String): String =
+  "Ej.: " + (startSuggestions(activity).firstOrNull() ?: "Abrir el libro").replaceFirstChar { it.lowercase() }

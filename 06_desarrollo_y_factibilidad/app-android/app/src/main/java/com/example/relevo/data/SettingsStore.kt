@@ -21,6 +21,8 @@ data class Settings(
   /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
   val constancy: Int = 0,
   val constancyPaused: Boolean = false,
+  /** Sonido de la señal (4.3, D-158): «madera», «fieltro», «claro» o «tonada». */
+  val sound: String = "madera",
 )
 
 class SettingsStore(context: Context) {
@@ -34,6 +36,7 @@ class SettingsStore(context: Context) {
     acknowledgements = preferences.getBoolean("acknowledgements", true),
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),
+    sound = preferences.getString("sound", "madera").orEmpty(),
   )
 
   fun save(settings: Settings) {
@@ -45,6 +48,7 @@ class SettingsStore(context: Context) {
       .putBoolean("acknowledgements", settings.acknowledgements)
       .putInt("constancy", settings.constancy.coerceIn(0, 7))
       .putBoolean("constancy_paused", settings.constancyPaused)
+      .putString("sound", settings.sound)
       // 4.0 (D-155): el aura se retiró. La clave «aura» que guardó la 3.x se quita al guardar.
       .remove("aura")
       .apply()

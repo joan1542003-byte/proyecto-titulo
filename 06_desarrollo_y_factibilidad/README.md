@@ -33,7 +33,9 @@ Una cifra o componente no se considerará vigente sin fecha, proveedor o fuente 
 
 - [Testigo para impresión 3D](testigo-impresion-3d/README.md): el objeto propio, versión 0 (D-143). Carcasa de 46 × 12,3 mm con la placa y la pila del Tag adentro y el logo calado como botón. Incluye el modelo paramétrico, las piezas sin soportes, tres proyectos de Bambu Studio listos para la Bambu Lab X1 Carbon y la guía de impresión y armado; las medidas de la placa están por confirmar.
 - [Relevo como sistema](relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md): frontend, backend y proyecto explicados de punta a punta, con sus fundamentos, y la [lámina de wireframes](relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
-- [Textos de la app](app-android/textos/README.md): cómo habla Relevo —voz, tono, vocabulario y diagnóstico de sus textos—, la descripción escrita de cada pantalla de 3.3 y el inventario de sus 1.287 textos, generado desde el código.
+- [Textos de la app](app-android/textos/README.md): cómo habla Relevo —voz, tono, vocabulario y diagnóstico de sus textos—, la descripción escrita de cada pantalla de 3.3 y el inventario de los 1.410 textos de 4.3, generado desde el código.
+- [Aplicación Android 4.3](app-android/version-4.3-sugerencias-relevos-y-sonido-2026-11-05.md): la 4.2.1 revisada, en la misma rama: sugerencias por un catastro de palabras clave, varios relevos activos, cuatro sonidos para elegir, salidas «Tag», «Dispositivo de audio» y «Notificaciones», la marca animada al abrir y textos sin posesivos innecesarios (D-158).
+- [El sonido de Relevo](app-android/sonido-de-relevo-2026-11-05.md): los cuatro sonidos de la 4.3, su fundamento en la investigación sobre avisos sonoros, su medición y [muestras para escuchar](app-android/sonidos/README.md).
 - [Aplicación Android 4.2.1](app-android/version-4.2.1-preparar-desde-una-idea-2026-11-05.md): corrección de la 4.2: preparar desde una idea abre en lo que falta y no se prepara otro relevo mientras uno cuenta.
 - [Aplicación Android 4.2](app-android/version-4.2-comentario-preguntas-borde-e-inicio-2026-11-05.md): la 4.1 revisada, en la misma rama: una sola fila para comentar, las preguntas de cada actividad, las predefinidas primero, el borde como en iOS e Inicio con color (D-157).
 - [Aplicación Android 4.1](app-android/version-4.1-anillos-textos-y-movimiento-2026-11-05.md): la 4.0 revisada, en la misma rama: anillos simétricos, íconos en su centro óptico, textos sin narración, sin viudas y movimiento y vibración según las pautas de Apple (D-156).
@@ -91,6 +93,12 @@ El conjunto y su relación con la ruta actual se explican en el [índice de desa
 ---
 
 ## Registro de cambios
+
+### 2026-11-05 — Android 4.3
+
+- **Qué cambió:** el índice suma la 4.3 (D-158) y el documento del sonido, y el inventario de textos pasa a los 1.410 de 4.3.
+- **Cómo estaba antes:** la última versión indexada era la 4.2.1.
+- **Por qué:** revisión del autor del 5 de noviembre.
 
 ### 2026-11-05 — Android 4.2.1
 

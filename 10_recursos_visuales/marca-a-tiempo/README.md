@@ -7,7 +7,7 @@
 | `lamina-relevo-a-tiempo-2026-09-25.html` | Manual de marca. Carga Schibsted Grotesk desde Google Fonts, las fotos desde `imagenes/` y el aviso desde `sonido/`. |
 | `logotipo/` | Logotipo «relevo» en tinta, papel y azul pasta; ícono «r» sobre tinta y sobre azul (512 px). SVG editables. |
 | `kit-relevo-2026-09-25.html` | Kit de diseño: 97 iconos con sus pesos y retícula, componentes y dieciséis pantallas de la app, y diez plantillas de presentación. |
-| `iconos/` | 97 iconos en SVG (retícula de 24, trazo de 1,75, extremos redondeados), con su nombre como título accesible. |
+| `iconos/` | 110 iconos en SVG (retícula de 24, trazo de 1,75, extremos redondeados), con su nombre como título accesible. Los 13 que sumó la app 4.3 (D-158) no están en el kit HTML. |
 | `imagenes/` | Tres fotos de muestra con la receta de corrección del proyecto. |
 | `sonido/firma-relevo.wav` | Copia de la firma sonora de D-071, generada con `../marca-suena-donde-empieza/sonido/firma-sonora.py`. |
 
@@ -28,6 +28,12 @@ Las actividades y horarios de la lámina son ejemplos, no datos de participantes
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — 110 iconos
+
+- **Qué cambió:** la carpeta `iconos/` pasó de 97 a 110 iconos: perro, correr, nadar, pelota, película, manga, maqueta, tejer, piano, meditar, idiomas, cartas y compartir.
+- **Cómo estaba antes:** 97 iconos; algunas actividades compartían ícono, como «Leer» y «Leer manga».
+- **Por qué:** el autor pidió más íconos, ordenados por categoría, para la app 4.3 (D-158).
 
 ### 2026-09-25 — 97 iconos
 

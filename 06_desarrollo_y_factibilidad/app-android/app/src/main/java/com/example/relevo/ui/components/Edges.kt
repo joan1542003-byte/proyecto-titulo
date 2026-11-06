@@ -23,9 +23,10 @@ import dev.chrisbanes.haze.hazeEffect
  * Borde de desplazamiento (4.2, D-157), como el borde suave de iOS 26: el contenido que pasa bajo la barra
  * de arriba o bajo los botones de abajo se desenfoca de a poco y se funde con el papel, sin un corte.
  *
- * Es un desenfoque variable, como el de iOS: bajo la barra o los botones ([solid]) el radio es pleno, y en
- * los [ramp] siguientes baja punto a punto hasta cero, con una curva suave en los dos extremos para que no
- * se note dónde empieza. La 4.0 usaba un solo desenfoque que aparecía con una máscara, a media resolución y
+ * Es un desenfoque variable, como el de iOS, que va de 100 a 0 (4.3, D-158): pleno en el borde de la
+ * pantalla y nulo del lado del contenido, en todo el alto del borde —lo que ocupan la barra o los botones
+ * ([solid]) más [ramp]—, con una curva suave en los dos extremos para que no se note dónde empieza. En la 4.2
+ * era pleno bajo la barra y bajaba solo en el último tramo. La 4.0 usaba un solo desenfoque que aparecía con una máscara, a media resolución y
  * bajo un velo de papel casi opaco: en la rampa se veían a la vez la imagen nítida y la borrosa, y abajo
  * quedaba una neblina. Desde Android 13 el desenfoque variable se calcula a resolución completa; en
  * Android 12, Haze vuelve a la máscara.
@@ -35,11 +36,10 @@ import dev.chrisbanes.haze.hazeEffect
  * apaga el borde cuando nada pasa por debajo.
  */
 @Composable
-fun ScrollEdge(state: HazeState, top: Boolean, solid: Dp, modifier: Modifier = Modifier, ramp: Dp = 32.dp, visible: Float = 1f, veil: Float = .55f) {
+fun ScrollEdge(state: HazeState, top: Boolean, solid: Dp, modifier: Modifier = Modifier, ramp: Dp = 40.dp, visible: Float = 1f, veil: Float = .55f) {
   val paper = Relevo.colors.paper
   val density = LocalDensity.current
   val total = with(density) { (solid + ramp).toPx() }.coerceAtLeast(1f)
-  val rampPx = with(density) { ramp.toPx() }.coerceIn(1f, total)
   Box(
     modifier.fillMaxWidth().height(solid + ramp).graphicsLayer { alpha = visible }
       .hazeEffect(state) {
@@ -47,11 +47,12 @@ fun ScrollEdge(state: HazeState, top: Boolean, solid: Dp, modifier: Modifier = M
         blurRadius = EdgeBlur
         noiseFactor = 0f
         inputScale = HazeInputScale.None
-        progressive = if (top) {
-          HazeProgressive.verticalGradient(easing = EaseInOutSine, startY = total - rampPx, startIntensity = 1f, endY = total, endIntensity = 0f, preferPerformance = false)
-        } else {
-          HazeProgressive.verticalGradient(easing = EaseInOutSine, startY = 0f, startIntensity = 0f, endY = rampPx, endIntensity = 1f, preferPerformance = false)
-        }
+        progressive = HazeProgressive.verticalGradient(
+          easing = EaseInOutSine,
+          startY = 0f, startIntensity = if (top) 1f else 0f,
+          endY = total, endIntensity = if (top) 0f else 1f,
+          preferPerformance = false,
+        )
       }
       .drawBehind { drawRect(veilBrush(paper, top, veil)) },
   )

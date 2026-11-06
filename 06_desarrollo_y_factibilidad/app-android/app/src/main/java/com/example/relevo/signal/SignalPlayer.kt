@@ -112,7 +112,9 @@ class SignalPlayer(private val context: Context) {
         audioTrack = track
         playing = true
         isPlaying = true
-        val pcm = if (pattern == Pattern.SIGNAL) FirmaSonora.signal() else FirmaSonora.test()
+        // El sonido elegido en Ajustes (4.3); sin elección, la firma.
+        val sonido = Sonido.from(com.example.relevo.data.SettingsStore(context).load().sound)
+        val pcm = if (pattern == Pattern.SIGNAL) FirmaSonora.signal(sonido) else FirmaSonora.test(sonido)
         startPlayback(track, chosenOutput, callRoute, pcm, onEnded)
         vibrateOnce()
         return true

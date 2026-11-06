@@ -12,6 +12,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    // La pantalla de carga (4.3) enciende las cuatro luces de la marca y Android la retira con su propia
+    // transición. Una salida propia obliga a traspasar la pantalla a la app, y en ese traspaso la marca
+    // desaparecía un cuadro antes de volver: por eso no se usa.
     enableEdgeToEdge()
     preferFastestRefreshRate()
     LaunchRequests.handle(intent)

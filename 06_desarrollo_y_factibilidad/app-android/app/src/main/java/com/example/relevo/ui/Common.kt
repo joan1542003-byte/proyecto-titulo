@@ -64,21 +64,21 @@ internal val activityIdeas = listOf(
   ActivityIdea("Leer", "Abrir el libro", "En el velador", KitIcon.LEER, Photo.LEER), // P6, P8
   ActivityIdea("Dormir a tiempo", "Dejar el teléfono cargando lejos", "Junto al cargador", KitIcon.DORMIR), // P2, P3, P8
   ActivityIdea("Hacer ejercicio", "Ponerte ropa cómoda", "Junto al clóset", KitIcon.EJERCICIO, Photo.EJERCICIO), // P1, P3
-  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la puerta", KitIcon.SALIR, Photo.PERRO), // P1, P4
+  ActivityIdea("Pasear al perro", "Tomar la correa", "Junto a la puerta", KitIcon.PERRO, Photo.PERRO), // P1, P4
   ActivityIdea("Dibujar", "Sacar el cuaderno y un lápiz", "En el escritorio", KitIcon.DIBUJAR, Photo.DIBUJAR), // P2
   ActivityIdea("Pintar", "Preparar las acuarelas", "En la mesa", KitIcon.PINTAR, Photo.PINTAR), // P2
   ActivityIdea("Cocinar", "Reunir los ingredientes", "En el mesón de la cocina", KitIcon.COCINAR, Photo.COCINAR), // P1
-  ActivityIdea("Estudiar", "Abrir tus apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR), // P8
-  ActivityIdea("Ordenar tu pieza", "Despejar una superficie", "En el escritorio", KitIcon.ORDENAR, Photo.ORDENAR), // P5
+  ActivityIdea("Estudiar", "Abrir los apuntes", "En el escritorio", KitIcon.ESTUDIAR, Photo.ESTUDIAR), // P8
+  ActivityIdea("Ordenar la pieza", "Despejar una superficie", "En el escritorio", KitIcon.ORDENAR, Photo.ORDENAR), // P5
   ActivityIdea("Hacer manualidades", "Preparar los materiales", "En la mesa de trabajo", KitIcon.MANUALIDADES, Photo.MANUALIDADES), // P2
-  ActivityIdea("Armar una maqueta", "Abrir la caja de la maqueta", "En la mesa", KitIcon.MANUALIDADES), // P6
+  ActivityIdea("Armar una maqueta", "Abrir la caja de la maqueta", "En la mesa", KitIcon.MAQUETA), // P6
   ActivityIdea("Salir en bicicleta", "Sacar la bici", "Junto a la puerta", KitIcon.BICICLETA), // P7
-  ActivityIdea("Meditar", "Sentarte en el cojín", "Junto al cojín", KitIcon.ESTIRAR), // P3
-  ActivityIdea("Leer manga", "Sacar el tomo del estante", "Junto al estante", KitIcon.LEER, Photo.LIBRO), // P1
+  ActivityIdea("Meditar", "Sentarte en el cojín", "Junto al cojín", KitIcon.MEDITAR), // P3
+  ActivityIdea("Leer manga", "Sacar el tomo del estante", "Junto al estante", KitIcon.MANGA), // P1
   // Desde 2.23, a pedido del autor: actividades de ocio que también son válidas y aparecen en P1–P8.
   ActivityIdea("Jugar videojuegos", "Encender la consola", "Junto a la tele", KitIcon.VIDEOJUEGOS), // P3, P6, P7, P8
   ActivityIdea("Escuchar música", "Ponerte los audífonos", "En el sillón", KitIcon.MUSICA), // P5, P6, P8
-  ActivityIdea("Ver una película", "Elegir la película", "Junto a la tele", KitIcon.REPRODUCIR), // P1, P2, P5
+  ActivityIdea("Ver una película", "Elegir la película", "Junto a la tele", KitIcon.PELICULA), // P1, P2, P5
   ActivityIdea("Llamar a alguien", "Buscar su número", "En el sillón", KitIcon.LLAMAR), // P6
   ActivityIdea("Jugar un juego de mesa", "Sacar la caja", "En la mesa", KitIcon.JUEGO_DE_MESA), // P2
 )
@@ -96,28 +96,19 @@ private fun knownRelevos(): List<Triple<String, String, String>> =
   activityIdeas.map { Triple(it.activity, it.start, it.place) } + Interests.all.flatMap { it.suggestions }
 
 /**
- * Primeros pasos para elegir con un toque: los de la misma actividad primero y después los de
- * actividades parecidas (mismo icono). Sin repetir y como máximo seis.
+ * Primeros pasos para elegir con un toque (4.3, D-158): los del mismo relevo, si la actividad es una idea o un
+ * paso de ruta, y después los de su concepto en el catastro de palabras clave. Nada de otras actividades ni
+ * frases genéricas: si las palabras no nombran nada conocido, no se sugiere nada.
  */
 internal fun startSuggestions(activity: String): List<String> {
-  val icon = iconForActivity(activity, emptyList())
-  val known = knownRelevos()
-  val same = known.filter { sameActivity(it.first, activity) }.map { it.second }
-  // Los otros pasos de la misma ruta: «Jugar una partida» también propone «Dejar el control cargado».
-  val route = Interests.all.filter { interest -> interest.suggestions.any { sameActivity(it.first, activity) } || sameActivity(interest.label, activity) }
-    .flatMap { interest -> interest.suggestions.map { it.second } }
-  val similar = known.filter { !sameActivity(it.first, activity) && iconForActivity(it.first, emptyList()) == icon }.map { it.second }
-  val generic = listOf("Dejar el teléfono en otro lugar")
-  return (same + route + similar + generic).distinct().take(6)
+  val same = knownRelevos().filter { sameActivity(it.first, activity) }.map { it.second }
+  return (same + conceptStarts(activity)).distinct().take(5)
 }
 
-/** Lugares para elegir con un toque: los de la actividad primero y después los comunes de la casa. */
+/** Lugares para elegir con un toque: los del mismo relevo y los de su concepto, con la misma regla. */
 internal fun placeSuggestions(activity: String): List<String> {
-  val known = knownRelevos()
-  val same = known.filter { sameActivity(it.first, activity) }.map { it.third }
-  val route = Interests.all.filter { interest -> interest.suggestions.any { sameActivity(it.first, activity) } || sameActivity(interest.label, activity) }
-    .flatMap { interest -> interest.suggestions.map { it.third } }
-  return (same + route + commonPlaces).distinct().take(8)
+  val same = knownRelevos().filter { sameActivity(it.first, activity) }.map { it.third }
+  return (same + conceptPlaces(activity)).distinct().take(5)
 }
 
 /** Fotos e iconos de los intereses de P3 y de sus rutas (intereses concretos desde 2.13, D-088). */
@@ -142,50 +133,24 @@ internal fun interestIcon(id: String): KitIcon = when (id) {
   "leer" -> KitIcon.LEER
   "ejercicio" -> KitIcon.EJERCICIO
   "bici" -> KitIcon.BICICLETA
-  "perro", "mover" -> KitIcon.CAMINAR
+  "perro" -> KitIcon.PERRO
+  "mover" -> KitIcon.CAMINAR
   "dibujar", "crear" -> KitIcon.DIBUJAR
   "manualidades" -> KitIcon.MANUALIDADES
   "cocinar" -> KitIcon.COCINAR
   "ordenar" -> KitIcon.ORDENAR
-  "meditar" -> KitIcon.ESTIRAR
+  "meditar" -> KitIcon.MEDITAR
   "estudiar", "aprender" -> KitIcon.ESTUDIAR
-  "compartir" -> KitIcon.JUEGO_DE_MESA
+  "compartir" -> KitIcon.COMPARTIR
   "videojuegos" -> KitIcon.VIDEOJUEGOS
   "musica" -> KitIcon.MUSICA
-  "peliculas" -> KitIcon.REPRODUCIR
+  "peliculas" -> KitIcon.PELICULA
   "cuidar" -> KitIcon.PLANTAS
   else -> KitIcon.ACTIVIDAD
 }
 
 private fun plain(text: String): String =
   Normalizer.normalize(text.lowercase(spanish), Normalizer.Form.NFD).replace(Regex("\\p{Mn}+"), "")
-
-/** Palabras que sugieren una foto y un icono cuando la persona escribe su propia actividad. */
-private val keywords: List<Triple<List<String>, Photo?, KitIcon>> = listOf(
-  Triple(listOf("perro", "correa"), Photo.PERRO, KitIcon.SALIR),
-  Triple(listOf("camin", "trot", "corr", "zapatill", "pasear"), Photo.CAMINAR, KitIcon.CAMINAR),
-  Triple(listOf("bici"), null, KitIcon.BICICLETA),
-  Triple(listOf("videojuego", "consola", "jugar en el comput", "partida"), null, KitIcon.VIDEOJUEGOS),
-  Triple(listOf("pelicula", "serie", "capitulo"), null, KitIcon.REPRODUCIR),
-  Triple(listOf("llamar", "videollamada"), null, KitIcon.LLAMAR),
-  Triple(listOf("estir", "yoga"), null, KitIcon.ESTIRAR),
-  Triple(listOf("ejercicio", "entren", "pesas", "gimnasio", "serie"), Photo.EJERCICIO, KitIcon.EJERCICIO),
-  Triple(listOf("leer", "libro", "capitulo", "pagina", "lectura", "genero"), Photo.LEER, KitIcon.LEER),
-  Triple(listOf("dibuj", "boceto"), Photo.DIBUJAR, KitIcon.DIBUJAR),
-  Triple(listOf("pint", "acuarel", "tecnica"), Photo.PINTAR, KitIcon.PINTAR),
-  Triple(listOf("guitarra", "instrumento", "tocar", "piano", "ukelele"), Photo.GUITARRA, KitIcon.GUITARRA),
-  Triple(listOf("musica", "cantar"), null, KitIcon.MUSICA),
-  Triple(listOf("cocin", "ingrediente", "receta", "hornear", "pan"), Photo.COCINAR, KitIcon.COCINAR),
-  Triple(listOf("orden", "cajon", "limpi", "doblar"), Photo.ORDENAR, KitIcon.ORDENAR),
-  Triple(listOf("planta", "regar", "regadera", "jardin"), null, KitIcon.PLANTAS),
-  Triple(listOf("dormir", "acostar", "descansar"), null, KitIcon.DORMIR),
-  Triple(listOf("escrib", "diario", "carta"), Photo.ESCRIBIR, KitIcon.ESCRIBIR),
-  Triple(listOf("llamar"), null, KitIcon.LLAMAR),
-  Triple(listOf("estudi", "apunte", "leccion", "practic", "aprend", "repasar"), Photo.ESTUDIAR, KitIcon.ESTUDIAR),
-  Triple(listOf("manualidad", "tejer", "coser", "armar"), Photo.MANUALIDADES, KitIcon.MANUALIDADES),
-  Triple(listOf("foto"), null, KitIcon.FOTOGRAFIA),
-  Triple(listOf("juego de mesa", "ajedrez"), null, KitIcon.JUEGO_DE_MESA),
-)
 
 /**
  * Imagen de una actividad: la de la idea, la que eligió la persona para su actividad propia o una
@@ -198,10 +163,7 @@ internal fun pictureForActivity(name: String, custom: List<CustomActivity>, rout
   // Un paso de la ruta lleva la foto de su interés, la misma que en Inicio y en Ruta.
   routes.firstOrNull { track -> track.steps.any { it.activity.equals(trimmed, ignoreCase = true) } }
     ?.let { track -> interestPhoto(track.interest) }?.let { return Picture.OfPhoto(it) }
-  val words = plain(trimmed)
-  keywords.firstOrNull { (keys, _, _) -> keys.any { words.contains(it) } }?.let { (_, photo, icon) ->
-    return photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(icon)
-  }
+  conceptFor(trimmed)?.let { concept -> return concept.photo?.let { Picture.OfPhoto(it) } ?: Picture.OfIcon(concept.icon) }
   return Picture.OfIcon(KitIcon.ACTIVIDAD)
 }
 
@@ -214,8 +176,7 @@ internal fun activityPicture(name: String, custom: List<CustomActivity>): Pictur
 internal fun iconForActivity(name: String, custom: List<CustomActivity>): KitIcon {
   val trimmed = name.trim()
   activityIdeas.firstOrNull { it.activity.equals(trimmed, ignoreCase = true) }?.let { return it.icon }
-  val words = plain(trimmed)
-  return keywords.firstOrNull { (keys, _, _) -> keys.any { words.contains(it) } }?.third
+  return conceptFor(trimmed)?.icon
     ?: (custom.firstOrNull { it.name.equals(trimmed, ignoreCase = true) }?.let { (Picture.parse(it.icon) as? Picture.OfIcon)?.icon })
     ?: KitIcon.ACTIVIDAD
 }
@@ -301,24 +262,37 @@ internal fun bluetoothSpeakerConnected(context: Context): Boolean =
     ?.any { it.type == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP || it.type == AudioDeviceInfo.TYPE_BLE_SPEAKER } == true
 
 internal fun routeName(route: SignalRoute): String = when (route) {
-  SignalRoute.BLUETOOTH -> "El parlante"
-  SignalRoute.WATCH -> "El reloj"
-  SignalRoute.TAG -> "El Tag"
-  SignalRoute.PHONE -> "El teléfono"
+  SignalRoute.BLUETOOTH -> "Dispositivo de audio"
+  SignalRoute.WATCH -> "Reloj"
+  SignalRoute.TAG -> "Tag"
+  SignalRoute.PHONE -> "Teléfono"
+}
+
+/**
+ * La respuesta a «¿Dónde suena?» (4.3, D-158): «Tag», «Dispositivo de audio» o «Notificaciones», que llegan
+ * al teléfono y al reloj que las reciba. El reloj por llamada (D-093) deja de ofrecerse. Sin «tu» delante:
+ * repetido en cada opción, cansaba la lectura.
+ */
+internal fun routeLabel(route: SignalRoute): String = if (route == SignalRoute.PHONE) "Notificaciones" else routeName(route)
+
+/** «en el Tag», «en el dispositivo de audio» y, como pidió el autor, «en tu teléfono» (4.3). */
+internal fun routeWhere(route: SignalRoute): String = when (route) {
+  SignalRoute.PHONE -> "en tu teléfono"
+  else -> "en el " + routeName(route).replaceFirstChar { if (route == SignalRoute.TAG) it else it.lowercaseChar() }
 }
 
 internal fun routeIcon(route: SignalRoute): KitIcon = when (route) {
   SignalRoute.BLUETOOTH -> KitIcon.PARLANTE
   SignalRoute.WATCH -> KitIcon.TIEMPO
   SignalRoute.TAG -> KitIcon.OBJETO
-  SignalRoute.PHONE -> KitIcon.TELEFONO
+  SignalRoute.PHONE -> KitIcon.AVISOS
 }
 
 internal fun routeFailure(route: SignalRoute): String = when (route) {
-  SignalRoute.BLUETOOTH -> "No sonó en el parlante. Revisa que esté encendido y conectado."
+  SignalRoute.BLUETOOTH -> "No sonó en el dispositivo de audio. Revisa que esté encendido y conectado."
   SignalRoute.WATCH -> "No sonó en el reloj. Revisa que esté conectado y con las llamadas por Bluetooth activadas."
   SignalRoute.TAG -> "No sonó en el Tag. Revisa que esté encendido y cerca del teléfono."
-  SignalRoute.PHONE -> "No sonó en el teléfono. Revisa el volumen."
+  SignalRoute.PHONE -> "No sonó en tu teléfono. Revisa el volumen."
 }
 
 /** Hay un reloj u otro equipo conectado que puede recibir audio de llamada (D-093). */
@@ -383,22 +357,22 @@ internal fun weekFacts(history: List<HistoryEntry>, today: LocalDate = LocalDate
  * Dónde suena, en palabras. El objeto va donde la persona dijo que empieza; solo en la semana B va en
  * otro lugar de la casa (D-079, D-112).
  */
-internal fun soundPlace(reminder: Reminder): String = routeName(reminder.signalRoute) + when {
+internal fun soundPlace(reminder: Reminder): String = routeLabel(reminder.signalRoute) + when {
   reminder.signalRoute == SignalRoute.PHONE -> ""
-  reminder.studyCondition == StudyCondition.NEUTRAL.code.toString() -> ", en otro lugar de tu casa"
+  reminder.studyCondition == StudyCondition.NEUTRAL.code.toString() -> ", en otro lugar de la casa"
   else -> ", donde empiezas"
 }
 
 /** Dónde sonará, en una frase: «en el reloj, en el velador» o «en el teléfono». Se usa en Inicio y en el relevo activo. */
 internal fun soundWhere(reminder: Reminder): String =
-  if (reminder.signalRoute == SignalRoute.PHONE) "en el teléfono"
-  else "en " + routeName(reminder.signalRoute).replaceFirstChar { it.lowercase() } + ", " + placePhrase(reminder.place)
+  if (reminder.signalRoute == SignalRoute.PHONE) routeWhere(SignalRoute.PHONE)
+  else routeWhere(reminder.signalRoute) + ", " + placePhrase(reminder.place)
 
 /** Nombre de la condición para la persona, en palabras de todos los días (D-084). */
 internal fun conditionName(condition: StudyCondition): String = when (condition) {
   StudyCondition.SITUATED -> "Suena donde empiezas"
   StudyCondition.NEUTRAL -> "Suena en otro lugar"
-  StudyCondition.PHONE -> "Suena en el teléfono"
+  StudyCondition.PHONE -> "Suena en tu teléfono"
 }
 
 /** Lo que la app pide al comenzar cada semana, con las palabras del protocolo 02. */

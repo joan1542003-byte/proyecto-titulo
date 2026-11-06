@@ -1,5 +1,6 @@
 package com.example.relevo.monitor
 
+import com.example.relevo.data.ActiveStore
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -44,6 +45,8 @@ import kotlinx.coroutines.launch
 class AppUsageMonitorService : Service() {
   private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
   private lateinit var store: ReminderStore
+  /** Relevos que cuentan; puede haber varios (4.3, D-158). [store] queda para el que suena y el borrador. */
+  private lateinit var activeStore: ActiveStore
   private lateinit var researchLog: ResearchLogStore
   private lateinit var signalPlayer: SignalPlayer
   private lateinit var autoMode: AutoModeStore
@@ -56,6 +59,7 @@ class AppUsageMonitorService : Service() {
   override fun onCreate() {
     super.onCreate()
     store = ReminderStore(this)
+    activeStore = ActiveStore(this)
     researchLog = ResearchLogStore(this)
     signalPlayer = SignalPlayer(this)
     autoMode = AutoModeStore(this)
@@ -65,8 +69,9 @@ class AppUsageMonitorService : Service() {
   }
 
   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-    val reminder = store.load()
-    val counting = reminder.status == ReminderStatus.WAITING
+    ActiveStore.migrate(this)
+    val actives = activeStore.load()
+    val counting = actives.isNotEmpty()
     // Android exige mostrar la notificación de primer plano antes de detenerse, incluso si no se va a contar.
     startInForeground(counting)
     if (!hasCurrentConsent()) {
@@ -85,14 +90,15 @@ class AppUsageMonitorService : Service() {
     // Sin intent: Android recreó el servicio tras detenerlo. ACTION_RESTORE: reinicio del teléfono o actualización.
     val restored = intent == null || intent.action == ACTION_RESTORE
     if (!UsageAccess.isGranted(this)) {
-      pauseForMissingAccess(reminder.sessionId, reminder.participantCode, reminder.targetPackage, reminder.observedUsageSeconds)
+      pauseForMissingAccess(actives)
       return START_NOT_STICKY
     }
     if (restored) {
-      researchLog.record(reminder.sessionId, reminder.participantCode, "monitor_resumed", reminder.targetPackage, reminder.observedUsageSeconds)
+      actives.forEach { researchLog.record(it.sessionId, it.participantCode, "monitor_resumed", it.targetPackage, it.observedUsageSeconds) }
     }
     getSystemService(NotificationManager::class.java)?.cancel(STATUS_NOTIFICATION_ID)
-    startMonitoring()
+    // Si ya está contando, el ciclo toma solo el relevo nuevo de [activeStore]; reiniciarlo cortaría una señal.
+    if (isCounting) startInForeground(counting = true) else startMonitoring()
     return START_STICKY
   }
 
@@ -115,14 +121,21 @@ class AppUsageMonitorService : Service() {
    * app, y el texto, cuándo suena. En la pantalla de bloqueo se ve una versión sin la actividad.
    */
   private fun startInForeground(counting: Boolean = true) {
-    val current = runCatching { ReminderStore(this).load() }.getOrNull()
-    val activity = current?.activity?.trim().orEmpty()
+    val actives = runCatching { ActiveStore(this).load() }.getOrDefault(emptyList())
+    // Con varios relevos (4.3), el título dice cuántos y el texto, cuál sonará primero.
+    val next = actives.minByOrNull { it.requiredUsageSeconds - it.observedUsageSeconds }
     val title = when {
       !counting -> "Se activa solo"
-      activity.isNotEmpty() -> "Contando para «$activity»"
+      actives.size > 1 -> "Contando ${actives.size} relevos"
+      next != null && next.activity.isNotBlank() -> "Contando para «${next.activity.trim()}»"
       else -> "Contando"
     }
-    val text = if (counting && current != null) "Suena al sumar ${minutes(current.requiredUsageSeconds)}" else if (counting) "Hasta que lo desactives" else "Al abrir las apps de tu último relevo"
+    val text = when {
+      !counting -> "Al abrir las apps del último relevo"
+      actives.size > 1 && next != null -> "El próximo en sonar: «${next.activity.trim()}»"
+      next != null -> "Suena al sumar ${minutes(next.requiredUsageSeconds)}"
+      else -> "Hasta que lo desactives"
+    }
     val publicVersion = NotificationCompat.Builder(this, CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
       .setContentTitle(if (counting) "Contando" else "Se activa solo")
@@ -151,30 +164,44 @@ class AppUsageMonitorService : Service() {
     stopSelf()
   }
 
+  /** Mantiene conectado el Tag mientras algún relevo activo suena en él (D-109). */
+  private fun holdTagIfNeeded() {
+    if (activeStore.load().any { it.signalRoute == SignalRoute.TAG }) TagStore(this).address?.let { TagLink.hold(this, it) }
+  }
+
+  /**
+   * Cuenta todos los relevos activos a la vez (4.3, D-158). Una sola lectura de qué app está en primer plano
+   * suma tiempo a cada relevo que la incluye, con sus propias entradas y salidas en el registro. Cuando uno
+   * cumple su tiempo y nada está sonando, pasa a [store] para la señal; si había un borrador a medias, se
+   * guarda aparte. Si otro relevo se cumple mientras suena uno, espera su turno y sigue contando.
+   */
   private fun startMonitoring() {
     monitorJob?.cancel()
     isWatching = false
     isCounting = true
     messageStream.start()
-    // El llavero se conecta al activar el relevo y se mantiene así hasta la señal (D-109).
-    if (store.load().signalRoute == SignalRoute.TAG) TagStore(this).address?.let { TagLink.hold(this, it) }
+    holdTagIfNeeded()
     val startedAt = System.currentTimeMillis()
     // Se revisa un periodo previo para saber qué app estaba abierta al empezar o al retomar.
     lastQueryMillis = startedAt - LOOKBACK_MILLIS
-    val tracker = ForegroundTracker(startedAt).apply { accumulatedMillis = store.load().observedUsageSeconds * 1_000L }
+    val tracker = ForegroundTracker(startedAt)
     monitorJob =
       scope.launch {
-        var wasTargetForeground = false
-        var lastTargetPackage = store.load().targetPackage
+        var lastTick = startedAt
+        val counted = mutableMapOf<String, Long>()
+        val inTarget = mutableMapOf<String, Boolean>()
+        val lastPackage = mutableMapOf<String, String>()
+        var shownCount = activeStore.load().size
         var ticks = 0L
 
         while (true) {
-          val reminder = store.load()
-          if (reminder.status != ReminderStatus.WAITING || !hasCurrentConsent()) break
+          val actives = activeStore.load()
+          if (actives.isEmpty() || !hasCurrentConsent()) break
+          if (actives.size != shownCount) { shownCount = actives.size; startInForeground(counting = true) }
 
           ticks += 1
           if (ticks % ACCESS_CHECK_TICKS == 0L && !UsageAccess.isGranted(this@AppUsageMonitorService)) {
-            pauseForMissingAccess(reminder.sessionId, reminder.participantCode, lastTargetPackage, reminder.observedUsageSeconds)
+            pauseForMissingAccess(actives)
             return@launch
           }
           if (ticks % SYNC_TICKS == 0L) launch(Dispatchers.IO) {
@@ -185,33 +212,50 @@ class AppUsageMonitorService : Service() {
 
           val now = System.currentTimeMillis()
           readUsageEvents(now, tracker)
-          val targetForeground = tracker.tick(now, reminder::tracks)
+          tracker.tick(now) { false }
+          val step = (now - lastTick).coerceIn(0L, ForegroundTracker.MAX_STEP_MILLIS)
+          lastTick = now
+          val foreground = tracker.currentPackage
 
-          if (targetForeground != wasTargetForeground || (targetForeground && tracker.currentPackage != lastTargetPackage)) {
-            val entered = targetForeground
+          var due: Reminder? = null
+          for (active in actives) {
+            val id = active.sessionId
+            val tracked = active.tracks(foreground)
+            val total = counted.getOrPut(id) { active.observedUsageSeconds * 1_000L } + if (tracked) step else 0L
+            counted[id] = total
+            val seconds = (total / 1_000L).toInt()
             // Pasar de una app elegida a otra también queda registrado como salida y entrada.
-            if (wasTargetForeground) researchLog.record(reminder.sessionId, reminder.participantCode, "target_left", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
-            if (entered) {
-              lastTargetPackage = tracker.currentPackage.orEmpty()
-              researchLog.record(reminder.sessionId, reminder.participantCode, "target_entered", lastTargetPackage, (tracker.accumulatedMillis / 1_000L).toInt())
+            val was = inTarget[id] ?: false
+            if (tracked != was || (tracked && foreground != lastPackage[id])) {
+              if (was) researchLog.record(id, active.participantCode, "target_left", lastPackage[id].orEmpty(), seconds)
+              if (tracked) {
+                lastPackage[id] = foreground.orEmpty()
+                researchLog.record(id, active.participantCode, "target_entered", foreground.orEmpty(), seconds)
+              }
+              inTarget[id] = tracked
             }
-            wasTargetForeground = targetForeground
+            // Se actualiza cada uno por su sesión: si la persona desactivó uno mientras tanto, no vuelve.
+            if (seconds != active.observedUsageSeconds) activeStore.update(id) { it.copy(observedUsageSeconds = seconds) }
+            if (due == null && seconds >= active.requiredUsageSeconds) due = active.copy(observedUsageSeconds = seconds)
           }
 
-          val observedSeconds = (tracker.accumulatedMillis / 1_000L).toInt()
-          if (observedSeconds != reminder.observedUsageSeconds) {
-            store.save(reminder.copy(observedUsageSeconds = observedSeconds))
-          }
-
-          if (observedSeconds >= reminder.requiredUsageSeconds) {
-            deliverSignal(reminder.copy(observedUsageSeconds = observedSeconds))
-            break
+          val focus = store.load()
+          val sounding = focus.status == ReminderStatus.SIGNALLED || focus.status == ReminderStatus.SILENCED || focus.status == ReminderStatus.CLOSED
+          val ready = due
+          if (ready != null && !sounding) {
+            activeStore.remove(ready.sessionId)
+            counted.remove(ready.sessionId)
+            if (focus.activity.isNotBlank() || focus.selectedApps.isNotEmpty()) activeStore.park(focus)
+            store.save(ready)
+            deliverSignal(ready)
+            holdTagIfNeeded()
+            shownCount = -1
           }
 
           delay(POLL_INTERVAL_MILLIS)
         }
         TagLink.release()
-        // Con la activación automática, al terminar un relevo vuelve a esperar en vez de detenerse.
+        // Con la activación automática, al terminar los relevos vuelve a esperar en vez de detenerse.
         if (autoMode.enabled && hasCurrentConsent()) startWatching() else stopMonitoring()
       }
   }
@@ -235,7 +279,7 @@ class AppUsageMonitorService : Service() {
         while (true) {
           if (!autoMode.enabled || !hasCurrentConsent()) break
           val current = store.load()
-          if (current.status == ReminderStatus.WAITING) {
+          if (activeStore.load().isNotEmpty()) {
             // Se activó un relevo a mano mientras Relevo esperaba: pasa a contarlo.
             isWatching = false
             startInForeground(counting = true)
@@ -249,7 +293,7 @@ class AppUsageMonitorService : Service() {
           readUsageEvents(now, tracker)
           tracker.tick(now) { false }
           val last = lastConfiguration.load()
-          if (AutoMode.shouldArm(true, current.status, last, tracker.currentPackage, now, autoMode.lastClosedAt) && armAutomatically(last)) {
+          if (AutoMode.shouldArm(true, current.status, last, tracker.currentPackage, now, autoMode.lastClosedAt) && activeStore.load().isEmpty() && armAutomatically(last)) {
             isWatching = false
             startInForeground(counting = true)
             startMonitoring()
@@ -270,7 +314,7 @@ class AppUsageMonitorService : Service() {
     val day = plan?.day(today)?.takeIf { it in 0..plan.lastDay } ?: -1
     val next = AutoMode.fromLast(last, code, plan?.condition(today), day, UUID.randomUUID().toString())
     if (next.status != ReminderStatus.WAITING) return false
-    store.save(next)
+    activeStore.add(next)
     researchLog.record(next.sessionId, next.participantCode, "armed", next.targetPackage, 0)
     researchLog.startSession(next)
     researchLog.logApp(code, "relevo_automatico", next.activity)
@@ -346,8 +390,8 @@ class AppUsageMonitorService : Service() {
    * Sin acceso a Tiempo de uso no se puede contar. El relevo sigue activo, pero el conteo se detiene
    * y la persona recibe un aviso visible para reactivarlo o desactivarlo.
    */
-  private fun pauseForMissingAccess(sessionId: String, participantCode: String, targetPackage: String, observedSeconds: Int) {
-    researchLog.record(sessionId, participantCode, "monitor_paused", targetPackage, observedSeconds)
+  private fun pauseForMissingAccess(actives: List<Reminder>) {
+    actives.forEach { researchLog.record(it.sessionId, it.participantCode, "monitor_paused", it.targetPackage, it.observedUsageSeconds) }
     getSystemService(NotificationManager::class.java)?.notify(
       STATUS_NOTIFICATION_ID,
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
@@ -408,10 +452,10 @@ class AppUsageMonitorService : Service() {
       .build()
     val text = when {
       // 4.0 (R11): lo útil primero y en menos de 40 caracteres; la frase genérica del protocolo se mantiene.
-      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No sonó en el parlante"
+      !audible && reminder.signalRoute == SignalRoute.BLUETOOTH -> "No sonó en el dispositivo de audio"
       !audible && reminder.signalRoute == SignalRoute.WATCH -> "No sonó en el reloj"
       !audible && reminder.signalRoute == SignalRoute.TAG -> "No sonó en el Tag"
-      !audible -> "No sonó en el teléfono"
+      !audible -> "No sonó en tu teléfono"
       generic -> GENERIC_SIGNAL_TEXT
       reminder.howToStart.isBlank() -> GENERIC_SIGNAL_TEXT
       else -> "Empieza por ${reminder.howToStart.trim().trimEnd('.').replaceFirstChar { it.lowercase() }}"

@@ -1,5 +1,6 @@
 package com.example.relevo.monitor
 
+import com.example.relevo.data.ActiveStore
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -57,7 +58,7 @@ object ReturnNotice {
     val settings = SettingsStore(context)
     if (!settings.load().returnNotice || !Participation.canUse(context)) return
     val status = ReminderStore(context).load().status
-    if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) return
+    if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED || ActiveStore(context).load().isNotEmpty()) return
     if (!due(now, settings.lastOpenedAt, settings.lastReturnNoticeAt)) return
     val manager = context.getSystemService(NotificationManager::class.java) ?: return
     if (!manager.areNotificationsEnabled()) return

@@ -23,6 +23,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import com.example.relevo.ui.components.OptionRow
+import com.example.relevo.signal.Sonido
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -105,15 +107,39 @@ internal fun SettingsScreen(
   onPermissions: () -> Unit,
   onPrivacy: () -> Unit,
   onBack: () -> Unit,
+  onSound: (Sonido) -> Unit = {},
 ) {
   val theme = when (settings.theme) { ThemeMode.LIGHT -> "Claro"; ThemeMode.DARK -> "Oscuro"; ThemeMode.SYSTEM -> "Automático" }
+  val sound = Sonido.from(settings.sound)
+  var choosingSound by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(title = "Ajustes", onBack = onBack, backLabel = "Perfil") {
     ListSection {
+      ListRow("Sonido", icon = KitIcon.SUENA, subtitle = sound.label, chevron = true, onClick = { choosingSound = true })
       ListRow("Avisos", icon = KitIcon.AVISOS, subtitle = if (settings.returnNotice) "Aviso semanal encendido" else "Aviso semanal apagado", chevron = true, onClick = onNotices)
       ListRow("Apariencia", icon = KitIcon.TEMA, subtitle = theme + if (settings.largeText) " · letra grande" else "", chevron = true, onClick = onAppearance)
       ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Todo listo para contar" else "Falta Tiempo de uso", chevron = true, onClick = onPermissions)
-      ListRow("Tus datos", icon = KitIcon.PRIVACIDAD, subtitle = "Privacidad, tu código y el borrado", chevron = true, onClick = onPrivacy)
+      ListRow("Datos", icon = KitIcon.PRIVACIDAD, subtitle = "Privacidad, código y borrado", chevron = true, onClick = onPrivacy)
     }
+  }
+  if (choosingSound) SoundSheet(sound, onSound, onDismiss = { choosingSound = false })
+}
+
+/**
+ * Elegir el sonido de la señal (4.3, D-158): cuatro, con su razón en una línea. Al elegir uno suena una vez,
+ * como al elegir un tono en el teléfono. Los fundamentos están en `sonido-de-relevo-2026-11-05.md`.
+ */
+@Composable
+private fun SoundSheet(current: Sonido, onSound: (Sonido) -> Unit, onDismiss: () -> Unit) {
+  RelevoSheet(onDismiss = onDismiss, title = "Sonido", done = "Listo") {
+    Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+      Sonido.entries.forEach { option ->
+        // Sin ícono: los cuatro llevarían el mismo, que no distingue nada.
+        OptionRow(option.label, option == current, { onSound(option) }, subtitle = option.description)
+      }
+    }
+    Spacer(Modifier.height(12.dp))
+    Text("En el Tag suena siempre su propio pitido.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(12.dp))
   }
 }
 
@@ -139,12 +165,12 @@ internal fun NoticesScreen(
       }.joinToString(" "),
     ) {
       ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
-        subtitle = "Al abrir las apps de tu último relevo, empieza a contar solo.")
+        subtitle = "Al abrir las apps del último relevo, empieza a contar solo.")
     }
     SectionGap()
     ListSection {
       ToggleRow("Resumen semanal", settings.weeklySummary, { on -> onChange { copy(weeklySummary = on) } }, icon = KitIcon.AVANCE,
-        subtitle = "Tu semana, en Inicio.")
+        subtitle = "«Esta semana», en Inicio.")
       ToggleRow("Aviso semanal", settings.returnNotice, { on ->
         if (on) requestNotificationPermission(context)
         onChange { copy(returnNotice = on) }
@@ -152,7 +178,7 @@ internal fun NoticesScreen(
       ToggleRow("Mensaje al responder", settings.acknowledgements, { on -> onChange { copy(acknowledgements = on) } }, icon = KitIcon.COMENTARIO,
         subtitle = "Unas palabras después de decir qué decidiste.")
       ToggleRow("Veces por semana", settings.constancy > 0, { on -> onChange { copy(constancy = if (on) constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
-        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces quieres hacerlo. Aparece en tu semana.")
+        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces quieres hacerlo. Aparece en «Esta semana».")
     }
     if (settings.constancy > 0) {
       Spacer(Modifier.height(Gap.list))
@@ -170,7 +196,7 @@ internal fun NoticesScreen(
 internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
   RelevoScreen(title = "Apariencia", onBack = onBack, backLabel = "Ajustes") {
     SettingPanel(
-      "Tema", "Claro, oscuro o como esté tu teléfono.",
+      "Tema", "Claro, oscuro o como esté el teléfono.",
       listOf(ThemeMode.LIGHT.name to "Claro", ThemeMode.DARK.name to "Oscuro", ThemeMode.SYSTEM.name to "Automático"), settings.theme.name,
       { value -> onChange { copy(theme = ThemeMode.valueOf(value)) } },
     )

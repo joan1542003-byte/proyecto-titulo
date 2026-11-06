@@ -84,7 +84,7 @@ internal fun WelcomeScreen(onStart: () -> Unit) {
       Spacer(Modifier.height(28.dp))
       Text("Anota algo que quieres hacer", style = Relevo.type.title, color = Relevo.colors.ink, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
       Spacer(Modifier.height(8.dp))
-      Text("Cuando llevas un rato en el teléfono, suena donde empiezas.", style = Relevo.type.body, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
+      Text("Cuando cumplas el tiempo que elegiste en tus apps, sonará un aviso donde empieza esa actividad.", style = Relevo.type.body, color = Relevo.colors.graphite, textAlign = TextAlign.Center, modifier = Modifier.appear(1))
     }
     Spacer(Modifier.height(36.dp))
     // Un ejemplo que se ve como en la app: la actividad en su anillo, cómo empieza y dónde.
@@ -94,7 +94,7 @@ internal fun WelcomeScreen(onStart: () -> Unit) {
       Text("Leer", style = Relevo.type.headline, color = Relevo.colors.ink)
       Spacer(Modifier.height(16.dp))
       ListSection {
-        ListRow("Abrir el libro", icon = KitIcon.PRIMER_PASO, overline = START_QUESTION)
+        ListRow("Abrir el libro", icon = KitIcon.COMENCE, overline = START_QUESTION)
         ListRow("En el velador", icon = KitIcon.LUGAR, overline = PLACE_QUESTION)
       }
     }

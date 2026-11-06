@@ -1,5 +1,6 @@
 package com.example.relevo.monitor
 
+import com.example.relevo.data.ActiveStore
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -20,7 +21,8 @@ class RestoreMonitorReceiver : BroadcastReceiver() {
     if (SettingsStore(context).load().returnNotice) ReturnNotice.schedule(context)
     if (Participation.participating(context)) ProjectMessages.schedule(context)
     // Con un relevo contando, o con la activación automática encendida (D-095), el servicio vuelve a empezar.
-    val waiting = ReminderStore(context).load().status == ReminderStatus.WAITING
+    ActiveStore.migrate(context)
+    val waiting = ActiveStore(context).load().isNotEmpty()
     if (!waiting && !(AutoModeStore(context).enabled && Participation.canUse(context))) return
     runCatching {
       ContextCompat.startForegroundService(

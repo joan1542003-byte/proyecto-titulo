@@ -87,7 +87,7 @@ enum class Photo(@param:DrawableRes val res: Int, val description: String, @para
   DIBUJAR(R.drawable.foto_dibujar, "Dibujar", icon = KitIcon.DIBUJAR),
   COCINAR(R.drawable.foto_cocinar, "Cocinar", icon = KitIcon.COCINAR),
   ORDENAR(R.drawable.foto_ordenar, "Ordenar", icon = KitIcon.ORDENAR),
-  PERRO(R.drawable.foto_perro, "Salir con el perro", icon = KitIcon.CAMINAR),
+  PERRO(R.drawable.foto_perro, "Salir con el perro", icon = KitIcon.PERRO),
   MANUALIDADES(R.drawable.foto_manualidades, "Manualidades", icon = KitIcon.MANUALIDADES),
   GUITARRA(R.drawable.foto_guitarra, "Tocar guitarra", icon = KitIcon.GUITARRA),
   ESCRIBIR(R.drawable.foto_escribir, "Escribir", icon = KitIcon.ESCRIBIR),
@@ -95,7 +95,7 @@ enum class Photo(@param:DrawableRes val res: Int, val description: String, @para
   APRENDER(R.drawable.foto_aprender, "Aprender", icon = KitIcon.ESTUDIAR),
   PAN(R.drawable.foto_pan, "Hacer pan", icon = KitIcon.COCINAR),
   PINTAR(R.drawable.foto_pintar, "Pintar", icon = KitIcon.PINTAR),
-  PUERTA(R.drawable.foto_puerta, "Empezar", R.drawable.foto_puerta_ancha, icon = KitIcon.PRIMER_PASO),
+  PUERTA(R.drawable.foto_puerta, "Empezar", R.drawable.foto_puerta_ancha, icon = KitIcon.COMENCE),
   SALIDA(R.drawable.foto_salida, "Salir", R.drawable.foto_salida_ancha, icon = KitIcon.SALIR),
   TIEMPO(R.drawable.foto_tiempo, "El tiempo en el teléfono", R.drawable.foto_tiempo_ancha, icon = KitIcon.TIEMPO);
 

@@ -2088,7 +2088,35 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:** Inicio vuelve a coincidir con la Figura 15 de la memoria. El desenfoque variable cuesta más que la máscara; hay que confirmar en un teléfono que no baja de los 60 cuadros por segundo.
 - **Documentos:** [Android 4.2](../06_desarrollo_y_factibilidad/app-android/version-4.2-comentario-preguntas-borde-e-inicio-2026-11-05.md).
 
+## D-158 — Android 4.3: sugerencias por catastro, varios relevos a la vez, sonido a elección y menos «tu»
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.3, `versionCode` 54), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono y de escuchar los sonidos.
+- **Contexto:** al probar la 4.2.1, el autor encontró sugerencias absurdas («Ver una película» sugería sacar un tomo o dejar el teléfono). Pidió un catastro de palabras clave; corregir «¿Dónde suena?»; varios relevos activos; un desenfoque de 100 a 0; «Envíanos un comentario» en Ayuda y Ajustes en Perfil; editar una actividad eligiendo entre opciones; íconos por categoría con un pulso; una píldora que se vea desplazarse; una pantalla de carga animada; textos claros; intereses ordenados; elegir apps en Perfil; quitar o actualizar el video, y elegir el sonido con fundamento. Al revisar la primera versión pidió menos «tu», «Dispositivo de audio» en vez de parlante, sugerencias concretas y descartar el ícono de escalera.
+- **Decisión:**
+  - **Sugerencias:** un catastro de 34 conceptos. Las palabras se comparan completas o por su raíz, las frases pesan el doble y las palabras débiles, como «ver», no deciden solas. Solo se sugiere lo del mismo concepto, y cada sugerencia nombra un objeto concreto. Sin concepto no hay sugerencias, y el campo muestra un ejemplo.
+  - **Salidas:** «Tag», «Dispositivo de audio» y «Notificaciones». El reloj deja de ser una opción propia, porque recibe las notificaciones del teléfono. Solo el teléfono conserva el posesivo: «Suena en tu teléfono».
+  - **Varios relevos:** los activos se guardan aparte del borrador. El servicio los cuenta todos con una sola lectura de la app en primer plano; el que se cumple pasa a la señal, y el borrador a medias vuelve al terminar.
+  - **Perfil:** «Relevos», «Actividades», «Pasos» y «Apps»; «Ajustes» como fila, y «Envíanos un comentario» en Ayuda. Las apps elegidas en Perfil se marcan al preparar un relevo nuevo.
+  - **Sonido:** cuatro sonidos en Ajustes (Madera, Fieltro, Claro y Tonada), con la duración de D-078 y el final de la firma de D-071. Madera sigue por defecto y el Tag conserva su pitido. Cada perfil se apoya en la investigación sobre urgencia, molestia, ubicación y habituación.
+  - **Movimiento:** una sola píldora que se desplaza con un resorte; un borde que va de 100 a 0; la marca animada al abrir, y el pulso con degradado en el nombre de la familia.
+  - **Textos:** sin posesivos innecesarios, con ejemplos concretos y sin el video desactualizado.
+- **Alternativas descartadas:**
+  - Afinar la búsqueda por pedazos de palabras: seguía confundiendo «capítulo» con películas y «serie» con ejercicio.
+  - Sugerir lo de las actividades con el mismo ícono: era la causa de las sugerencias absurdas.
+  - Mantener el reloj como salida: el autor pidió que no fuera una opción, y las notificaciones ya llegan al reloj.
+  - Volver a grabar el video: la interfaz sigue cambiando, y dos pantallas se mantienen al día con menos costo.
+  - Usar los tonos del teléfono: un tono de notificación podría invitar a mirar el teléfono, y se perdería la firma.
+- **Consecuencias:** las sugerencias dependen del catastro, que debe crecer cuando aparezcan actividades nuevas. Si se cumplen dos relevos seguidos, suenan por turno. El sonido elegido queda en el registro de la investigación y debe leerse junto a los datos de la señal. Los cuatro sonidos no se han escuchado en una casa.
+- **Documentos:** [Android 4.3](../06_desarrollo_y_factibilidad/app-android/version-4.3-sugerencias-relevos-y-sonido-2026-11-05.md) y [El sonido de Relevo](../06_desarrollo_y_factibilidad/app-android/sonido-de-relevo-2026-11-05.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-158
+
+- **Qué cambió:** se registró D-158.
+- **Cómo estaba antes:** la última decisión era D-157.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-05 — D-157
 

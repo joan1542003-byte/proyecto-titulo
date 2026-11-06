@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla de carga (4.3, D-158): las cuatro luces se encienden por turno, en el sentido del reloj desde
+     arriba —tu tiempo, tu primer paso, el lugar y lo que decides—, como un relevo que pasa de mano en mano. -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/splash_marca">
+    <target android:name="luz_tiempo" android:animation="@animator/splash_luz_0" />
+    <target android:name="luz_tiempo_trazo" android:animation="@animator/splash_luz_alfa_0" />
+    <target android:name="luz_paso" android:animation="@animator/splash_luz_1" />
+    <target android:name="luz_paso_trazo" android:animation="@animator/splash_luz_alfa_1" />
+    <target android:name="luz_lugar" android:animation="@animator/splash_luz_2" />
+    <target android:name="luz_lugar_trazo" android:animation="@animator/splash_luz_alfa_2" />
+    <target android:name="luz_decision" android:animation="@animator/splash_luz_3" />
+    <target android:name="luz_decision_trazo" android:animation="@animator/splash_luz_alfa_3" />
+</animated-vector>

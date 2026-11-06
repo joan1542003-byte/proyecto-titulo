@@ -26,6 +26,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import com.example.relevo.monitor.InstalledApp
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -70,6 +71,8 @@ import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RenglonArea
+import com.example.relevo.ui.components.RingCell
+import com.example.relevo.ui.components.RingGrid
 import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.appear
@@ -102,6 +105,7 @@ internal class ProfileActions(
   val onStudy: () -> Unit,
   val onFeedback: () -> Unit,
   val onReport: () -> Unit,
+  val onToggleApp: (InstalledApp) -> Unit,
   val onHowItWorks: () -> Unit,
 )
 
@@ -117,6 +121,7 @@ internal fun ProfileTab(
   routes: List<RouteTrack>,
   history: List<HistoryEntry>,
   customCount: Int,
+  apps: List<InstalledApp>,
   reselect: Int,
   actions: ProfileActions,
 ) {
@@ -124,20 +129,33 @@ internal fun ProfileTab(
   var firstReselect by remember { mutableStateOf(reselect) }
   LaunchedEffect(reselect) { if (reselect != firstReselect) scroll.animateScrollTo(0) else firstReselect = reselect }
   var tagGuide by rememberSaveable { mutableStateOf(false) }
+  var pickingApps by rememberSaveable { mutableStateOf(false) }
   if (tagGuide) TagGuideSheet(onDismiss = { tagGuide = false })
+  if (pickingApps) AppPickerSheet(apps, profile.apps.map { it.packageName }.toSet(), actions.onToggleApp, onDismiss = { pickingApps = false })
   RelevoScreen(scrollState = scroll, barTitle = "Perfil", trailing = { GearButton(actions.onSettings) }) {
     ProfileHeader(profile, routes, actions.onEdit, Modifier.appear(0))
     Spacer(Modifier.height(Gap.section))
     ListSection(Modifier.appear(1)) {
-      ListRow("Tus relevos", icon = KitIcon.RELEVOS, subtitle = countLine(history.size, "relevo terminado", "relevos terminados", "Todavía no terminas ninguno"), chevron = true, onClick = actions.onHistory)
-      ListRow("Tus actividades", icon = KitIcon.ACTIVIDADES, subtitle = countLine(customCount, "actividad guardada", "actividades guardadas", "Guarda las que haces seguido"), chevron = true, onClick = actions.onActivities)
-      ListRow("Tus pasos", icon = KitIcon.RUTA, subtitle = routes.firstNotNullOfOrNull { it.currentStep?.activity }?.let { "Ahora: $it" } ?: "Elige tus intereses", chevron = true, onClick = actions.onRoute)
-      ListRow("Envíanos un comentario", icon = KitIcon.COMENTARIO, chevron = true, onClick = actions.onFeedback)
+      ListRow("Relevos", icon = KitIcon.RELEVOS, subtitle = countLine(history.size, "relevo terminado", "relevos terminados", "Todavía no terminas ninguno"), chevron = true, onClick = actions.onHistory)
+      ListRow("Actividades", icon = KitIcon.ACTIVIDADES, subtitle = countLine(customCount, "actividad guardada", "actividades guardadas", "Guarda las que haces seguido"), chevron = true, onClick = actions.onActivities)
+      ListRow("Pasos", icon = KitIcon.DECISION, subtitle = routes.firstNotNullOfOrNull { it.currentStep?.activity }?.let { "Ahora: $it" } ?: "Elige intereses", chevron = true, onClick = actions.onRoute)
+      // 4.3 (D-158): las apps que cuentan tu tiempo; Preparar las trae marcadas.
+      ListRow(
+        "Apps", icon = KitIcon.TELEFONO,
+        subtitle = profile.apps.takeIf { it.isNotEmpty() }?.joinToString(" y ") { it.label } ?: "Las que cuentan el tiempo",
+        chevron = true, onClick = { pickingApps = true },
+      )
     }
     Spacer(Modifier.height(Gap.section))
-    ListSection(Modifier.appear(2), title = "Ayuda") {
+    // Ajustes también como fila, no solo con la tuerca (4.3).
+    ListSection(Modifier.appear(2)) {
+      ListRow("Ajustes", icon = KitIcon.TUERCA, subtitle = "Sonido, avisos, apariencia y datos", chevron = true, onClick = actions.onSettings)
+    }
+    Spacer(Modifier.height(Gap.section))
+    ListSection(Modifier.appear(3), title = "Ayuda") {
       ListRow("Cómo funciona Relevo", icon = KitIcon.AYUDA, chevron = true, onClick = actions.onHowItWorks)
       ListRow("Cómo usar el Tag", icon = KitIcon.OBJETO, chevron = true, onClick = { tagGuide = true })
+      ListRow("Envíanos un comentario", icon = KitIcon.COMENTARIO, chevron = true, onClick = actions.onFeedback)
       ListRow("Reportar un problema", icon = KitIcon.PROBLEMA, chevron = true, onClick = actions.onReport)
     }
     Spacer(Modifier.height(20.dp))
@@ -171,7 +189,7 @@ private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: ()
       Avatar(profile.image, profile.name, 92.dp, background = Relevo.colors.card)
     }
     Spacer(Modifier.height(12.dp))
-    Text(profile.name.ifBlank { "Tu perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, maxLines = 2, textAlign = TextAlign.Center)
+    Text(profile.name.ifBlank { "Perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, maxLines = 2, textAlign = TextAlign.Center)
     if (interests.isNotBlank()) Text(interests, style = Relevo.type.subhead, color = Relevo.colors.graphite, maxLines = 2, textAlign = TextAlign.Center)
     Spacer(Modifier.height(2.dp))
     PlainAction("Editar el perfil", onEdit, color = Relevo.colors.graphite)
@@ -202,7 +220,11 @@ internal fun ProfileSetupScreen(
   val reduce = rememberReduceMotion()
   fun go(to: Int) { forward = to > step; step = to }
   BackHandler(enabled = step > 0) { go(step - 1) }
+  val stepScroll = rememberScrollState()
+  // Cada paso empieza arriba (4.3): el desplazamiento de un paso no se arrastra al siguiente.
+  LaunchedEffect(step) { stepScroll.scrollTo(0) }
   RelevoScreen(
+    scrollState = stepScroll,
     title = when (step) { 0 -> "¿Cómo te llamas?"; 1 -> "¿Con qué te identificas?"; else -> "¿Qué te gustaría hacer más seguido?" },
     onBack = if (step > 0) ({ go(step - 1) }) else null,
     step = "${step + 1} de 3",
@@ -235,7 +257,7 @@ internal fun ProfileSetupScreen(
           0 -> {
             Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { WhiteAvatar(image, name) }
             SectionGap()
-            RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Tu nombre o como te dicen", imeAction = ImeAction.Next,
+            RenglonField("Nombre", name, { name = it.take(40) }, placeholder = "Como te dicen", imeAction = ImeAction.Next,
               onImeAction = { if (name.isNotBlank()) { onName(name.trim()); go(1) } })
             Spacer(Modifier.height(10.dp))
             Text("Se guarda con tu código, aparte de lo que haces en Relevo.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
@@ -288,13 +310,12 @@ internal fun EmojiGrid(selected: String, onSelect: (String) -> Unit) {
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun InterestGrid(selected: List<String>, other: String, onToggle: (String) -> Unit, onOther: (String) -> Unit) {
-  // En el orden de las familias, para que lo parecido quede junto.
-  val options = Interests.all.sortedBy { SkyOrder.indexOf(skyFor(interestIcon(it.id))) }
-  FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    options.forEach { interest ->
-      QuickChoice(interest.label, interest.id in selected, { onToggle(interest.id) }, icon = interestIcon(interest.id))
-    }
-    QuickChoice("Otra", Interests.OTHER in selected, { onToggle(Interests.OTHER) }, icon = KitIcon.AGREGAR)
+  // En el orden de las familias, para que lo parecido quede junto. Desde 4.3 (D-158), anillos de a tres con
+  // una o dos palabras: las cápsulas de largos muy distintos se veían desordenadas.
+  val options: List<String?> = Interests.all.sortedBy { SkyOrder.indexOf(skyFor(interestIcon(it.id))) }.map { it.id } + Interests.OTHER
+  RingGrid(options, columns = 3) { id ->
+    if (id == Interests.OTHER) RingCell(KitIcon.AGREGAR, "Otra", { onToggle(Interests.OTHER) }, size = 64.dp, selected = Interests.OTHER in selected)
+    else if (id != null) RingCell(interestIcon(id), interestShort(id), { onToggle(id) }, size = 64.dp, selected = id in selected, description = Interests.byId(id)?.label ?: interestShort(id))
   }
   AnimatedVisibility(Interests.OTHER in selected, enter = expandVertically(Motion.smooth()) + fadeIn(), exit = shrinkVertically(Motion.smooth()) + fadeOut()) {
     Column(Modifier.padding(top = 6.dp)) {
@@ -313,7 +334,7 @@ internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<S
   var picking by rememberSaveable { mutableStateOf(false) }
   val changed = name != profile.name || image != profile.image || interests != profile.interests || other != profile.otherInterest
   RelevoScreen(
-    title = "Tu perfil",
+    title = "Perfil",
     onBack = onBack, backLabel = "Cancelar",
     bottom = {
       GuardedButton("Guardar", { onSave(name.trim(), image, interests, other.trim()) }, missing = when {
@@ -334,15 +355,35 @@ internal fun ProfileEditScreen(profile: Profile, onSave: (String, String, List<S
       PlainAction("Cambiar el emoji", { picking = true })
     }
     SectionGap()
-    RenglonField("Tu nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo")
+    RenglonField("Nombre", name, { name = it.take(40) }, placeholder = "Como quieras que te diga Relevo")
     SectionGap()
     SectionLabel("Intereses", Modifier.padding(bottom = 12.dp), soft = "Elige una o varias.")
     InterestGrid(interests, other, onToggle = { id -> interests = if (id in interests) interests - id else interests + id }, onOther = { other = it })
   }
   if (picking) {
-    RelevoSheet(onDismiss = { picking = false }, title = "Tu emoji", done = "Listo", tall = true) {
+    RelevoSheet(onDismiss = { picking = false }, title = "Emoji", done = "Listo", tall = true) {
       Spacer(Modifier.height(4.dp))
       EmojiGrid(image) { image = it }
     }
   }
+}
+
+/** Nombre corto de un interés para su anillo (4.3): una o dos palabras; la ruta conserva el nombre completo. */
+private fun interestShort(id: String): String = when (id) {
+  "dormir" -> "Dormir"
+  "leer" -> "Leer"
+  "ejercicio" -> "Ejercicio"
+  "bici" -> "Bicicleta"
+  "perro" -> "Perro"
+  "dibujar" -> "Dibujar"
+  "manualidades" -> "Manualidades"
+  "cocinar" -> "Cocinar"
+  "ordenar" -> "Ordenar"
+  "meditar" -> "Meditar"
+  "estudiar" -> "Estudiar"
+  "videojuegos" -> "Videojuegos"
+  "musica" -> "Música"
+  "peliculas" -> "Películas"
+  "compartir" -> "Compartir"
+  else -> Interests.byId(id)?.label ?: "Otra"
 }
