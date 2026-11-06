@@ -3,11 +3,11 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica:** [borrador v5 de la memoria](08_memoria/borrador-memoria-v5-2026-10-11.md), aprobado como base de trabajo (D-123), con sus [anexos A a I](08_memoria/anexos/README.md) y su [versión en A3](08_memoria/memoria-a3/README.md). La [memoria v4](08_memoria/memoria-vigente-v4.md) queda como antecedente.
+**Base académica:** [borrador v6 de la memoria](08_memoria/borrador-memoria-v6-2026-10-28.md), reescrito en torno a las decisiones de diseño (D-146 a D-152), con su [versión diseñada en 1920 × 1080](08_memoria/memoria-1920x1080/README.md) y sus [anexos A a I](08_memoria/anexos/README.md). El [borrador v5](08_memoria/borrador-memoria-v5-2026-10-11.md), su [versión en A3](08_memoria/memoria-a3/README.md) y la [memoria v4](08_memoria/memoria-vigente-v4.md) quedan como antecedentes.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
-**Feedback más reciente:** [aplicación de anotaciones del 23 de septiembre](00_gobernanza/aplicacion-feedback-docente-2026-09-23.md) y [auditoría en Android 2.6](06_desarrollo_y_factibilidad/app-android/revision-feedback-2026-09-23.md). La comprensión y el comportamiento siguen sin validación con participantes.
+**Feedback más reciente:** la revisión con los profesores del 28 de octubre ([tarea 10 de Por hacer](00_gobernanza/por-hacer.md#10-correcciones-de-la-revisión-con-los-profesores-28-de-octubre)), aplicada en la v6. Tres personas usaron Relevo en sus hogares desde el 7 de octubre.
 
 **Visibilidad registrada el 9 de septiembre de 2026:** pública según la API de GitHub de esa fecha. Vuelve a comprobarla antes de subir información nueva; los datos identificables de participantes deben mantenerse fuera del repositorio.
 
@@ -39,13 +39,23 @@ Esta formulación continúa abierta a revisión. El producto final deberá respo
 
 La versión breve y mantenida después de cada actualización está en el [resumen vigente de Relevo](08_memoria/resumen-vigente-proyecto.md).
 
-Para una lectura ejecutiva del proyecto hasta el 25 de septiembre, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones y propuesta de valor, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md); lo posterior está en el [estado del proyecto](00_gobernanza/estado-del-proyecto-2026-10-19.md).
+Para una lectura ejecutiva del proyecto hasta el 25 de septiembre, con su evolución desde el Pase, el feedback aplicado, las investigaciones, decisiones y propuesta de valor, consultar el [resumen general del proyecto](00_gobernanza/resumen-general-del-proyecto.md); lo posterior está en el [estado del proyecto al 4 de noviembre](00_gobernanza/estado-del-proyecto-2026-11-04.md).
 
 Para explicarlo a público general, comisiones, posibles usuarios o equipos de desarrollo, consultar la [guía de comunicación y explicación de Relevo](00_gobernanza/guia-comunicacion-relevo.md).
 
 El [estudio del testigo compacto](06_desarrollo_y_factibilidad/estudio-dispositivo-compacto-luz-sonido-2026-09-07.md) es la definición física más reciente, anterior a la decisión de no usar luz (D-070). El [sistema de marca vigente](10_recursos_visuales/14_sistema-de-marca-vigente.md) cierra nombre, categoría, frase, descriptor, tipografía, paleta y reglas por soporte. La ruta de fabricación distingue una prueba temprana con una plataforma existente de la integración portátil y se detalla en [plataformas físicas existentes y modificables](06_desarrollo_y_factibilidad/plataformas-existentes-modificables-2026-09-07.md).
 
-## Estado actual — 24 de octubre de 2026
+## Estado actual — 4 de noviembre de 2026
+
+- **Memoria:** [borrador v6](08_memoria/borrador-memoria-v6-2026-10-28.md), centrado en las decisiones de diseño, con 78 referencias y 11 datos por confirmar, y su [versión en 1920 × 1080](08_memoria/memoria-1920x1080/README.md), en PDF y en IDML para Affinity (D-146 a D-152). El 30 de octubre el autor envió una versión al profesor para que la revisara; no es la entrega oficial.
+- **App:** la 2.33 para la prueba y la 3.3 en `main` (D-138), sin cambios desde el 20 de octubre.
+- **Prueba en casa:** tres personas, dos semanas con el Tag desde el 7 de octubre y una semana con la señal solo en el teléfono desde el 21. Hasta el 19, el Tag sonó en 23 de 24 ciclos. El cierre, previsto para el 30 de octubre, se aplica en papel ([instrumento de cierre](07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md), D-144); sus resultados faltan en la memoria.
+- **Objeto propio:** el [testigo para impresión 3D](06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), con la placa y la pila del Tag adentro y el logo como botón (D-143), listo para imprimir cuando se mida la placa.
+- **Presupuesto:** [cerrado el 27 de octubre](06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md).
+- **Trabajo en ramas:** cinco solicitudes de cambio en borrador, del 30 de octubre al 3 de noviembre, siguen sin fusionar por decisión del autor. Qué contiene cada una y cómo fusionarlas sin perder nada está en el [estado del proyecto](00_gobernanza/estado-del-proyecto-2026-11-04.md#2-trabajo-que-no-está-en-main).
+- **Estado completo y pendientes:** [estado del proyecto al 4 de noviembre](00_gobernanza/estado-del-proyecto-2026-11-04.md) y [por hacer](00_gobernanza/por-hacer.md).
+
+## Estado al 24 de octubre de 2026 (histórico)
 
 - **Memoria:** [borrador v5](08_memoria/borrador-memoria-v5-2026-10-11.md) con los resultados de las tres personas al 19 de octubre, la Figura 4 con fotos de la prueba y 88 referencias; [anexos A a I](08_memoria/anexos/README.md) en Markdown, HTML y PDF, y [versión en A3](08_memoria/memoria-a3/README.md). Quedan 23 datos por confirmar que solo sabe el autor.
 - **App:** la [2.33](06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) para el testeo y la [3.3](06_desarrollo_y_factibilidad/app-android/version-3.3-semana-de-comparacion-2026-10-20.md) con la identidad aprobada (D-138), ambas con 87 pruebas automáticas ([entregables](06_desarrollo_y_factibilidad/app-android/releases/README.md)).
@@ -165,6 +175,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Estado al 4 de noviembre
+
+- **Qué cambió:** la base académica pasa al borrador v6 y a su versión en 1920 × 1080; el feedback más reciente es la revisión del 28 de octubre; el estado actual pasa al 4 de noviembre, con la prueba, el objeto, el presupuesto y las cinco ramas sin fusionar, y enlaza el estado del proyecto de esa fecha. El estado del 24 de octubre se conserva como histórico.
+- **Cómo estaba antes:** la base era el borrador v5 con su versión en A3, el feedback más reciente era el del 23 de septiembre, con la frase «la comprensión y el comportamiento siguen sin validación con participantes», y el estado llegaba al 24 de octubre.
+- **Por qué:** el autor pidió actualizar los documentos sin fusionar todavía las ramas a `main`.
 
 ### 2026-10-24 — Estado actual
 
