@@ -240,6 +240,7 @@
 | 6 nov. | Consulta | ¿La respuesta de Parra sirve como la validación con un experto que pide el ramo, o conviene buscar otro perfil? Propone dejar las consultas como preguntas por correo, porque una entrevista es más invasiva. | Cuenta a medias: la matriz de pase (6.2) acepta validaciones con expertos y la rúbrica valora la colaboración interdisciplinaria, pero Parra respaldó el razonamiento y no evaluó la propuesta ni el objeto. Recomendación: sumarle una pregunta de juicio al enviarle el párrafo, enviar hoy el recordatorio con preguntas por correo a Zamorano y Parada, y buscar perfiles de diseño si el lunes 9 nadie responde. La evidencia de 6.2 suma la consulta. | Por confirmar: consulta por correo en vez de entrevista |
 | 6 nov. | Encargo | Buscar otra persona experta que ayude a validar la propuesta más que su teoría: perfiles, correos y mensajes redactados. | Tres perfiles en Chile, con su correo comprobado en fuentes oficiales o artículos de 2025 y 2026: Daniela Quiñones (PUCV, experiencia de usuario), Francisco J. Gutiérrez (Universidad de Chile, interacción humano-computador) y Macarena Valenzuela-Zubiaur (UTEM, diseño industrial). Un [correo](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) para cada una, con una pregunta de juicio sobre la propuesta y dos de su especialidad. Los correos electrónicos quedan fuera de GitHub. | Consulta por correo, sin entrevista |
 | 6 nov. | Corrección | Quitar frases como «En corto», el plazo, «dos o tres líneas», la oferta del video y el envío del párrafo, y revisar que el contexto del proyecto se entienda para que nadie deje de entender las preguntas. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) explican paso a paso cómo funciona la propuesta, cómo se apaga el aviso y qué se midió; cada pregunta usa solo lo que el correo ya contó, y se precisaron cinco preguntas. | — |
+| 6 nov. | Corrección | No sirve decir que el objeto es un llavero Bluetooth, y dejar el objeto junto al libro necesita contexto: la persona quiere leer, pero el teléfono está hecho para que siga y nunca logra leer; pone el objeto junto al libro o en el punto clave para empezar. Explicar mejor y con menos tecnicismos. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) cuentan esa situación y luego cómo ayuda la propuesta, sin el llavero, la placa ni los milímetros; se simplificaron cuatro preguntas. | — |
 
 ## Lo que muestra el registro
 
@@ -250,6 +251,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Correos de validación como situación concreta
+
+- **Qué cambió:** se registró el pedido de explicar el proyecto con una situación concreta y sin tecnicismos.
+- **Cómo estaba antes:** el último pedido era quitar las frases de relleno de esos correos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Correos de validación más claros
 
