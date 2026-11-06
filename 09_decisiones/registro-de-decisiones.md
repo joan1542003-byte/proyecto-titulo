@@ -2132,7 +2132,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
     - sin el reloj ni su permiso.
   - **Con los varios relevos de la 4.3:** las horas sin sonar detienen todos los relevos. La búsqueda del Tag se hace por relevo. Un relevo que se cumple durante las horas sin sonar espera a que terminen.
   - **APK:** paquete `cl.udp.relevo`, `versionCode` 55 y la clave de firma de siempre, con Supabase configurado. La 4.3 de revisión queda como antecedente.
-  - **Números:** el contenido de D-153 y D-154 de la rama local queda en D-159 y D-160. Esa rama se conserva sin subir.
+  - **Números:** el contenido de D-153 y D-154 de la rama local queda en D-159 y D-160. Esa rama se conserva sin fusionar y se subió a GitHub el 5 de noviembre (D-161).
 - **Alternativas descartadas:**
   - **Fusionar `android-1.0.0` en la 4.3:** chocaba en 25 archivos de código, y en las pantallas habría impuesto el diseño de la 1.0.0.
   - **Recompilar la 4.3 sin cambios:** era actualizable, pero seguía con la prueba de 21 días y sin lo que pidió la revisión.
@@ -2152,7 +2152,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** conservar la v13, que describe semanas e instrucciones que ya no existen; dejar de enviar datos, porque el autor decidió seguir registrándolos.
 - **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md) y `FirstRunScreens.kt`.
 
+## D-161 — La clave de firma y la configuración de Supabase entran al repositorio
+
+- **Fecha:** 2026-11-05.
+- **Estado:** hecha en la rama `android-4.4`.
+- **Contexto:** el APK de la 4.3, compilado en el Mac del autor, no se podía instalar como actualización: estaba firmado con otra clave y no tenía la dirección de Supabase, porque `local.properties` y la clave de firma solo estaban en este computador. El autor pidió subirlos al repositorio para tener todo, sabiendo que el repositorio es público.
+- **Decisión:**
+  - **Firma:** `app-android/firma/relevo-debug.keystore` es la clave de siempre (certificado `fdbe6bbe…`), la de depuración estándar de Android. La compilación la usa si existe, en la versión de depuración y en la optimizada.
+  - **Supabase:** `app-android/relevo.properties` trae la dirección del proyecto y la clave publicable. Un valor en `local.properties` la reemplaza.
+  - **`local.properties`** sigue fuera del repositorio, porque guarda la ruta del SDK de cada computador y Android Studio la reescribe.
+  - **La rama `android-1.0.0`** se sube sin fusionar, para conservar su trabajo.
+- **Riesgo aceptado:** con la clave a la vista, cualquiera puede firmar una app que se instale encima de Relevo, si logra que alguien la instale. La clave publicable de Supabase ya iba dentro de cada APK; no es la clave de servicio, y la base solo acepta lo que permiten sus políticas.
+- **Alternativas descartadas:** pasar los dos archivos a mano al Mac, que es lo que faltó en la 4.3; subir `local.properties` tal cual, que rompería la compilación en el Mac por la ruta del SDK.
+- **Verificación:** se compiló sin la dirección de Supabase en `local.properties`, como en el Mac. El APK salió con el paquete `cl.udp.relevo`, el certificado `fdbe6bbe…` y la dirección incluida, y pasan 90 pruebas unitarias.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md), `app/build.gradle.kts` y `CLAUDE.md`.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — D-161
+
+- **Qué cambió:** se registró D-161 y se anotó que la rama `android-1.0.0` se subió.
+- **Cómo estaba antes:** la última decisión era D-160, y la rama `android-1.0.0` estaba solo en este computador.
+- **Por qué:** el autor pidió subir al repositorio la clave de firma, la configuración de Supabase y todo lo demás.
 
 ### 2026-11-05 — D-159 y D-160
 

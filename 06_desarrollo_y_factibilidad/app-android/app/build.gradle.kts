@@ -5,8 +5,12 @@ plugins {
   alias(libs.plugins.compose.compiler)
 }
 
+// D-161: relevo.properties, en el repositorio, trae la dirección de Supabase y su clave publicable;
+// local.properties, de cada computador, puede reemplazarlas. Así cualquier computador compila una versión que envía datos.
 val localProperties = Properties().apply {
-  rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use(::load)
+  listOf("relevo.properties", "local.properties").forEach { name ->
+    rootProject.file(name).takeIf { it.exists() }?.inputStream()?.use(::load)
+  }
 }
 
 android {
@@ -29,11 +33,25 @@ android {
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${localProperties.getProperty("SUPABASE_PUBLISHABLE_KEY", "")}\"")
     }
 
+    // D-161: la clave de firma de siempre está en firma/, así que el Mac y este computador firman igual
+    // y cada versión se instala encima de la anterior sin perder datos. Es la clave de depuración estándar.
+    signingConfigs {
+        getByName("debug") {
+            val shared = rootProject.file("firma/relevo-debug.keystore")
+            if (shared.exists()) {
+                storeFile = shared
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
+        }
+    }
+
     buildTypes {
         release {
             // 2.28: la versión para teléfonos va optimizada (sin depuración, con R8 y los perfiles de Compose)
-            // para que se mueva a la frecuencia de la pantalla. Se firma con la clave de depuración de este
-            // computador, la misma de las versiones anteriores, para instalarse encima sin perder datos.
+            // para que se mueva a la frecuencia de la pantalla. Se firma con la clave de depuración de siempre
+            // (firma/relevo-debug.keystore), la misma de las versiones anteriores, para instalarse encima sin perder datos.
             isMinifyEnabled = true
             isShrinkResources = true
             signingConfig = signingConfigs.getByName("debug")

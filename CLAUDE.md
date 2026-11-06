@@ -13,6 +13,7 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 - Redacta en español claro, natural y preciso. Explica conceptos técnicos al primer uso, evita relleno, redundancias, meta-comentarios y afirmaciones genéricas.
 - No inventes entrevistas, participantes, pruebas, resultados, citas, consentimiento, inventario, precios ni especificaciones. Los únicos participantes del corpus original son P1–P8, anonimizados.
 - No añadas nombres, correos, claves secretas, tokens ni datos identificables al repositorio. La clave publicable de Supabase no es una clave de servicio; nunca publiques `service_role` ni secretos.
+- Excepción decidida por el autor (D-161, 5 de noviembre de 2026): la clave de firma de la app (`06_desarrollo_y_factibilidad/app-android/firma/relevo-debug.keystore`) y la dirección y la clave publicable de Supabase (`06_desarrollo_y_factibilidad/app-android/relevo.properties`) están en el repositorio a propósito, para que cualquier computador compile versiones actualizables. No las borres ni las cambies.
 - No borres ni muevas archivos de manera amplia. Conserva versiones históricas y cambios del usuario. Usa `apply_patch` para editar texto.
 - Al final de cada Markdown nuevo o modificado añade un registro de cambios que indique qué cambió, cómo estaba antes y por qué.
 - Si se cambia el texto académico, conserva los títulos, el orden progresivo y los límites de palabras exigidos por la memoria vigente; después actualiza el resumen breve y comprueba APA 7 y coherencia.
@@ -25,6 +26,12 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 El documento de traspaso incluye un prompt breve para iniciar el trabajo y las lecturas prioritarias. La rama principal actual al 24 de septiembre de 2026 es `main`; el estado de Issues debe consultarse en GitHub porque no se verificó en este entorno.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Firma y Supabase en el repositorio
+
+- **Qué cambió:** se añadió la excepción para la clave de firma y la configuración de Supabase de la app.
+- **Cómo estaba antes:** la regla de no subir claves no tenía excepciones.
+- **Por qué:** el autor pidió subirlas para tener todo en el repositorio, aunque sea público (D-161).
 
 ### 2026-09-29 — Registro de pedidos
 

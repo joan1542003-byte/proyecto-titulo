@@ -1,6 +1,6 @@
 # Android 4.4: la 4.3, actualizable, con lo de la 1.0.0
 
-**Fecha:** 5 de noviembre de 2026. **Decisiones:** [D-159 y D-160](../../09_decisiones/registro-de-decisiones.md). **Rama:** `android-4.4`, desde `android-4.0-rediseno` (4.3). **Versión:** 4.4, `versionCode` 55. **APK:** [relevo-android-4.4-2026-11-05.apk](releases/relevo-android-4.4-2026-11-05.apk), 10,6 MB, optimizada. Paquete `cl.udp.relevo`, firmada con el certificado de siempre (`fdbe6bbe…`). SHA-256: `57F21B32DA469B942A86C55FC230879AAC07E5B052385CD0116DC20F63D12A09`.
+**Fecha:** 5 de noviembre de 2026. **Decisiones:** [D-159, D-160 y D-161](../../09_decisiones/registro-de-decisiones.md). **Rama:** `android-4.4`, desde `android-4.0-rediseno` (4.3). **Versión:** 4.4, `versionCode` 55. **APK:** [relevo-android-4.4-2026-11-05.apk](releases/relevo-android-4.4-2026-11-05.apk), 10,6 MB, optimizada. Paquete `cl.udp.relevo`, firmada con el certificado de siempre (`fdbe6bbe…`). SHA-256: `57F21B32DA469B942A86C55FC230879AAC07E5B052385CD0116DC20F63D12A09`.
 
 ## Qué pidió el autor
 
@@ -33,7 +33,7 @@ El rediseño de las versiones 4.0 a 4.3 (D-155 a D-158) queda tal cual:
 
 ### Lo que se trae de la 1.0.0
 
-La 1.0.0 (4 de noviembre) quedó en la rama local `android-1.0.0`, que nunca se subió. Sus decisiones se numeraron D-153 y D-154, pero en `main` esos números ya son de la memoria; en la 4.4 su contenido queda como D-159 y D-160.
+La 1.0.0 (4 de noviembre) quedó en la rama `android-1.0.0`, que se subió a GitHub el 5 de noviembre, sin fusionar. Sus decisiones se numeraron D-153 y D-154, pero en `main` esos números ya son de la memoria; en la 4.4 su contenido queda como D-159 y D-160.
 
 | Qué | Dónde se ve en la 4.4 |
 | --- | --- |
@@ -90,6 +90,7 @@ Fusionar las ramas chocaba en 25 archivos de código, así que cada parte se lle
   - aparece «Relevo cambió»;
   - al aceptar, se mantiene el mismo código, el consentimiento pasa a la v14 y el relevo sigue contando.
 - **Al terminar:** los datos del autor se restauraron idénticos y el emulador volvió a tener conexión.
+- **Compilación como en el Mac** (D-161): sin la dirección de Supabase en `local.properties`, el APK salió con el paquete, el certificado y la dirección de siempre.
 
 **Falta probar:**
 
@@ -104,9 +105,15 @@ Fusionar las ramas chocaba en 25 archivos de código, así que cada parte se lle
 ## Para instalar y compilar
 
 - **Instalar:** la 4.4 se instala encima de la 2.33, la 3.3 o la 1.0.0 sin perder datos. «Relevo 4.3», la de revisión, es otra app y se puede desinstalar.
-- **Compilar en el Mac:** para que salga actualizable, el Mac necesita `local.properties` con la dirección y la clave publicable de Supabase, y la clave de firma de siempre, respaldada en `Documents/Relevo-respaldo-firma`. Hay que compilar sin `-PrelevoSuffix`. Ninguno de los dos archivos se sube al repositorio.
+- **Compilar en el Mac o en otro computador:** desde la rama `android-4.4`, sin `-PrelevoSuffix`. La clave de firma está en `firma/` y la dirección de Supabase en `relevo.properties`, así que la versión sale actualizable y envía datos sin copiar nada (D-161). `local.properties` lo crea Android Studio con la ruta del SDK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-05 — Firma y Supabase en el repositorio
+
+- **Qué cambió:** compilar en el Mac ya no pide copiar archivos; se suma la verificación de esa compilación, y la rama `android-1.0.0` figura como subida.
+- **Cómo estaba antes:** el Mac necesitaba `local.properties` y la clave de firma copiados a mano, y la 1.0.0 estaba solo en este computador.
+- **Por qué:** el autor pidió subirlos al repositorio (D-161).
 
 ### 2026-11-05 — Creación
 
