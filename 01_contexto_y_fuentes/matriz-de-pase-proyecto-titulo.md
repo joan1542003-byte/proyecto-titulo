@@ -45,7 +45,7 @@ La matriz evalúa cada subcriterio como **logrado**, **en desarrollo** o **no lo
 | 5.2 Aspectos técnicos resueltos | **No logrado** | Faltan las dimensiones, las uniones y la estructura del objeto: el modelo y los planos. |
 | 5.3 Proceso productivo, proveedores y fabricantes | En desarrollo | Hay estudios de dispositivos en Chile; faltan el proceso de fabricación de la carcasa y sus proveedores. |
 | 6.1 Iteraciones documentadas | Logrado | Versiones 2.0 a 3.3, Tabla 7 y documentos por versión. |
-| 6.2 Testeos pertinentes | Logrado | Tres hogares desde el 7 de octubre y una semana solo con el teléfono desde el 20 de octubre. |
+| 6.2 Testeos pertinentes | Logrado | Tres hogares desde el 7 de octubre y una semana solo con el teléfono desde el 20 de octubre. Además, una consulta escrita a un experto en sistemas de recomendación (Parra, noviembre de 2026; [ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)): respalda el problema y los criterios 1, 3 y 6, pero no evalúa la propuesta ni el objeto. |
 | 6.3 Incorporación de aprendizajes | Logrado | Las versiones 2.31 y 2.32 corrigen fallos del uso real. |
 | 7.1 Prototipo final desarrollado | En desarrollo | La app funciona; el objeto es un Tag comprado, sin forma propia. |
 | 7.2 Documentación gráfica y técnica | En desarrollo | Wireframes, capturas y fotos de la prueba; faltan los planos y la ficha del objeto. |
@@ -65,6 +65,12 @@ Para la maqueta editorial, cada dimensión debe aparecer mediante evidencia pert
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Consulta experta
+
+- **Qué cambió:** la evidencia de 6.2 suma la consulta escrita a Denis Parra, con su alcance y su límite.
+- **Cómo estaba antes:** 6.2 se apoyaba solo en la prueba en tres hogares.
+- **Por qué:** el subcriterio acepta validaciones con expertos, y el autor preguntó si esta respuesta sirve como validación.
 
 ### 2026-11-02 — Actores en la v6
 

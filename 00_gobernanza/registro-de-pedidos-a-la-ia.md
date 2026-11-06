@@ -237,6 +237,7 @@
 | 3 nov. | Encargo | Una pregunta extra para Parra: si ha estudiado algo relacionado con Relevo y su percepción desde su experiencia. | Pregunta 4, abierta: qué aprendió de lo que haya estudiado de parecido y qué le parece prometedor y débil en Relevo. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 | 3 nov. | Corrección | En la pregunta 4, no hablar de Relevo y preguntar directamente por lo que ha aprendido; evitar nombrar Relevo, que no se entiende sin contexto, y explicarlo de otra forma. | El correo ya no nombra Relevo: habla de «mi proyecto» o «mi propuesta» y describe lo que hace. La pregunta 4 pregunta qué ha aprendido sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella, tema de sus trabajos sobre control. | Correo sin el nombre del proyecto |
 | 6 nov. | Consulta | Denis Parra respondió el correo: analizar su respuesta y decir cómo valida lo que hace Relevo. | [Ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md) con su matriz de análisis. Como opinión experta, y no como evidencia de efecto, respalda el problema (las plataformas entrenan con lo que la persona hace porque sirve a su objetivo de tiempo y publicidad), el porqué del criterio 1 y, en parte, los criterios 3 y 6. No valida que Relevo funcione, ni el objeto ni el lugar; la pregunta 1 no se entendió. Autorizó la cita con su nombre. | Falta enviarle el párrafo antes de usarlo |
+| 6 nov. | Consulta | ¿La respuesta de Parra sirve como la validación con un experto que pide el ramo, o conviene buscar otro perfil? Propone dejar las consultas como preguntas por correo, porque una entrevista es más invasiva. | Cuenta a medias: la matriz de pase (6.2) acepta validaciones con expertos y la rúbrica valora la colaboración interdisciplinaria, pero Parra respaldó el razonamiento y no evaluó la propuesta ni el objeto. Recomendación: sumarle una pregunta de juicio al enviarle el párrafo, enviar hoy el recordatorio con preguntas por correo a Zamorano y Parada, y buscar perfiles de diseño si el lunes 9 nadie responde. La evidencia de 6.2 suma la consulta. | Por confirmar: consulta por correo en vez de entrevista |
 
 ## Lo que muestra el registro
 
@@ -247,6 +248,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Validación con un experto
+
+- **Qué cambió:** se registró la consulta sobre si la respuesta de Parra sirve como validación y la propuesta de consultar por correo.
+- **Cómo estaba antes:** el último pedido era el análisis de la respuesta de Parra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Respuesta de Parra
 
