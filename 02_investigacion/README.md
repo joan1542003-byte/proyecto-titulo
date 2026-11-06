@@ -9,7 +9,7 @@ Construir la base teórica y empírica que permita explicar por qué Relevo debe
 - `metodologia-usuarios.md`: protocolo de búsqueda, síntesis y fichas de fuentes utilizadas para escoger el método de análisis de usuarios.
 - [Síntesis de las anotaciones del 23 de septiembre](sintesis-anotaciones-2026-09-23.md): posición del proyecto, usuarios, continuidad, hábitos y criterios escritos para evaluar la interfaz; propuestas, no resultados.
 - [Hábitos, reconocimiento positivo, rachas y premios](habitos-reconocimiento-y-rachas-2026-09-23.md): revisión de estudios, límites de transferencia a Relevo y recomendación para discutir la memoria; no cambia el producto.
-- [Entrevistas a expertos](entrevistas-expertos/README.md): cinco personas en Chile para entrevistar, con la vigencia de su correo, y ocho de otros países en reserva; la guía de entrevista, el material para mostrar y los correos de invitación. Al 3 de noviembre de 2026 respondieron Francisco J. Parada y Denis Parra; a Parra, que pidió algo corto, se le envía un correo con cuatro preguntas.
+- [Entrevistas a expertos](entrevistas-expertos/README.md): cinco personas en Chile para entrevistar, con la vigencia de su correo, y ocho de otros países en reserva; la guía de entrevista, el material para mostrar y los correos de invitación. Al 6 de noviembre de 2026 respondieron Francisco J. Parada y Denis Parra; Parra contestó por escrito y su análisis está en [su ficha](entrevistas-expertos/ficha-parra.md).
 
 ## Orden interno previsto
 
@@ -36,6 +36,13 @@ Las líneas son provisionales. No deben convertirse en capítulos hasta verifica
 ---
 
 ## Registro de cambios
+
+### 2026-11-06 — Respuesta escrita de Parra
+
+- **Cambio:** la carpeta de entrevistas dice que Parra respondió por escrito y enlaza su ficha.
+- **Antes:** decía que se le enviaba un correo con cuatro preguntas.
+- **Motivo:** llegó su respuesta.
+- **Alcance:** índice documental.
 
 ### 2026-11-03 — Cuarta pregunta para Parra
 

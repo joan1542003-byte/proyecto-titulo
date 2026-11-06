@@ -278,7 +278,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Entrevistas
 
 - [ ] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.]
-- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre.
+- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria.
 
 ### La memoria diseñada
 
@@ -294,6 +294,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Respuesta de Parra
+
+- **Qué cambió:** la tarea de perfiles registra la respuesta escrita de Parra y lo que falta para usarla.
+- **Cómo estaba antes:** decía que faltaba enviar las invitaciones y hacer al menos una entrevista.
+- **Por qué:** llegó la primera respuesta completa de una persona experta.
 
 ### 2026-11-02 — Entrevistas solo en Chile
 

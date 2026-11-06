@@ -34,7 +34,7 @@ Escribir a las cinco el mismo día. Christian Salas y Francisco J. Parada van pr
 ### Observaciones
 
 - **Parada respondió** la invitación el 2 de noviembre de 2026; sus preguntas están en [su guion](guion-parada.md#correo-con-las-preguntas).
-- **Parra respondió** el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. Se le envía un correo con cuatro preguntas, sin video; está en [su guion](guion-parra.md#correo-con-las-preguntas).
+- **Parra respondió** el 3 de noviembre de 2026: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. Se le envió un correo con cuatro preguntas, sin video ([guion](guion-parra.md#correo-con-las-preguntas)), y las respondió por escrito; ver [su ficha](ficha-parra.md).
 - **Salas y Parada:** conviene leer el resumen de Salas et al. (2026) antes de escribirles y nombrarlo en la invitación. El Centro también publica un correo general, que sirve si las fichas personales dejan de estar al día.
 - **Herskovic:** sigue en la UC según un artículo de abril de 2025, pero el correo viene de un documento oficial de 2023. Si rebota, su [sitio](https://vherskov.ing.uc.cl/) tiene un formulario de contacto.
 - **Zamorano:** su ficha está en el sitio actual de la UDD, y una ficha de transferencia tecnológica de la UDD de noviembre de 2024 lo nombra docente investigador de la Facultad de Diseño, a cargo de TAMI. No se encontró actividad de 2025 o 2026. Si el correo rebota, buscarle por su nombre en LinkedIn y confirmar que es la misma persona antes de escribirle.
@@ -66,6 +66,12 @@ No se contactarán mientras el autor mantenga la decisión de entrevistar solo e
 Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Respuesta escrita de Parra
+
+- **Qué cambió:** la observación sobre Parra dice que respondió por escrito y enlaza su ficha.
+- **Cómo estaba antes:** decía que se le enviaba el correo.
+- **Por qué:** llegó su respuesta.
 
 ### 2026-11-03 — Cuarta pregunta para Parra
 

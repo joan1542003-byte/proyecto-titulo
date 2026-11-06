@@ -1,6 +1,6 @@
 # Entrevistas a expertos
 
-**Creada:** 2 de noviembre de 2026. **Estado al 3 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Respondió Denis Parra: tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; su [correo con cuatro preguntas](guion-parra.md#correo-con-las-preguntas), sin video, está listo para enviar. **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
+**Creada:** 2 de noviembre de 2026. **Estado al 6 de noviembre de 2026:** invitaciones enviadas. Respondió Francisco J. Parada, y se le enviaron las preguntas de [su guion](guion-parada.md#correo-con-las-preguntas). Denis Parra respondió por escrito las cuatro preguntas de [su correo](guion-parra.md#correo-con-las-preguntas) y autorizó la cita con su nombre; el análisis está en [su ficha](ficha-parra.md). **Origen:** tarea 10 de [Por hacer](../../00_gobernanza/por-hacer.md), con los apuntes de la revisión con los profesores del 28 de octubre, y pedido del autor del 2 de noviembre.
 
 ## Para qué
 
@@ -15,6 +15,7 @@ Conseguir al menos una entrevista con una persona experta de otra disciplina ant
 | [Guía de entrevista](guia-de-entrevista.md) | Lo que pide la guía de los profesores, método, consentimiento, preguntas comunes y por disciplina, en español y en inglés, versión escrita, ficha de registro y cómo citar la entrevista. |
 | [Material para mostrar](material-para-mostrar.md) | La página que se envía antes de la entrevista, en español y en inglés, y qué no mostrar. |
 | [Correos de invitación](correos-de-invitacion.md) | Invitaciones, recordatorio y agradecimiento, con el calendario de envío. |
+| [Ficha de Parra](ficha-parra.md) | Su respuesta escrita: ideas principales, citas autorizadas, matriz de análisis, lo que valida y lo que no, y dónde va en la memoria. |
 | [Video de Relevo](video-de-relevo/relevo-en-un-minuto.mp4) | Video de 53 segundos, sin sonido, preparado para Denis Parra; no se envió, porque el autor decidió mandarle solo texto. Lo genera [`generar-video.js`](video-de-relevo/generar-video.js). Qué muestra y de dónde sale cada dato está en [su guion](guion-parra.md#video-que-no-se-envía). |
 
 ## Dónde están los correos
@@ -41,6 +42,12 @@ Todos los correos se comprobaron ese día en la fuente oficial que indica cada p
 - La opinión de una persona experta no es evidencia de que Relevo funcione.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Respuesta escrita de Parra
+
+- **Qué cambió:** el estado dice que Parra respondió por escrito, y el contenido suma su ficha.
+- **Cómo estaba antes:** decía que su correo estaba listo para enviar.
+- **Por qué:** llegó su respuesta y el autor pidió analizarla.
 
 ### 2026-11-03 — Cuarta pregunta para Parra
 

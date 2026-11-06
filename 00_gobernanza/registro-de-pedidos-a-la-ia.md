@@ -236,6 +236,7 @@
 | 3 nov. | Corrección | No pedir autores: la persona experta es la referencia. Preguntarle desde su conocimiento y revisar que cada pregunta sea de su especialidad. | Las tres preguntas piden la mirada de Parra: qué papel cumple el sistema que elige qué viene después, qué se gana y qué se pierde al partir de lo declarado, y qué hace útil el control. Cada una se contrastó en Crossref con su trabajo: recomendación secuencial (2022), retroalimentación implícita y explícita (2011) y control en sistemas de recomendación (2013, 2015 y 2016). | — |
 | 3 nov. | Encargo | Una pregunta extra para Parra: si ha estudiado algo relacionado con Relevo y su percepción desde su experiencia. | Pregunta 4, abierta: qué aprendió de lo que haya estudiado de parecido y qué le parece prometedor y débil en Relevo. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 | 3 nov. | Corrección | En la pregunta 4, no hablar de Relevo y preguntar directamente por lo que ha aprendido; evitar nombrar Relevo, que no se entiende sin contexto, y explicarlo de otra forma. | El correo ya no nombra Relevo: habla de «mi proyecto» o «mi propuesta» y describe lo que hace. La pregunta 4 pregunta qué ha aprendido sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella, tema de sus trabajos sobre control. | Correo sin el nombre del proyecto |
+| 6 nov. | Consulta | Denis Parra respondió el correo: analizar su respuesta y decir cómo valida lo que hace Relevo. | [Ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md) con su matriz de análisis. Como opinión experta, y no como evidencia de efecto, respalda el problema (las plataformas entrenan con lo que la persona hace porque sirve a su objetivo de tiempo y publicidad), el porqué del criterio 1 y, en parte, los criterios 3 y 6. No valida que Relevo funcione, ni el objeto ni el lugar; la pregunta 1 no se entendió. Autorizó la cita con su nombre. | Falta enviarle el párrafo antes de usarlo |
 
 ## Lo que muestra el registro
 
@@ -246,6 +247,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Respuesta de Parra
+
+- **Qué cambió:** se registró el pedido de analizar la respuesta de Parra.
+- **Cómo estaba antes:** el último pedido era el correo para Parra sin nombrar Relevo.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-03 — Correo de Parra sin nombrar Relevo
 

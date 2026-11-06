@@ -2,7 +2,7 @@
 
 **Disciplina:** ciencia de la computación; sistemas de recomendación, interfaces inteligentes e inteligencia artificial centrada en las personas. **Institución:** profesor asociado, Departamento de Ciencia de la Computación, Pontificia Universidad Católica de Chile. **Duración:** 30 a 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
 
-**Estado al 3 de noviembre de 2026:** respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo. No habrá videollamada; se le envía un [correo con cuatro preguntas](#correo-con-las-preguntas), sin video.
+**Estado al 6 de noviembre de 2026:** respondió por escrito las preguntas del [correo](#correo-con-las-preguntas) y autorizó la cita con su nombre. Su respuesta y su análisis están en la [ficha](ficha-parra.md). Antes, el 3 de noviembre, había dicho que tenía la agenda llena hasta mediados de diciembre y pidió algo corto por correo, así que no hubo videollamada.
 
 Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
 
@@ -186,6 +186,12 @@ Parra, D. y Amatriain, X. (2011). Walk the talk: Analyzing the relation between 
 Parra, D. y Brusilovsky, P. (2015). User-controllable personalization: A case study with SetFusion. *International Journal of Human-Computer Studies, 78*, 43–67. https://doi.org/10.1016/j.ijhcs.2015.01.007
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Respuesta por escrito
+
+- **Qué cambió:** el estado dice que Parra respondió por escrito y enlaza su ficha.
+- **Cómo estaba antes:** decía que se le enviaba el correo con cuatro preguntas.
+- **Por qué:** llegó su respuesta.
 
 ### 2026-11-03 — Sin nombrar Relevo
 
