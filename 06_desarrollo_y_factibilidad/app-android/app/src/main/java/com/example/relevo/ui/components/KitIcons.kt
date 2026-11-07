@@ -18,12 +18,13 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M12 10.25V13.25L9.75 17.25M12 13.25L14.25 17.25", true, KitFill.NONE),
     ),
   ),
+  /** D-162: formas de base: una actividad cualquiera, sin el lápiz de Editar. */
   ACTIVIDAD(
     "Actividad",
     listOf(
-      KitShape("M3.5 20.5H20.5", true, KitFill.NONE),
-      KitShape("M5 17V14.4L14.6 4.8A1.9 1.9 0 0 1 17.3 4.8L17.7 5.2A1.9 1.9 0 0 1 17.7 7.9L8.1 17.5H5.5A.5.5 0 0 1 5 17Z", true, KitFill.NONE),
-      KitShape("M13 6.4L16.1 9.5", true, KitFill.NONE),
+      KitShape("M12 3.5L16 10.5H8Z", true, KitFill.NONE),
+      KitShape("M5 13.5H9A1.5 1.5 0 0 1 10.5 15V19A1.5 1.5 0 0 1 9 20.5H5A1.5 1.5 0 0 1 3.5 19V15A1.5 1.5 0 0 1 5 13.5Z", true, KitFill.NONE),
+      KitShape("M13.5 17A3.5 3.5 0 1 0 20.5 17A3.5 3.5 0 1 0 13.5 17Z", true, KitFill.NONE),
     ),
   ),
   ADVERTENCIA(
@@ -248,11 +249,13 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M8.5 6H15.5A2.5 2.5 0 0 1 18 8.5V15.5A2.5 2.5 0 0 1 15.5 18H8.5A2.5 2.5 0 0 1 6 15.5V8.5A2.5 2.5 0 0 1 8.5 6Z", true, KitFill.NONE),
     ),
   ),
+  /** D-162: el lápiz con su trazo, distinto de Editar. */
   DIBUJAR(
     "Dibujar",
     listOf(
-      KitShape("M15.2 4.8a2 2 0 0 1 2.8 0l1.2 1.2a2 2 0 0 1 0 2.8L9.1 18.9l-4.6 1.1 1.1-4.6z", true, KitFill.NONE),
-      KitShape("M13.4 6.6l4 4", true, KitFill.NONE),
+      KitShape("M6.3 15.7L7.2 12.4L16.4 3.2A1.7 1.7 0 0 1 18.8 5.6L9.6 14.8Z", true, KitFill.NONE),
+      KitShape("M14.6 5L17 7.4", true, KitFill.NONE),
+      KitShape("M3.5 20c2.2-1.6 4-1.8 5.5-.6 1.6 1.3 3.3 1.3 5.1 0 1.6-1.1 3.6-1.3 6.4-.2", true, KitFill.NONE),
     ),
   ),
   DORMIR(
@@ -325,13 +328,13 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M10.2 18.2c.6-.9 1.2-1.4 1.8-1.4s1.2.5 1.8 1.4z", true, KitFill.NONE),
     ),
   ),
+  /** D-162: la colchoneta a medio desenrollar, como sugiere la app; era igual a Meditar. */
   ESTIRAR(
     "Estirar",
     listOf(
-      KitShape("M12 4.8c2.1 2.3 3 4.9 2.7 7.8-.2 2.1-1.1 3.8-2.7 5.2-1.6-1.4-2.5-3.1-2.7-5.2-.3-2.9.6-5.5 2.7-7.8z", true, KitFill.NONE),
-      KitShape("M12 17.8c-4.3.5-7.6-1.6-8.9-5.6 2.6-.9 4.9-.7 6.6.5", true, KitFill.NONE),
-      KitShape("M12 17.8c4.3.5 7.6-1.6 8.9-5.6-2.6-.9-4.9-.7-6.6.5", true, KitFill.NONE),
-      KitShape("M8.5 20.5h7", true, KitFill.NONE),
+      KitShape("M2 13.5A6 6 0 1 0 14 13.5A6 6 0 1 0 2 13.5Z", true, KitFill.NONE),
+      KitShape("M11 13.5A3 3 0 1 1 8 10.5", true, KitFill.NONE),
+      KitShape("M8 19.5H19.8A1.25 1.25 0 0 0 19.8 17H12.9", true, KitFill.NONE),
     ),
   ),
   ESTRELLA_LLENA(
@@ -534,12 +537,12 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M4.5 4.5L19.5 19.5", true, KitFill.NONE),
     ),
   ),
+  /** D-162: el colgador: las sugerencias son de ropa; la caja se leía «archivar». */
   ORDENAR(
     "Ordenar",
     listOf(
-      KitShape("M4.5 4.5H19.5A1.5 1.5 0 0 1 21 6V7.5A1.5 1.5 0 0 1 19.5 9H4.5A1.5 1.5 0 0 1 3 7.5V6A1.5 1.5 0 0 1 4.5 4.5Z", true, KitFill.NONE),
-      KitShape("M4.5 9v9.5a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V9", true, KitFill.NONE),
-      KitShape("M10 12.8h4", true, KitFill.NONE),
+      KitShape("M10.2 6.2A1.8 1.8 0 1 1 12 8V9.3", true, KitFill.NONE),
+      KitShape("M12 9.3L3.7 15.5C2.9 16.1 3.3 17.5 4.4 17.5H19.6C20.7 17.5 21.1 16.1 20.3 15.5Z", true, KitFill.NONE),
     ),
   ),
   PARLANTE(
@@ -694,11 +697,12 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M10.5 18h3", true, KitFill.NONE),
     ),
   ),
+  /** D-162: el signo de contraste; los destellos se leían como inteligencia artificial. */
   TEMA(
     "Tema claro u oscuro",
     listOf(
-      KitShape("M10.5 4c.6 4 2.1 5.5 6 6.1-3.9.6-5.4 2.1-6 6.1-.6-4-2.1-5.5-6-6.1 3.9-.6 5.4-2.1 6-6.1z", true, KitFill.NONE),
-      KitShape("M18 14.6c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.6-.3-1.7-.9-2.3-2.5-2.6 1.6-.2 2.2-.8 2.5-2.5z", true, KitFill.NONE),
+      KitShape("M3.5 12A8.5 8.5 0 1 0 20.5 12A8.5 8.5 0 1 0 3.5 12Z", true, KitFill.NONE),
+      KitShape("M12 3.5A8.5 8.5 0 0 1 12 20.5Z", false, KitFill.INK),
     ),
   ),
   TEXTO(
@@ -793,16 +797,16 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
   ),
   // 4.3 (D-158): trece íconos nuevos para las actividades, dibujados con la misma retícula de 24 y trazo
   // redondeado; sus SVG están en 10_recursos_visuales/marca-a-tiempo/iconos.
+  /** D-162: orejas separadas y sin boca, legible a 17 px. */
   PERRO(
     "Perro",
     listOf(
-      KitShape("M8 9.4c0-2.4 1.8-4.2 4-4.2s4 1.8 4 4.2v4.4c0 2.5-1.8 4.6-4 4.6s-4-2.1-4-4.6z", true, KitFill.NONE),
-      KitShape("M8.6 6.3C6.6 5.9 5 7 4.6 9.2c-.3 1.9.2 3.8 1.2 4.6.6.5 1.5.2 1.7-.6L8 11.6", true, KitFill.NONE),
-      KitShape("M15.4 6.3c2-.4 3.6.7 4 2.9.3 1.9-.2 3.8-1.2 4.6-.6.5-1.5.2-1.7-.6L16 11.6", true, KitFill.NONE),
-      KitShape("M12 15.4v1.1", true, KitFill.NONE),
-      KitShape("M10.7 14.6a1.3 1 0 1 0 2.6 0a1.3 1 0 1 0 -2.6 0z", false, KitFill.INK),
-      KitShape("M9.5 10.7a.8 .8 0 1 0 1.6 0a.8 .8 0 1 0 -1.6 0z", false, KitFill.INK),
-      KitShape("M12.9 10.7a.8 .8 0 1 0 1.6 0a.8 .8 0 1 0 -1.6 0z", false, KitFill.INK),
+      KitShape("M8.5 9.6C8.5 7.4 10 5.7 12 5.7S15.5 7.4 15.5 9.6V14.4C15.5 16.8 14 18.6 12 18.6S8.5 16.8 8.5 14.4Z", true, KitFill.NONE),
+      KitShape("M8.1 6.4C6 5.9 4.2 7.1 3.8 9.4C3.5 11.3 3.9 13 4.9 13.7C5.6 14.2 6.4 13.9 6.6 13.1L7 11.5", true, KitFill.NONE),
+      KitShape("M15.9 6.4C18 5.9 19.8 7.1 20.2 9.4C20.5 11.3 20.1 13 19.1 13.7C18.4 14.2 17.6 13.9 17.4 13.1L17 11.5", true, KitFill.NONE),
+      KitShape("M10.6 15.1A1.4 1.1 0 1 0 13.4 15.1A1.4 1.1 0 1 0 10.6 15.1Z", false, KitFill.INK),
+      KitShape("M9.8 10.8A.8 .8 0 1 0 11.4 10.8A.8 .8 0 1 0 9.8 10.8Z", false, KitFill.INK),
+      KitShape("M12.6 10.8A.8 .8 0 1 0 14.2 10.8A.8 .8 0 1 0 12.6 10.8Z", false, KitFill.INK),
     ),
   ),
   CORRER(
@@ -839,28 +843,31 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M8.5 5L7 10M13 5l-1.5 5M17.5 5L16 10", true, KitFill.NONE),
     ),
   ),
+  /** D-162: un tomo con un globo de diálogo, legible a 17 px. */
   MANGA(
     "Leer manga",
     listOf(
-      KitShape("M6.5 3.5h11c.8 0 1.5.7 1.5 1.5v14c0 .8-.7 1.5-1.5 1.5h-11c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
-      KitShape("M5 11.5h14M12 11.5v9", true, KitFill.NONE),
-      KitShape("M8.6 5.9h5.6c.5 0 .9.4.9.9v1.1c0 .5-.4.9-.9.9h-2.7l-1.6 1.3V8.8h-1.3c-.5 0-.9-.4-.9-.9V6.8c0-.5.4-.9.9-.9z", true, KitFill.NONE),
+      KitShape("M7 3.5H17.5A1.5 1.5 0 0 1 19 5V19A1.5 1.5 0 0 1 17.5 20.5H7A2 2 0 0 1 5 18.5V5.5A2 2 0 0 1 7 3.5Z", true, KitFill.NONE),
+      KitShape("M8.5 3.5V20.5", true, KitFill.NONE),
+      KitShape("M12 7.5H15.5A1.5 1.5 0 0 1 17 9V10.5A1.5 1.5 0 0 1 15.5 12H13.6L12 13.6V12A1.5 1.5 0 0 1 10.5 10.5V9A1.5 1.5 0 0 1 12 7.5Z", true, KitFill.NONE),
     ),
   ),
+  /** D-162: una pieza para armar; el cubo se leía «paquete». */
   MAQUETA(
     "Armar una maqueta",
     listOf(
-      KitShape("M12 3.5l7.5 4.3v8.4L12 20.5l-7.5-4.3V7.8z", true, KitFill.NONE),
-      KitShape("M4.5 7.8L12 12l7.5-4.2M12 12v8.5", true, KitFill.NONE),
+      KitShape("M5.5 10.5H18.5A2 2 0 0 1 20.5 12.5V17.5A2 2 0 0 1 18.5 19.5H5.5A2 2 0 0 1 3.5 17.5V12.5A2 2 0 0 1 5.5 10.5Z", true, KitFill.NONE),
+      KitShape("M6.5 10.5V8.5A1 1 0 0 1 7.5 7.5H10.5A1 1 0 0 1 11.5 8.5V10.5", true, KitFill.NONE),
+      KitShape("M12.5 10.5V8.5A1 1 0 0 1 13.5 7.5H16.5A1 1 0 0 1 17.5 8.5V10.5", true, KitFill.NONE),
     ),
   ),
+  /** D-162: dos hebras en vez de tres, legible a 17 px. */
   TEJER(
     "Tejer o coser",
     listOf(
-      KitShape("M4 14a6.2 6.2 0 1 0 12.4 0a6.2 6.2 0 1 0 -12.4 0z", true, KitFill.NONE),
-      KitShape("M5.2 11.3c2.6-.4 6.4.8 9.6 4.2", true, KitFill.NONE),
-      KitShape("M4.6 14.9c2.5-.4 5.8.5 8.4 3.3", true, KitFill.NONE),
-      KitShape("M7.6 8.6c2.7.9 5.4 3.2 7.4 6.4", true, KitFill.NONE),
+      KitShape("M4 14A6.2 6.2 0 1 0 16.4 14A6.2 6.2 0 1 0 4 14Z", true, KitFill.NONE),
+      KitShape("M5.2 11.3C7.8 10.9 11.6 12.1 14.8 15.5", true, KitFill.NONE),
+      KitShape("M7.6 8.6C10.3 9.5 13 11.8 15 15", true, KitFill.NONE),
       KitShape("M14.6 9.4L20.5 3.5", true, KitFill.NONE),
     ),
   ),
@@ -881,13 +888,13 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M7.5 20.5h9", true, KitFill.NONE),
     ),
   ),
+  /** D-162: dos globos sin línea interior, legible a 17 px. */
   IDIOMAS(
     "Aprender un idioma",
     listOf(
-      KitShape("M4.5 3.5h7c.8 0 1.5.7 1.5 1.5v4.5c0 .8-.7 1.5-1.5 1.5H8l-2.5 2.2V11h-1c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
-      KitShape("M15 9.5h4.5c.8 0 1.5.7 1.5 1.5v4.5c0 .8-.7 1.5-1.5 1.5h-.5v2.2L16.5 17h-3c-.8 0-1.5-.7-1.5-1.5v-2", true, KitFill.NONE),
-      KitShape("M5.6 9.2l2-4.1 2 4.1M6.3 7.8h2.6", true, KitFill.NONE),
-      KitShape("M14.6 13.3h3.4", true, KitFill.NONE),
+      KitShape("M4.5 3.5H12A1.5 1.5 0 0 1 13.5 5V11A1.5 1.5 0 0 1 12 12.5H8.2L5.5 14.8V12.5H4.5A1.5 1.5 0 0 1 3 11V5A1.5 1.5 0 0 1 4.5 3.5Z", true, KitFill.NONE),
+      KitShape("M6.3 10.3L8.25 5.7L10.2 10.3M7 8.8H9.5", true, KitFill.NONE),
+      KitShape("M15.5 9H19.5A1.5 1.5 0 0 1 21 10.5V16.5A1.5 1.5 0 0 1 19.5 18H18.5V20.3L15.8 18H12A1.5 1.5 0 0 1 10.5 16.5V14.5", true, KitFill.NONE),
     ),
   ),
   CARTAS(
@@ -905,6 +912,13 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M3.8 19.5c0-3.1 2.3-5.6 5.1-5.6s5.1 2.5 5.1 5.6", true, KitFill.NONE),
       KitShape("M14.6 7.6a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0z", true, KitFill.NONE),
       KitShape("M15.6 13.7c.4-.1.9-.2 1.3-.2 2.6 0 4.6 2.4 4.6 5.4", true, KitFill.NONE),
+    ),
+  ),
+  /** D-162: un relevo sin respuesta: círculo punteado, sin juicio; usaba el gráfico de Historial. */
+  SIN_RESPUESTA(
+    "Sin respuesta",
+    listOf(
+      KitShape("M20.89 13.41A9 9 0 0 1 19.28 17.29M17.29 19.28A9 9 0 0 1 13.41 20.89M10.59 20.89A9 9 0 0 1 6.71 19.28M4.72 17.29A9 9 0 0 1 3.11 13.41M3.11 10.59A9 9 0 0 1 4.72 6.71M6.71 4.72A9 9 0 0 1 10.59 3.11M13.41 3.11A9 9 0 0 1 17.29 4.72M19.28 6.71A9 9 0 0 1 20.89 10.59", true, KitFill.NONE),
     ),
   ),
 }

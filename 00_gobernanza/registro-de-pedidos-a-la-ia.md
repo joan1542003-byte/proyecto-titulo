@@ -225,6 +225,8 @@
 | 5 nov. | Encargo | Indicó que la 4.3, la que hizo en su Mac, es la versión buena y que sus cambios tienen prioridad; lo relevante de la 1.0.0 debía sumarse a ella, para que la 4.3 fuera la versión que se puede actualizar. | [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md), en la rama `android-4.4`: el diseño y los textos de la 4.3, con lo de la 1.0.0. Sale la prueba y el consentimiento pasa a la v14. Entran la primera vez corta, el Tag con el teléfono como respaldo, «¿No tienes un Tag?», las horas sin sonar, el volumen, «Dejarla lista», la revisión del tiempo y la guía del Tag sin dibujos. [APK](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.4-2026-11-05.apk) con el paquete y la firma de siempre y Supabase configurado: se instala encima de la app de cada persona. 90 pruebas automáticas; probada en el emulador sobre los datos del autor, que quedaron idénticos. | D-159, D-160 |
 | 5 nov. | Decisión | Autorizó subir la 4.4 a GitHub como rama nueva. | Rama `android-4.4` en GitHub, sin fusionar con `main`. | D-159 |
 | 5 nov. | Encargo | Pidió subir al repositorio la clave de firma y la configuración de Supabase, para tener todo, aunque el repositorio sea público. | La clave de firma en `app-android/firma/` y la dirección y la clave publicable de Supabase en `app-android/relevo.properties`. La compilación las usa sola, así que el Mac compila una versión actualizable que envía datos. Se subió también la rama `android-1.0.0`, sin fusionar. Compilación verificada sin Supabase en `local.properties`: mismo paquete, misma firma y 90 pruebas. | D-161 |
+| 6 nov. | Pregunta | Preguntó cómo justificar que Relevo hizo sus propios íconos en vez de usar los de otros, propuso investigar íconos y luego hacer los propios, más refinados, al estilo de ChatGPT, y planteó que los íconos responden a lo que querían recuperar sus usuarios. | [Por qué Relevo tiene íconos propios](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md): las 19 actividades de la app vienen de P1–P8, cada una con su fuente; Material Symbols ya tenía equivalentes genéricos de casi todas, así que la razón es otra: lo propio de Relevo, la cercanía con lo que se nombró, una sola voz y las licencias. Comparación con ChatGPT, Material y SF Symbols; propuesta de refinamiento sin aplicar; texto para la memoria. Precisión: los datos sostienen «lo que querían hacer», no «recuperar». | — |
+| 6 nov. | Encargo | Pidió continuar: los íconos hay que saber justificarlos y diseñarlos respondiendo a lo que solicita la app. | [Íconos que responden a lo que pide la app](../10_recursos_visuales/44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario del código (96 de 117 íconos en uso; actividades desde 17 px), cinco reglas y once íconos rehechos, cada uno con su porqué. Salen el lápiz repetido en tres significados, los pares idénticos y los dibujos que decían otra cosa. Las actividades se dibujan con el objeto con que empiezan, como lo sugiere la app. En la app, en la rama local `iconos-propios`. | D-162 |
 
 ## Lo que muestra el registro
 
@@ -235,6 +237,18 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Íconos desde lo que pide la app
+
+- **Qué cambió:** se registró el pedido de diseñar los íconos respondiendo a lo que solicita la app.
+- **Cómo estaba antes:** el último pedido era la pregunta sobre cómo justificar los íconos propios.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Íconos propios
+
+- **Qué cambió:** se registró la pregunta sobre cómo justificar los íconos propios.
+- **Cómo estaba antes:** el último pedido era subir la clave de firma y la configuración de Supabase.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-05 — Subir la 4.4, la firma y Supabase
 

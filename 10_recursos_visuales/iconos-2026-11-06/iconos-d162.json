@@ -1,0 +1,245 @@
+[
+ {
+  "n": "ACTIVIDAD",
+  "label": "Actividad",
+  "por": "Ícono de reserva de una actividad propia sin concepto reconocido. El lápiz decía «editar» y repetía a Editar y Dibujar. Las formas de base de la retícula dicen «cualquier actividad» sin sugerir una.",
+  "shapes": [
+   {
+    "d": "M12 3.5L16 10.5H8Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M5 13.5H9A1.5 1.5 0 0 1 10.5 15V19A1.5 1.5 0 0 1 9 20.5H5A1.5 1.5 0 0 1 3.5 19V15A1.5 1.5 0 0 1 5 13.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M13.5 17A3.5 3.5 0 1 0 20.5 17A3.5 3.5 0 1 0 13.5 17Z",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "DIBUJAR",
+  "label": "Dibujar",
+  "por": "El lápiz solo era igual a Editar. Con el trazo que deja, dice «dibujar».",
+  "shapes": [
+   {
+    "d": "M6.3 15.7L7.2 12.4L16.4 3.2A1.7 1.7 0 0 1 18.8 5.6L9.6 14.8Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M14.6 5L17 7.4",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M3.5 20c2.2-1.6 4-1.8 5.5-.6 1.6 1.3 3.3 1.3 5.1 0 1.6-1.1 3.6-1.3 6.4-.2",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "SIN_RESPUESTA",
+  "label": "Sin respuesta",
+  "nuevo": true,
+  "por": "Resultado de un relevo que no se respondió. Usaba el gráfico de barras de Historial, igual a Avance. Un círculo punteado es el signo habitual de «sin estado»: no juzga ni se confunde con quitar.",
+  "shapes": [
+   {
+    "d": "M20.89 13.41A9 9 0 0 1 19.28 17.29M17.29 19.28A9 9 0 0 1 13.41 20.89M10.59 20.89A9 9 0 0 1 6.71 19.28M4.72 17.29A9 9 0 0 1 3.11 13.41M3.11 10.59A9 9 0 0 1 4.72 6.71M6.71 4.72A9 9 0 0 1 10.59 3.11M13.41 3.11A9 9 0 0 1 17.29 4.72M19.28 6.71A9 9 0 0 1 20.89 10.59",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "TEMA",
+  "label": "Apariencia",
+  "por": "Fila «Apariencia» (tema claro u oscuro). Los destellos hoy se leen como inteligencia artificial. El círculo mitad lleno es el signo de contraste.",
+  "shapes": [
+   {
+    "d": "M3.5 12A8.5 8.5 0 1 0 20.5 12A8.5 8.5 0 1 0 3.5 12Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M12 3.5A8.5 8.5 0 0 1 12 20.5Z",
+    "stroke": false,
+    "fill": "INK"
+   }
+  ]
+ },
+ {
+  "n": "ESTIRAR",
+  "label": "Estirar",
+  "por": "Era idéntico a Meditar. La app sugiere empezar con «Desenrollar la colchoneta»: el ícono es la colchoneta a medio desenrollar.",
+  "shapes": [
+   {
+    "d": "M2 13.5A6 6 0 1 0 14 13.5A6 6 0 1 0 2 13.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M11 13.5A3 3 0 1 1 8 10.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M8 19.5H19.8A1.25 1.25 0 0 0 19.8 17H12.9",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "ORDENAR",
+  "label": "Ordenar",
+  "por": "La caja con tapa se lee «archivar», y un canasto se confunde con el de compras. Las sugerencias de la app son de ropa y cajones («Juntar la ropa en el canasto», «doblar la ropa», clóset): el colgador dice «ordenar la ropa» sin ambigüedad.",
+  "shapes": [
+   {
+    "d": "M10.2 6.2A1.8 1.8 0 1 1 12 8V9.3",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M12 9.3L3.7 15.5C2.9 16.1 3.3 17.5 4.4 17.5H19.6C20.7 17.5 21.1 16.1 20.3 15.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "MANGA",
+  "label": "Leer manga",
+  "por": "La página con viñetas no se leía a 17 px. La app sugiere «Sacar el tomo del estante»: un tomo con un globo de diálogo.",
+  "shapes": [
+   {
+    "d": "M7 3.5H17.5A1.5 1.5 0 0 1 19 5V19A1.5 1.5 0 0 1 17.5 20.5H7A2 2 0 0 1 5 18.5V5.5A2 2 0 0 1 7 3.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M8.5 3.5V20.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M12 7.5H15.5A1.5 1.5 0 0 1 17 9V10.5A1.5 1.5 0 0 1 15.5 12H13.6L12 13.6V12A1.5 1.5 0 0 1 10.5 10.5V9A1.5 1.5 0 0 1 12 7.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "MAQUETA",
+  "label": "Armar una maqueta",
+  "por": "El cubo se lee «paquete» o «3D». La app reconoce maqueta, modelismo y lego, y sugiere «Ordenar las piezas»: una pieza para armar.",
+  "shapes": [
+   {
+    "d": "M5.5 10.5H18.5A2 2 0 0 1 20.5 12.5V17.5A2 2 0 0 1 18.5 19.5H5.5A2 2 0 0 1 3.5 17.5V12.5A2 2 0 0 1 5.5 10.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M6.5 10.5V8.5A1 1 0 0 1 7.5 7.5H10.5A1 1 0 0 1 11.5 8.5V10.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M12.5 10.5V8.5A1 1 0 0 1 13.5 7.5H16.5A1 1 0 0 1 17.5 8.5V10.5",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "PERRO",
+  "label": "Perro",
+  "por": "A 17 px las orejas tocaban la cara y la boca se confundía con la nariz. Se separan las orejas y sale la boca.",
+  "shapes": [
+   {
+    "d": "M8.5 9.6C8.5 7.4 10 5.7 12 5.7S15.5 7.4 15.5 9.6V14.4C15.5 16.8 14 18.6 12 18.6S8.5 16.8 8.5 14.4Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M8.1 6.4C6 5.9 4.2 7.1 3.8 9.4C3.5 11.3 3.9 13 4.9 13.7C5.6 14.2 6.4 13.9 6.6 13.1L7 11.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M15.9 6.4C18 5.9 19.8 7.1 20.2 9.4C20.5 11.3 20.1 13 19.1 13.7C18.4 14.2 17.6 13.9 17.4 13.1L17 11.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M10.6 15.1A1.4 1.1 0 1 0 13.4 15.1A1.4 1.1 0 1 0 10.6 15.1Z",
+    "stroke": false,
+    "fill": "INK"
+   },
+   {
+    "d": "M9.8 10.8A.8 .8 0 1 0 11.4 10.8A.8 .8 0 1 0 9.8 10.8Z",
+    "stroke": false,
+    "fill": "INK"
+   },
+   {
+    "d": "M12.6 10.8A.8 .8 0 1 0 14.2 10.8A.8 .8 0 1 0 12.6 10.8Z",
+    "stroke": false,
+    "fill": "INK"
+   }
+  ]
+ },
+ {
+  "n": "IDIOMAS",
+  "label": "Aprender un idioma",
+  "por": "Dos globos con letra y línea se empastaban a 17 px. Queda un globo con la «A» delante y otro detrás, sin relleno.",
+  "shapes": [
+   {
+    "d": "M4.5 3.5H12A1.5 1.5 0 0 1 13.5 5V11A1.5 1.5 0 0 1 12 12.5H8.2L5.5 14.8V12.5H4.5A1.5 1.5 0 0 1 3 11V5A1.5 1.5 0 0 1 4.5 3.5Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M6.3 10.3L8.25 5.7L10.2 10.3M7 8.8H9.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M15.5 9H19.5A1.5 1.5 0 0 1 21 10.5V16.5A1.5 1.5 0 0 1 19.5 18H18.5V20.3L15.8 18H12A1.5 1.5 0 0 1 10.5 16.5V14.5",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ },
+ {
+  "n": "TEJER",
+  "label": "Tejer o coser",
+  "por": "Tres hebras y el palillo se empastaban a 17 px. Quedan dos hebras y el palillo.",
+  "shapes": [
+   {
+    "d": "M4 14A6.2 6.2 0 1 0 16.4 14A6.2 6.2 0 1 0 4 14Z",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M5.2 11.3C7.8 10.9 11.6 12.1 14.8 15.5",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M7.6 8.6C10.3 9.5 13 11.8 15 15",
+    "stroke": true,
+    "fill": "NONE"
+   },
+   {
+    "d": "M14.6 9.4L20.5 3.5",
+    "stroke": true,
+    "fill": "NONE"
+   }
+  ]
+ }
+]

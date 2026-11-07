@@ -319,7 +319,8 @@ internal fun outcomeIcon(outcome: String): KitIcon = when (outcome) {
   "started" -> KitIcon.COMENCE
   "later" -> KitIcon.DESPUES
   "changed" -> KitIcon.CAMBIE
-  else -> KitIcon.HISTORIAL
+  // D-162: sin respuesta tiene su ícono; antes usaba el gráfico de Historial, igual a Avance.
+  else -> KitIcon.SIN_RESPUESTA
 }
 
 /**

@@ -2167,7 +2167,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** se compiló sin la dirección de Supabase en `local.properties`, como en el Mac. El APK salió con el paquete `cl.udp.relevo`, el certificado `fdbe6bbe…` y la dirección incluida, y pasan 90 pruebas unitarias.
 - **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md), `app/build.gradle.kts` y `CLAUDE.md`.
 
+## D-162 — Los íconos responden a lo que pide la app
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama local `iconos-propios`, sobre la 4.4. Pendiente de la revisión del autor y de una prueba de comprensión con personas.
+- **Contexto:** el autor pidió justificar los íconos propios y diseñarlos respondiendo a lo que solicita la app. Un inventario del código mostró que la app usa 96 de los 117 íconos del kit, que pide las actividades desde 17 px (anillos de 40 px) y que tres significados compartían el mismo lápiz, dos pares eran idénticos y varios dibujos decían otra cosa.
+- **Decisión:**
+  - **Cinco reglas:** un significado, un dibujo; cada actividad con el objeto con que empieza, como lo sugiere la app; legible a 17 px; neutro donde la app no juzga; la construcción de siempre.
+  - **Once íconos:** Actividad, Dibujar, Apariencia, Estirar, Ordenar, Leer manga, Armar una maqueta, Perro, Aprender un idioma y Tejer se redibujan. Sin respuesta es nuevo.
+  - **La foto «Salir»** usa el ícono de Caminar en vez de la huella.
+- **Fundamento:** un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018). Las actividades vienen de P1–P8 y del catastro de la 4.3 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)).
+- **Alternativas descartadas:**
+  - Un guion en un círculo para «sin respuesta», que se leía «quitar».
+  - Un canasto para ordenar, que se leía «canasto de compras».
+  - Engrosar ahora todas las líneas a 2, como ChatGPT, sin probarlo junto al texto.
+- **Documentos:** [Íconos que responden a lo que pide la app](../10_recursos_visuales/44_iconos-desde-lo-que-pide-la-app-2026-11-06.md), `KitIcons.kt` y `10_recursos_visuales/marca-a-tiempo/iconos`.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — D-162
+
+- **Qué cambió:** se registró D-162.
+- **Cómo estaba antes:** la última decisión era D-161.
+- **Por qué:** el autor pidió diseñar los íconos respondiendo a lo que solicita la app.
 
 ### 2026-11-05 — D-161
 

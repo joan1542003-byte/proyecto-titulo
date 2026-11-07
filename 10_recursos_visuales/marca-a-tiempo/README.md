@@ -29,6 +29,12 @@ Las actividades y horarios de la lámina son ejemplos, no datos de participantes
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-06 — 111 iconos (D-162)
+
+- **Qué cambió:** se redibujaron diez íconos (actividad, dibujar, tema, estirar, ordenar, manga, maqueta, perro, idiomas y tejer) y se sumó «sin respuesta». La carpeta pasa de 110 a 111.
+- **Cómo estaba antes:** el lápiz se repetía en actividad, editar y dibujar; estirar era igual a meditar; varios dibujos decían otra cosa o no se leían a 17 px.
+- **Por qué:** el autor pidió diseñar los íconos respondiendo a lo que solicita la app ([documento 44](../44_iconos-desde-lo-que-pide-la-app-2026-11-06.md)).
+
 ### 2026-11-05 — 110 iconos
 
 - **Qué cambió:** la carpeta `iconos/` pasó de 97 a 110 iconos: perro, correr, nadar, pelota, película, manga, maqueta, tejer, piano, meditar, idiomas, cartas y compartir.

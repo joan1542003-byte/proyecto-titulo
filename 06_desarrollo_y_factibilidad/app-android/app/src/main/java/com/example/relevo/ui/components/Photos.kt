@@ -73,7 +73,7 @@ enum class Photo(@param:DrawableRes val res: Int, val description: String, @para
   PAN(R.drawable.foto_pan, "Hacer pan", icon = KitIcon.COCINAR),
   PINTAR(R.drawable.foto_pintar, "Pintar", icon = KitIcon.PINTAR),
   PUERTA(R.drawable.foto_puerta, "Empezar", R.drawable.foto_puerta_ancha, icon = KitIcon.COMENCE),
-  SALIDA(R.drawable.foto_salida, "Salir", R.drawable.foto_salida_ancha, icon = KitIcon.SALIR),
+  SALIDA(R.drawable.foto_salida, "Salir", R.drawable.foto_salida_ancha, icon = KitIcon.CAMINAR), // D-162: salir a moverse; la huella del ícono Salir decía «mascota»
   TIEMPO(R.drawable.foto_tiempo, "El tiempo en el teléfono", R.drawable.foto_tiempo_ancha, icon = KitIcon.TIEMPO);
 
   val key: String get() = "foto:$name"
