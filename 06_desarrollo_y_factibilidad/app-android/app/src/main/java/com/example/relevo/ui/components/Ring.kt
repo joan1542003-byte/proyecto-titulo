@@ -57,7 +57,7 @@ private val Ink = Color(0xFF141312)
 fun ActivityRing(icon: KitIcon, size: Dp, modifier: Modifier = Modifier, description: String? = null) {
   val colors = skyFor(icon).ring
   // En el tema oscuro, el círculo es apenas tibio para no encandilar; el ícono sigue en tinta.
-  val disc = if (Relevo.colors.isDark) Color(0xFFECE7E1) else Color.White
+  val disc = if (Relevo.colors.isDark) Color(0xFFEAE7E5) else Color.White
   val geometry = remember(icon) { kitGeometry(icon) }
   val iconSide = size * 0.42f
   val stroke = opticalStroke(iconSide)

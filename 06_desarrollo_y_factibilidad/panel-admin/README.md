@@ -136,6 +136,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-06 — Android 4.5
+
+- **Qué cambió:** el panel reconoce la 4.5 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.4.
+- **Por qué:** D-163.
+
 ### 2026-11-05 — Android 4.4
 
 - **Qué cambió:** el panel compara contra la 4.4 y nombra las salidas como la app.

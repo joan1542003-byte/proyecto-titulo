@@ -168,7 +168,9 @@ internal fun HomeTab(
   // 4.4: el perfil se pide después del primer relevo, no antes.
   val profileDue = !profile.setupSeen && (history.isNotEmpty() || active)
 
-  RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", scrollState = scroll) {
+  // 4.5 (D-163): con un relevo contando, el saludo lleva el degradado de su anillo: si es azul, es azul.
+  val greetingColors = if (active) skyFor(activityIcon(counting.first().activity, customActivities)).ring else null
+  RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", titleColors = greetingColors, scrollState = scroll) {
     if (profileDue) {
       Notice("El nombre y lo que te gustaría hacer más seguido. Toma un minuto.", title = "Completa el perfil", icon = KitIcon.PERFIL) {
         PlainAction("Completar", actions.onProfileSetup)

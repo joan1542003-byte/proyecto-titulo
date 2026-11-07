@@ -46,7 +46,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.lerp
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.layout.onSizeChanged
@@ -104,6 +107,8 @@ fun RelevoScreen(
   largeTitle: Boolean = false,
   /** El título pequeño de la barra al desplazar; por defecto, el mismo título. */
   barTitle: String? = title,
+  /** 4.5: colores para el título grande en degradado, como el anillo del relevo activo en Inicio. */
+  titleColors: List<Color>? = null,
   header: (@Composable ColumnScope.() -> Unit)? = null,
   titleTrailing: (@Composable () -> Unit)? = null,
   bottom: (@Composable ColumnScope.() -> Unit)? = null,
@@ -142,7 +147,7 @@ fun RelevoScreen(
         Row(Modifier.fillMaxWidth().padding(bottom = Gap.title), verticalAlignment = Alignment.Bottom) {
           Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             if (eyebrow != null) Text(eyebrow, style = Relevo.type.subhead.copy(fontWeight = FontWeight.Medium), color = colors.graphite)
-            ScreenTitle(title, style = if (largeTitle) Relevo.type.largeTitle else Relevo.type.title)
+            ScreenTitle(title, style = if (largeTitle) Relevo.type.largeTitle else Relevo.type.title, colors = titleColors)
             if (subtitle != null) Text(subtitle, style = Relevo.type.body, color = colors.graphite)
           }
           titleTrailing?.invoke()
@@ -204,10 +209,40 @@ object Gap {
   val section = 28.dp
 }
 
-/** Título de pantalla: una sola frase en tinta, sin punto final (D-155). */
+/**
+ * Título de pantalla: una sola frase en tinta, sin punto final (D-155). Con [colors] (4.5, D-163), va en un
+ * degradado de izquierda a derecha. Cada color se acerca a la tinta solo lo necesario para leerse sobre el
+ * papel con un contraste de al menos 3:1, el mínimo para texto grande (WCAG 2.2, 1.4.3): el verde menta o el
+ * ámbar del anillo, tal cual, quedarían bajo ese mínimo.
+ */
 @Composable
-fun ScreenTitle(title: String, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.title) {
-  Text(title, style = style, color = Relevo.colors.ink, modifier = modifier.semantics { heading() })
+fun ScreenTitle(title: String, modifier: Modifier = Modifier, style: TextStyle = Relevo.type.title, colors: List<Color>? = null) {
+  val ink = Relevo.colors.ink
+  val paper = Relevo.colors.paper
+  if (colors.isNullOrEmpty()) {
+    Text(title, style = style, color = ink, modifier = modifier.semantics { heading() })
+    return
+  }
+  val legible = remember(colors, ink, paper) { colors.map { legibleOn(it, paper, ink) } }
+  val brush = if (legible.size == 1) Brush.horizontalGradient(listOf(legible[0], legible[0])) else Brush.horizontalGradient(legible)
+  Text(title, style = style.copy(brush = brush), modifier = modifier.semantics { heading() })
+}
+
+/** El color más parecido a [color] que se lee sobre [background] con un contraste de [minimum]:1, acercándolo a [ink]. */
+internal fun legibleOn(color: Color, background: Color, ink: Color, minimum: Float = 3f): Color {
+  var step = 0
+  var result = color
+  while (step <= 20 && contrastRatio(result, background) < minimum) {
+    step++
+    result = lerp(color, ink, step / 20f)
+  }
+  return result
+}
+
+internal fun contrastRatio(a: Color, b: Color): Float {
+  val la = a.luminance()
+  val lb = b.luminance()
+  return (maxOf(la, lb) + 0.05f) / (minOf(la, lb) + 0.05f)
 }
 
 /** Botón redondo blanco de la barra: cerrar o volver, 40 dp con sombra suave para leerse sobre el borde, y área táctil de 48 dp. */

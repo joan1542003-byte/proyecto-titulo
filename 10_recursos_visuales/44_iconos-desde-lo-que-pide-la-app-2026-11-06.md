@@ -56,7 +56,7 @@ Además, la foto «Salir», que la app usa para el interés de moverse, ya no ll
 - **Los otros 85 íconos en uso** cumplen las cinco reglas. Lo que hace cualquier app (volver, cerrar, buscar, agregar, borrar) mantiene las formas conocidas.
 - **Comencé y Reproducir** usan los dos un triángulo, pero no se confunden. Comencé va en un círculo y aparece en los relevos, como «¿Cómo empiezas?». Reproducir es el botón de un sonido.
 - **Los 21 íconos sin uso** siguen en el kit, porque borrar no es necesario para la app y se conservan los archivos. Historial queda entre ellos.
-- **El grosor y el radio de las esquinas** son los de siempre. Engrosar la línea a 2, como ChatGPT, queda como prueba pendiente (documento 43).
+- **El grosor y el radio de las esquinas** son los de siempre. Engrosar la línea a 2, como la de Lucide, la inspiración de los íconos, queda como prueba pendiente (documento 43).
 
 ## Verificación
 
@@ -84,6 +84,12 @@ Hou, G. y Pan, Y. (2025). What's behind the graphic? The impact of pictogram-sem
 Shen, Z., Xue, C. y Wang, H. (2018). Effects of users' familiarity with the objects depicted in icons on the cognitive performance of icon identification. *i-Perception, 9*(3), Artículo 2041669518780807. https://doi.org/10.1177/2041669518780807
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Lucide
+
+- **Qué cambió:** la línea de 2 se compara con Lucide.
+- **Cómo estaba antes:** se comparaba con ChatGPT.
+- **Por qué:** el autor precisó que la inspiración es Lucide.
 
 ### 2026-11-06 — Creación
 

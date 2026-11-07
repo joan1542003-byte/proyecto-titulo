@@ -38,7 +38,13 @@ fun FamilyLabel(sky: Sky, pulse: Int, modifier: Modifier = Modifier) {
   val glow = remember { Animatable(0f) }
   val sweep = remember { Animatable(0f) }
   LaunchedEffect(pulse) {
-    if (pulse == 0) return@LaunchedEffect
+    if (pulse == 0) {
+      // 4.5: si se elige algo de otra familia a mitad del pulso, esta vuelve a la tinta. Antes el efecto se
+      // cancelaba y salía sin más, y el degradado quedaba pegado en las letras.
+      launch { scale.animateTo(1f, spring(dampingRatio = 1f, stiffness = 600f)) }
+      glow.animateTo(0f, tween(220))
+      return@LaunchedEffect
+    }
     if (!reduce) launch {
       scale.animateTo(1.06f, spring(dampingRatio = 1f, stiffness = 1100f))
       scale.animateTo(1f, spring(dampingRatio = 1f, stiffness = 260f))

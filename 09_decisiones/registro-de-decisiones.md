@@ -2180,10 +2180,38 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:**
   - Un guion en un círculo para «sin respuesta», que se leía «quitar».
   - Un canasto para ordenar, que se leía «canasto de compras».
-  - Engrosar ahora todas las líneas a 2, como ChatGPT, sin probarlo junto al texto.
+  - Engrosar ahora todas las líneas a 2, como Lucide, sin probarlo junto al texto.
+- **Inspiración:** Lucide, un set abierto de íconos de línea; Relevo sigue sus reglas de construcción y dibuja sus propios íconos ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md), sección 4).
 - **Documentos:** [Íconos que responden a lo que pide la app](../10_recursos_visuales/44_iconos-desde-lo-que-pide-la-app-2026-11-06.md), `KitIcons.kt` y `10_recursos_visuales/marca-a-tiempo/iconos`.
 
+## D-163 — Android 4.5: menos amarillo, el saludo del relevo y más palabras clave
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama `android-4.5`, con su APK.
+- **Contexto:** el autor pidió más palabras y frases clave para los relevos propios, documentadas; bajar lo amarillo de los dos temas; el saludo de Inicio con el color del relevo activo; y arreglar el color que quedaba pegado en el selector de íconos.
+- **Decisión:**
+  - **Catastro:** de 322 a 634 palabras y de 20 a 121 frases, con el español de Chile y frases que deciden los casos dudosos. «Clase» y «curso» pasan a palabras débiles. Se documenta, generado desde el código, en [`textos/catastro-de-palabras-clave.md`](../06_desarrollo_y_factibilidad/app-android/textos/catastro-de-palabras-clave.md).
+  - **Neutros:** 40 % de su croma y el tono en 60° (OKLCH), con la misma luminosidad y los mismos contrastes.
+  - **Saludo:** con un relevo contando, en el degradado de su anillo. Cada color se acerca a la tinta solo lo necesario para un contraste de 3:1, el mínimo para texto grande (WCAG 2.2).
+  - **Selector:** la familia que pierde el pulso vuelve a la tinta en vez de quedar a medio camino.
+- **Alternativas descartadas:**
+  - Un papel gris frío, que quitaba la calidez del papel y la tinta (D-155).
+  - Los colores del anillo tal cual en el saludo: el menta y el ámbar no se leen sobre el papel.
+- **Documentos:** [Android 4.5](../06_desarrollo_y_factibilidad/app-android/version-4.5-colores-saludo-y-palabras-2026-11-06.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — D-162: Lucide
+
+- **Qué cambió:** D-162 nombra a Lucide como la inspiración de los íconos.
+- **Cómo estaba antes:** la comparación de la línea era con ChatGPT.
+- **Por qué:** el autor precisó que la inspiración es Lucide, no ChatGPT.
+
+### 2026-11-06 — D-163
+
+- **Qué cambió:** se registró D-163.
+- **Cómo estaba antes:** la última decisión era D-162.
+- **Por qué:** pedido del autor del 6 de noviembre.
 
 ### 2026-11-06 — D-162
 

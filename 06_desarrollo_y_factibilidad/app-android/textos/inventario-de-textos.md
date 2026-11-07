@@ -2,7 +2,7 @@
 
 > Se genera con `node extraer-textos.js` desde el código de la app. Para cambiar un texto se cambia el código y se vuelve a generar. Los datos variables van entre corchetes, como [nombre] o [duración].
 
-**Total:** 1335 textos, 5320 palabras, en 30 pantallas o grupos.
+**Total:** 1353 textos, 5365 palabras, en 30 pantallas o grupos.
 
 
 ## 01 Bienvenida
@@ -180,54 +180,54 @@
 | T0132 | texto | Hola de nuevo | `HomeScreen.kt:163` |
 | T0133 | texto | Hola, [nombre] | `HomeScreen.kt:164` |
 | T0134 | texto | Hola | `HomeScreen.kt:165` |
-| T0135 | texto | Inicio | `HomeScreen.kt:171` |
-| T0136 | aviso | El nombre y lo que te gustaría hacer más seguido. Toma un minuto. | `HomeScreen.kt:173` |
-| T0137 | título | Completa el perfil | `HomeScreen.kt:173` |
-| T0138 | acción | Completar | `HomeScreen.kt:174` |
-| T0139 | aviso | Ya sonó 3 veces. Si al sonar ya llevas mucho rato en una app, prueba con menos tiempo. | `HomeScreen.kt:179` |
-| T0140 | título | ¿El tiempo queda bien? | `HomeScreen.kt:179` |
-| T0141 | acción | Cambiar el tiempo | `HomeScreen.kt:180` |
-| T0142 | acción | Está bien así | `HomeScreen.kt:181` |
-| T0143 | texto | Al abrir [apps elegidas], empieza a contar «[actividad]». | `HomeScreen.kt:188` |
-| T0144 | título | Se activa solo | `HomeScreen.kt:189` |
-| T0145 | acción | Apagar | `HomeScreen.kt:190` |
-| T0146 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:200` |
-| T0147 | subtítulo | Faltan [duración] | `HomeScreen.kt:207` |
-| T0148 | botón | Preparar otro relevo | `HomeScreen.kt:215` |
-| T0149 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:218` |
-| T0150 | título | Relevo no puede contar | `HomeScreen.kt:218` |
-| T0151 | acción | Dar el permiso | `HomeScreen.kt:219` |
-| T0152 | título | Batería | `HomeScreen.kt:224` |
-| T0153 | acción | Quitar la restricción | `HomeScreen.kt:225` |
-| T0154 | texto | Siguiente paso en [lugar] | `HomeScreen.kt:261` |
-| T0155 | botón | Preparar un relevo | `HomeScreen.kt:265` |
-| T0156 | acción | Elegir otra | `HomeScreen.kt:266` |
-| T0157 | subtítulo | Repetir el último · [duración] | `HomeScreen.kt:273` |
-| T0158 | texto | Último relevo | `HomeScreen.kt:284` |
-| T0159 | botón | Preparar de nuevo | `HomeScreen.kt:287` |
-| T0160 | acción | Elegir otra | `HomeScreen.kt:288` |
-| T0161 | botón | Preparar un relevo | `HomeScreen.kt:291` |
-| T0162 | texto | Esta semana | `HomeScreen.kt:362` |
-| T0163 | texto | Aquí verás lo que hagas esta semana. | `HomeScreen.kt:371` |
-| T0164 | texto | Elegiste [dato] por semana. | `HomeScreen.kt:384` |
-| T0165 | rótulo | Actividades | `HomeScreen.kt:393` |
-| T0166 | rótulo | Ver todas | `HomeScreen.kt:393` |
-| T0167 | lector de pantalla | Preparar «[nombre]» | `HomeScreen.kt:400` |
-| T0168 | texto | Nueva | `HomeScreen.kt:403` |
-| T0169 | texto | Guarda lo que haces seguido y prepáralo en un toque. | `HomeScreen.kt:407` |
-| T0170 | acción | Ver ideas | `HomeScreen.kt:408` |
-| T0171 | texto | ¿Cambias este paso por otra actividad? | `HomeScreen.kt:437` |
-| T0172 | botón | Cambiar | `HomeScreen.kt:439` |
-| T0173 | acción | Ahora no | `HomeScreen.kt:440` |
-| T0174 | texto | Contando | `HomeScreen.kt:459` |
-| T0175 | texto | En pausa | `HomeScreen.kt:459` |
-| T0176 | texto | Suena | `HomeScreen.kt:459` |
-| T0177 | texto | Ver el relevo | `HomeScreen.kt:460` |
-| T0178 | texto | Faltan [duración] | `HomeScreen.kt:467` |
-| T0179 | texto | La última vez | `HomeScreen.kt:520` |
-| T0180 | botón | Preparar de nuevo | `HomeScreen.kt:522` |
-| T0181 | acción | Elegir otra | `HomeScreen.kt:524` |
-| T0182 | acción | Ahora no | `HomeScreen.kt:526` |
+| T0135 | texto | Inicio | `HomeScreen.kt:173` |
+| T0136 | aviso | El nombre y lo que te gustaría hacer más seguido. Toma un minuto. | `HomeScreen.kt:175` |
+| T0137 | título | Completa el perfil | `HomeScreen.kt:175` |
+| T0138 | acción | Completar | `HomeScreen.kt:176` |
+| T0139 | aviso | Ya sonó 3 veces. Si al sonar ya llevas mucho rato en una app, prueba con menos tiempo. | `HomeScreen.kt:181` |
+| T0140 | título | ¿El tiempo queda bien? | `HomeScreen.kt:181` |
+| T0141 | acción | Cambiar el tiempo | `HomeScreen.kt:182` |
+| T0142 | acción | Está bien así | `HomeScreen.kt:183` |
+| T0143 | texto | Al abrir [apps elegidas], empieza a contar «[actividad]». | `HomeScreen.kt:190` |
+| T0144 | título | Se activa solo | `HomeScreen.kt:191` |
+| T0145 | acción | Apagar | `HomeScreen.kt:192` |
+| T0146 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:202` |
+| T0147 | subtítulo | Faltan [duración] | `HomeScreen.kt:209` |
+| T0148 | botón | Preparar otro relevo | `HomeScreen.kt:217` |
+| T0149 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:220` |
+| T0150 | título | Relevo no puede contar | `HomeScreen.kt:220` |
+| T0151 | acción | Dar el permiso | `HomeScreen.kt:221` |
+| T0152 | título | Batería | `HomeScreen.kt:226` |
+| T0153 | acción | Quitar la restricción | `HomeScreen.kt:227` |
+| T0154 | texto | Siguiente paso en [lugar] | `HomeScreen.kt:263` |
+| T0155 | botón | Preparar un relevo | `HomeScreen.kt:267` |
+| T0156 | acción | Elegir otra | `HomeScreen.kt:268` |
+| T0157 | subtítulo | Repetir el último · [duración] | `HomeScreen.kt:275` |
+| T0158 | texto | Último relevo | `HomeScreen.kt:286` |
+| T0159 | botón | Preparar de nuevo | `HomeScreen.kt:289` |
+| T0160 | acción | Elegir otra | `HomeScreen.kt:290` |
+| T0161 | botón | Preparar un relevo | `HomeScreen.kt:293` |
+| T0162 | texto | Esta semana | `HomeScreen.kt:364` |
+| T0163 | texto | Aquí verás lo que hagas esta semana. | `HomeScreen.kt:373` |
+| T0164 | texto | Elegiste [dato] por semana. | `HomeScreen.kt:386` |
+| T0165 | rótulo | Actividades | `HomeScreen.kt:395` |
+| T0166 | rótulo | Ver todas | `HomeScreen.kt:395` |
+| T0167 | lector de pantalla | Preparar «[nombre]» | `HomeScreen.kt:402` |
+| T0168 | texto | Nueva | `HomeScreen.kt:405` |
+| T0169 | texto | Guarda lo que haces seguido y prepáralo en un toque. | `HomeScreen.kt:409` |
+| T0170 | acción | Ver ideas | `HomeScreen.kt:410` |
+| T0171 | texto | ¿Cambias este paso por otra actividad? | `HomeScreen.kt:439` |
+| T0172 | botón | Cambiar | `HomeScreen.kt:441` |
+| T0173 | acción | Ahora no | `HomeScreen.kt:442` |
+| T0174 | texto | Contando | `HomeScreen.kt:461` |
+| T0175 | texto | En pausa | `HomeScreen.kt:461` |
+| T0176 | texto | Suena | `HomeScreen.kt:461` |
+| T0177 | texto | Ver el relevo | `HomeScreen.kt:462` |
+| T0178 | texto | Faltan [duración] | `HomeScreen.kt:469` |
+| T0179 | texto | La última vez | `HomeScreen.kt:522` |
+| T0180 | botón | Preparar de nuevo | `HomeScreen.kt:524` |
+| T0181 | acción | Elegir otra | `HomeScreen.kt:526` |
+| T0182 | acción | Ahora no | `HomeScreen.kt:528` |
 
 ## 08 Preparar un relevo
 
@@ -379,12 +379,12 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0313 | texto | El relevo está contando | `HomeScreen.kt:480` |
-| T0314 | texto | Suena [dato] cuando sumes [duración] en [apps elegidas]. | `HomeScreen.kt:483` |
-| T0315 | texto | Mientras tanto, puedes completar el perfil: el nombre y lo que te gustaría hacer más seguido. | `HomeScreen.kt:489` |
-| T0316 | botón | Completar el perfil | `HomeScreen.kt:491` |
-| T0317 | botón | Más tarde | `HomeScreen.kt:493` |
-| T0318 | botón | Entendido | `HomeScreen.kt:495` |
+| T0313 | texto | El relevo está contando | `HomeScreen.kt:482` |
+| T0314 | texto | Suena [dato] cuando sumes [duración] en [apps elegidas]. | `HomeScreen.kt:485` |
+| T0315 | texto | Mientras tanto, puedes completar el perfil: el nombre y lo que te gustaría hacer más seguido. | `HomeScreen.kt:491` |
+| T0316 | botón | Completar el perfil | `HomeScreen.kt:493` |
+| T0317 | botón | Más tarde | `HomeScreen.kt:495` |
+| T0318 | botón | Entendido | `HomeScreen.kt:497` |
 | T0319 | texto | Dijiste que empezaste «[actividad]» [dato]. | `RouteScreens.kt:152` |
 | T0320 | texto | ¿Quieres probar el siguiente paso? | `RouteScreens.kt:154` |
 | T0321 | botón | Probar el siguiente paso | `RouteScreens.kt:168` |
@@ -400,35 +400,35 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0327 | volver | Inicio | `HomeScreen.kt:559` |
-| T0328 | texto | Contando | `HomeScreen.kt:560` |
-| T0329 | texto | En pausa | `HomeScreen.kt:560` |
-| T0330 | botón | Cambiar o desactivar | `HomeScreen.kt:561` |
-| T0331 | texto | Faltan | `HomeScreen.kt:568` |
-| T0332 | texto | de [duración] en [apps elegidas] | `HomeScreen.kt:571` |
-| T0333 | fragmento | las apps que elegiste | `HomeScreen.kt:571` |
-| T0334 | texto | Se activó solo. | `HomeScreen.kt:579` |
-| T0335 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:583` |
-| T0336 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:588` |
-| T0337 | título | Relevo no puede contar | `HomeScreen.kt:588` |
-| T0338 | acción | Dar el permiso | `HomeScreen.kt:589` |
-| T0339 | título | Batería | `HomeScreen.kt:594` |
-| T0340 | acción | Quitar la restricción | `HomeScreen.kt:595` |
-| T0341 | texto | Relevo | `HomeScreen.kt:601` |
-| T0342 | fila | Editar | `HomeScreen.kt:604` |
-| T0343 | subtítulo | Mientras lo editas no cuenta. | `HomeScreen.kt:604` |
-| T0344 | fila | Desactivar | `HomeScreen.kt:605` |
-| T0345 | subtítulo | Deja de contar y no suena. | `HomeScreen.kt:605` |
-| T0346 | fila | Eliminar | `HomeScreen.kt:606` |
-| T0347 | subtítulo | Si lo activaste por error. | `HomeScreen.kt:606` |
-| T0348 | texto | ¿Eliminar este relevo? | `HomeScreen.kt:612` |
-| T0349 | texto | Deja de contar, no suena y no queda en Relevos. | `HomeScreen.kt:614` |
-| T0350 | botón | Eliminar | `HomeScreen.kt:616` |
-| T0351 | botón | Mantenerlo | `HomeScreen.kt:618` |
-| T0352 | texto | ¿Desactivar el relevo? | `HomeScreen.kt:623` |
-| T0353 | texto | Deja de contar y no suena. Después puedes decir qué decidiste. | `HomeScreen.kt:625` |
-| T0354 | botón | Desactivar | `HomeScreen.kt:627` |
-| T0355 | botón | Mantenerlo | `HomeScreen.kt:629` |
+| T0327 | volver | Inicio | `HomeScreen.kt:561` |
+| T0328 | texto | Contando | `HomeScreen.kt:562` |
+| T0329 | texto | En pausa | `HomeScreen.kt:562` |
+| T0330 | botón | Cambiar o desactivar | `HomeScreen.kt:563` |
+| T0331 | texto | Faltan | `HomeScreen.kt:570` |
+| T0332 | texto | de [duración] en [apps elegidas] | `HomeScreen.kt:573` |
+| T0333 | fragmento | las apps que elegiste | `HomeScreen.kt:573` |
+| T0334 | texto | Se activó solo. | `HomeScreen.kt:581` |
+| T0335 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:585` |
+| T0336 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:590` |
+| T0337 | título | Relevo no puede contar | `HomeScreen.kt:590` |
+| T0338 | acción | Dar el permiso | `HomeScreen.kt:591` |
+| T0339 | título | Batería | `HomeScreen.kt:596` |
+| T0340 | acción | Quitar la restricción | `HomeScreen.kt:597` |
+| T0341 | texto | Relevo | `HomeScreen.kt:603` |
+| T0342 | fila | Editar | `HomeScreen.kt:606` |
+| T0343 | subtítulo | Mientras lo editas no cuenta. | `HomeScreen.kt:606` |
+| T0344 | fila | Desactivar | `HomeScreen.kt:607` |
+| T0345 | subtítulo | Deja de contar y no suena. | `HomeScreen.kt:607` |
+| T0346 | fila | Eliminar | `HomeScreen.kt:608` |
+| T0347 | subtítulo | Si lo activaste por error. | `HomeScreen.kt:608` |
+| T0348 | texto | ¿Eliminar este relevo? | `HomeScreen.kt:614` |
+| T0349 | texto | Deja de contar, no suena y no queda en Relevos. | `HomeScreen.kt:616` |
+| T0350 | botón | Eliminar | `HomeScreen.kt:618` |
+| T0351 | botón | Mantenerlo | `HomeScreen.kt:620` |
+| T0352 | texto | ¿Desactivar el relevo? | `HomeScreen.kt:625` |
+| T0353 | texto | Deja de contar y no suena. Después puedes decir qué decidiste. | `HomeScreen.kt:627` |
+| T0354 | botón | Desactivar | `HomeScreen.kt:629` |
+| T0355 | botón | Mantenerlo | `HomeScreen.kt:631` |
 
 ## 12 Suena
 
@@ -893,13 +893,13 @@
 | T0691 | texto | Dijiste que empezaste | `Common.kt:312` |
 | T0692 | texto | La dejaste para después | `Common.kt:313` |
 | T0693 | texto | Cambiaste de idea | `Common.kt:314` |
-| T0694 | texto | Queda anotado. Gracias por decirlo. | `Common.kt:330` |
-| T0695 | texto | Queda anotado. Puedes prepararlo cuando quieras. | `Common.kt:331` |
-| T0696 | texto | Está bien. Puedes elegir otra actividad cuando quieras. | `Common.kt:332` |
-| T0697 | texto | , donde empiezas | `Common.kt:354` |
-| T0698 | texto | Para después | `HomeScreen.kt:507` |
-| T0699 | botón | Activar ahora | `HomeScreen.kt:511` |
-| T0700 | acción | Ahora no | `HomeScreen.kt:512` |
+| T0694 | texto | Queda anotado. Gracias por decirlo. | `Common.kt:331` |
+| T0695 | texto | Queda anotado. Puedes prepararlo cuando quieras. | `Common.kt:332` |
+| T0696 | texto | Está bien. Puedes elegir otra actividad cuando quieras. | `Common.kt:333` |
+| T0697 | texto | , donde empiezas | `Common.kt:355` |
+| T0698 | texto | Para después | `HomeScreen.kt:509` |
+| T0699 | botón | Activar ahora | `HomeScreen.kt:513` |
+| T0700 | acción | Ahora no | `HomeScreen.kt:514` |
 | T0701 | texto | Suave | `SettingsScreens.kt:125` |
 | T0702 | texto | Medio | `SettingsScreens.kt:126` |
 | T0703 | texto | Fuerte | `SettingsScreens.kt:127` |
@@ -912,7 +912,7 @@
 
 ## 33 Ideas, sugerencias y rutas
 
-388 textos.
+405 textos.
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
@@ -1074,481 +1074,499 @@
 | T0865 | texto | En el living | `Route.kt:165` |
 | T0866 | texto | En la cocina | `Route.kt:165` |
 | T0867 | texto | En el comedor | `Route.kt:165` |
-| T0868 | texto | Tomar la correa | `Catastro.kt:56` |
-| T0869 | texto | Sacar su pelota | `Catastro.kt:56` |
-| T0870 | texto | Llenar su botella de agua | `Catastro.kt:56` |
-| T0871 | texto | Junto a la puerta | `Catastro.kt:57` |
-| T0872 | texto | Donde está la correa | `Catastro.kt:57` |
-| T0873 | texto | Ponerte las zapatillas | `Catastro.kt:63` |
-| T0874 | texto | Ponerte ropa deportiva | `Catastro.kt:63` |
-| T0875 | texto | Llenar la botella de agua | `Catastro.kt:63` |
-| T0876 | texto | Junto a la puerta | `Catastro.kt:64` |
-| T0877 | texto | Junto a las zapatillas | `Catastro.kt:64` |
-| T0878 | texto | Ponerte las zapatillas | `Catastro.kt:70` |
-| T0879 | texto | Llenar la botella de agua | `Catastro.kt:70` |
-| T0880 | texto | Elegir el recorrido | `Catastro.kt:70` |
-| T0881 | texto | Junto a la puerta | `Catastro.kt:71` |
-| T0882 | texto | Junto a las zapatillas | `Catastro.kt:71` |
-| T0883 | texto | Sacar la bici | `Catastro.kt:77` |
-| T0884 | texto | Inflar las ruedas | `Catastro.kt:77` |
-| T0885 | texto | Ponerte el casco | `Catastro.kt:77` |
-| T0886 | texto | Junto a la puerta | `Catastro.kt:78` |
-| T0887 | texto | Junto a la bici | `Catastro.kt:78` |
-| T0888 | texto | Ponerte ropa deportiva | `Catastro.kt:85` |
-| T0889 | texto | Estirar la colchoneta | `Catastro.kt:85` |
-| T0890 | texto | Preparar el bolso | `Catastro.kt:85` |
-| T0891 | texto | Junto al clóset | `Catastro.kt:86` |
-| T0892 | texto | Donde guardas la colchoneta | `Catastro.kt:86` |
-| T0893 | texto | Junto a la puerta | `Catastro.kt:86` |
-| T0894 | texto | Desenrollar la colchoneta | `Catastro.kt:92` |
-| T0895 | texto | Ponerte ropa cómoda | `Catastro.kt:92` |
-| T0896 | texto | Donde guardas la colchoneta | `Catastro.kt:93` |
-| T0897 | texto | Junto a la cama | `Catastro.kt:93` |
-| T0898 | texto | Preparar el traje de baño | `Catastro.kt:98` |
-| T0899 | texto | Echar la toalla al bolso | `Catastro.kt:98` |
-| T0900 | texto | Junto a la puerta | `Catastro.kt:99` |
-| T0901 | texto | Junto al bolso | `Catastro.kt:99` |
-| T0902 | texto | Preparar las zapatillas | `Catastro.kt:104` |
-| T0903 | texto | Inflar la pelota | `Catastro.kt:104` |
-| T0904 | texto | Avisar al equipo | `Catastro.kt:104` |
-| T0905 | texto | Junto a la puerta | `Catastro.kt:105` |
-| T0906 | texto | Llenar la regadera | `Catastro.kt:110` |
-| T0907 | texto | Ponerte los guantes | `Catastro.kt:110` |
-| T0908 | texto | Junto a las plantas | `Catastro.kt:111` |
-| T0909 | texto | Junto a la regadera | `Catastro.kt:111` |
-| T0910 | texto | Sacar el tomo del estante | `Catastro.kt:119` |
-| T0911 | texto | Abrir el tomo donde quedaste | `Catastro.kt:119` |
-| T0912 | texto | Junto al estante | `Catastro.kt:120` |
-| T0913 | texto | En el velador | `Catastro.kt:120` |
-| T0914 | texto | Elegir el libro | `Catastro.kt:126` |
-| T0915 | texto | Abrir el libro en el marcador | `Catastro.kt:126` |
-| T0916 | texto | Dejar el libro a la vista | `Catastro.kt:126` |
-| T0917 | texto | En el velador | `Catastro.kt:127` |
-| T0918 | texto | En el sillón | `Catastro.kt:127` |
-| T0919 | texto | Junto al estante | `Catastro.kt:127` |
-| T0920 | texto | Abrir los apuntes | `Catastro.kt:134` |
-| T0921 | texto | Despejar el escritorio | `Catastro.kt:134` |
-| T0922 | texto | Abrir el cuaderno en la tarea | `Catastro.kt:134` |
-| T0923 | texto | En el escritorio | `Catastro.kt:135` |
-| T0924 | texto | Abrir el cuaderno de vocabulario | `Catastro.kt:142` |
-| T0925 | texto | Abrir el libro del curso | `Catastro.kt:142` |
-| T0926 | texto | En el escritorio | `Catastro.kt:143` |
-| T0927 | texto | Abrir el cuaderno | `Catastro.kt:148` |
-| T0928 | texto | Dejar un lápiz sobre el cuaderno | `Catastro.kt:148` |
-| T0929 | texto | En el escritorio | `Catastro.kt:149` |
-| T0930 | texto | En el velador | `Catastro.kt:149` |
-| T0931 | texto | Sacar el cuaderno y un lápiz | `Catastro.kt:156` |
-| T0932 | texto | Abrir el cuaderno en ese dibujo | `Catastro.kt:156` |
-| T0933 | texto | Sacar los lápices | `Catastro.kt:156` |
-| T0934 | texto | En el escritorio | `Catastro.kt:157` |
-| T0935 | texto | En la mesa | `Catastro.kt:157` |
-| T0936 | texto | Preparar las acuarelas | `Catastro.kt:163` |
-| T0937 | texto | Llenar un vaso con agua | `Catastro.kt:163` |
-| T0938 | texto | Sacar los pinceles | `Catastro.kt:163` |
-| T0939 | texto | En la mesa | `Catastro.kt:164` |
-| T0940 | texto | En el escritorio | `Catastro.kt:164` |
-| T0941 | texto | Sacar el tejido | `Catastro.kt:170` |
-| T0942 | texto | Enhebrar la aguja | `Catastro.kt:170` |
-| T0943 | texto | Dejar la lana a mano | `Catastro.kt:170` |
-| T0944 | texto | En el sillón | `Catastro.kt:171` |
-| T0945 | texto | En la mesa | `Catastro.kt:171` |
-| T0946 | texto | Abrir la caja de la maqueta | `Catastro.kt:177` |
-| T0947 | texto | Dejar la pieza a la vista | `Catastro.kt:177` |
-| T0948 | texto | Ordenar las piezas | `Catastro.kt:177` |
-| T0949 | texto | En la mesa | `Catastro.kt:178` |
-| T0950 | texto | En la mesa de trabajo | `Catastro.kt:178` |
-| T0951 | texto | Sacar los materiales | `Catastro.kt:183` |
-| T0952 | texto | Despejar la mesa | `Catastro.kt:183` |
-| T0953 | texto | Dejar la tijera y el pegamento a mano | `Catastro.kt:183` |
-| T0954 | texto | En la mesa de trabajo | `Catastro.kt:184` |
-| T0955 | texto | En la mesa | `Catastro.kt:184` |
-| T0956 | texto | Cargar la batería de la cámara | `Catastro.kt:190` |
-| T0957 | texto | Sacar la cámara del estuche | `Catastro.kt:190` |
-| T0958 | texto | Junto a la puerta | `Catastro.kt:191` |
-| T0959 | texto | En el escritorio | `Catastro.kt:191` |
-| T0960 | texto | Abrir la tapa del piano | `Catastro.kt:198` |
-| T0961 | texto | Dejar la partitura a la vista | `Catastro.kt:198` |
-| T0962 | texto | Junto al piano | `Catastro.kt:199` |
-| T0963 | texto | Sacar {x} del estuche | `Catastro.kt:205` |
-| T0964 | texto | Afinar {x} | `Catastro.kt:205` |
-| T0965 | texto | Dejar la partitura a la vista | `Catastro.kt:205` |
-| T0966 | texto | la guitarra | `Catastro.kt:209` |
-| T0967 | texto | el ukelele | `Catastro.kt:209` |
-| T0968 | texto | el violín | `Catastro.kt:209` |
-| T0969 | texto | el charango | `Catastro.kt:209` |
-| T0970 | texto | la flauta | `Catastro.kt:210` |
-| T0971 | texto | la trompeta | `Catastro.kt:210` |
-| T0972 | texto | el saxofón | `Catastro.kt:210` |
-| T0973 | texto | el saxofón | `Catastro.kt:210` |
-| T0974 | texto | el cello | `Catastro.kt:210` |
-| T0975 | texto | el bajo | `Catastro.kt:211` |
-| T0976 | texto | Elegir la canción | `Catastro.kt:217` |
-| T0977 | texto | Tomar un vaso de agua | `Catastro.kt:217` |
-| T0978 | texto | En el sillón | `Catastro.kt:218` |
-| T0979 | texto | Ponerte los audífonos | `Catastro.kt:224` |
-| T0980 | texto | Elegir el disco | `Catastro.kt:224` |
-| T0981 | texto | En el sillón | `Catastro.kt:225` |
-| T0982 | texto | Junto a los discos | `Catastro.kt:225` |
-| T0983 | texto | Encender la consola | `Catastro.kt:232` |
-| T0984 | texto | Dejar el control cargado | `Catastro.kt:232` |
-| T0985 | texto | Avisar a quien juega contigo | `Catastro.kt:232` |
-| T0986 | texto | Junto a la tele | `Catastro.kt:233` |
-| T0987 | texto | Junto al computador | `Catastro.kt:233` |
-| T0988 | texto | Elegir la película | `Catastro.kt:239` |
-| T0989 | texto | Elegir el capítulo | `Catastro.kt:239` |
-| T0990 | texto | Preparar cabritas | `Catastro.kt:239` |
-| T0991 | texto | Avisar a quien ve contigo | `Catastro.kt:239` |
-| T0992 | texto | Junto a la tele | `Catastro.kt:240` |
-| T0993 | texto | En el sillón | `Catastro.kt:240` |
-| T0994 | texto | Sacar el mazo | `Catastro.kt:246` |
-| T0995 | texto | Despejar la mesa | `Catastro.kt:246` |
-| T0996 | texto | Avisar a quien juega contigo | `Catastro.kt:246` |
-| T0997 | texto | En la mesa | `Catastro.kt:247` |
-| T0998 | texto | juego de mesa | `Catastro.kt:250` |
-| T0999 | texto | Sacar la caja | `Catastro.kt:253` |
-| T1000 | texto | Despejar la mesa | `Catastro.kt:253` |
-| T1001 | texto | Avisar a quien juega contigo | `Catastro.kt:253` |
-| T1002 | texto | En la mesa | `Catastro.kt:254` |
-| T1003 | texto | Reunir los ingredientes | `Catastro.kt:262` |
-| T1004 | texto | Dejar la receta a la vista | `Catastro.kt:262` |
-| T1005 | texto | Lavar la tabla de picar | `Catastro.kt:262` |
-| T1006 | texto | En el mesón de la cocina | `Catastro.kt:263` |
-| T1007 | texto | Juntar la ropa en el canasto | `Catastro.kt:271` |
-| T1008 | texto | Vaciar el cajón sobre la cama | `Catastro.kt:271` |
-| T1009 | texto | Abrir la ventana | `Catastro.kt:271` |
-| T1010 | texto | Junto al cajón | `Catastro.kt:272` |
-| T1011 | texto | Junto al canasto | `Catastro.kt:272` |
-| T1012 | texto | Junto a la cama | `Catastro.kt:272` |
-| T1013 | texto | Dejar el teléfono cargando lejos de la cama | `Catastro.kt:280` |
-| T1014 | texto | Apagar la luz grande | `Catastro.kt:280` |
-| T1015 | texto | Ponerte el pijama | `Catastro.kt:280` |
-| T1016 | texto | Junto al cargador | `Catastro.kt:281` |
-| T1017 | texto | Junto a la cama | `Catastro.kt:281` |
-| T1018 | texto | Sentarte en el cojín | `Catastro.kt:286` |
-| T1019 | texto | Apagar la luz grande | `Catastro.kt:286` |
-| T1020 | texto | Junto al cojín | `Catastro.kt:287` |
-| T1021 | texto | Junto a la cama | `Catastro.kt:287` |
-| T1022 | texto | Buscar su número | `Catastro.kt:294` |
-| T1023 | texto | Escribirle que vas a llamar | `Catastro.kt:294` |
-| T1024 | texto | En el sillón | `Catastro.kt:295` |
-| T1025 | texto | Avisar que vas | `Catastro.kt:302` |
-| T1026 | texto | Preparar algo para llevar | `Catastro.kt:302` |
-| T1027 | texto | Poner la mesa | `Catastro.kt:302` |
-| T1028 | texto | Junto a la puerta | `Catastro.kt:303` |
-| T1029 | texto | En la mesa del comedor | `Catastro.kt:303` |
-| T1030 | texto | el instrumento | `Catastro.kt:340` |
-| T1031 | texto | Junto al [dato] | `Catastro.kt:341` |
-| T1032 | texto | Junto a [dato] | `Catastro.kt:341` |
-| T1033 | texto | Leer | `Common.kt:63` |
-| T1034 | texto | Abrir el libro | `Common.kt:63` |
-| T1035 | texto | En el velador | `Common.kt:63` |
-| T1036 | texto | Dormir a tiempo | `Common.kt:64` |
-| T1037 | texto | Dejar el teléfono cargando lejos | `Common.kt:64` |
-| T1038 | texto | Junto al cargador | `Common.kt:64` |
-| T1039 | texto | Hacer ejercicio | `Common.kt:65` |
-| T1040 | texto | Ponerte ropa cómoda | `Common.kt:65` |
-| T1041 | texto | Junto al clóset | `Common.kt:65` |
-| T1042 | texto | Pasear al perro | `Common.kt:66` |
-| T1043 | texto | Tomar la correa | `Common.kt:66` |
-| T1044 | texto | Junto a la puerta | `Common.kt:66` |
-| T1045 | texto | Dibujar | `Common.kt:67` |
-| T1046 | texto | Sacar el cuaderno y un lápiz | `Common.kt:67` |
-| T1047 | texto | En el escritorio | `Common.kt:67` |
-| T1048 | texto | Pintar | `Common.kt:68` |
-| T1049 | texto | Preparar las acuarelas | `Common.kt:68` |
-| T1050 | texto | En la mesa | `Common.kt:68` |
-| T1051 | texto | Cocinar | `Common.kt:69` |
-| T1052 | texto | Reunir los ingredientes | `Common.kt:69` |
-| T1053 | texto | En el mesón de la cocina | `Common.kt:69` |
-| T1054 | texto | Estudiar | `Common.kt:70` |
-| T1055 | texto | Abrir los apuntes | `Common.kt:70` |
-| T1056 | texto | En el escritorio | `Common.kt:70` |
-| T1057 | texto | Ordenar la pieza | `Common.kt:71` |
-| T1058 | texto | Despejar una superficie | `Common.kt:71` |
-| T1059 | texto | En el escritorio | `Common.kt:71` |
-| T1060 | texto | Hacer manualidades | `Common.kt:72` |
-| T1061 | texto | Preparar los materiales | `Common.kt:72` |
-| T1062 | texto | En la mesa de trabajo | `Common.kt:72` |
-| T1063 | texto | Armar una maqueta | `Common.kt:73` |
-| T1064 | texto | Abrir la caja de la maqueta | `Common.kt:73` |
-| T1065 | texto | En la mesa | `Common.kt:73` |
-| T1066 | texto | Salir en bicicleta | `Common.kt:74` |
-| T1067 | texto | Sacar la bici | `Common.kt:74` |
-| T1068 | texto | Junto a la puerta | `Common.kt:74` |
-| T1069 | texto | Meditar | `Common.kt:75` |
-| T1070 | texto | Sentarte en el cojín | `Common.kt:75` |
-| T1071 | texto | Junto al cojín | `Common.kt:75` |
-| T1072 | texto | Leer manga | `Common.kt:76` |
-| T1073 | texto | Sacar el tomo del estante | `Common.kt:76` |
-| T1074 | texto | Junto al estante | `Common.kt:76` |
-| T1075 | texto | Jugar videojuegos | `Common.kt:78` |
-| T1076 | texto | Encender la consola | `Common.kt:78` |
-| T1077 | texto | Junto a la tele | `Common.kt:78` |
-| T1078 | texto | Escuchar música | `Common.kt:79` |
-| T1079 | texto | Ponerte los audífonos | `Common.kt:79` |
-| T1080 | texto | En el sillón | `Common.kt:79` |
-| T1081 | texto | Ver una película | `Common.kt:80` |
-| T1082 | texto | Elegir la película | `Common.kt:80` |
-| T1083 | texto | Junto a la tele | `Common.kt:80` |
-| T1084 | texto | Llamar a alguien | `Common.kt:81` |
-| T1085 | texto | Buscar su número | `Common.kt:81` |
-| T1086 | texto | En el sillón | `Common.kt:81` |
-| T1087 | texto | Jugar un juego de mesa | `Common.kt:82` |
-| T1088 | texto | Sacar la caja | `Common.kt:82` |
-| T1089 | texto | En la mesa | `Common.kt:82` |
-| T1090 | texto | Moverte | `Sky.kt:134` |
-| T1091 | texto | Leer y aprender | `Sky.kt:135` |
-| T1092 | texto | Crear | `Sky.kt:136` |
-| T1093 | texto | Jugar y disfrutar | `Sky.kt:137` |
-| T1094 | texto | En casa | `Sky.kt:138` |
-| T1095 | texto | Descansar | `Sky.kt:139` |
-| T1096 | texto | Con otras personas | `Sky.kt:140` |
-| T1097 | texto | Otras | `Sky.kt:141` |
+| T0868 | texto | sacar a pasear al perro | `Catastro.kt:61` |
+| T0869 | texto | Tomar la correa | `Catastro.kt:62` |
+| T0870 | texto | Sacar su pelota | `Catastro.kt:62` |
+| T0871 | texto | Llenar su botella de agua | `Catastro.kt:62` |
+| T0872 | texto | Junto a la puerta | `Catastro.kt:63` |
+| T0873 | texto | Donde está la correa | `Catastro.kt:63` |
+| T0874 | texto | Ponerte las zapatillas | `Catastro.kt:71` |
+| T0875 | texto | Ponerte ropa deportiva | `Catastro.kt:71` |
+| T0876 | texto | Llenar la botella de agua | `Catastro.kt:71` |
+| T0877 | texto | Junto a la puerta | `Catastro.kt:72` |
+| T0878 | texto | Junto a las zapatillas | `Catastro.kt:72` |
+| T0879 | texto | Ponerte las zapatillas | `Catastro.kt:80` |
+| T0880 | texto | Llenar la botella de agua | `Catastro.kt:80` |
+| T0881 | texto | Elegir el recorrido | `Catastro.kt:80` |
+| T0882 | texto | Junto a la puerta | `Catastro.kt:81` |
+| T0883 | texto | Junto a las zapatillas | `Catastro.kt:81` |
+| T0884 | texto | Sacar la bici | `Catastro.kt:88` |
+| T0885 | texto | Inflar las ruedas | `Catastro.kt:88` |
+| T0886 | texto | Ponerte el casco | `Catastro.kt:88` |
+| T0887 | texto | Junto a la puerta | `Catastro.kt:89` |
+| T0888 | texto | Junto a la bici | `Catastro.kt:89` |
+| T0889 | texto | Ponerte ropa deportiva | `Catastro.kt:98` |
+| T0890 | texto | Estirar la colchoneta | `Catastro.kt:98` |
+| T0891 | texto | Preparar el bolso | `Catastro.kt:98` |
+| T0892 | texto | Junto al clóset | `Catastro.kt:99` |
+| T0893 | texto | Donde guardas la colchoneta | `Catastro.kt:99` |
+| T0894 | texto | Junto a la puerta | `Catastro.kt:99` |
+| T0895 | texto | Desenrollar la colchoneta | `Catastro.kt:107` |
+| T0896 | texto | Ponerte ropa cómoda | `Catastro.kt:107` |
+| T0897 | texto | Donde guardas la colchoneta | `Catastro.kt:108` |
+| T0898 | texto | Junto a la cama | `Catastro.kt:108` |
+| T0899 | texto | Preparar el traje de baño | `Catastro.kt:114` |
+| T0900 | texto | Echar la toalla al bolso | `Catastro.kt:114` |
+| T0901 | texto | Junto a la puerta | `Catastro.kt:115` |
+| T0902 | texto | Junto al bolso | `Catastro.kt:115` |
+| T0903 | texto | Preparar las zapatillas | `Catastro.kt:123` |
+| T0904 | texto | Inflar la pelota | `Catastro.kt:123` |
+| T0905 | texto | Avisar al equipo | `Catastro.kt:123` |
+| T0906 | texto | Junto a la puerta | `Catastro.kt:124` |
+| T0907 | texto | Llenar la regadera | `Catastro.kt:131` |
+| T0908 | texto | Ponerte los guantes | `Catastro.kt:131` |
+| T0909 | texto | Junto a las plantas | `Catastro.kt:132` |
+| T0910 | texto | Junto a la regadera | `Catastro.kt:132` |
+| T0911 | texto | Sacar el tomo del estante | `Catastro.kt:142` |
+| T0912 | texto | Abrir el tomo donde quedaste | `Catastro.kt:142` |
+| T0913 | texto | Junto al estante | `Catastro.kt:143` |
+| T0914 | texto | En el velador | `Catastro.kt:143` |
+| T0915 | texto | Elegir el libro | `Catastro.kt:151` |
+| T0916 | texto | Abrir el libro en el marcador | `Catastro.kt:151` |
+| T0917 | texto | Dejar el libro a la vista | `Catastro.kt:151` |
+| T0918 | texto | En el velador | `Catastro.kt:152` |
+| T0919 | texto | En el sillón | `Catastro.kt:152` |
+| T0920 | texto | Junto al estante | `Catastro.kt:152` |
+| T0921 | texto | Abrir los apuntes | `Catastro.kt:163` |
+| T0922 | texto | Despejar el escritorio | `Catastro.kt:163` |
+| T0923 | texto | Abrir el cuaderno en la tarea | `Catastro.kt:163` |
+| T0924 | texto | En el escritorio | `Catastro.kt:164` |
+| T0925 | texto | Abrir el cuaderno de vocabulario | `Catastro.kt:172` |
+| T0926 | texto | Abrir el libro del curso | `Catastro.kt:172` |
+| T0927 | texto | En el escritorio | `Catastro.kt:173` |
+| T0928 | texto | Abrir el cuaderno | `Catastro.kt:180` |
+| T0929 | texto | Dejar un lápiz sobre el cuaderno | `Catastro.kt:180` |
+| T0930 | texto | En el escritorio | `Catastro.kt:181` |
+| T0931 | texto | En el velador | `Catastro.kt:181` |
+| T0932 | texto | Sacar el cuaderno y un lápiz | `Catastro.kt:190` |
+| T0933 | texto | Abrir el cuaderno en ese dibujo | `Catastro.kt:190` |
+| T0934 | texto | Sacar los lápices | `Catastro.kt:190` |
+| T0935 | texto | En el escritorio | `Catastro.kt:191` |
+| T0936 | texto | En la mesa | `Catastro.kt:191` |
+| T0937 | texto | Preparar las acuarelas | `Catastro.kt:199` |
+| T0938 | texto | Llenar un vaso con agua | `Catastro.kt:199` |
+| T0939 | texto | Sacar los pinceles | `Catastro.kt:199` |
+| T0940 | texto | En la mesa | `Catastro.kt:200` |
+| T0941 | texto | En el escritorio | `Catastro.kt:200` |
+| T0942 | texto | Sacar el tejido | `Catastro.kt:208` |
+| T0943 | texto | Enhebrar la aguja | `Catastro.kt:208` |
+| T0944 | texto | Dejar la lana a mano | `Catastro.kt:208` |
+| T0945 | texto | En el sillón | `Catastro.kt:209` |
+| T0946 | texto | En la mesa | `Catastro.kt:209` |
+| T0947 | texto | Abrir la caja de la maqueta | `Catastro.kt:217` |
+| T0948 | texto | Dejar la pieza a la vista | `Catastro.kt:217` |
+| T0949 | texto | Ordenar las piezas | `Catastro.kt:217` |
+| T0950 | texto | En la mesa | `Catastro.kt:218` |
+| T0951 | texto | En la mesa de trabajo | `Catastro.kt:218` |
+| T0952 | texto | Sacar los materiales | `Catastro.kt:225` |
+| T0953 | texto | Despejar la mesa | `Catastro.kt:225` |
+| T0954 | texto | Dejar la tijera y el pegamento a mano | `Catastro.kt:225` |
+| T0955 | texto | En la mesa de trabajo | `Catastro.kt:226` |
+| T0956 | texto | En la mesa | `Catastro.kt:226` |
+| T0957 | texto | Cargar la batería de la cámara | `Catastro.kt:234` |
+| T0958 | texto | Sacar la cámara del estuche | `Catastro.kt:234` |
+| T0959 | texto | Junto a la puerta | `Catastro.kt:235` |
+| T0960 | texto | En el escritorio | `Catastro.kt:235` |
+| T0961 | texto | Abrir la tapa del piano | `Catastro.kt:242` |
+| T0962 | texto | Dejar la partitura a la vista | `Catastro.kt:242` |
+| T0963 | texto | Junto al piano | `Catastro.kt:243` |
+| T0964 | texto | Sacar {x} del estuche | `Catastro.kt:251` |
+| T0965 | texto | Afinar {x} | `Catastro.kt:251` |
+| T0966 | texto | Dejar la partitura a la vista | `Catastro.kt:251` |
+| T0967 | texto | la guitarra | `Catastro.kt:255` |
+| T0968 | texto | el ukelele | `Catastro.kt:255` |
+| T0969 | texto | el violín | `Catastro.kt:255` |
+| T0970 | texto | el charango | `Catastro.kt:255` |
+| T0971 | texto | la flauta | `Catastro.kt:256` |
+| T0972 | texto | la trompeta | `Catastro.kt:256` |
+| T0973 | texto | el saxofón | `Catastro.kt:256` |
+| T0974 | texto | el saxofón | `Catastro.kt:256` |
+| T0975 | texto | el cello | `Catastro.kt:256` |
+| T0976 | texto | el bajo | `Catastro.kt:257` |
+| T0977 | texto | el contrabajo | `Catastro.kt:257` |
+| T0978 | texto | la batería | `Catastro.kt:257` |
+| T0979 | texto | el acordeón | `Catastro.kt:257` |
+| T0980 | texto | el arpa | `Catastro.kt:257` |
+| T0981 | texto | el clarinete | `Catastro.kt:258` |
+| T0982 | texto | la armónica | `Catastro.kt:258` |
+| T0983 | texto | la mandolina | `Catastro.kt:258` |
+| T0984 | texto | la quena | `Catastro.kt:258` |
+| T0985 | texto | la zampoña | `Catastro.kt:259` |
+| T0986 | texto | la ocarina | `Catastro.kt:259` |
+| T0987 | texto | Elegir la canción | `Catastro.kt:266` |
+| T0988 | texto | Tomar un vaso de agua | `Catastro.kt:266` |
+| T0989 | texto | En el sillón | `Catastro.kt:267` |
+| T0990 | texto | Ponerte los audífonos | `Catastro.kt:275` |
+| T0991 | texto | Elegir el disco | `Catastro.kt:275` |
+| T0992 | texto | En el sillón | `Catastro.kt:276` |
+| T0993 | texto | Junto a los discos | `Catastro.kt:276` |
+| T0994 | texto | Encender la consola | `Catastro.kt:284` |
+| T0995 | texto | Dejar el control cargado | `Catastro.kt:284` |
+| T0996 | texto | Avisar a quien juega contigo | `Catastro.kt:284` |
+| T0997 | texto | Junto a la tele | `Catastro.kt:285` |
+| T0998 | texto | Junto al computador | `Catastro.kt:285` |
+| T0999 | texto | Elegir la película | `Catastro.kt:293` |
+| T1000 | texto | Elegir el capítulo | `Catastro.kt:293` |
+| T1001 | texto | Preparar cabritas | `Catastro.kt:293` |
+| T1002 | texto | Avisar a quien ve contigo | `Catastro.kt:293` |
+| T1003 | texto | Junto a la tele | `Catastro.kt:294` |
+| T1004 | texto | En el sillón | `Catastro.kt:294` |
+| T1005 | texto | Sacar el mazo | `Catastro.kt:300` |
+| T1006 | texto | Despejar la mesa | `Catastro.kt:300` |
+| T1007 | texto | Avisar a quien juega contigo | `Catastro.kt:300` |
+| T1008 | texto | En la mesa | `Catastro.kt:301` |
+| T1009 | texto | juego de mesa | `Catastro.kt:304` |
+| T1010 | texto | Sacar la caja | `Catastro.kt:308` |
+| T1011 | texto | Despejar la mesa | `Catastro.kt:308` |
+| T1012 | texto | Avisar a quien juega contigo | `Catastro.kt:308` |
+| T1013 | texto | En la mesa | `Catastro.kt:309` |
+| T1014 | texto | Reunir los ingredientes | `Catastro.kt:319` |
+| T1015 | texto | Dejar la receta a la vista | `Catastro.kt:319` |
+| T1016 | texto | Lavar la tabla de picar | `Catastro.kt:319` |
+| T1017 | texto | En el mesón de la cocina | `Catastro.kt:320` |
+| T1018 | texto | ordenar la cocina | `Catastro.kt:328` |
+| T1019 | texto | ordenar la pieza | `Catastro.kt:328` |
+| T1020 | texto | ordenar el escritorio | `Catastro.kt:328` |
+| T1021 | texto | limpiar el bano | `Catastro.kt:328` |
+| T1022 | texto | sacar la basura | `Catastro.kt:328` |
+| T1023 | texto | sacar el polvo | `Catastro.kt:328` |
+| T1024 | texto | Juntar la ropa en el canasto | `Catastro.kt:330` |
+| T1025 | texto | Vaciar el cajón sobre la cama | `Catastro.kt:330` |
+| T1026 | texto | Abrir la ventana | `Catastro.kt:330` |
+| T1027 | texto | Junto al cajón | `Catastro.kt:331` |
+| T1028 | texto | Junto al canasto | `Catastro.kt:331` |
+| T1029 | texto | Junto a la cama | `Catastro.kt:331` |
+| T1030 | texto | Dejar el teléfono cargando lejos de la cama | `Catastro.kt:341` |
+| T1031 | texto | Apagar la luz grande | `Catastro.kt:341` |
+| T1032 | texto | Ponerte el pijama | `Catastro.kt:341` |
+| T1033 | texto | Junto al cargador | `Catastro.kt:342` |
+| T1034 | texto | Junto a la cama | `Catastro.kt:342` |
+| T1035 | texto | Sentarte en el cojín | `Catastro.kt:349` |
+| T1036 | texto | Apagar la luz grande | `Catastro.kt:349` |
+| T1037 | texto | Junto al cojín | `Catastro.kt:350` |
+| T1038 | texto | Junto a la cama | `Catastro.kt:350` |
+| T1039 | texto | Buscar su número | `Catastro.kt:358` |
+| T1040 | texto | Escribirle que vas a llamar | `Catastro.kt:358` |
+| T1041 | texto | En el sillón | `Catastro.kt:359` |
+| T1042 | texto | Avisar que vas | `Catastro.kt:368` |
+| T1043 | texto | Preparar algo para llevar | `Catastro.kt:368` |
+| T1044 | texto | Poner la mesa | `Catastro.kt:368` |
+| T1045 | texto | Junto a la puerta | `Catastro.kt:369` |
+| T1046 | texto | En la mesa del comedor | `Catastro.kt:369` |
+| T1047 | texto | el instrumento | `Catastro.kt:406` |
+| T1048 | texto | Junto al [dato] | `Catastro.kt:407` |
+| T1049 | texto | Junto a [dato] | `Catastro.kt:407` |
+| T1050 | texto | Leer | `Common.kt:63` |
+| T1051 | texto | Abrir el libro | `Common.kt:63` |
+| T1052 | texto | En el velador | `Common.kt:63` |
+| T1053 | texto | Dormir a tiempo | `Common.kt:64` |
+| T1054 | texto | Dejar el teléfono cargando lejos | `Common.kt:64` |
+| T1055 | texto | Junto al cargador | `Common.kt:64` |
+| T1056 | texto | Hacer ejercicio | `Common.kt:65` |
+| T1057 | texto | Ponerte ropa cómoda | `Common.kt:65` |
+| T1058 | texto | Junto al clóset | `Common.kt:65` |
+| T1059 | texto | Pasear al perro | `Common.kt:66` |
+| T1060 | texto | Tomar la correa | `Common.kt:66` |
+| T1061 | texto | Junto a la puerta | `Common.kt:66` |
+| T1062 | texto | Dibujar | `Common.kt:67` |
+| T1063 | texto | Sacar el cuaderno y un lápiz | `Common.kt:67` |
+| T1064 | texto | En el escritorio | `Common.kt:67` |
+| T1065 | texto | Pintar | `Common.kt:68` |
+| T1066 | texto | Preparar las acuarelas | `Common.kt:68` |
+| T1067 | texto | En la mesa | `Common.kt:68` |
+| T1068 | texto | Cocinar | `Common.kt:69` |
+| T1069 | texto | Reunir los ingredientes | `Common.kt:69` |
+| T1070 | texto | En el mesón de la cocina | `Common.kt:69` |
+| T1071 | texto | Estudiar | `Common.kt:70` |
+| T1072 | texto | Abrir los apuntes | `Common.kt:70` |
+| T1073 | texto | En el escritorio | `Common.kt:70` |
+| T1074 | texto | Ordenar la pieza | `Common.kt:71` |
+| T1075 | texto | Despejar una superficie | `Common.kt:71` |
+| T1076 | texto | En el escritorio | `Common.kt:71` |
+| T1077 | texto | Hacer manualidades | `Common.kt:72` |
+| T1078 | texto | Preparar los materiales | `Common.kt:72` |
+| T1079 | texto | En la mesa de trabajo | `Common.kt:72` |
+| T1080 | texto | Armar una maqueta | `Common.kt:73` |
+| T1081 | texto | Abrir la caja de la maqueta | `Common.kt:73` |
+| T1082 | texto | En la mesa | `Common.kt:73` |
+| T1083 | texto | Salir en bicicleta | `Common.kt:74` |
+| T1084 | texto | Sacar la bici | `Common.kt:74` |
+| T1085 | texto | Junto a la puerta | `Common.kt:74` |
+| T1086 | texto | Meditar | `Common.kt:75` |
+| T1087 | texto | Sentarte en el cojín | `Common.kt:75` |
+| T1088 | texto | Junto al cojín | `Common.kt:75` |
+| T1089 | texto | Leer manga | `Common.kt:76` |
+| T1090 | texto | Sacar el tomo del estante | `Common.kt:76` |
+| T1091 | texto | Junto al estante | `Common.kt:76` |
+| T1092 | texto | Jugar videojuegos | `Common.kt:78` |
+| T1093 | texto | Encender la consola | `Common.kt:78` |
+| T1094 | texto | Junto a la tele | `Common.kt:78` |
+| T1095 | texto | Escuchar música | `Common.kt:79` |
+| T1096 | texto | Ponerte los audífonos | `Common.kt:79` |
+| T1097 | texto | En el sillón | `Common.kt:79` |
+| T1098 | texto | Ver una película | `Common.kt:80` |
+| T1099 | texto | Elegir la película | `Common.kt:80` |
+| T1100 | texto | Junto a la tele | `Common.kt:80` |
+| T1101 | texto | Llamar a alguien | `Common.kt:81` |
+| T1102 | texto | Buscar su número | `Common.kt:81` |
+| T1103 | texto | En el sillón | `Common.kt:81` |
+| T1104 | texto | Jugar un juego de mesa | `Common.kt:82` |
+| T1105 | texto | Sacar la caja | `Common.kt:82` |
+| T1106 | texto | En la mesa | `Common.kt:82` |
+| T1107 | texto | Moverte | `Sky.kt:134` |
+| T1108 | texto | Leer y aprender | `Sky.kt:135` |
+| T1109 | texto | Crear | `Sky.kt:136` |
+| T1110 | texto | Jugar y disfrutar | `Sky.kt:137` |
+| T1111 | texto | En casa | `Sky.kt:138` |
+| T1112 | texto | Descansar | `Sky.kt:139` |
+| T1113 | texto | Con otras personas | `Sky.kt:140` |
+| T1114 | texto | Otras | `Sky.kt:141` |
 
 ## 34 Piezas de la interfaz
 
-238 textos.
+239 textos.
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T1098 | texto | Restar tiempo | `Controls.kt:323` |
-| T1099 | texto | Sumar tiempo | `Controls.kt:325` |
-| T1100 | texto | Restar | `Controls.kt:335` |
-| T1101 | texto | Sumar | `Controls.kt:337` |
-| T1102 | lector de pantalla | Borrar la búsqueda | `Fields.kt:122` |
-| T1103 | texto | Sugerencias | `Fields.kt:141` |
-| T1104 | texto | Accesibilidad | `KitIcons.kt:13` |
-| T1105 | texto | Actividad | `KitIcons.kt:22` |
-| T1106 | texto | Advertencia | `KitIcons.kt:30` |
-| T1107 | texto | Agregar | `KitIcons.kt:38` |
-| T1108 | texto | Ajustes | `KitIcons.kt:44` |
-| T1109 | texto | Apps elegidas | `KitIcons.kt:52` |
-| T1110 | texto | Avisos del teléfono | `KitIcons.kt:61` |
-| T1111 | texto | Ayuda | `KitIcons.kt:68` |
-| T1112 | texto | Batería del objeto | `KitIcons.kt:76` |
-| T1113 | texto | Andar en bicicleta | `KitIcons.kt:84` |
-| T1114 | texto | Borrar | `KitIcons.kt:93` |
-| T1115 | texto | Buscar | `KitIcons.kt:102` |
-| T1116 | texto | Calendario | `KitIcons.kt:109` |
-| T1117 | texto | Cambié de idea | `KitIcons.kt:117` |
-| T1118 | texto | Caminar | `KitIcons.kt:124` |
-| T1119 | texto | Escribirle a alguien | `KitIcons.kt:133` |
-| T1120 | texto | Cerrar sesión | `KitIcons.kt:140` |
-| T1121 | texto | Cerrar | `KitIcons.kt:148` |
-| T1122 | texto | Cocinar | `KitIcons.kt:154` |
-| T1123 | texto | Código de participante | `KitIcons.kt:163` |
-| T1124 | texto | Comencé | `KitIcons.kt:169` |
-| T1125 | texto | Comentario | `KitIcons.kt:176` |
-| T1126 | texto | Conexión | `KitIcons.kt:182` |
-| T1127 | texto | Consentimiento | `KitIcons.kt:188` |
-| T1128 | texto | Contraer | `KitIcons.kt:196` |
-| T1129 | texto | Copiar | `KitIcons.kt:202` |
-| T1130 | texto | Datos del estudio | `KitIcons.kt:209` |
-| T1131 | texto | Decisión | `KitIcons.kt:217` |
-| T1132 | texto | Acceso abierto | `KitIcons.kt:224` |
-| T1133 | texto | Descargar | `KitIcons.kt:231` |
-| T1134 | texto | La dejé para después | `KitIcons.kt:238` |
-| T1135 | texto | Detener | `KitIcons.kt:246` |
-| T1136 | texto | Dibujar | `KitIcons.kt:252` |
-| T1137 | texto | Dormir | `KitIcons.kt:259` |
-| T1138 | texto | Editar | `KitIcons.kt:266` |
-| T1139 | texto | Hacer ejercicio | `KitIcons.kt:274` |
-| T1140 | texto | Abrir fuera de la app | `KitIcons.kt:283` |
-| T1141 | texto | Entrevistas | `KitIcons.kt:291` |
-| T1142 | texto | Enviar | `KitIcons.kt:298` |
-| T1143 | texto | Error | `KitIcons.kt:305` |
-| T1144 | texto | Escribir | `KitIcons.kt:312` |
-| T1145 | texto | Esperando | `KitIcons.kt:321` |
-| T1146 | texto | Estirar | `KitIcons.kt:329` |
-| T1147 | texto | Estrella llena | `KitIcons.kt:338` |
-| T1148 | texto | Media estrella | `KitIcons.kt:344` |
-| T1149 | texto | Estrella vacía | `KitIcons.kt:351` |
-| T1150 | texto | Estudiar | `KitIcons.kt:357` |
-| T1151 | texto | Expandir | `KitIcons.kt:365` |
-| T1152 | texto | Exportar o compartir | `KitIcons.kt:371` |
-| T1153 | texto | Filtrar | `KitIcons.kt:379` |
-| T1154 | texto | Fotografiar | `KitIcons.kt:385` |
-| T1155 | texto | Tocar un instrumento | `KitIcons.kt:394` |
-| T1156 | texto | Hipótesis y prueba | `KitIcons.kt:404` |
-| T1157 | texto | Historial | `KitIcons.kt:412` |
-| T1158 | texto | Información | `KitIcons.kt:418` |
-| T1159 | texto | Inicio | `KitIcons.kt:426` |
-| T1160 | texto | Investigación | `KitIcons.kt:432` |
-| T1161 | texto | Jugar un juego de mesa | `KitIcons.kt:441` |
-| T1162 | texto | Leer | `KitIcons.kt:450` |
-| T1163 | texto | Listo | `KitIcons.kt:457` |
-| T1164 | texto | Jugar videojuegos | `KitIcons.kt:463` |
-| T1165 | texto | Llamar a alguien | `KitIcons.kt:472` |
-| T1166 | texto | Lugar | `KitIcons.kt:478` |
-| T1167 | texto | Hacer manualidades | `KitIcons.kt:485` |
-| T1168 | texto | Más opciones | `KitIcons.kt:493` |
-| T1169 | texto | Menú | `KitIcons.kt:501` |
-| T1170 | texto | Mostrar | `KitIcons.kt:507` |
-| T1171 | texto | Escuchar música | `KitIcons.kt:514` |
-| T1172 | texto | Objeto | `KitIcons.kt:522` |
-| T1173 | texto | Ocultar | `KitIcons.kt:530` |
-| T1174 | texto | Ordenar | `KitIcons.kt:538` |
-| T1175 | texto | Parlante | `KitIcons.kt:546` |
-| T1176 | texto | Pausar | `KitIcons.kt:554` |
-| T1177 | texto | Perfil | `KitIcons.kt:560` |
-| T1178 | texto | Permiso | `KitIcons.kt:567` |
-| T1179 | texto | Pintar | `KitIcons.kt:574` |
-| T1180 | texto | Cuidar las plantas | `KitIcons.kt:581` |
-| T1181 | texto | Cómo empieza | `KitIcons.kt:590` |
-| T1182 | texto | Privacidad | `KitIcons.kt:597` |
-| T1183 | texto | Probar sonido | `KitIcons.kt:605` |
-| T1184 | texto | Reportar un problema | `KitIcons.kt:613` |
-| T1185 | texto | Reintentar | `KitIcons.kt:622` |
-| T1186 | texto | Relevos | `KitIcons.kt:629` |
-| T1187 | texto | Reproducir | `KitIcons.kt:638` |
-| T1188 | texto | Salir | `KitIcons.kt:644` |
-| T1189 | texto | Siguiente | `KitIcons.kt:654` |
-| T1190 | texto | Silenciar | `KitIcons.kt:660` |
-| T1191 | texto | Sin conexión | `KitIcons.kt:669` |
-| T1192 | texto | Sincronizar datos | `KitIcons.kt:676` |
-| T1193 | texto | Sistema phygital | `KitIcons.kt:683` |
-| T1194 | texto | Este teléfono | `KitIcons.kt:691` |
-| T1195 | texto | Tema claro u oscuro | `KitIcons.kt:698` |
-| T1196 | texto | Tamaño del texto | `KitIcons.kt:705` |
-| T1197 | texto | Tiempo | `KitIcons.kt:712` |
-| T1198 | texto | Después de cuánto uso | `KitIcons.kt:721` |
-| T1199 | texto | Persona | `KitIcons.kt:730` |
-| T1200 | texto | Validación | `KitIcons.kt:737` |
-| T1201 | texto | Volver | `KitIcons.kt:744` |
-| T1202 | texto | Suena | `KitIcons.kt:750` |
-| T1203 | texto | Ruta | `KitIcons.kt:760` |
-| T1204 | texto | Avance | `KitIcons.kt:768` |
-| T1205 | texto | Abrir | `KitIcons.kt:773` |
-| T1206 | texto | Ajustes | `KitIcons.kt:778` |
-| T1207 | texto | Actividades | `KitIcons.kt:786` |
-| T1208 | texto | Perro | `KitIcons.kt:797` |
-| T1209 | texto | Correr | `KitIcons.kt:809` |
-| T1210 | texto | Nadar | `KitIcons.kt:818` |
-| T1211 | texto | Pelota | `KitIcons.kt:827` |
-| T1212 | texto | Ver una película | `KitIcons.kt:835` |
-| T1213 | texto | Leer manga | `KitIcons.kt:843` |
-| T1214 | texto | Armar una maqueta | `KitIcons.kt:851` |
-| T1215 | texto | Tejer o coser | `KitIcons.kt:858` |
-| T1216 | texto | Tocar el piano | `KitIcons.kt:868` |
-| T1217 | texto | Meditar | `KitIcons.kt:876` |
-| T1218 | texto | Aprender un idioma | `KitIcons.kt:885` |
-| T1219 | texto | Jugar a las cartas | `KitIcons.kt:894` |
-| T1220 | texto | Con otras personas | `KitIcons.kt:902` |
-| T1221 | texto | Elegido | `Lists.kt:183` |
-| T1222 | texto | Sin completar | `Lists.kt:214` |
-| T1223 | texto | Encendido | `Lists.kt:300` |
-| T1224 | texto | Apagado | `Lists.kt:300` |
-| T1225 | texto | Caminar | `Photos.kt:60` |
-| T1226 | texto | Hacer ejercicio | `Photos.kt:61` |
-| T1227 | texto | Leer | `Photos.kt:62` |
-| T1228 | texto | Estudiar | `Photos.kt:63` |
-| T1229 | texto | Dibujar | `Photos.kt:64` |
-| T1230 | texto | Cocinar | `Photos.kt:65` |
-| T1231 | texto | Ordenar | `Photos.kt:66` |
-| T1232 | texto | Salir con el perro | `Photos.kt:67` |
-| T1233 | texto | Manualidades | `Photos.kt:68` |
-| T1234 | texto | Tocar guitarra | `Photos.kt:69` |
-| T1235 | texto | Escribir | `Photos.kt:70` |
-| T1236 | texto | Leer un libro | `Photos.kt:71` |
-| T1237 | texto | Aprender | `Photos.kt:72` |
-| T1238 | texto | Hacer pan | `Photos.kt:73` |
-| T1239 | texto | Pintar | `Photos.kt:74` |
-| T1240 | texto | Empezar | `Photos.kt:75` |
-| T1241 | texto | Salir | `Photos.kt:76` |
-| T1242 | texto | El tiempo en el teléfono | `Photos.kt:77` |
-| T1243 | texto | Caras | `Photos.kt:84` |
-| T1244 | texto | Animales | `Photos.kt:84` |
-| T1245 | texto | Naturaleza | `Photos.kt:84` |
-| T1246 | texto | Comida | `Photos.kt:84` |
-| T1247 | texto | Actividades | `Photos.kt:84` |
-| T1248 | texto | Cara sonriente | `Photos.kt:94` |
-| T1249 | texto | Cara contenta | `Photos.kt:95` |
-| T1250 | texto | Cara con lentes de sol | `Photos.kt:96` |
-| T1251 | texto | Cara que abraza | `Photos.kt:97` |
-| T1252 | texto | Cara con ojos de estrella | `Photos.kt:98` |
-| T1253 | texto | Cara con corazones | `Photos.kt:99` |
-| T1254 | texto | Cara de fiesta | `Photos.kt:100` |
-| T1255 | texto | Cara pensativa | `Photos.kt:101` |
-| T1256 | texto | Cara dormida | `Photos.kt:102` |
-| T1257 | texto | Cara con sombrero de vaquero | `Photos.kt:103` |
-| T1258 | texto | Robot | `Photos.kt:104` |
-| T1259 | texto | Fantasma | `Photos.kt:105` |
-| T1260 | texto | Perro | `Photos.kt:107` |
-| T1261 | texto | Gato | `Photos.kt:108` |
-| T1262 | texto | Zorro | `Photos.kt:109` |
-| T1263 | texto | Tortuga | `Photos.kt:110` |
-| T1264 | texto | Conejo | `Photos.kt:111` |
-| T1265 | texto | Oso | `Photos.kt:112` |
-| T1266 | texto | Panda | `Photos.kt:113` |
-| T1267 | texto | Koala | `Photos.kt:114` |
-| T1268 | texto | Tigre | `Photos.kt:115` |
-| T1269 | texto | León | `Photos.kt:116` |
-| T1270 | texto | Rana | `Photos.kt:117` |
-| T1271 | texto | Pingüino | `Photos.kt:118` |
-| T1272 | texto | Búho | `Photos.kt:119` |
-| T1273 | texto | Abeja | `Photos.kt:120` |
-| T1274 | texto | Mariposa | `Photos.kt:121` |
-| T1275 | texto | Pulpo | `Photos.kt:122` |
-| T1276 | texto | Ballena | `Photos.kt:123` |
-| T1277 | texto | Unicornio | `Photos.kt:124` |
-| T1278 | texto | Perezoso | `Photos.kt:125` |
-| T1279 | texto | Dinosaurio | `Photos.kt:126` |
-| T1280 | texto | Planta | `Photos.kt:128` |
-| T1281 | texto | Girasol | `Photos.kt:129` |
-| T1282 | texto | Ola | `Photos.kt:130` |
-| T1283 | texto | Luna | `Photos.kt:131` |
-| T1284 | texto | Sol | `Photos.kt:132` |
-| T1285 | texto | Arcoíris | `Photos.kt:133` |
-| T1286 | texto | Estrella | `Photos.kt:134` |
-| T1287 | texto | Nube | `Photos.kt:135` |
-| T1288 | texto | Copo de nieve | `Photos.kt:136` |
-| T1289 | texto | Fuego | `Photos.kt:137` |
-| T1290 | texto | Cactus | `Photos.kt:138` |
-| T1291 | texto | Árbol | `Photos.kt:139` |
-| T1292 | texto | Trébol de cuatro hojas | `Photos.kt:140` |
-| T1293 | texto | Tulipán | `Photos.kt:141` |
-| T1294 | texto | Hongo | `Photos.kt:142` |
-| T1295 | texto | Montaña nevada | `Photos.kt:143` |
-| T1296 | texto | Planeta con anillo | `Photos.kt:144` |
-| T1297 | texto | Taza de café | `Photos.kt:146` |
-| T1298 | texto | Pan | `Photos.kt:147` |
-| T1299 | texto | Sartén con un huevo | `Photos.kt:148` |
-| T1300 | texto | Palta | `Photos.kt:149` |
-| T1301 | texto | Frutilla | `Photos.kt:150` |
-| T1302 | texto | Sandía | `Photos.kt:151` |
-| T1303 | texto | Limón | `Photos.kt:152` |
-| T1304 | texto | Pizza | `Photos.kt:153` |
-| T1305 | texto | Dona | `Photos.kt:154` |
-| T1306 | texto | Helado | `Photos.kt:155` |
-| T1307 | texto | Té de burbujas | `Photos.kt:156` |
-| T1308 | texto | Zapatilla | `Photos.kt:158` |
-| T1309 | texto | Libros | `Photos.kt:159` |
-| T1310 | texto | Guitarra | `Photos.kt:160` |
-| T1311 | texto | Paleta de pintura | `Photos.kt:161` |
-| T1312 | texto | Ovillo de lana | `Photos.kt:162` |
-| T1313 | texto | Bicicleta | `Photos.kt:163` |
-| T1314 | texto | Cámara | `Photos.kt:164` |
-| T1315 | texto | Audífonos | `Photos.kt:165` |
-| T1316 | texto | Lápiz | `Photos.kt:166` |
-| T1317 | texto | Pieza de rompecabezas | `Photos.kt:167` |
-| T1318 | texto | Teclado de piano | `Photos.kt:168` |
-| T1319 | texto | Pelota | `Photos.kt:169` |
-| T1320 | texto | Pelota de básquetbol | `Photos.kt:170` |
-| T1321 | texto | Raqueta de tenis | `Photos.kt:171` |
-| T1322 | texto | Skate | `Photos.kt:172` |
-| T1323 | texto | Dado | `Photos.kt:173` |
-| T1324 | texto | Peón de ajedrez | `Photos.kt:174` |
-| T1325 | texto | Control de videojuegos | `Photos.kt:175` |
-| T1326 | texto | Volantín | `Photos.kt:176` |
-| T1327 | texto | Micrófono | `Photos.kt:177` |
-| T1328 | texto | Violín | `Photos.kt:178` |
-| T1329 | texto | Telescopio | `Photos.kt:179` |
-| T1330 | texto | Carpa | `Photos.kt:180` |
-| T1331 | texto | Cohete | `Photos.kt:181` |
-| T1332 | texto | Volver | `Screen.kt:95` |
-| T1333 | texto | Inicio | `RelevoApp.kt:83` |
-| T1334 | texto | Actividades | `RelevoApp.kt:84` |
-| T1335 | texto | Perfil | `RelevoApp.kt:85` |
+| T1115 | texto | Restar tiempo | `Controls.kt:323` |
+| T1116 | texto | Sumar tiempo | `Controls.kt:325` |
+| T1117 | texto | Restar | `Controls.kt:335` |
+| T1118 | texto | Sumar | `Controls.kt:337` |
+| T1119 | lector de pantalla | Borrar la búsqueda | `Fields.kt:122` |
+| T1120 | texto | Sugerencias | `Fields.kt:141` |
+| T1121 | texto | Accesibilidad | `KitIcons.kt:13` |
+| T1122 | texto | Actividad | `KitIcons.kt:23` |
+| T1123 | texto | Advertencia | `KitIcons.kt:31` |
+| T1124 | texto | Agregar | `KitIcons.kt:39` |
+| T1125 | texto | Ajustes | `KitIcons.kt:45` |
+| T1126 | texto | Apps elegidas | `KitIcons.kt:53` |
+| T1127 | texto | Avisos del teléfono | `KitIcons.kt:62` |
+| T1128 | texto | Ayuda | `KitIcons.kt:69` |
+| T1129 | texto | Batería del objeto | `KitIcons.kt:77` |
+| T1130 | texto | Andar en bicicleta | `KitIcons.kt:85` |
+| T1131 | texto | Borrar | `KitIcons.kt:94` |
+| T1132 | texto | Buscar | `KitIcons.kt:103` |
+| T1133 | texto | Calendario | `KitIcons.kt:110` |
+| T1134 | texto | Cambié de idea | `KitIcons.kt:118` |
+| T1135 | texto | Caminar | `KitIcons.kt:125` |
+| T1136 | texto | Escribirle a alguien | `KitIcons.kt:134` |
+| T1137 | texto | Cerrar sesión | `KitIcons.kt:141` |
+| T1138 | texto | Cerrar | `KitIcons.kt:149` |
+| T1139 | texto | Cocinar | `KitIcons.kt:155` |
+| T1140 | texto | Código de participante | `KitIcons.kt:164` |
+| T1141 | texto | Comencé | `KitIcons.kt:170` |
+| T1142 | texto | Comentario | `KitIcons.kt:177` |
+| T1143 | texto | Conexión | `KitIcons.kt:183` |
+| T1144 | texto | Consentimiento | `KitIcons.kt:189` |
+| T1145 | texto | Contraer | `KitIcons.kt:197` |
+| T1146 | texto | Copiar | `KitIcons.kt:203` |
+| T1147 | texto | Datos del estudio | `KitIcons.kt:210` |
+| T1148 | texto | Decisión | `KitIcons.kt:218` |
+| T1149 | texto | Acceso abierto | `KitIcons.kt:225` |
+| T1150 | texto | Descargar | `KitIcons.kt:232` |
+| T1151 | texto | La dejé para después | `KitIcons.kt:239` |
+| T1152 | texto | Detener | `KitIcons.kt:247` |
+| T1153 | texto | Dibujar | `KitIcons.kt:254` |
+| T1154 | texto | Dormir | `KitIcons.kt:262` |
+| T1155 | texto | Editar | `KitIcons.kt:269` |
+| T1156 | texto | Hacer ejercicio | `KitIcons.kt:277` |
+| T1157 | texto | Abrir fuera de la app | `KitIcons.kt:286` |
+| T1158 | texto | Entrevistas | `KitIcons.kt:294` |
+| T1159 | texto | Enviar | `KitIcons.kt:301` |
+| T1160 | texto | Error | `KitIcons.kt:308` |
+| T1161 | texto | Escribir | `KitIcons.kt:315` |
+| T1162 | texto | Esperando | `KitIcons.kt:324` |
+| T1163 | texto | Estirar | `KitIcons.kt:333` |
+| T1164 | texto | Estrella llena | `KitIcons.kt:341` |
+| T1165 | texto | Media estrella | `KitIcons.kt:347` |
+| T1166 | texto | Estrella vacía | `KitIcons.kt:354` |
+| T1167 | texto | Estudiar | `KitIcons.kt:360` |
+| T1168 | texto | Expandir | `KitIcons.kt:368` |
+| T1169 | texto | Exportar o compartir | `KitIcons.kt:374` |
+| T1170 | texto | Filtrar | `KitIcons.kt:382` |
+| T1171 | texto | Fotografiar | `KitIcons.kt:388` |
+| T1172 | texto | Tocar un instrumento | `KitIcons.kt:397` |
+| T1173 | texto | Hipótesis y prueba | `KitIcons.kt:407` |
+| T1174 | texto | Historial | `KitIcons.kt:415` |
+| T1175 | texto | Información | `KitIcons.kt:421` |
+| T1176 | texto | Inicio | `KitIcons.kt:429` |
+| T1177 | texto | Investigación | `KitIcons.kt:435` |
+| T1178 | texto | Jugar un juego de mesa | `KitIcons.kt:444` |
+| T1179 | texto | Leer | `KitIcons.kt:453` |
+| T1180 | texto | Listo | `KitIcons.kt:460` |
+| T1181 | texto | Jugar videojuegos | `KitIcons.kt:466` |
+| T1182 | texto | Llamar a alguien | `KitIcons.kt:475` |
+| T1183 | texto | Lugar | `KitIcons.kt:481` |
+| T1184 | texto | Hacer manualidades | `KitIcons.kt:488` |
+| T1185 | texto | Más opciones | `KitIcons.kt:496` |
+| T1186 | texto | Menú | `KitIcons.kt:504` |
+| T1187 | texto | Mostrar | `KitIcons.kt:510` |
+| T1188 | texto | Escuchar música | `KitIcons.kt:517` |
+| T1189 | texto | Objeto | `KitIcons.kt:525` |
+| T1190 | texto | Ocultar | `KitIcons.kt:533` |
+| T1191 | texto | Ordenar | `KitIcons.kt:542` |
+| T1192 | texto | Parlante | `KitIcons.kt:549` |
+| T1193 | texto | Pausar | `KitIcons.kt:557` |
+| T1194 | texto | Perfil | `KitIcons.kt:563` |
+| T1195 | texto | Permiso | `KitIcons.kt:570` |
+| T1196 | texto | Pintar | `KitIcons.kt:577` |
+| T1197 | texto | Cuidar las plantas | `KitIcons.kt:584` |
+| T1198 | texto | Cómo empieza | `KitIcons.kt:593` |
+| T1199 | texto | Privacidad | `KitIcons.kt:600` |
+| T1200 | texto | Probar sonido | `KitIcons.kt:608` |
+| T1201 | texto | Reportar un problema | `KitIcons.kt:616` |
+| T1202 | texto | Reintentar | `KitIcons.kt:625` |
+| T1203 | texto | Relevos | `KitIcons.kt:632` |
+| T1204 | texto | Reproducir | `KitIcons.kt:641` |
+| T1205 | texto | Salir | `KitIcons.kt:647` |
+| T1206 | texto | Siguiente | `KitIcons.kt:657` |
+| T1207 | texto | Silenciar | `KitIcons.kt:663` |
+| T1208 | texto | Sin conexión | `KitIcons.kt:672` |
+| T1209 | texto | Sincronizar datos | `KitIcons.kt:679` |
+| T1210 | texto | Sistema phygital | `KitIcons.kt:686` |
+| T1211 | texto | Este teléfono | `KitIcons.kt:694` |
+| T1212 | texto | Tema claro u oscuro | `KitIcons.kt:702` |
+| T1213 | texto | Tamaño del texto | `KitIcons.kt:709` |
+| T1214 | texto | Tiempo | `KitIcons.kt:716` |
+| T1215 | texto | Después de cuánto uso | `KitIcons.kt:725` |
+| T1216 | texto | Persona | `KitIcons.kt:734` |
+| T1217 | texto | Validación | `KitIcons.kt:741` |
+| T1218 | texto | Volver | `KitIcons.kt:748` |
+| T1219 | texto | Suena | `KitIcons.kt:754` |
+| T1220 | texto | Ruta | `KitIcons.kt:764` |
+| T1221 | texto | Avance | `KitIcons.kt:772` |
+| T1222 | texto | Abrir | `KitIcons.kt:777` |
+| T1223 | texto | Ajustes | `KitIcons.kt:782` |
+| T1224 | texto | Actividades | `KitIcons.kt:790` |
+| T1225 | texto | Perro | `KitIcons.kt:802` |
+| T1226 | texto | Correr | `KitIcons.kt:813` |
+| T1227 | texto | Nadar | `KitIcons.kt:822` |
+| T1228 | texto | Pelota | `KitIcons.kt:831` |
+| T1229 | texto | Ver una película | `KitIcons.kt:839` |
+| T1230 | texto | Leer manga | `KitIcons.kt:848` |
+| T1231 | texto | Armar una maqueta | `KitIcons.kt:857` |
+| T1232 | texto | Tejer o coser | `KitIcons.kt:866` |
+| T1233 | texto | Tocar el piano | `KitIcons.kt:875` |
+| T1234 | texto | Meditar | `KitIcons.kt:883` |
+| T1235 | texto | Aprender un idioma | `KitIcons.kt:893` |
+| T1236 | texto | Jugar a las cartas | `KitIcons.kt:901` |
+| T1237 | texto | Con otras personas | `KitIcons.kt:909` |
+| T1238 | texto | Sin respuesta | `KitIcons.kt:919` |
+| T1239 | texto | Elegido | `Lists.kt:183` |
+| T1240 | texto | Sin completar | `Lists.kt:214` |
+| T1241 | texto | Encendido | `Lists.kt:300` |
+| T1242 | texto | Apagado | `Lists.kt:300` |
+| T1243 | texto | Caminar | `Photos.kt:60` |
+| T1244 | texto | Hacer ejercicio | `Photos.kt:61` |
+| T1245 | texto | Leer | `Photos.kt:62` |
+| T1246 | texto | Estudiar | `Photos.kt:63` |
+| T1247 | texto | Dibujar | `Photos.kt:64` |
+| T1248 | texto | Cocinar | `Photos.kt:65` |
+| T1249 | texto | Ordenar | `Photos.kt:66` |
+| T1250 | texto | Salir con el perro | `Photos.kt:67` |
+| T1251 | texto | Manualidades | `Photos.kt:68` |
+| T1252 | texto | Tocar guitarra | `Photos.kt:69` |
+| T1253 | texto | Escribir | `Photos.kt:70` |
+| T1254 | texto | Leer un libro | `Photos.kt:71` |
+| T1255 | texto | Aprender | `Photos.kt:72` |
+| T1256 | texto | Hacer pan | `Photos.kt:73` |
+| T1257 | texto | Pintar | `Photos.kt:74` |
+| T1258 | texto | Empezar | `Photos.kt:75` |
+| T1259 | texto | Salir | `Photos.kt:76` |
+| T1260 | texto | El tiempo en el teléfono | `Photos.kt:77` |
+| T1261 | texto | Caras | `Photos.kt:84` |
+| T1262 | texto | Animales | `Photos.kt:84` |
+| T1263 | texto | Naturaleza | `Photos.kt:84` |
+| T1264 | texto | Comida | `Photos.kt:84` |
+| T1265 | texto | Actividades | `Photos.kt:84` |
+| T1266 | texto | Cara sonriente | `Photos.kt:94` |
+| T1267 | texto | Cara contenta | `Photos.kt:95` |
+| T1268 | texto | Cara con lentes de sol | `Photos.kt:96` |
+| T1269 | texto | Cara que abraza | `Photos.kt:97` |
+| T1270 | texto | Cara con ojos de estrella | `Photos.kt:98` |
+| T1271 | texto | Cara con corazones | `Photos.kt:99` |
+| T1272 | texto | Cara de fiesta | `Photos.kt:100` |
+| T1273 | texto | Cara pensativa | `Photos.kt:101` |
+| T1274 | texto | Cara dormida | `Photos.kt:102` |
+| T1275 | texto | Cara con sombrero de vaquero | `Photos.kt:103` |
+| T1276 | texto | Robot | `Photos.kt:104` |
+| T1277 | texto | Fantasma | `Photos.kt:105` |
+| T1278 | texto | Perro | `Photos.kt:107` |
+| T1279 | texto | Gato | `Photos.kt:108` |
+| T1280 | texto | Zorro | `Photos.kt:109` |
+| T1281 | texto | Tortuga | `Photos.kt:110` |
+| T1282 | texto | Conejo | `Photos.kt:111` |
+| T1283 | texto | Oso | `Photos.kt:112` |
+| T1284 | texto | Panda | `Photos.kt:113` |
+| T1285 | texto | Koala | `Photos.kt:114` |
+| T1286 | texto | Tigre | `Photos.kt:115` |
+| T1287 | texto | León | `Photos.kt:116` |
+| T1288 | texto | Rana | `Photos.kt:117` |
+| T1289 | texto | Pingüino | `Photos.kt:118` |
+| T1290 | texto | Búho | `Photos.kt:119` |
+| T1291 | texto | Abeja | `Photos.kt:120` |
+| T1292 | texto | Mariposa | `Photos.kt:121` |
+| T1293 | texto | Pulpo | `Photos.kt:122` |
+| T1294 | texto | Ballena | `Photos.kt:123` |
+| T1295 | texto | Unicornio | `Photos.kt:124` |
+| T1296 | texto | Perezoso | `Photos.kt:125` |
+| T1297 | texto | Dinosaurio | `Photos.kt:126` |
+| T1298 | texto | Planta | `Photos.kt:128` |
+| T1299 | texto | Girasol | `Photos.kt:129` |
+| T1300 | texto | Ola | `Photos.kt:130` |
+| T1301 | texto | Luna | `Photos.kt:131` |
+| T1302 | texto | Sol | `Photos.kt:132` |
+| T1303 | texto | Arcoíris | `Photos.kt:133` |
+| T1304 | texto | Estrella | `Photos.kt:134` |
+| T1305 | texto | Nube | `Photos.kt:135` |
+| T1306 | texto | Copo de nieve | `Photos.kt:136` |
+| T1307 | texto | Fuego | `Photos.kt:137` |
+| T1308 | texto | Cactus | `Photos.kt:138` |
+| T1309 | texto | Árbol | `Photos.kt:139` |
+| T1310 | texto | Trébol de cuatro hojas | `Photos.kt:140` |
+| T1311 | texto | Tulipán | `Photos.kt:141` |
+| T1312 | texto | Hongo | `Photos.kt:142` |
+| T1313 | texto | Montaña nevada | `Photos.kt:143` |
+| T1314 | texto | Planeta con anillo | `Photos.kt:144` |
+| T1315 | texto | Taza de café | `Photos.kt:146` |
+| T1316 | texto | Pan | `Photos.kt:147` |
+| T1317 | texto | Sartén con un huevo | `Photos.kt:148` |
+| T1318 | texto | Palta | `Photos.kt:149` |
+| T1319 | texto | Frutilla | `Photos.kt:150` |
+| T1320 | texto | Sandía | `Photos.kt:151` |
+| T1321 | texto | Limón | `Photos.kt:152` |
+| T1322 | texto | Pizza | `Photos.kt:153` |
+| T1323 | texto | Dona | `Photos.kt:154` |
+| T1324 | texto | Helado | `Photos.kt:155` |
+| T1325 | texto | Té de burbujas | `Photos.kt:156` |
+| T1326 | texto | Zapatilla | `Photos.kt:158` |
+| T1327 | texto | Libros | `Photos.kt:159` |
+| T1328 | texto | Guitarra | `Photos.kt:160` |
+| T1329 | texto | Paleta de pintura | `Photos.kt:161` |
+| T1330 | texto | Ovillo de lana | `Photos.kt:162` |
+| T1331 | texto | Bicicleta | `Photos.kt:163` |
+| T1332 | texto | Cámara | `Photos.kt:164` |
+| T1333 | texto | Audífonos | `Photos.kt:165` |
+| T1334 | texto | Lápiz | `Photos.kt:166` |
+| T1335 | texto | Pieza de rompecabezas | `Photos.kt:167` |
+| T1336 | texto | Teclado de piano | `Photos.kt:168` |
+| T1337 | texto | Pelota | `Photos.kt:169` |
+| T1338 | texto | Pelota de básquetbol | `Photos.kt:170` |
+| T1339 | texto | Raqueta de tenis | `Photos.kt:171` |
+| T1340 | texto | Skate | `Photos.kt:172` |
+| T1341 | texto | Dado | `Photos.kt:173` |
+| T1342 | texto | Peón de ajedrez | `Photos.kt:174` |
+| T1343 | texto | Control de videojuegos | `Photos.kt:175` |
+| T1344 | texto | Volantín | `Photos.kt:176` |
+| T1345 | texto | Micrófono | `Photos.kt:177` |
+| T1346 | texto | Violín | `Photos.kt:178` |
+| T1347 | texto | Telescopio | `Photos.kt:179` |
+| T1348 | texto | Carpa | `Photos.kt:180` |
+| T1349 | texto | Cohete | `Photos.kt:181` |
+| T1350 | texto | Volver | `Screen.kt:98` |
+| T1351 | texto | Inicio | `RelevoApp.kt:83` |
+| T1352 | texto | Actividades | `RelevoApp.kt:84` |
+| T1353 | texto | Perfil | `RelevoApp.kt:85` |
 
 ## Registro de cambios (disclaimer)
 

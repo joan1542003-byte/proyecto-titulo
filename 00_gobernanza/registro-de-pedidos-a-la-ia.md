@@ -227,6 +227,12 @@
 | 5 nov. | Encargo | Pidió subir al repositorio la clave de firma y la configuración de Supabase, para tener todo, aunque el repositorio sea público. | La clave de firma en `app-android/firma/` y la dirección y la clave publicable de Supabase en `app-android/relevo.properties`. La compilación las usa sola, así que el Mac compila una versión actualizable que envía datos. Se subió también la rama `android-1.0.0`, sin fusionar. Compilación verificada sin Supabase en `local.properties`: mismo paquete, misma firma y 90 pruebas. | D-161 |
 | 6 nov. | Pregunta | Preguntó cómo justificar que Relevo hizo sus propios íconos en vez de usar los de otros, propuso investigar íconos y luego hacer los propios, más refinados, al estilo de ChatGPT, y planteó que los íconos responden a lo que querían recuperar sus usuarios. | [Por qué Relevo tiene íconos propios](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md): las 19 actividades de la app vienen de P1–P8, cada una con su fuente; Material Symbols ya tenía equivalentes genéricos de casi todas, así que la razón es otra: lo propio de Relevo, la cercanía con lo que se nombró, una sola voz y las licencias. Comparación con ChatGPT, Material y SF Symbols; propuesta de refinamiento sin aplicar; texto para la memoria. Precisión: los datos sostienen «lo que querían hacer», no «recuperar». | — |
 | 6 nov. | Encargo | Pidió continuar: los íconos hay que saber justificarlos y diseñarlos respondiendo a lo que solicita la app. | [Íconos que responden a lo que pide la app](../10_recursos_visuales/44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario del código (96 de 117 íconos en uso; actividades desde 17 px), cinco reglas y once íconos rehechos, cada uno con su porqué. Salen el lápiz repetido en tres significados, los pares idénticos y los dibujos que decían otra cosa. Las actividades se dibujan con el objeto con que empiezan, como lo sugiere la app. En la app, en la rama local `iconos-propios`. | D-162 |
+| 6 nov. | Decisión | Autorizó subir la rama de los íconos a GitHub. | Rama `iconos-propios` en GitHub (8588c3d), sin fusionar. | D-162 |
+| 6 nov. | Corrección | Aclaró que los íconos no se copiaron a ChatGPT: ChatGPT se basa en íconos de código abierto, y esa es la inspiración de Relevo. | [Documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md): la inspiración es la familia de íconos abiertos (Feather y Lucide, Material Symbols y el set que OpenAI publicó con licencia MIT). Al revisar la página de ChatGPT, sus íconos son propios; lo abierto es el set que OpenAI publicó. | D-162 |
+| 6 nov. | Encargo | Pidió más palabras y frases clave para los relevos personalizados, y documentarlas todas. | El catastro pasa de 322 a 634 palabras y de 20 a 121 frases, con el español de Chile; [catastro de palabras clave](../06_desarrollo_y_factibilidad/app-android/textos/catastro-de-palabras-clave.md) generado desde el código. | D-163 |
+| 6 nov. | Corrección | Los temas claro y oscuro se ven demasiado amarillentos; propuso cambiarlo un poco. Pidió que «Hola, nombre» lleve el degradado del relevo activo, y arreglar el selector de íconos, donde el color quedaba pegado si se elegía otro durante la animación. | [Android 4.5](../06_desarrollo_y_factibilidad/app-android/version-4.5-colores-saludo-y-palabras-2026-11-06.md): neutros con un 40 % de su croma y los mismos contrastes; saludo en el degradado del anillo, con contraste de 3:1; la familia que pierde el pulso vuelve a la tinta. 93 pruebas; probada en el emulador sobre los datos del autor, que quedaron idénticos. | D-163 |
+| 6 nov. | Corrección | Precisó que la inspiración de los íconos es Lucide, no ChatGPT. | [Documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md): Lucide como inspiración, con sus reglas (retícula de 24, línea de 2, uniones y puntas redondas, esquinas de 2 y 1 px, 2 px entre elementos, peso parejo, poco detalle) y cómo las sigue Relevo; la comparación pone a Lucide en lugar de ChatGPT. | D-162 |
+| 6 nov. | Decisión | Indicó que siempre se suba el trabajo a GitHub, sin preguntar. | Cada tarea termina con commit y push de su rama. Fusionar con `main` sigue necesitando su indicación. | — |
 
 ## Lo que muestra el registro
 
@@ -237,6 +243,18 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Lucide y subir siempre
+
+- **Qué cambió:** se registraron la precisión sobre Lucide y la indicación de subir siempre a GitHub.
+- **Cómo estaba antes:** el último pedido era la versión 4.5.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Android 4.5
+
+- **Qué cambió:** se registraron la autorización para subir los íconos, la aclaración sobre su inspiración y los pedidos de la 4.5.
+- **Cómo estaba antes:** el último pedido era diseñar los íconos según lo que pide la app.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Íconos desde lo que pide la app
 
