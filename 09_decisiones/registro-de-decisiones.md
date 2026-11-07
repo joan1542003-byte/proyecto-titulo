@@ -2199,7 +2199,40 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Los colores del anillo tal cual en el saludo: el menta y el ámbar no se leen sobre el papel.
 - **Documentos:** [Android 4.5](../06_desarrollo_y_factibilidad/app-android/version-4.5-colores-saludo-y-palabras-2026-11-06.md).
 
+## D-164 — Android 4.6: una encuesta del rediseño, una vez, para quien ya usaba Relevo
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor pidió que quienes ya usaban Relevo, al abrir la versión nueva, vean una encuesta sobre el rediseño y lo demás. Debe aparecer al activar un relevo o tras un minuto de uso, y una sola vez.
+- **Decisión:**
+  - **Quién:** quien terminó la primera vez, aceptó alguna versión del consentimiento o tiene relevos cuando abre la 4.6 por primera vez. Se decide esa vez y no cambia.
+  - **Cuándo:**
+    - al activar un relevo o tras un minuto con la app abierta, sumado entre aperturas;
+    - solo sobre las pestañas y sin otra hoja abierta;
+    - con el consentimiento al día.
+  - **Una vez:** queda marcada al aparecer, aunque se cierre sin responder.
+  - **Preguntas:**
+    - la impresión del diseño (1 a 5);
+    - la comparación con la versión anterior;
+    - el UMUX-Lite (dos ítems de 1 a 7; Lewis et al., 2013);
+    - lo que más gusta;
+    - un comentario opcional.
+
+    Todas se pueden saltar.
+  - **Datos:** van a `relevo_answers` con claves `rediseno_…` y `umux_lite_…`. El consentimiento v14 ya cubre las respuestas, y el panel las nombra.
+- **Alternativas descartadas:**
+  - El SUS completo: diez ítems son demasiado para una hoja dentro de la app (Galesic y Bosnjak, 2009).
+  - Mostrarla también a instalaciones nuevas: no conocieron el diseño anterior.
+  - Volver a ofrecerla si se cierra: el autor pidió una sola vez.
+- **Documentos:** [Android 4.6](../06_desarrollo_y_factibilidad/app-android/version-4.6-encuesta-del-rediseno-2026-11-06.md), `RedesignSurvey.kt`.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — D-164
+
+- **Qué cambió:** se registró D-164.
+- **Cómo estaba antes:** la última decisión era D-163.
+- **Por qué:** pedido del autor del 6 de noviembre.
 
 ### 2026-11-06 — D-162: Lucide
 

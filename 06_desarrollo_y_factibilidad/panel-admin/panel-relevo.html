@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.5';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.6';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -741,7 +741,8 @@ select json_build_object(
     const prev = /^semanas_previas_(.+)$/.exec(q);
     if (prev) return 'Semanas anteriores: ' + (names[prev[1]] || prev[1].replace(/_/g, ' '));
     if (q.startsWith('cierre_')) return 'Cierre: ' + q.slice(7).replace(/_/g, ' ');
-    const map = { opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
+    const map = { rediseno_impresion: 'Rediseño: qué le parece (1 a 5)', rediseno_comparado: 'Rediseño: comparado con la versión anterior', umux_lite_funciones: 'UMUX-Lite: hace lo que necesito (1 a 7)', umux_lite_facil: 'UMUX-Lite: es fácil de usar (1 a 7)', rediseno_gusta: 'Rediseño: lo que más le gusta', rediseno_cambiaria: 'Rediseño: qué cambiaría',
+      opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
       reporte_problema: 'Reporte de un problema', lugar_del_objeto: 'Dónde dejó el objeto', salida_que_ayudo: 'Qué salida le ayudó', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó', percepcion_senal: 'Notó el aviso (enseguida, un rato después o no)' };
     return map[q] || q.replace(/_/g, ' ');
   }

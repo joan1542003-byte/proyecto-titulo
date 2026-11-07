@@ -199,6 +199,11 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   private val beforeConsent = mutableListOf<Pair<String, String>>()
   private val _quickFeedbackDue = MutableStateFlow(false)
   val quickFeedbackDue: StateFlow<Boolean> = _quickFeedbackDue.asStateFlow()
+  /** 4.6 (D-164): la encuesta del rediseño está lista para mostrarse sobre Inicio. */
+  private val _redesignSurveyDue = MutableStateFlow(false)
+  val redesignSurveyDue: StateFlow<Boolean> = _redesignSurveyDue.asStateFlow()
+  private var redesignSurveyTimer: Job? = null
+  private var redesignSurveyResumedAt = 0L
 
   init {
     _installedApps.value = appsRepository.launcherApps()
@@ -223,6 +228,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       if (_settings.value.returnNotice) ReturnNotice.schedule(application)
       ProjectMessages.schedule(application)
     }
+    checkRedesignSurvey()
     onAppResumed()
   }
 
@@ -242,6 +248,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
 
   fun onAppPaused() {
+    stopRedesignSurveyTimer()
     if (resumedAt > 0L) log("app_cerrada", "segundos=${((System.currentTimeMillis() - resumedAt) / 1000L).coerceAtLeast(0)}")
     resumedAt = 0L
     lastScreen = null
@@ -304,6 +311,68 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     syncRemote()
   }
 
+  // ---- 4.6 (D-164): encuesta del rediseño, una vez, para quien ya usaba Relevo ----
+
+  /** La primera vez que abre esta versión se decide si es alguien que ya usaba Relevo; después no cambia. */
+  private fun checkRedesignSurvey() {
+    if (experiencePreferences.getBoolean(RedesignSurvey.CHECKED, false)) return
+    val eligible = RedesignSurvey.eligibleAtFirstRun(
+      onboardingComplete = experiencePreferences.getBoolean("onboarding_complete", false),
+      acceptedBefore = Participation.acceptedBefore(getApplication()),
+      hasHistory = _history.value.isNotEmpty(),
+    )
+    experiencePreferences.edit().putBoolean(RedesignSurvey.CHECKED, true).putBoolean(RedesignSurvey.ELIGIBLE, eligible).apply()
+    log("encuesta_rediseno_elegible", if (eligible) "si" else "no")
+  }
+
+  private fun redesignSurveyPending(): Boolean =
+    hasCurrentConsent() && experiencePreferences.getBoolean(RedesignSurvey.ELIGIBLE, false) &&
+      !experiencePreferences.getBoolean(RedesignSurvey.SHOWN, false)
+
+  /** Cuenta el tiempo con la app abierta, sumado entre aperturas, hasta un minuto. */
+  private fun startRedesignSurveyTimer() {
+    redesignSurveyTimer?.cancel()
+    if (!redesignSurveyPending() || _redesignSurveyDue.value) return
+    redesignSurveyResumedAt = System.currentTimeMillis()
+    val remaining = RedesignSurvey.remainingMillis(experiencePreferences.getLong(RedesignSurvey.FOREGROUND_MS, 0L))
+    redesignSurveyTimer = viewModelScope.launch {
+      delay(remaining)
+      if (redesignSurveyPending()) _redesignSurveyDue.value = true
+    }
+  }
+
+  private fun stopRedesignSurveyTimer() {
+    redesignSurveyTimer?.cancel()
+    redesignSurveyTimer = null
+    if (redesignSurveyResumedAt == 0L) return
+    val spent = (System.currentTimeMillis() - redesignSurveyResumedAt).coerceAtLeast(0L)
+    redesignSurveyResumedAt = 0L
+    val total = experiencePreferences.getLong(RedesignSurvey.FOREGROUND_MS, 0L) + spent
+    experiencePreferences.edit().putLong(RedesignSurvey.FOREGROUND_MS, total.coerceAtMost(RedesignSurvey.AFTER_MILLIS)).apply()
+  }
+
+  /** Se marca al aparecer: aunque la cierre sin responder, no vuelve a salir. */
+  fun markRedesignSurveyShown() {
+    if (experiencePreferences.getBoolean(RedesignSurvey.SHOWN, false)) return
+    experiencePreferences.edit().putBoolean(RedesignSurvey.SHOWN, true).apply()
+    redesignSurveyTimer?.cancel()
+    log("encuesta_rediseno_vista")
+  }
+
+  internal fun submitRedesignSurvey(answers: RedesignAnswers) {
+    val code = _reminder.value.participantCode
+    answers.toAnswers().forEach { (question, answer) -> researchLog.recordAnswer(code, question, answer) }
+    log("encuesta_rediseno_enviada", "respuestas=${answers.toAnswers().size}")
+    _redesignSurveyDue.value = false
+    syncRemote()
+  }
+
+  fun dismissRedesignSurvey() {
+    log("encuesta_rediseno_cerrada")
+    _redesignSurveyDue.value = false
+    syncRemote()
+  }
+
   private fun currentParticipation(): ParticipationMode =
     if (Participation.participating(getApplication())) ParticipationMode.ACCEPTED else ParticipationMode.NONE
 
@@ -316,6 +385,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     logPermissions()
     refreshQuickFeedback()
     refreshLimitReview()
+    startRedesignSurveyTimer()
     settingsStore.lastOpenedAt = System.currentTimeMillis()
     ReturnNotice.dismiss(getApplication())
     if (settingsStore.returnNotNow >= 2 && !settingsStore.turnOffAsked && _settings.value.returnNotice) _askTurnOffReturn.value = true
@@ -507,6 +577,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       logPermissions()
       if (_settings.value.returnNotice) ReturnNotice.schedule(getApplication())
       refreshDashboard()
+      // 4.6: quien venía de una versión anterior empieza a contar el minuto de la encuesta al aceptar.
+      startRedesignSurveyTimer()
       // Envía lo pendiente y actualiza la copia en el teléfono sin esperar a que la app vuelva a abrirse.
       syncRemote()
     }
@@ -619,6 +691,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       getApplication(),
       Intent(getApplication(), AppUsageMonitorService::class.java),
     )
+    // 4.6: activar un relevo es uno de los dos momentos de la encuesta del rediseño.
+    if (redesignSurveyPending()) _redesignSurveyDue.value = true
     return true
   }
 

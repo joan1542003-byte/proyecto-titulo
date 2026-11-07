@@ -146,6 +146,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.onAppResumed() }
   LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { viewModel.onAppPaused() }
   val quickFeedbackDue by viewModel.quickFeedbackDue.collectAsState()
+  val redesignSurveyDue by viewModel.redesignSurveyDue.collectAsState()
   val guide by viewModel.guide.collectAsState()
   val firstActivated by viewModel.firstActivated.collectAsState()
   val tag by viewModel.tag.collectAsState()
@@ -529,6 +530,14 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
           onDismiss = viewModel::dismissFirstActivated,
           // El perfil se pide aquí, después del primer relevo, y no antes (4.4).
           onProfile = if (!profile.setupSeen) ({ viewModel.dismissFirstActivated(); push(Route.PROFILE_SETUP) }) else null,
+        )
+      }
+      // 4.6 (D-164): la encuesta del rediseño, una vez, solo sobre las pestañas y sin otra hoja abierta.
+      if (redesignSurveyDue && !firstActivated && routeSuggestion == null && !askTurnOffReturn) {
+        RedesignSurveySheet(
+          onShown = viewModel::markRedesignSurveyShown,
+          onSend = viewModel::submitRedesignSurvey,
+          onDismiss = viewModel::dismissRedesignSurvey,
         )
       }
     }
