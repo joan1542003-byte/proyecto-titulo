@@ -2,7 +2,7 @@
 
 > Se genera con `node extraer-textos.js` desde el código de la app. Para cambiar un texto se cambia el código y se vuelve a generar. Los datos variables van entre corchetes, como [nombre] o [duración].
 
-**Total:** 1379 textos, 5457 palabras, en 30 pantallas o grupos.
+**Total:** 1381 textos, 5459 palabras, en 30 pantallas o grupos.
 
 
 ## 01 Bienvenida
@@ -1350,7 +1350,7 @@
 
 ## 34 Piezas de la interfaz
 
-239 textos.
+241 textos.
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
@@ -1590,9 +1590,11 @@
 | T1374 | texto | Carpa | `Photos.kt:180` |
 | T1375 | texto | Cohete | `Photos.kt:181` |
 | T1376 | texto | Volver | `Screen.kt:98` |
-| T1377 | texto | Inicio | `RelevoApp.kt:83` |
-| T1378 | texto | Actividades | `RelevoApp.kt:84` |
-| T1379 | texto | Perfil | `RelevoApp.kt:85` |
+| T1377 | lector de pantalla | Cerrar | `Sheet.kt:141` |
+| T1378 | lector de pantalla | Cerrar | `Sheet.kt:142` |
+| T1379 | texto | Inicio | `RelevoApp.kt:83` |
+| T1380 | texto | Actividades | `RelevoApp.kt:84` |
+| T1381 | texto | Perfil | `RelevoApp.kt:85` |
 
 ## Registro de cambios (disclaimer)
 

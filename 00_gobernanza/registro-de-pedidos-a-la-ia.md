@@ -235,6 +235,8 @@
 | 6 nov. | Decisión | Indicó que siempre se suba el trabajo a GitHub, sin preguntar. | Cada tarea termina con commit y push de su rama. Fusionar con `main` sigue necesitando su indicación. | — |
 | 6 nov. | Encargo | Pidió una actualización para quienes ya usaban Relevo: al abrir la versión nueva verán una encuesta sobre el rediseño y lo demás. Aparece al activar un relevo o tras un minuto de navegación, y una sola vez. | [Android 4.6](../06_desarrollo_y_factibilidad/app-android/version-4.6-encuesta-del-rediseno-2026-11-06.md): seis preguntas que se pueden saltar, dos del UMUX-Lite. Aparece solo para quien ya usaba Relevo, al activar un relevo o tras un minuto sumado entre aperturas, sobre las pestañas y una vez. Las respuestas van a `relevo_answers` y el panel las nombra. 97 pruebas; probada en el emulador sobre los datos del autor, restaurados idénticos antes de reconectar. | D-164 |
 | 6 nov. | Encargo | Pidió analizar todo y registrar, de forma técnica y simple, cómo funciona la app: conexiones, cómo se conecta, cómo envía señales, cómo recibe datos, cómo funciona Supabase y cómo se hizo cada cosa. | [Cómo funciona Relevo por dentro](../06_desarrollo_y_factibilidad/app-android/como-funciona-relevo-2026-11-06.md): se leyó el código de la 4.6 (76 archivos, unas 15.800 líneas), el manifiesto, el esquema y el panel, y se revisó la estructura de la base real, sin leer datos de participantes. Cubre las piezas, los permisos, el recorrido de un relevo, Tiempo de uso, el sonido y el Tag por Bluetooth, lo que guarda el teléfono, Supabase (sesión anónima, REST, nueve tablas con RLS, Realtime), el panel, la compilación, la línea de decisiones y los límites. | — |
+| 7 nov. | Encargo | Preguntó si había alguna tarea pendiente que se pudiera tomar, que no fuera la memoria, y pidió hacerla. | Se eligió la revisión de la app que quedaba pendiente desde la 4.4: la primera vez desde cero, la encuesta, la letra grande y TalkBack. Se revisó en una copia aparte, sin conexión. | D-165 |
+| 7 nov. | Encargo | Pidió terminar esa revisión. | [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md): las palabras ya no se parten en la cuadrícula y el velo de las hojas se lee «Cerrar». La encuesta aparece al activar y no en una instalación nueva, y todo se lee con letra grande. 97 pruebas; la copia de prueba se desinstaló sin enviar datos. Queda para el autor: pedir el Bluetooth solo al buscar el Tag. | D-165 |
 
 ## Lo que muestra el registro
 
@@ -245,6 +247,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — Revisión de la 4.6
+
+- **Qué cambió:** se registraron el pedido de tomar una tarea pendiente y el de terminarla.
+- **Cómo estaba antes:** el último pedido era el mapa técnico de la app.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Mapa técnico
 

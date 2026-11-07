@@ -2226,7 +2226,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Volver a ofrecerla si se cierra: el autor pidió una sola vez.
 - **Documentos:** [Android 4.6](../06_desarrollo_y_factibilidad/app-android/version-4.6-encuesta-del-rediseno-2026-11-06.md), `RedesignSurvey.kt`.
 
+## D-165 — Android 4.6.1: la revisión de la primera vez, la encuesta y la accesibilidad
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** desde la 4.4 quedaban sin probar la primera vez desde cero, la encuesta del rediseño al activar y en una instalación nueva, la letra grande y TalkBack. El autor pidió tomar una tarea pendiente que no fuera la memoria y terminarla.
+- **Decisión:**
+  - **Cómo se revisó:** en una copia aparte de la app, sin conexión de principio a fin, para no tocar los datos del autor ni enviar datos de prueba.
+  - **Palabras:** el nombre de una actividad bajo su anillo nunca parte una palabra. Mantiene su ancho, se ensancha si una palabra no cabe y, si tampoco así, la letra baja lo justo.
+  - **TalkBack:** el velo que cierra las hojas se lee «Cerrar».
+- **Alternativas descartadas:**
+  - Que el nombre ocupe toda la celda: los nombres vecinos quedaban pegados.
+  - Partir con guion: «manua-lidades» se lee peor que una letra algo más chica.
+- **Pendiente del autor:** si el permiso de Bluetooth se pide solo al tocar «Buscar el Tag», en vez de al entrar a «¿Dónde suena?».
+- **Documentos:** [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — D-165
+
+- **Qué cambió:** se registró D-165.
+- **Cómo estaba antes:** la última decisión era D-164.
+- **Por qué:** el autor pidió terminar la revisión pendiente de la app.
 
 ### 2026-11-06 — D-164
 

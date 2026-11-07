@@ -51,6 +51,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.dialog
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -136,7 +137,9 @@ private fun SheetLayer(entry: SheetEntry, source: HazeState?, isTop: Boolean, on
       val maxSheet = maxHeight * 0.9f
       Box(
         Modifier.fillMaxSize().background(colors.scrim)
-          .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { entry.onDismiss() },
+          // 4.6.1: el velo cierra la hoja; con nombre, TalkBack lo lee como «Cerrar» y no como un botón sin nombre.
+          .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, onClickLabel = "Cerrar") { entry.onDismiss() }
+          .semantics { contentDescription = "Cerrar" },
       )
       Column(
         Modifier.align(Alignment.BottomCenter)

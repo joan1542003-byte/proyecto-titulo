@@ -7,6 +7,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -28,16 +30,22 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.isSpecified
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 import kotlin.math.max
@@ -129,11 +137,21 @@ fun RingCell(
     }
     if (label != null) {
       Spacer(Modifier.height(8.dp))
-      Text(
-        label, style = Relevo.type.footnote.copy(fontWeight = FontWeight.Medium, lineHeight = Relevo.type.footnote.lineHeight),
-        color = Relevo.colors.ink, textAlign = TextAlign.Center, maxLines = 2, overflow = TextOverflow.Ellipsis,
-        modifier = Modifier.width(size + 22.dp),
-      )
+      // 4.6.1: el nombre nunca parte una palabra. Ocupa su ancho de siempre y solo se ensancha, dejando aire con
+      // la celda vecina, si una palabra no cabe; si tampoco cabe ahí (letra grande), la letra baja lo justo.
+      // Antes «Hacer manualidades» se leía «Hacer man / ualidades» en la cuadrícula de cuatro.
+      val base = Relevo.type.footnote.copy(fontWeight = FontWeight.Medium, lineHeight = Relevo.type.footnote.lineHeight)
+      val measurer = rememberTextMeasurer()
+      val density = LocalDensity.current
+      BoxWithConstraints(Modifier.widthIn(min = size + 22.dp).fillMaxWidth(), contentAlignment = Alignment.TopCenter) {
+        val preferredPx = with(density) { (size + 22.dp).roundToPx() }
+        val availablePx = (constraints.maxWidth - with(density) { 8.dp.roundToPx() }).coerceAtLeast(preferredPx)
+        val fit = remember(label, base, preferredPx, availablePx) { labelFit(label, base, preferredPx, availablePx, measurer) }
+        Text(
+          label, style = fit.second, color = Relevo.colors.ink, textAlign = TextAlign.Center, maxLines = 2,
+          overflow = TextOverflow.Ellipsis, modifier = Modifier.width(with(density) { fit.first.toDp() }),
+        )
+      }
     }
   }
 }
@@ -157,6 +175,24 @@ fun AddRingCell(label: String, onClick: () -> Unit, modifier: Modifier = Modifie
     Spacer(Modifier.height(8.dp))
     Text(label, style = Relevo.type.footnote.copy(fontWeight = FontWeight.Medium), color = colors.ink, textAlign = TextAlign.Center, modifier = Modifier.width(size + 22.dp))
   }
+}
+
+/**
+ * El ancho y el estilo con que [label] cabe sin partir una palabra. Decide el trozo más largo que no se puede
+ * cortar (una palabra, o las dos últimas que [sinViuda] une): si cabe en [preferredPx], todo sigue igual; si
+ * no, el nombre se ensancha hasta [availablePx]; y si tampoco cabe ahí, la letra baja en proporción.
+ */
+internal fun labelFit(label: String, base: TextStyle, preferredPx: Int, availablePx: Int, measurer: TextMeasurer): Pair<Int, TextStyle> {
+  if (availablePx <= 0 || availablePx == Constraints.Infinity) return preferredPx to base
+  val widest = sinViuda(label).split(' ', '\n').filter { it.isNotEmpty() }
+    .maxOfOrNull { measurer.measure(it, base, maxLines = 1, softWrap = false).size.width } ?: return preferredPx to base
+  if (widest <= preferredPx) return preferredPx to base
+  if (widest <= availablePx) return widest to base
+  val factor = availablePx.toFloat() / widest * 0.97f
+  return availablePx to base.copy(
+    fontSize = base.fontSize * factor,
+    lineHeight = if (base.lineHeight.isSpecified) base.lineHeight * factor else base.lineHeight,
+  )
 }
 
 /**

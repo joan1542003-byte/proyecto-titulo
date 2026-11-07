@@ -136,6 +136,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-07 — Android 4.6.1
+
+- **Qué cambió:** el panel reconoce la 4.6.1 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.6.
+- **Por qué:** D-165.
+
 ### 2026-11-06 — Android 4.6 y la encuesta del rediseño
 
 - **Qué cambió:** el panel reconoce la 4.6 como la versión más nueva y nombra las seis preguntas de la encuesta del rediseño, entre ellas las dos del UMUX-Lite.
