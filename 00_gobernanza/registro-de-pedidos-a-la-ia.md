@@ -234,6 +234,7 @@
 | 6 nov. | Corrección | Precisó que la inspiración de los íconos es Lucide, no ChatGPT. | [Documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md): Lucide como inspiración, con sus reglas (retícula de 24, línea de 2, uniones y puntas redondas, esquinas de 2 y 1 px, 2 px entre elementos, peso parejo, poco detalle) y cómo las sigue Relevo; la comparación pone a Lucide en lugar de ChatGPT. | D-162 |
 | 6 nov. | Decisión | Indicó que siempre se suba el trabajo a GitHub, sin preguntar. | Cada tarea termina con commit y push de su rama. Fusionar con `main` sigue necesitando su indicación. | — |
 | 6 nov. | Encargo | Pidió una actualización para quienes ya usaban Relevo: al abrir la versión nueva verán una encuesta sobre el rediseño y lo demás. Aparece al activar un relevo o tras un minuto de navegación, y una sola vez. | [Android 4.6](../06_desarrollo_y_factibilidad/app-android/version-4.6-encuesta-del-rediseno-2026-11-06.md): seis preguntas que se pueden saltar, dos del UMUX-Lite. Aparece solo para quien ya usaba Relevo, al activar un relevo o tras un minuto sumado entre aperturas, sobre las pestañas y una vez. Las respuestas van a `relevo_answers` y el panel las nombra. 97 pruebas; probada en el emulador sobre los datos del autor, restaurados idénticos antes de reconectar. | D-164 |
+| 6 nov. | Encargo | Pidió analizar todo y registrar, de forma técnica y simple, cómo funciona la app: conexiones, cómo se conecta, cómo envía señales, cómo recibe datos, cómo funciona Supabase y cómo se hizo cada cosa. | [Cómo funciona Relevo por dentro](../06_desarrollo_y_factibilidad/app-android/como-funciona-relevo-2026-11-06.md): se leyó el código de la 4.6 (76 archivos, unas 15.800 líneas), el manifiesto, el esquema y el panel, y se revisó la estructura de la base real, sin leer datos de participantes. Cubre las piezas, los permisos, el recorrido de un relevo, Tiempo de uso, el sonido y el Tag por Bluetooth, lo que guarda el teléfono, Supabase (sesión anónima, REST, nueve tablas con RLS, Realtime), el panel, la compilación, la línea de decisiones y los límites. | — |
 
 ## Lo que muestra el registro
 
@@ -244,6 +245,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Mapa técnico
+
+- **Qué cambió:** se registró el pedido del mapa técnico de la app.
+- **Cómo estaba antes:** el último pedido era la encuesta del rediseño.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-06 — Android 4.6
 
