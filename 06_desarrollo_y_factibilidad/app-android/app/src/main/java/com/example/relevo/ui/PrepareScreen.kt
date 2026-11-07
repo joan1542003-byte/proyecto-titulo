@@ -162,7 +162,7 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
   PrepareStep.PLACE -> if (reminder.place.isNotBlank()) null else "Escribe en qué lugar empieza."
   PrepareStep.USAGE -> when {
     !usageAccess -> "Da el permiso de Tiempo de uso."
-    reminder.selectedApps.isEmpty() -> "Elige al menos una app que cuente."
+    reminder.selectedApps.isEmpty() -> "Elige al menos una app en la que contar el tiempo."
     else -> null
   }
   PrepareStep.SOUND -> when {
@@ -177,7 +177,7 @@ private fun missingFor(step: PrepareStep, reminder: Reminder, usageAccess: Boole
     reminder.activity.isBlank() -> "Falta qué quieres hacer."
     reminder.howToStart.isBlank() -> "Falta cómo empiezas la actividad."
     reminder.place.isBlank() -> "Falta en qué lugar empieza."
-    reminder.selectedApps.isEmpty() -> "Faltan las apps que cuentan."
+    reminder.selectedApps.isEmpty() -> "Faltan las apps en las que se cuenta el tiempo."
     else -> null
   }
 }
@@ -300,7 +300,7 @@ internal fun PrepareScreen(
           PrepareStep.SOUND -> SoundStep(reminder, tag, tagStatus, volume, actions)
           PrepareStep.REVIEW -> {
             if (editing) {
-              Text("Estás editando tu relevo. Al guardarlo vuelve a contar, con el tiempo que llevabas si las apps son las mismas.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
+              Text("Estás editando tu relevo. Al guardarlo, vuelve a contar el tiempo, con lo que llevabas si las apps son las mismas.", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 2.dp))
               Spacer(Modifier.height(Gap.block))
             }
             val apps = reminder.selectedApps.joinToString(" y ") { it.label }
@@ -329,7 +329,7 @@ internal fun PrepareScreen(
             }
             if (!backgroundUnrestricted) {
               SectionGap()
-              Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+              Notice(BATTERY_TEXT, title = "Batería del teléfono", icon = KitIcon.BATERIA) {
                 PlainAction("Quitar la restricción", actions.onBackground)
               }
             }
@@ -356,7 +356,7 @@ private fun ActivityHeader(activity: String, picture: Picture, @Suppress("UNUSED
 /** Paso 1: el renglón para escribir y, debajo, los pasos de la ruta, ideas con foto y las actividades propias. */
 @Composable
 private fun ActivityStep(reminder: Reminder, customActivities: List<CustomActivity>, routes: List<RouteTrack>, actions: PrepareActions, onNext: () -> Unit) {
-  RenglonField(PrepareStep.ACTIVITY.title, reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas", imeAction = ImeAction.Next, onImeAction = onNext, showLabel = false)
+  RenglonField(PrepareStep.ACTIVITY.title, reminder.activity, actions.onActivity, placeholder = "Ej.: leer 10 páginas de un libro", imeAction = ImeAction.Next, onImeAction = onNext, showLabel = false)
   val steps = routes.mapNotNull { track -> track.currentStep?.let { track to it } }
   if (steps.isNotEmpty()) {
     TileGroup("Pasos", steps.map { (track, step) ->
@@ -418,7 +418,7 @@ private fun PlaceStep(reminder: Reminder, actions: PrepareActions, onNext: () ->
 @Composable
 private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: PrepareActions, onPick: () -> Unit) {
   if (!usageAccess) {
-    Notice("Relevo necesita el permiso de Tiempo de uso para contar.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
+    Notice("Relevo necesita el permiso de Tiempo de uso para contar el tiempo en tus apps.", title = "Falta un permiso", icon = KitIcon.PERMISO) {
       PlainAction("Dar el permiso", actions.onUsageSettings)
     }
     Spacer(Modifier.height(Gap.block))
@@ -426,7 +426,7 @@ private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: Prepare
   val apps = reminder.selectedApps
   ListRow(
     if (apps.isEmpty()) "Elige las apps" else apps.joinToString(" y ") { it.label },
-    icon = KitIcon.APPS, subtitle = "Apps que cuentan", onClick = onPick,
+    icon = KitIcon.APPS, subtitle = "En las que se cuenta el tiempo", onClick = onPick,
     titleColor = if (apps.isEmpty()) Relevo.colors.graphite else Relevo.colors.ink,
     trailing = {
       Row(horizontalArrangement = Arrangement.spacedBy((-6).dp)) { apps.take(3).forEach { AppIcon(it.packageName, 26.dp) } }
@@ -449,7 +449,7 @@ private fun UsageStep(reminder: Reminder, usageAccess: Boolean, actions: Prepare
   Spacer(Modifier.height(12.dp))
   // Un límite breve al empezar (4.4, Tabla 4 de la memoria): con 45 minutos, al sonar una persona ya estaba
   // muy metida en un video. «Probar con 15 segundos», un atajo para probar la app, sale.
-  Text("Al empezar, conviene un tiempo breve: suena antes de que te pierdas en las apps.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+  Text("Al empezar, conviene un tiempo breve: sonará antes de que te pierdas en las apps.", style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
 }
 
 /** Dónde conseguir un Tag compatible: una búsqueda en Mercado Libre, que no caduca como una publicación. */
@@ -487,7 +487,7 @@ private fun SoundStep(reminder: Reminder, tag: TagUi, tagStatus: TagLink.Status,
     verticalArrangement = Arrangement.spacedBy(4.dp),
   ) {
     Text("Volumen", style = Relevo.type.headline, color = Relevo.colors.ink)
-    Text("El volumen multimedia del teléfono también cuenta.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+    Text("El volumen multimedia del teléfono también influye.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
     Spacer(Modifier.height(4.dp))
     SegmentedControl(
       listOf(SignalVolume.SOFT.name to "Suave", SignalVolume.MEDIUM.name to "Medio", SignalVolume.LOUD.name to "Fuerte"), volume.name,
@@ -560,13 +560,16 @@ private fun TagPanel(tag: TagUi, actions: PrepareActions) {
     )
   }
   // Sin Tag elegido, la búsqueda empieza sola al llegar (2.28): basta tocar el que aparece. Si no aparece
-  // ninguno, se vuelve a buscar hasta tres veces.
+  // ninguno, se vuelve a buscar hasta tres veces. Desde la 4.6.2, el permiso de dispositivos cercanos se pide
+  // solo al tocar algo del Tag («Buscar el Tag», «Buscar mi Tag»); la búsqueda sola al llegar ocurre únicamente
+  // si el permiso ya estaba dado. Antes, Android lo pedía apenas se entraba a «¿Dónde suena?», aunque la
+  // persona no tuviera un Tag.
   var autoSearched by rememberSaveable { mutableStateOf(false) }
   var retries by rememberSaveable { mutableIntStateOf(0) }
   LaunchedEffect(tag.linkedName, guide, tag.searching) {
-    if (tag.linkedName != null || guide || tag.searching || autoSearched || denied) return@LaunchedEffect
+    if (tag.linkedName != null || guide || tag.searching || autoSearched || denied || !TagLink.hasPermissions(context)) return@LaunchedEffect
     autoSearched = true
-    withPermission(actions.onTagSearch)
+    actions.onTagSearch()
   }
   LaunchedEffect(tag.searched, tag.searching) {
     if (tag.linkedName == null && tag.searched && !tag.searching && tag.found.isEmpty() && tag.problem == null && retries < 3 && TagLink.hasPermissions(context)) {

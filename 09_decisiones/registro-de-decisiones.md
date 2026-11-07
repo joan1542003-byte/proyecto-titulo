@@ -2238,10 +2238,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:**
   - Que el nombre ocupe toda la celda: los nombres vecinos quedaban pegados.
   - Partir con guion: «manua-lidades» se lee peor que una letra algo más chica.
-- **Pendiente del autor:** si el permiso de Bluetooth se pide solo al tocar «Buscar el Tag», en vez de al entrar a «¿Dónde suena?».
+- **Pendiente del autor:** si el permiso de Bluetooth se pide solo al tocar «Buscar el Tag», en vez de al entrar a «¿Dónde suena?». Resuelto en D-166: sí.
 - **Documentos:** [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md).
 
+## D-166 — Android 4.6.2: textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor señaló textos confusos: «Deja de contar» sin decir qué, «Suena» para algo que aún no pasa, «Batería» sin decir de qué, «el perfil» y «Ej.: leer 10 páginas». También quedaba pendiente de D-165 si el Bluetooth se pedía al entrar a «¿Dónde suena?».
+- **Decisión:**
+  - **Cinco reglas para toda la app:** «contar» dice qué se cuenta (el tiempo en tus apps); lo que aún no pasa va en futuro; lo de la persona lleva «tu»; los ejemplos se completan; los títulos dicen de qué se trata («Batería del teléfono»). Se aplicaron en 48 lugares, en siete archivos.
+  - **Bluetooth:** el permiso se pide solo al tocar algo del Tag. La búsqueda sola al llegar ocurre únicamente si el permiso ya estaba dado. Lo decidió el autor.
+  - **Aviso permanente:** si se publicó sin permiso de notificaciones, se vuelve a publicar en cuanto lo hay. Antes quedaba oculto en el primer relevo.
+- **Alternativas descartadas:**
+  - Cambiar «contar» por «medir»: «contar el tiempo» es más cercano y ya se usa en «Cómo funciona».
+  - Cambiar también el texto del consentimiento: exige una nueva versión del consentimiento, y ahí «las [apps]» ya dice qué se cuenta.
+- **Documentos:** [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — D-166
+
+- **Qué cambió:** se registró D-166 y se marcó como resuelto el pendiente de D-165.
+- **Cómo estaba antes:** la última decisión era D-165, con el Bluetooth pendiente.
+- **Por qué:** el autor señaló textos confusos y decidió cuándo pedir el Bluetooth.
 
 ### 2026-11-07 — D-165
 

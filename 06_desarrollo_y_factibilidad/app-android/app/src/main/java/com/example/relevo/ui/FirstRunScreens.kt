@@ -129,7 +129,7 @@ internal fun ConsentScreen(
       PlainAction(if (declined) "Ocultar" else "No acepto", { declined = !declined }, color = Relevo.colors.graphite)
       if (declined) {
         Text(
-          if (renewal) "Está bien. Sin aceptar, Relevo deja de contar. Los datos anteriores siguen guardados hasta que pidas borrarlos, o hasta el 30 de diciembre de 2026."
+          if (renewal) "Está bien. Sin aceptar, Relevo deja de contar el tiempo en tus apps. Los datos anteriores siguen guardados hasta que pidas borrarlos, o hasta el 30 de diciembre de 2026."
           else "Está bien. Sin aceptar, Relevo no se puede usar: puedes cerrar la app y desinstalarla. No se guardó nada.",
           style = Relevo.type.footnote, color = Relevo.colors.graphite,
         )

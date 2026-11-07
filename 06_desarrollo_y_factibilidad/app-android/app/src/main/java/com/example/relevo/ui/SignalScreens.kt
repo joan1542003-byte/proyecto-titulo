@@ -120,7 +120,7 @@ internal fun SignalScreen(
             ) {
               PlainAction("Probar otra vez", { tested = onTestSound(null) }, icon = KitIcon.PROBAR)
               if (reminder.signalRoute != SignalRoute.PHONE) PlainAction("Sonar en el teléfono", { tested = onTestSound(SignalRoute.PHONE) }, icon = KitIcon.TELEFONO)
-              tested?.let { Text(if (it) "Ahora sonó." else "Todavía no suena.", style = Relevo.type.subhead, color = colors.graphite) }
+              tested?.let { Text(if (it) "Ahora sonó." else "Tampoco sonó.", style = Relevo.type.subhead, color = colors.graphite) }
             }
           }
           Spacer(Modifier.height(2.dp))

@@ -163,7 +163,7 @@ private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: ()
   val interests = routes.joinToString(" · ") { it.title }
   Column(
     modifier.fillMaxWidth().pressScale(interaction, 0.985f)
-      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Editar el perfil", onClick = onEdit),
+      .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClickLabel = "Editar tu perfil", onClick = onEdit),
     horizontalAlignment = Alignment.CenterHorizontally,
   ) {
     Box(Modifier.size(92.dp).clip(CircleShape).background(Relevo.colors.card).border(1.dp, Relevo.colors.line, CircleShape), contentAlignment = Alignment.Center) {
@@ -173,7 +173,7 @@ private fun ProfileHeader(profile: Profile, routes: List<RouteTrack>, onEdit: ()
     Text(profile.name.ifBlank { "Perfil" }, style = Relevo.type.title, color = Relevo.colors.ink, maxLines = 2, textAlign = TextAlign.Center)
     if (interests.isNotBlank()) Text(interests, style = Relevo.type.subhead, color = Relevo.colors.graphite, maxLines = 2, textAlign = TextAlign.Center)
     Spacer(Modifier.height(2.dp))
-    PlainAction("Editar el perfil", onEdit, color = Relevo.colors.graphite)
+    PlainAction("Editar tu perfil", onEdit, color = Relevo.colors.graphite)
   }
 }
 

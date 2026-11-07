@@ -237,6 +237,8 @@
 | 6 nov. | Encargo | Pidió analizar todo y registrar, de forma técnica y simple, cómo funciona la app: conexiones, cómo se conecta, cómo envía señales, cómo recibe datos, cómo funciona Supabase y cómo se hizo cada cosa. | [Cómo funciona Relevo por dentro](../06_desarrollo_y_factibilidad/app-android/como-funciona-relevo-2026-11-06.md): se leyó el código de la 4.6 (76 archivos, unas 15.800 líneas), el manifiesto, el esquema y el panel, y se revisó la estructura de la base real, sin leer datos de participantes. Cubre las piezas, los permisos, el recorrido de un relevo, Tiempo de uso, el sonido y el Tag por Bluetooth, lo que guarda el teléfono, Supabase (sesión anónima, REST, nueve tablas con RLS, Realtime), el panel, la compilación, la línea de decisiones y los límites. | — |
 | 7 nov. | Encargo | Preguntó si había alguna tarea pendiente que se pudiera tomar, que no fuera la memoria, y pidió hacerla. | Se eligió la revisión de la app que quedaba pendiente desde la 4.4: la primera vez desde cero, la encuesta, la letra grande y TalkBack. Se revisó en una copia aparte, sin conexión. | D-165 |
 | 7 nov. | Encargo | Pidió terminar esa revisión. | [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md): las palabras ya no se parten en la cuadrícula y el velo de las hojas se lee «Cerrar». La encuesta aparece al activar y no en una instalación nueva, y todo se lee con letra grande. 97 pruebas; la copia de prueba se desinstaló sin enviar datos. Queda para el autor: pedir el Bluetooth solo al buscar el Tag. | D-165 |
+| 7 nov. | Corrección | Señaló textos que confunden: «Deja de contar» (¿contar qué?), «Suena en tu teléfono» en vez de «sonará», «Batería» sin decir de qué, «el perfil» y «Ej.: leer 10 páginas» (¿de qué?). Pidió corregir ese tipo de fallas en toda la app. | [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md): cinco reglas aplicadas en 48 lugares; «contar» siempre dice «el tiempo en tus apps», lo que aún no pasa va en futuro, «tu perfil», «leer 10 páginas de un libro», «Batería del teléfono». El consentimiento no se tocó. | D-166 |
+| 7 nov. | Decisión | Decidió que el permiso de Bluetooth se pida al tocar un botón relacionado con el Tag. | El permiso ya no aparece al entrar a «¿Dónde suena?»; aparece al tocar «Buscar el Tag». Al revisarlo se arregló además el aviso permanente del primer relevo, que quedaba oculto. 97 pruebas y revisión en una copia aparte, sin conexión. | D-166 |
 
 ## Lo que muestra el registro
 
@@ -247,6 +249,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — Textos y Bluetooth
+
+- **Qué cambió:** se registraron la corrección de los textos y la decisión sobre el Bluetooth.
+- **Cómo estaba antes:** el último pedido era terminar la revisión de la 4.6.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-07 — Revisión de la 4.6
 

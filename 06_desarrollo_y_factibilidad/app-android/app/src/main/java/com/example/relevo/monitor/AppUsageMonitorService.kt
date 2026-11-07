@@ -12,6 +12,7 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import cl.udp.relevo.R
 import com.example.relevo.data.AutoModeStore
@@ -55,6 +56,12 @@ class AppUsageMonitorService : Service() {
   /** Lo que dice la notificación permanente además de contar: horas sin sonar o un Tag que no responde (4.4). */
   @Volatile private var quietShown = false
   @Volatile private var tagMissing = false
+  /**
+   * 4.6.2: el aviso permanente se publicó sin permiso de notificaciones. Pasa con el primer relevo, porque
+   * Android pregunta por ese permiso mientras el servicio ya arrancó; sin volver a publicarlo, el aviso
+   * «Contando el tiempo» no aparecía hasta reiniciar el teléfono o la app.
+   */
+  @Volatile private var postedHidden = false
   /** Mensajes del proyecto al instante mientras el servicio está activo (D-096). */
   private lateinit var messageStream: MessageStream
   private var monitorJob: Job? = null
@@ -133,21 +140,21 @@ class AppUsageMonitorService : Service() {
     val title = when {
       !counting -> "Se activa solo"
       quietShown -> "En pausa"
-      actives.size > 1 -> "Contando ${actives.size} relevos"
-      next != null && next.activity.isNotBlank() -> "Contando para «${next.activity.trim()}»"
-      else -> "Contando"
+      actives.size > 1 -> "Contando el tiempo de ${actives.size} relevos"
+      next != null && next.activity.isNotBlank() -> "Contando el tiempo para «${next.activity.trim()}»"
+      else -> "Contando el tiempo"
     }
     val text = when {
       !counting -> "Al abrir las apps del último relevo"
       quietShown -> "Horas sin sonar, hasta las ${settings.load().quietUntil}:00"
-      tagMissing -> "El Tag no responde; si sigue así, suena en tu teléfono"
+      tagMissing -> "El Tag no responde; si sigue así, sonará en tu teléfono"
       actives.size > 1 && next != null -> "El próximo en sonar: «${next.activity.trim()}»"
-      next != null -> "Suena al sumar ${minutes(next.requiredUsageSeconds)}"
+      next != null -> "Sonará al sumar ${minutes(next.requiredUsageSeconds)}"
       else -> "Hasta que lo desactives"
     }
     val publicVersion = NotificationCompat.Builder(this, CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
-      .setContentTitle(if (counting) "Contando" else "Se activa solo")
+      .setContentTitle(if (counting) "Contando el tiempo" else "Se activa solo")
       .build()
     val notification =
       NotificationCompat.Builder(this, CHANNEL_ID)
@@ -163,6 +170,12 @@ class AppUsageMonitorService : Service() {
     val serviceType =
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE else 0
     ServiceCompat.startForeground(this, NOTIFICATION_ID, notification, serviceType)
+    postedHidden = !NotificationManagerCompat.from(this).areNotificationsEnabled()
+  }
+
+  /** Si el aviso permanente quedó oculto y ya hay permiso de notificaciones, lo publica de nuevo. */
+  private fun repostIfAllowed(counting: Boolean) {
+    if (postedHidden && NotificationManagerCompat.from(this).areNotificationsEnabled()) startInForeground(counting)
   }
 
   private fun stopMonitoring() {
@@ -217,6 +230,7 @@ class AppUsageMonitorService : Service() {
           val actives = activeStore.load()
           if (actives.isEmpty() || !hasCurrentConsent()) break
           if (actives.size != shownCount) { shownCount = actives.size; startInForeground(counting = true) }
+          repostIfAllowed(counting = true)
 
           ticks += 1
           if (ticks % ACCESS_CHECK_TICKS == 0L && !UsageAccess.isGranted(this@AppUsageMonitorService)) {
@@ -331,6 +345,7 @@ class AppUsageMonitorService : Service() {
             startMonitoring()
             return@launch
           }
+          repostIfAllowed(counting = false)
           ticks += 1
           if (ticks % WATCH_ACCESS_TICKS == 0L && !UsageAccess.isGranted(this@AppUsageMonitorService)) break
           if (ticks % WATCH_MESSAGE_TICKS == 0L) launch(Dispatchers.IO) { ProjectMessages.check(this@AppUsageMonitorService) }
@@ -446,9 +461,9 @@ class AppUsageMonitorService : Service() {
       STATUS_NOTIFICATION_ID,
       NotificationCompat.Builder(this, STATUS_CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Dejó de contar")
+        .setContentTitle("Dejó de contar el tiempo")
         .setContentText("Falta el permiso de Tiempo de uso")
-        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Sin él, Relevo no puede contar."))
+        .setStyle(NotificationCompat.BigTextStyle().bigText("Falta el permiso de Tiempo de uso. Sin él, Relevo no puede contar el tiempo en tus apps."))
         .setContentIntent(openAppIntent())
         .setAutoCancel(true)
         .build(),
@@ -482,7 +497,7 @@ class AppUsageMonitorService : Service() {
     )
     manager.createNotificationChannel(
       NotificationChannel(STATUS_CHANNEL_ID, "Estado del relevo", NotificationManager.IMPORTANCE_DEFAULT).apply {
-        description = "Avisa si Relevo dejó de contar, por ejemplo al retirar un permiso."
+        description = "Avisa si Relevo dejó de contar el tiempo, por ejemplo al retirar un permiso."
         setSound(null, null)
       },
     )

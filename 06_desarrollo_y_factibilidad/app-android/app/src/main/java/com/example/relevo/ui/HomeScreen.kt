@@ -105,7 +105,7 @@ internal class HomeActions(
 )
 
 /** Aviso de batería: qué hacer y para qué, en una frase. */
-internal const val BATTERY_TEXT = "Para que Relevo siga contando aunque pasen días."
+internal const val BATTERY_TEXT = "Android puede detener Relevo para ahorrar batería. Quita la restricción para que siga contando el tiempo en tus apps aunque pasen días."
 
 /**
  * Inicio de la 4.0 (D-155), de arriba abajo: la fecha y el saludo; lo que pide una respuesta (el perfil o
@@ -172,7 +172,7 @@ internal fun HomeTab(
   val greetingColors = if (active) skyFor(activityIcon(counting.first().activity, customActivities)).ring else null
   RelevoScreen(title = greeting, eyebrow = todayLabel(), largeTitle = true, barTitle = "Inicio", titleColors = greetingColors, scrollState = scroll) {
     if (profileDue) {
-      Notice("El nombre y lo que te gustaría hacer más seguido. Toma un minuto.", title = "Completa el perfil", icon = KitIcon.PERFIL) {
+      Notice("Tu nombre y lo que te gustaría hacer más seguido. Toma un minuto.", title = "Completa tu perfil", icon = KitIcon.PERFIL) {
         PlainAction("Completar", actions.onProfileSetup)
       }
       Spacer(Modifier.height(Gap.block))
@@ -187,7 +187,7 @@ internal fun HomeTab(
     // D-095: con la activación automática, Inicio recuerda qué se activará y cómo apagarla.
     if (autoMode && !active && lastReminder != null) {
       Notice(
-        "Al abrir ${lastReminder.selectedApps.joinToString(" o ") { it.label }}, empieza a contar «${lastReminder.activity}».",
+        "Al abrir ${lastReminder.selectedApps.joinToString(" o ") { it.label }}, Relevo activa solo «${lastReminder.activity}» y empieza a contar el tiempo.",
         title = "Se activa solo", icon = KitIcon.ESPERANDO,
       ) { PlainAction("Apagar", onAutoModeOff) }
       Spacer(Modifier.height(Gap.block))
@@ -199,7 +199,7 @@ internal fun HomeTab(
           ActiveCard(counting.first(), usageAccess && !quiet, customActivities) { actions.onOpenActive(counting.first().sessionId) }
           if (quiet) {
             Spacer(Modifier.height(Gap.list))
-            Text("Horas sin sonar: vuelve a contar a las $quietUntil:00", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
+            Text("Horas sin sonar: vuelve a contar el tiempo a las $quietUntil:00", style = Relevo.type.subhead, color = Relevo.colors.graphite, modifier = Modifier.padding(horizontal = 4.dp))
           }
           if (counting.size > 1) {
             Spacer(Modifier.height(Gap.list))
@@ -217,13 +217,13 @@ internal fun HomeTab(
           RelevoButton("Preparar otro relevo", actions.onPrepare, kind = ButtonKind.Secondary, icon = KitIcon.AGREGAR)
           if (!usageAccess) {
             Spacer(Modifier.height(Gap.list))
-            Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar", icon = KitIcon.ADVERTENCIA) {
+            Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar el tiempo", icon = KitIcon.ADVERTENCIA) {
               PlainAction("Dar el permiso", actions.onUsageSettings)
             }
           }
           if (!backgroundUnrestricted) {
             Spacer(Modifier.height(Gap.list))
-            Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+            Notice(BATTERY_TEXT, title = "Batería del teléfono", icon = KitIcon.BATERIA) {
               PlainAction("Quitar la restricción", actions.onBackground)
             }
           }
@@ -458,7 +458,7 @@ private fun ActiveCard(reminder: Reminder, counting: Boolean, customActivities: 
   val remaining = (reminder.requiredUsageSeconds - reminder.observedUsageSeconds).coerceAtLeast(0)
   ActivityHero(
     activityIcon(reminder.activity, customActivities), reminder.activity,
-    eyebrow = if (counting) "Contando" else "En pausa", detail = "Suena " + soundWhere(reminder),
+    eyebrow = if (counting) "Contando el tiempo" else "En pausa", detail = "Sonará " + soundWhere(reminder),
     onClick = onOpen, clickLabel = "Ver el relevo",
   ) {
     Spacer(Modifier.height(16.dp))
@@ -479,18 +479,18 @@ private fun ActiveCard(reminder: Reminder, counting: Boolean, customActivities: 
 @Composable
 internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit, onProfile: (() -> Unit)? = null) {
   RelevoSheet(onDismiss = onDismiss, scrollable = false) {
-    Text("El relevo está contando", style = Relevo.type.title2, color = Relevo.colors.ink)
+    Text("El relevo está contando el tiempo", style = Relevo.type.title2, color = Relevo.colors.ink)
     Spacer(Modifier.height(10.dp))
     Text(
-      "Suena ${soundWhere(reminder)} cuando sumes ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(" y ") { it.label }}.",
+      "Sonará ${soundWhere(reminder)} cuando sumes ${formatDuration(reminder.requiredUsageSeconds)} en ${reminder.selectedApps.joinToString(" y ") { it.label }}.",
       style = Relevo.type.body, color = Relevo.colors.ink,
     )
     Spacer(Modifier.height(22.dp))
     if (onProfile != null) {
       // 4.4: el perfil se pide aquí, después del primer relevo, y no antes.
-      Text("Mientras tanto, puedes completar el perfil: el nombre y lo que te gustaría hacer más seguido.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
+      Text("Mientras tanto, puedes completar tu perfil: tu nombre y lo que te gustaría hacer más seguido.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
       Spacer(Modifier.height(14.dp))
-      RelevoButton("Completar el perfil", onProfile)
+      RelevoButton("Completar tu perfil", onProfile)
       Spacer(Modifier.height(10.dp))
       RelevoButton("Más tarde", onDismiss, kind = ButtonKind.Secondary)
     } else {
@@ -559,7 +559,7 @@ internal fun ActiveScreen(
   val progress = reminder.observedUsageSeconds.toFloat() / reminder.requiredUsageSeconds.coerceAtLeast(1)
   RelevoScreen(
     onBack = onBack, backLabel = "Inicio", barTitle = null,
-    trailing = { Chip(if (usageAccess && !quiet) "Contando" else "En pausa", background = colors.mist) },
+    trailing = { Chip(if (usageAccess && !quiet) "Contando el tiempo" else "En pausa", background = colors.mist) },
     bottom = { RelevoButton("Cambiar o desactivar", { options = true }, kind = ButtonKind.Secondary) },
   ) {
     Column(Modifier.fillMaxWidth().padding(top = 28.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -582,18 +582,18 @@ internal fun ActiveScreen(
       }
       if (quiet) {
         Spacer(Modifier.height(14.dp))
-        Text("Horas sin sonar: vuelve a contar a las $quietUntil:00", style = Relevo.type.subhead, color = colors.graphite, textAlign = TextAlign.Center)
+        Text("Horas sin sonar: vuelve a contar el tiempo a las $quietUntil:00", style = Relevo.type.subhead, color = colors.graphite, textAlign = TextAlign.Center)
       }
     }
     if (!usageAccess) {
       Spacer(Modifier.height(Gap.section))
-      Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar", icon = KitIcon.ADVERTENCIA) {
+      Notice("Falta el permiso de Tiempo de uso.", title = "Relevo no puede contar el tiempo", icon = KitIcon.ADVERTENCIA) {
         PlainAction("Dar el permiso", onUsageSettings)
       }
     }
     if (!backgroundUnrestricted) {
       Spacer(Modifier.height(Gap.block))
-      Notice(BATTERY_TEXT, title = "Batería", icon = KitIcon.BATERIA) {
+      Notice(BATTERY_TEXT, title = "Batería del teléfono", icon = KitIcon.BATERIA) {
         PlainAction("Quitar la restricción", onBackground)
       }
     }
@@ -603,8 +603,8 @@ internal fun ActiveScreen(
       Text("Relevo", style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(16.dp))
       ListSection {
-        ListRow("Editar", icon = KitIcon.EDITAR, subtitle = "Mientras lo editas no cuenta.", chevron = true, onClick = { options = false; onEdit() })
-        ListRow("Desactivar", icon = KitIcon.DETENER, subtitle = "Deja de contar y no suena.", chevron = true, onClick = { options = false; confirming = true })
+        ListRow("Editar", icon = KitIcon.EDITAR, subtitle = "Mientras lo editas, no se cuenta el tiempo.", chevron = true, onClick = { options = false; onEdit() })
+        ListRow("Desactivar", icon = KitIcon.DETENER, subtitle = "Se deja de contar el tiempo y no sonará.", chevron = true, onClick = { options = false; confirming = true })
         ListRow("Eliminar", icon = KitIcon.BORRAR, subtitle = "Si lo activaste por error.", iconTint = colors.error, titleColor = colors.error, onClick = { options = false; confirmingDelete = true })
       }
     }
@@ -613,7 +613,7 @@ internal fun ActiveScreen(
     RelevoSheet(onDismiss = { confirmingDelete = false }, scrollable = false) {
       Text("¿Eliminar este relevo?", style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Deja de contar, no suena y no queda en Relevos.", style = Relevo.type.body, color = colors.graphite)
+      Text("Se deja de contar el tiempo, no sonará y no quedará en Relevos.", style = Relevo.type.body, color = colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Eliminar", { confirmingDelete = false; onDelete() }, kind = ButtonKind.Destructive)
       Spacer(Modifier.height(10.dp))
@@ -624,7 +624,7 @@ internal fun ActiveScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Desactivar el relevo?", style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Deja de contar y no suena. Después puedes decir qué decidiste.", style = Relevo.type.body, color = colors.graphite)
+      Text("Se deja de contar el tiempo y no sonará. Después puedes decir qué decidiste.", style = Relevo.type.body, color = colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Desactivar", { confirming = false; onDisarm() }, kind = ButtonKind.Destructive)
       Spacer(Modifier.height(10.dp))

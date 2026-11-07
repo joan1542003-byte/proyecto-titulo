@@ -113,7 +113,7 @@ internal fun SettingsScreen(
       ListRow("Horas sin sonar", icon = KitIcon.PAUSAR, subtitle = if (settings.quietHours) QuietHours.label(settings.quietFrom, settings.quietUntil) else "Apagadas", chevron = true, onClick = { choosingQuiet = true })
       ListRow("Avisos", icon = KitIcon.AVISOS, subtitle = if (settings.returnNotice) "Aviso semanal encendido" else "Aviso semanal apagado", chevron = true, onClick = onNotices)
       ListRow("Apariencia", icon = KitIcon.TEMA, subtitle = theme + if (settings.largeText) " · letra grande" else "", chevron = true, onClick = onAppearance)
-      ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Todo listo para contar" else "Falta Tiempo de uso", chevron = true, onClick = onPermissions)
+      ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Todo listo para contar el tiempo" else "Falta Tiempo de uso", chevron = true, onClick = onPermissions)
       ListRow("Datos", icon = KitIcon.PRIVACIDAD, subtitle = "Privacidad, código y borrado", chevron = true, onClick = onPrivacy)
     }
   }
@@ -134,7 +134,7 @@ private fun volumeLabel(volume: SignalVolume): String = when (volume) {
 @Composable
 private fun QuietSheet(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onDismiss: () -> Unit) {
   RelevoSheet(onDismiss = onDismiss, title = "Horas sin sonar", done = "Listo") {
-    ListSection(footer = "En esas horas Relevo no cuenta ni suena. El relevo sigue activo y retoma al terminar.") {
+    ListSection(footer = "En esas horas, Relevo no cuenta el tiempo ni suena. El relevo sigue activo y retoma al terminar.") {
       ToggleRow("Horas sin sonar", settings.quietHours, { on -> onChange { copy(quietHours = on) } }, icon = KitIcon.PAUSAR)
     }
     if (settings.quietHours) {
@@ -164,7 +164,7 @@ private fun SoundSheet(current: Sonido, volume: SignalVolume, onSound: (Sonido) 
     Spacer(Modifier.height(Gap.block))
     // Volumen (4.4): para el teléfono y el dispositivo de audio. El volumen multimedia del teléfono sigue mandando.
     SettingPanel(
-      "Volumen", "El volumen multimedia del teléfono también cuenta.",
+      "Volumen", "El volumen multimedia del teléfono también influye.",
       listOf(SignalVolume.SOFT.name to "Suave", SignalVolume.MEDIUM.name to "Medio", SignalVolume.LOUD.name to "Fuerte"), volume.name,
       { onVolume(SignalVolume.valueOf(it)) },
     )
@@ -196,7 +196,7 @@ internal fun NoticesScreen(
       }.joinToString(" "),
     ) {
       ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
-        subtitle = "Al abrir las apps del último relevo, empieza a contar solo.")
+        subtitle = "Al abrir las apps del último relevo, Relevo lo activa solo y empieza a contar el tiempo.")
     }
     SectionGap()
     ListSection {
@@ -245,11 +245,11 @@ internal fun PermissionsScreen(usageAccess: Boolean, backgroundUnrestricted: Boo
   var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { notifications = hasNotificationPermission(context) }
   RelevoScreen(title = "Permisos", onBack = onBack, backLabel = "Ajustes") {
-    ListSection(footer = "Tiempo de uso es necesario para contar. En Android se llama «Acceso a datos de uso». Lo demás es opcional.") {
+    ListSection(footer = "Tiempo de uso es necesario para contar el tiempo en tus apps. En Android se llama «Acceso a datos de uso». Lo demás es opcional.") {
       ListRow("Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Para contar el tiempo en las apps que elijas", value = if (usageAccess) "Permitido" else "Falta", chevron = true, onClick = onUsageSettings)
       ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app", value = if (notifications) "Permitidas" else "Apagadas",
         chevron = !notifications, onClick = if (notifications) null else ({ requestNotificationPermission(context) }))
-      ListRow("Batería", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo", value = if (backgroundUnrestricted) "Sin restricciones" else "Con restricciones",
+      ListRow("Batería del teléfono", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo", value = if (backgroundUnrestricted) "Sin restricciones" else "Con restricciones",
         chevron = !backgroundUnrestricted, onClick = if (backgroundUnrestricted) null else onBackground)
     }
   }
@@ -352,7 +352,7 @@ internal fun PrivacyScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Borrar tus datos?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar el tiempo en tus apps.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar mis datos", { confirming = false; onDelete() }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
       Spacer(Modifier.height(8.dp))

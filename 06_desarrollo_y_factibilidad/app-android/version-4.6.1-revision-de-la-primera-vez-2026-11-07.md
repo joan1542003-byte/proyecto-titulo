@@ -41,7 +41,7 @@ El primer arreglo de la palabra partida dejaba que el nombre ocupara toda la cel
 
 ## Para que decida el autor
 
-- **El Tag viene elegido por defecto** en «¿Dónde suena?» (2.28), así que Android pide el permiso de Bluetooth apenas se entra a ese paso, aunque la persona no tenga un Tag. Se podría pedir solo al tocar «Buscar el Tag».
+- **El Tag viene elegido por defecto** en «¿Dónde suena?» (2.28), así que Android pide el permiso de Bluetooth apenas se entra a ese paso, aunque la persona no tenga un Tag. Se podría pedir solo al tocar «Buscar el Tag». **Resuelto en la [4.6.2](version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md) (D-166):** el autor decidió que sí.
 
 ## Verificación
 
@@ -52,6 +52,12 @@ El primer arreglo de la palabra partida dejaba que el nombre ocupara toda la cel
 **Falta probar:** TalkBack encendido de punta a punta, la letra al 200 % y la 4.6.1 en un teléfono real.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — Bluetooth resuelto
+
+- **Qué cambió:** se anota que el pendiente del Bluetooth se resolvió en la 4.6.2.
+- **Cómo estaba antes:** quedaba como decisión pendiente del autor.
+- **Por qué:** D-166.
 
 ### 2026-11-07 — Creación
 

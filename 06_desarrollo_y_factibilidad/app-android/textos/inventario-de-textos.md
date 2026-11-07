@@ -2,7 +2,7 @@
 
 > Se genera con `node extraer-textos.js` desde el código de la app. Para cambiar un texto se cambia el código y se vuelve a generar. Los datos variables van entre corchetes, como [nombre] o [duración].
 
-**Total:** 1381 textos, 5459 palabras, en 30 pantallas o grupos.
+**Total:** 1381 textos, 5577 palabras, en 30 pantallas o grupos.
 
 
 ## 01 Bienvenida
@@ -61,7 +61,7 @@
 | T0034 | validación | Marca «Acepto usar Relevo con estas condiciones» para seguir. | `FirstRunScreens.kt:126` |
 | T0035 | texto | Ocultar | `FirstRunScreens.kt:129` |
 | T0036 | texto | No acepto | `FirstRunScreens.kt:129` |
-| T0037 | texto | Está bien. Sin aceptar, Relevo deja de contar. Los datos anteriores siguen guardados hasta que pidas borrarlos, o hasta el 30 de diciembre de 2026. | `FirstRunScreens.kt:132` |
+| T0037 | texto | Está bien. Sin aceptar, Relevo deja de contar el tiempo en tus apps. Los datos anteriores siguen guardados hasta que pidas borrarlos, o hasta el 30 de diciembre de 2026. | `FirstRunScreens.kt:132` |
 | T0038 | texto | Está bien. Sin aceptar, Relevo no se puede usar: puedes cerrar la app y desinstalarla. No se guardó nada. | `FirstRunScreens.kt:133` |
 | T0039 | acción | Abrir Tus datos | `FirstRunScreens.kt:136` |
 | T0040 | texto | Relevo es parte de un proyecto de título de Diseño de la Universidad Diego Portales. Mientras lo usas, guarda lo que haces en Relevo con un código, para estudiar cómo funciona. El nombre se guarda aparte. Puedes borrar los datos cuando quieras. | `FirstRunScreens.kt:141` |
@@ -175,29 +175,29 @@
 | T0127 | texto | ¿Qué tal te va con Relevo? | `Feedback.kt:90` |
 | T0128 | acción | Escribir un comentario | `Feedback.kt:94` |
 | T0129 | acción | Ahora no | `Feedback.kt:95` |
-| T0130 | texto | Para que Relevo siga contando aunque pasen días. | `HomeScreen.kt:108` |
+| T0130 | texto | Android puede detener Relevo para ahorrar batería. Quita la restricción para que siga contando el tiempo en tus apps aunque pasen días. | `HomeScreen.kt:108` |
 | T0131 | texto | Hola de nuevo, [nombre] | `HomeScreen.kt:162` |
 | T0132 | texto | Hola de nuevo | `HomeScreen.kt:163` |
 | T0133 | texto | Hola, [nombre] | `HomeScreen.kt:164` |
 | T0134 | texto | Hola | `HomeScreen.kt:165` |
 | T0135 | texto | Inicio | `HomeScreen.kt:173` |
-| T0136 | aviso | El nombre y lo que te gustaría hacer más seguido. Toma un minuto. | `HomeScreen.kt:175` |
-| T0137 | título | Completa el perfil | `HomeScreen.kt:175` |
+| T0136 | aviso | Tu nombre y lo que te gustaría hacer más seguido. Toma un minuto. | `HomeScreen.kt:175` |
+| T0137 | título | Completa tu perfil | `HomeScreen.kt:175` |
 | T0138 | acción | Completar | `HomeScreen.kt:176` |
 | T0139 | aviso | Ya sonó 3 veces. Si al sonar ya llevas mucho rato en una app, prueba con menos tiempo. | `HomeScreen.kt:181` |
 | T0140 | título | ¿El tiempo queda bien? | `HomeScreen.kt:181` |
 | T0141 | acción | Cambiar el tiempo | `HomeScreen.kt:182` |
 | T0142 | acción | Está bien así | `HomeScreen.kt:183` |
-| T0143 | texto | Al abrir [apps elegidas], empieza a contar «[actividad]». | `HomeScreen.kt:190` |
+| T0143 | texto | Al abrir [apps elegidas], Relevo activa solo «[actividad]» y empieza a contar el tiempo. | `HomeScreen.kt:190` |
 | T0144 | título | Se activa solo | `HomeScreen.kt:191` |
 | T0145 | acción | Apagar | `HomeScreen.kt:192` |
-| T0146 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:202` |
+| T0146 | texto | Horas sin sonar: vuelve a contar el tiempo a las [dato]:00 | `HomeScreen.kt:202` |
 | T0147 | subtítulo | Faltan [duración] | `HomeScreen.kt:209` |
 | T0148 | botón | Preparar otro relevo | `HomeScreen.kt:217` |
 | T0149 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:220` |
-| T0150 | título | Relevo no puede contar | `HomeScreen.kt:220` |
+| T0150 | título | Relevo no puede contar el tiempo | `HomeScreen.kt:220` |
 | T0151 | acción | Dar el permiso | `HomeScreen.kt:221` |
-| T0152 | título | Batería | `HomeScreen.kt:226` |
+| T0152 | título | Batería del teléfono | `HomeScreen.kt:226` |
 | T0153 | acción | Quitar la restricción | `HomeScreen.kt:227` |
 | T0154 | texto | Siguiente paso en [lugar] | `HomeScreen.kt:263` |
 | T0155 | botón | Preparar un relevo | `HomeScreen.kt:267` |
@@ -219,9 +219,9 @@
 | T0171 | texto | ¿Cambias este paso por otra actividad? | `HomeScreen.kt:439` |
 | T0172 | botón | Cambiar | `HomeScreen.kt:441` |
 | T0173 | acción | Ahora no | `HomeScreen.kt:442` |
-| T0174 | texto | Contando | `HomeScreen.kt:461` |
+| T0174 | texto | Contando el tiempo | `HomeScreen.kt:461` |
 | T0175 | texto | En pausa | `HomeScreen.kt:461` |
-| T0176 | texto | Suena | `HomeScreen.kt:461` |
+| T0176 | texto | Sonará | `HomeScreen.kt:461` |
 | T0177 | texto | Ver el relevo | `HomeScreen.kt:462` |
 | T0178 | texto | Faltan [duración] | `HomeScreen.kt:469` |
 | T0179 | texto | La última vez | `HomeScreen.kt:522` |
@@ -248,7 +248,7 @@
 | T0193 | validación | Escribe cómo empiezas la actividad: lo primero que harías. | `PrepareScreen.kt:161` |
 | T0194 | validación | Escribe en qué lugar empieza. | `PrepareScreen.kt:162` |
 | T0195 | texto | Da el permiso de Tiempo de uso. | `PrepareScreen.kt:164` |
-| T0196 | validación | Elige al menos una app que cuente. | `PrepareScreen.kt:165` |
+| T0196 | validación | Elige al menos una app en la que contar el tiempo. | `PrepareScreen.kt:165` |
 | T0197 | validación | Elige dónde quieres que suene. | `PrepareScreen.kt:169` |
 | T0198 | validación | Busca y elige el Tag, o elige otra forma de avisar. | `PrepareScreen.kt:170` |
 | T0199 | validación | Falta el permiso de Tiempo de uso. | `PrepareScreen.kt:174` |
@@ -257,33 +257,33 @@
 | T0202 | validación | Falta qué quieres hacer. | `PrepareScreen.kt:177` |
 | T0203 | validación | Falta cómo empiezas la actividad. | `PrepareScreen.kt:178` |
 | T0204 | validación | Falta en qué lugar empieza. | `PrepareScreen.kt:179` |
-| T0205 | validación | Faltan las apps que cuentan. | `PrepareScreen.kt:180` |
+| T0205 | validación | Faltan las apps en las que se cuenta el tiempo. | `PrepareScreen.kt:180` |
 | T0206 | texto | Cerrar | `PrepareScreen.kt:259` |
 | T0207 | texto | Volver | `PrepareScreen.kt:259` |
 | T0208 | texto | Guardar y activar | `PrepareScreen.kt:268` |
 | T0209 | texto | Activar el relevo | `PrepareScreen.kt:268` |
 | T0210 | texto | Listo | `PrepareScreen.kt:276` |
 | T0211 | texto | Seguir | `PrepareScreen.kt:276` |
-| T0212 | texto | Estás editando tu relevo. Al guardarlo vuelve a contar, con el tiempo que llevabas si las apps son las mismas. | `PrepareScreen.kt:303` |
+| T0212 | texto | Estás editando tu relevo. Al guardarlo, vuelve a contar el tiempo, con lo que llevabas si las apps son las mismas. | `PrepareScreen.kt:303` |
 | T0213 | texto | Guardar la actividad para la próxima vez | `PrepareScreen.kt:327` |
-| T0214 | título | Batería | `PrepareScreen.kt:332` |
+| T0214 | título | Batería del teléfono | `PrepareScreen.kt:332` |
 | T0215 | acción | Quitar la restricción | `PrepareScreen.kt:333` |
 | T0216 | subtítulo | Actividad | `PrepareScreen.kt:349` |
-| T0217 | ayuda del campo | Ej.: leer 10 páginas | `PrepareScreen.kt:359` |
+| T0217 | ayuda del campo | Ej.: leer 10 páginas de un libro | `PrepareScreen.kt:359` |
 | T0218 | texto | Pasos | `PrepareScreen.kt:362` |
 | T0219 | texto | Creadas por ti | `PrepareScreen.kt:367` |
 | T0220 | ayuda del campo | Ej.: en el velador | `PrepareScreen.kt:410` |
-| T0221 | aviso | Relevo necesita el permiso de Tiempo de uso para contar. | `PrepareScreen.kt:421` |
+| T0221 | aviso | Relevo necesita el permiso de Tiempo de uso para contar el tiempo en tus apps. | `PrepareScreen.kt:421` |
 | T0222 | título | Falta un permiso | `PrepareScreen.kt:421` |
 | T0223 | acción | Dar el permiso | `PrepareScreen.kt:422` |
 | T0224 | validación | Elige las apps | `PrepareScreen.kt:428` |
-| T0225 | subtítulo | Apps que cuentan | `PrepareScreen.kt:429` |
+| T0225 | subtítulo | En las que se cuenta el tiempo | `PrepareScreen.kt:429` |
 | T0226 | texto | Después de [duración] | `PrepareScreen.kt:439` |
 | T0227 | texto | Sumando las [número de apps] apps | `PrepareScreen.kt:440` |
 | T0228 | texto | En esas apps | `PrepareScreen.kt:440` |
-| T0229 | texto | Al empezar, conviene un tiempo breve: suena antes de que te pierdas en las apps. | `PrepareScreen.kt:452` |
+| T0229 | texto | Al empezar, conviene un tiempo breve: sonará antes de que te pierdas en las apps. | `PrepareScreen.kt:452` |
 | T0230 | texto | Volumen | `PrepareScreen.kt:489` |
-| T0231 | texto | El volumen multimedia del teléfono también cuenta. | `PrepareScreen.kt:490` |
+| T0231 | texto | El volumen multimedia del teléfono también influye. | `PrepareScreen.kt:490` |
 | T0232 | texto | Suave | `PrepareScreen.kt:493` |
 | T0233 | texto | Medio | `PrepareScreen.kt:493` |
 | T0234 | texto | Fuerte | `PrepareScreen.kt:493` |
@@ -297,52 +297,52 @@
 | T0242 | texto | No lo encontramos. Revisa que esté encendido y cerca, y que ninguna otra app, como iSearching, esté conectada a él: acepta una conexión a la vez. | `PrepareScreen.kt:529` |
 | T0243 | texto | Buscar mi Tag | `PrepareScreen.kt:558` |
 | T0244 | texto | Entendido | `PrepareScreen.kt:558` |
-| T0245 | aviso | Relevo necesita el permiso de dispositivos cercanos para encontrar el Tag. Solo lo usa para eso. | `PrepareScreen.kt:579` |
-| T0246 | título | Falta un permiso | `PrepareScreen.kt:579` |
-| T0247 | acción | Abrir los ajustes de Relevo | `PrepareScreen.kt:580` |
-| T0248 | aviso | Enciende el Bluetooth del teléfono para encontrar el Tag. | `PrepareScreen.kt:594` |
-| T0249 | título | Bluetooth apagado | `PrepareScreen.kt:594` |
-| T0250 | acción | Encender Bluetooth | `PrepareScreen.kt:595` |
-| T0251 | texto | Buscando Tags cerca. Si está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces. | `PrepareScreen.kt:604` |
-| T0252 | texto | Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después elígelo en la lista. | `PrepareScreen.kt:605` |
-| T0253 | acción | Cómo usar el Tag | `PrepareScreen.kt:609` |
-| T0254 | texto | Buscando… | `PrepareScreen.kt:612` |
-| T0255 | texto | Buscar de nuevo | `PrepareScreen.kt:612` |
-| T0256 | texto | Buscar el Tag | `PrepareScreen.kt:612` |
-| T0257 | texto | Para buscarlo, Android te pedirá permiso para encontrar dispositivos cercanos. Relevo solo recuerda el Tag que elijas, en este teléfono; no usa tu ubicación. | `PrepareScreen.kt:618` |
-| T0258 | texto | Aparatos cerca | `PrepareScreen.kt:625` |
-| T0259 | texto | Tags cerca | `PrepareScreen.kt:625` |
-| T0260 | texto | Si es compatible, pita una vez al elegirlo. | `PrepareScreen.kt:626` |
-| T0261 | texto | Al elegirlo, pita una vez para confirmarlo. | `PrepareScreen.kt:626` |
-| T0262 | texto | No apareció ningún aparato con Bluetooth cerca. Revisa que el Tag esté encendido y cerca del teléfono, y búscalo de nuevo. | `PrepareScreen.kt:635` |
-| T0263 | texto | No apareció ningún Tag. Revisa que esté encendido y cerca del teléfono, y búscalo de nuevo. Si lo usa otra app, como iSearching, ciérrala: el Tag acepta una conexión a la vez. | `PrepareScreen.kt:636` |
-| T0264 | acción | Ver todos los aparatos cercanos | `PrepareScreen.kt:639` |
-| T0265 | aviso | Ese aparato no aceptó la orden para pitar: no es un Tag compatible. Búscalo de nuevo y elige otro. | `PrepareScreen.kt:644` |
-| T0266 | texto | Sirve un iTag, el llavero que se usa con la app iSearching. Mientras tanto, elige «Notificaciones». | `PrepareScreen.kt:649` |
-| T0267 | fila | ¿No tienes un Tag? | `PrepareScreen.kt:650` |
-| T0268 | subtítulo | Consíguelo en Mercado Libre | `PrepareScreen.kt:650` |
-| T0269 | texto | Probando de otra forma… | `PrepareScreen.kt:658` |
-| T0270 | texto | Probando… | `PrepareScreen.kt:659` |
-| T0271 | texto | Probar el Tag | `PrepareScreen.kt:660` |
-| T0272 | texto | Sonó. Al cumplirse el tiempo, pita hasta 30 segundos. | `PrepareScreen.kt:674` |
-| T0273 | texto | Un toque a su botón lo calla; mantenerlo apretado lo apaga. | `PrepareScreen.kt:675` |
-| T0274 | texto | Este Tag mantiene su alarma de alejamiento: si el teléfono se aleja mucho mientras espera, puede pitar solo. Para callarlo, tócalo una vez. | `PrepareScreen.kt:677` |
-| T0275 | texto | Recibió la orden, pero no pitó. Apágalo y vuelve a encenderlo: mantén su botón apretado 3 segundos hasta que pite largo, y otra vez hasta que pite dos veces. Después pruébalo de nuevo. Si sigue sin pitar, elige otra salida. | `PrepareScreen.kt:681` |
-| T0276 | título | El Tag no pitó | `PrepareScreen.kt:682` |
-| T0277 | título | No sonó en el Tag | `PrepareScreen.kt:684` |
-| T0278 | acción | Cómo usar el Tag | `PrepareScreen.kt:688` |
-| T0279 | acción | Elegir otro Tag | `PrepareScreen.kt:690` |
-| T0280 | texto | Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y lo mantiene así hasta que suene. | `PrepareScreen.kt:693` |
-| T0281 | texto | ¿Lo escuchaste pitar? | `PrepareScreen.kt:705` |
-| T0282 | texto | Lo probamos de otra forma. Debió pitar 3 segundos seguidos. | `PrepareScreen.kt:707` |
-| T0283 | texto | Debió pitar 3 segundos seguidos. | `PrepareScreen.kt:707` |
-| T0284 | botón | Sí, pitó | `PrepareScreen.kt:711` |
-| T0285 | botón | No pitó | `PrepareScreen.kt:712` |
-| T0286 | título | Elige las apps | `PrepareScreen.kt:723` |
-| T0287 | botón | Listo | `PrepareScreen.kt:723` |
-| T0288 | campo | Buscar | `PrepareScreen.kt:724` |
-| T0289 | texto | Ej.: | `PrepareScreen.kt:739` |
-| T0290 | texto | Abrir el libro | `PrepareScreen.kt:739` |
+| T0245 | aviso | Relevo necesita el permiso de dispositivos cercanos para encontrar el Tag. Solo lo usa para eso. | `PrepareScreen.kt:582` |
+| T0246 | título | Falta un permiso | `PrepareScreen.kt:582` |
+| T0247 | acción | Abrir los ajustes de Relevo | `PrepareScreen.kt:583` |
+| T0248 | aviso | Enciende el Bluetooth del teléfono para encontrar el Tag. | `PrepareScreen.kt:597` |
+| T0249 | título | Bluetooth apagado | `PrepareScreen.kt:597` |
+| T0250 | acción | Encender Bluetooth | `PrepareScreen.kt:598` |
+| T0251 | texto | Buscando Tags cerca. Si está apagado, mantén apretado su botón 3 segundos, hasta que pite dos veces. | `PrepareScreen.kt:607` |
+| T0252 | texto | Enciende el Tag: mantén apretado su botón 3 segundos, hasta que pite dos veces. Después elígelo en la lista. | `PrepareScreen.kt:608` |
+| T0253 | acción | Cómo usar el Tag | `PrepareScreen.kt:612` |
+| T0254 | texto | Buscando… | `PrepareScreen.kt:615` |
+| T0255 | texto | Buscar de nuevo | `PrepareScreen.kt:615` |
+| T0256 | texto | Buscar el Tag | `PrepareScreen.kt:615` |
+| T0257 | texto | Para buscarlo, Android te pedirá permiso para encontrar dispositivos cercanos. Relevo solo recuerda el Tag que elijas, en este teléfono; no usa tu ubicación. | `PrepareScreen.kt:621` |
+| T0258 | texto | Aparatos cerca | `PrepareScreen.kt:628` |
+| T0259 | texto | Tags cerca | `PrepareScreen.kt:628` |
+| T0260 | texto | Si es compatible, pita una vez al elegirlo. | `PrepareScreen.kt:629` |
+| T0261 | texto | Al elegirlo, pita una vez para confirmarlo. | `PrepareScreen.kt:629` |
+| T0262 | texto | No apareció ningún aparato con Bluetooth cerca. Revisa que el Tag esté encendido y cerca del teléfono, y búscalo de nuevo. | `PrepareScreen.kt:638` |
+| T0263 | texto | No apareció ningún Tag. Revisa que esté encendido y cerca del teléfono, y búscalo de nuevo. Si lo usa otra app, como iSearching, ciérrala: el Tag acepta una conexión a la vez. | `PrepareScreen.kt:639` |
+| T0264 | acción | Ver todos los aparatos cercanos | `PrepareScreen.kt:642` |
+| T0265 | aviso | Ese aparato no aceptó la orden para pitar: no es un Tag compatible. Búscalo de nuevo y elige otro. | `PrepareScreen.kt:647` |
+| T0266 | texto | Sirve un iTag, el llavero que se usa con la app iSearching. Mientras tanto, elige «Notificaciones». | `PrepareScreen.kt:652` |
+| T0267 | fila | ¿No tienes un Tag? | `PrepareScreen.kt:653` |
+| T0268 | subtítulo | Consíguelo en Mercado Libre | `PrepareScreen.kt:653` |
+| T0269 | texto | Probando de otra forma… | `PrepareScreen.kt:661` |
+| T0270 | texto | Probando… | `PrepareScreen.kt:662` |
+| T0271 | texto | Probar el Tag | `PrepareScreen.kt:663` |
+| T0272 | texto | Sonó. Al cumplirse el tiempo, pita hasta 30 segundos. | `PrepareScreen.kt:677` |
+| T0273 | texto | Un toque a su botón lo calla; mantenerlo apretado lo apaga. | `PrepareScreen.kt:678` |
+| T0274 | texto | Este Tag mantiene su alarma de alejamiento: si el teléfono se aleja mucho mientras espera, puede pitar solo. Para callarlo, tócalo una vez. | `PrepareScreen.kt:680` |
+| T0275 | texto | Recibió la orden, pero no pitó. Apágalo y vuelve a encenderlo: mantén su botón apretado 3 segundos hasta que pite largo, y otra vez hasta que pite dos veces. Después pruébalo de nuevo. Si sigue sin pitar, elige otra salida. | `PrepareScreen.kt:684` |
+| T0276 | título | El Tag no pitó | `PrepareScreen.kt:685` |
+| T0277 | título | No sonó en el Tag | `PrepareScreen.kt:687` |
+| T0278 | acción | Cómo usar el Tag | `PrepareScreen.kt:691` |
+| T0279 | acción | Elegir otro Tag | `PrepareScreen.kt:693` |
+| T0280 | texto | Déjalo encendido donde empiezas. Relevo se conecta a él al activar el relevo y lo mantiene así hasta que suene. | `PrepareScreen.kt:696` |
+| T0281 | texto | ¿Lo escuchaste pitar? | `PrepareScreen.kt:708` |
+| T0282 | texto | Lo probamos de otra forma. Debió pitar 3 segundos seguidos. | `PrepareScreen.kt:710` |
+| T0283 | texto | Debió pitar 3 segundos seguidos. | `PrepareScreen.kt:710` |
+| T0284 | botón | Sí, pitó | `PrepareScreen.kt:714` |
+| T0285 | botón | No pitó | `PrepareScreen.kt:715` |
+| T0286 | título | Elige las apps | `PrepareScreen.kt:726` |
+| T0287 | botón | Listo | `PrepareScreen.kt:726` |
+| T0288 | campo | Buscar | `PrepareScreen.kt:727` |
+| T0289 | texto | Ej.: | `PrepareScreen.kt:742` |
+| T0290 | texto | Abrir el libro | `PrepareScreen.kt:742` |
 
 ## 09 Cómo usar el Tag
 
@@ -379,10 +379,10 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0313 | texto | El relevo está contando | `HomeScreen.kt:482` |
-| T0314 | texto | Suena [dato] cuando sumes [duración] en [apps elegidas]. | `HomeScreen.kt:485` |
-| T0315 | texto | Mientras tanto, puedes completar el perfil: el nombre y lo que te gustaría hacer más seguido. | `HomeScreen.kt:491` |
-| T0316 | botón | Completar el perfil | `HomeScreen.kt:493` |
+| T0313 | texto | El relevo está contando el tiempo | `HomeScreen.kt:482` |
+| T0314 | texto | Sonará [dato] cuando sumes [duración] en [apps elegidas]. | `HomeScreen.kt:485` |
+| T0315 | texto | Mientras tanto, puedes completar tu perfil: tu nombre y lo que te gustaría hacer más seguido. | `HomeScreen.kt:491` |
+| T0316 | botón | Completar tu perfil | `HomeScreen.kt:493` |
 | T0317 | botón | Más tarde | `HomeScreen.kt:495` |
 | T0318 | botón | Entendido | `HomeScreen.kt:497` |
 | T0319 | texto | Dijiste que empezaste «[actividad]» [dato]. | `RouteScreens.kt:152` |
@@ -401,32 +401,32 @@
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
 | T0327 | volver | Inicio | `HomeScreen.kt:561` |
-| T0328 | texto | Contando | `HomeScreen.kt:562` |
+| T0328 | texto | Contando el tiempo | `HomeScreen.kt:562` |
 | T0329 | texto | En pausa | `HomeScreen.kt:562` |
 | T0330 | botón | Cambiar o desactivar | `HomeScreen.kt:563` |
 | T0331 | texto | Faltan | `HomeScreen.kt:570` |
 | T0332 | texto | de [duración] en [apps elegidas] | `HomeScreen.kt:573` |
 | T0333 | fragmento | las apps que elegiste | `HomeScreen.kt:573` |
 | T0334 | texto | Se activó solo. | `HomeScreen.kt:581` |
-| T0335 | texto | Horas sin sonar: vuelve a contar a las [dato]:00 | `HomeScreen.kt:585` |
+| T0335 | texto | Horas sin sonar: vuelve a contar el tiempo a las [dato]:00 | `HomeScreen.kt:585` |
 | T0336 | aviso | Falta el permiso de Tiempo de uso. | `HomeScreen.kt:590` |
-| T0337 | título | Relevo no puede contar | `HomeScreen.kt:590` |
+| T0337 | título | Relevo no puede contar el tiempo | `HomeScreen.kt:590` |
 | T0338 | acción | Dar el permiso | `HomeScreen.kt:591` |
-| T0339 | título | Batería | `HomeScreen.kt:596` |
+| T0339 | título | Batería del teléfono | `HomeScreen.kt:596` |
 | T0340 | acción | Quitar la restricción | `HomeScreen.kt:597` |
 | T0341 | texto | Relevo | `HomeScreen.kt:603` |
 | T0342 | fila | Editar | `HomeScreen.kt:606` |
-| T0343 | subtítulo | Mientras lo editas no cuenta. | `HomeScreen.kt:606` |
+| T0343 | subtítulo | Mientras lo editas, no se cuenta el tiempo. | `HomeScreen.kt:606` |
 | T0344 | fila | Desactivar | `HomeScreen.kt:607` |
-| T0345 | subtítulo | Deja de contar y no suena. | `HomeScreen.kt:607` |
+| T0345 | subtítulo | Se deja de contar el tiempo y no sonará. | `HomeScreen.kt:607` |
 | T0346 | fila | Eliminar | `HomeScreen.kt:608` |
 | T0347 | subtítulo | Si lo activaste por error. | `HomeScreen.kt:608` |
 | T0348 | texto | ¿Eliminar este relevo? | `HomeScreen.kt:614` |
-| T0349 | texto | Deja de contar, no suena y no queda en Relevos. | `HomeScreen.kt:616` |
+| T0349 | texto | Se deja de contar el tiempo, no sonará y no quedará en Relevos. | `HomeScreen.kt:616` |
 | T0350 | botón | Eliminar | `HomeScreen.kt:618` |
 | T0351 | botón | Mantenerlo | `HomeScreen.kt:620` |
 | T0352 | texto | ¿Desactivar el relevo? | `HomeScreen.kt:625` |
-| T0353 | texto | Deja de contar y no suena. Después puedes decir qué decidiste. | `HomeScreen.kt:627` |
+| T0353 | texto | Se deja de contar el tiempo y no sonará. Después puedes decir qué decidiste. | `HomeScreen.kt:627` |
 | T0354 | botón | Desactivar | `HomeScreen.kt:629` |
 | T0355 | botón | Mantenerlo | `HomeScreen.kt:631` |
 
@@ -445,7 +445,7 @@
 | T0362 | acción | Probar otra vez | `SignalScreens.kt:121` |
 | T0363 | acción | Sonar en el teléfono | `SignalScreens.kt:122` |
 | T0364 | texto | Ahora sonó. | `SignalScreens.kt:123` |
-| T0365 | texto | Todavía no suena. | `SignalScreens.kt:123` |
+| T0365 | texto | Tampoco sonó. | `SignalScreens.kt:123` |
 | T0366 | texto | Silenciar y continuar | `SignalScreens.kt:127` |
 | T0367 | texto | Continuar | `SignalScreens.kt:127` |
 | T0368 | texto | Un toque al botón del Tag también lo calla. | `SignalScreens.kt:129` |
@@ -578,9 +578,9 @@
 | T0467 | fila | Reportar un problema | `ProfileScreens.kt:141` |
 | T0468 | texto | Relevo [dato] · Proyecto de Título de Diseño, Universidad Diego Portales | `ProfileScreens.kt:145` |
 | T0469 | texto | Ajustes | `ProfileScreens.kt:154` |
-| T0470 | lector de pantalla | Editar el perfil | `ProfileScreens.kt:166` |
+| T0470 | lector de pantalla | Editar tu perfil | `ProfileScreens.kt:166` |
 | T0471 | texto | Perfil | `ProfileScreens.kt:173` |
-| T0472 | acción | Editar el perfil | `ProfileScreens.kt:176` |
+| T0472 | acción | Editar tu perfil | `ProfileScreens.kt:176` |
 
 ## 17 Editar el perfil
 
@@ -614,7 +614,7 @@
 | T0489 | texto | Primero prepara y termina un relevo: la activación automática repite ese. | `SettingsScreens.kt:194` |
 | T0490 | texto | Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo espera 30 minutos. | `SettingsScreens.kt:195` |
 | T0491 | texto | Activación automática | `SettingsScreens.kt:198` |
-| T0492 | subtítulo | Al abrir las apps del último relevo, empieza a contar solo. | `SettingsScreens.kt:199` |
+| T0492 | subtítulo | Al abrir las apps del último relevo, Relevo lo activa solo y empieza a contar el tiempo. | `SettingsScreens.kt:199` |
 | T0493 | texto | Resumen semanal | `SettingsScreens.kt:203` |
 | T0494 | subtítulo | «Esta semana», en Inicio. | `SettingsScreens.kt:204` |
 | T0495 | texto | Aviso semanal | `SettingsScreens.kt:205` |
@@ -650,7 +650,7 @@
 | --- | --- | --- | --- |
 | T0512 | título | Permisos | `SettingsScreens.kt:247` |
 | T0513 | volver | Ajustes | `SettingsScreens.kt:247` |
-| T0514 | texto | Tiempo de uso es necesario para contar. En Android se llama «Acceso a datos de uso». Lo demás es opcional. | `SettingsScreens.kt:248` |
+| T0514 | texto | Tiempo de uso es necesario para contar el tiempo en tus apps. En Android se llama «Acceso a datos de uso». Lo demás es opcional. | `SettingsScreens.kt:248` |
 | T0515 | fila | Tiempo de uso | `SettingsScreens.kt:249` |
 | T0516 | subtítulo | Para contar el tiempo en las apps que elijas | `SettingsScreens.kt:249` |
 | T0517 | texto | Permitido | `SettingsScreens.kt:249` |
@@ -659,7 +659,7 @@
 | T0520 | subtítulo | Para avisarte aunque estés en otra app | `SettingsScreens.kt:250` |
 | T0521 | texto | Permitidas | `SettingsScreens.kt:250` |
 | T0522 | texto | Apagadas | `SettingsScreens.kt:250` |
-| T0523 | fila | Batería | `SettingsScreens.kt:252` |
+| T0523 | fila | Batería del teléfono | `SettingsScreens.kt:252` |
 | T0524 | subtítulo | Para que Android no detenga a Relevo | `SettingsScreens.kt:252` |
 | T0525 | texto | Sin restricciones | `SettingsScreens.kt:252` |
 | T0526 | texto | Con restricciones | `SettingsScreens.kt:252` |
@@ -698,14 +698,14 @@
 | T0545 | fila | Apariencia | `SettingsScreens.kt:115` |
 | T0546 | texto | · letra grande | `SettingsScreens.kt:115` |
 | T0547 | fila | Permisos | `SettingsScreens.kt:116` |
-| T0548 | texto | Todo listo para contar | `SettingsScreens.kt:116` |
+| T0548 | texto | Todo listo para contar el tiempo | `SettingsScreens.kt:116` |
 | T0549 | validación | Falta Tiempo de uso | `SettingsScreens.kt:116` |
 | T0550 | fila | Datos | `SettingsScreens.kt:117` |
 | T0551 | subtítulo | Privacidad, código y borrado | `SettingsScreens.kt:117` |
 | T0552 | título | Sonido | `SettingsScreens.kt:157` |
 | T0553 | botón | Listo | `SettingsScreens.kt:157` |
 | T0554 | texto | Volumen | `SettingsScreens.kt:167` |
-| T0555 | texto | El volumen multimedia del teléfono también cuenta. | `SettingsScreens.kt:167` |
+| T0555 | texto | El volumen multimedia del teléfono también influye. | `SettingsScreens.kt:167` |
 | T0556 | texto | Suave | `SettingsScreens.kt:168` |
 | T0557 | texto | Medio | `SettingsScreens.kt:168` |
 | T0558 | texto | Fuerte | `SettingsScreens.kt:168` |
@@ -780,7 +780,7 @@
 | T0613 | subtítulo | También sales del proyecto. | `SettingsScreens.kt:338` |
 | T0614 | texto | ¿Dudas, o prefieres pedir el borrado por correo? Escribe a [correo del investigador] con tu código. | `SettingsScreens.kt:343` |
 | T0615 | texto | ¿Borrar tus datos? | `SettingsScreens.kt:353` |
-| T0616 | texto | Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar. | `SettingsScreens.kt:355` |
+| T0616 | texto | Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar el tiempo en tus apps. | `SettingsScreens.kt:355` |
 | T0617 | botón | Borrar mis datos | `SettingsScreens.kt:357` |
 | T0618 | botón | Cancelar | `SettingsScreens.kt:359` |
 | T0619 | texto | Código de participación | `SettingsScreens.kt:365` |
@@ -829,33 +829,33 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0637 | texto | Se activa solo | `AppUsageMonitorService.kt:134` |
-| T0638 | texto | En pausa | `AppUsageMonitorService.kt:135` |
-| T0639 | texto | Contando [dato] relevos | `AppUsageMonitorService.kt:136` |
-| T0640 | texto | Contando para «[actividad]» | `AppUsageMonitorService.kt:137` |
-| T0641 | texto | Contando | `AppUsageMonitorService.kt:138` |
-| T0642 | texto | Al abrir las apps del último relevo | `AppUsageMonitorService.kt:141` |
-| T0643 | texto | Horas sin sonar, hasta las [dato]:00 | `AppUsageMonitorService.kt:142` |
-| T0644 | texto | El Tag no responde; si sigue así, suena en tu teléfono | `AppUsageMonitorService.kt:143` |
-| T0645 | texto | El próximo en sonar: «[actividad]» | `AppUsageMonitorService.kt:144` |
-| T0646 | texto | Suena al sumar [dato] | `AppUsageMonitorService.kt:145` |
-| T0647 | texto | Hasta que lo desactives | `AppUsageMonitorService.kt:146` |
-| T0648 | notificación | Contando | `AppUsageMonitorService.kt:150` |
-| T0649 | notificación | Se activa solo | `AppUsageMonitorService.kt:150` |
-| T0650 | notificación: título | Dejó de contar | `AppUsageMonitorService.kt:449` |
-| T0651 | notificación: texto | Falta el permiso de Tiempo de uso | `AppUsageMonitorService.kt:450` |
-| T0652 | notificación: texto | Falta el permiso de Tiempo de uso. Sin él, Relevo no puede contar. | `AppUsageMonitorService.kt:451` |
-| T0653 | lector de pantalla | Muestra que Relevo está contando el tiempo en las apps que elegiste o esperando para activarse solo. | `AppUsageMonitorService.kt:473` |
-| T0654 | lector de pantalla | Suena cuando sumas el tiempo que elegiste. | `AppUsageMonitorService.kt:478` |
-| T0655 | lector de pantalla | Avisa si Relevo dejó de contar, por ejemplo al retirar un permiso. | `AppUsageMonitorService.kt:485` |
-| T0656 | notificación: título | Relevo | `AppUsageMonitorService.kt:499` |
-| T0657 | texto | No sonó en el dispositivo de audio | `AppUsageMonitorService.kt:504` |
-| T0658 | texto | No sonó en el Tag ni en tu teléfono | `AppUsageMonitorService.kt:505` |
-| T0659 | texto | No sonó en tu teléfono | `AppUsageMonitorService.kt:506` |
-| T0660 | texto | El Tag no respondió; sonó en tu teléfono | `AppUsageMonitorService.kt:507` |
-| T0661 | texto | Empieza por [primer paso] | `AppUsageMonitorService.kt:509` |
-| T0662 | notificación | Relevo | `AppUsageMonitorService.kt:515` |
-| T0663 | notificación | Es momento de volver a elegir | `AppUsageMonitorService.kt:538` |
+| T0637 | texto | Se activa solo | `AppUsageMonitorService.kt:141` |
+| T0638 | texto | En pausa | `AppUsageMonitorService.kt:142` |
+| T0639 | texto | Contando el tiempo de [dato] relevos | `AppUsageMonitorService.kt:143` |
+| T0640 | texto | Contando el tiempo para «[actividad]» | `AppUsageMonitorService.kt:144` |
+| T0641 | texto | Contando el tiempo | `AppUsageMonitorService.kt:145` |
+| T0642 | texto | Al abrir las apps del último relevo | `AppUsageMonitorService.kt:148` |
+| T0643 | texto | Horas sin sonar, hasta las [dato]:00 | `AppUsageMonitorService.kt:149` |
+| T0644 | texto | El Tag no responde; si sigue así, sonará en tu teléfono | `AppUsageMonitorService.kt:150` |
+| T0645 | texto | El próximo en sonar: «[actividad]» | `AppUsageMonitorService.kt:151` |
+| T0646 | texto | Sonará al sumar [dato] | `AppUsageMonitorService.kt:152` |
+| T0647 | texto | Hasta que lo desactives | `AppUsageMonitorService.kt:153` |
+| T0648 | notificación | Contando el tiempo | `AppUsageMonitorService.kt:157` |
+| T0649 | notificación | Se activa solo | `AppUsageMonitorService.kt:157` |
+| T0650 | notificación: título | Dejó de contar el tiempo | `AppUsageMonitorService.kt:464` |
+| T0651 | notificación: texto | Falta el permiso de Tiempo de uso | `AppUsageMonitorService.kt:465` |
+| T0652 | notificación: texto | Falta el permiso de Tiempo de uso. Sin él, Relevo no puede contar el tiempo en tus apps. | `AppUsageMonitorService.kt:466` |
+| T0653 | lector de pantalla | Muestra que Relevo está contando el tiempo en las apps que elegiste o esperando para activarse solo. | `AppUsageMonitorService.kt:488` |
+| T0654 | lector de pantalla | Suena cuando sumas el tiempo que elegiste. | `AppUsageMonitorService.kt:493` |
+| T0655 | lector de pantalla | Avisa si Relevo dejó de contar el tiempo, por ejemplo al retirar un permiso. | `AppUsageMonitorService.kt:500` |
+| T0656 | notificación: título | Relevo | `AppUsageMonitorService.kt:514` |
+| T0657 | texto | No sonó en el dispositivo de audio | `AppUsageMonitorService.kt:519` |
+| T0658 | texto | No sonó en el Tag ni en tu teléfono | `AppUsageMonitorService.kt:520` |
+| T0659 | texto | No sonó en tu teléfono | `AppUsageMonitorService.kt:521` |
+| T0660 | texto | El Tag no respondió; sonó en tu teléfono | `AppUsageMonitorService.kt:522` |
+| T0661 | texto | Empieza por [primer paso] | `AppUsageMonitorService.kt:524` |
+| T0662 | notificación | Relevo | `AppUsageMonitorService.kt:530` |
+| T0663 | notificación | Es momento de volver a elegir | `AppUsageMonitorService.kt:553` |
 | T0664 | lector de pantalla | Mensajes del autor del proyecto sobre Relevo. | `ProjectMessages.kt:116` |
 | T0665 | notificación: título | Relevo | `ProjectMessages.kt:128` |
 | T0666 | notificación: texto | Tienes un mensaje nuevo | `ProjectMessages.kt:129` |
@@ -931,7 +931,7 @@
 | T0729 | texto | Fuerte | `SettingsScreens.kt:127` |
 | T0730 | título | Horas sin sonar | `SettingsScreens.kt:136` |
 | T0731 | botón | Listo | `SettingsScreens.kt:136` |
-| T0732 | texto | En esas horas Relevo no cuenta ni suena. El relevo sigue activo y retoma al terminar. | `SettingsScreens.kt:137` |
+| T0732 | texto | En esas horas, Relevo no cuenta el tiempo ni suena. El relevo sigue activo y retoma al terminar. | `SettingsScreens.kt:137` |
 | T0733 | texto | Horas sin sonar | `SettingsScreens.kt:138` |
 | T0734 | texto | Desde las [dato]:00 | `SettingsScreens.kt:143` |
 | T0735 | texto | Hasta las [dato]:00 | `SettingsScreens.kt:144` |
