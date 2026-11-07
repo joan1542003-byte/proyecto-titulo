@@ -3,7 +3,10 @@ package com.example.relevo.ui
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
+import android.provider.Settings
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import androidx.compose.foundation.Image
@@ -28,6 +31,7 @@ import com.example.relevo.domain.RouteTrack
 import com.example.relevo.domain.Interests
 import com.example.relevo.domain.Reminder
 import com.example.relevo.domain.SignalRoute
+import com.example.relevo.monitor.BackgroundAccess
 import com.example.relevo.ui.components.KitIcon
 import com.example.relevo.ui.components.Photo
 import com.example.relevo.ui.components.Picture
@@ -247,6 +251,29 @@ internal fun hasNotificationPermission(context: Context): Boolean =
 internal fun requestNotificationPermission(context: Context) {
   if (!hasNotificationPermission(context)) {
     (context as? Activity)?.let { ActivityCompat.requestPermissions(it, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1001) }
+  }
+}
+
+/**
+ * Abre los ajustes de notificaciones de Relevo en Android (4.6.3). Sirven para encenderlas y apagarlas, aunque
+ * Android ya no muestre su pregunta porque se rechazó antes.
+ */
+internal fun openNotificationSettings(context: Context) {
+  runCatching {
+    context.startActivity(
+      Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+    )
+  }.onFailure { openAppSettings(context) }
+}
+
+/** Con la batería ya permitida, abre la lista de Android donde se puede revisar o volver a restringir (4.6.3). */
+internal fun openBatterySettings(context: Context) {
+  runCatching { context.startActivity(BackgroundAccess.settingsIntent()) }.onFailure { openAppSettings(context) }
+}
+
+private fun openAppSettings(context: Context) {
+  runCatching {
+    context.startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
   }
 }
 

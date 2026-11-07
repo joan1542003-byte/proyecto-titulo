@@ -2,7 +2,7 @@
 
 > Se genera con `node extraer-textos.js` desde el código de la app. Para cambiar un texto se cambia el código y se vuelve a generar. Los datos variables van entre corchetes, como [nombre] o [duración].
 
-**Total:** 1381 textos, 5577 palabras, en 30 pantallas o grupos.
+**Total:** 1381 textos, 5590 palabras, en 30 pantallas o grupos.
 
 
 ## 01 Bienvenida
@@ -414,21 +414,21 @@
 | T0338 | acción | Dar el permiso | `HomeScreen.kt:591` |
 | T0339 | título | Batería del teléfono | `HomeScreen.kt:596` |
 | T0340 | acción | Quitar la restricción | `HomeScreen.kt:597` |
-| T0341 | texto | Relevo | `HomeScreen.kt:603` |
-| T0342 | fila | Editar | `HomeScreen.kt:606` |
-| T0343 | subtítulo | Mientras lo editas, no se cuenta el tiempo. | `HomeScreen.kt:606` |
-| T0344 | fila | Desactivar | `HomeScreen.kt:607` |
-| T0345 | subtítulo | Se deja de contar el tiempo y no sonará. | `HomeScreen.kt:607` |
-| T0346 | fila | Eliminar | `HomeScreen.kt:608` |
-| T0347 | subtítulo | Si lo activaste por error. | `HomeScreen.kt:608` |
-| T0348 | texto | ¿Eliminar este relevo? | `HomeScreen.kt:614` |
-| T0349 | texto | Se deja de contar el tiempo, no sonará y no quedará en Relevos. | `HomeScreen.kt:616` |
-| T0350 | botón | Eliminar | `HomeScreen.kt:618` |
-| T0351 | botón | Mantenerlo | `HomeScreen.kt:620` |
-| T0352 | texto | ¿Desactivar el relevo? | `HomeScreen.kt:625` |
-| T0353 | texto | Se deja de contar el tiempo y no sonará. Después puedes decir qué decidiste. | `HomeScreen.kt:627` |
-| T0354 | botón | Desactivar | `HomeScreen.kt:629` |
-| T0355 | botón | Mantenerlo | `HomeScreen.kt:631` |
+| T0341 | texto | Tu relevo | `HomeScreen.kt:604` |
+| T0342 | fila | Editar | `HomeScreen.kt:607` |
+| T0343 | subtítulo | Mientras lo editas, no se cuenta el tiempo. | `HomeScreen.kt:607` |
+| T0344 | fila | Desactivar | `HomeScreen.kt:608` |
+| T0345 | subtítulo | Se deja de contar el tiempo y no sonará. | `HomeScreen.kt:608` |
+| T0346 | fila | Eliminar | `HomeScreen.kt:609` |
+| T0347 | subtítulo | Si lo activaste por error. | `HomeScreen.kt:609` |
+| T0348 | texto | ¿Eliminar este relevo? | `HomeScreen.kt:615` |
+| T0349 | texto | Se deja de contar el tiempo, no sonará y no quedará en Relevos. | `HomeScreen.kt:617` |
+| T0350 | botón | Eliminar | `HomeScreen.kt:619` |
+| T0351 | botón | Mantenerlo | `HomeScreen.kt:621` |
+| T0352 | texto | ¿Desactivar el relevo? | `HomeScreen.kt:626` |
+| T0353 | texto | Se deja de contar el tiempo y no sonará. Después puedes decir qué decidiste. | `HomeScreen.kt:628` |
+| T0354 | botón | Desactivar | `HomeScreen.kt:630` |
+| T0355 | botón | Mantenerlo | `HomeScreen.kt:632` |
 
 ## 12 Suena
 
@@ -463,7 +463,7 @@
 | T0373 | acción | Saltar | `SignalScreens.kt:174` |
 | T0374 | texto | Cuatro preguntas de un toque | `SignalScreens.kt:175` |
 | T0375 | texto | ¿La dejas lista para después? | `SignalScreens.kt:175` |
-| T0376 | texto | Queda en Inicio para activarla con un toque. No suena sola. | `SignalScreens.kt:176` |
+| T0376 | texto | Queda en Inicio para activarla con un toque. No sonará sola. | `SignalScreens.kt:176` |
 | T0377 | botón | Seguir | `SignalScreens.kt:178` |
 | T0378 | botón | Dejarla lista | `SignalScreens.kt:181` |
 | T0379 | botón | No, gracias | `SignalScreens.kt:182` |
@@ -568,7 +568,7 @@
 | T0457 | texto | Ahora: [dato] | `ProfileScreens.kt:123` |
 | T0458 | validación | Elige intereses | `ProfileScreens.kt:123` |
 | T0459 | texto | Apps | `ProfileScreens.kt:126` |
-| T0460 | texto | Las que cuentan el tiempo | `ProfileScreens.kt:127` |
+| T0460 | texto | En las que se cuenta el tiempo | `ProfileScreens.kt:127` |
 | T0461 | fila | Ajustes | `ProfileScreens.kt:134` |
 | T0462 | subtítulo | Sonido, avisos, apariencia y datos | `ProfileScreens.kt:134` |
 | T0463 | título | Ayuda | `ProfileScreens.kt:137` |
@@ -612,7 +612,7 @@
 | T0487 | título | Avisos | `SettingsScreens.kt:189` |
 | T0488 | volver | Ajustes | `SettingsScreens.kt:189` |
 | T0489 | texto | Primero prepara y termina un relevo: la activación automática repite ese. | `SettingsScreens.kt:194` |
-| T0490 | texto | Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo espera 30 minutos. | `SettingsScreens.kt:195` |
+| T0490 | texto | Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo, espera 30 minutos antes de volver a activarlo. | `SettingsScreens.kt:195` |
 | T0491 | texto | Activación automática | `SettingsScreens.kt:198` |
 | T0492 | subtítulo | Al abrir las apps del último relevo, Relevo lo activa solo y empieza a contar el tiempo. | `SettingsScreens.kt:199` |
 | T0493 | texto | Resumen semanal | `SettingsScreens.kt:203` |
@@ -622,7 +622,7 @@
 | T0497 | texto | Mensaje al responder | `SettingsScreens.kt:209` |
 | T0498 | subtítulo | Unas palabras después de decir qué decidiste. | `SettingsScreens.kt:210` |
 | T0499 | texto | Veces por semana | `SettingsScreens.kt:211` |
-| T0500 | subtítulo | Cuántas veces quieres hacerlo. Aparece en «Esta semana». | `SettingsScreens.kt:212` |
+| T0500 | subtítulo | Cuántas veces a la semana quieres hacer tus actividades. Aparece en «Esta semana». | `SettingsScreens.kt:212` |
 | T0501 | texto | Retomar | `SettingsScreens.kt:218` |
 | T0502 | texto | Pausar | `SettingsScreens.kt:218` |
 
@@ -655,14 +655,14 @@
 | T0516 | subtítulo | Para contar el tiempo en las apps que elijas | `SettingsScreens.kt:249` |
 | T0517 | texto | Permitido | `SettingsScreens.kt:249` |
 | T0518 | validación | Falta | `SettingsScreens.kt:249` |
-| T0519 | fila | Notificaciones | `SettingsScreens.kt:250` |
-| T0520 | subtítulo | Para avisarte aunque estés en otra app | `SettingsScreens.kt:250` |
-| T0521 | texto | Permitidas | `SettingsScreens.kt:250` |
-| T0522 | texto | Apagadas | `SettingsScreens.kt:250` |
-| T0523 | fila | Batería del teléfono | `SettingsScreens.kt:252` |
-| T0524 | subtítulo | Para que Android no detenga a Relevo | `SettingsScreens.kt:252` |
-| T0525 | texto | Sin restricciones | `SettingsScreens.kt:252` |
-| T0526 | texto | Con restricciones | `SettingsScreens.kt:252` |
+| T0519 | fila | Notificaciones | `SettingsScreens.kt:253` |
+| T0520 | subtítulo | Para avisarte aunque estés en otra app | `SettingsScreens.kt:253` |
+| T0521 | texto | Permitidas | `SettingsScreens.kt:253` |
+| T0522 | texto | Apagadas | `SettingsScreens.kt:253` |
+| T0523 | fila | Batería del teléfono | `SettingsScreens.kt:255` |
+| T0524 | subtítulo | Para que Android no detenga a Relevo | `SettingsScreens.kt:255` |
+| T0525 | texto | Permitida | `SettingsScreens.kt:255` |
+| T0526 | texto | Restringida | `SettingsScreens.kt:255` |
 
 ## 21 Relevos
 
@@ -670,13 +670,13 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0527 | título | Tus relevos | `SettingsScreens.kt:261` |
-| T0528 | volver | Perfil | `SettingsScreens.kt:261` |
-| T0529 | texto | Aquí verás los relevos que termines. | `SettingsScreens.kt:263` |
-| T0530 | texto | Hoy | `SettingsScreens.kt:269` |
-| T0531 | texto | Ayer | `SettingsScreens.kt:270` |
-| T0532 | texto | Sonó | `SettingsScreens.kt:277` |
-| T0533 | texto | Terminó antes de sonar | `SettingsScreens.kt:277` |
+| T0527 | título | Tus relevos | `SettingsScreens.kt:264` |
+| T0528 | volver | Perfil | `SettingsScreens.kt:264` |
+| T0529 | texto | Aquí verás los relevos que termines. | `SettingsScreens.kt:266` |
+| T0530 | texto | Hoy | `SettingsScreens.kt:272` |
+| T0531 | texto | Ayer | `SettingsScreens.kt:273` |
+| T0532 | texto | Sonó | `SettingsScreens.kt:280` |
+| T0533 | texto | Terminó antes de sonar | `SettingsScreens.kt:280` |
 
 ## 22 Ajustes
 
@@ -754,36 +754,36 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0590 | texto | Todo está enviado. | `Common.kt:294` |
-| T0591 | texto | Algunos datos se enviarán cuando haya internet. | `Common.kt:294` |
-| T0592 | texto | Último envío: [dato]. | `Common.kt:295` |
-| T0593 | texto | En Documentos/Relevo. Última copia: [dato]. | `Common.kt:300` |
-| T0594 | texto | Se crea en Documentos/Relevo con el primer relevo. | `Common.kt:300` |
-| T0595 | texto | Borrando tus datos… | `RelevoViewModel.kt:1181` |
-| T0596 | texto | Relevo dejó de guardar datos, pero no se pudo confirmar el borrado en la base del proyecto. Tus datos siguen en el teléfono. Prueba otra vez o escribe a [correo del investigador]. | `RelevoViewModel.kt:1225` |
-| T0597 | texto | Tus datos se borraron. Si quieres volver a usar Relevo, tendrás que aceptar otra vez. | `RelevoViewModel.kt:1277` |
-| T0598 | texto | Tus datos quedaron en el archivo que elegiste. | `SettingsScreens.kt:312` |
-| T0599 | texto | No se pudo guardar el archivo. Prueba otra vez. | `SettingsScreens.kt:312` |
-| T0600 | título | Tus datos | `SettingsScreens.kt:315` |
-| T0601 | volver | Ajustes | `SettingsScreens.kt:315` |
-| T0602 | botón | Volver a comenzar | `SettingsScreens.kt:316` |
-| T0603 | texto | Guardamos lo que haces en Relevo con un código; tu nombre se guarda aparte, solo con ese código. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los borramos el 30 de diciembre de 2026. | `SettingsScreens.kt:319` |
-| T0604 | fila | Tu código | `SettingsScreens.kt:326` |
-| T0605 | texto | Sin código | `SettingsScreens.kt:326` |
-| T0606 | fila | Lo que aceptaste | `SettingsScreens.kt:329` |
-| T0607 | fila | Datos enviados | `SettingsScreens.kt:330` |
-| T0608 | fila | Copia en el teléfono | `SettingsScreens.kt:331` |
-| T0609 | texto | Primero se borra en la base del proyecto. Si no se puede, Relevo deja de guardar datos y conserva lo del teléfono para intentarlo otra vez. | `SettingsScreens.kt:335` |
-| T0610 | fila | Descargar mis datos | `SettingsScreens.kt:336` |
-| T0611 | subtítulo | Un archivo con todo lo guardado en el teléfono. | `SettingsScreens.kt:336` |
-| T0612 | fila | Borrar mis datos | `SettingsScreens.kt:338` |
-| T0613 | subtítulo | También sales del proyecto. | `SettingsScreens.kt:338` |
-| T0614 | texto | ¿Dudas, o prefieres pedir el borrado por correo? Escribe a [correo del investigador] con tu código. | `SettingsScreens.kt:343` |
-| T0615 | texto | ¿Borrar tus datos? | `SettingsScreens.kt:353` |
-| T0616 | texto | Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar el tiempo en tus apps. | `SettingsScreens.kt:355` |
-| T0617 | botón | Borrar mis datos | `SettingsScreens.kt:357` |
-| T0618 | botón | Cancelar | `SettingsScreens.kt:359` |
-| T0619 | texto | Código de participación | `SettingsScreens.kt:365` |
+| T0590 | texto | Todo está enviado. | `Common.kt:321` |
+| T0591 | texto | Algunos datos se enviarán cuando haya internet. | `Common.kt:321` |
+| T0592 | texto | Último envío: [dato]. | `Common.kt:322` |
+| T0593 | texto | En Documentos/Relevo. Última copia: [dato]. | `Common.kt:327` |
+| T0594 | texto | Se crea en Documentos/Relevo con el primer relevo. | `Common.kt:327` |
+| T0595 | texto | Borrando tus datos… | `RelevoViewModel.kt:1186` |
+| T0596 | texto | Relevo dejó de guardar datos, pero no se pudo confirmar el borrado en la base del proyecto. Tus datos siguen en el teléfono. Prueba otra vez o escribe a [correo del investigador]. | `RelevoViewModel.kt:1230` |
+| T0597 | texto | Tus datos se borraron. Si quieres volver a usar Relevo, tendrás que aceptar otra vez. | `RelevoViewModel.kt:1282` |
+| T0598 | texto | Tus datos quedaron en el archivo que elegiste. | `SettingsScreens.kt:315` |
+| T0599 | texto | No se pudo guardar el archivo. Prueba otra vez. | `SettingsScreens.kt:315` |
+| T0600 | título | Tus datos | `SettingsScreens.kt:318` |
+| T0601 | volver | Ajustes | `SettingsScreens.kt:318` |
+| T0602 | botón | Volver a comenzar | `SettingsScreens.kt:319` |
+| T0603 | texto | Guardamos lo que haces en Relevo con un código; tu nombre se guarda aparte, solo con ese código. No vemos lo que haces dentro de otras apps. Si no borras tus datos antes, los borramos el 30 de diciembre de 2026. | `SettingsScreens.kt:322` |
+| T0604 | fila | Tu código | `SettingsScreens.kt:329` |
+| T0605 | texto | Sin código | `SettingsScreens.kt:329` |
+| T0606 | fila | Lo que aceptaste | `SettingsScreens.kt:332` |
+| T0607 | fila | Datos enviados | `SettingsScreens.kt:333` |
+| T0608 | fila | Copia en el teléfono | `SettingsScreens.kt:334` |
+| T0609 | texto | Primero se borra en la base del proyecto. Si no se puede, Relevo deja de guardar datos y conserva lo del teléfono para intentarlo otra vez. | `SettingsScreens.kt:338` |
+| T0610 | fila | Descargar mis datos | `SettingsScreens.kt:339` |
+| T0611 | subtítulo | Un archivo con todo lo guardado en el teléfono. | `SettingsScreens.kt:339` |
+| T0612 | fila | Borrar mis datos | `SettingsScreens.kt:341` |
+| T0613 | subtítulo | También sales del proyecto. | `SettingsScreens.kt:341` |
+| T0614 | texto | ¿Dudas, o prefieres pedir el borrado por correo? Escribe a [correo del investigador] con tu código. | `SettingsScreens.kt:346` |
+| T0615 | texto | ¿Borrar tus datos? | `SettingsScreens.kt:356` |
+| T0616 | texto | Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar el tiempo en tus apps. | `SettingsScreens.kt:358` |
+| T0617 | botón | Borrar mis datos | `SettingsScreens.kt:360` |
+| T0618 | botón | Cancelar | `SettingsScreens.kt:362` |
+| T0619 | texto | Código de participación | `SettingsScreens.kt:368` |
 
 ## 25 Lo que aceptaste
 
@@ -800,13 +800,13 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0622 | título | Envíanos un comentario | `SettingsScreens.kt:375` |
-| T0623 | volver | Cerrar | `SettingsScreens.kt:376` |
-| T0624 | botón | Enviar | `SettingsScreens.kt:377` |
-| T0625 | validación | Escribe un comentario o elige las estrellas. | `SettingsScreens.kt:377` |
-| T0626 | campo | Comentario | `SettingsScreens.kt:379` |
-| T0627 | texto | Ej.: me gustaría elegir otro sonido | `SettingsScreens.kt:379` |
-| T0628 | texto | ¿Cómo te resultó Relevo? | `SettingsScreens.kt:381` |
+| T0622 | título | Envíanos un comentario | `SettingsScreens.kt:378` |
+| T0623 | volver | Cerrar | `SettingsScreens.kt:379` |
+| T0624 | botón | Enviar | `SettingsScreens.kt:380` |
+| T0625 | validación | Escribe un comentario o elige las estrellas. | `SettingsScreens.kt:380` |
+| T0626 | campo | Comentario | `SettingsScreens.kt:382` |
+| T0627 | texto | Ej.: me gustaría elegir otro sonido | `SettingsScreens.kt:382` |
+| T0628 | texto | ¿Cómo te resultó Relevo? | `SettingsScreens.kt:384` |
 
 ## 30 Reportar un problema
 
@@ -814,14 +814,14 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0629 | título | Reportar un problema | `SettingsScreens.kt:393` |
-| T0630 | volver | Cerrar | `SettingsScreens.kt:394` |
-| T0631 | botón | Enviar | `SettingsScreens.kt:395` |
-| T0632 | validación | Escribe qué pasó. | `SettingsScreens.kt:395` |
-| T0633 | campo | ¿Qué pasó? | `SettingsScreens.kt:397` |
-| T0634 | texto | Ej.: no sonó en el parlante | `SettingsScreens.kt:397` |
-| T0635 | texto | Adjuntar datos técnicos | `SettingsScreens.kt:407` |
-| T0636 | texto | Versión, permisos y estado del envío. Nada de lo que haces en tus apps. | `SettingsScreens.kt:408` |
+| T0629 | título | Reportar un problema | `SettingsScreens.kt:396` |
+| T0630 | volver | Cerrar | `SettingsScreens.kt:397` |
+| T0631 | botón | Enviar | `SettingsScreens.kt:398` |
+| T0632 | validación | Escribe qué pasó. | `SettingsScreens.kt:398` |
+| T0633 | campo | ¿Qué pasó? | `SettingsScreens.kt:400` |
+| T0634 | texto | Ej.: no sonó en el parlante | `SettingsScreens.kt:400` |
+| T0635 | texto | Adjuntar datos técnicos | `SettingsScreens.kt:410` |
+| T0636 | texto | Versión, permisos y estado del envío. Nada de lo que haces en tus apps. | `SettingsScreens.kt:411` |
 
 ## 31 Notificaciones
 
@@ -873,30 +873,30 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0674 | texto | ¿Cómo empiezas la actividad? | `Common.kt:53` |
-| T0675 | texto | ¿En qué lugar empieza? | `Common.kt:54` |
-| T0676 | texto | Para empezar: [primer paso], [lugar]. | `Common.kt:218` |
-| T0677 | texto | Para empezar: [primer paso]. | `Common.kt:219` |
-| T0678 | texto | Empieza [lugar]. | `Common.kt:220` |
-| T0679 | texto | donde lo dejaste | `Common.kt:228` |
-| T0680 | texto | detrás | `Common.kt:230` |
-| T0681 | texto | en «[dato]» | `Common.kt:231` |
-| T0682 | texto | Dispositivo de audio | `Common.kt:263` |
-| T0683 | texto | Tag | `Common.kt:264` |
-| T0684 | texto | Teléfono | `Common.kt:265` |
-| T0685 | texto | Notificaciones | `Common.kt:273` |
-| T0686 | texto | en tu teléfono | `Common.kt:277` |
-| T0687 | texto | en el | `Common.kt:278` |
-| T0688 | texto | No sonó en el dispositivo de audio. Revisa que esté encendido y conectado. | `Common.kt:288` |
-| T0689 | texto | No sonó en el Tag. Revisa que esté encendido y cerca del teléfono. | `Common.kt:289` |
-| T0690 | texto | No sonó en tu teléfono. Revisa el volumen. | `Common.kt:290` |
-| T0691 | texto | Dijiste que empezaste | `Common.kt:312` |
-| T0692 | texto | La dejaste para después | `Common.kt:313` |
-| T0693 | texto | Cambiaste de idea | `Common.kt:314` |
-| T0694 | texto | Queda anotado. Gracias por decirlo. | `Common.kt:331` |
-| T0695 | texto | Queda anotado. Puedes prepararlo cuando quieras. | `Common.kt:332` |
-| T0696 | texto | Está bien. Puedes elegir otra actividad cuando quieras. | `Common.kt:333` |
-| T0697 | texto | , donde empiezas | `Common.kt:355` |
+| T0674 | texto | ¿Cómo empiezas la actividad? | `Common.kt:57` |
+| T0675 | texto | ¿En qué lugar empieza? | `Common.kt:58` |
+| T0676 | texto | Para empezar: [primer paso], [lugar]. | `Common.kt:222` |
+| T0677 | texto | Para empezar: [primer paso]. | `Common.kt:223` |
+| T0678 | texto | Empieza [lugar]. | `Common.kt:224` |
+| T0679 | texto | donde lo dejaste | `Common.kt:232` |
+| T0680 | texto | detrás | `Common.kt:234` |
+| T0681 | texto | en «[dato]» | `Common.kt:235` |
+| T0682 | texto | Dispositivo de audio | `Common.kt:290` |
+| T0683 | texto | Tag | `Common.kt:291` |
+| T0684 | texto | Teléfono | `Common.kt:292` |
+| T0685 | texto | Notificaciones | `Common.kt:300` |
+| T0686 | texto | en tu teléfono | `Common.kt:304` |
+| T0687 | texto | en el | `Common.kt:305` |
+| T0688 | texto | No sonó en el dispositivo de audio. Revisa que esté encendido y conectado. | `Common.kt:315` |
+| T0689 | texto | No sonó en el Tag. Revisa que esté encendido y cerca del teléfono. | `Common.kt:316` |
+| T0690 | texto | No sonó en tu teléfono. Revisa el volumen. | `Common.kt:317` |
+| T0691 | texto | Dijiste que empezaste | `Common.kt:339` |
+| T0692 | texto | La dejaste para después | `Common.kt:340` |
+| T0693 | texto | Cambiaste de idea | `Common.kt:341` |
+| T0694 | texto | Queda anotado. Gracias por decirlo. | `Common.kt:358` |
+| T0695 | texto | Queda anotado. Puedes prepararlo cuando quieras. | `Common.kt:359` |
+| T0696 | texto | Está bien. Puedes elegir otra actividad cuando quieras. | `Common.kt:360` |
+| T0697 | texto | , donde empiezas | `Common.kt:382` |
 | T0698 | texto | Para después | `HomeScreen.kt:509` |
 | T0699 | botón | Activar ahora | `HomeScreen.kt:513` |
 | T0700 | acción | Ahora no | `HomeScreen.kt:514` |
@@ -1282,63 +1282,63 @@
 | T1073 | texto | el instrumento | `Catastro.kt:406` |
 | T1074 | texto | Junto al [dato] | `Catastro.kt:407` |
 | T1075 | texto | Junto a [dato] | `Catastro.kt:407` |
-| T1076 | texto | Leer | `Common.kt:63` |
-| T1077 | texto | Abrir el libro | `Common.kt:63` |
-| T1078 | texto | En el velador | `Common.kt:63` |
-| T1079 | texto | Dormir a tiempo | `Common.kt:64` |
-| T1080 | texto | Dejar el teléfono cargando lejos | `Common.kt:64` |
-| T1081 | texto | Junto al cargador | `Common.kt:64` |
-| T1082 | texto | Hacer ejercicio | `Common.kt:65` |
-| T1083 | texto | Ponerte ropa cómoda | `Common.kt:65` |
-| T1084 | texto | Junto al clóset | `Common.kt:65` |
-| T1085 | texto | Pasear al perro | `Common.kt:66` |
-| T1086 | texto | Tomar la correa | `Common.kt:66` |
-| T1087 | texto | Junto a la puerta | `Common.kt:66` |
-| T1088 | texto | Dibujar | `Common.kt:67` |
-| T1089 | texto | Sacar el cuaderno y un lápiz | `Common.kt:67` |
-| T1090 | texto | En el escritorio | `Common.kt:67` |
-| T1091 | texto | Pintar | `Common.kt:68` |
-| T1092 | texto | Preparar las acuarelas | `Common.kt:68` |
-| T1093 | texto | En la mesa | `Common.kt:68` |
-| T1094 | texto | Cocinar | `Common.kt:69` |
-| T1095 | texto | Reunir los ingredientes | `Common.kt:69` |
-| T1096 | texto | En el mesón de la cocina | `Common.kt:69` |
-| T1097 | texto | Estudiar | `Common.kt:70` |
-| T1098 | texto | Abrir los apuntes | `Common.kt:70` |
-| T1099 | texto | En el escritorio | `Common.kt:70` |
-| T1100 | texto | Ordenar la pieza | `Common.kt:71` |
-| T1101 | texto | Despejar una superficie | `Common.kt:71` |
-| T1102 | texto | En el escritorio | `Common.kt:71` |
-| T1103 | texto | Hacer manualidades | `Common.kt:72` |
-| T1104 | texto | Preparar los materiales | `Common.kt:72` |
-| T1105 | texto | En la mesa de trabajo | `Common.kt:72` |
-| T1106 | texto | Armar una maqueta | `Common.kt:73` |
-| T1107 | texto | Abrir la caja de la maqueta | `Common.kt:73` |
-| T1108 | texto | En la mesa | `Common.kt:73` |
-| T1109 | texto | Salir en bicicleta | `Common.kt:74` |
-| T1110 | texto | Sacar la bici | `Common.kt:74` |
-| T1111 | texto | Junto a la puerta | `Common.kt:74` |
-| T1112 | texto | Meditar | `Common.kt:75` |
-| T1113 | texto | Sentarte en el cojín | `Common.kt:75` |
-| T1114 | texto | Junto al cojín | `Common.kt:75` |
-| T1115 | texto | Leer manga | `Common.kt:76` |
-| T1116 | texto | Sacar el tomo del estante | `Common.kt:76` |
-| T1117 | texto | Junto al estante | `Common.kt:76` |
-| T1118 | texto | Jugar videojuegos | `Common.kt:78` |
-| T1119 | texto | Encender la consola | `Common.kt:78` |
-| T1120 | texto | Junto a la tele | `Common.kt:78` |
-| T1121 | texto | Escuchar música | `Common.kt:79` |
-| T1122 | texto | Ponerte los audífonos | `Common.kt:79` |
-| T1123 | texto | En el sillón | `Common.kt:79` |
-| T1124 | texto | Ver una película | `Common.kt:80` |
-| T1125 | texto | Elegir la película | `Common.kt:80` |
-| T1126 | texto | Junto a la tele | `Common.kt:80` |
-| T1127 | texto | Llamar a alguien | `Common.kt:81` |
-| T1128 | texto | Buscar su número | `Common.kt:81` |
-| T1129 | texto | En el sillón | `Common.kt:81` |
-| T1130 | texto | Jugar un juego de mesa | `Common.kt:82` |
-| T1131 | texto | Sacar la caja | `Common.kt:82` |
-| T1132 | texto | En la mesa | `Common.kt:82` |
+| T1076 | texto | Leer | `Common.kt:67` |
+| T1077 | texto | Abrir el libro | `Common.kt:67` |
+| T1078 | texto | En el velador | `Common.kt:67` |
+| T1079 | texto | Dormir a tiempo | `Common.kt:68` |
+| T1080 | texto | Dejar el teléfono cargando lejos | `Common.kt:68` |
+| T1081 | texto | Junto al cargador | `Common.kt:68` |
+| T1082 | texto | Hacer ejercicio | `Common.kt:69` |
+| T1083 | texto | Ponerte ropa cómoda | `Common.kt:69` |
+| T1084 | texto | Junto al clóset | `Common.kt:69` |
+| T1085 | texto | Pasear al perro | `Common.kt:70` |
+| T1086 | texto | Tomar la correa | `Common.kt:70` |
+| T1087 | texto | Junto a la puerta | `Common.kt:70` |
+| T1088 | texto | Dibujar | `Common.kt:71` |
+| T1089 | texto | Sacar el cuaderno y un lápiz | `Common.kt:71` |
+| T1090 | texto | En el escritorio | `Common.kt:71` |
+| T1091 | texto | Pintar | `Common.kt:72` |
+| T1092 | texto | Preparar las acuarelas | `Common.kt:72` |
+| T1093 | texto | En la mesa | `Common.kt:72` |
+| T1094 | texto | Cocinar | `Common.kt:73` |
+| T1095 | texto | Reunir los ingredientes | `Common.kt:73` |
+| T1096 | texto | En el mesón de la cocina | `Common.kt:73` |
+| T1097 | texto | Estudiar | `Common.kt:74` |
+| T1098 | texto | Abrir los apuntes | `Common.kt:74` |
+| T1099 | texto | En el escritorio | `Common.kt:74` |
+| T1100 | texto | Ordenar la pieza | `Common.kt:75` |
+| T1101 | texto | Despejar una superficie | `Common.kt:75` |
+| T1102 | texto | En el escritorio | `Common.kt:75` |
+| T1103 | texto | Hacer manualidades | `Common.kt:76` |
+| T1104 | texto | Preparar los materiales | `Common.kt:76` |
+| T1105 | texto | En la mesa de trabajo | `Common.kt:76` |
+| T1106 | texto | Armar una maqueta | `Common.kt:77` |
+| T1107 | texto | Abrir la caja de la maqueta | `Common.kt:77` |
+| T1108 | texto | En la mesa | `Common.kt:77` |
+| T1109 | texto | Salir en bicicleta | `Common.kt:78` |
+| T1110 | texto | Sacar la bici | `Common.kt:78` |
+| T1111 | texto | Junto a la puerta | `Common.kt:78` |
+| T1112 | texto | Meditar | `Common.kt:79` |
+| T1113 | texto | Sentarte en el cojín | `Common.kt:79` |
+| T1114 | texto | Junto al cojín | `Common.kt:79` |
+| T1115 | texto | Leer manga | `Common.kt:80` |
+| T1116 | texto | Sacar el tomo del estante | `Common.kt:80` |
+| T1117 | texto | Junto al estante | `Common.kt:80` |
+| T1118 | texto | Jugar videojuegos | `Common.kt:82` |
+| T1119 | texto | Encender la consola | `Common.kt:82` |
+| T1120 | texto | Junto a la tele | `Common.kt:82` |
+| T1121 | texto | Escuchar música | `Common.kt:83` |
+| T1122 | texto | Ponerte los audífonos | `Common.kt:83` |
+| T1123 | texto | En el sillón | `Common.kt:83` |
+| T1124 | texto | Ver una película | `Common.kt:84` |
+| T1125 | texto | Elegir la película | `Common.kt:84` |
+| T1126 | texto | Junto a la tele | `Common.kt:84` |
+| T1127 | texto | Llamar a alguien | `Common.kt:85` |
+| T1128 | texto | Buscar su número | `Common.kt:85` |
+| T1129 | texto | En el sillón | `Common.kt:85` |
+| T1130 | texto | Jugar un juego de mesa | `Common.kt:86` |
+| T1131 | texto | Sacar la caja | `Common.kt:86` |
+| T1132 | texto | En la mesa | `Common.kt:86` |
 | T1133 | texto | Moverte | `Sky.kt:134` |
 | T1134 | texto | Leer y aprender | `Sky.kt:135` |
 | T1135 | texto | Crear | `Sky.kt:136` |
@@ -1356,8 +1356,8 @@
 | --- | --- | --- | --- |
 | T1141 | texto | Restar tiempo | `Controls.kt:323` |
 | T1142 | texto | Sumar tiempo | `Controls.kt:325` |
-| T1143 | texto | Restar | `Controls.kt:335` |
-| T1144 | texto | Sumar | `Controls.kt:337` |
+| T1143 | texto | Restar, [dato] | `Controls.kt:347` |
+| T1144 | texto | Sumar, [dato] | `Controls.kt:349` |
 | T1145 | lector de pantalla | Borrar la búsqueda | `Fields.kt:122` |
 | T1146 | texto | Sugerencias | `Fields.kt:141` |
 | T1147 | texto | Accesibilidad | `KitIcons.kt:13` |

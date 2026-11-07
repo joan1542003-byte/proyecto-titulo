@@ -2255,7 +2255,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Cambiar también el texto del consentimiento: exige una nueva versión del consentimiento, y ahí «las [apps]» ya dice qué se cuenta.
 - **Documentos:** [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md).
 
+## D-167 — Android 4.6.3: el pulido y la señal que sonaba dos veces
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor pidió dejar la app lo más pulida posible. Al recorrerla en una copia aparte apareció un error: si la app se abría justo cuando se cumplía el tiempo, la señal volvía a sonar después de responder. Se debía a que el paso para traer los datos de la 4.2 se repetía cada vez y devolvía el relevo a los activos.
+- **Decisión:**
+  - **La señal doble:** el paso desde la 4.2 se hace una sola vez. Además, al responder, el relevo respondido se quita de los activos.
+  - **Permisos:** las tres filas se tocan y llevan flecha. «Notificaciones» abre sus ajustes en Android, y la batería dice «Permitida» o «Restringida».
+  - **Horas sin sonar:** la hora da la vuelta, y TalkBack dice qué hora cambia cada botón.
+  - **Barra de pestañas:** sus nombres crecen con la letra del teléfono hasta 1,3 veces.
+  - **Textos:** cinco más con las reglas de D-166, y el menú del relevo activo lleva el nombre de la actividad.
+- **Alternativas descartadas:**
+  - Guardar el relevo como «sonando» antes de que empiece a sonar: la pantalla mostraría por unos segundos el aviso de que no sonó.
+  - Cambiar las preguntas después de la señal: son las del registro del estudio.
+- **Documentos:** [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — D-167
+
+- **Qué cambió:** se registró D-167.
+- **Cómo estaba antes:** la última decisión era D-166.
+- **Por qué:** el autor pidió dejar la app lo más pulida posible.
 
 ### 2026-11-07 — D-166
 

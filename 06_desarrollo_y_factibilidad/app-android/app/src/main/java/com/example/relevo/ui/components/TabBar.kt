@@ -43,6 +43,9 @@ val TabBarHeight = 58.dp
 /** Ancho de cada destino: suficiente para «Actividades» y para un dedo. */
 private val TabWidth = 92.dp
 
+/** Hasta dónde crecen los nombres de las pestañas con la letra del teléfono. */
+private const val MaxLabelScale = 1.3f
+
 /**
  * Barra de pestañas de la 4.0 (D-155): una cápsula de vidrio centrada, del ancho de sus tres destinos, y no
  * una tarjeta de borde a borde. El destino elegido va en tinta sobre una píldora apenas marcada; los demás,
@@ -57,6 +60,10 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
   val colors = Relevo.colors
   val reduce = rememberReduceMotion()
   val tabPx = with(LocalDensity.current) { TabWidth.toPx() }
+  // 4.6.3: con letra al 200 %, «Actividades» se cortaba en «Activida». La barra mide siempre lo mismo, así que
+  // sus nombres crecen con la letra del teléfono hasta 1,3 veces y no más, como las barras de iOS.
+  val fontScale = LocalDensity.current.fontScale
+  val labelSize = (11f * fontScale.coerceAtMost(MaxLabelScale) / fontScale).sp
   val offset = remember { Animatable(selected * tabPx) }
   LaunchedEffect(selected, tabPx) {
     if (reduce) offset.snapTo(selected * tabPx) else offset.animateTo(selected * tabPx, spring(dampingRatio = .86f, stiffness = 520f))
@@ -98,7 +105,7 @@ fun TabBar(items: List<TabItem>, selected: Int, onSelect: (Int) -> Unit, modifie
         ) {
           RelevoIcon(item.icon, size = 22.dp, tint = tint, background = Color.Transparent, strokeWidth = if (active) 1.9f else 1.6f)
           Spacer(Modifier.height(2.dp))
-          Text(item.label, style = Relevo.type.caption.copy(fontSize = 11.sp, fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium), color = tint, maxLines = 1)
+          Text(item.label, style = Relevo.type.caption.copy(fontSize = labelSize, fontWeight = if (active) FontWeight.SemiBold else FontWeight.Medium), color = tint, maxLines = 1)
         }
       }
     }

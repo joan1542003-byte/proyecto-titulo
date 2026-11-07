@@ -977,7 +977,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   /** Vuelve a Inicio sin relevo. [keepAsLast]: el relevo terminado pasa a ser el último, para repetirlo. */
   fun reset(keepAsLast: Boolean = true) {
     clearCarried()
-    if (_reminder.value.sessionId.isNotBlank()) markRelevoClosed()
+    if (_reminder.value.sessionId.isNotBlank()) {
+      markRelevoClosed()
+      // 4.6.3: el relevo que ya sonó y se respondió no puede seguir entre los activos; si quedó ahí (por el
+      // paso desde la 4.2 de antes, ver [ActiveStore.migrate]), volvía a sonar al responder.
+      activeStore.remove(_reminder.value.sessionId)
+    }
     signalPlayer.stop()
     _reminder.value.takeIf { keepAsLast && it.activity.isNotBlank() && it.selectedApps.isNotEmpty() }?.let { finished ->
       val configuration = finished.copy(

@@ -43,22 +43,32 @@ class ActiveStore(context: Context) {
     return runCatching { reminderFromJson(JSONObject(raw)) }.getOrNull()
   }
 
-  fun clear() { preferences.edit().clear().apply() }
+  /** Borra los relevos activos y el borrador guardado. El paso desde la 4.2 sigue marcado como hecho. */
+  fun clear() { preferences.edit().clear().putBoolean(KEY_MIGRATED, true).apply() }
 
   companion object {
     private const val KEY_ACTIVE = "activos"
     private const val KEY_PARKED = "borrador_guardado"
+    private const val KEY_MIGRATED = "paso_desde_4_2_hecho"
 
     /**
      * Paso desde la 4.2: si el relevo único estaba contando, pasa a los activos y [ReminderStore] queda con un
-     * borrador vacío. Se hace al abrir la app y al empezar el servicio; si no hay nada que mover, no hace nada.
+     * borrador vacío. Se hace al abrir la app y al empezar el servicio, una sola vez.
+     *
+     * 4.6.3: antes se revisaba cada vez. Al cumplirse el tiempo, el servicio pasa el relevo a [ReminderStore]
+     * mientras empieza a sonar, todavía como «WAITING»; si la app se abría en ese instante, esto lo devolvía a
+     * los activos y, después de responder, sonaba otra vez. Con el Tag, ese instante dura hasta 30 segundos.
      */
     fun migrate(context: Context) {
+      val preferences = context.getSharedPreferences("relevo_activos", Context.MODE_PRIVATE)
+      if (preferences.getBoolean(KEY_MIGRATED, false)) return
       val store = ReminderStore(context)
       val current = store.load()
-      if (current.status != ReminderStatus.WAITING || current.sessionId.isBlank()) return
-      ActiveStore(context).add(current)
-      store.save(Reminder(participantCode = current.participantCode, consentAccepted = current.consentAccepted))
+      if (current.status == ReminderStatus.WAITING && current.sessionId.isNotBlank()) {
+        ActiveStore(context).add(current)
+        store.save(Reminder(participantCode = current.participantCode, consentAccepted = current.consentAccepted))
+      }
+      preferences.edit().putBoolean(KEY_MIGRATED, true).apply()
     }
   }
 }

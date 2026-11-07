@@ -124,7 +124,7 @@ internal fun ProfileTab(
       // 4.3 (D-158): las apps que cuentan tu tiempo; Preparar las trae marcadas.
       ListRow(
         "Apps", icon = KitIcon.TELEFONO,
-        subtitle = profile.apps.takeIf { it.isNotEmpty() }?.joinToString(" y ") { it.label } ?: "Las que cuentan el tiempo",
+        subtitle = profile.apps.takeIf { it.isNotEmpty() }?.joinToString(" y ") { it.label } ?: "En las que se cuenta el tiempo",
         chevron = true, onClick = { pickingApps = true },
       )
     }

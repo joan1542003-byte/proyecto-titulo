@@ -239,6 +239,7 @@
 | 7 nov. | Encargo | Pidió terminar esa revisión. | [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md): las palabras ya no se parten en la cuadrícula y el velo de las hojas se lee «Cerrar». La encuesta aparece al activar y no en una instalación nueva, y todo se lee con letra grande. 97 pruebas; la copia de prueba se desinstaló sin enviar datos. Queda para el autor: pedir el Bluetooth solo al buscar el Tag. | D-165 |
 | 7 nov. | Corrección | Señaló textos que confunden: «Deja de contar» (¿contar qué?), «Suena en tu teléfono» en vez de «sonará», «Batería» sin decir de qué, «el perfil» y «Ej.: leer 10 páginas» (¿de qué?). Pidió corregir ese tipo de fallas en toda la app. | [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md): cinco reglas aplicadas en 48 lugares; «contar» siempre dice «el tiempo en tus apps», lo que aún no pasa va en futuro, «tu perfil», «leer 10 páginas de un libro», «Batería del teléfono». El consentimiento no se tocó. | D-166 |
 | 7 nov. | Decisión | Decidió que el permiso de Bluetooth se pida al tocar un botón relacionado con el Tag. | El permiso ya no aparece al entrar a «¿Dónde suena?»; aparece al tocar «Buscar el Tag». Al revisarlo se arregló además el aviso permanente del primer relevo, que quedaba oculto. 97 pruebas y revisión en una copia aparte, sin conexión. | D-166 |
+| 7 nov. | Encargo | Preguntó si quedaba algún detalle por arreglar y pidió dejar la app lo más pulida posible. | [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md). Se recorrió la app en una copia aparte, sin conexión, con tema oscuro y letra al 200 %. Se arregló la señal que sonaba dos veces si la app se abría justo al cumplirse el tiempo. También se alinearon Permisos, las horas sin sonar dan la vuelta, la barra de pestañas cabe con letra grande y se corrigieron cinco textos. 99 pruebas. | D-167 |
 
 ## Lo que muestra el registro
 
@@ -249,6 +250,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-07 — Pulido de la app
+
+- **Qué cambió:** se registró el pedido de dejar la app lo más pulida posible.
+- **Cómo estaba antes:** el último pedido era el de los textos y el Bluetooth.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-07 — Textos y Bluetooth
 

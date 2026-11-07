@@ -326,15 +326,27 @@ fun DurationButtons(seconds: Int, onChange: (Int) -> Unit) {
   }
 }
 
-/** Cantidad con − y +, para la constancia elegida. */
+/**
+ * El valor después de sumar [delta] dentro de [range]. Con [wrap] (4.6.3), como en las horas, después del último
+ * viene el primero (de 23 a 0) y al revés; sin él, se queda en el borde.
+ */
+internal fun stepWithin(value: Int, delta: Int, range: IntRange, wrap: Boolean): Int {
+  val next = value + delta
+  if (!wrap) return next.coerceIn(range)
+  return range.first + Math.floorMod(next - range.first, range.last - range.first + 1)
+}
+
+/** Cantidad con − y +, para la constancia elegida y las horas sin sonar. */
 @Composable
-fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String) {
+fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String, wrap: Boolean = false) {
   val haptics = LocalHapticFeedback.current
+  fun step(delta: Int) = stepWithin(value, delta, range, wrap)
   Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
     Text(label, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
-    RepeatButton("Restar", "−", enabled = value > range.first) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value - 1).coerceIn(range)) }
+    // TalkBack lee qué se resta o suma: con dos contadores juntos, «Restar» solo no decía cuál.
+    RepeatButton("Restar, $label", "−", enabled = wrap || value > range.first) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(step(-1)) }
     Spacer(Modifier.width(10.dp))
-    RepeatButton("Sumar", "+", enabled = value < range.last) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value + 1).coerceIn(range)) }
+    RepeatButton("Sumar, $label", "+", enabled = wrap || value < range.last) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(step(1)) }
   }
 }
 

@@ -140,8 +140,8 @@ private fun QuietSheet(settings: Settings, onChange: (Settings.() -> Settings) -
     if (settings.quietHours) {
       Spacer(Modifier.height(Gap.list))
       Panel {
-        CountStepper(settings.quietFrom, { value -> onChange { copy(quietFrom = value) } }, 0..23, "Desde las ${settings.quietFrom}:00")
-        CountStepper(settings.quietUntil, { value -> onChange { copy(quietUntil = value) } }, 0..23, "Hasta las ${settings.quietUntil}:00")
+        CountStepper(settings.quietFrom, { value -> onChange { copy(quietFrom = value) } }, 0..23, "Desde las ${settings.quietFrom}:00", wrap = true)
+        CountStepper(settings.quietUntil, { value -> onChange { copy(quietUntil = value) } }, 0..23, "Hasta las ${settings.quietUntil}:00", wrap = true)
       }
     }
     Spacer(Modifier.height(12.dp))
@@ -192,7 +192,7 @@ internal fun NoticesScreen(
       footer = buildList {
         if (autoMode && lastReminder != null) add("${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}.")
         if (autoUnavailable && !autoMode) add("Primero prepara y termina un relevo: la activación automática repite ese.")
-        add("Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo espera 30 minutos.")
+        add("Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo, espera 30 minutos antes de volver a activarlo.")
       }.joinToString(" "),
     ) {
       ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
@@ -209,7 +209,7 @@ internal fun NoticesScreen(
       ToggleRow("Mensaje al responder", settings.acknowledgements, { on -> onChange { copy(acknowledgements = on) } }, icon = KitIcon.COMENTARIO,
         subtitle = "Unas palabras después de decir qué decidiste.")
       ToggleRow("Veces por semana", settings.constancy > 0, { on -> onChange { copy(constancy = if (on) constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
-        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces quieres hacerlo. Aparece en «Esta semana».")
+        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces a la semana quieres hacer tus actividades. Aparece en «Esta semana».")
     }
     if (settings.constancy > 0) {
       Spacer(Modifier.height(Gap.list))
@@ -247,10 +247,13 @@ internal fun PermissionsScreen(usageAccess: Boolean, backgroundUnrestricted: Boo
   RelevoScreen(title = "Permisos", onBack = onBack, backLabel = "Ajustes") {
     ListSection(footer = "Tiempo de uso es necesario para contar el tiempo en tus apps. En Android se llama «Acceso a datos de uso». Lo demás es opcional.") {
       ListRow("Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Para contar el tiempo en las apps que elijas", value = if (usageAccess) "Permitido" else "Falta", chevron = true, onClick = onUsageSettings)
+      // 4.6.3: las tres filas se tocan y llevan flecha, para que sus valores queden alineados y siempre se pueda
+      // revisar el permiso en Android. Notificaciones abre sus ajustes: ahí se encienden aunque Android ya no
+      // muestre su pregunta. La batería dice «Permitida» o «Restringida», para que su nombre quepa en una línea.
       ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app", value = if (notifications) "Permitidas" else "Apagadas",
-        chevron = !notifications, onClick = if (notifications) null else ({ requestNotificationPermission(context) }))
-      ListRow("Batería del teléfono", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo", value = if (backgroundUnrestricted) "Sin restricciones" else "Con restricciones",
-        chevron = !backgroundUnrestricted, onClick = if (backgroundUnrestricted) null else onBackground)
+        chevron = true, onClick = { openNotificationSettings(context) })
+      ListRow("Batería del teléfono", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo", value = if (backgroundUnrestricted) "Permitida" else "Restringida",
+        chevron = true, onClick = if (backgroundUnrestricted) ({ openBatterySettings(context) }) else onBackground)
     }
   }
 }

@@ -507,7 +507,7 @@ internal fun FirstRelevoActiveSheet(reminder: Reminder, onDismiss: () -> Unit, o
 private fun LaterCard(lastReminder: Reminder, customActivities: List<CustomActivity>, actions: HomeActions) {
   ActivityHero(
     activityIcon(lastReminder.activity, customActivities), lastReminder.activity, eyebrow = "Para después",
-    detail = "${formatDuration(lastReminder.requiredUsageSeconds)} en ${lastReminder.selectedApps.joinToString(" y ") { it.label }} · suena ${soundWhere(lastReminder)}",
+    detail = "${formatDuration(lastReminder.requiredUsageSeconds)} en ${lastReminder.selectedApps.joinToString(" y ") { it.label }} · sonará ${soundWhere(lastReminder)}",
   ) {
     Spacer(Modifier.height(16.dp))
     RelevoButton("Activar ahora", actions.onLaterActivate)
@@ -600,7 +600,8 @@ internal fun ActiveScreen(
   }
   if (options) {
     RelevoSheet(onDismiss = { options = false }, scrollable = false) {
-      Text("Relevo", style = Relevo.type.title2, color = colors.ink)
+      // 4.6.3: el título dice qué relevo se cambia; antes decía solo «Relevo», como el nombre de la app.
+      Text(reminder.activity.trim().ifBlank { "Tu relevo" }, style = Relevo.type.title2, color = colors.ink)
       Spacer(Modifier.height(16.dp))
       ListSection {
         ListRow("Editar", icon = KitIcon.EDITAR, subtitle = "Mientras lo editas, no se cuenta el tiempo.", chevron = true, onClick = { options = false; onEdit() })

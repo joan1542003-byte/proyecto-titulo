@@ -173,7 +173,7 @@ internal fun DecideScreen(
     leading = { Chip("Después de la señal", background = colors.mist) },
     trailing = { if (phase != 2) PlainAction("Saltar", { finish("not_answered") }, color = colors.graphite) },
     title = when (phase) { 0 -> "Cuatro preguntas de un toque"; 2 -> "¿La dejas lista para después?"; else -> null },
-    subtitle = if (phase == 2) "Queda en Inicio para activarla con un toque. No suena sola." else null,
+    subtitle = if (phase == 2) "Queda en Inicio para activarla con un toque. No sonará sola." else null,
     bottom = when (phase) {
       0 -> ({ RelevoButton("Seguir", { phase = 1 }) })
       // Las dos respuestas pesan lo mismo.
