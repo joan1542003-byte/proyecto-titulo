@@ -186,7 +186,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
-- [ ] **Peso del examen:** preguntar a los profesores cómo se combinan la nota de proceso del profesor y la nota de la comisión, y la fecha del examen: el instructivo dice que la nota final se compone de ambas, sin porcentaje, y da exámenes «desde el lunes 14 al 23 de diciembre».
+- [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
+- [ ] **Fecha del examen:** confirmar con los profesores; el instructivo dice «desde el lunes 14 al 23 de diciembre» y este documento decía del 14 al 18.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -295,6 +296,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Peso del examen resuelto
+
+- **Qué cambió:** la tarea sobre el peso del examen queda resuelta con el reglamento, y la fecha del examen queda como tarea aparte.
+- **Cómo estaba antes:** pedía preguntar a los profesores cómo se combinaban su nota y la de la comisión.
+- **Por qué:** el autor señaló que los profesores guía no califican el examen, y el reglamento lo confirma.
 
 ### 2026-11-08 — Peso del examen
 

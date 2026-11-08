@@ -247,6 +247,7 @@
 | 8 nov. | Consulta | Leer la versión más reciente de la memoria, analizarla y evaluarla según la rúbrica oficial, como si fuera la comisión. | [Evaluación](../08_memoria/evaluacion-como-comision-v6-2026-11-08.md) de la v6 del 4 de noviembre: nota orientativa cercana a 5,6; decisiones de diseño y formulación sólidas; la tesis del lugar sin evidencia hasta informar la semana con el teléfono, el objeto sin imprimir y 20 figuras por insertar. La matriz de pase se actualizó en 5.1, 5.2 y 8.1. | — |
 | 8 nov. | Consulta | ¿Cuánto vale la defensa si expone mal y nervioso? | Según el instructivo, el examen dura 50 minutos (15 de exposición, 30 de preguntas y 10 de evaluación), la comisión evalúa con la rúbrica y la nota final combina la nota de proceso del profesor y la de la comisión, sin porcentaje publicado; ajustarse al tiempo es parte de la evaluación. Se sumó a Por hacer preguntar la ponderación. | — |
 | 8 nov. | Consulta | ¿Qué pasa si responde mal gran parte de las preguntas del examen, y cuánto valen? | Las preguntas no tienen puntaje propio: la comisión pone una nota con la rúbrica a todo el trabajo, y las respuestas pesan en cómo juzga cada criterio. Cuánto baja la nota no está definido, y la ponderación entre la nota de proceso y la de la comisión queda por preguntar. Un límite reconocido con honestidad no es una mala respuesta. | — |
+| 8 nov. | Consulta y corrección | Entiende que los profesores guía no tienen peso en el examen final. | Confirmado en el reglamento (art. 16): el profesor del curso tiene voz y no voto; la nota la ponen los tres miembros con voto (art. 20), con 4,0 para aprobar (art. 21). Corrige lo dicho antes a partir del instructivo. Se sumó al documento de criterios oficiales y se resolvió la tarea de Por hacer. | — |
 
 ## Lo que muestra el registro
 
@@ -257,6 +258,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Voto del profesor guía
+
+- **Qué cambió:** se registró la consulta sobre el peso de los profesores guía en el examen.
+- **Cómo estaba antes:** el último pedido era el peso de las preguntas.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Peso de las preguntas
 
