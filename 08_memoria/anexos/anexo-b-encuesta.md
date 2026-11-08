@@ -1,25 +1,10 @@
 # Anexo B. Encuesta: 53 respuestas
 
-> Parte de los [anexos de la memoria](README.md). Se genera con `node construir-anexos.js` desde sus documentos fuente: para corregirlo, se corrige la fuente y se vuelve a generar.
+La encuesta en línea contrastó con más personas lo que mostraron las entrevistas, y pidió una opinión sobre la propuesta de septiembre de 2026. Se informa en recuentos y categorías, sin citas textuales, y la codificación de cada respuesta permite rehacer cada cifra que usa la memoria.
 
-La encuesta en línea contrastó los hallazgos de las entrevistas con 53 respuestas analizadas. Se informa en recuentos y categorías, sin citas textuales; la codificación por respuesta permite rehacer cada cifra que usa la memoria.
+## B.1 Instrumento y muestra
 
-## B.1 Encuesta en línea
-
-**Estado:** incorporada a la memoria el 29 de septiembre de 2026 como evidencia complementaria de las entrevistas P1–P8 (D-092). No reemplaza ni se mezcla con el corpus de entrevistas.
-
-### 1. Origen y límites
-
-- **Instrumento:** formulario de Google Forms con 16 preguntas (sección 2). El archivo entregado por el autor el 29 de septiembre de 2026 contiene 53 respuestas, identificadas de S01 a S53.
-- **Consentimiento:** según el autor, el formulario informaba el propósito académico y el uso anónimo de las respuestas. El texto del formulario no está en el repositorio.
-- **Edición:** según el autor, las respuestas son reales, pero se corrigieron, resumieron u ordenaron antes de exportarlas. Por eso este análisis usa recuentos y categorías y **no cita frases textuales**.
-- **Fecha y convocatoria:** el archivo no registra la fecha de cada respuesta ni la forma de convocatoria. Las preguntas describen el diseño con parlante y la prueba académica, por lo que la encuesta es posterior a esas decisiones (septiembre de 2026).
-- **Muestra:** 53 personas de 19 a 30 años (mediana de 22). No es representativa y no permite estimar frecuencias en la población.
-- **Relación con la ficha anterior:** la [ficha de 2 de septiembre](../../03_usuarios/encuesta-70-participantes-pendiente.md) mencionaba una encuesta de 70 participantes. El archivo entregado tiene 53 respuestas y describe una versión posterior del proyecto; no está documentado si es la misma encuesta.
-- **Datos brutos:** el archivo con las respuestas queda fuera del repositorio. Algunas respuestas describen convivencia, familia o el uso de un lector de pantalla, y aunque no tienen nombres, reunidas podrían ayudar a identificar a alguien.
-- **Preferencias, no uso:** las opiniones sobre Relevo se dieron tras leer una descripción, sin usar la app ni escuchar el sonido.
-
-### 2. Preguntas
+Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19 a 30 años, con una mediana de 22, identificadas de S01 a S53. El formulario informaba el propósito académico y el uso anónimo de las respuestas. Sus preguntas describen la propuesta de septiembre de 2026, con un parlante; el archivo se entregó el 29 de septiembre.
 
 1. Edad.
 2. En los últimos siete días, en cuántos días siguió usando una app de entretenimiento más tiempo del que quería.
@@ -31,64 +16,82 @@ La encuesta en línea contrastó los hallazgos de las entrevistas con 53 respues
 8. Qué hace normalmente para dejar una app de entretenimiento.
 9. Un uso reciente del teléfono que sí quería mantener.
 10. Qué entiende que haría Relevo, con sus palabras.
-11. Qué tan probable sería que quisiera probarlo (1 a 5).
+11. Qué tan probable sería que quisiera probarlo, de 1 a 5.
 12. Dónde pondría el parlante.
 13. Qué duración de sonido preferiría.
 14. Qué le haría descartar Relevo.
 15. Qué registro aceptaría para una prueba académica.
 16. Qué cambiaría de la propuesta.
 
-### 3. Método
+**Alcance.** Las respuestas se corrigieron, resumieron u ordenaron antes de exportarse; por eso se usan recuentos y categorías, y no frases textuales. La muestra no es representativa, y las opiniones sobre Relevo se dieron tras leer una descripción, sin usar la app ni oír el sonido. El archivo con las respuestas queda fuera del repositorio: reunidas, algunas podrían ayudar a reconocer a alguien.
 
-Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 se codificaron con una categoría principal por persona (sección 6). Cada cifra usa solo las respuestas a las que se aplica la pregunta: por ejemplo, el resultado de la actividad se cuenta sobre los 43 episodios en que había otra actividad.
+## B.2 Método
 
-La codificación la hizo Claude Code el 29 de septiembre de 2026, con reglas explícitas y un control automático de los totales; **está pendiente de revisión por el autor**. Una segunda codificación independiente permitiría estimar su confiabilidad.
+Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad. La codificación se hizo con apoyo de inteligencia artificial, con reglas explícitas y un control automático de los totales (Anexo E).
 
-### 4. Resultados
+## B.3 Resultados
 
-#### Episodios
+**Tabla B1**
+
+*El último episodio*
 
 | Resultado | Recuento |
 | --- | --- |
-| Siguió en una app más de lo que quería al menos un día de la última semana | 39 de 45 que dieron un número de días (mediana: 3 días; otras 8 no lo recordaban o respondieron en horas) |
+| Siguió en una app más de lo que quería al menos un día de la última semana | 39 de 45 que dieron un número de días; mediana, 3 días. Otras 8 no lo recordaban o respondieron en horas |
 | Había otra actividad que quería hacer | 43 de 47 episodios descritos |
-| El episodio ocurrió en casa | 44 de 47 (dos fuera de casa y uno no lo recordaba) |
+| El episodio ocurrió en casa | 44 de 47; dos fuera de casa y uno no lo recordaba |
 | Nombró un primer paso concreto para esa actividad | 42 de 43 |
-| Apps del episodio | Instagram 15, TikTok 12, YouTube 11, Reddit 3, Facebook 2, Pinterest 1, Brawl Stars 1, no recuerda 2 |
+| App del episodio | Instagram 15, TikTok 12, YouTube 11, Reddit 3, Facebook 2, Pinterest 1, Brawl Stars 1; no lo recuerda, 2 |
 
-**Qué pasó con la actividad (43 episodios):** no la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
+*Nota.* Elaboración propia a partir de las 53 respuestas.
 
-**Usos del teléfono que querían mantener (53):** aprender o resolver algo, muchas veces para la misma actividad (un tutorial o una receta), 18; conversar o compartir con alguien, 15; un contenido elegido, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
+**Qué pasó con la actividad (43 episodios).** No la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
 
-**Qué hacen para dejar una app (53):** alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
+**Usos del teléfono que querían mantener (53).** Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta, 18; conversar o compartir con alguien, 15; un contenido elegido, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
 
-#### Opiniones sobre Relevo
+**Qué hacen para dejar una app (53).** Alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
+
+**Tabla B2**
+
+*Opiniones sobre Relevo*
 
 | Pregunta | Resultado |
 | --- | --- |
-| Comprensión | 49 de 53 describieron bien el funcionamiento; 2 creyeron que bloquea las apps o que suena al cerrarlas; 2 no lo entendieron del todo |
-| Probabilidad de probarlo (1 a 5) | 5: 3 · 4: 20 · 3: 18 · 2: 8 · 1: 3 · no sabe: 1 (mediana: 3) |
+| Comprensión | 49 de 53 describieron bien cómo funciona; 2 creyeron que bloquea las apps o que suena al cerrarlas, y 2 no lo entendieron del todo |
+| Probabilidad de probarlo, de 1 a 5 | 5: 3 · 4: 20 · 3: 18 · 2: 8 · 1: 3 · no sabe: 1. Mediana, 3 |
 | Dónde pondría el parlante | Junto a los objetos o el espacio de la actividad, 36; en un lugar general de la casa, 7; no lo usaría, no sabe o no encuentra un lugar, 10 |
-| Duración preferida | 1 a 5 s, 16; 6 a 15 s, 25; 16 a 30 s, 3; preferiría que no sonara, 7; no sabe, 2 |
-| Registro aceptado para una prueba | Básicos y tiempos, 18; básicos del estudio, 18; solo local, 9; ninguno, 3; no sabe, 4; prefiere no responder, 1 |
+| Duración preferida | De 1 a 5 s, 16; de 6 a 15 s, 25; de 16 a 30 s, 3; que no sonara, 7; no sabe, 2 |
+| Registro que aceptaría en una prueba | Datos básicos y tiempos, 18; datos básicos del estudio, 18; solo en el teléfono, 9; ninguno, 3; no sabe, 4; prefiere no responder, 1 |
 
-**Motivo principal para descartarlo (53):** que suene en un mal momento, 8; la preparación y el mantenimiento, 7; el ruido y la convivencia, 7; no entender cuándo suena, 4; sentir presión u obligación, 4; necesitar otro aparato o un teléfono compatible, 4; no necesitarlo, 4; no escucharlo, 3; la privacidad de los datos, 3; acostumbrarse y apagarlo, 3; el audio o la conexión del parlante, 3; otros (dónde dejarlo, accesibilidad con lector de pantalla y no tener una intención clara), 3.
+*Nota.* Elaboración propia a partir de las 53 respuestas.
 
-### 5. Qué aporta al proyecto
+**Motivo principal para descartarlo (53).** Que suene en un mal momento, 8; prepararlo y mantenerlo, 7; el ruido y la convivencia, 7; no entender cuándo suena, 4; sentir presión u obligación, 4; necesitar otro aparato o un teléfono compatible, 4; no necesitarlo, 4; no escucharlo, 3; la privacidad de los datos, 3; acostumbrarse y apagarlo, 3; el audio o la conexión del parlante, 3; otros motivos, como dónde dejarlo, la accesibilidad con un lector de pantalla o no tener una intención clara, 3.
 
-| Hallazgo | Relación con la memoria | Consecuencia |
-| --- | --- | --- |
-| La situación es frecuente y casi siempre doméstica. | Respalda el hogar como contexto inicial (capítulo 7), que las entrevistas solo sugerían. | Se mantiene el hogar. |
-| Casi todos nombran un primer paso concreto, y 8 ya preparan el comienzo para dejar el teléfono. | Respalda el criterio 2 y la pregunta «¿Cómo empezarás?». | Se mantiene el primer paso. |
-| 36 de 53 pondrían el parlante junto a la actividad. | Coherente con la hipótesis, pero es una preferencia, no un efecto. | La prueba de 21 días sigue siendo necesaria. |
-| El riesgo más citado es que suene en un mal momento, y 18 usos valiosos sirven a la misma actividad (tutoriales, recetas). | Criterios 3 y 5: el conteo de tiempo no distingue un uso útil. | Explicar la condición con ejemplos y registrar en la prueba cuándo suena durante un uso útil. |
-| Carga de preparación, convivencia y privacidad aparecen entre los motivos para descartarlo. | Criterios 6 y 7. | Mantener la preparación breve, el volumen regulable y el registro mínimo. |
-| 41 de 53 preferirían un sonido de 15 segundos o menos; solo 3, uno de 16 a 30 segundos. | Tensión con el pulso de unos 30 segundos (D-078). | La prueba registrará si la duración molesta o si la señal pasa inadvertida; la duración podría acortarse. Decisión pendiente del autor. |
-| Dos personas creyeron que Relevo bloquea las apps o que suena al cerrarlas. | Criterio 3 y guía de la primera vez. | La guía debe decir que Relevo no bloquea y cuándo empieza a contar. |
+## B.4 Qué tomó el diseño
 
-### 6. Codificación por respuesta
+**Tabla B3**
 
-Categorías: **lugar** del parlante (pregunta 12), **motivo** principal para descartarlo (14), **comprensión** del funcionamiento (10), **uso** que quería mantener (9) y **estrategia** para dejar una app (8).
+*De la encuesta al diseño*
+
+| Hallazgo | Qué hizo el diseño |
+| --- | --- |
+| La situación es frecuente y casi siempre ocurre en casa: 39 de 45 siguieron en una app más de lo que querían al menos un día de la semana, y 44 de 47 episodios fueron en casa. | El hogar es el contexto del proyecto (capítulo 7). |
+| 42 de 43 nombraron un primer paso concreto, y 8 ya dejan preparado el comienzo de la actividad para dejar el teléfono. | Cada relevo se prepara con su primer paso (criterio 2). |
+| 36 de 53 pondrían el parlante junto a la actividad. | El objeto suena junto al primer paso. Como es una preferencia, la prueba en los hogares la puso a prueba (capítulo 13). |
+| 18 de 53 valoraron el teléfono para aprender o resolver algo, a veces para la misma actividad, y el motivo más citado para descartarlo es que suene en un mal momento. | La persona decide cuándo suena: elige las apps y fija el tiempo (criterio 3). |
+| Prepararlo (7), el ruido y la convivencia (7) y la privacidad (3) están entre los motivos para descartarlo, y 12 aceptarían solo un registro en el teléfono o ninguno. | Una preparación breve (criterio 6) y datos con un código, que la persona puede borrar (criterio 7). |
+| 41 de 53 preferirían un sonido de 15 segundos o menos. | La prueba mantuvo unos 30 segundos: el sonido les pareció bueno o neutro en 19 de 21 respuestas, y en 14 de 23 ciclos lo callaron antes de que terminara, así que una señal más breve bastaría (capítulo 13). |
+| Dos personas creyeron que Relevo bloquea las apps o que suena al cerrarlas. | Relevo no bloquea nada: suena cuando se cumple el tiempo y la decisión queda abierta (criterio 4). |
+
+*Nota.* Elaboración propia a partir de la encuesta y de los capítulos 7, 9 y 13 de la memoria.
+
+## B.5 Codificación por respuesta
+
+Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante (pregunta 12), el **motivo** principal para descartarlo (14), la **comprensión** del funcionamiento (10), el **uso** que quería mantener (9) y la **estrategia** para dejar una app (8).
+
+**Tabla B4**
+
+*Categoría de cada respuesta*
 
 | ID | Lugar | Motivo para descartarlo | Comprensión | Uso que quería mantener | Estrategia |
 | --- | --- | --- | --- | --- | --- |
@@ -146,7 +149,15 @@ Categorías: **lugar** del parlante (pregunta 12), **motivo** principal para des
 | S52 | Lugar general | Otros | Correcta | Conversar o compartir | Alarma, límite o nota |
 | S53 | Junto a la actividad | Privacidad de los datos | Correcta | No responde | Alejar, guardar o silenciar |
 
+*Nota.* Elaboración propia. S01 a S53 identifican las respuestas, no a las personas.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Anexo recopilado y listo para Word
+
+- **Qué cambió:** el anexo se ordena en instrumento, método, resultados, lo que tomó el diseño y la codificación por respuesta, con las tablas B1 a B4. Los límites se dicen una vez, en el alcance. La tabla de lo que tomó el diseño ahora cuenta qué se hizo con cada hallazgo, según la memoria v6, en vez de lo que quedaba por decidir en septiembre. Desde ahora este archivo es la fuente del anexo.
+- **Cómo estaba antes:** copiaba el documento de la encuesta con su historial: la relación con una ficha anterior de 70 participantes, la revisión pendiente de la codificación y decisiones abiertas de septiembre, como la duración del sonido.
+- **Por qué:** el autor pidió revisar todos los anexos y dejarlos listos para Word: directos, sin sobreexplicar, con su forma de escribir y con lo más relevante (D-168).
 
 ### 2026-10-24 — Creación
 

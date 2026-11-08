@@ -213,6 +213,7 @@
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
 | 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
 | 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
+| 8 nov. | Encargo | Pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. | Los [anexos A a I](../08_memoria/anexos/README.md) quedan como recopilaciones directas —decisiones y logros primero, límites una sola vez—, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. El [Word](../08_memoria/anexos/anexos-relevo.docx) sigue la pauta de tesis de la Biblioteca (carta, Arial 12, interlineado 1,5), con los estilos de título de Word, índice automático, tablas y figuras en APA 7. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) pasa de 94 a 67 páginas. El Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4, y el Anexo G registra las versiones hasta la 4.6.3. | D-168 |
 
 ## Lo que muestra el registro
 
@@ -223,6 +224,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Anexos listos para Word
+
+- **Qué cambió:** se registró el pedido de revisar todos los anexos y dejarlos listos para un documento de Word.
+- **Cómo estaba antes:** el último pedido era el de los términos de los autores y el análisis visual.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-04 — Términos de los autores y análisis visual
 

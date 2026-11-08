@@ -2030,7 +2030,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 16 478 palabras en los capítulos 1 a 14 (17 491 con las páginas iniciales y los índices); 24 figuras y 4 tablas, todas mencionadas en orden; 82 referencias, todas citadas; 2 marcadores «Confirmar». Wilms y Oberfeld (2018) se comprobó en Europe PMC: los colores saturados y brillantes se asocian a más activación, y la activación sube del azul y el verde al rojo; Machado et al. (2009) y Wilms y Oberfeld (2018), en Crossref.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
 
+## D-168 — Los anexos recopilan lo más relevante y salen también en Word
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el autor pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. Hasta ahora cada anexo copiaba completos sus documentos fuente —unas 37 000 palabras y 94 páginas en A4—, con advertencias repetidas, partes que ya no coincidían con la memoria v6 y remisiones internas del repositorio.
+- **Decisión:**
+  - **Cada anexo es un texto escrito para el anexo** y es su propia fuente: recopila lo más relevante de los documentos del proyecto, con decisiones y logros primero y los límites una sola vez. Los datos, las citas y los participantes son los del repositorio; el corpus P1–P8, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales.
+  - **Alineados con la memoria v6:** la pregunta, la hipótesis y sus tres supuestos; los nombres y la evidencia de los ocho criterios; el color decidido por su función; el nombre como traspaso, y una ficha por referente del mapa del capítulo 8, con MindPhone, kSafe, Place-Its y Wobble.
+  - **Lo que vino después de la prueba:** el Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4 de la memoria; el Anexo G registra las versiones 4.0 a 4.6.3, en ramas sin fusionar, y el Anexo I presenta el instrumento de cierre del 28 de octubre (D-144).
+  - **Word:** `anexos-relevo.docx`, con el formato de la pauta de tesis de la Biblioteca UDP —carta, márgenes de 3,5 y 2,5 cm, Arial 12, interlineado 1,5 y número de página centrado—, los estilos de título de Word, índice automático, tablas y figuras en APA 7 y las láminas y los diagramas como imágenes. Lo escribe `word.js`, sin dependencias.
+  - **Constructor:** `construir-anexos.js` ya no copia documentos fuente: lee los nueve Markdown y escribe el HTML, el PDF en A4, de 67 páginas, y el Word.
+- **Verificación:** el Word se abrió en LibreOffice y se revisó página por página: 101 páginas en carta, con negrita, índice y figuras en su lugar; su XML está bien formado y no conserva marcas de Markdown. El PDF cuadra con las páginas de su índice. Microsoft Word no está instalado en este computador, así que no se abrió ahí.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — D-168
+
+- **Qué cambió:** se registró D-168.
+- **Cómo estaba antes:** la última decisión en `main` era D-154; en las ramas de la app, D-155 a D-167.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-04 — D-154
 

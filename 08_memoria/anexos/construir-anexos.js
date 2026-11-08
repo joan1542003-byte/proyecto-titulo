@@ -1,11 +1,13 @@
-// Anexos A–I de la memoria v5. Toma cada parte de su documento en el repositorio, sin reescribirla, y arma:
-//   1. un Markdown por anexo, que se lee en GitHub con sus imágenes y enlaces;
-//   2. anexos-relevo.html, con la línea de Relevo: papel, tinta, fichas de color e Instrument Sans;
-//   3. anexos-relevo.pdf en A4, impreso por Chrome sin ventana, con la página de cada anexo en el índice.
-// Qué entra en cada anexo está en contenido-anexos.js; si cambia una fuente, basta volver a correrlo.
+// Anexos A–I de la memoria. Cada anexo es un Markdown de esta carpeta (anexo-<letra>-<slug>.md), escrito
+// para el anexo: recopila lo más relevante de los documentos del proyecto. Este constructor lo lee y arma:
+//   1. anexos-relevo.html, con la línea de Relevo: papel, tinta, fichas de color e Instrument Sans;
+//   2. anexos-relevo.pdf en A4, impreso por Chrome sin ventana, con la página de cada anexo en el índice;
+//   3. anexos-relevo.docx, para Word, con el formato de la pauta de tesis de la Biblioteca UDP (carta, Arial 12,
+//      interlineado 1,5): estilos de título y párrafo, tablas, imágenes e índice automático.
+// El orden, el color y el resumen de cada anexo están en contenido-anexos.js. Los Markdown no se reescriben.
 //
-// Uso: node construir-anexos.js            Markdown, HTML y PDF
-//      node construir-anexos.js --sin-pdf  solo Markdown y HTML
+// Uso: node construir-anexos.js            HTML, PDF y Word
+//      node construir-anexos.js --sin-pdf  HTML y Word
 
 const fs = require('fs');
 const os = require('os');
@@ -13,36 +15,29 @@ const crypto = require('crypto');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { portada, anexos } = require('./contenido-anexos.js');
+const { construirWord } = require('./word.js');
 
 const AQUI = __dirname;
 const RAIZ = path.resolve(AQUI, '..', '..');
 const SALIDA_HTML = path.join(AQUI, 'anexos-relevo.html');
 const SALIDA_PDF = path.join(AQUI, 'anexos-relevo.pdf');
+const SALIDA_WORD = path.join(AQUI, 'anexos-relevo.docx');
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const APP = '06_desarrollo_y_factibilidad/app-android';
 const KT = `${APP}/app/src/main/java/com/example/relevo`;
 const LOGOS = '10_recursos_visuales/logo-relevo-2026-10-11';
 const ICONOS = '10_recursos_visuales/iconos-relevo-2026-10-11/svg';
-const MEMORIA = '08_memoria/borrador-memoria-v5-2026-10-11.md';
+const MEMORIA = '08_memoria/borrador-memoria-v6-2026-10-28.md';
 const AURA = '08_memoria/memoria-a3/figuras/aura/portada.jpg';
 const DIR_DIAGRAMAS = path.join(AQUI, 'imagenes', 'diagramas');
+const DIR_WORD = path.join(AQUI, 'imagenes', 'word');
 // Solo se usa cuando falta el SVG de un diagrama: Chrome lo dibuja una vez y el SVG queda en imagenes/diagramas.
 const MERMAID = 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js';
 const LETRA = '06_desarrollo_y_factibilidad/app-android/app/src/main/res/font/instrument_sans.ttf';
 const LETRA_CURSIVA = '08_memoria/memoria-a3/letra/InstrumentSans-Italic.ttf';
-
-// Historia de los Markdown generados: cada cambio del constructor que cambie lo que dicen se anota aquí.
-const REGISTRO = [
-  {
-    fecha: '2026-10-24', titulo: 'Creación',
-    que: 'el anexo se arma desde sus documentos fuente, con el resto de los anexos A–I de la memoria v5.',
-    antes: 'la carpeta de anexos solo tenía un README de la v4, con cinco anexos y sin su contenido.',
-    porque: 'el autor pidió elegir un pendiente de prioridad alta y terminarlo; la memoria v5 remite a nueve anexos que no estaban armados.',
-  },
-];
+const ANCHO_WORD_MM = 155; // el ancho del texto en el Word: carta, con márgenes de 3,5 y 2,5 cm
 
 const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-const CORTOS = { enero: 'ene.', febrero: 'feb.', marzo: 'mar.', abril: 'abr.', mayo: 'may.', junio: 'jun.', julio: 'jul.', agosto: 'ago.', septiembre: 'sep.', octubre: 'oct.', noviembre: 'nov.', diciembre: 'dic.' };
 const hoy = new Date();
 const FECHA = `${hoy.getDate()} de ${MESES[hoy.getMonth()]} de ${hoy.getFullYear()}`;
 
@@ -50,7 +45,6 @@ const FECHA = `${hoy.getDate()} de ${MESES[hoy.getMonth()]} de ${hoy.getFullYear
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const attr = (s) => esc(s).replace(/"/g, '&quot;');
-const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const sinTildes = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 /** Texto de comparación: sin tildes, sin marcas ni numeración inicial, en minúsculas. */
 const clave = (s) => sinTildes(s).replace(/[*_`«»"“”]/g, '').replace(/^\s*\d+(\.\d+)*\.?\s+/, '').trim().toLowerCase();
@@ -58,219 +52,59 @@ const slug = (s) => sinTildes(s).toLowerCase().replace(/<[^>]+>/g, '').replace(/
 const desdeAqui = (rel) => path.relative(AQUI, path.join(RAIZ, rel)).split(path.sep).join('/');
 const leer = (rel) => fs.readFileSync(path.join(RAIZ, rel), 'utf8').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
 
-// ---------------------------------------------------------------- Fuentes
-
-const leidas = new Map();
-function lineasDe(rel) {
-  if (!fs.existsSync(path.join(RAIZ, rel))) throw new Error(`Falta la fuente ${rel}`);
-  if (!leidas.has(rel)) leidas.set(rel, leer(rel).replace(/^---\n[\s\S]*?\n---\n/, '').replace(/<!--[\s\S]*?-->/g, '').split('\n'));
-  return leidas.get(rel);
-}
-
-function encabezados(lineas) {
-  const out = [];
-  let codigo = false;
-  lineas.forEach((l, i) => {
-    if (/^\s*```/.test(l)) { codigo = !codigo; return; }
-    const m = !codigo && l.match(/^(#{1,6})\s+(.+?)\s*$/);
-    if (m) out.push({ i, nivel: m[1].length, texto: m[2] });
-  });
-  return out;
-}
-
-/** Una sección: desde su encabezado hasta el siguiente de su nivel o superior. */
-function seccion(lineas, nombre, rel) {
-  const hs = encabezados(lineas);
-  const k = hs.findIndex((h) => clave(h.texto).startsWith(clave(nombre)));
-  if (k < 0) throw new Error(`«${nombre}» no está en ${rel}`);
-  const fin = hs.slice(k + 1).find((h) => h.nivel <= hs[k].nivel);
-  return lineas.slice(hs[k].i, fin ? fin.i : lineas.length);
-}
-
-function quitarSecciones(lineas, prueba) {
-  const hs = encabezados(lineas);
-  const fuera = new Set();
-  hs.forEach((h, k) => {
-    if (!prueba(h.texto)) return;
-    const fin = hs.slice(k + 1).find((x) => x.nivel <= h.nivel);
-    for (let i = h.i; i < (fin ? fin.i : lineas.length); i++) fuera.add(i);
-  });
-  return lineas.filter((_, i) => !fuera.has(i));
-}
-
-/** Los enlaces relativos se reescriben desde esta carpeta; las anclas del documento original quedan como texto. */
-function rebasar(lineas, rel) {
-  const dir = path.dirname(path.join(RAIZ, rel));
-  let codigo = false;
-  return lineas.map((l) => {
-    if (/^\s*```/.test(l)) { codigo = !codigo; return l; }
-    if (codigo) return l;
-    return l.replace(/(!?)\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, (todo, img, texto, url) => {
-      if (/^(https?:|mailto:)/i.test(url)) return todo;
-      if (url.startsWith('#')) return img ? '' : texto;
-      const [p, ancla] = url.split('#');
-      const nueva = path.relative(AQUI, path.resolve(dir, decodeURI(p))).split(path.sep).join('/');
-      return `${img}[${texto}](${encodeURI(nueva)}${ancla ? '#' + ancla : ''})`;
-    });
-  });
-}
+// ---------------------------------------------------------------- Lectura de los anexos
 
 const DIAGRAMAS = new Map(); // identificador → código mermaid
 
-/** Sin historial de cambios ni reglas horizontales; cada diagrama mermaid pasa a una ficha; los enlaces, desde aquí. */
-function limpiar(lineas, rel) {
-  const sinRegistro = quitarSecciones(lineas, (t) => clave(t).startsWith('registro de cambios'));
-  const out = [];
+/**
+ * Lee el Markdown de un anexo: su título, su introducción y sus partes (una por «## »).
+ * El registro de cambios queda fuera; cada diagrama mermaid y cada lámina pasan a una ficha [[…]].
+ */
+function leerAnexo(a) {
+  const archivo = `anexo-${a.letra.toLowerCase()}-${a.slug}.md`;
+  const texto = fs.readFileSync(path.join(AQUI, archivo), 'utf8').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
+  comprobar(archivo, texto);
+  const lineas = texto.split('\n');
+  const fin = lineas.findIndex((l) => /^##\s+Registro de cambios/.test(l));
+  const util = fin >= 0 ? lineas.slice(0, fin) : lineas;
+
+  const limpias = [];
   let mermaid = null;
-  for (const l of sinRegistro) {
+  let lamina = null;
+  for (const l of util) {
+    const abre = l.match(/^\s*<!--\s*lamina:\s*([A-Z]+)\s*-->\s*$/);
+    if (abre) { lamina = abre[1]; continue; }
+    if (lamina) { if (/^\s*<!--\s*\/lamina\s*-->\s*$/.test(l)) { limpias.push(`[[${lamina}]]`); lamina = null; } continue; }
     if (/^\s*```mermaid/.test(l)) { mermaid = []; continue; }
     if (mermaid) {
       if (!/^\s*```\s*$/.test(l)) { mermaid.push(l); continue; }
       const codigo = mermaid.join('\n');
       const id = crypto.createHash('sha1').update(codigo).digest('hex').slice(0, 10);
       DIAGRAMAS.set(id, codigo);
-      out.push(`[[DIAGRAMA ${id}]]`);
+      limpias.push(`[[DIAGRAMA ${id}]]`);
       mermaid = null;
       continue;
     }
-    if (/^\s*(---|\*\*\*|___)\s*$/.test(l)) continue;
-    out.push(l);
+    if (/^\s*<!--[\s\S]*-->\s*$/.test(l)) continue;
+    limpias.push(l);
   }
-  return rebasar(out, rel);
-}
+  if (lamina || mermaid) throw new Error(`${archivo}: una lámina o un diagrama quedó sin cerrar`);
 
-/** El encabezado más alto pasa a `base` y los demás bajan con él. */
-function nivelar(lineas, base) {
-  const hs = encabezados(lineas);
-  if (!hs.length) return lineas;
-  const d = base - Math.min(...hs.map((h) => h.nivel));
-  const out = lineas.slice();
-  for (const h of hs) out[h.i] = '#'.repeat(Math.min(6, h.nivel + d)) + ' ' + h.texto;
-  return out;
-}
+  const h1 = limpias.findIndex((l) => /^# /.test(l));
+  const titulo = limpias[h1].replace(/^#\s+Anexo [A-I]\.\s*/, '').trim();
+  if (titulo !== a.titulo) throw new Error(`${archivo}: el título «${titulo}» no coincide con contenido-anexos.js («${a.titulo}»)`);
+  const primera = limpias.findIndex((l, i) => i > h1 && /^## /.test(l));
+  const intro = limpias.slice(h1 + 1, primera < 0 ? undefined : primera).join('\n').trim().split(/\n\s*\n/).map((p) => p.replace(/\s*\n\s*/g, ' '));
+  if (intro.length !== 1) throw new Error(`${archivo}: la introducción debe ser un solo párrafo`);
 
-const compactar = (lineas) => lineas.join('\n').replace(/\n{3,}/g, '\n\n').trim().split('\n');
-
-function deFuente(p) {
-  const todas = lineasDe(p.fuente);
-  let lineas;
-  if (p.tomar) lineas = p.tomar.flatMap((n) => [...seccion(todas, n, p.fuente), '']);
-  else {
-    lineas = todas.slice();
-    const h1 = lineas.findIndex((l) => /^# /.test(l));
-    if (h1 >= 0) lineas.splice(h1, 1);
+  const partes = [];
+  for (let i = primera; i >= 0 && i < limpias.length; i++) {
+    const h = limpias[i].match(/^##\s+(.+?)\s*$/);
+    if (h) { partes.push({ titulo: h[1], clase: /^referencias$/i.test(clave(h[1])) ? 'referencias' : '', lineas: [] }); continue; }
+    partes[partes.length - 1].lineas.push(limpias[i]);
   }
-  for (const n of p.quitar || []) lineas = quitarSecciones(lineas, (t) => clave(t).startsWith(clave(n)));
-  lineas = limpiar(lineas, p.fuente);
-  if (p.reemplazar) {
-    let t = lineas.join('\n');
-    for (const [a, b] of p.reemplazar) {
-      if (!t.includes(a)) throw new Error(`«${a}» no está en ${p.fuente}`);
-      t = t.split(a).join(b);
-    }
-    lineas = t.split('\n');
-  }
-  lineas = nivelar(lineas, 3);
-  if (p.titular) { const h = encabezados(lineas)[0]; lineas[h.i] = `### ${p.titular}`; }
-  // Una sola sección bajo el título de la parte: su encabezado sobra y sus subsecciones suben un nivel.
-  else if (p.titulo && p.tomar && p.tomar.length === 1) lineas = nivelar(lineas.slice(encabezados(lineas)[0].i + 1), 3);
-  return compactar(lineas);
-}
-
-// ---------------------------------------------------------------- Contenido calculado
-
-/** Registro de versiones: título, fecha y decisión de cada documento de versión de la app. */
-function versiones() {
-  const dir = path.join(RAIZ, APP);
-  const filas = fs.readdirSync(dir).filter((f) => /^version-\d+\.\d+-.+\.md$/.test(f)).map((f) => {
-    const t = fs.readFileSync(path.join(dir, f), 'utf8').replace(/\r\n?/g, '\n');
-    const [, mayor, menor] = f.match(/^version-(\d+)\.(\d+)/);
-    const titulo = (t.match(/^# Android [\d.]+:\s*(.+)$/m) || [])[1];
-    const fecha = (t.match(/\*\*Fecha:\*\*\s*(\d+) de (\w+)/) || []);
-    const decision = (t.match(/\*\*Decisi(?:ón|ones):\*\*\s*([^\n]+)/) || [])[1] || '';
-    if (!titulo || !fecha[1]) throw new Error(`No se pudo leer el encabezado de ${f}`);
-    const ds = [...new Set(decision.split('**')[0].match(/D-\d{3}/g) || [])];
-    return {
-      mayor: +mayor, menor: +menor, version: `${mayor}.${menor}`, archivo: f,
-      titulo: titulo[0].toUpperCase() + titulo.slice(1), fecha: `${fecha[1]} ${CORTOS[fecha[2]] || fecha[2]}`, decision: ds.join(', ') || '—',
-    };
-  }).sort((a, b) => a.mayor - b.mayor || a.menor - b.menor);
-  return [
-    `Cada versión tiene su documento en la carpeta de la app, con lo que cambió, por qué y cómo se probó. Desde la 2.7 hay ${filas.length} versiones: la línea 2 sostuvo la prueba en los teléfonos de las personas, y la línea 3, desde el 12 de octubre de 2026, aplica la identidad nueva sin cambiar los datos.`,
-    '',
-    '| Versión | Fecha | Qué trae | Decisión |',
-    '| --- | --- | --- | --- |',
-    ...filas.map((f) => `| [${f.version}](${encodeURI(desdeAqui(`${APP}/${f.archivo}`))}) | ${f.fecha} | ${f.titulo} | ${f.decision} |`),
-  ];
-}
-
-/** El consentimiento tal como lo muestra la app, sin el correo del investigador. */
-function consentimiento() {
-  const kt = leer(`${KT}/ui/FirstRunScreens.kt`);
-  const version = (leer(`${KT}/data/ResearchLogStore.kt`).match(/CONSENT_VERSION = "([^"]+)"/) || [])[1];
-  const intro = (kt.match(/Text\(\s*"(Relevo es parte de un proyecto[^"]+)"/) || [])[1];
-  const casilla = (kt.match(/Text\("(Acepto participar[^"]+)"/) || [])[1];
-  const partes = [...kt.matchAll(/ConsentPart\(KitIcon\.\w+, expanded, "([^"]+)", (?:if \(remoteConfigured\) )?"([^"]+)"/g)].map((m) => [m[1], m[2]]);
-  if (!version || !intro || !casilla || partes.length !== 8) throw new Error('No se pudo leer el consentimiento de la app');
-  const sinCorreo = (s) => s.replace(/escribiendo a \S+@\S+\.[a-z]{2,}/gi, 'escribiendo al correo del investigador');
-  return [
-    `Es el texto que la persona lee en la app antes de empezar; para seguir, marca la casilla «${casilla.replace(/\.$/, '')}». Versión \`${version}\`.`,
-    '',
-    `> ${intro}`,
-    '',
-    ...partes.flatMap(([t, x]) => [`**${t}.** ${sinCorreo(x)}`, '']),
-    '*Fuente:* pantalla de consentimiento de la app, en las versiones 2.33 y 3.3. Donde la app da el correo del investigador, aquí se omite.',
-  ];
-}
-
-const pareceReferencia = (t) => /^\S.*\((\d{4}[a-z]?|s\. f\.(-[a-z])?)(, [^)]*)?\)\./.test(t);
-/** Misma obra: mismo primer autor, mismo año y mismo comienzo del título, aunque cambien las iniciales o el formato. */
-function claveRef(t) {
-  const plano = t.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
-  const autor = (plano.match(/^([^,(]+?)\.?(?:,|\s\()/) || [])[1] || plano.slice(0, 20);
-  const m = plano.match(/\((\d{4}[a-z]?|s\. f\.(?:-[a-z])?)(?:,[^)]*)?\)\.\s*(.*)$/);
-  const titulo = m ? clave(m[2]).replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').slice(0, 20) : '';
-  return `${clave(autor)}|${m ? m[1] : ''}|${titulo}`;
-}
-/** APA en español: «y» entre autores; el «&» de un título o de una revista se conserva. */
-const yEntreAutores = (r) => { const k = r.search(/\((\d{4}[a-z]?|s\. f\.)/); return k < 0 ? r : r.slice(0, k).replace(/,? & /g, ' y ') + r.slice(k); };
-
-/** Los párrafos de una lista de referencias. */
-function parrafosDeReferencias(rel, nombre) {
-  const sec = limpiar(seccion(lineasDe(rel), nombre, rel).slice(1), rel);
-  const out = [];
-  let actual = [];
-  const cerrar = () => { if (actual.length) out.push(actual.join(' ').replace(/^[-*]\s+/, '').trim()); actual = []; };
-  for (const l of sec) {
-    if (!l.trim() || /^#/.test(l)) { cerrar(); continue; }
-    if (/^[-*]\s+/.test(l)) cerrar();
-    actual.push(l.trim());
-  }
-  cerrar();
-  return out.filter(pareceReferencia);
-}
-
-/** Si el texto cita la obra: el primer apellido y, poco después, el año. */
-function citada(ref, texto) {
-  const autor = (ref.match(/^([^,(]+?)\.?(?:,|\s\()/) || [])[1];
-  const anio = (ref.match(/\((\d{4}[a-z]?|s\. f\.(?:-[a-z])?)(?:,[^)]*)?\)/) || [])[1];
-  if (!autor || !anio) return false;
-  return new RegExp(`${reEsc(autor.trim())}[^\\n]{0,140}?${reEsc(anio)}(?![a-z0-9])`).test(texto);
-}
-
-/** Referencias de varias listas, sin repetir; con `citadas`, solo las que el anexo cita. */
-function referencias(listas, texto, yaEstan = new Set()) {
-  const vistas = new Map();
-  for (const { fuente, tomar, citadas } of listas) {
-    for (const n of tomar) {
-      for (const r of parrafosDeReferencias(fuente, n)) {
-        const k = claveRef(r);
-        if (yaEstan.has(k) || vistas.has(k) || (citadas && !citada(r, texto))) continue;
-        vistas.set(k, yEntreAutores(r));
-      }
-    }
-  }
-  return [...vistas.values()].sort((a, b) => clave(a).localeCompare(clave(b), 'es'));
+  for (const p of partes) p.lineas = p.lineas.join('\n').replace(/\n{3,}/g, '\n\n').trim().split('\n');
+  return { ...a, archivo, intro: intro[0], partes, palabras: util.join('\n').split(/\s+/).filter(Boolean).length };
 }
 
 // ---------------------------------------------------------------- Marca, color e íconos
@@ -315,13 +149,7 @@ const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${
 /** El mismo dibujo que la app: cada luz es un degradado radial de 0,95 a 0,45 (al 55 %) y a 0, sobre la base. */
 const fondoCielo = (c, lado) => c.luces.slice().reverse().map((l) => `radial-gradient(circle ${(l.r * lado).toFixed(1)}mm at ${l.x * 100}% ${l.y * 100}%, ${rgba(l.color, 0.95 * l.alfa)} 0%, ${rgba(l.color, 0.45 * l.alfa)} 55%, ${rgba(l.color, 0)} 100%)`).join(', ') + `, ${c.base}`;
 
-// ---------------------------------------------------------------- Fichas: Markdown y HTML
-
-function galeria(spec) {
-  const [cab, ...items] = spec.split('|');
-  const columnas = +(cab.match(/\d+/) || [2])[0];
-  return { columnas, items: items.map((x) => { const k = x.indexOf(':'); return { src: x.slice(0, k), pie: x.slice(k + 1) }; }) };
-}
+// ---------------------------------------------------------------- Fichas
 
 const svgDiagrama = (id) => fs.readFileSync(path.join(DIR_DIAGRAMAS, `${id}.svg`), 'utf8');
 
@@ -365,70 +193,15 @@ function dibujarDiagramas() {
   console.log(`Diagramas dibujados: ${faltan.length}`);
 }
 
-/** Tablas y figuras de los documentos fuente se numeran de nuevo dentro de cada anexo (Tabla G1, Figura G2…). */
-function renumerar(partes, letra) {
-  const cuenta = { Tabla: 0, Figura: 0 };
-  const todo = partes.map((p) => p.lineas.join('\n')).join('\n');
-  for (const tipo of Object.keys(cuenta)) for (const m of todo.matchAll(new RegExp(`\\*\\*${tipo} ${letra}(\\d+)\\*\\*`, 'g'))) cuenta[tipo] = Math.max(cuenta[tipo], +m[1]);
-  for (const p of partes.filter((x) => x.fuente)) {
-    const mapa = { Tabla: {}, Figura: {} };
-    p.lineas = p.lineas.map((l) => l.replace(/^\*\*(Tabla|Figura) (\d+)\*\*$/, (_, tipo, n) => { mapa[tipo][n] = `${letra}${++cuenta[tipo]}`; return `**${tipo} ${mapa[tipo][n]}**`; }));
-    p.lineas = p.lineas.map((l) => (/^\*\*(Tabla|Figura) [A-I]\d+\*\*$/.test(l) ? l : l.replace(/\b(Tabla|Figura) (\d+)\b(?![.,]\d)/g, (t, tipo, n) => (mapa[tipo][n] ? `${tipo} ${mapa[tipo][n]}` : t))));
-  }
-}
-
-function fichaMarkdown(token) {
-  if (token.startsWith('DIAGRAMA')) return ['```mermaid', ...DIAGRAMAS.get(token.split(' ')[1]).split('\n'), '```'];
-  if (token.startsWith('GALERIA')) {
-    const { columnas, items } = galeria(token);
-    const out = [];
-    if (columnas === 1) items.forEach((it) => out.push(`**${it.pie}**`, '', `![${it.pie}](${encodeURI(desdeAqui(it.src))})`, ''));
-    else for (let i = 0; i < items.length; i += columnas) {
-      const fila = items.slice(i, i + columnas);
-      out.push(`| ${fila.map((it) => it.pie).join(' | ')} |`, `| ${fila.map(() => '---').join(' | ')} |`, `| ${fila.map((it) => `![${it.pie}](${encodeURI(desdeAqui(it.src))})`).join(' | ')} |`, '');
-    }
-    return out;
-  }
-  if (token === 'LOGO') return [
-    `![Logo de Relevo](${desdeAqui(`${LOGOS}/relevo-logo-horizontal.svg`)})`, '',
-    `| ${VERSIONES_LOGO.map((v) => v[1]).join(' | ')} |`, `| ${VERSIONES_LOGO.map(() => '---').join(' | ')} |`,
-    `| ${VERSIONES_LOGO.map((v) => `![${v[1]}](${desdeAqui(`${LOGOS}/${v[0]}`)})`).join(' | ')} |`, '',
-    '| Luz | Color | Papel |', '| --- | --- | --- |', ...LUCES.map(([d, c, p]) => `| ${d} | \`${c}\` | ${p} |`), '',
-  ];
-  if (token === 'PALETA') return [
-    'Seis fichas claras, una por papel, y los colores de base.', '',
-    '| Papel | Ficha | Color |', '| --- | --- | --- |', ...PAPELES.map(([, c, p, n]) => `| ${p} | ${n} | \`${c}\` |`), '',
-    '| Base | Uso | Color |', '| --- | --- | --- |', ...BASE.map(([n, c, u]) => `| ${n} | ${u} | \`${c}\` |`), '',
-  ];
-  if (token === 'CIELOS') return [
-    'Los siete cielos de las actividades, como los dibuja la app: un color de base y cuatro o cinco luces.', '',
-    '| Familia | Base | Luces |', '| --- | --- | --- |', ...cielos().map((c) => `| ${c.nombre} | \`${c.base}\` | ${c.luces.map((l) => `\`${l.color}\``).join(' ')} |`), '',
-  ];
-  if (token === 'ICONOS') {
-    const lista = iconos();
-    const out = [`Los ${lista.length} íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](${desdeAqui(ICONOS)})).`, ''];
-    for (let i = 0; i < lista.length; i += 8) {
-      const fila = lista.slice(i, i + 8);
-      out.push(`| ${fila.map((x) => x.nombre).join(' | ')} |`, `| ${fila.map(() => '---').join(' | ')} |`, `| ${fila.map((x) => `![${x.nombre}](${encodeURI(desdeAqui(`${ICONOS}/${x.archivo}`))})`).join(' | ')} |`, '');
-    }
-    return out;
-  }
-  throw new Error(`Ficha desconocida: ${token}`);
-}
-
 function fichaHtml(token) {
   if (token.startsWith('DIAGRAMA')) return `<figure class="diagrama">${svgDiagrama(token.split(' ')[1])}</figure>`;
-  if (token.startsWith('GALERIA')) {
-    const { columnas, items } = galeria(token);
-    return `<div class="galeria g${columnas}">${items.map((it) => `<figure><img src="${attr(desdeAqui(it.src))}" alt="${attr(it.pie)}"><figcaption>${inline(it.pie)}</figcaption></figure>`).join('')}</div>`;
-  }
   if (token === 'LOGO') return `<div class="lamina-logo">
     <div class="logo-grande"><img src="${desdeAqui(`${LOGOS}/relevo-logo-horizontal.svg`)}" alt="Logo de Relevo"></div>
     <div class="logo-versiones">${VERSIONES_LOGO.map(([f, t]) => `<figure${/blanca/.test(f) ? ' class="oscuro"' : ''}><div class="caja"><img src="${desdeAqui(`${LOGOS}/${f}`)}" alt="${attr(t)}"></div><figcaption>${esc(t)}</figcaption></figure>`).join('')}</div>
     <div class="luces">${LUCES.map(([d, c, p]) => `<div class="luz"><span class="punto" style="background:${c}"></span><span><b>${esc(p)}</b><small>${esc(d)} · ${c}</small></span></div>`).join('')}</div>
   </div>`;
   if (token === 'PALETA') return `<div class="lamina-color">
-    <div class="papeles">${PAPELES.map(([k, c, p, n, ic]) => `<div class="papel"><div class="muestra" style="background:${c}"><span class="ficha-icono">${icono(ic)}</span></div><b>${esc(p)}</b><small>${esc(n)} · ${c}</small></div>`).join('')}</div>
+    <div class="papeles">${PAPELES.map(([, c, p, n, ic]) => `<div class="papel"><div class="muestra" style="background:${c}"><span class="ficha-icono">${icono(ic)}</span></div><b>${esc(p)}</b><small>${esc(n)} · ${c}</small></div>`).join('')}</div>
     <div class="bases">${BASE.map(([n, c, u]) => `<div class="base"><span class="muestra" style="background:${c}"></span><span><b>${esc(n)}</b><small>${esc(u)} · ${c}</small></span></div>`).join('')}</div>
   </div>`;
   if (token === 'CIELOS') return `<div class="lamina-cielos">${cielos().map((c) => `<figure><div class="cielo" style="background:${fondoCielo(c, 34)}"><span class="capsula">${esc(c.nombre)}</span></div><figcaption><b>${esc(c.nota.split(':')[0])}</b><small>${c.base}</small></figcaption></figure>`).join('')}</div>`;
@@ -446,7 +219,6 @@ function inline(s) {
   t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_, alt, src) => guardar(`<img src="${attr(decodeURI(src))}" alt="${attr(alt)}">`));
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, txt, url) => guardar(/^https?:/.test(url) ? `<a href="${attr(url)}">${inline(txt)}</a>` : `<span class="enlace">${inline(txt)}</span>`));
   t = t.replace(/`([^`]+)`/g, (_, c) => guardar(`<code>${esc(c)}</code>`));
-  t = t.replace(/\[CONFIRMAR: ([^\]]+)\]/g, (_, x) => guardar(`<mark class="confirmar"><b>Confirmar</b> ${inline(x)}</mark>`));
   t = t.replace(/(https?:\/\/[^\s<>()]+[^\s<>().,;:»”])/g, (u) => guardar(`<a class="url" href="${attr(u)}">${esc(u)}</a>`));
   t = t.replace(/<br\s*\/?>/gi, () => guardar('<br>'));
   t = esc(t);
@@ -472,12 +244,22 @@ function celdas(fila) {
   return out;
 }
 
+const IMAGEN_SOLA = /^!\[([^\]]*)\]\(([^)\s]+)\)$/;
+
+/** Una tabla; si todas sus celdas son imágenes, una galería con el encabezado como pie de cada imagen. */
 function tabla(filas) {
   const cab = celdas(filas[0]);
   const alin = celdas(filas[1] || '').map((c) => (/^:-+:$/.test(c) ? ' class="centro"' : /^-+:$/.test(c) ? ' class="num"' : ''));
   const cuerpo = filas.slice(2).map(celdas);
+  if (cuerpo.length && cuerpo.every((f) => f.every((c) => IMAGEN_SOLA.test(c)))) {
+    const items = cuerpo.flatMap((f) => f.map((c, k) => { const m = c.match(IMAGEN_SOLA); return { src: m[2], pie: cab[k] || m[1] }; }));
+    return `<div class="galeria g${cab.length}">${items.map((it) => `<figure><img src="${attr(decodeURI(it.src))}" alt="${attr(it.pie)}"><figcaption>${inline(it.pie)}</figcaption></figure>`).join('')}</div>`;
+  }
+  const fila = (f) => (cab.length > 1 && f[0] && f.slice(1).every((c) => !c)
+    ? `<tr class="grupo"><td colspan="${cab.length}">${inline(f[0])}</td></tr>`
+    : `<tr>${cab.map((_, k) => `<td${alin[k] || ''}>${inline(f[k] || '')}</td>`).join('')}</tr>`);
   return `<div class="tabla"><table><thead><tr>${cab.map((c, k) => `<th${alin[k] || ''}>${inline(c)}</th>`).join('')}</tr></thead>` +
-    `<tbody>${cuerpo.map((f) => `<tr>${cab.map((_, k) => `<td${alin[k] || ''}>${inline(f[k] || '')}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    `<tbody>${cuerpo.map(fila).join('')}</tbody></table></div>`;
 }
 
 const MARCA_LISTA = /^(\s*)([-*+]|\d+[.)])\s+(.*)$/;
@@ -508,9 +290,7 @@ function lista(lineas, i) {
   }
   const inicio = ordenada ? parseInt(m0[2], 10) : 1;
   const etiqueta = ordenada ? 'ol' : 'ul';
-  // «- [ ] …» es una casilla para marcar en una ficha.
-  const item = (it) => { const t = it.texto.join(' '); const c = t.match(/^\[( |x|X)\]\s+(.*)$/); return c ? `<li class="tarea"><span class="casilla${c[1] === ' ' ? '' : ' marcada'}"></span>${inline(c[2])}${it.hijos.join('')}</li>` : `<li>${inline(t)}${it.hijos.join('')}</li>`; };
-  const html = `<${etiqueta}${ordenada && inicio !== 1 ? ` start="${inicio}"` : ''}>${items.map(item).join('')}</${etiqueta}>`;
+  const html = `<${etiqueta}${ordenada && inicio !== 1 ? ` start="${inicio}"` : ''}>${items.map((it) => `<li>${inline(it.texto.join(' '))}${it.hijos.join('')}</li>`).join('')}</${etiqueta}>`;
   return { html, i };
 }
 
@@ -524,7 +304,6 @@ function bloquesHtml(lineas, ids, enReferencias = false) {
     const h = l.match(/^(#{1,6})\s+(.+?)\s*$/);
     if (h) {
       const n = h[1].length;
-      enReferencias = /^referencias/.test(clave(h[2]));
       out.push(`<h${n} id="${ids(h[2])}">${inline(h[2])}</h${n}>`);
       i++;
       continue;
@@ -555,54 +334,15 @@ function bloquesHtml(lineas, ids, enReferencias = false) {
     const parrafo = [];
     while (i < lineas.length && lineas[i].trim() && !/^(#{1,6}\s|\s*\||\s*>|\s*```)/.test(lineas[i]) && !MARCA_LISTA.test(lineas[i]) && !/^\[\[/.test(lineas[i].trim())) parrafo.push(lineas[i++].trim());
     const texto = parrafo.join(' ');
-    const soloImagen = texto.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/);
+    const soloImagen = texto.match(IMAGEN_SOLA);
     // El rótulo y el título de una tabla o figura no se separan de ella.
     const rotulo = /^\*\*(Tabla|Figura) [A-I]?\d+\*\*$/.test(texto);
     const tituloPieza = /^\*[^*].*\*$/.test(texto) && /class="rotulo-pieza"/.test(out[out.length - 1] || '');
-    if (soloImagen) out.push(`<figure class="suelta"><img src="${attr(decodeURI(soloImagen[2]))}" alt="${attr(soloImagen[1])}">${soloImagen[1] ? `<figcaption>${inline(soloImagen[1])}</figcaption>` : ''}</figure>`);
-    else out.push(`<p${rotulo ? ' class="rotulo-pieza"' : tituloPieza ? ' class="titulo-pieza"' : enReferencias && pareceReferencia(texto) ? ' class="ref"' : ''}>${inline(texto)}</p>`);
+    const nota = /^\*Nota\.\*/.test(texto);
+    if (soloImagen) out.push(`<figure class="suelta"><img src="${attr(decodeURI(soloImagen[2]))}" alt="${attr(soloImagen[1])}"></figure>`);
+    else out.push(`<p${rotulo ? ' class="rotulo-pieza"' : tituloPieza ? ' class="titulo-pieza"' : nota ? ' class="nota"' : enReferencias ? ' class="ref"' : ''}>${inline(texto)}</p>`);
   }
   return out.join('\n');
-}
-
-// ---------------------------------------------------------------- Anexos
-
-function armarAnexo(a) {
-  const partes = a.partes.filter((p) => !p.referencias).map((p) => ({
-    titulo: p.titulo, clase: p.clase, fuente: p.fuente,
-    lineas: p.md ? p.md.split('\n') : p.generar === 'versiones' ? versiones() : p.generar === 'consentimiento' ? consentimiento() : deFuente(p),
-  }));
-  renumerar(partes, a.letra);
-  const texto = partes.map((p) => p.lineas.join('\n')).join('\n');
-  // Las referencias del anexo: las de sus fuentes y las de la memoria, si el anexo las cita.
-  const yaEstan = new Set(texto.split('\n').filter(pareceReferencia).map(claveRef));
-  const explicitas = a.partes.find((p) => p.referencias);
-  const fuentes = [...new Set(a.partes.filter((p) => p.fuente).map((p) => p.fuente))];
-  const listas = explicitas
-    ? [{ fuente: MEMORIA, tomar: ['Referencias'], citadas: true }, ...explicitas.referencias.map((r) => ({ ...r, citadas: true }))]
-    : [{ fuente: MEMORIA, tomar: ['Referencias'], citadas: true }, ...fuentes.flatMap((f) => encabezados(lineasDe(f)).filter((h) => /^referencias/.test(clave(h.texto))).map((h) => ({ fuente: f, tomar: [h.texto], citadas: true })))];
-  const refs = referencias(listas, texto, yaEstan);
-  if (refs.length) partes.push({ titulo: explicitas ? explicitas.titulo : 'Referencias', clase: 'referencias', lineas: refs.flatMap((r) => [r, '']) });
-  return { ...a, partes, refs: refs.length };
-}
-
-function markdownDeAnexo(a) {
-  const out = [
-    `# Anexo ${a.letra}. ${a.titulo}`, '',
-    `> Parte de los [anexos de la memoria](README.md). Se genera con \`node construir-anexos.js\` desde sus documentos fuente: para corregirlo, se corrige la fuente y se vuelve a generar.`, '',
-    a.intro, '',
-  ];
-  for (const p of a.partes) {
-    if (p.titulo) out.push(`## ${p.titulo}`, '');
-    for (const l of p.lineas) {
-      const f = l.trim().match(/^\[\[(.+)\]\]$/);
-      if (f) out.push(...fichaMarkdown(f[1])); else out.push(l);
-    }
-    out.push('');
-  }
-  out.push('## Registro de cambios (disclaimer)', '');
-  for (const r of REGISTRO) out.push(`### ${r.fecha} — ${r.titulo}`, '', `- **Qué cambió:** ${r.que}`, `- **Cómo estaba antes:** ${r.antes}`, `- **Por qué:** ${r.porque}`, '');
-  return out.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
 }
 
 function htmlDeAnexo(a) {
@@ -625,7 +365,7 @@ function htmlDeAnexo(a) {
 
 // ---------------------------------------------------------------- Portada, índice y estilo
 
-/** Portada con los datos de la memoria: institución, título, autor y profesores. */
+/** Datos de la memoria para la portada: institución, título, autor y profesores. */
 function datosDeMemoria() {
   const l = leer(MEMORIA).split('\n');
   const fin = l.findIndex((x) => /^# Agradecimientos/.test(x));
@@ -650,17 +390,14 @@ function portadaHtml() {
 function indiceHtml(arts, paginas) {
   return `<section class="indice" style="page:indice">
   <h1>Índice</h1>
-  <p class="intro">${inline(portada.bajada)}. Nueve anexos que documentan la evidencia, el diseño y la prueba de Relevo. Cada uno se arma desde los documentos del proyecto, que conservan su historial de cambios.</p>
+  <p class="intro">${inline(portada.bajada)}. Nueve anexos que recopilan la evidencia, el diseño y la prueba de Relevo.</p>
   <ol class="indice-lista">${arts.map((a) => `<li><a href="#anexo-${a.letra.toLowerCase()}"><span class="letra ${a.color}">${a.letra}</span><span class="t"><b>${inline(a.titulo)}</b><small>${inline(a.resumen)}</small></span><span class="pag">${paginas ? paginas[a.letra] : ''}</span></a></li>`).join('')}</ol>
 </section>`;
 }
 
-function documento(cuerpo, arts) {
-  const cabeceras = arts.map((a) => `@page anexo-${a.letra.toLowerCase()} { @top-right { content: "Anexo ${a.letra} · ${a.titulo.replace(/"/g, '\\"')}"; } }`).join('\n');
-  return `<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><title>Relevo · Anexos de la memoria</title>
-<style>
-@font-face { font-family: "Instrument Sans"; src: url("${desdeAqui(LETRA)}") format("truetype"); font-weight: 400 700; font-style: normal; }
+/** La hoja de estilo de los anexos, compartida por el HTML, el PDF y las láminas del Word. */
+function estilo(cabeceras = '') {
+  return `@font-face { font-family: "Instrument Sans"; src: url("${desdeAqui(LETRA)}") format("truetype"); font-weight: 400 700; font-style: normal; }
 @font-face { font-family: "Instrument Sans"; src: url("${desdeAqui(LETRA_CURSIVA)}") format("truetype"); font-weight: 400 700; font-style: italic; }
 :root {
   --paper: #F7F4F0; --stone: #EEE9E3; --line: #E4DED6; --ink: #141312; --graphite: #6B655F; --white: #FFFFFF;
@@ -828,9 +565,72 @@ figure.suelta figcaption { font-size: 8pt; color: var(--graphite); margin-top: 1
   .portada, .indice, .anexo { width: 210mm; margin: 0 auto 8mm; background-color: var(--paper); box-shadow: 0 2mm 8mm rgba(0,0,0,.12); }
   .indice, .anexo { padding: 19mm 17mm 18mm 19mm; }
 }
+/* Desde el 8 de noviembre de 2026 */
+p.nota { font-size: 8pt; line-height: 1.4; color: var(--graphite); margin: 1.4mm 0 4mm; }
+tr.grupo td { background: var(--paper); font-weight: 600; }
+.galeria + .galeria { margin-top: -1mm; }
+.galeria.g3 { grid-template-columns: repeat(3, 1fr); } .galeria.g4 { grid-template-columns: repeat(4, 1fr); }`;
+}
+
+function documento(cuerpo, arts) {
+  const cabeceras = arts.map((a) => `@page anexo-${a.letra.toLowerCase()} { @top-right { content: "Anexo ${a.letra} · ${a.titulo.replace(/"/g, '\\"')}"; } }`).join('\n');
+  return `<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Relevo · Anexos de la memoria</title>
+<style>
+${estilo(cabeceras)}
 </style></head><body>
 ${cuerpo}
 </body></html>`;
+}
+
+// ---------------------------------------------------------------- Láminas para el Word
+
+/**
+ * Convierte en PNG las láminas y los diagramas que el Word no puede dibujar: Chrome mide cada pieza
+ * y la fotografía sola, a tres veces su tamaño. Se guardan en imagenes/word con una huella de su
+ * contenido, así que solo se rehacen si cambian.
+ */
+function rasterizar(piezas) {
+  fs.mkdirSync(DIR_WORD, { recursive: true });
+  const extra = 'html, body { background: transparent !important; margin: 0 !important; padding: 0 !important; }\n' +
+    '.pieza { box-sizing: border-box; overflow: hidden; } .pieza.con-fondo { background: #F7F4F0; border-radius: 4mm; padding: 5mm; }\n' +
+    '.pieza > :first-child { margin-top: 0 !important; } .pieza > :last-child { margin-bottom: 0 !important; } .pieza .diagrama { margin: 0; }';
+  const pagina = (cuerpo, guion = '') => `<!doctype html><html lang="es"><head><meta charset="utf-8"><style>${estilo()}\n${extra}</style></head><body>${cuerpo}${guion}</body></html>`;
+  const piezaHtml = (p) => `<div class="pieza${p.fondo === false ? '' : ' con-fondo'}" style="width:${p.anchoMm}mm">${p.html}</div>`;
+  const resultado = {};
+  const faltan = [];
+  for (const p of piezas) {
+    const huella = crypto.createHash('sha1').update(pagina(piezaHtml(p))).digest('hex').slice(0, 10);
+    const archivo = path.join(DIR_WORD, `${slug(p.clave)}-${huella}.png`);
+    resultado[p.clave] = { archivo, anchoMm: p.anchoMm };
+    if (!fs.existsSync(archivo)) faltan.push({ ...p, archivo });
+  }
+  if (faltan.length) {
+    const guion = '<script id="salida" type="application/json"></script><script>(async () => {' +
+      'await document.fonts.ready; await Promise.all([...document.images].map((im) => im.complete ? 0 : new Promise((r) => { im.onload = im.onerror = r; })));' +
+      'document.getElementById("salida").textContent = JSON.stringify([...document.querySelectorAll(".pieza")].map((el) => el.getBoundingClientRect().height));' +
+      'document.documentElement.setAttribute("data-listo", "1"); })();</script>';
+    const tmp = path.join(AQUI, `_medir-${process.pid}.html`);
+    fs.writeFileSync(tmp, pagina(faltan.map(piezaHtml).join('<div style="height:24px"></div>'), guion));
+    let dom;
+    try { dom = chrome(['--window-size=1400,1000', '--dump-dom', url(tmp)]).toString(); } finally { fs.unlinkSync(tmp); }
+    const m = dom.match(/<script id="salida" type="application\/json">([\s\S]*?)<\/script>/);
+    if (!/data-listo="1"/.test(dom) || !m || !m[1]) throw new Error('No se pudieron medir las láminas para el Word');
+    const altos = JSON.parse(m[1]);
+    faltan.forEach((p, k) => {
+      const ancho = Math.ceil(p.anchoMm * 96 / 25.4);
+      const alto = Math.ceil(altos[k]);
+      const t = path.join(AQUI, `_pieza-${process.pid}-${k}.html`);
+      fs.writeFileSync(t, pagina(piezaHtml(p)));
+      try { chrome([`--window-size=${ancho},${alto}`, '--force-device-scale-factor=3', '--default-background-color=00000000', `--screenshot=${p.archivo}`, url(t)]); } finally { fs.unlinkSync(t); }
+      if (!fs.existsSync(p.archivo)) throw new Error(`No se pudo convertir ${p.clave} en imagen`);
+    });
+    console.log(`Láminas para el Word: ${faltan.length}`);
+  }
+  // Las imágenes que ya no se usan, fuera.
+  const vigentes = new Set(Object.values(resultado).map((r) => path.basename(r.archivo)));
+  for (const f of fs.readdirSync(DIR_WORD)) if (f.endsWith('.png') && !vigentes.has(f)) fs.unlinkSync(path.join(DIR_WORD, f));
+  return resultado;
 }
 
 // ---------------------------------------------------------------- Impresión y comprobaciones
@@ -856,23 +656,13 @@ function imprimir(html, pdf, extra = []) {
 function comprobar(nombre, texto) {
   const correo = texto.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}/g);
   if (correo) throw new Error(`${nombre} contiene un correo: ${[...new Set(correo)].join(', ')}`);
-  if (/\[\[(GALERIA|LOGO|PALETA|CIELOS|ICONOS|DIAGRAMA)/.test(texto)) throw new Error(`${nombre} tiene una ficha sin dibujar`);
+  if (/\[\[(GALERIA|LOGO|PALETA|CIELOS|ICONOS|DIAGRAMA)/.test(texto) && !/\.md$/.test(nombre)) throw new Error(`${nombre} tiene una ficha sin dibujar`);
 }
 
 function principal() {
   const inicio = Date.now();
   const conPdf = !process.argv.includes('--sin-pdf');
-  const arts = anexos.map(armarAnexo);
-
-  // Markdown por anexo
-  for (const a of arts) {
-    const md = markdownDeAnexo(a);
-    const nombre = `anexo-${a.letra.toLowerCase()}-${a.slug}.md`;
-    comprobar(nombre, md);
-    fs.writeFileSync(path.join(AQUI, nombre), md);
-    a.palabras = md.split(/\s+/).filter(Boolean).length;
-    a.archivo = nombre;
-  }
+  const arts = anexos.map(leerAnexo);
   dibujarDiagramas();
   const htmlAnexos = arts.map(htmlDeAnexo);
 
@@ -895,11 +685,25 @@ function principal() {
 
   if (conPdf) {
     const n = imprimir(html, SALIDA_PDF, ['--generate-pdf-document-outline']);
-    const esperado = Object.values(paginas).length ? paginas.I + arts[arts.length - 1].paginas - 1 : 0;
+    const esperado = paginas.I + arts[arts.length - 1].paginas - 1;
     const peso = fs.statSync(SALIDA_PDF).size / 1048576;
     console.log(`PDF: ${n} páginas, ${peso.toFixed(1)} MB${n !== esperado ? ` (atención: el índice esperaba ${esperado})` : ''}`);
   }
-  for (const a of arts) console.log(`Anexo ${a.letra}: ${a.palabras} palabras${a.paginas ? `, ${a.paginas} páginas desde la ${paginas[a.letra]}` : ''}, ${a.refs} referencias · ${a.archivo}`);
+
+  // Word: las láminas y los diagramas van como imágenes; el resto, como texto con estilos.
+  const fichas = new Set(arts.flatMap((a) => a.partes.flatMap((p) => p.lineas)).map((l) => (l.trim().match(/^\[\[(.+)\]\]$/) || [])[1]).filter(Boolean));
+  const piezas = [...fichas].map((f) => ({ clave: f, html: fichaHtml(f), anchoMm: ANCHO_WORD_MM, fondo: !f.startsWith('DIAGRAMA') }));
+  piezas.push({ clave: 'LOGOTIPO', html: `<img src="${desdeAqui(`${LOGOS}/relevo-logo-horizontal.svg`)}" alt="Relevo" style="width:100%;display:block">`, anchoMm: 70, fondo: false });
+  const laminas = rasterizar(piezas);
+  const m = datosDeMemoria();
+  const word = construirWord({
+    salida: SALIDA_WORD, raiz: AQUI, laminas, anexos: arts,
+    titulo: 'Relevo · Anexos de la memoria', autor: m.datos[0] || 'Relevo',
+    portada: { institucion: m.institucion, titulo: portada.titulo, subtitulo: m.subtitulo, datos: m.datos, fecha: `Versión del ${FECHA}`, logo: laminas.LOGOTIPO },
+  });
+  console.log(`Word: ${word.encabezados} entradas en el índice, ${word.imagenes} imágenes, ${(word.peso / 1048576).toFixed(1)} MB`);
+
+  for (const a of arts) console.log(`Anexo ${a.letra}: ${a.palabras} palabras${a.paginas ? `, ${a.paginas} páginas desde la ${paginas[a.letra]}` : ''} · ${a.archivo}`);
   console.log(`Listo en ${((Date.now() - inicio) / 1000).toFixed(0)} s`);
 }
 
