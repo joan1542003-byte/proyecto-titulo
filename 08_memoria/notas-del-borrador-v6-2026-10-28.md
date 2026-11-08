@@ -126,9 +126,21 @@ El mismo 4 de noviembre, el autor pidió evitar términos propios, hablar de lo 
 - **Análisis visual (documento 43):** la forma que se repite, el desenfoque solo en la navegación, el color que sube con el momento (Figura 15, nueva), las fichas de igual luminosidad y poca saturación, la simulación de daltonismo, los íconos y cómo se llegó a la identidad. Entran Albers (2013), Machado et al. (2009) y Wilms y Oberfeld (2018); sale Android Developers (s. f.).
 - **Figuras:** 24; desde la 15, cada una sube un número.
 
+## Décima ronda: las correcciones de los anexos (D-170)
+
+El 8 de noviembre, el autor revisó los anexos y pidió aplicar sus correcciones también en la memoria, leyéndola completa antes de cambiarla.
+
+- **Inteligencia artificial:** la declaración del capítulo 10 sigue la del Anexo E. La investigación, las entrevistas, la memoria, la identidad y la interfaz son del autor; Codex ayudó a programar las primeras versiones; Claude Code desarrolló la aplicación a partir de sus prototipos, bocetos y *wireframes* de Figma y ayudó a ordenar el proceso, y las herramientas ayudaron a modelar el objeto en 3D, revisar la redacción, buscar fuentes y verificar citas, lo que permitió optimizar el tiempo y ahorrar recursos. Entra Springer Nature (s. f.) como referente de la revisión de la redacción; salen las alternativas visuales, la redacción de borradores, la clasificación de la encuesta y el registro de pedidos.
+- **Encuesta:** sale que las respuestas abiertas se clasificaron con apoyo de inteligencia artificial; el autor dijo que no fue del todo así.
+- ***Calm technology*:** se nombra con su término original, que no tiene una traducción fija al español; en el glosario pasa a la C.
+- **Palabras:** «el papel y la tinta» pasan a «el blanco y el negro»; la identidad es «diseñada por el autor», no «aprobada»; «aplicaciones seleccionadas», en vez de «elegidas». La Figura 11, la Tabla 1 y el capítulo 10 ya no remiten al registro de decisiones.
+- **Un recuento corregido:** en el criterio 1, quienes valoraron su sesión como descanso son seis, no tres: en la pregunta 7 de las entrevistas, dos personas dudaron y las otras seis dijeron que sí.
+- **Anexos:** la lista sigue los títulos y el contenido actuales de los nueve anexos.
+- **Sin cambios:** los resultados, las cifras de la prueba, las figuras y los dos marcadores `[CONFIRMAR: …]`. La versión diseñada no se regeneró.
+
 ## Extensión
 
-Capítulos 1 a 14: 16 478 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 491. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 560 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 573. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -147,7 +159,6 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 
 - **Fotos de la prueba:** la memoria ya no lo menciona, pero las personas deben haber autorizado su publicación.
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
-- **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre, y actualizar el Resumen, el Abstract y las Conclusiones.
@@ -158,6 +169,12 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Décima ronda
+
+- **Qué cambió:** se añadió la décima ronda; la extensión sigue a la v6 actual, y sale de lo pendiente el instrumento de cierre del Anexo I, que ya está en el anexo.
+- **Cómo estaba antes:** la última ronda era la novena, con 16 478 palabras.
+- **Por qué:** pedido del autor del 8 de noviembre de 2026 (D-170).
 
 ### 2026-11-04 — Novena ronda
 

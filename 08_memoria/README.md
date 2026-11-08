@@ -92,6 +92,27 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-11-08 — Décima ronda de la v6
+
+- **Cambio:** la v6 aplica las correcciones del autor a los anexos: la declaración de inteligencia artificial, con Springer Nature como referente; la *calm technology* con su nombre original; la encuesta sin la clasificación con inteligencia artificial; palabras más claras; sin remisiones al registro de decisiones; un recuento corregido en el criterio 1, y la lista de anexos al día. Pasa a 16 560 palabras.
+- **Versión anterior:** 16 478 palabras, con la declaración de inteligencia artificial anterior.
+- **Motivo:** décima ronda de la v6, pedida por el autor (D-170).
+- **Alcance:** la versión diseñada no se regeneró.
+
+### 2026-11-08 — Anexos formales
+
+- **Cambio:** el enlace a los anexos dice que son un documento formal, en Word y PDF, con la portada de la pauta y el logo de la Escuela de Diseño.
+- **Versión anterior:** salían también en HTML y en un PDF en A4 con la línea de Relevo.
+- **Motivo:** el autor pidió que los anexos no se diseñen (D-169).
+- **Alcance:** no cambió el texto de la memoria.
+
+### 2026-11-08 — Anexos en Word
+
+- **Cambio:** el enlace a los anexos describe las recopilaciones nuevas y suma el Word.
+- **Versión anterior:** los anexos eran de la v5, armados desde sus documentos fuente, en Markdown, HTML y PDF.
+- **Motivo:** el autor pidió los anexos directos y listos para Word (D-168).
+- **Alcance:** no cambió el texto de la memoria.
+
 ### 2026-11-04 — Novena ronda de la v6
 
 - **Cambio:** la v6 usa los términos de los autores, cuenta lo logrado, suma análisis visual y pasa a 24 figuras y 16 478 palabras.
@@ -127,20 +148,6 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 - **Cambio:** la descripción del borrador v6 pasa a 26 figuras y 11 tablas.
 - **Versión anterior:** decía 13 figuras y 9 tablas.
 - **Motivo:** segunda ronda de la v6, pedida por el autor (D-147).
-
-### 2026-11-08 — Anexos formales
-
-- **Cambio:** el enlace a los anexos dice que son un documento formal, en Word y PDF, con la portada de la pauta y el logo de la Escuela de Diseño.
-- **Versión anterior:** salían también en HTML y en un PDF en A4 con la línea de Relevo.
-- **Motivo:** el autor pidió que los anexos no se diseñen (D-169).
-- **Alcance:** no cambió el texto de la memoria.
-
-### 2026-11-08 — Anexos en Word
-
-- **Cambio:** el enlace a los anexos describe las recopilaciones nuevas y suma el Word.
-- **Versión anterior:** los anexos eran de la v5, armados desde sus documentos fuente, en Markdown, HTML y PDF.
-- **Motivo:** el autor pidió los anexos directos y listos para Word (D-168).
-- **Alcance:** no cambió el texto de la memoria.
 
 ### 2026-10-28 — Borrador v6 y memoria en 1920 × 1080
 

@@ -27,7 +27,7 @@ Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19
 
 ## B.2 Método
 
-Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad. La codificación se hizo con apoyo de inteligencia artificial, con reglas explícitas y un control automático de los totales.
+Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad.
 
 ## B.3 Resultados
 
@@ -155,7 +155,7 @@ Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante
 
 ### 2026-11-08 — Correcciones del autor
 
-- **Qué cambió:** las respuestas se numeran del 1 al 53; la categoría «Contenido elegido» pasa a «Contenido buscado»; sale la mención al repositorio y la remisión al Anexo E.
+- **Qué cambió:** las respuestas se numeran del 1 al 53; la categoría «Contenido elegido» pasa a «Contenido buscado»; sale la mención al repositorio, y también la frase sobre la codificación con inteligencia artificial, que el autor pidió quitar porque no fue del todo así.
 - **Cómo estaba antes:** las respuestas se identificaban como S01 a S53, y el alcance decía que el archivo quedaba fuera del repositorio.
 - **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
