@@ -246,6 +246,7 @@
 | 6 nov. | Corrección y encargo | El proyecto parte de situaciones comunes, con un ejemplo. La persona registra que quiere volver a leer, marca las aplicaciones que consumen su tiempo y elige un lugar relacionado con la actividad, como el velador junto al libro. Más preguntas, fáciles de entender, del área de cada persona y que ayuden a validar. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) toman ese contexto y pasan de tres a cinco preguntas: juicio de la propuesta, tres de su especialidad y la única cosa que cambiarían. | — |
 | 8 nov. | Consulta | Leer la versión más reciente de la memoria, analizarla y evaluarla según la rúbrica oficial, como si fuera la comisión. | [Evaluación](../08_memoria/evaluacion-como-comision-v6-2026-11-08.md) de la v6 del 4 de noviembre: nota orientativa cercana a 5,6; decisiones de diseño y formulación sólidas; la tesis del lugar sin evidencia hasta informar la semana con el teléfono, el objeto sin imprimir y 20 figuras por insertar. La matriz de pase se actualizó en 5.1, 5.2 y 8.1. | — |
 | 8 nov. | Consulta | ¿Cuánto vale la defensa si expone mal y nervioso? | Según el instructivo, el examen dura 50 minutos (15 de exposición, 30 de preguntas y 10 de evaluación), la comisión evalúa con la rúbrica y la nota final combina la nota de proceso del profesor y la de la comisión, sin porcentaje publicado; ajustarse al tiempo es parte de la evaluación. Se sumó a Por hacer preguntar la ponderación. | — |
+| 8 nov. | Consulta | ¿Qué pasa si responde mal gran parte de las preguntas del examen, y cuánto valen? | Las preguntas no tienen puntaje propio: la comisión pone una nota con la rúbrica a todo el trabajo, y las respuestas pesan en cómo juzga cada criterio. Cuánto baja la nota no está definido, y la ponderación entre la nota de proceso y la de la comisión queda por preguntar. Un límite reconocido con honestidad no es una mala respuesta. | — |
 
 ## Lo que muestra el registro
 
@@ -256,6 +257,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Peso de las preguntas
+
+- **Qué cambió:** se registró la consulta sobre cuánto valen las preguntas del examen.
+- **Cómo estaba antes:** el último pedido era cuánto vale la defensa.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Peso de la defensa
 
