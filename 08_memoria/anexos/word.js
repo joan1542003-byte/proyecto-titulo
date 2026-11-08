@@ -5,6 +5,8 @@
 // Lo que entiende del Markdown de los anexos: encabezados, párrafos, listas (también anidadas),
 // tablas, tablas de imágenes (galerías), citas, imágenes sueltas, negrita, cursiva, código y enlaces.
 // Las tablas y figuras siguen APA 7: rótulo en negrita, título en cursiva y nota debajo.
+// Es un documento formal, sin diseño propio: la pauta de la Biblioteca UDP, texto negro, los estilos de
+// título, índice y tabla de Word, y la portada de la pauta con el logo de la Escuela de Diseño.
 
 'use strict';
 const fs = require('fs');
@@ -62,7 +64,7 @@ function zip(archivos, fecha) {
   return Buffer.concat([...partes, dir, fin]);
 }
 
-// ---------------------------------------------------------------- Medidas y colores
+// ---------------------------------------------------------------- Medidas
 
 // Formato de la pauta de tesis de la Biblioteca UDP: carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los
 // demás, Arial 12, interlineado 1,5 y el número de página centrado abajo.
@@ -72,7 +74,7 @@ const MARGEN_IZQ = 1984;                            // 3,5 cm
 const TEXTO = PAGINA.ancho - MARGEN - MARGEN_IZQ;   // 8838 dxa, unos 15,6 cm
 const EMU_POR_DXA = 635;
 const LETRA = 'Arial';
-const C = { tinta: '141312', grafito: '6B655F', linea: 'D9D2C9', piedra: 'EEE9E3', papel: 'F7F4F0' };
+const NEGRO = '000000';
 
 const x = (s) => String(s).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -357,21 +359,26 @@ class Documento {
       const largos = textos.map((t) => t.length);
       const prom = largos.reduce((a, b) => a + b, 0) / largos.length;
       const max = Math.max(...largos);
-      const palabra = Math.max(...textos.flatMap((t) => t.split(/\s+/)).map((p) => p.length));
+      // La palabra más larga de la columna; la del encabezado, en negrita, ocupa un 10 % más.
+      const palabra = Math.max(...textos.flatMap((t, j) => t.split(/\s+/).map((p) => p.length * (j === 0 ? 1.1 : 1))));
       return { peso: Math.max(5, 0.55 * prom + 0.45 * Math.min(max, 90)), palabra };
     });
     const total = pesos.reduce((a, p) => a + p.peso, 0);
     const chica = n >= 5 || cuerpo.length > 30;
-    const anchoLetra = chica ? 92 : 104;          // dxa por carácter, aproximado
-    let anchos = pesos.map((p) => Math.max(Math.round(TEXTO * p.peso / total), Math.min(2400, p.palabra * anchoLetra + 220)));
-    const suma = anchos.reduce((a, b) => a + b, 0);
-    anchos = anchos.map((w) => Math.floor(w * TEXTO / suma));
+    const anchoLetra = chica ? 104 : 116;         // dxa por carácter, aproximado, a 9 y 10 puntos
+    // Cada columna tiene un mínimo para que su palabra más larga no se corte; lo demás se reparte según el texto.
+    const minimos = pesos.map((p) => Math.min(Math.round(TEXTO * 1.6 / n), Math.ceil(p.palabra * anchoLetra) + 220));
+    let anchos = pesos.map((p, k) => Math.max(minimos[k], Math.round(TEXTO * p.peso / total)));
+    const exceso = anchos.reduce((a, b) => a + b, 0) - TEXTO;
+    const holgura = anchos.reduce((a, w, k) => a + w - minimos[k], 0);
+    if (exceso > 0 && holgura >= exceso) anchos = anchos.map((w, k) => Math.floor(w - (w - minimos[k]) * exceso / holgura));
+    else if (exceso > 0) { const suma = anchos.reduce((a, b) => a + b, 0); anchos = anchos.map((w) => Math.floor(w * TEXTO / suma)); }
     anchos[anchos.length - 1] += TEXTO - anchos.reduce((a, b) => a + b, 0);
 
     const estiloCelda = chica ? 'TablaTextoChico' : 'TablaTexto';
-    const celda = (texto, k, encabezado) => `<w:tc><w:tcPr><w:tcW w:w="${anchos[k]}" w:type="dxa"/>${encabezado ? `<w:shd w:val="clear" w:color="auto" w:fill="${C.piedra}"/>` : ''}</w:tcPr>` +
+    const celda = (texto, k, encabezado) => `<w:tc><w:tcPr><w:tcW w:w="${anchos[k]}" w:type="dxa"/></w:tcPr>` +
       `<w:p><w:pPr><w:pStyle w:val="${estiloCelda}"/></w:pPr>${this.runs(texto, encabezado ? { b: true } : {})}</w:p></w:tc>`;
-    const grupo = (texto) => `<w:tc><w:tcPr><w:tcW w:w="${TEXTO}" w:type="dxa"/><w:gridSpan w:val="${n}"/><w:shd w:val="clear" w:color="auto" w:fill="${C.papel}"/></w:tcPr>` +
+    const grupo = (texto) => `<w:tc><w:tcPr><w:tcW w:w="${TEXTO}" w:type="dxa"/><w:gridSpan w:val="${n}"/></w:tcPr>` +
       `<w:p><w:pPr><w:pStyle w:val="${estiloCelda}"/><w:keepNext/></w:pPr>${this.runs(texto.replace(/^\*\*(.*)\*\*$/, '$1'), { b: true })}</w:p></w:tc>`;
 
     const filasXml = [
@@ -382,7 +389,7 @@ class Documento {
         return `<w:tr><w:trPr><w:cantSplit/></w:trPr>${cab.map((_, k) => celda(f[k] || '', k, false)).join('')}</w:tr>`;
       }),
     ];
-    return `<w:tbl><w:tblPr><w:tblStyle w:val="TablaRelevo"/><w:tblW w:w="${TEXTO}" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="1" w:noVBand="1"/></w:tblPr>` +
+    return `<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="${TEXTO}" w:type="dxa"/><w:tblLayout w:type="fixed"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="1" w:noVBand="1"/></w:tblPr>` +
       `<w:tblGrid>${anchos.map((w) => `<w:gridCol w:w="${w}"/>`).join('')}</w:tblGrid>${filasXml.join('')}</w:tbl>` + this.parrafoVacio();
   }
 
@@ -410,12 +417,13 @@ class Documento {
 
   // ------------------------------------------------------------ Índice
 
-  indiceXml() {
+  /** El índice como campo TOC de Word, con sus entradas ya escritas y, si se conocen, sus páginas. */
+  indiceXml(paginas) {
     const entradas = this.indice.map((e, k) => {
       const inicio = k === 0 ? '<w:r><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:instrText xml:space="preserve"> TOC \\o "1-2" \\h \\z \\u </w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r>' : '';
       return `<w:p><w:pPr><w:pStyle w:val="TOC${e.nivel}"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="${TEXTO}"/></w:tabs></w:pPr>${inicio}` +
         `<w:hyperlink w:anchor="${e.marca}" w:history="1"><w:r><w:t xml:space="preserve">${x(e.texto)}</w:t></w:r><w:r><w:tab/></w:r>` +
-        `<w:r><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:instrText xml:space="preserve"> PAGEREF ${e.marca} \\h </w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t></w:t></w:r><w:r><w:fldChar w:fldCharType="end"/></w:r></w:hyperlink></w:p>`;
+        `<w:r><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:instrText xml:space="preserve"> PAGEREF ${e.marca} \\h </w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t>${paginas && paginas[k] ? paginas[k] : ''}</w:t></w:r><w:r><w:fldChar w:fldCharType="end"/></w:r></w:hyperlink></w:p>`;
     });
     return entradas.join('') + '<w:p><w:r><w:fldChar w:fldCharType="end"/></w:r></w:p>';
   }
@@ -430,51 +438,53 @@ const XML = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n';
 
 function estilos() {
   const fuente = `<w:rFonts w:ascii="${LETRA}" w:hAnsi="${LETRA}" w:eastAsia="${LETRA}" w:cs="${LETRA}"/>`;
+  const tam = (n) => `<w:sz w:val="${n}"/><w:szCs w:val="${n}"/>`;
+  const negrita = '<w:b/><w:bCs/>';
+  const cursiva = '<w:i/><w:iCs/>';
   const parrafo = (id, nombre, { basado = 'Normal', siguiente, ppr = '', rpr = '', nivel, oculto = false, prioridad = 20, integrado = false } = {}) =>
     `<w:style w:type="paragraph"${integrado ? '' : ' w:customStyle="1"'} w:styleId="${id}"><w:name w:val="${nombre}"/>${basado ? `<w:basedOn w:val="${basado}"/>` : ''}${siguiente ? `<w:next w:val="${siguiente}"/>` : ''}` +
     `<w:uiPriority w:val="${prioridad}"/>${oculto ? '<w:semiHidden/>' : '<w:qFormat/>'}<w:pPr>${ppr}${nivel !== undefined ? `<w:outlineLvl w:val="${nivel}"/>` : ''}</w:pPr><w:rPr>${rpr}</w:rPr></w:style>`;
-  const titulo = (n, tam, antes, despues, extra = '') => parrafo(`Heading${n}`, `heading ${n}`, {
+  // Los títulos de Word, en negro: el del anexo en negrita de 14 puntos; los demás, de 12.
+  const titulo = (n, forma, puntos, antes, despues) => parrafo(`Heading${n}`, `heading ${n}`, {
     siguiente: 'Normal', nivel: n - 1, prioridad: 9, integrado: true,
-    ppr: `<w:keepNext/><w:keepLines/>${n === 1 ? '<w:pageBreakBefore/>' : ''}<w:spacing w:before="${antes}" w:after="${despues}" w:line="240" w:lineRule="auto"/>${extra}`,
-    rpr: `${fuente}<w:b/><w:bCs/><w:color w:val="${C.tinta}"/><w:sz w:val="${tam}"/><w:szCs w:val="${tam}"/>`,
+    ppr: `<w:keepNext/><w:keepLines/>${n === 1 ? '<w:pageBreakBefore/>' : ''}<w:spacing w:before="${antes}" w:after="${despues}" w:line="240" w:lineRule="auto"/>`,
+    rpr: `${fuente}${forma}<w:color w:val="${NEGRO}"/>${tam(puntos * 2)}`,
   });
+  const borde = (lado) => `<w:${lado} w:val="single" w:sz="4" w:space="0" w:color="${NEGRO}"/>`;
   return XML + `<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
-<w:docDefaults><w:rPrDefault><w:rPr>${fuente}<w:color w:val="${C.tinta}"/><w:sz w:val="24"/><w:szCs w:val="24"/><w:lang w:val="es-CL" w:eastAsia="es-CL" w:bidi="ar-SA"/></w:rPr></w:rPrDefault>
+<w:docDefaults><w:rPrDefault><w:rPr>${fuente}<w:color w:val="${NEGRO}"/>${tam(24)}<w:lang w:val="es-CL" w:eastAsia="es-CL" w:bidi="ar-SA"/></w:rPr></w:rPrDefault>
 <w:pPrDefault><w:pPr><w:spacing w:after="120" w:line="360" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>
-<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/><w:pPr><w:widowControl/><w:spacing w:after="120" w:line="360" w:lineRule="auto"/></w:pPr><w:rPr>${fuente}<w:sz w:val="24"/><w:szCs w:val="24"/></w:rPr></w:style>
+<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/><w:pPr><w:widowControl/><w:spacing w:after="120" w:line="360" w:lineRule="auto"/></w:pPr><w:rPr>${fuente}${tam(24)}</w:rPr></w:style>
 <w:style w:type="character" w:default="1" w:styleId="DefaultParagraphFont"><w:name w:val="Default Paragraph Font"/><w:uiPriority w:val="1"/><w:semiHidden/></w:style>
 <w:style w:type="table" w:default="1" w:styleId="TableNormal"><w:name w:val="Normal Table"/><w:uiPriority w:val="99"/><w:semiHidden/><w:tblPr><w:tblInd w:w="0" w:type="dxa"/><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="108" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="108" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style>
 <w:style w:type="numbering" w:default="1" w:styleId="NoList"><w:name w:val="No List"/><w:uiPriority w:val="99"/><w:semiHidden/></w:style>
-${titulo(1, 32, 0, 240)}
-${titulo(2, 28, 360, 120)}
-${titulo(3, 24, 240, 80)}
-${titulo(4, 24, 200, 60)}
-${parrafo('Portada', 'Portada', { ppr: '<w:spacing w:after="0" w:line="300" w:lineRule="auto"/>', rpr: '<w:sz w:val="22"/><w:szCs w:val="22"/>' })}
-${parrafo('PortadaTitulo', 'Portada: título', { ppr: '<w:spacing w:before="480" w:after="120" w:line="240" w:lineRule="auto"/>', rpr: '<w:b/><w:bCs/><w:sz w:val="64"/><w:szCs w:val="64"/>' })}
-${parrafo('PortadaBajada', 'Portada: bajada', { ppr: '<w:spacing w:after="960" w:line="300" w:lineRule="auto"/>', rpr: '<w:sz w:val="28"/><w:szCs w:val="28"/>' })}
-${parrafo('TituloIndice', 'Título del índice', { ppr: '<w:spacing w:after="240"/>', rpr: '<w:b/><w:bCs/><w:sz w:val="32"/><w:szCs w:val="32"/>' })}
-${parrafo('TOC1', 'toc 1', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:before="160" w:after="40" w:line="276" w:lineRule="auto"/>', rpr: '<w:b/><w:bCs/><w:sz w:val="22"/><w:szCs w:val="22"/>' })}
-${parrafo('TOC2', 'toc 2', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:after="20" w:line="276" w:lineRule="auto"/><w:ind w:left="284"/>', rpr: '<w:sz w:val="21"/><w:szCs w:val="21"/>' })}
-${parrafo('Intro', 'Introducción del anexo', { siguiente: 'Normal', ppr: '<w:spacing w:after="240"/>' })}
-${parrafo('Lista', 'Lista (Relevo)', { ppr: '<w:spacing w:after="60"/>' })}
+${titulo(1, negrita, 14, 0, 360)}
+${titulo(2, negrita, 12, 360, 120)}
+${titulo(3, negrita + cursiva, 12, 240, 80)}
+${titulo(4, cursiva, 12, 200, 60)}
+${parrafo('Portada', 'Portada', { ppr: '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>' })}
+${parrafo('TituloIndice', 'Título del índice', { siguiente: 'Normal', ppr: '<w:keepNext/><w:spacing w:after="360" w:line="240" w:lineRule="auto"/>', rpr: negrita + tam(28) })}
+${parrafo('TOC1', 'toc 1', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:before="120" w:after="40" w:line="276" w:lineRule="auto"/>', rpr: negrita })}
+${parrafo('TOC2', 'toc 2', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:after="40" w:line="276" w:lineRule="auto"/><w:ind w:left="284"/>' })}
+${parrafo('Lista', 'Lista', { ppr: '<w:spacing w:after="60"/>' })}
 ${parrafo('ListaFin', 'Lista, último elemento', { basado: 'Lista', ppr: '<w:spacing w:after="160"/>' })}
-${parrafo('RotuloPieza', 'Rótulo de tabla o figura', { siguiente: 'TituloPieza', ppr: '<w:keepNext/><w:spacing w:before="240" w:after="0"/>', rpr: '<w:b/><w:bCs/>' })}
-${parrafo('TituloPieza', 'Título de tabla o figura', { siguiente: 'Normal', ppr: '<w:keepNext/><w:spacing w:after="120"/>', rpr: '<w:i/><w:iCs/>' })}
-${parrafo('NotaPieza', 'Nota de tabla o figura', { ppr: '<w:spacing w:before="60" w:after="240" w:line="276" w:lineRule="auto"/>', rpr: `<w:color w:val="${C.grafito}"/><w:sz w:val="20"/><w:szCs w:val="20"/>` })}
-${parrafo('TablaTexto', 'Texto de tabla', { ppr: '<w:spacing w:before="20" w:after="20" w:line="240" w:lineRule="auto"/>', rpr: '<w:sz w:val="18"/><w:szCs w:val="18"/>' })}
-${parrafo('TablaTextoChico', 'Texto de tabla, chico', { basado: 'TablaTexto', rpr: '<w:sz w:val="16"/><w:szCs w:val="16"/>' })}
-${parrafo('TrasTabla', 'Espacio tras tabla', { ppr: '<w:spacing w:after="0" w:line="120" w:lineRule="exact"/>', rpr: '<w:sz w:val="8"/><w:szCs w:val="8"/>', oculto: true })}
+${parrafo('RotuloPieza', 'Rótulo de tabla o figura', { siguiente: 'TituloPieza', ppr: '<w:keepNext/><w:spacing w:before="240" w:after="0"/>', rpr: negrita })}
+${parrafo('TituloPieza', 'Título de tabla o figura', { siguiente: 'Normal', ppr: '<w:keepNext/><w:spacing w:after="120"/>', rpr: cursiva })}
+${parrafo('NotaPieza', 'Nota de tabla o figura', { ppr: '<w:spacing w:before="60" w:after="240" w:line="240" w:lineRule="auto"/>', rpr: tam(20) })}
+${parrafo('TablaTexto', 'Texto de tabla', { ppr: '<w:spacing w:before="20" w:after="20" w:line="240" w:lineRule="auto"/>', rpr: tam(20) })}
+${parrafo('TablaTextoChico', 'Texto de tabla, chico', { basado: 'TablaTexto', rpr: tam(18) })}
+${parrafo('TrasTabla', 'Espacio tras tabla', { ppr: '<w:spacing w:after="0" w:line="120" w:lineRule="exact"/>', rpr: tam(8), oculto: true })}
 ${parrafo('Imagen', 'Imagen', { ppr: '<w:spacing w:before="60" w:after="60" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>' })}
 ${parrafo('ImagenGaleria', 'Imagen de galería', { ppr: '<w:keepNext/><w:spacing w:before="80" w:after="40" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>' })}
-${parrafo('PieGaleria', 'Pie de imagen de galería', { ppr: '<w:spacing w:after="120" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', rpr: '<w:b/><w:bCs/><w:sz w:val="18"/><w:szCs w:val="18"/>' })}
-${parrafo('Cita', 'Cita en bloque', { ppr: `<w:pBdr><w:left w:val="single" w:sz="12" w:space="8" w:color="${C.linea}"/></w:pBdr><w:spacing w:before="60" w:after="160"/><w:ind w:left="284" w:right="284"/>`, rpr: '' })}
+${parrafo('PieGaleria', 'Pie de imagen de galería', { ppr: '<w:spacing w:after="120" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', rpr: tam(20) })}
+${parrafo('Cita', 'Cita en bloque', { ppr: '<w:spacing w:before="60" w:after="160"/><w:ind w:left="720"/>' })}
 ${parrafo('Referencia', 'Referencia (APA 7)', { ppr: '<w:spacing w:after="120"/><w:ind w:left="720" w:hanging="720"/>' })}
-${parrafo('TituloReferencias', 'Título de las referencias', { siguiente: 'Referencia', ppr: '<w:keepNext/><w:keepLines/><w:spacing w:before="360" w:after="120" w:line="240" w:lineRule="auto"/>', rpr: '<w:b/><w:bCs/><w:sz w:val="28"/><w:szCs w:val="28"/>' })}
-${parrafo('Codigo', 'Código', { ppr: '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:ind w:left="284"/>', rpr: '<w:sz w:val="20"/><w:szCs w:val="20"/>' })}
-${parrafo('PiePagina', 'Pie de página (Relevo)', { ppr: '<w:spacing w:after="0"/><w:jc w:val="center"/>', rpr: `<w:color w:val="${C.grafito}"/><w:sz w:val="20"/><w:szCs w:val="20"/>`, oculto: true })}
-<w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:basedOn w:val="DefaultParagraphFont"/><w:uiPriority w:val="99"/><w:rPr><w:color w:val="1C3891"/><w:u w:val="none"/></w:rPr></w:style>
-<w:style w:type="table" w:customStyle="1" w:styleId="TablaRelevo"><w:name w:val="Tabla Relevo"/><w:uiPriority w:val="40"/><w:tblPr>
-<w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/><w:left w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/><w:right w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="${C.linea}"/></w:tblBorders>
+${parrafo('TituloReferencias', 'Título de las referencias', { siguiente: 'Referencia', ppr: '<w:keepNext/><w:keepLines/><w:spacing w:before="360" w:after="120" w:line="240" w:lineRule="auto"/>', rpr: negrita })}
+${parrafo('Codigo', 'Código', { ppr: '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:ind w:left="284"/>', rpr: tam(20) })}
+${parrafo('PiePagina', 'Número de página', { ppr: '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>', rpr: tam(20), oculto: true })}
+<w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:basedOn w:val="DefaultParagraphFont"/><w:uiPriority w:val="99"/><w:rPr><w:color w:val="${NEGRO}"/><w:u w:val="none"/></w:rPr></w:style>
+<w:style w:type="table" w:styleId="TableGrid"><w:name w:val="Table Grid"/><w:basedOn w:val="TableNormal"/><w:uiPriority w:val="39"/><w:tblPr>
+<w:tblBorders>${['top', 'left', 'bottom', 'right', 'insideH', 'insideV'].map(borde).join('')}</w:tblBorders>
 <w:tblCellMar><w:top w:w="57" w:type="dxa"/><w:left w:w="85" w:type="dxa"/><w:bottom w:w="57" w:type="dxa"/><w:right w:w="85" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style>
 <w:style w:type="table" w:customStyle="1" w:styleId="TablaGaleria"><w:name w:val="Tabla de imágenes"/><w:uiPriority w:val="40"/><w:tblPr><w:tblCellMar><w:top w:w="0" w:type="dxa"/><w:left w:w="80" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="80" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style>
 </w:styles>`;
@@ -507,7 +517,9 @@ const pieVacio = () => XML + `<w:ftr ${NS}><w:p><w:pPr><w:pStyle w:val="PiePagin
  * @param {object} o
  * @param {string} o.salida   ruta del .docx
  * @param {string} o.raiz     carpeta desde la que se leen las imágenes de los anexos
- * @param {object} o.portada  { institucion: [], titulo, subtitulo, datos: [], fecha, logo: { archivo, anchoMm } }
+ * @param {object} o.portada  { titulo, subtitulo, documento, autor, grado, profesores, modalidad, facultad, escuela, ciudad, fecha,
+ *                             logo: { archivo, anchoMm, descripcion } }
+ * @param {Array}  [o.paginas] la página de cada entrada del índice, si ya se conoce
  * @param {Array}  o.anexos   [{ letra, titulo, intro, partes: [{ titulo, lineas, clase }] }]
  * @param {object} o.laminas  clave → { archivo, anchoMm } para [[LOGO]], [[ICONOS]], [[DIAGRAMA id]]…
  * @param {string} o.autor
@@ -515,19 +527,30 @@ const pieVacio = () => XML + `<w:ftr ${NS}><w:p><w:pPr><w:pStyle w:val="PiePagin
 function construirWord(o) {
   const d = new Documento({ raiz: o.raiz, laminas: o.laminas });
 
-  // Portada
+  // Portada de la pauta de la Biblioteca UDP: el logo arriba y al centro; el título en mayúsculas y el subtítulo;
+  // el autor en mayúsculas; el título al que se opta; los profesores guía y la modalidad, que pide el instructivo
+  // de la Escuela; FACULTAD y ESCUELA en mayúsculas; la ciudad y la fecha. Todo en Arial 12.
+  const p = o.portada;
+  const mayus = (s) => s.toLocaleUpperCase('es-CL');
+  const linea = (texto, antes = 0) => d.parrafo(texto, 'Portada', antes ? `<w:spacing w:before="${antes}"/>` : '');
   const portada = [
-    ...o.portada.institucion.map((t) => d.parrafo(t, 'Portada', '', { b: true })),
-    `<w:p><w:pPr><w:pStyle w:val="Portada"/><w:spacing w:before="1440" w:after="0"/></w:pPr>${d.dibujo(o.portada.logo.archivo, Math.round(o.portada.logo.anchoMm * 56.6929), null, 'Relevo')}</w:p>`,
-    d.parrafo(o.portada.titulo, 'PortadaTitulo'),
-    d.parrafo(o.portada.subtitulo, 'PortadaBajada'),
-    ...o.portada.datos.map((t, k) => d.parrafo(t, 'Portada', '<w:spacing w:after="60"/>', k === 0 ? { b: true } : {})),
-    d.parrafo(o.portada.fecha, 'Portada', '<w:spacing w:before="240"/>', { color: C.grafito }),
+    `<w:p><w:pPr><w:pStyle w:val="Portada"/></w:pPr>${d.dibujo(p.logo.archivo, Math.round(p.logo.anchoMm * 56.6929), null, p.logo.descripcion)}</w:p>`,
+    linea(mayus(p.titulo), 1680),
+    linea(p.subtitulo),
+    linea(mayus(p.documento), 840),
+    linea(mayus(p.autor), 1140),
+    linea(p.grado, 1140),
+    linea(p.profesores, 1080),
+    linea(p.modalidad),
+    linea(mayus(p.facultad), 1140),
+    linea(mayus(p.escuela)),
+    linea(p.ciudad, 980),
+    ...(p.fecha ? [linea(mayus(p.fecha[0]) + p.fecha.slice(1))] : []),
   ].join('');
 
   // Anexos
   const cuerpo = o.anexos.map((a) => {
-    const inicio = d.encabezado(1, `Anexo ${a.letra}. ${a.titulo}`) + d.parrafo(a.intro, 'Intro');
+    const inicio = d.encabezado(1, `Anexo ${a.letra}. ${a.titulo}`) + d.parrafo(a.intro, null);
     const partes = a.partes.map((p) => {
       const ref = p.clase === 'referencias';
       const titulo = !p.titulo ? '' : ref ? d.parrafo(p.titulo, 'TituloReferencias') : d.encabezado(2, p.titulo);
@@ -537,7 +560,7 @@ function construirWord(o) {
   }).join('');
 
   // El índice se arma al final, cuando ya se conocen todos los encabezados.
-  const indice = `<w:p><w:pPr><w:pStyle w:val="TituloIndice"/><w:pageBreakBefore/></w:pPr><w:r><w:t>Índice</w:t></w:r></w:p>` + d.indiceXml();
+  const indice = `<w:p><w:pPr><w:pStyle w:val="TituloIndice"/><w:pageBreakBefore/></w:pPr><w:r><w:t>Índice</w:t></w:r></w:p>` + d.indiceXml(o.paginas);
 
   const ftr = d.relacion('http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer', 'footer1.xml');
   const ftrPortada = d.relacion('http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer', 'footer2.xml');
@@ -590,7 +613,7 @@ function construirWord(o) {
     ...d.medios,
   ].map((a) => ({ nombre: a.nombre, datos: Buffer.isBuffer(a.datos) ? a.datos : Buffer.from(a.datos, 'utf8') }));
   fs.writeFileSync(o.salida, zip(archivos, ahora));
-  return { imagenes: d.medios.length, encabezados: d.indice.length, peso: fs.statSync(o.salida).size };
+  return { imagenes: d.medios.length, indice: d.indice.map((e) => e.texto), peso: fs.statSync(o.salida).size };
 }
 
 module.exports = { construirWord, tramos };

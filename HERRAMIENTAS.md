@@ -24,7 +24,7 @@ La entrada visual es [herramientas.html](herramientas.html): una página con los
 | Íconos de Relevo | [10_recursos_visuales/iconos-relevo-2026-10-11/iconos-relevo.html](10_recursos_visuales/iconos-relevo-2026-10-11/iconos-relevo.html) | Los 72 íconos, sus reglas y la paleta | Doble clic |
 | Logo | [10_recursos_visuales/logo-relevo-2026-10-11/](10_recursos_visuales/logo-relevo-2026-10-11/) | Archivos SVG del logo, la marca y el ícono de la app | Usar los SVG |
 | Memoria en A3 | [08_memoria/memoria-a3/](08_memoria/memoria-a3/) | La memoria v5 compuesta en A3 horizontal, con un IDML editable | `node construir-idml.js` |
-| Anexos de la memoria | [08_memoria/anexos/](08_memoria/anexos/) | Los nueve anexos, de la A a la I, en Markdown, HTML, PDF y Word | `node construir-anexos.js` |
+| Anexos de la memoria | [08_memoria/anexos/](08_memoria/anexos/) | Los nueve anexos, de la A a la I: un Markdown por anexo, el Word formal y su PDF | `node construir-anexos.js` |
 
 Las páginas usan Instrument Sans desde Google Fonts. Sin internet se ven con otra letra, pero funcionan. El Excel del panel también necesita internet: carga SheetJS desde cdnjs.
 
@@ -232,9 +232,9 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 
 ## Anexos de la memoria
 
-- **Qué es:** [construir-anexos.js](08_memoria/anexos/construir-anexos.js) lee los nueve Markdown de los anexos, que son su fuente, y escribe `anexos-relevo.html`, `anexos-relevo.pdf` en A4 y `anexos-relevo.docx`, el Word con el formato de la pauta de la Biblioteca (carta, Arial 12, interlineado 1,5). El orden, el color y el resumen de cada anexo están en [contenido-anexos.js](08_memoria/anexos/contenido-anexos.js); el Word lo escribe [word.js](08_memoria/anexos/word.js), sin dependencias.
-- **Cómo se usa:** `node construir-anexos.js` en esa carpeta; necesita Chrome y tarda unos 40 segundos. Con `--sin-pdf` escribe solo el HTML y el Word.
-- **Cuidado:** para corregir un anexo se edita su Markdown y se vuelve a correr. Los diagramas mermaid nuevos necesitan internet una vez; las láminas del Word se guardan en `imagenes/word` y solo se rehacen si cambian. El constructor se detiene si encuentra un correo o si el Word conserva marcas de Markdown.
+- **Qué es:** [construir-anexos.js](08_memoria/anexos/construir-anexos.js) lee los nueve Markdown de los anexos, que son su fuente, y escribe `anexos-relevo.docx`, un Word formal con el formato y la portada de la pauta de la Biblioteca (carta, Arial 12, interlineado 1,5 y el logo de la Escuela de Diseño), y `anexos-relevo.pdf`, el mismo Word exportado por LibreOffice. El orden y el título de cada anexo están en [contenido-anexos.js](08_memoria/anexos/contenido-anexos.js); el Word lo escribe [word.js](08_memoria/anexos/word.js), sin dependencias.
+- **Cómo se usa:** `node construir-anexos.js` en esa carpeta; tarda menos de un minuto. Necesita Chrome, para los diagramas y las figuras, y LibreOffice y `pdftotext`, para el PDF y las páginas del índice. Con `--sin-pdf` escribe solo el Word.
+- **Cuidado:** para corregir un anexo se edita su Markdown y se vuelve a correr. Los diagramas mermaid nuevos necesitan internet una vez; las figuras del Word se guardan en `imagenes/word` y solo se rehacen si cambian. El constructor se detiene si encuentra un correo o si el Word conserva marcas de Markdown.
 
 ## Para otro Claude
 
@@ -256,6 +256,12 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Anexos formales
+
+- **Qué cambió:** la sección de los anexos dice que el constructor escribe el Word formal y su PDF, exportado por LibreOffice, y ya no el HTML.
+- **Cómo estaba antes:** escribía también un HTML y un PDF en A4 con la línea de Relevo.
+- **Por qué:** el autor pidió que los anexos no se diseñen (D-169).
 
 ### 2026-11-08 — Anexos en Word
 

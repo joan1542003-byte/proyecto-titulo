@@ -3,12 +3,11 @@
 **Fecha:** 8 de noviembre de 2026
 **Documento principal:** [borrador v6 de la memoria](../borrador-memoria-v6-2026-10-28.md), sección «Anexos»
 
-Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Se leen de cuatro maneras:
+Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
-- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word, para editarlo o sumarlo a otro documento. Tiene el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md): carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5 y el número de página centrado. Usa los estilos de título de Word, así que al pegarlo en otro documento los títulos toman los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con sus páginas.
-- **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el documento diseñado, en A4, con la línea de Relevo (papel, tinta, fichas de color e Instrument Sans), índice con páginas, marcadores, diagramas y láminas.
-- **[`anexos-relevo.html`](anexos-relevo.html):** la misma composición, para abrir en el navegador.
-- **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros tres.
+- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada es la de la pauta: el logo de la Escuela de Diseño, que reúne la Universidad, la Facultad y la Escuela; el título y el autor en mayúsculas; el título al que se opta, los profesores guía y la modalidad; la facultad y la escuela, y la ciudad y la fecha. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
+- **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
+- **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
 
@@ -30,10 +29,12 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 node construir-anexos.js
 ```
 
-Lee los nueve Markdown y escribe el HTML, el PDF y el Word en esta carpeta, en unos 40 segundos. Con `--sin-pdf` escribe solo el HTML y el Word. Necesita Node 18 o posterior y Google Chrome; no usa paquetes de npm.
+Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de un minuto. Con `--sin-pdf` escribe solo el Word. Necesita Node 18 o posterior y Google Chrome y, para el PDF, LibreOffice y `pdftotext` (Poppler); no usa paquetes de npm.
 
-- **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden de los anexos, el color de su ficha y el resumen del índice están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y láminas.
-- **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Las láminas (logo, íconos, color y cielos) y los diagramas entran como imágenes, que Chrome fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
+- **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
+- **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo, de [`logotipos-udp-faad`](../../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad).
+- **El PDF** lo exporta LibreOffice desde el Word. `pdftotext` lee en qué página quedó cada título, y el constructor arma el Word otra vez con esas páginas en el índice, hasta que no cambian.
+- **Figuras:** los diagramas y las figuras de la identidad (logo, íconos, color y cielos) entran como imágenes, en Arial y negro sobre blanco. Chrome las fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
 - **Diagramas:** los de mermaid se guardan como SVG en [`imagenes/diagramas`](imagenes/diagramas). Solo un diagrama nuevo o cambiado necesita internet, porque mermaid se carga una vez desde jsDelivr.
 - **Comprobaciones:** el constructor se detiene si un Markdown contiene un correo, si el título de un anexo no coincide con `contenido-anexos.js` o si el Word conserva alguna marca de Markdown.
 
@@ -52,6 +53,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Anexos formales, sin diseño
+
+- **Qué cambió:** los anexos son un documento formal. El Word sigue la pauta de la Biblioteca, en negro y con los estilos de Word, y su portada es la de la pauta, con el logo de la Escuela de Diseño. El PDF es el mismo Word exportado, con las páginas en el índice, y los diagramas y las figuras de la identidad pasan a Arial, negro sobre blanco. Se retiran el HTML y el PDF diseñado (D-169).
+- **Cómo estaba antes:** el HTML y el PDF tenían la línea de Relevo —papel, tinta, fichas de color e Instrument Sans— y una portada de marca con el logo de Relevo; el Word repetía esa portada y tenía tablas con fondo de color y figuras sobre fondo papel.
+- **Por qué:** el autor pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad.
 
 ### 2026-11-08 — Anexos recopilados y en Word
 

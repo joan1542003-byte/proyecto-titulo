@@ -2033,7 +2033,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-168 — Los anexos recopilan lo más relevante y salen también en Word
 
 - **Fecha:** 2026-11-08.
-- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`. Su HTML y su PDF diseñado los reemplazó D-169.
 - **Contexto:** el autor pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. Hasta ahora cada anexo copiaba completos sus documentos fuente —unas 37 000 palabras y 94 páginas en A4—, con advertencias repetidas, partes que ya no coincidían con la memoria v6 y remisiones internas del repositorio.
 - **Decisión:**
   - **Cada anexo es un texto escrito para el anexo** y es su propia fuente: recopila lo más relevante de los documentos del proyecto, con decisiones y logros primero y los límites una sola vez. Los datos, las citas y los participantes son los del repositorio; el corpus P1–P8, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales.
@@ -2044,7 +2044,25 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** el Word se abrió en LibreOffice y se revisó página por página: 101 páginas en carta, con negrita, índice y figuras en su lugar; su XML está bien formado y no conserva marcas de Markdown. El PDF cuadra con las páginas de su índice. Microsoft Word no está instalado en este computador, así que no se abrió ahí.
 - **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
 
+## D-169 — Los anexos son un documento formal, con la portada de la pauta y el membrete de la UDP
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** con D-168 los anexos salían también en un HTML y un PDF en A4 con la línea de Relevo —papel, tinta, fichas de color e Instrument Sans— y con una portada de marca, que el Word repetía. El autor pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad.
+- **Decisión:**
+  - **Un documento formal:** el Word sigue la pauta de tesis de la Biblioteca UDP —carta, márgenes de 3,5 y 2,5 cm, Arial 12, interlineado 1,5 y número de página centrado—, todo en negro, con los estilos de título, índice y tabla de Word y tablas de bordes simples, sin fondos. El PDF es ese mismo Word, exportado por LibreOffice, con las páginas en el índice. Se retiran el HTML y el PDF diseñado.
+  - **Portada de la pauta:** arriba y al centro, el logo de la Escuela de Diseño, que reúne la Universidad, la Facultad y la Escuela, como pide el membrete del instructivo de examen; RELEVO, el subtítulo y ANEXOS; el autor en mayúsculas; el título al que se opta; los profesores guía y la modalidad; FACULTAD y ESCUELA en mayúsculas, y Santiago, Chile, diciembre de 2026. Todo en Arial 12, con los datos de la portada de la memoria v6. Las mayúsculas son las que pide la pauta; el resto sigue en tipo oración.
+  - **Figuras:** los diagramas y las figuras de la identidad —logo, íconos, color y cielos— se dibujan en Arial, negro sobre blanco, sin fondos ni fichas; sus colores son los de la marca, que es lo que muestran.
+- **Verificación:** el PDF tiene 102 páginas carta, solo Arial y la portada en una página, y su índice da la página de las 51 entradas. El Word usa solo negro, Arial y los estilos de Word, sin rellenos de color, y no conserva marcas de Markdown. Se revisó página por página en LibreOffice; Microsoft Word no está instalado en este computador.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — D-169
+
+- **Qué cambió:** se registró D-169, y D-168 anota que su HTML y su PDF diseñado quedaron reemplazados.
+- **Cómo estaba antes:** la última decisión era D-168.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-08 — D-168
 
