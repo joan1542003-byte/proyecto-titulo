@@ -248,6 +248,7 @@
 | 8 nov. | Consulta | ¿Cuánto vale la defensa si expone mal y nervioso? | Según el instructivo, el examen dura 50 minutos (15 de exposición, 30 de preguntas y 10 de evaluación), la comisión evalúa con la rúbrica y la nota final combina la nota de proceso del profesor y la de la comisión, sin porcentaje publicado; ajustarse al tiempo es parte de la evaluación. Se sumó a Por hacer preguntar la ponderación. | — |
 | 8 nov. | Consulta | ¿Qué pasa si responde mal gran parte de las preguntas del examen, y cuánto valen? | Las preguntas no tienen puntaje propio: la comisión pone una nota con la rúbrica a todo el trabajo, y las respuestas pesan en cómo juzga cada criterio. Cuánto baja la nota no está definido, y la ponderación entre la nota de proceso y la de la comisión queda por preguntar. Un límite reconocido con honestidad no es una mala respuesta. | — |
 | 8 nov. | Consulta y corrección | Entiende que los profesores guía no tienen peso en el examen final. | Confirmado en el reglamento (art. 16): el profesor del curso tiene voz y no voto; la nota la ponen los tres miembros con voto (art. 20), con 4,0 para aprobar (art. 21). Corrige lo dicho antes a partir del instructivo. Se sumó al documento de criterios oficiales y se resolvió la tarea de Por hacer. | — |
+| 8 nov. | Consulta | ¿Cómo se compone el examen de título? | Resumen desde el reglamento (arts. 15 a 26), el instructivo 2026 y la rúbrica: pase y memoria antes; exposición, preguntas y evaluación a puerta cerrada; nota de tres miembros con voto según la rúbrica (20, 40 y 40 %); 4,0 para aprobar; 60 % de la nota de titulación; ficha del proyecto después. | — |
 
 ## Lo que muestra el registro
 
@@ -258,6 +259,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Composición del examen
+
+- **Qué cambió:** se registró la consulta sobre cómo se compone el examen de título.
+- **Cómo estaba antes:** el último pedido era el voto del profesor guía.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Voto del profesor guía
 
