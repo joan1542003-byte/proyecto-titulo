@@ -186,6 +186,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
+- [ ] **Peso del examen:** preguntar a los profesores cómo se combinan la nota de proceso del profesor y la nota de la comisión, y la fecha del examen: el instructivo dice que la nota final se compone de ambas, sin porcentaje, y da exámenes «desde el lunes 14 al 23 de diciembre».
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -294,6 +295,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Peso del examen
+
+- **Qué cambió:** se sumó la tarea de preguntar cómo se pondera la nota del examen y su fecha.
+- **Cómo estaba antes:** solo se pedía confirmar el formato del Pase.
+- **Por qué:** el autor preguntó cuánto vale la defensa, y el instructivo no da porcentajes.
 
 ### 2026-11-06 — Perfiles para validar
 
