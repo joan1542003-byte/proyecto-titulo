@@ -33,7 +33,7 @@ Documenta cómo se buscaron y compararon los productos, servicios y proyectos de
 
 **Peso de la evidencia.** De más a menos: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria. Cuando dos niveles chocaron, se mantuvo la afirmación más limitada.
 
-**Memorias de título chilenas.** El Pase de junio pidió incorporar al menos una tesis local. El 25 de octubre de 2026 se buscó en el Repositorio Académico de la Universidad de Chile con «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», junto a «diseño» o «diseñadora». Entraron dos memorias de Diseño, Venegas Álvarez (2026) y Riveros Oltra (2023), leídas completas, y una de Sociología, Cortés Concha (2016), de la que se usa la ficha del repositorio. Se descartó una de Diseño Gráfico sobre el acoso en redes sociales. La base de memorias de Diseño UC no respondió, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
+**Memorias de título chilenas.** El Pase de junio pidió incorporar al menos una tesis local. El 25 de octubre de 2026 se buscó en el Repositorio Académico de la Universidad de Chile con «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», junto a «diseño» o «diseñadora». Entraron dos memorias de Diseño, Venegas Álvarez (2026) y Riveros Oltra (2023), leídas completas, y una de Sociología, Cortés Concha (2016), de la que se usa su ficha bibliográfica. Se descartó una de Diseño Gráfico sobre el acoso en redes sociales. La base de memorias de Diseño UC no respondió, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
 
 **Alcance.** Precios, compatibilidades y disponibilidad son los del corte, en su moneda original. No hay cifras de ventas, retención ni tamaño del mercado, el corpus se inclina a fuentes en inglés y la mayor parte de la evidencia independiente estudia intervenciones en la pantalla, no objetos. Por eso la oportunidad se formula sobre lo revisado y no como una novedad absoluta.
 
@@ -45,7 +45,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 **Qué es.** Herramientas de Android para medir el uso, fijar límites y agregar una pausa antes de abrir una app.
 
-**Cómo funciona.** Digital Wellbeing ofrece informes de uso, temporizadores por app, modos de desconexión y Focus Mode (Google, s. f.). Pause Point agrega una pausa de diez segundos al abrir las apps elegidas, con respiración, temporizador, fotografías o alternativas, y desactivarlo exige reiniciar el teléfono (Sanders, 2026).
+**Cómo funciona.** Digital Wellbeing ofrece informes de uso, temporizadores por app, modos de desconexión y Focus Mode (Google, s. f.). Pause Point agrega una pausa de diez segundos al abrir las apps que la persona escoge, con respiración, temporizador, fotografías o alternativas, y desactivarlo exige reiniciar el teléfono (Sanders, 2026).
 
 **Disponibilidad.** Integradas en el sistema, sin costo aparte. Digital Wellbeing varía según el teléfono, y Pause Point está documentado para los Pixel 11 con Android 17 o posterior.
 
@@ -67,7 +67,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 ### one sec
 
-**Qué es.** Una app de pausa que intercepta la apertura de las apps elegidas.
+**Qué es.** Una app de pausa que intercepta la apertura de las apps que la persona escoge.
 
 **Cómo funciona.** Antes de abrir una app configurada muestra una pausa o un ejercicio breve, con horarios, tipos de intervención, seguimiento de intenciones y, según su sitio, bloqueos completos (one sec, s. f.).
 
@@ -163,7 +163,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 **Evidencia.** El artículo presenta el prototipo y una evaluación heurística con 11 participantes.
 
-**Qué aprende Relevo.** Un objeto elegido puede llevar un significado digital al entorno y hablar desde la periferia de la atención, siempre que la relación entre el objeto y su significado se entienda. Trabaja con citas, no con intenciones que la persona puede decidir no realizar.
+**Qué aprende Relevo.** Un objeto cotidiano puede llevar un significado digital al entorno y hablar desde la periferia de la atención, siempre que la relación entre el objeto y su significado se entienda. Trabaja con citas, no con intenciones que la persona puede decidir no realizar.
 
 ### Place-Its
 
@@ -219,7 +219,7 @@ No se encontró un producto, una patente ni un prototipo que reúna los cinco el
 
 Estas patentes impiden presentar como nuevo el concepto amplio de recordatorios, objetos y lugares. La revisión fue exploratoria: no permite concluir infracción, patentabilidad ni libertad de operación, que exigirían una búsqueda profesional.
 
-**La oportunidad.** El mercado responde de tres maneras: bloquear con una llave física, interrumpir dentro del teléfono o recordar mediante objetos, lugares o señales ambientales. Queda abierta una pregunta de diseño: si una intención elegida por la persona puede quedar asociada al lugar donde empieza y volver con una señal breve mientras la sesión de ocio digital sigue, con la decisión en sus manos. Relevo no se presenta como inédito: la memoria evalúa si esa combinación aporta algo frente a una notificación en el teléfono.
+**La oportunidad.** El mercado responde de tres maneras: bloquear con una llave física, interrumpir dentro del teléfono o recordar mediante objetos, lugares o señales ambientales. Queda abierta una pregunta de diseño: si una intención de la persona puede quedar asociada al lugar donde empieza y volver con una señal breve mientras la sesión de ocio digital sigue, con la decisión en sus manos. Relevo no se presenta como inédito: la memoria evalúa si esa combinación aporta algo frente a una notificación en el teléfono.
 
 ## Referencias
 
@@ -294,6 +294,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** menos «elegido» y una ficha bibliográfica en vez de «la ficha del repositorio».
+- **Cómo estaba antes:** repetía «apps elegidas», «objeto elegido» e «intención elegida».
+- **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
 ### 2026-11-08 — Anexo recopilado y listo para Word
 

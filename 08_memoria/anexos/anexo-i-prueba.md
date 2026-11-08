@@ -84,11 +84,11 @@ Cualquier cambio de umbral se registra antes de ver los resultados.
 
 Una falla de la conexión, del objeto o de la app no cuenta como respuesta de la persona: se registra como incidente técnico, y esa señal sale de la comparación.
 
-**Datos y conservación.** La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps elegidas, los tiempos, los momentos de la señal y la respuesta, las respuestas y el uso de las apps elegidas alrededor de la señal; no registra el contenido de otras apps, mensajes ni fotos. Desde la 2.16 registra también si cada relevo se activó a mano o solo, y la llegada y la apertura de cada mensaje del investigador; desde la 2.18, el uso diario de las apps elegidas, el tiempo total de pantalla por día —sin el nombre de las demás apps—, el estado del teléfono y los relevos eliminados. La persona puede pedir el borrado en cualquier momento, y todos los registros se eliminan, a más tardar, el 30 de diciembre de 2026; después solo quedan resultados agregados, sin vínculo con la persona.
+**Datos y conservación.** La app registra, con un código, la actividad, el primer paso, el lugar declarado, las apps seleccionadas, los tiempos, los momentos de la señal y la respuesta, las respuestas y el uso de las apps elegidas alrededor de la señal; no registra el contenido de otras apps, mensajes ni fotos. Desde la 2.16 registra también si cada relevo se activó a mano o solo, y la llegada y la apertura de cada mensaje del investigador; desde la 2.18, el uso diario de las apps elegidas, el tiempo total de pantalla por día —sin el nombre de las demás apps—, el estado del teléfono y los relevos eliminados. La persona puede pedir el borrado en cualquier momento, y todos los registros se eliminan, a más tardar, el 30 de diciembre de 2026; después solo quedan resultados agregados, sin vínculo con la persona.
 
 ## I.3 La semana para comparar
 
-Desde la versión 2.33, cuando una persona ya usó un objeto sin la prueba iniciada, la pantalla del investigador permite una sola semana de siete días con una condición (D-138). La semana empieza el día en que se inicia y no reemplaza al orden contrabalanceado de las tres semanas. Antes de empezar, la app pregunta por las semanas anteriores con las tres escalas de la tarjeta semanal; después de cada relevo, la primera pregunta es si la persona notó el aviso apenas sonó; el día 7, la tarjeta suma la comparación con las semanas anteriores, y el cierre pregunta qué ayudó más a recordar y con qué preferiría que sonara. En la prueba, esa semana no se inició en la app, así que sus preguntas se aplican en papel en el cierre (I.7). Como la semana con el teléfono vino después de las semanas con el Tag, el análisis declara que el orden no se contrabalanceó.
+Desde la versión 2.33, cuando una persona ya usó un objeto sin la prueba iniciada, la pantalla del investigador permite una sola semana de siete días con una condición. La semana empieza el día en que se inicia y no reemplaza al orden contrabalanceado de las tres semanas. Antes de empezar, la app pregunta por las semanas anteriores con las tres escalas de la tarjeta semanal; después de cada relevo, la primera pregunta es si la persona notó el aviso apenas sonó; el día 7, la tarjeta suma la comparación con las semanas anteriores, y el cierre pregunta qué ayudó más a recordar y con qué preferiría que sonara. En la prueba, esa semana no se inició en la app, así que sus preguntas se aplican en papel en el cierre (I.7). Como la semana con el teléfono vino después de las semanas con el Tag, el análisis declara que el orden no se contrabalanceó.
 
 ## I.4 El consentimiento de la prueba
 
@@ -112,7 +112,7 @@ Es el texto que la persona lee en la app antes de empezar; para seguir, marca la
 
 **Hasta cuándo.** Puedes borrar tus datos desde Perfil, en Tus datos, o escribiendo al correo del investigador con tu código. Si no lo haces antes, los borramos a más tardar el 30 de diciembre de 2026.
 
-*Nota.* Pantalla de consentimiento de la app en las versiones 2.33 y 3.3. Donde la app da el correo del investigador, aquí se omite. Desde la versión 4.4, ya sin la prueba de 21 días, la app usa el consentimiento v14, con los mismos datos (D-160).
+*Nota.* Pantalla de consentimiento de la app en las versiones 2.33 y 3.3. Donde la app da el correo del investigador, aquí se omite. Desde la versión 4.4, ya sin la prueba de 21 días, la app usa el consentimiento v14, con los mismos datos.
 
 ## I.5 Las preguntas de la app
 
@@ -159,7 +159,7 @@ Después: «¿Qué decidiste?» — Comencé la actividad · La dejé para despu
 
 ## I.6 La ficha de la sesión inicial
 
-Es la plantilla del protocolo 01, que usa la sesión inicial del protocolo de 21 días desde el 25 de septiembre de 2026, adaptada a una señal solo sonora (D-070).
+Es la plantilla de la sesión inicial del protocolo de 21 días, en uso desde el 25 de septiembre de 2026 y adaptada a una señal solo sonora.
 
 **Tabla I4**
 
@@ -168,7 +168,7 @@ Es la plantilla del protocolo 01, que usa la sesión inicial del protocolo de 21
 | Sección | Qué se anota |
 | --- | --- |
 | Identificación | El código de participante, la fecha, la sesión, la versión del prototipo, el investigador, el consentimiento y los incidentes previos. |
-| Configuración | La intención, el primer paso, el lugar elegido y por qué, la actividad digital de espera, la hora de configuración y la de activación, y si se comprobaron tres activaciones, el silencio y la reconexión. |
+| Configuración | La intención, el primer paso, el lugar donde quedó el objeto y por qué, la actividad digital de espera, la hora de configuración y la de activación, y si se comprobaron tres activaciones, el silencio y la reconexión. |
 | Cadena observable | Para cada momento —percibió la señal, la atribuyó a Relevo, recuperó la intención, recuperó el primer paso—, la observación directa, la respuesta posterior y el resultado: sí, no, dudoso o parcial. Si consultó el teléfono, si la asociación fue completa, si comprendió que podía ignorar, silenciar o actuar, y qué salidas explicó sin ayuda. |
 | Incidentes técnicos | Un enlace interrumpido, una orden tardía o duplicada, una señal incompleta o una falla de energía o del control; su momento, su descripción, lo que se hizo y si el intento se invalidó y repitió. |
 | Fallos críticos | Los seis del protocolo, marcados y descritos. |
@@ -178,7 +178,7 @@ Es la plantilla del protocolo 01, que usa la sesión inicial del protocolo de 21
 
 ## I.7 El instrumento de cierre
 
-Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 días, en persona o por llamada, en unos 25 minutos (D-144). Tiene un cuestionario de 16 preguntas cortas, copiadas de la app 2.33 con sus opciones, y una entrevista de nueve preguntas. Reemplaza a la ficha en papel del 20 de octubre, pensada para tres semanas con el objeto, porque las preguntas de comparación de la semana con el teléfono no aparecieron en la app.
+Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 días, en persona o por llamada, en unos 25 minutos. Tiene un cuestionario de 16 preguntas cortas, copiadas de la app 2.33 con sus opciones, y una entrevista de nueve preguntas. Reemplaza a la ficha en papel del 20 de octubre, pensada para tres semanas con el objeto, porque las preguntas de comparación de la semana con el teléfono no aparecieron en la app.
 
 **Tabla I5**
 
@@ -219,7 +219,7 @@ Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 
 
 Al terminar, el investigador marca si apareció alguno de los seis fallos críticos del protocolo, y en qué pregunta.
 
-**Cómo se aplica.** Primero el cuestionario, como en la app, para que la conversación no cambie sus respuestas, y después la entrevista, sin sugerir respuestas ni anticipar qué se espera del Tag o del teléfono. No se graba: se toman notas con las palabras de la persona, con su código y sin nombres. Toda pregunta se puede saltar, y la persona puede terminar cuando quiera. El mismo día se exportan los datos del teléfono, con su acuerdo, y las fichas y exportaciones se guardan solo con los datos de la prueba, fuera del repositorio.
+**Cómo se aplica.** Primero el cuestionario, como en la app, para que la conversación no cambie sus respuestas, y después la entrevista, sin sugerir respuestas ni anticipar qué se espera del Tag o del teléfono. No se graba: se toman notas con las palabras de la persona, con su código y sin nombres. Toda pregunta se puede saltar, y la persona puede terminar cuando quiera. El mismo día se exportan los datos del teléfono, con su acuerdo, y las fichas y exportaciones se guardan solo con los datos de la prueba.
 
 **Cómo se lee.** Por persona y sin porcentajes, como el resto de la prueba. La comparación con el teléfono no está contrabalanceada —la semana con el teléfono vino después de las semanas con el Tag—, así que B4, C2 y C4 describen la experiencia y la preferencia de cada persona, sin medir un efecto.
 
@@ -228,6 +228,12 @@ Al terminar, el investigador marca si apareció alguno de los seis fallos críti
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** sin códigos de decisión ni menciones al repositorio, y con menos «elegido» fuera del consentimiento, que sigue textual.
+- **Cómo estaba antes:** citaba decisiones como D-138 y D-144 y decía que los datos quedaban fuera del repositorio.
+- **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
 ### 2026-11-08 — Anexo recopilado y listo para Word
 

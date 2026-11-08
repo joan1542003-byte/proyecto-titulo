@@ -215,6 +215,7 @@
 | 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
 | 8 nov. | Encargo | Pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. | Los [anexos A a I](../08_memoria/anexos/README.md) quedan como recopilaciones directas —decisiones y logros primero, límites una sola vez—, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. El [Word](../08_memoria/anexos/anexos-relevo.docx) sigue la pauta de tesis de la Biblioteca (carta, Arial 12, interlineado 1,5), con los estilos de título de Word, índice automático, tablas y figuras en APA 7. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) pasa de 94 a 67 páginas. El Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4, y el Anexo G registra las versiones hasta la 4.6.3. | D-168 |
 | 8 nov. | Corrección | Pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad. | El [Word](../08_memoria/anexos/anexos-relevo.docx) queda como documento formal de la pauta de la Biblioteca —negro, Arial 12, estilos de Word y tablas de bordes simples—, con la portada de la pauta y el logo de la Escuela de Diseño UDP. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) es el mismo Word exportado, de 102 páginas carta, con las páginas en el índice. Las figuras pasan a negro sobre blanco, y se retiran el HTML y el PDF diseñado. | D-169 |
+| 8 nov. | Corrección | Revisó los anexos y pidió: sin códigos («Persona 1» en vez de P1), sin mencionar el repositorio en ningún lugar, sin el «testigo», «wireframes» en vez de láminas, «referentes» en vez de fuentes en lo visual, explicar los «papeles» y la «piedra», «degradados» en vez de cielos, revisar si «tecnología calma» es el nombre real y usar menos «elegido». Corrigió la declaración de IA: la investigación y la memoria son suyas; la IA lo ayudó con errores, repeticiones y palabras que podían confundir; Claude Code desarrolló la app desde sus prototipos, ideas, bocetos y wireframes de Figma y ayudó a leer y ordenar su proceso, y la IA ayudó a elaborar un modelo 3D con sus especificaciones. Pidió un referente famoso de revisión con IA, decir que la IA permitió optimizar el tiempo y ahorrar recursos, y quitar la clasificación de la encuesta, las alternativas visuales, los resguardos y el registro de pedidos. Preguntó si «el autor» es la forma de nombrarlo y pidió que se le pida lo que falte. | Los nueve anexos quedan sin códigos ni menciones al repositorio y con palabras claras; el Anexo E sigue su declaración, con Springer Nature como referente para revisar la redacción. El Word y el PDF se regeneraron, con 101 páginas. | D-170 |
 
 ## Lo que muestra el registro
 
@@ -225,6 +226,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones a los anexos
+
+- **Qué cambió:** se registró la revisión del autor a los anexos y su corrección de la declaración de IA.
+- **Cómo estaba antes:** el último pedido era el de los anexos formales.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Anexos formales
 

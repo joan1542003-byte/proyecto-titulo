@@ -48,9 +48,9 @@ flowchart LR
 | Base remota | Guarda sesiones, eventos, respuestas, uso y mensajes, con reglas por persona. | Supabase: Postgres, autenticación anónima, REST y tiempo real |
 | Panel del testeo | Muestra el estado de cada participante, los resultados y los mensajes. | Página HTML y JavaScript, con un servidor Node local |
 | Copia local | Respaldo legible en el teléfono, que la persona puede descargar. | Archivos JSON y CSV |
-| Herramientas de diseño | Íconos, láminas de la app, taller de auras y logo. | Páginas HTML autónomas |
+| Herramientas de diseño | Íconos, wireframes de la app, taller de auras y logo. | Páginas HTML autónomas |
 
-*Nota.* Elaboración propia. El código está en el repositorio, en `06_desarrollo_y_factibilidad/app-android` y `06_desarrollo_y_factibilidad/panel-admin`.
+*Nota.* Elaboración propia.
 
 ## G.3 La app
 
@@ -106,27 +106,27 @@ stateDiagram-v2
   CLOSED --> [*]
 ```
 
-*Nota.* Elaboración propia a partir de `Reminder.kt`.
+*Nota.* Elaboración propia a partir del código de la app.
 
-Cada relevo tiene un identificador de sesión y queda asociado al día y a la condición de la semana en que se activó (D-079, D-112), a la salida elegida, a la versión de la app y a si se activó a mano o solo.
+Cada relevo tiene un identificador de sesión y queda asociado al día y a la condición de la semana en que se activó, a la salida de sonido, a la versión de la app y a si se activó a mano o solo.
 
 ### Cómo cuenta el tiempo
 
 1. Al activar un relevo, la app inicia un servicio en primer plano: un proceso que Android no cierra mientras muestra una notificación visible.
 2. Cada segundo, el servicio lee los eventos de Tiempo de uso de Android (`UsageStatsManager`): qué app se abrió, cuál se pausó y cuándo se apagó la pantalla.
-3. Con esos eventos reconstruye qué app está en primer plano, y suma el tiempo solo si es una de las elegidas. Al empezar revisa 15 minutos hacia atrás, para saber qué app ya estaba abierta.
+3. Con esos eventos reconstruye qué app está en primer plano, y suma el tiempo solo si es una de las seleccionadas. Al empezar revisa 15 minutos hacia atrás, para saber qué app ya estaba abierta.
 4. El avance se guarda en cada vuelta: si el teléfono se reinicia o la app se actualiza, el conteo se reanuda. Si la persona quita el permiso, el conteo se pausa y aparece un aviso para reactivarlo.
-5. Al llegar al límite, el servicio entrega la señal y guarda cuánto se usaron las apps elegidas en los 10 minutos anteriores y posteriores.
+5. Al llegar al límite, el servicio entrega la señal y guarda cuánto se usaron las apps seleccionadas en los 10 minutos anteriores y posteriores.
 
 La app conoce solo el nombre de la app en primer plano y su tiempo, nunca lo que pasa dentro de ella.
 
 ### Cómo suena
 
-La señal va a la salida elegida y nunca cambia de salida sin avisar. Si la salida no responde, el teléfono vibra, aparece una notificación y la señal queda registrada como fallida.
+La señal va a la salida que define la persona y nunca cambia de salida sin avisar. Si la salida no responde, el teléfono vibra, aparece una notificación y la señal queda registrada como fallida.
 
-- **Teléfono y parlante:** la firma sonora de Relevo, dos golpes de un timbre de madera que bajan de 587 a 440 Hz y duran 2,2 s. Se repite siete veces, cada 4,4 s, durante unos 30 s, y las tres primeras van al 40, 60 y 80 % del volumen, para no sobresaltar (D-071, D-078).
-- **Reloj:** la señal viaja como audio de llamada hacia un reloj que contesta llamadas por Bluetooth. Es una salida experimental, que no se probó con un reloj real (D-093).
-- **Tag:** la app le escribe la orden de alerta por Bluetooth y la repite cada segundo durante 30 s, o hasta que se aprieta su botón (D-109, D-116). El Tag tiene solo su propio pitido, continuo y de volumen fijo.
+- **Teléfono y parlante:** la firma sonora de Relevo, dos golpes de un timbre de madera que bajan de 587 a 440 Hz y duran 2,2 s. Se repite siete veces, cada 4,4 s, durante unos 30 s, y las tres primeras van al 40, 60 y 80 % del volumen, para no sobresaltar.
+- **Reloj:** la señal viaja como audio de llamada hacia un reloj que contesta llamadas por Bluetooth. Es una salida experimental, que no se probó con un reloj real.
+- **Tag:** la app le escribe la orden de alerta por Bluetooth y la repite cada segundo durante 30 s, o hasta que se aprieta su botón. El Tag tiene solo su propio pitido, continuo y de volumen fijo.
 - **Siempre**, al empezar la señal, el teléfono vibra una vez y muestra una notificación.
 
 ### El Tag
@@ -145,7 +145,7 @@ El Tag es un localizador iTag comercial, con una pila CR2032 y un botón. La app
 | Pérdida de enlace (0x1803) | Nivel de alerta (0x2A06) | La alarma por desconexión, que se deja en 0. |
 | Batería (0x180F) | Nivel de batería (0x2A19) | La carga de la pila, que la app muestra y registra. |
 
-*Nota.* Elaboración propia a partir de `TagProtocol.kt`.
+*Nota.* Elaboración propia a partir del código de la app.
 
 Al conectarse, la app busca el Tag guardado, pide una conexión rápida, descubre sus servicios, apaga primero la alarma por desconexión y la alerta, y después activa el aviso del botón y lee la pila. Mientras el relevo espera, mantiene la conexión abierta y la reabre cada 30 s si se corta, como la app del fabricante, para que el Tag no se apague por falta de conexión.
 
@@ -158,8 +158,8 @@ Al conectarse, la app busca el Tag guardado, pide una conexión rápida, descubr
 | 2.26 | El Tag aceptaba la orden, pero no pitaba. | La prueba de sonido pregunta si se escuchó, y ya no se apaga FFE2 a ciegas. |
 | 2.27 | Pitaba en la prueba y no en la señal. | FFE2 en 1 junto con la alerta, y un pitido continuo con la orden repetida. |
 | 2.29 | El nivel alto no pitaba y el medio sí. | La prueba empieza por el nivel medio. |
-| 2.31 | Siguió pitando tras la prueba y, más tarde, sonó sin parar. | Callarlo con confirmación, una desconexión que espera a Android y la lectura de la pila (D-136). |
-| 2.32 | Tras mucho tiempo sin uso, sonaba lento y sin parar hasta reiniciarlo. | Nunca cortar la conexión con la alarma por desconexión encendida, y más paciencia con un Tag lento (D-137). |
+| 2.31 | Siguió pitando tras la prueba y, más tarde, sonó sin parar. | Callarlo con confirmación, una desconexión que espera a Android y la lectura de la pila. |
+| 2.32 | Tras mucho tiempo sin uso, sonaba lento y sin parar hasta reiniciarlo. | Nunca cortar la conexión con la alarma por desconexión encendida, y más paciencia con un Tag lento. |
 
 *Nota.* Elaboración propia a partir de los documentos de cada versión.
 
@@ -167,8 +167,8 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 ### Lo que guarda el teléfono
 
-- **Preferencias**, en archivos privados de la app: el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba, el Tag elegido y el estado del envío.
-- **Una base SQLite** con cinco tablas: cada relevo y su resultado (`sessions`); sus momentos, como activarlo, entrar y salir de las apps, la señal y la respuesta (`events`); las respuestas (`answers`); el uso de la propia app (`app_events`), y el uso diario de las apps elegidas y el tiempo total de pantalla (`daily_usage`).
+- **Preferencias**, en archivos privados de la app: el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba, el Tag vinculado y el estado del envío.
+- **Una base SQLite** con cinco tablas: cada relevo y su resultado (`sessions`); sus momentos, como activarlo, entrar y salir de las apps, la señal y la respuesta (`events`); las respuestas (`answers`); el uso de la propia app (`app_events`), y el uso diario de las apps seleccionadas y el tiempo total de pantalla (`daily_usage`).
 - **Una copia legible** en `Documentos/Relevo`: un JSON con todo y dos CSV, de relevos y de respuestas. Se reescribe en cada envío y se borra con «Borrar mis datos».
 
 ### Funciones de continuidad
@@ -181,17 +181,17 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 | --- | --- | --- |
 | Ruta | Pasos pequeños por interés; tras tres respuestas «Comencé», ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
 | Tus actividades | Guarda actividades propias para preparar en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
-| Editar un relevo activo | Cambia lo elegido sin borrarlo y conserva el tiempo contado si las apps son las mismas (D-120). | Lo pidió una persona de la prueba. |
-| Activación automática | Repite el último relevo al abrir una de sus apps, con 30 minutos de pausa (D-095). | Viene apagada, y la app registra cómo se activó cada relevo. |
+| Editar un relevo activo | Cambia lo preparado sin borrarlo y conserva el tiempo contado si las apps son las mismas. | Lo pidió una persona de la prueba. |
+| Activación automática | Repite el último relevo al abrir una de sus apps, con 30 minutos de pausa. | Viene apagada, y la app registra cómo se activó cada relevo. |
 | Aviso semanal | Avisa una vez tras una semana sin abrir la app. | Apagado, salvo que la persona lo pida. |
-| Mensajes del proyecto | El investigador escribe a una persona o a todas (D-096). | Sirven para coordinar; la app registra la llegada y la apertura. |
+| Mensajes del proyecto | El investigador escribe a una persona o a todas. | Sirven para coordinar; la app registra la llegada y la apertura. |
 | Resumen semanal | Lo preparado en la semana, en el perfil. | Se puede apagar. |
 
 *Nota.* Elaboración propia a partir del código de la app.
 
 ## G.4 Los datos y el panel
 
-**La sesión anónima.** Supabase reúne una base de datos Postgres, autenticación y una API REST. Cuando la persona acepta participar, la app pide a Supabase un usuario nuevo, sin correo ni contraseña, y recibe un identificador (`user_id`) y un token que se renueva solo; cada fila que envía lleva ese identificador. Sin participar, la app no abre ninguna sesión. Usa la clave publicable del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de servicio nunca está en la app ni en el repositorio.
+**La sesión anónima.** Supabase reúne una base de datos Postgres, autenticación y una API REST. Cuando la persona acepta participar, la app pide a Supabase un usuario nuevo, sin correo ni contraseña, y recibe un identificador (`user_id`) y un token que se renueva solo; cada fila que envía lleva ese identificador. Sin participar, la app no abre ninguna sesión. Usa la clave publicable del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de servicio nunca está en la app.
 
 **Tabla G6**
 
@@ -203,7 +203,7 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 | `relevo_events` | Los momentos de cada relevo. | Tipo de evento, como `armed`, `target_entered`, `signal_emitted` o `responded`, la app y los segundos. |
 | `relevo_answers` | Las respuestas. | Pregunta, respuesta y relevo. |
 | `relevo_app_events` | El uso de la propia app. | Evento, como una pantalla, la prueba de sonido o el perfil del Tag, su detalle y la versión. |
-| `relevo_daily_usage` | El uso diario. | Día, app elegida o `_total`, segundos y aperturas. |
+| `relevo_daily_usage` | El uso diario. | Día, app seleccionada o `_total`, segundos y aperturas. |
 | `relevo_participant_state` | El estado del teléfono, en una fila por persona. | Permisos, modelo, ajustes, ruta y relevo actual, en JSON. |
 | `relevo_participants` | El nombre, aparte. | Código y nombre. |
 | `relevo_messages` y `relevo_message_receipts` | Los mensajes del proyecto y su recepción. | Destinatario, título, texto, llegada y apertura. |
@@ -216,7 +216,7 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 **Mensajes en tiempo real.** Mientras el servicio cuenta o espera, la app mantiene una conexión WebSocket con el canal de tiempo real de Supabase: un mensaje del investigador llega en menos de un segundo, y en el emulador se midieron 0,8 s. Como respaldo, la app revisa los mensajes al abrirse, cada 60 segundos mientras el servicio corre y cada 15 minutos con una tarea programada de Android.
 
-**El panel del testeo.** Una página HTML con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Con doble clic muestra datos de ejemplo inventados; con `node servidor.js`, un servidor sin dependencias que escucha solo en el computador, con una clave que cambia en cada arranque, consulta la base real. Ningún dato real se guarda en el repositorio.
+**El panel del testeo.** Una página HTML con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Con doble clic muestra datos de ejemplo inventados; con `node servidor.js`, un servidor sin dependencias que escucha solo en el computador, con una clave que cambia en cada arranque, consulta la base real. Ningún dato real se guarda junto al código del panel.
 
 **Tabla G7**
 
@@ -224,7 +224,7 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 | Sale, con consentimiento | No sale |
 | --- | --- |
-| La actividad, el primer paso y el lugar declarados; las apps elegidas y su tiempo; los eventos y las respuestas; el uso diario de las apps elegidas y el tiempo total de pantalla; el estado del teléfono y los permisos; el uso de la propia app; una descripción técnica del Tag, sin su dirección, y el nombre, en una tabla aparte. | Lo que pasa dentro de otras apps; los nombres de las apps no elegidas; la dirección Bluetooth del Tag; fotos, contactos o ubicación. |
+| La actividad, el primer paso y el lugar declarados; las apps seleccionadas y su tiempo; los eventos y las respuestas; el uso diario de las apps seleccionadas y el tiempo total de pantalla; el estado del teléfono y los permisos; el uso de la propia app; una descripción técnica del Tag, sin su dirección, y el nombre, en una tabla aparte. | Lo que pasa dentro de otras apps; los nombres de las apps no elegidas; la dirección Bluetooth del Tag; fotos, contactos o ubicación. |
 
 *Nota.* Elaboración propia.
 
@@ -236,65 +236,71 @@ Cada versión tiene su documento en la carpeta de la app, con lo que cambió, po
 
 *Versiones de la app, de la 2.7 a la 3.3*
 
-| Versión | Fecha | Qué trae | Decisión |
-| --- | --- | --- | --- |
-| 2.7 | 25 sep. | La app que pide el protocolo de la prueba | — |
-| 2.8 | 26 sep. | Sistema de marca D-073, perfil, ruta y regreso | — |
-| 2.9 | 27 sep. | Vidrio, formas redondeadas, emoji y textos naturales | D-083 |
-| 2.10 | 27 sep. | Participación en la prueba, textos claros, tono de las fotos y más emoji | D-084 |
-| 2.11 | 28 sep. | «Cómo funciona», video vertical y datos guardados en dos lugares | — |
-| 2.12 | 29 sep. | Más simple para la persona y más datos para el proyecto | — |
-| 2.13 | 29 sep. | Guía de la primera vez, intereses concretos y nombre guardado aparte | — |
-| 2.14 | 29 sep. | Guía con contexto y primer relevo acompañado | — |
-| 2.15 | 29 sep. | El reloj como objeto que suena, experimental | D-093 |
-| 2.16 | 30 sep. | Activación automática y mensajes del proyecto | D-095, D-096 |
-| 2.17 | 30 sep. | Mensajes al instante | D-096 |
-| 2.18 | 30 sep. | Registro completo, relevos que se pueden eliminar y avisos de campos faltantes | D-097 |
-| 2.19 | 5 oct. | El llavero iTag como objeto que suena | D-109 |
-| 2.20 | 6 oct. | La persona elige dónde suena | D-110 |
-| 2.21 | 6 oct. | Íconos con degradado y nada elegido de antemano | D-111 |
-| 2.22 | 6 oct. | Volver a comparar y lenguaje claro | D-112, D-110 |
-| 2.23 | 7 oct. | Degradados de varios colores, más actividades y opciones listas | D-113 |
-| 2.24 | 7 oct. | Cómo usar el llavero | D-109 |
-| 2.25 | 7 oct. | El Tag y su guía paso a paso | D-114 |
-| 2.26 | 7 oct. | El Tag pita, y la prueba pregunta si se escuchó | D-115 |
-| 2.27 | 7 oct. | El Tag suena en la señal, seguido | D-116 |
-| 2.28 | 7 oct. | El Tag por defecto, lugares concretos y una app más fluida | D-117 |
-| 2.29 | 7 oct. | La prueba del Tag empieza por la forma que pita | D-119 |
-| 2.30 | 9 oct. | Editar un relevo sin borrarlo | D-120 |
-| 2.31 | 14 oct. | El Tag se calla siempre | D-136 |
-| 2.32 | 17 oct. | El Tag no se corta con la alarma encendida | D-137 |
-| 2.33 | 20 oct. | Semana de comparación y preguntas de la experiencia | D-138 |
-| 3.0 | 12 oct. | La línea nueva, sin perder nada | D-129, D-128 |
-| 3.1 | 12 oct. | Las pantallas de «Relevo, la app» | D-130 |
-| 3.2 | 12 oct. | Igual a «Relevo, la app» | D-131 |
-| 3.3 | 20 oct. | La línea nueva con la semana para comparar | D-138 |
+| Versión | Fecha | Qué trae |
+| --- | --- | --- |
+| 2.7 | 25 sep. | La app que pide el protocolo de la prueba |
+| 2.8 | 26 sep. | Sistema de marca «Vuelve a lo que querías hacer», perfil, ruta y regreso |
+| 2.9 | 27 sep. | Vidrio, formas redondeadas, emoji y textos naturales |
+| 2.10 | 27 sep. | Participación en la prueba, textos claros, tono de las fotos y más emoji |
+| 2.11 | 28 sep. | «Cómo funciona», video vertical y datos guardados en dos lugares |
+| 2.12 | 29 sep. | Más simple para la persona y más datos para el proyecto |
+| 2.13 | 29 sep. | Guía de la primera vez, intereses concretos y nombre guardado aparte |
+| 2.14 | 29 sep. | Guía con contexto y primer relevo acompañado |
+| 2.15 | 29 sep. | El reloj como objeto que suena, experimental |
+| 2.16 | 30 sep. | Activación automática y mensajes del proyecto |
+| 2.17 | 30 sep. | Mensajes al instante |
+| 2.18 | 30 sep. | Registro completo, relevos que se pueden eliminar y avisos de campos faltantes |
+| 2.19 | 5 oct. | El llavero iTag como objeto que suena |
+| 2.20 | 6 oct. | La persona elige dónde suena |
+| 2.21 | 6 oct. | Íconos con degradado y nada marcado de antemano |
+| 2.22 | 6 oct. | Volver a comparar y lenguaje claro |
+| 2.23 | 7 oct. | Degradados de varios colores, más actividades y opciones listas |
+| 2.24 | 7 oct. | Cómo usar el llavero |
+| 2.25 | 7 oct. | El Tag y su guía paso a paso |
+| 2.26 | 7 oct. | El Tag pita, y la prueba pregunta si se escuchó |
+| 2.27 | 7 oct. | El Tag suena en la señal, seguido |
+| 2.28 | 7 oct. | El Tag por defecto, lugares concretos y una app más fluida |
+| 2.29 | 7 oct. | La prueba del Tag empieza por la forma que pita |
+| 2.30 | 9 oct. | Editar un relevo sin borrarlo |
+| 2.31 | 14 oct. | El Tag se calla siempre |
+| 2.32 | 17 oct. | El Tag no se corta con la alarma encendida |
+| 2.33 | 20 oct. | Semana de comparación y preguntas de la experiencia |
+| 3.0 | 12 oct. | La línea nueva, sin perder nada |
+| 3.1 | 12 oct. | Las pantallas de «Relevo, la app» |
+| 3.2 | 12 oct. | Igual a «Relevo, la app» |
+| 3.3 | 20 oct. | La línea nueva con la semana para comparar |
 
-*Nota.* Elaboración propia a partir del encabezado de cada documento de versión, en `06_desarrollo_y_factibilidad/app-android`. Fechas de 2026.
+*Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
-Después de la prueba, la app siguió en ramas propias del repositorio, sin fusionar con `main`. La 1.0.0, del 4 de noviembre, quitó la prueba de 21 días y pasó el consentimiento a la versión 14 (rama `android-1.0.0`). La línea 4 rediseñó la interfaz (rama `android-4.0-rediseno`); la 4.4 la volvió actualizable sobre la app instalada y sumó lo de la 1.0.0, y la 4.6.3, del 7 de noviembre de 2026, es la versión más reciente (rama `android-4.6`).
+Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de noviembre, quitó la prueba de 21 días y pasó el consentimiento a la versión 14. La línea 4 rediseñó la interfaz; la 4.4 la volvió actualizable sobre la app instalada y sumó lo de la 1.0.0, y la 4.6.3, del 7 de noviembre de 2026, es la versión más reciente.
 
 **Tabla G9**
 
 *Versiones posteriores a la prueba*
 
-| Versión | Fecha | Qué trae | Decisión |
-| --- | --- | --- | --- |
-| 4.0 | 5 nov. | Rediseño de la interfaz | D-155 |
-| 4.1 | 5 nov. | Anillos simétricos, textos con función, sin viudas y movimiento al tacto | D-156 |
-| 4.2 | 5 nov. | Un solo comentario, las preguntas de cada actividad, predefinidas primero, el borde como en iOS e Inicio con color | D-157 |
-| 4.2.1 | 5 nov. | Preparar desde una idea abre lo que falta, no un relevo desde cero | D-157 |
-| 4.3 | 5 nov. | Sugerencias que corresponden, varios relevos a la vez, sonido fundamentado y una app más clara | D-158 |
-| 4.4 | 5 nov. | La 4.3, actualizable, con lo de la 1.0.0 | D-159, D-160, D-161 |
-| 4.5 | 6 nov. | Menos amarillo, el saludo del relevo y más palabras | D-162, D-163 |
-| 4.6 | 6 nov. | La encuesta del rediseño | D-164 |
-| 4.6.1 | 7 nov. | Revisión de la primera vez, la encuesta y la accesibilidad | D-165 |
-| 4.6.2 | 7 nov. | Textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag | D-166 |
-| 4.6.3 | 7 nov. | El pulido y la señal que sonaba dos veces | D-167 |
+| Versión | Fecha | Qué trae |
+| --- | --- | --- |
+| 4.0 | 5 nov. | Rediseño de la interfaz |
+| 4.1 | 5 nov. | Anillos simétricos, textos con función, sin viudas y movimiento al tacto |
+| 4.2 | 5 nov. | Un solo comentario, las preguntas de cada actividad, predefinidas primero, el borde como en iOS e Inicio con color |
+| 4.2.1 | 5 nov. | Preparar desde una idea abre lo que falta, no un relevo desde cero |
+| 4.3 | 5 nov. | Sugerencias que corresponden, varios relevos a la vez, sonido fundamentado y una app más clara |
+| 4.4 | 5 nov. | La 4.3, actualizable, con lo de la 1.0.0 |
+| 4.5 | 6 nov. | Menos amarillo, el saludo del relevo y más palabras |
+| 4.6 | 6 nov. | La encuesta del rediseño |
+| 4.6.1 | 7 nov. | Revisión de la primera vez, la encuesta y la accesibilidad |
+| 4.6.2 | 7 nov. | Textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag |
+| 4.6.3 | 7 nov. | El pulido y la señal que sonaba dos veces |
 
-*Nota.* Elaboración propia a partir del encabezado de cada documento de versión, en la rama `android-4.6`. Fechas de 2026.
+*Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** sin códigos de decisión, sin ramas ni carpetas del repositorio y sin nombres de archivos de código; las tablas de versiones pierden la columna «Decisión»; menos «elegido».
+- **Cómo estaba antes:** citaba decisiones como D-109, las ramas android-4.x, las carpetas del repositorio y archivos como Reminder.kt.
+- **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
 ### 2026-11-08 — Anexo recopilado y listo para Word
 

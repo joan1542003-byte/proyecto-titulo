@@ -136,11 +136,11 @@ function datosDeMemoria() {
 
 const LUCES = [['Arriba', '#FFD54A', 'Tu tiempo'], ['Derecha', '#9DD6F4', 'Tu primer paso'], ['Abajo', '#B3E788', 'El lugar donde empiezas'], ['Izquierda', '#F6A3CB', 'Lo que decides']];
 const PAPELES = [
-  ['butter', '#F4E496', 'Tu tiempo', 'Mantequilla', 'tiempo'], ['sky', '#B3E5FC', 'Tu primer paso', 'Cielo', 'primer-paso'],
-  ['lime', '#C6EEAE', 'El lugar', 'Lima', 'lugar'], ['blush', '#FAC8D9', 'Lo que decides', 'Rubor', 'decidir'],
+  ['butter', '#F4E496', 'Tu tiempo', 'Amarillo claro', 'tiempo'], ['sky', '#B3E5FC', 'Tu primer paso', 'Celeste', 'primer-paso'],
+  ['lime', '#C6EEAE', 'El lugar', 'Verde claro', 'lugar'], ['blush', '#FAC8D9', 'Lo que decides', 'Rosa', 'decidir'],
   ['lilac', '#DFD1FC', 'Tu aura', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después', 'Durazno', 'despues'],
 ];
-const BASE = [['Papel', '#F7F4F0', 'Fondo'], ['Piedra', '#EEE9E3', 'Superficies y el medio'], ['Línea', '#E4DED6', 'Bordes'], ['Grafito', '#6B655F', 'Texto secundario'], ['Tinta', '#141312', 'Texto y selección'], ['Error', '#B3261E', 'Solo errores, con ícono y texto']];
+const BASE = [['Blanco cálido', '#F7F4F0', 'Fondo de las pantallas'], ['Gris claro', '#EEE9E3', 'Botones secundarios y los íconos del Tag y del teléfono'], ['Gris de borde', '#E4DED6', 'Líneas de separación'], ['Gris oscuro', '#6B655F', 'Texto secundario'], ['Negro', '#141312', 'Texto, acciones y selección'], ['Rojo', '#B3261E', 'Solo errores, siempre con ícono y texto']];
 const VERSIONES_LOGO = [
   ['relevo-logo-vertical.svg', 'Vertical'], ['relevo-marca.svg', 'Marca, desde 24 px'], ['relevo-marca-chica.svg', 'Marca chica, de 16 a 23 px'],
   ['relevo-marca-degradado.svg', 'Luz, desde 48 px'], ['relevo-marca-tinta.svg', 'Una tinta'], ['relevo-marca-blanca.svg', 'Sobre fondo oscuro'], ['relevo-icono-app.svg', 'Ícono de la app'],

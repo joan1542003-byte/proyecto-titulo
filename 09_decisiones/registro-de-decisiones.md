@@ -2056,7 +2056,26 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** el PDF tiene 102 páginas carta, solo Arial y la portada en una página, y su índice da la página de las 51 entradas. El Word usa solo negro, Arial y los estilos de Word, sin rellenos de color, y no conserva marcas de Markdown. Se revisó página por página en LibreOffice; Microsoft Word no está instalado en este computador.
 - **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
 
+## D-170 — Los anexos, sin códigos ni repositorio y con la declaración de IA del autor
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el autor revisó los anexos formales y señaló códigos que un lector no entiende (P1, Q7, S01, D-109, C-OBL-PEND), menciones al repositorio, el «testigo», palabras poco claras —papeles, piedra, cielos, un «elegido» repetido— y una declaración de IA que le atribuía a la herramienta trabajo que hizo él.
+- **Decisión:**
+  - **Sin códigos:** las personas entrevistadas son Persona 1 a Persona 8, los mismos casos anonimizados de P1 a P8; las preguntas y las respuestas de la encuesta van por su número; el libro de códigos usa nombres; salen los códigos de decisión y los números de los estados del ciclo.
+  - **Sin repositorio:** ningún anexo menciona el repositorio, sus carpetas, sus ramas ni sus archivos.
+  - **Palabras claras:** el objeto reemplaza al testigo; las láminas de agosto son wireframes; los papeles son los colores de las partes de un relevo; los colores de base dicen para qué sirven; los cielos son degradados; en lo visual se habla de referentes, y la *calm technology* conserva su nombre original (Weiser y Brown, 1997), que no tiene una traducción fija al español.
+  - **Declaración de IA (Anexo E):** la investigación, la memoria, la identidad, los íconos, los prototipos y los wireframes son del autor. La IA revisó la redacción —errores, repeticiones y palabras que podían confundir—, el uso que acepta la editorial Springer Nature; Claude Code desarrolló la app a partir de sus prototipos, bocetos y wireframes de Figma y ayudó a ordenar el proceso, y la IA ayudó a modelar el objeto en 3D. La IA permitió optimizar el tiempo y ahorrar recursos. Salen la clasificación de la encuesta y la generación de alternativas visuales.
+- **Pendiente con el autor:** la memoria v6 sigue con P1–P8, «tecnología calma» y la declaración de IA anterior, y el Anexo B todavía dice que la codificación de la encuesta se hizo con apoyo de IA.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — D-170
+
+- **Qué cambió:** se registró D-170.
+- **Cómo estaba antes:** la última decisión era D-169.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-08 — D-169
 

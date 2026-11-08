@@ -4,7 +4,7 @@ La encuesta en línea contrastó con más personas lo que mostraron las entrevis
 
 ## B.1 Instrumento y muestra
 
-Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19 a 30 años, con una mediana de 22, identificadas de S01 a S53. El formulario informaba el propósito académico y el uso anónimo de las respuestas. Sus preguntas describen la propuesta de septiembre de 2026, con un parlante; el archivo se entregó el 29 de septiembre.
+Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19 a 30 años, con una mediana de 22, numeradas del 1 al 53. El formulario informaba el propósito académico y el uso anónimo de las respuestas. Sus preguntas describen la propuesta de septiembre de 2026, con un parlante; el archivo se entregó el 29 de septiembre.
 
 1. Edad.
 2. En los últimos siete días, en cuántos días siguió usando una app de entretenimiento más tiempo del que quería.
@@ -23,11 +23,11 @@ Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19
 15. Qué registro aceptaría para una prueba académica.
 16. Qué cambiaría de la propuesta.
 
-**Alcance.** Las respuestas se corrigieron, resumieron u ordenaron antes de exportarse; por eso se usan recuentos y categorías, y no frases textuales. La muestra no es representativa, y las opiniones sobre Relevo se dieron tras leer una descripción, sin usar la app ni oír el sonido. El archivo con las respuestas queda fuera del repositorio: reunidas, algunas podrían ayudar a reconocer a alguien.
+**Alcance.** Las respuestas se corrigieron, resumieron u ordenaron antes de exportarse; por eso se usan recuentos y categorías, y no frases textuales. La muestra no es representativa, y las opiniones sobre Relevo se dieron tras leer una descripción, sin usar la app ni oír el sonido. Las respuestas completas no se publican: reunidas, algunas podrían ayudar a reconocer a alguien.
 
 ## B.2 Método
 
-Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad. La codificación se hizo con apoyo de inteligencia artificial, con reglas explícitas y un control automático de los totales (Anexo E).
+Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad. La codificación se hizo con apoyo de inteligencia artificial, con reglas explícitas y un control automático de los totales.
 
 ## B.3 Resultados
 
@@ -47,7 +47,7 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 **Qué pasó con la actividad (43 episodios).** No la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
 
-**Usos del teléfono que querían mantener (53).** Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta, 18; conversar o compartir con alguien, 15; un contenido elegido, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
+**Usos del teléfono que querían mantener (53).** Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta, 18; conversar o compartir con alguien, 15; un contenido buscado a propósito, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
 
 **Qué hacen para dejar una app (53).** Alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
 
@@ -93,65 +93,71 @@ Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante
 
 *Categoría de cada respuesta*
 
-| ID | Lugar | Motivo para descartarlo | Comprensión | Uso que quería mantener | Estrategia |
+| N.º | Lugar | Motivo para descartarlo | Comprensión | Uso que quería mantener | Estrategia |
 | --- | --- | --- | --- | --- | --- |
-| S01 | Junto a la actividad | Preparación y mantenimiento | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
-| S02 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S03 | Lugar general | Ruido y convivencia | Parcial | Descanso | Otra o ninguna |
-| S04 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido elegido | Otra o ninguna |
-| S05 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Alejar, guardar o silenciar |
-| S06 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S07 | No lo usaría o no sabe | Ruido y convivencia | Correcta | Conversar o compartir | Bloquear o borrar apps |
-| S08 | No lo usaría o no sabe | Suena en un mal momento | Correcta | Juego con amigos | Otras personas |
-| S09 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S10 | Junto a la actividad | Suena en un mal momento | Correcta | Contenido elegido | Alejar, guardar o silenciar |
-| S11 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido elegido | Otra o ninguna |
-| S12 | Junto a la actividad | Privacidad de los datos | Correcta | Contenido elegido | Bloquear o borrar apps |
-| S13 | No lo usaría o no sabe | No entender cuándo suena | Parcial | Conversar o compartir | Otra o ninguna |
-| S14 | Junto a la actividad | Ruido y convivencia | Correcta | Conversar o compartir | Otra o ninguna |
-| S15 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Alejar, guardar o silenciar |
-| S16 | Junto a la actividad | No escucharlo | Correcta | Aprender o resolver algo | Otra o ninguna |
-| S17 | Junto a la actividad | Preparación y mantenimiento | Correcta | Descanso | Alejar, guardar o silenciar |
-| S18 | Junto a la actividad | Suena en un mal momento | Correcta | Conversar o compartir | Alarma, límite o nota |
-| S19 | Lugar general | No entender cuándo suena | Errónea | Conversar o compartir | Bloquear o borrar apps |
-| S20 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido elegido | Bloquear o borrar apps |
-| S21 | Junto a la actividad | No entender cuándo suena | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S22 | Junto a la actividad | No escucharlo | Correcta | Contenido elegido | Alejar, guardar o silenciar |
-| S23 | Junto a la actividad | Ruido y convivencia | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
-| S24 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S25 | Lugar general | Presión u obligación | Correcta | Descanso | Otra o ninguna |
-| S26 | Junto a la actividad | Acostumbrarse y apagarlo | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S27 | Junto a la actividad | Ruido y convivencia | Correcta | Contenido elegido | Alarma, límite o nota |
-| S28 | No lo usaría o no sabe | Suena en un mal momento | Correcta | Juego con amigos | Otra o ninguna |
-| S29 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S30 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
-| S31 | Junto a la actividad | No escucharlo | Correcta | Contenido elegido | Alarma, límite o nota |
-| S32 | Junto a la actividad | Presión u obligación | Correcta | Descanso | Alejar, guardar o silenciar |
-| S33 | Junto a la actividad | Audio y conexión del parlante | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S34 | No lo usaría o no sabe | Otros | Correcta | Conversar o compartir | Otras personas |
-| S35 | Junto a la actividad | Ruido y convivencia | Correcta | Contenido elegido | Otras personas |
-| S36 | Lugar general | Acostumbrarse y apagarlo | Correcta | Conversar o compartir | Bloquear o borrar apps |
-| S37 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S38 | Lugar general | Preparación y mantenimiento | Correcta | Descanso | Alejar, guardar o silenciar |
-| S39 | Lugar general | Ruido y convivencia | Correcta | Contenido elegido | Preparar el comienzo |
-| S40 | Junto a la actividad | Privacidad de los datos | Correcta | Conversar o compartir | Preparar el comienzo |
-| S41 | Junto a la actividad | No entender cuándo suena | Errónea | Conversar o compartir | Otras personas |
-| S42 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
-| S43 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido elegido | Otra o ninguna |
-| S44 | Junto a la actividad | Otros | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S45 | Junto a la actividad | Acostumbrarse y apagarlo | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
-| S46 | Junto a la actividad | Audio y conexión del parlante | Correcta | Descanso | Otra o ninguna |
-| S47 | Junto a la actividad | Presión u obligación | Correcta | Conversar o compartir | Otra o ninguna |
-| S48 | Junto a la actividad | Audio y conexión del parlante | Correcta | Aprender o resolver algo | Alarma, límite o nota |
-| S49 | Junto a la actividad | Presión u obligación | Correcta | Conversar o compartir | Otras personas |
-| S50 | No lo usaría o no sabe | Otro aparato o compatibilidad | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
-| S51 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Preparar el comienzo |
-| S52 | Lugar general | Otros | Correcta | Conversar o compartir | Alarma, límite o nota |
-| S53 | Junto a la actividad | Privacidad de los datos | Correcta | No responde | Alejar, guardar o silenciar |
+| 1 | Junto a la actividad | Preparación y mantenimiento | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
+| 2 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 3 | Lugar general | Ruido y convivencia | Parcial | Descanso | Otra o ninguna |
+| 4 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido buscado | Otra o ninguna |
+| 5 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Alejar, guardar o silenciar |
+| 6 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 7 | No lo usaría o no sabe | Ruido y convivencia | Correcta | Conversar o compartir | Bloquear o borrar apps |
+| 8 | No lo usaría o no sabe | Suena en un mal momento | Correcta | Juego con amigos | Otras personas |
+| 9 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 10 | Junto a la actividad | Suena en un mal momento | Correcta | Contenido buscado | Alejar, guardar o silenciar |
+| 11 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido buscado | Otra o ninguna |
+| 12 | Junto a la actividad | Privacidad de los datos | Correcta | Contenido buscado | Bloquear o borrar apps |
+| 13 | No lo usaría o no sabe | No entender cuándo suena | Parcial | Conversar o compartir | Otra o ninguna |
+| 14 | Junto a la actividad | Ruido y convivencia | Correcta | Conversar o compartir | Otra o ninguna |
+| 15 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Alejar, guardar o silenciar |
+| 16 | Junto a la actividad | No escucharlo | Correcta | Aprender o resolver algo | Otra o ninguna |
+| 17 | Junto a la actividad | Preparación y mantenimiento | Correcta | Descanso | Alejar, guardar o silenciar |
+| 18 | Junto a la actividad | Suena en un mal momento | Correcta | Conversar o compartir | Alarma, límite o nota |
+| 19 | Lugar general | No entender cuándo suena | Errónea | Conversar o compartir | Bloquear o borrar apps |
+| 20 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido buscado | Bloquear o borrar apps |
+| 21 | Junto a la actividad | No entender cuándo suena | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 22 | Junto a la actividad | No escucharlo | Correcta | Contenido buscado | Alejar, guardar o silenciar |
+| 23 | Junto a la actividad | Ruido y convivencia | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
+| 24 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 25 | Lugar general | Presión u obligación | Correcta | Descanso | Otra o ninguna |
+| 26 | Junto a la actividad | Acostumbrarse y apagarlo | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 27 | Junto a la actividad | Ruido y convivencia | Correcta | Contenido buscado | Alarma, límite o nota |
+| 28 | No lo usaría o no sabe | Suena en un mal momento | Correcta | Juego con amigos | Otra o ninguna |
+| 29 | Junto a la actividad | Preparación y mantenimiento | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 30 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
+| 31 | Junto a la actividad | No escucharlo | Correcta | Contenido buscado | Alarma, límite o nota |
+| 32 | Junto a la actividad | Presión u obligación | Correcta | Descanso | Alejar, guardar o silenciar |
+| 33 | Junto a la actividad | Audio y conexión del parlante | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 34 | No lo usaría o no sabe | Otros | Correcta | Conversar o compartir | Otras personas |
+| 35 | Junto a la actividad | Ruido y convivencia | Correcta | Contenido buscado | Otras personas |
+| 36 | Lugar general | Acostumbrarse y apagarlo | Correcta | Conversar o compartir | Bloquear o borrar apps |
+| 37 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 38 | Lugar general | Preparación y mantenimiento | Correcta | Descanso | Alejar, guardar o silenciar |
+| 39 | Lugar general | Ruido y convivencia | Correcta | Contenido buscado | Preparar el comienzo |
+| 40 | Junto a la actividad | Privacidad de los datos | Correcta | Conversar o compartir | Preparar el comienzo |
+| 41 | Junto a la actividad | No entender cuándo suena | Errónea | Conversar o compartir | Otras personas |
+| 42 | Junto a la actividad | Otro aparato o compatibilidad | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
+| 43 | No lo usaría o no sabe | No lo necesita | Correcta | Contenido buscado | Otra o ninguna |
+| 44 | Junto a la actividad | Otros | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 45 | Junto a la actividad | Acostumbrarse y apagarlo | Correcta | Aprender o resolver algo | Bloquear o borrar apps |
+| 46 | Junto a la actividad | Audio y conexión del parlante | Correcta | Descanso | Otra o ninguna |
+| 47 | Junto a la actividad | Presión u obligación | Correcta | Conversar o compartir | Otra o ninguna |
+| 48 | Junto a la actividad | Audio y conexión del parlante | Correcta | Aprender o resolver algo | Alarma, límite o nota |
+| 49 | Junto a la actividad | Presión u obligación | Correcta | Conversar o compartir | Otras personas |
+| 50 | No lo usaría o no sabe | Otro aparato o compatibilidad | Correcta | Conversar o compartir | Alejar, guardar o silenciar |
+| 51 | Junto a la actividad | Suena en un mal momento | Correcta | Aprender o resolver algo | Preparar el comienzo |
+| 52 | Lugar general | Otros | Correcta | Conversar o compartir | Alarma, límite o nota |
+| 53 | Junto a la actividad | Privacidad de los datos | Correcta | No responde | Alejar, guardar o silenciar |
 
-*Nota.* Elaboración propia. S01 a S53 identifican las respuestas, no a las personas.
+*Nota.* Elaboración propia. Los números identifican las respuestas, no a las personas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** las respuestas se numeran del 1 al 53; la categoría «Contenido elegido» pasa a «Contenido buscado»; sale la mención al repositorio y la remisión al Anexo E.
+- **Cómo estaba antes:** las respuestas se identificaban como S01 a S53, y el alcance decía que el archivo quedaba fuera del repositorio.
+- **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
 ### 2026-11-08 — Anexo recopilado y listo para Word
 

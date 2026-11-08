@@ -13,12 +13,12 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 
 | Anexo | Qué contiene |
 | --- | --- |
-| [A. Entrevistas: pauta, corpus y análisis](anexo-a-entrevistas.md) | La ficha y la pauta de 13 preguntas, la síntesis de las ocho entrevistas (P1–P8), el método, el libro de 23 códigos, cada caso y los dos tipos de usuario. |
+| [A. Entrevistas: pauta, corpus y análisis](anexo-a-entrevistas.md) | La ficha y la pauta de 13 preguntas, la síntesis de las ocho entrevistas (Persona 1 a Persona 8), el método, el libro de 23 códigos, cada caso y los dos tipos de usuario. |
 | [B. Encuesta: 53 respuestas](anexo-b-encuesta.md) | Las 16 preguntas, el método, los recuentos, lo que tomó el diseño y la codificación de cada respuesta, sin citas textuales. |
 | [C. Estado del arte y referentes](anexo-c-referentes.md) | La búsqueda, una ficha por referente del mapa del capítulo 8 y los prototipos y patentes con piezas parecidas. |
 | [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
-| [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron, lo que decidió el autor y los resguardos. |
-| [F. Estados del ciclo y wireframes](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus láminas, y los wireframes de las 39 pantallas de la app. |
+| [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
+| [F. Estados del ciclo y wireframes](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus wireframes, y los wireframes de las 39 pantallas de la app. |
 | [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, y cada versión desde la 2.7 hasta la 4.6.3. |
 | [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos letras, los 72 íconos y el color, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
@@ -31,6 +31,7 @@ node construir-anexos.js
 
 Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de un minuto. Con `--sin-pdf` escribe solo el Word. Necesita Node 18 o posterior y Google Chrome y, para el PDF, LibreOffice y `pdftotext` (Poppler); no usa paquetes de npm.
 
+- **Cómo se escriben:** sin códigos internos —las personas son Persona 1 a Persona 8; las preguntas y las respuestas, su número— y sin mencionar el repositorio, sus carpetas ni sus archivos (D-170).
 - **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
 - **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo, de [`logotipos-udp-faad`](../../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad).
 - **El PDF** lo exporta LibreOffice desde el Word. `pdftotext` lee en qué página quedó cada título, y el constructor arma el Word otra vez con esas páginas en el índice, hasta que no cambian.
@@ -40,7 +41,7 @@ Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de u
 
 ## Criterio de selección
 
-Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Los datos, las citas y los participantes son los del repositorio: el corpus P1–P8, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales. Las imágenes de agosto son copias livianas de las láminas 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3 en un teléfono Android.
+Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Los datos, las citas y los participantes son los del proyecto: el corpus de las ocho entrevistas, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales. Las imágenes de agosto son copias livianas de los wireframes 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3 en un teléfono Android.
 
 ## Lo que no entra
 
@@ -53,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** el índice nombra a las personas como Persona 1 a Persona 8, describe el Anexo E corregido y los wireframes de agosto, y suma cómo se escriben los anexos: sin códigos y sin mencionar el repositorio.
+- **Cómo estaba antes:** hablaba de P1–P8, de las láminas de agosto y de los resguardos del Anexo E.
+- **Por qué:** el autor revisó los anexos y los corrigió (D-170).
 
 ### 2026-11-08 — Anexos formales, sin diseño
 

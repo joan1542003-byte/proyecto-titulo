@@ -1,34 +1,35 @@
 # Anexo E. Uso de inteligencia artificial
 
-Declara qué herramientas de inteligencia artificial se usaron en el proyecto, en qué tareas ayudaron y qué decidió el autor. El registro de cada pedido, que se lleva a diario desde el 29 de septiembre de 2026, está abierto en el repositorio del proyecto y no se reproduce aquí.
+Declara qué herramientas de inteligencia artificial se usaron, en qué tareas ayudaron y qué hizo el autor. La inteligencia artificial fue una herramienta que permitió optimizar el tiempo y ahorrar recursos; la investigación, el diseño y las decisiones son del autor.
 
 ## E.1 Herramientas
 
-El proyecto usó dos herramientas de inteligencia artificial generativa, de proveedores distintos. Ambas son agentes que trabajan sobre los archivos del proyecto —los leen, los modifican y devuelven el resultado—, y eso permitió encargarles tareas sostenidas, como programar la app o mantener la coherencia entre documentos escritos en meses distintos.
-
-- **Codex, de OpenAI**, desde marzo de 2026, en la primera etapa: la investigación, la redacción inicial de la memoria y las primeras versiones de la app y de las piezas web. El repositorio conserva sus instrucciones de trabajo.
-- **Claude Code, de Anthropic**, desde fines de septiembre de 2026, como herramienta principal de la etapa final. Registra cada cambio en el control de versiones del repositorio, con su autoría, de modo que puede revisarse, atribuirse y revertirse. El repositorio conserva también su archivo de reglas.
+- **Codex, de OpenAI**, desde marzo de 2026: revisó la redacción de los textos del autor y ayudó a programar las primeras versiones de la app y de las piezas web.
+- **Claude Code, de Anthropic**, desde fines de septiembre de 2026: desarrolló la app, llevando a Android Studio los prototipos, las ideas, los bocetos y los wireframes de Figma del autor, y ayudó a leer y ordenar el proceso del proyecto.
 
 ## E.2 Cinco tareas
 
-1. **Programar la app y su base de datos.** Es la intervención de mayor alcance. El autor no programa en Kotlin: el prototipo existe porque estas herramientas escribieron el código a partir de sus especificaciones —qué debía ocurrir, en qué pantalla y con qué palabras—. El autor instaló y probó cada versión, informó las fallas y decidió qué se incorporaba (Anexo G).
-2. **Generar alternativas visuales.** Propuestas de identidad, láminas, íconos y el modelo 3D del objeto, entre las que el autor eligió, corrigió o descartó (Anexo H).
-3. **Redactar y revisar.** Borradores de la memoria, reescrituras de párrafos poco claros, repeticiones señaladas, un tono común entre documentos de distintas fechas y correcciones de ortografía y puntuación. El contenido y el criterio son del autor; la herramienta propuso formas de decirlo.
-4. **Clasificar las respuestas abiertas de la encuesta**, con reglas explícitas y un control automático de los totales (Anexo B).
-5. **Buscar fuentes y verificar citas.** La herramienta propuso fuentes sin muro de pago, cada una con su ficha; el autor las revisó una por una y leyó las que servían antes de incorporarlas. Así se armó el estado del arte del capítulo 8 y se encontraron las memorias de título chilenas que pidió el Pase de junio (Anexo C). También se revisó que cada cita tuviera su referencia, y cada referencia su cita, y el formato APA 7 de la lista.
+1. **Programar la app y su base de datos.** Es la intervención de mayor alcance. El autor no programa en Kotlin: la app existe porque estas herramientas escribieron el código a partir de sus prototipos y especificaciones —qué debía ocurrir, en qué pantalla y con qué palabras—. El autor instaló y probó cada versión, informó las fallas y decidió qué se incorporaba (Anexo G).
+2. **Modelar el objeto en 3D**, a partir de las especificaciones del autor.
+3. **Revisar la redacción.** Los textos son del autor; la herramienta señaló errores, repeticiones y palabras que podían confundir, y el autor decidió qué cambiar. Es el uso que acepta la editorial académica Springer Nature: un modelo de lenguaje puede pulir o afinar la redacción, porque la inteligencia artificial apoya y no reemplaza el criterio de las personas, y una persona responde siempre por el trabajo (Springer Nature, s. f.).
+4. **Buscar fuentes y verificar citas.** La herramienta propuso fuentes sin muro de pago, cada una con su ficha; el autor las revisó una por una y leyó las que servían antes de incorporarlas. También se revisó que cada cita tuviera su referencia, y cada referencia su cita, y el formato APA 7 de la lista.
+5. **Leer y ordenar el proceso:** las decisiones, las versiones de la app y los documentos de distintas fechas.
 
-## E.3 Lo que decidió el autor
+## E.3 Lo que hizo el autor
 
-El autor definió el problema, la pregunta, la hipótesis y los objetivos; eligió a las personas entrevistadas e hizo las entrevistas y sus repreguntas; formuló los ocho criterios de diseño; eligió la identidad visual entre las propuestas; decidió qué versión de la app se instaló en los teléfonos de la prueba, y responde por las citas y por las conclusiones. Cada resultado de una herramienta fue una propuesta que el autor revisó, corrigió o descartó.
+El autor definió el problema, la pregunta, la hipótesis y los objetivos; hizo la investigación y escribió la memoria; convocó a las personas entrevistadas e hizo las entrevistas y sus repreguntas; formuló los ocho criterios de diseño; diseñó la identidad visual, los íconos, los prototipos y los wireframes en Figma, a partir de sus bocetos; decidió qué versión de la app se instaló en los teléfonos de la prueba, y responde por las citas y por las conclusiones. Cada resultado de una herramienta fue una propuesta que el autor revisó, corrigió o descartó. Ninguna herramienta generó datos, participantes, citas ni resultados.
 
-## E.4 Resguardos y registro
+## Referencias
 
-- Ninguna herramienta generó datos, participantes, citas ni resultados.
-- Las imágenes hechas con estas herramientas se presentan como visualizaciones, nunca como fotografía de un prototipo o de su uso.
-- Cuando no se conservó el texto literal de un pedido, se anota una síntesis, sin reconstruir una transcripción.
-- Desde el 29 de septiembre de 2026, el registro de pedidos a la IA anota el mismo día cada pedido del autor, su tipo, el resultado y la decisión asociada; la trazabilidad del 23 de septiembre reconstruye en parte el periodo anterior. Las herramientas también mantienen el estado del proyecto, el registro de riesgos y el registro de decisiones. Todo está en el repositorio público del proyecto, en las carpetas `00_gobernanza` y `09_decisiones`.
+Springer Nature. (s. f.). *AI guidance for researchers, editors and reviewers*. Recuperado el 8 de noviembre de 2026, de https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** la declaración sigue lo que dice el autor: la investigación y la memoria son suyas, y la IA revisó la redacción —errores, repeticiones y palabras que podían confundir—, con Springer Nature como referente; Claude Code desarrolló la app a partir de sus prototipos, bocetos y wireframes de Figma y ayudó a ordenar el proceso; la IA ayudó a modelar el objeto en 3D. Salen la clasificación de la encuesta, las alternativas visuales, los resguardos sobre imágenes y transcripciones y el registro de pedidos con sus carpetas. Se suma que la IA permitió optimizar el tiempo y ahorrar recursos.
+- **Cómo estaba antes:** atribuía a Codex la investigación y la redacción inicial de la memoria y a la IA las alternativas de identidad, láminas e íconos, y remitía al repositorio.
+- **Por qué:** el autor revisó los anexos y pidió un texto sin códigos ni menciones al repositorio, con palabras claras y la declaración de IA corregida (D-170).
 
 ### 2026-11-08 — Anexo recopilado y listo para Word
 
