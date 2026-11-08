@@ -20,7 +20,7 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
 | [F. Estados del ciclo y wireframes](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus wireframes, y los wireframes de las 39 pantallas de la app. |
 | [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, y cada versión desde la 2.7 hasta la 4.6.3. |
-| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos letras, los 72 íconos y el color, cada uno con su fundamento, y las propuestas anteriores. |
+| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos tipografías, los 72 íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
 ## Cómo se arman
@@ -54,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Repreguntas y terminología de diseño
+
+- **Qué cambió:** el índice describe el Anexo H con «las dos tipografías» y «la paleta cromática».
+- **Cómo estaba antes:** decía «las dos letras» y «el color».
+- **Por qué:** el autor pidió poner bien las repreguntas y hablar de lo visual con terminología de diseñador: tipografía y paleta cromática, no letras, fuentes ni texto (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 

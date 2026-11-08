@@ -140,7 +140,7 @@ const PAPELES = [
   ['lime', '#C6EEAE', 'El lugar', 'Verde claro', 'lugar'], ['blush', '#FAC8D9', 'Lo que decides', 'Rosa', 'decidir'],
   ['lilac', '#DFD1FC', 'Tu aura', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después', 'Durazno', 'despues'],
 ];
-const BASE = [['Blanco cálido', '#F7F4F0', 'Fondo de las pantallas'], ['Gris claro', '#EEE9E3', 'Botones secundarios y los íconos del Tag y del teléfono'], ['Gris de borde', '#E4DED6', 'Líneas de separación'], ['Gris oscuro', '#6B655F', 'Texto secundario'], ['Negro', '#141312', 'Texto, acciones y selección'], ['Rojo', '#B3261E', 'Solo errores, siempre con ícono y texto']];
+const BASE = [['Blanco cálido', '#F7F4F0', 'Fondo de las pantallas'], ['Gris claro', '#EEE9E3', 'Botones secundarios y los íconos del Tag y del teléfono'], ['Gris de borde', '#E4DED6', 'Líneas de separación'], ['Gris oscuro', '#6B655F', 'Información secundaria'], ['Negro', '#141312', 'Tipografía, acciones y selección'], ['Rojo', '#B3261E', 'Solo errores, siempre con ícono y palabra']];
 const VERSIONES_LOGO = [
   ['relevo-logo-vertical.svg', 'Vertical'], ['relevo-marca.svg', 'Marca, desde 24 px'], ['relevo-marca-chica.svg', 'Marca chica, de 16 a 23 px'],
   ['relevo-marca-degradado.svg', 'Luz, desde 48 px'], ['relevo-marca-tinta.svg', 'Una tinta'], ['relevo-marca-blanca.svg', 'Sobre fondo oscuro'], ['relevo-icono-app.svg', 'Ícono de la app'],

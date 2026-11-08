@@ -48,29 +48,29 @@ Las repreguntas cambiaron según cada respuesta: sirvieron para aclarar signific
 
 ## A.2 Síntesis de las entrevistas
 
-Cada respuesta está resumida en tercera persona, sin nombres y con el número de su pregunta; las repreguntas siguen a la respuesta. Las respuestas breves o no contestadas se conservan como tales. Las expresiones coloquiales o de autodiagnóstico, como «dopamina» o «uso adictivo», son de las personas y no categorías del análisis.
+Cada respuesta está resumida en tercera persona, sin nombres y con el número de su pregunta; cuando el investigador repreguntó, la respuesta sigue en la misma línea. Las respuestas breves o no contestadas se conservan como tales. Las expresiones coloquiales o de autodiagnóstico, como «dopamina» o «uso adictivo», son de las personas y no categorías del análisis.
 
 ### Persona 1 · 21 años · 12 de junio
 
-**1.** Jugar, disfrutar tiempo con sus perros y ver películas o series. *Repregunta — tiempo con sus perros:* consiste en disfrutar con ellos, porque ellos estarán una parte de su vida, pero para ellos será toda su vida.
+**1.** Jugar, disfrutar tiempo con sus perros y ver películas o series. Al repreguntarle por el tiempo con sus perros, explicó que consiste en disfrutar con ellos, porque ellos estarán una parte de su vida, pero para ellos será toda su vida.
 
-**2.** Hacer ejercicio y cocinar. *Repregunta — momento de desconexión:* cuando está concentrado haciendo lo que le gusta; si se desconcentra, algo puede salir mal.
+**2.** Hacer ejercicio y cocinar. Al repreguntarle cuándo se desconecta, respondió que cuando está concentrado haciendo lo que le gusta; si se desconcentra, algo puede salir mal.
 
-**3.** Hace unos días leyó manga en el teléfono. *Repregunta — decisión de leer:* un momento tranquilo, buscando una dopamina más saludable.
+**3.** Hace unos días leyó manga en el teléfono. Al repreguntarle por qué decidió leer, lo describió como un momento tranquilo, buscando una dopamina más saludable.
 
-**4.** Feliz, tranquilo y reflexivo. *Repregunta — reflexión:* depende del manga; algunos contenidos le hacen reflexionar.
+**4.** Feliz, tranquilo y reflexivo. Al repreguntarle por la reflexión, dijo que depende del manga: algunos contenidos le hacen reflexionar.
 
-**5.** Satisfecho con usar su tiempo para cosas mejores. *Repregunta — cosas mejores:* leer en vez de ocupar el teléfono para TikTok o actividades similares.
+**5.** Satisfecho con usar su tiempo para cosas mejores. Al repreguntarle cuáles, mencionó leer, en vez de ocupar el teléfono para TikTok o actividades similares.
 
 **6.** Dormir.
 
-**7.** Sí, porque ya había hecho cosas temprano. *Repregunta — actividades previas:* ir a la universidad.
+**7.** Sí, porque ya había hecho cosas temprano. Al repreguntarle qué había hecho, mencionó ir a la universidad.
 
 **8.** Sí.
 
-**9.** Considera que toda actividad libre que haga sentir bien es buen tiempo de ocio. *Repregunta — sentirse bien:* sentirse feliz y desconectado de las obligaciones.
+**9.** Considera que toda actividad libre que haga sentir bien es buen tiempo de ocio. Al repreguntarle qué es sentirse bien, lo definió como sentirse feliz y desconectado de las obligaciones.
 
-**10.** Hacer ejercicio, ver una película o practicar algún deporte. *Repregunta — condición del ejercicio:* terminar cansado y adolorido para quedar satisfecho.
+**10.** Hacer ejercicio, ver una película o practicar algún deporte. Al repreguntarle por el ejercicio, precisó que necesita terminar cansado y adolorido para quedar satisfecho.
 
 **11.** No.
 
@@ -80,13 +80,13 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 2 · 22 años · 12 de junio
 
-**1.** Descansa, ve videos y revisa redes sociales. *Repregunta — contenidos:* memes o temas de su interés, generalmente para reírse.
+**1.** Descansa, ve videos y revisa redes sociales. Al repreguntarle por los contenidos, dijo que son memes o temas de su interés, generalmente para reírse.
 
-**2.** Acostarse a ver videos, jugar en el computador o estar con su pareja. *Repregunta — videos para desconectarse:* contenidos de humor.
+**2.** Acostarse a ver videos, jugar en el computador o estar con su pareja. Al repreguntarle qué videos la desconectan, mencionó los de humor.
 
 **3.** Durante la entrevista se puso a ver memes en Instagram al acostarse.
 
-**4.** Se sintió tranquila hasta que tuvo sueño. *Repregunta — continuidad:* reconoció que era momento de dormir y, aunque tenía mucho sueño, siguió frente a la pantalla.
+**4.** Se sintió tranquila hasta que tuvo sueño. Al repreguntarle si siguió en el teléfono, reconoció que era momento de dormir y, aunque tenía mucho sueño, siguió frente a la pantalla.
 
 **5.** Más o menos.
 
@@ -96,9 +96,9 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** A veces, pero muy poco.
 
-**9.** Considera más válidas las actividades de interés personal que no consisten en permanecer desplazándose por el celular. *Repregunta — actividad productiva:* una actividad que permita desconectarse y se sienta plena; menciona manualidades, pintura y dibujo.
+**9.** Considera más válidas las actividades de interés personal que no consisten en permanecer desplazándose por el celular. Al repreguntarle qué actividad le parece productiva, la describió como una que permita desconectarse y se sienta plena, y mencionó manualidades, pintura y dibujo.
 
-**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. *Repregunta — hacer lo que quiere:* realizar sus hobbies en paz.
+**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. Al repreguntarle qué es hacer lo que quiere, lo definió como realizar sus hobbies en paz.
 
 **11.** No por el momento.
 
@@ -110,25 +110,25 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **1.** Jugar en el computador y practicar artes marciales.
 
-**2.** Dormir, ver una serie, jugar en el computador y meditar. *Repregunta — desconexión al jugar:* disfruta saber que no tiene la presión de hacer algo.
+**2.** Dormir, ver una serie, jugar en el computador y meditar. Al repreguntarle por la desconexión al jugar, dijo que disfruta saber que no tiene la presión de hacer algo.
 
 **3.** Ese día miró videos humorísticos en Instagram.
 
-**4.** Sintió que estaba matando el tiempo sin ser consciente de él. *Repregunta — conciencia temporal:* no tenía noción del tiempo mientras lo hacía.
+**4.** Sintió que estaba matando el tiempo sin ser consciente de él. Al repreguntarle si notó el paso del tiempo, dijo que no tenía noción del tiempo mientras lo hacía.
 
-**5.** No se sintió mal ni bien; pensó que tenía mejores cosas que hacer. *Repregunta — alternativa:* sentía que perdía parte del día viendo el celular.
+**5.** No se sintió mal ni bien; pensó que tenía mejores cosas que hacer. Al repreguntarle por esas otras cosas, dijo que sentía que perdía parte del día viendo el celular.
 
 **6.** Habría dicho la verdad, pero no especificó el contenido del relato.
 
-**7.** Sí contó como descanso porque no hizo lo que debía y se despejó de las responsabilidades. *Repregunta — coexistencia con obligaciones:* sabía que tenía algo pendiente y aun así continuó descansando.
+**7.** Sí contó como descanso porque no hizo lo que debía y se despejó de las responsabilidades. Al repreguntarle por sus obligaciones, dijo que sabía que tenía algo pendiente y aun así continuó descansando.
 
-**8.** Le suele ocurrir y le provoca sentirse un poco mal consigo mismo. *Repregunta — razón:* piensa que podría haber hecho algo más productivo.
+**8.** Le suele ocurrir y le provoca sentirse un poco mal consigo mismo. Al repreguntarle por qué, dijo que piensa que podría haber hecho algo más productivo.
 
 **9.** Considera todas las actividades igualmente válidas, aunque algunas entregan habilidades aplicables a la vida cotidiana.
 
-**10.** Invertir el ocio en actividades que le hagan crecer o entreguen un beneficio. *Repregunta — beneficio:* actividades que le hagan sentirse pleno o sentir que vive.
+**10.** Invertir el ocio en actividades que le hagan crecer o entreguen un beneficio. Al repreguntarle por el beneficio, habló de actividades que le hagan sentirse pleno o sentir que vive.
 
-**11.** Considera relevante la normalización de perder tiempo con el celular y luego sentir que podría haber hecho algo mejor. *Repregunta — situaciones:* permanecer bastante tiempo viendo memes o contenido en TikTok o Instagram.
+**11.** Considera relevante la normalización de perder tiempo con el celular y luego sentir que podría haber hecho algo mejor. Al repreguntarle en qué situaciones, mencionó permanecer bastante tiempo viendo memes o contenido en TikTok o Instagram.
 
 **12.** Cuando entrena, juega en el computador o medita intenta dejar el celular lejos. A veces activa no molestar, pero si está cerca vuelve a tomarlo para revisar Instagram.
 
@@ -136,7 +136,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 4 · 22 años · 11 de junio
 
-**1.** Ver una película o estar en el teléfono. *Repregunta — teléfono:* revisar redes sociales.
+**1.** Ver una película o estar en el teléfono. Al repreguntarle qué hace en el teléfono, mencionó revisar redes sociales.
 
 **2.** Pasear a su perro y escuchar música tranquila o enérgica.
 
@@ -144,13 +144,13 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **4.** Tranquila.
 
-**5.** Concentrada y relajada. *Repregunta — concentración:* el juego exigía atención y, al terminar, pudo enfocarse en su entorno.
+**5.** Concentrada y relajada. Al repreguntarle por la concentración, explicó que el juego exigía atención y que, al terminar, pudo enfocarse en su entorno.
 
 **6.** Diría que no hizo nada porque considera que jugar es técnicamente una forma de no hacer nada.
 
 **7.** Sí contó como descanso: ocupó su mente sin estrés ni mal humor.
 
-**8.** Le ocurre muchas veces, especialmente con TikTok. *Repregunta — dificultad narrativa:* ve muchos videos, pero luego no permanece contenido en su mente.
+**8.** Le ocurre muchas veces, especialmente con TikTok. Al repreguntarle por qué le cuesta contarlo, dijo que ve muchos videos, pero luego no permanece contenido en su mente.
 
 **9.** Considera más válidos caminar o hacer ejercicio porque mantienen el cuerpo activo y dejan tiempo para pensar.
 
@@ -166,7 +166,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **1.** Pasa tiempo en TikTok, Instagram y Facebook.
 
-**2.** Ordenar su pieza, peinar sus muñecas y estar con el celular. *Repregunta — muñecas:* calma.
+**2.** Ordenar su pieza, peinar sus muñecas y estar con el celular. Al repreguntarle por sus muñecas, las asoció con la calma.
 
 **3.** Durante la entrevista veía TikTok, específicamente videos de God of War.
 
@@ -180,9 +180,9 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** Sí.
 
-**9.** Considera más válida cualquier actividad distinta de estar en el celular porque permite hacer cosas productivas. *Repregunta — productividad:* ordenar, hacer ejercicio o algo que ayude a la vida.
+**9.** Considera más válida cualquier actividad distinta de estar en el celular porque permite hacer cosas productivas. Al repreguntarle qué es productivo, mencionó ordenar, hacer ejercicio o algo que ayude a la vida.
 
-**10.** Hacer algo productivo y no estar todo el tiempo con el celular. *Repregunta — actividades:* ordenar, limpiar o aprender algo nuevo.
+**10.** Hacer algo productivo y no estar todo el tiempo con el celular. Al repreguntarle qué actividades, mencionó ordenar, limpiar o aprender algo nuevo.
 
 **11.** No.
 
@@ -192,15 +192,15 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 6 · 27 años · 11 de junio
 
-**1.** Jugar, leer, realizar videollamadas y cenar con su familia. *Repregunta — juego:* se instala con algo para comer y beber y comprueba si alguien está disponible para jugar.
+**1.** Jugar, leer, realizar videollamadas y cenar con su familia. Al repreguntarle cómo juega, contó que se instala con algo para comer y beber y comprueba si alguien está disponible para jugar.
 
 **2.** Escuchar música, armar maquetas y resolver sudoku, principalmente durante la noche.
 
-**3.** El día anterior estuvo varias horas en videollamada con una amiga que vive fuera del país. *Repregunta — contenido:* conversaron sobre su semana, jugaron y planearon otra llamada.
+**3.** El día anterior estuvo varias horas en videollamada con una amiga que vive fuera del país. Al repreguntarle qué hicieron, contó que conversaron sobre su semana, jugaron y planearon otra llamada.
 
-**4.** Contenta, porque hacía tiempo que no hablaba con su amiga por videollamada. *Repregunta — temas:* acontecimientos de la semana y experiencias personales.
+**4.** Contenta, porque hacía tiempo que no hablaba con su amiga por videollamada. Al repreguntarle de qué hablaron, mencionó los acontecimientos de la semana y experiencias personales.
 
-**5.** Con ganas de repetir la videollamada. *Repregunta — razón:* emoción y nostalgia.
+**5.** Con ganas de repetir la videollamada. Al repreguntarle por qué, habló de emoción y nostalgia.
 
 **6.** Diría que estuvo en videollamada con una amiga muy cercana y podría describir temas como universidad, trabajo, viajes y salidas.
 
@@ -208,7 +208,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** Sí le ha ocurrido no poder describir bien otros usos del teléfono.
 
-**9.** Algunas actividades parecen más válidas porque puede sentir que desaprovechó horas en acciones rutinarias que realiza todos los días. *Repregunta — ejemplos:* revisar redes sociales o escuchar música en la cama.
+**9.** Algunas actividades parecen más válidas porque puede sentir que desaprovechó horas en acciones rutinarias que realiza todos los días. Al repreguntarle por ejemplos, mencionó revisar redes sociales o escuchar música en la cama.
 
 **10.** No pensar en trabajo ni estudios y concentrarse por completo en leer, construir u otra actividad.
 
@@ -486,6 +486,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Repreguntas en frases
+
+- **Qué cambió:** las 31 repreguntas se escriben como frases —por ejemplo, «Al repreguntarle si notó el paso del tiempo, dijo que no tenía noción del tiempo mientras lo hacía»—, con el tema registrado en el corpus y sin inventar la pregunta textual, que no se conservó.
+- **Cómo estaba antes:** cada repregunta llevaba un rótulo con su tema, como «Repregunta — conciencia temporal:», que no se entendía.
+- **Por qué:** el autor pidió poner bien las repreguntas y hablar de lo visual con terminología de diseñador: tipografía y paleta cromática, no letras, fuentes ni texto (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 

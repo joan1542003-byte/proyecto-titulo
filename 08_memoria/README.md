@@ -94,7 +94,7 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ### 2026-11-08 — Décima ronda de la v6
 
-- **Cambio:** la v6 aplica las correcciones del autor a los anexos: la declaración de inteligencia artificial, con Springer Nature como referente; la *calm technology* con su nombre original; la encuesta sin la clasificación con inteligencia artificial; palabras más claras; sin remisiones al registro de decisiones; un recuento corregido en el criterio 1, y la lista de anexos al día. Pasa a 16 560 palabras.
+- **Cambio:** la v6 aplica las correcciones del autor a los anexos: la declaración de inteligencia artificial, con Springer Nature como referente; la *calm technology* con su nombre original; la encuesta sin la clasificación con inteligencia artificial; palabras más claras; sin remisiones al registro de decisiones; un recuento corregido en el criterio 1; la lista de anexos al día, y lo visual con terminología de diseñador: tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. Pasa a 16 560 palabras.
 - **Versión anterior:** 16 478 palabras, con la declaración de inteligencia artificial anterior.
 - **Motivo:** décima ronda de la v6, pedida por el autor (D-170).
 - **Alcance:** la versión diseñada no se regeneró.

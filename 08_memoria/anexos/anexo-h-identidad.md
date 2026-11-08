@@ -1,6 +1,6 @@
 # Anexo H. Identidad visual y sistema de marca
 
-Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, y cómo llegó a ella: el logo de cuatro luces, las dos letras, los 72 íconos propios y el color por función, cada decisión con su fundamento; lo que se mantiene de la marca del 16 de septiembre, y las propuestas anteriores.
+Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, y cómo llegó a ella: el logo de cuatro luces, las dos tipografías, los 72 íconos propios y la paleta cromática, cada decisión con su fundamento; lo que se mantiene de la marca del 16 de septiembre, y las propuestas anteriores.
 
 ## H.1 El logo
 
@@ -37,7 +37,7 @@ Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, 
 
 - Alrededor del logo queda libre al menos la mitad del ancho de la marca.
 - Tamaños mínimos: la marca, 16 px con su versión chica; el logo horizontal, 96 px de ancho.
-- En la composición horizontal, la marca mide 1,18 veces la altura de la «l» y se centra en ella, con una separación de 0,30 del cuerpo de la letra.
+- En la composición horizontal, la marca mide 1,18 veces la altura de la «l» y se centra en ella, con una separación de 0,30 del cuerpo tipográfico.
 - El logotipo va siempre en minúsculas, en negro o en blanco, nunca de colores; el blanco, solo sobre fondos oscuros.
 - Desde 48 px se puede usar la versión «Luz», con cada luz más clara afuera y más intensa hacia el centro.
 - No se gira, no se rellena el centro, no se cambia el orden de las luces y no se le agregan sombras ni brillos.
@@ -48,22 +48,22 @@ Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, 
 - **Un logo que describe.** Los logotipos que describen lo que hace la marca se evalúan mejor, sobre todo en marcas nuevas (Luffarelli et al., 2019). Por eso la marca muestra el funcionamiento del sistema, y donde Relevo todavía no se conoce va con su descriptor.
 - **Formas planas.** Cortes y colores planos, sin transparencias, para que la marca se reproduzca igual en cualquier medio y en una sola tinta, como enseñó el rediseño de Slack en 2019: su logotipo anterior, de once colores superpuestos, era fácil de reproducir mal (Slack, 2019).
 
-## H.2 Las dos letras
+## H.2 Las dos tipografías
 
-La identidad usa dos letras sin serifa: una para el nombre y otra para todo lo demás.
+La identidad usa dos tipografías sin serifa: una para el nombre y otra para todo lo demás.
 
 **Tabla H1**
 
-*Las dos letras*
+*Las dos tipografías*
 
-| Letra | Uso | Autoría y licencia | Por qué |
+| Tipografía | Uso | Autoría y licencia | Por qué |
 | --- | --- | --- | --- |
 | **Chillax Semibold** | El logotipo, convertido a trazos. | Indian Type Foundry, en Fontshare; ITF Free Font License. | Sus formas son redondas como las luces, y en tamaño chico no pierde la forma. |
 | **Instrument Sans** | La app y la memoria. | Rodrigo Fuenzalida, diseñador radicado en Santiago, y Jordan Egstad; Google Fonts, SIL Open Font License. | Una grotesca con ejes de peso y ancho, legible en pantalla y en papel; el trazo de los íconos se midió sobre su asta. |
 
 *Nota.* Elaboración propia.
 
-**Cómo se eligió la letra del logotipo.** Se compararon 20 letras sin serifa de Fontshare, y llegaron cinco a la final: Chillax 600 y 700, Cabinet Grotesk 800, Pally 700 y Panchang 600, con Instrument Sans 700 como referencia. Ganó Chillax Semibold porque sus formas son redondas como las luces: su «o» es casi un círculo, con un ancho y un alto de 1,03; la «e» y la «r» terminan en curvas abiertas, y en tamaño chico no pierde la forma, con una altura x de 0,495 del cuerpo. No es de Google Fonts, como buscaba el autor para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con un interletrado de −0,02.
+**Cómo se eligió la tipografía del logotipo.** Se compararon 20 tipografías sin serifa de Fontshare, y llegaron cinco a la final: Chillax 600 y 700, Cabinet Grotesk 800, Pally 700 y Panchang 600, con Instrument Sans 700 como referencia. Ganó Chillax Semibold porque sus formas son redondas como las luces: su «o» es casi un círculo, con un ancho y un alto de 1,03; la «e» y la «r» terminan en curvas abiertas, y en tamaño chico no pierde la forma, con una altura x de 0,495 del cuerpo. No es de Google Fonts, como buscaba el autor para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con un interletrado de −0,02.
 
 ## H.3 Los íconos
 
@@ -123,11 +123,11 @@ Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](
 | --- | --- | --- |
 | Retícula de 24 y área viva de 20 | Se alinean en listas, botones y barras, con 2 de margen. | Google, Material Design: íconos de sistema |
 | Cuatro formas de base: círculo (r 9), cuadrado (16), vertical (14 × 18) y horizontal (18 × 14) | Un ícono redondo y uno con esquinas miden lo mismo a la vista. | Google, Material Design: keylines |
-| Trazo de 1,6 | El asta de Instrument Sans Medium mide 0,105 de su tamaño; junto a un texto de 15 px, el de las fichas, da 1,6: el ícono pesa lo mismo que su palabra. | Apple, SF Symbols, y medición propia del 11 de octubre |
+| Trazo de 1,6 | El asta de Instrument Sans Medium mide 0,105 de su cuerpo; junto a una tipografía de 15 px, la de las fichas, da 1,6: el ícono pesa lo mismo que su palabra. | Apple, SF Symbols, y medición propia del 11 de octubre |
 | Tamaños ópticos: 16 → 2,0; 20 → 1,8; 24 → 1,6; 32 → 1,4; 48 → 1,3 | Se ve igual de firme en una lista que en tamaño grande. | Google, eje de tamaño óptico de Material Symbols |
 | Puntas y uniones redondas | Conversan con las cápsulas y las fichas, y a tamaño chico no dejan picos. | Coherencia con «Relevo con aura» |
 | Un solo peso; solo se rellenan los puntos que marcan algo | El punto del primer peldaño y la argolla del Tag. | Decisión propia |
-| Siempre con una palabra | Casi ningún ícono tiene un significado único, y la app ya los muestra con texto. | Harley, Nielsen Norman Group |
+| Siempre con una palabra | Casi ningún ícono tiene un significado único, y la app ya los muestra con su rótulo. | Harley, Nielsen Norman Group |
 
 *Nota.* Elaboración propia.
 
@@ -137,11 +137,11 @@ Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](
 - **Lo que hace cualquier app usa formas conocidas,** como volver, borrar o buscar: lo que la gente reconoce de otras apps le ahorra aprender.
 - **Dos íconos se rehicieron tras verlos a 16 px.** «Caminar» pasó de una zapatilla, que parecía una bota, a dos huellas, y «Primer paso» perdió un «+» que se confundía con «Agregar».
 
-## H.4 El color
+## H.4 La paleta cromática
 
 **Figura H3**
 
-*Los colores de las partes de un relevo y los colores de base*
+*La paleta cromática: los colores de las partes de un relevo y los de base*
 
 <!-- lamina: PALETA -->
 Seis colores claros, uno por parte de un relevo, y los colores de base.
@@ -160,14 +160,14 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 | Blanco cálido | Fondo de las pantallas | `#F7F4F0` |
 | Gris claro | Botones secundarios y los íconos del Tag y del teléfono | `#EEE9E3` |
 | Gris de borde | Líneas de separación | `#E4DED6` |
-| Gris oscuro | Texto secundario | `#6B655F` |
-| Negro | Texto, acciones y selección | `#141312` |
-| Rojo | Solo errores, siempre con ícono y texto | `#B3261E` |
+| Gris oscuro | Información secundaria | `#6B655F` |
+| Negro | Tipografía, acciones y selección | `#141312` |
+| Rojo | Solo errores, siempre con ícono y palabra | `#B3261E` |
 <!-- /lamina -->
 
 *Nota.* Elaboración propia.
 
-**El color como función.** El color se decidió por la función que cumple en la interfaz, no por un efecto emocional esperado: la investigación sobre psicología del color está en una etapa inicial y sus efectos dependen del contexto (Elliot y Maier, 2014), y el significado de un color cambia según el producto en que aparece (Kauppinen-Räisänen y Luomala, 2010). El color distingue de forma estable tres cosas: las partes de un relevo, las actividades de cada persona y los momentos del ciclo. Los seis colores de las partes tienen casi la misma luminosidad percibida, así que pesan lo mismo: distinguen sin jerarquizar.
+**Una paleta por función.** La paleta cromática se decidió por la función que cumple cada color en la interfaz, no por un efecto emocional esperado: la investigación sobre psicología del color está en una etapa inicial y sus efectos dependen del contexto (Elliot y Maier, 2014), y el significado de un color cambia según el producto en que aparece (Kauppinen-Räisänen y Luomala, 2010). El color distingue de forma estable tres cosas: las partes de un relevo, las actividades de cada persona y los momentos del ciclo. Los seis colores de las partes tienen casi la misma luminosidad percibida, así que pesan lo mismo: distinguen sin jerarquizar.
 
 **Lo que dice la evidencia.** Las asociaciones entre color y emoción son tendencias compartidas, no efectos sobre la conducta, y en Relevo sirvieron sobre todo para descartar.
 
@@ -176,13 +176,13 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 - La saturación y el brillo elevan la activación, que crece del azul y el verde hacia el rojo (Wilms y Oberfeld, 2018).
 - No se encontró un estudio solo con población chilena. En una encuesta a 1066 personas de México, Argentina y Chile, el miedo se asoció sobre todo con el negro (52,4 %), el rojo (13,5 %) y el gris (8,9 %), y el celeste claro y el magenta fueron los colores menos asociados con el miedo; es un boletín de prensa sobre una ponencia, sin revisión por pares (Universidad Nacional Autónoma de México [UNAM], 2023). En Medellín, con 2400 universitarios, el verde se asoció con la naturaleza y la esperanza; el azul, con el mar y el cielo; el rosa, con la ternura; el morado, con el luto, y el gris, con el mal tiempo y la tristeza (Restrepo Betancur, 2022). En Ecuador, con 260 universitarios, los conceptos con raíz sensorial o cultural recibieron colores consistentes, y los abstractos, como «creativo», se dispersaron (Sánchez-Borrero et al., 2026).
 
-**Seis criterios.**
+**Seis criterios para la paleta.**
 
 1. **Familias, no tonos exactos.** Ningún tono preciso produce por sí mismo una emoción.
 2. **Colores claros y poco saturados,** para no elevar la activación, como propone la *calm technology* (Weiser y Brown, 1997): informar desde la periferia de la atención.
 3. **Sin negro, gris ni rojo en los estados de la persona.** El rojo queda para los errores.
 4. **Redundancia.** Ningún dato se comunica solo con color, siempre también con ícono y palabra (World Wide Web Consortium, 2024, criterio 1.4.1). La simulación de las deficiencias de visión del color (Machado et al., 2009) mostró dos pares que se confunden: el celeste y el lila con deuteranopia, y el rosa y el durazno con tritanopia.
-5. **Contraste medido:** 4,5:1 para el texto (criterio 1.4.3) y 3:1 para los gráficos que informan (criterio 1.4.11; World Wide Web Consortium, 2024).
+5. **Contraste medido:** 4,5:1 para la tipografía (criterio 1.4.3) y 3:1 para los gráficos que informan (criterio 1.4.11; World Wide Web Consortium, 2024).
 6. **Un color, un significado.** Cada color significa siempre lo mismo. El color es difícil de apropiar como rasgo de una marca (Ward et al., 2020), así que su aporte está en la coherencia del sistema.
 
 **Los colores de las partes.** Seis colores claros, de luminosidad perceptual equivalente —entre 0,88 y 0,91 en OKLCH (Ottosson, 2020)—, distinguen las partes de un relevo (Tabla H3). Donde existe, la asignación sigue la convención de la señalética de seguridad: la norma ISO 3864-1 asigna el rojo a la prohibición, el amarillo a la precaución, el azul a la acción obligatoria y el verde a la condición segura, como una salida o un botiquín (International Organization for Standardization [ISO], 2011).
@@ -200,7 +200,7 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 | El aura, la personalización | Lila, `#DFD1FC` | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
 | Después de la señal | Durazno, `#FBD1B3` | El naranja se asocia con la alegría y la diversión. |
 
-*Nota.* Elaboración propia. El texto negro sobre cualquiera de los seis colores alcanza un contraste de 12,7:1 a 14,5:1.
+*Nota.* Elaboración propia. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de 12,7:1 a 14,5:1.
 
 **Los degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos.
 
@@ -240,9 +240,9 @@ Los degradados de las siete familias: un color de base y cuatro o cinco luces.
 
 *Nota.* Elaboración propia. Cada persona puede cambiar el color de una actividad.
 
-El texto blanco sobre los degradados claros no alcanzó 4,5:1 —se midieron entre 2,6:1 y 3,7:1—, así que el nombre de la actividad va en una cápsula blanca con letra negra, que alcanza entre 15:1 y 17,8:1 sobre cualquier degradado. El degradado aparece solo donde está la actividad y cubre la pantalla completa en el momento de la señal, cuando la interfaz debe hacer visible la actividad.
+La tipografía blanca sobre los degradados claros no alcanzó 4,5:1 —se midieron entre 2,6:1 y 3,7:1—, así que el nombre de la actividad va en una cápsula blanca con tipografía negra, que alcanza entre 15:1 y 17,8:1 sobre cualquier degradado. El degradado aparece solo donde está la actividad y cubre la pantalla completa en el momento de la señal, cuando la interfaz debe hacer visible la actividad.
 
-**Cómo se verificó.** La luminosidad y la saturación se midieron en OKLCH, y el contraste, según las WCAG 2.2; el del texto sobre los degradados, en capturas, sobre el píxel más desfavorable del fondo. Las deficiencias de visión del color se simularon con el modelo de Machado et al. (2009).
+**Cómo se verificó.** La luminosidad y la saturación se midieron en OKLCH, y el contraste, según las WCAG 2.2; el de la tipografía sobre los degradados, en capturas, sobre el píxel más desfavorable del fondo. Las deficiencias de visión del color se simularon con el modelo de Machado et al. (2009).
 
 ## H.5 Nombre, frase y descriptor
 
@@ -262,16 +262,16 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 
 | Fecha | Propuesta | Qué proponía | Qué pasó |
 | --- | --- | --- | --- |
-| 16 sep. | Sistema de marca del proyecto | Nombre, descriptor, frase, letra, paleta y logotipo. | Se mantienen el nombre, el descriptor y la frase; la letra, la paleta y el logotipo se reemplazaron en octubre. |
+| 16 sep. | Sistema de marca del proyecto | Nombre, descriptor, frase, tipografía, paleta cromática y logotipo. | Se mantienen el nombre, el descriptor y la frase; la tipografía, la paleta cromática y el logotipo se reemplazaron en octubre. |
 | 25 sep. | Punto y pulso | Una identidad a partir de un punto que late. | Se reemplazó el mismo día. |
 | 25 sep. | «Antes de que sea después» | Una plataforma de marca sobre el momento en que aún se puede elegir. | El autor la juzgó confusa para la comisión, y la reemplazó «Vuelve a lo que querías hacer». |
 | 25 sep. | «Vuelve a lo que querías hacer» | El mismo centro, en palabras directas. | Se aplicó en la app de la 2.8 a la 2.30. |
 | 27 sep. | Sistema de marca 2.0 en Figma | Variables, componentes y pantallas en Figma. | La superaron las propuestas de fines de septiembre. |
 | 30 sep. | El subrayado | Una identidad alrededor de un renglón azul. | Se descartó porque no decía qué hace Relevo; el renglón quedó como línea de escritura. |
 | 2 oct. | Sistema de diseño 3.1 | Un renglón que hace lugar, dos voces y los colores de la casa. | Fue la base de las propuestas 3.2 a 3.5. |
-| 3 oct. | Relevo vivo, Volver a enfocar, Las ganas estaban y Cuándo va color | Color vivo, letra manuscrita, serifa y reglas de cuándo usar color. | El autor descartó la letra manuscrita y la serifa; quedó la regla de cuándo va color. |
+| 3 oct. | Relevo vivo, Volver a enfocar, Las ganas estaban y Cuándo va color | Color vivo, tipografía manuscrita, serifa y reglas de cuándo usar color. | El autor descartó la tipografía manuscrita y la serifa; quedó la regla de cuándo va color. |
 | 3 oct. | El traspaso | La marca como un traspaso de mano en mano. | La idea del traspaso sigue en el logo de cuatro luces. |
-| 4 oct. | Letras para el logotipo | Una búsqueda amplia de letras display. | Llevó a elegir Chillax para el logo del 11 de octubre. |
+| 4 oct. | Tipografías para el logotipo | Una búsqueda amplia de tipografías display. | Llevó a elegir Chillax para el logo del 11 de octubre. |
 | 10 y 11 oct. | Relevo con aura | Aura, fichas por color, íconos propios, degradados y el logo de cuatro luces. | **Aprobada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde la 3.0. |
 | 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos y sin aura. | Es la base de las versiones 4.0 a 4.6.3 de la app. |
 
@@ -287,7 +287,7 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 | --- | --- | --- | --- |
 | Dafi (Mambo Mambo) | Íconos de línea sobre cuadrados de color, fichas en escalera y aura. | Las fichas con ícono de línea, ahora con un color por parte del relevo. | Sus dibujos: los 72 íconos se trazaron de nuevo. |
 | DAYO | Personajes que nacen de cuatro estados emocionales, ordenados con el modelo de valencia y activación. | Fundamentar el color en estudios de emoción, con datos de 31 países y la saturación como activación. | El volumen peludo en 3D, que a 16 px se pierde; el volumen de Relevo vive en el aura. |
-| Biceps Grotesk | Una letra modular de cuadrados y triángulos en una retícula de 30 px, en rojos y rosas. | La construcción modular: las mismas formas de base y una sola retícula; de sus rojos, el lado rosa. | La letra para la interfaz, que es para lucirse en grande. |
+| Biceps Grotesk | Una tipografía modular de cuadrados y triángulos en una retícula de 30 px, en rojos y rosas. | La construcción modular: las mismas formas de base y una sola retícula; de sus rojos, el lado rosa. | La tipografía para la interfaz, que es para lucirse en grande. |
 
 *Nota.* Elaboración propia.
 
@@ -330,6 +330,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Terminología de diseño
+
+- **Qué cambió:** lo visual usa términos de diseño: «tipografía» en vez de «letra», «paleta cromática» en vez de «el color», «cuerpo tipográfico» e «información secundaria»; la tipografía, y no «el texto», va sobre los colores y los degradados.
+- **Cómo estaba antes:** decía «las dos letras», «la letra del logotipo», «el color», «texto secundario» y «el texto sobre los degradados».
+- **Por qué:** el autor pidió poner bien las repreguntas y hablar de lo visual con terminología de diseñador: tipografía y paleta cromática, no letras, fuentes ni texto (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 

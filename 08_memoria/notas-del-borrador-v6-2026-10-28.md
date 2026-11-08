@@ -136,6 +136,7 @@ El 8 de noviembre, el autor revisó los anexos y pidió aplicar sus correcciones
 - **Palabras:** «el papel y la tinta» pasan a «el blanco y el negro»; la identidad es «diseñada por el autor», no «aprobada»; «aplicaciones seleccionadas», en vez de «elegidas». La Figura 11, la Tabla 1 y el capítulo 10 ya no remiten al registro de decisiones.
 - **Un recuento corregido:** en el criterio 1, quienes valoraron su sesión como descanso son seis, no tres: en la pregunta 7 de las entrevistas, dos personas dudaron y las otras seis dijeron que sí.
 - **Anexos:** la lista sigue los títulos y el contenido actuales de los nueve anexos.
+- **Terminología de diseño:** lo visual se nombra como lo haría un diseñador: «tipografía» y «escala tipográfica» en vez de «letra», «cuerpo» en vez de «tamaño», «interlineado» en vez de «aire entre líneas» y «paleta cromática» en vez de «el color» o «los colores»; la tipografía, y no «el texto», va sobre cada color.
 - **Sin cambios:** los resultados, las cifras de la prueba, las figuras y los dos marcadores `[CONFIRMAR: …]`. La versión diseñada no se regeneró.
 
 ## Extensión
