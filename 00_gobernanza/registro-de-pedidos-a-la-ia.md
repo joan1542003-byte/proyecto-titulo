@@ -250,6 +250,7 @@
 | 8 nov. | Consulta y corrección | Entiende que los profesores guía no tienen peso en el examen final. | Confirmado en el reglamento (art. 16): el profesor del curso tiene voz y no voto; la nota la ponen los tres miembros con voto (art. 20), con 4,0 para aprobar (art. 21). Corrige lo dicho antes a partir del instructivo. Se sumó al documento de criterios oficiales y se resolvió la tarea de Por hacer. | — |
 | 8 nov. | Consulta | ¿Cómo se compone el examen de título? | Resumen desde el reglamento (arts. 15 a 26), el instructivo 2026 y la rúbrica: pase y memoria antes; exposición, preguntas y evaluación a puerta cerrada; nota de tres miembros con voto según la rúbrica (20, 40 y 40 %); 4,0 para aprobar; 60 % de la nota de titulación; ficha del proyecto después. | — |
 | 8 nov. | Consulta | ¿Qué pasa si saca un 3,0 en Proyecto de Título con un 5,2 en Seminario? | Reprueba Proyecto de Título: se exige 4,0 en el examen (art. 21) y el 5,2 no compensa; la ponderación de 40 y 60 % (art. 26) solo se calcula con ambos aprobados. Puede volver a inscribirlo hasta dos veces u optar por otra modalidad (art. 25), y la comisión puede prorrogar el examen hasta 30 días (art. 22). | — |
+| 8 nov. | Consulta | El profesor dice que fabricar un objeto desde cero es un esfuerzo innecesario: ¿es útil, si todos los Tag sirven? | Recomendación: no fabricar electrónica ni un aparato propio; diseñar un porta Tag que reciba un Tag completo, sin abrirlo, como pidió la revisión del 28 de octubre. Resuelve el botón que no se encontraba, da un objeto para el examen y la marca, y cuesta poco. La hipótesis depende del lugar y el sonido, no de la carcasa. Decide el autor. | Por decidir |
 
 ## Lo que muestra el registro
 
@@ -260,6 +261,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Objeto propio o porta Tag
+
+- **Qué cambió:** se registró la consulta sobre si vale la pena fabricar un objeto propio.
+- **Cómo estaba antes:** el último pedido era qué pasa al reprobar Proyecto de Título.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Reprobar Proyecto de Título
 
