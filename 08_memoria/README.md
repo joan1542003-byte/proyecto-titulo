@@ -92,6 +92,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-11-09 — Undécima ronda de la v6
+
+- **Cambio:** la identidad de la v6 ya no habla de luces: el logo son cuatro círculos, y el párrafo del logo remite al Anexo H para su construcción.
+- **Versión anterior:** decía «las luces del logo» y «el logo de cuatro luces».
+- **Motivo:** el autor pidió eliminar de la marca las referencias a luz o aura (D-171).
+- **Alcance:** la versión diseñada no se regeneró.
+
 ### 2026-11-08 — Portada e índices de los anexos
 
 - **Cambio:** el enlace a los anexos dice que su portada copia la de ejemplo de la Biblioteca, con el logo de la Universidad, y que el Word trae índices de tablas y de figuras.

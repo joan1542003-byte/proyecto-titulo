@@ -48,7 +48,7 @@ flowchart LR
 | Base remota | Guarda sesiones, eventos, respuestas, uso y mensajes, con reglas por persona. | Supabase: Postgres, autenticación anónima, REST y tiempo real |
 | Panel del testeo | Muestra el estado de cada participante, los resultados y los mensajes. | Página HTML y JavaScript, con un servidor Node local |
 | Copia local | Respaldo legible en el teléfono, que la persona puede descargar. | Archivos JSON y CSV |
-| Herramientas de diseño | Íconos, *wireframes* de la app, taller de auras y logo. | Páginas HTML autónomas |
+| Herramientas de diseño | Íconos, *wireframes* de la app, exploraciones de color y logo. | Páginas HTML autónomas |
 
 *Nota.* Elaboración propia.
 
@@ -358,6 +358,12 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 *Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Sin aura
+
+- **Qué cambió:** las herramientas de diseño ya no nombran el «taller de auras», sino exploraciones de color.
+- **Cómo estaba antes:** decía «taller de auras».
+- **Por qué:** el autor pidió eliminar de la marca las referencias a luz y aura, y explicar más cómo se construye el logo y en qué se basa (D-171).
 
 ### 2026-11-08 — Extranjerismos en cursiva
 

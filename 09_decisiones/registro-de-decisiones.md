@@ -2071,7 +2071,25 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Repreguntas y terminología de diseño:** las repreguntas del Anexo A se escriben como frases, con el tema que registró el corpus y sin inventar la pregunta textual. Lo visual, en los anexos y en la memoria, usa términos de diseñador: tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática, no letras, fuentes ni texto.
 - **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
 
+## D-171 — La marca sin luz ni aura, y el logo explicado por su construcción
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el Anexo H y la memoria describían el logo como «cuatro luces», con una versión «Luz», nombraban «Tu aura» entre los colores y la propuesta «Relevo con aura», y la construcción del logo cabía en tres puntos. El autor pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar más de cómo se construye el logo y en qué se basa.
+- **Decisión:**
+  - **Sin luz ni aura:** el logo son cuatro círculos; la versión con degradado se llama así; el color lila es el de la personalización; los degradados combinan manchas de color, y la propuesta del 10 y 11 de octubre es «la identidad final». En la figura de los íconos, el ícono «Aura» se rotula «Personalización». Quedan las menciones que no son de la marca: lo que dijeron las personas entrevistadas, un producto referente y la sugerencia «Apagar la luz grande» de la app.
+  - **Construcción del logo:** el Anexo H la explica en siete pasos, con las medidas de sus archivos —una retícula de 100, cuatro círculos de radio 29 a 21 del centro, cada uno recortado por el siguiente agrandado en 3,4, trazados planos de dos arcos y cortes más anchos en tamaños chicos— y una figura nueva (Figura H2), además del logotipo y su composición, sus versiones y en qué se basa: el modelo del proyecto (Guynn et al., 1998), el nombre, los círculos (Jiang et al., 2016), un logo que describe (Luffarelli et al., 2019) y las formas planas del rediseño de Slack con Michael Bierut, de Pentagram (Slack, 2019).
+  - **Memoria:** la identidad dice «los círculos del logo» y «el logo de cuatro círculos», y remite al Anexo H para la construcción.
+- **Fuera de alcance:** los documentos de trabajo de la marca en `10_recursos_visuales` conservan sus nombres de entonces, como historia del proceso. La app 4.6.3 ya no muestra «aura» en sus textos.
+- **Documentos:** [Anexo H](../08_memoria/anexos/anexo-h-identidad.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-171
+
+- **Qué cambió:** se registró D-171.
+- **Cómo estaba antes:** la última decisión era D-170.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-08 — D-170
 

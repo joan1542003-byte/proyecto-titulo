@@ -139,7 +139,10 @@ El 8 de noviembre, el autor revisó los anexos y pidió aplicar sus correcciones
 - **Terminología de diseño:** lo visual se nombra como lo haría un diseñador: «tipografía» y «escala tipográfica» en vez de «letra», «cuerpo» en vez de «tamaño», «interlineado» en vez de «aire entre líneas» y «paleta cromática» en vez de «el color» o «los colores»; la tipografía, y no «el texto», va sobre cada color.
 - **Sin cambios:** los resultados, las cifras de la prueba, las figuras y los dos marcadores `[CONFIRMAR: …]`. La versión diseñada no se regeneró.
 
-## Extensión
+## Undécima ronda: la marca sin luz ni aura (D-171)
+
+El 9 de noviembre, el autor pidió eliminar de la marca las referencias a luz o aura. En la identidad del capítulo 11, «las luces del logo» pasan a «los círculos del logo», «el logo de cuatro luces» a «el logo de cuatro círculos» y «nunca como luz» a «anillos que se abren», y el párrafo del logo remite al Anexo H, que explica su construcción paso a paso. Las demás menciones de la luz —los medios del ambiente de Ishii y Ullmer y por qué la señal es un sonido— no son de la marca y se mantienen.
+
 
 Capítulos 1 a 14: 16 560 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 573. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
@@ -170,6 +173,12 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Undécima ronda
+
+- **Qué cambió:** se añadió la undécima ronda.
+- **Cómo estaba antes:** la última ronda era la décima.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-171).
 
 ### 2026-11-08 — Décima ronda
 

@@ -134,23 +134,24 @@ function datosDeMemoria() {
 
 // ---------------------------------------------------------------- Marca, color e íconos
 
-const LUCES = [['Arriba', '#FFD54A', 'Tu tiempo'], ['Derecha', '#9DD6F4', 'Tu primer paso'], ['Abajo', '#B3E788', 'El lugar donde empiezas'], ['Izquierda', '#F6A3CB', 'Lo que decides']];
+const CIRCULOS = [['Arriba', '#FFD54A', 'Tu tiempo'], ['Derecha', '#9DD6F4', 'Tu primer paso'], ['Abajo', '#B3E788', 'El lugar donde empiezas'], ['Izquierda', '#F6A3CB', 'Lo que decides']];
 const PAPELES = [
   ['butter', '#F4E496', 'Tu tiempo', 'Amarillo claro', 'tiempo'], ['sky', '#B3E5FC', 'Tu primer paso', 'Celeste', 'primer-paso'],
   ['lime', '#C6EEAE', 'El lugar', 'Verde claro', 'lugar'], ['blush', '#FAC8D9', 'Lo que decides', 'Rosa', 'decidir'],
-  ['lilac', '#DFD1FC', 'Tu aura', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después', 'Durazno', 'despues'],
+  ['lilac', '#DFD1FC', 'Personalización', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después', 'Durazno', 'despues'],
 ];
 const BASE = [['Blanco cálido', '#F7F4F0', 'Fondo de las pantallas'], ['Gris claro', '#EEE9E3', 'Botones secundarios y los íconos del Tag y del teléfono'], ['Gris de borde', '#E4DED6', 'Líneas de separación'], ['Gris oscuro', '#6B655F', 'Información secundaria'], ['Negro', '#141312', 'Tipografía, acciones y selección'], ['Rojo', '#B3261E', 'Solo errores, siempre con ícono y palabra']];
 const VERSIONES_LOGO = [
   ['relevo-logo-vertical.svg', 'Vertical'], ['relevo-marca.svg', 'Marca, desde 24 px'], ['relevo-marca-chica.svg', 'Marca chica, de 16 a 23 px'],
-  ['relevo-marca-degradado.svg', 'Luz, desde 48 px'], ['relevo-marca-tinta.svg', 'Una tinta'], ['relevo-marca-blanca.svg', 'Sobre fondo oscuro'], ['relevo-icono-app.svg', 'Ícono de la app'],
+  ['relevo-marca-degradado.svg', 'Degradado, desde 48 px'], ['relevo-marca-tinta.svg', 'Una tinta'], ['relevo-marca-blanca.svg', 'Sobre fondo oscuro'], ['relevo-icono-app.svg', 'Ícono de la app'],
 ];
 
 function iconos() {
   const dir = path.join(RAIZ, ICONOS);
   return fs.readdirSync(dir).filter((f) => f.endsWith('.svg')).sort().map((f) => {
     const svg = fs.readFileSync(path.join(dir, f), 'utf8');
-    const nombre = (svg.match(/<title>([^<]+)<\/title>/) || [])[1] || f.replace('.svg', '');
+    const titulo = (svg.match(/<title>([^<]+)<\/title>/) || [])[1] || f.replace('.svg', '');
+    const nombre = titulo === 'Aura' ? 'Personalización' : titulo; // la marca ya no habla de aura (D-170)
     const cuerpo = svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '').trim();
     return { archivo: f, nombre, cuerpo };
   });
@@ -223,13 +224,41 @@ function dibujarDiagramas() {
   for (const f of fs.readdirSync(DIR_DIAGRAMAS)) if (f.endsWith('.svg') && !DIAGRAMAS.has(f.slice(0, -4))) fs.unlinkSync(path.join(DIR_DIAGRAMAS, f));
 }
 
+/**
+ * Cómo se construye el logo, en tres pasos y con las medidas reales de sus archivos: cuatro círculos de radio 29 a
+ * 21 del centro de un cuadrado de 100; cada uno recortado por el siguiente, agrandado en 3,4, y la marca terminada.
+ */
+function construccionHtml() {
+  const marca = fs.readFileSync(path.join(RAIZ, LOGOS, 'relevo-marca.svg'), 'utf8');
+  const formas = (marca.match(/<path[^>]*\/>/g) || []).join('');
+  if (!formas) throw new Error('No se encontraron las formas de relevo-marca.svg');
+  const centros = [[50, 29], [71, 50], [50, 71], [29, 50]];
+  const reticula = [10, 20, 30, 40, 50, 60, 70, 80, 90].map((v) => `<line x1="${v}" y1="0" x2="${v}" y2="100"/><line x1="0" y1="${v}" x2="100" y2="${v}"/>`).join('');
+  const marco = `<g stroke="#d4d4d4" stroke-width="0.25">${reticula}</g><rect x="0" y="0" width="100" height="100" fill="none" stroke="#000" stroke-width="0.4"/>`;
+  const svg = (contenido) => `<svg viewBox="-14 -14 128 128" xmlns="http://www.w3.org/2000/svg">${contenido}</svg>`;
+  const paso1 = svg(marco +
+    centros.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="29" fill="none" stroke="#000" stroke-width="0.6"/><circle cx="${x}" cy="${y}" r="1.1" fill="#000"/>`).join('') +
+    '<circle cx="50" cy="50" r="1.1" fill="#000"/><line x1="50" y1="50" x2="50" y2="29" stroke="#000" stroke-width="0.6"/><text x="52.5" y="42" class="t">21</text>' +
+    '<line x1="50" y1="29" x2="79" y2="29" stroke="#000" stroke-width="0.5" stroke-dasharray="1.6 1.2"/><text x="64.5" y="26.5" class="t" text-anchor="middle">r 29</text>' +
+    '<line x1="0" y1="107" x2="100" y2="107" stroke="#000" stroke-width="0.4"/><line x1="0" y1="104.5" x2="0" y2="109.5" stroke="#000" stroke-width="0.4"/><line x1="100" y1="104.5" x2="100" y2="109.5" stroke="#000" stroke-width="0.4"/><text x="50" y="114" class="t" text-anchor="middle">100</text>');
+  const paso2 = svg(marco + formas +
+    '<circle cx="71" cy="50" r="32.4" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="2 1.4"/><circle cx="71" cy="50" r="1.1" fill="#000"/>' +
+    '<text x="112" y="10" class="t" text-anchor="end">r 29 + 3,4</text>');
+  const paso3 = svg(formas);
+  return `<div class="lamina-construccion">
+    <figure>${paso1}<figcaption>1. Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cuadrado de 100.</figcaption></figure>
+    <figure>${paso2}<figcaption>2. Cada círculo se recorta con el siguiente, agrandado en 3,4: aquí, el amarillo con el celeste.</figcaption></figure>
+    <figure>${paso3}<figcaption>3. La marca: cuatro formas planas de dos arcos y el centro abierto.</figcaption></figure>
+  </div>`;
+}
+
 /** Cada ficha como HTML, para fotografiarla: un diagrama o una figura armada con los archivos de la marca. */
 function fichaHtml(token) {
   if (token.startsWith('DIAGRAMA')) return `<figure class="diagrama">${svgDiagrama(token.split(' ')[1])}</figure>`;
   if (token === 'LOGO') return `<div class="lamina-logo">
     <div class="logo-grande"><img src="${desdeAqui(`${LOGOS}/relevo-logo-horizontal.svg`)}" alt="Logo de Relevo"></div>
     <div class="logo-versiones">${VERSIONES_LOGO.map(([f, t]) => `<figure${/blanca/.test(f) ? ' class="oscuro"' : ''}><div class="caja"><img src="${desdeAqui(`${LOGOS}/${f}`)}" alt="${attr(t)}"></div><figcaption>${esc(t)}</figcaption></figure>`).join('')}</div>
-    <div class="luces">${LUCES.map(([d, c, p]) => `<div class="luz"><span class="punto" style="background:${c}"></span><span><b>${esc(p)}</b><small>${esc(d)} · ${c}</small></span></div>`).join('')}</div>
+    <div class="circulos">${CIRCULOS.map(([d, c, p]) => `<div class="circulo"><span class="punto" style="background:${c}"></span><span><b>${esc(p)}</b><small>${esc(d)} · ${c}</small></span></div>`).join('')}</div>
   </div>`;
   if (token === 'PALETA') return `<div class="lamina-color">
     <div class="papeles">${PAPELES.map(([, c, p, n, ic]) => `<div class="papel"><div class="muestra" style="background:${c}"><span class="ficha-icono">${icono(ic)}</span></div><b>${esc(p)}</b><small>${esc(n)} · ${c}</small></div>`).join('')}</div>
@@ -237,6 +266,7 @@ function fichaHtml(token) {
   </div>`;
   if (token === 'CIELOS') return `<div class="lamina-cielos">${cielos().map((c) => `<figure><div class="cielo" style="background:${fondoCielo(c, 34)}"></div><figcaption><b>${esc(c.nombre)}</b><small>${c.base}</small></figcaption></figure>`).join('')}</div>`;
   if (token === 'ICONOS') return `<div class="lamina-iconos">${iconos().map((x) => `<figure><svg class="i" viewBox="0 0 24 24" aria-hidden="true">${x.cuerpo}</svg><figcaption>${esc(x.nombre)}</figcaption></figure>`).join('')}</div>`;
+  if (token === 'CONSTRUCCION') return construccionHtml();
   throw new Error(`Ficha desconocida: ${token}`);
 }
 
@@ -257,11 +287,11 @@ svg.i { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-widt
 .logo-versiones .caja img { max-height: 14mm; max-width: 100%; }
 .logo-versiones .oscuro .caja { background: #000; }
 .logo-versiones figcaption { font-size: 8pt; margin-top: 1.5mm; }
-.luces { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-top: 7mm; }
-.luz { display: flex; align-items: center; gap: 2mm; }
-.luz .punto { width: 7mm; height: 7mm; border-radius: 50%; flex: none; }
-.luz b, .base b, .papel b { display: block; font-size: 8.5pt; }
-.luz small, .base small, .papel small { display: block; font-size: 8pt; }
+.circulos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-top: 7mm; }
+.circulo { display: flex; align-items: center; gap: 2mm; }
+.circulo .punto { width: 7mm; height: 7mm; border-radius: 50%; flex: none; }
+.circulo b, .base b, .papel b { display: block; font-size: 8.5pt; }
+.circulo small, .base small, .papel small { display: block; font-size: 8pt; }
 .papeles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3mm; }
 .papel .muestra { height: 28mm; display: grid; place-items: center; margin-bottom: 1.5mm; border: .25mm solid #000; }
 .ficha-icono { width: 10mm; height: 10mm; display: block; }
@@ -274,7 +304,11 @@ svg.i { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-widt
 .lamina-iconos { display: grid; grid-template-columns: repeat(9, 1fr); gap: 3mm 1.5mm; }
 .lamina-iconos figure { text-align: center; }
 .lamina-iconos svg.i { width: 7mm; height: 7mm; margin: 0 auto 1mm; }
-.lamina-iconos figcaption { font-size: 6.5pt; line-height: 1.2; }`;
+.lamina-iconos figcaption { font-size: 6.5pt; line-height: 1.2; }
+.lamina-construccion { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+.lamina-construccion svg { width: 100%; display: block; }
+.lamina-construccion .t { font-family: Arial, Helvetica, sans-serif; font-size: 6px; fill: #000; }
+.lamina-construccion figcaption { font-size: 8pt; line-height: 1.3; margin-top: 2mm; }`;
 
 /**
  * Convierte en PNG las figuras y los diagramas que el Word no puede dibujar: Chrome mide cada pieza y la

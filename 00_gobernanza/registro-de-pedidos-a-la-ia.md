@@ -219,6 +219,7 @@
 | 8 nov. | Decisión y corrección | Confirmó que «el autor» está bien si así se usa académicamente, también en la UDP; dejó los *wireframes* originales de agosto; pidió quitar del Anexo B la codificación con IA, porque no es necesaria y no fue del todo así, y aplicar en la memoria las correcciones de los anexos, sin errores, leyéndola completa antes de modificarla y reportando los cambios. | El Anexo B ya no menciona la IA. La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sigue la nueva declaración de IA, con Springer Nature como referente; nombra la *calm technology* con su término original; quita la clasificación con IA de la encuesta y las remisiones al registro de decisiones; usa palabras más claras; corrige un recuento del criterio 1 —seis personas, no tres— y pone al día la lista de anexos. Pasa a 16 560 palabras; la versión diseñada no se regeneró. | D-170 |
 | 8 nov. | Corrección | Pidió poner bien las repreguntas, porque rótulos como «Repregunta — conciencia temporal:» no se entienden, y hablar de todo lo visual con terminología de diseñador: no son fuentes ni texto, es tipografía, es paleta cromática. | Las 31 repreguntas del [Anexo A](../08_memoria/anexos/anexo-a-entrevistas.md) se escriben como frases, sin inventar la pregunta textual, que no se conservó. El Anexo H y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. El Word y el PDF se regeneraron. | D-170 |
 | 8 nov. | Encargo y corrección | Pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias, mejorar la portada copiando una referencia de la UDP y corregir los errores de formato. | El [Anexo G](../08_memoria/anexos/anexo-g-android.md) suma la parte G.6 y la Tabla G10, con las 34 actividades que la app reconoce desde la 4.3, sus palabras clave y lo que sugiere. La portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas. Se suman los índices de tablas y de figuras; las tablas reparten mejor el ancho; las figuras altas ya no dejan páginas casi vacías, y los extranjerismos van en cursiva. El Word y el PDF se regeneraron, con 106 páginas. | D-170 |
+| 9 nov. | Corrección | Pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar aún más de cómo se construye el logo y en qué se basa. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de cuatro círculos, de la versión con degradado y del color de la personalización. El logo se explica en siete pasos, con las medidas de sus archivos y una figura nueva, más su logotipo, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. El Word y el PDF se regeneraron. | D-171 |
 
 ## Lo que muestra el registro
 
@@ -229,6 +230,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — La marca sin luz ni aura
+
+- **Qué cambió:** se registró el pedido de quitar luz y aura de la marca y de explicar más la construcción del logo.
+- **Cómo estaba antes:** el último pedido era el de las palabras clave, la portada y el formato.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Palabras clave, portada y formato
 

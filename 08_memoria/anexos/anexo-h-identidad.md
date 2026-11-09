@@ -1,21 +1,21 @@
 # Anexo H. Identidad visual y sistema de marca
 
-Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, y cómo llegó a ella: el logo de cuatro luces, las dos tipografías, los 72 íconos propios y la paleta cromática, cada decisión con su fundamento; lo que se mantiene de la marca del 16 de septiembre, y las propuestas anteriores.
+Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, y cómo llegó a ella: el logo de cuatro círculos, las dos tipografías, los 72 íconos propios y la paleta cromática, cada decisión con su fundamento; lo que se mantiene de la marca del 16 de septiembre, y las propuestas anteriores.
 
 ## H.1 El logo
 
 **Figura H1**
 
-*El logo, sus versiones y sus cuatro luces*
+*El logo, sus versiones y sus cuatro círculos*
 
 <!-- lamina: LOGO -->
 ![Logo de Relevo](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-logo-horizontal.svg)
 
-| Vertical | Marca, desde 24 px | Marca chica, de 16 a 23 px | Luz, desde 48 px | Una tinta | Sobre fondo oscuro | Ícono de la app |
+| Vertical | Marca, desde 24 px | Marca chica, de 16 a 23 px | Degradado, desde 48 px | Una tinta | Sobre fondo oscuro | Ícono de la app |
 | --- | --- | --- | --- | --- | --- | --- |
-| ![Vertical](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-logo-vertical.svg) | ![Marca, desde 24 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca.svg) | ![Marca chica, de 16 a 23 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-chica.svg) | ![Luz, desde 48 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-degradado.svg) | ![Una tinta](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-tinta.svg) | ![Sobre fondo oscuro](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-blanca.svg) | ![Ícono de la app](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-icono-app.svg) |
+| ![Vertical](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-logo-vertical.svg) | ![Marca, desde 24 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca.svg) | ![Marca chica, de 16 a 23 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-chica.svg) | ![Degradado, desde 48 px](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-degradado.svg) | ![Una tinta](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-tinta.svg) | ![Sobre fondo oscuro](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca-blanca.svg) | ![Ícono de la app](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-icono-app.svg) |
 
-| Luz | Color | Qué representa |
+| Círculo | Color | Qué representa |
 | --- | --- | --- |
 | Arriba | `#FFD54A` | Tu tiempo |
 | Derecha | `#9DD6F4` | Tu primer paso |
@@ -25,28 +25,56 @@ Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, 
 
 *Nota.* Elaboración propia.
 
-**Concepto.** Cuatro luces que se pasan el turno, en el sentido del reloj desde arriba: el tiempo, en amarillo; el primer paso, en celeste; el lugar donde empieza la actividad, en lima, y lo que decide la persona, en rosa. Cada luz queda bajo la siguiente, como el traspaso de una carrera de relevos, y el centro queda abierto: es el paso de la pantalla a lo que la persona quería hacer.
+**Concepto.** El logo dibuja un relevo: cuatro círculos que se pasan el turno, en el sentido del reloj desde arriba. Cada uno es una de las cuatro partes de un relevo, en el orden del modelo del proyecto (capítulo 11): el tiempo, en amarillo; el primer paso, en celeste; el lugar donde empieza la actividad, en verde, y lo que decide la persona, en rosa. Cada círculo queda bajo el siguiente, como el traspaso en una carrera de relevos, y el centro queda abierto: es el paso de la pantalla a lo que la persona quería hacer.
 
-**Construcción.**
+**Construcción.** El logo se dibuja solo con círculos y sus cortes, sin trazos a mano (Figura H2):
 
-- Cuatro círculos iguales, de radio 29 y a 21 del centro, en una unidad de 100.
-- Cada luz se recorta con el círculo siguiente agrandado: un corte de 3,4 en tamaño normal, de 6,5 en tamaños chicos y de 7 en la notificación de 24 dp.
-- Cada luz es un trazado plano de dos arcos, sin máscaras, transparencias ni mezclas, así que funciona igual en cualquier programa y en una sola tinta. Reemplazó a una marca anterior cuyas luces se mezclaban y daban un centro turbio.
+1. Una retícula de 100 × 100 unidades, con su centro marcado.
+2. Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro: arriba, a la derecha, abajo y a la izquierda. Juntos ocupan exactamente el cuadrado de 100.
+3. Cada círculo se recorta con el siguiente, en el sentido del reloj, agrandado en 3,4 unidades. El corte deja una línea blanca que separa las formas y hace que cada círculo parezca pasar bajo el siguiente.
+4. Como el centro queda dentro de los cuatro círculos, los cortes lo dejan vacío: ese centro abierto es el traspaso.
+5. Cada forma es un trazado plano de dos arcos, uno de radio 29 y otro de 32,4, sin máscaras, transparencias ni mezclas, así que funciona igual en cualquier programa y en una sola tinta.
+6. En tamaños chicos, el corte se ensancha para que la línea blanca no se cierre: 6,5 unidades de 16 a 23 px y 7 en el ícono de notificación de 24 dp.
+7. Cada círculo lleva el color de su parte en la paleta cromática, en su versión más intensa: amarillo `#FFD54A`, celeste `#9DD6F4`, verde `#B3E788` y rosa `#F6A3CB`.
+
+**Figura H2**
+
+*Cómo se construye el logo*
+
+<!-- lamina: CONSTRUCCION -->
+Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cuadrado de 100; cada uno se recorta con el siguiente, agrandado en 3,4.
+
+![Marca de Relevo](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca.svg)
+<!-- /lamina -->
+
+*Nota.* Elaboración propia, a partir de los archivos del logo.
+
+**El logotipo y la composición.** «relevo» va siempre en minúsculas, en Chillax Semibold convertida a trazos (H.2). En la versión horizontal, la marca mide 1,18 veces la altura de la «l» y se centra en ella, con una separación de 0,30 del cuerpo tipográfico; en la vertical, la marca va sobre el nombre.
+
+**Versiones.**
+
+- **Horizontal:** la principal.
+- **Vertical:** espacios cuadrados y portadas.
+- **Marca sola:** desde 24 px; de 16 a 23 px, la versión chica, con el corte más ancho.
+- **Con degradado:** desde 48 px; cada círculo es más claro afuera y más intenso hacia el centro, con los tonos calculados en OKLCH.
+- **Una tinta y blanca:** impresión, sellos y fondos oscuros.
+- **Ícono de la app:** una superelipse blanca con la marca al 62 %.
+- **Notificación:** la silueta blanca de 24 dp.
 
 **Reglas de uso.**
 
 - Alrededor del logo queda libre al menos la mitad del ancho de la marca.
 - Tamaños mínimos: la marca, 16 px con su versión chica; el logo horizontal, 96 px de ancho.
-- En la composición horizontal, la marca mide 1,18 veces la altura de la «l» y se centra en ella, con una separación de 0,30 del cuerpo tipográfico.
 - El logotipo va siempre en minúsculas, en negro o en blanco, nunca de colores; el blanco, solo sobre fondos oscuros.
-- Desde 48 px se puede usar la versión «Luz», con cada luz más clara afuera y más intensa hacia el centro.
-- No se gira, no se rellena el centro, no se cambia el orden de las luces y no se le agregan sombras ni brillos.
+- No se gira, no se rellena el centro, no se cambia el orden de los círculos y no se le agregan sombras ni brillos.
 
-**Fundamento.** La marca representa con cuatro círculos los cuatro componentes de un relevo, en el orden del modelo del proyecto (capítulo 11). Ese modelo se apoya en que los recordatorios eficaces aluden a la vez a la ocasión y a la acción prevista (Guynn et al., 1998), y en la hipótesis del proyecto: que el lugar donde comienza la actividad aporte a esa señal. La tercera luz representa el lugar y no el localizador del prototipo, así que la marca sigue valiendo si el objeto cambia. Su forma responde a tres antecedentes:
+**En qué se basa.**
 
+- **El modelo del proyecto.** La marca representa con cuatro círculos las cuatro partes de un relevo. Ese modelo se apoya en que los recordatorios eficaces aluden a la vez a la ocasión y a la acción prevista (Guynn et al., 1998): el tiempo es la ocasión, y el primer paso, la acción. El tercer círculo es el lugar, la hipótesis del proyecto —que el sitio donde comienza la actividad aporte a la señal—, y no el localizador del prototipo, así que la marca sigue valiendo si el objeto cambia.
+- **El nombre.** Un relevo es el paso de algo de una mano a otra. La forma lo muestra con círculos que se pasan el turno y un centro que no pertenece a ninguno.
 - **Círculos.** En cinco experimentos, las formas circulares activaron más atributos de suavidad y cuidado, y las angulosas, de dureza (Jiang et al., 2016). Un sistema que no quiere vigilar ni presionar necesita lo primero.
-- **Un logo que describe.** Los logotipos que describen lo que hace la marca se evalúan mejor, sobre todo en marcas nuevas (Luffarelli et al., 2019). Por eso la marca muestra el funcionamiento del sistema, y donde Relevo todavía no se conoce va con su descriptor.
-- **Formas planas.** Cortes y colores planos, sin transparencias, para que la marca se reproduzca igual en cualquier medio y en una sola tinta, como enseñó el rediseño de Slack en 2019: su logotipo anterior, de once colores superpuestos, era fácil de reproducir mal (Slack, 2019).
+- **Un logo que describe.** Los logotipos que muestran lo que hace la marca se evalúan mejor, sobre todo en marcas nuevas (Luffarelli et al., 2019). Por eso la marca dibuja cómo funciona el sistema, y donde Relevo todavía no se conoce va con su descriptor.
+- **Formas planas.** Slack rehízo su logo en 2019 con su equipo de diseño y con Michael Bierut, de Pentagram: el anterior tenía once colores, solo podía ir sobre blanco y con una inclinación exacta de 18°, y era muy fácil de hacer mal; el nuevo usa una paleta más simple y escala con facilidad (Slack, 2019). Relevo toma esa lección: cortes y colores planos, sin transparencias, para que la marca se reproduzca igual en pantalla, en papel y en una sola tinta. Por eso reemplazó a una marca anterior cuyos círculos se mezclaban y daban un centro turbio.
 
 ## H.2 Las dos tipografías
 
@@ -58,25 +86,25 @@ La identidad usa dos tipografías sin serifa: una para el nombre y otra para tod
 
 | Tipografía | Uso | Autoría y licencia | Por qué |
 | --- | --- | --- | --- |
-| **Chillax Semibold** | El logotipo, convertido a trazos. | Indian Type Foundry, en Fontshare; ITF Free Font License. | Sus formas son redondas como las luces, y en tamaño chico no pierde la forma. |
+| **Chillax Semibold** | El logotipo, convertido a trazos. | Indian Type Foundry, en Fontshare; ITF Free Font License. | Sus formas son redondas como los círculos del logo, y en tamaño chico no pierde la forma. |
 | **Instrument Sans** | La app y la memoria. | Rodrigo Fuenzalida, diseñador radicado en Santiago, y Jordan Egstad; Google Fonts, SIL Open Font License. | Una grotesca con ejes de peso y ancho, legible en pantalla y en papel; el trazo de los íconos se midió sobre su asta. |
 
 *Nota.* Elaboración propia.
 
-**Cómo se eligió la tipografía del logotipo.** Se compararon 20 tipografías sin serifa de Fontshare, y llegaron cinco a la final: Chillax 600 y 700, Cabinet Grotesk 800, Pally 700 y Panchang 600, con Instrument Sans 700 como referencia. Ganó Chillax Semibold porque sus formas son redondas como las luces: su «o» es casi un círculo, con un ancho y un alto de 1,03; la «e» y la «r» terminan en curvas abiertas, y en tamaño chico no pierde la forma, con una altura x de 0,495 del cuerpo. No es de Google Fonts, como buscaba el autor para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con un interletrado de −0,02.
+**Cómo se eligió la tipografía del logotipo.** Se compararon 20 tipografías sin serifa de Fontshare, y llegaron cinco a la final: Chillax 600 y 700, Cabinet Grotesk 800, Pally 700 y Panchang 600, con Instrument Sans 700 como referencia. Ganó Chillax Semibold porque sus formas son redondas como los círculos del logo: su «o» es casi un círculo, con un ancho y un alto de 1,03; la «e» y la «r» terminan en curvas abiertas, y en tamaño chico no pierde la forma, con una altura x de 0,495 del cuerpo. No es de Google Fonts, como buscaba el autor para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con un interletrado de −0,02.
 
 ## H.3 Los íconos
 
-**Figura H2**
+**Figura H3**
 
 *Los 72 íconos propios*
 
 <!-- lamina: ICONOS -->
 Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg)).
 
-| Abrir | Advertencia | Agregar | Ajustes | Apps elegidas | Aura | Avance | Avisos |
+| Abrir | Advertencia | Agregar | Ajustes | Apps elegidas | Personalización | Avance | Avisos |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Abrir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/abrir.svg) | ![Advertencia](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/advertencia.svg) | ![Agregar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/agregar.svg) | ![Ajustes](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ajustes.svg) | ![Apps elegidas](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/apps.svg) | ![Aura](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/aura.svg) | ![Avance](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avance.svg) | ![Avisos](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avisos.svg) |
+| ![Abrir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/abrir.svg) | ![Advertencia](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/advertencia.svg) | ![Agregar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/agregar.svg) | ![Ajustes](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ajustes.svg) | ![Apps elegidas](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/apps.svg) | ![Personalización](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/aura.svg) | ![Avance](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avance.svg) | ![Avisos](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avisos.svg) |
 
 | Ayuda | Pila | Salir en bicicleta | Borrar | Buscar | Calendario | Cambié de idea | Caminar |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -125,7 +153,7 @@ Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](
 | Cuatro formas de base: círculo (r 9), cuadrado (16), vertical (14 × 18) y horizontal (18 × 14) | Un ícono redondo y uno con esquinas miden lo mismo a la vista. | Google, Material Design: keylines |
 | Trazo de 1,6 | El asta de Instrument Sans Medium mide 0,105 de su cuerpo; junto a una tipografía de 15 px, la de las fichas, da 1,6: el ícono pesa lo mismo que su palabra. | Apple, SF Symbols, y medición propia del 11 de octubre |
 | Tamaños ópticos: 16 → 2,0; 20 → 1,8; 24 → 1,6; 32 → 1,4; 48 → 1,3 | Se ve igual de firme en una lista que en tamaño grande. | Google, eje de tamaño óptico de Material Symbols |
-| Puntas y uniones redondas | Conversan con las cápsulas y las fichas, y a tamaño chico no dejan picos. | Coherencia con «Relevo con aura» |
+| Puntas y uniones redondas | Conversan con las cápsulas y las fichas, y a tamaño chico no dejan picos. | Decisión propia |
 | Un solo peso; solo se rellenan los puntos que marcan algo | El punto del primer peldaño y la argolla del Tag. | Decisión propia |
 | Siempre con una palabra | Casi ningún ícono tiene un significado único, y la app ya los muestra con su rótulo. | Harley, Nielsen Norman Group |
 
@@ -133,13 +161,13 @@ Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](
 
 **Metáforas.**
 
-- **Lo propio de Relevo se dibuja con su objeto y sus ideas:** el Tag como es, redondo, con su botón y su argolla; el sonido como anillos, nunca como luz; el primer paso como un punto en el primer peldaño, y el tiempo como un cronómetro, porque se cuentan minutos de uso.
+- **Lo propio de Relevo se dibuja con su objeto y sus ideas:** el Tag como es, redondo, con su botón y su argolla; el sonido como anillos que se abren; el primer paso como un punto en el primer peldaño, y el tiempo como un cronómetro, porque se cuentan minutos de uso.
 - **Lo que hace cualquier app usa formas conocidas,** como volver, borrar o buscar: lo que la gente reconoce de otras apps le ahorra aprender.
 - **Dos íconos se rehicieron tras verlos a 16 px.** «Caminar» pasó de una zapatilla, que parecía una bota, a dos huellas, y «Primer paso» perdió un «+» que se confundía con «Agregar».
 
 ## H.4 La paleta cromática
 
-**Figura H3**
+**Figura H4**
 
 *La paleta cromática: los colores de las partes de un relevo y los de base*
 
@@ -152,7 +180,7 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 | Tu primer paso | Celeste | `#B3E5FC` |
 | El lugar | Verde claro | `#C6EEAE` |
 | Lo que decides | Rosa | `#FAC8D9` |
-| Tu aura | Lila | `#DFD1FC` |
+| Personalización | Lila | `#DFD1FC` |
 | Después | Durazno | `#FBD1B3` |
 
 | Color | Uso | Código |
@@ -197,21 +225,21 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 | Tu primer paso | Celeste, `#B3E5FC` | En la señalética indica una acción, y está entre los colores menos asociados con el miedo. |
 | El lugar donde empiezas | Verde claro, `#C6EEAE` | En la señalética, el verde indica dónde está algo; en Medellín se asocia con la naturaleza y la esperanza. |
 | Lo que decides | Rosa, `#FAC8D9` | Conserva el amor y la alegría del rojo sin su asociación con la rabia, para que la decisión no se juzgue. |
-| El aura, la personalización | Lila, `#DFD1FC` | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
+| La personalización | Lila, `#DFD1FC` | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
 | Después de la señal | Durazno, `#FBD1B3` | El naranja se asocia con la alegría y la diversión. |
 
 *Nota.* Elaboración propia. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de 12,7:1 a 14,5:1.
 
 **Los degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos.
 
-**Figura H4**
+**Figura H5**
 
 *Los degradados de las siete familias de actividades*
 
 <!-- lamina: CIELOS -->
-Los degradados de las siete familias: un color de base y cuatro o cinco luces.
+Los degradados de las siete familias: un color de base y cuatro o cinco manchas de color.
 
-| Familia | Base | Luces |
+| Familia | Base | Manchas de color |
 | --- | --- | --- |
 | Moverte | `#BFE7D3` | `#3FB487` `#E6F7FF` `#9ED6F4` `#5FC79A` |
 | Leer y aprender | `#8DB9EA` | `#2559C9` `#E9F3FF` `#7EA9E8` `#F7FBFF` `#3B6BD2` |
@@ -222,7 +250,7 @@ Los degradados de las siete familias: un color de base y cuatro o cinco luces.
 | Con otras personas | `#F4C9D2` | `#C8325A` `#F7A9BE` `#FFFFFF` `#E0617F` |
 <!-- /lamina -->
 
-*Nota.* Elaboración propia. Cada degradado combina un color de base con cuatro o cinco luces, tomados del código de la app.
+*Nota.* Elaboración propia. Cada degradado combina un color de base con cuatro o cinco manchas de color, tomados del código de la app.
 
 **Tabla H4**
 
@@ -270,10 +298,10 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 | 30 sep. | El subrayado | Una identidad alrededor de un renglón azul. | Se descartó porque no decía qué hace Relevo; el renglón quedó como línea de escritura. |
 | 2 oct. | Sistema de diseño 3.1 | Un renglón que hace lugar, dos voces y los colores de la casa. | Fue la base de las propuestas 3.2 a 3.5. |
 | 3 oct. | Relevo vivo, Volver a enfocar, Las ganas estaban y Cuándo va color | Color vivo, tipografía manuscrita, serifa y reglas de cuándo usar color. | El autor descartó la tipografía manuscrita y la serifa; quedó la regla de cuándo va color. |
-| 3 oct. | El traspaso | La marca como un traspaso de mano en mano. | La idea del traspaso sigue en el logo de cuatro luces. |
+| 3 oct. | El traspaso | La marca como un traspaso de mano en mano. | La idea del traspaso sigue en el logo de cuatro círculos. |
 | 4 oct. | Tipografías para el logotipo | Una búsqueda amplia de tipografías display. | Llevó a elegir Chillax para el logo del 11 de octubre. |
-| 10 y 11 oct. | Relevo con aura | Aura, fichas por color, íconos propios, degradados y el logo de cuatro luces. | **Aprobada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde la 3.0. |
-| 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos y sin aura. | Es la base de las versiones 4.0 a 4.6.3 de la app. |
+| 10 y 11 oct. | La identidad final | Fichas por color, íconos propios, degradados y el logo de cuatro círculos. | **Cerrada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde la 3.0. |
+| 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos. | Es la base de las versiones 4.0 a 4.6.3 de la app. |
 
 *Nota.* Elaboración propia. Fechas de 2026.
 
@@ -285,8 +313,8 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 
 | Referente | Qué enseña | Qué se tomó | Qué no |
 | --- | --- | --- | --- |
-| Dafi (Mambo Mambo) | Íconos de línea sobre cuadrados de color, fichas en escalera y aura. | Las fichas con ícono de línea, ahora con un color por parte del relevo. | Sus dibujos: los 72 íconos se trazaron de nuevo. |
-| DAYO | Personajes que nacen de cuatro estados emocionales, ordenados con el modelo de valencia y activación. | Fundamentar el color en estudios de emoción, con datos de 31 países y la saturación como activación. | El volumen peludo en 3D, que a 16 px se pierde; el volumen de Relevo vive en el aura. |
+| Dafi (Mambo Mambo) | Íconos de línea sobre cuadrados de color y fichas en escalera. | Las fichas con ícono de línea, ahora con un color por parte del relevo. | Sus dibujos: los 72 íconos se trazaron de nuevo. |
+| DAYO | Personajes que nacen de cuatro estados emocionales, ordenados con el modelo de valencia y activación. | Fundamentar el color en estudios de emoción, con datos de 31 países y la saturación como activación. | El volumen peludo en 3D, que a 16 px se pierde; el volumen de Relevo está en sus degradados. |
 | Biceps Grotesk | Una tipografía modular de cuadrados y triángulos en una retícula de 30 px, en rojos y rosas. | La construcción modular: las mismas formas de base y una sola retícula; de sus rojos, el lado rosa. | La tipografía para la interfaz, que es para lucirse en grande. |
 
 *Nota.* Elaboración propia.
@@ -330,6 +358,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Sin luz ni aura; cómo se construye el logo
+
+- **Qué cambió:** la marca ya no habla de luces ni de aura: el logo son cuatro círculos, su versión con degradado deja de llamarse «Luz», el color lila es el de la personalización y los degradados combinan manchas de color. H.1 explica paso a paso cómo se construye el logo, con la nueva Figura H2, su logotipo y su composición, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. Las figuras siguientes pasan a H3, H4 y H5.
+- **Cómo estaba antes:** hablaba de «cuatro luces», de la versión «Luz», de «Tu aura» y de la propuesta «Relevo con aura», y la construcción del logo cabía en tres puntos.
+- **Por qué:** el autor pidió eliminar de la marca las referencias a luz y aura, y explicar más cómo se construye el logo y en qué se basa (D-171).
 
 ### 2026-11-08 — Terminología de diseño
 

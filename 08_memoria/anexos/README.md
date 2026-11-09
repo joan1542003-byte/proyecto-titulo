@@ -35,7 +35,7 @@ Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de u
 - **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
 - **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo de la Universidad, [`imagenes/logo-udp-biblioteca.png`](imagenes/logo-udp-biblioteca.png), se recortó a 600 ppp de la [portada de ejemplo de la Biblioteca](../../01_contexto_y_fuentes/documentos_institucionales/biblioteca-portada-ejemplo.pdf). Los índices de tablas y de figuras se arman con los rótulos de cada pieza, y sus páginas, como las del índice, salen del PDF.
 - **El PDF** lo exporta LibreOffice desde el Word. `pdftotext` lee en qué página quedó cada título, y el constructor arma el Word otra vez con esas páginas en el índice, hasta que no cambian.
-- **Figuras:** los diagramas y las figuras de la identidad (logo, íconos, color y cielos) entran como imágenes, en Arial y negro sobre blanco. Chrome las fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
+- **Figuras:** los diagramas y las figuras de la identidad (el logo y su construcción, los íconos, la paleta cromática y los degradados) entran como imágenes, en Arial y negro sobre blanco. Chrome las fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
 - **Diagramas:** los de mermaid se guardan como SVG en [`imagenes/diagramas`](imagenes/diagramas). Solo un diagrama nuevo o cambiado necesita internet, porque mermaid se carga una vez desde jsDelivr.
 - **Comprobaciones:** el constructor se detiene si un Markdown contiene un correo, si el título de un anexo no coincide con `contenido-anexos.js` o si el Word conserva alguna marca de Markdown.
 
@@ -54,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — La marca sin luz ni aura
+
+- **Qué cambió:** el Anexo H explica la construcción del logo con una figura nueva y ya no habla de luces ni de aura; las figuras de la identidad incluyen la construcción del logo.
+- **Cómo estaba antes:** el logo se describía como cuatro luces y la marca incluía el aura.
+- **Por qué:** pedido del autor (D-171).
 
 ### 2026-11-08 — Portada de la Biblioteca, índices y palabras clave
 
