@@ -55,6 +55,12 @@ Queda en el repositorio como respaldo del proceso:
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos y rótulos de los nueve anexos son frases nominales, sin artículo al comienzo ni segunda persona, y las figuras del logo, de la paleta cromática, de los íconos y de los degradados nombran así las partes, los íconos y las familias.
+- **Cómo estaba antes:** había títulos como «El logo» o «Las dos tipografías» y rótulos como «Tu tiempo» o «Lo que decides».
+- **Por qué:** pedido del autor (D-172).
+
 ### 2026-11-09 — La marca sin luz ni aura
 
 - **Qué cambió:** el Anexo H explica la construcción del logo con una figura nueva y ya no habla de luces ni de aura; las figuras de la identidad incluyen la construcción del logo.

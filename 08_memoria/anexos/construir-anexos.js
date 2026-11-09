@@ -134,11 +134,11 @@ function datosDeMemoria() {
 
 // ---------------------------------------------------------------- Marca, color e íconos
 
-const CIRCULOS = [['Arriba', '#FFD54A', 'Tu tiempo'], ['Derecha', '#9DD6F4', 'Tu primer paso'], ['Abajo', '#B3E788', 'El lugar donde empiezas'], ['Izquierda', '#F6A3CB', 'Lo que decides']];
+const CIRCULOS = [['Arriba', '#FFD54A', 'Tiempo'], ['Derecha', '#9DD6F4', 'Primer paso'], ['Abajo', '#B3E788', 'Lugar de inicio'], ['Izquierda', '#F6A3CB', 'Decisión']];
 const PAPELES = [
-  ['butter', '#F4E496', 'Tu tiempo', 'Amarillo claro', 'tiempo'], ['sky', '#B3E5FC', 'Tu primer paso', 'Celeste', 'primer-paso'],
-  ['lime', '#C6EEAE', 'El lugar', 'Verde claro', 'lugar'], ['blush', '#FAC8D9', 'Lo que decides', 'Rosa', 'decidir'],
-  ['lilac', '#DFD1FC', 'Personalización', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después', 'Durazno', 'despues'],
+  ['butter', '#F4E496', 'Tiempo', 'Amarillo claro', 'tiempo'], ['sky', '#B3E5FC', 'Primer paso', 'Celeste', 'primer-paso'],
+  ['lime', '#C6EEAE', 'Lugar', 'Verde claro', 'lugar'], ['blush', '#FAC8D9', 'Decisión', 'Rosa', 'decidir'],
+  ['lilac', '#DFD1FC', 'Personalización', 'Lila', 'aura'], ['peach', '#FBD1B3', 'Después de la señal', 'Durazno', 'despues'],
 ];
 const BASE = [['Blanco cálido', '#F7F4F0', 'Fondo de las pantallas'], ['Gris claro', '#EEE9E3', 'Botones secundarios y los íconos del Tag y del teléfono'], ['Gris de borde', '#E4DED6', 'Líneas de separación'], ['Gris oscuro', '#6B655F', 'Información secundaria'], ['Negro', '#141312', 'Tipografía, acciones y selección'], ['Rojo', '#B3261E', 'Solo errores, siempre con ícono y palabra']];
 const VERSIONES_LOGO = [
@@ -146,12 +146,17 @@ const VERSIONES_LOGO = [
   ['relevo-marca-degradado.svg', 'Degradado, desde 48 px'], ['relevo-marca-tinta.svg', 'Una tinta'], ['relevo-marca-blanca.svg', 'Sobre fondo oscuro'], ['relevo-icono-app.svg', 'Ícono de la app'],
 ];
 
+/** Nombres de los íconos en los anexos: sin aura (D-171) ni segunda persona (D-172). */
+const NOMBRES_ICONOS = { Aura: 'Personalización', 'Ordenar tu pieza': 'Ordenar la pieza' };
+/** Nombres de las familias de degradados en los anexos, sin segunda persona (D-172). */
+const NOMBRES_FAMILIAS = { Moverte: 'Moverse' };
+
 function iconos() {
   const dir = path.join(RAIZ, ICONOS);
   return fs.readdirSync(dir).filter((f) => f.endsWith('.svg')).sort().map((f) => {
     const svg = fs.readFileSync(path.join(dir, f), 'utf8');
     const titulo = (svg.match(/<title>([^<]+)<\/title>/) || [])[1] || f.replace('.svg', '');
-    const nombre = titulo === 'Aura' ? 'Personalización' : titulo; // la marca ya no habla de aura (D-170)
+    const nombre = NOMBRES_ICONOS[titulo] || titulo; // sin aura (D-171) ni segunda persona (D-172)
     const cuerpo = svg.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<title>[^<]*<\/title>/, '').trim();
     return { archivo: f, nombre, cuerpo };
   });
@@ -166,7 +171,7 @@ function cielos() {
   const kt = leer(`${KT}/ui/components/Sky.kt`);
   const nombres = Object.fromEntries([...kt.matchAll(/Sky\.(\w+) -> "([^"]+)"/g)].filter((m) => m.index > kt.indexOf('familyName')).map((m) => [m[1], m[2]]));
   return [...kt.matchAll(/\/\*\* ([^*]+?) \*\/\s*\n\s*([A-Z]+)\(Color\(0xFF([0-9A-F]{6})\), listOf\(([^\n]+)\)\)\)?,?/g)].map((m) => ({
-    id: m[2], nota: m[1], base: `#${m[3]}`, nombre: nombres[m[2]] || m[2],
+    id: m[2], nota: m[1], base: `#${m[3]}`, nombre: NOMBRES_FAMILIAS[nombres[m[2]]] || nombres[m[2]] || m[2],
     luces: [...m[4].matchAll(/SkyBlob\(Color\(0xFF([0-9A-F]{6})\)(?:\.copy\(alpha = ([.\d]+)f\))?, ([.\d]+)f, ([.\d]+)f, ([.\d]+)f\)/g)]
       .map((b) => ({ color: `#${b[1]}`, alfa: b[2] ? +b[2] : 1, x: +b[3], y: +b[4], r: +b[5] })),
   })).filter((c) => c.id !== 'AURA');
@@ -248,7 +253,7 @@ function construccionHtml() {
   return `<div class="lamina-construccion">
     <figure>${paso1}<figcaption>1. Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cuadrado de 100.</figcaption></figure>
     <figure>${paso2}<figcaption>2. Cada círculo se recorta con el siguiente, agrandado en 3,4: aquí, el amarillo con el celeste.</figcaption></figure>
-    <figure>${paso3}<figcaption>3. La marca: cuatro formas planas de dos arcos y el centro abierto.</figcaption></figure>
+    <figure>${paso3}<figcaption>3. Marca final: cuatro formas planas de dos arcos y un centro abierto.</figcaption></figure>
   </div>`;
 }
 

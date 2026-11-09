@@ -33,23 +33,23 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 **Tabla B1**
 
-*El último episodio*
+*Último episodio descrito*
 
 | Resultado | Recuento |
 | --- | --- |
 | Siguió en una app más de lo que quería al menos un día de la última semana | 39 de 45 que dieron un número de días; mediana, 3 días. Otras 8 no lo recordaban o respondieron en horas |
 | Había otra actividad que quería hacer | 43 de 47 episodios descritos |
-| El episodio ocurrió en casa | 44 de 47; dos fuera de casa y uno no lo recordaba |
+| Ocurrió en casa | 44 de 47; dos fuera de casa y uno no lo recordaba |
 | Nombró un primer paso concreto para esa actividad | 42 de 43 |
 | App del episodio | Instagram 15, TikTok 12, YouTube 11, Reddit 3, Facebook 2, Pinterest 1, Brawl Stars 1; no lo recuerda, 2 |
 
 *Nota.* Elaboración propia a partir de las 53 respuestas.
 
-**Qué pasó con la actividad (43 episodios).** No la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
+**Desenlace de la actividad (43 episodios).** No la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
 
 **Usos del teléfono que querían mantener (53).** Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta, 18; conversar o compartir con alguien, 15; un contenido buscado a propósito, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
 
-**Qué hacen para dejar una app (53).** Alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
+**Estrategias para dejar una app (53).** Alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
 
 **Tabla B2**
 
@@ -59,7 +59,7 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 | --- | --- |
 | Comprensión | 49 de 53 describieron bien cómo funciona; 2 creyeron que bloquea las apps o que suena al cerrarlas, y 2 no lo entendieron del todo |
 | Probabilidad de probarlo, de 1 a 5 | 5: 3 · 4: 20 · 3: 18 · 2: 8 · 1: 3 · no sabe: 1. Mediana, 3 |
-| Dónde pondría el parlante | Junto a los objetos o el espacio de la actividad, 36; en un lugar general de la casa, 7; no lo usaría, no sabe o no encuentra un lugar, 10 |
+| Ubicación preferida del parlante | Junto a los objetos o el espacio de la actividad, 36; en un lugar general de la casa, 7; no lo usaría, no sabe o no encuentra un lugar, 10 |
 | Duración preferida | De 1 a 5 s, 16; de 6 a 15 s, 25; de 16 a 30 s, 3; que no sonara, 7; no sabe, 2 |
 | Registro que aceptaría en una prueba | Datos básicos y tiempos, 18; datos básicos del estudio, 18; solo en el teléfono, 9; ninguno, 3; no sabe, 4; prefiere no responder, 1 |
 
@@ -67,13 +67,13 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 **Motivo principal para descartarlo (53).** Que suene en un mal momento, 8; prepararlo y mantenerlo, 7; el ruido y la convivencia, 7; no entender cuándo suena, 4; sentir presión u obligación, 4; necesitar otro aparato o un teléfono compatible, 4; no necesitarlo, 4; no escucharlo, 3; la privacidad de los datos, 3; acostumbrarse y apagarlo, 3; el audio o la conexión del parlante, 3; otros motivos, como dónde dejarlo, la accesibilidad con un lector de pantalla o no tener una intención clara, 3.
 
-## B.4 Qué tomó el diseño
+## B.4 Aportes al diseño
 
 **Tabla B3**
 
-*De la encuesta al diseño*
+*Aportes de la encuesta al diseño*
 
-| Hallazgo | Qué hizo el diseño |
+| Hallazgo | Respuesta del diseño |
 | --- | --- |
 | La situación es frecuente y casi siempre ocurre en casa: 39 de 45 siguieron en una app más de lo que querían al menos un día de la semana, y 44 de 47 episodios fueron en casa. | El hogar es el contexto del proyecto (capítulo 7). |
 | 42 de 43 nombraron un primer paso concreto, y 8 ya dejan preparado el comienzo de la actividad para dejar el teléfono. | Cada relevo se prepara con su primer paso (criterio 2). |
@@ -91,7 +91,7 @@ Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante
 
 **Tabla B4**
 
-*Categoría de cada respuesta*
+*Categorías por respuesta*
 
 | N.º | Lugar | Motivo para descartarlo | Comprensión | Uso que quería mantener | Estrategia |
 | --- | --- | --- | --- | --- | --- |
@@ -152,6 +152,12 @@ Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante
 *Nota.* Elaboración propia. Los números identifican las respuestas, no a las personas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos de las secciones, tablas y párrafos son formales («Aportes al diseño», «Desenlace de la actividad»).
+- **Cómo estaba antes:** decían «Qué tomó el diseño» o «Qué pasó con la actividad».
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-08 — Correcciones del autor
 

@@ -2,23 +2,23 @@
 
 Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.6.3, y las palabras clave con que la app reconoce cada actividad desde la 4.3.
 
-## G.1 La app en la versión 3.3
+## G.1 Versión 3.3 de la app
 
 **Figura G1**
 
-*La app en un teléfono Android*
+*Pantallas de la app en un teléfono Android*
 
-| Inicio | Todo listo | Suena | Cuatro preguntas | ¿Qué decidiste? |
+| Inicio | Relevo listo | Señal | Cuatro preguntas | Decisión |
 | --- | --- | --- | --- | --- |
-| ![Inicio](imagenes/app-3.3-1-inicio.jpg) | ![Todo listo](imagenes/app-3.3-2-todo-listo.jpg) | ![Suena](imagenes/app-3.3-4-suena.jpg) | ![Cuatro preguntas](imagenes/app-3.3-5-preguntas.jpg) | ![¿Qué decidiste?](imagenes/app-3.3-6-decidir.jpg) |
+| ![Inicio](imagenes/app-3.3-1-inicio.jpg) | ![Relevo listo](imagenes/app-3.3-2-todo-listo.jpg) | ![Señal](imagenes/app-3.3-4-suena.jpg) | ![Cuatro preguntas](imagenes/app-3.3-5-preguntas.jpg) | ![Decisión](imagenes/app-3.3-6-decidir.jpg) |
 
 *Nota.* Capturas de la versión 3.3: la actividad en Inicio, el relevo listo, la señal, las preguntas de un toque y la decisión.
 
-## G.2 El sistema completo
+## G.2 Arquitectura del sistema
 
 **Figura G2**
 
-*Partes de Relevo y cómo se comunican*
+*Componentes de Relevo y su comunicación*
 
 ```mermaid
 flowchart LR
@@ -30,7 +30,7 @@ flowchart LR
   APP -- copia local --> DOC[(Documentos/Relevo<br/>JSON y CSV)]
   APP -- HTTPS con sesión anónima --> SB[(Supabase<br/>Postgres + Auth)]
   SB -- mensajes en tiempo real --> APP
-  PANEL[Panel del testeo<br/>página HTML] -- consultas SQL --> SRV[servidor.js<br/>en el computador] -- API de administración --> SB
+  PANEL[Panel del testeo<br/>página HTML] -- consultas SQL --> SRV[Servidor local<br/>en el computador] -- API de administración --> SB
   INV([Investigador]) --> PANEL
   SB -. datos de la prueba .-> MEM[Memoria y<br/>decisiones de diseño]
 ```
@@ -41,7 +41,7 @@ flowchart LR
 
 *Componentes del sistema*
 
-| Componente | Qué hace | Tecnología |
+| Componente | Función | Tecnología |
 | --- | --- | --- |
 | App Android | Prepara relevos, cuenta el uso, hace sonar la señal y registra las respuestas. | Kotlin 2.3 y Jetpack Compose, para Android 12 o posterior |
 | Tag | Suena junto al primer paso, y su botón calla la señal. | Localizador iTag comercial, con Bluetooth de baja energía |
@@ -52,7 +52,7 @@ flowchart LR
 
 *Nota.* Elaboración propia.
 
-## G.3 La app
+## G.3 Funcionamiento de la app
 
 ### Tecnologías
 
@@ -60,7 +60,7 @@ flowchart LR
 
 *Tecnologías de la app*
 
-| Pieza | Versión | Para qué |
+| Pieza | Versión | Uso |
 | --- | --- | --- |
 | Kotlin | 2.3.20 | El lenguaje de toda la app. |
 | Jetpack Compose y Material 3 | BOM 2026.03.01 | La interfaz: cada pantalla es una función que dibuja el estado. |
@@ -76,7 +76,7 @@ flowchart LR
 
 La app no usa bibliotecas de Supabase: habla con su API REST mediante `HttpURLConnection`, que ya trae Android. Así tiene menos dependencias y se controla exactamente qué datos salen.
 
-### Cómo está organizada
+### Organización del código
 
 La app separa lo que se ve de las reglas y de los datos, y cada capa conoce solo a la de abajo:
 
@@ -86,7 +86,7 @@ La app separa lo que se ve de las reglas y de los datos, y cada capa conoce solo
 - **`signal`**, el sonido: en el teléfono, el parlante o el reloj, y el control del Tag.
 - **`ui`**, las pantallas, con un solo `RelevoViewModel` que reúne el estado y las acciones para que todas vean lo mismo.
 
-### El ciclo de un relevo
+### Ciclo de un relevo
 
 **Figura G3**
 
@@ -94,6 +94,12 @@ La app separa lo que se ve de las reglas y de los datos, y cada capa conoce solo
 
 ```mermaid
 stateDiagram-v2
+  state "Borrador" as DRAFT
+  state "Listo" as READY
+  state "En espera" as WAITING
+  state "Sonando" as SIGNALLED
+  state "Silenciado" as SILENCED
+  state "Cerrado" as CLOSED
   [*] --> DRAFT: empezar a preparar
   DRAFT --> READY: actividad, primer paso, apps y límite listos
   READY --> WAITING: Activar el relevo (con el lugar escrito)
@@ -110,7 +116,7 @@ stateDiagram-v2
 
 Cada relevo tiene un identificador de sesión y queda asociado al día y a la condición de la semana en que se activó, a la salida de sonido, a la versión de la app y a si se activó a mano o solo.
 
-### Cómo cuenta el tiempo
+### Conteo del tiempo
 
 1. Al activar un relevo, la app inicia un servicio en primer plano: un proceso que Android no cierra mientras muestra una notificación visible.
 2. Cada segundo, el servicio lee los eventos de Tiempo de uso de Android (`UsageStatsManager`): qué app se abrió, cuál se pausó y cuándo se apagó la pantalla.
@@ -120,7 +126,7 @@ Cada relevo tiene un identificador de sesión y queda asociado al día y a la co
 
 La app conoce solo el nombre de la app en primer plano y su tiempo, nunca lo que pasa dentro de ella.
 
-### Cómo suena
+### Señal sonora
 
 La señal va a la salida que define la persona y nunca cambia de salida sin avisar. Si la salida no responde, el teléfono vibra, aparece una notificación y la señal queda registrada como fallida.
 
@@ -129,13 +135,13 @@ La señal va a la salida que define la persona y nunca cambia de salida sin avis
 - **Tag:** la app le escribe la orden de alerta por Bluetooth y la repite cada segundo durante 30 s, o hasta que se aprieta su botón. El Tag tiene solo su propio pitido, continuo y de volumen fijo.
 - **Siempre**, al empezar la señal, el teléfono vibra una vez y muestra una notificación.
 
-### El Tag
+### Tag
 
 El Tag es un localizador iTag comercial, con una pila CR2032 y un botón. La app lo controla con un protocolo verificado en código abierto y en los registros de la prueba.
 
 **Tabla G3**
 
-*Servicios Bluetooth del Tag que usa la app*
+*Servicios Bluetooth del Tag usados por la app*
 
 | Servicio (código) | Característica | Uso en Relevo |
 | --- | --- | --- |
@@ -151,9 +157,9 @@ Al conectarse, la app busca el Tag guardado, pide una conexión rápida, descubr
 
 **Tabla G4**
 
-*Lo que enseñó el Tag real*
+*Aprendizajes del Tag real*
 
-| Versión | Lo que pasó | Lo que cambió |
+| Versión | Problema observado | Cambio |
 | --- | --- | --- |
 | 2.26 | El Tag aceptaba la orden, pero no pitaba. | La prueba de sonido pregunta si se escuchó, y ya no se apaga FFE2 a ciegas. |
 | 2.27 | Pitaba en la prueba y no en la señal. | FFE2 en 1 junto con la alerta, y un pitido continuo con la orden repetida. |
@@ -165,22 +171,22 @@ Al conectarse, la app busca el Tag guardado, pide una conexión rápida, descubr
 
 La lección general: que el objeto acepte una orden no prueba que haya sonado. Por eso la prueba de sonido le pregunta a la persona, y el registro guarda cuánto tardó el Tag en responder y cómo quedó al callarlo.
 
-### Lo que guarda el teléfono
+### Datos guardados en el teléfono
 
 - **Preferencias**, en archivos privados de la app: el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba, el Tag vinculado y el estado del envío.
-- **Una base SQLite** con cinco tablas: cada relevo y su resultado (`sessions`); sus momentos, como activarlo, entrar y salir de las apps, la señal y la respuesta (`events`); las respuestas (`answers`); el uso de la propia app (`app_events`), y el uso diario de las apps seleccionadas y el tiempo total de pantalla (`daily_usage`).
-- **Una copia legible** en `Documentos/Relevo`: un JSON con todo y dos CSV, de relevos y de respuestas. Se reescribe en cada envío y se borra con «Borrar mis datos».
+- **Base SQLite**, con cinco tablas: cada relevo y su resultado (`sessions`); sus momentos, como activarlo, entrar y salir de las apps, la señal y la respuesta (`events`); las respuestas (`answers`); el uso de la propia app (`app_events`), y el uso diario de las apps seleccionadas y el tiempo total de pantalla (`daily_usage`).
+- **Copia legible**, en `Documentos/Relevo`: un JSON con todo y dos CSV, de relevos y de respuestas. Se reescribe en cada envío y se borra con «Borrar mis datos».
 
 ### Funciones de continuidad
 
 **Tabla G5**
 
-*Funciones que acompañan el uso*
+*Funciones de continuidad*
 
-| Función | Qué hace | Cómo respeta los criterios |
+| Función | Descripción | Relación con los criterios |
 | --- | --- | --- |
 | Ruta | Pasos pequeños por interés; tras tres respuestas «Comencé», ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
-| Tus actividades | Guarda actividades propias para preparar en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
+| Actividades propias | Guarda actividades propias para preparar en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
 | Editar un relevo activo | Cambia lo preparado sin borrarlo y conserva el tiempo contado si las apps son las mismas. | Lo pidió una persona de la prueba. |
 | Activación automática | Repite el último relevo al abrir una de sus apps, con 30 minutos de pausa. | Viene apagada, y la app registra cómo se activó cada relevo. |
 | Aviso semanal | Avisa una vez tras una semana sin abrir la app. | Apagado, salvo que la persona lo pida. |
@@ -189,15 +195,15 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 *Nota.* Elaboración propia a partir del código de la app.
 
-## G.4 Los datos y el panel
+## G.4 Datos y panel del testeo
 
-**La sesión anónima.** Supabase reúne una base de datos Postgres, autenticación y una API REST. Cuando la persona acepta participar, la app pide a Supabase un usuario nuevo, sin correo ni contraseña, y recibe un identificador (`user_id`) y un token que se renueva solo; cada fila que envía lleva ese identificador. Sin participar, la app no abre ninguna sesión. Usa la clave publicable del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de servicio nunca está en la app.
+**Sesión anónima.** Supabase reúne una base de datos Postgres, autenticación y una API REST. Cuando la persona acepta participar, la app pide a Supabase un usuario nuevo, sin correo ni contraseña, y recibe un identificador (`user_id`) y un token que se renueva solo; cada fila que envía lleva ese identificador. Sin participar, la app no abre ninguna sesión. Usa la clave publicable del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de servicio nunca está en la app.
 
 **Tabla G6**
 
 *Tablas de la base remota*
 
-| Tabla | Qué guarda | Columnas principales |
+| Tabla | Contenido | Columnas principales |
 | --- | --- | --- |
 | `relevo_sessions` | Cada relevo. | Actividad, primer paso, lugar, apps, límite, condición y día de la prueba, salida, si sonó, respuesta, segundos hasta responder, uso antes y después, versión y forma de activación. |
 | `relevo_events` | Los momentos de cada relevo. | Tipo de evento, como `armed`, `target_entered`, `signal_emitted` o `responded`, la app y los segundos. |
@@ -210,19 +216,19 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 *Nota.* Elaboración propia. El esquema empezó el 22 de septiembre de 2026 y suma 16 migraciones; el esquema `analisis` tiene vistas listas para leer los relevos, las respuestas, el resumen por condición, el uso y los participantes.
 
-**Cada persona ve solo lo suyo.** Todas las tablas `relevo_*` tienen seguridad por fila: la base revisa cada consulta con una regla. Solo un usuario cuyo identificador coincide con el de la fila puede leerla, insertarla, actualizarla o borrarla, y cada teléfono lee los mensajes generales y los dirigidos a él. Así, un teléfono nunca puede leer los datos de otro, ni siquiera con la clave publicable. El panel entra con un token personal de administración, que vive solo en el computador del investigador.
+**Acceso a los datos propios.** Todas las tablas `relevo_*` tienen seguridad por fila: la base revisa cada consulta con una regla. Solo un usuario cuyo identificador coincide con el de la fila puede leerla, insertarla, actualizarla o borrarla, y cada teléfono lee los mensajes generales y los dirigidos a él. Así, un teléfono nunca puede leer los datos de otro, ni siquiera con la clave publicable. El panel entra con un token personal de administración, que vive solo en el computador del investigador.
 
-**Cómo se envían los datos.** Cada registro nace en SQLite como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta la fila, queda enviada; si la rechaza de forma definitiva, queda rechazada y la cola sigue, y si falla la red, se reintenta después. «Borrar mis datos» borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
+**Envío de datos.** Cada registro nace en SQLite como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta la fila, queda enviada; si la rechaza de forma definitiva, queda rechazada y la cola sigue, y si falla la red, se reintenta después. «Borrar mis datos» borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
 
 **Mensajes en tiempo real.** Mientras el servicio cuenta o espera, la app mantiene una conexión WebSocket con el canal de tiempo real de Supabase: un mensaje del investigador llega en menos de un segundo, y en el emulador se midieron 0,8 s. Como respaldo, la app revisa los mensajes al abrirse, cada 60 segundos mientras el servicio corre y cada 15 minutos con una tarea programada de Android.
 
-**El panel del testeo.** Una página HTML con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Con doble clic muestra datos de ejemplo inventados; con `node servidor.js`, un servidor sin dependencias que escucha solo en el computador, con una clave que cambia en cada arranque, consulta la base real. Ningún dato real se guarda junto al código del panel.
+**Panel del testeo.** Una página HTML con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Con doble clic muestra datos de ejemplo inventados; con `node servidor.js`, un servidor sin dependencias que escucha solo en el computador, con una clave que cambia en cada arranque, consulta la base real. Ningún dato real se guarda junto al código del panel.
 
 **Tabla G7**
 
-*Qué sale del teléfono y qué no*
+*Datos que salen del teléfono y datos que no salen*
 
-| Sale, con consentimiento | No sale |
+| Salen, con consentimiento | No salen |
 | --- | --- |
 | La actividad, el primer paso y el lugar declarados; las apps seleccionadas y su tiempo; los eventos y las respuestas; el uso diario de las apps seleccionadas y el tiempo total de pantalla; el estado del teléfono y los permisos; el uso de la propia app; una descripción técnica del Tag, sin su dirección, y el nombre, en una tabla aparte. | Lo que pasa dentro de otras apps; los nombres de las apps no elegidas; la dirección Bluetooth del Tag; fotos, contactos o ubicación. |
 
@@ -236,7 +242,7 @@ Cada versión tiene su documento en la carpeta de la app, con lo que cambió, po
 
 *Versiones de la app, de la 2.7 a la 3.3*
 
-| Versión | Fecha | Qué trae |
+| Versión | Fecha | Cambios |
 | --- | --- | --- |
 | 2.7 | 25 sep. | La app que pide el protocolo de la prueba |
 | 2.8 | 26 sep. | Sistema de marca «Vuelve a lo que querías hacer», perfil, ruta y regreso |
@@ -278,7 +284,7 @@ Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de n
 
 *Versiones posteriores a la prueba*
 
-| Versión | Fecha | Qué trae |
+| Versión | Fecha | Cambios |
 | --- | --- | --- |
 | 4.0 | 5 nov. | Rediseño de la interfaz |
 | 4.1 | 5 nov. | Anillos simétricos, textos con función, sin viudas y movimiento al tacto |
@@ -298,7 +304,7 @@ Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de n
 
 Desde la versión 4.3, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. La versión 4.5 sumó palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete»: la app reconoce 34 actividades en siete familias, con 634 palabras, 121 frases y 31 palabras débiles, y sugiere 91 primeros pasos y 61 lugares.
 
-**Cómo reconoce una actividad.**
+**Reconocimiento de una actividad.**
 
 1. Pasa el texto a minúsculas y sin tildes: «Película» y «pelicula» son lo mismo.
 2. Compara cada palabra entera. Algunas valen también con lo que sigue, como «dibuj…», que reconoce dibujar, dibujo y dibujando.
@@ -309,11 +315,11 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 
 **Tabla G10**
 
-*Las 34 actividades que reconoce la app*
+*Actividades reconocidas por la app*
 
-| Actividad | Palabras clave, por ejemplo | Con qué empezar | Dónde |
+| Actividad | Palabras clave, por ejemplo | Primer paso sugerido | Lugar sugerido |
 | --- | --- | --- | --- |
-| **Moverte** | | | |
+| **Moverse** | | | |
 | Pasear al perro | perro, perrito, cachorro, quiltro, mascota, correa | Tomar la correa; Sacar su pelota; Llenar su botella de agua | Junto a la puerta; Donde está la correa |
 | Correr | correr, trotar, trote, running, maratón, trail | Ponerte las zapatillas; Ponerte ropa deportiva; Llenar la botella de agua | Junto a la puerta; Junto a las zapatillas |
 | Caminar | caminar, caminata, pasear, cerro, parque, trekking | Ponerte las zapatillas; Llenar la botella de agua; Elegir el recorrido | Junto a la puerta; Junto a las zapatillas |
@@ -355,9 +361,15 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 | Llamar | llamar, llamada, videollamada, FaceTime, conversar | Buscar su número; Escribirle que vas a llamar | En el sillón |
 | Compartir | visitar, juntarme, carrete, asado, abuela, polola | Avisar que vas; Preparar algo para llevar; Poner la mesa | Junto a la puerta; En la mesa del comedor |
 
-*Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
+*Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos de las secciones, tablas, figuras y columnas son formales; las pantallas de la Figura G1 y los estados de la Figura G3 tienen nombres en español; el servidor local ya no se nombra por su archivo, y la Tabla G10 aclara que las sugerencias se transcriben como las muestra la app.
+- **Cómo estaba antes:** había títulos como «La app», «Cómo suena» o «Lo que guarda el teléfono», estados en inglés y el nombre del archivo del servidor.
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-09 — Sin aura
 

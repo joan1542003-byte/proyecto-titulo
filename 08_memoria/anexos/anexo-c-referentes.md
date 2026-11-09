@@ -2,7 +2,7 @@
 
 Documenta cómo se buscaron y compararon los productos, servicios y proyectos del capítulo 8: el método de la búsqueda, una ficha por referente y la revisión de prototipos y patentes con piezas parecidas a Relevo.
 
-## C.1 La búsqueda
+## C.1 Estrategia de búsqueda
 
 **Pregunta.** Qué mecanismos, productos y antecedentes técnicos existen para apoyar la regulación del uso del teléfono, y qué límites de evidencia, adopción, compatibilidad, privacidad y modelo económico hay que considerar al diseñar un sistema *phygital* como Relevo.
 
@@ -12,7 +12,7 @@ Documenta cómo se buscaron y compararon los productos, servicios y proyectos de
 
 **Tabla C1**
 
-*Términos de la búsqueda*
+*Términos de búsqueda*
 
 | Campo | En español | En inglés |
 | --- | --- | --- |
@@ -27,9 +27,9 @@ Documenta cómo se buscaron y compararon los productos, servicios y proyectos de
 
 **Fuentes.** La documentación oficial de Google y Apple, para las funciones del sistema; los sitios oficiales de cada producto, para su mecanismo, precio y modelo económico; las publicaciones con DOI de Wiley, ACM, PNAS, Springer, Sage, JMIR e IET, para la evidencia, y los repositorios y registros académicos, para verificar autoría, año y acceso. Las tiendas y reseñas se leyeron solo como señal comercial.
 
-**Qué entró.** Publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores que cumplen una función fundacional, como The Tangible Reminder, de 2007. Productos vigentes al corte, con una página oficial que permita verificar su mecanismo. Y referentes que iluminan una decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono.
+**Criterios de inclusión.** Publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores que cumplen una función fundacional, como The Tangible Reminder, de 2007. Productos vigentes al corte, con una página oficial que permita verificar su mecanismo. Y referentes que iluminan una decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono.
 
-**Qué quedó fuera.** Aro, porque su disponibilidad no pudo verificarse con una fuente oficial al corte; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
+**Exclusiones.** Aro, porque su disponibilidad no pudo verificarse con una fuente oficial al corte; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
 
 **Peso de la evidencia.** De más a menos: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria. Cuando dos niveles chocaron, se mantuvo la afirmación más limitada.
 
@@ -37,168 +37,168 @@ Documenta cómo se buscaron y compararon los productos, servicios y proyectos de
 
 **Alcance.** Precios, compatibilidades y disponibilidad son los del corte, en su moneda original. No hay cifras de ventas, retención ni tamaño del mercado, el corpus se inclina a fuentes en inglés y la mayor parte de la evidencia independiente estudia intervenciones en la pantalla, no objetos. Por eso la oportunidad se formula sobre lo revisado y no como una novedad absoluta.
 
-## C.2 Fichas de los referentes
+## C.2 Fichas de referentes
 
 Cada ficha separa lo que el producto declara, que es una afirmación comercial, de la evidencia independiente, que se reserva para estudios académicos o evaluaciones externas. Los datos comerciales son los del 24 de agosto de 2026.
 
 ### Google Digital Wellbeing y Pause Point
 
-**Qué es.** Herramientas de Android para medir el uso, fijar límites y agregar una pausa antes de abrir una app.
+**Descripción.** Herramientas de Android para medir el uso, fijar límites y agregar una pausa antes de abrir una app.
 
-**Cómo funciona.** Digital Wellbeing ofrece informes de uso, temporizadores por app, modos de desconexión y Focus Mode (Google, s. f.). Pause Point agrega una pausa de diez segundos al abrir las apps que la persona escoge, con respiración, temporizador, fotografías o alternativas, y desactivarlo exige reiniciar el teléfono (Sanders, 2026).
+**Funcionamiento.** Digital Wellbeing ofrece informes de uso, temporizadores por app, modos de desconexión y Focus Mode (Google, s. f.). Pause Point agrega una pausa de diez segundos al abrir las apps que la persona escoge, con respiración, temporizador, fotografías o alternativas, y desactivarlo exige reiniciar el teléfono (Sanders, 2026).
 
 **Disponibilidad.** Integradas en el sistema, sin costo aparte. Digital Wellbeing varía según el teléfono, y Pause Point está documentado para los Pixel 11 con Android 17 o posterior.
 
 **Evidencia.** No se encontró una evaluación independiente de Pause Point. Las revisiones sobre herramientas de autocontrol digital muestran efectos variables (Biedermann et al., 2021; Monge Roffarello y De Russis, 2023).
 
-**Qué aprende Relevo.** Una plataforma puede interrumpir sin bloquear del todo, pero la señal, el significado y la decisión quedan en la pantalla. Es el competidor más directo: un objeto solo se justifica si aporta algo que esa pausa no da.
+**Aporte a Relevo.** Una plataforma puede interrumpir sin bloquear del todo, pero la señal, el significado y la decisión quedan en la pantalla. Es el competidor más directo: un objeto solo se justifica si aporta algo que esa pausa no da.
 
 ### Apple Screen Time
 
-**Qué es.** La herramienta de iPhone para medir el uso, programar descansos y restringir apps.
+**Descripción.** La herramienta de iPhone para medir el uso, programar descansos y restringir apps.
 
-**Cómo funciona.** Genera informes de actividad, fija límites por app o por categoría, programa periodos sin uso y bloquea apps, sitios y funciones; la persona puede cambiar o quitar los límites (Apple, s. f.-a).
+**Funcionamiento.** Genera informes de actividad, fija límites por app o por categoría, programa periodos sin uso y bloquea apps, sitios y funciones; la persona puede cambiar o quitar los límites (Apple, s. f.-a).
 
 **Disponibilidad.** Integrada en iPhone, sin costo aparte. Los informes y límites se pueden sincronizar entre iPhone, iPad y Mac.
 
 **Evidencia.** No se encontró evidencia de que ayude a recuperar intenciones.
 
-**Qué aprende Relevo.** Un límite en el teléfono es el contraste de menor carga. Relevo debe mostrar qué aporta frente a él: recuerdo, intrusión y lugar.
+**Aporte a Relevo.** Un límite en el teléfono es el contraste de menor carga. Relevo debe mostrar qué aporta frente a él: recuerdo, intrusión y lugar.
 
 ### one sec
 
-**Qué es.** Una app de pausa que intercepta la apertura de las apps que la persona escoge.
+**Descripción.** Una app de pausa que intercepta la apertura de las apps que la persona escoge.
 
-**Cómo funciona.** Antes de abrir una app configurada muestra una pausa o un ejercicio breve, con horarios, tipos de intervención, seguimiento de intenciones y, según su sitio, bloqueos completos (one sec, s. f.).
+**Funcionamiento.** Antes de abrir una app configurada muestra una pausa o un ejercicio breve, con horarios, tipos de intervención, seguimiento de intenciones y, según su sitio, bloqueos completos (one sec, s. f.).
 
 **Disponibilidad.** iOS y Android; su sitio declara también una extensión para Windows, macOS y Linux. Lo esencial es gratis, con funciones pagadas.
 
 **Evidencia.** En un experimento de campo de seis semanas, 280 personas desistieron en el 36 % de los intentos de abrir una app, y la opción explícita de no seguir tuvo más efecto que el mensaje de reflexión (Grüning et al., 2023). Los registros de 1039 personas que ya la usaban muestran que el uso sube en las pausas de la intervención y baja al retomarla (Haliburton et al., 2024). Uno de los autores de ambos estudios desarrolló la app.
 
-**Qué aprende Relevo.** Es el referente digital más cercano a la idea de intención y reconsideración, y obliga a comparar una señal en el lugar con una pausa repetida en la pantalla.
+**Aporte a Relevo.** Es el referente digital más cercano a la idea de intención y reconsideración, y obliga a comparar una señal en el lugar con una pausa repetida en la pantalla.
 
 ### MindPhone
 
-**Qué es.** Un prototipo de investigación que pregunta al desbloquear el teléfono.
+**Descripción.** Un prototipo de investigación que pregunta al desbloquear el teléfono.
 
-**Cómo funciona.** Pregunta para qué se va a usar el teléfono, o qué se hará después fuera de él.
+**Funcionamiento.** Pregunta para qué se va a usar el teléfono, o qué se hará después fuera de él.
 
 **Evidencia.** En un estudio de campo de dos semanas con 28 personas, la segunda pregunta redujo el uso distraído y favoreció volver antes al entorno, y la primera aumentó la conciencia de los motivos de uso (Terzimehić et al., 2022).
 
-**Qué aprende Relevo.** Preguntar por lo que viene después ayuda, pero la pregunta sigue en la pantalla.
+**Aporte a Relevo.** Preguntar por lo que viene después ayuda, pero la pregunta sigue en la pantalla.
 
 ### Brick
 
-**Qué es.** Un bloqueo físico y digital: un dispositivo que funciona como llave.
+**Descripción.** Un bloqueo físico y digital: un dispositivo que funciona como llave.
 
-**Cómo funciona.** La persona elige apps y modos, y toca el teléfono con el Brick para bloquearlas; para revertirlo, vuelve a tocarlo o usa una salida de emergencia (Brick LLC, s. f.-a). En Android pide acceso de uso, superposición, notificaciones y el servicio de accesibilidad (Brick LLC, s. f.-c).
+**Funcionamiento.** La persona elige apps y modos, y toca el teléfono con el Brick para bloquearlas; para revertirlo, vuelve a tocarlo o usa una salida de emergencia (Brick LLC, s. f.-a). En Android pide acceso de uso, superposición, notificaciones y el servicio de accesibilidad (Brick LLC, s. f.-c).
 
 **Disponibilidad.** Android 12 e iOS 17 o posteriores. USD 59, en una compra única y sin suscripción.
 
 **Evidencia.** No se encontró una evaluación independiente; sus reseñas y testimonios son señales comerciales.
 
-**Qué aprende Relevo.** Hay disposición a comprar una barrera física, pero bloquear no devuelve una intención ni deja la decisión abierta. Es el contraste de máxima restricción.
+**Aporte a Relevo.** Hay disposición a comprar una barrera física, pero bloquear no devuelve una intención ni deja la decisión abierta. Es el contraste de máxima restricción.
 
 ### Brick Zone
 
-**Qué es.** Un dispositivo Bluetooth que bloquea apps donde se deja.
+**Descripción.** Un dispositivo Bluetooth que bloquea apps donde se deja.
 
-**Cómo funciona.** Se empareja con el teléfono y bloquea por sí mismo las apps que distraen. El fabricante lo presenta como transportable entre el escritorio, la mesa u otros lugares (Brick LLC, s. f.-b), sin documentar su alcance ni su precisión.
+**Funcionamiento.** Se empareja con el teléfono y bloquea por sí mismo las apps que distraen. El fabricante lo presenta como transportable entre el escritorio, la mesa u otros lugares (Brick LLC, s. f.-b), sin documentar su alcance ni su precisión.
 
 **Disponibilidad.** USD 99.
 
 **Evidencia.** No se encontró evidencia independiente; la automatización es una afirmación comercial.
 
-**Qué aprende Relevo.** El lugar puede ser una barrera automática o una señal. Relevo elige la señal, para que la persona decida la respuesta en vez de recibir un bloqueo.
+**Aporte a Relevo.** El lugar puede ser una barrera automática o una señal. Relevo elige la señal, para que la persona decida la respuesta en vez de recibir un bloqueo.
 
 ### Unpluq Tag
 
-**Qué es.** Una etiqueta NFC que funciona como llave de las apps bloqueadas.
+**Descripción.** Una etiqueta NFC que funciona como llave de las apps bloqueadas.
 
-**Cómo funciona.** La persona elige apps, horarios y hasta siete barreras digitales; para abrir una app bloqueada usa el Tag o una barrera alternativa (Unpluq, s. f.).
+**Funcionamiento.** La persona elige apps, horarios y hasta siete barreras digitales; para abrir una app bloqueada usa el Tag o una barrera alternativa (Unpluq, s. f.).
 
 **Disponibilidad.** iPhone con iOS 16 o posterior y Android con NFC. Suscripción de 3, 6 o 12 meses, con o sin Tag.
 
 **Evidencia.** No se encontró evidencia independiente; sus cifras de reducción del tiempo de pantalla son comerciales.
 
-**Qué aprende Relevo.** Una llave tangible controla el acceso, pero no contiene ni recupera una intención. Relevo no reproduce el bloqueo ni las estadísticas de cumplimiento.
+**Aporte a Relevo.** Una llave tangible controla el acceso, pero no contiene ni recupera una intención. Relevo no reproduce el bloqueo ni las estadísticas de cumplimiento.
 
 ### Screenless Breaker
 
-**Qué es.** Una llave NFC pasiva, sin batería, para bloquear apps.
+**Descripción.** Una llave NFC pasiva, sin batería, para bloquear apps.
 
-**Cómo funciona.** La app arma el bloqueo y el Breaker lo deshace al acercarlo; tiene una salida de emergencia demorada y un modo parental (Screenless, s. f.).
+**Funcionamiento.** La app arma el bloqueo y el Breaker lo deshace al acercarlo; tiene una salida de emergencia demorada y un modo parental (Screenless, s. f.).
 
 **Disponibilidad.** €45, sin suscripción. Su página declara compatibilidad con iOS y Android, pero sus preguntas frecuentes dicen que por ahora es solo para iOS.
 
 **Evidencia.** No se encontró evidencia independiente; sus reseñas son valoraciones comerciales.
 
-**Qué aprende Relevo.** Estar presente en un lugar no es lo mismo que controlar el acceso.
+**Aporte a Relevo.** Estar presente en un lugar no es lo mismo que controlar el acceso.
 
 ### kSafe
 
-**Qué es.** Un contenedor que se cierra con un temporizador (Kitchen Safe, s. f.).
+**Descripción.** Un contenedor que se cierra con un temporizador (Kitchen Safe, s. f.).
 
-**Cómo funciona.** Restringe sin conectarse con el teléfono.
+**Funcionamiento.** Restringe sin conectarse con el teléfono.
 
-**Qué aprende Relevo.** Es difícil de revertir. Alejar o silenciar el teléfono, como contaron las entrevistas, es más reversible y no cuesta nada.
+**Aporte a Relevo.** Es difícil de revertir. Alejar o silenciar el teléfono, como contaron las entrevistas, es más reversible y no cuesta nada.
 
 ### Focusaur
 
-**Qué es.** Un dispositivo de foco y hábitos, con su app.
+**Descripción.** Un dispositivo de foco y hábitos, con su app.
 
-**Cómo funciona.** Se inicia con un dial y un botón; un modo de barrera detecta si se mueve el teléfono, y suma etiquetas NFC para hábitos y lugares, sonidos, recompensas con dinosaurios y un asistente de foco con inteligencia artificial (Focusaur, s. f.).
+**Funcionamiento.** Se inicia con un dial y un botón; un modo de barrera detecta si se mueve el teléfono, y suma etiquetas NFC para hábitos y lugares, sonidos, recompensas con dinosaurios y un asistente de foco con inteligencia artificial (Focusaur, s. f.).
 
 **Disponibilidad.** USD 129 en oferta, frente a USD 169, con planes gratis y Pro de la app. Se despacha a Estados Unidos y Europa.
 
 **Evidencia.** No se encontró evidencia independiente. Su campaña de Kickstarter de 2026 reunió 1395 patrocinadores (Focusaur, 2026), una señal comercial y no de uso sostenido.
 
-**Qué aprende Relevo.** Un objeto puede anclar un lugar y un ritual, pero sus recompensas empujan a cumplir con el sistema y se orientan a la productividad. Relevo excluye los puntos, las rachas y la verificación.
+**Aporte a Relevo.** Un objeto puede anclar un lugar y un ritual, pero sus recompensas empujan a cumplir con el sistema y se orientan a la productividad. Relevo excluye los puntos, las rachas y la verificación.
 
 ### The Tangible Reminder
 
-**Qué es.** Un prototipo académico de 2007 que vincula objetos cotidianos con citas.
+**Descripción.** Un prototipo académico de 2007 que vincula objetos cotidianos con citas.
 
-**Cómo funciona.** Cada objeto, con una etiqueta RFID, se asocia a una cita; al dejarlo en una bandeja, una pantalla ambiental cambia de color a medida que se acerca la hora y parpadea cuando es urgente (Hermann et al., 2007).
+**Funcionamiento.** Cada objeto, con una etiqueta RFID, se asocia a una cita; al dejarlo en una bandeja, una pantalla ambiental cambia de color a medida que se acerca la hora y parpadea cuando es urgente (Hermann et al., 2007).
 
 **Evidencia.** El artículo presenta el prototipo y una evaluación heurística con 11 participantes.
 
-**Qué aprende Relevo.** Un objeto cotidiano puede llevar un significado digital al entorno y hablar desde la periferia de la atención, siempre que la relación entre el objeto y su significado se entienda. Trabaja con citas, no con intenciones que la persona puede decidir no realizar.
+**Aporte a Relevo.** Un objeto cotidiano puede llevar un significado digital al entorno y hablar desde la periferia de la atención, siempre que la relación entre el objeto y su significado se entienda. Trabaja con citas, no con intenciones que la persona puede decidir no realizar.
 
 ### Place-Its
 
-**Qué es.** Una app de investigación con recordatorios asociados a lugares.
+**Descripción.** Una app de investigación con recordatorios asociados a lugares.
 
-**Cómo funciona.** La persona escribe una nota y la deja colgada de un lugar conocido, para que aparezca al llegar ahí o al irse (Sohn et al., 2005).
+**Funcionamiento.** La persona escribe una nota y la deja colgada de un lugar conocido, para que aparezca al llegar ahí o al irse (Sohn et al., 2005).
 
 **Evidencia.** Diez personas la usaron durante dos semanas y crearon 89 recordatorios; hubo que volver a colgar 19, porque aparecieron en el lugar equivocado o en un momento en que no podían atenderse.
 
-**Qué aprende Relevo.** El lugar ayuda a recordar, pero una ubicación detectada no equivale a una relación personal con el espacio, y la señal sigue en la pantalla.
+**Aporte a Relevo.** El lugar ayuda a recordar, pero una ubicación detectada no equivale a una relación personal con el espacio, y la señal sigue en la pantalla.
 
 ### Wobble
 
-**Qué es.** Un prototipo de investigación de recordatorios para el hogar.
+**Descripción.** Un prototipo de investigación de recordatorios para el hogar.
 
-**Cómo funciona.** Explora recordatorios que no reclaman la atención y que, según sus autores, convienen a intenciones que no exigen actuar de inmediato (Zekveld et al., 2017).
+**Funcionamiento.** Explora recordatorios que no reclaman la atención y que, según sus autores, convienen a intenciones que no exigen actuar de inmediato (Zekveld et al., 2017).
 
-**Qué aprende Relevo.** Un recordatorio puede vivir en la casa sin exigir una respuesta inmediata. No trata el ocio digital.
+**Aporte a Relevo.** Un recordatorio puede vivir en la casa sin exigir una respuesta inmediata. No trata el ocio digital.
 
-### Evidencia que no pertenece a un producto
+### Evidencia no asociada a productos
 
 - Biedermann et al. (2021) revisaron 28 intervenciones de autocontrol digital: resultados variables, baja confianza general y poca eficacia de las que solo buscan conciencia.
 - Monge Roffarello y De Russis (2023) sintetizaron la literatura sobre herramientas de autocontrol digital: estudios breves y medidas heterogéneas. Su metaanálisis da un efecto promedio, no una garantía para un producto.
 - Chiu y Gilbert (2024) mostraron que aumentar el esfuerzo de dejar un recordatorio reduce su uso: el objeto debe justificar lo que cuesta configurarlo y llevarlo.
 - Peña-Albert et al. (2026) encontraron que 63 de 138 personas que habían desactivado los avisos de una herramienta de autocontrol digital aceptaron darle otra oportunidad: una regla puede dejar de servir, y conviene que se pueda reconfigurar.
 
-## C.3 Prototipos y patentes parecidos
+## C.3 Prototipos y patentes similares
 
 No se encontró un producto, una patente ni un prototipo que reúna los cinco elementos de Relevo: una intención formulada por la persona, un primer paso concreto, una condición digital comprensible, una señal sin texto emitida desde donde comienza la actividad y una decisión que queda abierta, sin bloqueo, premio, castigo ni evaluación. Cada pieza existe por separado, y también varias combinaciones parciales (Tabla C2). Por eso Relevo no se defiende por tener una app, un objeto conectado o una señal ambiental, sino por investigar si esa combinación ayuda a recuperar una intención mejor que una notificación en el teléfono.
 
 **Tabla C2**
 
-*Prototipos y productos con piezas parecidas*
+*Prototipos y productos similares*
 
-| Referente | Qué comparte con Relevo | Qué no comparte |
+| Referente | Coincidencias con Relevo | Diferencias |
 | --- | --- | --- |
 | FocuShift (AxLab, 2026) | Un objeto adherido al teléfono que cambia de forma durante una app que distrae; probado 48 horas, con entrevistas. | No trabaja con una intención propia, un lugar de inicio ni una señal ambiental. |
 | Focusaur (Focusaur, 2026) | App, teléfono, dispositivo y etiquetas NFC para espacios. | Mezcla foco, bloqueo, recompensas y hábitos; no deja una intención abierta y sin evaluación. |
@@ -219,7 +219,7 @@ No se encontró un producto, una patente ni un prototipo que reúna los cinco el
 
 Estas patentes impiden presentar como nuevo el concepto amplio de recordatorios, objetos y lugares. La revisión fue exploratoria: no permite concluir infracción, patentabilidad ni libertad de operación, que exigirían una búsqueda profesional.
 
-**La oportunidad.** El mercado responde de tres maneras: bloquear con una llave física, interrumpir dentro del teléfono o recordar mediante objetos, lugares o señales ambientales. Queda abierta una pregunta de diseño: si una intención de la persona puede quedar asociada al lugar donde empieza y volver con una señal breve mientras la sesión de ocio digital sigue, con la decisión en sus manos. Relevo no se presenta como inédito: la memoria evalúa si esa combinación aporta algo frente a una notificación en el teléfono.
+**Oportunidad.** El mercado responde de tres maneras: bloquear con una llave física, interrumpir dentro del teléfono o recordar mediante objetos, lugares o señales ambientales. Queda abierta una pregunta de diseño: si una intención de la persona puede quedar asociada al lugar donde empieza y volver con una señal breve mientras la sesión de ocio digital sigue, con la decisión en sus manos. Relevo no se presenta como inédito: la memoria evalúa si esa combinación aporta algo frente a una notificación en el teléfono.
 
 ## Referencias
 
@@ -294,6 +294,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos y los rótulos de las fichas son formales («Estrategia de búsqueda», «Descripción», «Funcionamiento», «Aporte a Relevo»).
+- **Cómo estaba antes:** decían «La búsqueda», «Qué es», «Cómo funciona» y «Qué aprende Relevo».
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-08 — Correcciones del autor
 

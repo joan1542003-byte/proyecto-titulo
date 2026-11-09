@@ -289,7 +289,7 @@ El análisis usó tres unidades: el caso, que es la entrevista completa; el epis
 
 *Niveles de confianza*
 
-| Nivel | Cuándo se asigna | Cómo se usa |
+| Nivel | Criterio de asignación | Uso en el análisis |
 | --- | --- | --- |
 | Alto | Contenido explícito y en contexto en la transcripción, o dato confirmado por el autor | En el análisis y la redacción |
 | Medio | Interpretación respaldada por más de un fragmento, que requiere síntesis | Como hallazgo, siempre con la persona y la pregunta que lo respaldan |
@@ -324,7 +324,7 @@ Se codificó con ocho reglas:
 
 *Libro de códigos*
 
-| Código | Qué marca | Evidencia |
+| Código | Definición | Evidencia |
 | --- | --- | --- |
 | **Contexto** | | |
 | Obligación pendiente | Una obligación, necesidad corporal o meta compite con la sesión. | Persona 2, preguntas 4 y 7: tenía sueño y siguió mirando el celular. |
@@ -363,27 +363,27 @@ Se codificó con ocho reglas:
 - **Recuerdo débil no es usuario principal.** La Persona 8 reconoce que su rutina en Instagram es difícil de describir, pero descansa cuando está al día y no expresa arrepentimiento.
 - **Recuerdo claro no elimina el conflicto.** La Persona 2 recuerda el episodio con detalle y, aun así, siguió en el teléfono después de reconocer que debía dormir.
 - **Uso digital no es continuidad inercial.** Leer manga, resolver un sudoku, hablar por videollamada o ver un pódcast son usos digitales dirigidos o relacionales.
-- **La productividad no es un criterio del proyecto.** Las personas 3 y 5 la usan para evaluar su ocio; las personas 7 y 8 defienden su autonomía. El análisis registra ambas posiciones.
+- **Productividad no es criterio del proyecto.** Las personas 3 y 5 la usan para evaluar su ocio; las personas 7 y 8 defienden su autonomía. El análisis registra ambas posiciones.
 
-## A.5 Cada caso
+## A.5 Análisis por caso
 
 Cada entrevista se leyó primero como un caso completo, antes de comparar entre personas. Un caso no es todavía un tipo: una misma persona puede aportar a más de un patrón.
 
 **Persona 1. Ocio digital dirigido, en contraste con el *feed*.** Leer manga en el teléfono fue tranquilo, reflexivo y satisfactorio, y lo contrapone a TikTok. Cuando lee, cocina o hace ejercicio separa el teléfono, porque si está cerca lo mira. El teléfono no es el problema: la dificultad aparece en episodios menos delimitados. Queda abierto qué quiso decir al resumir la tarde como dormir (pregunta 6). *Códigos:* uso dirigido, alternativa valorada, intención clara, recuerdo débil, cierre positivo, autonomía del ocio, teléfono cerca, separación física, aceptación con condiciones y señal breve. *Confianza:* media-alta.
 
-**Persona 2. La continuidad desplaza el sueño.** Abrió Instagram al acostarse, reconoció que debía dormir y siguió. Recuerda la sesión con detalle y la evalúa como más o menos: el conflicto no viene del olvido, sino de una necesidad reconocida que no cambia la conducta. Es la evidencia más clara de que Relevo no debe definirse solo por un recuerdo débil. *Códigos:* uso de continuidad, alternativa valorada, recuerdo claro, intención desplazada, obligación pendiente, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital y aceptación con condiciones. *Confianza:* alta.
+**Persona 2. Continuidad que desplaza el sueño.** Abrió Instagram al acostarse, reconoció que debía dormir y siguió. Recuerda la sesión con detalle y la evalúa como más o menos: el conflicto no viene del olvido, sino de una necesidad reconocida que no cambia la conducta. Es la evidencia más clara de que Relevo no debe definirse solo por un recuerdo débil. *Códigos:* uso de continuidad, alternativa valorada, recuerdo claro, intención desplazada, obligación pendiente, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital y aceptación con condiciones. *Confianza:* alta.
 
-**Persona 3. Pierde la noción del tiempo y reconoce otra cosa que hacer.** Vio videos humorísticos sin conciencia del tiempo, sintió que perdía parte del día y que tenía mejores cosas que hacer; aun así, la sesión le sirvió de pausa. Reúne continuidad, pérdida de la noción del tiempo, intención desplazada, recuerdo débil y una valoración negativa. Una intervención que califique ese rato solo como pérdida reforzaría la culpa que el proyecto quiere evitar. *Códigos:* uso de continuidad, alternativa valorada, intención desplazada, pérdida de la noción del tiempo, recuerdo débil, cierre ambivalente o negativo, obligación pendiente, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital, estrategia frágil, aceptación con condiciones y señal breve. *Confianza:* alta para el conflicto; media para atribuir el recuerdo débil a ese episodio.
+**Persona 3. Pérdida de la noción del tiempo y otra actividad reconocida.** Vio videos humorísticos sin conciencia del tiempo, sintió que perdía parte del día y que tenía mejores cosas que hacer; aun así, la sesión le sirvió de pausa. Reúne continuidad, pérdida de la noción del tiempo, intención desplazada, recuerdo débil y una valoración negativa. Una intervención que califique ese rato solo como pérdida reforzaría la culpa que el proyecto quiere evitar. *Códigos:* uso de continuidad, alternativa valorada, intención desplazada, pérdida de la noción del tiempo, recuerdo débil, cierre ambivalente o negativo, obligación pendiente, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital, estrategia frágil, aceptación con condiciones y señal breve. *Confianza:* alta para el conflicto; media para atribuir el recuerdo débil a ese episodio.
 
 **Persona 4. Concentración en el sudoku, continuidad en TikTok.** El sudoku en el teléfono fue tranquilo, la concentró y le sirvió de descanso; TikTok, en cambio, es una sucesión de videos que no le quedan en la mente. El mecanismo depende del episodio, no del aparato, y eso respalda una intervención selectiva. Que resuma el juego como no hacer nada muestra una jerarquía del ocio que el sistema no debe reforzar. *Códigos:* uso dirigido, uso de continuidad, intención clara, recuerdo débil, cierre positivo, ocio medido por su productividad, separación física, ajuste digital, aceptación con condiciones y señal breve. *Confianza:* alta.
 
 **Persona 5. Entretenimiento que termina en vacío.** Se entretuvo en TikTok y terminó aburrida; resumiría la tarde como nada. Para ordenar su pieza o peinar sus muñecas deja el teléfono en otro lugar, pero vuelve a mirarlo. Es un caso fuerte para un apoyo situado, siempre que el sistema no convierta su autocrítica en castigo. *Códigos:* uso de continuidad, alternativa valorada, recuerdo débil, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, estrategia frágil, aceptación con condiciones, señal breve y dificultad para separar el teléfono. *Confianza:* alta para la valoración ambivalente y la estrategia frágil; media para la intención desplazada, porque no nombra una meta concreta durante el episodio.
 
-**Persona 6. Ocio relacional y un criterio selectivo.** Pasó horas en videollamada con una amiga que vive fuera del país: lo recuerda con detalle, terminó con ganas de repetirlo y lo valoró como descanso. Una sesión larga en el teléfono puede ser deseada, memorable y valiosa; la duración no justifica intervenir. Reserva el objeto para cuando mira redes sin pensar, así que su propia distinción sostiene una tipología de episodios, no de personas. *Códigos:* uso relacional, uso de continuidad, intención clara, recuerdo claro, cierre positivo, alternativa valorada, sin necesidad de intervenir y aceptación con condiciones. *Confianza:* alta.
+**Persona 6. Ocio relacional y criterio selectivo.** Pasó horas en videollamada con una amiga que vive fuera del país: lo recuerda con detalle, terminó con ganas de repetirlo y lo valoró como descanso. Una sesión larga en el teléfono puede ser deseada, memorable y valiosa; la duración no justifica intervenir. Reserva el objeto para cuando mira redes sin pensar, así que su propia distinción sostiene una tipología de episodios, no de personas. *Códigos:* uso relacional, uso de continuidad, intención clara, recuerdo claro, cierre positivo, alternativa valorada, sin necesidad de intervenir y aceptación con condiciones. *Confianza:* alta.
 
 **Persona 7. Autonomía del ocio, sin lagunas.** Vio un pódcast de fútbol mientras comía, lo recuerda y lo considera descanso porque no tenía obligaciones. No experimenta lagunas al usar el teléfono y defiende que cada persona use su tiempo libre como quiera. Es el caso límite de no intervención, y fija condiciones éticas: probaría el objeto si fuera discreto, sin notas ni comparaciones entre días. *Códigos:* uso dirigido, intención clara, recuerdo claro, sin obligaciones pendientes, autonomía del ocio, cierre positivo, separación física, ajuste digital, sin necesidad de intervenir y aceptación con condiciones. *Confianza:* alta para el episodio; media para otros contextos apenas mencionados.
 
-**Persona 8. Una rutina difícil de narrar, sin malestar.** Revisó Instagram consumiendo lo primero que aparecía; le cuesta describirlo porque siempre es lo mismo, pero lo valora como descanso porque estaba al día. Separa el recuerdo débil del malestar: Relevo solo tendría sentido si la persona declara antes otra intención. *Códigos:* uso de continuidad, recuerdo débil, cierre positivo, sin obligaciones pendientes, autonomía del ocio, alternativa valorada, ajuste digital, aceptación con condiciones, señal breve y dificultad para separar el teléfono. *Confianza:* alta para la ausencia de malestar; media para la necesidad futura del objeto.
+**Persona 8. Rutina difícil de narrar, sin malestar.** Revisó Instagram consumiendo lo primero que aparecía; le cuesta describirlo porque siempre es lo mismo, pero lo valora como descanso porque estaba al día. Separa el recuerdo débil del malestar: Relevo solo tendría sentido si la persona declara antes otra intención. *Códigos:* uso de continuidad, recuerdo débil, cierre positivo, sin obligaciones pendientes, autonomía del ocio, alternativa valorada, ajuste digital, aceptación con condiciones, señal breve y dificultad para separar el teléfono. *Confianza:* alta para la ausencia de malestar; media para la necesidad futura del objeto.
 
 Los ocho casos dejan cuatro hallazgos:
 
@@ -397,13 +397,13 @@ Los ocho casos dejan cuatro hallazgos:
 La comparación entre casos definió dos tipos situacionales: patrones de experiencia que pueden aparecer en personas distintas y en momentos distintos de una misma persona. No son segmentos demográficos.
 
 1. **Usuario principal: continuidad digital con intención desplazada.**
-2. **Usuario límite: el ocio digital tiene sentido.** Marca cuándo la propuesta no debe intervenir y protege el alcance ético y funcional del proyecto.
+2. **Usuario límite: ocio digital con sentido.** Marca cuándo la propuesta no debe intervenir y protege el alcance ético y funcional del proyecto.
 
 Se compararon dos estructuras: dividir el público en dos variantes —por ejemplo, olvido y culpa frente a no lograr empezar— o definir un patrón que justifica apoyo y otro que delimita cuándo no intervenir. Se eligió la segunda (Tabla A4).
 
 **Tabla A4**
 
-*Las dos estructuras comparadas*
+*Comparación de las dos estructuras*
 
 | Criterio | Dos variantes del público | Usuario principal y usuario límite |
 | --- | --- | --- |
@@ -430,28 +430,28 @@ Una sesión de ocio digital empieza o continúa mientras una intención, necesid
 
 - **Evidencia central:** Persona 2, que reconoce su sueño y sigue; Persona 3, que pierde la noción del tiempo y tiene mejores cosas que hacer, y Persona 5, que pasa del entretenimiento al aburrimiento, con estrategias frágiles.
 - **Evidencia complementaria:** Persona 4 con TikTok; Persona 6 cuando mira redes sin pensar; Persona 8 cuando abre Instagram sin darse cuenta teniendo tareas, y Persona 1 cuando el teléfono queda cerca.
-- **Cuándo está presente:** convergen una sesión en continuidad, una intención o alternativa reconocible, la dificultad para convertirla en una transición y una consecuencia que importa a la persona, como un cierre ambivalente, malestar, tiempo perdido o una estrategia fallida. No basta con observar una app o una duración.
-- **Lo que necesita:** recuperar a tiempo una intención ya formulada, una transición breve entre reconocer y actuar, poder seguir sin sanción, depender menos de la fuerza de voluntad y una señal comprensible que no convierta el ocio en rendimiento.
-- **Lo que puede hacer Relevo:** apoyar una transición que la persona definió antes, haciendo perceptible su intención.
-- **Lo que el sistema no debe suponer:** que toda sesión larga es indeseada, que toda red social produce conflicto, que la persona quiere ser interrumpida cada vez, que una actividad no productiva no vale, que el recuerdo débil es un daño o que seguir es siempre un error.
+- **Condiciones de presencia:** convergen una sesión en continuidad, una intención o alternativa reconocible, la dificultad para convertirla en una transición y una consecuencia que importa a la persona, como un cierre ambivalente, malestar, tiempo perdido o una estrategia fallida. No basta con observar una app o una duración.
+- **Necesidades:** recuperar a tiempo una intención ya formulada, una transición breve entre reconocer y actuar, poder seguir sin sanción, depender menos de la fuerza de voluntad y una señal comprensible que no convierta el ocio en rendimiento.
+- **Aporte de Relevo:** apoyar una transición que la persona definió antes, haciendo perceptible su intención.
+- **Supuestos que el sistema debe evitar:** que toda sesión larga es indeseada, que toda red social produce conflicto, que la persona quiere ser interrumpida cada vez, que una actividad no productiva no vale, que el recuerdo débil es un daño o que seguir es siempre un error.
 
-### Usuario límite: el ocio digital tiene sentido
+### Usuario límite: ocio digital con sentido
 
 La actividad digital coincide con lo que la persona quiere o cumple una función aceptada: descanso, relación, concentración o entretenimiento. No hay otra necesidad reconocida, o la persona decide seguir de acuerdo con sus prioridades. El episodio puede ser largo, cotidiano, neutro o difícil de resumir: pesa más la ausencia de conflicto que una norma externa sobre cómo usar el tiempo.
 
 - **Evidencia central:** Persona 6, con la videollamada, y Persona 7, con el pódcast sin obligaciones pendientes.
 - **Evidencia complementaria:** Persona 1 con el manga, Persona 4 con el sudoku y Persona 8 con Instagram cuando está al día.
-- **Lo que necesita:** conservar la autonomía sobre su ocio, no ser juzgado por la duración, la app o la productividad, poder desactivar, ignorar o posponer cualquier señal y ninguna comparación de desempeño.
-- **Lo que le haría daño:** que se interrumpa una conversación, un juego o una lectura; una falsa alarma por tiempo o por app; convertir el descanso en una tarea medible, y la sensación de vigilancia.
-- **Lo que implica para Relevo:** el comportamiento correcto puede ser no actuar. Sin una intención declarada, o si la persona decide seguir, el sistema calla y no juzga.
+- **Necesidades:** conservar la autonomía sobre su ocio, no ser juzgado por la duración, la app o la productividad, poder desactivar, ignorar o posponer cualquier señal y ninguna comparación de desempeño.
+- **Riesgos:** que se interrumpa una conversación, un juego o una lectura; una falsa alarma por tiempo o por app; convertir el descanso en una tarea medible, y la sensación de vigilancia.
+- **Implicancia para Relevo:** el comportamiento correcto puede ser no actuar. Sin una intención declarada, o si la persona decide seguir, el sistema calla y no juzga.
 
 **Figura A1**
 
-*Cómo pasa una persona de un tipo a otro*
+*Tránsito entre los dos tipos de usuario*
 
 ```mermaid
 stateDiagram-v2
-    state "El ocio tiene sentido" as Sentido
+    state "Ocio con sentido" as Sentido
     state "Intención desplazada" as Desplazada
     state "Transición" as Transicion
     [*] --> Sentido: la actividad coincide con la intención
@@ -465,7 +465,7 @@ stateDiagram-v2
 
 **Tabla A5**
 
-*Los dos tipos, comparados*
+*Comparación de los dos tipos de usuario*
 
 | Dimensión | Usuario principal | Usuario límite |
 | --- | --- | --- |
@@ -474,7 +474,7 @@ stateDiagram-v2
 | Afecto | Entretenimiento y luego ambivalencia | Positivo o neutro |
 | Obligación | Hay una necesidad o alternativa activa | No hay, o ya se resolvió |
 | Estrategia | Frágil o dependiente del autocontrol | Puede no necesitar ninguna |
-| Qué hace Relevo | Devolver la intención y apoyar la transición | Callar, o quedar disponible si se pide |
+| Acción de Relevo | Devolver la intención y apoyar la transición | Callar, o quedar disponible si se pide |
 | Riesgo principal | No actuar cuando la persona pide apoyo | Interrumpir, juzgar o convertir el descanso en rendimiento |
 
 *Nota.* Elaboración propia.
@@ -486,6 +486,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos de las secciones, tablas y figuras, los rótulos de los casos y de los tipos de usuario y el estado de la Figura A1 son formales, sin artículo al comienzo («Análisis por caso», «Necesidades», «Ocio con sentido»).
+- **Cómo estaba antes:** había títulos como «Cada caso», «Lo que necesita» o «El ocio tiene sentido».
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-08 — Extranjerismos en cursiva
 

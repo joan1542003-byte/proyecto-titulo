@@ -221,6 +221,7 @@
 | 8 nov. | Encargo y corrección | Pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias, mejorar la portada copiando una referencia de la UDP y corregir los errores de formato. | El [Anexo G](../08_memoria/anexos/anexo-g-android.md) suma la parte G.6 y la Tabla G10, con las 34 actividades que la app reconoce desde la 4.3, sus palabras clave y lo que sugiere. La portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas. Se suman los índices de tablas y de figuras; las tablas reparten mejor el ancho; las figuras altas ya no dejan páginas casi vacías, y los extranjerismos van en cursiva. El Word y el PDF se regeneraron, con 106 páginas. | D-170 |
 | 9 nov. | Corrección | Pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar aún más de cómo se construye el logo y en qué se basa. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de cuatro círculos, de la versión con degradado y del color de la personalización. El logo se explica en siete pasos, con las medidas de sus archivos y una figura nueva, más su logotipo, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. El Word y el PDF se regeneraron. | D-171 |
 | 9 nov. | Decisión | Dejar como historia del proceso los documentos de trabajo de la marca —el [documento de marca del 25 de octubre](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las herramientas de exploración de color— con sus nombres de entonces, en vez de quitarles también la luz y el aura. | Se mantienen sin cambios; la corrección vale para los anexos y la memoria. | D-171 |
+| 9 nov. | Corrección | Señaló que los títulos de los anexos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debe ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sienten raras. | Los títulos de secciones, tablas, figuras y columnas de los nueve [anexos](../08_memoria/anexos/README.md) son frases nominales, sin artículo al comienzo; las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, y los textos que se aplicaron, como el consentimiento, se citan con su redacción original. El Word y el PDF se regeneraron. | D-172 |
 
 ## Lo que muestra el registro
 
@@ -231,6 +232,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** se registró el pedido de títulos y rótulos formales en los anexos.
+- **Cómo estaba antes:** el último registro era la decisión sobre los documentos de trabajo de la marca.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-09 — Los documentos de trabajo de la marca
 

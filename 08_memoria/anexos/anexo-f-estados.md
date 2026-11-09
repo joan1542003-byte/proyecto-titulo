@@ -2,7 +2,7 @@
 
 Muestra cómo se diseñó el recorrido completo de Relevo: primero, los 35 estados del ciclo que se definieron en agosto de 2026, con sus *wireframes*; después, los *wireframes* de las 39 pantallas de la app de octubre, ordenados por recorrido.
 
-## F.1 Los 35 estados del ciclo
+## F.1 Estados del ciclo
 
 En agosto de 2026, antes del Tag, el objeto se pensó con un control propio. Para comprobar que el ciclo podía representarse de principio a fin, con sus validaciones, decisiones voluntarias, fallos técnicos y estados límite, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app configura, informa el estado y ayuda a recuperarse de un fallo. En estos *wireframes*, «armar» es activar un relevo, y el «pulso» es la señal.
 
@@ -17,9 +17,9 @@ Seis reglas delimitan el ciclo:
 
 **Tabla F1**
 
-*Los 35 estados del ciclo*
+*Estados del ciclo*
 
-| Estado | Cuándo ocurre | Qué se puede hacer |
+| Estado | Momento en que ocurre | Acciones posibles |
 | --- | --- | --- |
 | **Configuración** | | |
 | Sin configurar | No hay un ciclo activo. | Crear una intención. |
@@ -70,7 +70,7 @@ La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y co
 
 **Figura F1**
 
-*Los catorce *wireframes* del recorrido*
+*Recorrido del ciclo en *wireframes*, agosto de 2026*
 
 | Configuración 1 | Configuración 2 |
 | --- | --- |
@@ -108,19 +108,19 @@ Las 39 pantallas de la versión 2.32, en muy baja fidelidad y con sus textos rea
 
 **Figura F2**
 
-*La primera vez*
+*Primer uso*
 
 ![La primera vez](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/1-primera-vez.png)
 
 **Figura F3**
 
-*Preparar un relevo*
+*Preparación de un relevo*
 
 ![Preparar un relevo](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/2-preparar-un-relevo.png)
 
 **Figura F4**
 
-*Contar, sonar y decidir*
+*Conteo, señal y decisión*
 
 ![Contar, sonar y decidir](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/3-contar-sonar-y-decidir.png)
 
@@ -139,6 +139,12 @@ Las 39 pantallas de la versión 2.32, en muy baja fidelidad y con sus textos rea
 *Nota.* Elaboración propia, a partir de la versión 2.32 de la app en el emulador.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos de la sección F.1, de la Tabla F1, de sus columnas y de las figuras son formales («Primer uso», «Conteo, señal y decisión»).
+- **Cómo estaba antes:** decían «Los 35 estados del ciclo», «La primera vez» o «Contar, sonar y decidir».
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-08 — Extranjerismos en cursiva
 

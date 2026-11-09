@@ -2083,7 +2083,26 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Fuera de alcance:** los documentos de trabajo de la marca en `10_recursos_visuales` conservan sus nombres de entonces: el autor decidió dejarlos como historia del proceso. La app 4.6.3 ya no muestra «aura» en sus textos.
 - **Documentos:** [Anexo H](../08_memoria/anexos/anexo-h-identidad.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md).
 
+## D-172 — Títulos y rótulos formales en los anexos
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** al revisar los anexos, el autor señaló que los títulos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debía ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sentían raras, como «Tu tiempo» o «Lo que decides».
+- **Decisión:**
+  - **Títulos:** las secciones, tablas, figuras, columnas y rótulos de párrafo de los nueve anexos se titulan con frases nominales, sin artículo al comienzo ni preguntas: «Logo», «Tipografía», «Iconografía», «Paleta cromática», «Análisis por caso», «Descripción», «Funcionamiento» o «Aporte a Relevo».
+  - **Sin segunda persona:** las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, como en la memoria; la familia de degradados «Moverte» se nombra «Moverse»; el ícono «Ordenar tu pieza», «Ordenar la pieza», y la función «Tus actividades», «Actividades propias».
+  - **Textos citados:** las preguntas de las entrevistas, el consentimiento, las preguntas de la app y el instrumento de cierre conservan su redacción, porque son los textos que se aplicaron. El consentimiento completo va como cita en bloque, y la Tabla G10 aclara que las sugerencias se transcriben como las muestra la app.
+  - **De paso:** los estados de la Figura G3 se nombran en español, y el servidor local de la Figura G2 ya no se nombra por su archivo.
+- **Fuera de alcance:** los títulos de la memoria v6, trece de los cuales empiezan con artículo o pregunta, quedan como están hasta que el autor lo decida.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-172
+
+- **Qué cambió:** se registró D-172.
+- **Cómo estaba antes:** la última decisión era D-171.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-09 — D-171, documentos de trabajo
 

@@ -8,7 +8,7 @@ Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —est
 
 *Criterios, evidencia, aplicación y prueba*
 
-| Criterio | Evidencia | Cómo lo aplica Relevo | Qué mostró la prueba |
+| Criterio | Evidencia | Aplicación en Relevo | Resultado de la prueba |
 | --- | --- | --- | --- |
 | **1. La persona elige qué quiere hacer** | Lukoff et al. (2018); Meier y Reinecke (2021). En las entrevistas, las personas 2 y 3 reconocieron otra cosa que querían hacer y siguieron en el teléfono, mientras las personas 6, 7 y 8 vivieron su sesión como el descanso que buscaban. | La persona elige o escribe su actividad; la app no la deduce del uso. | Cada persona eligió las suyas: estudiar, ordenar su pieza, dibujar y tocar guitarra. |
 | **2. Cada actividad empieza con un paso concreto** | Gollwitzer y Sheeran (2006). La Persona 2 asoció una tarde bien aprovechada con tener sus materiales a mano (pregunta 10), y en la encuesta 42 de 43 personas nombraron un primer paso. | Dos preguntas al preparar: «¿Cómo empiezas?» y «¿Dónde empiezas?». | En las 21 respuestas, la persona recordó cómo empezar. |
@@ -21,15 +21,15 @@ Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —est
 
 *Nota.* Elaboración propia. Criterios y evidencia, capítulo 9 de la memoria; aplicación, capítulo 11; resultados de la prueba, capítulo 13.
 
-## D.2 Lo que la app ya cambió
+## D.2 Cambios en la app
 
 La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron una lista de cambios (Tabla 4 de la memoria). Los técnicos se corrigieron durante la prueba, y la versión 4.4 de la app, del 5 de noviembre, incorpora siete de los que la tabla dejaba por implementar o como propuesta.
 
 **Tabla D2**
 
-*Del hallazgo al cambio en la app*
+*Hallazgos de la prueba y cambios en la app*
 
-| Hallazgo de la prueba | Criterio | Cómo lo resuelve la app |
+| Hallazgo de la prueba | Criterio | Solución en la app |
 | --- | --- | --- |
 | Fuera de casa, el Tag no sonó. | 8 | Busca el Tag un minuto y medio antes del final; si no responde, lo avisa y suena en el teléfono. |
 | Sin el objeto, no hay cómo empezar. | 8 | «¿No tienes un Tag?» ofrece dónde conseguirlo y, mientras tanto, la notificación del teléfono. |
@@ -62,6 +62,12 @@ Silverman, J. y Barasch, A. (2023). On or off track: How (broken) streaks affect
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, Artículo 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos de la sección D.2, de la Tabla D2 y de las columnas son formales.
+- **Cómo estaba antes:** decían «Lo que la app ya cambió» o «Cómo lo aplica Relevo».
+- **Por qué:** el autor pidió títulos formales: sin artículo al comienzo ni segunda persona (D-172).
 
 ### 2026-11-08 — Correcciones del autor
 
