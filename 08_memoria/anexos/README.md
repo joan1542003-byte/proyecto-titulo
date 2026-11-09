@@ -5,7 +5,7 @@
 
 Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
-- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada copia la de ejemplo de la Biblioteca UDP, con el logo de la Universidad y cada bloque a la misma altura: el título y el autor en mayúsculas, el título al que se opta, los profesores guía y la modalidad, la facultad y la escuela, y la ciudad y la fecha. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
+- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
@@ -54,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Portada ordenada
+
+- **Qué cambió:** la portada agrupa sus datos en tres bloques, deja el título en negrita como único énfasis, achica el logo a 70 mm, parte las líneas largas en dos y pone la ciudad y el año al pie, en Arial 11; la tesis de Smits se cita por su copia archivada.
+- **Cómo estaba antes:** la portada copiaba las alturas de la de ejemplo de la Biblioteca, con seis bloques del mismo peso, y decía «Diciembre de 2026».
+- **Por qué:** el autor pidió ordenarla mejor y controlar los pesos visuales (D-174).
 
 ### 2026-11-09 — Referencias en APA 7
 

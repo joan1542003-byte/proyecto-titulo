@@ -4,7 +4,7 @@
 
 Norman, D. A. (2002). *The design of everyday things*. Basic Books.
 
-**Dato por confirmar:** el PDF incluye un prefacio identificado como correspondiente a la edición de 2002, pero la copia revisada no permite confirmar de manera completa la editorial, el ISBN ni la edición bibliográfica exacta desde su página legal. La referencia anterior es provisional.
+**Edición:** el PDF no trae página legal, pero incluye el «Preface to the 2002 Edition», que solo tiene la edición de Basic Books de 2002 (ISBN 0-465-06710-7, según el catálogo de Internet Archive). La referencia quedó confirmada el 9 de noviembre de 2026, y la memoria la cita como Norman (1988/2002).
 
 ## Estructura de la obra
 
@@ -62,6 +62,12 @@ La lectura sustenta una auditoría de comprensión. No convierte los componentes
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Edición confirmada
+
+- **Qué cambió:** la referencia de Norman queda confirmada como la edición de Basic Books de 2002.
+- **Cómo estaba antes:** era provisional, porque la copia no trae página legal.
+- **Por qué:** revisión de las referencias pedida por el autor (D-173).
 
 ### 2026-08-29 — Creación del resumen
 

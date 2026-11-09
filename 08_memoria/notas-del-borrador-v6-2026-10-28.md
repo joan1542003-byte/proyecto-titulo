@@ -150,7 +150,7 @@ El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la
 
 ## Decimotercera ronda: referencias en APA 7 (D-173)
 
-El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual; Laws of UX suma la fecha de consulta, y Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile. El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
+El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual; Laws of UX suma la fecha de consulta, y Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile. Norman se cita por la edición que se leyó, la de Basic Books de 2002 (1988/2002). El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
 
 ## Extensión
 
@@ -179,11 +179,16 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
-- **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. Falta confirmar la edición de Norman que se usó: la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002.
-- **Un enlace (D-173):** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió.
+- **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. La edición de Norman que se usó es la de Basic Books de 2002: se confirmó el 9 de noviembre con la copia leída, y la cita pasó a 1988/2002.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Norman
+
+- **Qué cambió:** la decimotercera ronda suma la edición de Norman, se cierra el pendiente de las fuentes y se quita el del enlace de Smits, ya resuelto en el Anexo C.
+- **Cómo estaba antes:** la cita decía Norman (1988/1990) y quedaba pendiente el enlace de Smits.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-173).
 
 ### 2026-11-09 — Screenless
 

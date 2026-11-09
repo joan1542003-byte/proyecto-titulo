@@ -225,6 +225,8 @@
 | 9 nov. | Decisión | Aplicar también a la memoria v6 los títulos y rótulos formales de los anexos. | La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) cambia 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras, 11 rótulos de párrafo y sus esquemas; la paleta cromática nombra sus partes como el logo. Los cambios están en las [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md). | D-172 |
 | 9 nov. | Pedido | Revisar todas las citas y fuentes en APA 7 y comprobar que se puede acceder a cada una; con autorización para lo que haga falta y, si algo bloquea, intentarlo o pedírselo al autor. | La [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md) revisó 107 obras de la memoria v6 y los anexos: todas existen y sus citas coinciden. Se corrigieron el orden de las obras sin fecha, las letras de año, las patentes, FocuShift, Raya, la norma ISO, iniciales, fechas y direcciones, y se regeneraron el Word y el PDF de los anexos. Las verificaciones anti-bot no se forzaron; quedan dos enlaces y la edición de Norman para el autor. | D-173 |
 | 9 nov. | Decisión | Reescribir la ficha de Screenless con lo que muestra hoy la portada de su sitio. | La ficha del [Anexo C](../08_memoria/anexos/anexo-c-referentes.md) describe el bloqueo por horarios, el desbloqueo al acercar el teléfono, el modo para padres, el precio de 45 euros y la versión para Android anunciada; la referencia de la memoria y del anexo cita la portada. Se regeneraron el Word y el PDF de los anexos. | D-173 |
+| 9 nov. | Pedido | Avisó que el registro de la tesis de Smits tampoco le carga y pidió que la IA revise la página legal y los datos de Norman. | La tesis de Smits se cita por su copia en Internet Archive, que confirma sus datos. La copia de Norman que se leyó, la misma de agosto, es la edición de Basic Books de 2002: trae su prefacio, aunque no la página legal, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002). | D-173 |
+| 9 nov. | Pedido | Mejorar la portada de los anexos: ordenarla mejor y controlar los pesos visuales. | La [portada](../08_memoria/anexos/anexos-relevo.pdf) agrupa los datos en tres bloques —título, autoría e institución con la ciudad y el año al pie—, deja el título en negrita como único énfasis, achica el logo, parte las líneas largas en dos de largo parecido y pone la ciudad y el año en Arial 11, con el año solo, como pide la pauta. | D-174 |
 
 ## Lo que muestra el registro
 
@@ -235,6 +237,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Smits, Norman y portada
+
+- **Qué cambió:** se registraron el pedido sobre Smits y Norman y el de la portada de los anexos.
+- **Cómo estaba antes:** el último registro era la ficha de Screenless.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
 
 ### 2026-11-09 — Ficha de Screenless
 

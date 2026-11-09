@@ -2099,7 +2099,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-173 — Citas y referencias verificadas en APA 7
 
 - **Fecha:** 2026-11-09.
-- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`; quedan un enlace y la edición de Norman para el autor.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`; no queda nada pendiente.
 - **Contexto:** en las últimas semanas antes de la entrega, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se puede abrir; autorizó lo que hiciera falta y pidió que, si algo bloqueaba el acceso, se intentara o se le pidiera a él.
 - **Decisión:**
   - **Alcance:** 107 obras —83 de la memoria v6 y 24 solo de los anexos— se cruzaron con sus citas, se compararon con Crossref, DataCite, el ISBN, Google Patents o la página de ISO, y se abrieron; el detalle por referencia está en la [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md).
@@ -2109,10 +2109,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Datos corregidos:** iniciales de Waggoner et al. (2026) y Jonauskaite et al. (2020), el capítulo de Raya en INTERACT 2021, el tipo y la dirección de la norma ISO 3864-1, la fecha de Ottosson (2020), la dirección de Springer Nature, la fecha de consulta de Laws of UX, el título y los patrocinadores de la campaña de Focusaur y el tipo de tesis de Smits (2022).
   - **Acceso:** las verificaciones anti-bot y los CAPTCHA no se forzaron. Las 27 páginas de editoriales que bloquean herramientas automáticas abren en un navegador normal y sus datos se verificaron por el DOI; 23 obras tienen una copia abierta que abre.
 - **Screenless:** la página del producto hoy responde 404 desde Chile y no tiene copia archivada; el autor pidió reescribir la ficha del Anexo C con lo que muestra la portada del sitio, que también pasa a ser la referencia en la memoria.
-- **Pendiente del autor:** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió, y confirmar la edición de Norman con que se comprobaron las páginas 73 y 103.
+- **Smits:** el repositorio de TU Delft tampoco cargó para el autor; la tesis se cita por su copia en Internet Archive, que confirma título, autor, grado y fecha, y suma su subtítulo.
+- **Norman:** a pedido del autor, la IA revisó la copia leída, la misma de agosto. No trae página legal, pero sí el prefacio de la edición de Basic Books de 2002, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002).
 - **Documentos:** [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md), [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
 
+## D-174 — Portada de los anexos ordenada
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el autor pidió mejorar la portada de los anexos, ordenarla mejor y controlar los pesos visuales. La portada copiaba la de ejemplo de la Biblioteca: seis bloques del mismo peso, repartidos a distancias distintas, con un logo grande y un título que no se distinguía.
+- **Decisión:**
+  - **Tres grupos:** arriba, el logo y el título con su subtítulo y «Anexos»; al centro, el autor, la nota «Memoria para optar…» y los profesores guía con la modalidad; al pie, la Facultad y la Escuela con la ciudad y el año. Dentro de cada grupo, los bloques se separan por línea y media.
+  - **Pesos:** el título, en negrita y con un leve espaciado entre letras, es el único énfasis; el logo baja de 79,8 a 70 mm, para que no compita con él.
+  - **Líneas:** el subtítulo y la nota se parten en dos líneas de largo parecido, sin cortar una frase.
+  - **Pauta:** se mantienen el logo arriba, las mayúsculas, el Arial 12 y el centrado; la ciudad y el año van al final de la página, en Arial 11, con el año solo, como pide la pauta, en vez de «Diciembre de 2026».
+- **Documentos:** [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [word.js](../08_memoria/anexos/word.js).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-174
+
+- **Qué cambió:** se registró D-174 y D-173 cierra sus dos pendientes: Smits y Norman.
+- **Cómo estaba antes:** la última decisión era D-173, con el enlace de Smits y la edición de Norman pendientes.
+- **Por qué:** pedidos del autor del 9 de noviembre de 2026.
 
 ### 2026-11-09 — D-173, Screenless
 

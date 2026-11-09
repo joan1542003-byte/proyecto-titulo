@@ -209,6 +209,7 @@ class Documento {
     if (t.b || base.b) props.push('<w:b/><w:bCs/>');
     if (t.i || base.i) props.push('<w:i/><w:iCs/>');
     if (base.color) props.push(`<w:color w:val="${base.color}"/>`);
+    if (base.espaciado) props.push(`<w:spacing w:val="${base.espaciado}"/>`);
     if (base.sz) props.push(`<w:sz w:val="${base.sz}"/><w:szCs w:val="${base.sz}"/>`);
     return `<w:r>${props.length ? `<w:rPr>${props.join('')}</w:rPr>` : ''}<w:t xml:space="preserve">${x(t.t)}</w:t></w:r>`;
   }
@@ -554,28 +555,52 @@ const pieVacio = () => XML + `<w:ftr ${NS}><w:p><w:pPr><w:pStyle w:val="PiePagin
 function construirWord(o) {
   const d = new Documento({ raiz: o.raiz, laminas: o.laminas });
 
-  // Portada copiada de la de ejemplo de la Biblioteca UDP (biblioteca-portada-ejemplo.pdf): el logo de la Universidad
-  // arriba; el título en mayúsculas con su subtítulo; el autor en mayúsculas; el título al que se opta; el profesor
-  // guía; FACULTAD y ESCUELA en mayúsculas, y la ciudad y la fecha. Todo en Arial 12, interlineado sencillo, centrado
-  // en la página. Cada bloque queda a la altura que tiene en la portada de ejemplo, medida en puntos; la modalidad,
-  // que pide el instructivo de la Escuela, va bajo los profesores guía, y «Anexos», bajo el subtítulo.
+  // Portada según la pauta de la Biblioteca UDP: el logo centrado arriba; el título en mayúsculas y su subtítulo; el
+  // autor en mayúsculas; la nota «Memoria para optar…»; los profesores guía; FACULTAD y ESCUELA en mayúsculas, y la
+  // ciudad y el año al final de la página, en Arial 11. El resto, en Arial 12, centrado en la hoja.
+  // Jerarquía: el título en negrita es el único énfasis; el logo, más chico que en la portada de ejemplo, no compite con
+  // él; las líneas largas se parten en dos de largo parecido, y los bloques forman tres grupos —identidad, autoría e
+  // institución— con espacios regulares. El interlineado es fijo para que cada bloque caiga donde se calculó: las
+  // posiciones se miden en veinteavos de punto desde el margen superior. La modalidad, que pide el instructivo de la
+  // Escuela, va con los profesores guía, y «Anexos» cierra el grupo del título.
   const p = o.portada;
   const mayus = (s) => s.toLocaleUpperCase('es-CL');
   const centrada = '<w:ind w:left="-283" w:right="283"/>'; // los márgenes son 3,5 y 2,5 cm: así queda al centro de la hoja
-  const linea = (texto, antes = 0) => d.parrafo(texto, 'Portada', `${antes ? `<w:spacing w:before="${antes}"/>` : ''}${centrada}`);
+  const L12 = 276; // 13,8 pt, el interlineado sencillo de Arial 12
+  const L11 = 253; // 12,65 pt, el de Arial 11
+  // Parte una línea en dos: después de la frase indicada o, si no está, donde los dos tramos quedan más parejos.
+  const partir = (texto, despues) => {
+    const k = despues ? texto.indexOf(despues) : -1;
+    if (k >= 0) return [texto.slice(0, k + despues.length).trim(), texto.slice(k + despues.length).trim()];
+    const espacios = [...texto.matchAll(/ /g)].map((m) => m.index);
+    const medio = espacios.reduce((a, b) => (Math.abs(b - texto.length / 2) < Math.abs(a - texto.length / 2) ? b : a), espacios[0]);
+    return [texto.slice(0, medio), texto.slice(medio + 1)];
+  };
+  // Un bloque: una o más líneas en un párrafo, con su espacio antes y su interlineado fijo.
+  const bloque = (lineas, antes, { b = false, sz = null, espaciado = 0, alto = L12 } = {}) =>
+    `<w:p><w:pPr><w:pStyle w:val="Portada"/><w:spacing w:before="${antes}" w:after="0" w:line="${alto}" w:lineRule="exact"/>${centrada}</w:pPr>` +
+    lineas.map((l) => d.runs(l, { b, sz, espaciado })).join('<w:r><w:br/></w:r>') + '</w:p>';
+  const anchoLogo = Math.round(p.logo.anchoMm * 56.6929);
+  const altoLogo = Math.round(anchoLogo * d.imagen(p.logo.archivo).alto / d.imagen(p.logo.archivo).ancho);
+  const finLogo = altoLogo + 60; // la línea del logo suma el descendente de la letra
+  // Tres grupos: arriba, el logo y el título; al centro, la autoría; al pie, la Facultad, la Escuela, la ciudad y el
+  // año. Dentro de un grupo, los bloques se separan por línea y media (G); el pie termina en el margen inferior.
+  const G = 414;
+  const Y = { titulo: 2100, autor: 5300, ciudad: 12378 }; // inicio de cada grupo; el área de texto mide 13 004
+  const facultad = Y.ciudad - G - L12 * 2;
+  const finTitulo = Y.titulo + L12 * 3 + L12 * 2; // título, subtítulo en dos líneas, una línea libre y «Anexos»
+  const finAutoria = Y.autor + L12 + (G + L12 * 2) * 2; // autor; la nota y los profesores, de dos líneas cada uno
+  const anio = (p.fecha.match(/\d{4}/) || [''])[0];
   const portada = [
-    `<w:p><w:pPr><w:pStyle w:val="Portada"/>${centrada}</w:pPr>${d.dibujo(p.logo.archivo, Math.round(p.logo.anchoMm * 56.6929), null, p.logo.descripcion)}</w:p>`,
-    linea(mayus(p.titulo), 2218),
-    linea(p.subtitulo),
-    linea(p.documento),
-    linea(mayus(p.autor), 1652),
-    linea(p.grado, 1144),
-    linea(p.profesores, 1104),
-    linea(p.modalidad),
-    linea(mayus(p.facultad), 1338),
-    linea(mayus(p.escuela)),
-    linea(p.ciudad, 878),
-    ...(p.fecha ? [linea(mayus(p.fecha[0]) + p.fecha.slice(1))] : []),
+    `<w:p><w:pPr><w:pStyle w:val="Portada"/>${centrada}</w:pPr>${d.dibujo(p.logo.archivo, anchoLogo, null, p.logo.descripcion)}</w:p>`,
+    bloque([mayus(p.titulo)], Y.titulo - finLogo, { b: true, espaciado: 20 }),
+    bloque(partir(p.subtitulo, p.cortes?.subtitulo), 0),
+    bloque([p.documento], L12),
+    bloque([mayus(p.autor)], Y.autor - finTitulo),
+    bloque(partir(p.grado, p.cortes?.grado), G),
+    bloque([p.profesores, p.modalidad], G),
+    bloque([mayus(p.facultad), mayus(p.escuela)], facultad - finAutoria),
+    bloque([p.ciudad, anio], G, { sz: 22, alto: L11 }),
   ].join('');
 
   // Anexos

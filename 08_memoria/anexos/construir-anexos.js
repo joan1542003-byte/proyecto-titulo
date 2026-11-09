@@ -418,7 +418,12 @@ function principal() {
   const opciones = {
     salida: SALIDA_WORD, raiz: AQUI, laminas, anexos: arts,
     titulo: `${m.titulo}: anexos de la memoria`, autor: m.autor,
-    portada: { ...m, documento: 'Anexos', logo: { archivo: path.join(RAIZ, LOGO_UDP), anchoMm: 79.8, descripcion: 'Universidad Diego Portales' } },
+    portada: {
+      ...m, documento: 'Anexos',
+      // Dónde se parten en dos las líneas largas, para que cada corte respete la frase.
+      cortes: { subtitulo: 'para recuperar', grado: 'profesional de' },
+      logo: { archivo: path.join(RAIZ, LOGO_UDP), anchoMm: 70, descripcion: 'Universidad Diego Portales' },
+    },
   };
   let word = construirWord(opciones);
 

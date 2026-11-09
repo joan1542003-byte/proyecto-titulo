@@ -15,7 +15,7 @@ Revisión del 9 de noviembre de 2026, a pedido del autor: todas las citas y refe
 - **Citas:** todas las citas tienen su referencia y todas las referencias se citan; las citas con varias obras están en orden alfabético.
 - **53 DOI:** todos llevan a su obra, y sus datos coinciden con el registro después de las correcciones. 23 tienen una copia de texto abierto que abre. En 27, la editorial —ACM, SAGE, Wiley, Oxford, Springer, PNAS, Annual Reviews, Emerald, MDPI o IEEE— bloquea las herramientas automáticas con una verificación anti-bot, pero la página abre con normalidad en un navegador; varios de esos textos completos son de pago. Las otras 3 abren directamente en la editorial.
 - **Páginas, informes, leyes, patentes y norma:** abren, y las cifras y datos que se comprobaron coinciden con lo que se les atribuye (Subtel, UNAM, Microsoft, Laws of UX, Pause Point y las guías de Apple y Google).
-- **Un enlace no se pudo abrir** (abajo, «Pendiente del autor»).
+- **Todos los enlaces abren.** La tesis de Smits se cita por su copia en Internet Archive, porque el repositorio de TU Delft no responde.
 
 ## Correcciones
 
@@ -29,17 +29,18 @@ Revisión del 9 de noviembre de 2026, a pedido del autor: todas las citas y refe
 - Springer Nature usa su dirección actual, porque la antigua redirige; también en el Anexo E.
 - Laws of UX suma la fecha de consulta, como las demás páginas sin fecha.
 - Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile; también en el Anexo C.
+- Norman se cita por la edición que se leyó: Basic Books, 2002, como Norman (1988/2002).
 
 **Anexos**
 
-- **C:** FocuShift se cita por su artículo en TEI 2026 —Dong et al. (2026), con DOI—, porque el dominio de la página de AxLab ya no existe; el resumen del artículo confirma lo que dice el anexo. Las patentes llevan como autores a sus inventores, el tipo de documento y la oficina que las publica: Herman y Akmal (2023), de Apple, y Driver y Nasgowitz (2026), de Brick; las de Newman y Rosenberg suman la oficina. Raya se cita como capítulo de las actas de INTERACT 2021, con editores, volumen y páginas. Apple (s. f.) pierde la letra, porque es la única obra de Apple en ese anexo. La página de Focusaur sin fecha va antes que la campaña de 2026, cuyo título usa «&», como la página. La campaña dice «unos 1400 patrocinadores»: tenía 1398 al 9 de noviembre y el anexo decía 1395. Smits (2022) dice «Tesis de maestría» y nombra su repositorio. A pedido del autor, la ficha de Screenless Breaker se reescribió con lo que muestra hoy la portada.
+- **C:** FocuShift se cita por su artículo en TEI 2026 —Dong et al. (2026), con DOI—, porque el dominio de la página de AxLab ya no existe; el resumen del artículo confirma lo que dice el anexo. Las patentes llevan como autores a sus inventores, el tipo de documento y la oficina que las publica: Herman y Akmal (2023), de Apple, y Driver y Nasgowitz (2026), de Brick; las de Newman y Rosenberg suman la oficina. Raya se cita como capítulo de las actas de INTERACT 2021, con editores, volumen y páginas. Apple (s. f.) pierde la letra, porque es la única obra de Apple en ese anexo. La página de Focusaur sin fecha va antes que la campaña de 2026, cuyo título usa «&», como la página. La campaña dice «unos 1400 patrocinadores»: tenía 1398 al 9 de noviembre y el anexo decía 1395. Smits (2022) dice «Tesis de maestría» y nombra su repositorio. A pedido del autor, la ficha de Screenless Breaker se reescribió con lo que muestra hoy la portada, y la tesis de Smits suma su subtítulo y se cita por su copia en Internet Archive.
 - **D:** Google (2026), sin letra, porque es la única obra de Google de 2026 en ese anexo.
 - **H:** Jonauskaite et al. (2020) escribe «Antonietti, J.-P.»; la norma ISO suma tipo y dirección, y Ottosson suma su fecha (23 de diciembre de 2020).
 
-## Pendiente del autor
+## Resueltos con el autor
 
-1. **Smits (2022), Anexo C:** el repositorio de TU Delft no respondió desde aquí. Abrir [el registro](https://repository.tudelft.nl/record/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22) y confirmar que carga.
-2. **Norman (1988/1990):** la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002. Conviene mirar la página legal de la copia con que se comprobaron las páginas 73 y 103: si es la de 2002, la referencia pasa a Norman (1988/2002).
+1. **Smits (2022), Anexo C:** el repositorio de TU Delft tampoco cargó para el autor. Internet Archive guarda el registro (24 de noviembre de 2024), que confirma el título completo, el autor, el máster en Design for Interaction de TU Delft y la fecha (21 de diciembre de 2022). La referencia cita esa copia y suma el subtítulo.
+2. **Norman:** la copia leída es la misma de agosto: su huella SHA-256 coincide con la registrada. No trae página legal, pero sí el «Preface to the 2002 Edition», que solo tiene la edición de Basic Books de 2002. En esa edición, la página 73 dice que un recordatorio tiene dos aspectos, la señal y el mensaje, y la 103, que el sonido se detecta aunque la atención esté en otra parte y por eso es intrusivo. La referencia pasa a Norman (1988/2002), Basic Books.
 
 Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 
@@ -116,7 +117,7 @@ Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 | Montag et al. (2019) | Memoria | DOI verificado (Crossref) | Texto abierto: [copia](http://dx.doi.org/10.3390/ijerph16142612) |  |
 | Newman y Newman (2022) | C | Patente verificada | Abierta | Inventores y fecha de concesión (3 de mayo de 2022) verificados en Google Patents. |
 | Nielsen (1993) | Memoria | Libro verificado | Libro impreso | Datos verificados en Open Library: Academic Press, 1993. |
-| Norman (1990) | Memoria | Libro verificado | Libro impreso | Edición Doubleday/Currency de 1990 verificada en el catálogo de Internet Archive. Las páginas 73 y 103 se comprobaron el 20 de octubre contra la copia del autor (D-141). Hoy no se pudieron volver a abrir: Internet Archive restringió el ejemplar y Google Books pidió resolver un CAPTCHA. |
+| Norman (2002) | Memoria | Libro verificado | Libro impreso | La copia leída es la misma de agosto (SHA-256 coincidente). Trae el «Preface to the 2002 Edition», propio de la edición de Basic Books de 2002, y no la página legal. Las páginas 73 y 103 dicen lo que cita la memoria. |
 | O’Rear y Radvansky (2019) | Memoria, D | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas; texto completo con suscripción |  |
 | one sec (s. f.) | Memoria, C | Página verificada | Abierta |  |
 | OpenAI (s. f.) | Memoria | Página verificada | Abierta |  |
@@ -137,7 +138,7 @@ Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 | Silverman y Barasch (2023) | Memoria, D | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas |  |
 | Slack (2019) | H | Página verificada | Abierta |  |
 | Smit et al. (2019) | Memoria | DOI verificado (Crossref) | Texto abierto: [copia](https://www.ncbi.nlm.nih.gov/pmc/articles/6914245) |  |
-| Smits (2022) | C | Tesis | No se pudo abrir | El repositorio de TU Delft no respondió desde esta red ni en el navegador integrado. **Pendiente del autor:** abrir el enlace. |
+| Smits (2022) | C | Tesis verificada | Copia archivada | El repositorio de TU Delft no responde, tampoco para el autor. La copia de Internet Archive del 24 de noviembre de 2024 confirma título, autor, máster en Design for Interaction y fecha (21 de diciembre de 2022). |
 | Sohn et al. (2005) | Memoria, C | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas; texto completo con suscripción |  |
 | Springer Nature (s. f.) | Memoria, E | Guía verificada | Abierta | La dirección antigua redirige a la nueva; el título coincide. |
 | Stapley et al. (2022) | Memoria, A | DOI verificado (Crossref) | Texto abierto: [copia](https://openaccess.city.ac.uk/id/eprint/28086/10/16094069221100633.pdf) |  |
@@ -158,6 +159,12 @@ Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 | Zimmerman et al. (2007) | Memoria | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas |  |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Norman y Smits
+
+- **Qué cambió:** se resolvieron los dos pendientes: Norman se cita por la edición leída y Smits por su copia archivada.
+- **Cómo estaba antes:** quedaban para el autor el enlace de Smits y la edición de Norman.
+- **Por qué:** el autor avisó que el enlace tampoco le carga y pidió revisar la página legal uno mismo.
 
 ### 2026-11-09 — Screenless
 
