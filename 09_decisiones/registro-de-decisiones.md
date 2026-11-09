@@ -2080,10 +2080,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Sin luz ni aura:** el logo son cuatro círculos; la versión con degradado se llama así; el color lila es el de la personalización; los degradados combinan manchas de color, y la propuesta del 10 y 11 de octubre es «la identidad final». En la figura de los íconos, el ícono «Aura» se rotula «Personalización». Quedan las menciones que no son de la marca: lo que dijeron las personas entrevistadas, un producto referente y la sugerencia «Apagar la luz grande» de la app.
   - **Construcción del logo:** el Anexo H la explica en siete pasos, con las medidas de sus archivos —una retícula de 100, cuatro círculos de radio 29 a 21 del centro, cada uno recortado por el siguiente agrandado en 3,4, trazados planos de dos arcos y cortes más anchos en tamaños chicos— y una figura nueva (Figura H2), además del logotipo y su composición, sus versiones y en qué se basa: el modelo del proyecto (Guynn et al., 1998), el nombre, los círculos (Jiang et al., 2016), un logo que describe (Luffarelli et al., 2019) y las formas planas del rediseño de Slack con Michael Bierut, de Pentagram (Slack, 2019).
   - **Memoria:** la identidad dice «los círculos del logo» y «el logo de cuatro círculos», y remite al Anexo H para la construcción.
-- **Fuera de alcance:** los documentos de trabajo de la marca en `10_recursos_visuales` conservan sus nombres de entonces, como historia del proceso. La app 4.6.3 ya no muestra «aura» en sus textos.
+- **Fuera de alcance:** los documentos de trabajo de la marca en `10_recursos_visuales` conservan sus nombres de entonces: el autor decidió dejarlos como historia del proceso. La app 4.6.3 ya no muestra «aura» en sus textos.
 - **Documentos:** [Anexo H](../08_memoria/anexos/anexo-h-identidad.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-171, documentos de trabajo
+
+- **Qué cambió:** D-171 registra que el autor decidió dejar los documentos de trabajo de la marca como historia del proceso.
+- **Cómo estaba antes:** los dejaba fuera de alcance, sin su decisión.
+- **Por qué:** respuesta del autor.
 
 ### 2026-11-09 — D-171
 
