@@ -142,6 +142,8 @@ class Documento {
     this.idMarca = 1;
     this.numeros = [];                    // listas numeradas: cada una reinicia
     this.indice = [];                     // { nivel, texto, marca }
+    this.piezas = [];                     // tablas y figuras: { tipo, rotulo, titulo, marca }
+    this.orden = [];                      // títulos y piezas en el orden del documento, para buscar su página
     this.avisos = [];
   }
 
@@ -222,6 +224,7 @@ class Documento {
     const marca = `_Toc${String(this.idMarca).padStart(6, '0')}`;
     const id = this.idMarca++;
     this.indice.push({ nivel, texto: limpio, marca });
+    this.orden.push({ clase: 'titulo', i: this.indice.length - 1 });
     return `<w:p><w:pPr><w:pStyle w:val="Heading${nivel}"/></w:pPr><w:bookmarkStart w:id="${id}" w:name="${marca}"/>${this.runs(texto)}<w:bookmarkEnd w:id="${id}"/></w:p>`;
   }
 
@@ -243,7 +246,7 @@ class Documento {
         const lam = this.laminas[ficha[1]];
         if (!lam) throw new Error(`Falta la imagen de ${ficha[1]} para el Word`);
         const ancho = Math.min(TEXTO, Math.round(lam.anchoMm * 56.6929));
-        out.push(`<w:p><w:pPr><w:pStyle w:val="Imagen"/></w:pPr>${this.dibujo(lam.archivo, ancho, 12000, ficha[1])}</w:p>`);
+        out.push(`<w:p><w:pPr><w:pStyle w:val="Imagen"/></w:pPr>${this.dibujo(lam.archivo, ancho, 7400, ficha[1])}</w:p>`);
         anterior = 'img'; i++; continue;
       }
       if (/^\s*```/.test(l)) {
@@ -281,8 +284,12 @@ class Documento {
         out.push(`<w:p><w:pPr><w:pStyle w:val="Imagen"/></w:pPr>${this.dibujo(archivo, TEXTO, 11500, img[1])}</w:p>`);
         anterior = 'img'; continue;
       }
-      if (/^\*\*(Tabla|Figura) [A-I]?\d+\*\*$/.test(texto)) { out.push(this.parrafo(texto.replace(/\*\*/g, ''), 'RotuloPieza')); anterior = 'rotulo'; continue; }
-      if (anterior === 'rotulo' && /^\*[^*].*\*$/.test(texto)) { out.push(this.parrafo(texto.slice(1, -1), 'TituloPieza')); anterior = 'titulo'; continue; }
+      const rot = texto.match(/^\*\*((Tabla|Figura) [A-I]?\d+)\*\*$/);
+      if (rot) { out.push(this.rotulo(rot[1], rot[2])); anterior = 'rotulo'; continue; }
+      if (anterior === 'rotulo' && /^\*[^*].*\*$/.test(texto)) {
+        this.piezas[this.piezas.length - 1].titulo = tramos(texto.slice(1, -1)).map((t) => t.t).join('');
+        out.push(this.parrafo(texto.slice(1, -1), 'TituloPieza')); anterior = 'titulo'; continue;
+      }
       if (/^\*Nota\.\*/.test(texto)) { out.push(this.parrafo(texto, 'NotaPieza')); anterior = 'nota'; continue; }
       out.push(this.parrafo(texto, referencias ? 'Referencia' : null));
       anterior = 'p';
@@ -353,26 +360,26 @@ class Documento {
 
     const n = cab.length;
     const plano = (s) => tramos(s).map((t) => t.t).join('');
-    // Ancho de cada columna según su texto: el promedio y el más largo pesan, con un mínimo para la palabra más larga.
-    const pesos = cab.map((h, k) => {
-      const textos = [h, ...cuerpo.map((f) => f[k] || '')].map(plano);
-      const largos = textos.map((t) => t.length);
-      const prom = largos.reduce((a, b) => a + b, 0) / largos.length;
-      const max = Math.max(...largos);
-      // La palabra más larga de la columna; la del encabezado, en negrita, ocupa un 10 % más.
-      const palabra = Math.max(...textos.flatMap((t, j) => t.split(/\s+/).map((p) => p.length * (j === 0 ? 1.1 : 1))));
-      return { peso: Math.max(5, 0.55 * prom + 0.45 * Math.min(max, 90)), palabra };
-    });
-    const total = pesos.reduce((a, p) => a + p.peso, 0);
+    const esGrupo = (f) => n > 1 && f[0] && f.slice(1).every((c) => !c);
     const chica = n >= 5 || cuerpo.length > 30;
     const anchoLetra = chica ? 104 : 116;         // dxa por carácter, aproximado, a 9 y 10 puntos
-    // Cada columna tiene un mínimo para que su palabra más larga no se corte; lo demás se reparte según el texto.
-    const minimos = pesos.map((p) => Math.min(Math.round(TEXTO * 1.6 / n), Math.ceil(p.palabra * anchoLetra) + 220));
-    let anchos = pesos.map((p, k) => Math.max(minimos[k], Math.round(TEXTO * p.peso / total)));
-    const exceso = anchos.reduce((a, b) => a + b, 0) - TEXTO;
-    const holgura = anchos.reduce((a, w, k) => a + w - minimos[k], 0);
-    if (exceso > 0 && holgura >= exceso) anchos = anchos.map((w, k) => Math.floor(w - (w - minimos[k]) * exceso / holgura));
-    else if (exceso > 0) { const suma = anchos.reduce((a, b) => a + b, 0); anchos = anchos.map((w) => Math.floor(w * TEXTO / suma)); }
+    // Anchos como los de una tabla web: cada columna va de lo que ocupa su palabra más larga (para no cortarla) a lo que
+    // ocupa su texto más largo en una línea, y el espacio que sobra se reparte en proporción a esa diferencia. Así, una
+    // columna de rótulos cortos no queda angosta junto a una de párrafos. La negrita ocupa un 10 % más.
+    const medidas = cab.map((h, k) => {
+      const celdasCol = [h, ...cuerpo.filter((f) => !esGrupo(f)).map((f) => f[k] || '')];
+      const factor = (c, j) => (j === 0 || /^\*\*/.test(c) ? 1.1 : 1);
+      const palabra = Math.max(...celdasCol.flatMap((c, j) => plano(c).split(/\s+/).map((p) => p.length * factor(c, j))));
+      const largo = Math.max(...celdasCol.map((c, j) => plano(c).length * factor(c, j)));
+      const minimo = Math.min(Math.round(TEXTO * 1.6 / n), Math.ceil(palabra * anchoLetra) + 220);
+      return { minimo, maximo: Math.max(minimo, Math.min(TEXTO, Math.ceil(largo * anchoLetra) + 220)) };
+    });
+    const sMin = medidas.reduce((a, m) => a + m.minimo, 0);
+    const sMax = medidas.reduce((a, m) => a + m.maximo, 0);
+    let anchos;
+    if (sMax <= TEXTO) anchos = medidas.map((m) => Math.floor(m.maximo * TEXTO / sMax));
+    else if (sMin >= TEXTO) anchos = medidas.map((m) => Math.floor(m.minimo * TEXTO / sMin));
+    else anchos = medidas.map((m) => Math.floor(m.minimo + (m.maximo - m.minimo) * (TEXTO - sMin) / (sMax - sMin)));
     anchos[anchos.length - 1] += TEXTO - anchos.reduce((a, b) => a + b, 0);
 
     const estiloCelda = chica ? 'TablaTextoChico' : 'TablaTexto';
@@ -416,6 +423,25 @@ class Documento {
   parrafoVacio() { return '<w:p><w:pPr><w:pStyle w:val="TrasTabla"/></w:pPr></w:p>'; }
 
   // ------------------------------------------------------------ Índice
+
+  /** El rótulo de una tabla o figura, con un marcador para su índice. */
+  rotulo(texto, tipo) {
+    const marca = `_Pie${String(this.idMarca).padStart(6, '0')}`;
+    const id = this.idMarca++;
+    this.piezas.push({ tipo, rotulo: texto, titulo: '', marca });
+    this.orden.push({ clase: 'pieza', i: this.piezas.length - 1 });
+    return `<w:p><w:pPr><w:pStyle w:val="RotuloPieza"/></w:pPr><w:bookmarkStart w:id="${id}" w:name="${marca}"/>${this.runs(texto)}<w:bookmarkEnd w:id="${id}"/></w:p>`;
+  }
+
+  /** El índice de tablas o de figuras: cada rótulo con su título y su página, que Word actualiza con los campos. */
+  listaXml(tipo, titulo, paginas, nuevaPagina) {
+    const items = this.piezas.map((p, k) => ({ ...p, pagina: paginas ? paginas[k] : '' })).filter((p) => p.tipo === tipo);
+    if (!items.length) return '';
+    const cabeza = `<w:p><w:pPr><w:pStyle w:val="TituloIndice"/>${nuevaPagina ? '<w:pageBreakBefore/>' : '<w:spacing w:before="480"/>'}</w:pPr><w:r><w:t>${x(titulo)}</w:t></w:r></w:p>`;
+    return cabeza + items.map((p) => `<w:p><w:pPr><w:pStyle w:val="TableofFigures"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="${TEXTO}"/></w:tabs></w:pPr>` +
+      `<w:hyperlink w:anchor="${p.marca}" w:history="1"><w:r><w:t xml:space="preserve">${x(`${p.rotulo}. ${p.titulo}`)}</w:t></w:r><w:r><w:tab/></w:r>` +
+      `<w:r><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:instrText xml:space="preserve"> PAGEREF ${p.marca} \\h </w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:t>${p.pagina || ''}</w:t></w:r><w:r><w:fldChar w:fldCharType="end"/></w:r></w:hyperlink></w:p>`).join('');
+  }
 
   /** El índice como campo TOC de Word, con sus entradas ya escritas y, si se conocen, sus páginas. */
   indiceXml(paginas) {
@@ -465,6 +491,7 @@ ${titulo(4, cursiva, 12, 200, 60)}
 ${parrafo('Portada', 'Portada', { ppr: '<w:spacing w:after="0" w:line="240" w:lineRule="auto"/><w:jc w:val="center"/>' })}
 ${parrafo('TituloIndice', 'Título del índice', { siguiente: 'Normal', ppr: '<w:keepNext/><w:spacing w:after="360" w:line="240" w:lineRule="auto"/>', rpr: negrita + tam(28) })}
 ${parrafo('TOC1', 'toc 1', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:before="120" w:after="40" w:line="276" w:lineRule="auto"/>', rpr: negrita })}
+${parrafo('TableofFigures', 'table of figures', { siguiente: 'Normal', oculto: true, prioridad: 99, integrado: true, ppr: '<w:spacing w:after="40" w:line="276" w:lineRule="auto"/>' })}
 ${parrafo('TOC2', 'toc 2', { siguiente: 'Normal', oculto: true, prioridad: 39, integrado: true, ppr: '<w:spacing w:after="40" w:line="276" w:lineRule="auto"/><w:ind w:left="284"/>' })}
 ${parrafo('Lista', 'Lista', { ppr: '<w:spacing w:after="60"/>' })}
 ${parrafo('ListaFin', 'Lista, último elemento', { basado: 'Lista', ppr: '<w:spacing w:after="160"/>' })}
@@ -527,24 +554,27 @@ const pieVacio = () => XML + `<w:ftr ${NS}><w:p><w:pPr><w:pStyle w:val="PiePagin
 function construirWord(o) {
   const d = new Documento({ raiz: o.raiz, laminas: o.laminas });
 
-  // Portada de la pauta de la Biblioteca UDP: el logo arriba y al centro; el título en mayúsculas y el subtítulo;
-  // el autor en mayúsculas; el título al que se opta; los profesores guía y la modalidad, que pide el instructivo
-  // de la Escuela; FACULTAD y ESCUELA en mayúsculas; la ciudad y la fecha. Todo en Arial 12.
+  // Portada copiada de la de ejemplo de la Biblioteca UDP (biblioteca-portada-ejemplo.pdf): el logo de la Universidad
+  // arriba; el título en mayúsculas con su subtítulo; el autor en mayúsculas; el título al que se opta; el profesor
+  // guía; FACULTAD y ESCUELA en mayúsculas, y la ciudad y la fecha. Todo en Arial 12, interlineado sencillo, centrado
+  // en la página. Cada bloque queda a la altura que tiene en la portada de ejemplo, medida en puntos; la modalidad,
+  // que pide el instructivo de la Escuela, va bajo los profesores guía, y «Anexos», bajo el subtítulo.
   const p = o.portada;
   const mayus = (s) => s.toLocaleUpperCase('es-CL');
-  const linea = (texto, antes = 0) => d.parrafo(texto, 'Portada', antes ? `<w:spacing w:before="${antes}"/>` : '');
+  const centrada = '<w:ind w:left="-283" w:right="283"/>'; // los márgenes son 3,5 y 2,5 cm: así queda al centro de la hoja
+  const linea = (texto, antes = 0) => d.parrafo(texto, 'Portada', `${antes ? `<w:spacing w:before="${antes}"/>` : ''}${centrada}`);
   const portada = [
-    `<w:p><w:pPr><w:pStyle w:val="Portada"/></w:pPr>${d.dibujo(p.logo.archivo, Math.round(p.logo.anchoMm * 56.6929), null, p.logo.descripcion)}</w:p>`,
-    linea(mayus(p.titulo), 1680),
+    `<w:p><w:pPr><w:pStyle w:val="Portada"/>${centrada}</w:pPr>${d.dibujo(p.logo.archivo, Math.round(p.logo.anchoMm * 56.6929), null, p.logo.descripcion)}</w:p>`,
+    linea(mayus(p.titulo), 2218),
     linea(p.subtitulo),
-    linea(mayus(p.documento), 840),
-    linea(mayus(p.autor), 1140),
-    linea(p.grado, 1140),
-    linea(p.profesores, 1080),
+    linea(p.documento),
+    linea(mayus(p.autor), 1652),
+    linea(p.grado, 1144),
+    linea(p.profesores, 1104),
     linea(p.modalidad),
-    linea(mayus(p.facultad), 1140),
+    linea(mayus(p.facultad), 1338),
     linea(mayus(p.escuela)),
-    linea(p.ciudad, 980),
+    linea(p.ciudad, 878),
     ...(p.fecha ? [linea(mayus(p.fecha[0]) + p.fecha.slice(1))] : []),
   ].join('');
 
@@ -560,7 +590,12 @@ function construirWord(o) {
   }).join('');
 
   // El índice se arma al final, cuando ya se conocen todos los encabezados.
-  const indice = `<w:p><w:pPr><w:pStyle w:val="TituloIndice"/><w:pageBreakBefore/></w:pPr><w:r><w:t>Índice</w:t></w:r></w:p>` + d.indiceXml(o.paginas);
+  // Las páginas llegan en el orden del documento, títulos y piezas mezclados: se reparten entre los índices.
+  const pagina = new Map((o.paginas || []).map((pg, k) => [`${d.orden[k].clase}:${d.orden[k].i}`, pg]));
+  const pagTitulos = d.indice.map((_, i) => pagina.get(`titulo:${i}`));
+  const pagPiezas = d.piezas.map((_, i) => pagina.get(`pieza:${i}`));
+  const indice = `<w:p><w:pPr><w:pStyle w:val="TituloIndice"/><w:pageBreakBefore/></w:pPr><w:r><w:t>Índice</w:t></w:r></w:p>` + d.indiceXml(pagTitulos) +
+    d.listaXml('Tabla', 'Índice de tablas', pagPiezas, true) + d.listaXml('Figura', 'Índice de figuras', pagPiezas, false);
 
   const ftr = d.relacion('http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer', 'footer1.xml');
   const ftrPortada = d.relacion('http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer', 'footer2.xml');
@@ -613,7 +648,8 @@ function construirWord(o) {
     ...d.medios,
   ].map((a) => ({ nombre: a.nombre, datos: Buffer.isBuffer(a.datos) ? a.datos : Buffer.from(a.datos, 'utf8') }));
   fs.writeFileSync(o.salida, zip(archivos, ahora));
-  return { imagenes: d.medios.length, indice: d.indice.map((e) => e.texto), peso: fs.statSync(o.salida).size };
+  const buscar = d.orden.map((e) => (e.clase === 'titulo' ? d.indice[e.i].texto : `${d.piezas[e.i].rotulo}${d.piezas[e.i].titulo}`));
+  return { imagenes: d.medios.length, indice: d.indice.map((e) => e.texto), buscar, tablas: d.piezas.filter((p) => p.tipo === 'Tabla').length, figuras: d.piezas.filter((p) => p.tipo === 'Figura').length, peso: fs.statSync(o.salida).size };
 }
 
 module.exports = { construirWord, tramos };

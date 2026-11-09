@@ -1,6 +1,6 @@
 # Anexo G. Prototipo Android y registro de versiones
 
-Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.6.3.
+Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.6.3, y las palabras clave con que la app reconoce cada actividad desde la 4.3.
 
 ## G.1 La app en la versión 3.3
 
@@ -48,7 +48,7 @@ flowchart LR
 | Base remota | Guarda sesiones, eventos, respuestas, uso y mensajes, con reglas por persona. | Supabase: Postgres, autenticación anónima, REST y tiempo real |
 | Panel del testeo | Muestra el estado de cada participante, los resultados y los mensajes. | Página HTML y JavaScript, con un servidor Node local |
 | Copia local | Respaldo legible en el teléfono, que la persona puede descargar. | Archivos JSON y CSV |
-| Herramientas de diseño | Íconos, wireframes de la app, taller de auras y logo. | Páginas HTML autónomas |
+| Herramientas de diseño | Íconos, *wireframes* de la app, taller de auras y logo. | Páginas HTML autónomas |
 
 *Nota.* Elaboración propia.
 
@@ -294,7 +294,82 @@ Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de n
 
 *Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
+## G.6 Palabras clave y sugerencias
+
+Desde la versión 4.3, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. La versión 4.5 sumó palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete»: la app reconoce 34 actividades en siete familias, con 634 palabras, 121 frases y 31 palabras débiles, y sugiere 91 primeros pasos y 61 lugares.
+
+**Cómo reconoce una actividad.**
+
+1. Pasa el texto a minúsculas y sin tildes: «Película» y «pelicula» son lo mismo.
+2. Compara cada palabra entera. Algunas valen también con lo que sigue, como «dibuj…», que reconoce dibujar, dibujo y dibujando.
+3. Suma puntos por actividad: cada palabra suma 1; cada frase completa, 2, y cada palabra débil, medio punto, porque sola no decide, como «ver», «jugar» o «tocar».
+4. Elige la actividad con más puntos, si suma al menos 1; ante un empate, la que va primero en la lista. Si ninguna llega a 1, no sugiere nada.
+
+Las frases resuelven los casos dudosos: «maratón de series» es de películas y no de correr; «leer una novela gráfica», de manga y no de leer, y «dar una vuelta en bici», de bicicleta y no de caminar. Ninguna palabra pertenece a dos actividades. Las sugerencias nombran un objeto concreto, como «Elegir la película» o «Elegir el libro», y no algo abierto, como «Elegir qué ver»; si la actividad es una de las ideas de la app o un paso de una ruta, primero aparecen sus propias sugerencias, y se muestran hasta cinco.
+
+**Tabla G10**
+
+*Las 34 actividades que reconoce la app*
+
+| Actividad | Palabras clave, por ejemplo | Con qué empezar | Dónde |
+| --- | --- | --- | --- |
+| **Moverte** | | | |
+| Pasear al perro | perro, perrito, cachorro, quiltro, mascota, correa | Tomar la correa; Sacar su pelota; Llenar su botella de agua | Junto a la puerta; Donde está la correa |
+| Correr | correr, trotar, trote, running, maratón, trail | Ponerte las zapatillas; Ponerte ropa deportiva; Llenar la botella de agua | Junto a la puerta; Junto a las zapatillas |
+| Caminar | caminar, caminata, pasear, cerro, parque, trekking | Ponerte las zapatillas; Llenar la botella de agua; Elegir el recorrido | Junto a la puerta; Junto a las zapatillas |
+| Andar en bicicleta | bici, bicicleta, pedalear, ciclismo, ciclovía, cicletada | Sacar la bici; Inflar las ruedas; Ponerte el casco | Junto a la puerta; Junto a la bici |
+| Hacer ejercicio | ejercicio, gimnasio, pesas, calistenia, boxeo, bailar | Ponerte ropa deportiva; Estirar la colchoneta; Preparar el bolso | Junto al clóset; Donde guardas la colchoneta; Junto a la puerta |
+| Yoga y estirar | yoga, estirar, elongar, pilates, movilidad, colchoneta | Desenrollar la colchoneta; Ponerte ropa cómoda | Donde guardas la colchoneta; Junto a la cama |
+| Nadar | nadar, natación, piscina, acuagym, brazadas | Preparar el traje de baño; Echar la toalla al bolso | Junto a la puerta; Junto al bolso |
+| Deportes con pelota | fútbol, pichanga, básquetbol, vóleibol, tenis, pádel | Preparar las zapatillas; Inflar la pelota; Avisar al equipo | Junto a la puerta |
+| Cuidar las plantas | plantas, regar, jardín, huerto, suculentas, compost | Llenar la regadera; Ponerte los guantes | Junto a las plantas; Junto a la regadera |
+| **Leer y aprender** | | | |
+| Manga y cómics | manga, manhwa, cómic, historieta, tomo, webtoon | Sacar el tomo del estante; Abrir el tomo donde quedaste | Junto al estante; En el velador |
+| Leer | leer, libro, novela, cuento, poesía, audiolibro | Elegir el libro; Abrir el libro en el marcador; Dejar el libro a la vista | En el velador; En el sillón; Junto al estante |
+| Estudiar | estudiar, apuntes, certamen, ramo, preu, PAES | Abrir los apuntes; Despejar el escritorio; Abrir el cuaderno en la tarea | En el escritorio |
+| Idiomas | inglés, idioma, francés, japonés, vocabulario, Duolingo | Abrir el cuaderno de vocabulario; Abrir el libro del curso | En el escritorio |
+| Escribir | escribir, diario, journaling, carta, poema, guion | Abrir el cuaderno; Dejar un lápiz sobre el cuaderno | En el escritorio; En el velador |
+| **Crear** | | | |
+| Dibujar | dibujar, dibujo, boceto, ilustración, croquis, lettering | Sacar el cuaderno y un lápiz; Abrir el cuaderno en ese dibujo; Sacar los lápices | En el escritorio; En la mesa |
+| Pintar | pintar, acuarela, óleo, acrílico, pincel, mural | Preparar las acuarelas; Llenar un vaso con agua; Sacar los pinceles | En la mesa; En el escritorio |
+| Tejer y coser | tejer, crochet, bordar, coser, lana, amigurumi | Sacar el tejido; Enhebrar la aguja; Dejar la lana a mano | En el sillón; En la mesa |
+| Maquetas | maqueta, modelismo, lego, miniatura, gunpla | Abrir la caja de la maqueta; Dejar la pieza a la vista; Ordenar las piezas | En la mesa; En la mesa de trabajo |
+| Manualidades | manualidades, collage, origami, cerámica, greda, mostacillas | Sacar los materiales; Despejar la mesa; Dejar la tijera y el pegamento a mano | En la mesa de trabajo; En la mesa |
+| Fotografía | foto, fotografía, cámara, rollo, analógica, revelado | Cargar la batería de la cámara; Sacar la cámara del estuche | Junto a la puerta; En el escritorio |
+| **Jugar y disfrutar** | | | |
+| Piano | piano, órgano, sintetizador | Abrir la tapa del piano; Dejar la partitura a la vista | Junto al piano |
+| Otro instrumento | guitarra, ukelele, violín, charango, flauta, batería | Sacar el instrumento del estuche; Afinar el instrumento; Dejar la partitura a la vista | Junto al instrumento |
+| Cantar | cantar, canto, coro, karaoke, vocalizar | Elegir la canción; Tomar un vaso de agua | En el sillón |
+| Música | música, disco, playlist, vinilo, pódcast, audífonos | Ponerte los audífonos; Elegir el disco | En el sillón; Junto a los discos |
+| Videojuegos | videojuegos, consola, PlayStation, Nintendo, Minecraft, gamear | Encender la consola; Dejar el control cargado; Avisar a quien juega contigo | Junto a la tele; Junto al computador |
+| Películas y series | película, serie, anime, dorama, documental, teleserie | Elegir la película; Elegir el capítulo; Preparar cabritas; Avisar a quien ve contigo | Junto a la tele; En el sillón |
+| Cartas | cartas, naipes, carioca, póker, truco, brisca | Sacar el mazo; Despejar la mesa; Avisar a quien juega contigo | En la mesa |
+| Juegos de mesa | ajedrez, rompecabezas, dominó, ludo, Catan, sudoku | Sacar la caja; Despejar la mesa; Avisar a quien juega contigo | En la mesa |
+| **En casa** | | | |
+| Cocinar | cocinar, receta, hornear, queque, empanadas, sopaipillas | Reunir los ingredientes; Dejar la receta a la vista; Lavar la tabla de picar | En el mesón de la cocina |
+| Ordenar y limpiar | ordenar, limpiar, aseo, trapear, loza, clóset | Juntar la ropa en el canasto; Vaciar el cajón sobre la cama; Abrir la ventana | Junto al cajón; Junto al canasto; Junto a la cama |
+| **Descansar** | | | |
+| Dormir | dormir, acostarme, siesta, descansar, sueño | Dejar el teléfono cargando lejos de la cama; Apagar la luz grande; Ponerte el pijama | Junto al cargador; Junto a la cama |
+| Meditar | meditar, respirar, mindfulness, relajarme, rezar, qigong | Sentarte en el cojín; Apagar la luz grande | Junto al cojín; Junto a la cama |
+| **Con otras personas** | | | |
+| Llamar | llamar, llamada, videollamada, FaceTime, conversar | Buscar su número; Escribirle que vas a llamar | En el sillón |
+| Compartir | visitar, juntarme, carrete, asado, abuela, polola | Avisar que vas; Preparar algo para llevar; Poner la mesa | Junto a la puerta; En la mesa del comedor |
+
+*Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Extranjerismos en cursiva
+
+- **Qué cambió:** *wireframes*, *feed* y *hobbies* van en cursiva, como en la memoria.
+- **Cómo estaba antes:** iban en redonda.
+- **Por qué:** el autor pidió corregir los errores de formato (D-170).
+
+### 2026-11-08 — Palabras clave y sugerencias
+
+- **Qué cambió:** se suma la parte G.6, con cómo la app reconoce una actividad por sus palabras clave desde la versión 4.3 y la Tabla G10, con las 34 actividades, ejemplos de sus palabras y lo que sugiere para empezar y dónde dejar el Tag. Sale de leer el código de la versión 4.6.3.
+- **Cómo estaba antes:** el anexo no mencionaba las palabras clave.
+- **Por qué:** el autor pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 

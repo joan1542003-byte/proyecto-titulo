@@ -232,7 +232,7 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 
 ## Anexos de la memoria
 
-- **Qué es:** [construir-anexos.js](08_memoria/anexos/construir-anexos.js) lee los nueve Markdown de los anexos, que son su fuente, y escribe `anexos-relevo.docx`, un Word formal con el formato y la portada de la pauta de la Biblioteca (carta, Arial 12, interlineado 1,5 y el logo de la Escuela de Diseño), y `anexos-relevo.pdf`, el mismo Word exportado por LibreOffice. El orden y el título de cada anexo están en [contenido-anexos.js](08_memoria/anexos/contenido-anexos.js); el Word lo escribe [word.js](08_memoria/anexos/word.js), sin dependencias.
+- **Qué es:** [construir-anexos.js](08_memoria/anexos/construir-anexos.js) lee los nueve Markdown de los anexos, que son su fuente, y escribe `anexos-relevo.docx`, un Word formal con el formato y la portada de la pauta de la Biblioteca (carta, Arial 12 e interlineado 1,5, con la portada de su ejemplo y el logo de la Universidad), y `anexos-relevo.pdf`, el mismo Word exportado por LibreOffice. El orden y el título de cada anexo están en [contenido-anexos.js](08_memoria/anexos/contenido-anexos.js); el Word lo escribe [word.js](08_memoria/anexos/word.js), sin dependencias.
 - **Cómo se usa:** `node construir-anexos.js` en esa carpeta; tarda menos de un minuto. Necesita Chrome, para los diagramas y las figuras, y LibreOffice y `pdftotext`, para el PDF y las páginas del índice. Con `--sin-pdf` escribe solo el Word.
 - **Cuidado:** para corregir un anexo se edita su Markdown y se vuelve a correr. Los diagramas mermaid nuevos necesitan internet una vez; las figuras del Word se guardan en `imagenes/word` y solo se rehacen si cambian. El constructor se detiene si encuentra un correo o si el Word conserva marcas de Markdown.
 
@@ -256,6 +256,12 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Portada de los anexos
+
+- **Qué cambió:** la sección de los anexos dice que la portada copia la de ejemplo de la Biblioteca, con el logo de la Universidad.
+- **Cómo estaba antes:** decía que llevaba el logo de la Escuela de Diseño.
+- **Por qué:** el autor pidió una portada copiada de una referencia de la UDP, sumar las palabras clave de la app y corregir los errores de formato (D-170).
 
 ### 2026-11-08 — Anexos formales
 

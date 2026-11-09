@@ -20,7 +20,7 @@ const anexos = [
   { letra: 'C', slug: 'referentes', titulo: 'Estado del arte y referentes' },
   { letra: 'D', slug: 'criterios', titulo: 'Trazabilidad de los criterios de diseño' },
   { letra: 'E', slug: 'ia', titulo: 'Uso de inteligencia artificial' },
-  { letra: 'F', slug: 'estados', titulo: 'Estados del ciclo y wireframes' },
+  { letra: 'F', slug: 'estados', titulo: 'Estados del ciclo y *wireframes*' },
   { letra: 'G', slug: 'android', titulo: 'Prototipo Android y registro de versiones' },
   { letra: 'H', slug: 'identidad', titulo: 'Identidad visual y sistema de marca' },
   { letra: 'I', slug: 'prueba', titulo: 'Protocolo de la prueba, consentimiento e instrumentos' },

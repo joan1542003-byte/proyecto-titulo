@@ -1065,6 +1065,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 - **Anexo D.** Trazabilidad de los criterios de diseño: cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la aplicación ya cambió.
 - **Anexo E.** Uso de inteligencia artificial: las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor.
 - **Anexo F.** Estados del ciclo y *wireframes*: los 35 estados del ciclo, con sus *wireframes* de agosto, y las 39 pantallas de la aplicación.
-- **Anexo G.** Prototipo Android y registro de versiones: la aplicación de la prueba, el Tag, los datos y el panel, y cada versión desde la 2.7 hasta la 4.6.3.
+- **Anexo G.** Prototipo Android y registro de versiones: la aplicación de la prueba, el Tag, los datos y el panel, cada versión desde la 2.7 hasta la 4.6.3 y las palabras clave con que la aplicación reconoce cada actividad.
 - **Anexo H.** Identidad visual y sistema de marca: el logo, las dos tipografías, los íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores.
 - **Anexo I.** Protocolo de la prueba, consentimiento e instrumentos: la prueba aplicada, el protocolo de 21 días, el consentimiento, las preguntas de la aplicación y los instrumentos, de la sesión inicial al cierre.

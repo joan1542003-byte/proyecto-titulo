@@ -1,10 +1,10 @@
-# Anexo F. Estados del ciclo y wireframes
+# Anexo F. Estados del ciclo y *wireframes*
 
-Muestra cómo se diseñó el recorrido completo de Relevo: primero, los 35 estados del ciclo que se definieron en agosto de 2026, con sus wireframes; después, los wireframes de las 39 pantallas de la app de octubre, ordenados por recorrido.
+Muestra cómo se diseñó el recorrido completo de Relevo: primero, los 35 estados del ciclo que se definieron en agosto de 2026, con sus *wireframes*; después, los *wireframes* de las 39 pantallas de la app de octubre, ordenados por recorrido.
 
 ## F.1 Los 35 estados del ciclo
 
-En agosto de 2026, antes del Tag, el objeto se pensó con un control propio. Para comprobar que el ciclo podía representarse de principio a fin, con sus validaciones, decisiones voluntarias, fallos técnicos y estados límite, cada estado tuvo su wireframe. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app configura, informa el estado y ayuda a recuperarse de un fallo. En estos wireframes, «armar» es activar un relevo, y el «pulso» es la señal.
+En agosto de 2026, antes del Tag, el objeto se pensó con un control propio. Para comprobar que el ciclo podía representarse de principio a fin, con sus validaciones, decisiones voluntarias, fallos técnicos y estados límite, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app configura, informa el estado y ayuda a recuperarse de un fallo. En estos *wireframes*, «armar» es activar un relevo, y el «pulso» es la señal.
 
 Seis reglas delimitan el ciclo:
 
@@ -66,11 +66,11 @@ Seis reglas delimitan el ciclo:
 
 La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y confirmar el objeto, probar el lugar, listo para armar, armado, armado en espera, señal activa y cierre. Los demás no son una segunda experiencia: hacen visibles las bifurcaciones que vuelven el sistema comprensible y recuperable. Hay cinco tipos de ruta: la principal, la validación previa, la salida voluntaria, el fallo técnico y el estado límite.
 
-## F.2 Wireframes de agosto de 2026
+## F.2 *Wireframes* de agosto de 2026
 
 **Figura F1**
 
-*Los catorce wireframes del recorrido*
+*Los catorce *wireframes* del recorrido*
 
 | Configuración 1 | Configuración 2 |
 | --- | --- |
@@ -102,7 +102,7 @@ La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y co
 
 *Nota.* Elaboración propia, agosto de 2026.
 
-## F.3 Wireframes de la app (octubre de 2026)
+## F.3 *Wireframes* de la app (octubre de 2026)
 
 Las 39 pantallas de la versión 2.32, en muy baja fidelidad y con sus textos reales, en cinco recorridos. Se dibujaron pieza por pieza sobre una retícula común, a partir de la posición de cada elemento en el emulador.
 
@@ -139,6 +139,12 @@ Las 39 pantallas de la versión 2.32, en muy baja fidelidad y con sus textos rea
 *Nota.* Elaboración propia, a partir de la versión 2.32 de la app en el emulador.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Extranjerismos en cursiva
+
+- **Qué cambió:** *wireframes*, *feed* y *hobbies* van en cursiva, como en la memoria.
+- **Cómo estaba antes:** iban en redonda.
+- **Por qué:** el autor pidió corregir los errores de formato (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 

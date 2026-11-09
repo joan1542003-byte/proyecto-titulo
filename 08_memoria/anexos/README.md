@@ -5,7 +5,7 @@
 
 Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
-- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada es la de la pauta: el logo de la Escuela de Diseño, que reúne la Universidad, la Facultad y la Escuela; el título y el autor en mayúsculas; el título al que se opta, los profesores guía y la modalidad; la facultad y la escuela, y la ciudad y la fecha. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
+- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada copia la de ejemplo de la Biblioteca UDP, con el logo de la Universidad y cada bloque a la misma altura: el título y el autor en mayúsculas, el título al que se opta, los profesores guía y la modalidad, la facultad y la escuela, y la ciudad y la fecha. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
@@ -18,8 +18,8 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [C. Estado del arte y referentes](anexo-c-referentes.md) | La búsqueda, una ficha por referente del mapa del capítulo 8 y los prototipos y patentes con piezas parecidas. |
 | [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
 | [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
-| [F. Estados del ciclo y wireframes](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus wireframes, y los wireframes de las 39 pantallas de la app. |
-| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, y cada versión desde la 2.7 hasta la 4.6.3. |
+| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los *wireframes* de las 39 pantallas de la app. |
+| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, cada versión desde la 2.7 hasta la 4.6.3 y las palabras clave con que la app reconoce cada actividad. |
 | [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos tipografías, los 72 íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
@@ -33,7 +33,7 @@ Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de u
 
 - **Cómo se escriben:** sin códigos internos —las personas son Persona 1 a Persona 8; las preguntas y las respuestas, su número— y sin mencionar el repositorio, sus carpetas ni sus archivos (D-170).
 - **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
-- **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo, de [`logotipos-udp-faad`](../../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad).
+- **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo de la Universidad, [`imagenes/logo-udp-biblioteca.png`](imagenes/logo-udp-biblioteca.png), se recortó a 600 ppp de la [portada de ejemplo de la Biblioteca](../../01_contexto_y_fuentes/documentos_institucionales/biblioteca-portada-ejemplo.pdf). Los índices de tablas y de figuras se arman con los rótulos de cada pieza, y sus páginas, como las del índice, salen del PDF.
 - **El PDF** lo exporta LibreOffice desde el Word. `pdftotext` lee en qué página quedó cada título, y el constructor arma el Word otra vez con esas páginas en el índice, hasta que no cambian.
 - **Figuras:** los diagramas y las figuras de la identidad (logo, íconos, color y cielos) entran como imágenes, en Arial y negro sobre blanco. Chrome las fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
 - **Diagramas:** los de mermaid se guardan como SVG en [`imagenes/diagramas`](imagenes/diagramas). Solo un diagrama nuevo o cambiado necesita internet, porque mermaid se carga una vez desde jsDelivr.
@@ -54,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Portada de la Biblioteca, índices y palabras clave
+
+- **Qué cambió:** la portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas; se suman el índice de tablas y el de figuras, y el Anexo G suma las palabras clave de la app (G.6).
+- **Cómo estaba antes:** la portada llevaba el logo de la Escuela de Diseño, con otras distancias, y no había índices de tablas ni de figuras.
+- **Por qué:** el autor pidió una portada copiada de una referencia de la UDP, sumar las palabras clave de la app y corregir los errores de formato (D-170).
 
 ### 2026-11-08 — Repreguntas y terminología de diseño
 

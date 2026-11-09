@@ -19,7 +19,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios de la v4](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requería pruebas en agosto. La vigente es el [Anexo D](anexos/anexo-d-criterios.md).
-- [Anexos A a I](anexos/README.md): los nueve anexos de la memoria, que recopilan lo más relevante de los documentos del proyecto. Son un documento formal, sin diseño propio: un [Word](anexos/anexos-relevo.docx) con el formato y la portada de la pauta de la Biblioteca, con el logo de la Escuela de Diseño, y su [PDF](anexos/anexos-relevo.pdf). Se arman con `node construir-anexos.js` desde un Markdown por anexo.
+- [Anexos A a I](anexos/README.md): los nueve anexos de la memoria, que recopilan lo más relevante de los documentos del proyecto. Son un documento formal, sin diseño propio: un [Word](anexos/anexos-relevo.docx) con el formato de la pauta de la Biblioteca, la portada copiada de su ejemplo, con el logo de la Universidad, y los índices de tablas y de figuras, y su [PDF](anexos/anexos-relevo.pdf). Se arman con `node construir-anexos.js` desde un Markdown por anexo.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [Coherencia de la app con la memoria](coherencia-app-con-la-memoria-2026-09-29.md): contradicciones, cambios fundamentados y actualizaciones pendientes de la memoria tras Android 2.11 a 2.13.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 25 de septiembre sobre la propuesta, el APK 2.6, los cambios y los pendientes.
@@ -91,6 +91,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-08 — Portada e índices de los anexos
+
+- **Cambio:** el enlace a los anexos dice que su portada copia la de ejemplo de la Biblioteca, con el logo de la Universidad, y que el Word trae índices de tablas y de figuras.
+- **Versión anterior:** decía que la portada llevaba el logo de la Escuela de Diseño.
+- **Motivo:** pedido del autor (D-170).
+- **Alcance:** no cambió el texto de la memoria.
 
 ### 2026-11-08 — Décima ronda de la v6
 

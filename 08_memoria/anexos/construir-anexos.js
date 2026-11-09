@@ -33,7 +33,7 @@ const APP = '06_desarrollo_y_factibilidad/app-android';
 const KT = `${APP}/app/src/main/java/com/example/relevo`;
 const LOGOS = '10_recursos_visuales/logo-relevo-2026-10-11';
 const ICONOS = '10_recursos_visuales/iconos-relevo-2026-10-11/svg';
-const LOGO_ESCUELA = '01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/faad-udp-escuela-de-diseno-negro.png';
+const LOGO_UDP = '08_memoria/anexos/imagenes/logo-udp-biblioteca.png'; // recortado a 600 ppp de la portada de ejemplo de la Biblioteca UDP
 const MEMORIA = '08_memoria/borrador-memoria-v6-2026-10-28.md';
 const DIR_DIAGRAMAS = path.join(AQUI, 'imagenes', 'diagramas');
 const DIR_WORD = path.join(AQUI, 'imagenes', 'word');
@@ -339,19 +339,20 @@ function exportarPdf(docx, carpeta) {
 }
 
 /**
- * La página de cada título del índice, leída del PDF con pdftotext. El índice nombra todos los títulos, así que
- * se buscan después de la página donde el índice nombra el último. Devuelve null si falta pdftotext.
+ * La página de cada título y de cada tabla o figura, leída del PDF con pdftotext, en el orden del documento. Los
+ * índices repiten esos textos con puntos guía, así que se busca después de la última página que tiene puntos guía.
+ * Una tabla o figura se busca por su rótulo y su título juntos. Devuelve null si falta pdftotext.
  */
-function paginasDeTitulos(pdf, titulos) {
+function paginasDe(pdf, textos) {
   let texto;
   try { texto = execFileSync('pdftotext', ['-enc', 'UTF-8', pdf, '-'], { maxBuffer: 200 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] }).toString('utf8'); } catch { return null; }
   const norma = (s) => s.normalize('NFC').replace(/\s+/g, '');
   const paginas = texto.split('\f').map(norma);
-  let desde = paginas.findIndex((p, i) => i > 0 && p.includes(norma(titulos[titulos.length - 1]))) + 1;
+  let desde = paginas.map((p) => /\.{6,}/.test(p)).lastIndexOf(true) + 1;
   if (desde <= 0) throw new Error('No se encontró el índice en el PDF');
-  return titulos.map((t) => {
+  return textos.map((t) => {
     const k = paginas.findIndex((p, i) => i >= desde && p.includes(norma(t)));
-    if (k < 0) throw new Error(`No se encontró en el PDF el título «${t}»`);
+    if (k < 0) throw new Error(`No se encontró en el PDF «${t}»`);
     desde = k;
     return k + 1;
   });
@@ -378,7 +379,7 @@ function principal() {
   const opciones = {
     salida: SALIDA_WORD, raiz: AQUI, laminas, anexos: arts,
     titulo: `${m.titulo}: anexos de la memoria`, autor: m.autor,
-    portada: { ...m, documento: 'Anexos', logo: { archivo: path.join(RAIZ, LOGO_ESCUELA), anchoMm: 60, descripcion: 'Escuela de Diseño, Facultad de Arquitectura, Arte y Diseño, Universidad Diego Portales' } },
+    portada: { ...m, documento: 'Anexos', logo: { archivo: path.join(RAIZ, LOGO_UDP), anchoMm: 79.8, descripcion: 'Universidad Diego Portales' } },
   };
   let word = construirWord(opciones);
 
@@ -391,7 +392,7 @@ function principal() {
     try {
       for (let vuelta = 1; ; vuelta++) {
         const pdf = exportarPdf(SALIDA_WORD, carpeta);
-        const nuevas = paginasDeTitulos(pdf, word.indice);
+        const nuevas = paginasDe(pdf, word.buscar);
         const iguales = nuevas && paginas && nuevas.every((p, k) => p === paginas[k]);
         if (!nuevas || iguales || vuelta === 4) {
           fs.copyFileSync(pdf, SALIDA_PDF);
@@ -405,8 +406,8 @@ function principal() {
     } finally { fs.rmSync(carpeta, { recursive: true, force: true }); }
   }
 
-  console.log(`Word: ${word.indice.length} entradas en el índice, ${word.imagenes} imágenes, ${(word.peso / 1048576).toFixed(1)} MB`);
-  if (paginas) console.log(`PDF: ${(fs.statSync(SALIDA_PDF).size / 1048576).toFixed(1)} MB; los anexos empiezan en las páginas ${arts.map((a) => `${a.letra} ${paginas[word.indice.indexOf(`Anexo ${a.letra}. ${a.titulo}`)]}`).join(', ')}`);
+  console.log(`Word: ${word.indice.length} entradas en el índice, ${word.tablas} tablas, ${word.figuras} figuras, ${word.imagenes} imágenes, ${(word.peso / 1048576).toFixed(1)} MB`);
+  if (paginas) console.log(`PDF: ${(fs.statSync(SALIDA_PDF).size / 1048576).toFixed(1)} MB; los anexos empiezan en las páginas ${arts.map((a) => `${a.letra} ${paginas[word.buscar.indexOf(`Anexo ${a.letra}. ${a.titulo.replace(/\*/g, '')}`)]}`).join(', ')}`);
   for (const a of arts) console.log(`Anexo ${a.letra}: ${a.palabras} palabras · ${a.archivo}`);
   console.log(`Listo en ${((Date.now() - inicio) / 1000).toFixed(0)} s`);
 }

@@ -98,7 +98,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **9.** Considera más válidas las actividades de interés personal que no consisten en permanecer desplazándose por el celular. Al repreguntarle qué actividad le parece productiva, la describió como una que permita desconectarse y se sienta plena, y mencionó manualidades, pintura y dibujo.
 
-**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. Al repreguntarle qué es hacer lo que quiere, lo definió como realizar sus hobbies en paz.
+**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. Al repreguntarle qué es hacer lo que quiere, lo definió como realizar sus *hobbies* en paz.
 
 **11.** No por el momento.
 
@@ -252,7 +252,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **2.** Estar en el computador, jugar, escuchar música, leer o dormir.
 
-**3.** Durante la entrevista estaba mirando Instagram y consumía lo primero que aparecía en el feed.
+**3.** Durante la entrevista estaba mirando Instagram y consumía lo primero que aparecía en el *feed*.
 
 **4.** Tranquilidad, entendida como relajarse porque no tenía algo que hacer.
 
@@ -264,7 +264,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** Sí le cuesta describirlo porque la rutina termina siendo siempre la misma: videos e Instagram.
 
-**9.** No considera unas actividades universalmente más válidas que otras; las personas tienen cantidades distintas de tiempo libre y hacen el hobby que pueden realizar.
+**9.** No considera unas actividades universalmente más válidas que otras; las personas tienen cantidades distintas de tiempo libre y hacen el *hobby* que pueden realizar.
 
 **10.** Haber terminado sus deberes y poder avanzar en actividades deseadas, como completar un juego, una lectura o un dibujo.
 
@@ -332,7 +332,7 @@ Se codificó con ocho reglas:
 | Teléfono cerca | La cercanía del teléfono favorece revisarlo o retomarlo. | Personas 1, 3 y 5, pregunta 12. |
 | **Forma del episodio** | | |
 | Uso dirigido | Actividad digital con contenido, propósito o cierre reconocible. | Persona 1, preguntas 3 y 4; Persona 4, preguntas 3 a 5. |
-| Uso de continuidad | Consumo guiado por un feed o una rutina, sin un final que decida la persona. | Persona 3, preguntas 3 y 4; Persona 5, preguntas 3 a 5; Persona 8, preguntas 3 y 8. |
+| Uso de continuidad | Consumo guiado por un *feed* o una rutina, sin un final que decida la persona. | Persona 3, preguntas 3 y 4; Persona 5, preguntas 3 a 5; Persona 8, preguntas 3 y 8. |
 | Uso relacional | Uso digital cuyo valor principal es la relación con otras personas. | Persona 6, preguntas 3 a 7. |
 | Alternativa valorada | Actividad que la persona valora y podría hacer si la intención vuelve a estar disponible. | Persona 2, preguntas 9 y 10; Persona 3, preguntas 5 y 10; Persona 8, pregunta 10. |
 | **Intención, tiempo, recuerdo y cierre** | | |
@@ -369,7 +369,7 @@ Se codificó con ocho reglas:
 
 Cada entrevista se leyó primero como un caso completo, antes de comparar entre personas. Un caso no es todavía un tipo: una misma persona puede aportar a más de un patrón.
 
-**Persona 1. Ocio digital dirigido, en contraste con el feed.** Leer manga en el teléfono fue tranquilo, reflexivo y satisfactorio, y lo contrapone a TikTok. Cuando lee, cocina o hace ejercicio separa el teléfono, porque si está cerca lo mira. El teléfono no es el problema: la dificultad aparece en episodios menos delimitados. Queda abierto qué quiso decir al resumir la tarde como dormir (pregunta 6). *Códigos:* uso dirigido, alternativa valorada, intención clara, recuerdo débil, cierre positivo, autonomía del ocio, teléfono cerca, separación física, aceptación con condiciones y señal breve. *Confianza:* media-alta.
+**Persona 1. Ocio digital dirigido, en contraste con el *feed*.** Leer manga en el teléfono fue tranquilo, reflexivo y satisfactorio, y lo contrapone a TikTok. Cuando lee, cocina o hace ejercicio separa el teléfono, porque si está cerca lo mira. El teléfono no es el problema: la dificultad aparece en episodios menos delimitados. Queda abierto qué quiso decir al resumir la tarde como dormir (pregunta 6). *Códigos:* uso dirigido, alternativa valorada, intención clara, recuerdo débil, cierre positivo, autonomía del ocio, teléfono cerca, separación física, aceptación con condiciones y señal breve. *Confianza:* media-alta.
 
 **Persona 2. La continuidad desplaza el sueño.** Abrió Instagram al acostarse, reconoció que debía dormir y siguió. Recuerda la sesión con detalle y la evalúa como más o menos: el conflicto no viene del olvido, sino de una necesidad reconocida que no cambia la conducta. Es la evidencia más clara de que Relevo no debe definirse solo por un recuerdo débil. *Códigos:* uso de continuidad, alternativa valorada, recuerdo claro, intención desplazada, obligación pendiente, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital y aceptación con condiciones. *Confianza:* alta.
 
@@ -387,7 +387,7 @@ Cada entrevista se leyó primero como un caso completo, antes de comparar entre 
 
 Los ocho casos dejan cuatro hallazgos:
 
-1. El feed continuo aparece con pérdida de la noción del tiempo, dificultad para narrar o un cierre ambivalente, pero no siempre con malestar.
+1. El *feed* continuo aparece con pérdida de la noción del tiempo, dificultad para narrar o un cierre ambivalente, pero no siempre con malestar.
 2. Las actividades digitales dirigidas o relacionales pueden recordarse, descansar y coincidir con la intención.
 3. El conflicto que importa ocurre cuando una intención ya reconocida deja de orientar la acción.
 4. La aceptación del objeto depende de que sea selectivo, simple, tranquilo y sin castigo.
@@ -486,6 +486,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Extranjerismos en cursiva
+
+- **Qué cambió:** *wireframes*, *feed* y *hobbies* van en cursiva, como en la memoria.
+- **Cómo estaba antes:** iban en redonda.
+- **Por qué:** el autor pidió corregir los errores de formato (D-170).
 
 ### 2026-11-08 — Repreguntas en frases
 

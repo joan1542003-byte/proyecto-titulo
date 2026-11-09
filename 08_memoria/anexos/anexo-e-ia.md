@@ -5,7 +5,7 @@ Declara qué herramientas de inteligencia artificial se usaron, en qué tareas a
 ## E.1 Herramientas
 
 - **Codex, de OpenAI**, desde marzo de 2026: revisó la redacción de los textos del autor y ayudó a programar las primeras versiones de la app y de las piezas web.
-- **Claude Code, de Anthropic**, desde fines de septiembre de 2026: desarrolló la app, llevando a Android Studio los prototipos, las ideas, los bocetos y los wireframes de Figma del autor, y ayudó a leer y ordenar el proceso del proyecto.
+- **Claude Code, de Anthropic**, desde fines de septiembre de 2026: desarrolló la app, llevando a Android Studio los prototipos, las ideas, los bocetos y los *wireframes* de Figma del autor, y ayudó a leer y ordenar el proceso del proyecto.
 
 ## E.2 Cinco tareas
 
@@ -17,13 +17,19 @@ Declara qué herramientas de inteligencia artificial se usaron, en qué tareas a
 
 ## E.3 Lo que hizo el autor
 
-El autor definió el problema, la pregunta, la hipótesis y los objetivos; hizo la investigación y escribió la memoria; convocó a las personas entrevistadas e hizo las entrevistas y sus repreguntas; formuló los ocho criterios de diseño; diseñó la identidad visual, los íconos, los prototipos y los wireframes en Figma, a partir de sus bocetos; decidió qué versión de la app se instaló en los teléfonos de la prueba, y responde por las citas y por las conclusiones. Cada resultado de una herramienta fue una propuesta que el autor revisó, corrigió o descartó. Ninguna herramienta generó datos, participantes, citas ni resultados.
+El autor definió el problema, la pregunta, la hipótesis y los objetivos; hizo la investigación y escribió la memoria; convocó a las personas entrevistadas e hizo las entrevistas y sus repreguntas; formuló los ocho criterios de diseño; diseñó la identidad visual, los íconos, los prototipos y los *wireframes* en Figma, a partir de sus bocetos; decidió qué versión de la app se instaló en los teléfonos de la prueba, y responde por las citas y por las conclusiones. Cada resultado de una herramienta fue una propuesta que el autor revisó, corrigió o descartó. Ninguna herramienta generó datos, participantes, citas ni resultados.
 
 ## Referencias
 
 Springer Nature. (s. f.). *AI guidance for researchers, editors and reviewers*. Recuperado el 8 de noviembre de 2026, de https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Extranjerismos en cursiva
+
+- **Qué cambió:** *wireframes*, *feed* y *hobbies* van en cursiva, como en la memoria.
+- **Cómo estaba antes:** iban en redonda.
+- **Por qué:** el autor pidió corregir los errores de formato (D-170).
 
 ### 2026-11-08 — Correcciones del autor
 
