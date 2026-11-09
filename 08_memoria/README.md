@@ -92,6 +92,13 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-11-09 — Duodécima ronda de la v6
+
+- **Cambio:** los títulos, rótulos y esquemas de la v6 son formales, sin artículo al comienzo ni segunda persona, y la paleta cromática nombra sus partes como el logo.
+- **Versión anterior:** había títulos como «La identidad» o «Cómo habla Relevo» y rótulos como «Por qué».
+- **Motivo:** el autor pidió aplicar a la memoria los títulos formales de los anexos (D-172).
+- **Alcance:** la versión diseñada no se regeneró.
+
 ### 2026-11-09 — Undécima ronda de la v6
 
 - **Cambio:** la identidad de la v6 ya no habla de luces: el logo son cuatro círculos, y el párrafo del logo remite al Anexo H para su construcción.

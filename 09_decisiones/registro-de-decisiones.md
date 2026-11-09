@@ -2093,10 +2093,16 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Sin segunda persona:** las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, como en la memoria; la familia de degradados «Moverte» se nombra «Moverse»; el ícono «Ordenar tu pieza», «Ordenar la pieza», y la función «Tus actividades», «Actividades propias».
   - **Textos citados:** las preguntas de las entrevistas, el consentimiento, las preguntas de la app y el instrumento de cierre conservan su redacción, porque son los textos que se aplicaron. El consentimiento completo va como cita en bloque, y la Tabla G10 aclara que las sugerencias se transcriben como las muestra la app.
   - **De paso:** los estados de la Figura G3 se nombran en español, y el servidor local de la Figura G2 ya no se nombra por su archivo.
-- **Fuera de alcance:** los títulos de la memoria v6, trece de los cuales empiezan con artículo o pregunta, quedan como están hasta que el autor lo decida.
-- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+- **Memoria v6:** el autor pidió aplicar la misma regla a la memoria (duodécima ronda): 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras con su índice, 11 rótulos de párrafo, los rótulos «Por qué» de los criterios —ahora «Fundamento»— y los encabezados de dos tablas. La paleta cromática nombra sus partes como el logo, y los esquemas por insertar y los pies de fotografía siguen la regla; las preguntas citadas de la aplicación se mantienen. La versión diseñada no se regeneró, pero su generador ya rotula la lámina de identidad con las cuatro partes.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf), [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-172, memoria
+
+- **Qué cambió:** D-172 suma la memoria v6.
+- **Cómo estaba antes:** dejaba la memoria fuera de alcance hasta que el autor lo decidiera.
+- **Por qué:** el autor pidió aplicarla también a la memoria.
 
 ### 2026-11-09 — D-172
 

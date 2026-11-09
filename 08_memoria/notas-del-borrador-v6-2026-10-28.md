@@ -144,7 +144,13 @@ El 8 de noviembre, el autor revisó los anexos y pidió aplicar sus correcciones
 El 9 de noviembre, el autor pidió eliminar de la marca las referencias a luz o aura. En la identidad del capítulo 11, «las luces del logo» pasan a «los círculos del logo», «el logo de cuatro luces» a «el logo de cuatro círculos» y «nunca como luz» a «anillos que se abren», y el párrafo del logo remite al Anexo H, que explica su construcción paso a paso. Las demás menciones de la luz —los medios del ambiente de Ishii y Ullmer y por qué la señal es un sonido— no son de la marca y se mantienen.
 
 
-Capítulos 1 a 14: 16 560 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 573. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+## Duodécima ronda: títulos formales (D-172)
+
+El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la», «los» o «las» y que los rótulos no usen «tu» ni «lo que», primero en los anexos y después también en la memoria. Cambian 17 títulos de sección y el del capítulo 11 —por ejemplo, «La identidad» pasa a «Identidad», «El objeto» a «Objeto», «Cómo habla Relevo» a «Voz de Relevo» y «Que valga el esfuerzo» a «Justificar el esfuerzo»—, 16 títulos de tablas y figuras con su índice, 11 rótulos de párrafo, los rótulos «Por qué» de los criterios, que pasan a «Fundamento», y los encabezados de las Tablas 1 y 2. La paleta cromática nombra sus partes como el logo —el tiempo, el primer paso, el lugar y la decisión— en vez de las preguntas de la aplicación; los esquemas por insertar y los pies de fotografía siguen la misma regla, y la arquitectura de información describe las secciones del perfil sin segunda persona. Las preguntas y respuestas citadas de la aplicación, como «¿Qué quieres hacer?», se mantienen. La versión diseñada no se regeneró; su generador ya rotula la lámina de identidad con las cuatro partes.
+
+## Extensión
+
+Capítulos 1 a 14: 16 452 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 453. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -173,6 +179,12 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Duodécima ronda
+
+- **Qué cambió:** se añadió la duodécima ronda, se repuso el título «Extensión», que la ronda anterior había borrado por error, y se actualizó la extensión.
+- **Cómo estaba antes:** la última ronda era la undécima y la extensión decía 16 560 y 17 573 palabras.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-172).
 
 ### 2026-11-09 — Undécima ronda
 
