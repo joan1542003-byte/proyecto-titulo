@@ -515,7 +515,6 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.FEEDBACK -> FeedbackScreen(onSend = { stars, comment -> viewModel.submitFeedback(stars, comment); pop() }, onBack = { pop() })
                 Route.REPORT -> ReportScreen(onSend = { text, attach -> viewModel.submitReport(text, attach); pop() }, onBack = { pop() })
                 Route.CLOSING -> ClosingSurveyScreen(
-                  answered = remember { viewModel.closingAnswered() },
                   startPart = closing?.part ?: 0,
                   onPart = viewModel::saveClosingPart,
                   onClose = { pop() },

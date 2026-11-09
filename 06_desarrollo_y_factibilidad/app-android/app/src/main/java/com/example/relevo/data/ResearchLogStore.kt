@@ -335,12 +335,6 @@ class ResearchLogStore(context: Context) :
     })
   }
 
-  /** Las preguntas que la persona ya respondió en este teléfono, enviadas o no (4.7: el cierre no las repite). */
-  fun answeredQuestions(): Set<String> =
-    readableDatabase.query(true, "answers", arrayOf("question"), null, null, null, null, null, null).use { cursor ->
-      buildSet { while (cursor.moveToNext()) add(cursor.getString(0)) }
-    }
-
   fun pendingSessions(): List<PendingSession> = readableDatabase.query("sessions", null, "synced = $PENDING", null, null, null, "started_at").use { cursor ->
     buildList { while (cursor.moveToNext()) add(PendingSession(
       cursor.string("session_id"), cursor.string("participant_code"), cursor.string("activity"), cursor.string("first_step"), cursor.string("place"),

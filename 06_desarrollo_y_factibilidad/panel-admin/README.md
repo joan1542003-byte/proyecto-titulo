@@ -136,6 +136,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Cierre de la prueba en la ficha y artefacto al día
+
+- **Qué cambió:** la ficha de cada persona tiene la sección «Cierre de la prueba», con las cuatro partes del instrumento, cada respuesta en palabras y su fecha, sin ocultar ninguna. El modo de ejemplo trae respuestas inventadas para verla. El artefacto de claude.ai se publicó con esta versión (versión 20, el mismo enlace), sin `conector-local.js`.
+- **Cómo estaba antes:** las respuestas del cierre aparecían sueltas en «Otras respuestas», y el artefacto publicado era el del 7 de octubre (app 2.30).
+- **Por qué:** el autor pidió que el cierre se vea en el panel de Relevo (D-176).
+
 ### 2026-11-09 — Android 4.7: el cierre de la prueba
 
 - **Qué cambió:** el panel reconoce la 4.7 como la versión más nueva y nombra cada respuesta del cierre con su pregunta, por ejemplo «Entrevista final 5: si sintió que podía elegir», y los eventos del cierre en palabras.

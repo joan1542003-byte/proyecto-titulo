@@ -63,6 +63,12 @@ Son las del [instrumento de cierre del 28 de octubre](../../07_validacion/instru
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Corregido en la 4.7.1
+
+- **Qué cambió:** se anota que la 4.7.1 ya no salta las preguntas respondidas antes: las muestra todas ([Android 4.7.1](version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md), D-176).
+- **Cómo estaba antes:** la 4.7 no repetía lo ya respondido en el teléfono, y eso podía dejar sin preguntar la semana con el teléfono.
+- **Por qué:** el autor pidió no perder ningún dato ni respuesta.
+
 ### 2026-11-09 — Creación
 
 - **Qué cambió:** se documenta el cierre de la prueba en la app: quién lo ve, cuándo aparece, sus cuatro partes, dónde se guarda y cómo se verificó.

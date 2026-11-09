@@ -378,9 +378,6 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _closingOfferDue.value = false
   }
 
-  /** Las preguntas ya respondidas en este teléfono: el cierre no las repite. */
-  fun closingAnswered(): Set<String> = runCatching { researchLog.answeredQuestions() }.getOrDefault(emptySet())
-
   /** Guarda una parte del cierre y deja anotada la siguiente; sin [next], el cierre está terminado. */
   fun saveClosingPart(part: Int, answers: List<Pair<String, String>>, next: Int?) {
     val code = _reminder.value.participantCode

@@ -2288,7 +2288,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Claves nuevas: con las del instrumento, el papel y la app se analizan juntos.
 - **Documentos:** [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md).
 
+## D-176 — El cierre de la prueba sin perder respuestas, y el panel al día
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6` (app 4.7.1) y en el artefacto del panel (versión 20).
+- **Contexto:** el autor preguntó si el instrumento de cierre estaba actualizado y pidió que esté en la app, en Supabase y en el panel, sin perder ningún dato. La búsqueda confirmó que el del 28 de octubre es el más reciente para las personas de la prueba. Lo posterior, del 2 de noviembre, es la guía de los profesores para entrevistas y la entrevista a expertos.
+- **Decisión:**
+  - **La app muestra siempre todas las preguntas del cierre.** Antes saltaba las que tenían una respuesta guardada, y las claves `semana1_*` y `cierre_*` ya se habían usado con otro sentido en la prueba de 21 días.
+  - **El panel muestra el cierre de cada persona** en el orden del instrumento, con todas las respuestas y sus fechas.
+  - **El artefacto de claude.ai se publica de nuevo**, con la misma conexión a Supabase.
+- **Alternativas descartadas:**
+  - Claves nuevas para el cierre en la app: el papel y la app dejarían de analizarse juntos.
+  - Ajustar ahora la entrevista a la guía de los profesores: cambia el instrumento y lo decide el autor.
+- **Documentos:** [Android 4.7.1](../06_desarrollo_y_factibilidad/app-android/version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-176
+
+- **Qué cambió:** se registró D-176.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-175.
+- **Por qué:** el autor pidió el cierre en la app, en Supabase y en el panel, sin perder datos.
 
 ### 2026-11-09 — D-175
 

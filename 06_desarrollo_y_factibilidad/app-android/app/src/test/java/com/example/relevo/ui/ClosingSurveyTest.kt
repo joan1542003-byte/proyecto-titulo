@@ -28,14 +28,11 @@ class ClosingSurveyTest {
   }
 
   @Test
-  fun partsAlreadyAnsweredInTheAppAreSkipped() {
-    assertEquals(listOf(0, 1, 2, 3), ClosingSurvey.remainingParts(0, emptySet()))
-    val partA = ClosingSurvey.parts[0].questions.map { it.key }.toSet()
-    assertEquals(listOf(1, 2, 3), ClosingSurvey.remainingParts(0, partA))
-    // Con una sola pregunta respondida, la parte sigue: se muestran las que faltan.
-    assertEquals(listOf(0, 1, 2, 3), ClosingSurvey.remainingParts(0, setOf("semanas_previas_costo_preparar")))
-    assertEquals(listOf(2, 3), ClosingSurvey.remainingParts(2, emptySet()))
-    assertEquals(emptyList<Int>(), ClosingSurvey.remainingParts(4, emptySet()))
+  fun resumesFromTheSavedPartAndAsksEveryQuestion() {
+    // 4.7.1: no se salta ninguna parte por respuestas anteriores; solo se retoma desde la parte guardada.
+    assertEquals(listOf(0, 1, 2, 3), ClosingSurvey.remainingParts(0))
+    assertEquals(listOf(2, 3), ClosingSurvey.remainingParts(2))
+    assertEquals(emptyList<Int>(), ClosingSurvey.remainingParts(4))
   }
 
   @Test

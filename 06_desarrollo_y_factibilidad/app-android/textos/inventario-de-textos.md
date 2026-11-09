@@ -760,9 +760,9 @@
 | T0593 | texto | Último envío: [dato]. | `Common.kt:322` |
 | T0594 | texto | En Documentos/Relevo. Última copia: [dato]. | `Common.kt:327` |
 | T0595 | texto | Se crea en Documentos/Relevo con el primer relevo. | `Common.kt:327` |
-| T0596 | texto | Borrando tus datos… | `RelevoViewModel.kt:1255` |
-| T0597 | texto | Relevo dejó de guardar datos, pero no se pudo confirmar el borrado en la base del proyecto. Tus datos siguen en el teléfono. Prueba otra vez o escribe a [correo del investigador]. | `RelevoViewModel.kt:1299` |
-| T0598 | texto | Tus datos se borraron. Si quieres volver a usar Relevo, tendrás que aceptar otra vez. | `RelevoViewModel.kt:1351` |
+| T0596 | texto | Borrando tus datos… | `RelevoViewModel.kt:1252` |
+| T0597 | texto | Relevo dejó de guardar datos, pero no se pudo confirmar el borrado en la base del proyecto. Tus datos siguen en el teléfono. Prueba otra vez o escribe a [correo del investigador]. | `RelevoViewModel.kt:1296` |
+| T0598 | texto | Tus datos se borraron. Si quieres volver a usar Relevo, tendrás que aceptar otra vez. | `RelevoViewModel.kt:1348` |
 | T0599 | texto | Tus datos quedaron en el archivo que elegiste. | `SettingsScreens.kt:324` |
 | T0600 | texto | No se pudo guardar el archivo. Prueba otra vez. | `SettingsScreens.kt:324` |
 | T0601 | título | Tus datos | `SettingsScreens.kt:327` |
@@ -801,79 +801,79 @@
 
 | Id | Tipo | Texto | Dónde |
 | --- | --- | --- | --- |
-| T0623 | texto | Las semanas con el Tag | `ClosingSurvey.kt:84` |
-| T0624 | texto | ¿Cómo te fue hasta ahora? | `ClosingSurvey.kt:84` |
-| T0625 | texto | ¿Te costó preparar Relevo? | `ClosingSurvey.kt:86` |
-| T0626 | texto | ¿Te molestó el sonido? | `ClosingSurvey.kt:87` |
-| T0627 | texto | ¿El sonido tenía que ver con el lugar donde sonó? | `ClosingSurvey.kt:88` |
-| T0628 | texto | ¿Algo más que quieras contarnos? | `ClosingSurvey.kt:89` |
-| T0629 | texto | La semana con el teléfono | `ClosingSurvey.kt:93` |
-| T0630 | texto | ¿Cómo te fue esta semana? | `ClosingSurvey.kt:93` |
-| T0631 | texto | ¿Te costó preparar Relevo? | `ClosingSurvey.kt:95` |
-| T0632 | texto | ¿Te molestó el sonido? | `ClosingSurvey.kt:96` |
-| T0633 | texto | ¿El sonido tenía que ver con el lugar donde sonó? | `ClosingSurvey.kt:97` |
-| T0634 | texto | Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer… | `ClosingSurvey.kt:99` |
-| T0635 | texto | Más | `ClosingSurvey.kt:100` |
-| T0636 | texto | Igual | `ClosingSurvey.kt:100` |
-| T0637 | texto | Menos | `ClosingSurvey.kt:100` |
-| T0638 | texto | ¿Por qué? ¿Algo más que quieras contarnos? | `ClosingSurvey.kt:102` |
-| T0639 | texto | ¡Terminaste la prueba! | `ClosingSurvey.kt:106` |
-| T0640 | texto | Gracias. Siete preguntas cortas; puedes saltar las que quieras. | `ClosingSurvey.kt:106` |
-| T0641 | texto | ¿Seguirías usando Relevo? | `ClosingSurvey.kt:108` |
-| T0642 | texto | Sí | `ClosingSurvey.kt:108` |
-| T0643 | texto | Tal vez | `ClosingSurvey.kt:108` |
-| T0644 | texto | No | `ClosingSurvey.kt:108` |
-| T0645 | texto | ¿Qué te ayudó más a recordar lo que querías hacer? | `ClosingSurvey.kt:110` |
-| T0646 | texto | El objeto donde empiezo | `ClosingSurvey.kt:111` |
-| T0647 | texto | El aviso en el teléfono | `ClosingSurvey.kt:111` |
-| T0648 | texto | Los dos por igual | `ClosingSurvey.kt:111` |
-| T0649 | texto | Ninguno | `ClosingSurvey.kt:111` |
-| T0650 | texto | ¿Por qué? | `ClosingSurvey.kt:113` |
-| T0651 | texto | Si siguieras usando Relevo, ¿con qué te gustaría que sonara? | `ClosingSurvey.kt:115` |
-| T0652 | texto | Un objeto | `ClosingSurvey.kt:116` |
-| T0653 | texto | El teléfono | `ClosingSurvey.kt:116` |
-| T0654 | texto | Me da igual | `ClosingSurvey.kt:116` |
-| T0655 | texto | ¿Qué te molestó? | `ClosingSurvey.kt:118` |
-| T0656 | texto | ¿Qué cambiarías? | `ClosingSurvey.kt:119` |
-| T0657 | texto | ¿Dónde quedó el objeto la mayor parte del tiempo? | `ClosingSurvey.kt:120` |
-| T0658 | texto | Entrevista final | `ClosingSurvey.kt:124` |
-| T0659 | texto | Nueve preguntas para responder con tus palabras. Puedes saltar las que quieras. | `ClosingSurvey.kt:124` |
-| T0660 | texto | Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono? | `ClosingSurvey.kt:127` |
-| T0661 | texto | ¿Ya estabas pensando en la actividad o el sonido te la trajo? | `ClosingSurvey.kt:128` |
-| T0662 | texto | ¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas? | `ClosingSurvey.kt:129` |
-| T0663 | texto | ¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué? | `ClosingSurvey.kt:132` |
-| T0664 | texto | En la semana con el teléfono, ¿supiste qué querías hacer antes de leer la notificación o al leerla? | `ClosingSurvey.kt:133` |
-| T0665 | texto | ¿Qué fue distinto entre el Tag y el teléfono? | `ClosingSurvey.kt:134` |
-| T0666 | texto | ¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)? | `ClosingSurvey.kt:136` |
-| T0667 | texto | ¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste? | `ClosingSurvey.kt:137` |
-| T0668 | texto | ¿Por qué ahí? | `ClosingSurvey.kt:137` |
-| T0669 | texto | ¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir? | `ClosingSurvey.kt:139` |
-| T0670 | texto | ¿Sabías cómo callarlo o dejarlo para después? | `ClosingSurvey.kt:140` |
-| T0671 | texto | ¿Falló algo? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro. | `ClosingSurvey.kt:142` |
-| T0672 | texto | ¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue? | `ClosingSurvey.kt:143` |
-| T0673 | texto | ¿Hubo días en que no lo usaste? ¿Qué pasó? | `ClosingSurvey.kt:144` |
-| T0674 | texto | ¿Qué cambiarías? ¿Algo más que quieras contarme? | `ClosingSurvey.kt:145` |
-| T0675 | texto | Sin responder · unos 15 minutos | `ClosingSurvey.kt:181` |
-| T0676 | texto | Te falta 1 de [dato] partes | `ClosingSurvey.kt:182` |
-| T0677 | texto | Te faltan [dato] de [dato] partes | `ClosingSurvey.kt:183` |
-| T0678 | título | Cierre de la prueba | `ClosingSurvey.kt:189` |
-| T0679 | texto | Gracias por estas semanas. Son unas respuestas cortas y, al final, nueve preguntas para contar con tus palabras cómo te fue con el Tag y con el teléfono. Toma unos 15 minutos y puedes saltar cualquier pregunta. | `ClosingSurvey.kt:191` |
-| T0680 | texto | No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. | `ClosingSurvey.kt:196` |
-| T0681 | botón | Empezar | `ClosingSurvey.kt:200` |
-| T0682 | acción | Ahora no | `ClosingSurvey.kt:203` |
-| T0683 | texto | Queda en Ajustes para cuando quieras. | `ClosingSurvey.kt:206` |
-| T0684 | volver | Cerrar | `ClosingSurvey.kt:243` |
-| T0685 | texto | Enviar | `ClosingSurvey.kt:249` |
-| T0686 | texto | Seguir | `ClosingSurvey.kt:249` |
-| T0687 | texto | Nada | `ClosingSurvey.kt:267` |
-| T0688 | texto | Mucho | `ClosingSurvey.kt:267` |
-| T0689 | campo | Respuesta | `ClosingSurvey.kt:271` |
-| T0690 | ayuda del campo | Opcional | `ClosingSurvey.kt:271` |
-| T0691 | título | Gracias | `ClosingSurvey.kt:283` |
-| T0692 | subtítulo | Tus respuestas quedaron guardadas. Puedes ver o borrar tus datos en Ajustes, en Datos. | `ClosingSurvey.kt:284` |
-| T0693 | volver | Cerrar | `ClosingSurvey.kt:285` |
-| T0694 | botón | Listo | `ClosingSurvey.kt:286` |
-| T0695 | texto | 1, [dato] | `ClosingSurvey.kt:298` |
+| T0623 | texto | Las semanas con el Tag | `ClosingSurvey.kt:87` |
+| T0624 | texto | ¿Cómo te fue hasta ahora? | `ClosingSurvey.kt:87` |
+| T0625 | texto | ¿Te costó preparar Relevo? | `ClosingSurvey.kt:89` |
+| T0626 | texto | ¿Te molestó el sonido? | `ClosingSurvey.kt:90` |
+| T0627 | texto | ¿El sonido tenía que ver con el lugar donde sonó? | `ClosingSurvey.kt:91` |
+| T0628 | texto | ¿Algo más que quieras contarnos? | `ClosingSurvey.kt:92` |
+| T0629 | texto | La semana con el teléfono | `ClosingSurvey.kt:96` |
+| T0630 | texto | ¿Cómo te fue esta semana? | `ClosingSurvey.kt:96` |
+| T0631 | texto | ¿Te costó preparar Relevo? | `ClosingSurvey.kt:98` |
+| T0632 | texto | ¿Te molestó el sonido? | `ClosingSurvey.kt:99` |
+| T0633 | texto | ¿El sonido tenía que ver con el lugar donde sonó? | `ClosingSurvey.kt:100` |
+| T0634 | texto | Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer… | `ClosingSurvey.kt:102` |
+| T0635 | texto | Más | `ClosingSurvey.kt:103` |
+| T0636 | texto | Igual | `ClosingSurvey.kt:103` |
+| T0637 | texto | Menos | `ClosingSurvey.kt:103` |
+| T0638 | texto | ¿Por qué? ¿Algo más que quieras contarnos? | `ClosingSurvey.kt:105` |
+| T0639 | texto | ¡Terminaste la prueba! | `ClosingSurvey.kt:109` |
+| T0640 | texto | Gracias. Siete preguntas cortas; puedes saltar las que quieras. | `ClosingSurvey.kt:109` |
+| T0641 | texto | ¿Seguirías usando Relevo? | `ClosingSurvey.kt:111` |
+| T0642 | texto | Sí | `ClosingSurvey.kt:111` |
+| T0643 | texto | Tal vez | `ClosingSurvey.kt:111` |
+| T0644 | texto | No | `ClosingSurvey.kt:111` |
+| T0645 | texto | ¿Qué te ayudó más a recordar lo que querías hacer? | `ClosingSurvey.kt:113` |
+| T0646 | texto | El objeto donde empiezo | `ClosingSurvey.kt:114` |
+| T0647 | texto | El aviso en el teléfono | `ClosingSurvey.kt:114` |
+| T0648 | texto | Los dos por igual | `ClosingSurvey.kt:114` |
+| T0649 | texto | Ninguno | `ClosingSurvey.kt:114` |
+| T0650 | texto | ¿Por qué? | `ClosingSurvey.kt:116` |
+| T0651 | texto | Si siguieras usando Relevo, ¿con qué te gustaría que sonara? | `ClosingSurvey.kt:118` |
+| T0652 | texto | Un objeto | `ClosingSurvey.kt:119` |
+| T0653 | texto | El teléfono | `ClosingSurvey.kt:119` |
+| T0654 | texto | Me da igual | `ClosingSurvey.kt:119` |
+| T0655 | texto | ¿Qué te molestó? | `ClosingSurvey.kt:121` |
+| T0656 | texto | ¿Qué cambiarías? | `ClosingSurvey.kt:122` |
+| T0657 | texto | ¿Dónde quedó el objeto la mayor parte del tiempo? | `ClosingSurvey.kt:123` |
+| T0658 | texto | Entrevista final | `ClosingSurvey.kt:127` |
+| T0659 | texto | Nueve preguntas para responder con tus palabras. Puedes saltar las que quieras. | `ClosingSurvey.kt:127` |
+| T0660 | texto | Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono? | `ClosingSurvey.kt:130` |
+| T0661 | texto | ¿Ya estabas pensando en la actividad o el sonido te la trajo? | `ClosingSurvey.kt:131` |
+| T0662 | texto | ¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas? | `ClosingSurvey.kt:132` |
+| T0663 | texto | ¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué? | `ClosingSurvey.kt:135` |
+| T0664 | texto | En la semana con el teléfono, ¿supiste qué querías hacer antes de leer la notificación o al leerla? | `ClosingSurvey.kt:136` |
+| T0665 | texto | ¿Qué fue distinto entre el Tag y el teléfono? | `ClosingSurvey.kt:137` |
+| T0666 | texto | ¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)? | `ClosingSurvey.kt:139` |
+| T0667 | texto | ¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste? | `ClosingSurvey.kt:140` |
+| T0668 | texto | ¿Por qué ahí? | `ClosingSurvey.kt:140` |
+| T0669 | texto | ¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir? | `ClosingSurvey.kt:142` |
+| T0670 | texto | ¿Sabías cómo callarlo o dejarlo para después? | `ClosingSurvey.kt:143` |
+| T0671 | texto | ¿Falló algo? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro. | `ClosingSurvey.kt:145` |
+| T0672 | texto | ¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue? | `ClosingSurvey.kt:146` |
+| T0673 | texto | ¿Hubo días en que no lo usaste? ¿Qué pasó? | `ClosingSurvey.kt:147` |
+| T0674 | texto | ¿Qué cambiarías? ¿Algo más que quieras contarme? | `ClosingSurvey.kt:148` |
+| T0675 | texto | Sin responder · unos 15 minutos | `ClosingSurvey.kt:184` |
+| T0676 | texto | Te falta 1 de [dato] partes | `ClosingSurvey.kt:185` |
+| T0677 | texto | Te faltan [dato] de [dato] partes | `ClosingSurvey.kt:186` |
+| T0678 | título | Cierre de la prueba | `ClosingSurvey.kt:192` |
+| T0679 | texto | Gracias por estas semanas. Son unas respuestas cortas y, al final, nueve preguntas para contar con tus palabras cómo te fue con el Tag y con el teléfono. Toma unos 15 minutos y puedes saltar cualquier pregunta. | `ClosingSurvey.kt:194` |
+| T0680 | texto | No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. | `ClosingSurvey.kt:199` |
+| T0681 | botón | Empezar | `ClosingSurvey.kt:203` |
+| T0682 | acción | Ahora no | `ClosingSurvey.kt:206` |
+| T0683 | texto | Queda en Ajustes para cuando quieras. | `ClosingSurvey.kt:209` |
+| T0684 | volver | Cerrar | `ClosingSurvey.kt:245` |
+| T0685 | texto | Enviar | `ClosingSurvey.kt:251` |
+| T0686 | texto | Seguir | `ClosingSurvey.kt:251` |
+| T0687 | texto | Nada | `ClosingSurvey.kt:269` |
+| T0688 | texto | Mucho | `ClosingSurvey.kt:269` |
+| T0689 | campo | Respuesta | `ClosingSurvey.kt:273` |
+| T0690 | ayuda del campo | Opcional | `ClosingSurvey.kt:273` |
+| T0691 | título | Gracias | `ClosingSurvey.kt:285` |
+| T0692 | subtítulo | Tus respuestas quedaron guardadas. Puedes ver o borrar tus datos en Ajustes, en Datos. | `ClosingSurvey.kt:286` |
+| T0693 | volver | Cerrar | `ClosingSurvey.kt:287` |
+| T0694 | botón | Listo | `ClosingSurvey.kt:288` |
+| T0695 | texto | 1, [dato] | `ClosingSurvey.kt:300` |
 
 ## 29 Envíanos un comentario (antes, Opinar sobre Relevo)
 

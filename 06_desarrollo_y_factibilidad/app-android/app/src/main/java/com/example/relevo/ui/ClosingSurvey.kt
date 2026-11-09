@@ -52,8 +52,12 @@ import com.example.relevo.ui.components.Text
  *
  * La ve quien ya usaba Relevo cuando abrió esta versión por primera vez, nunca una instalación nueva. Aparece
  * al abrir la app, una vez, y después queda en Ajustes hasta terminarla. Cada parte se guarda al tocar
- * «Seguir», así que lo respondido no se pierde si la persona la deja a medias, y las preguntas que ya
- * respondió en la app 2.33 no se repiten.
+ * «Seguir», así que lo respondido no se pierde si la persona la deja a medias.
+ *
+ * 4.7.1: se muestran todas las preguntas, aunque alguna se haya respondido antes. Las claves `semana1_*` y
+ * `cierre_*` también las usaron las tarjetas de la prueba de 21 días, con otro sentido (la primera semana, la
+ * semana que más ayudó); saltarlas por eso podía dejar sin responder la semana con el teléfono. Lo anterior
+ * queda guardado con su fecha y no se borra.
  */
 internal object ClosingSurvey {
   const val CHECKED = "survey_closing_checked"
@@ -71,9 +75,8 @@ internal object ClosingSurvey {
   fun eligibleAtFirstRun(onboardingComplete: Boolean, acceptedBefore: Boolean, hasHistory: Boolean): Boolean =
     onboardingComplete || acceptedBefore || hasHistory
 
-  /** Las partes que quedan desde [from], sin las que ya tienen todas sus preguntas respondidas. */
-  fun remainingParts(from: Int, answered: Set<String>): List<Int> =
-    parts.indices.filter { it >= from && parts[it].questions.any { q -> q.key !in answered } }
+  /** Las partes que quedan desde [from], la próxima por responder. */
+  fun remainingParts(from: Int): List<Int> = parts.indices.filter { it >= from }
 
   private fun scale(key: String, text: String) = ClosingQuestion(key, text, ClosingKind.SCALE)
   private fun choice(key: String, text: String, vararg options: Pair<String, String>) = ClosingQuestion(key, text, ClosingKind.CHOICE, options.toList())
@@ -212,19 +215,18 @@ internal fun ClosingIntroSheet(onStart: () -> Unit, onLater: () -> Unit) {
 }
 
 /**
- * Las partes del cierre, una por pantalla. [answered]: las claves que la persona ya respondió en el teléfono;
- * esas preguntas no se muestran. [onPart] guarda una parte y dice cuál sigue (null al terminar).
+ * Las partes del cierre, una por pantalla, desde [startPart]. [onPart] guarda una parte y dice cuál sigue (null
+ * al terminar).
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun ClosingSurveyScreen(
-  answered: Set<String>,
   startPart: Int,
   onPart: (part: Int, answers: List<Pair<String, String>>, next: Int?) -> Unit,
   onClose: () -> Unit,
 ) {
   // Se calcula una vez al abrir: al guardar una parte, [startPart] avanza, y recalcularla saltaba la siguiente.
-  val remaining = rememberSaveable { ArrayList(ClosingSurvey.remainingParts(startPart, answered)) }
+  val remaining = rememberSaveable { ArrayList(ClosingSurvey.remainingParts(startPart)) }
   var index by rememberSaveable { mutableIntStateOf(0) }
   var values by rememberSaveable { mutableStateOf(HashMap<String, String>()) }
   var finished by rememberSaveable { mutableStateOf(remaining.isEmpty()) }
@@ -254,7 +256,7 @@ internal fun ClosingSurveyScreen(
     },
   ) {
     Column(verticalArrangement = Arrangement.spacedBy(Gap.section)) {
-      part.questions.filter { it.key !in answered }.forEach { question ->
+      part.questions.forEach { question ->
         val value = values[question.key]
         val set: (String?) -> Unit = { new -> values = HashMap(values).apply { if (new.isNullOrEmpty()) remove(question.key) else put(question.key, new) } }
         SurveyQuestion(question.text) {

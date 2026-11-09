@@ -242,6 +242,7 @@
 | 7 nov. | Encargo | Preguntó si quedaba algún detalle por arreglar y pidió dejar la app lo más pulida posible. | [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md). Se recorrió la app en una copia aparte, sin conexión, con tema oscuro y letra al 200 %. Se arregló la señal que sonaba dos veces si la app se abría justo al cumplirse el tiempo. También se alinearon Permisos, las horas sin sonar dan la vuelta, la barra de pestañas cabe con letra grande y se corrigieron cinco textos. 99 pruebas. | D-167 |
 | 9 nov. | Pregunta | Preguntó qué tareas quedan pendientes y si falta algo para entregar la memoria. | Se respondió en la conversación: lo principal son los resultados del cierre de la prueba, que la memoria marca como pendientes, y además las decisiones sobre el objeto y la versión de la app, la memoria diseñada con el texto final y la presentación del Pase. | — |
 | 9 nov. | Encargo | Pidió llevar a la app la encuesta y la entrevista finales del cierre de la prueba, solo para quienes ya la usan, al abrirla o desde Ajustes si no la responden, con todo guardado en Supabase. | [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md): las preguntas del instrumento de cierre, en cuatro partes y con sus mismas claves, en `relevo_answers`. Aparecen al abrir la app una vez y después quedan en Ajustes. 104 pruebas, revisión en una copia aparte sin conexión y dos errores corregidos. | D-175 |
+| 9 nov. | Pregunta y encargo | Preguntó si el instrumento de cierre estaba actualizado, porque recordaba una entrevista más reciente, y pidió que esté integrado en la app, que se suba a Supabase y que se vea en el panel de Relevo, sin perder ningún dato ni respuesta. | El del 28 de octubre es el más reciente para las personas de la prueba; lo del 2 de noviembre es la guía de los profesores y la entrevista a expertos. [Android 4.7.1](../06_desarrollo_y_factibilidad/app-android/version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md): el cierre muestra siempre todas sus preguntas. El panel muestra el cierre por persona, y su artefacto en claude.ai se publicó de nuevo. En Supabase no se borró nada. | D-176 |
 
 ## Lo que muestra el registro
 
@@ -252,6 +253,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Instrumento de cierre y panel
+
+- **Qué cambió:** se registró el pedido sobre el instrumento de cierre, la app, Supabase y el panel.
+- **Cómo estaba antes:** el último pedido era el cierre de la prueba en la app.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-09 — Pendientes y cierre en la app
 
