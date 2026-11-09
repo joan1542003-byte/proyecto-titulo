@@ -150,7 +150,7 @@ El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la
 
 ## Decimotercera ronda: referencias en APA 7 (D-173)
 
-El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual, y Laws of UX suma la fecha de consulta. El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
+El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual; Laws of UX suma la fecha de consulta, y Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile. El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
 
 ## Extensión
 
@@ -180,10 +180,16 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
 - **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. Falta confirmar la edición de Norman que se usó: la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002.
-- **Dos enlaces (D-173):** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió, y decidir si la ficha de Screenless se mantiene como se consultó el 24 de agosto, porque la página del producto hoy responde 404 desde Chile.
+- **Un enlace (D-173):** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Screenless
+
+- **Qué cambió:** la decimotercera ronda suma la nueva referencia de Screenless, y el pendiente queda en un solo enlace.
+- **Cómo estaba antes:** Screenless citaba la página del producto y su ficha esperaba una decisión del autor.
+- **Por qué:** el autor pidió reescribir la ficha con lo que muestra la portada (D-173).
 
 ### 2026-11-09 — Decimotercera ronda
 

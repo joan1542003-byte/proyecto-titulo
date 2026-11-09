@@ -15,7 +15,7 @@ Revisión del 9 de noviembre de 2026, a pedido del autor: todas las citas y refe
 - **Citas:** todas las citas tienen su referencia y todas las referencias se citan; las citas con varias obras están en orden alfabético.
 - **53 DOI:** todos llevan a su obra, y sus datos coinciden con el registro después de las correcciones. 23 tienen una copia de texto abierto que abre. En 27, la editorial —ACM, SAGE, Wiley, Oxford, Springer, PNAS, Annual Reviews, Emerald, MDPI o IEEE— bloquea las herramientas automáticas con una verificación anti-bot, pero la página abre con normalidad en un navegador; varios de esos textos completos son de pago. Las otras 3 abren directamente en la editorial.
 - **Páginas, informes, leyes, patentes y norma:** abren, y las cifras y datos que se comprobaron coinciden con lo que se les atribuye (Subtel, UNAM, Microsoft, Laws of UX, Pause Point y las guías de Apple y Google).
-- **Dos enlaces no se pudieron abrir** (abajo, «Pendiente del autor»).
+- **Un enlace no se pudo abrir** (abajo, «Pendiente del autor»).
 
 ## Correcciones
 
@@ -28,18 +28,18 @@ Revisión del 9 de noviembre de 2026, a pedido del autor: todas las citas y refe
 - ISO 3864-1 suma el tipo de documento y su dirección.
 - Springer Nature usa su dirección actual, porque la antigua redirige; también en el Anexo E.
 - Laws of UX suma la fecha de consulta, como las demás páginas sin fecha.
+- Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile; también en el Anexo C.
 
 **Anexos**
 
-- **C:** FocuShift se cita por su artículo en TEI 2026 —Dong et al. (2026), con DOI—, porque el dominio de la página de AxLab ya no existe; el resumen del artículo confirma lo que dice el anexo. Las patentes llevan como autores a sus inventores, el tipo de documento y la oficina que las publica: Herman y Akmal (2023), de Apple, y Driver y Nasgowitz (2026), de Brick; las de Newman y Rosenberg suman la oficina. Raya se cita como capítulo de las actas de INTERACT 2021, con editores, volumen y páginas. Apple (s. f.) pierde la letra, porque es la única obra de Apple en ese anexo. La página de Focusaur sin fecha va antes que la campaña de 2026, cuyo título usa «&», como la página. La campaña dice «unos 1400 patrocinadores»: tenía 1398 al 9 de noviembre y el anexo decía 1395. Smits (2022) dice «Tesis de maestría» y nombra su repositorio.
+- **C:** FocuShift se cita por su artículo en TEI 2026 —Dong et al. (2026), con DOI—, porque el dominio de la página de AxLab ya no existe; el resumen del artículo confirma lo que dice el anexo. Las patentes llevan como autores a sus inventores, el tipo de documento y la oficina que las publica: Herman y Akmal (2023), de Apple, y Driver y Nasgowitz (2026), de Brick; las de Newman y Rosenberg suman la oficina. Raya se cita como capítulo de las actas de INTERACT 2021, con editores, volumen y páginas. Apple (s. f.) pierde la letra, porque es la única obra de Apple en ese anexo. La página de Focusaur sin fecha va antes que la campaña de 2026, cuyo título usa «&», como la página. La campaña dice «unos 1400 patrocinadores»: tenía 1398 al 9 de noviembre y el anexo decía 1395. Smits (2022) dice «Tesis de maestría» y nombra su repositorio. A pedido del autor, la ficha de Screenless Breaker se reescribió con lo que muestra hoy la portada.
 - **D:** Google (2026), sin letra, porque es la única obra de Google de 2026 en ese anexo.
 - **H:** Jonauskaite et al. (2020) escribe «Antonietti, J.-P.»; la norma ISO suma tipo y dirección, y Ottosson suma su fecha (23 de diciembre de 2020).
 
 ## Pendiente del autor
 
 1. **Smits (2022), Anexo C:** el repositorio de TU Delft no respondió desde aquí. Abrir [el registro](https://repository.tudelft.nl/record/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22) y confirmar que carga.
-2. **Screenless (s. f.), memoria y Anexo C:** la página del producto, consultada el 24 de agosto, hoy responde 404 desde Chile y no tiene copia archivada. La [portada](https://screenlessapp.com/en) abre y confirma la llave NFC, el desbloqueo físico y el modo para padres, pero no la salida de emergencia demorada, el precio ni la compatibilidad, y anuncia una versión para Android. Falta decidir si la ficha se mantiene como se consultó o se reescribe con lo que muestra la portada.
-3. **Norman (1988/1990):** la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002. Conviene mirar la página legal de la copia con que se comprobaron las páginas 73 y 103: si es la de 2002, la referencia pasa a Norman (1988/2002).
+2. **Norman (1988/1990):** la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002. Conviene mirar la página legal de la copia con que se comprobaron las páginas 73 y 103: si es la de 2002, la referencia pasa a Norman (1988/2002).
 
 Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 
@@ -133,7 +133,7 @@ Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 | Sánchez-Borrero et al. (2026) | H | DOI verificado (Crossref) | Texto abierto: [copia](https://revistasojs.ucaldas.edu.co/index.php/kepes/article/download/12119/8370) |  |
 | Sanders y Stappers (2012) | Memoria | Libro verificado | Libro impreso | Datos verificados en la página de BIS Publishers: ISBN 978-90-6369-284-1, publicado en otoño de 2012. |
 | Sanders (2026) | Memoria, C | Blog verificado | Abierta | Autora (Sophie Sanders) y fecha (12 de mayo de 2026) verificadas en la página. |
-| Screenless (s. f.) | Memoria, C | Página | No se pudo abrir | La página del producto responde 404 desde Chile; la tienda oculta el producto para la región y no hay copia en Internet Archive. La portada del sitio sí abre y confirma la llave NFC, el desbloqueo físico y el modo para padres, pero no la salida de emergencia demorada, el precio ni la compatibilidad. **Pendiente del autor.** |
+| Screenless (s. f.) | Memoria, C | Página verificada | Abierta | La página del producto, consultada el 24 de agosto, responde 404 desde Chile y no tiene copia en Internet Archive. A pedido del autor, la referencia cita la portada, que abre, y la ficha del Anexo C describe lo que la portada muestra: bloqueo por horarios, desbloqueo al acercar el teléfono, sin contraseña ni nube, modo para padres, 45 euros en un solo pago y una versión para Android anunciada. |
 | Silverman y Barasch (2023) | Memoria, D | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas |  |
 | Slack (2019) | H | Página verificada | Abierta |  |
 | Smit et al. (2019) | Memoria | DOI verificado (Crossref) | Texto abierto: [copia](https://www.ncbi.nlm.nih.gov/pmc/articles/6914245) |  |
@@ -158,6 +158,12 @@ Las 27 páginas de editoriales no requieren nada: abren en un navegador normal.
 | Zimmerman et al. (2007) | Memoria | DOI verificado (Crossref) | Página de la editorial: abre en un navegador; bloquea herramientas automáticas |  |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Screenless
+
+- **Qué cambió:** Screenless se cita por la portada de su sitio y su ficha se reescribió; queda un solo enlace pendiente.
+- **Cómo estaba antes:** la ficha de Screenless estaba pendiente de una decisión del autor.
+- **Por qué:** el autor pidió reescribirla con lo que muestra hoy la portada.
 
 ### 2026-11-09 — Creación
 

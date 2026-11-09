@@ -2099,7 +2099,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-173 — Citas y referencias verificadas en APA 7
 
 - **Fecha:** 2026-11-09.
-- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`; quedan dos enlaces y la edición de Norman para el autor.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`; quedan un enlace y la edición de Norman para el autor.
 - **Contexto:** en las últimas semanas antes de la entrega, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se puede abrir; autorizó lo que hiciera falta y pidió que, si algo bloqueaba el acceso, se intentara o se le pidiera a él.
 - **Decisión:**
   - **Alcance:** 107 obras —83 de la memoria v6 y 24 solo de los anexos— se cruzaron con sus citas, se compararon con Crossref, DataCite, el ISBN, Google Patents o la página de ISO, y se abrieron; el detalle por referencia está en la [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md).
@@ -2108,10 +2108,17 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Fuente reemplazada:** FocuShift se cita por su artículo en TEI 2026, con DOI, porque el dominio de AxLab ya no existe; el resumen confirma lo que dice el anexo.
   - **Datos corregidos:** iniciales de Waggoner et al. (2026) y Jonauskaite et al. (2020), el capítulo de Raya en INTERACT 2021, el tipo y la dirección de la norma ISO 3864-1, la fecha de Ottosson (2020), la dirección de Springer Nature, la fecha de consulta de Laws of UX, el título y los patrocinadores de la campaña de Focusaur y el tipo de tesis de Smits (2022).
   - **Acceso:** las verificaciones anti-bot y los CAPTCHA no se forzaron. Las 27 páginas de editoriales que bloquean herramientas automáticas abren en un navegador normal y sus datos se verificaron por el DOI; 23 obras tienen una copia abierta que abre.
-- **Pendiente del autor:** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió; decidir si la ficha de Screenless se mantiene como se consultó el 24 de agosto —la página del producto hoy responde 404 desde Chile— o se reescribe con la portada; y confirmar la edición de Norman con que se comprobaron las páginas 73 y 103.
+- **Screenless:** la página del producto hoy responde 404 desde Chile y no tiene copia archivada; el autor pidió reescribir la ficha del Anexo C con lo que muestra la portada del sitio, que también pasa a ser la referencia en la memoria.
+- **Pendiente del autor:** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió, y confirmar la edición de Norman con que se comprobaron las páginas 73 y 103.
 - **Documentos:** [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md), [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-173, Screenless
+
+- **Qué cambió:** D-173 registra que la ficha de Screenless se reescribió con la portada del sitio.
+- **Cómo estaba antes:** dejaba la ficha de Screenless como decisión pendiente del autor.
+- **Por qué:** el autor eligió reescribirla.
 
 ### 2026-11-09 — D-173
 

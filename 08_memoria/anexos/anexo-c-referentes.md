@@ -125,13 +125,13 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 ### Screenless Breaker
 
-**Descripción.** Una llave NFC pasiva, sin batería, para bloquear apps.
+**Descripción.** Una llave NFC pasiva, magnética y sin batería, para bloquear apps.
 
-**Funcionamiento.** La app arma el bloqueo y el Breaker lo deshace al acercarlo; tiene una salida de emergencia demorada y un modo parental (Screenless, s. f.).
+**Funcionamiento.** En la app, la persona elige qué apps se bloquean y cuándo están disponibles; quedan cerradas hasta que acerca el teléfono al Breaker, que se deja en casa al salir. No admite contraseña ni otra forma de saltarse el bloqueo; todo funciona en el teléfono, sin nube, y tiene un modo para padres (Screenless, s. f.).
 
-**Disponibilidad.** €45, sin suscripción. Su página declara compatibilidad con iOS y Android, pero sus preguntas frecuentes dicen que por ahora es solo para iOS.
+**Disponibilidad.** 45 euros en un solo pago, sin suscripción, con envío a más de 30 países. La guía de uso muestra el ajuste en iPhone, y la portada anuncia una versión para Android.
 
-**Evidencia.** No se encontró evidencia independiente; sus reseñas son valoraciones comerciales.
+**Evidencia.** No se encontró evidencia independiente; la reducción de hasta un 90 % del tiempo de pantalla y sus reseñas son cifras comerciales.
 
 **Aporte a Relevo.** Estar presente en un lugar no es lo mismo que controlar el acceso.
 
@@ -279,7 +279,7 @@ Rosenberg, L. B. (2009). *Spatially associated personal reminder system and meth
 
 Sanders, S. (2026, 12 de mayo). *Reclaim your time with Pause Point*. Google. https://blog.google/products-and-platforms/platforms/android/pause-point/
 
-Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en/products/screenless-breaker-v1
+Screenless. (s. f.). *You know you’re scrolling too much. Take your time back*. Recuperado el 9 de noviembre de 2026, de https://screenlessapp.com/en
 
 Smits, T. (2022). *Digital distraction barrier design* [Tesis de maestría, Delft University of Technology]. TU Delft Repository. https://repository.tudelft.nl/record/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22
 
@@ -294,6 +294,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Ficha de Screenless
+
+- **Qué cambió:** la ficha de Screenless Breaker describe lo que muestra hoy la portada del sitio —bloqueo por horarios, desbloqueo al acercar el teléfono, sin contraseña ni nube, modo para padres, 45 euros en un solo pago, envío a más de 30 países y una versión para Android anunciada—, y la referencia cita esa portada.
+- **Cómo estaba antes:** describía la página del producto consultada el 24 de agosto, con una salida de emergencia demorada y compatibilidad solo con iOS; esa página hoy responde 404 desde Chile y no tiene copia archivada.
+- **Por qué:** el autor pidió reescribirla con lo que muestra la portada (D-173).
 
 ### 2026-11-09 — Referencias en APA 7
 
