@@ -12,7 +12,7 @@ Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —est
 | --- | --- | --- | --- |
 | **1. La persona elige qué quiere hacer** | Lukoff et al. (2018); Meier y Reinecke (2021). En las entrevistas, las personas 2 y 3 reconocieron otra cosa que querían hacer y siguieron en el teléfono, mientras las personas 6, 7 y 8 vivieron su sesión como el descanso que buscaban. | La persona elige o escribe su actividad; la app no la deduce del uso. | Cada persona eligió las suyas: estudiar, ordenar su pieza, dibujar y tocar guitarra. |
 | **2. Cada actividad empieza con un paso concreto** | Gollwitzer y Sheeran (2006). La Persona 2 asoció una tarde bien aprovechada con tener sus materiales a mano (pregunta 10), y en la encuesta 42 de 43 personas nombraron un primer paso. | Dos preguntas al preparar: «¿Cómo empiezas?» y «¿Dónde empiezas?». | En las 21 respuestas, la persona recordó cómo empezar. |
-| **3. La persona decide cuándo suena** | Google (2026b): Android permite consultar el uso de cada app, con permiso. En la encuesta, 18 de 53 valoraron el teléfono para aprender o resolver algo. | Suena cuando las apps que la persona eligió suman el tiempo que ella fijó, y lo cambia en un toque. | Cada persona fijó su límite, de 15 a 45 minutos, y una bajó el suyo de 45 a 35. |
+| **3. La persona decide cuándo suena** | Google (2026): Android permite consultar el uso de cada app, con permiso. En la encuesta, 18 de 53 valoraron el teléfono para aprender o resolver algo. | Suena cuando las apps que la persona eligió suman el tiempo que ella fijó, y lo cambia en un toque. | Cada persona fijó su límite, de 15 a 45 minutos, y una bajó el suyo de 45 a 35. |
 | **4. La persona decide qué hacer cuando suena** | Grüning et al. (2023); Silverman y Barasch (2023). | La señal no bloquea nada. Empezar, dejarlo para después o cambiar de idea pesan lo mismo, sin rachas ni premios. | Se usaron las tres respuestas: empezaron en 10 de 21, lo dejaron para después en 9 y cambiaron de idea en 2. |
 | **5. El sistema interviene solo cuando hace falta** | Tonietto et al. (2021). En las entrevistas, las personas 6 y 7 valoraron una videollamada y un pódcast. | Sin un relevo preparado, Relevo no suena; la activación automática es opcional y viene apagada. | Las personas usaron Relevo a su gusto, cuando quisieron, y activaron 31 relevos en dos semanas. |
 | **6. Prepararlo toma poco esfuerzo** | Chiu y Gilbert (2024). En la encuesta, prepararlo fue uno de los motivos más citados para descartarlo: 7 de 53. | Pocas preguntas de un toque, y «Preparar de nuevo» repite el último relevo. | Siete de los 31 relevos se editaron o eliminaron antes de sonar, con la edición que se sumó el 9 de octubre a pedido de una persona. |
@@ -47,7 +47,7 @@ Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-s
 
 Gollwitzer, P. M. y Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology, 38*, 69–119. https://doi.org/10.1016/S0065-2601(06)38002-1
 
-Google. (2026b, 28 de agosto). *UsageStatsManager*. Android Developers. https://developer.android.com/reference/android/app/usage/UsageStatsManager
+Google. (2026, 28 de agosto). *UsageStatsManager*. Android Developers. https://developer.android.com/reference/android/app/usage/UsageStatsManager
 
 Grüning, D. J., Riedel, F. y Lorenz-Spreen, P. (2023). Directing smartphone use through the self-nudge app one sec. *Proceedings of the National Academy of Sciences, 120*(8), Artículo e2213114120. https://doi.org/10.1073/pnas.2213114120
 
@@ -62,6 +62,12 @@ Silverman, J. y Barasch, A. (2023). On or off track: How (broken) streaks affect
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, Artículo 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Referencias en APA 7
+
+- **Qué cambió:** la cita y la referencia de la página de UsageStatsManager dicen «Google (2026)».
+- **Cómo estaba antes:** decían «2026b», aunque este anexo cita una sola obra de Google de 2026.
+- **Por qué:** en APA 7 la letra solo distingue obras del mismo autor y año dentro de una misma lista (D-173).
 
 ### 2026-11-09 — Títulos formales
 

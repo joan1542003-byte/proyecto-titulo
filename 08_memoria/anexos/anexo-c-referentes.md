@@ -57,7 +57,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 **Descripción.** La herramienta de iPhone para medir el uso, programar descansos y restringir apps.
 
-**Funcionamiento.** Genera informes de actividad, fija límites por app o por categoría, programa periodos sin uso y bloquea apps, sitios y funciones; la persona puede cambiar o quitar los límites (Apple, s. f.-a).
+**Funcionamiento.** Genera informes de actividad, fija límites por app o por categoría, programa periodos sin uso y bloquea apps, sitios y funciones; la persona puede cambiar o quitar los límites (Apple, s. f.).
 
 **Disponibilidad.** Integrada en iPhone, sin costo aparte. Los informes y límites se pueden sincronizar entre iPhone, iPad y Mac.
 
@@ -151,7 +151,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 **Disponibilidad.** USD 129 en oferta, frente a USD 169, con planes gratis y Pro de la app. Se despacha a Estados Unidos y Europa.
 
-**Evidencia.** No se encontró evidencia independiente. Su campaña de Kickstarter de 2026 reunió 1395 patrocinadores (Focusaur, 2026), una señal comercial y no de uso sostenido.
+**Evidencia.** No se encontró evidencia independiente. Su campaña de Kickstarter de 2026 reunió unos 1400 patrocinadores (Focusaur, 2026), una señal comercial y no de uso sostenido.
 
 **Aporte a Relevo.** Un objeto puede anclar un lugar y un ritual, pero sus recompensas empujan a cumplir con el sistema y se orientan a la productividad. Relevo excluye los puntos, las rachas y la verificación.
 
@@ -200,7 +200,7 @@ No se encontró un producto, una patente ni un prototipo que reúna los cinco el
 
 | Referente | Coincidencias con Relevo | Diferencias |
 | --- | --- | --- |
-| FocuShift (AxLab, 2026) | Un objeto adherido al teléfono que cambia de forma durante una app que distrae; probado 48 horas, con entrevistas. | No trabaja con una intención propia, un lugar de inicio ni una señal ambiental. |
+| FocuShift (Dong et al., 2026) | Un objeto adherido al teléfono que cambia de forma durante una app que distrae; probado 48 horas, con entrevistas. | No trabaja con una intención propia, un lugar de inicio ni una señal ambiental. |
 | Focusaur (Focusaur, 2026) | App, teléfono, dispositivo y etiquetas NFC para espacios. | Mezcla foco, bloqueo, recompensas y hábitos; no deja una intención abierta y sin evaluación. |
 | Jaye Band (Jaye, 2026) | Una pulsera con app, prioridades personales, bloques de foco y vibración. | Tiene pantalla y no se ancla al lugar de la actividad; su campaña aparece cancelada. |
 | Remind Holder (Kim y Xu, 2019) | Una app y un portalápices de escritorio con luz y conexión inalámbrica. | Es un recordatorio temporal general, sin ocio digital ni primer paso. |
@@ -214,8 +214,8 @@ No se encontró un producto, una patente ni un prototipo que reúna los cinco el
 
 - **US7577522B2** (Rosenberg, 2009): un recordatorio personal escrito por la persona y asociado a un área, con salida digital.
 - **US11321677B1** (Newman y Newman, 2022): un dispositivo situado donde comienza una acción, con un recordatorio pasivo; usa una pantalla y no el teléfono.
-- **US20230267422A1** (Apple Inc., 2023): intención, posición de un objeto y recordatorio cuando el objeto está a la vista, con salida electrónica.
-- **US20260082231A1** (Brick LLC, 2026): un objeto cercano que cambia la configuración del teléfono; su mecanismo es el bloqueo.
+- **US20230267422A1**, de Apple (Herman y Akmal, 2023): intención, posición de un objeto y recordatorio cuando el objeto está a la vista, con salida electrónica.
+- **US20260082231A1**, de Brick (Driver y Nasgowitz, 2026): un objeto cercano que cambia la configuración del teléfono; su mecanismo es el bloqueo.
 
 Estas patentes impiden presentar como nuevo el concepto amplio de recordatorios, objetos y lugares. La revisión fue exploratoria: no permite concluir infracción, patentabilidad ni libertad de operación, que exigirían una búsqueda profesional.
 
@@ -223,15 +223,9 @@ Estas patentes impiden presentar como nuevo el concepto amplio de recordatorios,
 
 ## Referencias
 
-Apple. (s. f.-a). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
-
-Apple Inc. (2023). *Contextual reminders* (U.S. Patent Application Publication No. US20230267422A1). https://patents.google.com/patent/US20230267422A1/en
-
-AxLab. (2026). *FocuShift: Actuated intervention to prevent smartphone overuse via phone-attached shape-changing device*. University of Chicago. https://www.axlab.cs.uchicago.edu/projects/focushift
+Apple. (s. f.). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
 Biedermann, D., Schneider, J. y Drachsler, H. (2021). Digital self-control interventions for distracting media multitasking: A systematic review. *Journal of Computer Assisted Learning, 37*(5), 1217–1231. https://doi.org/10.1111/jcal.12581
-
-Brick LLC. (2026). *Electronic device program blocker* (U.S. Patent Application Publication No. US20260082231A1). https://patents.google.com/patent/US20260082231A1/en
 
 Brick LLC. (s. f.-a). *Brick — Take back control of your screen time*. Recuperado el 24 de agosto de 2026, de https://getbrick.com/
 
@@ -243,15 +237,21 @@ Chiu, G. y Gilbert, S. J. (2024). Influence of the physical effort of reminder-s
 
 Cortés Concha, O. S. (2016). *Ocio digital y vida cotidiana: alcances de la experiencia social de ocio en las social media por parte de jóvenes nativos y nativas digitales* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://repositorio.uchile.cl/handle/2250/164071
 
-Focusaur. (2026). *Focusaur: The phone-free focus device for deep work and habits*. Kickstarter. https://www.kickstarter.com/projects/focusaur/focusaur-the-ai-focus-console-for-deep-work-and-habits
+Dong, H., Sathya, A. y Nakagaki, K. (2026). FocuShift: Actuated intervention to prevent smartphone overuse via phone-attached shape-changing device. En *Proceedings of the Twentieth International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 1–7). Association for Computing Machinery. https://doi.org/10.1145/3731459.3779357
+
+Driver, T. J. K. y Nasgowitz, Z. M. (2026). *Electronic device program blocker* (Solicitud de patente de EE. UU. n.º US20260082231A1). Oficina de Patentes y Marcas de Estados Unidos. https://patents.google.com/patent/US20260082231A1/en
 
 Focusaur. (s. f.). *Focusaur: The phone-free focus device for deep work & habits*. Recuperado el 24 de agosto de 2026, de https://www.focusaur.com/products/focusaur-the-phone-free-focus-device-for-deep-work-habits
+
+Focusaur. (2026). *Focusaur: The phone-free focus device for deep work & habits*. Kickstarter. https://www.kickstarter.com/projects/focusaur/focusaur-the-ai-focus-console-for-deep-work-and-habits
 
 Google. (s. f.). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Pixel Phone Help. Recuperado el 11 de octubre de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
 
 Grüning, D. J., Riedel, F. y Lorenz-Spreen, P. (2023). Directing smartphone use through the self-nudge app one sec. *Proceedings of the National Academy of Sciences, 120*(8), Artículo e2213114120. https://doi.org/10.1073/pnas.2213114120
 
 Haliburton, L., Grüning, D. J., Riedel, F., Schmidt, A. y Terzimehić, N. (2024). A longitudinal in-the-wild investigation of design frictions to prevent smartphone overuse. En *Proceedings of the CHI Conference on Human Factors in Computing Systems* (Artículo 243). Association for Computing Machinery. https://doi.org/10.1145/3613904.3642370
+
+Herman, B. K. y Akmal, S. (2023). *Contextual reminders* (Solicitud de patente de EE. UU. n.º US20230267422A1). Oficina de Patentes y Marcas de Estados Unidos. https://patents.google.com/patent/US20230267422A1/en
 
 Hermann, M., Mahler, T., de Melo, G. y Weber, M. (2007). The Tangible Reminder. En *3rd IET International Conference on Intelligent Environments (IE 07)* (pp. 144–151). Institution of Engineering and Technology. https://doi.org/10.1049/cp:20070359
 
@@ -261,11 +261,11 @@ Kim, I. y Xu, M. (2019). *Remind Holder*. https://inhaekim.com/project/remind-ho
 
 Kitchen Safe. (s. f.). *kSafe by Kitchen Safe: The time lock safe*. Recuperado el 25 de septiembre de 2026, de https://www.thekitchensafe.com/
 
-Menheere, D., de Haan, A., Vos, S. y Lallemand, C. (2021). *Raya: A tangible exercise buddy reminding oneself of the commitment to exercise*. https://doi.org/10.1007/978-3-030-85607-6_60
+Menheere, D., de Haan, A., Vos, S. y Lallemand, C. (2021). Raya: A tangible exercise buddy reminding oneself of the commitment to exercise. En C. Ardito, R. Lanzilotti, A. Malizia, H. Petrie, A. Piccinno, G. Desolda y K. Inkpen (Eds.), *Lecture notes in computer science: Vol. 12936. Human-computer interaction – INTERACT 2021* (pp. 471–475). Springer. https://doi.org/10.1007/978-3-030-85607-6_60
 
 Monge Roffarello, A. y De Russis, L. (2023). Achieving digital wellbeing through digital self-control tools: A systematic review and meta-analysis. *ACM Transactions on Computer-Human Interaction, 30*(4), Artículo 53. https://doi.org/10.1145/3571810
 
-Newman, J. J. y Newman, R. G. (2022). *Action reminder device and method* (U.S. Patent No. US11321677B1). https://patents.google.com/patent/US11321677B1/en
+Newman, J. J. y Newman, R. G. (2022). *Action reminder device and method* (Patente de EE. UU. n.º US11321677B1). Oficina de Patentes y Marcas de Estados Unidos. https://patents.google.com/patent/US11321677B1/en
 
 one sec. (s. f.). *Cut your screen time in half*. Recuperado el 24 de agosto de 2026, de https://one-sec.app/
 
@@ -275,13 +275,13 @@ Peña-Albert, A. K., Ingram, S., Khazaal, Y., Litrico, L., Farah, J. C. y Gillet
 
 Riveros Oltra, J. (2023). *BetterHumans: explorando la gamificación y la formación de hábitos en la retención de usuarios: un estudio de caso de Betterfly* [Memoria de título, Universidad de Chile]. Repositorio Académico de la Universidad de Chile. https://doi.org/10.58011/khxf-cq52
 
-Rosenberg, L. B. (2009). *Spatially associated personal reminder system and method* (U.S. Patent No. US7577522B2). https://patents.google.com/patent/US7577522B2/en
+Rosenberg, L. B. (2009). *Spatially associated personal reminder system and method* (Patente de EE. UU. n.º US7577522B2). Oficina de Patentes y Marcas de Estados Unidos. https://patents.google.com/patent/US7577522B2/en
 
 Sanders, S. (2026, 12 de mayo). *Reclaim your time with Pause Point*. Google. https://blog.google/products-and-platforms/platforms/android/pause-point/
 
 Screenless. (s. f.). *Screenless Breaker*. Recuperado el 24 de agosto de 2026, de https://screenlessapp.com/en/products/screenless-breaker-v1
 
-Smits, T. (2022). *Digital distraction barrier design* [Tesis de magíster, Delft University of Technology]. https://repository.tudelft.nl/record/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22
+Smits, T. (2022). *Digital distraction barrier design* [Tesis de maestría, Delft University of Technology]. TU Delft Repository. https://repository.tudelft.nl/record/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22
 
 Sohn, T., Li, K. A., Lee, G., Smith, I., Scott, J. y Griswold, W. G. (2005). Place-Its: A study of location-based reminders on mobile phones. En M. Beigl, S. Intille, J. Rekimoto y H. Tokuda (Eds.), *Lecture notes in computer science: Vol. 3660. UbiComp 2005: Ubiquitous computing* (pp. 232–250). Springer. https://doi.org/10.1007/11551201_14
 
@@ -294,6 +294,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Referencias en APA 7
+
+- **Qué cambió:** FocuShift se cita por su artículo en TEI 2026, con DOI; las patentes llevan como autores a sus inventores, el tipo de documento y la oficina que las publica; Raya se cita como capítulo de las actas de INTERACT 2021, con editores, volumen y páginas; la referencia de Apple sin fecha pierde la letra, porque es la única de Apple en este anexo; las obras sin fecha de Focusaur van antes que las fechadas; el título de la campaña de Focusaur sigue el de la página; los patrocinadores se redondean a unos 1400, y la tesis de Smits dice «Tesis de maestría» y nombra su repositorio.
+- **Cómo estaba antes:** FocuShift se citaba como página de AxLab, cuyo dominio ya no existe; dos patentes tenían como autor a la empresa titular y ninguna nombraba la oficina; Raya no decía dónde se publicó; Apple tenía «s. f.-a»; Focusaur de 2026 iba antes que la obra sin fecha; la campaña decía «and habits» y 1395 patrocinadores, y la tesis decía «Tesis de magíster».
+- **Por qué:** revisión de todas las citas y fuentes en APA 7 pedida por el autor el 9 de noviembre de 2026 (D-173).
 
 ### 2026-11-09 — Títulos formales
 

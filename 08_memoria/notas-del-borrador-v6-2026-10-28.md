@@ -148,9 +148,13 @@ El 9 de noviembre, el autor pidió eliminar de la marca las referencias a luz o 
 
 El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la», «los» o «las» y que los rótulos no usen «tu» ni «lo que», primero en los anexos y después también en la memoria. Cambian 17 títulos de sección y el del capítulo 11 —por ejemplo, «La identidad» pasa a «Identidad», «El objeto» a «Objeto», «Cómo habla Relevo» a «Voz de Relevo» y «Que valga el esfuerzo» a «Justificar el esfuerzo»—, 16 títulos de tablas y figuras con su índice, 11 rótulos de párrafo, los rótulos «Por qué» de los criterios, que pasan a «Fundamento», y los encabezados de las Tablas 1 y 2. La paleta cromática nombra sus partes como el logo —el tiempo, el primer paso, el lugar y la decisión— en vez de las preguntas de la aplicación; los esquemas por insertar y los pies de fotografía siguen la misma regla, y la arquitectura de información describe las secciones del perfil sin segunda persona. Las preguntas y respuestas citadas de la aplicación, como «¿Qué quieres hacer?», se mantienen. La versión diseñada no se regeneró; su generador ya rotula la lámina de identidad con las cuatro partes.
 
+## Decimotercera ronda: referencias en APA 7 (D-173)
+
+El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual, y Laws of UX suma la fecha de consulta. El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 16 452 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 453. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 451 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 452. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -175,10 +179,17 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
-- **Fuentes por conseguir (tarea 14, punto H):** McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019), la versión publicada de Sohn et al. (2005) y la edición de Norman que se usó.
+- **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. Falta confirmar la edición de Norman que se usó: la referencia dice Doubleday/Currency, 1990, y la copia de la biblioteca de diseño era la de Basic Books, 2002.
+- **Dos enlaces (D-173):** abrir el registro de Smits (2022) en el repositorio de TU Delft, que no respondió, y decidir si la ficha de Screenless se mantiene como se consultó el 24 de agosto, porque la página del producto hoy responde 404 desde Chile.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Decimotercera ronda
+
+- **Qué cambió:** se añadió la decimotercera ronda, se actualizó la extensión y se precisaron las fuentes por conseguir, con dos enlaces pendientes.
+- **Cómo estaba antes:** la última ronda era la duodécima, la extensión decía 16 452 y 17 453 palabras, y las fuentes por conseguir no estaban verificadas.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-173).
 
 ### 2026-11-09 — Duodécima ronda
 

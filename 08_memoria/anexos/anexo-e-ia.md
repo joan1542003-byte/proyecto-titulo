@@ -21,9 +21,15 @@ El autor definió el problema, la pregunta, la hipótesis y los objetivos; hizo 
 
 ## Referencias
 
-Springer Nature. (s. f.). *AI guidance for researchers, editors and reviewers*. Recuperado el 8 de noviembre de 2026, de https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities
+Springer Nature. (s. f.). *AI guidance for researchers, editors and reviewers*. Recuperado el 8 de noviembre de 2026, de https://group.springernature.com/gp/group/ai/ai-guidance-for-researchers-editors-reviewers
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Referencias en APA 7
+
+- **Qué cambió:** la guía de Springer Nature se cita con su dirección actual.
+- **Cómo estaba antes:** usaba una dirección antigua que hoy redirige a la nueva.
+- **Por qué:** revisión de las referencias en APA 7 (D-173).
 
 ### 2026-11-09 — Títulos formales
 

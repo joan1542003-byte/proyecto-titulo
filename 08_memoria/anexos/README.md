@@ -55,6 +55,12 @@ Queda en el repositorio como respaldo del proceso:
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Referencias en APA 7
+
+- **Qué cambió:** las referencias de los Anexos C, D, E y H se corrigieron tras verificarlas en línea, y se regeneraron el Word y el PDF.
+- **Cómo estaba antes:** FocuShift tenía un enlace muerto, las patentes llevaban a la empresa como autora y había letras de año sin otra obra del mismo año.
+- **Por qué:** revisión de todas las citas y fuentes pedida por el autor (D-173; detalle en la verificación de referencias).
+
 ### 2026-11-09 — Títulos formales
 
 - **Qué cambió:** los títulos y rótulos de los nueve anexos son frases nominales, sin artículo al comienzo ni segunda persona, y las figuras del logo, de la paleta cromática, de los íconos y de los degradados nombran así las partes, los íconos y las familias.
