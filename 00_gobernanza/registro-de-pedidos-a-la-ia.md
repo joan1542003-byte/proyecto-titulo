@@ -243,6 +243,7 @@
 | 9 nov. | Pregunta | Preguntó qué tareas quedan pendientes y si falta algo para entregar la memoria. | Se respondió en la conversación: lo principal son los resultados del cierre de la prueba, que la memoria marca como pendientes, y además las decisiones sobre el objeto y la versión de la app, la memoria diseñada con el texto final y la presentación del Pase. | — |
 | 9 nov. | Encargo | Pidió llevar a la app la encuesta y la entrevista finales del cierre de la prueba, solo para quienes ya la usan, al abrirla o desde Ajustes si no la responden, con todo guardado en Supabase. | [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md): las preguntas del instrumento de cierre, en cuatro partes y con sus mismas claves, en `relevo_answers`. Aparecen al abrir la app una vez y después quedan en Ajustes. 104 pruebas, revisión en una copia aparte sin conexión y dos errores corregidos. | D-175 |
 | 9 nov. | Pregunta y encargo | Preguntó si el instrumento de cierre estaba actualizado, porque recordaba una entrevista más reciente, y pidió que esté integrado en la app, que se suba a Supabase y que se vea en el panel de Relevo, sin perder ningún dato ni respuesta. | El del 28 de octubre es el más reciente para las personas de la prueba; lo del 2 de noviembre es la guía de los profesores y la entrevista a expertos. [Android 4.7.1](../06_desarrollo_y_factibilidad/app-android/version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md): el cierre muestra siempre todas sus preguntas. El panel muestra el cierre por persona, y su artefacto en claude.ai se publicó de nuevo. En Supabase no se borró nada. | D-176 |
+| 9 nov. | Decisión y encargo | Aceptó ajustar la entrevista final del cierre a la guía de sus profesores. | [Entrevista de cierre del 9 de noviembre](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md): diez preguntas abiertas, en embudo y con una pregunta final proyectiva. [Android 4.7.2](../06_desarrollo_y_factibilidad/app-android/version-4.7.2-entrevista-segun-la-guia-2026-11-09.md) la trae en dos pantallas, con claves por tema, y guarda lo escrito aunque se cierre a medias. El panel la muestra y se publicó de nuevo. 106 pruebas. Queda actualizar el Anexo I. | D-177 |
 
 ## Lo que muestra el registro
 
@@ -253,6 +254,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Entrevista según la guía
+
+- **Qué cambió:** se registró la decisión de ajustar la entrevista final a la guía de los profesores.
+- **Cómo estaba antes:** el último pedido era el del instrumento de cierre y el panel.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-09 — Instrumento de cierre y panel
 

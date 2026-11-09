@@ -57,7 +57,7 @@
       { question: 'semana1_comparacion', answer: 'menos', created_at: iso(now - 25 * 60000) },
       { question: 'cierre_semana_que_ayudo', answer: 'A', created_at: iso(now - 20 * 60000) },
       { question: 'cierre_prefiere_que_suene', answer: 'objeto', created_at: iso(now - 20 * 60000) },
-      { question: 'entrevista_1', answer: 'Ejemplo: supe qué quería hacer apenas sonó.', created_at: iso(now - 10 * 60000) },
+      { question: 'entrevista_al_sonar', answer: 'Ejemplo: lo escuché desde la pieza y me acordé del libro.', created_at: iso(now - 10 * 60000) },
     ] };
   // v5: relevos de ejemplo para Resultados y Exportar.
   const conds = ["A","B","C"], outs = ["started","started","later","changed",null,"started","later"], feel = ["good","neutral","bad","good"], routes = ["bluetooth","tag","phone"];

@@ -17,11 +17,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
+import kotlinx.coroutines.delay
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -46,9 +49,9 @@ import com.example.relevo.ui.components.Text
 /**
  * Cierre de la prueba (4.7, D-175): el [instrumento de cierre del 28 de octubre](07_validacion/instrumentos) en
  * la app, para que cada persona lo responda sola, cuando pueda. Son las mismas preguntas, opciones y claves que
- * el cuestionario en papel y la entrevista, así que el análisis las trata igual: las partes A, B y C vienen de
- * la app 2.33, y la entrevista, de la ficha del 20 de octubre y del protocolo 02. Los fallos críticos no
- * están: los marca el investigador al leer las respuestas.
+ * el cuestionario en papel, así que el análisis las trata igual: las partes A, B y C vienen de la app 2.33.
+ * Desde la 4.7.2 (D-177), la entrevista es la del 9 de noviembre, que sigue la guía de los profesores para la
+ * entrevista semiestructurada. Los fallos críticos no están: los marca el investigador al leer las respuestas.
  *
  * La ve quien ya usaba Relevo cuando abrió esta versión por primera vez, nunca una instalación nueva. Aparece
  * al abrir la app, una vez, y después queda en Ajustes hasta terminarla. Cada parte se guarda al tocar
@@ -123,32 +126,74 @@ internal object ClosingSurvey {
         open("cierre_lugar_parlante", "¿Dónde quedó el objeto la mayor parte del tiempo?"),
       ),
     ),
+    // 4.7.2 (D-177): la entrevista sigue la guía de los profesores para la entrevista semiestructurada. Todas las
+    // preguntas son abiertas, ninguna se responde con sí o no, y van de lo general a lo particular: contexto,
+    // contraste, opinión y una pregunta final proyectiva. Las claves llevan el tema, no un número, para que nunca
+    // se confundan con las de la entrevista del 28 de octubre (`entrevista_1` a `entrevista_9`).
     ClosingPart(
-      "Entrevista final", "Nueve preguntas para responder con tus palabras. Puedes saltar las que quieras.",
+      "Entrevista final, primera parte", "Cinco preguntas para contar con tus palabras cómo fue. No hay respuestas correctas y puedes saltar las que quieras.",
       listOf(
         open(
-          "entrevista_1", "Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?",
-          "¿Ya estabas pensando en la actividad o el sonido te la trajo?",
-          "¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas?",
+          "entrevista_uso", "Para empezar, cuéntame cómo usaste Relevo en estas semanas: qué actividad elegiste y en qué momentos lo preparabas.",
+          "¿Qué te llevó a elegir esa actividad?",
         ),
         open(
-          "entrevista_2", "¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué?",
-          "En la semana con el teléfono, ¿supiste qué querías hacer antes de leer la notificación o al leerla?",
-          "¿Qué fue distinto entre el Tag y el teléfono?",
+          "entrevista_al_sonar", "Piensa en una vez en que sonó. ¿Qué pasó desde que lo escuchaste? Cuéntalo paso a paso.",
+          "¿En qué estabas pensando justo antes de que sonara?",
+          "¿Qué se te vino a la cabeza antes de mirar el teléfono?",
+          "Cuéntame también de alguna vez en que sonó y no lo notaste, o lo notaste y seguiste en lo que estabas.",
         ),
-        open("entrevista_3", "¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)?"),
-        open("entrevista_4", "¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste?", "¿Por qué ahí?"),
         open(
-          "entrevista_5", "¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir?",
-          "¿Sabías cómo callarlo o dejarlo para después?",
+          "entrevista_lugar", "¿Dónde estuvo el Tag la mayor parte del tiempo y cómo llegaste a dejarlo ahí?",
+          "Si lo cambiaste de lugar, ¿qué te hizo moverlo?",
         ),
-        open("entrevista_6", "¿Falló algo? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro."),
-        open("entrevista_7", "¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue?"),
-        open("entrevista_8", "¿Hubo días en que no lo usaste? ¿Qué pasó?"),
-        open("entrevista_9", "¿Qué cambiarías? ¿Algo más que quieras contarme?"),
+        open(
+          "entrevista_tag_y_telefono", "¿Qué fue distinto y qué fue igual entre las semanas en que sonó el Tag y la semana en que sonó el teléfono?",
+          "En la semana con el teléfono, ¿qué pasaba entre que sonaba y que leías la notificación?",
+          "Cuéntame un ejemplo de cada una.",
+        ),
+        open(
+          "entrevista_dias_sin_uso", "Cuéntame de los días en que no preparaste ningún relevo: ¿qué pasaba esos días?",
+          "¿Qué te hizo volver a usarlo, o dejar de usarlo?",
+        ),
+      ),
+    ),
+    ClosingPart(
+      "Entrevista final, segunda parte", "Cinco preguntas sobre lo que sentiste y lo que cambiarías. Puedes saltar las que quieras.",
+      listOf(
+        open(
+          "entrevista_decidir", "Cuando sonaba, ¿cómo decidías qué hacer: empezar la actividad, dejarla para después o cambiar de idea?",
+          "¿Qué sentías en ese momento?",
+          "¿Cómo hacías para callarlo o dejarlo para después?",
+        ),
+        open(
+          "entrevista_costo_y_molestia", "¿Qué te costó o te molestó de usar Relevo? Puede ser al prepararlo, el sonido, el Tag o el teléfono.",
+          "Cuéntame una vez en que pasó.",
+        ),
+        open(
+          "entrevista_fallas", "¿Qué cosas no funcionaron como esperabas?",
+          "Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro.",
+        ),
+        open(
+          "entrevista_otras_personas", "¿Cómo fue usar Relevo con otras personas cerca?",
+          "¿Qué dijeron o hicieron cuando sonó o cuando vieron lo que preparaste?",
+        ),
+        open(
+          "entrevista_cambiaria", "Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería y por qué?",
+          "¿Qué más te gustaría contar que no te haya preguntado?",
+        ),
       ),
     ),
   )
+
+  /** Las partes que son entrevista: sus preguntas siguen la guía de los profesores. */
+  val interviewParts: List<ClosingPart> get() = parts.filter { it.title.startsWith("Entrevista") }
+
+  /** Versión del instrumento; va en el registro de uso junto a cada parte guardada. */
+  const val INSTRUMENT = "2026-11-09"
+
+  /** Lo escrito y aún no enviado, por si la persona cierra la pantalla a medias. Solo en el teléfono. */
+  const val DRAFT = "survey_closing_draft"
 
   /**
    * Lo respondido de una parte, en el orden de sus preguntas y con las claves del instrumento. Lo que quedó en
@@ -191,12 +236,12 @@ internal fun closingSubtitle(status: ClosingStatus): String = when {
 internal fun ClosingIntroSheet(onStart: () -> Unit, onLater: () -> Unit) {
   RelevoSheet(onDismiss = onLater, title = "Cierre de la prueba") {
     Text(
-      "Gracias por estas semanas. Son unas respuestas cortas y, al final, nueve preguntas para contar con tus palabras cómo te fue con el Tag y con el teléfono. Toma unos 15 minutos y puedes saltar cualquier pregunta.",
+      "Gracias por estas semanas. Son unas respuestas cortas y, al final, diez preguntas para contar con tus palabras cómo te fue con el Tag y con el teléfono. Toma unos 15 minutos y puedes saltar cualquier pregunta.",
       style = Relevo.type.body, color = Relevo.colors.graphite,
     )
     Spacer(Modifier.height(12.dp))
     Text(
-      "No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó.",
+      "No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. Se guardan con tu código, aparte de tu nombre.",
       style = Relevo.type.body, color = Relevo.colors.graphite,
     )
     Spacer(Modifier.height(Gap.section))
@@ -222,14 +267,22 @@ internal fun ClosingIntroSheet(onStart: () -> Unit, onLater: () -> Unit) {
 @Composable
 internal fun ClosingSurveyScreen(
   startPart: Int,
+  /** Lo que la persona había escrito y no envió: vuelve a aparecer en sus campos (4.7.2). */
+  draft: Map<String, String>,
+  onDraft: (Map<String, String>) -> Unit,
   onPart: (part: Int, answers: List<Pair<String, String>>, next: Int?) -> Unit,
   onClose: () -> Unit,
 ) {
   // Se calcula una vez al abrir: al guardar una parte, [startPart] avanza, y recalcularla saltaba la siguiente.
   val remaining = rememberSaveable { ArrayList(ClosingSurvey.remainingParts(startPart)) }
   var index by rememberSaveable { mutableIntStateOf(0) }
-  var values by rememberSaveable { mutableStateOf(HashMap<String, String>()) }
+  var values by rememberSaveable { mutableStateOf(HashMap(draft)) }
   var finished by rememberSaveable { mutableStateOf(remaining.isEmpty()) }
+  // 4.7.2: lo escrito se guarda en el teléfono mientras se responde y al salir de la pantalla, para que cerrar
+  // a medias, por error o porque llegó una llamada, no borre una respuesta larga.
+  val latest by rememberUpdatedState(values)
+  LaunchedEffect(values) { delay(400); onDraft(values) }
+  DisposableEffect(Unit) { onDispose { onDraft(latest) } }
   if (finished) {
     ClosingThanks(onClose)
     return
@@ -251,6 +304,8 @@ internal fun ClosingSurveyScreen(
       RelevoButton(if (last) "Enviar" else "Seguir", {
         val next = remaining.getOrNull(index + 1)
         onPart(partIndex, ClosingSurvey.answersOf(partIndex, values), next)
+        // Lo enviado sale del borrador: si no, volvería a guardarse como pendiente.
+        values = HashMap(values).apply { part.questions.forEach { remove(it.key) } }
         if (next == null) finished = true else index += 1
       }, Modifier.fillMaxWidth())
     },

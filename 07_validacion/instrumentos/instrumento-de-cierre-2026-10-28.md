@@ -65,6 +65,8 @@ Las escalas van de 1 («Nada») a 5 («Mucho»).
 
 ### Entrevista
 
+**Reemplazada el 9 de noviembre de 2026** por la [entrevista de cierre según la guía de los profesores](entrevista-de-cierre-2026-11-09.md) (D-177). La de abajo queda como registro: seis de sus nueve preguntas se podían responder con sí o no.
+
 1. Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?
    - ¿Ya estabas pensando en la actividad o el sonido te la trajo?
    - ¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas?
@@ -155,6 +157,12 @@ Las claves y los valores de A, B y C son los que la app 2.33 guarda en `relevo_a
 - **La entrevista** parte de la ficha del 20 de octubre y del protocolo 02.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Entrevista reemplazada
+
+- **Qué cambió:** se anota que la entrevista fue reemplazada por la del 9 de noviembre. El cuestionario sigue vigente.
+- **Cómo estaba antes:** la entrevista de nueve preguntas era la vigente.
+- **Por qué:** el autor pidió ajustarla a la guía de sus profesores (D-177).
 
 ### 2026-11-09 — También en la app
 

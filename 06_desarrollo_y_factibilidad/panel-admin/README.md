@@ -136,6 +136,12 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Entrevista del 9 de noviembre
+
+- **Qué cambió:** «Entrevista final» muestra las diez preguntas de la entrevista nueva, con claves por tema. La entrevista del 28 de octubre aparece aparte, solo si alguien la respondió. El artefacto de claude.ai se publicó de nuevo (versión 21) y reconoce la 4.7.2 como la más nueva.
+- **Cómo estaba antes:** mostraba las nueve preguntas del 28 de octubre.
+- **Por qué:** D-177.
+
 ### 2026-11-09 — Cierre de la prueba en la ficha y artefacto al día
 
 - **Qué cambió:** la ficha de cada persona tiene la sección «Cierre de la prueba», con las cuatro partes del instrumento, cada respuesta en palabras y su fecha, sin ocultar ninguna. El modo de ejemplo trae respuestas inventadas para verla. El artefacto de claude.ai se publicó con esta versión (versión 20, el mismo enlace), sin `conector-local.js`.

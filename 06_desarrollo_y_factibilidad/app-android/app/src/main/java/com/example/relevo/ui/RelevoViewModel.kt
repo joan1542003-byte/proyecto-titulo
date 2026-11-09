@@ -378,11 +378,26 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     _closingOfferDue.value = false
   }
 
+  /** Lo escrito en el cierre y aún no enviado (4.7.2). Vive solo en el teléfono, hasta enviar la parte. */
+  fun closingDraft(): Map<String, String> = runCatching {
+    val json = org.json.JSONObject(experiencePreferences.getString(ClosingSurvey.DRAFT, null) ?: "{}")
+    buildMap { json.keys().forEach { key -> put(key, json.getString(key)) } }
+  }.getOrDefault(emptyMap())
+
+  fun saveClosingDraft(values: Map<String, String>) {
+    val kept = values.filterValues { it.isNotBlank() }
+    if (kept.isEmpty()) experiencePreferences.edit().remove(ClosingSurvey.DRAFT).apply()
+    else experiencePreferences.edit().putString(ClosingSurvey.DRAFT, org.json.JSONObject(kept).toString()).apply()
+  }
+
   /** Guarda una parte del cierre y deja anotada la siguiente; sin [next], el cierre está terminado. */
   fun saveClosingPart(part: Int, answers: List<Pair<String, String>>, next: Int?) {
     val code = _reminder.value.participantCode
     answers.forEach { (question, answer) -> researchLog.recordAnswer(code, question, answer) }
-    log("encuesta_cierre_parte", "parte=${part + 1};respuestas=${answers.size}")
+    log("encuesta_cierre_parte", "parte=${part + 1};respuestas=${answers.size};instrumento=${ClosingSurvey.INSTRUMENT}")
+    // Lo enviado sale del borrador.
+    val sent = ClosingSurvey.parts[part].questions.map { it.key }.toSet()
+    saveClosingDraft(closingDraft().filterKeys { it !in sent })
     experiencePreferences.edit()
       .putInt(ClosingSurvey.PART, next ?: ClosingSurvey.parts.size)
       .putBoolean(ClosingSurvey.DONE, next == null)

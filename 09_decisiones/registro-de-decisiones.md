@@ -2302,7 +2302,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Ajustar ahora la entrevista a la guía de los profesores: cambia el instrumento y lo decide el autor.
 - **Documentos:** [Android 4.7.1](../06_desarrollo_y_factibilidad/app-android/version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md).
 
+## D-177 — La entrevista de cierre sigue la guía de los profesores
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6` (app 4.7.2) y en el artefacto del panel (versión 21).
+- **Contexto:** la guía de los profesores para la entrevista semiestructurada, del 2 de noviembre, pide preguntas abiertas, nunca de sí o no, un orden de lo general a lo particular y un cierre proyectivo. La entrevista del 28 de octubre no lo cumplía. El autor pidió ajustarla.
+- **Decisión:**
+  - **Diez preguntas abiertas en embudo:** introducción, cuerpo, crítica y una pregunta final proyectiva. Cubren los mismos aspectos que antes.
+  - **Claves por tema** en vez de numeradas, porque las respuestas no guardan la versión de la app: así las dos redacciones nunca se mezclan.
+  - **Dos pantallas de cinco preguntas,** y lo escrito se guarda en el teléfono hasta enviarlo.
+  - **Quien ya terminó la entrevista anterior no la repite.**
+- **Alternativas descartadas:**
+  - Reutilizar `entrevista_1` a `entrevista_9` con el orden nuevo: una respuesta anterior se leería bajo otra pregunta.
+  - Volver a preguntar a quien ya respondió: duplica el esfuerzo de la persona.
+  - Cambiar también el cuestionario: la guía trata de la entrevista, y sus preguntas vienen de la app de la prueba.
+- **Pendiente:** actualizar el Anexo I de la memoria con la entrevista que se aplique.
+- **Documentos:** [entrevista de cierre](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md) y [Android 4.7.2](../06_desarrollo_y_factibilidad/app-android/version-4.7.2-entrevista-segun-la-guia-2026-11-09.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-177
+
+- **Qué cambió:** se registró D-177.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-176.
+- **Por qué:** el autor pidió ajustar la entrevista final a la guía de sus profesores.
 
 ### 2026-11-09 — D-176
 

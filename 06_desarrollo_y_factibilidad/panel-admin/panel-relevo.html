@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.7';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.7.2';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -748,11 +748,22 @@ select json_build_object(
       cierre_semana_que_ayudo: 'Cierre: qué le ayudó más a recordar (A = el objeto, C = el aviso en el teléfono, igual o ninguna)',
       cierre_por_que_ayudo: 'Cierre: por qué le ayudó', cierre_prefiere_que_suene: 'Cierre: con qué le gustaría que sonara',
       cierre_que_molesto: 'Cierre: qué le molestó', cierre_que_cambiaria: 'Cierre: qué cambiaría', cierre_lugar_parlante: 'Cierre: dónde quedó el objeto',
-      entrevista_1: 'Entrevista final 1: qué pensó al sonar', entrevista_2: 'Entrevista final 2: qué le ayudó más a recordar',
-      entrevista_3: 'Entrevista final 3: qué le molestó o le costó', entrevista_4: 'Entrevista final 4: dónde estuvo el objeto',
-      entrevista_5: 'Entrevista final 5: si sintió que podía elegir', entrevista_6: 'Entrevista final 6: qué falló',
-      entrevista_7: 'Entrevista final 7: otras personas', entrevista_8: 'Entrevista final 8: días sin usarlo',
-      entrevista_9: 'Entrevista final 9: qué cambiaría',
+      entrevista_uso: 'Entrevista final: cómo usó Relevo',
+      entrevista_al_sonar: 'Entrevista final: qué pasó al sonar',
+      entrevista_lugar: 'Entrevista final: dónde estuvo el Tag',
+      entrevista_tag_y_telefono: 'Entrevista final: el Tag frente al teléfono',
+      entrevista_dias_sin_uso: 'Entrevista final: los días sin usarlo',
+      entrevista_decidir: 'Entrevista final: cómo decidía al sonar',
+      entrevista_costo_y_molestia: 'Entrevista final: qué le costó o le molestó',
+      entrevista_fallas: 'Entrevista final: qué no funcionó',
+      entrevista_otras_personas: 'Entrevista final: con otras personas cerca',
+      entrevista_cambiaria: 'Entrevista final: qué cambiaría',
+      // La entrevista del 28 de octubre, por si alguien la respondió con la app 4.7 o 4.7.1.
+      entrevista_1: 'Entrevista del 28 de octubre, 1: qué pensó al sonar', entrevista_2: 'Entrevista del 28 de octubre, 2: qué le ayudó más a recordar',
+      entrevista_3: 'Entrevista del 28 de octubre, 3: qué le molestó o le costó', entrevista_4: 'Entrevista del 28 de octubre, 4: dónde estuvo el objeto',
+      entrevista_5: 'Entrevista del 28 de octubre, 5: si sintió que podía elegir', entrevista_6: 'Entrevista del 28 de octubre, 6: qué falló',
+      entrevista_7: 'Entrevista del 28 de octubre, 7: otras personas', entrevista_8: 'Entrevista del 28 de octubre, 8: días sin usarlo',
+      entrevista_9: 'Entrevista del 28 de octubre, 9: qué cambiaría',
     };
     if (closing[q]) return closing[q];
     if (q.startsWith('cierre_')) return 'Cierre: ' + q.slice(7).replace(/_/g, ' ');
@@ -1144,14 +1155,28 @@ select json_build_object(
     ['Cierre de la prueba', [['cierre_seguiria_usando', '¿Seguirías usando Relevo?'], ['cierre_semana_que_ayudo', '¿Qué te ayudó más a recordar lo que querías hacer?'],
       ['cierre_por_que_ayudo', '¿Por qué?'], ['cierre_prefiere_que_suene', 'Si siguieras usando Relevo, ¿con qué te gustaría que sonara?'],
       ['cierre_que_molesto', '¿Qué te molestó?'], ['cierre_que_cambiaria', '¿Qué cambiarías?'], ['cierre_lugar_parlante', '¿Dónde quedó el objeto la mayor parte del tiempo?']]],
+    // Desde la app 4.7.2 (D-177): la entrevista que sigue la guía de los profesores, con claves por tema.
     ['Entrevista final', [
+      ['entrevista_uso', 'Para empezar, cuéntame cómo usaste Relevo en estas semanas: qué actividad elegiste y en qué momentos lo preparabas.'],
+      ['entrevista_al_sonar', 'Piensa en una vez en que sonó. ¿Qué pasó desde que lo escuchaste? Cuéntalo paso a paso.'],
+      ['entrevista_lugar', '¿Dónde estuvo el Tag la mayor parte del tiempo y cómo llegaste a dejarlo ahí?'],
+      ['entrevista_tag_y_telefono', '¿Qué fue distinto y qué fue igual entre las semanas en que sonó el Tag y la semana en que sonó el teléfono?'],
+      ['entrevista_dias_sin_uso', 'Cuéntame de los días en que no preparaste ningún relevo: ¿qué pasaba esos días?'],
+      ['entrevista_decidir', 'Cuando sonaba, ¿cómo decidías qué hacer: empezar la actividad, dejarla para después o cambiar de idea?'],
+      ['entrevista_costo_y_molestia', '¿Qué te costó o te molestó de usar Relevo? Puede ser al prepararlo, el sonido, el Tag o el teléfono.'],
+      ['entrevista_fallas', '¿Qué cosas no funcionaron como esperabas?'],
+      ['entrevista_otras_personas', '¿Cómo fue usar Relevo con otras personas cerca?'],
+      ['entrevista_cambiaria', 'Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería y por qué?'],
+    ]],
+    // Las claves numeradas son de la entrevista anterior: se muestran solo si alguien la respondió.
+    ['Entrevista final, versión del 28 de octubre', [
       ['entrevista_1', 'Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?'],
       ['entrevista_2', '¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué?'],
       ['entrevista_3', '¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)?'],
       ['entrevista_4', '¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste?'],
       ['entrevista_5', '¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir?'],
       ['entrevista_6', '¿Falló algo?'], ['entrevista_7', '¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue?'],
-      ['entrevista_8', '¿Hubo días en que no lo usaste? ¿Qué pasó?'], ['entrevista_9', '¿Qué cambiarías? ¿Algo más que quieras contarme?']]],
+      ['entrevista_8', '¿Hubo días en que no lo usaste? ¿Qué pasó?'], ['entrevista_9', '¿Qué cambiarías? ¿Algo más que quieras contarme?']], true],
   ];
   const CLOSING_VALUES = { mas: 'Más', igual: 'Igual', menos: 'Menos', si: 'Sí', tal_vez: 'Tal vez', no: 'No', A: 'El objeto donde empiezo', C: 'El aviso en el teléfono',
     ninguna: 'Ninguno', objeto: 'Un objeto', telefono: 'El teléfono', da_igual: 'Me da igual' };
@@ -1164,8 +1189,9 @@ select json_build_object(
   function closingBlock(rows) {
     if (!rows.length) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no responde el cierre de la prueba.' })]);
     const by = {}; rows.forEach((r) => (by[r.question] || (by[r.question] = [])).push(r));
-    const parts = CLOSING_PARTS.map(([title, questions]) => {
+    const parts = CLOSING_PARTS.map(([title, questions, legacy]) => {
       const answered = questions.filter(([key]) => by[key]);
+      if (legacy && !answered.length) return null;
       return el('div', { class: 'section' }, [
         el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: title }),
           el('span', { class: 'row-sub', text: answered.length ? answered.length + ' de ' + questions.length + ' preguntas respondidas' : 'Sin respuestas' })])]),
@@ -1173,7 +1199,7 @@ select json_build_object(
           el('span', { class: 'row-sub', text: question + ' · ' + when(r.created_at) + (by[key].length > 1 ? ' · respuesta ' + (i + 1) + ' de ' + by[key].length : '') }),
           el('span', { class: 'row-title voice', text: closingValue(key, r.answer).slice(0, 600) })])])))]);
     });
-    return el('div', { style: 'display:flex;flex-direction:column;gap:14px' }, parts);
+    return el('div', { style: 'display:flex;flex-direction:column;gap:14px' }, parts.filter(Boolean));
   }
 
   // ---- Resultados: cifras por condición, calculadas en la página con los relevos sin eliminar ----
@@ -1317,7 +1343,7 @@ select json_build_object(
     ['Relevos', 'recalled_first_step', '¿Recordó cómo empezar? yes, no'], ['Relevos', 'outcome', 'Qué hizo: started, later, changed, not_answered, deleted'],
     ['Relevos', 'signal_feeling', 'Cómo le cayó la señal: good, neutral, bad'], ['Relevos', 'usage_before_seconds', 'Segundos en las apps elegidas en los 10 min antes de la señal'],
     ['Relevos', 'usage_after_seconds', 'Segundos en las apps elegidas en los 10 min después de la señal'], ['Relevos', 'app_version', 'Versión de la app'],
-    ['Respuestas', 'question', 'Pregunta: semanaN_… (tarjeta semanal), semanas_previas_… y cierre_… (cierre de la prueba), entrevista_1 a entrevista_9 (entrevista final), opinion_…'], ['Eventos del relevo', 'event_type', 'Paso del relevo (armed, target_entered, signal_emitted, silenced, …)'],
+    ['Respuestas', 'question', 'Pregunta: semanaN_… (tarjeta semanal), semanas_previas_… y cierre_… (cierre de la prueba), entrevista_… con el tema de cada pregunta (entrevista final del 9 de noviembre; entrevista_1 a entrevista_9 son de la del 28 de octubre), opinion_…'], ['Eventos del relevo', 'event_type', 'Paso del relevo (armed, target_entered, signal_emitted, silenced, …)'],
     ['Uso de Relevo', 'event', 'Qué hizo en la app; detail agrega datos del evento'], ['Uso diario', 'package', 'App; _total es el tiempo total de pantalla'], ['Uso diario', 'seconds', 'Segundos de uso ese día'],
     ['Todas', 'consent_version', 'Versión del consentimiento aceptado'], ['Todas', 'created_at, updated_at', 'Fechas en hora de Chile continental']
   ].map(([Hoja, Columna, q]) => ({ Hoja, Columna, 'Qué es': q }));
