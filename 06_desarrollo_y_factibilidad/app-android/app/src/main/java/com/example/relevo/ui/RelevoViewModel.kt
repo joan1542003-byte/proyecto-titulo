@@ -204,6 +204,12 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
   val redesignSurveyDue: StateFlow<Boolean> = _redesignSurveyDue.asStateFlow()
   private var redesignSurveyTimer: Job? = null
   private var redesignSurveyResumedAt = 0L
+  /** 4.7 (D-175): el cierre de la prueba; null para quien no lo ve. */
+  private val _closing = MutableStateFlow<ClosingStatus?>(null)
+  internal val closing: StateFlow<ClosingStatus?> = _closing.asStateFlow()
+  /** El cierre está listo para ofrecerse al abrir la app, una vez. */
+  private val _closingOfferDue = MutableStateFlow(false)
+  val closingOfferDue: StateFlow<Boolean> = _closingOfferDue.asStateFlow()
 
   init {
     _installedApps.value = appsRepository.launcherApps()
@@ -229,6 +235,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       ProjectMessages.schedule(application)
     }
     checkRedesignSurvey()
+    checkClosingSurvey()
     onAppResumed()
   }
 
@@ -327,7 +334,66 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
 
   private fun redesignSurveyPending(): Boolean =
     hasCurrentConsent() && experiencePreferences.getBoolean(RedesignSurvey.ELIGIBLE, false) &&
-      !experiencePreferences.getBoolean(RedesignSurvey.SHOWN, false)
+      !experiencePreferences.getBoolean(RedesignSurvey.SHOWN, false) && !closingComesFirst()
+
+  /**
+   * 4.7: quien ve el cierre de la prueba lo ve antes que la encuesta del rediseño, y esta espera un día desde
+   * que se le ofreció el cierre, para no pedir dos encuestas seguidas.
+   */
+  private fun closingComesFirst(): Boolean {
+    if (!experiencePreferences.getBoolean(ClosingSurvey.ELIGIBLE, false)) return false
+    val offeredAt = experiencePreferences.getLong(ClosingSurvey.OFFERED_AT, 0L)
+    return offeredAt == 0L || System.currentTimeMillis() - offeredAt < ClosingSurvey.REDESIGN_WAIT_MILLIS
+  }
+
+  // ---- 4.7 (D-175): cierre de la prueba, para quien ya usaba Relevo ----
+
+  /** La primera vez que abre esta versión se decide si la persona ya usaba Relevo; después no cambia. */
+  private fun checkClosingSurvey() {
+    if (!experiencePreferences.getBoolean(ClosingSurvey.CHECKED, false)) {
+      val eligible = ClosingSurvey.eligibleAtFirstRun(
+        onboardingComplete = experiencePreferences.getBoolean("onboarding_complete", false),
+        acceptedBefore = Participation.acceptedBefore(getApplication()),
+        hasHistory = _history.value.isNotEmpty(),
+      )
+      experiencePreferences.edit().putBoolean(ClosingSurvey.CHECKED, true).putBoolean(ClosingSurvey.ELIGIBLE, eligible).apply()
+      log("encuesta_cierre_elegible", if (eligible) "si" else "no")
+    }
+    refreshClosing()
+  }
+
+  private fun refreshClosing() {
+    val eligible = experiencePreferences.getBoolean(ClosingSurvey.ELIGIBLE, false)
+    val done = experiencePreferences.getBoolean(ClosingSurvey.DONE, false)
+    _closing.value = if (eligible) ClosingStatus(experiencePreferences.getInt(ClosingSurvey.PART, 0), done) else null
+    _closingOfferDue.value = eligible && !done && hasCurrentConsent() && experiencePreferences.getLong(ClosingSurvey.OFFERED_AT, 0L) == 0L
+  }
+
+  /** Se ofreció al abrir la app: no vuelve a aparecer sola, pero queda en Ajustes. */
+  fun markClosingOffered(answer: String) {
+    if (experiencePreferences.getLong(ClosingSurvey.OFFERED_AT, 0L) == 0L) {
+      experiencePreferences.edit().putLong(ClosingSurvey.OFFERED_AT, System.currentTimeMillis()).apply()
+      log("encuesta_cierre_ofrecida", answer)
+    }
+    _closingOfferDue.value = false
+  }
+
+  /** Las preguntas ya respondidas en este teléfono: el cierre no las repite. */
+  fun closingAnswered(): Set<String> = runCatching { researchLog.answeredQuestions() }.getOrDefault(emptySet())
+
+  /** Guarda una parte del cierre y deja anotada la siguiente; sin [next], el cierre está terminado. */
+  fun saveClosingPart(part: Int, answers: List<Pair<String, String>>, next: Int?) {
+    val code = _reminder.value.participantCode
+    answers.forEach { (question, answer) -> researchLog.recordAnswer(code, question, answer) }
+    log("encuesta_cierre_parte", "parte=${part + 1};respuestas=${answers.size}")
+    experiencePreferences.edit()
+      .putInt(ClosingSurvey.PART, next ?: ClosingSurvey.parts.size)
+      .putBoolean(ClosingSurvey.DONE, next == null)
+      .apply()
+    if (next == null) log("encuesta_cierre_terminada")
+    refreshClosing()
+    syncRemote()
+  }
 
   /** Cuenta el tiempo con la app abierta, sumado entre aperturas, hasta un minuto. */
   private fun startRedesignSurveyTimer() {
@@ -385,6 +451,7 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
     logPermissions()
     refreshQuickFeedback()
     refreshLimitReview()
+    refreshClosing()
     startRedesignSurveyTimer()
     settingsStore.lastOpenedAt = System.currentTimeMillis()
     ReturnNotice.dismiss(getApplication())
@@ -579,6 +646,8 @@ class RelevoViewModel(application: Application) : AndroidViewModel(application) 
       refreshDashboard()
       // 4.6: quien venía de una versión anterior empieza a contar el minuto de la encuesta al aceptar.
       startRedesignSurveyTimer()
+      // 4.7: y, si le toca, ve el cierre de la prueba apenas vuelve a Inicio.
+      refreshClosing()
       // Envía lo pendiente y actualiza la copia en el teléfono sin esperar a que la app vuelva a abrirse.
       syncRemote()
     }

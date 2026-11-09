@@ -4,6 +4,8 @@
 
 Para este cierre reemplaza a la [ficha de escalas y cierre del 20 de octubre](ficha-escalas-y-cierre-2026-10-20.md), que pregunta por tres semanas con el objeto y no compara el objeto con el teléfono.
 
+**Desde el 9 de noviembre de 2026, también en la app** ([Android 4.7](../../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md), D-175): quien ya usaba Relevo responde el cuestionario y las nueve preguntas de la entrevista en el teléfono, con las mismas palabras, opciones y claves, y las respuestas llegan a Supabase. Las repreguntas aparecen como ayuda bajo cada pregunta, y los fallos críticos los marca el investigador al leerlas.
+
 ## Por qué existe
 
 Las tres personas usaron el Tag junto al primer paso y, en la última semana, la señal solo en el teléfono. Esa semana no se inició en la app ([tarea 6 de Por hacer](../../00_gobernanza/por-hacer.md)), así que la app no mostrará las preguntas que la [versión 2.33](../../06_desarrollo_y_factibilidad/app-android/version-2.33-semana-de-comparacion-2026-10-20.md) preparó para comparar: las escalas de las semanas con el Tag, la tarjeta del día 7 con la comparación y el cierre de siete preguntas. Son la única evidencia que contrasta el objeto con el teléfono, el tercer supuesto de la hipótesis. Este instrumento las aplica en papel, con las mismas palabras y opciones, y suma la entrevista final.
@@ -153,6 +155,12 @@ Las claves y los valores de A, B y C son los que la app 2.33 guarda en `relevo_a
 - **La entrevista** parte de la ficha del 20 de octubre y del protocolo 02.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — También en la app
+
+- **Qué cambió:** se anota que el instrumento también se responde en la app 4.7, con las mismas claves.
+- **Cómo estaba antes:** se aplicaba solo en papel y en una entrevista.
+- **Por qué:** el autor pidió llevar el cierre a la app (D-175).
 
 ### 2026-10-28 — Creación
 

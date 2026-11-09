@@ -36,6 +36,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -74,6 +75,9 @@ import dev.chrisbanes.haze.rememberHazeState
  * Espacio que reserva abajo la barra de pestañas. Las pantallas de pestañas lo dejan libre.
  */
 val LocalDockInset = compositionLocalOf { 0.dp }
+
+/** Lo que tapan, abajo, los botones flotantes de la pantalla (4.7). Un campo que se escribe sube por encima. */
+val LocalBottomOverlay = compositionLocalOf { 0.dp }
 
 /** Alto de la barra superior: volver o cerrar a la izquierda y una acción a la derecha. */
 private val BarHeight = 56.dp
@@ -153,7 +157,8 @@ fun RelevoScreen(
           titleTrailing?.invoke()
         }
       }
-      content()
+      // 4.7: los campos saben cuánto tapan los botones de abajo, para no quedar escondidos detrás al escribir.
+      CompositionLocalProvider(LocalBottomOverlay provides bottomSpace) { content() }
       Spacer(Modifier.height(bottomSpace + 28.dp))
     }
 

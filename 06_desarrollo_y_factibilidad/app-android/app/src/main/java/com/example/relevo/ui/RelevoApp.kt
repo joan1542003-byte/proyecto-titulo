@@ -76,6 +76,8 @@ internal enum class Route {
   TABS, PREPARE, ACTIVE, SIGNAL, DECIDE,
   ROUTE_EDIT, PROFILE_EDIT, SETTINGS, NOTICES, APPEARANCE, PERMISSIONS, HISTORY, ACTIVITY_EDIT,
   PRIVACY, CONSENT_DETAILS, FEEDBACK, REPORT,
+  /** 4.7 (D-175): el cierre de la prueba. */
+  CLOSING,
 }
 
 /** Las tres pestañas de la 4.0 (D-155): la Ruta pasa a Actividades, junto a lo tuyo y las ideas. */
@@ -147,6 +149,8 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
   LifecycleEventEffect(Lifecycle.Event.ON_PAUSE) { viewModel.onAppPaused() }
   val quickFeedbackDue by viewModel.quickFeedbackDue.collectAsState()
   val redesignSurveyDue by viewModel.redesignSurveyDue.collectAsState()
+  val closing by viewModel.closing.collectAsState()
+  val closingOfferDue by viewModel.closingOfferDue.collectAsState()
   val guide by viewModel.guide.collectAsState()
   val firstActivated by viewModel.firstActivated.collectAsState()
   val tag by viewModel.tag.collectAsState()
@@ -479,6 +483,7 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                   onNotices = { push(Route.NOTICES) }, onAppearance = { push(Route.APPEARANCE) },
                   onPermissions = { push(Route.PERMISSIONS) }, onPrivacy = { push(Route.PRIVACY) },
                   onBack = { pop() }, onSound = viewModel::chooseSound, onChange = viewModel::updateSettings,
+                  closing = closing?.takeIf { !it.done }, onClosing = { viewModel.markClosingOffered("ajustes"); push(Route.CLOSING) },
                 )
                 Route.NOTICES -> NoticesScreen(
                   settings, onChange = viewModel::updateSettings, onBack = { pop() },
@@ -509,6 +514,12 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
                 Route.CONSENT_DETAILS -> ConsentDetailsScreen(viewModel.remoteConfigured, onBack = { pop() })
                 Route.FEEDBACK -> FeedbackScreen(onSend = { stars, comment -> viewModel.submitFeedback(stars, comment); pop() }, onBack = { pop() })
                 Route.REPORT -> ReportScreen(onSend = { text, attach -> viewModel.submitReport(text, attach); pop() }, onBack = { pop() })
+                Route.CLOSING -> ClosingSurveyScreen(
+                  answered = remember { viewModel.closingAnswered() },
+                  startPart = closing?.part ?: 0,
+                  onPart = viewModel::saveClosingPart,
+                  onClose = { pop() },
+                )
               }
             }
           }
@@ -532,8 +543,15 @@ private fun RelevoNavigation(viewModel: RelevoViewModel) {
           onProfile = if (!profile.setupSeen) ({ viewModel.dismissFirstActivated(); push(Route.PROFILE_SETUP) }) else null,
         )
       }
+      // 4.7 (D-175): el cierre de la prueba, al abrir la app, una vez y sin otra hoja abierta; después, en Ajustes.
+      if (closingOfferDue && !firstActivated && routeSuggestion == null && !askTurnOffReturn) {
+        ClosingIntroSheet(
+          onStart = { viewModel.markClosingOffered("empezar"); push(Route.CLOSING) },
+          onLater = { viewModel.markClosingOffered("ahora_no") },
+        )
+      }
       // 4.6 (D-164): la encuesta del rediseño, una vez, solo sobre las pestañas y sin otra hoja abierta.
-      if (redesignSurveyDue && !firstActivated && routeSuggestion == null && !askTurnOffReturn) {
+      if (redesignSurveyDue && !closingOfferDue && !firstActivated && routeSuggestion == null && !askTurnOffReturn) {
         RedesignSurveySheet(
           onShown = viewModel::markRedesignSurveyShown,
           onSend = viewModel::submitRedesignSurvey,

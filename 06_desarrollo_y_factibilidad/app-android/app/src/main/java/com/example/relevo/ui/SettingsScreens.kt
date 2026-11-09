@@ -102,12 +102,21 @@ internal fun SettingsScreen(
   onBack: () -> Unit,
   onSound: (Sonido) -> Unit = {},
   onChange: (Settings.() -> Settings) -> Unit = {},
+  /** 4.7 (D-175): el cierre de la prueba, mientras falte responderlo; null si no corresponde. */
+  closing: ClosingStatus? = null,
+  onClosing: () -> Unit = {},
 ) {
   val theme = when (settings.theme) { ThemeMode.LIGHT -> "Claro"; ThemeMode.DARK -> "Oscuro"; ThemeMode.SYSTEM -> "Automático" }
   val sound = Sonido.from(settings.sound)
   var choosingSound by rememberSaveable { mutableStateOf(false) }
   var choosingQuiet by rememberSaveable { mutableStateOf(false) }
   RelevoScreen(title = "Ajustes", onBack = onBack, backLabel = "Perfil") {
+    if (closing != null) {
+      ListSection {
+        ListRow("Cierre de la prueba", icon = KitIcon.ENTREVISTAS, subtitle = closingSubtitle(closing), chevron = true, onClick = onClosing)
+      }
+      Spacer(Modifier.height(Gap.block))
+    }
     ListSection {
       ListRow("Sonido", icon = KitIcon.SUENA, subtitle = "${sound.label} · volumen ${volumeLabel(settings.volume).lowercase()}", chevron = true, onClick = { choosingSound = true })
       ListRow("Horas sin sonar", icon = KitIcon.PAUSAR, subtitle = if (settings.quietHours) QuietHours.label(settings.quietFrom, settings.quietUntil) else "Apagadas", chevron = true, onClick = { choosingQuiet = true })

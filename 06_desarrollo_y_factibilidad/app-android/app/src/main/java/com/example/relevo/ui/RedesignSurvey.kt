@@ -148,8 +148,9 @@ internal fun RedesignSurveySheet(onShown: () -> Unit, onSend: (RedesignAnswers) 
   }
 }
 
+/** Una pregunta de encuesta: el enunciado como encabezado para TalkBack y, debajo, cómo se responde. */
 @Composable
-private fun SurveyQuestion(title: String, hint: String? = null, content: @Composable () -> Unit) {
+internal fun SurveyQuestion(title: String, hint: String? = null, content: @Composable () -> Unit) {
   Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
       Text(title, style = Relevo.type.headline, color = Relevo.colors.ink, modifier = Modifier.semantics { heading() })

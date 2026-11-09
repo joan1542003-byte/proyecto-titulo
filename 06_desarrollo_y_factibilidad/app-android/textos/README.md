@@ -7,7 +7,7 @@ Todo lo que dice Relevo: cada palabra de la app, cómo se escribe y por qué. Si
 | [Estudio de los textos](estudio-escritura-de-interfaces-2026-10-24.md) | Cómo habla Relevo: lo que recomiendan las guías y la investigación, cómo escriben apps conocidas, el diagnóstico de los textos actuales (R1 a R14), la voz, el tono, las reglas por tipo de texto y el vocabulario. |
 | [Pantallas de la app 3.3](pantallas-de-la-app-3.3.md) | Cada pantalla descrita por escrito: para qué sirve, cuándo aparece, qué muestra, qué se puede hacer, qué registra y sus textos. |
 | [Catastro de palabras clave](catastro-de-palabras-clave.md) | Las 634 palabras y 121 frases con que la app reconoce una actividad propia, por concepto, con lo que sugiere para empezar y dónde. Se genera con [`generar-catastro.js`](generar-catastro.js). |
-| [Inventario de textos](inventario-de-textos.md) | Los 1381 textos de la 4.6.3, agrupados por pantalla, con su identificador (T0001…), tipo, archivo y línea. Los de la 4.3 y la 3.3 quedan en el historial de Git. |
+| [Inventario de textos](inventario-de-textos.md) | Los 1455 textos de la 4.7, agrupados por pantalla, con su identificador (T0001…), tipo, archivo y línea. Los de la 4.3 y la 3.3 quedan en el historial de Git. |
 | [Tabla de textos](textos-de-la-app.csv) | Lo mismo en una tabla para abrir en Excel (separada por punto y coma). |
 | [Inventario de 2.33](inventario-de-textos-android-2.33.md) y [tabla de 2.33](textos-de-la-app-android-2.33.csv) | Los textos de la versión que se usa en la prueba. |
 | [`extraer-textos.js`](extraer-textos.js) | El script que genera los inventarios desde el código. |
@@ -31,6 +31,12 @@ El script lee el código Kotlin de `app/src/main/java/com/example/relevo/` (carp
 **Límites.** Los identificadores siguen el orden del código: si se agrega o quita un texto, cambian los que vienen después. Para citar un texto de forma estable, conviene usar también su archivo y línea. El inventario incluye unos pocos textos que siguen en el código pero ya no se muestran; el estudio los indica.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Inventario de la 4.7
+
+- **Qué cambió:** el inventario pasa a los 1455 textos de la 4.7. El cierre de la prueba queda en la pantalla 28 («Cierre de la prueba») y la encuesta del rediseño, en una pantalla propia, la 35.
+- **Cómo estaba antes:** tenía los 1381 textos de la 4.6.3, y los de ambas encuestas quedaban entre los textos compartidos.
+- **Por qué:** D-175.
 
 ### 2026-11-07 — Inventario de la 4.6.3
 

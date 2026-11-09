@@ -240,6 +240,8 @@
 | 7 nov. | Corrección | Señaló textos que confunden: «Deja de contar» (¿contar qué?), «Suena en tu teléfono» en vez de «sonará», «Batería» sin decir de qué, «el perfil» y «Ej.: leer 10 páginas» (¿de qué?). Pidió corregir ese tipo de fallas en toda la app. | [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md): cinco reglas aplicadas en 48 lugares; «contar» siempre dice «el tiempo en tus apps», lo que aún no pasa va en futuro, «tu perfil», «leer 10 páginas de un libro», «Batería del teléfono». El consentimiento no se tocó. | D-166 |
 | 7 nov. | Decisión | Decidió que el permiso de Bluetooth se pida al tocar un botón relacionado con el Tag. | El permiso ya no aparece al entrar a «¿Dónde suena?»; aparece al tocar «Buscar el Tag». Al revisarlo se arregló además el aviso permanente del primer relevo, que quedaba oculto. 97 pruebas y revisión en una copia aparte, sin conexión. | D-166 |
 | 7 nov. | Encargo | Preguntó si quedaba algún detalle por arreglar y pidió dejar la app lo más pulida posible. | [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md). Se recorrió la app en una copia aparte, sin conexión, con tema oscuro y letra al 200 %. Se arregló la señal que sonaba dos veces si la app se abría justo al cumplirse el tiempo. También se alinearon Permisos, las horas sin sonar dan la vuelta, la barra de pestañas cabe con letra grande y se corrigieron cinco textos. 99 pruebas. | D-167 |
+| 9 nov. | Pregunta | Preguntó qué tareas quedan pendientes y si falta algo para entregar la memoria. | Se respondió en la conversación: lo principal son los resultados del cierre de la prueba, que la memoria marca como pendientes, y además las decisiones sobre el objeto y la versión de la app, la memoria diseñada con el texto final y la presentación del Pase. | — |
+| 9 nov. | Encargo | Pidió llevar a la app la encuesta y la entrevista finales del cierre de la prueba, solo para quienes ya la usan, al abrirla o desde Ajustes si no la responden, con todo guardado en Supabase. | [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md): las preguntas del instrumento de cierre, en cuatro partes y con sus mismas claves, en `relevo_answers`. Aparecen al abrir la app una vez y después quedan en Ajustes. 104 pruebas, revisión en una copia aparte sin conexión y dos errores corregidos. | D-175 |
 
 ## Lo que muestra el registro
 
@@ -250,6 +252,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Pendientes y cierre en la app
+
+- **Qué cambió:** se registraron la pregunta sobre lo pendiente y el pedido del cierre de la prueba en la app.
+- **Cómo estaba antes:** en esta rama, el último pedido era el pulido de la 4.6.3.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-07 — Pulido de la app
 

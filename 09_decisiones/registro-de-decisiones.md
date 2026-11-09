@@ -2271,7 +2271,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - Cambiar las preguntas después de la señal: son las del registro del estudio.
 - **Documentos:** [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md).
 
+## D-175 — Android 4.7: el cierre de la prueba en la app
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** la memoria aún no tiene los resultados de la semana con el teléfono ni del cierre. El autor pidió llevar la encuesta y la entrevista finales a la app, para las personas que ya la usan.
+- **Decisión:**
+  - **Quién:** quien ya usaba Relevo al abrir la 4.7 por primera vez; nunca una instalación nueva.
+  - **Cuándo:** al abrir la app, una vez, en una hoja con «Empezar» y «Ahora no». Después queda en Ajustes hasta terminarla.
+  - **Qué:** las preguntas del instrumento de cierre del 28 de octubre, con sus palabras, opciones y claves, en cuatro partes. Cada parte se guarda al seguir y no se repite lo ya respondido en la app.
+  - **Dónde:** `relevo_answers` en Supabase, como las demás respuestas.
+  - **De paso:** los campos de texto suben sobre el teclado y sobre el botón flotante.
+- **Alternativas descartadas:**
+  - Mostrarla a todas las personas: una instalación nueva no participó en la prueba.
+  - Las 25 preguntas en una sola hoja: es demasiado largo para responder de una vez.
+  - Claves nuevas: con las del instrumento, el papel y la app se analizan juntos.
+- **Documentos:** [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-175
+
+- **Qué cambió:** se registró D-175. D-168 a D-174 están en la rama `anexos-para-word`.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-167.
+- **Por qué:** el autor pidió el cierre de la prueba en la app.
 
 ### 2026-11-07 — D-167
 

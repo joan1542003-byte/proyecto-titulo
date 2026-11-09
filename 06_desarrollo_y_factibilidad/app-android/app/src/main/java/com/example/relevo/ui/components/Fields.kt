@@ -21,11 +21,22 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.isImeVisible
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
+import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -36,6 +47,7 @@ import com.example.relevo.theme.Relevo
  * Campo de texto de la línea 3.0: una caja blanca con borde fino y, dentro, lo que escribe la persona
  * en tinta. Con foco, el borde pasa a tinta. El ejemplo va en grafito y el rótulo, arriba.
  */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun RenglonField(
   label: String,
@@ -58,6 +70,18 @@ fun RenglonField(
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val focused by interaction.collectIsFocusedAsState()
+  // 4.7: al escribir, el campo sube hasta quedar sobre el teclado y sobre los botones flotantes de la pantalla.
+  // Antes, un campo al final de una pantalla larga quedaba escondido detrás de «Seguir».
+  val requester = remember { BringIntoViewRequester() }
+  val overlay = LocalBottomOverlay.current
+  val density = LocalDensity.current
+  var fieldHeight by remember { mutableIntStateOf(0) }
+  val keyboard = WindowInsets.isImeVisible
+  LaunchedEffect(focused, keyboard, fieldHeight) {
+    if (!focused || !keyboard) return@LaunchedEffect
+    delay(80)
+    requester.bringIntoView(Rect(0f, 0f, 1f, fieldHeight + with(density) { (overlay + 12.dp).toPx() }))
+  }
   val lineColor by animateColorAsState(if (focused) colors.ink else colors.line, Motion.standard(Motion.SHORT), label = "renglon_line")
   val lineWidth by animateDpAsState(if (focused) 2.dp else 1.5.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
   val shape = RoundedCornerShape(20.dp)
@@ -71,7 +95,8 @@ fun RenglonField(
     interactionSource = interaction,
     keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
     keyboardActions = KeyboardActions(onAny = { onImeAction() }),
-    modifier = modifier.fillMaxWidth().then(if (showLabel) Modifier else Modifier.semantics { contentDescription = label }),
+    modifier = modifier.fillMaxWidth().bringIntoViewRequester(requester).onSizeChanged { fieldHeight = it.height }
+      .then(if (showLabel) Modifier else Modifier.semantics { contentDescription = label }),
     decorationBox = { inner ->
       androidx.compose.foundation.layout.Row(
         Modifier.fillMaxWidth().heightIn(min = 64.dp).background(colors.card, shape).border(lineWidth, lineColor, shape)

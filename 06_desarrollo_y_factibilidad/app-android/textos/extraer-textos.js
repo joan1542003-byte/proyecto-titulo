@@ -51,7 +51,9 @@ const PANTALLAS = [
   ['25', 'Lo que aceptaste', ['ConsentDetailsScreen']],
   ['26', 'Prueba de 21 días (investigador)', ['StudyScreen', 'StudyPlan']],
   ['27', '¿Cómo te fue esta semana?', ['WeekReviewScreen']],
-  ['28', 'Cierre de la prueba', ['ClosingScreen']],
+  ['28', 'Cierre de la prueba', ['ClosingScreen', 'ClosingSurvey', 'ClosingSurveyScreen', 'ClosingIntroSheet', 'ClosingThanks', 'closingSubtitle', 'PointScale']],
+  // 4.6 (D-164): la encuesta del rediseño, para quien ya usaba Relevo.
+  ['35', 'Encuesta del rediseño', ['RedesignSurveySheet', 'RedesignSurvey', 'AgreementScale']],
   ['29', 'Envíanos un comentario (antes, Opinar sobre Relevo)', ['FeedbackScreen']],
   ['30', 'Reportar un problema', ['ReportScreen']],
   ['31', 'Notificaciones', ['AppUsageMonitorService', 'ProjectMessages', 'ReturnNotice']],
