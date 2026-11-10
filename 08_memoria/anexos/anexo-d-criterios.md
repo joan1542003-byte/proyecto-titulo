@@ -23,7 +23,7 @@ Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —est
 
 ## D.2 Cambios en la app
 
-La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron una lista de cambios (Tabla 4 de la memoria). Los técnicos se corrigieron durante la prueba, y la versión 4.4 de la app, del 5 de noviembre, incorpora siete de los que la tabla dejaba por implementar o como propuesta.
+La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron una lista de cambios (Tabla 5 de la memoria). Los técnicos se corrigieron durante la prueba, y la versión 4.4 de la app, del 5 de noviembre, incorpora siete de los que la tabla dejaba por implementar o como propuesta.
 
 **Tabla D2**
 
@@ -39,7 +39,7 @@ La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron un
 | De noche, la señal se oye desde la cama y no lleva a levantarse. | 5 | Horas sin sonar: en el horario que define la persona, Relevo no cuenta, no suena y no se activa solo. |
 | La respuesta fue «La dejé para después» en 9 de 21 señales. | 4 | Al responderla, la app pregunta si la deja lista; si sí, Inicio la ofrece con «Activar ahora». |
 
-*Nota.* Elaboración propia a partir de la Tabla 4 de la memoria y de la documentación de la versión 4.4. Las versiones 4.5 a 4.6.3, del 6 y el 7 de noviembre, las mantienen. Son posteriores a la prueba en los hogares.
+*Nota.* Elaboración propia a partir de la Tabla 5 de la memoria y de la documentación de la versión 4.4. Las versiones 4.5 a 4.7.2, del 6 al 9 de noviembre, las mantienen. Son posteriores a la prueba en los hogares.
 
 ## Referencias
 
@@ -62,6 +62,12 @@ Silverman, J. y Barasch, A. (2023). On or off track: How (broken) streaks affect
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, Artículo 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Tabla 5 y versión 4.7.2
+
+- **Qué cambió:** el texto y la nota citan la Tabla 5 de la memoria, y la nota, las versiones hasta la 4.7.2.
+- **Cómo estaba antes:** citaba la Tabla 4, que ahora es la de resultados por persona, y las versiones hasta la 4.6.3.
+- **Por qué:** la memoria sumó una tabla con los resultados finales de la prueba.
 
 ### 2026-11-09 — Referencias en APA 7
 

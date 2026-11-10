@@ -39,7 +39,8 @@ function readXlsx(file) {
     const local = buf.readUInt32LE(p + 42), name = buf.toString("utf8", p + 46, p + 46 + nameLen);
     const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28);
     const data = buf.subarray(start, start + size);
-    entries[name] = (method === 8 ? zlib.inflateRawSync(data) : data).toString("utf8");
+    // Algunos programas escriben las etiquetas con prefijo («<x:row>»); se quita para leerlas igual.
+    entries[name] = (method === 8 ? zlib.inflateRawSync(data) : data).toString("utf8").replace(/<(\/?)[A-Za-z]+:(?=[A-Za-z])/g, "<$1");
     p += 46 + nameLen + extra + note;
   }
   const dec = (s) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&amp;/g, "&");

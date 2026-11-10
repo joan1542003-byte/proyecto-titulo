@@ -152,9 +152,17 @@ El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la
 
 El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual; Laws of UX suma la fecha de consulta, y Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile. Norman se cita por la edición que se leyó, la de Basic Books de 2002 (1988/2002). El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
 
+## Decimocuarta ronda: resultados finales de la prueba
+
+El 10 de noviembre, el autor entregó los datos finales de las tres personas, exportados de la app: los de la primera, desde Supabase, y los de las otras dos, en un Excel con el formato del panel. Se unieron con `07_validacion/analisis/unir-datos.js` y se guardan solo en `datos_sensibles/final-2026-11-10/`, con el código de cada persona. Las semanas con el Tag coinciden exactamente con lo que ya informaba la memoria; lo nuevo es la etapa con el teléfono, que fue del 21 de octubre al 8 de noviembre, no hasta el 30 de octubre.
+
+- **Capítulo 13:** la prueba dura un mes; el procedimiento y la Figura 21 cuentan la etapa con el teléfono y el cierre con una entrevista. Se suman dos párrafos con sus resultados, la Tabla 4, por persona y soporte, y su lectura contra el tercer supuesto: se sostiene en parte. La tabla de hallazgos pasa a ser la Tabla 5 y suma uno.
+- **Capítulo 14, resumen y abstract:** dicen el resultado de la comparación; la app llegó a la versión 4.7.2.
+- **Se quitan** los dos `[CONFIRMAR]`. La entrevista de cierre sigue pendiente.
+
 ## Extensión
 
-Capítulos 1 a 14: 16 451 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 452. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: unas 17 100 palabras desde el 10 de noviembre, con los resultados finales (antes, 16 451); con portada, agradecimientos, resumen, abstract e índices, unas 18 200. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -167,15 +175,15 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con el teléfono y la fecha del cierre (capítulos 13 y 14). El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta.
+Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta.
 
 ## Pendiente
 
 - **Fotos de la prueba:** la memoria ya no lo menciona, pero las personas deben haber autorizado su publicación.
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
-- **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
-- **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre, y actualizar el Resumen, el Abstract y las Conclusiones.
+- **Aplicación:** implementar lo que la Tabla 5 marca «Por implementar» y decidir las «Propuestas».
+- **Resultados:** sumar lo que digan las entrevistas de cierre. La etapa con el teléfono ya está, con el Resumen, el Abstract y las Conclusiones.
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
@@ -183,6 +191,12 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Decimocuarta ronda
+
+- **Qué cambió:** se registran los resultados finales de la prueba en la memoria, sin marcadores por confirmar, y el pendiente queda en las entrevistas de cierre.
+- **Cómo estaba antes:** quedaban dos marcadores por los resultados de la semana con el teléfono.
+- **Por qué:** el autor entregó los datos finales de las tres personas.
 
 ### 2026-11-09 — Norman
 

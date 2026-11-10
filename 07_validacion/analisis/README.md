@@ -56,7 +56,23 @@ Se unieron los datos de las tres personas hasta el 19 de octubre. Para una, se u
 
 El ciclo que se activó fuera de casa no tiene `signal_at` y no cuenta como señal, aunque tenga respuestas.
 
+## Uso del 10 de noviembre: datos finales
+
+El autor entregó los datos finales de las tres personas, que se guardan solo en `datos_sensibles/final-2026-11-10/`, con el código de cada una en el nombre del archivo. Los tres vienen con el formato del panel: el de la primera persona sale de Supabase, y los de las otras dos, de lo que ellas entregaron. Se unieron con `node unir-datos.js ../../datos_sensibles/final-2026-11-10`. Desde este día, el script también lee los Excel que escriben sus etiquetas con prefijo, como `<x:row>`, que es como venían los dos últimos.
+
+- **Con el Tag, del 8 al 19 de octubre:** los mismos recuentos del 20 de octubre, sin diferencias.
+- **Con el teléfono, del 21 de octubre al 8 de noviembre:** 27 relevos, dos eliminados antes de sonar, 24 señales y 21 respuestas. Recordaron cómo empezar y supieron qué querían hacer en las 21; empezaron en 13, lo dejaron para después en 7 y cambiaron de idea en 1. Notaron el aviso enseguida en 11, tarde en 7 y no lo notaron en 3.
+- **Encuesta del rediseño, 8 de noviembre:** las tres respondieron que la app nueva era mejor.
+
+El detalle por persona está en la Tabla 4 de la memoria y en la Tabla I6 del Anexo I. Las respuestas de la etapa con el teléfono se separan por la salida de cada relevo (`signal_route`: `tag` o `phone`).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Datos finales
+
+- **Qué cambió:** se registra la unión de los datos finales y el script lee los Excel con etiquetas con prefijo.
+- **Cómo estaba antes:** el último uso era el del 20 de octubre, y esos Excel salían vacíos.
+- **Por qué:** el autor entregó los datos finales de la prueba.
 
 ### 2026-10-28 — Instrumento de cierre
 

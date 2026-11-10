@@ -19,7 +19,7 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
 | [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
 | [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los *wireframes* de las 39 pantallas de la app. |
-| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, cada versión desde la 2.7 hasta la 4.6.3 y las palabras clave con que la app reconoce cada actividad. |
+| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, cada versión desde la 2.7 hasta la 4.7.2 y las palabras clave con que la app reconoce cada actividad. |
 | [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos tipografías, los 72 íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
@@ -54,6 +54,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Versión 4.7.2 y resultados
+
+- **Qué cambió:** el Anexo G llega a la versión 4.7.2, con sus pantallas, y el Anexo I suma la entrevista según la guía y los resultados por persona.
+- **Cómo estaba antes:** el Anexo G llegaba a la 4.6.3.
+- **Por qué:** el autor entregó los datos finales de la prueba y pidió capturas de la versión más reciente.
 
 ### 2026-11-09 — Portada ordenada
 

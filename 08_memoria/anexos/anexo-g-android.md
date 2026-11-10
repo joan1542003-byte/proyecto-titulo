@@ -1,6 +1,6 @@
 # Anexo G. Prototipo Android y registro de versiones
 
-Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.6.3, y las palabras clave con que la app reconoce cada actividad desde la 4.3.
+Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.7.2, con sus pantallas, y las palabras clave con que la app reconoce cada actividad desde la 4.3.
 
 ## G.1 Versión 3.3 de la app
 
@@ -278,7 +278,7 @@ Cada versión tiene su documento en la carpeta de la app, con lo que cambió, po
 
 *Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
-Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de noviembre, quitó la prueba de 21 días y pasó el consentimiento a la versión 14. La línea 4 rediseñó la interfaz; la 4.4 la volvió actualizable sobre la app instalada y sumó lo de la 1.0.0, y la 4.6.3, del 7 de noviembre de 2026, es la versión más reciente.
+Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de noviembre, quitó la prueba de 21 días y pasó el consentimiento a la versión 14. La línea 4 rediseñó la interfaz; la 4.4 la volvió actualizable sobre la app instalada y sumó lo de la 1.0.0, y la 4.7.2, del 9 de noviembre de 2026, es la versión más reciente: suma el cierre de la prueba en la app, con el cuestionario y la entrevista del Anexo I.
 
 **Tabla G9**
 
@@ -297,6 +297,9 @@ Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de n
 | 4.6.1 | 7 nov. | Revisión de la primera vez, la encuesta y la accesibilidad |
 | 4.6.2 | 7 nov. | Textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag |
 | 4.6.3 | 7 nov. | El pulido y la señal que sonaba dos veces |
+| 4.7 | 9 nov. | El cierre de la prueba en la app |
+| 4.7.1 | 9 nov. | El cierre sin perder ninguna respuesta |
+| 4.7.2 | 9 nov. | La entrevista de cierre según la guía de los profesores |
 
 *Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
@@ -364,6 +367,12 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 *Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Versión 4.7.2 y sus pantallas
+
+- **Qué cambió:** el registro llega a la versión 4.7.2, con las filas de la 4.7, la 4.7.1 y la 4.7.2 en la Tabla G9, y la Figura G4 muestra sus pantallas, capturadas el 10 de noviembre en una copia de prueba.
+- **Cómo estaba antes:** el registro terminaba en la 4.6.3 y solo había capturas de la 3.3.
+- **Por qué:** el autor pidió capturas de la versión más reciente de la app.
 
 ### 2026-11-09 — Títulos formales
 

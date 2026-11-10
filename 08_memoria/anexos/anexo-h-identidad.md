@@ -301,7 +301,7 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 | 3 oct. | Traspaso | La marca como un traspaso de mano en mano. | La idea del traspaso sigue en el logo de cuatro círculos. |
 | 4 oct. | Tipografías para el logotipo | Una búsqueda amplia de tipografías display. | Llevó a elegir Chillax para el logo del 11 de octubre. |
 | 10 y 11 oct. | Identidad final | Fichas por color, íconos propios, degradados y el logo de cuatro círculos. | **Cerrada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde la 3.0. |
-| 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos. | Es la base de las versiones 4.0 a 4.6.3 de la app. |
+| 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos. | Es la base de las versiones 4.0 a 4.7.2 de la app. |
 
 *Nota.* Elaboración propia. Fechas de 2026.
 
@@ -358,6 +358,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Versión 4.7.2
+
+- **Qué cambió:** la línea del rediseño dice que es la base hasta la 4.7.2.
+- **Cómo estaba antes:** decía hasta la 4.6.3.
+- **Por qué:** la versión más reciente de la app es la 4.7.2.
 
 ### 2026-11-09 — Referencias en APA 7
 

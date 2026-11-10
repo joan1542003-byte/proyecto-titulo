@@ -21,6 +21,7 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
 - **App Android:**
   - La 2.33, para el testeo (D-138): la 2.32, en que el Tag se calla con confirmación, muestra su pila y no se desconecta con su alarma encendida (D-137), con una semana para comparar con el teléfono.
   - La 3.3, con la línea visual aprobada (D-131) y todo lo que suman la 2.31 a la 2.33 (D-138).
+  - La 4.7.2, del 9 de noviembre, la más reciente: el rediseño de la línea 4 y el cierre de la prueba en la app, con la entrevista según la guía de los profesores (D-155 a D-177); 106 pruebas automáticas.
   - 87 pruebas automáticas; consentimiento v13; datos seudonimizados en Supabase y en una copia en el teléfono.
   - Su arquitectura completa está en [Relevo como sistema](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md), con [wireframes](../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-relevo.html) de las 39 pantallas.
 - **Prueba en casa:** tres personas desde el 7 de octubre.
@@ -28,23 +29,29 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
   - En las 21 respuestas recordaron cómo empezar; en 19 supieron qué querían hacer antes de leerlo en la pantalla (en 2, a medias) y en 10 decidieron empezar la actividad.
   - Los fallos del Tag que reportaron se atendieron en las versiones 2.31 y 2.32.
   - Los datos de dos personas los entregaron ellas, en parte como archivos y en parte como capturas o mensajes, y el autor los reunió en una planilla. Se unen con [unir-datos.js](../07_validacion/analisis/README.md).
-  - Las dos primeras semanas usaron el Tag a su gusto, cuando quisieron; la última, la señal llega solo como notificación en el teléfono, sin el Tag (app 2.33, D-138), y termina el 30 de octubre con un cuestionario en papel y una entrevista.
-  - La prueba no se inició en la app, así que sus escalas semanales y su cierre no aparecerán en ella; hay una [ficha para aplicarlos en papel](../07_validacion/instrumentos/ficha-escalas-y-cierre-2026-10-20.md).
-- **Memoria:** borrador v6 con 16 478 palabras en los capítulos 1 a 14, reescrito en torno a las decisiones de diseño y con las ediciones del autor (D-146 a D-154), con 24 figuras y 4 tablas, y diagramado en [1920 × 1080](memoria-1920x1080/README.md) (62 páginas), con su IDML para Affinity. Tiene 2 datos por confirmar: los resultados de la semana con el teléfono y la fecha del cierre. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
+  - Del 21 de octubre al 8 de noviembre, la señal llegó solo como notificación en el teléfono, sin el Tag. En las 21 respuestas recordaron cómo empezar y supieron qué querían hacer, y en 13 empezaron la actividad; pero notaron el aviso tarde o no lo notaron en 10. El tercer supuesto se sostiene en parte. Los datos finales llegaron el 10 de noviembre.
+  - Falta la entrevista de cierre con cada persona, con el [instrumento del 28 de octubre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md) y la [entrevista según la guía](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md), en la app 4.7.2 o en persona.
+- **Memoria:** borrador v6 con 16 478 palabras en los capítulos 1 a 14, reescrito en torno a las decisiones de diseño y con las ediciones del autor (D-146 a D-154), con 24 figuras y 4 tablas, y diagramado en [1920 × 1080](memoria-1920x1080/README.md) (62 páginas), con su IDML para Affinity. Desde el 10 de noviembre tiene los resultados finales de la prueba y ningún dato por confirmar; tiene 5 tablas. Sus nueve [anexos](anexos/README.md), de la A a la I, están armados en Markdown, HTML y PDF desde el 24 de octubre.
 - **Identidad:** aprobada (logo, Instrument Sans, íconos y color con fundamento).
 
 ## Qué falta
 
 El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md). Lo principal es:
 
-- el cierre de la semana con el teléfono, el 30 de octubre, y la comparación con un lugar neutro, que queda para una etapa con más personas;
+- la entrevista de cierre con cada persona, y la comparación con un lugar neutro, que queda para una etapa con más personas;
 - imprimir y probar el hardware de Relevo;
 - confirmar la autoría y la autorización de las fotos;
-- las escalas y la entrevista de cierre;
+- las escalas del cuestionario de cierre;
 - los costos reales;
 - la presentación del Pase de Examen del 25 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Resultados finales
+
+- **Qué cambió:** el resumen informa la etapa con el teléfono, del 21 de octubre al 8 de noviembre, la app 4.7.2 y lo que falta: la entrevista de cierre.
+- **Cómo estaba antes:** decía que la semana con el teléfono terminaba el 30 de octubre y que la memoria tenía dos datos por confirmar.
+- **Por qué:** el autor entregó los datos finales de la prueba.
 
 ### 2026-11-04 — Novena ronda de la v6
 

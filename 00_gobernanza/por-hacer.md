@@ -104,7 +104,7 @@ Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestr
 | --- | --- | --- |
 | 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
-| 6. Semana solo con notificaciones | Crítica | El autor entrega las entrevistas y los resultados el 11 de noviembre |
+| 6. Semana solo con notificaciones | Crítica | Datos finales recibidos el 10 de noviembre; falta la entrevista de cierre |
 | 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
 | 8. Memoria: datos, portada y entrega | Alta | Entrega previa el 11 de noviembre a las 23:30; 15 de noviembre; entrega oficial el 1 de diciembre |
 | 9. Pendientes menores | Baja | 15 de noviembre |
@@ -164,7 +164,7 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 
 ## 6. Semana solo con notificaciones: cierre y comparación
 
-**Estado:** esperando los datos del autor, que llegan el 11 de noviembre. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
+**Estado:** datos finales recibidos y unidos el 10 de noviembre; falta la entrevista de cierre con cada persona. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
 
 ### Por qué
 
@@ -173,17 +173,17 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [x] **Quiénes pasaron a la semana solo con notificaciones:** las tres, desde el 21 de octubre, según el autor. La base remota solo muestra a una porque las otras dos entregan sus datos al exportarlos; sus relevos con el teléfono llegarán en la exportación del cierre.
-- [ ] **Cerrar el viernes 30 de octubre**, cuando la tercera persona cumple sus 21 días (la primera los cumple el 28 y la segunda el 29). Cerrar a las tres el mismo día evita coordinar tres fechas.
+- [x] **Cerrar la etapa con el teléfono.** Según los datos finales, fue del 21 de octubre al 8 de noviembre, no hasta el 30 de octubre.
 - [ ] Al terminar la semana, aplicar el [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md) ([PDF para imprimir](../07_validacion/instrumentos/instrumento-de-cierre.pdf)): las escalas, la comparación y el cierre de la app 2.33, en papel (D-144). Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
-- [ ] Entrevista de cierre de unos 15 minutos con cada persona, con la guía del mismo instrumento, y revisión de los fallos críticos.
-- [ ] **Recibir del autor, el 11 de noviembre** (anotado el 10 de noviembre):
-  - la entrevista final con las personas de la prueba, según cómo usó cada una la app;
-  - los resultados finales de la prueba;
-  - los resultados de la semana solo con notificaciones.
+- [ ] Entrevista de cierre con cada persona, con la [entrevista según la guía de los profesores](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md), en la app 4.7.2 o en persona, y revisión de los fallos críticos. Es lo único que falta de la prueba.
+- [x] **Recibir del autor los datos finales** (llegaron el 10 de noviembre, un día antes de lo anotado):
+  - los relevos y respuestas finales de las tres personas, con la etapa solo con notificaciones;
+  - la entrevista final queda pendiente.
 
-  La entrevista de la app es la del 9 de noviembre, según la guía de los profesores (D-177, rama `android-4.6`), que reemplaza a la del instrumento del 28 de octubre. Se guarda solo con códigos, sin nombres.
-- [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
-- [ ] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos.
+  La entrevista de la app es la del 9 de noviembre, según la guía de los profesores (D-177), que reemplaza a la del instrumento del 28 de octubre. Se guarda solo con códigos, sin nombres.
+- [x] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/` (`final-2026-11-10/`).
+- [x] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos: capítulos 13 y 14, resumen, abstract, Tabla 4 nueva y Anexos G e I, el 10 de noviembre.
+- [ ] Sumar a la memoria y al Anexo I lo que digan las entrevistas de cierre.
 
 ## 7. Presentación del Pase y del examen
 
@@ -221,7 +221,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
-- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6). Los datos llegan el 11 de noviembre.
+- [ ] **Resultados finales:** la etapa solo con notificaciones ya está en la memoria (10 de noviembre); faltan las escalas y las entrevistas de cierre, y el objeto propio (tareas 4 y 6).
 - [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
 - [ ] **Depósito en la Biblioteca**, después del examen. La [pauta](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) ya se revisó: pide carta, Arial 12 y una portada en mayúsculas, y para las carreras de Diseño nombra «tesis no convencionales» sin dar reglas. Hay que preguntar a la Coordinación o a la Biblioteca si se acepta el A3 y si hace falta una portada institucional. Al depositar: PDF sin clave nombrado con el RUT y el formulario de autorización.
 
@@ -733,6 +733,12 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Datos finales de la prueba
+
+- **Qué cambió:** la tarea 6 registra que llegaron y se unieron los datos finales, que la etapa con el teléfono fue del 21 de octubre al 8 de noviembre y que solo falta la entrevista de cierre; la tarea 8 dice lo mismo.
+- **Cómo estaba antes:** la tarea esperaba los datos para el 11 de noviembre.
+- **Por qué:** el autor entregó los datos finales y pidió dejar listos los pendientes.
 
 ### 2026-11-10 — Entrega previa
 

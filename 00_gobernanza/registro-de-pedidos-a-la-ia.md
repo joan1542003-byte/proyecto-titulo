@@ -322,6 +322,7 @@
 | 10 nov. | Respuesta | La subida de mañana a las 23:30 es una entrega previa, no la oficial. | El [calendario de cierre](por-hacer.md#calendario-de-cierre) suma la entrega previa del 11 de noviembre; la oficial sigue el 2 de diciembre a las 12:00. | — |
 | 10 nov. | Decisión y encargo | Subir por ahora solo los textos a `main`, juntando las ramas, sin generar el PDF ni otros archivos, y registrar los cambios. | Entraron a `main` siete ramas de textos: el estado al 4 de noviembre, los anexos formales y las rondas 10 a 13 de la memoria v6, las entrevistas a expertos, las tareas 11 a 14, la pregunta alineada y el documento 43. Los choques solo fueron de registros e índices y se conservaron ambos lados. Quedaron fuera la app (`android-4.6`) y los íconos propios. No se generó ningún archivo. Detalle en la [fusión de los textos](fusion-de-textos-en-main-2026-11-10.md). | — |
 | 10 nov. | Decisión | Juntar también la app en `main`, si es la versión más reciente. | Es la 4.7.2 (`versionCode` 63); ninguna otra rama pasa de la 4.5. Entró a `main` con los íconos propios, la entrevista de cierre del 9 de noviembre y las decisiones D-155 a D-167 y D-175 a D-177; el registro de decisiones queda completo, de D-001 a D-177. La carpeta de la app quedó idéntica a la de la rama, así que vale su verificación: 106 pruebas. No se generó ningún archivo. Detalle en la [fusión](fusion-de-textos-en-main-2026-11-10.md#segunda-fusión-la-app-472). | — |
+| 10 nov. | Encargo | Entregó los relevos finales de las tres personas —solo falta la entrevista con ellas— y pidió capturas de la versión más reciente de la app, actualizar los anexos si hacía falta, dejar listos los pendientes y decirle qué queda. | Los datos se unieron sin nombres. Con el Tag coinciden con lo ya informado; con el teléfono, del 21 de octubre al 8 de noviembre, recordaron igual, pero notaron el aviso tarde o no lo notaron en 10 de 21 respuestas. La memoria suma la Tabla 4 y la lectura del tercer supuesto, y ya no tiene datos por confirmar; el Anexo I suma la entrevista según la guía y los resultados por persona, y el Anexo G, la versión 4.7.2 con sus capturas. | — |
 
 ## Lo que muestra el registro
 
@@ -332,6 +333,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Datos finales y capturas
+
+- **Qué cambió:** se registró la entrega de los datos finales y el pedido de capturas y anexos.
+- **Cómo estaba antes:** el último pedido era juntar la app en `main`.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — La app en main
 

@@ -6,7 +6,7 @@ Reúne lo necesario para entender y repetir la prueba en los hogares: cómo se a
 
 La memoria pregunta: «¿Bajo qué condiciones lo que una persona quería hacer vuelve a estar presente a tiempo, y la decisión sigue siendo suya, mientras una sesión de ocio digital continúa?». Su hipótesis es: «Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella» (capítulo 10).
 
-Tres personas usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. La tercera semana no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. Esa semana terminó el 30 de octubre, y el cierre se hace con un cuestionario en papel y una entrevista (I.7). Los resultados están en el capítulo 13 de la memoria.
+Tres personas usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. La prueba cierra con el cuestionario y la entrevista de I.7. Los resultados están en el capítulo 13 de la memoria y, por persona, en I.8.
 
 **Tabla I1**
 
@@ -88,7 +88,7 @@ Una falla de la conexión, del objeto o de la app no cuenta como respuesta de la
 
 ## I.3 Semana de comparación
 
-Desde la versión 2.33, cuando una persona ya usó un objeto sin la prueba iniciada, la pantalla del investigador permite una sola semana de siete días con una condición. La semana empieza el día en que se inicia y no reemplaza al orden contrabalanceado de las tres semanas. Antes de empezar, la app pregunta por las semanas anteriores con las tres escalas de la tarjeta semanal; después de cada relevo, la primera pregunta es si la persona notó el aviso apenas sonó; el día 7, la tarjeta suma la comparación con las semanas anteriores, y el cierre pregunta qué ayudó más a recordar y con qué preferiría que sonara. En la prueba, esa semana no se inició en la app, así que sus preguntas se aplican en papel en el cierre (I.7). Como la semana con el teléfono vino después de las semanas con el Tag, el análisis declara que el orden no se contrabalanceó.
+Desde la versión 2.33, cuando una persona ya usó un objeto sin la prueba iniciada, la pantalla del investigador permite una sola semana de siete días con una condición. La semana empieza el día en que se inicia y no reemplaza al orden contrabalanceado de las tres semanas. Antes de empezar, la app pregunta por las semanas anteriores con las tres escalas de la tarjeta semanal; después de cada relevo, la primera pregunta es si la persona notó el aviso apenas sonó; el día 7, la tarjeta suma la comparación con las semanas anteriores, y el cierre pregunta qué ayudó más a recordar y con qué preferiría que sonara. En la prueba, esa semana no se inició en la app: la pregunta sobre el aviso sí apareció después de cada señal, pero la comparación del día 7 y el cierre se aplican al cerrar la prueba (I.7). Como la semana con el teléfono vino después de las semanas con el Tag, el análisis declara que el orden no se contrabalanceó.
 
 ## I.4 Consentimiento de la prueba
 
@@ -178,7 +178,7 @@ Es la plantilla de la sesión inicial del protocolo de 21 días, en uso desde el
 
 ## I.7 Instrumento de cierre
 
-Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 días, en persona o por llamada, en unos 25 minutos. Tiene un cuestionario de 16 preguntas cortas, copiadas de la app 2.33 con sus opciones, y una entrevista de nueve preguntas. Reemplaza a la ficha en papel del 20 de octubre, pensada para tres semanas con el objeto, porque las preguntas de comparación de la semana con el teléfono no aparecieron en la app.
+Se aplica al terminar la prueba, en la app desde la versión 4.7.2 o en persona, en unos 25 minutos. Tiene un cuestionario de 16 preguntas cortas, copiadas de la app 2.33 con sus opciones, y una entrevista semiestructurada de diez preguntas abiertas. Reemplaza a la ficha en papel del 20 de octubre, pensada para tres semanas con el objeto, porque las preguntas de comparación de la semana con el teléfono no aparecieron en la app. En la app, el cierre tiene cinco partes: las tres del cuestionario y la entrevista en dos pantallas de cinco preguntas; lo escrito se guarda en el teléfono hasta enviarlo.
 
 **Tabla I5**
 
@@ -186,16 +186,16 @@ Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 
 
 | Aspecto evaluado | Preguntas | Responde a |
 | --- | --- | --- |
-| Recuerdo de la actividad y de cómo empezar, al sonar y sin mirar el teléfono | E1 | Supuesto 1, asociación |
-| Percepción de la señal | E1 | Objetivo 4, percepción |
-| Ayuda del objeto frente al teléfono | B4, C2, C3, C4 y E2 | Supuesto 3, soporte, y objetivo 3 |
-| Relación del sonido con el lugar | A3, B3, C7 y E4 | Supuesto 2, lugar, solo de forma descriptiva |
-| Esfuerzo y molestia | A1, A2, B1, B2, C5 y E3 | Objetivo 4, carga, y supuesto 3 |
-| Libertad para elegir | E5 | Autonomía |
-| Fallos | E6 | Funcionamiento técnico |
-| Convivencia con otras personas | E7 | Convivencia |
-| Continuidad de uso y abandono | C1 y E8 | Uso y abandono |
-| Cambios propuestos | C6 y E9 | Iteración siguiente |
+| Recuerdo de la actividad y de cómo empezar, al sonar y sin mirar el teléfono | E2 | Supuesto 1, asociación |
+| Percepción de la señal | E2 | Objetivo 4, percepción |
+| Ayuda del objeto frente al teléfono | B4, C2, C3, C4 y E4 | Supuesto 3, soporte, y objetivo 3 |
+| Relación del sonido con el lugar | A3, B3, C7 y E3 | Supuesto 2, lugar, solo de forma descriptiva |
+| Esfuerzo y molestia | A1, A2, B1, B2, C5 y E7 | Objetivo 4, carga, y supuesto 3 |
+| Libertad para elegir | E6 | Autonomía |
+| Fallos | E8 | Funcionamiento técnico |
+| Convivencia con otras personas | E9 | Convivencia |
+| Continuidad de uso y abandono | C1, E1 y E5 | Uso y abandono |
+| Cambios propuestos | C6 y E10 | Iteración siguiente |
 
 *Nota.* Elaboración propia. Los supuestos y los objetivos son los del capítulo 10 de la memoria.
 
@@ -205,29 +205,68 @@ Se aplica el 30 de octubre de 2026, o el día en que cada persona cumple sus 21 
 - **B. Semana con el teléfono.** «¿Cómo te fue esta semana?» B1 a B3, las mismas tres escalas. B4. Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…? Más · Igual · Menos. B5. ¿Por qué? ¿Algo más que quieras contarnos?
 - **C. Cierre de la prueba.** «¡Terminaste la prueba!» C1. ¿Seguirías usando Relevo? Sí · Tal vez · No. C2. ¿Qué te ayudó más a recordar lo que querías hacer? El objeto donde empiezo · El aviso en el teléfono · Los dos por igual · Ninguno. C3. ¿Por qué? C4. Si siguieras usando Relevo, ¿con qué te gustaría que sonara? Un objeto · El teléfono · Me da igual. C5. ¿Qué te molestó? C6. ¿Qué cambiarías? C7. ¿Dónde quedó el objeto la mayor parte del tiempo?
 
-**Entrevista.**
+**Entrevista.** Sigue la guía de los profesores para la entrevista semiestructurada: preguntas abiertas, nunca de sí o no, ordenadas de lo general a lo particular, y una pregunta final proyectiva. Antes de empezar se dice: «Gracias por estas semanas. No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. Puedes saltar cualquier pregunta». Después de cada pregunta van las repreguntas, que se usan si la respuesta queda corta; en la app aparecen debajo, como ayuda.
 
-1. Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono? ¿Ya estabas pensando en la actividad o el sonido te la trajo? ¿Hubo veces en que sonó y no lo escuchaste, o lo escuchaste y seguiste en lo que estabas?
-2. ¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué? En la semana con el teléfono, ¿supiste qué querías hacer antes de leer la notificación o al leerla? ¿Qué fue distinto entre el Tag y el teléfono?
-3. ¿Qué te molestó o te costó: preparar, el sonido, el objeto o el teléfono?
-4. ¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste? ¿Por qué ahí?
-5. ¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir? ¿Sabías cómo callarlo o dejarlo para después?
-6. ¿Falló algo? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro.
-7. ¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue?
-8. ¿Hubo días en que no lo usaste? ¿Qué pasó?
-9. ¿Qué cambiarías? ¿Algo más que quieras contarme?
+*Introducción*
+
+1. Para empezar, cuéntame cómo usaste Relevo en estas semanas: qué actividad elegiste y en qué momentos lo preparabas. ¿Qué te llevó a elegir esa actividad?
+
+*Cuerpo*
+
+2. Piensa en una vez en que sonó. ¿Qué pasó desde que lo escuchaste? Cuéntalo paso a paso. ¿En qué estabas pensando justo antes de que sonara? ¿Qué se te vino a la cabeza antes de mirar el teléfono? Cuéntame también de alguna vez en que sonó y no lo notaste, o lo notaste y seguiste en lo que estabas.
+3. ¿Dónde estuvo el Tag la mayor parte del tiempo y cómo llegaste a dejarlo ahí? Si lo cambiaste de lugar, ¿qué te hizo moverlo?
+4. ¿Qué fue distinto y qué fue igual entre las semanas en que sonó el Tag y las semanas en que sonó el teléfono? Con el teléfono, ¿qué pasaba entre que sonaba y que leías la notificación? Cuéntame un ejemplo de cada una.
+5. Cuéntame de los días en que no preparaste ningún relevo: ¿qué pasaba esos días? ¿Qué te hizo volver a usarlo, o dejar de usarlo?
+
+*Crítica*
+
+6. Cuando sonaba, ¿cómo decidías qué hacer: empezar la actividad, dejarla para después o cambiar de idea? ¿Qué sentías en ese momento? ¿Cómo hacías para callarlo o dejarlo para después?
+7. ¿Qué te costó o te molestó de usar Relevo? Puede ser al prepararlo, el sonido, el Tag o el teléfono. Cuéntame una vez en que pasó.
+8. ¿Qué cosas no funcionaron como esperabas? Por ejemplo, que no sonara, que sonara cuando no lo esperabas o que el Tag o la app hicieran algo raro.
+9. ¿Cómo fue usar Relevo con otras personas cerca? ¿Qué dijeron o hicieron cuando sonó o cuando vieron lo que preparaste?
+
+*Cierre*
+
+10. Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería y por qué? ¿Qué más te gustaría contar que no te haya preguntado?
 
 Al terminar, el investigador marca si apareció alguno de los seis fallos críticos del protocolo, y en qué pregunta.
 
-**Aplicación.** Primero el cuestionario, como en la app, para que la conversación no cambie sus respuestas, y después la entrevista, sin sugerir respuestas ni anticipar qué se espera del Tag o del teléfono. No se graba: se toman notas con las palabras de la persona, con su código y sin nombres. Toda pregunta se puede saltar, y la persona puede terminar cuando quiera. El mismo día se exportan los datos del teléfono, con su acuerdo, y las fichas y exportaciones se guardan solo con los datos de la prueba.
+**Aplicación.** Primero el cuestionario, como en la app, para que la conversación no cambie sus respuestas, y después la entrevista, sin sugerir respuestas ni anticipar qué se espera del Tag o del teléfono. En persona, el investigador muestra interés sin juzgar, no asiente de más y sostiene el silencio después de cada respuesta. No se graba: se toman notas con las palabras de la persona, con su código y sin nombres; en la app, la persona escribe sus respuestas, que se guardan con su código. Toda pregunta se puede saltar, y la persona puede terminar cuando quiera. El mismo día se exportan los datos del teléfono, con su acuerdo, y las fichas y exportaciones se guardan solo con los datos de la prueba.
 
-**Análisis.** Por persona y sin porcentajes, como el resto de la prueba. La comparación con el teléfono no está contrabalanceada —la semana con el teléfono vino después de las semanas con el Tag—, así que B4, C2 y C4 describen la experiencia y la preferencia de cada persona, sin medir un efecto.
+**Análisis.** Por persona y sin porcentajes, como el resto de la prueba. Antes de leer las respuestas, el investigador anota lo que espera encontrar, para no leerlo donde no está. Cada entrevista se lee dos veces antes de codificarla; la codificación parte de los tres supuestos y de los criterios de diseño y suma lo que aparezca sin estar previsto, y se ordena en una matriz de categoría, hallazgo, cita e implicancia, que se contrasta con las respuestas después de cada señal y con los registros de uso. La comparación con el teléfono no está contrabalanceada —la etapa con el teléfono vino después de las semanas con el Tag—, así que B4, C2, C4 y E4 describen la experiencia y la preferencia de cada persona, sin medir un efecto.
+
+## I.8 Resultados por persona
+
+La Tabla I6 reúne, por persona y soporte, lo que respondieron después de cada señal. Las semanas con el Tag fueron del 8 al 19 de octubre de 2026, y la etapa con el teléfono, del 21 de octubre al 8 de noviembre.
+
+**Tabla I6**
+
+*Respuestas después de cada señal, por persona y soporte*
+
+| Persona | Soporte | Relevos | Sonaron | Respuestas | Supo qué quería hacer | Recordó cómo empezar | Empezó / después / cambió de idea | Sonido bien / normal / mal | Notó el aviso enseguida / tarde / no | Segundos hasta responder (mediana) |
+| --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- | --- | ---: |
+| Primera | Tag | 7 | 7 | 7 | 6, y 1 a medias | 7 | 5 / 2 / 0 | 6 / 1 / 0 | — | 7 |
+| Primera | Teléfono | 12 | 11 | 10 | 10 | 10 | 7 / 3 / 0 | 7 / 2 / 1 | 8 / 1 / 1 | 4 |
+| Segunda | Tag | 8 | 8 | 7 | 7 | 7 | 3 / 3 / 1 | 2 / 4 / 1 | — | 15 |
+| Segunda | Teléfono | 8 | 8 | 7 | 7 | 7 | 4 / 2 / 1 | 4 / 2 / 1 | 3 / 4 / 0 | 63 |
+| Tercera | Tag | 9 | 8 | 7 | 6, y 1 a medias | 7 | 2 / 4 / 1 | 2 / 4 / 1 | — | 22 |
+| Tercera | Teléfono | 5 | 5 | 4 | 4 | 4 | 2 / 2 / 0 | 2 / 2 / 0 | 0 / 2 / 2 | 69 |
+
+*Nota.* Elaboración propia a partir de los registros de la aplicación. Las personas se numeran como en el capítulo 13 de la memoria; no son las de las entrevistas del Anexo A. No se cuentan los relevos eliminados antes de sonar: siete con el Tag y dos con el teléfono. La pregunta sobre el aviso se hizo solo con el teléfono. Una respuesta es la que la persona dio después de una señal; las que quedaron sin responder no se cuentan.
+
+El 8 de noviembre, con la versión 4.6 de la app, las tres personas respondieron la encuesta del rediseño. Las tres dijeron que la app nueva era mejor que la anterior, y en las dos preguntas del UMUX-Lite, de 1 a 7, sobre si la app tiene las funciones que necesitan y si es fácil de usar, respondieron 7 y 7, 5 y 6, y 4 y 5. Las entrevistas de cierre están pendientes.
 
 ## Referencias
 
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Resultados finales y entrevista según la guía
+
+- **Qué cambió:** la prueba aplicada cuenta la etapa con el teléfono, del 21 de octubre al 8 de noviembre; la entrevista de cierre es la de diez preguntas abiertas, según la guía de los profesores, con su forma de aplicarla y analizarla, y la Tabla I5 usa su numeración; se suma I.8, con la Tabla I6, por persona y soporte, y la encuesta del rediseño.
+- **Cómo estaba antes:** decía que la semana con el teléfono terminaba el 30 de octubre, presentaba la entrevista de nueve preguntas, seis de ellas de sí o no, y no tenía resultados por persona.
+- **Por qué:** el autor entregó los datos finales de la prueba y pidió actualizar los anexos.
 
 ### 2026-11-09 — Títulos formales
 

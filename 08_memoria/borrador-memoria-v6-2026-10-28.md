@@ -30,13 +30,13 @@ A las dos, por permitir que la creatividad, el arte y la entretención fueran pa
 
 # Resumen
 
-Algunas sesiones de ocio digital se prolongan sin una decisión propia de continuar, y otras actividades también deseadas dejan de estar presentes cuando aún es posible comenzarlas. El proyecto busca diseñar y evaluar un sistema *phygital* (físico y digital) que ayude a recuperar esa intención —volver a tenerla presente— sin bloquear el teléfono ni juzgar la decisión posterior. La investigación combinó una revisión bibliográfica, ocho entrevistas semiestructuradas analizadas con el método Framework, una encuesta de 53 respuestas y una comparación de herramientas. Los resultados indican que la duración no basta para valorar una sesión, que la mayoría de las herramientas revisadas actúan sobre el uso del teléfono y no sobre la actividad que es desplazada, y que no corresponde intervenir cuando el ocio digital tiene un sentido. De ellos se derivaron ocho criterios de diseño que dan vida a Relevo: una aplicación Android y un objeto que se deja junto al primer paso de lo que la persona quiere hacer —por ejemplo, si quiere leer, lo deja junto a un libro— y emite un sonido al cumplirse una condición definida por la persona. Para probar la relación entre señal y lugar, el prototipo hace sonar un localizador Bluetooth comercial. Tres personas lo usaron en su hogar desde el 7 de octubre de 2026; hasta el 19, el ciclo completo funcionó en los tres hogares: el localizador sonó en 23 de 24 ciclos y, en 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla; en las 21 recordó cómo empezar, y en 10 decidió empezar. Esta etapa validó el ciclo.
+Algunas sesiones de ocio digital se prolongan sin una decisión propia de continuar, y otras actividades también deseadas dejan de estar presentes cuando aún es posible comenzarlas. El proyecto busca diseñar y evaluar un sistema *phygital* (físico y digital) que ayude a recuperar esa intención —volver a tenerla presente— sin bloquear el teléfono ni juzgar la decisión posterior. La investigación combinó una revisión bibliográfica, ocho entrevistas semiestructuradas analizadas con el método Framework, una encuesta de 53 respuestas y una comparación de herramientas. Los resultados indican que la duración no basta para valorar una sesión, que la mayoría de las herramientas revisadas actúan sobre el uso del teléfono y no sobre la actividad que es desplazada, y que no corresponde intervenir cuando el ocio digital tiene un sentido. De ellos se derivaron ocho criterios de diseño que dan vida a Relevo: una aplicación Android y un objeto que se deja junto al primer paso de lo que la persona quiere hacer —por ejemplo, si quiere leer, lo deja junto a un libro— y emite un sonido al cumplirse una condición definida por la persona. Para probar la relación entre señal y lugar, el prototipo hace sonar un localizador Bluetooth comercial. Tres personas lo usaron en su hogar desde el 7 de octubre de 2026; hasta el 19, el ciclo completo funcionó en los tres hogares: el localizador sonó en 23 de 24 ciclos y, en 19 de 21 respuestas, la persona supo qué quería hacer antes de leerlo en la pantalla; en las 21 recordó cómo empezar, y en 10 decidió empezar. Después, con una notificación en el teléfono en lugar del localizador, recordaron igual, pero notaron el aviso tarde o no lo notaron en 10 de 21 respuestas. La prueba validó el ciclo.
 
 *Palabras clave:* ocio digital, memoria prospectiva, diseño *phygital*
 
 # Abstract
 
-Some digital leisure sessions go on without a decision of one's own to continue, and other activities, also desired, fade from view while they can still be started. The project seeks to design and evaluate a phygital (physical and digital) system that helps people retrieve that intention—bring it back to mind—without blocking the phone or judging the decision that follows. The research combined a literature review, eight semistructured interviews analyzed with the Framework method, a survey with 53 responses, and a comparison of tools. The results indicate that duration alone is not enough to assess a session, that most of the tools reviewed act on phone use, not on the displaced activity, and that no intervention is called for when digital leisure has a meaning of its own. These results led to eight design criteria that shape Relevo: an Android application and an object left next to the first step of what the person wants to do (for example, next to a book, if they want to read), which plays a sound once a condition defined by the person is met. To test the relationship between signal and place, the prototype sounds a commercial Bluetooth tracker. Three people used it at home starting October 7, 2026; up to October 19, the full cycle worked in all three homes: the tracker sounded in 23 of 24 cycles, and in 19 of 21 responses the person knew what they wanted to do before reading it on the screen; in all 21 they remembered how to start, and in 10 they chose to start. This stage validated the cycle.
+Some digital leisure sessions go on without a decision of one's own to continue, and other activities, also desired, fade from view while they can still be started. The project seeks to design and evaluate a phygital (physical and digital) system that helps people retrieve that intention—bring it back to mind—without blocking the phone or judging the decision that follows. The research combined a literature review, eight semistructured interviews analyzed with the Framework method, a survey with 53 responses, and a comparison of tools. The results indicate that duration alone is not enough to assess a session, that most of the tools reviewed act on phone use, not on the displaced activity, and that no intervention is called for when digital leisure has a meaning of its own. These results led to eight design criteria that shape Relevo: an Android application and an object left next to the first step of what the person wants to do (for example, next to a book, if they want to read), which plays a sound once a condition defined by the person is met. To test the relationship between signal and place, the prototype sounds a commercial Bluetooth tracker. Three people used it at home starting October 7, 2026; up to October 19, the full cycle worked in all three homes: the tracker sounded in 23 of 24 cycles, and in 19 of 21 responses the person knew what they wanted to do before reading it on the screen; in all 21 they remembered how to start, and in 10 they chose to start. Then, with a phone notification instead of the tracker, they remembered just as well, but noticed the alert late or not at all in 10 of 21 responses. The test validated the cycle.
 
 *Keywords:* digital leisure, prospective memory, phygital design
 
@@ -65,7 +65,8 @@ Some digital leisure sessions go on without a decision of one's own to continue,
 - Tabla 1. Decisiones de diseño de Relevo
 - Tabla 2. Iteraciones del prototipo
 - Tabla 3. Presupuesto del prototipo académico
-- Tabla 4. Hallazgos de la prueba y de las revisiones, y cambios para la iteración
+- Tabla 4. Resultados con el Tag y con el teléfono, por persona
+- Tabla 5. Hallazgos de la prueba y de las revisiones, y cambios para la iteración
 
 ## Índice de figuras
 
@@ -90,7 +91,7 @@ Some digital leisure sessions go on without a decision of one's own to continue,
 - Figura 19. Relevo, con su carcasa propia y la placa del Tag adentro
 - Figura 20. Etapas del proyecto
 - Figura 21. Prueba en los hogares
-- Figura 22. Resultados de los 24 relevos
+- Figura 22. Resultados de los 24 relevos con el Tag
 - Figura 23. Decisión de cada persona después de la señal
 - Figura 24. Recordar no basta para empezar
 
@@ -706,17 +707,17 @@ La pila de botón puede llegar a ser peligrosa si se traga: por eso la tapa de R
 
 # 13. Plan de desarrollo y validación
 
-Lo diseñado se puso a prueba en el uso real: tres personas usaron Relevo en sus hogares durante tres semanas. La prueba usó el Tag, un objeto comercial, porque lo que se quería observar era la relación entre la señal, el lugar y lo que la persona quería hacer, no la forma del objeto.
+Lo diseñado se puso a prueba en el uso real: tres personas usaron Relevo en sus hogares durante un mes. La prueba usó el Tag, un objeto comercial, porque lo que se quería observar era la relación entre la señal, el lugar y lo que la persona quería hacer, no la forma del objeto.
 
 ## Procedimiento de la prueba
 
-La prueba comenzó el 7 de octubre de 2026 (Figura 21). Cada persona aceptó el consentimiento en la aplicación, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas usaron Relevo a su gusto, cuando quisieron, y cada una fijó su propio límite; las tres completaron esas dos semanas. Tras cada señal, la aplicación preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. La tercera semana no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. Esa semana terminó el 30 de octubre, y el cierre se hace con un cuestionario en papel y una entrevista [CONFIRMAR: resultados de la semana con el teléfono y fecha del cierre]. El consentimiento y las preguntas de la aplicación están en el Anexo I.
+La prueba comenzó el 7 de octubre de 2026 (Figura 21). Cada persona aceptó el consentimiento en la aplicación, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas usaron Relevo a su gusto, cuando quisieron, y cada una fijó su propio límite; las tres completaron esas dos semanas. Tras cada señal, la aplicación preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes, y la aplicación preguntó además si notaron el aviso. La prueba cierra con una entrevista a cada persona. El consentimiento y las preguntas de la aplicación están en el Anexo I.
 
 **Figura 21**
 
 *Prueba en los hogares*
 
-[FIGURA POR INSERTAR: línea de tiempo de la prueba aplicada: 7 de octubre | Inicio | Cada persona acepta el consentimiento, prepara su primer relevo y deja el Tag junto a su primer paso; Semanas 1 y 2 | Con el Tag | Cada persona usa Relevo cuando quiere y responde una serie de preguntas tras cada señal; Semana 3 | Con el teléfono | Sin el Tag: la señal llega como una notificación; 30 de octubre | Cierre | Preparación del cuestionario en papel y de la entrevista]
+[FIGURA POR INSERTAR: línea de tiempo de la prueba aplicada: 7 de octubre | Inicio | Cada persona acepta el consentimiento, prepara su primer relevo y deja el Tag junto a su primer paso; Semanas 1 y 2 | Con el Tag | Cada persona usa Relevo cuando quiere y responde una serie de preguntas tras cada señal; 21 de octubre al 8 de noviembre | Con el teléfono | Sin el Tag: la señal llega como una notificación; Noviembre | Cierre | Entrevista con cada persona]
 
 *Nota.* Elaboración propia.
 
@@ -734,7 +735,7 @@ Durante las semanas con el Tag, el ciclo completo funcionó en los tres hogares.
 
 **Figura 22**
 
-*Resultados de los 24 relevos*
+*Resultados de los 24 relevos con el Tag*
 
 [FIGURA POR INSERTAR: cuatro datos en tarjetas: 23 de 24, ciclos completados en que sonó el Tag; 19 de 21, respuestas en que la persona supo qué quería hacer antes de leerlo, y 2 a medias; 21 de 21, respuestas en que recordó el primer paso; 10 de 21, respuestas en que declaró haber empezado la actividad]
 
@@ -766,17 +767,38 @@ Dos hallazgos orientan el diseño. El primero es que la señal pertenece al luga
 
 Las personas también dijeron aspectos a mejorar en la aplicación. La primera pidió corregir un relevo sin borrarlo: «podrían implementar que se pueda actualizar o editar las opciones que uno ya eligió… así no tenemos que borrarlo y crearlo de nuevo». La segunda encontró el pitido demasiado fuerte, como una alarma, y juzgó largo el límite de 45 minutos, porque al sonar ya estaba inmersa en un video. La tercera contó que la señal le sirvió cuando estaba en el escritorio, pero que de noche la oye desde la cama y no se levanta.
 
+Del 21 de octubre al 8 de noviembre, la señal llegó solo como una notificación en el teléfono. Las tres personas activaron 27 relevos y eliminaron dos antes de sonar; la notificación llegó en 24, y hubo 21 respuestas: diez de la primera persona, siete de la segunda y cuatro de la tercera (Tabla 4). En las 21, la persona recordó cómo empezar y supo qué quería hacer, aunque con el teléfono el aviso ya trae escrita la actividad. Empezó en 13, la dejó para después en 7 y cambió de idea en 1. Empezar no dependió del soporte: la primera persona empezó en 5 de 7 respuestas con el Tag y en 7 de 10 con el teléfono; la segunda, en 3 de 7 y en 4 de 7, y la tercera, en 2 de 7 y en 2 de 4.
+
+Con el teléfono, recordar fue igual de fácil, pero notar la señal no. En 10 de las 21 respuestas, la persona notó el aviso tarde o no lo notó, y dos de las tres tardaron más en responder: la mediana pasó de 15 a 63 segundos en la segunda persona y de 22 a 69 en la tercera. La segunda persona contó que, con el aviso en el teléfono, ya no molestaba con el ruido del Tag a quien vivía con ella, pero que era más fácil pasarlo de largo. La tercera usó menos Relevo que con el Tag —cinco relevos frente a nueve— y contó que una semana casi no lo abrió.
+
+**Tabla 4**
+
+*Resultados con el Tag y con el teléfono, por persona*
+
+| Persona | Soporte | Relevos | Sonaron | Respuestas | Supo qué quería hacer | Recordó cómo empezar | Empezó / después / cambió de idea | Notó el aviso enseguida / tarde / no | Segundos hasta responder (mediana) |
+| --- | --- | ---: | ---: | ---: | --- | ---: | --- | --- | ---: |
+| Primera | Tag | 7 | 7 | 7 | 6, y 1 a medias | 7 | 5 / 2 / 0 | — | 7 |
+| Primera | Teléfono | 12 | 11 | 10 | 10 | 10 | 7 / 3 / 0 | 8 / 1 / 1 | 4 |
+| Segunda | Tag | 8 | 8 | 7 | 7 | 7 | 3 / 3 / 1 | — | 15 |
+| Segunda | Teléfono | 8 | 8 | 7 | 7 | 7 | 4 / 2 / 1 | 3 / 4 / 0 | 63 |
+| Tercera | Tag | 9 | 8 | 7 | 6, y 1 a medias | 7 | 2 / 4 / 1 | — | 22 |
+| Tercera | Teléfono | 5 | 5 | 4 | 4 | 4 | 2 / 2 / 0 | 0 / 2 / 2 | 69 |
+
+*Nota.* Elaboración propia a partir de los registros de la aplicación. Con el Tag, del 8 al 19 de octubre de 2026; con el teléfono, del 21 de octubre al 8 de noviembre. No se cuentan los relevos eliminados antes de sonar. La pregunta sobre el aviso se hizo solo con el teléfono.
+
+Leídos contra el tercer supuesto de la hipótesis —que el objeto ayude al menos tanto como una notificación, sin más molestia—, los resultados lo sostienen en parte. Con el Tag recordaron tanto como con el teléfono, y dos de las tres personas respondieron antes; pero su sonido molestó más a quienes estaban cerca. Como la etapa con el teléfono vino después de las semanas con el Tag, las personas ya sabían qué significaba la señal: la comparación describe lo que vivió cada una, no un efecto del soporte.
+
 ## Alcance de esta etapa
 
-Esta etapa validó el uso real del ciclo con tres personas: el ciclo funciona en un hogar, la señal se entiende y los fallos que aparecieron se corrigieron durante la prueba. Lo que recordaron se conoce por sus propias respuestas, dadas justo después de cada señal.
+Esta etapa validó el uso real del ciclo con tres personas durante un mes: el ciclo funciona en un hogar, la señal se entiende, los fallos que aparecieron se corrigieron durante la prueba y la comparación con el teléfono mostró qué aporta el objeto. Lo que recordaron se conoce por sus propias respuestas, dadas justo después de cada señal.
 
 ## Iterar con los resultados
 
 Lo que mostró la prueba se convierte en cambios, y conviene separar los problemas técnicos —la mayoría, del objeto comprado— de los de uso.
 
-Los técnicos se corrigieron durante la prueba; los de uso definen la iteración siguiente, junto con la identidad visual nueva. La Tabla 4 reúne cada hallazgo, su cambio y su estado, junto con lo que mostró la revisión con los profesores.
+Los técnicos se corrigieron durante la prueba; los de uso definen la iteración siguiente, junto con la identidad visual nueva. La Tabla 5 reúne cada hallazgo, su cambio y su estado, junto con lo que mostró la revisión con los profesores.
 
-**Tabla 4**
+**Tabla 5**
 
 *Hallazgos de la prueba y de las revisiones, y cambios para la iteración*
 
@@ -793,6 +815,7 @@ Los técnicos se corrigieron durante la prueba; los de uso definen la iteración
 | «Elige tu emoji» no pregunta por la persona. | Escritura | «¿Con qué te identificas?» o una pregunta similar. | Por implementar |
 | Un límite de 45 minutos resultó largo: al sonar, la persona ya estaba inmersa en un video. | Uso | Proponer un límite breve al empezar y sugerir revisarlo tras las primeras señales. | Propuesta |
 | De noche, la señal se oye desde la cama y no lleva a levantarse. | Uso | Permitir que la persona excluya horas del día. | Propuesta |
+| Con el teléfono, el aviso se notó tarde o no se notó en 10 de 21 respuestas; el pitido del Tag, en cambio, molestó a quienes estaban cerca. | Uso | Mantener el objeto como señal principal y diseñar en Relevo un sonido más suave. | Propuesta |
 | La respuesta fue «La dejé para después» en 9 de 21 señales. | Uso | Ofrecer, desde esa respuesta, preparar el relevo para otro momento, sin repetir la señal. | Propuesta |
 | Sin el objeto, no hay cómo empezar. | Uso | «¿Tienes un Tag? No: consíguelo acá». | Por implementar |
 
@@ -802,15 +825,15 @@ Los técnicos se corrigieron durante la prueba; los de uso definen la iteración
 
 El proyecto partió de una situación cotidiana —quedarse en el teléfono más de lo que uno quería— y la convirtió en un problema de diseño preciso: que la persona recuerde a tiempo algo que quería hacer, sin que nadie decida por ella. Con esa base tomó decisiones en todas las escalas —el sistema, el recorrido, la interfaz, la voz, la identidad y el objeto—, y cada una responde a un criterio.
 
-El prototipo funciona en uso real: en los tres hogares, el Tag sonó en 23 de los 24 relevos que llegaron a su límite; en las 21 respuestas, la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla. Los fallos que reportaron se corrigieron durante la prueba, y lo que mostró sobre el uso ya orienta la iteración siguiente. Así, los dos primeros objetivos —entender el problema y diseñar el sistema— se cumplieron; el cuarto, probarlo en hogares, se cumplió con tres personas durante dos semanas, y el tercero, la comparación con el teléfono, completó su semana de prueba el 30 de octubre [CONFIRMAR: resultados de la semana con el teléfono].
+El prototipo funciona en uso real: en los tres hogares, el Tag sonó en 23 de los 24 relevos que llegaron a su límite; en las 21 respuestas, la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla. Los fallos que reportaron se corrigieron durante la prueba, y lo que mostró sobre el uso ya orienta la iteración siguiente. Así, los dos primeros objetivos —entender el problema y diseñar el sistema— se cumplieron; el cuarto, probarlo en hogares, se cumplió con tres personas durante un mes, y el tercero, la comparación con el teléfono, se cumplió del 21 de octubre al 8 de noviembre: con la notificación recordaron igual, pero la notaron tarde o no la notaron en 10 de 21 respuestas.
 
-El avance se ve en el propio prototipo. Entre septiembre y octubre, la propuesta pasó de un objeto donde dejar el teléfono a un sistema probado en tres hogares: doce cambios, tres de ellos a partir de lo que contaron las personas durante la prueba (Tabla 2); una identidad completa, con logo, paleta cromática, tipografía y 72 íconos propios; una aplicación en su versión 3.3, y un objeto propio modelado para imprimir.
+El avance se ve en el propio prototipo. Entre septiembre y noviembre, la propuesta pasó de un objeto donde dejar el teléfono a un sistema probado en tres hogares: doce cambios, tres de ellos a partir de lo que contaron las personas durante la prueba (Tabla 2); una identidad completa, con logo, paleta cromática, tipografía y 72 íconos propios; una aplicación que llegó a la versión 4.7.2, y un objeto propio modelado para imprimir.
 
-La pregunta de investigación pedía condiciones, y la investigación las precisó: una ayuda debe partir de una actividad que la persona elige, unirla a un primer paso concreto, sonar cuando ella lo decidió y dejar abierta la decisión. Construido así, Relevo devolvió la intención sin decidir por nadie: cada persona decidió a su manera si empezar, dejarlo para después o cambiar de idea. Una de esas condiciones, que la señal llegue desde el lugar donde la actividad comienza, se formuló como hipótesis. La prueba sostiene su primer supuesto: al oír la señal, la persona supo qué quería hacer antes de leerlo en 19 de 21 respuestas y recordó cómo empezar en todas. La semana con el teléfono aporta la comparación del tercero. El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables —qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones—, sin reducirla a una cuestión de disciplina.
+La pregunta de investigación pedía condiciones, y la investigación las precisó: una ayuda debe partir de una actividad que la persona elige, unirla a un primer paso concreto, sonar cuando ella lo decidió y dejar abierta la decisión. Construido así, Relevo devolvió la intención sin decidir por nadie: cada persona decidió a su manera si empezar, dejarlo para después o cambiar de idea. Una de esas condiciones, que la señal llegue desde el lugar donde la actividad comienza, se formuló como hipótesis. La prueba sostiene su primer supuesto: al oír la señal, la persona supo qué quería hacer antes de leerlo en 19 de 21 respuestas y recordó cómo empezar en todas. El tercero se sostiene en parte: con el teléfono recordaron igual, pero el aviso se notó tarde o no se notó en 10 de 21 respuestas, y el sonido del Tag molestó más a quienes estaban cerca. El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables —qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones—, sin reducirla a una cuestión de disciplina.
 
 ## Alcances y proyecciones
 
-El trabajo puede seguir en cinco pasos: cerrar la prueba e informar cada caso; aplicar lo que mostró; imprimir y probar Relevo, con volumen regulable; ampliar la prueba a más personas y compararla con el mismo objeto en un lugar sin relación con la actividad, y explorar Relevo Home y Relevo Go, con localizadores de otras marcas, si sonar desde el lugar mantiene su aporte. Más adelante, un hardware propio permitiría diseñar también el sonido y el control.
+El trabajo puede seguir en cinco pasos: cerrar la prueba con la entrevista a cada persona; aplicar lo que mostró; imprimir y probar Relevo, con volumen regulable; ampliar la prueba a más personas y compararla con el mismo objeto en un lugar sin relación con la actividad, y explorar Relevo Home y Relevo Go, con localizadores de otras marcas, si sonar desde el lugar mantiene su aporte. Más adelante, un hardware propio permitiría diseñar también el sonido y el control.
 
 # Referencias
 
@@ -1065,6 +1088,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 - **Anexo D.** Trazabilidad de los criterios de diseño: cada criterio con su evidencia, su aplicación en Relevo y el resultado de la prueba, y los cambios en la aplicación.
 - **Anexo E.** Uso de inteligencia artificial: las herramientas, las tareas que apoyaron y el trabajo del autor.
 - **Anexo F.** Estados del ciclo y *wireframes*: los 35 estados del ciclo, con sus *wireframes* de agosto, y las 39 pantallas de la aplicación.
-- **Anexo G.** Prototipo Android y registro de versiones: la aplicación de la prueba, el Tag, los datos y el panel, cada versión desde la 2.7 hasta la 4.6.3 y las palabras clave con que la aplicación reconoce cada actividad.
+- **Anexo G.** Prototipo Android y registro de versiones: la aplicación de la prueba, el Tag, los datos y el panel, cada versión desde la 2.7 hasta la 4.7.2, con sus pantallas, y las palabras clave con que la aplicación reconoce cada actividad.
 - **Anexo H.** Identidad visual y sistema de marca: el logo, la tipografía, la iconografía y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores.
-- **Anexo I.** Protocolo de la prueba, consentimiento e instrumentos: la prueba aplicada, el protocolo de 21 días, el consentimiento, las preguntas de la aplicación y los instrumentos, de la sesión inicial al cierre.
+- **Anexo I.** Protocolo de la prueba, consentimiento e instrumentos: la prueba aplicada, el protocolo de 21 días, el consentimiento, las preguntas de la aplicación, los instrumentos, de la sesión inicial al cierre, y los resultados por persona.
