@@ -275,6 +275,16 @@
 | 10 nov. | Encargo | Entregó la copia del correo de Denis Parra, del 4 de noviembre, y avisó que el 11 de noviembre entrega la entrevista final con las personas, según su uso de la app, y los resultados finales de la prueba y de la semana solo con notificaciones; pidió anotarlo todo. | La [ficha de Parra](../02_investigacion/entrevistas-expertos/ficha-parra.md) tiene la fecha del correo, y la cita la usa; las citas coinciden con la copia, y el texto completo quedó fuera de GitHub. La [tarea 6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) espera los datos del 11 de noviembre. | — |
 | 10 nov. | Consulta | Qué queda pendiente: mañana se cierra todo, porque a las 23:30 sube la memoria. | Lista para el 11 de noviembre: con los datos del cierre, los resultados caso por caso sin los dos «por confirmar», el Anexo I con la entrevista nueva, Parra en el capítulo 3 y el criterio 1, y las correcciones de la evaluación como comisión; después, juntar las ramas en una sola, con su autorización, generar el PDF y los anexos. Se le preguntó si mañana es la entrega oficial, que el calendario fija el 2 de diciembre a las 12:00. El cuerpo de la memoria tiene unas 16.500 palabras, dentro del límite. | — |
 | 10 nov. | Respuesta | La subida de mañana a las 23:30 es una entrega previa, no la oficial. | El [calendario de cierre](por-hacer.md#calendario-de-cierre) suma la entrega previa del 11 de noviembre; la oficial sigue el 2 de diciembre a las 12:00. | — |
+| 30 oct. | Consulta | Pidió detener la revisión en curso, quedarse solo con el contexto del proyecto y revertir cualquier cambio hecho en la memoria. | Nada que revertir: la revisión había sido de lectura, con el árbol de trabajo limpio y el HEAD igual a `origin/main` | — |
+| 30 oct. | Consulta | Mostró una propuesta de pregunta de investigación y preguntó si tiene sentido, porque la actual le cuesta leer. | Revisión en la conversación: la propuesta desplaza el sujeto de la intención a la sesión, lo que coincide con la primera línea del resumen, pero sus comas la dejan sin sujeto | — |
+| 30 oct. | Encargo | Pidió tres propuestas que solo cambien la redacción de la pregunta, sin alterar la memoria. | Tres propuestas en la conversación, de reordenamiento puro: inciso al final, circunstancia primero y enunciado más pregunta | — |
+| 30 oct. | Corrección | Señaló que «la decisión inmediata» es el punto que hace difícil de entender toda la pregunta. | Tres propuestas que reemplazan esa frase por expresiones del propio texto: «el paso siguiente» (capítulos 2 y 7), «deja de estar presente» (resumen y capítulo 3) y «no vuelve a aparecer» (capítulo 3) | — |
+| 30 oct. | Encargo | Pidió leer completo el borrador v6 y, sobre esa base, proponer una pregunta de investigación. | Propuesta y dos variantes en la conversación, armadas con el vacío del capítulo 5, el objetivo general y las conclusiones; de esa lectura salió el desajuste de las dos partes | — |
+| 30 oct. | Encargo | Pidió explicar el desajuste entre la pregunta y las dos partes que se le atribuyen, proponer una solución y subirlo a Por hacer. | [Tarea 11](por-hacer.md#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes), con el problema, tres soluciones y una recomendación | — |
+| 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
+| 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
+| 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
+| 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
 
 ## Lo que muestra el registro
 
@@ -638,6 +648,24 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Qué cambió:** se registró la consulta para comparar la memoria con la de otra persona del taller según la rúbrica.
 - **Cómo estaba antes:** el último pedido era subir el IDML.
 - **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-10-30 — Camino al 7
+
+- **Qué cambió:** se registró el pedido de dejar por escrito el camino a la nota máxima.
+- **Cómo estaba antes:** el registro terminaba en la tarea 12.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-30 — Revisión de la memoria y crítica con la rúbrica
+
+- **Qué cambió:** se registraron los tres pedidos del autor sobre la memoria enviada al profesor: la lectura completa, la crítica con la rúbrica y el traslado de los errores a Por hacer.
+- **Cómo estaba antes:** el registro terminaba en los archivos satélite de la pregunta.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
+### 2026-10-30 — Pedidos sobre la pregunta de investigación
+
+- **Qué cambió:** se registraron los seis pedidos del 30 de octubre sobre la pregunta de investigación: detener la revisión, evaluar su propuesta, tres redacciones, el reparo a «la decisión inmediata», la lectura completa de la v6 y la tarea 11.
+- **Cómo estaba antes:** el registro terminaba en el encargo de subir el IDML, del 29 de octubre.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda
 
