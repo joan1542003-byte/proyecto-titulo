@@ -18,11 +18,23 @@ Siete ramas de textos, en este orden:
 
 En total cambian 81 archivos. Las líneas que se borran vienen de las ramas, no de la fusión: casi todas son de los anexos, que la rama `anexos-para-word` rehízo como documento formal (D-168 a D-170).
 
-## Qué quedó fuera
+## Qué quedó fuera de esta primera fusión
 
-- **`android-4.6`**, la app 4.6.3 a 4.7.2 (D-155 a D-167 y D-175 a D-177), con su código, sus APK y la entrevista de cierre del 9 de noviembre. No es texto de la memoria. Por eso, en `main`, el registro de decisiones salta de D-154 a D-168: las decisiones que faltan están en esa rama.
-- **`iconos-propios`**, los íconos propios y los documentos 43 y 44 de esa rama (D-162): 188 archivos, casi todos imágenes.
-- **PR #12 y #13**, de septiembre y octubre: cada uno tiene un commit y va más de cien commits atrás de `main`. Lo que proponían quedó reemplazado por la memoria v6 y su versión en 1920 × 1080.
+- **`android-4.6`**, la app 4.0 a 4.7.2 (D-155 a D-167 y D-175 a D-177), con su código, sus APK y la entrevista de cierre del 9 de noviembre. Entró el mismo día, en la [segunda fusión](#segunda-fusión-la-app-472).
+- **`iconos-propios`**, los íconos propios y los documentos 43 y 44 de esa rama (D-162). Ya estaba dentro de `android-4.6`, así que entró con ella.
+- **PR #12 y #13**, de septiembre y octubre: cada uno tiene un commit y va más de cien commits atrás de `main`. Lo que proponían quedó reemplazado por la memoria v6 y su versión en 1920 × 1080. Siguen abiertos, sin fusionar.
+
+## Segunda fusión: la app 4.7.2
+
+El autor pidió después juntar también la app, si era la versión más reciente: «si esa versión es la más reciente que hicimos, hazlo».
+
+- **Es la más reciente:** `android-4.6` tiene la 4.7.2, `versionCode` 63, del 9 de noviembre. Ninguna otra rama pasa de la 4.5 (`versionCode` 56).
+- **Qué entró:** la app pasa en `main` de la 3.3 (`versionCode` 49) a la 4.7.2: las versiones 4.0 a 4.7.2, con su código, sus pruebas, sus APK y sus documentos; los íconos propios; la entrevista de cierre del 9 de noviembre; el panel de administración al día; y las decisiones D-155 a D-167 y D-175 a D-177. Cambian 216 archivos, 60 de ellos binarios (APK e imágenes).
+- **Choques:** solo de registros e índices.
+  - **Registro de decisiones:** quedan las 177 decisiones en orden, de D-155 a D-177 sin saltos, y un solo registro de cambios ordenado por fecha. No se perdió ninguna entrada.
+  - **Recursos visuales:** las dos ramas habían numerado como 44 un documento distinto. Ahora son el 44 (decisiones de diseño), el 45 (por qué íconos propios) y el 46 (íconos que responden a lo que pide la app).
+  - **Registro de pedidos y Por hacer:** se conservaron ambos lados, ordenados por fecha.
+- **La app no cambió:** la carpeta `06_desarrollo_y_factibilidad` de `main` quedó idéntica a la de `android-4.6`. Por eso vale la verificación de la 4.7.2: compilación desde cero, 106 pruebas sin fallas y la prueba sin conexión en una copia aparte. No se volvió a compilar ni se generó un APK nuevo.
 
 ## Cómo se resolvieron los choques
 
@@ -44,6 +56,12 @@ Ningún choque fue de contenido de la memoria. Todos se resolvieron conservando 
 - Los enlaces relativos de los 81 archivos llevan a archivos que existen, salvo uno que ya estaba roto en `main`: D-147 enlaza `08_memoria/figuras/fuentes/LEEME.md`, que no está en ninguna rama.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — La app en main
+
+- **Qué cambió:** se documenta la segunda fusión, la de la app 4.7.2 con los íconos propios, y cómo se resolvieron sus choques.
+- **Cómo estaba antes:** la app y los íconos figuraban como fuera de `main`.
+- **Por qué:** el autor pidió juntar también la app, por ser la versión más reciente.
 
 ### 2026-11-10 — Creación
 

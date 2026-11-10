@@ -321,6 +321,7 @@
 | 10 nov. | Consulta | Qué queda pendiente: mañana se cierra todo, porque a las 23:30 sube la memoria. | Lista para el 11 de noviembre: con los datos del cierre, los resultados caso por caso sin los dos «por confirmar», el Anexo I con la entrevista nueva, Parra en el capítulo 3 y el criterio 1, y las correcciones de la evaluación como comisión; después, juntar las ramas en una sola, con su autorización, generar el PDF y los anexos. Se le preguntó si mañana es la entrega oficial, que el calendario fija el 2 de diciembre a las 12:00. El cuerpo de la memoria tiene unas 16.500 palabras, dentro del límite. | — |
 | 10 nov. | Respuesta | La subida de mañana a las 23:30 es una entrega previa, no la oficial. | El [calendario de cierre](por-hacer.md#calendario-de-cierre) suma la entrega previa del 11 de noviembre; la oficial sigue el 2 de diciembre a las 12:00. | — |
 | 10 nov. | Decisión y encargo | Subir por ahora solo los textos a `main`, juntando las ramas, sin generar el PDF ni otros archivos, y registrar los cambios. | Entraron a `main` siete ramas de textos: el estado al 4 de noviembre, los anexos formales y las rondas 10 a 13 de la memoria v6, las entrevistas a expertos, las tareas 11 a 14, la pregunta alineada y el documento 43. Los choques solo fueron de registros e índices y se conservaron ambos lados. Quedaron fuera la app (`android-4.6`) y los íconos propios. No se generó ningún archivo. Detalle en la [fusión de los textos](fusion-de-textos-en-main-2026-11-10.md). | — |
+| 10 nov. | Decisión | Juntar también la app en `main`, si es la versión más reciente. | Es la 4.7.2 (`versionCode` 63); ninguna otra rama pasa de la 4.5. Entró a `main` con los íconos propios, la entrevista de cierre del 9 de noviembre y las decisiones D-155 a D-167 y D-175 a D-177; el registro de decisiones queda completo, de D-001 a D-177. La carpeta de la app quedó idéntica a la de la rama, así que vale su verificación: 106 pruebas. No se generó ningún archivo. Detalle en la [fusión](fusion-de-textos-en-main-2026-11-10.md#segunda-fusión-la-app-472). | — |
 
 ## Lo que muestra el registro
 
@@ -331,6 +332,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — La app en main
+
+- **Qué cambió:** se registró la decisión de juntar la app en `main`.
+- **Cómo estaba antes:** el último pedido era la fusión de los textos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Fusión de los textos
 
