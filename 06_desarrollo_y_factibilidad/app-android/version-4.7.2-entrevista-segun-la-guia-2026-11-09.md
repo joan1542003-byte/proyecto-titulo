@@ -40,11 +40,18 @@ El autor pidió ajustar la entrevista final del cierre de la prueba a la guía d
 
 **Falta probar:** el envío a Supabase desde un teléfono real con conexión y el panel publicado con la cuenta del autor.
 
-## Pendiente fuera de esta rama
+## Capturas y anexos
 
-El Anexo I de la memoria (rama `anexos-para-word`) todavía presenta la entrevista del 28 de octubre. Hay que actualizarlo con la entrevista que efectivamente se aplique.
+- **Capturas:** 18 pantallas de esta versión, del primer uso al cierre de la prueba, en [capturas/interfaz-4.7.2](capturas/interfaz-4.7.2/README.md), tomadas el 10 de noviembre de 2026. Ocho forman la Figura G4 del Anexo G.
+- **Anexo I:** desde el 10 de noviembre presenta esta entrevista.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Capturas y Anexo I
+
+- **Qué cambió:** se enlazan las capturas de esta versión y se anota que el Anexo I ya presenta la entrevista nueva.
+- **Cómo estaba antes:** el Anexo I seguía con la entrevista del 28 de octubre y no había capturas de la 4.7.2.
+- **Por qué:** el autor pidió capturas de la versión más reciente y actualizar los anexos.
 
 ### 2026-11-09 — Creación
 

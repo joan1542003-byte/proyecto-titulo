@@ -303,6 +303,18 @@ Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de n
 
 *Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
 
+**Figura G4**
+
+*Pantallas de la versión 4.7.2*
+
+| Bienvenida | Actividad | Relevo listo | Inicio |
+| --- | --- | --- | --- |
+| ![Bienvenida](imagenes/app-4.7.2-1-bienvenida.jpg) | ![Actividad](imagenes/app-4.7.2-2-actividad.jpg) | ![Relevo listo](imagenes/app-4.7.2-3-todo-listo.jpg) | ![Inicio](imagenes/app-4.7.2-4-inicio.jpg) |
+| **Señal** | **Cuatro preguntas** | **Decisión** | **Entrevista de cierre** |
+| ![Señal](imagenes/app-4.7.2-5-senal.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-6-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-7-decidir.jpg) | ![Entrevista de cierre](imagenes/app-4.7.2-8-entrevista.jpg) |
+
+*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un relevo de ejemplo que suena en el teléfono: la bienvenida, la actividad, el relevo listo, Inicio mientras cuenta, la señal, las preguntas de un toque, la decisión y la primera parte de la entrevista de cierre.
+
 ## G.6 Palabras clave y sugerencias
 
 Desde la versión 4.3, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. La versión 4.5 sumó palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete»: la app reconoce 34 actividades en siete familias, con 634 palabras, 121 frases y 31 palabras débiles, y sugiere 91 primeros pasos y 61 lugares.
