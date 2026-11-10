@@ -611,6 +611,127 @@ Estimaciones sobre la simulación del 30 de octubre, para decidir qué soltar si
 - No tocar la pregunta, la hipótesis ni los objetivos sin que el autor lo pida.
 - Declarar lo que no se probó. En esta memoria la honestidad suma nota.
 
+## 14. Capítulos 1 a 6: fundamentar lo que presenta el proyecto
+
+**Estado:** por hacer. **Anotada:** 2 de noviembre de 2026. **Origen:** el autor pidió revisar con rigor el apartado que empieza a describir el proyecto y leer completo cada referente de la memoria. El análisis está en la [fundamentación de los capítulos 1 a 6](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md), con el texto propuesto para cada cambio, y en la [verificación de sus 40 citas](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md), con página y fragmento de cada fuente. **Riesgo:** alto: son los capítulos que la comisión lee primero y el instructivo evalúa la citación. La memoria no se modificó: los cambios se aplican cuando el autor lo decida.
+
+### Por qué
+
+El PDF del 30 de octubre tiene seis problemas en estos capítulos:
+
+1. La Introducción tiene 492 palabras y la pauta pide entre 600 y 1200; la Justificación, 220, y pide entre 300 y 600. Ambas perdieron párrafos que la v6 sí tenía.
+2. El capítulo 3 plantea el problema sin ningún dato que muestre que una intención pierde presencia durante una sesión.
+3. Nueve de las 40 citas sostienen menos de lo que el texto les atribuye: seis son parciales y tres no tienen respaldo en su fuente. Otras cinco no se pudieron comprobar porque falta el texto completo (punto H).
+4. Tres frases presentan como establecido lo que es propio del proyecto.
+5. La Justificación no dice qué vacío llena ni qué aporta.
+6. «Está decidiendo por mí», en la Motivación, contradice la postura del proyecto: la interfaz «no actúa sola» y la decisión es de la persona.
+
+Las erratas de estos capítulos ya están en la tarea 12, punto D. Aquí van solo las que esa lista no tiene.
+
+### A. Motivación personal (capítulo 1)
+
+- [ ] Reemplazar «Me inquieta la diferencia entre elegir seguir y darme cuenta contra el automatismo que genera el dispositivo. Está decidiendo por mi» por la frase de la v6: «Me inquieta la diferencia entre elegir seguir y darme cuenta, después, de que no volví a considerar lo demás». Propuesta 3.1.
+- [ ] Reponer la frase de la v6: «La pregunta nace de mi experiencia; lo que esta memoria afirma sobre otras personas proviene de la investigación».
+
+### B. Introducción (capítulo 2)
+
+- [ ] Reescribir el segundo párrafo: el ejemplo de la sesión larga y la breve es propio, y la cita de Lukoff et al. (2018) pasa a sostener lo que el estudio encontró, que el sentido de cada uso depende de su motivo y de su tipo. Propuesta 3.2.
+- [ ] «esa intención deja de tener una presencia, cuando la persona vuelve» → «esa intención deja de orientar el paso siguiente; cuando la persona vuelve», y reponer «El proyecto se dirige a la primera; queda abierto si también puede ayudar en la segunda».
+- [ ] Reponer «Estos patrones no determinan la conducta, pero reducen…»: Montag et al. (2019) es una revisión y no mide el efecto.
+- [ ] Reponer el párrafo final de la v6 (método, propuesta y prueba) y añadir el párrafo nuevo con el estado del proyecto y la organización del documento, que la pauta pide y ninguna versión tiene. Actualizar la oración del estado al momento de entregar.
+- **Resultado:** unas 790 palabras.
+
+### C. Planteamiento del problema (capítulo 3)
+
+- [ ] Añadir el párrafo con el dato que falta. Lukoff et al. (2018, p. 22:16), ya citados: la proporción de usos con un objetivo concreto baja del 65,6 % al 51,4 % mientras la sesión continúa. A eso se suma el indicio de la encuesta del capítulo 7: de 43 personas que tenían otra cosa que hacer, 21 no la empezaron. Propuesta 3.3. Responde a la pregunta de la comisión anotada en la tarea 12, punto H: «¿por qué creer que existe más allá de la experiencia del autor?».
+- [ ] Precisar el estudio de de Segovia Vicente et al. (2024): el desplazamiento sin propósito se midió en redes sociales, y los registros del teléfono cubren a 691 de las 1315 personas. El conflicto de metas fue bajo en promedio (1,95 de 7), lo que confirma que el problema ocurre «durante algunas sesiones».
+- [ ] McDaniel y Einstein (2000): verificar en el texto completo que una actividad absorbente hace depender el recuerdo de una señal del entorno (opción A). Si no se consigue el texto, reformular dentro de lo que dice el resumen (opción B).
+- [ ] «La interfaz no actúa sola, pero decide cuándo aparecen los cierres» → «…pero organiza…», como en la v6: «decide» contradice lo anterior.
+- **Resultado:** entre 660 y 700 palabras.
+
+### D. Justificación (capítulo 4)
+
+- [ ] Reemplazar el capítulo por la propuesta 3.4. Recupera la pertinencia disciplinar y el aporte de la v6 y añade el vacío que documentan fuentes ya citadas:
+  - Terzimehić et al. (2022, pp. 1818–1819): las intervenciones contra el uso distraído del teléfono casi no incluyen el entorno físico.
+  - Lyngs et al. (2019): las herramientas que recuerdan una meta lo hacen en la misma pantalla.
+  - Monge Roffarello y De Russis (2023): el tiempo de pantalla es una medida demasiado gruesa.
+- [ ] «Este criterio se traduce en decisiones de diseño, una necesidad psicológica básica» perdió la palabra «autonomía». Reponerla y anclarla en Ryan y Deci (2000, p. 70): las órdenes y las metas impuestas debilitan la motivación propia; la posibilidad de elegir la fortalece.
+- [ ] Sacar a Waggoner et al. (2026) de la frase «El diseño permite crear una interacción entre componentes físicos y digitales»: es una revisión de métodos para bibliotecas y no la sostiene. Se mantiene en el capítulo 6 para definir *phygital*.
+- [ ] Comprobar que el aporte descrito coincida con el plan del capítulo 13.
+- **Resultado:** unas 440 palabras. Sumados B, C y D, el cuerpo gana unas 650 palabras en lugares que la pauta exige; cuentan para las 1000 que faltan en la tarea 12, punto C.
+
+### E. Antecedentes y estado de la cuestión (capítulo 5)
+
+- [ ] «Este apartado permitirá definir los conceptos…» → «Este capítulo revisa qué se ha estudiado y qué se ha probado; el siguiente define los conceptos».
+- [ ] de Segovia Vicente et al. (2024): separar la inferencia propia («reducir el uso no basta como criterio») de lo que el estudio midió.
+- [ ] Lyngs et al. (2019): quitar «creando hábitos», que no aparece en el artículo; escribir «recordándola en la pantalla o pidiendo fijarla (35 %)».
+- [ ] Grüning et al. (2023) y Haliburton et al. (2024): declarar que un coautor desarrolló one sec, como dicen los propios artículos.
+- [ ] Haliburton et al. (2024): «el efecto no persiste» → «el uso sube durante las pausas de la intervención y vuelve a bajar al retomarla».
+- [ ] O'Rear y Radvansky (2019): «Llegar al lugar bastó» → «Las señales del lugar favorecieron el recuerdo». Confirmar con el texto completo (punto H).
+- [ ] Sohn et al. (2005): «no se podían colocar» → «no se podían atender», como dice el original.
+
+### F. Marco teórico por ámbitos (capítulo 6)
+
+- [ ] «Se le llama decisión renovada» → «En esta memoria se llama *decisión renovada*», y añadir el término al glosario.
+- [ ] «forman lo que se llama arquitectura de atención»: el término no está en Montag et al. (2019). Presentarlo como término de la memoria o quitarlo.
+- [ ] «pero si es excesiva puede llegar a frustrar»: Grüning et al. (2023) no lo dicen. Reemplazar por la interferencia con usos legítimos que documentan Haliburton et al. (2024, p. 8).
+- [ ] de Segovia Vicente et al. (2024): definir el conflicto de metas como lo midió el estudio y dejar «sin establecer cuál debería prevalecer» como postura del proyecto.
+- [ ] Ryan y Deci (2000): la traducción al diseño (aceptar, ajustar o rechazar la ayuda) queda declarada como del proyecto, con la p. 70 como anclaje.
+- [ ] McDaniel y Einstein (2000): «si la señal es llamativa y está fuertemente asociada a la acción» necesita la página del texto completo; si no se consigue, usar la opción B.
+- [ ] «De ahí formularon una hipótesis» → «De ahí se desprende la hipótesis de este proyecto»: hoy se lee como si fuera de O'Rear y Radvansky.
+- [ ] Risko y Gilbert (2016): añadir el término *descarga de intenciones*, el más exacto para lo que hace Relevo.
+- [ ] Guynn et al. (1998), opcional: los recordatorios que solo nombraban la acción ayudaron, pero menos que los que nombraban ocasión y acción.
+- [ ] Kirsh (1995): completar la frase del rollo de película, que quedó cortada, y confirmar que el ejemplo está en el artículo (punto H).
+- [ ] Figura 4: «El objeto junto un primer paso» → «junto a un primer paso».
+
+### G. APA y versiones de las fuentes
+
+- [ ] **Norman:** la copia que leyó el autor es de la edición de 2002 y la referencia cita la de 1990. Confirmar las páginas 73 y 103 en la copia usada; si es la de 2002, cambiar la referencia a esa edición, con la editorial de su página legal, y las citas a «Norman, 1988/2002».
+- [ ] **Sohn et al. (2005):** las cifras salieron del informe técnico de marzo de 2005. Confirmarlas en la versión publicada que cita la memoria, o citar el informe.
+- [ ] **Manuscritos de autor** (Monge Roffarello y De Russis, Risko y Gilbert, Meier y Reinecke, Jiang et al.): sus páginas no son las de la revista. En la memoria, citar sin página o por sección, o comprobar la página en la versión publicada.
+- [ ] **Gollwitzer y Sheeran (2006):** el texto se leyó con OCR; revisar el escaneo antes de citarlo textualmente.
+
+### H. Recordatorio: buscar las fuentes que faltaron por verificar
+
+De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tienen el resumen y 14 no tienen acceso, por estar cerradas, ser libros o normas de pago, o porque el sitio bloquea las descargas automáticas. El motivo de cada una está en el [estado de las fuentes](../01_contexto_y_fuentes/fuentes-de-la-memoria/README.md#estado-al-2-de-noviembre-de-2026). Se consiguen con la cuenta de la biblioteca de la UDP, si la revista está suscrita, por préstamo de la biblioteca o con el navegador cuando son de acceso abierto. Ninguna se busca en sitios de copias no autorizadas.
+
+**Prioridad 1: cierran la verificación de los capítulos 1 a 6.**
+
+- [ ] McDaniel y Einstein (2000), *Applied Cognitive Psychology* (Wiley): las afirmaciones de los capítulos 3 y 6 sobre la señal.
+- [ ] Kirsh (1995), *Artificial Intelligence* (Elsevier): el ejemplo del rollo de película y su página.
+- [ ] O'Rear y Radvansky (2019), *Quarterly Journal of Experimental Psychology* (Sage): si el lugar «bastó» o solo favoreció el recuerdo.
+- [ ] Sohn et al. (2005), versión publicada en *UbiComp 2005* (Springer): 10 personas, 89 recordatorios y 19 vueltos a colgar.
+- [ ] Norman, copia del autor: edición, editorial y páginas 73 y 103.
+- [ ] Waggoner et al. (2026), Springer, de acceso abierto: la página de la definición de *phygital*.
+- [ ] Radtke et al. (2022), Sage, de acceso abierto: las cifras del capítulo 5, opcionales.
+- [ ] Guynn et al. (1998), *Memory & Cognition* (Springer): los resultados completos, opcional.
+
+**Prioridad 2: para verificar los capítulos 7 a 14.**
+
+- [ ] Artículos: Fogg (2009), en la ACM Digital Library; Goldsmith (2021), en NSUWorks, de acceso abierto; Hermann et al. (2007), en IET; Miller et al. (2007); Edworthy et al. (1991) y Hellier et al. (1993), en *Human Factors*; Elliot y Maier (2014) y Middlebrooks y Green (1991), en *Annual Review of Psychology*.
+- [ ] Tesis: Gembali (2023), en DSpace@MIT, de acceso abierto; Riveros Oltra (2023) y Venegas Álvarez (2026): el autor ya tiene sus PDF.
+- [ ] Libros y norma: Kolko (2011), Nielsen (1993), Sanders y Stappers (2012) e ISO 3864-1:2011.
+- [ ] Páginas web: revisar en el sitio el dato que se cita de OpenAI (s. f.), que no respondió, y de cuatro páginas breves o dinámicas: Apple Developer (s. f.), Brick LLC (s. f.-b), Mindicador (2026) y Sanders (2026).
+- [ ] Con esas fuentes, verificar las citas de los capítulos 7 a 14, que no se revisaron en esta pasada.
+
+**Cómo dejarlas listas:** en el computador del autor, `python3 construir.py`, dentro de `01_contexto_y_fuentes/fuentes-de-la-memoria/`, regenera los textos que sí se consiguen. Cada PDF conseguido a mano se guarda en la carpeta `textos/` con el nombre de su clave, por ejemplo `mcdaniel-einstein-2000.pdf`. Esa carpeta no se sube al repositorio. Después se pide cerrar la verificación de esa fuente.
+
+### Orden sugerido
+
+1. **H, prioridad 1** (una tarde): sin esos textos, C, E y F no se cierran.
+2. **A a D** (un día): Motivación, Introducción, Planteamiento y Justificación, con el texto de la fundamentación.
+3. **E y F** (medio día): los reemplazos de los capítulos 5 y 6.
+4. **G** (una hora).
+5. **H, prioridad 2**, y la verificación de los capítulos 7 a 14, antes del 22 de noviembre.
+
+### Reglas
+
+- La memoria no se toca hasta que el autor lo decida; el texto de cada cambio está en la fundamentación.
+- No tocar la pregunta, la hipótesis ni los objetivos.
+- Cada cita debe decir lo que su fuente sostiene. Si una fuente no se consigue, reformular dentro de su resumen o quitar la afirmación.
+- No subir al repositorio PDF ni textos con derechos de autor.
+- Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
+
 ## Registro de cambios (disclaimer)
 
 ### 2026-11-10 — Entrega previa
@@ -660,6 +781,12 @@ Estimaciones sobre la simulación del 30 de octubre, para decidir qué soltar si
 - **Qué cambió:** la tarea de buscar perfiles para entrevistar en Chile enlaza la carpeta de entrevistas a expertos y dice lo que falta.
 - **Cómo estaba antes:** la tarea no tenía perfiles, preguntas ni material.
 - **Por qué:** pedido del autor del 2 de noviembre.
+
+### 2026-11-02 — Capítulos 1 a 6 y fuentes por verificar
+
+- **Qué cambió:** se añadió la tarea 14, con todo lo encontrado al revisar los capítulos 1 a 6 contra los textos completos de sus fuentes: la extensión bajo la pauta, el dato que falta en el problema, las citas que sostienen menos de lo que dicen, los términos propios, el vacío de la Justificación y las versiones de las fuentes. Incluye el recordatorio de las 23 fuentes que faltan por verificar, ordenadas por prioridad.
+- **Cómo estaba antes:** estos hallazgos estaban solo en la fundamentación y en la verificación, sin tareas en esta lista.
+- **Por qué:** el autor pidió subir lo encontrado al repositorio, dejarlo en Por hacer sin modificar la memoria y que se le recordara buscar las fuentes que faltan.
 
 ### 2026-10-30 — Camino al 7
 
