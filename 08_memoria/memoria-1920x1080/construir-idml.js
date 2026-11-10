@@ -685,9 +685,9 @@ function pruebaAplicada(b, T) {
   return `<div class="fig4" style="grid-template-columns:repeat(${etapas.length},1fr)">${etapas.map(([f, tit, tx], i) => `<div class="etapa" style="background:${i === 0 || i === etapas.length - 1 ? rgb(color[i ? 3 : 0]) : '#fff'}">${T('Celda cabecera', f)}${T('Celda primera', tit)}${T('Celda', tx)}</div>`).join('')}</div>`;
 }
 
-/** La identidad en una lámina: logo, las cuatro luces con su papel, la letra y una muestra de íconos. */
+/** La identidad en una lámina: logo, los cuatro círculos con su parte, la tipografía y una muestra de íconos. */
 function identidad(T) {
-  const luces = [['#FFD54A', 'tiempo', '¿Cuándo suena?'], ['#9DD6F4', 'primer-paso', '¿Cómo empiezas?'], ['#B3E788', 'lugar', '¿Dónde empiezas?'], ['#F6A3CB', 'decidir', '¿Qué decidiste?']];
+  const luces = [['#FFD54A', 'tiempo', 'Tiempo'], ['#9DD6F4', 'primer-paso', 'Primer paso'], ['#B3E788', 'lugar', 'Lugar'], ['#F6A3CB', 'decidir', 'Decisión']];
   const iconos = ['tag', 'suena', 'primer-paso', 'lugar', 'tiempo', 'leer', 'dibujar', 'decidir'];
   return `<div class="idn"><div class="blanco idn-logo">${lockup()}</div>` +
     `<div class="idn-luces">${luces.map(([c, ic, tx]) => `<div class="idn-luz"><span class="cuad" style="background:${c}">${svgIcono(ic)}</span><div class="tx">${T('Celda primera', tx)}${T('Celda cabecera', c)}</div></div>`).join('')}</div>` +

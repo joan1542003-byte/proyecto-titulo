@@ -29,7 +29,7 @@ Los hashes corresponden a la copia leída, retirada del repositorio el 25 de sep
 
 | Obra | Autor | Año / edición identificable | Páginas del PDF leído | Tamaño | SHA-256 | Estado de lectura |
 | --- | --- | --- | ---: | ---: | --- | --- |
-| *The Design of Everyday Things* | Don Norman | La portada interior no permite confirmar todos los datos; incluye una “Preface to the 2002 Edition”. Se registra provisionalmente como edición de 2002. | 270 | 3.140.257 bytes | `85E2F248ED85EB8B4271E181F38602239A66FE1611ADE7E187357AD467C5C232` | Completa para el archivo suministrado: prefacios, siete capítulos, notas, lecturas sugeridas, referencias e índice. |
+| *The Design of Everyday Things* | Don Norman | La portada interior no permite confirmar todos los datos; incluye una “Preface to the 2002 Edition”. Es la edición de Basic Books de 2002, la única con ese prefacio; así se cita en la memoria desde el 9 de noviembre de 2026. | 270 | 3.140.257 bytes | `85E2F248ED85EB8B4271E181F38602239A66FE1611ADE7E187357AD467C5C232` | Completa para el archivo suministrado: prefacios, siete capítulos, notas, lecturas sugeridas, referencias e índice. |
 | *Interaction of Color* | Josef Albers | 2013, cuarta edición; “50th Anniversary Edition”; Yale University Press. ISBN visible: 978-0-300-17935-4. | 210 | 8.762.475 bytes | `101A484101845275AD81AF045F8B344DC930B4251029493F5B18C7F7563450C8` | Completa para el archivo suministrado: introducción, capítulos I–XXVI y placas con comentarios. |
 | *Design as Art* | Bruno Munari | Traducción inglesa de Patrick Creagh publicada por Penguin Books en 1971; obra original publicada en 1966. | 155 | 6.335.217 bytes | `832D518FE44508F9C7181F92745392B13411CCB2512EE0012C5FF7AF642817AE` | Completa para el PDF suministrado, pero el archivo parece incompleto respecto del índice de su propia edición: el índice anuncia secciones posteriores a la página 155 que no están presentes. |
 | *Steve Jobs* | Walter Isaacson | Texto en español; título original y año visibles: *Steve Jobs*, 2011. Traducción de David González-Iglesias González. Editorial, ISBN y edición española no confirmados en el archivo. | 1.412 | 4.725.316 bytes | `C8D898EF623661238EBEDF86E45B629C3C12937CA9CDF53DA0695B74AD06DC5D` | Completa para el archivo suministrado: introducción, 41 capítulos, agradecimientos, fuentes, bibliografía, anotaciones y notas finales. |
@@ -47,6 +47,12 @@ Las referencias APA 7 de cada obra son provisionales cuando falta editorial, ISB
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Edición de Norman
+
+- **Qué cambió:** la edición de Norman queda confirmada: Basic Books, 2002.
+- **Cómo estaba antes:** se registraba como provisional.
+- **Por qué:** la copia leída, la misma de agosto, trae el prefacio de 2002, que solo tiene esa edición (D-173).
 
 ### 2026-09-25 — Retiro de los PDF protegidos
 

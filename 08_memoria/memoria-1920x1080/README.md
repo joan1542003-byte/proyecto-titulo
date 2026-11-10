@@ -82,6 +82,12 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-09 — Lámina de identidad
+
+- **Qué cambió:** la lámina de identidad rotula sus cuatro colores como Tiempo, Primer paso, Lugar y Decisión.
+- **Cómo estaba antes:** los rotulaba con las preguntas de la aplicación, como «¿Cuándo suena?» o «¿Qué decidiste?».
+- **Por qué:** títulos y rótulos formales, a pedido del autor (D-172). La versión diseñada no se regeneró.
+
 ### 2026-10-29 — El IDML entra al repositorio
 
 - **Qué cambió:** el IDML se sube junto al PDF y las tipografías.

@@ -217,6 +217,20 @@
 | 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
 | 5 nov. | Encargo | Pidió buscar la versión más reciente de la app, que había llegado al repositorio como APK, instalarla y dejarla como la más reciente en este computador. | Es la 4.3, de la rama `android-4.0-rediseno` (D-158), que otra sesión subió el mismo día. La copia local quedó en esa rama, con `main` al día, y su APK se instaló en el emulador como «Relevo 4.3», aparte de la app principal y sus datos. La 4.3 parte de la 3.3: no incluye la 1.0.0, que sigue solo en este computador, en la rama `android-1.0.0`. | — |
 | 5 nov. | Encargo | Pidió fusionar `main` en la rama de este estado (PR #20) y resolver sus choques. | Se fusionó `main` en `estado-del-proyecto-2026-11-04`. Solo chocó este registro: se conservaron las filas de ambos lados, por orden de hora. El [estado del proyecto](estado-del-proyecto-2026-11-04.md) suma lo que pasó después: D-153 y D-154 de la memoria y la rama de la 4.3. | — |
+| 8 nov. | Encargo | Pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. | Los [anexos A a I](../08_memoria/anexos/README.md) quedan como recopilaciones directas —decisiones y logros primero, límites una sola vez—, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. El [Word](../08_memoria/anexos/anexos-relevo.docx) sigue la pauta de tesis de la Biblioteca (carta, Arial 12, interlineado 1,5), con los estilos de título de Word, índice automático, tablas y figuras en APA 7. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) pasa de 94 a 67 páginas. El Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4, y el Anexo G registra las versiones hasta la 4.6.3. | D-168 |
+| 8 nov. | Corrección | Pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad. | El [Word](../08_memoria/anexos/anexos-relevo.docx) queda como documento formal de la pauta de la Biblioteca —negro, Arial 12, estilos de Word y tablas de bordes simples—, con la portada de la pauta y el logo de la Escuela de Diseño UDP. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) es el mismo Word exportado, de 102 páginas carta, con las páginas en el índice. Las figuras pasan a negro sobre blanco, y se retiran el HTML y el PDF diseñado. | D-169 |
+| 8 nov. | Corrección | Revisó los anexos y pidió: sin códigos («Persona 1» en vez de P1), sin mencionar el repositorio en ningún lugar, sin el «testigo», «wireframes» en vez de láminas, «referentes» en vez de fuentes en lo visual, explicar los «papeles» y la «piedra», «degradados» en vez de cielos, revisar si «tecnología calma» es el nombre real y usar menos «elegido». Corrigió la declaración de IA: la investigación y la memoria son suyas; la IA lo ayudó con errores, repeticiones y palabras que podían confundir; Claude Code desarrolló la app desde sus prototipos, ideas, bocetos y wireframes de Figma y ayudó a leer y ordenar su proceso, y la IA ayudó a elaborar un modelo 3D con sus especificaciones. Pidió un referente famoso de revisión con IA, decir que la IA permitió optimizar el tiempo y ahorrar recursos, y quitar la clasificación de la encuesta, las alternativas visuales, los resguardos y el registro de pedidos. Preguntó si «el autor» es la forma de nombrarlo y pidió que se le pida lo que falte. | Los nueve anexos quedan sin códigos ni menciones al repositorio y con palabras claras; el Anexo E sigue su declaración, con Springer Nature como referente para revisar la redacción. El Word y el PDF se regeneraron, con 101 páginas. | D-170 |
+| 8 nov. | Decisión y corrección | Confirmó que «el autor» está bien si así se usa académicamente, también en la UDP; dejó los *wireframes* originales de agosto; pidió quitar del Anexo B la codificación con IA, porque no es necesaria y no fue del todo así, y aplicar en la memoria las correcciones de los anexos, sin errores, leyéndola completa antes de modificarla y reportando los cambios. | El Anexo B ya no menciona la IA. La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sigue la nueva declaración de IA, con Springer Nature como referente; nombra la *calm technology* con su término original; quita la clasificación con IA de la encuesta y las remisiones al registro de decisiones; usa palabras más claras; corrige un recuento del criterio 1 —seis personas, no tres— y pone al día la lista de anexos. Pasa a 16 560 palabras; la versión diseñada no se regeneró. | D-170 |
+| 8 nov. | Corrección | Pidió poner bien las repreguntas, porque rótulos como «Repregunta — conciencia temporal:» no se entienden, y hablar de todo lo visual con terminología de diseñador: no son fuentes ni texto, es tipografía, es paleta cromática. | Las 31 repreguntas del [Anexo A](../08_memoria/anexos/anexo-a-entrevistas.md) se escriben como frases, sin inventar la pregunta textual, que no se conservó. El Anexo H y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. El Word y el PDF se regeneraron. | D-170 |
+| 8 nov. | Encargo y corrección | Pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias, mejorar la portada copiando una referencia de la UDP y corregir los errores de formato. | El [Anexo G](../08_memoria/anexos/anexo-g-android.md) suma la parte G.6 y la Tabla G10, con las 34 actividades que la app reconoce desde la 4.3, sus palabras clave y lo que sugiere. La portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas. Se suman los índices de tablas y de figuras; las tablas reparten mejor el ancho; las figuras altas ya no dejan páginas casi vacías, y los extranjerismos van en cursiva. El Word y el PDF se regeneraron, con 106 páginas. | D-170 |
+| 9 nov. | Corrección | Pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar aún más de cómo se construye el logo y en qué se basa. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de cuatro círculos, de la versión con degradado y del color de la personalización. El logo se explica en siete pasos, con las medidas de sus archivos y una figura nueva, más su logotipo, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. El Word y el PDF se regeneraron. | D-171 |
+| 9 nov. | Decisión | Dejar como historia del proceso los documentos de trabajo de la marca —el [documento de marca del 25 de octubre](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las herramientas de exploración de color— con sus nombres de entonces, en vez de quitarles también la luz y el aura. | Se mantienen sin cambios; la corrección vale para los anexos y la memoria. | D-171 |
+| 9 nov. | Corrección | Señaló que los títulos de los anexos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debe ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sienten raras. | Los títulos de secciones, tablas, figuras y columnas de los nueve [anexos](../08_memoria/anexos/README.md) son frases nominales, sin artículo al comienzo; las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, y los textos que se aplicaron, como el consentimiento, se citan con su redacción original. El Word y el PDF se regeneraron. | D-172 |
+| 9 nov. | Decisión | Aplicar también a la memoria v6 los títulos y rótulos formales de los anexos. | La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) cambia 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras, 11 rótulos de párrafo y sus esquemas; la paleta cromática nombra sus partes como el logo. Los cambios están en las [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md). | D-172 |
+| 9 nov. | Pedido | Revisar todas las citas y fuentes en APA 7 y comprobar que se puede acceder a cada una; con autorización para lo que haga falta y, si algo bloquea, intentarlo o pedírselo al autor. | La [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md) revisó 107 obras de la memoria v6 y los anexos: todas existen y sus citas coinciden. Se corrigieron el orden de las obras sin fecha, las letras de año, las patentes, FocuShift, Raya, la norma ISO, iniciales, fechas y direcciones, y se regeneraron el Word y el PDF de los anexos. Las verificaciones anti-bot no se forzaron; quedan dos enlaces y la edición de Norman para el autor. | D-173 |
+| 9 nov. | Decisión | Reescribir la ficha de Screenless con lo que muestra hoy la portada de su sitio. | La ficha del [Anexo C](../08_memoria/anexos/anexo-c-referentes.md) describe el bloqueo por horarios, el desbloqueo al acercar el teléfono, el modo para padres, el precio de 45 euros y la versión para Android anunciada; la referencia de la memoria y del anexo cita la portada. Se regeneraron el Word y el PDF de los anexos. | D-173 |
+| 9 nov. | Pedido | Avisó que el registro de la tesis de Smits tampoco le carga y pidió que la IA revise la página legal y los datos de Norman. | La tesis de Smits se cita por su copia en Internet Archive, que confirma sus datos. La copia de Norman que se leyó, la misma de agosto, es la edición de Basic Books de 2002: trae su prefacio, aunque no la página legal, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002). | D-173 |
+| 9 nov. | Pedido | Mejorar la portada de los anexos: ordenarla mejor y controlar los pesos visuales. | La [portada](../08_memoria/anexos/anexos-relevo.pdf) agrupa los datos en tres bloques —título, autoría e institución con la ciudad y el año al pie—, deja el título en negrita como único énfasis, achica el logo, parte las líneas largas en dos de largo parecido y pone la ciudad y el año en Arial 11, con el año solo, como pide la pauta. | D-174 |
 
 ## Lo que muestra el registro
 
@@ -227,6 +241,84 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Smits, Norman y portada
+
+- **Qué cambió:** se registraron el pedido sobre Smits y Norman y el de la portada de los anexos.
+- **Cómo estaba antes:** el último registro era la ficha de Screenless.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Ficha de Screenless
+
+- **Qué cambió:** se registró la decisión de reescribir la ficha de Screenless.
+- **Cómo estaba antes:** el último registro era el pedido de revisar las citas y fuentes.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Revisión de citas y referencias
+
+- **Qué cambió:** se registró el pedido de revisar las citas y fuentes en APA 7.
+- **Cómo estaba antes:** el último registro era la decisión de aplicar los títulos formales a la memoria.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Títulos formales en la memoria
+
+- **Qué cambió:** se registró la decisión de aplicar los títulos formales también a la memoria.
+- **Cómo estaba antes:** el último registro era el pedido de títulos formales en los anexos.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** se registró el pedido de títulos y rótulos formales en los anexos.
+- **Cómo estaba antes:** el último registro era la decisión sobre los documentos de trabajo de la marca.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-09 — Los documentos de trabajo de la marca
+
+- **Qué cambió:** se registró la decisión de dejar los documentos de trabajo de la marca como historia del proceso.
+- **Cómo estaba antes:** el último pedido era el de quitar luz y aura de la marca.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — La marca sin luz ni aura
+
+- **Qué cambió:** se registró el pedido de quitar luz y aura de la marca y de explicar más la construcción del logo.
+- **Cómo estaba antes:** el último pedido era el de las palabras clave, la portada y el formato.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Palabras clave, portada y formato
+
+- **Qué cambió:** se registró el pedido de sumar las palabras clave de la app, copiar una portada de la UDP y corregir el formato.
+- **Cómo estaba antes:** el último pedido era el de las repreguntas y la terminología de diseño.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Repreguntas y terminología de diseño
+
+- **Qué cambió:** se registró el pedido de poner bien las repreguntas y de usar terminología de diseñador en lo visual.
+- **Cómo estaba antes:** el último pedido era el de aplicar en la memoria las correcciones de los anexos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — La memoria con las correcciones de los anexos
+
+- **Qué cambió:** se registró el pedido de aplicar en la memoria las correcciones de los anexos.
+- **Cómo estaba antes:** el último pedido era el de las correcciones a los anexos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Correcciones a los anexos
+
+- **Qué cambió:** se registró la revisión del autor a los anexos y su corrección de la declaración de IA.
+- **Cómo estaba antes:** el último pedido era el de los anexos formales.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Anexos formales
+
+- **Qué cambió:** se registró el pedido de que los anexos no se diseñen y sigan la pauta de la universidad, con su logo.
+- **Cómo estaba antes:** el último pedido era el de dejar los anexos listos para Word.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Anexos listos para Word
+
+- **Qué cambió:** se registró el pedido de revisar todos los anexos y dejarlos listos para un documento de Word.
+- **Cómo estaba antes:** el último pedido era el de los términos de los autores y el análisis visual.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-05 — Fusión con main y la versión más reciente de la app
 

@@ -1,27 +1,27 @@
-# Anexos de la memoria v5
+# Anexos de la memoria
 
-**Fecha:** 24 de octubre de 2026
-**Documento principal:** [borrador v5 de la memoria](../borrador-memoria-v5-2026-10-11.md), sección «Anexos»
+**Fecha:** 8 de noviembre de 2026
+**Documento principal:** [borrador v6 de la memoria](../borrador-memoria-v6-2026-10-28.md), sección «Anexos»
 
-Los nueve anexos que nombra la memoria, armados desde los documentos del proyecto. Se leen de tres maneras:
+Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
-- **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el documento para entregar, en A4, con la línea de Relevo (papel, tinta, fichas de color e Instrument Sans), índice con páginas, marcadores, diagramas y láminas.
-- **[`anexos-relevo.html`](anexos-relevo.html):** la misma composición, para abrir en el navegador.
-- **Un Markdown por anexo:** para leer en GitHub, con sus imágenes, sus diagramas y enlaces a cada documento fuente.
+- **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
+- **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
+- **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
 
-| Anexo | Qué contiene | Fuentes |
-| --- | --- | --- |
-| [A. Entrevistas: pauta, corpus y análisis](anexo-a-entrevistas.md) | La pauta de 13 preguntas y sus condiciones, el corpus anonimizado P1–P8, el método, el libro de códigos, la reconstrucción de cada caso y la comparación entre casos. | `99_archivo/fuentes-locales/instrumentos`, `03_usuarios` |
-| [B. Encuesta: 53 respuestas](anexo-b-encuesta.md) | Las 16 preguntas, el método, los recuentos y la codificación de cada respuesta, sin citas textuales. | `03_usuarios` |
-| [C. Estado del arte y referentes](anexo-c-referentes.md) | El registro de la búsqueda, las fichas de los referentes y la exploración de patentes. | `04_mercado_y_referentes` |
-| [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba al 19 de octubre y lo que sigue. | Capítulos 9, 11 y 13 de la memoria |
-| [E. Uso de inteligencia artificial](anexo-e-ia.md) | La declaración, cómo cambió el proceso, la ficha para cada producción y el registro de pedidos del autor. | `00_gobernanza` |
-| [F. Estados del ciclo y wireframes](anexo-f-estados.md) | Los 35 estados del ciclo con sus 14 láminas de agosto y los wireframes de las 39 pantallas de la app. | `05_propuesta_phygital`, `06_desarrollo_y_factibilidad` |
-| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | Capturas de la 3.3, el sistema completo, la app, los datos y el panel, y las versiones desde la 2.7. | `06_desarrollo_y_factibilidad` |
-| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos letras, los 72 íconos, el color y los cielos, con su fundamento; lo que se mantiene del 16 de septiembre y las propuestas anteriores. | `10_recursos_visuales` |
-| [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | El protocolo de 21 días, la semana para comparar, el consentimiento vigente, las preguntas de la app y las fichas de registro. | `07_validacion`, código de la app |
+| Anexo | Qué contiene |
+| --- | --- |
+| [A. Entrevistas: pauta, corpus y análisis](anexo-a-entrevistas.md) | La ficha y la pauta de 13 preguntas, la síntesis de las ocho entrevistas (Persona 1 a Persona 8), el método, el libro de 23 códigos, cada caso y los dos tipos de usuario. |
+| [B. Encuesta: 53 respuestas](anexo-b-encuesta.md) | Las 16 preguntas, el método, los recuentos, lo que tomó el diseño y la codificación de cada respuesta, sin citas textuales. |
+| [C. Estado del arte y referentes](anexo-c-referentes.md) | La búsqueda, una ficha por referente del mapa del capítulo 8 y los prototipos y patentes con piezas parecidas. |
+| [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
+| [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
+| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los *wireframes* de las 39 pantallas de la app. |
+| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, cada versión desde la 2.7 hasta la 4.6.3 y las palabras clave con que la app reconoce cada actividad. |
+| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos tipografías, los 72 íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
+| [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
 ## Cómo se arman
 
@@ -29,29 +29,85 @@ Los nueve anexos que nombra la memoria, armados desde los documentos del proyect
 node construir-anexos.js
 ```
 
-Escribe los nueve Markdown, el HTML y el PDF en esta carpeta, en unos 30 segundos. Con `--sin-pdf` solo escribe los Markdown y el HTML. Necesita Node 18 o posterior y Google Chrome.
+Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de un minuto. Con `--sin-pdf` escribe solo el Word. Necesita Node 18 o posterior y Google Chrome y, para el PDF, LibreOffice y `pdftotext` (Poppler); no usa paquetes de npm.
 
-- **Qué entra en cada anexo** está en [`contenido-anexos.js`](contenido-anexos.js): de qué documento sale cada parte y qué secciones toma, o el texto escrito para el anexo.
-- **Los documentos fuente no se reescriben.** El constructor toma sus secciones tal como están, quita el historial de cambios de cada uno, ajusta los títulos y reescribe los enlaces desde esta carpeta. Para corregir un anexo se corrige su fuente y se vuelve a generar.
-- **Lo que se calcula:** el registro de versiones sale del encabezado de cada documento de versión; el consentimiento, del código de la app, sin el correo del investigador; los cielos, de los colores que usa la app.
-- **Tablas, figuras y referencias:** las tablas y figuras de cada fuente se numeran dentro del anexo (Tabla G1, Figura G2…). Cada anexo que cita obras cierra con sus referencias, tomadas de la memoria y de sus fuentes, en APA 7 y sin repetir.
+- **Cómo se escriben:** sin códigos internos —las personas son Persona 1 a Persona 8; las preguntas y las respuestas, su número— y sin mencionar el repositorio, sus carpetas ni sus archivos (D-170).
+- **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
+- **El Word** lo escribe [`word.js`](word.js): un ZIP con las partes de Office Open XML, sin dependencias. Los datos de la portada salen de la portada de la memoria v6, y el logo de la Universidad, [`imagenes/logo-udp-biblioteca.png`](imagenes/logo-udp-biblioteca.png), se recortó a 600 ppp de la [portada de ejemplo de la Biblioteca](../../01_contexto_y_fuentes/documentos_institucionales/biblioteca-portada-ejemplo.pdf). Los índices de tablas y de figuras se arman con los rótulos de cada pieza, y sus páginas, como las del índice, salen del PDF.
+- **El PDF** lo exporta LibreOffice desde el Word. `pdftotext` lee en qué página quedó cada título, y el constructor arma el Word otra vez con esas páginas en el índice, hasta que no cambian.
+- **Figuras:** los diagramas y las figuras de la identidad (el logo y su construcción, los íconos, la paleta cromática y los degradados) entran como imágenes, en Arial y negro sobre blanco. Chrome las fotografía una vez y quedan en [`imagenes/word`](imagenes/word); solo se rehacen si cambian.
 - **Diagramas:** los de mermaid se guardan como SVG en [`imagenes/diagramas`](imagenes/diagramas). Solo un diagrama nuevo o cambiado necesita internet, porque mermaid se carga una vez desde jsDelivr.
-- **Privacidad:** el constructor se detiene si un archivo de salida contiene un correo. No entra ningún dato de las personas participantes: solo recuentos que ya están en la memoria.
+- **Comprobaciones:** el constructor se detiene si un Markdown contiene un correo, si el título de un anexo no coincide con `contenido-anexos.js` o si el Word conserva alguna marca de Markdown.
 
 ## Criterio de selección
 
-Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Las imágenes de agosto son copias livianas de las láminas 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3 en un teléfono Android.
+Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Los datos, las citas y los participantes son los del proyecto: el corpus de las ocho entrevistas, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales. Las imágenes de agosto son copias livianas de los wireframes 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3 en un teléfono Android.
 
 ## Lo que no entra
 
 Queda en el repositorio como respaldo del proceso:
 
+- los documentos fuente completos, con su historial: el corpus, el libro de códigos con sus criterios de inclusión y exclusión, las fichas de mercado, los documentos técnicos y los protocolos;
 - informes de agentes, auditorías internas y versiones antiguas de la memoria;
 - el código de la app, del panel y de las herramientas de diseño;
 - los datos de la prueba, que están solo en `datos_sensibles/`, fuera del repositorio;
-- el registro de decisiones completo, los documentos de coordinación y las exploraciones visuales descartadas, salvo su resumen en el Anexo H.
+- el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Portada ordenada
+
+- **Qué cambió:** la portada agrupa sus datos en tres bloques, deja el título en negrita como único énfasis, achica el logo a 70 mm, parte las líneas largas en dos y pone la ciudad y el año al pie, en Arial 11; la tesis de Smits se cita por su copia archivada.
+- **Cómo estaba antes:** la portada copiaba las alturas de la de ejemplo de la Biblioteca, con seis bloques del mismo peso, y decía «Diciembre de 2026».
+- **Por qué:** el autor pidió ordenarla mejor y controlar los pesos visuales (D-174).
+
+### 2026-11-09 — Referencias en APA 7
+
+- **Qué cambió:** las referencias de los Anexos C, D, E y H se corrigieron tras verificarlas en línea, y se regeneraron el Word y el PDF.
+- **Cómo estaba antes:** FocuShift tenía un enlace muerto, las patentes llevaban a la empresa como autora y había letras de año sin otra obra del mismo año.
+- **Por qué:** revisión de todas las citas y fuentes pedida por el autor (D-173; detalle en la verificación de referencias).
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** los títulos y rótulos de los nueve anexos son frases nominales, sin artículo al comienzo ni segunda persona, y las figuras del logo, de la paleta cromática, de los íconos y de los degradados nombran así las partes, los íconos y las familias.
+- **Cómo estaba antes:** había títulos como «El logo» o «Las dos tipografías» y rótulos como «Tu tiempo» o «Lo que decides».
+- **Por qué:** pedido del autor (D-172).
+
+### 2026-11-09 — La marca sin luz ni aura
+
+- **Qué cambió:** el Anexo H explica la construcción del logo con una figura nueva y ya no habla de luces ni de aura; las figuras de la identidad incluyen la construcción del logo.
+- **Cómo estaba antes:** el logo se describía como cuatro luces y la marca incluía el aura.
+- **Por qué:** pedido del autor (D-171).
+
+### 2026-11-08 — Portada de la Biblioteca, índices y palabras clave
+
+- **Qué cambió:** la portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas; se suman el índice de tablas y el de figuras, y el Anexo G suma las palabras clave de la app (G.6).
+- **Cómo estaba antes:** la portada llevaba el logo de la Escuela de Diseño, con otras distancias, y no había índices de tablas ni de figuras.
+- **Por qué:** el autor pidió una portada copiada de una referencia de la UDP, sumar las palabras clave de la app y corregir los errores de formato (D-170).
+
+### 2026-11-08 — Repreguntas y terminología de diseño
+
+- **Qué cambió:** el índice describe el Anexo H con «las dos tipografías» y «la paleta cromática».
+- **Cómo estaba antes:** decía «las dos letras» y «el color».
+- **Por qué:** el autor pidió poner bien las repreguntas y hablar de lo visual con terminología de diseñador: tipografía y paleta cromática, no letras, fuentes ni texto (D-170).
+
+### 2026-11-08 — Correcciones del autor
+
+- **Qué cambió:** el índice nombra a las personas como Persona 1 a Persona 8, describe el Anexo E corregido y los wireframes de agosto, y suma cómo se escriben los anexos: sin códigos y sin mencionar el repositorio.
+- **Cómo estaba antes:** hablaba de P1–P8, de las láminas de agosto y de los resguardos del Anexo E.
+- **Por qué:** el autor revisó los anexos y los corrigió (D-170).
+
+### 2026-11-08 — Anexos formales, sin diseño
+
+- **Qué cambió:** los anexos son un documento formal. El Word sigue la pauta de la Biblioteca, en negro y con los estilos de Word, y su portada es la de la pauta, con el logo de la Escuela de Diseño. El PDF es el mismo Word exportado, con las páginas en el índice, y los diagramas y las figuras de la identidad pasan a Arial, negro sobre blanco. Se retiran el HTML y el PDF diseñado (D-169).
+- **Cómo estaba antes:** el HTML y el PDF tenían la línea de Relevo —papel, tinta, fichas de color e Instrument Sans— y una portada de marca con el logo de Relevo; el Word repetía esa portada y tenía tablas con fondo de color y figuras sobre fondo papel.
+- **Por qué:** el autor pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad.
+
+### 2026-11-08 — Anexos recopilados y en Word
+
+- **Qué cambió:** los nueve anexos se reescribieron como recopilaciones directas, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. Se suma el Word, con el formato de la pauta de la Biblioteca, y el constructor lee los Markdown en vez de copiar los documentos fuente. El PDF pasa de 94 a 67 páginas.
+- **Cómo estaba antes:** el constructor copiaba secciones completas de los documentos fuente, con sus advertencias y su historial; los anexos sumaban unas 37 000 palabras y no había versión en Word.
+- **Por qué:** el autor pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar, con su forma de escribir y con lo más relevante (D-168).
 
 ### 2026-10-24 — Anexos de la memoria v5
 

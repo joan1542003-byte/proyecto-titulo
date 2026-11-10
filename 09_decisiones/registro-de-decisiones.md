@@ -2030,7 +2030,162 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 16 478 palabras en los capítulos 1 a 14 (17 491 con las páginas iniciales y los índices); 24 figuras y 4 tablas, todas mencionadas en orden; 82 referencias, todas citadas; 2 marcadores «Confirmar». Wilms y Oberfeld (2018) se comprobó en Europe PMC: los colores saturados y brillantes se asocian a más activación, y la activación sube del azul y el verde al rojo; Machado et al. (2009) y Wilms y Oberfeld (2018), en Crossref.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
 
+## D-168 — Los anexos recopilan lo más relevante y salen también en Word
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`. Su HTML y su PDF diseñado los reemplazó D-169.
+- **Contexto:** el autor pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. Hasta ahora cada anexo copiaba completos sus documentos fuente —unas 37 000 palabras y 94 páginas en A4—, con advertencias repetidas, partes que ya no coincidían con la memoria v6 y remisiones internas del repositorio.
+- **Decisión:**
+  - **Cada anexo es un texto escrito para el anexo** y es su propia fuente: recopila lo más relevante de los documentos del proyecto, con decisiones y logros primero y los límites una sola vez. Los datos, las citas y los participantes son los del repositorio; el corpus P1–P8, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales.
+  - **Alineados con la memoria v6:** la pregunta, la hipótesis y sus tres supuestos; los nombres y la evidencia de los ocho criterios; el color decidido por su función; el nombre como traspaso, y una ficha por referente del mapa del capítulo 8, con MindPhone, kSafe, Place-Its y Wobble.
+  - **Lo que vino después de la prueba:** el Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4 de la memoria; el Anexo G registra las versiones 4.0 a 4.6.3, en ramas sin fusionar, y el Anexo I presenta el instrumento de cierre del 28 de octubre (D-144).
+  - **Word:** `anexos-relevo.docx`, con el formato de la pauta de tesis de la Biblioteca UDP —carta, márgenes de 3,5 y 2,5 cm, Arial 12, interlineado 1,5 y número de página centrado—, los estilos de título de Word, índice automático, tablas y figuras en APA 7 y las láminas y los diagramas como imágenes. Lo escribe `word.js`, sin dependencias.
+  - **Constructor:** `construir-anexos.js` ya no copia documentos fuente: lee los nueve Markdown y escribe el HTML, el PDF en A4, de 67 páginas, y el Word.
+- **Verificación:** el Word se abrió en LibreOffice y se revisó página por página: 101 páginas en carta, con negrita, índice y figuras en su lugar; su XML está bien formado y no conserva marcas de Markdown. El PDF cuadra con las páginas de su índice. Microsoft Word no está instalado en este computador, así que no se abrió ahí.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
+## D-169 — Los anexos son un documento formal, con la portada de la pauta y el membrete de la UDP
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** con D-168 los anexos salían también en un HTML y un PDF en A4 con la línea de Relevo —papel, tinta, fichas de color e Instrument Sans— y con una portada de marca, que el Word repetía. El autor pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad.
+- **Decisión:**
+  - **Un documento formal:** el Word sigue la pauta de tesis de la Biblioteca UDP —carta, márgenes de 3,5 y 2,5 cm, Arial 12, interlineado 1,5 y número de página centrado—, todo en negro, con los estilos de título, índice y tabla de Word y tablas de bordes simples, sin fondos. El PDF es ese mismo Word, exportado por LibreOffice, con las páginas en el índice. Se retiran el HTML y el PDF diseñado.
+  - **Portada de la pauta:** arriba y al centro, el logo de la Escuela de Diseño, que reúne la Universidad, la Facultad y la Escuela, como pide el membrete del instructivo de examen; RELEVO, el subtítulo y ANEXOS; el autor en mayúsculas; el título al que se opta; los profesores guía y la modalidad; FACULTAD y ESCUELA en mayúsculas, y Santiago, Chile, diciembre de 2026. Todo en Arial 12, con los datos de la portada de la memoria v6. Las mayúsculas son las que pide la pauta; el resto sigue en tipo oración.
+  - **Figuras:** los diagramas y las figuras de la identidad —logo, íconos, color y cielos— se dibujan en Arial, negro sobre blanco, sin fondos ni fichas; sus colores son los de la marca, que es lo que muestran.
+- **Verificación:** el PDF tiene 102 páginas carta, solo Arial y la portada en una página, y su índice da la página de las 51 entradas. El Word usa solo negro, Arial y los estilos de Word, sin rellenos de color, y no conserva marcas de Markdown. Se revisó página por página en LibreOffice; Microsoft Word no está instalado en este computador.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
+## D-170 — Los anexos, sin códigos ni repositorio y con la declaración de IA del autor
+
+- **Fecha:** 2026-11-08.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el autor revisó los anexos formales y señaló códigos que un lector no entiende (P1, Q7, S01, D-109, C-OBL-PEND), menciones al repositorio, el «testigo», palabras poco claras —papeles, piedra, cielos, un «elegido» repetido— y una declaración de IA que le atribuía a la herramienta trabajo que hizo él.
+- **Decisión:**
+  - **Sin códigos:** las personas entrevistadas son Persona 1 a Persona 8, los mismos casos anonimizados de P1 a P8; las preguntas y las respuestas de la encuesta van por su número; el libro de códigos usa nombres; salen los códigos de decisión y los números de los estados del ciclo.
+  - **Sin repositorio:** ningún anexo menciona el repositorio, sus carpetas, sus ramas ni sus archivos.
+  - **Palabras claras:** el objeto reemplaza al testigo; las láminas de agosto son wireframes; los papeles son los colores de las partes de un relevo; los colores de base dicen para qué sirven; los cielos son degradados; en lo visual se habla de referentes, y la *calm technology* conserva su nombre original (Weiser y Brown, 1997), que no tiene una traducción fija al español.
+  - **Declaración de IA (Anexo E):** la investigación, la memoria, la identidad, los íconos, los prototipos y los wireframes son del autor. La IA revisó la redacción —errores, repeticiones y palabras que podían confundir—, el uso que acepta la editorial Springer Nature; Claude Code desarrolló la app a partir de sus prototipos, bocetos y wireframes de Figma y ayudó a ordenar el proceso, y la IA ayudó a modelar el objeto en 3D. La IA permitió optimizar el tiempo y ahorrar recursos. Salen la clasificación de la encuesta y la generación de alternativas visuales.
+- **En la memoria, el mismo día:** el autor confirmó «el autor» como forma de nombrarlo, dejó los *wireframes* originales de agosto y pidió aplicar estas correcciones en la memoria v6, leída completa antes de cambiarla: la declaración de IA, con Springer Nature como referente; la *calm technology*; la encuesta sin la clasificación con IA, que también sale del Anexo B porque no fue del todo así; palabras más claras; sin remisiones al registro de decisiones; la lista de anexos al día, y un recuento corregido en el criterio 1: seis personas, no tres, valoraron su sesión como descanso. La versión diseñada de la memoria no se regeneró.
+- **Portada, palabras clave y formato:** la portada de los anexos copia la de ejemplo de la Biblioteca UDP —su logo, sus bloques y sus alturas, medidas en puntos—, con la modalidad y «Anexos» agregados. Se suman el índice de tablas y el de figuras, que la pauta pide, y el Anexo G suma cómo la app reconoce cada actividad por sus palabras clave y qué sugiere (G.6, Tabla G10). Las tablas reparten el ancho según su texto más largo, las figuras altas tienen un tope para no dejar páginas casi vacías y *wireframes*, *feed* y *hobbies* van en cursiva.
+- **Repreguntas y terminología de diseño:** las repreguntas del Anexo A se escriben como frases, con el tema que registró el corpus y sin inventar la pregunta textual. Lo visual, en los anexos y en la memoria, usa términos de diseñador: tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática, no letras, fuentes ni texto.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
+## D-171 — La marca sin luz ni aura, y el logo explicado por su construcción
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el Anexo H y la memoria describían el logo como «cuatro luces», con una versión «Luz», nombraban «Tu aura» entre los colores y la propuesta «Relevo con aura», y la construcción del logo cabía en tres puntos. El autor pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar más de cómo se construye el logo y en qué se basa.
+- **Decisión:**
+  - **Sin luz ni aura:** el logo son cuatro círculos; la versión con degradado se llama así; el color lila es el de la personalización; los degradados combinan manchas de color, y la propuesta del 10 y 11 de octubre es «la identidad final». En la figura de los íconos, el ícono «Aura» se rotula «Personalización». Quedan las menciones que no son de la marca: lo que dijeron las personas entrevistadas, un producto referente y la sugerencia «Apagar la luz grande» de la app.
+  - **Construcción del logo:** el Anexo H la explica en siete pasos, con las medidas de sus archivos —una retícula de 100, cuatro círculos de radio 29 a 21 del centro, cada uno recortado por el siguiente agrandado en 3,4, trazados planos de dos arcos y cortes más anchos en tamaños chicos— y una figura nueva (Figura H2), además del logotipo y su composición, sus versiones y en qué se basa: el modelo del proyecto (Guynn et al., 1998), el nombre, los círculos (Jiang et al., 2016), un logo que describe (Luffarelli et al., 2019) y las formas planas del rediseño de Slack con Michael Bierut, de Pentagram (Slack, 2019).
+  - **Memoria:** la identidad dice «los círculos del logo» y «el logo de cuatro círculos», y remite al Anexo H para la construcción.
+- **Fuera de alcance:** los documentos de trabajo de la marca en `10_recursos_visuales` conservan sus nombres de entonces: el autor decidió dejarlos como historia del proceso. La app 4.6.3 ya no muestra «aura» en sus textos.
+- **Documentos:** [Anexo H](../08_memoria/anexos/anexo-h-identidad.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md).
+
+## D-172 — Títulos y rótulos formales en los anexos
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** al revisar los anexos, el autor señaló que los títulos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debía ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sentían raras, como «Tu tiempo» o «Lo que decides».
+- **Decisión:**
+  - **Títulos:** las secciones, tablas, figuras, columnas y rótulos de párrafo de los nueve anexos se titulan con frases nominales, sin artículo al comienzo ni preguntas: «Logo», «Tipografía», «Iconografía», «Paleta cromática», «Análisis por caso», «Descripción», «Funcionamiento» o «Aporte a Relevo».
+  - **Sin segunda persona:** las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, como en la memoria; la familia de degradados «Moverte» se nombra «Moverse»; el ícono «Ordenar tu pieza», «Ordenar la pieza», y la función «Tus actividades», «Actividades propias».
+  - **Textos citados:** las preguntas de las entrevistas, el consentimiento, las preguntas de la app y el instrumento de cierre conservan su redacción, porque son los textos que se aplicaron. El consentimiento completo va como cita en bloque, y la Tabla G10 aclara que las sugerencias se transcriben como las muestra la app.
+  - **De paso:** los estados de la Figura G3 se nombran en español, y el servidor local de la Figura G2 ya no se nombra por su archivo.
+- **Memoria v6:** el autor pidió aplicar la misma regla a la memoria (duodécima ronda): 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras con su índice, 11 rótulos de párrafo, los rótulos «Por qué» de los criterios —ahora «Fundamento»— y los encabezados de dos tablas. La paleta cromática nombra sus partes como el logo, y los esquemas por insertar y los pies de fotografía siguen la regla; las preguntas citadas de la aplicación se mantienen. La versión diseñada no se regeneró, pero su generador ya rotula la lámina de identidad con las cuatro partes.
+- **Documentos:** [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf), [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
+
+## D-173 — Citas y referencias verificadas en APA 7
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`; no queda nada pendiente.
+- **Contexto:** en las últimas semanas antes de la entrega, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se puede abrir; autorizó lo que hiciera falta y pidió que, si algo bloqueaba el acceso, se intentara o se le pidiera a él.
+- **Decisión:**
+  - **Alcance:** 107 obras —83 de la memoria v6 y 24 solo de los anexos— se cruzaron con sus citas, se compararon con Crossref, DataCite, el ISBN, Google Patents o la página de ISO, y se abrieron; el detalle por referencia está en la [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md).
+  - **Orden APA:** las obras sin fecha de un mismo autor van antes que las fechadas; la letra de año depende de cada lista, por eso Apple (s. f.) del Anexo C y Google (2026) del Anexo D no llevan letra, y la memoria reordena a Apple de s. f.-a a s. f.-c. de Segovia Vicente et al. (2024) se ordena por la «d», porque el autor publica con la partícula.
+  - **Autoría:** las patentes llevan como autores a sus inventores y nombran la oficina, como pide APA 7; el texto del Anexo C sigue diciendo de qué empresa son. La página de Family Controls se atribuye a Apple, como las demás de Apple Developer.
+  - **Fuente reemplazada:** FocuShift se cita por su artículo en TEI 2026, con DOI, porque el dominio de AxLab ya no existe; el resumen confirma lo que dice el anexo.
+  - **Datos corregidos:** iniciales de Waggoner et al. (2026) y Jonauskaite et al. (2020), el capítulo de Raya en INTERACT 2021, el tipo y la dirección de la norma ISO 3864-1, la fecha de Ottosson (2020), la dirección de Springer Nature, la fecha de consulta de Laws of UX, el título y los patrocinadores de la campaña de Focusaur y el tipo de tesis de Smits (2022).
+  - **Acceso:** las verificaciones anti-bot y los CAPTCHA no se forzaron. Las 27 páginas de editoriales que bloquean herramientas automáticas abren en un navegador normal y sus datos se verificaron por el DOI; 23 obras tienen una copia abierta que abre.
+- **Screenless:** la página del producto hoy responde 404 desde Chile y no tiene copia archivada; el autor pidió reescribir la ficha del Anexo C con lo que muestra la portada del sitio, que también pasa a ser la referencia en la memoria.
+- **Smits:** el repositorio de TU Delft tampoco cargó para el autor; la tesis se cita por su copia en Internet Archive, que confirma título, autor, grado y fecha, y suma su subtítulo.
+- **Norman:** a pedido del autor, la IA revisó la copia leída, la misma de agosto. No trae página legal, pero sí el prefacio de la edición de Basic Books de 2002, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002).
+- **Documentos:** [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md), [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), [anexos](../08_memoria/anexos/README.md), [Word](../08_memoria/anexos/anexos-relevo.docx) y [PDF](../08_memoria/anexos/anexos-relevo.pdf).
+
+## D-174 — Portada de los anexos ordenada
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `anexos-para-word`, sin fusionar con `main`.
+- **Contexto:** el autor pidió mejorar la portada de los anexos, ordenarla mejor y controlar los pesos visuales. La portada copiaba la de ejemplo de la Biblioteca: seis bloques del mismo peso, repartidos a distancias distintas, con un logo grande y un título que no se distinguía.
+- **Decisión:**
+  - **Tres grupos:** arriba, el logo y el título con su subtítulo y «Anexos»; al centro, el autor, la nota «Memoria para optar…» y los profesores guía con la modalidad; al pie, la Facultad y la Escuela con la ciudad y el año. Dentro de cada grupo, los bloques se separan por línea y media.
+  - **Pesos:** el título, en negrita y con un leve espaciado entre letras, es el único énfasis; el logo baja de 79,8 a 70 mm, para que no compita con él.
+  - **Líneas:** el subtítulo y la nota se parten en dos líneas de largo parecido, sin cortar una frase.
+  - **Pauta:** se mantienen el logo arriba, las mayúsculas, el Arial 12 y el centrado; la ciudad y el año van al final de la página, en Arial 11, con el año solo, como pide la pauta, en vez de «Diciembre de 2026».
+- **Documentos:** [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [word.js](../08_memoria/anexos/word.js).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — D-174
+
+- **Qué cambió:** se registró D-174 y D-173 cierra sus dos pendientes: Smits y Norman.
+- **Cómo estaba antes:** la última decisión era D-173, con el enlace de Smits y la edición de Norman pendientes.
+- **Por qué:** pedidos del autor del 9 de noviembre de 2026.
+
+### 2026-11-09 — D-173, Screenless
+
+- **Qué cambió:** D-173 registra que la ficha de Screenless se reescribió con la portada del sitio.
+- **Cómo estaba antes:** dejaba la ficha de Screenless como decisión pendiente del autor.
+- **Por qué:** el autor eligió reescribirla.
+
+### 2026-11-09 — D-173
+
+- **Qué cambió:** se registró D-173.
+- **Cómo estaba antes:** la última decisión era D-172.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026.
+
+### 2026-11-09 — D-172, memoria
+
+- **Qué cambió:** D-172 suma la memoria v6.
+- **Cómo estaba antes:** dejaba la memoria fuera de alcance hasta que el autor lo decidiera.
+- **Por qué:** el autor pidió aplicarla también a la memoria.
+
+### 2026-11-09 — D-172
+
+- **Qué cambió:** se registró D-172.
+- **Cómo estaba antes:** la última decisión era D-171.
+- **Por qué:** pedido del autor.
+
+### 2026-11-09 — D-171, documentos de trabajo
+
+- **Qué cambió:** D-171 registra que el autor decidió dejar los documentos de trabajo de la marca como historia del proceso.
+- **Cómo estaba antes:** los dejaba fuera de alcance, sin su decisión.
+- **Por qué:** respuesta del autor.
+
+### 2026-11-09 — D-171
+
+- **Qué cambió:** se registró D-171.
+- **Cómo estaba antes:** la última decisión era D-170.
+- **Por qué:** pedido del autor.
+
+### 2026-11-08 — D-170
+
+- **Qué cambió:** se registró D-170.
+- **Cómo estaba antes:** la última decisión era D-169.
+- **Por qué:** pedido del autor.
+
+### 2026-11-08 — D-169
+
+- **Qué cambió:** se registró D-169, y D-168 anota que su HTML y su PDF diseñado quedaron reemplazados.
+- **Cómo estaba antes:** la última decisión era D-168.
+- **Por qué:** pedido del autor.
+
+### 2026-11-08 — D-168
+
+- **Qué cambió:** se registró D-168.
+- **Cómo estaba antes:** la última decisión en `main` era D-154; en las ramas de la app, D-155 a D-167.
+- **Por qué:** pedido del autor.
 
 ### 2026-11-04 — D-154
 

@@ -8,6 +8,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 
 - [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md): reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-154). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 478 palabras.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 62 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas, ninguna figura que corte la lectura y ninguna columna de texto sola. Reemplaza a la versión A3.
+- [Verificación de citas y referencias (9 de noviembre de 2026)](verificacion-de-referencias-2026-11-09.md): las 107 obras de la memoria v6 y los anexos, con su registro, su acceso y las correcciones en APA 7 (D-173).
 - [Coherencia de la memoria y condiciones de cierre](auditoria-coherencia-memoria-2026-09-09.md): revisión actual de promesa, recorrido, soporte, construcción y límites de evidencia.
 
 - [Memoria v5 en A3 horizontal](memoria-a3/README.md), reemplazada por la versión en 1920 × 1080: la v5 compuesta con la línea de Relevo, en un [PDF de 57 páginas](memoria-a3/memoria-relevo-a3.pdf) y en un archivo editable para Affinity (D-132, D-134, D-135 y D-145). Texto de 14 pt en columnas de 8 a 12 palabras por línea, cada sección en página nueva, paneles de aura, tablas y cifras como piezas de la marca y control de viudas. Por ahora, sin agradecimientos y con un índice solo de secciones. El texto es el de la v5, con sus marcadores a la vista. Se genera de nuevo con `node construir-idml.js` cuando cambie la v5.
@@ -19,7 +20,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Revisión final textual de la v4](revision-final-textual-2026-08-31.md): dictamen de cierre al 31 de agosto, fuentes consultadas, correcciones integradas y controles finales.
 - [Matriz de citas y referencias de la v4](matriz-citas-referencias-v4-2026-08-27.md): correspondencia de las 64 entradas bibliográficas, actualizada tras el feedback del 23 de septiembre.
 - [Matriz de trazabilidad de los criterios de la v4](matriz-trazabilidad-criterios-v4-2026-08-27.md): relación entre los ocho criterios del capítulo 9, su evidencia y aquello que todavía requería pruebas en agosto. La vigente es el [Anexo D](anexos/anexo-d-criterios.md).
-- [Anexos A a I de la v5](anexos/README.md): los nueve anexos de la memoria en Markdown, HTML y un [PDF en A4](anexos/anexos-relevo.pdf), armados desde sus documentos fuente con `node construir-anexos.js`.
+- [Anexos A a I](anexos/README.md): los nueve anexos de la memoria, que recopilan lo más relevante de los documentos del proyecto. Son un documento formal, sin diseño propio: un [Word](anexos/anexos-relevo.docx) con el formato de la pauta de la Biblioteca, la portada copiada de su ejemplo, con el logo de la Universidad, y los índices de tablas y de figuras, y su [PDF](anexos/anexos-relevo.pdf). Se arman con `node construir-anexos.js` desde un Markdown por anexo.
 - [Cabos sueltos priorizados](cabos-sueltos-priorizados-2026-08-26.md): estado reconciliado al 9 de septiembre entre correcciones resueltas, evidencia que requiere prototipado e Issues activas.
 - [Coherencia de la app con la memoria](coherencia-app-con-la-memoria-2026-09-29.md): contradicciones, cambios fundamentados y actualizaciones pendientes de la memoria tras Android 2.11 a 2.13.
 - [Resumen vigente de Relevo](resumen-vigente-proyecto.md): lectura breve actualizada al 25 de septiembre sobre la propuesta, el APK 2.6, los cambios y los pendientes.
@@ -91,6 +92,55 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-09 — Referencias en APA 7
+
+- **Cambio:** las citas y referencias de la v6 y los anexos se verificaron en APA 7 y en línea, y se sumó la verificación a los documentos activos.
+- **Versión anterior:** la última revisión completa de fuentes era la de la v4, del 25 de septiembre.
+- **Motivo:** pedido del autor (D-173).
+- **Alcance:** la versión diseñada no se regeneró.
+
+### 2026-11-09 — Duodécima ronda de la v6
+
+- **Cambio:** los títulos, rótulos y esquemas de la v6 son formales, sin artículo al comienzo ni segunda persona, y la paleta cromática nombra sus partes como el logo.
+- **Versión anterior:** había títulos como «La identidad» o «Cómo habla Relevo» y rótulos como «Por qué».
+- **Motivo:** el autor pidió aplicar a la memoria los títulos formales de los anexos (D-172).
+- **Alcance:** la versión diseñada no se regeneró.
+
+### 2026-11-09 — Undécima ronda de la v6
+
+- **Cambio:** la identidad de la v6 ya no habla de luces: el logo son cuatro círculos, y el párrafo del logo remite al Anexo H para su construcción.
+- **Versión anterior:** decía «las luces del logo» y «el logo de cuatro luces».
+- **Motivo:** el autor pidió eliminar de la marca las referencias a luz o aura (D-171).
+- **Alcance:** la versión diseñada no se regeneró.
+
+### 2026-11-08 — Portada e índices de los anexos
+
+- **Cambio:** el enlace a los anexos dice que su portada copia la de ejemplo de la Biblioteca, con el logo de la Universidad, y que el Word trae índices de tablas y de figuras.
+- **Versión anterior:** decía que la portada llevaba el logo de la Escuela de Diseño.
+- **Motivo:** pedido del autor (D-170).
+- **Alcance:** no cambió el texto de la memoria.
+
+### 2026-11-08 — Décima ronda de la v6
+
+- **Cambio:** la v6 aplica las correcciones del autor a los anexos: la declaración de inteligencia artificial, con Springer Nature como referente; la *calm technology* con su nombre original; la encuesta sin la clasificación con inteligencia artificial; palabras más claras; sin remisiones al registro de decisiones; un recuento corregido en el criterio 1; la lista de anexos al día, y lo visual con terminología de diseñador: tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. Pasa a 16 560 palabras.
+- **Versión anterior:** 16 478 palabras, con la declaración de inteligencia artificial anterior.
+- **Motivo:** décima ronda de la v6, pedida por el autor (D-170).
+- **Alcance:** la versión diseñada no se regeneró.
+
+### 2026-11-08 — Anexos formales
+
+- **Cambio:** el enlace a los anexos dice que son un documento formal, en Word y PDF, con la portada de la pauta y el logo de la Escuela de Diseño.
+- **Versión anterior:** salían también en HTML y en un PDF en A4 con la línea de Relevo.
+- **Motivo:** el autor pidió que los anexos no se diseñen (D-169).
+- **Alcance:** no cambió el texto de la memoria.
+
+### 2026-11-08 — Anexos en Word
+
+- **Cambio:** el enlace a los anexos describe las recopilaciones nuevas y suma el Word.
+- **Versión anterior:** los anexos eran de la v5, armados desde sus documentos fuente, en Markdown, HTML y PDF.
+- **Motivo:** el autor pidió los anexos directos y listos para Word (D-168).
+- **Alcance:** no cambió el texto de la memoria.
 
 ### 2026-11-04 — Novena ronda de la v6
 

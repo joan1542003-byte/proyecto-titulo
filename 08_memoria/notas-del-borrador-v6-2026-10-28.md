@@ -126,9 +126,35 @@ El mismo 4 de noviembre, el autor pidió evitar términos propios, hablar de lo 
 - **Análisis visual (documento 43):** la forma que se repite, el desenfoque solo en la navegación, el color que sube con el momento (Figura 15, nueva), las fichas de igual luminosidad y poca saturación, la simulación de daltonismo, los íconos y cómo se llegó a la identidad. Entran Albers (2013), Machado et al. (2009) y Wilms y Oberfeld (2018); sale Android Developers (s. f.).
 - **Figuras:** 24; desde la 15, cada una sube un número.
 
+## Décima ronda: las correcciones de los anexos (D-170)
+
+El 8 de noviembre, el autor revisó los anexos y pidió aplicar sus correcciones también en la memoria, leyéndola completa antes de cambiarla.
+
+- **Inteligencia artificial:** la declaración del capítulo 10 sigue la del Anexo E. La investigación, las entrevistas, la memoria, la identidad y la interfaz son del autor; Codex ayudó a programar las primeras versiones; Claude Code desarrolló la aplicación a partir de sus prototipos, bocetos y *wireframes* de Figma y ayudó a ordenar el proceso, y las herramientas ayudaron a modelar el objeto en 3D, revisar la redacción, buscar fuentes y verificar citas, lo que permitió optimizar el tiempo y ahorrar recursos. Entra Springer Nature (s. f.) como referente de la revisión de la redacción; salen las alternativas visuales, la redacción de borradores, la clasificación de la encuesta y el registro de pedidos.
+- **Encuesta:** sale que las respuestas abiertas se clasificaron con apoyo de inteligencia artificial; el autor dijo que no fue del todo así.
+- ***Calm technology*:** se nombra con su término original, que no tiene una traducción fija al español; en el glosario pasa a la C.
+- **Palabras:** «el papel y la tinta» pasan a «el blanco y el negro»; la identidad es «diseñada por el autor», no «aprobada»; «aplicaciones seleccionadas», en vez de «elegidas». La Figura 11, la Tabla 1 y el capítulo 10 ya no remiten al registro de decisiones.
+- **Un recuento corregido:** en el criterio 1, quienes valoraron su sesión como descanso son seis, no tres: en la pregunta 7 de las entrevistas, dos personas dudaron y las otras seis dijeron que sí.
+- **Anexos:** la lista sigue los títulos y el contenido actuales de los nueve anexos, con las palabras clave que suma el Anexo G.
+- **Terminología de diseño:** lo visual se nombra como lo haría un diseñador: «tipografía» y «escala tipográfica» en vez de «letra», «cuerpo» en vez de «tamaño», «interlineado» en vez de «aire entre líneas» y «paleta cromática» en vez de «el color» o «los colores»; la tipografía, y no «el texto», va sobre cada color.
+- **Sin cambios:** los resultados, las cifras de la prueba, las figuras y los dos marcadores `[CONFIRMAR: …]`. La versión diseñada no se regeneró.
+
+## Undécima ronda: la marca sin luz ni aura (D-171)
+
+El 9 de noviembre, el autor pidió eliminar de la marca las referencias a luz o aura. En la identidad del capítulo 11, «las luces del logo» pasan a «los círculos del logo», «el logo de cuatro luces» a «el logo de cuatro círculos» y «nunca como luz» a «anillos que se abren», y el párrafo del logo remite al Anexo H, que explica su construcción paso a paso. Las demás menciones de la luz —los medios del ambiente de Ishii y Ullmer y por qué la señal es un sonido— no son de la marca y se mantienen.
+
+
+## Duodécima ronda: títulos formales (D-172)
+
+El 9 de noviembre, el autor pidió que los títulos no empiecen con «el», «la», «los» o «las» y que los rótulos no usen «tu» ni «lo que», primero en los anexos y después también en la memoria. Cambian 17 títulos de sección y el del capítulo 11 —por ejemplo, «La identidad» pasa a «Identidad», «El objeto» a «Objeto», «Cómo habla Relevo» a «Voz de Relevo» y «Que valga el esfuerzo» a «Justificar el esfuerzo»—, 16 títulos de tablas y figuras con su índice, 11 rótulos de párrafo, los rótulos «Por qué» de los criterios, que pasan a «Fundamento», y los encabezados de las Tablas 1 y 2. La paleta cromática nombra sus partes como el logo —el tiempo, el primer paso, el lugar y la decisión— en vez de las preguntas de la aplicación; los esquemas por insertar y los pies de fotografía siguen la misma regla, y la arquitectura de información describe las secciones del perfil sin segunda persona. Las preguntas y respuestas citadas de la aplicación, como «¿Qué quieres hacer?», se mantienen. La versión diseñada no se regeneró; su generador ya rotula la lámina de identidad con las cuatro partes.
+
+## Decimotercera ronda: referencias en APA 7 (D-173)
+
+El 9 de noviembre, el autor pidió revisar todas las citas y fuentes en APA 7 y comprobar que cada una se pueda abrir. Las 83 referencias de la memoria existen, tienen cita y coinciden con su registro. Las obras sin fecha de Apple y de Google pasan antes que las fechadas; la página de Family Controls se atribuye a Apple, con lo que las tres obras de Apple sin fecha quedan como s. f.-a, s. f.-b y s. f.-c, y cambian tres citas del texto. de Segovia Vicente et al. (2024) se ordena por la «d»; Waggoner et al. (2026) escribe «Yu, J.-C.»; la norma ISO 3864-1 suma su tipo y su dirección; Springer Nature usa su dirección actual; Laws of UX suma la fecha de consulta, y Screenless se cita por la portada de su sitio, porque la página del producto hoy responde 404 desde Chile. Norman se cita por la edición que se leyó, la de Basic Books de 2002 (1988/2002). El detalle está en la [verificación de referencias](verificacion-de-referencias-2026-11-09.md).
+
 ## Extensión
 
-Capítulos 1 a 14: 16 478 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 491. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: 16 451 palabras; con portada, agradecimientos, resumen, abstract e índices, 17 452. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -147,17 +173,52 @@ Hay 2 marcadores `[CONFIRMAR: …]`, ambos por los resultados de la semana con e
 
 - **Fotos de la prueba:** la memoria ya no lo menciona, pero las personas deben haber autorizado su publicación.
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
-- **Anexo I:** sumar el instrumento de cierre del 30 de octubre.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** implementar lo que la Tabla 4 marca «Por implementar» y decidir las «Propuestas».
 - **Resultados:** sumar la semana con el teléfono y el cierre del 30 de octubre, y actualizar el Resumen, el Abstract y las Conclusiones.
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
-- **Fuentes por conseguir (tarea 14, punto H):** McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019), la versión publicada de Sohn et al. (2005) y la edición de Norman que se usó.
+- **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. La edición de Norman que se usó es la de Basic Books de 2002: se confirmó el 9 de noviembre con la copia leída, y la cita pasó a 1988/2002.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Norman
+
+- **Qué cambió:** la decimotercera ronda suma la edición de Norman, se cierra el pendiente de las fuentes y se quita el del enlace de Smits, ya resuelto en el Anexo C.
+- **Cómo estaba antes:** la cita decía Norman (1988/1990) y quedaba pendiente el enlace de Smits.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-173).
+
+### 2026-11-09 — Screenless
+
+- **Qué cambió:** la decimotercera ronda suma la nueva referencia de Screenless, y el pendiente queda en un solo enlace.
+- **Cómo estaba antes:** Screenless citaba la página del producto y su ficha esperaba una decisión del autor.
+- **Por qué:** el autor pidió reescribir la ficha con lo que muestra la portada (D-173).
+
+### 2026-11-09 — Decimotercera ronda
+
+- **Qué cambió:** se añadió la decimotercera ronda, se actualizó la extensión y se precisaron las fuentes por conseguir, con dos enlaces pendientes.
+- **Cómo estaba antes:** la última ronda era la duodécima, la extensión decía 16 452 y 17 453 palabras, y las fuentes por conseguir no estaban verificadas.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-173).
+
+### 2026-11-09 — Duodécima ronda
+
+- **Qué cambió:** se añadió la duodécima ronda, se repuso el título «Extensión», que la ronda anterior había borrado por error, y se actualizó la extensión.
+- **Cómo estaba antes:** la última ronda era la undécima y la extensión decía 16 560 y 17 573 palabras.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-172).
+
+### 2026-11-09 — Undécima ronda
+
+- **Qué cambió:** se añadió la undécima ronda.
+- **Cómo estaba antes:** la última ronda era la décima.
+- **Por qué:** pedido del autor del 9 de noviembre de 2026 (D-171).
+
+### 2026-11-08 — Décima ronda
+
+- **Qué cambió:** se añadió la décima ronda; la extensión sigue a la v6 actual, y sale de lo pendiente el instrumento de cierre del Anexo I, que ya está en el anexo.
+- **Cómo estaba antes:** la última ronda era la novena, con 16 478 palabras.
+- **Por qué:** pedido del autor del 8 de noviembre de 2026 (D-170).
 
 ### 2026-11-04 — Novena ronda
 
