@@ -98,7 +98,7 @@ El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y c
 
 ## Calendario de cierre
 
-Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
+Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). **Entrega previa de la memoria: miércoles 11 de noviembre, a las 23:30,** según el autor; no reemplaza la entrega oficial del 2 de diciembre. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
 
 | Tarea | Prioridad | Plazo |
 | --- | --- | --- |
@@ -106,7 +106,7 @@ Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestr
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
 | 6. Semana solo con notificaciones | Crítica | El autor entrega las entrevistas y los resultados el 11 de noviembre |
 | 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
-| 8. Memoria: datos, portada y entrega | Alta | 15 de noviembre; entrega el 1 de diciembre |
+| 8. Memoria: datos, portada y entrega | Alta | Entrega previa el 11 de noviembre a las 23:30; 15 de noviembre; entrega oficial el 1 de diciembre |
 | 9. Pendientes menores | Baja | 15 de noviembre |
 
 ## 4. Objeto propio: la carcasa del Tag
@@ -302,6 +302,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Entrega previa
+
+- **Qué cambió:** el calendario suma la entrega previa de la memoria, el 11 de noviembre a las 23:30.
+- **Cómo estaba antes:** solo tenía los cierres internos y la entrega oficial del 2 de diciembre.
+- **Por qué:** el autor avisó que mañana sube una versión previa de la memoria.
 
 ### 2026-11-10 — Datos del cierre
 
