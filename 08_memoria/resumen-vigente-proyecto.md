@@ -39,13 +39,19 @@ No bloquea el teléfono ni comprueba si la actividad se hizo. Para probar la rel
 El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyecto-2026-10-19.md). Lo principal es:
 
 - la entrevista de cierre con cada persona, y la comparación con un lugar neutro, que queda para una etapa con más personas;
-- imprimir y probar el hardware de Relevo;
+- Relevo, el objeto propio, queda como propuesta modelada, sin imprimir (D-178);
 - confirmar la autoría y la autorización de las fotos;
 - las escalas del cuestionario de cierre;
 - los costos reales;
-- la presentación del Pase de Examen del 18 de noviembre.
+- la presentación del examen, el 14 o el 15 de diciembre; el Pase del 18 de noviembre es solo la revisión de la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Objeto y presentación
+
+- **Qué cambió:** lo que falta dice que el objeto queda como propuesta y que la presentación es la del examen.
+- **Cómo estaba antes:** pedía imprimir el objeto y presentar en el Pase.
+- **Por qué:** el autor decidió que el objeto no se imprime y queda como propuesta (D-178), y el autor aclaró que el Pase es solo la revisión de la memoria y que la presentación es la del examen.
 
 ### 2026-11-10 — Fecha del Pase
 

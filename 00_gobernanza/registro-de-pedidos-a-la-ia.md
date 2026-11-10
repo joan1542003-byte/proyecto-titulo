@@ -326,6 +326,8 @@
 | 10 nov. | Datos | Confirmó su nombre legal y la mención —Diseño, mención Gráfico—, que las tres personas de la prueba son mayores de edad y que las entrevistas de inicio de año fueron presenciales, grabadas en audio y pasadas a texto. | El nombre, el título y la mención coinciden con la portada. El capítulo 7, el Anexo A y la declaración de procedencia suman la grabación en audio; el capítulo 13 y el Anexo I, la mayoría de edad. Siguen por confirmar la frase de marca y los datos de la encuesta. | — |
 | 10 nov. | Datos y decisión | Confirmó las fechas de sus profesores (entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre); dijo que la encuesta y la portada ya estaban, que Parra está listo y que la presentación sigue pendiente, y preguntó cuál pregunta de investigación faltaba. | Calendario, Por hacer, riesgos y resumen con las fechas nuevas; encuesta, portada y Parra resueltos. La tarea de la pregunta de investigación ya estaba resuelta en la memoria (opción C): no queda nada por elegir. | — |
 | 10 nov. | Encargo | Resolver lo que quedaba de las correcciones de la evaluación como comisión y sumar a la memoria los fondos para financiar el proyecto. | La memoria suma a Parra (capítulos 3, 9, 10, 12 y 14), cuatro fuentes comprobadas en Crossref, la accesibilidad auditiva, la Tabla 3 separada y una sección «Financiamiento» con Fondart Nacional, Semilla Inicia de Corfo y Capital Semilla Emprende de Sercotec, de fuentes oficiales; los resultados se leen como compatibles, con el límite del autorreporte, y la Tabla 5 marca nueve cambios ya hechos. Quedan del autor: imprimir el objeto y describir a las tres personas. | — |
+| 10 nov. | Decisión y consulta | El objeto no se imprime y queda como propuesta; el Pase no tiene presentación, es solo la revisión de la memoria, y la presentación es la del examen. Preguntó si es necesario describir a las tres personas de la prueba y qué opciones hay para la frase de marca. | D-178: Relevo queda como propuesta, y el capítulo 11, la Figura 19, Por hacer, riesgos y el resumen lo dicen; el calendario y la tarea 7 separan el Pase, sin presentación, del examen. Se le propusieron frases de marca a partir de la vigente, «Hazle lugar a lo que quieres hacer». | D-178 |
+| 10 nov. | Decisión | Eligió la frase de marca vigente, «Hazle lugar a lo que quieres hacer», y decidió no describir en la memoria a las tres personas de la prueba, sino responderlo en el examen. | La frase queda confirmada en el Anexo H y en el documento de marca; la tarea 7 suma esa respuesta a la preparación del examen. | — |
 
 ## Lo que muestra el registro
 
@@ -336,6 +338,18 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Frase de marca y las tres personas
+
+- **Qué cambió:** se registró la elección de la frase de marca y la decisión sobre las tres personas.
+- **Cómo estaba antes:** el último pedido era la decisión sobre el objeto y el Pase.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-10 — Objeto, Pase y frase de marca
+
+- **Qué cambió:** se registraron la decisión sobre el objeto, la aclaración del Pase y las consultas sobre las personas y la frase de marca.
+- **Cómo estaba antes:** el último pedido era el de las correcciones de la comisión y los fondos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Fechas, comisión y fondos
 

@@ -102,16 +102,16 @@ Fechas confirmadas por los profesores el 10 de noviembre ([calendario](calendari
 
 | Tarea | Prioridad | Plazo |
 | --- | --- | --- |
-| 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
+| 4. Objeto propio | Cerrada | Queda como propuesta (D-178) |
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
 | 6. Semana solo con notificaciones | Crítica | Datos finales recibidos el 10 de noviembre; falta la entrevista de cierre |
-| 7. Presentación | Crítica | Borrador el 14 de noviembre; ensayo el 17; Pase el 18 de noviembre |
+| 7. Presentación del examen | Alta | Borrador a fines de noviembre; ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Memoria: datos, portada y entrega | Alta | Entrega interna el 11 de noviembre a las 23:30; entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Baja | 15 de noviembre |
 
 ## 4. Objeto propio: la carcasa del Tag
 
-**Estado:** en curso. El 28 de octubre se hizo el modelo, con la placa y la pila del Tag adentro y el logo calado como botón, y se dejaron listos los proyectos para imprimirlo en Bambu Studio ([testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), D-143). Falta medir la placa, imprimir y probar. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 1](registro-de-riesgos.md)).
+**Estado:** cerrada el 10 de noviembre de 2026: el objeto no se imprime y queda como propuesta (D-178). Lo que sigue abajo queda para el piloto. El 28 de octubre se hizo el modelo, con la placa y la pila del Tag adentro y el logo calado como botón, y se dejaron listos los proyectos para imprimirlo en Bambu Studio ([testigo para impresión 3D](../06_desarrollo_y_factibilidad/testigo-impresion-3d/README.md), D-143). Falta medir la placa, imprimir y probar. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 1](registro-de-riesgos.md)).
 
 ### Por qué
 
@@ -187,11 +187,11 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ## 7. Presentación del Pase y del examen
 
-**Estado:** para dentro de unas semanas. **Anotada:** 25 de octubre de 2026. **Riesgo:** alto ([riesgos 6 y 7](registro-de-riesgos.md)).
+**Estado:** el Pase, el 18 de noviembre, es solo la revisión de la memoria, sin presentación (aclarado por el autor el 10 de noviembre). La presentación es la del examen, el 14 o el 15 de diciembre, con la entrega final. **Anotada:** 25 de octubre de 2026. **Riesgo:** alto ([riesgos 6 y 7](registro-de-riesgos.md)).
 
 ### Qué hacer
 
-- [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
+- [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
 - [ ] Una presentación de 15 minutos que muestre:
@@ -201,7 +201,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - la evidencia y sus límites.
 
   Son los puntos que la comisión de julio no entendió.
-- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, el uso de IA y la factibilidad.
+- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
@@ -212,10 +212,10 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [x] **Fechas por escrito:** confirmadas por los profesores el 10 de noviembre: entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre.
-- [ ] **Describir a las tres personas de la prueba** (lo pide la evaluación como comisión): cómo se convocaron, su relación con el autor y su edad. Solo lo sabe el autor.
+- [x] **Describir a las tres personas de la prueba:** el autor decidió no hacerlo en la memoria (10 de noviembre); la respuesta se prepara para el examen (tarea 7).
 - [ ] **Datos por confirmar**, que solo sabe el autor:
   - [x] nombre legal, título y mención: confirmados el 10 de noviembre; coinciden con la portada de la memoria;
-  - [ ] frase de marca;
+  - [x] frase de marca: «Hazle lugar a lo que quieres hacer», confirmada el 10 de noviembre (Anexo H);
   - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
   - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
   - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
@@ -734,6 +734,18 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Frase de marca y las tres personas
+
+- **Qué cambió:** la frase de marca queda confirmada, y describir a las tres personas pasa a las respuestas del examen.
+- **Cómo estaba antes:** ambos estaban pendientes del autor.
+- **Por qué:** el autor confirmó el 10 de noviembre de 2026 la frase «Hazle lugar a lo que quieres hacer», y el autor decidió el 10 de noviembre de 2026 no describir a las tres personas en la memoria y dejar la respuesta para el examen.
+
+### 2026-11-10 — Objeto como propuesta y Pase sin presentación
+
+- **Qué cambió:** la tarea 4 queda cerrada porque el objeto queda como propuesta (D-178); la tarea 7 aclara que el Pase es solo la revisión de la memoria y que la presentación es la del examen, y el calendario lo refleja.
+- **Cómo estaba antes:** la tarea 4 pedía imprimir el objeto y la tarea 7 preparaba una presentación para el Pase del 18 de noviembre.
+- **Por qué:** el autor decidió no imprimir el objeto (D-178) y aclaró que el Pase es solo la revisión de la memoria.
 
 ### 2026-11-10 — Correcciones de la comisión
 

@@ -617,7 +617,7 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 *Nota.* Fotografías de la prueba en los hogares. En a, la pantalla muestra la actividad, el primer paso y el lugar donde sonará el Tag; se difuminó el nombre de la persona.
 
-**Objeto propio.** El objeto propio es una carcasa redonda que lleva adentro la placa y la pila del Tag: conserva el sonido ya probado y suma forma, control y marca (Figura 19). Mide 46 mm de diámetro y 12,3 mm de alto y no tiene frente, así que puede dejarse en cualquier posición. El logo, calado sobre sus cuatro colores, es el botón: al apretarlo baja 0,45 mm y un tope protege el botón del Tag. El sonido sale por la ranura que rodea el logo y por ocho agujeros de la tapa, que se abre con una moneda para cambiar la pila. Es más grande que el Tag por tres razones: para encontrarlo, porque un objeto que hay que hallar para silenciarlo no puede quedar tapado sobre una mesa; para controlarlo, porque una persona de la prueba nunca encontró el botón del Tag y un botón del tamaño del logo se ve y se siente, y para fabricarlo, porque sus detalles necesitan espacio para imprimirse. El modelo está listo para imprimirse en 3D, en cinco piezas y sin soportes; como solo una pieza depende de la placa, podría recibir otros localizadores.
+**Objeto propio.** El objeto propio es una carcasa redonda que lleva adentro la placa y la pila del Tag: conserva el sonido ya probado y suma forma, control y marca (Figura 19). Mide 46 mm de diámetro y 12,3 mm de alto y no tiene frente, así que puede dejarse en cualquier posición. El logo, calado sobre sus cuatro colores, es el botón: al apretarlo baja 0,45 mm y un tope protege el botón del Tag. El sonido sale por la ranura que rodea el logo y por ocho agujeros de la tapa, que se abre con una moneda para cambiar la pila. Es más grande que el Tag por tres razones: para encontrarlo, porque un objeto que hay que hallar para silenciarlo no puede quedar tapado sobre una mesa; para controlarlo, porque una persona de la prueba nunca encontró el botón del Tag y un botón del tamaño del logo se ve y se siente, y para fabricarlo, porque sus detalles necesitan espacio para imprimirse. El modelo está listo para imprimirse en 3D, en cinco piezas y sin soportes; como solo una pieza depende de la placa, podría recibir otros localizadores. En esta etapa, Relevo queda como propuesta: la prueba se hizo con el Tag, y el objeto propio se imprimiría para el piloto.
 
 **Figura 19**
 
@@ -625,7 +625,7 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 ![a. Relevo armado, de 46 mm de diámetro](../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/testigo-heroe.png) ![b. Cinco piezas, con la placa y la pila del Tag](../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/testigo-explosion.png) ![c. Corte](../06_desarrollo_y_factibilidad/testigo-impresion-3d/vistas/testigo-corte.png)
 
-*Nota.* Elaboración propia: modelo 3D hecho con ayuda de Claude Code, a partir de las especificaciones del autor. Las medidas de la placa del Tag son estimadas hasta medirla.
+*Nota.* Elaboración propia: modelo 3D hecho con ayuda de Claude Code, a partir de las especificaciones del autor. Es una propuesta sin imprimir, y las medidas de la placa del Tag son estimadas.
 
 ## Señal
 

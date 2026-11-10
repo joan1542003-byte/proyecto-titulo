@@ -111,7 +111,7 @@ La memoria está bien construida y es honesta. El problema está formulado con p
 
 ## Qué hacer primero
 
-**Antes del Pase, el 18 de noviembre** (fecha confirmada por los profesores el 10 de noviembre):
+**Antes del Pase, el 18 de noviembre** (fecha confirmada por los profesores el 10 de noviembre; es la revisión de la memoria, sin presentación):
 
 1. Informar la semana con el teléfono, caso por caso, y quitar los dos `[CONFIRMAR]`.
 2. Reescribir las afirmaciones del capítulo 13 y de las conclusiones como compatibles con los criterios, no como prueba, y declarar el límite del autorreporte.
@@ -132,8 +132,8 @@ La memoria está bien construida y es honesta. El problema está formulado con p
 | --- | --- |
 | 1. Semana con el teléfono y los dos `[CONFIRMAR]` | Hecho: Tabla 4 nueva, por persona y soporte; el tercer supuesto se sostiene en parte. |
 | 2. Resultados como compatibles y límite del autorreporte | Hecho en los capítulos 13 y 14. |
-| 3. Imprimir el objeto, medir la placa y fotografiarlo | Pendiente del autor. |
-| 4. Describir a las tres personas | En parte: la memoria dice que son mayores de edad; faltan, del autor, cómo se convocaron, su relación con él y su edad. |
+| 3. Imprimir el objeto, medir la placa y fotografiarlo | Decisión del autor: el objeto queda como propuesta, sin imprimir (D-178). El capítulo 11 lo dice. |
+| 4. Describir a las tres personas | La memoria dice que son mayores de edad; el resto lo responde el autor en el examen, por decisión suya. |
 | 5. Insertar las 20 figuras | Al generar la memoria diseñada. |
 | 6. «Tres semanas», «21 días» y el criterio 6 | Hecho: la prueba dura un mes y el criterio 6 se cumple a medias. El Anexo I conserva el «protocolo de 21 días» como el protocolo preparado, distinto de la prueba aplicada. |
 | 7. Parra y una fuente reciente de interacción tangible | Hecho: Parra en los capítulos 3, 9, 10, 12 y 14; Ullmer et al. (2022) y Ball et al. (2025). |
@@ -143,6 +143,18 @@ La memoria está bien construida y es honesta. El problema está formulado con p
 También se resolvieron las observaciones de la formulación (el segundo supuesto queda dicho en el capítulo 10), de «recordar no basta» (Sheeran y Webb, 2016), de la voz experta, de las suscripciones de IA como costo del proceso y de la codificación con IA de la encuesta, que el autor ya había quitado.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Las tres personas
+
+- **Qué cambió:** el punto 4 registra que el autor responderá en el examen cómo llegaron las tres personas.
+- **Cómo estaba antes:** faltaban esos datos del autor.
+- **Por qué:** el autor decidió el 10 de noviembre de 2026 no describir a las tres personas en la memoria y dejar la respuesta para el examen.
+
+### 2026-11-10 — Objeto como propuesta
+
+- **Qué cambió:** el punto 3 registra que el objeto queda como propuesta (D-178) y el Pase se describe como revisión de la memoria.
+- **Cómo estaba antes:** el punto 3 estaba pendiente del autor.
+- **Por qué:** el autor decidió que el objeto no se imprime y queda como propuesta (D-178).
 
 ### 2026-11-10 — Estado al 10 de noviembre
 

@@ -41,7 +41,7 @@ La marca tiene que hacer reconocible esa idea en cada soporte, aunque cada uno c
 | Descriptor | **Un recordatorio físico preparado desde el teléfono** | Acompaña al nombre donde Relevo todavía no se conoce. Aclara, no emociona. |
 | Frase de marca | **Hazle lugar a lo que quieres hacer** | Une el lugar físico de la señal con volver a considerar una actividad. Va en portadas, presentaciones y piezas de introducción, nunca en pantallas operativas ni mensajes de error. |
 
-Los tres vienen de la [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) del 16 de septiembre y se mantuvieron en la identidad de octubre. La frase sigue marcada como «por confirmar» en la memoria, y su forma definitiva la decide el autor.
+Los tres vienen de la [guía de comunicación](../00_gobernanza/guia-comunicacion-relevo.md) del 16 de septiembre y se mantuvieron en la identidad de octubre. El autor confirmó la frase el 10 de noviembre de 2026.
 
 **Fundamento.** En seis estudios, los logos que comunican qué hace una marca se evaluaron mejor, sobre todo en marcas nuevas (Luffarelli et al., 2019). Por eso el descriptor acompaña al nombre hasta que Relevo sea conocido.
 
@@ -347,7 +347,7 @@ La voz es la misma en la app, la memoria y las presentaciones; el tono cambia se
 - **Prueba con personas:** ninguna decisión de marca se ha probado con personas: ni el logo, ni los colores, ni los íconos.
 - **Evidencia de Chile:** la evidencia de color es internacional y regional; no hay un estudio hecho solo en Chile.
 - **Registro de marca:** no se ha buscado en INAPI si hay marcas registradas parecidas a «Relevo», un paso necesario antes de cualquier uso comercial.
-- **Frase de marca:** está por confirmar en la memoria.
+- **Frase de marca:** confirmada por el autor el 10 de noviembre de 2026: «Hazle lugar a lo que quieres hacer».
 - **La versión de la prueba:** la 2.33 usa la marca anterior. La identidad nueva llega a las personas cuando termine la prueba.
 - **El video «Cómo funciona»:** es anterior a esta identidad y al Tag.
 - **La forma propia del objeto:** está en curso (tarea 4).
@@ -411,6 +411,12 @@ World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility g
 Yablonski, J. (s. f.). *Laws of UX*. https://lawsofux.com/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Frase de marca confirmada
+
+- **Qué cambió:** la frase de marca deja de estar por confirmar.
+- **Cómo estaba antes:** figuraba por confirmar en la memoria.
+- **Por qué:** el autor confirmó el 10 de noviembre de 2026 la frase «Hazle lugar a lo que quieres hacer».
 
 ### 2026-10-25 — Creación
 

@@ -173,7 +173,7 @@ El 10 de noviembre, el autor pidió resolver lo que quedaba de la [evaluación c
 - **Capítulo 12:** la Tabla 3 separa el prototipo del proceso; la sección «Financiamiento» nombra Fondart Nacional (línea de Investigación) para el piloto, y Semilla Inicia de Corfo y Capital Semilla Emprende de Sercotec para el producto, con sus fuentes oficiales consultadas el 10 de noviembre; la Figura 20 y «Actores del proyecto» los suman.
 - **Capítulo 13:** los resultados son «compatibles» con las decisiones, no las prueban; el criterio 6 se cumple a medias; «Alcance de esta etapa» declara el límite del autorreporte; la Tabla 5 marca nueve cambios hechos en las versiones 4.0 y 4.4.
 - **Capítulo 14:** el primer supuesto es compatible, no probado; las versiones posteriores incorporaron nueve cambios; las proyecciones suman el control progresivo que sugirió Parra y un fondo concursable para ampliar la prueba.
-- **Lo que no se pudo hacer:** describir cómo se reclutó a las tres personas, su relación con el autor y su edad exacta, porque esos datos solo los tiene el autor; e imprimir el objeto.
+- **Lo que no se pudo hacer:** describir cómo se reclutó a las tres personas, su relación con el autor y su edad exacta, porque esos datos solo los tiene el autor. El objeto no se imprime: el mismo día, el autor decidió que queda como propuesta (D-178), y el capítulo 11 lo dice.
 
 ## Extensión
 
@@ -190,7 +190,7 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta. El 10 de noviembre, el autor confirmó tres de ellos: su nombre legal, el título y la mención, que coinciden con la portada; que las entrevistas se grabaron en audio y se pasaron a texto, y que las tres personas de la prueba son mayores de edad. El capítulo 7 suma la grabación, y el 13, la mayoría de edad. Sigue por confirmar la frase de marca; los datos de la encuesta, según el autor, ya están en el repositorio. Para describir a las tres personas de la prueba faltan cómo se convocaron, su relación con el autor y su edad.
+Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta. El 10 de noviembre, el autor confirmó tres de ellos: su nombre legal, el título y la mención, que coinciden con la portada; que las entrevistas se grabaron en audio y se pasaron a texto, y que las tres personas de la prueba son mayores de edad. El capítulo 7 suma la grabación, y el 13, la mayoría de edad. La frase de marca, «Hazle lugar a lo que quieres hacer», quedó confirmada el mismo día y está en el Anexo H; la memoria no la incluye, como en la edición del autor. Los datos de la encuesta, según el autor, ya están en el repositorio. Las tres personas de la prueba no se describen en la memoria: el autor prefiere responderlo en el examen.
 
 ## Pendiente
 
@@ -206,6 +206,18 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Frase de marca y las tres personas
+
+- **Qué cambió:** se anota que la frase de marca quedó confirmada y que las tres personas no se describen en la memoria.
+- **Cómo estaba antes:** ambos datos figuraban por confirmar.
+- **Por qué:** el autor confirmó el 10 de noviembre de 2026 la frase «Hazle lugar a lo que quieres hacer», y el autor decidió el 10 de noviembre de 2026 no describir a las tres personas en la memoria y dejar la respuesta para el examen.
+
+### 2026-11-10 — Objeto como propuesta
+
+- **Qué cambió:** se anota que Relevo queda como propuesta y que el capítulo 11 y la nota de la Figura 19 lo dicen.
+- **Cómo estaba antes:** imprimir el objeto figuraba como pendiente.
+- **Por qué:** el autor decidió que el objeto no se imprime y queda como propuesta (D-178).
 
 ### 2026-11-10 — Decimoquinta ronda
 

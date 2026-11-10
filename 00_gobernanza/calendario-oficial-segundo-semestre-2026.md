@@ -33,9 +33,9 @@ El 10 de noviembre de 2026, el autor entregó las fechas que confirmaron sus pro
 | Fecha | Hito |
 | --- | --- |
 | Miércoles 11 de noviembre | Entrega interna de la memoria |
-| Miércoles 18 de noviembre | Feedback y Pase de Examen |
+| Miércoles 18 de noviembre | Feedback y Pase de Examen: revisión de la memoria, sin presentación |
 | Miércoles 2 de diciembre | Entrega final de la memoria |
-| Lunes 14 y martes 15 de diciembre | Examen de título |
+| Lunes 14 y martes 15 de diciembre | Examen de título, con la presentación del proyecto |
 
 El Pase se adelanta una semana respecto del calendario (25 de noviembre), y el examen queda en dos días dentro del periodo oficial.
 
@@ -61,6 +61,12 @@ El intervalo entre el 16 y el 24 de noviembre funciona como margen de seguridad 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Pase sin presentación
+
+- **Qué cambió:** el Pase dice que es una revisión de la memoria, sin presentación, y el examen, que lleva la presentación.
+- **Cómo estaba antes:** no decía qué se hace en cada hito.
+- **Por qué:** el autor aclaró que el Pase es solo la revisión de la memoria y que la presentación es la del examen.
 
 ### 2026-11-10 — Fechas confirmadas
 

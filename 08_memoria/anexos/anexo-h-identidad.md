@@ -276,7 +276,7 @@ La tipografía blanca sobre los degradados claros no alcanzó 4,5:1 —se midier
 
 **Nombre.** Un relevo es el momento en que algo pasa de una mano a otra, como en una carrera de relevos. El nombre cuenta lo que busca el sistema: que la atención pase de la pantalla a lo que la persona quería hacer, sin que nadie se la quite. Es breve, se pronuncia sin trabas en español y viene del mundo de los traspasos y los turnos, no de las prohibiciones. Una comercialización exigiría revisar antes la disponibilidad jurídica del nombre, los dominios y las coincidencias comerciales.
 
-**Frase de marca.** «Hazle lugar a lo que quieres hacer.» Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error.
+**Frase de marca.** «Hazle lugar a lo que quieres hacer.» Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error. Es la frase definitiva desde el 10 de noviembre de 2026.
 
 **Descriptor.** «Un recordatorio físico preparado desde el teléfono.» Acompaña al nombre cuando quien lo lee todavía no conoce el producto: su función es aclarar, no emocionar.
 
@@ -358,6 +358,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Frase de marca definitiva
+
+- **Qué cambió:** la frase de marca se declara definitiva.
+- **Cómo estaba antes:** no decía si estaba confirmada.
+- **Por qué:** el autor confirmó el 10 de noviembre de 2026 la frase «Hazle lugar a lo que quieres hacer».
 
 ### 2026-11-10 — Versión 4.7.2
 

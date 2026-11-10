@@ -16,12 +16,12 @@ Las estimaciones son propias y se revisan cada semana. La base es el [estado del
 
 | N.º | Riesgo | Probabilidad | Impacto | Prioridad | Cómo se reduce | Tarea |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | **El objeto queda como un producto comprado**, sin forma, medidas ni planos propios. La matriz de pase lo marca como no logrado (5.2) y el prototipo como «en desarrollo» (7.1). | Alta | Alto | **Crítica** | Medir el Tag y modelar, imprimir, fotografiar y documentar una carcasa propia. El modelo está hecho desde el 28 de octubre (D-143). | [4](por-hacer.md#4-objeto-propio-la-carcasa-del-tag) |
+| 1 | **El objeto queda como un producto comprado**, sin forma, medidas ni planos propios. La matriz de pase lo marca como no logrado (5.2) y el prototipo como «en desarrollo» (7.1). | Alta | Alto | **Crítica** | Medir el Tag y modelar, imprimir, fotografiar y documentar una carcasa propia. El modelo está hecho desde el 28 de octubre (D-143). **Aceptado el 10 de noviembre:** el objeto queda como propuesta, modelado y sin imprimir (D-178); se defiende con el modelo, sus medidas y la aplicación funcionando. | [4](por-hacer.md#4-objeto-propio-la-carcasa-del-tag) |
 | 2 | **Presupuesto (cerrado el 27 de octubre):** el prototipo académico queda en unos 182 000 pesos con financiamiento propio, con 114 horas de trabajo valorizadas y el costo por unidad del piloto ([presupuesto](../06_desarrollo_y_factibilidad/presupuesto-2026-10-27.md)). El subcriterio 8.2 pasó a logrado. | — | — | Cerrado | — | [5](por-hacer.md#5-costos-y-presupuesto) |
 | 3 | **La hipótesis queda sin contraste**: la semana solo con notificaciones está en uso, pero no se inició en la app, que por eso no hace las preguntas de comparación ni las de cierre. | Media | Alto | **Crítica** | Ficha en papel y entrevista al terminar la semana; sumar los relevos con el teléfono al análisis. | [6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) |
 | 4 | **Entrega fuera de plazo** por las fechas contradictorias del instructivo. La no entrega reprueba el curso. | Baja | Crítico | **Alta** | Confirmar por escrito con los profesores guía; entregar el 1 de diciembre como margen. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
 | 5 | **Memoria fuera de formato**: faltan logos, modalidad y fecha en la portada, y el archivo debe llevar el nombre y la mención. Un archivo fuera de formato reprueba. | Media | Crítico | **Alta** | Portada oficial y una lista de control antes de subir el archivo. | [8](por-hacer.md#8-memoria-datos-por-confirmar-portada-y-entrega) |
-| 6 | **La presentación no explica el objeto**, que fue la crítica central de la comisión de julio. | Media | Alto | **Alta** | Presentación centrada en la escena, el objeto en su lugar y la evidencia; ensayo cronometrado de 15 minutos. | [7](por-hacer.md#7-presentación-del-pase-y-del-examen) |
+| 6 | **La presentación no explica el objeto**, que fue la crítica central de la comisión de julio. | Media | Alto | **Alta** | Presentación del examen (14 y 15 de diciembre) centrada en la escena, el objeto en su lugar y la evidencia; ensayo cronometrado de 15 minutos. El Pase no lleva presentación. | [7](por-hacer.md#7-presentación-del-pase-y-del-examen) |
 | 7 | **La demostración falla en el examen**: el Tag no conecta, se agota la pila o el teléfono no suena. | Media | Alto | **Alta** | Video de respaldo del ciclo completo, pila nueva y un segundo Tag. | [7](por-hacer.md#7-presentación-del-pase-y-del-examen) |
 | 8 | **Se cuestiona el uso de IA**: en la charla de la Escuela, pegar texto de IA sin reelaborarlo cuenta como plagio. | Media | Alto | **Alta** | Precisar en el capítulo 10 qué tuvo borrador de IA y cómo se revisó; mostrar el registro de pedidos como trazabilidad. | [2](por-hacer.md#2-memoria-decisiones-pendientes-tras-revisar-las-guías-de-la-escuela) |
 | 9 | **Se cuestiona la validez de la prueba**: tres personas reclutadas por cercanía, autoinforme, y datos de dos de ellas que pasaron por una planilla. | Alta | Medio | Media | Ya está declarado en «Alcance de la prueba y amenazas a la validez». Presentarla como evaluación formativa del ciclo, no como prueba de eficacia. | — |
@@ -82,6 +82,12 @@ Cosas que ya están aceptables y que suben el nivel de la rúbrica de «bueno» 
 | Reducir el tamaño del repositorio, de unos 785 MB, moviendo los APK antiguos a *releases*. | Orden | Bajo |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Objeto y presentación
+
+- **Qué cambió:** el riesgo 1 queda aceptado con el objeto como propuesta (D-178), y el 6 dice que la presentación es la del examen.
+- **Cómo estaba antes:** el riesgo 1 pedía imprimir y el 6 no distinguía el Pase del examen.
+- **Por qué:** el autor decidió que el objeto no se imprime y queda como propuesta (D-178), y el autor aclaró que el Pase es solo la revisión de la memoria y que la presentación es la del examen.
 
 ### 2026-11-10 — Fechas confirmadas
 

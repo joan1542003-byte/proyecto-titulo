@@ -2414,7 +2414,23 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** actualizar el Anexo I de la memoria con la entrevista que se aplique.
 - **Documentos:** [entrevista de cierre](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md) y [Android 4.7.2](../06_desarrollo_y_factibilidad/app-android/version-4.7.2-entrevista-segun-la-guia-2026-11-09.md).
 
+## D-178 — Relevo, el objeto propio, queda como propuesta
+
+- **Fecha:** 2026-11-10.
+- **Estado:** decidida por el autor.
+- **Contexto:** el modelo de Relevo, la carcasa redonda con la placa y la pila del Tag adentro, está listo para imprimirse desde el 28 de octubre (D-143). La evaluación como comisión recomendaba imprimirlo, medir la placa y fotografiarlo antes del Pase.
+- **Decisión:** el objeto no se imprime para la entrega. Queda como propuesta: modelado, con sus medidas, piezas y costo, y listo para imprimirse. El prototipo funcional de la prueba es el Tag con la aplicación.
+- **Consecuencias:** la memoria presenta a Relevo como propuesta y dice que la prueba se hizo con el Tag; las medidas de la placa siguen estimadas; el piloto, si se hace, imprimiría las seis carcasas. En la matriz de pase, los aspectos técnicos (5.2) y el prototipo final (7.1) se sostienen con el modelo, los planos y la aplicación funcionando.
+- **Alternativa descartada:** imprimir, medir la placa y fotografiar el objeto antes de la entrega.
+- **Documentos:** [Por hacer, tarea 4](../00_gobernanza/por-hacer.md#4-objeto-propio-la-carcasa-del-tag) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), capítulo 11.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — D-178
+
+- **Qué cambió:** se registró D-178: Relevo, el objeto propio, queda como propuesta.
+- **Cómo estaba antes:** la última decisión era D-177.
+- **Por qué:** el autor decidió que el objeto no se imprime y queda como propuesta (D-178).
 
 ### 2026-11-09 — D-174
 
