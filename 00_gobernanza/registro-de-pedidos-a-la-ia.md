@@ -253,6 +253,7 @@
 | 8 nov. | Consulta | El profesor dice que fabricar un objeto desde cero es un esfuerzo innecesario: ¿es útil, si todos los Tag sirven? | Recomendación: no fabricar electrónica ni un aparato propio; diseñar un porta Tag que reciba un Tag completo, sin abrirlo, como pidió la revisión del 28 de octubre. Resuelve el botón que no se encontraba, da un objeto para el examen y la marca, y cuesta poco. La hipótesis depende del lugar y el sonido, no de la carcasa. Decide el autor. | Por decidir |
 | 8 nov. | Consulta | ¿Es necesario imprimir el objeto o basta con diseñarlo? | No es obligatorio: la matriz de pase acepta un prototipo que «represente, simule o demuestre» y documentación con planos o renders, y el reglamento admite apoyo tridimensional u otro. Recomendación: imprimir una unidad si cuesta poco, porque confirma que calza y da algo que mostrar; si no, presentarlo como diseño, con medidas reales del Tag y sin afirmar que se probó. | Por decidir |
 | 10 nov. | Encargo | Entregó la copia del correo de Denis Parra, del 4 de noviembre, y avisó que el 11 de noviembre entrega la entrevista final con las personas, según su uso de la app, y los resultados finales de la prueba y de la semana solo con notificaciones; pidió anotarlo todo. | La [ficha de Parra](../02_investigacion/entrevistas-expertos/ficha-parra.md) tiene la fecha del correo, y la cita la usa; las citas coinciden con la copia, y el texto completo quedó fuera de GitHub. La [tarea 6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) espera los datos del 11 de noviembre. | — |
+| 10 nov. | Consulta | Qué queda pendiente: mañana se cierra todo, porque a las 23:30 sube la memoria. | Lista para el 11 de noviembre: con los datos del cierre, los resultados caso por caso sin los dos «por confirmar», el Anexo I con la entrevista nueva, Parra en el capítulo 3 y el criterio 1, y las correcciones de la evaluación como comisión; después, juntar las ramas en una sola, con su autorización, generar el PDF y los anexos. Se le preguntó si mañana es la entrega oficial, que el calendario fija el 2 de diciembre a las 12:00. El cuerpo de la memoria tiene unas 16.500 palabras, dentro del límite. | — |
 
 ## Lo que muestra el registro
 
@@ -263,6 +264,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Pendientes para cerrar
+
+- **Qué cambió:** se registró la consulta sobre qué queda para cerrar la memoria.
+- **Cómo estaba antes:** el último pedido era el correo de Parra y el aviso de los datos del cierre.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Correo de Parra y datos del cierre
 
