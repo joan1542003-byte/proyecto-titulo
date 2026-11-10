@@ -231,6 +231,50 @@
 | 9 nov. | Decisión | Reescribir la ficha de Screenless con lo que muestra hoy la portada de su sitio. | La ficha del [Anexo C](../08_memoria/anexos/anexo-c-referentes.md) describe el bloqueo por horarios, el desbloqueo al acercar el teléfono, el modo para padres, el precio de 45 euros y la versión para Android anunciada; la referencia de la memoria y del anexo cita la portada. Se regeneraron el Word y el PDF de los anexos. | D-173 |
 | 9 nov. | Pedido | Avisó que el registro de la tesis de Smits tampoco le carga y pidió que la IA revise la página legal y los datos de Norman. | La tesis de Smits se cita por su copia en Internet Archive, que confirma sus datos. La copia de Norman que se leyó, la misma de agosto, es la edición de Basic Books de 2002: trae su prefacio, aunque no la página legal, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002). | D-173 |
 | 9 nov. | Pedido | Mejorar la portada de los anexos: ordenarla mejor y controlar los pesos visuales. | La [portada](../08_memoria/anexos/anexos-relevo.pdf) agrupa los datos en tres bloques —título, autoría e institución con la ciudad y el año al pie—, deja el título en negrita como único énfasis, achica el logo, parte las líneas largas en dos de largo parecido y pone la ciudad y el año en Arial 11, con el año solo, como pide la pauta. | D-174 |
+| 2 nov. | Consulta | Entregó en .docx la memoria en curso de otra persona del taller (salud mental y cuidado de plantas) y pidió compararla con la suya desde una mirada crítica y académica, según la rúbrica oficial. | Respuesta en la conversación: comparación por las tres dimensiones de la rúbrica y la matriz de pase, contra la v6. La otra memoria no se sube ni se nombra en el repositorio. Al revisar la v6 se vio que ya no tiene «Actores y responsabilidades», y el subcriterio 8.1 de la [matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md) vuelve a «en desarrollo». | — |
+| 2 nov. | Encargo | Buscar perfiles para entrevistar —en LinkedIn, Instagram u otro lugar donde estén activos—, con su correo, disciplina y perfil; agregarlos al repositorio y preparar las preguntas. Ofreció sus credenciales si hacían falta. | [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): 13 perfiles (cinco en Chile) con correo comprobado en fuentes oficiales, guía de entrevista, material para mostrar e invitaciones. Las credenciales no se usaron. Como el repositorio es público y `CLAUDE.md` prohíbe correos, los correos se entregaron en un archivo aparte, en la carpeta privada `00_fuentes_privadas/`. | — |
+| 2 nov. | Decisión y encargo | Registrar los correos solo de Chile y guardarlos de forma interna, en la conversación o en un archivo local; comprobar que sean los actuales, con ayuda de LinkedIn. | El archivo privado queda con las cinco personas en Chile y la evidencia de vigencia de cada correo: página oficial, publicaciones de 2025 o 2026 y registros del dominio. LinkedIn no sirvió: exige iniciar sesión y no muestra correos. Se halló un artículo de Salas y Parada del 30 de octubre de 2026 sobre cognición extendida, que ordena el envío. Los [perfiles](../02_investigacion/entrevistas-expertos/perfiles.md) dejan a las personas de otros países en reserva. | Entrevistar solo en Chile |
+| 2 nov. | Encargo | Hacer el guion de entrevista para cada uno de los perfiles de Chile. | Cinco guiones, uno por persona ([Salas](../02_investigacion/entrevistas-expertos/guion-salas.md), [Parada](../02_investigacion/entrevistas-expertos/guion-parada.md), [Parra](../02_investigacion/entrevistas-expertos/guion-parra.md), [Herskovic](../02_investigacion/entrevistas-expertos/guion-herskovic.md) y [Zamorano](../02_investigacion/entrevistas-expertos/guion-zamorano.md)), armados sobre sus publicaciones, comprobadas en Crossref y Europe PMC. Se corrigió que Parra estuviera de sabático (fue en 2023). | — |
+| 2 nov. | Corrección y encargo | Dejar de hacer automatizaciones. Entregar el enlace de cada perfil, su correo y el texto para pedirles una entrevista breve, leyendo la guía de entrevistas del repositorio. | Sin tareas programadas y sin avisos del PR. Los cinco correos personalizados se entregaron en la conversación, a partir de la guía de expertos y los guiones; la guía E11 del archivo es de entrevistas a usuarios. La página de resumen queda en [PDF](../02_investigacion/entrevistas-expertos/relevo-resumen-entrevista.pdf) para adjuntar. | Sin automatizaciones |
+| 2 nov. | Corrección | Acortar los mensajes: ir al grano, pedir una entrevista entre el 3 y el 13 de noviembre y explicar el proyecto al final, en pocas líneas. Verificar que todo esté bien. Entregó dos documentos de sus profesores: una guía de entrevista semiestructurada y análisis del discurso, y un guion de entrevista de ejemplo. | Cinco [mensajes breves](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md), uno por persona. La guía y los guiones siguen la pauta de los profesores: embudo, preguntas abiertas, consentimiento completo, cierre proyectivo y matriz de análisis. Se comprobaron de nuevo los enlaces y correos. Los documentos de los profesores no se suben. | — |
+| 2 nov. | Corrección | Tutear, no tratar de usted, y hacer las entrevistas siempre por videollamada. | Mensajes, recordatorio, agradecimiento, consentimiento, guía, cinco guiones, página para mostrar y PDF tratan de tú y piden solo videollamada. | Entrevistas de tú y por videollamada |
+| 2 nov. | Corrección | No adjuntar nada: todo en el correo, diciendo sobre todo cómo se relaciona la investigación de cada persona con el proyecto y en qué podría ayudar. | Cinco [mensajes](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md) sin adjuntos, con «Por qué te escribo», «Cómo me ayudarías» y «Sobre Relevo». La página para mostrar queda para compartir pantalla. | Invitaciones sin adjuntos |
+| 2 nov. | Corrección | Considerar que las entrevistas son posteriores a la prueba, así que deben beneficiar sobre todo a la investigación y la teoría. | Los [mensajes](../02_investigacion/entrevistas-expertos/correos-de-invitacion.md) unen la investigación de cada persona con un resultado de la prueba y piden ayuda para interpretarlo y fortalecer el marco teórico. La guía suma las preguntas C5 y C6, y cada guion, las preguntas A y B, con objetivos de interpretación y teoría. | Entrevistas al servicio de la interpretación y la teoría |
+| 2 nov. | Encargo | Francisco respondió la invitación: pidió las preguntas y todo lo necesario para que le sea fácil responder. | Correo de respuesta con cuatro preguntas, el contexto y los resultados en el mismo texto, en los guiones de [Parada](../02_investigacion/entrevistas-expertos/guion-parada.md) y [Zamorano](../02_investigacion/entrevistas-expertos/guion-zamorano.md), porque el pedido no dice cuál de los dos respondió. | — |
+| 2 nov. | Corrección | Ser más claro: dar más contexto sin abrumar, para que sea fácil de entender y responder. | El correo para Francisco se ordena en «Qué es Relevo», «Qué probé», «Qué encontré» y «Mis preguntas», con tres preguntas ligadas a resultados. | — |
+| 2 nov. | Corrección | Contexto más breve en el correo para Francisco. | El contexto cabe en un párrafo de dos frases («En corto»), seguido de las tres preguntas. | — |
+| 2 nov. | Consulta y corrección | Pedir alguna pregunta extra y comprobar que cada pregunta corresponda a lo que la persona sabe. | Dos preguntas opcionales para cada Francisco, apoyadas en sus publicaciones. La pregunta 1 de Zamorano se reformula: pedía explicar por qué recordar no bastó para empezar, un tema de la conducta que no es su campo. | — |
+| 2 nov. | Corrección | Preguntas que aporten valor: leer la memoria, entenderla y preguntar lo que hoy no tiene. | Se releyó la v6 y las preguntas para Francisco apuntan a sus vacíos: el supuesto del lugar sin respaldo, qué evidencia lo mostraría, «recordar no basta» explicado solo con Fogg, «decisión renovada» sin cita, el control desde el teléfono, el gesto de dejar el objeto, la crítica de julio sobre el objeto y la tensión entre señal visual y sonora. Cada guion suma una tabla de qué aporta cada pregunta. | — |
+| 2 nov. | Encargo | Una pregunta más para Francisco. | Pregunta 6 opcional: a Parada, qué cuenta como «recordar a tiempo» (cambia la lectura de 19 de 21 a 10 de 21); a Zamorano, qué pasos y socios llevarían el objeto de prototipo a producto (factibilidad, proveedores y actores). | — |
+| 2 nov. | Corrección | Una pregunta más teórica, no de resultados, desde la especialidad de la persona. | La pregunta 6 se reemplaza: a Parada, cómo describir el fenómeno desde la cognición 4E (problema y respuesta en el entorno); a Zamorano, qué teoría tangible reciente reemplazaría a los textos de 1997. | — |
+| 2 nov. | Decisión | Confirmó que el que respondió es Francisco J. Parada. | Correo final para Parada con seis preguntas (tres principales y tres opcionales), listo para enviar; estado actualizado en la carpeta de entrevistas. El correo de Zamorano queda en espera. | Entrevista con Parada |
+| 2 nov. | Corrección | Verificar que Parada entienda de qué se habla y qué se le pregunta. | Se contrastó cada pregunta con sus líneas de investigación (UDP) y sus artículos: 2, 3, 5 y 6 caen en su campo; 1 y 4 se acotaron a la cognición situada y a la psicología cognitiva. El resumen ahora dice que el recuerdo se midió por lo que respondieron en la aplicación. | — |
+| 3 nov. | Encargo | Preparar el correo para Francisco Zamorano. | Correo verificado contra su campo (interacción humano-computador, interfaces tangibles y TAMI) y contra la memoria v6: aclara que el objeto de la prueba fue un llavero comprado y que el recuerdo se midió por autorreporte; corrige dos paráfrasis de la memoria. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-zamorano.md). | — |
+| 3 nov. | Encargo | Denis Parra respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; preparar el correo y todo lo que necesite, con preguntas que aporten desde su experiencia y sin explicar Relevo con tecnicismos. | Video de 53 segundos, sin sonido, con pantallas reales de la app, el modelo 3D del objeto (con la nota de que en la prueba se usó un llavero comprado) y los recuentos de la prueba. Correo con tres preguntas desde su trabajo publicado (recomendación, retroalimentación implícita y explícita, control de las personas) que apuntan a vacíos de la v6: el capítulo 3 no habla del sistema que elige qué viene después, y el criterio 3 se apoya en un argumento propio. Al revisar se corrigieron en los cinco guiones la frase del consentimiento, que seguía en usted, y verbos con tilde duplicada. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Sin videollamada con Parra |
+| 3 nov. | Corrección | Redactar el mensaje para Parra sin video. | El resumen del correo cuenta, sin términos técnicos, el problema, cómo se usa Relevo y la prueba de dos semanas; las tres preguntas se mantienen. El video queda en el repositorio, sin enviar. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Correo sin video |
+| 3 nov. | Corrección | Reescribir las preguntas para Parra: bien formuladas, fáciles de entender, más directas y con valor teórico. | Cada pregunta tiene una o dos frases de contexto y pide algo para el marco teórico: el concepto que falta para explicar el sistema que elige qué viene después, el que explica la diferencia entre lo que se hace y lo que se declara, y las condiciones de un control real. Están en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
+| 3 nov. | Corrección | No pedir autores: la persona experta es la referencia. Preguntarle desde su conocimiento y revisar que cada pregunta sea de su especialidad. | Las tres preguntas piden la mirada de Parra: qué papel cumple el sistema que elige qué viene después, qué se gana y qué se pierde al partir de lo declarado, y qué hace útil el control. Cada una se contrastó en Crossref con su trabajo: recomendación secuencial (2022), retroalimentación implícita y explícita (2011) y control en sistemas de recomendación (2013, 2015 y 2016). | — |
+| 3 nov. | Encargo | Una pregunta extra para Parra: si ha estudiado algo relacionado con Relevo y su percepción desde su experiencia. | Pregunta 4, abierta: qué aprendió de lo que haya estudiado de parecido y qué le parece prometedor y débil en Relevo. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
+| 3 nov. | Corrección | En la pregunta 4, no hablar de Relevo y preguntar directamente por lo que ha aprendido; evitar nombrar Relevo, que no se entiende sin contexto, y explicarlo de otra forma. | El correo ya no nombra Relevo: habla de «mi proyecto» o «mi propuesta» y describe lo que hace. La pregunta 4 pregunta qué ha aprendido sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella, tema de sus trabajos sobre control. | Correo sin el nombre del proyecto |
+| 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
+| 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
+| 6 nov. | Consulta | Denis Parra respondió el correo: analizar su respuesta y decir cómo valida lo que hace Relevo. | [Ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md) con su matriz de análisis. Como opinión experta, y no como evidencia de efecto, respalda el problema (las plataformas entrenan con lo que la persona hace porque sirve a su objetivo de tiempo y publicidad), el porqué del criterio 1 y, en parte, los criterios 3 y 6. No valida que Relevo funcione, ni el objeto ni el lugar; la pregunta 1 no se entendió. Autorizó la cita con su nombre. | Falta enviarle el párrafo antes de usarlo |
+| 6 nov. | Consulta | ¿La respuesta de Parra sirve como la validación con un experto que pide el ramo, o conviene buscar otro perfil? Propone dejar las consultas como preguntas por correo, porque una entrevista es más invasiva. | Cuenta a medias: la matriz de pase (6.2) acepta validaciones con expertos y la rúbrica valora la colaboración interdisciplinaria, pero Parra respaldó el razonamiento y no evaluó la propuesta ni el objeto. Recomendación: sumarle una pregunta de juicio al enviarle el párrafo, enviar hoy el recordatorio con preguntas por correo a Zamorano y Parada, y buscar perfiles de diseño si el lunes 9 nadie responde. La evidencia de 6.2 suma la consulta. | Por confirmar: consulta por correo en vez de entrevista |
+| 6 nov. | Encargo | Buscar otra persona experta que ayude a validar la propuesta más que su teoría: perfiles, correos y mensajes redactados. | Tres perfiles en Chile, con su correo comprobado en fuentes oficiales o artículos de 2025 y 2026: Daniela Quiñones (PUCV, experiencia de usuario), Francisco J. Gutiérrez (Universidad de Chile, interacción humano-computador) y Macarena Valenzuela-Zubiaur (UTEM, diseño industrial). Un [correo](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) para cada una, con una pregunta de juicio sobre la propuesta y dos de su especialidad. Los correos electrónicos quedan fuera de GitHub. | Consulta por correo, sin entrevista |
+| 6 nov. | Corrección | Quitar frases como «En corto», el plazo, «dos o tres líneas», la oferta del video y el envío del párrafo, y revisar que el contexto del proyecto se entienda para que nadie deje de entender las preguntas. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) explican paso a paso cómo funciona la propuesta, cómo se apaga el aviso y qué se midió; cada pregunta usa solo lo que el correo ya contó, y se precisaron cinco preguntas. | — |
+| 6 nov. | Corrección | No sirve decir que el objeto es un llavero Bluetooth, y dejar el objeto junto al libro necesita contexto: la persona quiere leer, pero el teléfono está hecho para que siga y nunca logra leer; pone el objeto junto al libro o en el punto clave para empezar. Explicar mejor y con menos tecnicismos. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) cuentan esa situación y luego cómo ayuda la propuesta, sin el llavero, la placa ni los milímetros; se simplificaron cuatro preguntas. | — |
+| 6 nov. | Corrección y encargo | El proyecto parte de situaciones comunes, con un ejemplo. La persona registra que quiere volver a leer, marca las aplicaciones que consumen su tiempo y elige un lugar relacionado con la actividad, como el velador junto al libro. Más preguntas, fáciles de entender, del área de cada persona y que ayuden a validar. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) toman ese contexto y pasan de tres a cinco preguntas: juicio de la propuesta, tres de su especialidad y la única cosa que cambiarían. | — |
+| 8 nov. | Consulta | Leer la versión más reciente de la memoria, analizarla y evaluarla según la rúbrica oficial, como si fuera la comisión. | [Evaluación](../08_memoria/evaluacion-como-comision-v6-2026-11-08.md) de la v6 del 4 de noviembre: nota orientativa cercana a 5,6; decisiones de diseño y formulación sólidas; la tesis del lugar sin evidencia hasta informar la semana con el teléfono, el objeto sin imprimir y 20 figuras por insertar. La matriz de pase se actualizó en 5.1, 5.2 y 8.1. | — |
+| 8 nov. | Consulta | ¿Cuánto vale la defensa si expone mal y nervioso? | Según el instructivo, el examen dura 50 minutos (15 de exposición, 30 de preguntas y 10 de evaluación), la comisión evalúa con la rúbrica y la nota final combina la nota de proceso del profesor y la de la comisión, sin porcentaje publicado; ajustarse al tiempo es parte de la evaluación. Se sumó a Por hacer preguntar la ponderación. | — |
+| 8 nov. | Consulta | ¿Qué pasa si responde mal gran parte de las preguntas del examen, y cuánto valen? | Las preguntas no tienen puntaje propio: la comisión pone una nota con la rúbrica a todo el trabajo, y las respuestas pesan en cómo juzga cada criterio. Cuánto baja la nota no está definido, y la ponderación entre la nota de proceso y la de la comisión queda por preguntar. Un límite reconocido con honestidad no es una mala respuesta. | — |
+| 8 nov. | Consulta y corrección | Entiende que los profesores guía no tienen peso en el examen final. | Confirmado en el reglamento (art. 16): el profesor del curso tiene voz y no voto; la nota la ponen los tres miembros con voto (art. 20), con 4,0 para aprobar (art. 21). Corrige lo dicho antes a partir del instructivo. Se sumó al documento de criterios oficiales y se resolvió la tarea de Por hacer. | — |
+| 8 nov. | Consulta | ¿Cómo se compone el examen de título? | Resumen desde el reglamento (arts. 15 a 26), el instructivo 2026 y la rúbrica: pase y memoria antes; exposición, preguntas y evaluación a puerta cerrada; nota de tres miembros con voto según la rúbrica (20, 40 y 40 %); 4,0 para aprobar; 60 % de la nota de titulación; ficha del proyecto después. | — |
+| 8 nov. | Consulta | ¿Qué pasa si saca un 3,0 en Proyecto de Título con un 5,2 en Seminario? | Reprueba Proyecto de Título: se exige 4,0 en el examen (art. 21) y el 5,2 no compensa; la ponderación de 40 y 60 % (art. 26) solo se calcula con ambos aprobados. Puede volver a inscribirlo hasta dos veces u optar por otra modalidad (art. 25), y la comisión puede prorrogar el examen hasta 30 días (art. 22). | — |
+| 8 nov. | Consulta | El profesor dice que fabricar un objeto desde cero es un esfuerzo innecesario: ¿es útil, si todos los Tag sirven? | Recomendación: no fabricar electrónica ni un aparato propio; diseñar un porta Tag que reciba un Tag completo, sin abrirlo, como pidió la revisión del 28 de octubre. Resuelve el botón que no se encontraba, da un objeto para el examen y la marca, y cuesta poco. La hipótesis depende del lugar y el sonido, no de la carcasa. Decide el autor. | Por decidir |
+| 8 nov. | Consulta | ¿Es necesario imprimir el objeto o basta con diseñarlo? | No es obligatorio: la matriz de pase acepta un prototipo que «represente, simule o demuestre» y documentación con planos o renders, y el reglamento admite apoyo tridimensional u otro. Recomendación: imprimir una unidad si cuesta poco, porque confirma que calza y da algo que mostrar; si no, presentarlo como diseño, con medidas reales del Tag y sin afirmar que se probó. | Por decidir |
+| 10 nov. | Encargo | Entregó la copia del correo de Denis Parra, del 4 de noviembre, y avisó que el 11 de noviembre entrega la entrevista final con las personas, según su uso de la app, y los resultados finales de la prueba y de la semana solo con notificaciones; pidió anotarlo todo. | La [ficha de Parra](../02_investigacion/entrevistas-expertos/ficha-parra.md) tiene la fecha del correo, y la cita la usa; las citas coinciden con la copia, y el texto completo quedó fuera de GitHub. La [tarea 6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) espera los datos del 11 de noviembre. | — |
+| 10 nov. | Consulta | Qué queda pendiente: mañana se cierra todo, porque a las 23:30 sube la memoria. | Lista para el 11 de noviembre: con los datos del cierre, los resultados caso por caso sin los dos «por confirmar», el Anexo I con la entrevista nueva, Parra en el capítulo 3 y el criterio 1, y las correcciones de la evaluación como comisión; después, juntar las ramas en una sola, con su autorización, generar el PDF y los anexos. Se le preguntó si mañana es la entrega oficial, que el calendario fija el 2 de diciembre a las 12:00. El cuerpo de la memoria tiene unas 16.500 palabras, dentro del límite. | — |
+| 10 nov. | Respuesta | La subida de mañana a las 23:30 es una entrega previa, no la oficial. | El [calendario de cierre](por-hacer.md#calendario-de-cierre) suma la entrega previa del 11 de noviembre; la oficial sigue el 2 de diciembre a las 12:00. | — |
 
 ## Lo que muestra el registro
 
@@ -241,6 +285,108 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Entrega previa
+
+- **Qué cambió:** se registró que la subida del 11 de noviembre es una entrega previa.
+- **Cómo estaba antes:** el último pedido era la consulta sobre lo pendiente para cerrar.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-10 — Pendientes para cerrar
+
+- **Qué cambió:** se registró la consulta sobre qué queda para cerrar la memoria.
+- **Cómo estaba antes:** el último pedido era el correo de Parra y el aviso de los datos del cierre.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-10 — Correo de Parra y datos del cierre
+
+- **Qué cambió:** se registró la entrega del correo de Parra y el aviso de los datos del cierre.
+- **Cómo estaba antes:** el último pedido era la consulta sobre imprimir el objeto.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Imprimir o solo diseñar
+
+- **Qué cambió:** se registró la consulta sobre si hace falta imprimir el objeto.
+- **Cómo estaba antes:** el último pedido era objeto propio o porta Tag.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Objeto propio o porta Tag
+
+- **Qué cambió:** se registró la consulta sobre si vale la pena fabricar un objeto propio.
+- **Cómo estaba antes:** el último pedido era qué pasa al reprobar Proyecto de Título.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Reprobar Proyecto de Título
+
+- **Qué cambió:** se registró la consulta sobre qué pasa con un 3,0 en Proyecto de Título.
+- **Cómo estaba antes:** el último pedido era la composición del examen.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Composición del examen
+
+- **Qué cambió:** se registró la consulta sobre cómo se compone el examen de título.
+- **Cómo estaba antes:** el último pedido era el voto del profesor guía.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Voto del profesor guía
+
+- **Qué cambió:** se registró la consulta sobre el peso de los profesores guía en el examen.
+- **Cómo estaba antes:** el último pedido era el peso de las preguntas.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Peso de las preguntas
+
+- **Qué cambió:** se registró la consulta sobre cuánto valen las preguntas del examen.
+- **Cómo estaba antes:** el último pedido era cuánto vale la defensa.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Peso de la defensa
+
+- **Qué cambió:** se registró la consulta sobre cuánto vale la defensa.
+- **Cómo estaba antes:** el último pedido era la evaluación como comisión.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-08 — Evaluación como comisión
+
+- **Qué cambió:** se registró el pedido de evaluar la memoria v6 como comisión.
+- **Cómo estaba antes:** el último pedido era el de las cinco preguntas de validación.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Cinco preguntas de validación
+
+- **Qué cambió:** se registró la corrección del contexto y el pedido de más preguntas en los correos de validación.
+- **Cómo estaba antes:** el último pedido era contar el contexto como una situación concreta.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Correos de validación como situación concreta
+
+- **Qué cambió:** se registró el pedido de explicar el proyecto con una situación concreta y sin tecnicismos.
+- **Cómo estaba antes:** el último pedido era quitar las frases de relleno de esos correos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Correos de validación más claros
+
+- **Qué cambió:** se registró el pedido de quitar frases de relleno y aclarar el contexto de los correos de validación.
+- **Cómo estaba antes:** el último pedido era buscar perfiles para validar la propuesta.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Perfiles para validar la propuesta
+
+- **Qué cambió:** se registró el pedido de buscar personas expertas que validen la propuesta, con sus correos.
+- **Cómo estaba antes:** el último pedido era la consulta sobre si la respuesta de Parra servía como validación.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Validación con un experto
+
+- **Qué cambió:** se registró la consulta sobre si la respuesta de Parra sirve como validación y la propuesta de consultar por correo.
+- **Cómo estaba antes:** el último pedido era el análisis de la respuesta de Parra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Respuesta de Parra
+
+- **Qué cambió:** se registró el pedido de analizar la respuesta de Parra.
+- **Cómo estaba antes:** el último pedido era el correo para Parra sin nombrar Relevo.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-09 — Smits, Norman y portada
 
@@ -342,6 +488,155 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registraron el pedido de leer el repositorio completo y el de actualizar los documentos sin fusionar las ramas.
 - **Cómo estaba antes:** en `main`, el último pedido era el del IDML del 29 de octubre; los pedidos del 30 de octubre al 3 de noviembre están en las ramas de los PR #15 a #19.
+
+### 2026-11-03 — Correo de Parra sin nombrar Relevo
+
+- **Qué cambió:** se registró el pedido de no nombrar Relevo en el correo para Parra.
+- **Cómo estaba antes:** el último pedido era la pregunta abierta para Parra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Pregunta abierta para Parra
+
+- **Qué cambió:** se registró el pedido de una pregunta extra para Parra.
+- **Cómo estaba antes:** el último pedido era preguntarle desde su conocimiento.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Preguntas para Parra desde su conocimiento
+
+- **Qué cambió:** se registró el pedido de preguntarle a Parra desde su conocimiento, sin pedir autores.
+- **Cómo estaba antes:** el último pedido era reescribir sus preguntas más directas.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Preguntas más directas para Parra
+
+- **Qué cambió:** se registró el pedido de reescribir las preguntas para Parra.
+- **Cómo estaba antes:** el último pedido era el mensaje sin video.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Correo sin video para Parra
+
+- **Qué cambió:** se registró el pedido de redactar el mensaje para Parra sin video, y el enlace de la fila anterior apunta a la sección con su nuevo nombre.
+- **Cómo estaba antes:** el último pedido era el video y el correo para Parra, y su enlace llevaba a «Correo con el video».
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Video y correo para Parra
+
+- **Qué cambió:** se registró el pedido del video y el correo para Parra.
+- **Cómo estaba antes:** el último pedido era el correo para Zamorano.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-03 — Correo para Zamorano
+
+- **Qué cambió:** se registró el pedido del correo para Zamorano.
+- **Cómo estaba antes:** el último pedido era la verificación del correo para Parada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Verificación con Parada
+
+- **Qué cambió:** se registró la verificación del correo para Parada.
+- **Cómo estaba antes:** el último pedido era la confirmación de que respondió Parada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Respuesta de Parada
+
+- **Qué cambió:** se registró que respondió Francisco J. Parada.
+- **Cómo estaba antes:** el último pedido era la pregunta teórica.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Pregunta teórica
+
+- **Qué cambió:** se registró el pedido de una pregunta teórica.
+- **Cómo estaba antes:** el último pedido era una pregunta más.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Una pregunta más
+
+- **Qué cambió:** se registró el pedido de una pregunta más para Francisco.
+- **Cómo estaba antes:** el último pedido eran las preguntas que aportan valor.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Preguntas que aportan valor
+
+- **Qué cambió:** se registró el pedido de preguntas basadas en los vacíos de la memoria.
+- **Cómo estaba antes:** el último pedido eran las preguntas extra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Preguntas extra
+
+- **Qué cambió:** se registró el pedido de preguntas extra comprobadas contra el campo de cada persona.
+- **Cómo estaba antes:** el último pedido era un contexto más breve.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Contexto más breve
+
+- **Qué cambió:** se registró el pedido de un contexto más breve.
+- **Cómo estaba antes:** el último pedido era un correo más claro.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Correo más claro
+
+- **Qué cambió:** se registró el pedido de un correo más claro para Francisco.
+- **Cómo estaba antes:** el último pedido era la respuesta de Francisco.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Respuesta de Francisco
+
+- **Qué cambió:** se registró la respuesta de Francisco y el pedido de las preguntas.
+- **Cómo estaba antes:** el último pedido era orientar las entrevistas a la teoría.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Entrevistas posteriores a la prueba
+
+- **Qué cambió:** se registró que las entrevistas son posteriores a la prueba y deben servir a la investigación y la teoría.
+- **Cómo estaba antes:** el último pedido eran las invitaciones sin adjuntos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** se registró el pedido de invitaciones sin adjuntos.
+- **Cómo estaba antes:** el último pedido era tutear y entrevistar por videollamada.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** se registró el pedido de tutear y entrevistar solo por videollamada.
+- **Cómo estaba antes:** el último pedido eran los mensajes breves.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Mensajes breves
+
+- **Qué cambió:** se registró el pedido de mensajes más breves y la guía entregada por los profesores.
+- **Cómo estaba antes:** el último pedido eran los correos listos para enviar.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Correos listos para enviar
+
+- **Qué cambió:** se registró el pedido de dejar las automatizaciones y de entregar los correos de invitación personalizados.
+- **Cómo estaba antes:** el último pedido eran los guiones por persona.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Guiones por persona
+
+- **Qué cambió:** se registró el pedido de un guion para cada perfil.
+- **Cómo estaba antes:** el último pedido era la decisión de entrevistar solo en Chile.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Correos de Chile
+
+- **Qué cambió:** se registró la decisión de entrevistar solo en Chile y la comprobación de los correos.
+- **Cómo estaba antes:** el último pedido era buscar perfiles para entrevistar.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Perfiles para entrevistar
+
+- **Qué cambió:** se registró el pedido de buscar perfiles para entrevistar y preparar las preguntas.
+- **Cómo estaba antes:** el último pedido era la comparación con otra memoria.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Comparación con otra memoria
+
+- **Qué cambió:** se registró la consulta para comparar la memoria con la de otra persona del taller según la rúbrica.
+- **Cómo estaba antes:** el último pedido era subir el IDML.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda

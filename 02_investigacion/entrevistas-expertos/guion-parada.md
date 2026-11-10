@@ -1,0 +1,271 @@
+# Guion de entrevista: Francisco J. Parada
+
+**Disciplina:** psicología cognitiva y neurociencia; cognición 4E y neurociencia de la vida real. **Institución:** director del Centro de Estudios en Neurociencia Humana y Neuropsicología, Facultad de Psicología, Universidad Diego Portales; sus artículos de 2026 suman la Escuela de Diseño UDP. **Duración:** 35 minutos. **Formato:** videollamada. **Trato:** de tú. **Idioma:** español.
+
+Este guion aplica la [guía general](guia-de-entrevista.md) a su trabajo. Las preguntas marcadas con ★ son imprescindibles; las demás se hacen si queda tiempo.
+
+## Por qué esta persona
+
+Parada estudia la cognición como algo que ocurre entre el cerebro, el cuerpo y el entorno, y la mide fuera del laboratorio. Tres de sus trabajos tocan a Relevo:
+
+- **Parada et al. (2024)** propone la perspectiva *3E*: una cognición corporizada, *andamiada por el entorno* —sostenida por lo que hay alrededor— y enactiva, es decir, que surge al actuar. La aplica a diseñar espacios inclusivos en la educación, el trabajo y la salud.
+- **Parada y Rossi (2024)** y **Parada et al. (2026)** usan *diseños experimentales escalables*: la misma tarea se estudia en varios niveles, desde el computador hasta situaciones reales entre dos personas, para ver qué cambia al acercarse a la vida diaria.
+- **Salas et al. (2026)**, del que es coautor, distingue la cognición extendida de la distribuida en la rehabilitación.
+
+## Qué debe dejar la entrevista
+
+1. Una lectura de los resultados desde la cognición 4E: qué dicen sobre el papel del lugar y qué no pueden decir todavía.
+2. El lenguaje correcto para el marco teórico: cómo decir que el objeto «sostiene» el recuerdo, sin exagerar.
+3. Cómo debería comprobarse en una etapa siguiente el efecto del lugar, separado del efecto del canal.
+
+## Antes de la entrevista
+
+- **Leer:** los resúmenes de Parada et al. (2024) y Parada y Rossi (2024), y el resumen de Salas et al. (2026).
+- **Mostrar:** si hace falta, la [página para mostrar](material-para-mostrar.md), compartiendo pantalla. La invitación no lleva adjuntos.
+- **Tener a mano:** el Tag y el teléfono con la aplicación, para hacerlo sonar frente a la cámara; la Figura 4 de la v6, para compartir pantalla, (la señal pasa del segundo plano al primero) y la lista de lo que registra la aplicación: cuándo se activó cada relevo, si sonó, cómo se calló y las respuestas.
+
+## Guion
+
+### 1. Apertura (2 minutos)
+
+> Gracias por tu tiempo. Te cuento brevemente el proyecto y después me interesa tu opinión sobre cómo estudiarlo en la vida real, a partir de tu trabajo en cognición 4E y en diseños escalables. ¿Puedo grabar el audio solo para revisar mis notas? Lo borro al terminar la memoria. ¿Puedo citarte con tu nombre como comunicación personal? Antes de entregar te envío el párrafo donde aparezca tu opinión para que lo revises.
+
+> Tu participación es voluntaria y no hay respuestas correctas: me interesa tu opinión. Puedes pedirme detener la grabación o borrar una parte, o terminar cuando quieras.
+
+Anotar: grabación sí o no · cita con nombre sí o no · revisión del párrafo sí o no.
+
+### 2. Relevo en tres minutos
+
+Contar el problema, el ciclo y los resultados de la página. **Subrayar en esta entrevista:** la persona elige el lugar y deja el objeto junto al primer paso, de modo que modifica su propio entorno; la prueba ocurrió en hogares reales, sin laboratorio.
+
+### 3. Preguntas (25 minutos)
+
+La entrevista ocurre después de la prueba, así que lo primero es interpretar los resultados y fortalecer el marco teórico; las preguntas sobre el diseño futuro van al final. Las preguntas van de lo general a lo particular, como pide la guía de los profesores: primero su trabajo, después los resultados y la teoría, y al final su crítica. Si una respuesta queda corta, repreguntar: «¿Me puedes dar un ejemplo?».
+
+**Para empezar (2 minutos)**
+
+> Para empezar, ¿cómo llegaste a estudiar la cognición fuera del laboratorio, en la vida diaria?
+
+- *Por qué:* crea confianza y sitúa la conversación en su experiencia.
+
+**A. ★ Recordar no basta para empezar**
+
+> En la prueba, en las 21 respuestas la persona recordó cómo empezar, y en 19 supo qué quería hacer antes de leerlo en la pantalla, pero empezó la actividad solo en 10. Desde tu campo, ¿cómo explicas esa distancia entre recordar y empezar?
+
+- *Por qué:* es el resultado que más necesita teoría; hoy la memoria lo explica con Fogg (2009).
+- *Repregunta:* «¿Qué factor pesaría más, según tu experiencia?».
+- *Va a:* capítulo 13, «Resultados», y capítulo 6.
+
+**B. ★ Lo que falta en el marco teórico**
+
+> Con estos resultados a la vista, ¿qué concepto, autor o estudio de tu campo debería estar en el marco teórico de la memoria para explicarlos?
+
+- *Por qué:* la entrevista es posterior a la prueba; su mayor aporte es a la interpretación y a la teoría.
+- *Va a:* capítulo 6 y referencias.
+
+**1. ★ Un diseño escalable para Relevo**
+
+> En tus diseños escalables, la misma tarea pasa del computador a situaciones reales. Relevo tiene una duda parecida: la prueba comparó el objeto junto al primer paso con una notificación en el teléfono, y eso cambia a la vez el canal y el lugar. Con tres a seis personas, ¿cómo organizarías niveles que separen ambos efectos?
+
+- *Por qué:* es la debilidad central de la prueba, y el supuesto del lugar es justo lo propio de la hipótesis.
+- *Propuesta para discutir:* cuatro niveles, cada uno en una semana: el sonido en el teléfono; el mismo sonido desde el objeto en un lugar neutro; desde el objeto junto al primer paso, y sin señal. «¿Qué sacarías o cambiarías, y qué papel juega el orden?»
+- *Qué escuchar:* el número mínimo de niveles, cómo ordenarlos o alternarlos, y qué comparar dentro de cada persona.
+- *Va a:* capítulo 10, hipótesis y supuestos; capítulo 13, «Límites de esta etapa», y la etapa siguiente.
+
+**2. ★ Andamiaje del entorno**
+
+> Tu perspectiva 3E habla de una cognición andamiada por el entorno. En Relevo, la persona deja el objeto donde empieza la actividad. ¿Cómo describirías, desde esa perspectiva, el papel de ese objeto en el recuerdo?
+
+- *Por qué:* la memoria usa a Kirsh (1995) y la interacción tangible, pero le falta un término preciso para el papel del objeto.
+- *Repreguntas:* «¿Qué lo harías pasar de aviso a andamiaje?», «¿Qué diferencia hay, en tu artículo con Christian Salas, entre que el objeto extienda la cognición de la persona y que la cognición se distribuya entre la persona, el objeto y el lugar?».
+- *Va a:* capítulo 6, «Recordar con objetos y lugares».
+
+**3. ★ Medir sin depender solo de lo que la persona dice**
+
+> Tras cada señal, la aplicación pregunta: «¿Supiste qué querías hacer antes de leerlo en la pantalla?». En 19 de 21 respuestas dijeron que sí, pero lo respondieron en la misma pantalla que muestra la actividad. ¿Qué medida de comportamiento, de bajo costo y sin equipos de laboratorio, sumarías?
+
+- *Por qué:* sus revisiones piden medir en contextos reales; Relevo no tiene electroencefalografía, pero sí registros del teléfono.
+- *Propuesta para discutir:* el tiempo entre la señal y la siguiente apertura de una aplicación; cómo se calló la señal (teléfono o botón del objeto), y preguntar qué recordó antes de mostrar la actividad.
+- *Va a:* capítulo 13, «Qué se registró», y la iteración siguiente de la aplicación.
+
+**4. El primer paso como acción**
+
+> Relevo pide anotar un primer paso concreto, como abrir el libro o sacar la guitarra, y deja el objeto junto a él. Desde una mirada enactiva, ¿qué cambia cuando el recuerdo se apoya en una acción y un lugar, y no en una frase?
+
+- *Va a:* criterio 2 y capítulo 11, «Cómo funciona Relevo».
+
+**5. ★ Qué no se puede afirmar**
+
+> Con tres personas, una semana de comparación y respuestas dentro de la aplicación, ¿qué no debería afirmar la memoria?
+
+- *Repregunta:* «¿Cómo lo dirías tú en una frase?».
+- *Va a:* resumen, capítulo 13 y conclusiones.
+
+**6. Diseño y neurociencia en la UDP**
+
+> Tus artículos de este año también nombran a la Escuela de Diseño UDP. ¿Cómo se podría seguir trabajando Relevo entre diseño y neurociencia en una etapa siguiente?
+
+- *Por qué:* muestra colaboración interdisciplinaria y una proyección concreta, sin pedirle un compromiso.
+- *Va a:* capítulo 14, «Alcances y proyecciones».
+
+**Si queda tiempo:**
+
+- «¿Qué pasa con un mismo sonido que se repite durante semanas, y cómo lo manejarías?»
+- «El sonido debe pasar del segundo plano al primero para alcanzar a quien mira una pantalla. ¿Qué dice la evidencia sobre la atención auditiva en esa situación?»
+
+### 4. Cierre (3 minutos)
+
+- «Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería?»
+- «¿Hay algo que no te pregunté y que debería saber?»
+- «¿A quién más consultarías?»
+- Confirmar cómo quiere aparecer en la memoria y ofrecer el envío del párrafo y, al final, de la memoria.
+
+## Si responde por escrito
+
+Enviar solo cinco preguntas: A, B, 1, 2 y «¿A quién más consultarías?».
+
+## Correo con las preguntas
+
+Respondió la invitación el 2 de noviembre de 2026. Este es el correo de respuesta, en el mismo hilo y sin adjuntos. Sirve si responde por escrito o como pauta de la videollamada. Cada pregunta apunta a algo que la memoria v6 todavía no resuelve.
+
+> Hola, Francisco:
+>
+> ¡Gracias por responder! Te dejo un resumen breve, tres preguntas y otras tres opcionales. Puedes responder por escrito, en dos o tres líneas cada una, o lo conversamos en la videollamada.
+>
+> En corto: Relevo es una aplicación y un objeto pequeño que la persona deja junto a algo que quiere hacer, por ejemplo su guitarra; cuando se cumple el tiempo que ella fijó en el teléfono, el objeto suena para que lo recuerde. Tres personas lo probaron en su casa durante dos semanas. Después de cada aviso respondían en la aplicación: casi siempre dijeron que sabían qué querían hacer (19 de 21 veces), pero empezaron la actividad solo en 10.
+>
+> Mis preguntas
+> 1. Los estudios que revisé sobre lugar y memoria evalúan intenciones que se recuerdan estando en ese lugar. En Relevo, la persona puede estar en otra parte de la casa y el sonido llega desde donde está la guitarra. Desde la cognición situada o 4E, ¿qué condiciones harían que un sonido que viene de un lugar traiga a la mente lo que hay ahí?
+> 2. Cada persona preparaba una sola actividad a la vez, así que al oír el sonido podía ser fácil saber de cuál se trataba, estuviera donde estuviera el objeto. ¿Qué tendría que observar para afirmar que el lugar, y no solo el sonido, ayudó a recordar?
+> 3. Una persona contó que la señal le sirvió cuando estaba en el escritorio, pero que de noche la oye desde la cama y no se levanta. Desde una mirada corporizada, ¿qué papel tienen la postura, el cansancio o la distancia en pasar del teléfono a otra actividad?
+>
+> Si te queda tiempo (opcional)
+> 4. En la memoria llamo «decisión renovada» al momento en que alguien vuelve a considerar si sigue en el teléfono o cambia de actividad. Desde la psicología cognitiva o la cognición enactiva, ¿qué concepto establecido usarías para ese momento?
+> 5. En «Beyond the skull» distinguen la cognición extendida de la distribuida. Si la persona prepara el aviso en el teléfono y un objeto lo da desde otro lugar de la casa, ¿cuál de las dos describe mejor el sistema, y por qué?
+> 6. En la memoria explico el problema como una intención que deja de volver a la mente (memoria prospectiva). Pero tanto lo que la aleja —aplicaciones diseñadas para que la sesión continúe— como lo que la trae de vuelta —un objeto en el lugar de la actividad— están en el entorno. Desde la cognición 4E, ¿cómo describirías este fenómeno, y qué cambiaría en mi marco teórico?
+>
+> No hay respuestas correctas; si alguna no te hace sentido, sáltala. ¿Puedo citarte con tu nombre en la memoria? Antes de entregarla te envío el párrafo para que lo revises.
+>
+> Si respondes por escrito, me ayudaría tenerlo antes del viernes 13 de noviembre.
+>
+> ¡Muchas gracias!
+> Johan
+
+**Qué aporta cada pregunta a la memoria**
+
+| Pregunta | Vacío que llena | Va a |
+| --- | --- | --- |
+| 1. Un sonido que viene de un lugar | La memoria reconoce que los estudios sobre lugar evalúan a personas que están en el sitio, no un sonido que llega desde él; el supuesto del lugar no tiene respaldo teórico. | Capítulo 6 y supuesto 2 del capítulo 10 |
+| 2. Qué mostraría que el lugar ayudó | Con una actividad a la vez, «supo qué quería hacer» puede reflejar la asociación con Relevo y no con el lugar. Falta definir qué evidencia separaría ambas cosas. | Capítulo 13, límites, y proyecciones |
+| 3. El cuerpo en la transición | «Recordar no basta para empezar» se explica hoy solo con Fogg (2009), un modelo de diseño persuasivo. Falta una explicación desde la cognición. | Capítulos 6 y 13 |
+| 4. «Decisión renovada» (opcional) | Es un término del autor, sin cita. Un concepto establecido le daría respaldo. | Capítulo 6 y glosario |
+| 5. Extendida o distribuida (opcional) | La memoria no nombra este marco, que describe con más precisión el sistema persona, teléfono, objeto y lugar. | Capítulo 6 |
+| 6. El fenómeno desde la cognición 4E (opcional) | Hoy el problema se explica como memoria, dentro de la cabeza, y la respuesta como entorno. Esta pregunta busca un marco que una ambas explicaciones. | Capítulos 3 y 6 |
+
+## Después
+
+Llenar la ficha de la [guía](guia-de-entrevista.md#cómo-registrar-la-entrevista) el mismo día. Si propone un diseño escalonado, anotarlo como propuesta para la etapa siguiente; no cambiar la prueba ya hecha.
+
+## Referencias
+
+Kirsh, D. (1995). The intelligent use of space. *Artificial Intelligence, 73*(1–2), 31–68. https://doi.org/10.1016/0004-3702(94)00017-U
+
+Parada, F. J., Grasso-Cladera, A. y Rossi, A. (2026). From traditional tasks to hyperscanning: Exploratory evidence for selective modulation of sensorimotor neurodynamics using time-resolved generalized additive model analysis. *European Journal of Neuroscience*. https://doi.org/10.1111/ejn.70677
+
+Parada, F. J., Grasso-Cladera, A., Rossi, A., Soto-Icaza, P., Arenas-Pérez, M. y Errázuriz, M. C. (2024). Applied human neuroscience: Fostering and designing inclusive environments with the 3E-Cognition perspective. *European Journal of Neuroscience, 60*(3), 4148–4168. https://doi.org/10.1111/ejn.16463
+
+Parada, F. J. y Rossi, A. (2024). The potential of neuroarchitecture and 4E-Cognition: From microbial dynamics to active environments and back via scalable experimental designs. *European Journal of Neuroscience, 60*(9), 6216–6221. https://doi.org/10.1111/ejn.16549
+
+Salas, C., Rossi, A., Rojas-Líbano, D., Kausel, L. y Parada, F. J. (2026). Beyond the skull: Neuropsychological rehabilitation and extended/distributed cognition. *Clinical Rehabilitation*. https://doi.org/10.1177/02692155261491940
+
+## Registro de cambios (disclaimer)
+
+### 2026-11-03 — Erratas del trato de tú
+
+- **Qué cambió:** la frase del consentimiento en la apertura pasa a tú («Tu participación…, Puedes pedirme…, cuando quieras»), y los verbos con una tilde de más quedan bien escritos (por ejemplo, «harías»).
+- **Cómo estaba antes:** esa frase seguía en usted («Su participación…, Puede pedirme…, cuando quiera») y varios verbos tenían la tilde duplicada («haríías»).
+- **Por qué:** el autor pidió tratar de tú; los errores se encontraron al preparar el correo para Parra.
+
+### 2026-11-02 — Comprensión y campo de Parada
+
+- **Qué cambió:** el resumen explica que «recordaron» viene de lo que las personas respondieron en la aplicación; la pregunta 1 nombra la cognición situada o 4E y pregunta por condiciones, sin suponer la respuesta; la pregunta 2 pasa a pasado; la 4 nombra la psicología cognitiva o la cognición enactiva, y la apertura dice que hay tres preguntas opcionales.
+- **Cómo estaba antes:** el resumen no decía cómo se midió el recuerdo, la pregunta 1 decía «tu campo» y la 4 no nombraba un campo.
+- **Por qué:** el autor pidió verificar que Parada entienda de qué se habla y que cada pregunta corresponda a lo que él investiga.
+
+### 2026-11-02 — Parada respondió
+
+- **Qué cambió:** el correo queda como la respuesta a Parada, que aceptó, y la pregunta 6 dice «aplicaciones diseñadas para que la sesión continúe».
+- **Cómo estaba antes:** el correo servía para cualquiera de los dos Francisco, y la pregunta 6 decía «un teléfono diseñado para que sigas», que podía leerse como dirigido a él.
+- **Por qué:** el autor confirmó que respondió Francisco J. Parada.
+
+### 2026-11-02 — Pregunta 6 teórica
+
+- **Qué cambió:** la pregunta 6 pasa a ser teórica y propia del campo de la persona, sin datos de la prueba.
+- **Cómo estaba antes:** la pregunta 6 partía de un resultado o de la producción del objeto.
+- **Por qué:** el autor pidió una pregunta teórica, desde la especialidad de la persona.
+
+### 2026-11-02 — Una pregunta más
+
+- **Qué cambió:** se suma la pregunta opcional 6 al correo, con su fila en la tabla de qué aporta.
+- **Cómo estaba antes:** el correo tenía cinco preguntas.
+- **Por qué:** el autor pidió una pregunta más.
+
+### 2026-11-02 — Preguntas que aportan a la memoria
+
+- **Qué cambió:** las preguntas del correo se reescribieron desde los vacíos de la memoria v6 —supuestos sin respaldo, conceptos propios sin cita y tensiones abiertas—, con una tabla de qué aporta cada una y adónde va.
+- **Cómo estaba antes:** las preguntas eran generales y podían responderse sin agregar algo nuevo a la memoria.
+- **Por qué:** el autor pidió preguntas que generen un valor que la memoria no tiene.
+
+### 2026-11-02 — Preguntas opcionales
+
+- **Qué cambió:** el correo suma dos preguntas opcionales, sobre Salas et al. (2026) y sobre su revisión del entorno construido (Grasso-Cladera et al., 2025).
+- **Cómo estaba antes:** tenía solo tres preguntas.
+- **Por qué:** el autor pidió preguntas extra, comprobadas contra lo que la persona investiga.
+
+### 2026-11-02 — Contexto más breve
+
+- **Qué cambió:** el contexto del correo cabe en un párrafo de dos frases («En corto»).
+- **Cómo estaba antes:** ocupaba tres bloques: qué es Relevo, qué probé y qué encontré.
+- **Por qué:** el autor pidió un contexto más breve.
+
+### 2026-11-02 — Correo más claro
+
+- **Qué cambió:** el correo se ordena en «Qué es Relevo», «Qué probé», «Qué encontré» y «Mis preguntas», con frases cortas y tres preguntas en vez de cuatro.
+- **Cómo estaba antes:** el contexto iba en un solo párrafo denso y había cuatro preguntas, una de ellas opcional.
+- **Por qué:** el autor pidió más claridad y contexto sin abrumar.
+
+### 2026-11-02 — Correo con las preguntas
+
+- **Qué cambió:** se suma el correo de respuesta con cuatro preguntas fáciles de responder por escrito o en la videollamada, con los resultados en el mismo texto.
+- **Cómo estaba antes:** la versión escrita solo indicaba qué preguntas enviar.
+- **Por qué:** Parada respondió la invitación según el autor, y el autor pidió las preguntas listas.
+
+### 2026-11-02 — Entrevista posterior a la prueba
+
+- **Qué cambió:** el guion prioriza interpretar los resultados y fortalecer el marco teórico: cambian los objetivos y se suman las preguntas A (recordar no basta para empezar) y B (lo que falta en el marco teórico), que también encabezan la versión escrita.
+- **Cómo estaba antes:** los objetivos miraban sobre todo al diseño y a pruebas futuras.
+- **Por qué:** el autor aclaró que las entrevistas son posteriores a la prueba.
+
+### 2026-11-02 — Sin adjuntos
+
+- **Qué cambió:** la página para mostrar ya no se envía antes; se comparte en pantalla si hace falta.
+- **Cómo estaba antes:** se enviaba dos días antes de la entrevista.
+- **Por qué:** el autor pidió que la invitación no lleve adjuntos.
+
+### 2026-11-02 — De tú y por videollamada
+
+- **Qué cambió:** todo lo que se le dice a la persona trata de tú, y la entrevista es siempre por videollamada, con el Tag y las figuras mostrados por cámara o pantalla.
+- **Cómo estaba antes:** trataba de usted y proponía también una reunión en persona.
+- **Por qué:** pedido del autor.
+
+### 2026-11-02 — Guía de los profesores
+
+- **Qué cambió:** se suma una pregunta inicial sobre su trabajo y una de cierre («Si pudieras cambiar una sola cosa…»); las preguntas de sí o no pasan a ser abiertas, y la apertura dice que la participación es voluntaria y que puede detener la grabación o borrar una parte.
+- **Cómo estaba antes:** empezaba directo en Relevo, tenía preguntas que se respondían con sí o no y no mencionaba esos derechos.
+- **Por qué:** el autor entregó la guía de entrevista semiestructurada de sus profesores.
+
+### 2026-11-02 — Creación
+
+- **Qué cambió:** se creó el guion para entrevistar a Francisco J. Parada, a partir de sus trabajos de 2024 a 2026.
+- **Cómo estaba antes:** solo existía la guía general, con preguntas comunes y por disciplina.
+- **Por qué:** el autor pidió un guion para cada persona en Chile.

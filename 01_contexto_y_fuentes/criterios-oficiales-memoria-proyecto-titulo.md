@@ -43,6 +43,18 @@ La rúbrica organiza la evaluación en tres dimensiones ponderadas:
 
 En el nivel esperado para Proyecto de Título no basta declarar los componentes. Deben estar desarrollados y fundamentados en la memoria. La rúbrica valora especialmente la coherencia entre investigación y propuesta, el análisis crítico de referentes, la actualidad de la bibliografía, el estudio de usuario y contexto, la factibilidad productiva y el uso estratégico de tecnologías.
 
+## Cómo se califica el examen
+
+Según el Reglamento de Titulación (Resolución 472/2022):
+
+- **Quién califica (art. 16):** la comisión de Proyecto de Título la integran la Dirección de Escuela o su representante, que la preside; la Coordinación de Titulación o su representante, y una persona docente de la Escuela. Quien imparte la asignatura integra la comisión «con derecho a voz, para dar testimonio del proceso, y sin voto en la calificación». La Dirección puede sumar hasta dos invitados, solo con voz.
+- **Cómo se calcula la nota (art. 20):** por consenso o por el promedio simple de quienes integran la comisión, ponderando los criterios de la rúbrica. El equipo docente puede poner notas parciales o una nota de referencia, y da el pase a examen; sin pase, la asignatura se reprueba con la nota mínima.
+- **Cómo es el examen (art. 19):** exposición de hasta 30 minutos (el instructivo 2026 pide unos 15), preguntas y discusión, evaluación a puerta cerrada y entrega de la evaluación. El art. 18 exige un discurso coherente, pertinente y técnicamente preciso.
+- **Aprobación (arts. 21, 22 y 25):** se aprueba con 4,0. Reprobar el examen reprueba Proyecto de Título, que puede volver a inscribirse hasta dos veces. La comisión puede prorrogar el examen hasta 30 días si el avance lo amerita; no presentarse o llegar más de 15 minutos tarde se califica con 1,0.
+- **Peso en el título (art. 26):** la nota final del proceso es 40 % Seminario de Título y 60 % Proyecto de Título.
+
+El instructivo 2026 dice que la calificación final «se compone de la nota del profesor/a» y de la comisión, pero ese párrafo nombra la rúbrica de Seminario y parece copiado de su instructivo. Prevalece el reglamento.
+
 ## Fuentes auxiliares y límites de uso
 
 ### Pauta de contenidos de proyectos
@@ -74,6 +86,12 @@ La memoria revisada se considerará suficientemente alineada cuando cada criteri
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-08 — Calificación del examen
+
+- **Qué cambió:** se sumó cómo se califica el examen de Proyecto de Título según los artículos 16 a 26 del reglamento.
+- **Cómo estaba antes:** el documento no decía quién califica ni cómo se calcula la nota.
+- **Por qué:** el autor preguntó cuánto pesan la defensa y el profesor guía; el reglamento lo responde.
 
 ### 2026-10-27 — Enlaces a las copias
 

@@ -98,15 +98,15 @@ El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y c
 
 ## Calendario de cierre
 
-Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
+Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). **Entrega previa de la memoria: miércoles 11 de noviembre, a las 23:30,** según el autor; no reemplaza la entrega oficial del 2 de diciembre. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
 
 | Tarea | Prioridad | Plazo |
 | --- | --- | --- |
 | 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
-| 6. Semana solo con notificaciones | Crítica | Al terminar la semana; entrevistas antes del 8 de noviembre |
+| 6. Semana solo con notificaciones | Crítica | El autor entrega las entrevistas y los resultados el 11 de noviembre |
 | 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
-| 8. Memoria: datos, portada y entrega | Alta | 15 de noviembre; entrega el 1 de diciembre |
+| 8. Memoria: datos, portada y entrega | Alta | Entrega previa el 11 de noviembre a las 23:30; 15 de noviembre; entrega oficial el 1 de diciembre |
 | 9. Pendientes menores | Baja | 15 de noviembre |
 
 ## 4. Objeto propio: la carcasa del Tag
@@ -164,7 +164,7 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 
 ## 6. Semana solo con notificaciones: cierre y comparación
 
-**Estado:** en curso. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
+**Estado:** esperando los datos del autor, que llegan el 11 de noviembre. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
 
 ### Por qué
 
@@ -176,6 +176,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Cerrar el viernes 30 de octubre**, cuando la tercera persona cumple sus 21 días (la primera los cumple el 28 y la segunda el 29). Cerrar a las tres el mismo día evita coordinar tres fechas.
 - [ ] Al terminar la semana, aplicar el [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md) ([PDF para imprimir](../07_validacion/instrumentos/instrumento-de-cierre.pdf)): las escalas, la comparación y el cierre de la app 2.33, en papel (D-144). Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
 - [ ] Entrevista de cierre de unos 15 minutos con cada persona, con la guía del mismo instrumento, y revisión de los fallos críticos.
+- [ ] **Recibir del autor, el 11 de noviembre** (anotado el 10 de noviembre):
+  - la entrevista final con las personas de la prueba, según cómo usó cada una la app;
+  - los resultados finales de la prueba;
+  - los resultados de la semana solo con notificaciones.
+
+  La entrevista de la app es la del 9 de noviembre, según la guía de los profesores (D-177, rama `android-4.6`), que reemplaza a la del instrumento del 28 de octubre. Se guarda solo con códigos, sin nombres.
 - [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
 - [ ] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos.
 
@@ -186,6 +192,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
+- [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
+- [ ] **Fecha del examen:** confirmar con los profesores; el instructivo dice «desde el lunes 14 al 23 de diciembre» y este documento decía del 14 al 18.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -213,7 +221,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
-- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6).
+- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6). Los datos llegan el 11 de noviembre.
 - [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
 - [ ] **Depósito en la Biblioteca**, después del examen. La [pauta](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) ya se revisó: pide carta, Arial 12 y una portada en mayúsculas, y para las carreras de Diseño nombra «tesis no convencionales» sin dar reglas. Hay que preguntar a la Coordinación o a la Biblioteca si se acepta el A3 y si hace falta una portada institucional. Al depositar: PDF sin clave nombrado con el RUT y el formulario de autorización.
 
@@ -278,7 +286,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Entrevistas
 
 - [ ] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.]
-- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo.
+- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria. Como no evaluó la propuesta, se sumaron tres perfiles para validarla por correo ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)); falta que el autor los envíe.
 
 ### La memoria diseñada
 
@@ -294,6 +302,54 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Entrega previa
+
+- **Qué cambió:** el calendario suma la entrega previa de la memoria, el 11 de noviembre a las 23:30.
+- **Cómo estaba antes:** solo tenía los cierres internos y la entrega oficial del 2 de diciembre.
+- **Por qué:** el autor avisó que mañana sube una versión previa de la memoria.
+
+### 2026-11-10 — Datos del cierre
+
+- **Qué cambió:** la tarea 6 anota que el autor entrega el 11 de noviembre la entrevista final con las personas, los resultados finales de la prueba y los de la semana solo con notificaciones. El calendario y la tarea 8 dicen lo mismo.
+- **Cómo estaba antes:** la tarea 6 estaba en curso, con las entrevistas antes del 8 de noviembre.
+- **Por qué:** el autor avisó cuándo llegan los datos y pidió anotarlo.
+
+### 2026-11-08 — Peso del examen resuelto
+
+- **Qué cambió:** la tarea sobre el peso del examen queda resuelta con el reglamento, y la fecha del examen queda como tarea aparte.
+- **Cómo estaba antes:** pedía preguntar a los profesores cómo se combinaban su nota y la de la comisión.
+- **Por qué:** el autor señaló que los profesores guía no califican el examen, y el reglamento lo confirma.
+
+### 2026-11-08 — Peso del examen
+
+- **Qué cambió:** se sumó la tarea de preguntar cómo se pondera la nota del examen y su fecha.
+- **Cómo estaba antes:** solo se pedía confirmar el formato del Pase.
+- **Por qué:** el autor preguntó cuánto vale la defensa, y el instructivo no da porcentajes.
+
+### 2026-11-06 — Perfiles para validar
+
+- **Qué cambió:** la tarea de perfiles suma los tres correos para validar la propuesta.
+- **Cómo estaba antes:** terminaba en la respuesta de Parra.
+- **Por qué:** pedido del autor.
+
+### 2026-11-06 — Respuesta de Parra
+
+- **Qué cambió:** la tarea de perfiles registra la respuesta escrita de Parra y lo que falta para usarla.
+- **Cómo estaba antes:** decía que faltaba enviar las invitaciones y hacer al menos una entrevista.
+- **Por qué:** llegó la primera respuesta completa de una persona experta.
+
+### 2026-11-02 — Entrevistas solo en Chile
+
+- **Qué cambió:** la tarea de perfiles dice que la lista activa es de cinco personas en Chile, con el correo vigente.
+- **Cómo estaba antes:** decía 13 perfiles, cinco en Chile.
+- **Por qué:** el autor decidió entrevistar solo en Chile.
+
+### 2026-11-02 — Perfiles para entrevistar
+
+- **Qué cambió:** la tarea de buscar perfiles para entrevistar en Chile enlaza la carpeta de entrevistas a expertos y dice lo que falta.
+- **Cómo estaba antes:** la tarea no tenía perfiles, preguntas ni material.
+- **Por qué:** pedido del autor del 2 de noviembre.
 
 ### 2026-10-29 — Séptima ronda de la v6
 
