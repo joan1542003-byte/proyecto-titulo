@@ -285,6 +285,8 @@
 | 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
 | 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
 | 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
+| 30 oct. | Decisión | Aprobó la nueva redacción de la pregunta de investigación y pidió saber qué textos de la memoria debía cambiar, con la condición de no alterar el resultado ni la memoria. | Dos cambios en el capítulo 10: la pregunta y el sujeto de la frase que la define; neto, una palabra menos. Nada más en la memoria | Pendiente de aplicar por el autor |
+| 30 oct. | Encargo | Pidió actualizar los archivos que citaban la redacción anterior de la pregunta. | [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md), [Anexo I](../08_memoria/anexos/anexo-i-prueba.md), [guía de comunicación](guia-comunicacion-relevo.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). La memoria v4 y los flujos del 25 de septiembre quedan como registro histórico, por decisión del autor | — |
 
 ## Lo que muestra el registro
 
@@ -665,6 +667,11 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registraron los seis pedidos del 30 de octubre sobre la pregunta de investigación: detener la revisión, evaluar su propuesta, tres redacciones, el reparo a «la decisión inmediata», la lectura completa de la v6 y la tarea 11.
 - **Cómo estaba antes:** el registro terminaba en el encargo de subir el IDML, del 29 de octubre.
+
+### 2026-10-30 — Redacción de la pregunta y archivos satélite
+
+- **Qué cambió:** se registraron la decisión del autor de adoptar la nueva redacción de la pregunta y el encargo de alinear los archivos que citaban la anterior.
+- **Cómo estaba antes:** el registro terminaba en la tarea 11.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-29 — Revisión de la sexta ronda

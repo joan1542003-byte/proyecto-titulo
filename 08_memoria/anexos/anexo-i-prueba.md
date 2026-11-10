@@ -247,6 +247,12 @@ Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are
 - **Cómo estaba antes:** copiaba el protocolo completo, citaba la pregunta de investigación de la v4 y la hipótesis con otra redacción, presentaba la ficha del 20 de octubre como el instrumento del cierre y la ficha de la sesión inicial con sus campos de luz.
 - **Por qué:** el autor pidió revisar todos los anexos y dejarlos listos para Word: directos, sin sobreexplicar, con su forma de escribir y con lo más relevante (D-168).
 
+### 2026-10-30 — Redacción de la pregunta
+
+- **Qué cambió:** la referencia a la pregunta de investigación usa la nueva redacción aprobada por el autor.
+- **Cómo estaba antes:** citaba la pregunta de la v4, «vuelva a considerar una actividad elegida… deja de orientar su decisión».
+- **Por qué:** el autor aprobó una nueva redacción y pidió alinear los archivos que citaban la anterior. La hipótesis no se tocó: la cita de D-091 es fiel a su registro.
+
 ### 2026-10-24 — Creación
 
 - **Qué cambió:** el anexo se arma desde sus documentos fuente, con el resto de los anexos A–I de la memoria v5.

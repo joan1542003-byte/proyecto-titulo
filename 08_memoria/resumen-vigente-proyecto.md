@@ -4,7 +4,7 @@
 
 ## Qué es
 
-Relevo es un sistema *phygital*, con un componente físico y uno digital, para que una persona vuelva a considerar una actividad que eligió mientras usa una aplicación de ocio digital.
+Relevo es un sistema *phygital*, con un componente físico y uno digital, para que lo que una persona quería hacer vuelva a estar presente a tiempo mientras usa una aplicación de ocio digital.
 
 1. En la app Android escribe la actividad, su primer paso y dónde empieza.
 2. Elige las apps que cuentan y cuánto tiempo.
@@ -57,6 +57,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - **Qué cambió:** la memoria tiene 16 137 palabras, 23 figuras, 4 tablas, 80 referencias y 2 datos por confirmar; el PDF de 62 páginas no se regeneró.
 - **Cómo estaba antes:** 14 481 palabras, 78 referencias y 11 datos por confirmar.
 - **Por qué:** la memoria cambió y este resumen debe coincidir con ella (D-153).
+
+### 2026-10-30 — Redacción de la pregunta
+
+- **Qué cambió:** la descripción de Relevo usa «vuelva a estar presente a tiempo», el vocabulario de la nueva redacción de la pregunta de investigación.
+- **Cómo estaba antes:** decía «vuelva a considerar una actividad que eligió», de la pregunta de la v4.
+- **Por qué:** el autor aprobó una nueva redacción de la pregunta y pidió alinear los archivos que la citaban con la versión anterior.
 
 ### 2026-10-29 — Séptima ronda de la v6
 
