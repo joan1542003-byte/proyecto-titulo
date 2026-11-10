@@ -43,9 +43,15 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - confirmar la autoría y la autorización de las fotos;
 - las escalas del cuestionario de cierre;
 - los costos reales;
-- la presentación del Pase de Examen del 25 de noviembre.
+- la presentación del Pase de Examen del 18 de noviembre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fecha del Pase
+
+- **Qué cambió:** el Pase es el 18 de noviembre.
+- **Cómo estaba antes:** decía el 25 de noviembre.
+- **Por qué:** el autor entregó el 10 de noviembre de 2026 las fechas confirmadas por sus profesores.
 
 ### 2026-11-10 — Resultados finales
 

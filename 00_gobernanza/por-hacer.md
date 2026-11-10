@@ -98,15 +98,15 @@ El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y c
 
 ## Calendario de cierre
 
-Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestre-2026.md): **Pase el miércoles 25 de noviembre, memoria el miércoles 2 de diciembre antes de las 12:00 y exámenes del 14 al 18 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). **Entrega previa de la memoria: miércoles 11 de noviembre, a las 23:30,** según el autor; no reemplaza la entrega oficial del 2 de diciembre. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
+Fechas confirmadas por los profesores el 10 de noviembre ([calendario](calendario-oficial-segundo-semestre-2026.md#fechas-confirmadas-por-los-profesores)): **entrega interna el miércoles 11 de noviembre, feedback y Pase el miércoles 18 de noviembre, entrega final el miércoles 2 de diciembre y examen el lunes 14 y el martes 15 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). La entrega interna del 11 de noviembre la sube el autor a las 23:30. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
 
 | Tarea | Prioridad | Plazo |
 | --- | --- | --- |
 | 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
 | 6. Semana solo con notificaciones | Crítica | Datos finales recibidos el 10 de noviembre; falta la entrevista de cierre |
-| 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
-| 8. Memoria: datos, portada y entrega | Alta | Entrega previa el 11 de noviembre a las 23:30; 15 de noviembre; entrega oficial el 1 de diciembre |
+| 7. Presentación | Crítica | Borrador el 14 de noviembre; ensayo el 17; Pase el 18 de noviembre |
+| 8. Memoria: datos, portada y entrega | Alta | Entrega interna el 11 de noviembre a las 23:30; entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Baja | 15 de noviembre |
 
 ## 4. Objeto propio: la carcasa del Tag
@@ -193,7 +193,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [ ] Confirmar con los profesores qué formato tiene el Pase y qué se entrega ese día.
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
-- [ ] **Fecha del examen:** confirmar con los profesores; el instructivo dice «desde el lunes 14 al 23 de diciembre» y este documento decía del 14 al 18.
+- [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -211,14 +211,14 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### Qué hacer
 
-- [ ] **Fechas por escrito:** confirmar con los profesores guía el Pase (25 de noviembre) y la memoria (2 de diciembre a las 12:00). El instructivo dice 26 de noviembre y «2 de noviembre».
-- [ ] **Datos por confirmar (16)**, que solo sabe el autor:
-  - nombre legal, título y mención;
-  - frase de marca;
-  - grabación y transcripción de las entrevistas;
-  - la encuesta: fecha, convocatoria y alcance de la edición;
-  - que las tres personas son mayores de edad;
-- [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
+- [x] **Fechas por escrito:** confirmadas por los profesores el 10 de noviembre: entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre.
+- [ ] **Datos por confirmar**, que solo sabe el autor:
+  - [x] nombre legal, título y mención: confirmados el 10 de noviembre; coinciden con la portada de la memoria;
+  - [ ] frase de marca;
+  - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
+  - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
+  - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
+- [x] **Portada oficial:** ya está en la memoria, según confirmó el autor el 10 de noviembre. logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
 - [ ] **Resultados finales:** la etapa solo con notificaciones ya está en la memoria (10 de noviembre); faltan las escalas y las entrevistas de cierre, y el objeto propio (tareas 4 y 6).
@@ -350,7 +350,7 @@ La **C**, y si el autor quiere además declarar las preguntas específicas, la *
 
 ### Qué hacer
 
-- [ ] El autor elige entre A, B y C, o las combina.
+- [x] Resuelto en la memoria v6 (rondas de D-151 en adelante), como la opción C: el capítulo 10 ya no dice que la pregunta tenga dos partes, sino que pide condiciones y que una de ellas se pone a prueba frente al teléfono, y el capítulo 14 dice lo mismo. Comprobado el 10 de noviembre.
 - [ ] Aplicar lo elegido en el capítulo 10 y en el capítulo 14 del [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), y comprobar que cada objetivo específico quede colgado de una pregunta.
 - [ ] Revisar que la [memoria vigente v4](../08_memoria/memoria-vigente-v4.md) y el [resumen vigente](../08_memoria/resumen-vigente-proyecto.md) no contradigan lo que quede.
 - [ ] Regenerar la [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) con `node construir-idml.js`.
@@ -733,6 +733,18 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fechas confirmadas y datos del autor
+
+- **Qué cambió:** rigen las fechas que confirmaron los profesores (Pase el 18 de noviembre y examen el 14 y el 15 de diciembre); la encuesta y la portada quedan resueltas según el autor, y la tarea 11 queda cerrada porque la memoria ya aplica la opción C.
+- **Cómo estaba antes:** el Pase figuraba el 25 de noviembre, el examen del 14 al 18 de diciembre y la tarea 11 esperaba la elección del autor.
+- **Por qué:** el autor entregó el 10 de noviembre de 2026 las fechas confirmadas por sus profesores y preguntó qué pregunta de investigación quedaba por resolver.
+
+### 2026-11-10 — Datos del autor
+
+- **Qué cambió:** la tarea 8 marca como confirmados el nombre legal, el título y la mención, la grabación de las entrevistas y la mayoría de edad de las tres personas.
+- **Cómo estaba antes:** los cinco datos estaban por confirmar.
+- **Por qué:** el autor confirmó estos datos el 10 de noviembre de 2026.
 
 ### 2026-11-10 — Datos finales de la prueba
 

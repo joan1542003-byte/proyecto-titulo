@@ -1,6 +1,6 @@
 # Riesgos, errores y mejoras de Relevo
 
-**Qué es:** una lista honesta de lo que puede salir mal antes del Pase (25 de noviembre), la memoria (2 de diciembre) y el examen (14 a 18 de diciembre); de lo que hoy está mal, y de lo que se puede mejorar. Cada riesgo enlaza su tarea en [Por hacer](por-hacer.md).
+**Qué es:** una lista honesta de lo que puede salir mal antes del Pase (18 de noviembre), la memoria (2 de diciembre) y el examen (14 y 15 de diciembre); de lo que hoy está mal, y de lo que se puede mejorar. Cada riesgo enlaza su tarea en [Por hacer](por-hacer.md).
 
 **Cómo se lee:**
 
@@ -82,6 +82,12 @@ Cosas que ya están aceptables y que suben el nivel de la rúbrica de «bueno» 
 | Reducir el tamaño del repositorio, de unos 785 MB, moviendo los APK antiguos a *releases*. | Orden | Bajo |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fechas confirmadas
+
+- **Qué cambió:** las fechas del Pase y del examen son las que confirmaron los profesores.
+- **Cómo estaba antes:** decía Pase el 25 de noviembre y examen del 14 al 18 de diciembre.
+- **Por qué:** el autor entregó el 10 de noviembre de 2026 las fechas confirmadas por sus profesores.
 
 ### 2026-10-28 — Modelo del testigo
 

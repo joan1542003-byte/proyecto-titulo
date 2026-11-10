@@ -17,7 +17,7 @@ Ocho entrevistas semiestructuradas, hechas en persona en Santiago el 11 y el 12 
 | Convocatoria | Por referencias de contactos cercanos; el único criterio común fue la edad |
 | Consentimiento | Informado y oral |
 | Preguntas | Todas las formuló el investigador, también las repreguntas |
-| Registro | Transcripción posterior, con ortografía y puntuación regularizadas |
+| Registro | Grabación en audio y transcripción posterior, con ortografía y puntuación regularizadas |
 
 *Nota.* Elaboración propia.
 
@@ -486,6 +486,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Grabación en audio
+
+- **Qué cambió:** la ficha del levantamiento dice que las entrevistas se grabaron en audio antes de transcribirse.
+- **Cómo estaba antes:** solo decía que hubo una transcripción posterior.
+- **Por qué:** el autor confirmó estos datos el 10 de noviembre de 2026.
 
 ### 2026-11-09 — Títulos formales
 

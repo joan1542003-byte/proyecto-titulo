@@ -56,7 +56,7 @@ La cita va solo en el texto, con la fecha del correo: «(D. Parra, comunicación
 
 ## Siguiente paso
 
-Enviarle a Parra el párrafo antes de usarlo, como se le prometió en el correo. La fecha del correo ya está confirmada.
+Ninguno. El 10 de noviembre, el autor dio por cerrado lo pendiente con Parra («Parra listo»), y su respuesta entró a la memoria: capítulos 3, 9, 10, 12 y 14.
 
 ## Referencias
 
@@ -67,6 +67,12 @@ Kleinberg, J., Mullainathan, S. y Raghavan, M. (2023). The challenge of understa
 Rotter, J. B. (1966). Generalized expectancies for internal versus external control of reinforcement. *Psychological Monographs: General and Applied, 80*(1), 1–28. https://doi.org/10.1037/h0092976
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Parra listo
+
+- **Qué cambió:** el siguiente paso queda cerrado y se anota dónde entró la respuesta en la memoria.
+- **Cómo estaba antes:** faltaba enviarle el párrafo antes de usarlo.
+- **Por qué:** el autor confirmó que lo de Parra está listo.
 
 ### 2026-11-10 — Fecha del correo
 

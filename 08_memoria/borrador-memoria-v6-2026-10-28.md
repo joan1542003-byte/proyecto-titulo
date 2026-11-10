@@ -267,7 +267,7 @@ Las entrevistas se hicieron en Santiago, de manera presencial durante junio de 2
 
 La pauta recorrió la última sesión de cada persona sin nombrarle el fenómeno, así que la otra actividad apareció en sus relatos por sí sola. Después, la encuesta la preguntó de forma directa, y la prueba en los hogares registró lo que las personas hicieron tras cada señal: tres fuentes que se complementan.
 
-Las conversaciones se transcribieron y se analizaron con el método Framework, que ordena lo dicho en una matriz de personas y temas para compararlas entre sí (Goldsmith, 2021). De esa comparación surgieron *tipos ideales*: agrupaciones de situaciones parecidas que no pretenden calzar exactamente con nadie (Stapley et al., 2022). Sanders y Stappers (2012, p. 69), en su guía de investigación generativa, advierten que lo que las personas dicen puede diferir de lo que hacen; por eso, la prueba en los hogares registró también lo que hacen (Figura 5).
+Las conversaciones se grabaron en audio, se transcribieron y se analizaron con el método Framework, que ordena lo dicho en una matriz de personas y temas para compararlas entre sí (Goldsmith, 2021). De esa comparación surgieron *tipos ideales*: agrupaciones de situaciones parecidas que no pretenden calzar exactamente con nadie (Stapley et al., 2022). Sanders y Stappers (2012, p. 69), en su guía de investigación generativa, advierten que lo que las personas dicen puede diferir de lo que hacen; por eso, la prueba en los hogares registró también lo que hacen (Figura 5).
 
 **Figura 5**
 
@@ -727,7 +727,7 @@ La aplicación registró cada relevo —cuándo se activó, si sonó y cómo se 
 
 Para dar el ciclo por logrado, el Tag debía sonar cuando correspondía, la persona debía saber qué quería hacer al oír la señal, sin leer la pantalla, y debía seguir usando Relevo durante las dos semanas.
 
-La participación fue voluntaria y sin pago. Las tres personas podían omitir preguntas, silenciar la señal o dejar la prueba sin dar razones. El consentimiento, en la aplicación, explica el propósito académico, los datos que se registran, la molestia que el sonido puede causar y cómo retirarse. Los datos se guardan en la base de datos que recopila la aplicación con un código en lugar del nombre, aunque no son anónimos, porque actividades y horarios podrían identificar a alguien. Se tratan según la ley chilena de protección de datos (Ley 19628, 1999; Ley 21719, 2024) y se eliminan cuando la persona lo pide o, a más tardar, el 30 de diciembre de 2026.
+Las tres personas son mayores de edad, y su participación fue voluntaria y sin pago. Las tres personas podían omitir preguntas, silenciar la señal o dejar la prueba sin dar razones. El consentimiento, en la aplicación, explica el propósito académico, los datos que se registran, la molestia que el sonido puede causar y cómo retirarse. Los datos se guardan en la base de datos que recopila la aplicación con un código en lugar del nombre, aunque no son anónimos, porque actividades y horarios podrían identificar a alguien. Se tratan según la ley chilena de protección de datos (Ley 19628, 1999; Ley 21719, 2024) y se eliminan cuando la persona lo pide o, a más tardar, el 30 de diciembre de 2026.
 
 ## Resultados
 

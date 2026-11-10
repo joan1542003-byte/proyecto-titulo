@@ -13,6 +13,7 @@
 - El reclutamiento fue **no probabilístico mediante referencias de la red personal**: personas cercanas facilitaron contactos que cumplían el rango etario.
 - Se obtuvo **consentimiento informado oral**.
 - Todas las preguntas y repreguntas fueron formuladas por el investigador durante las conversaciones.
+- Las conversaciones se grabaron en audio (confirmado por el autor el 10 de noviembre de 2026).
 - La transcripción y la regularización académica se realizaron después del levantamiento; no añadieron preguntas ni respuestas.
 - El corpus operativo digital combina las once preguntas base del archivo de respuestas con las dos preguntas adicionales del anexo.
 - Las notas manuscritas ya no están disponibles.
@@ -49,6 +50,12 @@ No quedan bloqueos de procedencia para iniciar la codificación y la comparació
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Grabación en audio
+
+- **Qué cambió:** los hechos confirmados suman que las conversaciones se grabaron en audio.
+- **Cómo estaba antes:** la declaración no decía cómo se registraron antes de transcribirse.
+- **Por qué:** el autor confirmó estos datos el 10 de noviembre de 2026.
 
 ### 2026-08-23 — Cobertura exacta del corpus
 

@@ -175,7 +175,7 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta.
+Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta. El 10 de noviembre, el autor confirmó tres de ellos: su nombre legal, el título y la mención, que coinciden con la portada; que las entrevistas se grabaron en audio y se pasaron a texto, y que las tres personas de la prueba son mayores de edad. El capítulo 7 suma la grabación, y el 13, la mayoría de edad. Siguen por confirmar la frase de marca y los datos de la encuesta.
 
 ## Pendiente
 
@@ -191,6 +191,12 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Datos del autor
+
+- **Qué cambió:** se anota que el autor confirmó su nombre legal, el título y la mención, la grabación de las entrevistas y la mayoría de edad de las tres personas, y lo que suma cada capítulo.
+- **Cómo estaba antes:** esos datos figuraban como pendientes del autor.
+- **Por qué:** el autor confirmó estos datos el 10 de noviembre de 2026.
 
 ### 2026-11-10 — Decimocuarta ronda
 

@@ -6,7 +6,7 @@ Reúne lo necesario para entender y repetir la prueba en los hogares: cómo se a
 
 La memoria pregunta: «¿Bajo qué condiciones lo que una persona quería hacer vuelve a estar presente a tiempo, y la decisión sigue siendo suya, mientras una sesión de ocio digital continúa?». Su hipótesis es: «Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella» (capítulo 10).
 
-Tres personas usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. La prueba cierra con el cuestionario y la entrevista de I.7. Los resultados están en el capítulo 13 de la memoria y, por persona, en I.8.
+Tres personas mayores de edad usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. La prueba cierra con el cuestionario y la entrevista de I.7. Los resultados están en el capítulo 13 de la memoria y, por persona, en I.8.
 
 **Tabla I1**
 
@@ -261,6 +261,12 @@ El 8 de noviembre, con la versión 4.6 de la app, las tres personas respondieron
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Mayoría de edad
+
+- **Qué cambió:** la prueba aplicada dice que las tres personas son mayores de edad.
+- **Cómo estaba antes:** no lo decía.
+- **Por qué:** el autor confirmó estos datos el 10 de noviembre de 2026.
 
 ### 2026-11-10 — Resultados finales y entrevista según la guía
 
