@@ -2030,6 +2030,247 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** 16 478 palabras en los capítulos 1 a 14 (17 491 con las páginas iniciales y los índices); 24 figuras y 4 tablas, todas mencionadas en orden; 82 referencias, todas citadas; 2 marcadores «Confirmar». Wilms y Oberfeld (2018) se comprobó en Europe PMC: los colores saturados y brillantes se asocian a más activación, y la activación sube del azul y el verde al rojo; Machado et al. (2009) y Wilms y Oberfeld (2018), en Crossref.
 - **Documentos:** [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) y [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md).
 
+## D-155 — Android 4.0: la interfaz en papel y tinta, las actividades en anillos y sin aura
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.0, `versionCode` 50), sin fusionar a `main`. Pendiente de revisión del autor en su teléfono.
+- **Contexto:** al revisar la 3.3, el autor pidió dejar lo local y arreglar el diseño: menús, uso, navegación, notificaciones y color. Unos íconos tenían color y otros no; algunas frases de Inicio no tenían sentido; la barra de navegación era muy grande; la sección de actividades estaba desordenada, y el aura no debía estar, porque la memoria v6 ya no la usa. Prefirió los íconos con anillo del selector de imagen a las «etiquetas» sobre un cuadrado de color, y pidió un resumen de las actividades en Inicio que no juzgue, menos palabras, los ajustes en Perfil con una tuerca y un desenfoque progresivo arriba y abajo, como en iOS. El rediseño es total.
+- **Decisión:**
+  - **Color:** la interfaz va en papel y tinta, con todos sus íconos iguales (tinta sobre un círculo de piedra). El color es solo de las actividades, en su anillo. Se retiran de la app las seis fichas de papel de D-124.
+  - **Actividades:** cada actividad es un anillo (círculo blanco, ícono en tinta y borde con el color de su familia, D-126). Reemplaza al cielo con cápsula de D-126 y D-131 en toda la app.
+  - **Navegación:** tres pestañas, Inicio, Actividades y Perfil, en una cápsula de vidrio centrada de 58 dp. La Ruta pasa a Actividades, junto a las actividades guardadas y las ideas.
+  - **Inicio:** la fecha y el saludo, lo de la prueba, el relevo que cuenta o «Preparar un relevo» con dos atajos, un resumen de la semana con solo hechos (cuántos relevos y en qué actividades) y las actividades a un toque.
+  - **Ajustes:** se abren con una tuerca en Perfil; Inicio no tiene campana.
+  - **Aura:** se retira de la app (deja sin efecto en la app D-121 y la parte del aura de D-122, D-129 y D-130). Las actividades sin familia toman «arena».
+  - **Bordes:** desenfoque progresivo arriba y abajo, con la imagen reducida a la mitad y una máscara para cuidar los cuadros por segundo, el problema que llevó a quitarlo en la 2.28.
+  - **Textos y notificaciones:** se aplican R1, R3, R5, R6, R8, R11 y R12 del estudio de los textos y dos filas de la Tabla 4 de la memoria («¿Con qué te identificas?» y la pantalla del relevo con la actividad, lo que falta y una acción). No cambian los textos del protocolo ni del consentimiento.
+- **Alternativas descartadas:**
+  - Dar color a todos los íconos, como los ajustes de iOS: el autor rechazó las etiquetas sobre un cuadrado de color.
+  - Mantener la Ruta como pestaña: dejaba las actividades en tres lugares.
+  - Conservar el aura como opción apagada: la memoria v6 ya no la sostiene y el autor pidió quitarla.
+- **Consecuencias:** la memoria v6 todavía describe las seis fichas de papel y el cielo con cápsula (sección «Color e imagen», «Color» y Figura 15). Si el autor adopta la 4.0, esas partes y el [documento 42](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) deben actualizarse.
+- **Documentos:** [Android 4.0](../06_desarrollo_y_factibilidad/app-android/version-4.0-rediseno-2026-11-05.md).
+
+## D-156 — Android 4.1: anillos simétricos, textos con función, sin viudas y movimiento al tacto
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.1, `versionCode` 51), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono.
+- **Contexto:** al revisar la 4.0, el autor sintió que los íconos circulares no eran simétricos; pidió quitar mensajes como «Así suena Relevo», que no tienen sentido, y que no haya viudas, y fijó como estándar las pautas de Apple: microinteracciones y animaciones que se sientan bien al tocarlas, actuales, sin efectos triviales como el 3D. Cada decisión debe responder a la memoria y estar fundamentada.
+- **Decisión:**
+  - **Anillos:** se dibujan en un solo lienzo con un mismo centro; el grosor es el 7,5 % del diámetro en píxeles enteros, y el color, un degradado igual a ambos lados con tres colores de la familia llevados a la misma luminancia, la regla de las fichas de la memoria (Albers, 2013). El ícono va en su centro óptico: el centro de su dibujo, más un cuarto de la distancia al centro de la tinta, con un tope de 0,6 unidades. Vale para todos los íconos de la app.
+  - **Textos:** salen los que narran la pantalla o hablan de la app: las notas de guía de la primera vez, «Así suena Relevo» y los «Toca…» cuando el botón ya está a la vista. La ayuda pasa a los campos como ejemplo («Ej.: …»), según la regla de campos del estudio de los textos. Se mantienen las instrucciones del Tag físico y los textos del protocolo y del consentimiento.
+  - **Viudas:** toda la app usa un `Text` que une las dos últimas palabras de cada párrafo (D-135); los títulos y el texto centrado se parten en líneas parejas.
+  - **Movimiento y tacto:** todo responde al apoyar el dedo; los resortes no rebotan, salvo la hoja que se suelta con impulso, que vuelve con la velocidad del dedo; el impulso proyectado decide si la hoja se cierra; vibra solo lo que confirma o cambia algo; las cifras que bajan se deslizan; los objetos se dibujan planos, y las áreas táctiles miden 48 dp.
+  - **Alineación:** las acciones de texto quedan en la columna de su texto; los títulos de las listas agrupadas, donde empieza el contenido de las filas, y la barra de «Tu relevo», al ancho de la tarjeta de abajo.
+- **Alternativas descartadas:**
+  - Engrosar solo el lado pálido del anillo: el contorno seguiría cambiando de peso con el color.
+  - Centrar los íconos solo por su dibujo: la campana y la escalera se seguían viendo caídas.
+  - Acortar las notas de la primera vez en vez de quitarlas: la memoria registra que la primera vez resultó larga, y el documento 43 propone enseñar haciéndolo.
+  - Corregir las viudas pantalla por pantalla: depende de recordarlo en cada texto nuevo.
+- **Consecuencias:** el inventario de textos se volvió a generar con 4.1 (1237 textos y 5212 palabras; en 3.3 eran 1287 y 5837). Dos pares de ideas comparten ícono, «Leer» y «Leer manga», y «Hacer manualidades» y «Armar una maqueta», porque el kit no tiene uno propio para ellas.
+- **Documentos:** [Android 4.1](../06_desarrollo_y_factibilidad/app-android/version-4.1-anillos-textos-y-movimiento-2026-11-05.md).
+
+## D-157 — Android 4.2: un solo comentario, las preguntas de cada actividad, predefinidas primero, el borde como en iOS e Inicio con color
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.2, `versionCode` 52), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono.
+- **Contexto:** al ver la 4.1 en el emulador, el autor pidió que «¿Qué te ayudó?» diga «Envíanos un comentario»; un desenfoque progresivo al nivel del de Apple; «¿Cómo empiezas la actividad?» en vez de «Para empezar» y «¿En qué lugar empieza?» en vez de «Dónde empiezas»; que agregar una actividad empiece por las predefinidas, con la opción de hacer una propia; un Inicio más atractivo, y «Creadas por ti» en vez de «Tuyas».
+- **Decisión:**
+  - **Comentario:** una sola fila en Perfil, «Envíanos un comentario», siempre a la vista, que abre la pantalla de opinión con ese título: primero el comentario y después estrellas opcionales. Reemplaza a «¿Qué te ayudó esta semana?» y a «Opinar sobre Relevo»; `tu_semana_ayudo` deja de registrarse en esta rama.
+  - **Preguntas:** las del autor, con una sola forma en toda la app; en las hojas y en «Todo listo», la pregunta va arriba del dato. En Preparar, el título de cada paso es la pregunta y el campo no la repite a la vista. «Tuyas» pasa a «Creadas por ti».
+  - **Nueva actividad:** primero las predefinidas, por familia y sin las ya guardadas; elegir una abre el formulario lleno, y «Crear una propia» queda siempre a la vista. Una predefinida se puede guardar con su nombre.
+  - **Borde:** desenfoque variable a resolución completa, pleno bajo las barras y con una rampa de curva suave, bajo un velo de papel de hasta el 55 %, como el borde suave de iOS 26 (Apple, 2025).
+  - **Inicio:** lo más próximo va en una tarjeta con el color de su actividad: el cielo de su familia arriba, el anillo sobre su borde y, en papel, el texto y la acción. Es la tarjeta de la memoria v6 (Figura 15): «en Inicio, la actividad se presenta en una tarjeta con su degradado».
+- **Alternativas descartadas:**
+  - Mantener «Opinar sobre Relevo» junto a «Envíanos un comentario»: dos filas para lo mismo.
+  - Dejar el borde en la opción rápida con menos velo: la doble imagen de la rampa venía de la máscara, no del velo.
+  - Dar a Inicio un fondo de color completo: el color a pantalla completa es de la señal; Inicio es el paso intermedio.
+- **Consecuencias:** Inicio vuelve a coincidir con la Figura 15 de la memoria. El desenfoque variable cuesta más que la máscara; hay que confirmar en un teléfono que no baja de los 60 cuadros por segundo.
+- **Documentos:** [Android 4.2](../06_desarrollo_y_factibilidad/app-android/version-4.2-comentario-preguntas-borde-e-inicio-2026-11-05.md).
+
+## D-158 — Android 4.3: sugerencias por catastro, varios relevos a la vez, sonido a elección y menos «tu»
+
+- **Fecha:** 2026-11-05.
+- **Estado:** implementada en la rama `android-4.0-rediseno` (versión 4.3, `versionCode` 54), sin fusionar a `main`. Revisada en el emulador; pendiente de revisión del autor en su teléfono y de escuchar los sonidos.
+- **Contexto:** al probar la 4.2.1, el autor encontró sugerencias absurdas («Ver una película» sugería sacar un tomo o dejar el teléfono). Pidió un catastro de palabras clave; corregir «¿Dónde suena?»; varios relevos activos; un desenfoque de 100 a 0; «Envíanos un comentario» en Ayuda y Ajustes en Perfil; editar una actividad eligiendo entre opciones; íconos por categoría con un pulso; una píldora que se vea desplazarse; una pantalla de carga animada; textos claros; intereses ordenados; elegir apps en Perfil; quitar o actualizar el video, y elegir el sonido con fundamento. Al revisar la primera versión pidió menos «tu», «Dispositivo de audio» en vez de parlante, sugerencias concretas y descartar el ícono de escalera.
+- **Decisión:**
+  - **Sugerencias:** un catastro de 34 conceptos. Las palabras se comparan completas o por su raíz, las frases pesan el doble y las palabras débiles, como «ver», no deciden solas. Solo se sugiere lo del mismo concepto, y cada sugerencia nombra un objeto concreto. Sin concepto no hay sugerencias, y el campo muestra un ejemplo.
+  - **Salidas:** «Tag», «Dispositivo de audio» y «Notificaciones». El reloj deja de ser una opción propia, porque recibe las notificaciones del teléfono. Solo el teléfono conserva el posesivo: «Suena en tu teléfono».
+  - **Varios relevos:** los activos se guardan aparte del borrador. El servicio los cuenta todos con una sola lectura de la app en primer plano; el que se cumple pasa a la señal, y el borrador a medias vuelve al terminar.
+  - **Perfil:** «Relevos», «Actividades», «Pasos» y «Apps»; «Ajustes» como fila, y «Envíanos un comentario» en Ayuda. Las apps elegidas en Perfil se marcan al preparar un relevo nuevo.
+  - **Sonido:** cuatro sonidos en Ajustes (Madera, Fieltro, Claro y Tonada), con la duración de D-078 y el final de la firma de D-071. Madera sigue por defecto y el Tag conserva su pitido. Cada perfil se apoya en la investigación sobre urgencia, molestia, ubicación y habituación.
+  - **Movimiento:** una sola píldora que se desplaza con un resorte; un borde que va de 100 a 0; la marca animada al abrir, y el pulso con degradado en el nombre de la familia.
+  - **Textos:** sin posesivos innecesarios, con ejemplos concretos y sin el video desactualizado.
+- **Alternativas descartadas:**
+  - Afinar la búsqueda por pedazos de palabras: seguía confundiendo «capítulo» con películas y «serie» con ejercicio.
+  - Sugerir lo de las actividades con el mismo ícono: era la causa de las sugerencias absurdas.
+  - Mantener el reloj como salida: el autor pidió que no fuera una opción, y las notificaciones ya llegan al reloj.
+  - Volver a grabar el video: la interfaz sigue cambiando, y dos pantallas se mantienen al día con menos costo.
+  - Usar los tonos del teléfono: un tono de notificación podría invitar a mirar el teléfono, y se perdería la firma.
+- **Consecuencias:** las sugerencias dependen del catastro, que debe crecer cuando aparezcan actividades nuevas. Si se cumplen dos relevos seguidos, suenan por turno. El sonido elegido queda en el registro de la investigación y debe leerse junto a los datos de la señal. Los cuatro sonidos no se han escuchado en una casa.
+- **Documentos:** [Android 4.3](../06_desarrollo_y_factibilidad/app-android/version-4.3-sugerencias-relevos-y-sonido-2026-11-05.md) y [El sonido de Relevo](../06_desarrollo_y_factibilidad/app-android/sonido-de-relevo-2026-11-05.md).
+
+## D-159 — Android 4.4: la 4.3 del autor, actualizable, con lo relevante de la 1.0.0
+
+- **Fecha:** 2026-11-05.
+- **Estado:** hecha en la rama `android-4.4` (4.4, `versionCode` 55). Compila y pasan 90 pruebas unitarias. Se probó en el emulador sobre los datos del autor y simulando a quien viene de la 3.3. Falta probarla en un teléfono real y con un Tag real.
+- **Contexto:**
+  - El 4 de noviembre se hizo la 1.0.0 en una rama local, `android-1.0.0`. Quitaba la prueba de 21 días, acortaba la primera vez y sumaba lo que pidió la revisión del 28 de octubre y las mejoras de la Tabla 4. Sus decisiones se numeraron D-153 y D-154, que en `main` ya eran de la memoria.
+  - El 5 de noviembre, en su Mac, el autor hizo el rediseño 4.0 a 4.3 (D-155 a D-158) a partir de la 3.3, sin la 1.0.0.
+  - El APK de la 4.3 se instalaba aparte, con otra firma y sin la dirección de Supabase.
+  - El autor indicó que la 4.3 es la buena, que sus cambios tienen prioridad y que lo relevante de la 1.0.0 debía sumarse a ella, para que fuera la versión actualizable.
+- **Decisión:**
+  - **Base:** el código de la 4.3. Donde la 4.3 y la 1.0.0 resolvieron lo mismo de forma distinta, manda la 4.3: diseño, pantallas y textos.
+  - **Desde la 1.0.0:**
+    - sin la prueba de 21 días, con el consentimiento v14 (D-160);
+    - la primera vez en tres pantallas, con el perfil después del primer relevo;
+    - el Tag buscado a 90 segundos del final y el teléfono si no responde;
+    - «¿No tienes un Tag?»;
+    - las horas sin sonar, el volumen, «Dejarla lista» y la revisión del tiempo tras 3 sonidos;
+    - un límite breve al empezar, sin «Probar con 15 segundos»;
+    - la guía del Tag sin dibujos;
+    - sin el reloj ni su permiso.
+  - **Con los varios relevos de la 4.3:** las horas sin sonar detienen todos los relevos. La búsqueda del Tag se hace por relevo. Un relevo que se cumple durante las horas sin sonar espera a que terminen.
+  - **APK:** paquete `cl.udp.relevo`, `versionCode` 55 y la clave de firma de siempre, con Supabase configurado. La 4.3 de revisión queda como antecedente.
+  - **Números:** el contenido de D-153 y D-154 de la rama local queda en D-159 y D-160. Esa rama se conserva sin fusionar y se subió a GitHub el 5 de noviembre (D-161).
+- **Alternativas descartadas:**
+  - **Fusionar `android-1.0.0` en la 4.3:** chocaba en 25 archivos de código, y en las pantallas habría impuesto el diseño de la 1.0.0.
+  - **Recompilar la 4.3 sin cambios:** era actualizable, pero seguía con la prueba de 21 días y sin lo que pidió la revisión.
+  - **Llamarla 4.3:** el APK de revisión de la 4.3 ya existe con `versionCode` 54. Una versión distinta con el mismo nombre confundiría la trazabilidad.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md).
+
+## D-160 — En la 4.4, el consentimiento pasa a la v14, sin la prueba, y los datos se siguen registrando igual
+
+- **Fecha:** 2026-11-05. Es la decisión que en la rama local `android-1.0.0` se numeró D-154 el 4 de noviembre.
+- **Estado:** hecha en la 4.4. Pendiente de revisión docente, como las versiones anteriores del consentimiento.
+- **Contexto:** el consentimiento v13 describía la prueba de 21 días. El autor decidió el 4 de noviembre que los datos se sigan recibiendo igual y que quien ya estaba registrado los conserve intactos.
+- **Decisión:**
+  - **Texto:** versión `2026-11-04-v14`. Dice lo mismo sobre qué se guarda, dónde, qué no se ve, los mensajes, el código y el plazo —se borra a más tardar el 30 de diciembre de 2026—, sin la prueba de 21 días y en listas.
+  - **Quien aceptó la v13:** ve «Relevo cambió», conserva su código y sus datos, y los relevos que contaban siguen contando después de aceptar.
+  - **Si no acepta:** Relevo deja de contar, y sus datos anteriores siguen guardados hasta que pida borrarlos o hasta el plazo.
+  - **Los datos:** son los mismos, en las mismas tablas de Supabase. Los relevos nuevos dejan vacías las columnas de la prueba.
+- **Alternativas descartadas:** conservar la v13, que describe semanas e instrucciones que ya no existen; dejar de enviar datos, porque el autor decidió seguir registrándolos.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md) y `FirstRunScreens.kt`.
+
+## D-161 — La clave de firma y la configuración de Supabase entran al repositorio
+
+- **Fecha:** 2026-11-05.
+- **Estado:** hecha en la rama `android-4.4`.
+- **Contexto:** el APK de la 4.3, compilado en el Mac del autor, no se podía instalar como actualización: estaba firmado con otra clave y no tenía la dirección de Supabase, porque `local.properties` y la clave de firma solo estaban en este computador. El autor pidió subirlos al repositorio para tener todo, sabiendo que el repositorio es público.
+- **Decisión:**
+  - **Firma:** `app-android/firma/relevo-debug.keystore` es la clave de siempre (certificado `fdbe6bbe…`), la de depuración estándar de Android. La compilación la usa si existe, en la versión de depuración y en la optimizada.
+  - **Supabase:** `app-android/relevo.properties` trae la dirección del proyecto y la clave publicable. Un valor en `local.properties` la reemplaza.
+  - **`local.properties`** sigue fuera del repositorio, porque guarda la ruta del SDK de cada computador y Android Studio la reescribe.
+  - **La rama `android-1.0.0`** se sube sin fusionar, para conservar su trabajo.
+- **Riesgo aceptado:** con la clave a la vista, cualquiera puede firmar una app que se instale encima de Relevo, si logra que alguien la instale. La clave publicable de Supabase ya iba dentro de cada APK; no es la clave de servicio, y la base solo acepta lo que permiten sus políticas.
+- **Alternativas descartadas:** pasar los dos archivos a mano al Mac, que es lo que faltó en la 4.3; subir `local.properties` tal cual, que rompería la compilación en el Mac por la ruta del SDK.
+- **Verificación:** se compiló sin la dirección de Supabase en `local.properties`, como en el Mac. El APK salió con el paquete `cl.udp.relevo`, el certificado `fdbe6bbe…` y la dirección incluida, y pasan 90 pruebas unitarias.
+- **Documentos:** [Android 4.4](../06_desarrollo_y_factibilidad/app-android/version-4.4-la-version-actualizable-2026-11-05.md), `app/build.gradle.kts` y `CLAUDE.md`.
+
+## D-162 — Los íconos responden a lo que pide la app
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama local `iconos-propios`, sobre la 4.4. Pendiente de la revisión del autor y de una prueba de comprensión con personas.
+- **Contexto:** el autor pidió justificar los íconos propios y diseñarlos respondiendo a lo que solicita la app. Un inventario del código mostró que la app usa 96 de los 117 íconos del kit, que pide las actividades desde 17 px (anillos de 40 px) y que tres significados compartían el mismo lápiz, dos pares eran idénticos y varios dibujos decían otra cosa.
+- **Decisión:**
+  - **Cinco reglas:** un significado, un dibujo; cada actividad con el objeto con que empieza, como lo sugiere la app; legible a 17 px; neutro donde la app no juzga; la construcción de siempre.
+  - **Once íconos:** Actividad, Dibujar, Apariencia, Estirar, Ordenar, Leer manga, Armar una maqueta, Perro, Aprender un idioma y Tejer se redibujan. Sin respuesta es nuevo.
+  - **La foto «Salir»** usa el ícono de Caminar en vez de la huella.
+- **Fundamento:** un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018). Las actividades vienen de P1–P8 y del catastro de la 4.3 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)).
+- **Alternativas descartadas:**
+  - Un guion en un círculo para «sin respuesta», que se leía «quitar».
+  - Un canasto para ordenar, que se leía «canasto de compras».
+  - Engrosar ahora todas las líneas a 2, como Lucide, sin probarlo junto al texto.
+- **Inspiración:** Lucide, un set abierto de íconos de línea; Relevo sigue sus reglas de construcción y dibuja sus propios íconos ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md), sección 4).
+- **Documentos:** [Íconos que responden a lo que pide la app](../10_recursos_visuales/44_iconos-desde-lo-que-pide-la-app-2026-11-06.md), `KitIcons.kt` y `10_recursos_visuales/marca-a-tiempo/iconos`.
+
+## D-163 — Android 4.5: menos amarillo, el saludo del relevo y más palabras clave
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama `android-4.5`, con su APK.
+- **Contexto:** el autor pidió más palabras y frases clave para los relevos propios, documentadas; bajar lo amarillo de los dos temas; el saludo de Inicio con el color del relevo activo; y arreglar el color que quedaba pegado en el selector de íconos.
+- **Decisión:**
+  - **Catastro:** de 322 a 634 palabras y de 20 a 121 frases, con el español de Chile y frases que deciden los casos dudosos. «Clase» y «curso» pasan a palabras débiles. Se documenta, generado desde el código, en [`textos/catastro-de-palabras-clave.md`](../06_desarrollo_y_factibilidad/app-android/textos/catastro-de-palabras-clave.md).
+  - **Neutros:** 40 % de su croma y el tono en 60° (OKLCH), con la misma luminosidad y los mismos contrastes.
+  - **Saludo:** con un relevo contando, en el degradado de su anillo. Cada color se acerca a la tinta solo lo necesario para un contraste de 3:1, el mínimo para texto grande (WCAG 2.2).
+  - **Selector:** la familia que pierde el pulso vuelve a la tinta en vez de quedar a medio camino.
+- **Alternativas descartadas:**
+  - Un papel gris frío, que quitaba la calidez del papel y la tinta (D-155).
+  - Los colores del anillo tal cual en el saludo: el menta y el ámbar no se leen sobre el papel.
+- **Documentos:** [Android 4.5](../06_desarrollo_y_factibilidad/app-android/version-4.5-colores-saludo-y-palabras-2026-11-06.md).
+
+## D-164 — Android 4.6: una encuesta del rediseño, una vez, para quien ya usaba Relevo
+
+- **Fecha:** 2026-11-06.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor pidió que quienes ya usaban Relevo, al abrir la versión nueva, vean una encuesta sobre el rediseño y lo demás. Debe aparecer al activar un relevo o tras un minuto de uso, y una sola vez.
+- **Decisión:**
+  - **Quién:** quien terminó la primera vez, aceptó alguna versión del consentimiento o tiene relevos cuando abre la 4.6 por primera vez. Se decide esa vez y no cambia.
+  - **Cuándo:**
+    - al activar un relevo o tras un minuto con la app abierta, sumado entre aperturas;
+    - solo sobre las pestañas y sin otra hoja abierta;
+    - con el consentimiento al día.
+  - **Una vez:** queda marcada al aparecer, aunque se cierre sin responder.
+  - **Preguntas:**
+    - la impresión del diseño (1 a 5);
+    - la comparación con la versión anterior;
+    - el UMUX-Lite (dos ítems de 1 a 7; Lewis et al., 2013);
+    - lo que más gusta;
+    - un comentario opcional.
+
+    Todas se pueden saltar.
+  - **Datos:** van a `relevo_answers` con claves `rediseno_…` y `umux_lite_…`. El consentimiento v14 ya cubre las respuestas, y el panel las nombra.
+- **Alternativas descartadas:**
+  - El SUS completo: diez ítems son demasiado para una hoja dentro de la app (Galesic y Bosnjak, 2009).
+  - Mostrarla también a instalaciones nuevas: no conocieron el diseño anterior.
+  - Volver a ofrecerla si se cierra: el autor pidió una sola vez.
+- **Documentos:** [Android 4.6](../06_desarrollo_y_factibilidad/app-android/version-4.6-encuesta-del-rediseno-2026-11-06.md), `RedesignSurvey.kt`.
+
+## D-165 — Android 4.6.1: la revisión de la primera vez, la encuesta y la accesibilidad
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** desde la 4.4 quedaban sin probar la primera vez desde cero, la encuesta del rediseño al activar y en una instalación nueva, la letra grande y TalkBack. El autor pidió tomar una tarea pendiente que no fuera la memoria y terminarla.
+- **Decisión:**
+  - **Cómo se revisó:** en una copia aparte de la app, sin conexión de principio a fin, para no tocar los datos del autor ni enviar datos de prueba.
+  - **Palabras:** el nombre de una actividad bajo su anillo nunca parte una palabra. Mantiene su ancho, se ensancha si una palabra no cabe y, si tampoco así, la letra baja lo justo.
+  - **TalkBack:** el velo que cierra las hojas se lee «Cerrar».
+- **Alternativas descartadas:**
+  - Que el nombre ocupe toda la celda: los nombres vecinos quedaban pegados.
+  - Partir con guion: «manua-lidades» se lee peor que una letra algo más chica.
+- **Pendiente del autor:** si el permiso de Bluetooth se pide solo al tocar «Buscar el Tag», en vez de al entrar a «¿Dónde suena?». Resuelto en D-166: sí.
+- **Documentos:** [Android 4.6.1](../06_desarrollo_y_factibilidad/app-android/version-4.6.1-revision-de-la-primera-vez-2026-11-07.md).
+
+## D-166 — Android 4.6.2: textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor señaló textos confusos: «Deja de contar» sin decir qué, «Suena» para algo que aún no pasa, «Batería» sin decir de qué, «el perfil» y «Ej.: leer 10 páginas». También quedaba pendiente de D-165 si el Bluetooth se pedía al entrar a «¿Dónde suena?».
+- **Decisión:**
+  - **Cinco reglas para toda la app:** «contar» dice qué se cuenta (el tiempo en tus apps); lo que aún no pasa va en futuro; lo de la persona lleva «tu»; los ejemplos se completan; los títulos dicen de qué se trata («Batería del teléfono»). Se aplicaron en 48 lugares, en siete archivos.
+  - **Bluetooth:** el permiso se pide solo al tocar algo del Tag. La búsqueda sola al llegar ocurre únicamente si el permiso ya estaba dado. Lo decidió el autor.
+  - **Aviso permanente:** si se publicó sin permiso de notificaciones, se vuelve a publicar en cuanto lo hay. Antes quedaba oculto en el primer relevo.
+- **Alternativas descartadas:**
+  - Cambiar «contar» por «medir»: «contar el tiempo» es más cercano y ya se usa en «Cómo funciona».
+  - Cambiar también el texto del consentimiento: exige una nueva versión del consentimiento, y ahí «las [apps]» ya dice qué se cuenta.
+- **Documentos:** [Android 4.6.2](../06_desarrollo_y_factibilidad/app-android/version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md).
+
+## D-167 — Android 4.6.3: el pulido y la señal que sonaba dos veces
+
+- **Fecha:** 2026-11-07.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** el autor pidió dejar la app lo más pulida posible. Al recorrerla en una copia aparte apareció un error: si la app se abría justo cuando se cumplía el tiempo, la señal volvía a sonar después de responder. Se debía a que el paso para traer los datos de la 4.2 se repetía cada vez y devolvía el relevo a los activos.
+- **Decisión:**
+  - **La señal doble:** el paso desde la 4.2 se hace una sola vez. Además, al responder, el relevo respondido se quita de los activos.
+  - **Permisos:** las tres filas se tocan y llevan flecha. «Notificaciones» abre sus ajustes en Android, y la batería dice «Permitida» o «Restringida».
+  - **Horas sin sonar:** la hora da la vuelta, y TalkBack dice qué hora cambia cada botón.
+  - **Barra de pestañas:** sus nombres crecen con la letra del teléfono hasta 1,3 veces.
+  - **Textos:** cinco más con las reglas de D-166, y el menú del relevo activo lleva el nombre de la actividad.
+- **Alternativas descartadas:**
+  - Guardar el relevo como «sonando» antes de que empiece a sonar: la pantalla mostraría por unos segundos el aviso de que no sonó.
+  - Cambiar las preguntas después de la señal: son las del registro del estudio.
+- **Documentos:** [Android 4.6.3](../06_desarrollo_y_factibilidad/app-android/version-4.6.3-pulido-2026-11-07.md).
+
 ## D-168 — Los anexos recopilan lo más relevante y salen también en Word
 
 - **Fecha:** 2026-11-08.
@@ -2125,6 +2366,54 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
   - **Pauta:** se mantienen el logo arriba, las mayúsculas, el Arial 12 y el centrado; la ciudad y el año van al final de la página, en Arial 11, con el año solo, como pide la pauta, en vez de «Diciembre de 2026».
 - **Documentos:** [Word](../08_memoria/anexos/anexos-relevo.docx), [PDF](../08_memoria/anexos/anexos-relevo.pdf) y [word.js](../08_memoria/anexos/word.js).
 
+## D-175 — Android 4.7: el cierre de la prueba en la app
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6`, con su APK.
+- **Contexto:** la memoria aún no tiene los resultados de la semana con el teléfono ni del cierre. El autor pidió llevar la encuesta y la entrevista finales a la app, para las personas que ya la usan.
+- **Decisión:**
+  - **Quién:** quien ya usaba Relevo al abrir la 4.7 por primera vez; nunca una instalación nueva.
+  - **Cuándo:** al abrir la app, una vez, en una hoja con «Empezar» y «Ahora no». Después queda en Ajustes hasta terminarla.
+  - **Qué:** las preguntas del instrumento de cierre del 28 de octubre, con sus palabras, opciones y claves, en cuatro partes. Cada parte se guarda al seguir y no se repite lo ya respondido en la app.
+  - **Dónde:** `relevo_answers` en Supabase, como las demás respuestas.
+  - **De paso:** los campos de texto suben sobre el teclado y sobre el botón flotante.
+- **Alternativas descartadas:**
+  - Mostrarla a todas las personas: una instalación nueva no participó en la prueba.
+  - Las 25 preguntas en una sola hoja: es demasiado largo para responder de una vez.
+  - Claves nuevas: con las del instrumento, el papel y la app se analizan juntos.
+- **Documentos:** [Android 4.7](../06_desarrollo_y_factibilidad/app-android/version-4.7-cierre-de-la-prueba-2026-11-09.md).
+
+## D-176 — El cierre de la prueba sin perder respuestas, y el panel al día
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6` (app 4.7.1) y en el artefacto del panel (versión 20).
+- **Contexto:** el autor preguntó si el instrumento de cierre estaba actualizado y pidió que esté en la app, en Supabase y en el panel, sin perder ningún dato. La búsqueda confirmó que el del 28 de octubre es el más reciente para las personas de la prueba. Lo posterior, del 2 de noviembre, es la guía de los profesores para entrevistas y la entrevista a expertos.
+- **Decisión:**
+  - **La app muestra siempre todas las preguntas del cierre.** Antes saltaba las que tenían una respuesta guardada, y las claves `semana1_*` y `cierre_*` ya se habían usado con otro sentido en la prueba de 21 días.
+  - **El panel muestra el cierre de cada persona** en el orden del instrumento, con todas las respuestas y sus fechas.
+  - **El artefacto de claude.ai se publica de nuevo**, con la misma conexión a Supabase.
+- **Alternativas descartadas:**
+  - Claves nuevas para el cierre en la app: el papel y la app dejarían de analizarse juntos.
+  - Ajustar ahora la entrevista a la guía de los profesores: cambia el instrumento y lo decide el autor.
+- **Documentos:** [Android 4.7.1](../06_desarrollo_y_factibilidad/app-android/version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md).
+
+## D-177 — La entrevista de cierre sigue la guía de los profesores
+
+- **Fecha:** 2026-11-09.
+- **Estado:** hecha en la rama `android-4.6` (app 4.7.2) y en el artefacto del panel (versión 21).
+- **Contexto:** la guía de los profesores para la entrevista semiestructurada, del 2 de noviembre, pide preguntas abiertas, nunca de sí o no, un orden de lo general a lo particular y un cierre proyectivo. La entrevista del 28 de octubre no lo cumplía. El autor pidió ajustarla.
+- **Decisión:**
+  - **Diez preguntas abiertas en embudo:** introducción, cuerpo, crítica y una pregunta final proyectiva. Cubren los mismos aspectos que antes.
+  - **Claves por tema** en vez de numeradas, porque las respuestas no guardan la versión de la app: así las dos redacciones nunca se mezclan.
+  - **Dos pantallas de cinco preguntas,** y lo escrito se guarda en el teléfono hasta enviarlo.
+  - **Quien ya terminó la entrevista anterior no la repite.**
+- **Alternativas descartadas:**
+  - Reutilizar `entrevista_1` a `entrevista_9` con el orden nuevo: una respuesta anterior se leería bajo otra pregunta.
+  - Volver a preguntar a quien ya respondió: duplica el esfuerzo de la persona.
+  - Cambiar también el cuestionario: la guía trata de la entrevista, y sus preguntas vienen de la app de la prueba.
+- **Pendiente:** actualizar el Anexo I de la memoria con la entrevista que se aplique.
+- **Documentos:** [entrevista de cierre](../07_validacion/instrumentos/entrevista-de-cierre-2026-11-09.md) y [Android 4.7.2](../06_desarrollo_y_factibilidad/app-android/version-4.7.2-entrevista-segun-la-guia-2026-11-09.md).
+
 ## Registro de cambios (disclaimer)
 
 ### 2026-11-09 — D-174
@@ -2169,6 +2458,24 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Cómo estaba antes:** la última decisión era D-170.
 - **Por qué:** pedido del autor.
 
+### 2026-11-09 — D-177
+
+- **Qué cambió:** se registró D-177.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-176.
+- **Por qué:** el autor pidió ajustar la entrevista final a la guía de sus profesores.
+
+### 2026-11-09 — D-176
+
+- **Qué cambió:** se registró D-176.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-175.
+- **Por qué:** el autor pidió el cierre en la app, en Supabase y en el panel, sin perder datos.
+
+### 2026-11-09 — D-175
+
+- **Qué cambió:** se registró D-175. D-168 a D-174 están en la rama `anexos-para-word`.
+- **Cómo estaba antes:** en esta rama, la última decisión era D-167.
+- **Por qué:** el autor pidió el cierre de la prueba en la app.
+
 ### 2026-11-08 — D-170
 
 - **Qué cambió:** se registró D-170.
@@ -2185,6 +2492,84 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 - **Qué cambió:** se registró D-168.
 - **Cómo estaba antes:** la última decisión en `main` era D-154; en las ramas de la app, D-155 a D-167.
+
+### 2026-11-07 — D-167
+
+- **Qué cambió:** se registró D-167.
+- **Cómo estaba antes:** la última decisión era D-166.
+- **Por qué:** el autor pidió dejar la app lo más pulida posible.
+
+### 2026-11-07 — D-166
+
+- **Qué cambió:** se registró D-166 y se marcó como resuelto el pendiente de D-165.
+- **Cómo estaba antes:** la última decisión era D-165, con el Bluetooth pendiente.
+- **Por qué:** el autor señaló textos confusos y decidió cuándo pedir el Bluetooth.
+
+### 2026-11-07 — D-165
+
+- **Qué cambió:** se registró D-165.
+- **Cómo estaba antes:** la última decisión era D-164.
+- **Por qué:** el autor pidió terminar la revisión pendiente de la app.
+
+### 2026-11-06 — D-164
+
+- **Qué cambió:** se registró D-164.
+- **Cómo estaba antes:** la última decisión era D-163.
+- **Por qué:** pedido del autor del 6 de noviembre.
+
+### 2026-11-06 — D-162: Lucide
+
+- **Qué cambió:** D-162 nombra a Lucide como la inspiración de los íconos.
+- **Cómo estaba antes:** la comparación de la línea era con ChatGPT.
+- **Por qué:** el autor precisó que la inspiración es Lucide, no ChatGPT.
+
+### 2026-11-06 — D-163
+
+- **Qué cambió:** se registró D-163.
+- **Cómo estaba antes:** la última decisión era D-162.
+- **Por qué:** pedido del autor del 6 de noviembre.
+
+### 2026-11-06 — D-162
+
+- **Qué cambió:** se registró D-162.
+- **Cómo estaba antes:** la última decisión era D-161.
+- **Por qué:** el autor pidió diseñar los íconos respondiendo a lo que solicita la app.
+
+### 2026-11-05 — D-161
+
+- **Qué cambió:** se registró D-161 y se anotó que la rama `android-1.0.0` se subió.
+- **Cómo estaba antes:** la última decisión era D-160, y la rama `android-1.0.0` estaba solo en este computador.
+- **Por qué:** el autor pidió subir al repositorio la clave de firma, la configuración de Supabase y todo lo demás.
+
+### 2026-11-05 — D-159 y D-160
+
+- **Qué cambió:** se registraron D-159 y D-160. El contenido de D-153 y D-154 de la rama local `android-1.0.0`, que nunca se subió, queda con estos números.
+- **Cómo estaba antes:** la última decisión era D-158.
+- **Por qué:** el autor pidió que la 4.3 fuera la versión actualizable, con lo relevante de la 1.0.0.
+
+### 2026-11-05 — D-158
+
+- **Qué cambió:** se registró D-158.
+- **Cómo estaba antes:** la última decisión era D-157.
+- **Por qué:** pedido del autor.
+
+### 2026-11-05 — D-157
+
+- **Qué cambió:** se registró D-157.
+- **Cómo estaba antes:** la última decisión era D-156.
+- **Por qué:** pedido del autor.
+
+### 2026-11-05 — D-156
+
+- **Qué cambió:** se registró D-156.
+- **Cómo estaba antes:** la última decisión era D-155.
+- **Por qué:** pedido del autor.
+
+### 2026-11-05 — D-155
+
+- **Qué cambió:** se registró D-155.
+- **Cómo estaba antes:** la última decisión era D-154.
+
 - **Por qué:** pedido del autor.
 
 ### 2026-11-04 — D-154

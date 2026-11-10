@@ -22,6 +22,7 @@ Comprobar por separado las hipótesis de Relevo y usar los resultados para mante
 
 ## Protocolos planificados
 
+- [Entrevista de cierre según la guía de los profesores](instrumentos/entrevista-de-cierre-2026-11-09.md): diez preguntas abiertas, en embudo y con una pregunta final proyectiva. Reemplaza a la entrevista del instrumento del 28 de octubre y es la que tiene la app desde la 4.7.2 (D-177).
 - [Instrumento de cierre de la prueba](instrumentos/instrumento-de-cierre-2026-10-28.md): para el 30 de octubre. Aplica en papel las preguntas de comparación de la app 2.33, una entrevista de nueve preguntas y la revisión de los fallos críticos ([PDF](instrumentos/instrumento-de-cierre.pdf)).
 - [Ficha de escalas semanales y cierre en papel](instrumentos/ficha-escalas-y-cierre-2026-10-20.md): las preguntas de la tarjeta semanal y del cierre de la app, y la guía de la entrevista final, para aplicarlas cuando la prueba no se inició en el teléfono ([PDF](instrumentos/ficha-escalas-y-cierre.pdf)).
 - [Unir los datos de la prueba](analisis/README.md): script que junta Supabase, las copias de los teléfonos sin conexión y las fichas en papel, con un resumen por persona.
@@ -74,6 +75,12 @@ Cada protocolo debe declarar hipótesis, variable, muestra, procedimiento, indic
 ---
 
 ## Registro de cambios
+
+### 2026-11-09 — Entrevista de cierre
+
+- **Qué cambió:** se agrega la entrevista de cierre del 9 de noviembre.
+- **Cómo estaba antes:** el índice listaba solo el instrumento del 28 de octubre.
+- **Por qué:** D-177.
 
 ### 2026-10-28 — Instrumento de cierre
 

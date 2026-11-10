@@ -49,7 +49,16 @@
       { what: "app_abierta", detail: null, created_at: iso(now - 26 * 3600000), src: "app" }
     ], usage,
     state: { updated_at: iso(now - 20 * 60000), app_version: '2.18', consent_version: '2026-09-30-v11', state },
-    missing: [{ detail: 'paso=usage;aviso=Elige al menos una app que cuente.', created_at: iso(now - 40 * 60000) }, { detail: 'paso=usage;aviso=Elige al menos una app que cuente.', created_at: iso(now - 41 * 60000) }] };
+    missing: [{ detail: 'paso=usage;aviso=Elige al menos una app que cuente.', created_at: iso(now - 40 * 60000) }, { detail: 'paso=usage;aviso=Elige al menos una app que cuente.', created_at: iso(now - 41 * 60000) }],
+    // Cierre de la prueba (4.7): respuestas inventadas, solo para ver la sección en modo de ejemplo.
+    closing: [
+      { question: 'semanas_previas_costo_preparar', answer: '2', created_at: iso(now - 30 * 60000) },
+      { question: 'semanas_previas_relacion_lugar', answer: '4', created_at: iso(now - 30 * 60000) },
+      { question: 'semana1_comparacion', answer: 'menos', created_at: iso(now - 25 * 60000) },
+      { question: 'cierre_semana_que_ayudo', answer: 'A', created_at: iso(now - 20 * 60000) },
+      { question: 'cierre_prefiere_que_suene', answer: 'objeto', created_at: iso(now - 20 * 60000) },
+      { question: 'entrevista_al_sonar', answer: 'Ejemplo: lo escuché desde la pieza y me acordé del libro.', created_at: iso(now - 10 * 60000) },
+    ] };
   // v5: relevos de ejemplo para Resultados y Exportar.
   const conds = ["A","B","C"], outs = ["started","started","later","changed",null,"started","later"], feel = ["good","neutral","bad","good"], routes = ["bluetooth","tag","phone"];
   const stats = []; for (let i = 0; i < 36; i++) { const c = conds[i % 3], sig = i % 5 !== 4, out = sig ? outs[i % 7] : null;

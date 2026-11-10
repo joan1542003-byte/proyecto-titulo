@@ -1,10 +1,9 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,32 +15,31 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.isImeVisible
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
+import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.TextLayoutResult
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
@@ -49,6 +47,7 @@ import com.example.relevo.theme.Relevo
  * Campo de texto de la línea 3.0: una caja blanca con borde fino y, dentro, lo que escribe la persona
  * en tinta. Con foco, el borde pasa a tinta. El ejemplo va en grafito y el rótulo, arriba.
  */
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun RenglonField(
   label: String,
@@ -60,12 +59,29 @@ fun RenglonField(
   imeAction: ImeAction = ImeAction.Done,
   onImeAction: () -> Unit = {},
   maxLength: Int = 120,
-  /** La ficha de su papel a la izquierda, como en las filas: el primer paso en cielo, el lugar en lima. */
+  /** El ícono a la izquierda, como en las filas: siempre en tinta sobre piedra (4.0). */
   icon: KitIcon? = null,
+  /**
+   * false cuando el título de la pantalla ya hace la pregunta (Preparar, 4.2): el rótulo no se repite a la
+   * vista y queda para el lector de pantalla.
+   */
+  showLabel: Boolean = true,
 ) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val focused by interaction.collectIsFocusedAsState()
+  // 4.7: al escribir, el campo sube hasta quedar sobre el teclado y sobre los botones flotantes de la pantalla.
+  // Antes, un campo al final de una pantalla larga quedaba escondido detrás de «Seguir».
+  val requester = remember { BringIntoViewRequester() }
+  val overlay = LocalBottomOverlay.current
+  val density = LocalDensity.current
+  var fieldHeight by remember { mutableIntStateOf(0) }
+  val keyboard = WindowInsets.isImeVisible
+  LaunchedEffect(focused, keyboard, fieldHeight) {
+    if (!focused || !keyboard) return@LaunchedEffect
+    delay(80)
+    requester.bringIntoView(Rect(0f, 0f, 1f, fieldHeight + with(density) { (overlay + 12.dp).toPx() }))
+  }
   val lineColor by animateColorAsState(if (focused) colors.ink else colors.line, Motion.standard(Motion.SHORT), label = "renglon_line")
   val lineWidth by animateDpAsState(if (focused) 2.dp else 1.5.dp, Motion.standard(Motion.SHORT), label = "renglon_width")
   val shape = RoundedCornerShape(20.dp)
@@ -79,7 +95,8 @@ fun RenglonField(
     interactionSource = interaction,
     keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = imeAction),
     keyboardActions = KeyboardActions(onAny = { onImeAction() }),
-    modifier = modifier.fillMaxWidth(),
+    modifier = modifier.fillMaxWidth().bringIntoViewRequester(requester).onSizeChanged { fieldHeight = it.height }
+      .then(if (showLabel) Modifier else Modifier.semantics { contentDescription = label }),
     decorationBox = { inner ->
       androidx.compose.foundation.layout.Row(
         Modifier.fillMaxWidth().heightIn(min = 64.dp).background(colors.card, shape).border(lineWidth, lineColor, shape)
@@ -91,7 +108,7 @@ fun RenglonField(
           Spacer(Modifier.width(14.dp))
         }
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-          if (label.isNotBlank()) Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = colors.graphite)
+          if (showLabel && label.isNotBlank()) Text(label, style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = colors.graphite)
           Box {
             if (value.isEmpty() && placeholder.isNotEmpty()) Text(placeholder, style = Relevo.type.body, color = colors.graphite)
             inner()
@@ -131,47 +148,24 @@ fun SearchField(value: String, onValueChange: (String) -> Unit, placeholder: Str
   }
 }
 
-/**
- * La firma con las palabras de la persona: «Vuelve a leer.», en dos tonos como los títulos de la línea
- * 3.0: el comienzo en grafito y lo que escribió la persona en tinta. Lo escrito aparece en 450 ms; sin
- * animación si Android la desactiva.
- */
-@Composable
-fun Signature(
-  words: String,
-  modifier: Modifier = Modifier,
-  style: TextStyle = Relevo.type.signature,
-  animate: Boolean = true,
-  prefix: String = "Vuelve a ",
-  /** Lo que escribió la persona va en tinta; el comienzo, en grafito. */
-  phraseColor: Color = Relevo.colors.voice,
-) {
-  val colors = Relevo.colors
-  val reduce = rememberReduceMotion()
-  val phrase = words.trim().trimEnd('.').replaceFirstChar { it.lowercase() }
-  val progress = remember(phrase) { Animatable(if (animate && !reduce) 0f else 1f) }
-  LaunchedEffect(phrase, reduce) {
-    if (animate && !reduce) progress.animateTo(1f, tween(Motion.WRITING, easing = LinearEasing)) else progress.snapTo(1f)
-  }
-  val visible = (phrase.length * progress.value).toInt()
-  val text = buildAnnotatedString {
-    withStyle(SpanStyle(color = colors.graphite)) { append(prefix) }
-    withStyle(SpanStyle(color = phraseColor)) { append(phrase.take(visible)) }
-    withStyle(SpanStyle(color = Color.Transparent)) { append(phrase.drop(visible)) }
-    withStyle(SpanStyle(color = colors.ink)) { append(".") }
-  }
-  Text(
-    text,
-    style = style,
-    modifier = modifier,
-  )
-}
-
 /** Texto largo sobre renglón, para comentarios. */
 @Composable
 fun RenglonArea(label: String, value: String, onValueChange: (String) -> Unit, placeholder: String) {
   RenglonField(label, value, onValueChange, placeholder = placeholder, singleLine = false, imeAction = ImeAction.Default, maxLength = 600)
 }
 
+/**
+ * Sugerencias de un toque, con su rótulo «Sugerencias» (4.3, D-158): así se distinguen de lo que la persona
+ * escribe. La elegida queda marcada y se puede cambiar o escribir encima. Sin sugerencias, no se muestra nada.
+ */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
-internal fun VerticalSpace(height: androidx.compose.ui.unit.Dp) = Spacer(Modifier.height(height))
+fun Suggestions(options: List<String>, current: String, onPick: (String) -> Unit, modifier: Modifier = Modifier) {
+  if (options.isEmpty()) return
+  Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text("Sugerencias", style = Relevo.type.footnote.copy(fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold), color = Relevo.colors.graphite)
+    androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      options.forEach { option -> QuickChoice(option, current.trim().equals(option, ignoreCase = true), { onPick(option) }) }
+    }
+  }
+}

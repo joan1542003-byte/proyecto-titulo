@@ -1,5 +1,6 @@
 package com.example.relevo.monitor
 
+import com.example.relevo.data.ActiveStore
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -15,10 +16,9 @@ import com.example.relevo.data.ReminderStore
 import com.example.relevo.data.ResearchLogStore
 import com.example.relevo.data.SettingsStore
 import com.example.relevo.domain.ReminderStatus
-import java.util.Locale
 
 /**
- * V2: aviso de regreso opcional. Empieza apagado y se activa en «Avisos y resúmenes». Llega como
+ * V2: aviso de regreso opcional. Empieza apagado y se enciende en «Ajustes de tus relevos». Llega como
  * máximo una vez por semana y solo si la persona no abrió Relevo en ese tiempo. No dice cuántos días
  * pasaron ni sugiere una falta; tras dos «Ahora no» seguidos, la app pregunta una vez si se apaga.
  */
@@ -56,20 +56,21 @@ object ReturnNotice {
 
   fun check(context: Context, now: Long = System.currentTimeMillis()) {
     val settings = SettingsStore(context)
-    if (!settings.load().returnNotice || !Participation.canUse(context)) return
+    if (!settings.load().returnNotice || !Participation.participating(context)) return
     val status = ReminderStore(context).load().status
-    if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED) return
+    if (status == ReminderStatus.WAITING || status == ReminderStatus.SIGNALLED || ActiveStore(context).load().isNotEmpty()) return
     if (!due(now, settings.lastOpenedAt, settings.lastReturnNoticeAt)) return
     val manager = context.getSystemService(NotificationManager::class.java) ?: return
     if (!manager.areNotificationsEnabled()) return
     manager.createNotificationChannel(
       NotificationChannel(CHANNEL_ID, "Aviso semanal", NotificationManager.IMPORTANCE_LOW).apply {
-        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil, en Avisos y resúmenes."
+        description = "Una vez por semana como máximo, si no abriste Relevo. Se apaga en Perfil › Ajustes › Avisos."
       },
     )
     val activity = ReminderStore(context, ReminderStore.LAST_CONFIGURATION).load().activity.trim().trimEnd('.')
-    val question = if (activity.isBlank()) GENERIC_QUESTION
-      else "¿Sigue en pie ${activity.replaceFirstChar { it.lowercase(Locale.forLanguageTag("es")) }} esta semana?"
+    // 4.0 (R11): la actividad en el título, sin el nombre de la app, y una pregunta corta.
+    val title = activity.ifBlank { "Esta semana" }
+    val question = if (activity.isBlank()) GENERIC_QUESTION else "¿Sigue en pie esta semana?"
     // En la pantalla de bloqueo no se muestra la actividad, como en la señal.
     val publicVersion = NotificationCompat.Builder(context, CHANNEL_ID)
       .setSmallIcon(R.drawable.ic_stat_relevo)
@@ -90,7 +91,7 @@ object ReturnNotice {
       NOTIFICATION_ID,
       NotificationCompat.Builder(context, CHANNEL_ID)
         .setSmallIcon(R.drawable.ic_stat_relevo)
-        .setContentTitle("Relevo")
+        .setContentTitle(title)
         .setContentText(question)
         .setContentIntent(prepare)
         .addAction(0, "Preparar", prepare)

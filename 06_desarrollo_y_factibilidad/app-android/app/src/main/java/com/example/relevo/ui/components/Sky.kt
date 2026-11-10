@@ -39,24 +39,42 @@ enum class Sky(internal val base: Color, internal val blobs: List<SkyBlob>) {
   NOCHE(Color(0xFF2B3A66), listOf(SkyBlob(Color(0xFF0F1A3D), .2f, .3f, .6f), SkyBlob(Color(0xFF5E7BD8), .8f, .7f, .55f), SkyBlob(Color(0xFFA9B8F5), .6f, .2f, .35f), SkyBlob(Color(0xFF1E2B5C), .9f, .9f, .4f))),
   /** Personas: rosa de amor y ternura. */
   ROSA(Color(0xFFF4C9D2), listOf(SkyBlob(Color(0xFFC8325A), .25f, .35f, .55f), SkyBlob(Color(0xFFF7A9BE), .75f, .25f, .5f), SkyBlob(Color(0xFFFFFFFF), .55f, .6f, .35f), SkyBlob(Color(0xFFE0617F), .3f, .85f, .45f))),
-  /** Lo que no tiene familia: el aura suave. */
-  AURA(Color(0xFFFBF5EC), listOf(SkyBlob(Color(0xFFFFD54A).copy(alpha = .75f), .25f, .75f, .55f), SkyBlob(Color(0xFFF6A3CB).copy(alpha = .75f), .7f, .3f, .5f), SkyBlob(Color(0xFF9DD6F4).copy(alpha = .75f), .15f, .2f, .45f), SkyBlob(Color(0xFFC5B2F6).copy(alpha = .75f), .9f, .8f, .45f))),
+  /** Lo que no tiene familia: arena, un tono tibio y quieto (4.0; antes, el aura). */
+  ARENA(Color(0xFFE8DCCB), listOf(SkyBlob(Color(0xFFC9B79C), .25f, .75f, .55f), SkyBlob(Color(0xFFF6EFE4), .7f, .3f, .5f), SkyBlob(Color(0xFFD8C7AE), .85f, .85f, .45f))),
   ;
 
   /** Tres colores representativos, para ilustraciones que usan la familia (la guía del Tag). */
   internal val palette: List<Color> get() = blobs.map { it.color.copy(alpha = 1f) }.take(3)
+
+  /**
+   * Los tres colores del anillo de una actividad (4.1, D-156): arriba, a los lados y abajo. Salen de las
+   * luces de la familia, llevadas a una misma luminancia para que el anillo pese igual en todo su
+   * contorno; las luces casi blancas del cielo hacían que un lado pareciera más delgado.
+   */
+  internal val ring: List<Color> get() = when (this) {
+    MENTA -> listOf(Color(0xFF3FB482), Color(0xFF3FB487), Color(0xFF3DAEC3))
+    CIELO -> listOf(Color(0xFF2A6DD4), Color(0xFF356ADA), Color(0xFF3B6BD2))
+    ATARDECER -> listOf(Color(0xFFEE6C23), Color(0xFFE8698E), Color(0xFFA080EE))
+    AMBAR -> listOf(Color(0xFFE79A0B), Color(0xFFE39A4F), Color(0xFFBF98F1))
+    BRASA -> listOf(Color(0xFFDB5D10), Color(0xFFE8501E), Color(0xFFE6522A))
+    NOCHE -> listOf(Color(0xFF36457C), Color(0xFF34457A), Color(0xFF25419A))
+    ROSA -> listOf(Color(0xFFDA4265), Color(0xFFD24A6F), Color(0xFFD8426F))
+    ARENA -> listOf(Color(0xFFB49972), Color(0xFFB09A7B), Color(0xFFB09A77))
+  }
 }
 
-/** La familia de una actividad, por su ícono. Las que la app no reconoce toman el aura suave. */
+/** La familia de una actividad, por su ícono. Las que la app no reconoce toman la arena. */
 fun skyFor(icon: KitIcon): Sky = when (icon) {
-  KitIcon.CAMINAR, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.SALIR, KitIcon.PLANTAS -> Sky.MENTA
-  KitIcon.LEER, KitIcon.ESTUDIAR, KitIcon.ESCRIBIR, KitIcon.TEXTO -> Sky.CIELO
-  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.FOTOGRAFIA -> Sky.ATARDECER
-  KitIcon.VIDEOJUEGOS, KitIcon.JUEGO_DE_MESA, KitIcon.MUSICA, KitIcon.GUITARRA, KitIcon.REPRODUCIR -> Sky.AMBAR
+  KitIcon.CAMINAR, KitIcon.CORRER, KitIcon.EJERCICIO, KitIcon.BICICLETA, KitIcon.NADAR, KitIcon.PELOTA, KitIcon.PERRO, KitIcon.SALIR,
+  KitIcon.PLANTAS -> Sky.MENTA
+  KitIcon.LEER, KitIcon.MANGA, KitIcon.ESTUDIAR, KitIcon.IDIOMAS, KitIcon.ESCRIBIR, KitIcon.CARTA, KitIcon.TEXTO -> Sky.CIELO
+  KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.MANUALIDADES, KitIcon.TEJER, KitIcon.MAQUETA, KitIcon.FOTOGRAFIA -> Sky.ATARDECER
+  KitIcon.VIDEOJUEGOS, KitIcon.JUEGO_DE_MESA, KitIcon.CARTAS, KitIcon.MUSICA, KitIcon.GUITARRA, KitIcon.PIANO, KitIcon.PELICULA,
+  KitIcon.REPRODUCIR -> Sky.AMBAR
   KitIcon.COCINAR, KitIcon.ORDENAR -> Sky.BRASA
-  KitIcon.DORMIR, KitIcon.ESTIRAR -> Sky.NOCHE
-  KitIcon.LLAMAR -> Sky.ROSA
-  else -> Sky.AURA
+  KitIcon.DORMIR, KitIcon.MEDITAR, KitIcon.ESTIRAR -> Sky.NOCHE
+  KitIcon.LLAMAR, KitIcon.COMPARTIR -> Sky.ROSA
+  else -> Sky.ARENA
 }
 
 /** Grano de papel: ruido de 128 px que se repite, calculado una sola vez. */
@@ -109,7 +127,7 @@ fun SkyBackground(sky: Sky, modifier: Modifier = Modifier, variant: Int = 0, con
  * Orden de las familias en una cuadrícula (3.2): de moverse a descansar, para que los colores vayan
  * agrupados y en orden, y no salpicados.
  */
-val SkyOrder = listOf(Sky.MENTA, Sky.CIELO, Sky.ATARDECER, Sky.AMBAR, Sky.BRASA, Sky.NOCHE, Sky.ROSA, Sky.AURA)
+val SkyOrder = listOf(Sky.MENTA, Sky.CIELO, Sky.ATARDECER, Sky.AMBAR, Sky.BRASA, Sky.NOCHE, Sky.ROSA, Sky.ARENA)
 
 /** Nombre de cada familia, para los rótulos de «¿Qué quieres hacer?». */
 val Sky.familyName: String get() = when (this) {
@@ -120,5 +138,5 @@ val Sky.familyName: String get() = when (this) {
   Sky.BRASA -> "En casa"
   Sky.NOCHE -> "Descansar"
   Sky.ROSA -> "Con otras personas"
-  Sky.AURA -> "Otras"
+  Sky.ARENA -> "Otras"
 }

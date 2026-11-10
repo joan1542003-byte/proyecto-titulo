@@ -80,7 +80,7 @@ object Interests {
       Triple("Ir en bici a algún lugar", "Ponerte el casco", "Junto a la puerta"),
     )),
     // P1, Q1; P4, Q2 y Q12.
-    Interest("perro", "Pasear o jugar con tu perro", listOf(
+    Interest("perro", "Pasear o jugar con el perro", listOf(
       Triple("Salir 10 minutos con el perro", "Tomar la correa", "Junto a la puerta"),
       Triple("Jugar con el perro", "Sacar su pelota", "Donde está su pelota"),
       Triple("Salir con el perro sin el teléfono", "Dejar el teléfono en casa", "Junto a la puerta"),
@@ -104,7 +104,7 @@ object Interests {
       Triple("Preparar la comida de mañana", "Sacar los táper", "En el mesón de la cocina"),
     )),
     // P5, Q2 y Q12.
-    Interest("ordenar", "Ordenar tu pieza", listOf(
+    Interest("ordenar", "Ordenar la pieza", listOf(
       Triple("Ordenar un cajón", "Vaciar el cajón sobre la cama", "Junto al cajón"),
       Triple("Hacer la cama", "Estirar las sábanas", "Junto a la cama"),
       Triple("Ordenar la ropa", "Juntar la ropa en el canasto", "Junto al canasto"),
@@ -117,14 +117,14 @@ object Interests {
     )),
     // P8, Q12 (tareas).
     Interest("estudiar", "Estudiar o hacer tareas", listOf(
-      Triple("Estudiar 20 minutos", "Abrir tus apuntes", "En el escritorio"),
+      Triple("Estudiar 20 minutos", "Abrir los apuntes", "En el escritorio"),
       Triple("Hacer una tarea", "Abrir el cuaderno en la tarea", "En el escritorio"),
-      Triple("Repasar para una prueba", "Sacar tus resúmenes", "En el escritorio"),
+      Triple("Repasar para una prueba", "Sacar los resúmenes", "En el escritorio"),
     )),
     // P3, Q1 (jugar en el computador); P6, Q1; P7, Q1; P8, Q1 y Q10 (completar un juego).
     Interest("videojuegos", "Jugar videojuegos", listOf(
       Triple("Jugar una partida", "Encender la consola", "Junto a la tele"),
-      Triple("Avanzar en tu juego", "Dejar el control cargado", "Junto a la tele"),
+      Triple("Avanzar en el juego", "Dejar el control cargado", "Junto a la tele"),
       Triple("Jugar con alguien", "Avisar a quien juega contigo", "Junto al computador"),
     )),
     // P5, Q1; P6, Q1; P8, Q1.

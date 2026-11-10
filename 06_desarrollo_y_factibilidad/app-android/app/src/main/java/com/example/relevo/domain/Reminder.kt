@@ -10,11 +10,13 @@ enum class ReminderStatus {
 }
 
 /**
- * Por dónde suena la señal. BLUETOOTH: parlante multimedia. PHONE: altavoz del teléfono.
- * WATCH: reloj u otro equipo que contesta llamadas; el tono viaja como audio de llamada (D-093, experimental).
- * TAG: llavero iTag clásico; pita con el servicio Bluetooth estándar de alerta inmediata (D-109).
+ * Con qué suena un relevo. Los nombres son los que guarda la base de datos desde 2.11, así que no cambian.
+ * - TAG: el Tag, el llavero Bluetooth que se deja donde empieza la actividad (D-109).
+ * - PHONE: una notificación con sonido en el teléfono, donde esté.
+ * - BLUETOOTH: un dispositivo de audio Bluetooth, como un parlante o unos audífonos.
  */
-enum class SignalRoute { BLUETOOTH, PHONE, WATCH, TAG }
+enum class SignalRoute { BLUETOOTH, PHONE, TAG }
+
 data class TrackedApp(val packageName: String, val label: String)
 
 data class Reminder(
@@ -23,32 +25,28 @@ data class Reminder(
   val place: String = "",
   val targetPackage: String = "",
   val targetAppLabel: String = "",
-  val requiredUsageSeconds: Int = 900,
+  val requiredUsageSeconds: Int = DEFAULT_LIMIT_SECONDS,
   val observedUsageSeconds: Int = 0,
   val participantCode: String = "",
   val consentAccepted: Boolean = false,
   val sessionId: String = "",
   val status: ReminderStatus = ReminderStatus.DRAFT,
   val signalDelivered: Boolean = false,
-  val signalRoute: SignalRoute = SignalRoute.BLUETOOTH,
+  val signalRoute: SignalRoute = SignalRoute.TAG,
   val targetApps: List<TrackedApp> = emptyList(),
-  /** Condición de la prueba de 21 días en que se activó (A, B o C); vacío fuera de la prueba o el día 0. */
-  val studyCondition: String = "",
   /**
-   * La persona eligió dónde suena. En un relevo nuevo no hay salida marcada (2.21): sin elegir,
-   * [signalRoute] no se muestra ni se usa. Al repetir un relevo se conserva su propia elección.
+   * La persona eligió con qué suena. Desde 1.0.0 el Tag viene elegido por defecto (D-117); la marca sigue
+   * existiendo para los relevos guardados antes, que se respetan tal como estaban.
    */
   val routeChosen: Boolean = false,
-  /** Día de la prueba en que se activó (0 a 21); −1 fuera de la prueba. */
-  val studyDay: Int = -1,
-  /** Momento en que se emitió la señal. */
+  /** Momento en que sonó. */
   val signalAt: Long = 0L,
-  /** La señal ya no suena: terminó sola a los 30 s, se perdió la salida o no pudo reproducirse. */
+  /** Ya no suena: terminó sola a los 30 s, se perdió la salida o no pudo reproducirse. */
   val signalEnded: Boolean = false,
-  /** Se usa sin participar en la prueba (A2): funciona igual, sin código ni registro del estudio. */
-  val localOnly: Boolean = false,
   /** Se activó solo al abrir una app elegida (activación automática, D-095). */
   val autoActivated: Boolean = false,
+  /** El Tag no respondió al cumplirse el tiempo y sonó una notificación en el teléfono (1.0.0). */
+  val soundedOnPhone: Boolean = false,
 ) {
   val selectedApps: List<TrackedApp>
     get() = targetApps.ifEmpty { if (targetPackage.isNotBlank()) listOf(TrackedApp(targetPackage, targetAppLabel)) else emptyList() }
@@ -62,7 +60,7 @@ data class Reminder(
         selectedApps.isNotEmpty() &&
         selectedApps.all { it.packageName.isNotBlank() && it.label.isNotBlank() } &&
         requiredUsageSeconds > 0 &&
-        ((participantCode.isNotBlank() && consentAccepted) || localOnly)
+        participantCode.isNotBlank() && consentAccepted
 
   val hasRequiredContent: Boolean
     get() = hasPreparedContent && place.isNotBlank()
@@ -78,19 +76,20 @@ data class Reminder(
         signalDelivered = false,
         signalAt = 0L,
         signalEnded = false,
+        soundedOnPhone = false,
       )
     } else {
       this
     }
 
-  fun deliverSignal(audible: Boolean, at: Long = System.currentTimeMillis()): Reminder =
+  fun deliverSignal(audible: Boolean, at: Long = System.currentTimeMillis(), onPhone: Boolean = false): Reminder =
     if (status == ReminderStatus.WAITING) {
-      copy(status = ReminderStatus.SIGNALLED, signalDelivered = audible, signalAt = at, signalEnded = !audible)
+      copy(status = ReminderStatus.SIGNALLED, signalDelivered = audible, signalAt = at, signalEnded = !audible, soundedOnPhone = onPhone)
     } else {
       this
     }
 
-  /** La señal dejó de sonar sin que la persona la silenciara; la pantalla sigue esperando su respuesta. */
+  /** Dejó de sonar sin que la persona lo silenciara; la pantalla sigue esperando su respuesta. */
   fun endSignal(): Reminder = if (status == ReminderStatus.SIGNALLED) copy(signalEnded = true) else this
 
   fun silence(): Reminder =
@@ -104,4 +103,9 @@ data class Reminder(
     }
 
   fun close(): Reminder = copy(status = ReminderStatus.CLOSED)
+
+  companion object {
+    /** El tiempo que propone un relevo nuevo: 15 minutos, un límite breve para empezar (1.0.0). */
+    const val DEFAULT_LIMIT_SECONDS = 15 * 60
+  }
 }

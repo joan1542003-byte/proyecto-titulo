@@ -30,18 +30,11 @@ object AutoMode {
   ): Boolean =
     enabled && usable(last) && last!!.tracks(foregroundPackage) && current !in BUSY && now - lastClosedAt >= PAUSE_MILLIS
 
-  /**
-   * El relevo automático: la última configuración con el código de la persona y, durante la prueba,
-   * el día y la condición de hoy, que deciden dónde suena, como en un relevo activado a mano.
-   */
-  fun fromLast(last: Reminder, participantCode: String, condition: StudyCondition?, studyDay: Int, sessionId: String): Reminder =
+  /** El relevo automático: la última configuración, con el código de la persona y marcado como automático. */
+  fun fromLast(last: Reminder, participantCode: String, sessionId: String): Reminder =
     last.copy(
       participantCode = participantCode,
       consentAccepted = true,
-      localOnly = false,
-      signalRoute = condition?.routeFor(last.signalRoute) ?: last.signalRoute,
-      studyCondition = condition?.code?.toString().orEmpty(),
-      studyDay = studyDay,
       status = ReminderStatus.READY,
       autoActivated = true,
     ).arm(sessionId)

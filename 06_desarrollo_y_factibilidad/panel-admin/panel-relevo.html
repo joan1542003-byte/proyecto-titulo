@@ -501,7 +501,7 @@ footer { max-width: 1040px; margin: 36px auto 0; color: var(--graphite); font-si
 
 <script>
 (function () {
-  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '2.33';
+  const PROJECT = 'rwzslwtxabmfofqppgwu', SERVER = 'Supabase', TOOL = 'execute_sql', TZ = 'America/Santiago', REFRESH_MS = 30000, LATEST = '4.7.2';
 
   const SNAPSHOT_SQL = `
 with ev as (
@@ -630,7 +630,7 @@ select json_build_object(
   ];
 
   const CONDITIONS = { A: 'Junto al primer paso', B: 'Otro lugar de la casa', C: 'En el teléfono' };
-  const ROUTES = { bluetooth: 'parlante', phone: 'teléfono', watch: 'reloj', tag: 'Tag' };
+  const ROUTES = { bluetooth: 'dispositivo de audio', phone: 'notificación en el teléfono', watch: 'reloj', tag: 'Tag' };
   const OUTCOMES = { started: 'Comenzó', later: 'Lo dejó para después', changed: 'Cambió de idea', not_answered: 'Saltó las preguntas', deleted: 'Lo eliminó' };
   const KNEW = { yes: 'Sí', partly: 'A medias', no: 'No' };
   const FEELING = { good: '😄 Bien', neutral: '😐 Normal', bad: '😞 Mal' };
@@ -649,7 +649,9 @@ select json_build_object(
     preparar_abierto: ['play', 'Empezó a preparar'], preparar_cerrado: ['pause', 'Cerró la preparación'], actividad_elegida: ['check', 'Eligió una actividad'],
     prueba_de_sonido: ['bell', 'Probó el sonido'], video_como_funciona: ['play', 'Vio el video'], aviso_semanal_enviado: ['bell', 'Le llegó el aviso semanal'],
     llavero_busqueda: ['bell', 'Buscó su Tag'], llavero_encontrados: ['bell', 'Terminó de buscar el Tag'], llavero_vinculado: ['check', 'Eligió su Tag'],
-    llavero_olvidado: ['close', 'Olvidó su Tag'], llavero_escuchado: ['bell', 'Dijo si escuchó el Tag'], llavero_perfil: ['info', 'Registró cómo es su Tag'], llavero_pila: ['info', 'Pila de su Tag al sonar']
+    llavero_olvidado: ['close', 'Olvidó su Tag'], llavero_escuchado: ['bell', 'Dijo si escuchó el Tag'], llavero_perfil: ['info', 'Registró cómo es su Tag'], llavero_pila: ['info', 'Pila de su Tag al sonar'],
+    encuesta_cierre_elegible: ['info', 'Se revisó si le corresponde el cierre de la prueba'], encuesta_cierre_ofrecida: ['bell', 'Se le ofreció el cierre de la prueba'],
+    encuesta_cierre_parte: ['check', 'Respondió una parte del cierre'], encuesta_cierre_terminada: ['check', 'Terminó el cierre de la prueba']
   };
   const ICONS = {
     now: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
@@ -740,8 +742,33 @@ select json_build_object(
     // Desde la 2.33: las semanas antes de una semana de comparación.
     const prev = /^semanas_previas_(.+)$/.exec(q);
     if (prev) return 'Semanas anteriores: ' + (names[prev[1]] || prev[1].replace(/_/g, ' '));
+    // Desde la 4.7 (D-175): el cierre de la prueba en la app, con las claves del instrumento en papel.
+    const closing = {
+      cierre_seguiria_usando: 'Cierre: seguiría usando Relevo (sí, tal vez o no)',
+      cierre_semana_que_ayudo: 'Cierre: qué le ayudó más a recordar (A = el objeto, C = el aviso en el teléfono, igual o ninguna)',
+      cierre_por_que_ayudo: 'Cierre: por qué le ayudó', cierre_prefiere_que_suene: 'Cierre: con qué le gustaría que sonara',
+      cierre_que_molesto: 'Cierre: qué le molestó', cierre_que_cambiaria: 'Cierre: qué cambiaría', cierre_lugar_parlante: 'Cierre: dónde quedó el objeto',
+      entrevista_uso: 'Entrevista final: cómo usó Relevo',
+      entrevista_al_sonar: 'Entrevista final: qué pasó al sonar',
+      entrevista_lugar: 'Entrevista final: dónde estuvo el Tag',
+      entrevista_tag_y_telefono: 'Entrevista final: el Tag frente al teléfono',
+      entrevista_dias_sin_uso: 'Entrevista final: los días sin usarlo',
+      entrevista_decidir: 'Entrevista final: cómo decidía al sonar',
+      entrevista_costo_y_molestia: 'Entrevista final: qué le costó o le molestó',
+      entrevista_fallas: 'Entrevista final: qué no funcionó',
+      entrevista_otras_personas: 'Entrevista final: con otras personas cerca',
+      entrevista_cambiaria: 'Entrevista final: qué cambiaría',
+      // La entrevista del 28 de octubre, por si alguien la respondió con la app 4.7 o 4.7.1.
+      entrevista_1: 'Entrevista del 28 de octubre, 1: qué pensó al sonar', entrevista_2: 'Entrevista del 28 de octubre, 2: qué le ayudó más a recordar',
+      entrevista_3: 'Entrevista del 28 de octubre, 3: qué le molestó o le costó', entrevista_4: 'Entrevista del 28 de octubre, 4: dónde estuvo el objeto',
+      entrevista_5: 'Entrevista del 28 de octubre, 5: si sintió que podía elegir', entrevista_6: 'Entrevista del 28 de octubre, 6: qué falló',
+      entrevista_7: 'Entrevista del 28 de octubre, 7: otras personas', entrevista_8: 'Entrevista del 28 de octubre, 8: días sin usarlo',
+      entrevista_9: 'Entrevista del 28 de octubre, 9: qué cambiaría',
+    };
+    if (closing[q]) return closing[q];
     if (q.startsWith('cierre_')) return 'Cierre: ' + q.slice(7).replace(/_/g, ' ');
-    const map = { opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
+    const map = { rediseno_impresion: 'Rediseño: qué le parece (1 a 5)', rediseno_comparado: 'Rediseño: comparado con la versión anterior', umux_lite_funciones: 'UMUX-Lite: hace lo que necesito (1 a 7)', umux_lite_facil: 'UMUX-Lite: es fácil de usar (1 a 7)', rediseno_gusta: 'Rediseño: lo que más le gusta', rediseno_cambiaria: 'Rediseño: qué cambiaría',
+      opinion_rapida: 'Opinión rápida (1 a 5)', opinion_estrellas: 'Estrellas a la app', opinion_comentario: 'Comentario sobre la app',
       reporte_problema: 'Reporte de un problema', lugar_del_objeto: 'Dónde dejó el objeto', salida_que_ayudo: 'Qué salida le ayudó', reporte_registro: 'Registro técnico', prueba_inicio: 'Inicio de la prueba', prueba_fin: 'Fin de la prueba', tu_semana_ayudo: 'Tu semana: qué ayudó', percepcion_senal: 'Notó el aviso (enseguida, un rato después o no)' };
     return map[q] || q.replace(/_/g, ' ');
   }
@@ -851,7 +878,7 @@ select json_build_object(
     if (perm.notificaciones === false) out.push({ text: 'Tiene las notificaciones apagadas: los mensajes no le llegan', tpl: null });
     if (perm.bateria_sin_restriccion === false) out.push({ text: 'La batería está con restricción', tpl: 'bateria' });
     if (p.contact && Date.now() - new Date(p.contact).getTime() > 24 * 3600e3) out.push({ text: 'No llegan datos desde ' + when(p.contact), tpl: 'sin_datos' });
-    if (p.version && !versionAtLeast(p.version, LATEST)) out.push({ text: 'Usa la app ' + p.version + '; usa la ' + LATEST + ' para el testeo', tpl: 'version' });
+    if (p.version && !versionAtLeast(p.version, LATEST)) out.push({ text: 'Usa la app ' + p.version + '; la más nueva es la ' + LATEST, tpl: 'version' });
     return out;
   }
 
@@ -1116,6 +1143,65 @@ select json_build_object(
   }
   function renderAnswers(A) { section('l-answers', A.map((a) => answerRow(a, true)), 'Todavía no hay respuestas de tarjetas ni opiniones.'); }
 
+  // ---- Cierre de la prueba (app 4.7, D-175): en el orden del instrumento del 28 de octubre ----
+  // Se muestran todas las respuestas, con su fecha: si una pregunta se respondió más de una vez, ninguna se oculta.
+  const CLOSING_RE = /^(semanas_previas_|semana1_|cierre_|entrevista_)/;
+  const CLOSING_PARTS = [
+    ['Semanas con el Tag', [['semanas_previas_costo_preparar', '¿Te costó preparar Relevo?'], ['semanas_previas_molestia_senal', '¿Te molestó el sonido?'],
+      ['semanas_previas_relacion_lugar', '¿El sonido tenía que ver con el lugar donde sonó?'], ['semanas_previas_comentario', '¿Algo más que quieras contarnos?']]],
+    ['Semana con el teléfono', [['semana1_costo_preparar', '¿Te costó preparar Relevo?'], ['semana1_molestia_senal', '¿Te molestó el sonido?'],
+      ['semana1_relacion_lugar', '¿El sonido tenía que ver con el lugar donde sonó?'],
+      ['semana1_comparacion', 'Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…'], ['semana1_comentario', '¿Por qué? ¿Algo más que quieras contarnos?']]],
+    ['Cierre de la prueba', [['cierre_seguiria_usando', '¿Seguirías usando Relevo?'], ['cierre_semana_que_ayudo', '¿Qué te ayudó más a recordar lo que querías hacer?'],
+      ['cierre_por_que_ayudo', '¿Por qué?'], ['cierre_prefiere_que_suene', 'Si siguieras usando Relevo, ¿con qué te gustaría que sonara?'],
+      ['cierre_que_molesto', '¿Qué te molestó?'], ['cierre_que_cambiaria', '¿Qué cambiarías?'], ['cierre_lugar_parlante', '¿Dónde quedó el objeto la mayor parte del tiempo?']]],
+    // Desde la app 4.7.2 (D-177): la entrevista que sigue la guía de los profesores, con claves por tema.
+    ['Entrevista final', [
+      ['entrevista_uso', 'Para empezar, cuéntame cómo usaste Relevo en estas semanas: qué actividad elegiste y en qué momentos lo preparabas.'],
+      ['entrevista_al_sonar', 'Piensa en una vez en que sonó. ¿Qué pasó desde que lo escuchaste? Cuéntalo paso a paso.'],
+      ['entrevista_lugar', '¿Dónde estuvo el Tag la mayor parte del tiempo y cómo llegaste a dejarlo ahí?'],
+      ['entrevista_tag_y_telefono', '¿Qué fue distinto y qué fue igual entre las semanas en que sonó el Tag y la semana en que sonó el teléfono?'],
+      ['entrevista_dias_sin_uso', 'Cuéntame de los días en que no preparaste ningún relevo: ¿qué pasaba esos días?'],
+      ['entrevista_decidir', 'Cuando sonaba, ¿cómo decidías qué hacer: empezar la actividad, dejarla para después o cambiar de idea?'],
+      ['entrevista_costo_y_molestia', '¿Qué te costó o te molestó de usar Relevo? Puede ser al prepararlo, el sonido, el Tag o el teléfono.'],
+      ['entrevista_fallas', '¿Qué cosas no funcionaron como esperabas?'],
+      ['entrevista_otras_personas', '¿Cómo fue usar Relevo con otras personas cerca?'],
+      ['entrevista_cambiaria', 'Si pudieras cambiar una sola cosa de Relevo, ¿cuál sería y por qué?'],
+    ]],
+    // Las claves numeradas son de la entrevista anterior: se muestran solo si alguien la respondió.
+    ['Entrevista final, versión del 28 de octubre', [
+      ['entrevista_1', 'Cuando sonó, ¿qué pensaste primero? ¿Supiste de dónde venía y qué querías hacer, sin mirar el teléfono?'],
+      ['entrevista_2', '¿Qué te ayudó más a recordar: el sonido, el lugar donde estaba el objeto o lo que decía el teléfono? ¿Por qué?'],
+      ['entrevista_3', '¿Qué te molestó o te costó (preparar, el sonido, el objeto, el teléfono)?'],
+      ['entrevista_4', '¿Dónde estuvo el objeto la mayor parte del tiempo? ¿Lo moviste?'],
+      ['entrevista_5', '¿Sentiste que tenías que hacer la actividad cuando sonaba, o que podías elegir?'],
+      ['entrevista_6', '¿Falló algo?'], ['entrevista_7', '¿Alguien más escuchó el sonido o vio lo que preparaste? ¿Cómo fue?'],
+      ['entrevista_8', '¿Hubo días en que no lo usaste? ¿Qué pasó?'], ['entrevista_9', '¿Qué cambiarías? ¿Algo más que quieras contarme?']], true],
+  ];
+  const CLOSING_VALUES = { mas: 'Más', igual: 'Igual', menos: 'Menos', si: 'Sí', tal_vez: 'Tal vez', no: 'No', A: 'El objeto donde empiezo', C: 'El aviso en el teléfono',
+    ninguna: 'Ninguno', objeto: 'Un objeto', telefono: 'El teléfono', da_igual: 'Me da igual' };
+  function closingValue(key, value) {
+    const v = String(value || '');
+    if (key === 'cierre_semana_que_ayudo' && v === 'igual') return 'Los dos por igual';
+    if (/_(costo_preparar|molestia_senal|relacion_lugar)$/.test(key) && /^[1-5]$/.test(v)) return v + ' de 5 (1 = nada, 5 = mucho)';
+    return CLOSING_VALUES[v] || v;
+  }
+  function closingBlock(rows) {
+    if (!rows.length) return el('div', { class: 'section' }, [el('div', { class: 'empty', text: 'Todavía no responde el cierre de la prueba.' })]);
+    const by = {}; rows.forEach((r) => (by[r.question] || (by[r.question] = [])).push(r));
+    const parts = CLOSING_PARTS.map(([title, questions, legacy]) => {
+      const answered = questions.filter(([key]) => by[key]);
+      if (legacy && !answered.length) return null;
+      return el('div', { class: 'section' }, [
+        el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [el('span', { class: 'row-title', text: title }),
+          el('span', { class: 'row-sub', text: answered.length ? answered.length + ' de ' + questions.length + ' preguntas respondidas' : 'Sin respuestas' })])]),
+        ...answered.flatMap(([key, question]) => by[key].map((r, i) => el('div', { class: 'row plain' }, [el('span', { class: 'row-main' }, [
+          el('span', { class: 'row-sub', text: question + ' · ' + when(r.created_at) + (by[key].length > 1 ? ' · respuesta ' + (i + 1) + ' de ' + by[key].length : '') }),
+          el('span', { class: 'row-title voice', text: closingValue(key, r.answer).slice(0, 600) })])])))]);
+    });
+    return el('div', { style: 'display:flex;flex-direction:column;gap:14px' }, parts.filter(Boolean));
+  }
+
   // ---- Resultados: cifras por condición, calculadas en la página con los relevos sin eliminar ----
   const pct = (a, b) => b ? Math.round(100 * a / b) : null;
   const pctText = (a, b) => b ? pct(a, b) + ' %' : '—';
@@ -1226,7 +1312,7 @@ select json_build_object(
       el('p', { class: 'note', text: 'Un cambio negativo significa que, después de la señal, usó menos sus apps elegidas.' }));
     const routeCount = (r) => S.filter((x) => x.signal_route === r).length;
     $('r-routes').replaceChildren(...[
-      ['En el parlante', routeCount('bluetooth')], ['En el reloj', routeCount('watch')], ['En el Tag', routeCount('tag')], ['En el teléfono', routeCount('phone')],
+      ['En el Tag', routeCount('tag')], ['En el teléfono (notificación)', routeCount('phone')], ['En un dispositivo de audio', routeCount('bluetooth')], ['En el reloj (hasta la 3.3)', routeCount('watch')],
       ['Se activó a mano', all.relevos - all.automaticos], ['Se activó solo', all.automaticos],
       ['La silenció en el teléfono', all.calladas], ['La calló tocando el Tag', all.calladas_objeto], ['Terminó sola a los 30 s', all.solas], ['Se cortó', all.cortadas]
     ].filter(([, n], i) => i >= 4 || n > 0).map(([k, n]) => el('div', { class: 'fact' }, [el('span', { text: k }), el('span', { class: 'num', text: String(n) })])));
@@ -1251,13 +1337,13 @@ select json_build_object(
     ['Relevos', 'threshold_seconds', 'Tiempo en las apps para que suene (segundos)'], ['Relevos', 'observed_seconds', 'Tiempo contado (segundos)'],
     ['Relevos', 'started_at', 'Cuándo se activó'], ['Relevos', 'signal_at', 'Cuándo sonó la señal (vacío: no sonó)'], ['Relevos', 'closed_at', 'Cuándo se cerró'],
     ['Relevos', 'study_condition', 'Condición de la semana: A junto al primer paso, B otro lugar, C teléfono'], ['Relevos', 'study_day', 'Día de la prueba (0 a 21)'],
-    ['Relevos', 'signal_route', 'Dónde sonó: bluetooth (parlante), watch (reloj), tag (Tag), phone (teléfono)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
+    ['Relevos', 'signal_route', 'Dónde sonó: tag (Tag), phone (notificación en el teléfono, también cuando el Tag no respondió), bluetooth (dispositivo de audio, antes parlante), watch (reloj, hasta la 3.3)'], ['Relevos', 'activation', 'manual o auto (activación automática)'],
     ['Relevos', 'signal_end', 'Cómo terminó: silenced (la silenció), object (tocó el Tag), auto (sola a los 30 s), interrupted (se cortó)'],
     ['Relevos', 'response_seconds', 'Segundos entre la señal y su primera acción'], ['Relevos', 'knew_intention', '¿Supo qué quería hacer? yes, partly, no'],
     ['Relevos', 'recalled_first_step', '¿Recordó cómo empezar? yes, no'], ['Relevos', 'outcome', 'Qué hizo: started, later, changed, not_answered, deleted'],
     ['Relevos', 'signal_feeling', 'Cómo le cayó la señal: good, neutral, bad'], ['Relevos', 'usage_before_seconds', 'Segundos en las apps elegidas en los 10 min antes de la señal'],
     ['Relevos', 'usage_after_seconds', 'Segundos en las apps elegidas en los 10 min después de la señal'], ['Relevos', 'app_version', 'Versión de la app'],
-    ['Respuestas', 'question', 'Pregunta: semanaN_… (tarjeta semanal), cierre_…, opinion_…'], ['Eventos del relevo', 'event_type', 'Paso del relevo (armed, target_entered, signal_emitted, silenced, …)'],
+    ['Respuestas', 'question', 'Pregunta: semanaN_… (tarjeta semanal), semanas_previas_… y cierre_… (cierre de la prueba), entrevista_… con el tema de cada pregunta (entrevista final del 9 de noviembre; entrevista_1 a entrevista_9 son de la del 28 de octubre), opinion_…'], ['Eventos del relevo', 'event_type', 'Paso del relevo (armed, target_entered, signal_emitted, silenced, …)'],
     ['Uso de Relevo', 'event', 'Qué hizo en la app; detail agrega datos del evento'], ['Uso diario', 'package', 'App; _total es el tiempo total de pantalla'], ['Uso diario', 'seconds', 'Segundos de uso ese día'],
     ['Todas', 'consent_version', 'Versión del consentimiento aceptado'], ['Todas', 'created_at, updated_at', 'Fechas en hora de Chile continental']
   ].map(([Hoja, Columna, q]) => ({ Hoja, Columna, 'Qué es': q }));
@@ -1491,17 +1577,19 @@ select json_build_object(
     const profileSlot = el('div'), reminderSlot = el('div'), missingSlot = el('div');
     const sessionsBox = loading('Cargando sus relevos…'), answersBox = loading('Cargando sus respuestas…');
     const summarySlot = el('div', null, [loading('Cargando su resumen…')]), flowSlot = el('div', null, [loading('Cargando lo que hizo en la app…')]);
+    const closingSlot = el('div', null, [loading('Cargando su cierre de la prueba…')]);
     const removeTop = twoStep('Eliminar', '¿Eliminar a ' + (p.name || p.code) + ' y todos sus datos?', 'Sí, eliminar', () => runDelete(p, DELETE_GROUPS.map((g) => g[0]), dlNote));
     const nodes = [];
     const deleteSlot = el('div', { id: 'sec-borrar' }, [loading('Cargando lo que hay guardado…')]);
     const jump = (label, id, danger) => el('button', { class: 'jump' + (danger ? ' danger' : ''), type: 'button', onclick: () => { const t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }, [label]);
-    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Resumen', 'sec-resumen'), jump('Apps', 'sec-apps'), jump('Relevos', 'sec-relevos'), jump('Flujo de uso', 'sec-flujo'), jump('Respuestas', 'sec-respuestas'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
+    nodes.push(el('nav', { class: 'jumps', 'aria-label': 'Ir a' }, [jump('Resumen', 'sec-resumen'), jump('Apps', 'sec-apps'), jump('Relevos', 'sec-relevos'), jump('Cierre', 'sec-cierre'), jump('Flujo de uso', 'sec-flujo'), jump('Respuestas', 'sec-respuestas'), jump('Teléfono', 'sec-telefono'), jump('Borrar datos', 'sec-borrar', true)]));
     if (notice) nodes.push(el('div', { class: 'toast' }, [icon('check'), notice]));
     if (issues.length) nodes.push(el('div', { class: 'notice' }, [el('span', { class: 'ring' }, [icon('info')]), el('div', null, [el('strong', { text: 'Para revisar' }), el('p', { text: issues.map((i) => i.text).join(' · ') })])]));
     const anchored = (id, node) => { node.id = id; node.style.scrollMarginTop = '52px'; return node; };
     // El resumen va primero: sus apps, el tiempo en ellas y lo que respondió; el estado, después (panel 12).
     nodes.push(anchored('sec-resumen', block('Resumen', summarySlot)), el('div', { class: 'actions' }, [write, dl, removeTop]), dlNote, anchored('sec-apps', block('Tiempo en sus apps con relevo activo', appsSlot)),
-      anchored('sec-relevos', block('Sus relevos y lo que respondió', sessionsBox)), anchored('sec-flujo', block('Flujo de uso', flowSlot)), anchored('sec-respuestas', block('Otras respuestas', answersBox)),
+      anchored('sec-relevos', block('Sus relevos y lo que respondió', sessionsBox)), anchored('sec-cierre', block('Cierre de la prueba', closingSlot)),
+      anchored('sec-flujo', block('Flujo de uso', flowSlot)), anchored('sec-respuestas', block('Otras respuestas', answersBox)),
       block('Estado', facts), anchored('sec-uso', el('details', { class: 'context' }, [el('summary', { text: 'Uso del teléfono en todo el día, con y sin relevo' }), usageSlot])), reminderSlot, anchored('sec-telefono', block('Su teléfono y ajustes', phoneSlot)), profileSlot, missingSlot, deleteSlot);
     openSheet(p.name || p.code, el('span', { class: 'avatar', text: initials(p) }), nodes);
     try {
@@ -1510,6 +1598,8 @@ select json_build_object(
         'sessions', coalesce((select json_agg(s) from (select session_id, activity, started_at, signal_at, outcome, knew_intention, recalled_first_step, signal_feeling, response_seconds, study_condition, study_day, signal_route, activation, target_apps, observed_seconds, threshold_seconds, closed_at, signal_end
           from public.relevo_sessions where participant_code = ${code} order by started_at desc limit 40) s), '[]'::json),
         'answers', coalesce((select json_agg(a) from (select session_id, question, answer, created_at from public.relevo_answers where participant_code = ${code} order by created_at desc limit 80) a), '[]'::json),
+        'closing', coalesce((select json_agg(c order by c.created_at) from (select question, answer, created_at from public.relevo_answers
+          where participant_code = ${code} and question ~ '^(semanas_previas_|semana1_|cierre_|entrevista_)') c), '[]'::json),
         'flow', coalesce((select json_agg(f) from (select * from (
             select event as what, detail, created_at, 'app' as src from public.relevo_app_events where participant_code = ${code}
             union all select event_type, null, created_at, 'relevo' from public.relevo_events where participant_code = ${code}
@@ -1556,10 +1646,12 @@ select json_build_object(
       const bySession = {}; (d.answers || []).forEach((a) => { if (a.session_id) (bySession[a.session_id] || (bySession[a.session_id] = [])).push(a); });
       section(sessionsBox, (d.sessions || []).map((x) => { const row = sessionRow(x, false, deleteSession); const det = x.outcome === 'deleted' ? null : relevoDetails(x, (bySession[x.session_id] || []).slice().reverse()); if (det) row.querySelector('.row-main').append(det); return row; }), 'Sin relevos todavía.');
       deleteSlot.replaceChildren(deleteBlock(p, d.counts || {}));
-      section(answersBox, (d.answers || []).filter((a) => !a.session_id).map((a) => answerRow(a, false)), 'Sin respuestas de la semana, del cierre ni opiniones todavía.');
+      closingSlot.replaceChildren(closingBlock(d.closing || []));
+      // Las del cierre ya están arriba, en su orden; aquí van las demás, sin repetirlas.
+      section(answersBox, (d.answers || []).filter((a) => !a.session_id && !CLOSING_RE.test(a.question)).map((a) => answerRow(a, false)), 'Sin opiniones ni otras respuestas todavía.');
     } catch (err) {
       const msg = explain(err).join('. ');
-      [usageSlot, phoneSlot, summarySlot, flowSlot, appsSlot].forEach((s) => s.replaceChildren(el('div', { class: 'section' }, [el('div', { class: 'empty', text: msg })])));
+      [usageSlot, phoneSlot, summarySlot, flowSlot, appsSlot, closingSlot].forEach((s) => s.replaceChildren(el('div', { class: 'section' }, [el('div', { class: 'empty', text: msg })])));
       sessionsBox.replaceChildren(el('div', { class: 'empty', text: msg })); answersBox.replaceChildren();
     }
   }

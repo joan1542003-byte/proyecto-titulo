@@ -1,11 +1,15 @@
 package com.example.relevo.data
 
 import android.content.Context
+import com.example.relevo.domain.QuietHours
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
-/** Aura de la pantalla (3.0, D-128): apagada, suave, media o viva. Es de la app; el Tag no emite luz. */
-enum class AuraLevel { OFF, SOFT, MEDIUM, STRONG }
+/**
+ * Volumen del sonido en el teléfono y en un dispositivo de audio (4.4, desde la 1.0.0). Multiplica el sonido
+ * de Relevo; el volumen multimedia del teléfono sigue mandando. El Tag pita siempre con su propio volumen.
+ */
+enum class SignalVolume(val gain: Float) { SOFT(0.35f), MEDIUM(0.65f), LOUD(1f) }
 
 /**
  * Preferencias de S2 y de apariencia. Desde 2.12 (D-087) la app empieza en modo claro y con el resumen
@@ -24,8 +28,13 @@ data class Settings(
   /** Constancia elegida: veces por semana que fija la persona; 0 es apagada. Variante de la prueba. */
   val constancy: Int = 0,
   val constancyPaused: Boolean = false,
-  /** Desde 3.0. Se guarda en una clave nueva; quien actualiza parte con el aura media. */
-  val aura: AuraLevel = AuraLevel.MEDIUM,
+  /** Sonido de la señal (4.3, D-158): «madera», «fieltro», «claro» o «tonada». */
+  val sound: String = "madera",
+  /** Horas sin sonar (4.4): entre [quietFrom] y [quietUntil], Relevo no cuenta ni suena. Empiezan apagadas. */
+  val quietHours: Boolean = false,
+  val quietFrom: Int = QuietHours.DEFAULT_FROM,
+  val quietUntil: Int = QuietHours.DEFAULT_UNTIL,
+  val volume: SignalVolume = SignalVolume.MEDIUM,
 )
 
 class SettingsStore(context: Context) {
@@ -39,7 +48,11 @@ class SettingsStore(context: Context) {
     acknowledgements = preferences.getBoolean("acknowledgements", true),
     constancy = preferences.getInt("constancy", 0).coerceIn(0, 7),
     constancyPaused = preferences.getBoolean("constancy_paused", false),
-    aura = runCatching { AuraLevel.valueOf(preferences.getString("aura", AuraLevel.MEDIUM.name).orEmpty()) }.getOrDefault(AuraLevel.MEDIUM),
+    sound = preferences.getString("sound", "madera").orEmpty(),
+    quietHours = preferences.getBoolean("quiet_hours", false),
+    quietFrom = preferences.getInt("quiet_from", QuietHours.DEFAULT_FROM).coerceIn(0, 23),
+    quietUntil = preferences.getInt("quiet_until", QuietHours.DEFAULT_UNTIL).coerceIn(0, 23),
+    volume = runCatching { SignalVolume.valueOf(preferences.getString("volume", SignalVolume.MEDIUM.name).orEmpty()) }.getOrDefault(SignalVolume.MEDIUM),
   )
 
   fun save(settings: Settings) {
@@ -51,7 +64,13 @@ class SettingsStore(context: Context) {
       .putBoolean("acknowledgements", settings.acknowledgements)
       .putInt("constancy", settings.constancy.coerceIn(0, 7))
       .putBoolean("constancy_paused", settings.constancyPaused)
-      .putString("aura", settings.aura.name)
+      .putString("sound", settings.sound)
+      .putBoolean("quiet_hours", settings.quietHours)
+      .putInt("quiet_from", settings.quietFrom.coerceIn(0, 23))
+      .putInt("quiet_until", settings.quietUntil.coerceIn(0, 23))
+      .putString("volume", settings.volume.name)
+      // 4.0 (D-155): el aura se retiró. La clave «aura» que guardó la 3.x se quita al guardar.
+      .remove("aura")
       .apply()
   }
 

@@ -3,24 +3,23 @@ package com.example.relevo.data
 import android.content.Context
 
 /**
- * Participación en la prueba (A2). Desde 2.10, Relevo es parte de la prueba (D-084): se usa solo con
- * el consentimiento vigente, que registra y envía los datos del estudio. Ya no existe el uso «sin
- * participar» de 2.8 y 2.9; quien lo había elegido vuelve a ver el consentimiento.
+ * Relevo se usa con el consentimiento vigente (D-084), que explica qué datos se guardan y envía. Quien
+ * aceptó una versión anterior conserva su código y sus datos; solo vuelve a leer y aceptar el texto nuevo.
  */
 object Participation {
   private const val PREFERENCES = "relevo_experience"
-  /** Marca del uso sin participar de 2.8 y 2.9; solo se lee para borrarla. */
-  private const val LEGACY_LOCAL_MODE = "local_mode"
 
+  /** Aceptó el consentimiento vigente. Sin eso, Relevo no prepara ni cuenta relevos. */
   fun participating(context: Context): Boolean = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE).let {
     it.getBoolean("academic_consent_accepted", false) && it.getString("academic_consent_version", null) == ResearchLogStore.CONSENT_VERSION
   }
 
-  /** Código de participación guardado en el teléfono, o vacío. */
-  fun code(context: Context): String = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE).getString("participant_code", null).orEmpty()
+  /** Aceptó alguna vez, aunque fuera una versión anterior: se le muestra el texto nuevo, no la bienvenida. */
+  fun acceptedBefore(context: Context): Boolean =
+    context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE).getString("academic_consent_version", null) != null
 
-  /** Puede preparar y activar relevos: solo quien participa. */
-  fun canUse(context: Context): Boolean = participating(context)
+  /** Código guardado en el teléfono, o vacío. */
+  fun code(context: Context): String = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE).getString("participant_code", null).orEmpty()
 
   /**
    * Código nuevo, corto y fácil de dictar (desde 2.12): cuatro caracteres sin letras ni números que
@@ -31,10 +30,4 @@ object Participation {
 
   const val CODE_ALPHABET = "ACDEFHJKMNPRTUVWXY3469"
   const val CODE_LENGTH = 4
-
-  /** Borra la marca del uso sin participar que dejaron 2.8 y 2.9. */
-  fun clearLegacyLocalMode(context: Context) {
-    val preferences = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE)
-    if (preferences.contains(LEGACY_LOCAL_MODE)) preferences.edit().remove(LEGACY_LOCAL_MODE).apply()
-  }
 }

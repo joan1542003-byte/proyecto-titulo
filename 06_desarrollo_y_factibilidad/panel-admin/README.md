@@ -121,7 +121,7 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - **Semanas anteriores:** las escalas `semanas_previas_*` se leen «Semanas anteriores: …».
 - **Tras cada relevo:** `percepcion_senal` se lee «Notó el aviso (enseguida, un rato después o no)».
 - **Día 7 y cierre:** `semana1_comparacion`, `cierre_por_que_ayudo` y `cierre_prefiere_que_suene` se muestran con palabras.
-- **Versión de referencia:** el aviso de versión compara contra la 2.33.
+- **Versión de referencia:** el aviso de versión compara contra la 4.4, la más nueva desde el 5 de noviembre de 2026, y dice «la más nueva es la 4.4». Las salidas se nombran como en la app: Tag, notificación en el teléfono y dispositivo de audio; el reloj, hasta la 3.3.
 
 ## Desde la app 2.32
 
@@ -135,6 +135,60 @@ Este archivo, [panel-relevo.html](panel-relevo.html), es una copia del código p
 - **Versión de referencia:** el aviso de versión compara contra la 2.31.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Entrevista del 9 de noviembre
+
+- **Qué cambió:** «Entrevista final» muestra las diez preguntas de la entrevista nueva, con claves por tema. La entrevista del 28 de octubre aparece aparte, solo si alguien la respondió. El artefacto de claude.ai se publicó de nuevo (versión 21) y reconoce la 4.7.2 como la más nueva.
+- **Cómo estaba antes:** mostraba las nueve preguntas del 28 de octubre.
+- **Por qué:** D-177.
+
+### 2026-11-09 — Cierre de la prueba en la ficha y artefacto al día
+
+- **Qué cambió:** la ficha de cada persona tiene la sección «Cierre de la prueba», con las cuatro partes del instrumento, cada respuesta en palabras y su fecha, sin ocultar ninguna. El modo de ejemplo trae respuestas inventadas para verla. El artefacto de claude.ai se publicó con esta versión (versión 20, el mismo enlace), sin `conector-local.js`.
+- **Cómo estaba antes:** las respuestas del cierre aparecían sueltas en «Otras respuestas», y el artefacto publicado era el del 7 de octubre (app 2.30).
+- **Por qué:** el autor pidió que el cierre se vea en el panel de Relevo (D-176).
+
+### 2026-11-09 — Android 4.7: el cierre de la prueba
+
+- **Qué cambió:** el panel reconoce la 4.7 como la versión más nueva y nombra cada respuesta del cierre con su pregunta, por ejemplo «Entrevista final 5: si sintió que podía elegir», y los eventos del cierre en palabras.
+- **Cómo estaba antes:** la más nueva era la 4.6.3, y las respuestas del cierre se leían por su clave.
+- **Por qué:** D-175.
+
+### 2026-11-07 — Android 4.6.3
+
+- **Qué cambió:** el panel reconoce la 4.6.3 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.6.2.
+- **Por qué:** D-167.
+
+### 2026-11-07 — Android 4.6.2
+
+- **Qué cambió:** el panel reconoce la 4.6.2 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.6.1.
+- **Por qué:** D-166.
+
+### 2026-11-07 — Android 4.6.1
+
+- **Qué cambió:** el panel reconoce la 4.6.1 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.6.
+- **Por qué:** D-165.
+
+### 2026-11-06 — Android 4.6 y la encuesta del rediseño
+
+- **Qué cambió:** el panel reconoce la 4.6 como la versión más nueva y nombra las seis preguntas de la encuesta del rediseño, entre ellas las dos del UMUX-Lite.
+- **Cómo estaba antes:** la más nueva era la 4.5, y esas preguntas no existían.
+- **Por qué:** D-164.
+
+### 2026-11-06 — Android 4.5
+
+- **Qué cambió:** el panel reconoce la 4.5 como la versión más nueva.
+- **Cómo estaba antes:** la más nueva era la 4.4.
+- **Por qué:** D-163.
+
+### 2026-11-05 — Android 4.4
+
+- **Qué cambió:** el panel compara contra la 4.4 y nombra las salidas como la app.
+- **Cómo estaba antes:** comparaba contra la 2.33 y hablaba de parlante y reloj.
+- **Por qué:** la 4.4 es la versión actualizable (D-159).
 
 ### 2026-10-20 — Android 2.33
 

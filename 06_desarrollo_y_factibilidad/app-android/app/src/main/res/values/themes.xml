@@ -2,7 +2,10 @@
 <resources>
     <!-- Papel de la línea 3.0 desde el arranque, para que no haya un destello blanco. -->
     <style name="Theme.Relevo" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowBackground">#F7F4F0</item>
-        <item name="android:windowSplashScreenBackground">#F7F4F0</item>
+        <item name="android:windowBackground">#F6F4F3</item>
+        <item name="android:windowSplashScreenBackground">#F6F4F3</item>
+        <!-- 4.3 (D-158): pantalla de carga con la marca, que enciende sus luces por turno mientras la app abre. -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_icono</item>
+        <item name="android:windowSplashScreenAnimationDuration">800</item>
     </style>
 </resources>

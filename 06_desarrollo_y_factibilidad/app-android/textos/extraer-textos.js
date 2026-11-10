@@ -24,34 +24,37 @@ const SIN_TEXTOS = new Set(['monitor/BackgroundAccess.kt', 'monitor/DailyUsage.k
 // Cada función se asigna a la pantalla o la pieza donde aparece su texto.
 const PANTALLAS = [
   ['01', 'Bienvenida', ['WelcomeScreen', 'FloatingRow']],
-  ['02', 'Cómo funciona (guía de la primera vez)', ['HowItWorksScreen', 'IntroVideo', 'GuidePanel', 'SystemRow', 'RelevoNavigation']],
+  ['02', 'Cómo funciona (guía de la primera vez)', ['HowItWorksScreen', 'GuidePanel', 'SystemRow', 'RelevoNavigation']],
   ['03', 'Antes de empezar (consentimiento)', ['ConsentScreen', 'ConsentSections', 'ConsentPart']],
   ['04', 'Para saber cuándo avisarte (permisos de la primera vez)', ['PermissionScreen', 'PermissionEnd']],
-  ['05', 'Tu perfil (primera vez)', ['ProfileSetupScreen', 'InterestGrid']],
-  ['06', 'Tu primer relevo', ['FirstRelevoScreen']],
-  ['07', 'Inicio', ['HomeTab', 'BellButton', 'AvatarButton', 'CreateActivityRow', 'AcknowledgementToast', 'ActiveCard', 'SoundRow', 'ReturnCard', 'NextStepCard', 'StudyCards', 'StudyCard', 'QuickFeedbackCard', 'ratingFaces', 'HomeActions']],
+  ['05', 'Perfil (primera vez)', ['ProfileSetupScreen', 'InterestGrid', 'interestShort']],
+  ['06', 'Primer relevo', ['FirstRelevoScreen']],
+  ['07', 'Inicio', ['HomeTab', 'BellButton', 'AvatarButton', 'CreateActivityRow', 'AcknowledgementToast', 'ActiveCard', 'SoundRow', 'ReturnCard', 'NextStepCard', 'StudyCards', 'StudyCard', 'QuickFeedbackCard', 'ratingFaces', 'HomeActions', 'PrepareBlock', 'QuickActivities', 'WeekBanner']],
   ['08', 'Preparar un relevo', ['PrepareScreen', 'guideTipFor', 'titleFor', 'missingFor', 'ActivityHeader', 'ActivityStep', 'TileGroup', 'PlaceStep', 'SuggestionChips', 'UsageStep', 'SoundStep', 'tagSubtitle', 'tagProblem', 'TagPanel', 'TagHeardQuestion', 'SoundOption', 'AppPickerSheet', 'TagProtocol']],
   ['09', 'Cómo usar el Tag', ['TagGuideSheet', 'GuideStep', 'TagArt', 'guideSteps']],
   ['10', 'Hojas sobre Inicio', ['FirstRelevoActiveSheet', 'NextStepSheet', 'TurnOffReturnSheet']],
   ['11', 'Tu relevo (contando)', ['ActiveScreen']],
   ['12', 'Suena', ['SignalScreen']],
   ['13', 'Preguntas y ¿Qué decidiste?', ['DecideScreen', 'Question', 'feelingFaces', 'starFaces', 'Face']],
-  ['14', 'Ruta', ['RouteTab', 'StepTimeline', 'NowChip', 'RouteActions']],
+  // Desde 4.0, la pestaña Ruta y la lista de actividades son la pestaña Actividades.
+  ['14', 'Actividades (antes Ruta)', ['RouteTab', 'StepTimeline', 'NowChip', 'RouteActions', 'ActivitiesTab', 'ActivitiesSection', 'MineSection', 'IdeasSection', 'ActivitySheet', 'StepsSection', 'StepSheet', 'ActivitiesScreen']],
   ['15', 'Editar la ruta', ['RouteEditScreen', 'StepEditorSheet']],
-  ['16', 'Perfil', ['ProfileTab', 'ProfileHeader', 'WeekSummary', 'WeekNoteSheet', 'countLine', 'weekLine']],
+  ['16', 'Perfil', ['ProfileTab', 'ProfileHeader', 'WeekSummary', 'WeekNoteSheet', 'countLine', 'weekLine', 'GearButton']],
   ['17', 'Editar el perfil', ['ProfileEditScreen']],
   ['18', 'Avisos y resúmenes', ['NoticesScreen']],
   ['19', 'Apariencia', ['AppearanceScreen']],
   ['20', 'Permisos', ['PermissionsScreen']],
-  ['21', 'Tus relevos', ['HistoryScreen']],
-  ['22', 'Tus actividades', ['ActivitiesScreen']],
-  ['23', 'Crear o editar una actividad', ['ActivityEditScreen']],
-  ['24', 'Privacidad y datos', ['PrivacyScreen', 'RelevoViewModel', 'backupStatusText', 'syncStatusText']],
+  ['21', 'Relevos', ['HistoryScreen']],
+  ['22', 'Ajustes', ['SettingsScreen', 'SoundSheet']],
+  ['23', 'Crear o editar una actividad', ['ActivityEditScreen', 'PresetPicker', 'ActivityForm', 'ChoiceSheet']],
+  ['24', 'Privacidad y datos', ['PrivacyScreen', 'copy', 'RelevoViewModel', 'backupStatusText', 'syncStatusText']],
   ['25', 'Lo que aceptaste', ['ConsentDetailsScreen']],
   ['26', 'Prueba de 21 días (investigador)', ['StudyScreen', 'StudyPlan']],
   ['27', '¿Cómo te fue esta semana?', ['WeekReviewScreen']],
-  ['28', 'Cierre de la prueba', ['ClosingScreen']],
-  ['29', 'Opinar sobre Relevo', ['FeedbackScreen']],
+  ['28', 'Cierre de la prueba', ['ClosingScreen', 'ClosingSurvey', 'ClosingSurveyScreen', 'ClosingIntroSheet', 'ClosingThanks', 'closingSubtitle', 'PointScale']],
+  // 4.6 (D-164): la encuesta del rediseño, para quien ya usaba Relevo.
+  ['35', 'Encuesta del rediseño', ['RedesignSurveySheet', 'RedesignSurvey', 'AgreementScale']],
+  ['29', 'Envíanos un comentario (antes, Opinar sobre Relevo)', ['FeedbackScreen']],
   ['30', 'Reportar un problema', ['ReportScreen']],
   ['31', 'Notificaciones', ['AppUsageMonitorService', 'ProjectMessages', 'ReturnNotice']],
 ];
@@ -217,6 +220,7 @@ function pantallaDe(funcion, archivo) {
   const base = path.basename(archivo, '.kt');
   if (DE_FUNCION.has(base)) return DE_FUNCION.get(base);
   if (archivo.endsWith('components/Sky.kt')) return IDEAS;
+  if (archivo.endsWith('ui/Catastro.kt')) return IDEAS;
   if (funcion === 'keywords') return null;
   if (funcion === 'Tab') return COMPONENTES;
   if (archivo.endsWith('ui/Common.kt') && /^(Common|commonPlaces|placeSuggestions|startSuggestions|activityIdeas|homeIdeas|ideasByFamily|interestPhoto|interestIcon)$/.test(funcion)) return IDEAS;
@@ -246,6 +250,8 @@ function principal() {
       const linea = lineaDe(lit.inicio);
       const funcion = funcionDe(lit.inicio);
       const contexto = lineas[linea - 1];
+      // Catastro (4.3): las palabras con que se reconoce una actividad no se ven; sus sugerencias, sí.
+      if (rel.endsWith('ui/Catastro.kt') && /^\s*(words|phrases|weak|objects)\s*=/.test(contexto)) continue;
       const pantalla = pantallaDe(funcion, rel);
       if (!pantalla) continue;
       filas.push({ pantalla, tipo: tipo(antes, contexto, t, rel), texto: t, archivo: rel.replace(`${BASE}/`, ''), linea, funcion });
@@ -276,7 +282,12 @@ function principal() {
     }
     md.push(`| ${f.id} | ${f.tipo} | ${f.texto.replace(/\|/g, '\\|')} | \`${path.basename(f.archivo)}:${f.linea}\` |`);
   }
-  md.push('', '## Registro de cambios (disclaimer)', '', '### 2026-10-24 — Creación', '', '- **Qué cambió:** se creó el inventario, generado desde el código.', '- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin.', '- **Por qué:** el autor pidió estudiar y documentar cada palabra de la app antes de actualizar los textos.', '');
+  md.push('', '## Registro de cambios (disclaimer)', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.3', '', '- **Qué cambió:** se volvió a generar con el código de 4.3 (D-158): suma las sugerencias del catastro, los sonidos de Ajustes y la hoja de opciones al editar una actividad, y deja fuera las palabras con que el catastro reconoce cada actividad, que no se ven.', '- **Cómo estaba antes:** tenía los 1221 textos de 4.2.1, con «Tu perfil», «Tus relevos», «En tu Tag», «En el parlante» y el video de «Cómo funciona».', '- **Por qué:** revisión del autor de la 4.2.1 y de la primera versión de la 4.3.', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.2.1', '', '- **Qué cambió:** se volvió a generar con el código de 4.2.1.', '- **Cómo estaba antes:** no tenía los avisos que piden esperar a que termine el relevo ni las preguntas en los avisos de «Todo listo».', '- **Por qué:** corrección de preparar desde una idea, reportada por el autor.', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.2', '', '- **Qué cambió:** se volvió a generar con el código de 4.2 (D-157).', '- **Cómo estaba antes:** tenía los textos de 4.1, con «Para empezar», «Dónde empiezas», «Tuyas» y «¿Qué te ayudó?».', '- **Por qué:** el autor cambió esos textos al ver la 4.1.', '');
+  if (!RAMA) md.push('### 2026-11-05 — Textos de 4.1', '', '- **Qué cambió:** se volvió a generar con el código de 4.1 (D-155 y D-156).', '- **Cómo estaba antes:** tenía los textos de 3.3, con las notas de guía de la primera vez y los textos del aura.', '- **Por qué:** 4.0 y 4.1 quitaron y acortaron textos; el inventario se rehace cada vez que cambian.', '');
+  md.push('### 2026-10-24 — Creación', '', '- **Qué cambió:** se creó el inventario, generado desde el código.', '- **Cómo estaba antes:** los textos solo estaban dentro del código Kotlin.', '- **Por qué:** el autor pidió estudiar y documentar cada palabra de la app antes de actualizar los textos.', '');
   fs.writeFileSync(path.join(AQUI, `inventario-de-textos${sufijo}.md`), md.join('\n'));
   const porTipo = {};
   for (const f of filas) porTipo[f.tipo] = (porTipo[f.tipo] || 0) + 1;

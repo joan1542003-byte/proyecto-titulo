@@ -5,9 +5,13 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 /**
- * Paleta de la línea 3.0 (D-124 a D-128): papel tibio, tinta casi negra y seis fichas claras, una por
- * papel. Cada color dice siempre lo mismo; la selección va en tinta. El vidrio es un tinte translúcido
- * sobre un desenfoque, solo en la capa de navegación (D-083).
+ * Paleta de la 4.0 (D-155): la interfaz va en papel y tinta, y el color es solo de las actividades, en
+ * su anillo. Las seis fichas de papel de la 3.0 (D-124) se retiraron: un ícono con color y otro sin él
+ * no decían nada claro. El vidrio es un tinte translúcido sobre un desenfoque, solo en la navegación.
+ *
+ * 4.5 (D-163): los neutros se veían amarillentos en los dos temas. Tenían el tono de la crema (OKLCH h 68–75°);
+ * ahora conservan su luminosidad, y con ella todos los contrastes, con un 40 % de su croma y el tono en 60°: un
+ * papel apenas tibio, no crema.
  */
 @Immutable
 data class RelevoColors(
@@ -41,70 +45,52 @@ data class RelevoColors(
   val glassEdge: Color,
   /** Velo detrás de una hoja. */
   val scrim: Color,
-  /** Mantequilla: tu tiempo (las apps y los minutos). */
-  val butter: Color,
-  /** Cielo: tu primer paso. */
-  val sky: Color,
-  /** Lima: el lugar donde empiezas, y donde suena (D-127). */
-  val lime: Color,
-  /** Rubor: lo que decides. */
-  val blush: Color,
-  /** Lila: tu aura, lo que personalizas. */
-  val lilac: Color,
-  /** Durazno: lo que pasó después de la señal. */
-  val peach: Color,
-  /** Tinta de los íconos sobre las fichas de color: igual en claro y en oscuro. */
+  /** Tinta de los íconos sobre el color de una actividad: igual en claro y en oscuro. */
   val onTile: Color,
   val isDark: Boolean,
 )
 
-/** Las seis fichas son las mismas en los dos temas: luminosidad OKLCH 0,88–0,91 y tinta encima (12,7:1 a 14,5:1). */
-private val Butter = Color(0xFFF4E496)
-private val Sky = Color(0xFFB3E5FC)
-private val Lime = Color(0xFFC6EEAE)
-private val Blush = Color(0xFFFAC8D9)
-private val Lilac = Color(0xFFDFD1FC)
-private val Peach = Color(0xFFFBD1B3)
-private val TileInk = Color(0xFF141312)
+/** Tinta fija sobre el color de una actividad, en los dos temas. */
+private val TileInk = Color(0xFF141313)
 
 internal val LightColors = RelevoColors(
-  paper = Color(0xFFF7F4F0),
+  paper = Color(0xFFF6F4F3),
   card = Color(0xFFFFFFFF),
-  ink = Color(0xFF141312),
+  ink = Color(0xFF141313),
   onInk = Color(0xFFFFFFFF),
-  graphite = Color(0xFF6B655F),
-  mist = Color(0xFFEEE9E3),
-  line = Color(0xFFE4DED6),
-  gray = Color(0xFFA9A197),
-  slate = Color(0xFF33302C),
-  voice = Color(0xFF141312),
-  voiceSoft = Color(0xFFEEE9E3),
+  graphite = Color(0xFF686663),
+  mist = Color(0xFFECE9E7),
+  line = Color(0xFFE2DEDC),
+  gray = Color(0xFFA6A19E),
+  slate = Color(0xFF32302F),
+  voice = Color(0xFF141313),
+  voiceSoft = Color(0xFFECE9E7),
   error = Color(0xFFB3261E),
   glass = Color(0xFFFFFFFF).copy(alpha = 0.62f),
-  glassEdge = Color(0xFF141312).copy(alpha = 0.06f),
+  glassEdge = Color(0xFF141313).copy(alpha = 0.06f),
   scrim = Color.Black.copy(alpha = 0.18f),
-  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
+  onTile = TileInk,
   isDark = false,
 )
 
 /** Tema oscuro «Noche» (D-128): se conserva para quien lo eligió, con los mismos papeles. */
 internal val DarkColors = RelevoColors(
-  paper = Color(0xFF141312),
-  card = Color(0xFF1F1D1B),
-  ink = Color(0xFFF2EEE9),
-  onInk = Color(0xFF141312),
-  graphite = Color(0xFFABA49C),
-  mist = Color(0xFF2A2724),
-  line = Color(0xFF36322E),
-  gray = Color(0xFF6E6862),
-  slate = Color(0xFFD8D2CB),
-  voice = Color(0xFFF2EEE9),
-  voiceSoft = Color(0xFF2A2724),
+  paper = Color(0xFF141313),
+  card = Color(0xFF1E1D1C),
+  ink = Color(0xFFF0EEED),
+  onInk = Color(0xFF141313),
+  graphite = Color(0xFFA8A4A2),
+  mist = Color(0xFF292726),
+  line = Color(0xFF343231),
+  gray = Color(0xFF6B6966),
+  slate = Color(0xFFD5D2D0),
+  voice = Color(0xFFF0EEED),
+  voiceSoft = Color(0xFF292726),
   error = Color(0xFFF2B8B5),
-  glass = Color(0xFF1F1D1B).copy(alpha = 0.68f),
+  glass = Color(0xFF1E1D1C).copy(alpha = 0.68f),
   glassEdge = Color.White.copy(alpha = 0.09f),
   scrim = Color.Black.copy(alpha = 0.45f),
-  butter = Butter, sky = Sky, lime = Lime, blush = Blush, lilac = Lilac, peach = Peach, onTile = TileInk,
+  onTile = TileInk,
   isDark = true,
 )
 

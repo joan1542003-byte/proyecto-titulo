@@ -3,6 +3,7 @@ package com.example.relevo.ui.components
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.MutableTransitionState
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -33,7 +34,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -51,6 +51,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.dialog
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -136,7 +137,9 @@ private fun SheetLayer(entry: SheetEntry, source: HazeState?, isTop: Boolean, on
       val maxSheet = maxHeight * 0.9f
       Box(
         Modifier.fillMaxSize().background(colors.scrim)
-          .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) { entry.onDismiss() },
+          // 4.6.1: el velo cierra la hoja; con nombre, TalkBack lo lee como «Cerrar» y no como un botón sin nombre.
+          .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null, onClickLabel = "Cerrar") { entry.onDismiss() }
+          .semantics { contentDescription = "Cerrar" },
       )
       Column(
         Modifier.align(Alignment.BottomCenter)
@@ -158,8 +161,12 @@ private fun SheetLayer(entry: SheetEntry, source: HazeState?, isTop: Boolean, on
             state = rememberDraggableState { delta -> scope.launch { drag.snapTo((drag.value + delta).coerceAtLeast(0f)) } },
             orientation = Orientation.Vertical,
             onDragStopped = { velocity ->
-              if (drag.value > with(density) { 120.dp.toPx() } || velocity > 1800f) entry.onDismiss()
-              else drag.animateTo(0f, Motion.smooth())
+              // Se proyecta dónde terminaría el gesto con su impulso, como el desplazamiento de iOS, y se
+              // decide con ese punto; si vuelve, vuelve con la misma velocidad del dedo y un leve resorte,
+              // porque el gesto traía impulso (4.1, D-156).
+              val projected = drag.value + velocity / 1000f * 0.998f / (1f - 0.998f)
+              if (projected > with(density) { 160.dp.toPx() }) entry.onDismiss()
+              else drag.animateTo(0f, spring(dampingRatio = 0.8f, stiffness = 440f), initialVelocity = velocity)
             },
           ),
           horizontalAlignment = Alignment.CenterHorizontally,

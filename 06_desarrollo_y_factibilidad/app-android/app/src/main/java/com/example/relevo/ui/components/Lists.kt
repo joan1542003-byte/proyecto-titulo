@@ -24,14 +24,19 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -47,25 +52,64 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.relevo.theme.Relevo
 
-/** Forma de las filas de la línea 3.2: 21 dp, como la de la lámina a escala. */
-val RowShape = RoundedCornerShape(21.dp)
+/** Forma de las tarjetas de filas (4.0): 22 dp, concéntrica con las tarjetas grandes. */
+val RowShape = RoundedCornerShape(22.dp)
+
+/** Las filas de un grupo se dibujan sin tarjeta propia: la tarjeta es del grupo. */
+private val LocalInGroup = staticCompositionLocalOf { false }
 
 /**
- * Grupo de filas: un rótulo opcional (en tinta, como «Tus actividades» en la lámina) y las filas sueltas,
- * separadas por 9 dp.
+ * Grupo de filas (4.0, D-155): un rótulo opcional y las filas juntas en una sola tarjeta blanca, separadas
+ * por líneas finas que empiezan donde empieza el texto, como las listas de iOS. Reemplaza las filas sueltas
+ * de la 3.2, que repetían una tarjeta y una sombra por cada fila.
  */
 @Composable
 fun ListSection(
   modifier: Modifier = Modifier,
   title: String? = null,
   footer: String? = null,
-  content: @Composable ColumnScope.() -> Unit,
+  /** Dónde empieza la línea entre filas: después del ícono (62 dp) o desde el borde del texto (16 dp). */
+  dividerInset: Dp = 62.dp,
+  content: @Composable () -> Unit,
 ) {
+  val colors = Relevo.colors
   Column(modifier.fillMaxWidth()) {
-    if (title != null) SectionLabel(title, Modifier.padding(bottom = 10.dp))
-    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(Gap.list), content = content)
+    // El título y la nota empiezan donde empieza el contenido de las filas (14 dp), como en las listas agrupadas de iOS.
+    if (title != null) SectionLabel(title, Modifier.padding(start = 14.dp, bottom = 8.dp))
+    CompositionLocalProvider(LocalInGroup provides true) {
+      GroupedRows(Modifier.fillMaxWidth().clip(RowShape).background(colors.card), colors.line, dividerInset, content)
+    }
     if (footer != null) {
-      Text(footer, style = Relevo.type.footnote, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, end = 4.dp, top = 10.dp))
+      Text(footer, style = Relevo.type.footnote, color = colors.graphite, modifier = Modifier.padding(start = 14.dp, end = 14.dp, top = 8.dp))
+    }
+  }
+}
+
+/** Apila las filas y dibuja una línea fina entre cada una. */
+@Composable
+private fun GroupedRows(modifier: Modifier, divider: Color, inset: Dp, content: @Composable () -> Unit) {
+  var bounds by remember { mutableStateOf(IntArray(0)) }
+  Layout(
+    content,
+    modifier.drawWithContent {
+      drawContent()
+      val start = inset.toPx()
+      val stroke = 1.dp.toPx() * .75f
+      bounds.forEach { y -> drawLine(divider, Offset(start, y.toFloat()), Offset(size.width, y.toFloat()), strokeWidth = stroke) }
+    },
+  ) { measurables, constraints ->
+    val placeables = measurables.map { it.measure(constraints.copy(minHeight = 0)) }
+    val visible = placeables.filter { it.height > 0 }
+    val height = visible.sumOf { it.height }
+    val lines = IntArray((visible.size - 1).coerceAtLeast(0))
+    layout(constraints.maxWidth, height) {
+      var y = 0
+      visible.forEachIndexed { i, placeable ->
+        placeable.place(0, y)
+        y += placeable.height
+        if (i < visible.lastIndex) lines[i] = y
+      }
+      if (!lines.contentEquals(bounds)) bounds = lines
     }
   }
 }
@@ -86,20 +130,23 @@ fun SectionLabel(text: String, modifier: Modifier = Modifier, soft: String? = nu
   )
 }
 
-/** Ícono de fila en su ficha (D-124, D-127): 45 dp, con el color de su papel; si no tiene papel, en piedra. */
+/**
+ * Ícono de interfaz (4.0, D-155): siempre igual, en tinta sobre un círculo de piedra. La 3.3 pintaba
+ * algunos con el color de su papel y otros en gris, y no se entendía por qué; ahora el color es solo de
+ * las actividades.
+ */
 @Composable
-fun IconTile(icon: KitIcon, tint: Color = Relevo.colors.ink, size: Dp = 45.dp, background: Color? = null) {
-  if (background != null) {
-    Box(Modifier.size(size).clip(RoundedCornerShape(size * 0.31f)).background(background), contentAlignment = Alignment.Center) {
-      RelevoIcon(icon, size = size * 0.58f, tint = if (tint == Relevo.colors.ink && background != Relevo.colors.mist && background != Relevo.colors.card) Relevo.colors.onTile else tint, background = background)
-    }
-  } else RoleTile(icon, size = size, tint = tint)
+fun IconTile(icon: KitIcon, tint: Color = Relevo.colors.ink, size: Dp = 34.dp) {
+  val colors = Relevo.colors
+  Box(Modifier.size(size).clip(CircleShape).background(colors.mist), contentAlignment = Alignment.Center) {
+    RelevoIcon(icon, size = size * 0.56f, tint = tint, background = colors.mist)
+  }
 }
 
 /**
- * Fila de la línea 3.2 («Relevo, la app»): una tarjeta blanca de 21 dp con la ficha de color a la
- * izquierda, el título en seminegrita y, debajo, el detalle en grafito. A la derecha, un valor, un control
- * o el galón que dice que se abre. Al presionar se oscurece apenas. [selected] la marca con un anillo de tinta.
+ * Fila de la 4.0: el ícono a la izquierda, el título en seminegrita y, debajo, el detalle en grafito. A la
+ * derecha, un valor, un control o el galón que dice que se abre. Dentro de un [ListSection] va sin tarjeta;
+ * sola, lleva la suya. Al presionar se oscurece apenas. [selected] la marca con un borde de tinta.
  */
 @Composable
 fun ListRow(
@@ -114,36 +161,37 @@ fun ListRow(
   chevron: Boolean = false,
   onClick: (() -> Unit)? = null,
   leading: (@Composable () -> Unit)? = null,
-  @Suppress("UNUSED_PARAMETER") leadingWidth: Dp = 45.dp,
   trailing: (@Composable RowScope.() -> Unit)? = null,
-  @Suppress("UNUSED_PARAMETER") divider: Boolean = true,
   selected: Boolean = false,
-  tileColor: Color? = null,
   /** Una fila sin fondo y con borde fino, para agregar algo («Agregar un paso»). */
   outlined: Boolean = false,
+  /** Qué es el dato, arriba y en pequeño, como el rótulo de un campo (4.2): «¿Cómo empiezas la actividad?». */
+  overline: String? = null,
 ) {
   val colors = Relevo.colors
+  val grouped = LocalInGroup.current && !selected && !outlined
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
-  val base = if (outlined) Color.Transparent else colors.card
+  val base = if (outlined || grouped) Color.Transparent else colors.card
   val background by animateColorAsState(if (pressed && onClick != null) colors.mist else base, Motion.standard(90), label = "row")
   Row(
-    modifier.fillMaxWidth().heightIn(min = 64.dp).pressScale(interaction, 0.985f)
-      .then(if (outlined || colors.isDark) Modifier else Modifier.shadow(1.dp, RowShape, ambientColor = Color(0x0D1E160C), spotColor = Color(0x141E160C)))
-      .clip(RowShape).background(background)
+    modifier.fillMaxWidth().heightIn(min = if (subtitle != null || overline != null) 62.dp else 54.dp)
+      .then(if (grouped) Modifier else Modifier.pressScale(interaction, 0.985f).clip(RowShape))
+      .background(background)
       .then(if (selected) Modifier.border(2.dp, colors.ink, RowShape) else if (outlined) Modifier.border(1.5.dp, colors.line, RowShape) else Modifier)
       .then(if (onClick != null) Modifier.clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick) else Modifier)
       .then(if (selected) Modifier.semantics { stateDescription = "Elegido" } else Modifier)
-      .padding(start = 10.dp, end = 15.dp, top = 10.dp, bottom = 10.dp),
+      .padding(start = 14.dp, end = 14.dp, top = 10.dp, bottom = 10.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     when {
       leading != null -> { leading(); Spacer(Modifier.width(14.dp)) }
-      icon != null -> { IconTile(icon, iconTint, background = tileColor); Spacer(Modifier.width(14.dp)) }
-      else -> Spacer(Modifier.width(6.dp))
+      icon != null -> { IconTile(icon, iconTint); Spacer(Modifier.width(14.dp)) }
+      else -> Spacer(Modifier.width(2.dp))
     }
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(1.dp)) {
-      Text(title, style = Relevo.type.headline, color = titleColor, maxLines = 3, overflow = TextOverflow.Ellipsis)
+      if (overline != null) Text(overline, style = Relevo.type.footnote.copy(fontWeight = FontWeight.SemiBold), color = colors.graphite)
+      Text(title, style = Relevo.type.headline.copy(fontWeight = FontWeight.Medium), color = titleColor, maxLines = 3, overflow = TextOverflow.Ellipsis)
       if (subtitle != null) Text(subtitle, style = Relevo.type.subhead, color = colors.graphite)
     }
     if (value != null) {
@@ -155,22 +203,22 @@ fun ListRow(
       )
     }
     if (trailing != null) { Spacer(Modifier.width(10.dp)); trailing() }
-    if (chevron) { Spacer(Modifier.width(8.dp)); RelevoIcon(KitIcon.ABRIR, size = 20.dp, tint = colors.graphite, background = colors.card, strokeWidth = 1.9f) }
+    if (chevron) { Spacer(Modifier.width(6.dp)); RelevoIcon(KitIcon.ABRIR, size = 18.dp, tint = colors.gray, background = Color.Transparent, strokeWidth = 2f) }
   }
 }
 
-/** Dato con su rótulo, como en «Todo listo»: el dato en tinta y, debajo, qué es. Si se puede cambiar, lleva un lápiz. */
+/** Dato con su rótulo, como en «Todo listo»: arriba, la pregunta que responde; debajo, el dato en tinta. Si se puede cambiar, lleva un lápiz. */
 @Composable
 fun FactRow(icon: KitIcon, label: String, value: String, @Suppress("UNUSED_PARAMETER") valueIsVoice: Boolean = true, leading: (@Composable () -> Unit)? = null, onClick: (() -> Unit)? = null) {
   ListRow(
-    title = value.ifBlank { "Sin completar" }, subtitle = label, icon = icon, leading = leading,
+    title = value.ifBlank { "Sin completar" }, overline = label, icon = icon, leading = leading,
     titleColor = if (value.isBlank()) Relevo.colors.graphite else Relevo.colors.ink, onClick = onClick,
     trailing = if (onClick != null) ({ RelevoIcon(KitIcon.EDITAR, size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) }) else null,
   )
 }
 
 /**
- * Opción de una pregunta («¿Dónde suena?», «¿Qué decidiste?»): tarjeta blanca con borde fino, la ficha
+ * Opción de una pregunta («¿Dónde suena?», «¿Qué decidiste?»): tarjeta blanca con borde fino, el ícono
  * opcional, el texto y un círculo a la derecha. La elegida lleva borde de tinta y el círculo lleno.
  */
 @Composable
@@ -180,9 +228,10 @@ fun OptionRow(
   onClick: () -> Unit,
   modifier: Modifier = Modifier,
   icon: KitIcon? = null,
-  tileColor: Color? = null,
   subtitle: String? = null,
   enabled: Boolean = true,
+  /** Elegir una opción marca un tic; una respuesta que cierra algo, como «¿Qué decidiste?», confirma. */
+  haptic: HapticFeedbackType = HapticFeedbackType.SegmentTick,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
@@ -193,14 +242,14 @@ fun OptionRow(
     modifier.fillMaxWidth().heightIn(min = 60.dp).pressScale(interaction, 0.985f).clip(RoundedCornerShape(20.dp)).background(colors.card)
       .border(width, ring, RoundedCornerShape(20.dp))
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.RadioButton) {
-        haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onClick()
+        haptics.performHapticFeedback(haptic); onClick()
       }
       .semantics { this.selected = selected }
       .padding(start = if (icon != null) 12.dp else 18.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     if (icon != null) {
-      IconTile(icon, size = 38.dp, background = tileColor ?: (roleTint(icon) ?: colors.mist))
+      IconTile(icon, size = 36.dp)
       Spacer(Modifier.width(13.dp))
     }
     Column(Modifier.weight(1f)) {
@@ -249,7 +298,7 @@ fun ToggleRow(title: String, checked: Boolean, onChange: (Boolean) -> Unit, modi
   val haptics = LocalHapticFeedback.current
   ListRow(
     title, modifier.semantics { stateDescription = if (checked) "Encendido" else "Apagado" }, icon = icon, subtitle = subtitle,
-    onClick = { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(!checked) },
+    onClick = { haptics.performHapticFeedback(if (checked) HapticFeedbackType.ToggleOff else HapticFeedbackType.ToggleOn); onChange(!checked) },
     trailing = { Toggle(checked) },
   )
 }
@@ -270,14 +319,14 @@ fun Notice(
   val error = tone == Tone.Error
   val background = if (error) colors.error.copy(alpha = if (colors.isDark) .14f else .07f) else colors.card
   Row(
-    modifier.fillMaxWidth().clip(RowShape).background(background).padding(start = 10.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
+    modifier.fillMaxWidth().clip(RowShape).background(background).padding(start = 14.dp, end = 16.dp, top = 14.dp, bottom = 14.dp),
     verticalAlignment = Alignment.Top,
   ) {
-    Box(Modifier.size(45.dp).clip(RoundedCornerShape(14.dp)).background(if (error) colors.error.copy(alpha = .12f) else colors.mist), contentAlignment = Alignment.Center) {
-      RelevoIcon(if (error) KitIcon.ERROR else icon, size = 24.dp, tint = if (error) colors.error else colors.ink, background = Color.Transparent)
+    Box(Modifier.size(34.dp).clip(CircleShape).background(if (error) colors.error.copy(alpha = .12f) else colors.mist), contentAlignment = Alignment.Center) {
+      RelevoIcon(if (error) KitIcon.ERROR else icon, size = 19.dp, tint = if (error) colors.error else colors.ink, background = Color.Transparent)
     }
     Spacer(Modifier.width(14.dp))
-    Column(Modifier.weight(1f).padding(top = 2.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+    Column(Modifier.weight(1f).padding(top = 5.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
       if (title != null) Text(title, style = Relevo.type.headline, color = colors.ink)
       Text(text, style = Relevo.type.subhead, color = if (title != null) colors.graphite else colors.ink)
       if (actions != null) Column(Modifier.padding(top = 2.dp)) { actions() }
@@ -325,6 +374,3 @@ fun SectionHeader(title: String, modifier: Modifier = Modifier, action: String? 
 
 @Composable
 fun SectionGap() = Spacer(Modifier.height(Gap.section))
-
-@Composable
-internal fun Hairline(color: Color = Relevo.colors.line) = Box(Modifier.fillMaxWidth().height(1.dp).background(color))

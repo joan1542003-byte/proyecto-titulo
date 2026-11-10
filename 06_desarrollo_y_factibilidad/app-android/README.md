@@ -4,7 +4,11 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 ## Estado
 
-**Versión del testeo:** 2.33, la 2.32 con una semana para comparar: 7 días con la señal en el teléfono, que se inician en la pantalla del investigador, y preguntas sobre las semanas anteriores, sobre si notó el aviso tras cada relevo, la comparación del día 7 y un cierre que compara el objeto con el teléfono. Su código está en la rama `android-2.33` (D-138; [detalle](version-2.33-semana-de-comparacion-2026-10-20.md)). Lo mismo está en la 3.3 ([detalle](version-3.3-semana-de-comparacion-2026-10-20.md)). La **2.32**: la 2.31 sin cortes con la alarma del Tag encendida, con más paciencia con un Tag lento y la guía del botón; su código está en la rama `android-2.32` (D-137; [detalle](version-2.32-el-tag-no-se-corta-2026-10-17.md)). El mismo cambio está en la 3.2 de esta rama. La **2.31**: la 2.30 con el Tag que se calla siempre, la pila del Tag a la vista y el ícono y el logo de la línea 3.0; su código está en la rama `android-2.31` (D-136; [detalle](version-2.31-el-tag-se-calla-2026-10-14.md)). El arreglo del Tag y la pila también están en la 3.2 de esta rama, sin versión publicada. **Versión de diseño:** 3.3, la 3.2 con los arreglos del Tag de la 2.31 y la 2.32 y la semana para comparar de la 2.33, con el mismo código (D-138; [detalle](version-3.3-semana-de-comparacion-2026-10-20.md)). La **3.2**: igual a la lámina «Relevo, la app»: filas, opciones, campos y fichas con sus medidas, las ideas ordenadas por familia de color y textos más claros; solo cambia la interfaz (D-131; [detalle](version-3.2-igual-a-la-lamina-2026-10-12.md)). La **3.1**, las pantallas compuestas como en la lámina «Relevo, la app»: tarjetas sueltas con fichas de color, cápsulas sobre los cielos y el aura o el cielo a pantalla completa al empezar, al contar y al sonar; solo cambia la interfaz (D-130; [detalle](version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). La **3.0**, la línea nueva sin perder datos: colores, letra, íconos, cielos, aura y logo nuevos; mismas pantallas, decisiones y datos (D-129; [detalle](version-3.0-la-linea-nueva-2026-10-12.md); [plan](plan-rediseno-3.0-2026-10-11.md)). La **2.30**, para el primer testeo: editar un relevo sin borrarlo (D-120; [detalle](version-2.30-editar-sin-borrar-2026-10-09.md)). La **2.29**: la prueba del Tag empieza por el nivel medio (D-119; [detalle](version-2.29-nivel-medio-primero-2026-10-07.md)). La **2.28**: el Tag por defecto, lugares concretos y una app optimizada (D-117; [detalle](version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md)). Desde esta versión se entrega el APK optimizado (*release*), firmado con la misma clave. La **2.27**: el Tag suena en la señal y pita seguido (D-116; [detalle](version-2.27-el-tag-suena-en-la-senal-2026-10-07.md)). La **2.26**: el Tag pita y la prueba pregunta si se escuchó (D-115; [detalle](version-2.26-el-tag-pita-2026-10-07.md)). La **2.25**, del mismo día: «Tag» en pantalla y guía paso a paso (D-114; [detalle](version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md)). La **2.24** la 2.23 con la guía «Cómo usar el llavero» ([detalle](version-2.24-tutorial-del-llavero-2026-10-07.md)). La **2.23** degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir (D-113; [detalle](version-2.23-colores-y-opciones-listas-2026-10-07.md)). La **2.22** compara las semanas A, B y C del protocolo 02, con el objeto donde la persona empieza, y aclara el lenguaje (D-112; [detalle](version-2.22-comparar-y-lenguaje-claro-2026-10-06.md)). La **2.21** iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111; [detalle](version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)). La **2.20** la persona elige dónde suena y la app registra su elección (D-110; [detalle](version-2.20-eleccion-libre-2026-10-06.md)). La **2.19** agrega la salida «El llavero»: un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal; la pantalla se probó en emulador, pero falta probarla con un llavero real ([detalle](version-2.19-llavero-itag-2026-10-05.md), D-109). La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
+**Cómo funciona por dentro:** [mapa técnico de la 4.6](como-funciona-relevo-2026-11-06.md): las piezas, los permisos, el recorrido de un relevo, cómo cuenta, cómo suena y cómo se conecta con el Tag, qué guarda, cómo envía y recibe datos de Supabase, el panel, la compilación y la historia de cada decisión.
+
+**Versión actualizable:** 4.7.2, del 9 de noviembre de 2026, en la rama `android-4.6`: la entrevista final del cierre sigue la guía de los profesores, con diez preguntas abiertas en dos pantallas, y lo escrito se guarda aunque se cierre a medias (D-177; [detalle](version-4.7.2-entrevista-segun-la-guia-2026-11-09.md); [APK](releases/relevo-android-4.7.2-2026-11-09.apk)). Paquete `cl.udp.relevo`, `versionCode` 63. La próxima versión debe usar `versionCode` 64 o más. La **4.7.1**, del 9 de noviembre de 2026, en la misma rama: el cierre de la prueba muestra siempre todas sus preguntas, para no perder ninguna respuesta, y el panel lo muestra por persona (D-176; [detalle](version-4.7.1-cierre-sin-perder-respuestas-2026-11-09.md); [APK](releases/relevo-android-4.7.1-2026-11-09.apk)). Paquete `cl.udp.relevo`, `versionCode` 62. La **4.7**, del 9 de noviembre de 2026, en la misma rama: el cierre de la prueba en la app. Quien ya usaba Relevo ve, al abrirla, las preguntas del cuestionario y la entrevista finales; si no responde, quedan en Ajustes hasta terminarlas, y todo se guarda en Supabase (D-175; [detalle](version-4.7-cierre-de-la-prueba-2026-11-09.md); [APK](releases/relevo-android-4.7-2026-11-09.apk)). Paquete `cl.udp.relevo`, `versionCode` 61. La **4.6.3**, del 7 de noviembre de 2026, en la misma rama: el pulido. La señal ya no suena dos veces si la app se abre justo al cumplirse el tiempo. Permisos queda alineado, las horas sin sonar dan la vuelta, la barra de pestañas cabe con letra grande y se corrigen cinco textos más (D-167; [detalle](version-4.6.3-pulido-2026-11-07.md); [APK](releases/relevo-android-4.6.3-2026-11-07.apk)). Paquete `cl.udp.relevo`, `versionCode` 60. La **4.6.2**, del 7 de noviembre de 2026, en la misma rama: los textos dicen qué se cuenta («el tiempo en tus apps»), anuncian en futuro lo que aún no pasa («sonará») y hablan de «tu perfil». El permiso de Bluetooth se pide solo al tocar algo del Tag, y el aviso permanente del primer relevo ya no queda oculto (D-166; [detalle](version-4.6.2-textos-claros-y-bluetooth-2026-11-07.md); [APK](releases/relevo-android-4.6.2-2026-11-07.apk)). Paquete `cl.udp.relevo`, `versionCode` 59. La **4.6.1**, del 7 de noviembre de 2026, en la misma rama: la 4.6 revisada desde cero, sin conexión y en una copia aparte. Las palabras ya no se parten en la cuadrícula de actividades y el velo de las hojas se lee «Cerrar» con TalkBack. Se comprobó que la encuesta aparece al activar un relevo y no en una instalación nueva, y que todo se lee con letra grande (D-165; [detalle](version-4.6.1-revision-de-la-primera-vez-2026-11-07.md); [APK](releases/relevo-android-4.6.1-2026-11-07.apk)). Paquete `cl.udp.relevo`, `versionCode` 58. La **4.6**, del 6 de noviembre de 2026, en la misma rama: la 4.5 con una encuesta sobre el rediseño para quienes ya usaban Relevo. Aparece una sola vez, al activar un relevo o tras un minuto en la app, y tiene seis preguntas que se pueden saltar, dos del UMUX-Lite (D-164; [detalle](version-4.6-encuesta-del-rediseno-2026-11-06.md); [APK](releases/relevo-android-4.6-2026-11-06.apk)). Paquete `cl.udp.relevo`, `versionCode` 57. La **4.5**, del mismo día, en la rama `android-4.5`: la 4.4 con los íconos que responden a lo que pide la app (D-162), menos amarillo en los temas claro y oscuro, el saludo de Inicio con el color del relevo activo, 634 palabras y 121 frases clave [documentadas](textos/catastro-de-palabras-clave.md) y el selector de íconos sin el color pegado (D-163; [detalle](version-4.5-colores-saludo-y-palabras-2026-11-06.md); [APK](releases/relevo-android-4.5-2026-11-06.apk)). Paquete `cl.udp.relevo`, `versionCode` 56, firmada con la clave de siempre. La **4.4**, del 5 de noviembre de 2026, en la rama `android-4.4`: la 4.3 con lo relevante de la 1.0.0. Sale la prueba de 21 días y el consentimiento pasa a la v14 con los mismos datos. La primera vez tiene tres pantallas. El Tag se busca antes de sonar y, si no responde, suena el teléfono. Se suman «¿No tienes un Tag?», las horas sin sonar, el volumen, dejar un relevo listo para después y la revisión del tiempo. Paquete `cl.udp.relevo`, `versionCode` 55, firmada con la clave de siempre: se instala encima de la app de cada persona (D-159 y D-160; [detalle](version-4.4-la-version-actualizable-2026-11-05.md); [APK](releases/relevo-android-4.4-2026-11-05.apk)). La clave de firma (`firma/`) y la dirección de Supabase (`relevo.properties`) están en el repositorio: cualquier computador, también el Mac, compila una versión actualizable sin copiar archivos (D-161).
+
+**Rediseño en revisión:** 4.3, en la rama `android-4.0-rediseno`, sin fusionar: sugerencias por un catastro de palabras clave, varios relevos activos a la vez, cuatro sonidos para elegir en Ajustes, «Tag», «Dispositivo de audio» y «Notificaciones» como salidas, la marca animada al abrir, una píldora que se desplaza, un borde de 100 a 0 y textos sin posesivos innecesarios (D-158; [detalle](version-4.3-sugerencias-relevos-y-sonido-2026-11-05.md); [sonido](sonido-de-relevo-2026-11-05.md)). La **4.2.1**: la 4.2 con preparar desde una idea abriendo en lo que falta, y sin preparar otro relevo mientras uno cuenta ([detalle](version-4.2.1-preparar-desde-una-idea-2026-11-05.md)). La **4.2**: una sola fila para comentar, las preguntas «¿Cómo empiezas la actividad?» y «¿En qué lugar empieza?», las actividades predefinidas primero al crear una, un desenfoque variable como el borde suave de iOS e Inicio con la tarjeta de color de la memoria (D-157; [detalle](version-4.2-comentario-preguntas-borde-e-inicio-2026-11-05.md)). La **4.1**: la 4.0 con anillos simétricos y los íconos en su centro óptico, sin textos que narran la pantalla, sin viudas y con movimiento y vibración según las pautas de Apple (D-156; [detalle](version-4.1-anillos-textos-y-movimiento-2026-11-05.md)). La **4.0**: la interfaz en papel y tinta, cada actividad en un anillo con su color, las pestañas Inicio, Actividades y Perfil, los ajustes con una tuerca en Perfil, sin aura, con desenfoque progresivo arriba y abajo y textos y notificaciones más breves; mismos datos y misma lógica de la prueba (D-155; [detalle](version-4.0-rediseno-2026-11-05.md)). **Versión del testeo:** 2.33, la 2.32 con una semana para comparar: 7 días con la señal en el teléfono, que se inician en la pantalla del investigador, y preguntas sobre las semanas anteriores, sobre si notó el aviso tras cada relevo, la comparación del día 7 y un cierre que compara el objeto con el teléfono. Su código está en la rama `android-2.33` (D-138; [detalle](version-2.33-semana-de-comparacion-2026-10-20.md)). Lo mismo está en la 3.3 ([detalle](version-3.3-semana-de-comparacion-2026-10-20.md)). La **2.32**: la 2.31 sin cortes con la alarma del Tag encendida, con más paciencia con un Tag lento y la guía del botón; su código está en la rama `android-2.32` (D-137; [detalle](version-2.32-el-tag-no-se-corta-2026-10-17.md)). El mismo cambio está en la 3.2 de esta rama. La **2.31**: la 2.30 con el Tag que se calla siempre, la pila del Tag a la vista y el ícono y el logo de la línea 3.0; su código está en la rama `android-2.31` (D-136; [detalle](version-2.31-el-tag-se-calla-2026-10-14.md)). El arreglo del Tag y la pila también están en la 3.2 de esta rama, sin versión publicada. **Versión de diseño:** 3.3, la 3.2 con los arreglos del Tag de la 2.31 y la 2.32 y la semana para comparar de la 2.33, con el mismo código (D-138; [detalle](version-3.3-semana-de-comparacion-2026-10-20.md)). La **3.2**: igual a la lámina «Relevo, la app»: filas, opciones, campos y fichas con sus medidas, las ideas ordenadas por familia de color y textos más claros; solo cambia la interfaz (D-131; [detalle](version-3.2-igual-a-la-lamina-2026-10-12.md)). La **3.1**, las pantallas compuestas como en la lámina «Relevo, la app»: tarjetas sueltas con fichas de color, cápsulas sobre los cielos y el aura o el cielo a pantalla completa al empezar, al contar y al sonar; solo cambia la interfaz (D-130; [detalle](version-3.1-las-pantallas-de-la-lamina-2026-10-12.md)). La **3.0**, la línea nueva sin perder datos: colores, letra, íconos, cielos, aura y logo nuevos; mismas pantallas, decisiones y datos (D-129; [detalle](version-3.0-la-linea-nueva-2026-10-12.md); [plan](plan-rediseno-3.0-2026-10-11.md)). La **2.30**, para el primer testeo: editar un relevo sin borrarlo (D-120; [detalle](version-2.30-editar-sin-borrar-2026-10-09.md)). La **2.29**: la prueba del Tag empieza por el nivel medio (D-119; [detalle](version-2.29-nivel-medio-primero-2026-10-07.md)). La **2.28**: el Tag por defecto, lugares concretos y una app optimizada (D-117; [detalle](version-2.28-tag-por-defecto-y-fluidez-2026-10-07.md)). Desde esta versión se entrega el APK optimizado (*release*), firmado con la misma clave. La **2.27**: el Tag suena en la señal y pita seguido (D-116; [detalle](version-2.27-el-tag-suena-en-la-senal-2026-10-07.md)). La **2.26**: el Tag pita y la prueba pregunta si se escuchó (D-115; [detalle](version-2.26-el-tag-pita-2026-10-07.md)). La **2.25**, del mismo día: «Tag» en pantalla y guía paso a paso (D-114; [detalle](version-2.25-tag-y-guia-paso-a-paso-2026-10-07.md)). La **2.24** la 2.23 con la guía «Cómo usar el llavero» ([detalle](version-2.24-tutorial-del-llavero-2026-10-07.md)). La **2.23** degradados de varios colores, actividades de ocio como jugar videojuegos y opciones de un toque para no escribir (D-113; [detalle](version-2.23-colores-y-opciones-listas-2026-10-07.md)). La **2.22** compara las semanas A, B y C del protocolo 02, con el objeto donde la persona empieza, y aclara el lenguaje (D-112; [detalle](version-2.22-comparar-y-lenguaje-claro-2026-10-06.md)). La **2.21** iconos con degradado, nada elegido de antemano y sin patrones oscuros (D-111; [detalle](version-2.21-iconos-y-sin-sugerencias-2026-10-06.md)). La **2.20** la persona elige dónde suena y la app registra su elección (D-110; [detalle](version-2.20-eleccion-libre-2026-10-06.md)). La **2.19** agrega la salida «El llavero»: un llavero iTag que pita con Bluetooth, con búsqueda, prueba, conexión durante la espera y botón que calla la señal; la pantalla se probó en emulador, pero falta probarla con un llavero real ([detalle](version-2.19-llavero-itag-2026-10-05.md), D-109). La **2.18** registra el uso diario de las apps elegidas, el tiempo total de pantalla y el estado del teléfono, permite eliminar un relevo activo y avisa qué falta cuando un campo está vacío; el consentimiento pasa a v11 ([detalle](version-2.18-registro-completo-y-avisos-2026-09-30.md), D-097). La **2.17** hace que los mensajes del proyecto lleguen al instante mientras Relevo cuenta o espera ([detalle](version-2.17-mensajes-al-instante-2026-09-30.md)). La **2.16** agrega la activación automática opcional y los mensajes del proyecto, probados en emulador y no en un teléfono real; el consentimiento pasa a v10 ([detalle](version-2.16-activacion-automatica-y-mensajes-2026-09-30.md), D-095 y D-096). La **2.15** agrega la salida experimental «El reloj», sin probar con un reloj real ([detalle](version-2.15-reloj-como-llamada-2026-09-29.md), D-093).
 
 **Actualizado:** 20 de octubre de 2026
 
@@ -12,7 +16,7 @@ Prototipo funcional para elegir una actividad, seleccionar las aplicaciones cuyo
 
 **Android mínimo:** 12, API 31. El requisito se refiere a la versión del sistema, no al año de compra del teléfono.
 
-**APK del testeo:** [relevo-android-2.33-2026-10-20.apk](releases/relevo-android-2.33-2026-10-20.apk), con el código en la rama `android-2.33`. La próxima versión debe usar `versionCode` 50 o más. **Con la línea visual nueva:** [relevo-android-3.3-2026-10-20.apk](releases/relevo-android-3.3-2026-10-20.apk), en esta rama. Las versiones anteriores se conservan en [releases/](releases/).
+**APK del rediseño:** [relevo-android-4.3-revision-2026-11-05.apk](releases/relevo-android-4.3-revision-2026-11-05.apk), que se instala aparte como «Relevo 4.3», sin base remota; la [4.2.1](releases/relevo-android-4.2.1-revision-2026-11-05.apk), la [4.2](releases/relevo-android-4.2-revision-2026-11-05.apk), la [4.1](releases/relevo-android-4.1-revision-2026-11-05.apk) y la [4.0](releases/relevo-android-4.0-revision-2026-11-05.apk) quedan en `releases/`. **APK del testeo:** [relevo-android-2.33-2026-10-20.apk](releases/relevo-android-2.33-2026-10-20.apk), con el código en la rama `android-2.33`. La 4.3 usa `versionCode` 54; la próxima debe usar 55 o más. **Con la línea visual nueva:** [relevo-android-3.3-2026-10-20.apk](releases/relevo-android-3.3-2026-10-20.apk), en esta rama. Las versiones anteriores se conservan en [releases/](releases/).
 
 **Proyecto para Android Studio en macOS:** [instrucciones de apertura](ABRIR-EN-MAC.md)
 
@@ -142,6 +146,102 @@ $env:RELEVO_BUILD_DIR='D:\AndroidBuild'
 - [`textos/`](textos/README.md): inventario de todos los textos de la app generado desde el código, estudio de cómo habla Relevo y descripción escrita de cada pantalla.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-09 — Android 4.7.2
+
+- **Qué cambió:** el estado abre con la 4.7.2.
+- **Cómo estaba antes:** abría con la 4.7.1.
+- **Por qué:** D-177.
+
+### 2026-11-09 — Android 4.7.1
+
+- **Qué cambió:** el estado abre con la 4.7.1.
+- **Cómo estaba antes:** abría con la 4.7.
+- **Por qué:** D-176.
+
+### 2026-11-09 — Android 4.7
+
+- **Qué cambió:** el estado abre con la 4.7, el cierre de la prueba en la app.
+- **Cómo estaba antes:** abría con la 4.6.3.
+- **Por qué:** D-175.
+
+### 2026-11-07 — Android 4.6.3
+
+- **Qué cambió:** el estado abre con la 4.6.3.
+- **Cómo estaba antes:** abría con la 4.6.2.
+- **Por qué:** D-167.
+
+### 2026-11-07 — Android 4.6.2
+
+- **Qué cambió:** el estado abre con la 4.6.2.
+- **Cómo estaba antes:** abría con la 4.6.1.
+- **Por qué:** D-166.
+
+### 2026-11-07 — Android 4.6.1
+
+- **Qué cambió:** el estado abre con la 4.6.1.
+- **Cómo estaba antes:** abría con la 4.6.
+- **Por qué:** D-165.
+
+### 2026-11-06 — Mapa técnico
+
+- **Qué cambió:** el estado enlaza el mapa técnico de cómo funciona la app.
+- **Cómo estaba antes:** la explicación técnica estaba repartida entre versiones, decisiones y código.
+- **Por qué:** el autor pidió registrar cómo funciona la app por dentro.
+
+### 2026-11-06 — Android 4.6
+
+- **Qué cambió:** el estado abre con la 4.6.
+- **Cómo estaba antes:** abría con la 4.5.
+- **Por qué:** D-164.
+
+### 2026-11-06 — Android 4.5
+
+- **Qué cambió:** el estado abre con la 4.5.
+- **Cómo estaba antes:** abría con la 4.4.
+- **Por qué:** D-163.
+
+### 2026-11-05 — Firma y Supabase en el repositorio
+
+- **Qué cambió:** el estado dice dónde están la clave de firma y la configuración de Supabase.
+- **Cómo estaba antes:** había que copiarlas a mano a cada computador.
+- **Por qué:** el autor pidió subirlas al repositorio (D-161).
+
+### 2026-11-05 — Android 4.4
+
+- **Qué cambió:** el estado abre con la 4.4, la versión actualizable.
+- **Cómo estaba antes:** abría con la 4.3, solo como APK de revisión.
+- **Por qué:** el autor pidió que la 4.3 fuera la versión buena y actualizable, con lo relevante de la 1.0.0 (D-159).
+
+### 2026-11-05 — Android 4.3
+
+- **Qué cambió:** el estado pasa a la 4.3, con su APK, su `versionCode` y el documento del sonido.
+- **Cómo estaba antes:** el rediseño en revisión era la 4.2.1, con `versionCode` 53.
+- **Por qué:** revisión del autor de la 4.2.1 y de la primera versión de la 4.3.
+
+### 2026-11-05 — Android 4.2.1
+
+- **Qué cambió:** el estado pasa a la 4.2.1, con su APK y su `versionCode`.
+- **Cómo estaba antes:** el rediseño en revisión era la 4.2, con `versionCode` 52.
+- **Por qué:** el autor reportó que preparar desde una idea hacía crear el relevo desde cero.
+
+### 2026-11-05 — Android 4.2
+
+- **Qué cambió:** el estado pasa a la 4.2, con su APK y su `versionCode`.
+- **Cómo estaba antes:** el rediseño en revisión era la 4.1, con `versionCode` 51.
+- **Por qué:** el autor vio la 4.1 en el emulador y pidió cambios en Perfil, los rótulos, Actividades, el borde e Inicio (D-157).
+
+### 2026-11-05 — Android 4.1
+
+- **Qué cambió:** el estado pasa a la 4.1, con su APK y su `versionCode`.
+- **Cómo estaba antes:** el rediseño en revisión era la 4.0, con `versionCode` 50.
+- **Por qué:** el autor revisó la 4.0 y pidió corregir los anillos, los textos, las viudas y el movimiento (D-156).
+
+### 2026-11-05 — Android 4.0
+
+- **Qué cambió:** se agregó la versión 4.0, el rediseño de la interfaz, al estado.
+- **Cómo estaba antes:** la última versión de diseño era la 3.3.
+- **Por qué:** pedido del autor (D-155).
 
 ### 2026-10-24 — Textos de la app
 

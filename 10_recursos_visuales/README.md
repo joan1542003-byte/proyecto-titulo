@@ -79,6 +79,8 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 42. [Relevo, la app](rediseno-app-2026-10-11/relevo-la-app.html) ([en claude.ai](https://claude.ai/artifact/E6nkPDDmDrDF9Gw8zNxnqM)): el rediseño de la app en 25 pantallas con la línea nueva, el logo con degradado «Luz» y el lugar como tercera luz (D-127). Incluye el resumen del plan para actualizar sin perder datos (D-128).
 43. [La marca Relevo](42_marca-relevo-2026-10-25.md): la identidad vigente completa, con su fundamento: idea, logo, letra, color, cielos, aura, íconos, forma de la interfaz, objeto y sonido, voz, soportes y lo que no se hace.
 44. [Las decisiones de diseño de Relevo](43_decisiones-de-diseno-2026-11-02.md): documento interno que explica y verifica cada decisión —sistema, señal, objeto, marca, letra, color, íconos, interfaz, experiencia, escritura y memoria diseñada—, con los errores encontrados y su solución, las incoherencias entre documentos y respuestas para defender cada decisión ante la comisión.
+45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
+46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -108,6 +110,18 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-06 — Íconos desde lo que pide la app
+
+- **Qué cambió:** se enlaza el documento 44, con los íconos rehechos según lo que pide la app.
+- **Cómo estaba antes:** el último documento enlazado era el 43.
+- **Por qué:** D-162.
+
+### 2026-11-06 — Íconos propios
+
+- **Qué cambió:** se enlaza el documento 43, sobre por qué Relevo tiene íconos propios.
+- **Cómo estaba antes:** el fundamento de los íconos estaba en los documentos 39 y 42, sin el argumento de por qué no usar un set existente.
+- **Por qué:** el autor preguntó cómo justificar los íconos propios.
 
 ### 2026-11-02 — Las decisiones de diseño
 

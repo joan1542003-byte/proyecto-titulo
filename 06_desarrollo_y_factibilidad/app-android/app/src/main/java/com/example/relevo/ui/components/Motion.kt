@@ -1,5 +1,14 @@
 package com.example.relevo.ui.components
 
+import androidx.compose.animation.togetherWith
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.SizeTransform
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.AnimatedContent
 import android.provider.Settings
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.CubicBezierEasing
@@ -87,4 +96,27 @@ fun Modifier.appear(index: Int = 0): Modifier {
     alpha = progress.value
     translationY = (1f - progress.value) * distance
   }
+}
+
+/**
+ * Una cifra que cambia como en iOS (4.1, D-156): el valor nuevo entra deslizándose y el anterior sale, hacia
+ * abajo cuando la cuenta baja, como el contenido numérico de SwiftUI. El cambio se ve y no salta. Sin
+ * movimiento si Android lo pide.
+ */
+@Composable
+fun <T : Comparable<T>> RollingContent(value: T, modifier: Modifier = Modifier, content: @Composable (T) -> Unit) {
+  val reduce = rememberReduceMotion()
+  AnimatedContent(
+    targetState = value,
+    modifier = modifier,
+    transitionSpec = {
+      if (reduce) EnterTransition.None togetherWith ExitTransition.None
+      else {
+        val down = targetState < initialState
+        (slideInVertically(Motion.smooth()) { if (down) -it / 3 else it / 3 } + fadeIn(Motion.standard(180))) togetherWith
+          (slideOutVertically(Motion.smooth()) { if (down) it / 3 else -it / 3 } + fadeOut(Motion.standard(120))) using SizeTransform(clip = false)
+      }
+    },
+    label = "rolling",
+  ) { content(it) }
 }

@@ -27,10 +27,22 @@ class ReminderTest {
     assertFalse(complete.copy(targetPackage = "").hasPreparedContent)
   }
 
-  @Test fun withoutParticipatingTheReminderStillWorksWithoutCode() {
-    val local = complete.copy(participantCode = "", consentAccepted = false, localOnly = true)
-    assertTrue(local.hasPreparedContent)
-    assertEquals(ReminderStatus.WAITING, local.ready().arm("local").status)
+  @Test fun withoutCodeOrConsentItCannotBeArmed() {
+    val noCode = complete.copy(participantCode = "", consentAccepted = false)
+    assertFalse(noCode.hasPreparedContent)
+    assertEquals(ReminderStatus.DRAFT, noCode.ready().arm("s").status)
+  }
+
+  @Test fun aNewRelevoProposesABriefLimit() {
+    assertEquals(15 * 60, Reminder().requiredUsageSeconds)
+  }
+
+  @Test fun soundingOnThePhoneBecauseTheTagFailedIsRemembered() {
+    val armed = complete.ready().arm("s-tag")
+    val sounded = armed.deliverSignal(audible = true, at = 1L, onPhone = true)
+    assertEquals(ReminderStatus.SIGNALLED, sounded.status)
+    assertTrue(sounded.soundedOnPhone)
+    assertFalse(sounded.ready().arm("otra").soundedOnPhone)
   }
 
   @Test fun completeReminderCanBeArmed() {

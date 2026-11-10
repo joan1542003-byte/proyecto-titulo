@@ -1,6 +1,5 @@
 package com.example.relevo.ui.components
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.expandVertically
@@ -17,9 +16,6 @@ import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -41,7 +37,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -52,7 +48,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.BlurredEdgeTreatment
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathMeasure
@@ -78,8 +73,9 @@ enum class ButtonKind { Primary, Secondary, Destructive }
 
 /**
  * Botón en cápsula (D-083): 56 dp de alto y ancho completo, o compacto dentro de una tarjeta. El
- * principal va en tinta; el secundario, desde 3.0, blanco con un contorno de tinta. Al presionar se hunde un
- * poco, sin ondas ni rebotes; la acción principal se confirma con un toque háptico.
+ * principal va en tinta; el secundario, desde 3.0, blanco con un contorno de tinta. Responde al apoyar el
+ * dedo, no al soltarlo: se hunde un poco y se oscurece, y vuelve con un resorte sin rebote (4.1, D-156).
+ * La vibración queda para lo que la merece, como activar un relevo ([haptic]): si todo vibra, nada avisa.
  */
 @Composable
 fun RelevoButton(
@@ -92,6 +88,8 @@ fun RelevoButton(
   compact: Boolean = false,
   /** Se ve apagado pero responde: lo usa [GuardedButton] para decir qué falta. */
   muted: Boolean = false,
+  /** Vibración al confirmar una acción que importa, como activar el relevo. Por omisión, ninguna. */
+  haptic: HapticFeedbackType? = null,
 ) {
   val colors = Relevo.colors
   val haptics = LocalHapticFeedback.current
@@ -101,13 +99,15 @@ fun RelevoButton(
     !enabled || muted -> colors.mist to colors.gray
     kind == ButtonKind.Primary -> colors.ink to colors.onInk
     kind == ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .16f else .09f) to colors.error
-    else -> Color.Transparent to colors.ink
+    // El secundario es blanco, como dice su descripción: transparente, sobre el borde desenfocado de abajo
+    // dejaba ver los colores que pasaban detrás (4.2).
+    else -> colors.card to colors.ink
   }
   val outlined = kind == ButtonKind.Secondary && enabled && !muted
   val pressedColor = when (kind) {
     ButtonKind.Primary -> colors.slate
     ButtonKind.Destructive -> colors.error.copy(alpha = if (colors.isDark) .24f else .15f)
-    ButtonKind.Secondary -> colors.ink.copy(alpha = .08f)
+    ButtonKind.Secondary -> colors.mist
   }
   val background by animateColorAsState(if (pressed && enabled) pressedColor else container, Motion.standard(120), label = "button_background")
   Row(
@@ -117,7 +117,7 @@ fun RelevoButton(
       .clip(Relevo.controlShape).background(background)
       .then(if (outlined) Modifier.border(2.dp, colors.ink, Relevo.controlShape) else Modifier)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button) {
-        if (kind == ButtonKind.Primary && !muted) haptics.performHapticFeedback(HapticFeedbackType.ContextClick)
+        if (haptic != null && !muted) haptics.performHapticFeedback(haptic)
         onClick()
       }
       .padding(horizontal = if (compact) 18.dp else 22.dp),
@@ -146,6 +146,7 @@ fun GuardedButton(
   kind: ButtonKind = ButtonKind.Primary,
   icon: KitIcon? = null,
   onMissing: (String) -> Unit = {},
+  haptic: HapticFeedbackType? = null,
 ) {
   val haptics = LocalHapticFeedback.current
   val scope = rememberCoroutineScope()
@@ -162,11 +163,11 @@ fun GuardedButton(
         // Si el aviso ya estaba a la vista, crece un instante para que se note.
         val again = shown == missing
         shown = missing
-        haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+        haptics.performHapticFeedback(HapticFeedbackType.Reject)
         if (again) scope.launch { bump.animateTo(1.04f, tween(110)); bump.animateTo(1f, tween(170)) }
         onMissing(missing)
       } else onClick()
-    }, kind = kind, icon = icon, muted = missing != null)
+    }, kind = kind, icon = icon, muted = missing != null, haptic = haptic)
   }
 }
 
@@ -197,10 +198,10 @@ fun PlainAction(
 ) {
   val interaction = remember { MutableInteractionSource() }
   val pressed by interaction.collectIsPressedAsState()
+  // Sin relleno a los lados: el texto queda en la misma columna que el texto vecino. El área táctil igual mide 48 dp.
   Row(
-    modifier.heightIn(min = 48.dp).clip(Relevo.controlShape)
-      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick)
-      .padding(horizontal = 4.dp),
+    modifier.minimumInteractiveComponentSize()
+      .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onClick),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     val tint = if (!enabled) Relevo.colors.gray else color.copy(alpha = if (pressed) .5f else 1f)
@@ -219,7 +220,7 @@ fun IconAction(icon: KitIcon, description: String, onClick: () -> Unit, modifier
   val pressed by interaction.collectIsPressedAsState()
   val colors = Relevo.colors
   Box(
-    modifier.size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
+    modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.92f).clip(CircleShape)
       .background(if (filled || pressed) colors.mist else Color.Transparent)
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick)
       .semantics { contentDescription = description },
@@ -244,7 +245,7 @@ fun SegmentedControl(
   val haptics = LocalHapticFeedback.current
   val reduce = rememberReduceMotion()
   val index = options.indexOfFirst { it.first == selected }
-  BoxWithConstraints(modifier.fillMaxWidth().height(46.dp).clip(Relevo.controlShape).background(colors.card).border(1.5.dp, colors.line, Relevo.controlShape).padding(4.dp)) {
+  BoxWithConstraints(modifier.fillMaxWidth().height(48.dp).clip(Relevo.controlShape).background(colors.card).border(1.5.dp, colors.line, Relevo.controlShape).padding(4.dp)) {
     val segment = maxWidth / options.size
     val offset by animateDpAsState(segment * index.coerceAtLeast(0), if (reduce) snap() else Motion.smooth(), label = "segment_offset")
     val thumbAlpha by animateFloatAsState(if (index >= 0) 1f else 0f, Motion.standard(Motion.SHORT), label = "segment_thumb")
@@ -272,26 +273,14 @@ fun SegmentedControl(
   }
 }
 
-/** Escala de 1 a 5 con sus extremos nombrados. */
-@Composable
-fun ScaleControl(value: Int?, onChange: (Int?) -> Unit, low: String = "Nada", high: String = "Mucho") {
-  Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-    SegmentedControl((1..5).map { it.toString() to it.toString() }, value?.toString(), { onChange(it?.toInt()) })
-    Row(Modifier.fillMaxWidth().padding(horizontal = 6.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-      Text("1 · $low", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-      Text("5 · $high", style = Relevo.type.footnote, color = Relevo.colors.graphite)
-    }
-  }
-}
-
 /**
  * Estrellas para opinar sobre la app o la prueba. Nunca califican a la persona ni lo que hizo (D-073).
  * Tocar la estrella elegida la quita.
  */
 @Composable
-fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
+fun StarRating(value: Int?, onChange: (Int?) -> Unit, modifier: Modifier = Modifier) {
   val haptics = LocalHapticFeedback.current
-  Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
+  Row(modifier, horizontalArrangement = Arrangement.spacedBy(2.dp)) {
     (1..5).forEach { star ->
       val filled = (value ?: 0) >= star
       val scale by animateFloatAsState(if (filled) 1f else .9f, Motion.smooth(stiffness = 700f), label = "star")
@@ -313,37 +302,12 @@ fun StarRating(value: Int?, onChange: (Int?) -> Unit) {
   }
 }
 
-/** Selector de tiempo con − y +: la cifra cambia deslizándose. Mantener presionado repite el paso. */
-@Composable
-fun DurationStepper(seconds: Int, onChange: (Int) -> Unit, label: String) {
-  val colors = Relevo.colors
-  val haptics = LocalHapticFeedback.current
-  fun step(current: Int) = when {
-    current < 10 * 60 -> 60
-    current < 60 * 60 -> 5 * 60
-    current < 120 * 60 -> 15 * 60
-    else -> 30 * 60
-  }
-  fun decrease(current: Int) = (current - step(current - 1)).coerceAtLeast(60)
-  fun increase(current: Int) = (current + step(current)).coerceAtMost(6 * 60 * 60)
-  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-    Column(Modifier.weight(1f)) {
-      AnimatedContent(
-        targetState = seconds,
-        transitionSpec = {
-          val up = targetState > initialState
-          (slideInVertically(Motion.smooth()) { if (up) it / 2 else -it / 2 } + fadeIn(Motion.standard(Motion.SHORT))) togetherWith
-            (slideOutVertically(Motion.smooth()) { if (up) -it / 2 else it / 2 } + fadeOut(Motion.standard(120)))
-        },
-        label = "duration",
-      ) { value -> Text(formatDuration(value), style = Relevo.type.largeTitle, color = colors.ink, modifier = Modifier.enterBlur(this)) }
-      Text(label, style = Relevo.type.footnote, color = colors.graphite)
-    }
-    RepeatButton("Restar tiempo", "−", enabled = seconds > 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(decrease(seconds)) }
-    Spacer(Modifier.width(10.dp))
-    RepeatButton("Sumar tiempo", "+", enabled = seconds < 6 * 60 * 60) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(increase(seconds)) }
-  }
-}
+/**
+ * Cuánto entra la punta izquierda de la primera estrella desde el borde de su celda: 10 dp entre la celda
+ * de 54 y el ícono de 34, y 6 dp hasta la punta, que empieza en 4,2 de 24. Con este corrimiento la estrella
+ * queda en la columna del texto que la pregunta (4.2).
+ */
+val StarGlyphInset = 16.dp
 
 /** Solo los botones − y + del tiempo, para ponerlos al final de una fila (3.2). */
 @Composable
@@ -362,15 +326,27 @@ fun DurationButtons(seconds: Int, onChange: (Int) -> Unit) {
   }
 }
 
-/** Cantidad con − y +, para la constancia elegida. */
+/**
+ * El valor después de sumar [delta] dentro de [range]. Con [wrap] (4.6.3), como en las horas, después del último
+ * viene el primero (de 23 a 0) y al revés; sin él, se queda en el borde.
+ */
+internal fun stepWithin(value: Int, delta: Int, range: IntRange, wrap: Boolean): Int {
+  val next = value + delta
+  if (!wrap) return next.coerceIn(range)
+  return range.first + Math.floorMod(next - range.first, range.last - range.first + 1)
+}
+
+/** Cantidad con − y +, para la constancia elegida y las horas sin sonar. */
 @Composable
-fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String) {
+fun CountStepper(value: Int, onChange: (Int) -> Unit, range: IntRange, label: String, wrap: Boolean = false) {
   val haptics = LocalHapticFeedback.current
+  fun step(delta: Int) = stepWithin(value, delta, range, wrap)
   Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
     Text(label, style = Relevo.type.body, color = Relevo.colors.ink, modifier = Modifier.weight(1f))
-    RepeatButton("Restar", "−", enabled = value > range.first) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value - 1).coerceIn(range)) }
+    // TalkBack lee qué se resta o suma: con dos contadores juntos, «Restar» solo no decía cuál.
+    RepeatButton("Restar, $label", "−", enabled = wrap || value > range.first) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(step(-1)) }
     Spacer(Modifier.width(10.dp))
-    RepeatButton("Sumar", "+", enabled = value < range.last) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange((value + 1).coerceIn(range)) }
+    RepeatButton("Sumar, $label", "+", enabled = wrap || value < range.last) { haptics.performHapticFeedback(HapticFeedbackType.SegmentTick); onChange(step(1)) }
   }
 }
 
@@ -385,7 +361,7 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
     while (true) { onStep(); delay(110) }
   }
   Box(
-    Modifier.size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
+    Modifier.minimumInteractiveComponentSize().size(44.dp).pressScale(interaction, 0.9f).clip(CircleShape).background(if (pressed) colors.mist else colors.card).border(1.5.dp, colors.line, CircleShape)
       .clickable(interactionSource = interaction, indication = null, enabled = enabled, role = Role.Button, onClick = onStep)
       .semantics { contentDescription = description },
     contentAlignment = Alignment.Center,
@@ -396,22 +372,19 @@ private fun RepeatButton(description: String, symbol: String, enabled: Boolean, 
 
 /** Opción rápida en cápsula: blanca con un borde fino; la elegida, en tinta. */
 @Composable
-fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null, sky: Sky? = null) {
+fun QuickChoice(label: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier, icon: KitIcon? = null) {
   val colors = Relevo.colors
   val interaction = remember { MutableInteractionSource() }
   val background by animateColorAsState(if (selected) colors.ink else colors.card, Motion.standard(Motion.SHORT), label = "chip")
   val content by animateColorAsState(if (selected) colors.onInk else colors.ink, Motion.standard(Motion.SHORT), label = "chip_text")
   Row(
-    modifier.heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
+    modifier.minimumInteractiveComponentSize().heightIn(min = 40.dp).pressScale(interaction, 0.95f).clip(Relevo.controlShape).background(background)
       .then(if (selected) Modifier else Modifier.border(1.5.dp, colors.line, Relevo.controlShape))
       .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onClick).semantics { this.selected = selected }
       .padding(horizontal = 16.dp),
     verticalAlignment = Alignment.CenterVertically,
   ) {
-    if (sky != null) {
-      SkySquare(sky, size = 18.dp, radius = 6.dp)
-      Spacer(Modifier.width(8.dp))
-    } else if (icon != null) {
+    if (icon != null) {
       RelevoIcon(icon, size = 18.dp, tint = content, background = background)
       Spacer(Modifier.width(8.dp))
     }

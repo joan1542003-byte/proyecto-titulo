@@ -10,7 +10,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,9 +19,12 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
+import com.example.relevo.ui.components.Text
 import androidx.compose.runtime.Composable
+import com.example.relevo.ui.components.OptionRow
+import com.example.relevo.signal.Sonido
+import com.example.relevo.data.SignalVolume
+import com.example.relevo.domain.QuietHours
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -30,6 +32,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.example.relevo.ui.components.StarGlyphInset
+import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
@@ -43,6 +47,7 @@ import com.example.relevo.data.SyncStatus
 import com.example.relevo.data.ThemeMode
 import com.example.relevo.domain.Reminder
 import com.example.relevo.theme.Relevo
+import com.example.relevo.ui.components.ActivityRing
 import com.example.relevo.ui.components.GuardedButton
 import com.example.relevo.ui.components.ButtonKind
 import com.example.relevo.ui.components.CheckMark
@@ -52,40 +57,23 @@ import com.example.relevo.ui.components.ListRow
 import com.example.relevo.ui.components.ListSection
 import com.example.relevo.ui.components.Notice
 import com.example.relevo.ui.components.Panel
-import com.example.relevo.ui.components.Picture
-import com.example.relevo.ui.components.PictureContent
-import com.example.relevo.ui.components.PictureTile
 import com.example.relevo.ui.components.PlainAction
 import com.example.relevo.ui.components.RelevoButton
 import com.example.relevo.ui.components.RelevoIcon
 import com.example.relevo.ui.components.RelevoScreen
 import com.example.relevo.ui.components.RelevoSheet
 import com.example.relevo.ui.components.RenglonArea
-import com.example.relevo.ui.components.RenglonField
 import com.example.relevo.ui.components.SectionGap
 import com.example.relevo.ui.components.SegmentedControl
-import com.example.relevo.ui.components.Signature
 import com.example.relevo.ui.components.StarRating
 import com.example.relevo.ui.components.Tone
 import com.example.relevo.ui.components.formatDuration
-import com.example.relevo.ui.components.key
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
-import com.example.relevo.ui.components.AuraBackground
-import com.example.relevo.ui.components.AuraMood
-import com.example.relevo.data.AuraLevel
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import java.util.UUID
-import com.example.relevo.ui.components.BackStyle
 import com.example.relevo.ui.components.Gap
 import com.example.relevo.ui.components.RowShape
-import com.example.relevo.ui.components.SkyCard
-import com.example.relevo.ui.components.SkySquare
 import com.example.relevo.ui.components.ToggleRow
-import com.example.relevo.ui.components.TwoColumnGrid
-import com.example.relevo.ui.components.pictureIcon
 
 /** Una opción de ajuste: qué es, en una línea, y sus valores en un control segmentado. */
 @Composable
@@ -99,7 +87,103 @@ private fun SettingPanel(title: String, detail: String, options: List<Pair<Strin
   }
 }
 
-/** S2: avisos y resúmenes. Todo lo opcional empieza apagado y se apaga con un toque. */
+/**
+ * Ajustes (4.0, D-155): se abren con la tuerca de Perfil y ya no desde Inicio. Reúnen lo que se configura
+ * una vez —avisos, apariencia, permisos y datos— para que Inicio quede para el día a día.
+ */
+@Composable
+internal fun SettingsScreen(
+  settings: Settings,
+  usageAccess: Boolean,
+  onNotices: () -> Unit,
+  onAppearance: () -> Unit,
+  onPermissions: () -> Unit,
+  onPrivacy: () -> Unit,
+  onBack: () -> Unit,
+  onSound: (Sonido) -> Unit = {},
+  onChange: (Settings.() -> Settings) -> Unit = {},
+  /** 4.7 (D-175): el cierre de la prueba, mientras falte responderlo; null si no corresponde. */
+  closing: ClosingStatus? = null,
+  onClosing: () -> Unit = {},
+) {
+  val theme = when (settings.theme) { ThemeMode.LIGHT -> "Claro"; ThemeMode.DARK -> "Oscuro"; ThemeMode.SYSTEM -> "Automático" }
+  val sound = Sonido.from(settings.sound)
+  var choosingSound by rememberSaveable { mutableStateOf(false) }
+  var choosingQuiet by rememberSaveable { mutableStateOf(false) }
+  RelevoScreen(title = "Ajustes", onBack = onBack, backLabel = "Perfil") {
+    if (closing != null) {
+      ListSection {
+        ListRow("Cierre de la prueba", icon = KitIcon.ENTREVISTAS, subtitle = closingSubtitle(closing), chevron = true, onClick = onClosing)
+      }
+      Spacer(Modifier.height(Gap.block))
+    }
+    ListSection {
+      ListRow("Sonido", icon = KitIcon.SUENA, subtitle = "${sound.label} · volumen ${volumeLabel(settings.volume).lowercase()}", chevron = true, onClick = { choosingSound = true })
+      ListRow("Horas sin sonar", icon = KitIcon.PAUSAR, subtitle = if (settings.quietHours) QuietHours.label(settings.quietFrom, settings.quietUntil) else "Apagadas", chevron = true, onClick = { choosingQuiet = true })
+      ListRow("Avisos", icon = KitIcon.AVISOS, subtitle = if (settings.returnNotice) "Aviso semanal encendido" else "Aviso semanal apagado", chevron = true, onClick = onNotices)
+      ListRow("Apariencia", icon = KitIcon.TEMA, subtitle = theme + if (settings.largeText) " · letra grande" else "", chevron = true, onClick = onAppearance)
+      ListRow("Permisos", icon = KitIcon.PERMISO, subtitle = if (usageAccess) "Todo listo para contar el tiempo" else "Falta Tiempo de uso", chevron = true, onClick = onPermissions)
+      ListRow("Datos", icon = KitIcon.PRIVACIDAD, subtitle = "Privacidad, código y borrado", chevron = true, onClick = onPrivacy)
+    }
+  }
+  if (choosingSound) SoundSheet(sound, settings.volume, onSound, { volume -> onChange { copy(volume = volume) } }, onDismiss = { choosingSound = false })
+  if (choosingQuiet) QuietSheet(settings, onChange, onDismiss = { choosingQuiet = false })
+}
+
+private fun volumeLabel(volume: SignalVolume): String = when (volume) {
+  SignalVolume.SOFT -> "Suave"
+  SignalVolume.MEDIUM -> "Medio"
+  SignalVolume.LOUD -> "Fuerte"
+}
+
+/**
+ * Horas sin sonar (4.4, Tabla 4 de la memoria): en ese tramo Relevo no cuenta ni suena, ni se activa solo; el
+ * relevo sigue activo y retoma al terminar. Empiezan apagadas y, al encenderlas, proponen de 23:00 a 8:00.
+ */
+@Composable
+private fun QuietSheet(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onDismiss: () -> Unit) {
+  RelevoSheet(onDismiss = onDismiss, title = "Horas sin sonar", done = "Listo") {
+    ListSection(footer = "En esas horas, Relevo no cuenta el tiempo ni suena. El relevo sigue activo y retoma al terminar.") {
+      ToggleRow("Horas sin sonar", settings.quietHours, { on -> onChange { copy(quietHours = on) } }, icon = KitIcon.PAUSAR)
+    }
+    if (settings.quietHours) {
+      Spacer(Modifier.height(Gap.list))
+      Panel {
+        CountStepper(settings.quietFrom, { value -> onChange { copy(quietFrom = value) } }, 0..23, "Desde las ${settings.quietFrom}:00", wrap = true)
+        CountStepper(settings.quietUntil, { value -> onChange { copy(quietUntil = value) } }, 0..23, "Hasta las ${settings.quietUntil}:00", wrap = true)
+      }
+    }
+    Spacer(Modifier.height(12.dp))
+  }
+}
+
+/**
+ * Elegir el sonido de la señal (4.3, D-158): cuatro, con su razón en una línea. Al elegir uno suena una vez,
+ * como al elegir un tono en el teléfono. Los fundamentos están en `sonido-de-relevo-2026-11-05.md`.
+ */
+@Composable
+private fun SoundSheet(current: Sonido, volume: SignalVolume, onSound: (Sonido) -> Unit, onVolume: (SignalVolume) -> Unit, onDismiss: () -> Unit) {
+  RelevoSheet(onDismiss = onDismiss, title = "Sonido", done = "Listo") {
+    Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+      Sonido.entries.forEach { option ->
+        // Sin ícono: los cuatro llevarían el mismo, que no distingue nada.
+        OptionRow(option.label, option == current, { onSound(option) }, subtitle = option.description)
+      }
+    }
+    Spacer(Modifier.height(Gap.block))
+    // Volumen (4.4): para el teléfono y el dispositivo de audio. El volumen multimedia del teléfono sigue mandando.
+    SettingPanel(
+      "Volumen", "El volumen multimedia del teléfono también influye.",
+      listOf(SignalVolume.SOFT.name to "Suave", SignalVolume.MEDIUM.name to "Medio", SignalVolume.LOUD.name to "Fuerte"), volume.name,
+      { onVolume(SignalVolume.valueOf(it)) },
+    )
+    Spacer(Modifier.height(12.dp))
+    Text("En el Tag suena siempre su propio pitido, con su volumen.", style = Relevo.type.footnote, color = Relevo.colors.graphite)
+    Spacer(Modifier.height(12.dp))
+  }
+}
+
+/** Avisos: todo lo opcional empieza apagado y se apaga con un toque. */
 @Composable
 internal fun NoticesScreen(
   settings: Settings,
@@ -111,29 +195,30 @@ internal fun NoticesScreen(
 ) {
   val context = LocalContext.current
   var autoUnavailable by remember { mutableStateOf(false) }
-  RelevoScreen(title = "Avisos y resúmenes", onBack = onBack, backLabel = "Perfil") {
+  RelevoScreen(title = "Avisos", onBack = onBack, backLabel = "Ajustes") {
     // D-095: repite el último relevo cada vez que se abre una de sus apps.
-    ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
-      subtitle = "Cuando abras las apps de tu último relevo, empieza a contar solo.")
-    SettingNote(
-      buildList {
-        if (autoMode && lastReminder != null) add("${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}")
+    ListSection(
+      footer = buildList {
+        if (autoMode && lastReminder != null) add("${lastReminder.activity} · ${lastReminder.selectedApps.joinToString(", ") { it.label }} · ${formatDuration(lastReminder.requiredUsageSeconds)}.")
         if (autoUnavailable && !autoMode) add("Primero prepara y termina un relevo: la activación automática repite ese.")
-        add("Mientras esté encendida, Relevo mira qué app tienes abierta —solo su nombre— para saber cuándo empezar. Después de cada relevo espera 30 minutos antes de activarse otra vez.")
-      },
-    )
-    Spacer(Modifier.height(Gap.block))
-    Column(verticalArrangement = Arrangement.spacedBy(Gap.list)) {
+        add("Mientras está encendida, Relevo mira qué app tienes abierta, solo su nombre. Después de cada relevo, espera 30 minutos antes de volver a activarlo.")
+      }.joinToString(" "),
+    ) {
+      ToggleRow("Activación automática", autoMode, { on -> autoUnavailable = !onAutoMode(on) }, icon = KitIcon.ESPERANDO,
+        subtitle = "Al abrir las apps del último relevo, Relevo lo activa solo y empieza a contar el tiempo.")
+    }
+    SectionGap()
+    ListSection {
       ToggleRow("Resumen semanal", settings.weeklySummary, { on -> onChange { copy(weeklySummary = on) } }, icon = KitIcon.AVANCE,
-        subtitle = "Lo que preparaste esta semana, en tu perfil.")
+        subtitle = "«Esta semana», en Inicio.")
       ToggleRow("Aviso semanal", settings.returnNotice, { on ->
         if (on) requestNotificationPermission(context)
         onChange { copy(returnNotice = on) }
       }, icon = KitIcon.AVISOS, subtitle = "Si pasas una semana sin abrir Relevo, te avisa una vez.")
-      ToggleRow("Mensaje después de responder", settings.acknowledgements, { on -> onChange { copy(acknowledgements = on) } }, icon = KitIcon.COMENTARIO,
-        subtitle = "Unas palabras cuando cuentas qué decidiste.")
+      ToggleRow("Mensaje al responder", settings.acknowledgements, { on -> onChange { copy(acknowledgements = on) } }, icon = KitIcon.COMENTARIO,
+        subtitle = "Unas palabras después de decir qué decidiste.")
       ToggleRow("Veces por semana", settings.constancy > 0, { on -> onChange { copy(constancy = if (on) constancy.coerceAtLeast(3) else 0, constancyPaused = false) } },
-        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces por semana quieres hacerlo. Aparece en tu resumen.")
+        icon = KitIcon.CALENDARIO, subtitle = "Cuántas veces a la semana quieres hacer tus actividades. Aparece en «Esta semana».")
     }
     if (settings.constancy > 0) {
       Spacer(Modifier.height(Gap.list))
@@ -146,41 +231,19 @@ internal fun NoticesScreen(
   }
 }
 
-/** Notas bajo un ajuste, en grafito y con el margen de las filas. */
-@Composable
-private fun SettingNote(lines: List<String>) {
-  Column(Modifier.padding(start = 6.dp, end = 6.dp, top = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-    lines.forEach { Text(it, style = Relevo.type.footnote, color = Relevo.colors.graphite) }
-  }
-}
-
-/** Apariencia: tema y tamaño del texto, con una vista previa que cambia al instante. */
+/** Apariencia (4.0): el tema y el tamaño de la letra. El aura se retiró (D-155). */
 @Composable
 internal fun AppearanceScreen(settings: Settings, onChange: (Settings.() -> Settings) -> Unit, onBack: () -> Unit) {
-  RelevoScreen(title = "Apariencia y aura", onBack = onBack, backLabel = "Perfil", backStyle = BackStyle.Text) {
-    // Vista previa: el aura con el nivel elegido, como se ve mientras cuenta un relevo.
-    Box(Modifier.fillMaxWidth().aspectRatio(1.6f).clip(androidx.compose.foundation.shape.RoundedCornerShape(24.dp))) {
-      AuraBackground(Modifier.fillMaxSize(), mood = AuraMood.PREVIEW, level = settings.aura)
-    }
-    Spacer(Modifier.height(Gap.block))
-    ToggleRow("Tu aura", settings.aura != AuraLevel.OFF, { on -> onChange { copy(aura = if (on) AuraLevel.MEDIUM else AuraLevel.OFF) } }, icon = KitIcon.AURA,
-      subtitle = "Aparece mientras cuenta un relevo. Es de la pantalla: el Tag no se ilumina.")
-    if (settings.aura != AuraLevel.OFF) {
-      Spacer(Modifier.height(Gap.list))
-      SettingPanel(
-        "Intensidad", "Cuánto color tiene el aura.",
-        listOf(AuraLevel.SOFT.name to "Suave", AuraLevel.MEDIUM.name to "Media", AuraLevel.STRONG.name to "Viva"), settings.aura.name,
-        { value -> onChange { copy(aura = AuraLevel.valueOf(value)) } },
-      )
-    }
-    Spacer(Modifier.height(Gap.list))
+  RelevoScreen(title = "Apariencia", onBack = onBack, backLabel = "Ajustes") {
     SettingPanel(
-      "Tema", "Claro, oscuro o como esté tu teléfono.",
+      "Tema", "Claro, oscuro o como esté el teléfono.",
       listOf(ThemeMode.LIGHT.name to "Claro", ThemeMode.DARK.name to "Oscuro", ThemeMode.SYSTEM.name to "Automático"), settings.theme.name,
       { value -> onChange { copy(theme = ThemeMode.valueOf(value)) } },
     )
-    Spacer(Modifier.height(Gap.list))
-    ToggleRow("Letra grande", settings.largeText, { on -> onChange { copy(largeText = on) } }, subtitle = "Se suma al tamaño que usas en el teléfono.")
+    Spacer(Modifier.height(Gap.block))
+    ListSection(footer = "Se suma al tamaño que usas en el teléfono.", dividerInset = 16.dp) {
+      ToggleRow("Letra grande", settings.largeText, { on -> onChange { copy(largeText = on) } })
+    }
   }
 }
 
@@ -190,13 +253,16 @@ internal fun PermissionsScreen(usageAccess: Boolean, backgroundUnrestricted: Boo
   val context = LocalContext.current
   var notifications by remember { mutableStateOf(hasNotificationPermission(context)) }
   LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { notifications = hasNotificationPermission(context) }
-  RelevoScreen(title = "Permisos", onBack = onBack, backLabel = "Perfil") {
-    ListSection(footer = "Tiempo de uso es necesario para contar. Lo demás es opcional.") {
-      ListRow("Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Para contar el tiempo en las apps que elijas.", value = if (usageAccess) "Permitido" else "Falta", chevron = true, onClick = onUsageSettings)
-      ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app.", value = if (notifications) "Permitidas" else "Apagadas",
-        chevron = !notifications, onClick = if (notifications) null else ({ requestNotificationPermission(context) }))
-      ListRow("Batería", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo.", value = if (backgroundUnrestricted) "Sin restricción" else "Con restricción",
-        chevron = !backgroundUnrestricted, onClick = if (backgroundUnrestricted) null else onBackground)
+  RelevoScreen(title = "Permisos", onBack = onBack, backLabel = "Ajustes") {
+    ListSection(footer = "Tiempo de uso es necesario para contar el tiempo en tus apps. En Android se llama «Acceso a datos de uso». Lo demás es opcional.") {
+      ListRow("Tiempo de uso", icon = KitIcon.PERMISO, subtitle = "Para contar el tiempo en las apps que elijas", value = if (usageAccess) "Permitido" else "Falta", chevron = true, onClick = onUsageSettings)
+      // 4.6.3: las tres filas se tocan y llevan flecha, para que sus valores queden alineados y siempre se pueda
+      // revisar el permiso en Android. Notificaciones abre sus ajustes: ahí se encienden aunque Android ya no
+      // muestre su pregunta. La batería dice «Permitida» o «Restringida», para que su nombre quepa en una línea.
+      ListRow("Notificaciones", icon = KitIcon.AVISOS, subtitle = "Para avisarte aunque estés en otra app", value = if (notifications) "Permitidas" else "Apagadas",
+        chevron = true, onClick = { openNotificationSettings(context) })
+      ListRow("Batería del teléfono", icon = KitIcon.BATERIA, subtitle = "Para que Android no detenga a Relevo", value = if (backgroundUnrestricted) "Permitida" else "Restringida",
+        chevron = true, onClick = if (backgroundUnrestricted) ({ openBatterySettings(context) }) else onBackground)
     }
   }
 }
@@ -216,157 +282,17 @@ internal fun HistoryScreen(history: List<HistoryEntry>, customActivities: List<C
         today.minusDays(1) -> "Ayer"
         else -> todayLabel(day)
       }
-      ListSection(title = label) {
+      ListSection(title = label, dividerInset = 68.dp) {
         entries.forEach { entry ->
           ListRow(
             entry.activity,
             subtitle = listOfNotNull(entry.appLabel.takeIf { it.isNotBlank() }, formatDuration(entry.seconds), outcomeLabel(entry.outcome) ?: if (entry.signalDelivered) "Sonó" else "Terminó antes de sonar").joinToString(" · "),
-            leading = { SkySquare(activityIcon(entry.activity, customActivities), variant = activityVariant(entry.activity)) },
+            leading = { ActivityRing(activityIcon(entry.activity, customActivities), 40.dp) },
             trailing = { RelevoIcon(outcomeIcon(entry.outcome), size = 20.dp, tint = Relevo.colors.graphite, background = Relevo.colors.card) },
           )
         }
       }
       SectionGap()
-    }
-  }
-}
-
-/**
- * Tus actividades (D-084): lo que la persona hace seguido, guardado con su primer paso y el lugar
- * donde empieza, para prepararlo en un toque. Tocar una abre una hoja con «Preparar un relevo» y
- * «Editar». Se guardan en el teléfono.
- */
-@Composable
-internal fun ActivitiesScreen(
-  customActivities: List<CustomActivity>,
-  onOpen: (String) -> Unit,
-  onNew: () -> Unit,
-  onPrepare: (CustomActivity) -> Unit,
-  onBack: () -> Unit,
-) {
-  var shown by rememberSaveable { mutableStateOf<String?>(null) }
-  RelevoScreen(
-    title = "Tus actividades",
-    titleSoft = "Lo que haces seguido, listo en un toque.",
-    onBack = onBack, backLabel = "Perfil",
-    bottom = { RelevoButton("Crear una actividad", onNew, icon = KitIcon.AGREGAR) },
-  ) {
-    if (customActivities.isEmpty()) {
-      Panel {
-        Text("Todavía no tienes actividades", style = Relevo.type.headline, color = Relevo.colors.ink)
-        Text("Anota qué haces, cómo empiezas y dónde. Después la encuentras en Inicio y al preparar un relevo.", style = Relevo.type.subhead, color = Relevo.colors.graphite)
-      }
-    } else {
-      TwoColumnGrid(customActivities) { activity, cell ->
-        SkyCard(
-          activity.name, pictureIcon(Picture.parse(activity.icon) ?: pictureForActivity(activity.name, emptyList())), cell,
-          aspect = 1.05f, onClick = { shown = activity.id }, variant = activityVariant(activity.name),
-        )
-      }
-    }
-  }
-  val selected = customActivities.firstOrNull { it.id == shown }
-  if (selected != null) {
-    RelevoSheet(onDismiss = { shown = null }, scrollable = false) {
-      Row(verticalAlignment = Alignment.CenterVertically) {
-        SkySquare(pictureIcon(Picture.parse(selected.icon) ?: pictureForActivity(selected.name, emptyList())), size = 64.dp, radius = 18.dp, variant = activityVariant(selected.name))
-        Spacer(Modifier.width(16.dp))
-        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-          Text(selected.name, style = Relevo.type.title2, color = Relevo.colors.ink)
-          startSentence(selected.firstStep, selected.place)?.let { Text(it, style = Relevo.type.subhead, color = Relevo.colors.graphite) }
-        }
-      }
-      Spacer(Modifier.height(22.dp))
-      RelevoButton("Preparar un relevo", { shown = null; onPrepare(selected) })
-      Spacer(Modifier.height(8.dp))
-      RelevoButton("Editar", { shown = null; onOpen(selected.id) }, kind = ButtonKind.Secondary, icon = KitIcon.EDITAR)
-    }
-  }
-}
-
-/** Iconos de actividades del kit (grupo «Actividades», 21). */
-private val activityIcons = listOf(
-  KitIcon.LEER, KitIcon.ESCRIBIR, KitIcon.DIBUJAR, KitIcon.PINTAR, KitIcon.GUITARRA, KitIcon.MUSICA, KitIcon.CAMINAR,
-  KitIcon.BICICLETA, KitIcon.EJERCICIO, KitIcon.ESTIRAR, KitIcon.COCINAR, KitIcon.PLANTAS, KitIcon.DORMIR, KitIcon.LLAMAR,
-  KitIcon.CARTA, KitIcon.ORDENAR, KitIcon.ESTUDIAR, KitIcon.FOTOGRAFIA, KitIcon.MANUALIDADES, KitIcon.JUEGO_DE_MESA, KitIcon.SALIR,
-)
-
-/**
- * Crear o editar una actividad propia: la imagen arriba (se elige en una hoja; si no, la sugiere el
- * nombre) y tres renglones: la actividad, cómo empieza y dónde.
- */
-@Composable
-internal fun ActivityEditScreen(initial: CustomActivity?, existing: List<CustomActivity>, onSave: (CustomActivity) -> Unit, onDelete: (String) -> Unit, onBack: () -> Unit) {
-  var name by rememberSaveable { mutableStateOf(initial?.name.orEmpty()) }
-  var first by rememberSaveable { mutableStateOf(initial?.firstStep.orEmpty()) }
-  var place by rememberSaveable { mutableStateOf(initial?.place.orEmpty()) }
-  var image by rememberSaveable { mutableStateOf(initial?.icon?.let { Picture.parse(it) }?.let { if (it is Picture.OfPhoto) it.photo.key else (it as Picture.OfIcon).icon.key }.orEmpty()) }
-  var confirmDelete by rememberSaveable { mutableStateOf(false) }
-  var picking by rememberSaveable { mutableStateOf(false) }
-  val duplicate = activityIdeas.any { it.activity.equals(name.trim(), true) } || existing.any { it.id != initial?.id && it.name.equals(name.trim(), true) }
-  val valid = name.trim().length in 2..60 && !duplicate && first.isNotBlank() && place.isNotBlank()
-  val picture = Picture.parse(image) ?: pictureForActivity(name, emptyList())
-  RelevoScreen(
-    title = if (initial == null) "Nueva actividad" else "Editar la actividad",
-    onBack = onBack, closeIcon = initial == null, backLabel = "Cancelar",
-    bottom = {
-      GuardedButton("Guardar", {
-        onSave(CustomActivity(initial?.id ?: UUID.randomUUID().toString(), name.trim(), first.trim(), place.trim(), image.ifBlank { (picture as? Picture.OfPhoto)?.photo?.key ?: (picture as Picture.OfIcon).icon.key }, 0))
-      }, missing = when {
-        name.trim().length < 2 -> "Escribe el nombre de la actividad."
-        name.trim().length > 60 -> "El nombre es muy largo: usa hasta 60 caracteres."
-        duplicate -> "Ya existe una actividad con ese nombre."
-        first.isBlank() -> "Escribe cómo empiezas."
-        place.isBlank() -> "Escribe dónde empiezas."
-        else -> null
-      })
-    },
-  ) {
-    SkyCard(name.ifBlank { "Tu actividad" }, pictureIcon(picture), aspect = 1.6f, largeLabel = true, onClick = { picking = true }, description = "Cambiar la imagen", variant = activityVariant(name))
-    Spacer(Modifier.height(4.dp))
-    Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) { PlainAction("Cambiar la imagen", { picking = true }) }
-    Spacer(Modifier.height(Gap.block))
-    RenglonField("Actividad", name, { name = it.take(60) }, placeholder = "Ej.: practicar guitarra")
-    if (duplicate) { Spacer(Modifier.height(6.dp)); Text("Ya tienes una actividad con ese nombre.", style = Relevo.type.footnote, color = Relevo.colors.error) }
-    Spacer(Modifier.height(Gap.list))
-    RenglonField("Para empezar", first, { first = it.take(120) }, placeholder = "Ej.: sacar la guitarra del estuche", icon = KitIcon.PRIMER_PASO)
-    Spacer(Modifier.height(Gap.list))
-    RenglonField("Dónde empiezas", place, { place = it.take(120) }, placeholder = "Ej.: junto a la guitarra", icon = KitIcon.LUGAR)
-    if (initial != null) {
-      SectionGap()
-      RelevoButton("Borrar la actividad", { confirmDelete = true }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
-    }
-  }
-  if (picking) {
-    RelevoSheet(onDismiss = { picking = false }, title = "Elige una imagen", done = "Listo", tall = true) {
-      Text("Fotos", style = Relevo.type.section, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
-      choosablePhotos.chunked(4).forEach { row ->
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-          row.forEach { photo -> PictureTile(Picture.OfPhoto(photo), image == photo.key, { image = photo.key }, Modifier.weight(1f), description = photo.description, cornerRadius = 18.dp) }
-          repeat(4 - row.size) { Spacer(Modifier.weight(1f)) }
-        }
-        Spacer(Modifier.height(10.dp))
-      }
-      Spacer(Modifier.height(10.dp))
-      Text("Iconos", style = Relevo.type.section, color = Relevo.colors.graphite, modifier = Modifier.padding(start = 4.dp, bottom = 12.dp))
-      activityIcons.chunked(6).forEach { row ->
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-          row.forEach { icon -> PictureTile(Picture.OfIcon(icon), image == icon.key, { image = icon.key }, Modifier.weight(1f), description = icon.label, aspect = 1f, cornerRadius = 100.dp) }
-          repeat(6 - row.size) { Spacer(Modifier.weight(1f)) }
-        }
-        Spacer(Modifier.height(8.dp))
-      }
-    }
-  }
-  if (confirmDelete && initial != null) {
-    RelevoSheet(onDismiss = { confirmDelete = false }, scrollable = false) {
-      Text("¿Borrar «${initial.name}»?", style = Relevo.type.title2, color = Relevo.colors.ink)
-      Spacer(Modifier.height(8.dp))
-      Text("Se quita de tus actividades. Los relevos que ya hiciste se mantienen.", style = Relevo.type.body, color = Relevo.colors.graphite)
-      Spacer(Modifier.height(22.dp))
-      RelevoButton("Borrar", { confirmDelete = false; onDelete(initial.id) }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
-      Spacer(Modifier.height(8.dp))
-      RelevoButton("Cancelar", { confirmDelete = false }, kind = ButtonKind.Secondary)
     }
   }
 }
@@ -393,12 +319,12 @@ internal fun PrivacyScreen(
   var copied by remember { mutableStateOf(false) }
   var exportMessage by rememberSaveable { mutableStateOf<String?>(null) }
   val deleted = deletionStatus == RelevoViewModel.DELETED_MESSAGE
-  val participating = participation == ParticipationMode.STUDY
+  val participating = participation == ParticipationMode.ACCEPTED
   val exporter = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
     if (uri != null) onExport(uri) { ok -> exportMessage = if (ok) "Tus datos quedaron en el archivo que elegiste." else "No se pudo guardar el archivo. Prueba otra vez." }
   }
   RelevoScreen(
-    title = "Tus datos", onBack = onBack,
+    title = "Tus datos", onBack = onBack, backLabel = "Ajustes",
     bottom = if (deleted) ({ RelevoButton("Volver a comenzar", onRestart) }) else null,
   ) {
     Text(
@@ -438,7 +364,7 @@ internal fun PrivacyScreen(
     RelevoSheet(onDismiss = { confirming = false }, scrollable = false) {
       Text("¿Borrar tus datos?", style = Relevo.type.title2, color = Relevo.colors.ink)
       Spacer(Modifier.height(8.dp))
-      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar.", style = Relevo.type.body, color = Relevo.colors.graphite)
+      Text("Se borran tus relevos, actividades, perfil, ruta y respuestas, también en la base del proyecto y en la copia de Documentos/Relevo. Sales del proyecto y Relevo deja de contar el tiempo en tus apps.", style = Relevo.type.body, color = Relevo.colors.graphite)
       Spacer(Modifier.height(22.dp))
       RelevoButton("Borrar mis datos", { confirming = false; onDelete() }, kind = ButtonKind.Destructive, icon = KitIcon.BORRAR)
       Spacer(Modifier.height(8.dp))
@@ -456,14 +382,17 @@ private fun copy(context: Context, text: String) {
 internal fun FeedbackScreen(onSend: (Int?, String) -> Unit, onBack: () -> Unit) {
   var stars by rememberSaveable { mutableStateOf<Int?>(null) }
   var comment by rememberSaveable { mutableStateOf("") }
+  // 4.2 (D-157): el comentario va primero, porque es lo que la persona vino a hacer; las estrellas son opcionales.
   RelevoScreen(
-    title = "¿Cómo te resultó Relevo?",
+    title = "Envíanos un comentario",
     onBack = onBack, closeIcon = true, backLabel = "Cerrar",
-    bottom = { GuardedButton("Enviar", { onSend(stars, comment) }, missing = if (stars == null && comment.isBlank()) "Elige las estrellas o escribe un comentario." else null, icon = KitIcon.ENVIAR) },
+    bottom = { GuardedButton("Enviar", { onSend(stars, comment) }, missing = if (stars == null && comment.isBlank()) "Escribe un comentario o elige las estrellas." else null, icon = KitIcon.ENVIAR) },
   ) {
-    StarRating(stars) { stars = it }
+    RenglonArea("Comentario", comment, { comment = it }, "Ej.: me gustaría elegir otro sonido")
     SectionGap()
-    RenglonArea("Comentario", comment, { comment = it }, "¿Qué cambiarías?")
+    Text("¿Cómo te resultó Relevo?", style = Relevo.type.headline, color = Relevo.colors.ink)
+    Spacer(Modifier.height(8.dp))
+    StarRating(stars, { stars = it }, Modifier.offset(x = -StarGlyphInset))
   }
 }
 
