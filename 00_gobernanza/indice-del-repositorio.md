@@ -2,10 +2,10 @@
 
 Este documento indica dónde comenzar, qué archivo funciona como referencia vigente y cómo distinguir el desarrollo actual del material histórico. Su propósito es evitar que una versión anterior oriente una decisión nueva por accidente.
 
-**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo](traspaso-a-claude-2026-09-24.md), que se actualiza con cada cambio. El estado al día está en el [estado del proyecto](estado-del-proyecto-2026-10-19.md): la app 2.33 para el testeo y la 3.3 con la identidad aprobada (D-138), la prueba en casa con tres personas desde el 7 de octubre y la memoria v5 con sus anexos. El estado de Issues debe confirmarse directamente en GitHub.
+**Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo](traspaso-a-claude-2026-09-24.md), que se actualiza con cada cambio. El estado al día está en el [estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, el trabajo de las cinco ramas que todavía no entran a `main`, lo que ya existe y lo que hay que aclarar con el autor. El estado de Issues debe confirmarse directamente en GitHub.
 
 
-**Base académica:** [borrador v5 de la memoria](../08_memoria/borrador-memoria-v5-2026-10-11.md) (D-123), con sus [anexos A a I](../08_memoria/anexos/README.md). La [coherencia del 9 de septiembre](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md) queda como antecedente.
+**Base académica:** [borrador v6 de la memoria](../08_memoria/borrador-memoria-v6-2026-10-28.md) (D-146 a D-152), con su [versión en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y sus [anexos A a I](../08_memoria/anexos/README.md). El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) (D-123) y la [coherencia del 9 de septiembre](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md) quedan como antecedentes.
 
 **Consulta del feedback:** [Las 23 preguntas y sus documentos responsables](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
@@ -81,6 +81,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Estado al 4 de noviembre
+
+- **Qué cambió:** la entrada remite al estado del 4 de noviembre, y la base académica pasa al borrador v6 con su versión en 1920 × 1080.
+- **Cómo estaba antes:** remitía al estado del 19 de octubre y la base académica era el borrador v5.
+- **Por qué:** el autor pidió actualizar los documentos sin fusionar todavía las ramas a `main`.
 
 ### 2026-10-24 — Entrada al día
 

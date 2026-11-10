@@ -32,6 +32,9 @@ La gobernanza busca que cada resultado pueda responder cuatro preguntas:
 - [Dirección del autor y referencias aportadas](direccion-del-autor-y-referencias-2026-09-27.md): criterios, evolución visual, recomendaciones como Laws of UX y correcciones a las herramientas; incluye un [anexo de mensajes originales de Claude y fuentes de Codex](fuentes-direccion-del-autor-2026-09-27.md).
 - [Reflexión sobre diseñar Relevo con IA](reflexion-diseno-con-ia-relevo-2026-09-27.md): borrador para el autor y sus profesores, con tres casos documentados, discusión de los wireframes, aportes, límites y referencias; pendiente de revisión personal antes de incorporarlo a la memoria.
 - [Aplicación del feedback docente del 23 de septiembre](aplicacion-feedback-docente-2026-09-23.md): cambios incorporados, opciones no adoptadas y condiciones antes de trabajar con participantes.
+- [Estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, el trabajo de las ramas sin fusionar y cómo fusionarlas sin perder nada, lo que ya existe y lo que hay que aclarar. Los estados anteriores, del [19](estado-del-proyecto-2026-10-19.md) y del [25 de octubre](estado-del-proyecto-2026-10-25.md), se conservan.
+- [Por hacer](por-hacer.md): las tareas acordadas con el autor, cada una con su porqué, sus pasos y sus reglas.
+- [Registro de riesgos](registro-de-riesgos.md): los riesgos del cierre, con su prioridad y cómo se cubren.
 - [Traspaso a Claude](traspaso-a-claude-2026-09-24.md): contexto, evidencia, estado del producto, mapa documental, riesgos y prioridades.
 - [Inicio rápido para Claude](INICIO-CLAUDE.md): instrucción inicial para comenzar sin reconstruir conversaciones.
 - `indice-del-repositorio.md`: orden de lectura, estado de cada carpeta y fuentes que deben tomarse como referencia.
@@ -55,6 +58,12 @@ Una fuente de menor nivel no puede corregir silenciosamente una de mayor nivel. 
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-04 — Estado, tareas y riesgos
+
+- **Qué cambió:** la lista de documentos suma el estado del 4 de noviembre, Por hacer y el registro de riesgos.
+- **Cómo estaba antes:** la lista no tenía ninguno de los tres, aunque existen desde el 19 y el 25 de octubre.
+- **Por qué:** el autor pidió actualizar los documentos sin fusionar todavía las ramas a `main`.
 
 ### 2026-09-29 — Registro de pedidos
 
