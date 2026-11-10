@@ -4,6 +4,8 @@
 
 Por decisión del autor del 4 de noviembre, ninguna rama se fusiona a `main` todavía. Este documento sirve para hacerlo después sin perder nada.
 
+> **Al 10 de noviembre:** las ramas de textos ya están en `main`; la app (`android-4.6`) y los íconos (`iconos-propios`) siguen aparte. El detalle está en la [fusión de los textos](fusion-de-textos-en-main-2026-11-10.md).
+
 > **Al 5 de noviembre:** esta rama ya tiene `main` al día. Lo que cambió después del corte está en la [sección 7](#7-después-del-corte-5-de-noviembre).
 
 ## 1. Dónde está cada cosa
@@ -114,6 +116,12 @@ El 5 de noviembre se fusionó `main` (`f34f668`) en esta rama. Solo chocó el re
 | Decisiones | [Registro de decisiones](../09_decisiones/registro-de-decisiones.md) | En `main` la última es D-154; en `android-4.0-rediseno`, D-158. La siguiente libre es D-159. |
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fusión de los textos
+
+- **Qué cambió:** una nota al inicio dice que las ramas de textos ya entraron a `main` y enlaza el registro de la fusión.
+- **Cómo estaba antes:** decía que ninguna rama se fusionaba todavía.
+- **Por qué:** el autor autorizó juntar los textos en `main`.
 
 ### 2026-11-05 — Fusión con main
 

@@ -211,26 +211,18 @@
 | 29 oct. | Corrección | Al revisar la quinta ronda, pidió decir en palabras simples «señal de la periferia», «episodio» y la mediana; quitar los códigos de participantes y las afirmaciones que no aportan; que el texto siga la columna sin cortarse y continúe hacia el lado, como en una página doble; criterios fáciles de entender, con su porqué y sin la convivencia; explicar por qué la decisión queda abierta; quitar el rótulo «Cita», «Actores y responsabilidades», las etiquetas «Decisión.» y la tabla de estado de los objetivos; objetivos claros; el recorrido del usuario en un esquema simple; desarrollar la referencia de Apple desde sus pautas, sin tabla; nombrar los colores con el estudio de escritura y llevarlo a la memoria; lenguaje de diseñador; no nombrar «luz»; llamar Relevo al objeto; Relevo Home y Relevo Go; sin fechas de inicio por persona; APA 7 en español; su nombre completo, el logo de la Facultad y la mención en Diseño Gráfico. Preguntó si la Figura 9 hace falta. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con los capítulos 7, 9, 10, 11 y 14 en palabras simples y sin códigos de participantes; criterios que se entienden solos; un capítulo 11 contado como relato, con el recorrido del usuario en un esquema, la referencia de Apple en prosa y «Cómo habla Relevo»; 21 figuras y 4 tablas; 80 referencias, todas citadas. La [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), de 66 páginas, se lee hacia el lado —el texto llena cada columna y las piezas van al pie—, con portada según el instructivo y el reglamento e índice de tablas y figuras. La Figura 9 se queda: el instructivo pide el plan de trabajo. | D-151 |
 | 29 oct. | Corrección y consulta | Al revisar la sexta ronda, señaló que en la lámina 16 las figuras volvían a interrumpir la lectura y que las láminas 17, 22, 28 y 58 dejaban una columna de texto sola. Preguntó si el glosario es obligatorio y pidió abrir la pestaña de la Biblioteca para iniciar sesión y leer otras memorias de diseño. | [Memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) de 62 páginas: las figuras de una columna van en su propia columna, a la derecha, y ningún capítulo termina en una columna sola —con dos figuras de concepto (Figuras 1 y 8) y lo repetido dicho una vez en los capítulos 6, 11, 12 y 14—; el mapa con rótulos naturales; el índice de tablas y figuras ya no toca el folio. El glosario es optativo según la pauta; se mantiene hasta que decida el autor. La pestaña quedó abierta; el inicio de sesión no se completó. | D-152 |
 | 29 oct. | Encargo | Pidió subir el IDML a la carpeta de la memoria, junto a las tipografías. | El [IDML](../08_memoria/memoria-1920x1080/memoria-relevo-1920x1080.idml) entra al repositorio y sale del `.gitignore`; el README advierte que sus imágenes se vuelven a enlazar en otro computador. | — |
-| 4 nov. | Consulta | Pidió leer el repositorio completo y entenderlo, para tener todo el contexto del proyecto. | Lectura de `main` y de las cinco solicitudes de cambio en borrador (PR #15 a #19), sin cambios en el proyecto. Dos observaciones para aclarar con el autor: el PDF enviado al profesor el 30 de octubre tiene texto que el borrador v6 del repositorio no tiene, y los datos del cierre de la prueba aún no están en `datos_sensibles/`. | — |
-| 4 nov. | Encargo | Actualizar solo documentos, sin fusionar todavía las ramas a `main`, con trazabilidad de qué es cada cosa, para no perder trabajo ni repetir lo ya hecho. | [Estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, qué contiene cada rama, los choques medidos al fusionarlas y cómo resolverlos, lo que ya existe, los pendientes que se repiten entre listas y lo que hay que aclarar. El README, el traspaso y los índices de gobernanza remiten a la v6 y a ese estado. Todo en la rama `estado-del-proyecto-2026-11-04`. | Sin fusionar a `main` hasta que el autor lo decida |
-| 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
-| 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
-| 5 nov. | Encargo | Pidió buscar la versión más reciente de la app, que había llegado al repositorio como APK, instalarla y dejarla como la más reciente en este computador. | Es la 4.3, de la rama `android-4.0-rediseno` (D-158), que otra sesión subió el mismo día. La copia local quedó en esa rama, con `main` al día, y su APK se instaló en el emulador como «Relevo 4.3», aparte de la app principal y sus datos. La 4.3 parte de la 3.3: no incluye la 1.0.0, que sigue solo en este computador, en la rama `android-1.0.0`. | — |
-| 5 nov. | Encargo | Pidió fusionar `main` en la rama de este estado (PR #20) y resolver sus choques. | Se fusionó `main` en `estado-del-proyecto-2026-11-04`. Solo chocó este registro: se conservaron las filas de ambos lados, por orden de hora. El [estado del proyecto](estado-del-proyecto-2026-11-04.md) suma lo que pasó después: D-153 y D-154 de la memoria y la rama de la 4.3. | — |
-| 8 nov. | Encargo | Pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. | Los [anexos A a I](../08_memoria/anexos/README.md) quedan como recopilaciones directas —decisiones y logros primero, límites una sola vez—, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. El [Word](../08_memoria/anexos/anexos-relevo.docx) sigue la pauta de tesis de la Biblioteca (carta, Arial 12, interlineado 1,5), con los estilos de título de Word, índice automático, tablas y figuras en APA 7. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) pasa de 94 a 67 páginas. El Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4, y el Anexo G registra las versiones hasta la 4.6.3. | D-168 |
-| 8 nov. | Corrección | Pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad. | El [Word](../08_memoria/anexos/anexos-relevo.docx) queda como documento formal de la pauta de la Biblioteca —negro, Arial 12, estilos de Word y tablas de bordes simples—, con la portada de la pauta y el logo de la Escuela de Diseño UDP. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) es el mismo Word exportado, de 102 páginas carta, con las páginas en el índice. Las figuras pasan a negro sobre blanco, y se retiran el HTML y el PDF diseñado. | D-169 |
-| 8 nov. | Corrección | Revisó los anexos y pidió: sin códigos («Persona 1» en vez de P1), sin mencionar el repositorio en ningún lugar, sin el «testigo», «wireframes» en vez de láminas, «referentes» en vez de fuentes en lo visual, explicar los «papeles» y la «piedra», «degradados» en vez de cielos, revisar si «tecnología calma» es el nombre real y usar menos «elegido». Corrigió la declaración de IA: la investigación y la memoria son suyas; la IA lo ayudó con errores, repeticiones y palabras que podían confundir; Claude Code desarrolló la app desde sus prototipos, ideas, bocetos y wireframes de Figma y ayudó a leer y ordenar su proceso, y la IA ayudó a elaborar un modelo 3D con sus especificaciones. Pidió un referente famoso de revisión con IA, decir que la IA permitió optimizar el tiempo y ahorrar recursos, y quitar la clasificación de la encuesta, las alternativas visuales, los resguardos y el registro de pedidos. Preguntó si «el autor» es la forma de nombrarlo y pidió que se le pida lo que falte. | Los nueve anexos quedan sin códigos ni menciones al repositorio y con palabras claras; el Anexo E sigue su declaración, con Springer Nature como referente para revisar la redacción. El Word y el PDF se regeneraron, con 101 páginas. | D-170 |
-| 8 nov. | Decisión y corrección | Confirmó que «el autor» está bien si así se usa académicamente, también en la UDP; dejó los *wireframes* originales de agosto; pidió quitar del Anexo B la codificación con IA, porque no es necesaria y no fue del todo así, y aplicar en la memoria las correcciones de los anexos, sin errores, leyéndola completa antes de modificarla y reportando los cambios. | El Anexo B ya no menciona la IA. La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sigue la nueva declaración de IA, con Springer Nature como referente; nombra la *calm technology* con su término original; quita la clasificación con IA de la encuesta y las remisiones al registro de decisiones; usa palabras más claras; corrige un recuento del criterio 1 —seis personas, no tres— y pone al día la lista de anexos. Pasa a 16 560 palabras; la versión diseñada no se regeneró. | D-170 |
-| 8 nov. | Corrección | Pidió poner bien las repreguntas, porque rótulos como «Repregunta — conciencia temporal:» no se entienden, y hablar de todo lo visual con terminología de diseñador: no son fuentes ni texto, es tipografía, es paleta cromática. | Las 31 repreguntas del [Anexo A](../08_memoria/anexos/anexo-a-entrevistas.md) se escriben como frases, sin inventar la pregunta textual, que no se conservó. El Anexo H y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. El Word y el PDF se regeneraron. | D-170 |
-| 8 nov. | Encargo y corrección | Pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias, mejorar la portada copiando una referencia de la UDP y corregir los errores de formato. | El [Anexo G](../08_memoria/anexos/anexo-g-android.md) suma la parte G.6 y la Tabla G10, con las 34 actividades que la app reconoce desde la 4.3, sus palabras clave y lo que sugiere. La portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas. Se suman los índices de tablas y de figuras; las tablas reparten mejor el ancho; las figuras altas ya no dejan páginas casi vacías, y los extranjerismos van en cursiva. El Word y el PDF se regeneraron, con 106 páginas. | D-170 |
-| 9 nov. | Corrección | Pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar aún más de cómo se construye el logo y en qué se basa. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de cuatro círculos, de la versión con degradado y del color de la personalización. El logo se explica en siete pasos, con las medidas de sus archivos y una figura nueva, más su logotipo, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. El Word y el PDF se regeneraron. | D-171 |
-| 9 nov. | Decisión | Dejar como historia del proceso los documentos de trabajo de la marca —el [documento de marca del 25 de octubre](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las herramientas de exploración de color— con sus nombres de entonces, en vez de quitarles también la luz y el aura. | Se mantienen sin cambios; la corrección vale para los anexos y la memoria. | D-171 |
-| 9 nov. | Corrección | Señaló que los títulos de los anexos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debe ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sienten raras. | Los títulos de secciones, tablas, figuras y columnas de los nueve [anexos](../08_memoria/anexos/README.md) son frases nominales, sin artículo al comienzo; las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, y los textos que se aplicaron, como el consentimiento, se citan con su redacción original. El Word y el PDF se regeneraron. | D-172 |
-| 9 nov. | Decisión | Aplicar también a la memoria v6 los títulos y rótulos formales de los anexos. | La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) cambia 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras, 11 rótulos de párrafo y sus esquemas; la paleta cromática nombra sus partes como el logo. Los cambios están en las [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md). | D-172 |
-| 9 nov. | Pedido | Revisar todas las citas y fuentes en APA 7 y comprobar que se puede acceder a cada una; con autorización para lo que haga falta y, si algo bloquea, intentarlo o pedírselo al autor. | La [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md) revisó 107 obras de la memoria v6 y los anexos: todas existen y sus citas coinciden. Se corrigieron el orden de las obras sin fecha, las letras de año, las patentes, FocuShift, Raya, la norma ISO, iniciales, fechas y direcciones, y se regeneraron el Word y el PDF de los anexos. Las verificaciones anti-bot no se forzaron; quedan dos enlaces y la edición de Norman para el autor. | D-173 |
-| 9 nov. | Decisión | Reescribir la ficha de Screenless con lo que muestra hoy la portada de su sitio. | La ficha del [Anexo C](../08_memoria/anexos/anexo-c-referentes.md) describe el bloqueo por horarios, el desbloqueo al acercar el teléfono, el modo para padres, el precio de 45 euros y la versión para Android anunciada; la referencia de la memoria y del anexo cita la portada. Se regeneraron el Word y el PDF de los anexos. | D-173 |
-| 9 nov. | Pedido | Avisó que el registro de la tesis de Smits tampoco le carga y pidió que la IA revise la página legal y los datos de Norman. | La tesis de Smits se cita por su copia en Internet Archive, que confirma sus datos. La copia de Norman que se leyó, la misma de agosto, es la edición de Basic Books de 2002: trae su prefacio, aunque no la página legal, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002). | D-173 |
-| 9 nov. | Pedido | Mejorar la portada de los anexos: ordenarla mejor y controlar los pesos visuales. | La [portada](../08_memoria/anexos/anexos-relevo.pdf) agrupa los datos en tres bloques —título, autoría e institución con la ciudad y el año al pie—, deja el título en negrita como único énfasis, achica el logo, parte las líneas largas en dos de largo parecido y pone la ciudad y el año en Arial 11, con el año solo, como pide la pauta. | D-174 |
+| 30 oct. | Consulta | Pidió detener la revisión en curso, quedarse solo con el contexto del proyecto y revertir cualquier cambio hecho en la memoria. | Nada que revertir: la revisión había sido de lectura, con el árbol de trabajo limpio y el HEAD igual a `origin/main` | — |
+| 30 oct. | Consulta | Mostró una propuesta de pregunta de investigación y preguntó si tiene sentido, porque la actual le cuesta leer. | Revisión en la conversación: la propuesta desplaza el sujeto de la intención a la sesión, lo que coincide con la primera línea del resumen, pero sus comas la dejan sin sujeto | — |
+| 30 oct. | Encargo | Pidió tres propuestas que solo cambien la redacción de la pregunta, sin alterar la memoria. | Tres propuestas en la conversación, de reordenamiento puro: inciso al final, circunstancia primero y enunciado más pregunta | — |
+| 30 oct. | Corrección | Señaló que «la decisión inmediata» es el punto que hace difícil de entender toda la pregunta. | Tres propuestas que reemplazan esa frase por expresiones del propio texto: «el paso siguiente» (capítulos 2 y 7), «deja de estar presente» (resumen y capítulo 3) y «no vuelve a aparecer» (capítulo 3) | — |
+| 30 oct. | Encargo | Pidió leer completo el borrador v6 y, sobre esa base, proponer una pregunta de investigación. | Propuesta y dos variantes en la conversación, armadas con el vacío del capítulo 5, el objetivo general y las conclusiones; de esa lectura salió el desajuste de las dos partes | — |
+| 30 oct. | Encargo | Pidió explicar el desajuste entre la pregunta y las dos partes que se le atribuyen, proponer una solución y subirlo a Por hacer. | [Tarea 11](por-hacer.md#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes), con el problema, tres soluciones y una recomendación | — |
+| 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
+| 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
+| 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
+| 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
+| 30 oct. | Decisión | Aprobó la nueva redacción de la pregunta de investigación y pidió saber qué textos de la memoria debía cambiar, con la condición de no alterar el resultado ni la memoria. | Dos cambios en el capítulo 10: la pregunta y el sujeto de la frase que la define; neto, una palabra menos. Nada más en la memoria | Pendiente de aplicar por el autor |
+| 30 oct. | Encargo | Pidió actualizar los archivos que citaban la redacción anterior de la pregunta. | [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md), [Anexo I](../08_memoria/anexos/anexo-i-prueba.md), [guía de comunicación](guia-comunicacion-relevo.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). La memoria v4 y los flujos del 25 de septiembre quedan como registro histórico, por decisión del autor | — |
 | 2 nov. | Consulta | Entregó en .docx la memoria en curso de otra persona del taller (salud mental y cuidado de plantas) y pidió compararla con la suya desde una mirada crítica y académica, según la rúbrica oficial. | Respuesta en la conversación: comparación por las tres dimensiones de la rúbrica y la matriz de pase, contra la v6. La otra memoria no se sube ni se nombra en el repositorio. Al revisar la v6 se vio que ya no tiene «Actores y responsabilidades», y el subcriterio 8.1 de la [matriz de pase](../01_contexto_y_fuentes/matriz-de-pase-proyecto-titulo.md) vuelve a «en desarrollo». | — |
 | 2 nov. | Encargo | Buscar perfiles para entrevistar —en LinkedIn, Instagram u otro lugar donde estén activos—, con su correo, disciplina y perfil; agregarlos al repositorio y preparar las preguntas. Ofreció sus credenciales si hacían falta. | [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): 13 perfiles (cinco en Chile) con correo comprobado en fuentes oficiales, guía de entrevista, material para mostrar e invitaciones. Las credenciales no se usaron. Como el repositorio es público y `CLAUDE.md` prohíbe correos, los correos se entregaron en un archivo aparte, en la carpeta privada `00_fuentes_privadas/`. | — |
 | 2 nov. | Decisión y encargo | Registrar los correos solo de Chile y guardarlos de forma interna, en la conversación o en un archivo local; comprobar que sean los actuales, con ayuda de LinkedIn. | El archivo privado queda con las cinco personas en Chile y la evidencia de vigencia de cada correo: página oficial, publicaciones de 2025 o 2026 y registros del dominio. LinkedIn no sirvió: exige iniciar sesión y no muestra correos. Se halló un artículo de Salas y Parada del 30 de octubre de 2026 sobre cognición extendida, que ordena el envío. Los [perfiles](../02_investigacion/entrevistas-expertos/perfiles.md) dejan a las personas de otros países en reserva. | Entrevistar solo en Chile |
@@ -249,6 +241,10 @@
 | 2 nov. | Corrección | Una pregunta más teórica, no de resultados, desde la especialidad de la persona. | La pregunta 6 se reemplaza: a Parada, cómo describir el fenómeno desde la cognición 4E (problema y respuesta en el entorno); a Zamorano, qué teoría tangible reciente reemplazaría a los textos de 1997. | — |
 | 2 nov. | Decisión | Confirmó que el que respondió es Francisco J. Parada. | Correo final para Parada con seis preguntas (tres principales y tres opcionales), listo para enviar; estado actualizado en la carpeta de entrevistas. El correo de Zamorano queda en espera. | Entrevista con Parada |
 | 2 nov. | Corrección | Verificar que Parada entienda de qué se habla y qué se le pregunta. | Se contrastó cada pregunta con sus líneas de investigación (UDP) y sus artículos: 2, 3, 5 y 6 caen en su campo; 1 y 4 se acotaron a la cognición situada y a la psicología cognitiva. El resumen ahora dice que el recuerdo se midió por lo que respondieron en la aplicación. | — |
+| 2 nov. | Corrección y encargo | Canceló la revisión programada y pidió revisar otro apartado entero que siente flojo y poco fundamentado: todo lo que empieza a describir el proyecto. Pidió documentos fundamentados y leer cada referente de la memoria completo, pasarlo a Markdown para tener a mano los textos originales, con mucha rigurosidad. | [Fuentes de la memoria](../01_contexto_y_fuentes/fuentes-de-la-memoria/README.md): de las 78 referencias, 29 con texto completo, 26 páginas consultadas, 9 con solo el resumen y 14 sin acceso, cada una con su motivo; los textos quedan en una carpeta local que no se versiona, por derechos de autor. [Verificación](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md) de las 40 citas de los capítulos 1 a 6 y [fundamentación](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md) con el diagnóstico y propuestas de redacción. La memoria no se modificó. | — |
+| 2 nov. | Orden | «Termínalo». | Se cerró el trabajo con los documentos anteriores y se abrió un PR en borrador. | — |
+| 2 nov. | Encargo | Subir al repositorio todo lo encontrado y dejarlo en Por hacer, sin actualizar la memoria, con un recordatorio de buscar las fuentes que faltaron por verificar. | [Por hacer, tarea 14](por-hacer.md#14-capítulos-1-a-6-fundamentar-lo-que-presenta-el-proyecto): los cambios de los capítulos 1 a 6, capítulo por capítulo, con las versiones de las fuentes y, en el punto H, las 23 fuentes que faltan, en dos prioridades. La memoria no se modificó. | — |
+| 2 nov. | Encargo | Pidió leer la memoria y escribir un documento interno que explique cada decisión de diseño, en especial la cromática, la tipográfica y la de la aplicación, con los errores vistos y su solución, la usabilidad, la experiencia, la interfaz y el diseño gráfico, con los requisitos de la Universidad y APA 7. Autorizó usar su computador si hacía falta. | [Las decisiones de diseño de Relevo](../10_recursos_visuales/43_decisiones-de-diseno-2026-11-02.md), con las cifras de color, letra y áreas táctiles verificadas contra el código y las fuentes oficiales de Apple y Android. El computador no tenía carpetas compartidas con la nube, así que los descriptores de nivel de la rúbrica, que solo están ahí, quedaron pendientes | — |
 | 3 nov. | Encargo | Preparar el correo para Francisco Zamorano. | Correo verificado contra su campo (interacción humano-computador, interfaces tangibles y TAMI) y contra la memoria v6: aclara que el objeto de la prueba fue un llavero comprado y que el recuerdo se midió por autorreporte; corrige dos paráfrasis de la memoria. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-zamorano.md). | — |
 | 3 nov. | Encargo | Denis Parra respondió que tiene la agenda llena hasta mediados de diciembre y pidió un video o algo corto por correo; preparar el correo y todo lo que necesite, con preguntas que aporten desde su experiencia y sin explicar Relevo con tecnicismos. | Video de 53 segundos, sin sonido, con pantallas reales de la app, el modelo 3D del objeto (con la nota de que en la prueba se usó un llavero comprado) y los recuentos de la prueba. Correo con tres preguntas desde su trabajo publicado (recomendación, retroalimentación implícita y explícita, control de las personas) que apuntan a vacíos de la v6: el capítulo 3 no habla del sistema que elige qué viene después, y el criterio 3 se apoya en un argumento propio. Al revisar se corrigieron en los cinco guiones la frase del consentimiento, que seguía en usted, y verbos con tilde duplicada. Queda en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Sin videollamada con Parra |
 | 3 nov. | Corrección | Redactar el mensaje para Parra sin video. | El resumen del correo cuenta, sin términos técnicos, el problema, cómo se usa Relevo y la prueba de dos semanas; las tres preguntas se mantienen. El video queda en el repositorio, sin enviar. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | Correo sin video |
@@ -256,14 +252,24 @@
 | 3 nov. | Corrección | No pedir autores: la persona experta es la referencia. Preguntarle desde su conocimiento y revisar que cada pregunta sea de su especialidad. | Las tres preguntas piden la mirada de Parra: qué papel cumple el sistema que elige qué viene después, qué se gana y qué se pierde al partir de lo declarado, y qué hace útil el control. Cada una se contrastó en Crossref con su trabajo: recomendación secuencial (2022), retroalimentación implícita y explícita (2011) y control en sistemas de recomendación (2013, 2015 y 2016). | — |
 | 3 nov. | Encargo | Una pregunta extra para Parra: si ha estudiado algo relacionado con Relevo y su percepción desde su experiencia. | Pregunta 4, abierta: qué aprendió de lo que haya estudiado de parecido y qué le parece prometedor y débil en Relevo. Está en su [guion](../02_investigacion/entrevistas-expertos/guion-parra.md#correo-con-las-preguntas). | — |
 | 3 nov. | Corrección | En la pregunta 4, no hablar de Relevo y preguntar directamente por lo que ha aprendido; evitar nombrar Relevo, que no se entiende sin contexto, y explicarlo de otra forma. | El correo ya no nombra Relevo: habla de «mi proyecto» o «mi propuesta» y describe lo que hace. La pregunta 4 pregunta qué ha aprendido sobre ayudar a una persona a volver a decidir cuando un sistema elige por ella, tema de sus trabajos sobre control. | Correo sin el nombre del proyecto |
+| 4 nov. | Consulta | Pidió leer el repositorio completo y entenderlo, para tener todo el contexto del proyecto. | Lectura de `main` y de las cinco solicitudes de cambio en borrador (PR #15 a #19), sin cambios en el proyecto. Dos observaciones para aclarar con el autor: el PDF enviado al profesor el 30 de octubre tiene texto que el borrador v6 del repositorio no tiene, y los datos del cierre de la prueba aún no están en `datos_sensibles/`. | — |
+| 4 nov. | Encargo | Actualizar solo documentos, sin fusionar todavía las ramas a `main`, con trazabilidad de qué es cada cosa, para no perder trabajo ni repetir lo ya hecho. | [Estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, qué contiene cada rama, los choques medidos al fusionarlas y cómo resolverlos, lo que ya existe, los pendientes que se repiten entre listas y lo que hay que aclarar. El README, el traspaso y los índices de gobernanza remiten a la v6 y a ese estado. Todo en la rama `estado-del-proyecto-2026-11-04`. | Sin fusionar a `main` hasta que el autor lo decida |
 | 4 nov. | Corrección y encargo | Entregó el PDF de la memoria que editó y envió al profesor el 30 de octubre y pidió leerlo, pasar al Markdown lo que borró y cambió, verificar lo marcado en amarillo —nombres, citas y redacción— y arreglar lo anotado en Por hacer, porque la factibilidad y el diseño se sienten flojos; sin regenerar todavía el PDF ni el IDML. | [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) con sus ediciones, las erratas corregidas, la pregunta aprobada, las tareas 11 a 14 aplicadas, el diseño y la factibilidad reforzados y la declaración de IA completa; 16 137 palabras en los capítulos y 80 referencias, todas citadas. | D-153 |
 | 4 nov. | Corrección | Pidió evitar en la memoria los términos propios y usar los de los autores; no hablar de lo que no se hizo, sino de lo que se hizo, de los logros y del análisis de avances y resultados, y menos tecnicismo y más análisis visual, a partir de un estudio reciente suyo que había que buscar en el repositorio. | El estudio es el documento 43 (rama `decisiones-de-diseno`). [Borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sin términos propios, sin frases sobre lo que falta, con los resultados leídos contra los criterios, el avance del prototipo y el análisis visual del documento 43, con una figura nueva; 16 478 palabras y 82 referencias. | D-154 |
+| 5 nov. | Encargo | Pidió buscar la versión más reciente de la app, que había llegado al repositorio como APK, instalarla y dejarla como la más reciente en este computador. | Es la 4.3, de la rama `android-4.0-rediseno` (D-158), que otra sesión subió el mismo día. La copia local quedó en esa rama, con `main` al día, y su APK se instaló en el emulador como «Relevo 4.3», aparte de la app principal y sus datos. La 4.3 parte de la 3.3: no incluye la 1.0.0, que sigue solo en este computador, en la rama `android-1.0.0`. | — |
+| 5 nov. | Encargo | Pidió fusionar `main` en la rama de este estado (PR #20) y resolver sus choques. | Se fusionó `main` en `estado-del-proyecto-2026-11-04`. Solo chocó este registro: se conservaron las filas de ambos lados, por orden de hora. El [estado del proyecto](estado-del-proyecto-2026-11-04.md) suma lo que pasó después: D-153 y D-154 de la memoria y la rama de la 4.3. | — |
 | 6 nov. | Consulta | Denis Parra respondió el correo: analizar su respuesta y decir cómo valida lo que hace Relevo. | [Ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md) con su matriz de análisis. Como opinión experta, y no como evidencia de efecto, respalda el problema (las plataformas entrenan con lo que la persona hace porque sirve a su objetivo de tiempo y publicidad), el porqué del criterio 1 y, en parte, los criterios 3 y 6. No valida que Relevo funcione, ni el objeto ni el lugar; la pregunta 1 no se entendió. Autorizó la cita con su nombre. | Falta enviarle el párrafo antes de usarlo |
 | 6 nov. | Consulta | ¿La respuesta de Parra sirve como la validación con un experto que pide el ramo, o conviene buscar otro perfil? Propone dejar las consultas como preguntas por correo, porque una entrevista es más invasiva. | Cuenta a medias: la matriz de pase (6.2) acepta validaciones con expertos y la rúbrica valora la colaboración interdisciplinaria, pero Parra respaldó el razonamiento y no evaluó la propuesta ni el objeto. Recomendación: sumarle una pregunta de juicio al enviarle el párrafo, enviar hoy el recordatorio con preguntas por correo a Zamorano y Parada, y buscar perfiles de diseño si el lunes 9 nadie responde. La evidencia de 6.2 suma la consulta. | Por confirmar: consulta por correo en vez de entrevista |
 | 6 nov. | Encargo | Buscar otra persona experta que ayude a validar la propuesta más que su teoría: perfiles, correos y mensajes redactados. | Tres perfiles en Chile, con su correo comprobado en fuentes oficiales o artículos de 2025 y 2026: Daniela Quiñones (PUCV, experiencia de usuario), Francisco J. Gutiérrez (Universidad de Chile, interacción humano-computador) y Macarena Valenzuela-Zubiaur (UTEM, diseño industrial). Un [correo](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) para cada una, con una pregunta de juicio sobre la propuesta y dos de su especialidad. Los correos electrónicos quedan fuera de GitHub. | Consulta por correo, sin entrevista |
 | 6 nov. | Corrección | Quitar frases como «En corto», el plazo, «dos o tres líneas», la oferta del video y el envío del párrafo, y revisar que el contexto del proyecto se entienda para que nadie deje de entender las preguntas. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) explican paso a paso cómo funciona la propuesta, cómo se apaga el aviso y qué se midió; cada pregunta usa solo lo que el correo ya contó, y se precisaron cinco preguntas. | — |
 | 6 nov. | Corrección | No sirve decir que el objeto es un llavero Bluetooth, y dejar el objeto junto al libro necesita contexto: la persona quiere leer, pero el teléfono está hecho para que siga y nunca logra leer; pone el objeto junto al libro o en el punto clave para empezar. Explicar mejor y con menos tecnicismos. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) cuentan esa situación y luego cómo ayuda la propuesta, sin el llavero, la placa ni los milímetros; se simplificaron cuatro preguntas. | — |
 | 6 nov. | Corrección y encargo | El proyecto parte de situaciones comunes, con un ejemplo. La persona registra que quiere volver a leer, marca las aplicaciones que consumen su tiempo y elige un lugar relacionado con la actividad, como el velador junto al libro. Más preguntas, fáciles de entender, del área de cada persona y que ayuden a validar. | Los tres [correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md) toman ese contexto y pasan de tres a cinco preguntas: juicio de la propuesta, tres de su especialidad y la única cosa que cambiarían. | — |
+| 8 nov. | Encargo | Pidió revisar todos los anexos y dejarlos listos para un documento de Word: directos, sin sobreexplicar y con su forma de escribir; no como unas disculpas, sino como anexos que recopilan lo más relevante. | Los [anexos A a I](../08_memoria/anexos/README.md) quedan como recopilaciones directas —decisiones y logros primero, límites una sola vez—, alineadas con la memoria v6, y cada Markdown pasa a ser la fuente de su anexo. El [Word](../08_memoria/anexos/anexos-relevo.docx) sigue la pauta de tesis de la Biblioteca (carta, Arial 12, interlineado 1,5), con los estilos de título de Word, índice automático, tablas y figuras en APA 7. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) pasa de 94 a 67 páginas. El Anexo D suma lo que la app 4.4 ya resolvió de la Tabla 4, y el Anexo G registra las versiones hasta la 4.6.3. | D-168 |
+| 8 nov. | Corrección | Pidió que los anexos no se diseñen: son formales, como un documento común, según las pautas de la universidad y con el logo de la universidad. | El [Word](../08_memoria/anexos/anexos-relevo.docx) queda como documento formal de la pauta de la Biblioteca —negro, Arial 12, estilos de Word y tablas de bordes simples—, con la portada de la pauta y el logo de la Escuela de Diseño UDP. El [PDF](../08_memoria/anexos/anexos-relevo.pdf) es el mismo Word exportado, de 102 páginas carta, con las páginas en el índice. Las figuras pasan a negro sobre blanco, y se retiran el HTML y el PDF diseñado. | D-169 |
+| 8 nov. | Corrección | Revisó los anexos y pidió: sin códigos («Persona 1» en vez de P1), sin mencionar el repositorio en ningún lugar, sin el «testigo», «wireframes» en vez de láminas, «referentes» en vez de fuentes en lo visual, explicar los «papeles» y la «piedra», «degradados» en vez de cielos, revisar si «tecnología calma» es el nombre real y usar menos «elegido». Corrigió la declaración de IA: la investigación y la memoria son suyas; la IA lo ayudó con errores, repeticiones y palabras que podían confundir; Claude Code desarrolló la app desde sus prototipos, ideas, bocetos y wireframes de Figma y ayudó a leer y ordenar su proceso, y la IA ayudó a elaborar un modelo 3D con sus especificaciones. Pidió un referente famoso de revisión con IA, decir que la IA permitió optimizar el tiempo y ahorrar recursos, y quitar la clasificación de la encuesta, las alternativas visuales, los resguardos y el registro de pedidos. Preguntó si «el autor» es la forma de nombrarlo y pidió que se le pida lo que falte. | Los nueve anexos quedan sin códigos ni menciones al repositorio y con palabras claras; el Anexo E sigue su declaración, con Springer Nature como referente para revisar la redacción. El Word y el PDF se regeneraron, con 101 páginas. | D-170 |
+| 8 nov. | Decisión y corrección | Confirmó que «el autor» está bien si así se usa académicamente, también en la UDP; dejó los *wireframes* originales de agosto; pidió quitar del Anexo B la codificación con IA, porque no es necesaria y no fue del todo así, y aplicar en la memoria las correcciones de los anexos, sin errores, leyéndola completa antes de modificarla y reportando los cambios. | El Anexo B ya no menciona la IA. La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) sigue la nueva declaración de IA, con Springer Nature como referente; nombra la *calm technology* con su término original; quita la clasificación con IA de la encuesta y las remisiones al registro de decisiones; usa palabras más claras; corrige un recuento del criterio 1 —seis personas, no tres— y pone al día la lista de anexos. Pasa a 16 560 palabras; la versión diseñada no se regeneró. | D-170 |
+| 8 nov. | Corrección | Pidió poner bien las repreguntas, porque rótulos como «Repregunta — conciencia temporal:» no se entienden, y hablar de todo lo visual con terminología de diseñador: no son fuentes ni texto, es tipografía, es paleta cromática. | Las 31 repreguntas del [Anexo A](../08_memoria/anexos/anexo-a-entrevistas.md) se escriben como frases, sin inventar la pregunta textual, que no se conservó. El Anexo H y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de tipografía, escala tipográfica, cuerpo, interlineado y paleta cromática. El Word y el PDF se regeneraron. | D-170 |
+| 8 nov. | Encargo y corrección | Pidió incluir en el anexo que la app asocia palabras clave a actividades y sugerencias, mejorar la portada copiando una referencia de la UDP y corregir los errores de formato. | El [Anexo G](../08_memoria/anexos/anexo-g-android.md) suma la parte G.6 y la Tabla G10, con las 34 actividades que la app reconoce desde la 4.3, sus palabras clave y lo que sugiere. La portada copia la de ejemplo de la Biblioteca UDP, con su logo y sus alturas. Se suman los índices de tablas y de figuras; las tablas reparten mejor el ancho; las figuras altas ya no dejan páginas casi vacías, y los extranjerismos van en cursiva. El Word y el PDF se regeneraron, con 106 páginas. | D-170 |
 | 8 nov. | Consulta | Leer la versión más reciente de la memoria, analizarla y evaluarla según la rúbrica oficial, como si fuera la comisión. | [Evaluación](../08_memoria/evaluacion-como-comision-v6-2026-11-08.md) de la v6 del 4 de noviembre: nota orientativa cercana a 5,6; decisiones de diseño y formulación sólidas; la tesis del lugar sin evidencia hasta informar la semana con el teléfono, el objeto sin imprimir y 20 figuras por insertar. La matriz de pase se actualizó en 5.1, 5.2 y 8.1. | — |
 | 8 nov. | Consulta | ¿Cuánto vale la defensa si expone mal y nervioso? | Según el instructivo, el examen dura 50 minutos (15 de exposición, 30 de preguntas y 10 de evaluación), la comisión evalúa con la rúbrica y la nota final combina la nota de proceso del profesor y la de la comisión, sin porcentaje publicado; ajustarse al tiempo es parte de la evaluación. Se sumó a Por hacer preguntar la ponderación. | — |
 | 8 nov. | Consulta | ¿Qué pasa si responde mal gran parte de las preguntas del examen, y cuánto valen? | Las preguntas no tienen puntaje propio: la comisión pone una nota con la rúbrica a todo el trabajo, y las respuestas pesan en cómo juzga cada criterio. Cuánto baja la nota no está definido, y la ponderación entre la nota de proceso y la de la comisión queda por preguntar. Un límite reconocido con honestidad no es una mala respuesta. | — |
@@ -272,25 +278,18 @@
 | 8 nov. | Consulta | ¿Qué pasa si saca un 3,0 en Proyecto de Título con un 5,2 en Seminario? | Reprueba Proyecto de Título: se exige 4,0 en el examen (art. 21) y el 5,2 no compensa; la ponderación de 40 y 60 % (art. 26) solo se calcula con ambos aprobados. Puede volver a inscribirlo hasta dos veces u optar por otra modalidad (art. 25), y la comisión puede prorrogar el examen hasta 30 días (art. 22). | — |
 | 8 nov. | Consulta | El profesor dice que fabricar un objeto desde cero es un esfuerzo innecesario: ¿es útil, si todos los Tag sirven? | Recomendación: no fabricar electrónica ni un aparato propio; diseñar un porta Tag que reciba un Tag completo, sin abrirlo, como pidió la revisión del 28 de octubre. Resuelve el botón que no se encontraba, da un objeto para el examen y la marca, y cuesta poco. La hipótesis depende del lugar y el sonido, no de la carcasa. Decide el autor. | Por decidir |
 | 8 nov. | Consulta | ¿Es necesario imprimir el objeto o basta con diseñarlo? | No es obligatorio: la matriz de pase acepta un prototipo que «represente, simule o demuestre» y documentación con planos o renders, y el reglamento admite apoyo tridimensional u otro. Recomendación: imprimir una unidad si cuesta poco, porque confirma que calza y da algo que mostrar; si no, presentarlo como diseño, con medidas reales del Tag y sin afirmar que se probó. | Por decidir |
+| 9 nov. | Corrección | Pidió eliminar de la marca las referencias a luz o aura, de todos los lugares posibles, y hablar aún más de cómo se construye el logo y en qué se basa. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) hablan de cuatro círculos, de la versión con degradado y del color de la personalización. El logo se explica en siete pasos, con las medidas de sus archivos y una figura nueva, más su logotipo, sus versiones y en qué se basa, con Slack (2019) como referente de las formas planas. El Word y el PDF se regeneraron. | D-171 |
+| 9 nov. | Decisión | Dejar como historia del proceso los documentos de trabajo de la marca —el [documento de marca del 25 de octubre](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las herramientas de exploración de color— con sus nombres de entonces, en vez de quitarles también la luz y el aura. | Se mantienen sin cambios; la corrección vale para los anexos y la memoria. | D-171 |
+| 9 nov. | Corrección | Señaló que los títulos de los anexos que empiezan con «los», «las» o «el» parecen informales —«La tipografía» debe ser «Tipografía», y «El logo», «Logo»— y que formas como «tus», «lo» y «el» en los rótulos se sienten raras. | Los títulos de secciones, tablas, figuras y columnas de los nueve [anexos](../08_memoria/anexos/README.md) son frases nominales, sin artículo al comienzo; las partes de un relevo se nombran tiempo, primer paso, lugar y decisión, y los textos que se aplicaron, como el consentimiento, se citan con su redacción original. El Word y el PDF se regeneraron. | D-172 |
+| 9 nov. | Decisión | Aplicar también a la memoria v6 los títulos y rótulos formales de los anexos. | La [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) cambia 17 títulos de sección y el del capítulo 11, 16 títulos de tablas y figuras, 11 rótulos de párrafo y sus esquemas; la paleta cromática nombra sus partes como el logo. Los cambios están en las [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md). | D-172 |
+| 9 nov. | Pedido | Revisar todas las citas y fuentes en APA 7 y comprobar que se puede acceder a cada una; con autorización para lo que haga falta y, si algo bloquea, intentarlo o pedírselo al autor. | La [verificación](../08_memoria/verificacion-de-referencias-2026-11-09.md) revisó 107 obras de la memoria v6 y los anexos: todas existen y sus citas coinciden. Se corrigieron el orden de las obras sin fecha, las letras de año, las patentes, FocuShift, Raya, la norma ISO, iniciales, fechas y direcciones, y se regeneraron el Word y el PDF de los anexos. Las verificaciones anti-bot no se forzaron; quedan dos enlaces y la edición de Norman para el autor. | D-173 |
+| 9 nov. | Decisión | Reescribir la ficha de Screenless con lo que muestra hoy la portada de su sitio. | La ficha del [Anexo C](../08_memoria/anexos/anexo-c-referentes.md) describe el bloqueo por horarios, el desbloqueo al acercar el teléfono, el modo para padres, el precio de 45 euros y la versión para Android anunciada; la referencia de la memoria y del anexo cita la portada. Se regeneraron el Word y el PDF de los anexos. | D-173 |
+| 9 nov. | Pedido | Avisó que el registro de la tesis de Smits tampoco le carga y pidió que la IA revise la página legal y los datos de Norman. | La tesis de Smits se cita por su copia en Internet Archive, que confirma sus datos. La copia de Norman que se leyó, la misma de agosto, es la edición de Basic Books de 2002: trae su prefacio, aunque no la página legal, y sus páginas 73 y 103 dicen lo que cita la memoria; la cita pasa a Norman (1988/2002). | D-173 |
+| 9 nov. | Pedido | Mejorar la portada de los anexos: ordenarla mejor y controlar los pesos visuales. | La [portada](../08_memoria/anexos/anexos-relevo.pdf) agrupa los datos en tres bloques —título, autoría e institución con la ciudad y el año al pie—, deja el título en negrita como único énfasis, achica el logo, parte las líneas largas en dos de largo parecido y pone la ciudad y el año en Arial 11, con el año solo, como pide la pauta. | D-174 |
 | 10 nov. | Encargo | Entregó la copia del correo de Denis Parra, del 4 de noviembre, y avisó que el 11 de noviembre entrega la entrevista final con las personas, según su uso de la app, y los resultados finales de la prueba y de la semana solo con notificaciones; pidió anotarlo todo. | La [ficha de Parra](../02_investigacion/entrevistas-expertos/ficha-parra.md) tiene la fecha del correo, y la cita la usa; las citas coinciden con la copia, y el texto completo quedó fuera de GitHub. La [tarea 6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) espera los datos del 11 de noviembre. | — |
 | 10 nov. | Consulta | Qué queda pendiente: mañana se cierra todo, porque a las 23:30 sube la memoria. | Lista para el 11 de noviembre: con los datos del cierre, los resultados caso por caso sin los dos «por confirmar», el Anexo I con la entrevista nueva, Parra en el capítulo 3 y el criterio 1, y las correcciones de la evaluación como comisión; después, juntar las ramas en una sola, con su autorización, generar el PDF y los anexos. Se le preguntó si mañana es la entrega oficial, que el calendario fija el 2 de diciembre a las 12:00. El cuerpo de la memoria tiene unas 16.500 palabras, dentro del límite. | — |
 | 10 nov. | Respuesta | La subida de mañana a las 23:30 es una entrega previa, no la oficial. | El [calendario de cierre](por-hacer.md#calendario-de-cierre) suma la entrega previa del 11 de noviembre; la oficial sigue el 2 de diciembre a las 12:00. | — |
-| 30 oct. | Consulta | Pidió detener la revisión en curso, quedarse solo con el contexto del proyecto y revertir cualquier cambio hecho en la memoria. | Nada que revertir: la revisión había sido de lectura, con el árbol de trabajo limpio y el HEAD igual a `origin/main` | — |
-| 30 oct. | Consulta | Mostró una propuesta de pregunta de investigación y preguntó si tiene sentido, porque la actual le cuesta leer. | Revisión en la conversación: la propuesta desplaza el sujeto de la intención a la sesión, lo que coincide con la primera línea del resumen, pero sus comas la dejan sin sujeto | — |
-| 30 oct. | Encargo | Pidió tres propuestas que solo cambien la redacción de la pregunta, sin alterar la memoria. | Tres propuestas en la conversación, de reordenamiento puro: inciso al final, circunstancia primero y enunciado más pregunta | — |
-| 30 oct. | Corrección | Señaló que «la decisión inmediata» es el punto que hace difícil de entender toda la pregunta. | Tres propuestas que reemplazan esa frase por expresiones del propio texto: «el paso siguiente» (capítulos 2 y 7), «deja de estar presente» (resumen y capítulo 3) y «no vuelve a aparecer» (capítulo 3) | — |
-| 30 oct. | Encargo | Pidió leer completo el borrador v6 y, sobre esa base, proponer una pregunta de investigación. | Propuesta y dos variantes en la conversación, armadas con el vacío del capítulo 5, el objetivo general y las conclusiones; de esa lectura salió el desajuste de las dos partes | — |
-| 30 oct. | Encargo | Pidió explicar el desajuste entre la pregunta y las dos partes que se le atribuyen, proponer una solución y subirlo a Por hacer. | [Tarea 11](por-hacer.md#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes), con el problema, tres soluciones y una recomendación | — |
-| 30 oct. | Encargo | Entregó el PDF de la memoria que envió al profesor y pidió leerla completa, dar una opinión y decir qué se le pasó por alto, sin rastros de IA. | Revisión de las 58 páginas: trece marcas de edición visibles, la Tabla 3 que no se ve, las etiquetas cortadas de la Figura 9, la Figura 23 sin título, el índice desajustado, el Resumen distinto del Abstract y una treintena de erratas | — |
-| 30 oct. | Encargo | Pidió una crítica en el papel de la comisión, con la rúbrica y los documentos oficiales. | Crítica por las tres dimensiones ponderadas, con nueve preguntas previsibles y una nota simulada de 4,6 sobre el documento enviado | — |
-| 30 oct. | Encargo | Pidió la nota, revisar de nuevo lo revisado y dejar todos los errores en Por hacer con soluciones realistas. | [Tarea 12](por-hacer.md#12-memoria-v6-lo-que-hay-que-corregir-antes-del-pase). La segunda revisión corrigió dos diagnósticos: la Tabla 3 tiene su contenido pero se imprime invisible, y las etiquetas de la Figura 9 vienen cortadas desde el generador | — |
-| 30 oct. | Encargo | Pidió apuntar a la nota máxima y dejar en Por hacer, de forma específica y estudiada, qué camino tomar para subir la nota, considerando el tiempo. | [Tarea 13](por-hacer.md#13-camino-al-7-cerrar-los-huecos-de-la-rúbrica), con el objeto, la hipótesis contrastada, las debilidades metodológicas convertidas en rigor, la formulación, la factibilidad y la ética; calendario al 25 de noviembre y nota estimada por bloque. Al estudiar el objeto se vio que las piezas, los proyectos de impresión y las instrucciones ya existen: solo faltan cinco medidas con pie de metro | — |
-| 30 oct. | Decisión | Aprobó la nueva redacción de la pregunta de investigación y pidió saber qué textos de la memoria debía cambiar, con la condición de no alterar el resultado ni la memoria. | Dos cambios en el capítulo 10: la pregunta y el sujeto de la frase que la define; neto, una palabra menos. Nada más en la memoria | Pendiente de aplicar por el autor |
-| 30 oct. | Encargo | Pidió actualizar los archivos que citaban la redacción anterior de la pregunta. | [Resumen vigente](../08_memoria/resumen-vigente-proyecto.md), [Anexo I](../08_memoria/anexos/anexo-i-prueba.md), [guía de comunicación](guia-comunicacion-relevo.md) y [protocolo 02](../07_validacion/protocolo-02-prueba-21-dias.md). La memoria v4 y los flujos del 25 de septiembre quedan como registro histórico, por decisión del autor | — |
-| 2 nov. | Corrección y encargo | Canceló la revisión programada y pidió revisar otro apartado entero que siente flojo y poco fundamentado: todo lo que empieza a describir el proyecto. Pidió documentos fundamentados y leer cada referente de la memoria completo, pasarlo a Markdown para tener a mano los textos originales, con mucha rigurosidad. | [Fuentes de la memoria](../01_contexto_y_fuentes/fuentes-de-la-memoria/README.md): de las 78 referencias, 29 con texto completo, 26 páginas consultadas, 9 con solo el resumen y 14 sin acceso, cada una con su motivo; los textos quedan en una carpeta local que no se versiona, por derechos de autor. [Verificación](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md) de las 40 citas de los capítulos 1 a 6 y [fundamentación](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md) con el diagnóstico y propuestas de redacción. La memoria no se modificó. | — |
-| 2 nov. | Orden | «Termínalo». | Se cerró el trabajo con los documentos anteriores y se abrió un PR en borrador. | — |
-| 2 nov. | Encargo | Subir al repositorio todo lo encontrado y dejarlo en Por hacer, sin actualizar la memoria, con un recordatorio de buscar las fuentes que faltaron por verificar. | [Por hacer, tarea 14](por-hacer.md#14-capítulos-1-a-6-fundamentar-lo-que-presenta-el-proyecto): los cambios de los capítulos 1 a 6, capítulo por capítulo, con las versiones de las fuentes y, en el punto H, las 23 fuentes que faltan, en dos prioridades. La memoria no se modificó. | — |
-| 2 nov. | Encargo | Pidió leer la memoria y escribir un documento interno que explique cada decisión de diseño, en especial la cromática, la tipográfica y la de la aplicación, con los errores vistos y su solución, la usabilidad, la experiencia, la interfaz y el diseño gráfico, con los requisitos de la Universidad y APA 7. Autorizó usar su computador si hacía falta. | [Las decisiones de diseño de Relevo](../10_recursos_visuales/43_decisiones-de-diseno-2026-11-02.md), con las cifras de color, letra y áreas táctiles verificadas contra el código y las fuentes oficiales de Apple y Android. El computador no tenía carpetas compartidas con la nube, así que los descriptores de nivel de la rúbrica, que solo están ahí, quedaron pendientes | — |
+| 10 nov. | Decisión y encargo | Subir por ahora solo los textos a `main`, juntando las ramas, sin generar el PDF ni otros archivos, y registrar los cambios. | Entraron a `main` siete ramas de textos: el estado al 4 de noviembre, los anexos formales y las rondas 10 a 13 de la memoria v6, las entrevistas a expertos, las tareas 11 a 14, la pregunta alineada y el documento 43. Los choques solo fueron de registros e índices y se conservaron ambos lados. Quedaron fuera la app (`android-4.6`) y los íconos propios. No se generó ningún archivo. Detalle en la [fusión de los textos](fusion-de-textos-en-main-2026-11-10.md). | — |
 
 ## Lo que muestra el registro
 
@@ -301,6 +300,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fusión de los textos
+
+- **Qué cambió:** se registró el pedido de juntar los textos en `main`.
+- **Cómo estaba antes:** el último pedido era la entrega previa del 11 de noviembre.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Entrega previa
 
@@ -318,6 +323,48 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registró la entrega del correo de Parra y el aviso de los datos del cierre.
 - **Cómo estaba antes:** el último pedido era la consulta sobre imprimir el objeto.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-09 — Smits, Norman y portada
+
+- **Qué cambió:** se registraron el pedido sobre Smits y Norman y el de la portada de los anexos.
+- **Cómo estaba antes:** el último registro era la ficha de Screenless.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Ficha de Screenless
+
+- **Qué cambió:** se registró la decisión de reescribir la ficha de Screenless.
+- **Cómo estaba antes:** el último registro era el pedido de revisar las citas y fuentes.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Revisión de citas y referencias
+
+- **Qué cambió:** se registró el pedido de revisar las citas y fuentes en APA 7.
+- **Cómo estaba antes:** el último registro era la decisión de aplicar los títulos formales a la memoria.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Títulos formales en la memoria
+
+- **Qué cambió:** se registró la decisión de aplicar los títulos formales también a la memoria.
+- **Cómo estaba antes:** el último registro era el pedido de títulos formales en los anexos.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — Títulos formales
+
+- **Qué cambió:** se registró el pedido de títulos y rótulos formales en los anexos.
+- **Cómo estaba antes:** el último registro era la decisión sobre los documentos de trabajo de la marca.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-09 — Los documentos de trabajo de la marca
+
+- **Qué cambió:** se registró la decisión de dejar los documentos de trabajo de la marca como historia del proceso.
+- **Cómo estaba antes:** el último pedido era el de quitar luz y aura de la marca.
+- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
+
+### 2026-11-09 — La marca sin luz ni aura
+
+- **Qué cambió:** se registró el pedido de quitar luz y aura de la marca y de explicar más la construcción del logo.
+- **Cómo estaba antes:** el último pedido era el de las palabras clave, la portada y el formato.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Imprimir o solo diseñar
@@ -368,84 +415,6 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Cómo estaba antes:** el último pedido era el de las cinco preguntas de validación.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
-### 2026-11-06 — Cinco preguntas de validación
-
-- **Qué cambió:** se registró la corrección del contexto y el pedido de más preguntas en los correos de validación.
-- **Cómo estaba antes:** el último pedido era contar el contexto como una situación concreta.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-06 — Correos de validación como situación concreta
-
-- **Qué cambió:** se registró el pedido de explicar el proyecto con una situación concreta y sin tecnicismos.
-- **Cómo estaba antes:** el último pedido era quitar las frases de relleno de esos correos.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-06 — Correos de validación más claros
-
-- **Qué cambió:** se registró el pedido de quitar frases de relleno y aclarar el contexto de los correos de validación.
-- **Cómo estaba antes:** el último pedido era buscar perfiles para validar la propuesta.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-06 — Perfiles para validar la propuesta
-
-- **Qué cambió:** se registró el pedido de buscar personas expertas que validen la propuesta, con sus correos.
-- **Cómo estaba antes:** el último pedido era la consulta sobre si la respuesta de Parra servía como validación.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-06 — Validación con un experto
-
-- **Qué cambió:** se registró la consulta sobre si la respuesta de Parra sirve como validación y la propuesta de consultar por correo.
-- **Cómo estaba antes:** el último pedido era el análisis de la respuesta de Parra.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-06 — Respuesta de Parra
-
-- **Qué cambió:** se registró el pedido de analizar la respuesta de Parra.
-- **Cómo estaba antes:** el último pedido era el correo para Parra sin nombrar Relevo.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-09 — Smits, Norman y portada
-
-- **Qué cambió:** se registraron el pedido sobre Smits y Norman y el de la portada de los anexos.
-- **Cómo estaba antes:** el último registro era la ficha de Screenless.
-- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
-
-### 2026-11-09 — Ficha de Screenless
-
-- **Qué cambió:** se registró la decisión de reescribir la ficha de Screenless.
-- **Cómo estaba antes:** el último registro era el pedido de revisar las citas y fuentes.
-- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
-
-### 2026-11-09 — Revisión de citas y referencias
-
-- **Qué cambió:** se registró el pedido de revisar las citas y fuentes en APA 7.
-- **Cómo estaba antes:** el último registro era la decisión de aplicar los títulos formales a la memoria.
-- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
-
-### 2026-11-09 — Títulos formales en la memoria
-
-- **Qué cambió:** se registró la decisión de aplicar los títulos formales también a la memoria.
-- **Cómo estaba antes:** el último registro era el pedido de títulos formales en los anexos.
-- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
-
-### 2026-11-09 — Títulos formales
-
-- **Qué cambió:** se registró el pedido de títulos y rótulos formales en los anexos.
-- **Cómo estaba antes:** el último registro era la decisión sobre los documentos de trabajo de la marca.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-09 — Los documentos de trabajo de la marca
-
-- **Qué cambió:** se registró la decisión de dejar los documentos de trabajo de la marca como historia del proceso.
-- **Cómo estaba antes:** el último pedido era el de quitar luz y aura de la marca.
-- **Por qué:** regla de registrar cada pedido y cada decisión el mismo día.
-
-### 2026-11-09 — La marca sin luz ni aura
-
-- **Qué cambió:** se registró el pedido de quitar luz y aura de la marca y de explicar más la construcción del logo.
-- **Cómo estaba antes:** el último pedido era el de las palabras clave, la portada y el formato.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
 ### 2026-11-08 — Palabras clave, portada y formato
 
 - **Qué cambió:** se registró el pedido de sumar las palabras clave de la app, copiar una portada de la UDP y corregir el formato.
@@ -480,6 +449,42 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registró el pedido de revisar todos los anexos y dejarlos listos para un documento de Word.
 - **Cómo estaba antes:** el último pedido era el de los términos de los autores y el análisis visual.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Cinco preguntas de validación
+
+- **Qué cambió:** se registró la corrección del contexto y el pedido de más preguntas en los correos de validación.
+- **Cómo estaba antes:** el último pedido era contar el contexto como una situación concreta.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Correos de validación como situación concreta
+
+- **Qué cambió:** se registró el pedido de explicar el proyecto con una situación concreta y sin tecnicismos.
+- **Cómo estaba antes:** el último pedido era quitar las frases de relleno de esos correos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Correos de validación más claros
+
+- **Qué cambió:** se registró el pedido de quitar frases de relleno y aclarar el contexto de los correos de validación.
+- **Cómo estaba antes:** el último pedido era buscar perfiles para validar la propuesta.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Perfiles para validar la propuesta
+
+- **Qué cambió:** se registró el pedido de buscar personas expertas que validen la propuesta, con sus correos.
+- **Cómo estaba antes:** el último pedido era la consulta sobre si la respuesta de Parra servía como validación.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Validación con un experto
+
+- **Qué cambió:** se registró la consulta sobre si la respuesta de Parra sirve como validación y la propuesta de consultar por correo.
+- **Cómo estaba antes:** el último pedido era el análisis de la respuesta de Parra.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-06 — Respuesta de Parra
+
+- **Qué cambió:** se registró el pedido de analizar la respuesta de Parra.
+- **Cómo estaba antes:** el último pedido era el correo para Parra sin nombrar Relevo.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-05 — Fusión con main y la versión más reciente de la app
@@ -655,6 +660,24 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Cómo estaba antes:** el último pedido era subir el IDML.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
+### 2026-11-02 — Tarea 14
+
+- **Qué cambió:** se registró el pedido de dejar lo encontrado en Por hacer, con el recordatorio de las fuentes que faltan.
+- **Cómo estaba antes:** el último pedido registrado era la orden de terminar el trabajo.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Fuentes y fundamentación de los capítulos 1 a 6
+
+- **Qué cambió:** se registraron el pedido de leer cada referente completo y fundamentar los capítulos que describen el proyecto, y la orden de terminarlo.
+- **Cómo estaba antes:** el último pedido registrado en esta rama era la subida del IDML.
+- **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Las decisiones de diseño
+
+- **Qué cambió:** se registró el pedido del documento interno sobre las decisiones de diseño.
+- **Cómo estaba antes:** el registro terminaba en el 29 de octubre en esta rama.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
+
 ### 2026-10-30 — Camino al 7
 
 - **Qué cambió:** se registró el pedido de dejar por escrito el camino a la nota máxima.
@@ -678,23 +701,6 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Cómo estaba antes:** el registro terminaba en la tarea 11.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
-### 2026-11-02 — Tarea 14
-
-- **Qué cambió:** se registró el pedido de dejar lo encontrado en Por hacer, con el recordatorio de las fuentes que faltan.
-- **Cómo estaba antes:** el último pedido registrado era la orden de terminar el trabajo.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-02 — Fuentes y fundamentación de los capítulos 1 a 6
-
-- **Qué cambió:** se registraron el pedido de leer cada referente completo y fundamentar los capítulos que describen el proyecto, y la orden de terminarlo.
-- **Cómo estaba antes:** el último pedido registrado en esta rama era la subida del IDML.
-- **Por qué:** regla de registrar cada pedido el mismo día.
-
-### 2026-11-02 — Las decisiones de diseño
-
-- **Qué cambió:** se registró el pedido del documento interno sobre las decisiones de diseño.
-- **Cómo estaba antes:** el registro terminaba en el 29 de octubre en esta rama.
-- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 ### 2026-10-29 — Revisión de la sexta ronda
 
 - **Qué cambió:** se registró el pedido sobre figuras que cortan la lectura, columnas solas, el glosario y la Biblioteca.
@@ -771,6 +777,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registró el pedido del objeto para imprimir.
 - **Cómo estaba antes:** terminaba en la declaración de las herramientas de IA.
+
 ### 2026-10-28 — Apuntes de la revisión
 
 - **Qué cambió:** se registró la entrega de los apuntes y su paso a la lista de tareas.
@@ -793,6 +800,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registró el pedido de subir la carpeta de la Coordinación.
 - **Cómo estaba antes:** terminaba en la redacción del Anexo E.
+
 ### 2026-10-27 — Codex
 
 - **Qué cambió:** se registró que dentro de ChatGPT se usó Codex, y que faltan por ubicar los documentos actualizados de la universidad.
@@ -893,12 +901,6 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 - **Qué cambió:** se registró la autorización del autor y lo que se hizo con ella: tesis en la memoria, pauta de la Biblioteca e Issues.
 - **Cómo estaba antes:** terminaba en la propuesta de tesis locales.
-- **Por qué:** regla de registrar cada pedido del autor el mismo día.
-
-### 2026-10-25 — Tesis locales
-
-- **Qué cambió:** se registraron la consulta sobre tareas que la IA puede hacer sola y el encargo de buscar una tesis local de diseño.
-- **Cómo estaba antes:** terminaba en el documento de marca.
 - **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-10-25 — Tesis locales
