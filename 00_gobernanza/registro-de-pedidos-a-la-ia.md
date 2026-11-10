@@ -290,6 +290,7 @@
 | 2 nov. | Corrección y encargo | Canceló la revisión programada y pidió revisar otro apartado entero que siente flojo y poco fundamentado: todo lo que empieza a describir el proyecto. Pidió documentos fundamentados y leer cada referente de la memoria completo, pasarlo a Markdown para tener a mano los textos originales, con mucha rigurosidad. | [Fuentes de la memoria](../01_contexto_y_fuentes/fuentes-de-la-memoria/README.md): de las 78 referencias, 29 con texto completo, 26 páginas consultadas, 9 con solo el resumen y 14 sin acceso, cada una con su motivo; los textos quedan en una carpeta local que no se versiona, por derechos de autor. [Verificación](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md) de las 40 citas de los capítulos 1 a 6 y [fundamentación](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md) con el diagnóstico y propuestas de redacción. La memoria no se modificó. | — |
 | 2 nov. | Orden | «Termínalo». | Se cerró el trabajo con los documentos anteriores y se abrió un PR en borrador. | — |
 | 2 nov. | Encargo | Subir al repositorio todo lo encontrado y dejarlo en Por hacer, sin actualizar la memoria, con un recordatorio de buscar las fuentes que faltaron por verificar. | [Por hacer, tarea 14](por-hacer.md#14-capítulos-1-a-6-fundamentar-lo-que-presenta-el-proyecto): los cambios de los capítulos 1 a 6, capítulo por capítulo, con las versiones de las fuentes y, en el punto H, las 23 fuentes que faltan, en dos prioridades. La memoria no se modificó. | — |
+| 2 nov. | Encargo | Pidió leer la memoria y escribir un documento interno que explique cada decisión de diseño, en especial la cromática, la tipográfica y la de la aplicación, con los errores vistos y su solución, la usabilidad, la experiencia, la interfaz y el diseño gráfico, con los requisitos de la Universidad y APA 7. Autorizó usar su computador si hacía falta. | [Las decisiones de diseño de Relevo](../10_recursos_visuales/43_decisiones-de-diseno-2026-11-02.md), con las cifras de color, letra y áreas táctiles verificadas contra el código y las fuentes oficiales de Apple y Android. El computador no tenía carpetas compartidas con la nube, así que los descriptores de nivel de la rúbrica, que solo están ahí, quedaron pendientes | — |
 
 ## Lo que muestra el registro
 
@@ -688,6 +689,12 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Qué cambió:** se registraron el pedido de leer cada referente completo y fundamentar los capítulos que describen el proyecto, y la orden de terminarlo.
 - **Cómo estaba antes:** el último pedido registrado en esta rama era la subida del IDML.
 - **Por qué:** regla de registrar cada pedido el mismo día.
+
+### 2026-11-02 — Las decisiones de diseño
+
+- **Qué cambió:** se registró el pedido del documento interno sobre las decisiones de diseño.
+- **Cómo estaba antes:** el registro terminaba en el 29 de octubre en esta rama.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 ### 2026-10-29 — Revisión de la sexta ronda
 
 - **Qué cambió:** se registró el pedido sobre figuras que cortan la lectura, columnas solas, el glosario y la Biblioteca.
