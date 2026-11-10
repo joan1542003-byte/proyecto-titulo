@@ -1,8 +1,8 @@
 # Ficha: respuesta escrita de Denis Parra
 
-**Fecha del correo:** [CONFIRMAR: día en que llegó, entre el 3 y el 6 de noviembre de 2026]. **Ficha:** 6 de noviembre de 2026. **Persona y disciplina:** Denis Parra, ciencia de la computación (sistemas de recomendación), Pontificia Universidad Católica de Chile. **Formato:** por escrito, respuesta a las cuatro preguntas del [correo](guion-parra.md#correo-con-las-preguntas). **Consentimiento:** cita con su nombre, sí («Sí, no hay problema»); revisión del párrafo antes de usarlo, comprometida en el correo; sin grabación.
+**Fecha del correo:** miércoles 4 de noviembre de 2026, a las 9:31, según la copia que el autor entregó el 10 de noviembre. **Ficha:** 6 de noviembre de 2026. **Persona y disciplina:** Denis Parra, ciencia de la computación (sistemas de recomendación), Pontificia Universidad Católica de Chile. **Formato:** por escrito, respuesta a las cuatro preguntas del [correo](guion-parra.md#correo-con-las-preguntas). **Consentimiento:** cita con su nombre, sí («Sí, no hay problema»); revisión del párrafo antes de usarlo, comprometida en el correo; sin grabación.
 
-El texto completo de la respuesta se guarda fuera de GitHub, en `00_fuentes_privadas/`, como pide el [README](README.md#reglas). Aquí van solo las citas que se usarán.
+El texto completo de la respuesta se guarda fuera de GitHub, en `00_fuentes_privadas/expertos/`, como pide el [README](README.md#reglas). Se comparó con la copia del 10 de noviembre: las citas de abajo coinciden palabra por palabra. Aquí van solo las citas que se usarán.
 
 ## Ideas principales
 
@@ -52,11 +52,11 @@ El texto completo de la respuesta se guarda fuera de GitHub, en `00_fuentes_priv
 | Capítulo 13, «Resultados» | La distancia entre 19 de 21 y 10 de 21, leída como diferencia entre lo declarado y lo hecho. Es interpretación del autor. | Kleinberg et al. (2023), si se usa la idea de preferencias inconsistentes |
 | Capítulo 14, «Alcances y proyecciones» | Control progresivo. | Parra, comunicación personal |
 
-La cita va solo en el texto, con la fecha del correo: «(D. Parra, comunicación personal, [fecha])». Covington et al. (2016) y Kleinberg et al. (2023) se comprobaron en Crossref; el resumen de Kleinberg et al. dice que las plataformas, para saber lo que la persona quiere, miran lo que hace. Hay que leer ambos antes de citarlos.
+La cita va solo en el texto, con la fecha del correo: «(D. Parra, comunicación personal, 4 de noviembre de 2026)». Covington et al. (2016) y Kleinberg et al. (2023) se comprobaron en Crossref; el resumen de Kleinberg et al. dice que las plataformas, para saber lo que la persona quiere, miran lo que hace. Hay que leer ambos antes de citarlos.
 
 ## Siguiente paso
 
-Enviarle a Parra el párrafo antes de usarlo, como se le prometió en el correo, y confirmar la fecha del correo para la cita.
+Enviarle a Parra el párrafo antes de usarlo, como se le prometió en el correo. La fecha del correo ya está confirmada.
 
 ## Referencias
 
@@ -67,6 +67,12 @@ Kleinberg, J., Mullainathan, S. y Raghavan, M. (2023). The challenge of understa
 Rotter, J. B. (1966). Generalized expectancies for internal versus external control of reinforcement. *Psychological Monographs: General and Applied, 80*(1), 1–28. https://doi.org/10.1037/h0092976
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fecha del correo
+
+- **Qué cambió:** la ficha tiene la fecha del correo, 4 de noviembre de 2026, y la cita la usa. El texto completo quedó en la carpeta privada.
+- **Cómo estaba antes:** la fecha estaba por confirmar, entre el 3 y el 6 de noviembre, y el texto completo no estaba guardado.
+- **Por qué:** el autor entregó la copia del correo con su fecha.
 
 ### 2026-11-06 — Creación
 

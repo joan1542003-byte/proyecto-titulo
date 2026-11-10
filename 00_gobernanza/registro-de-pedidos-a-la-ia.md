@@ -252,6 +252,7 @@
 | 8 nov. | Consulta | ¿Qué pasa si saca un 3,0 en Proyecto de Título con un 5,2 en Seminario? | Reprueba Proyecto de Título: se exige 4,0 en el examen (art. 21) y el 5,2 no compensa; la ponderación de 40 y 60 % (art. 26) solo se calcula con ambos aprobados. Puede volver a inscribirlo hasta dos veces u optar por otra modalidad (art. 25), y la comisión puede prorrogar el examen hasta 30 días (art. 22). | — |
 | 8 nov. | Consulta | El profesor dice que fabricar un objeto desde cero es un esfuerzo innecesario: ¿es útil, si todos los Tag sirven? | Recomendación: no fabricar electrónica ni un aparato propio; diseñar un porta Tag que reciba un Tag completo, sin abrirlo, como pidió la revisión del 28 de octubre. Resuelve el botón que no se encontraba, da un objeto para el examen y la marca, y cuesta poco. La hipótesis depende del lugar y el sonido, no de la carcasa. Decide el autor. | Por decidir |
 | 8 nov. | Consulta | ¿Es necesario imprimir el objeto o basta con diseñarlo? | No es obligatorio: la matriz de pase acepta un prototipo que «represente, simule o demuestre» y documentación con planos o renders, y el reglamento admite apoyo tridimensional u otro. Recomendación: imprimir una unidad si cuesta poco, porque confirma que calza y da algo que mostrar; si no, presentarlo como diseño, con medidas reales del Tag y sin afirmar que se probó. | Por decidir |
+| 10 nov. | Encargo | Entregó la copia del correo de Denis Parra, del 4 de noviembre, y avisó que el 11 de noviembre entrega la entrevista final con las personas, según su uso de la app, y los resultados finales de la prueba y de la semana solo con notificaciones; pidió anotarlo todo. | La [ficha de Parra](../02_investigacion/entrevistas-expertos/ficha-parra.md) tiene la fecha del correo, y la cita la usa; las citas coinciden con la copia, y el texto completo quedó fuera de GitHub. La [tarea 6](por-hacer.md#6-semana-solo-con-notificaciones-cierre-y-comparación) espera los datos del 11 de noviembre. | — |
 
 ## Lo que muestra el registro
 
@@ -262,6 +263,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Correo de Parra y datos del cierre
+
+- **Qué cambió:** se registró la entrega del correo de Parra y el aviso de los datos del cierre.
+- **Cómo estaba antes:** el último pedido era la consulta sobre imprimir el objeto.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-08 — Imprimir o solo diseñar
 

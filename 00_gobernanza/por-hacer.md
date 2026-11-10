@@ -104,7 +104,7 @@ Fechas confirmadas en el [calendario oficial](calendario-oficial-segundo-semestr
 | --- | --- | --- |
 | 4. Objeto propio | Crítica | 1 de noviembre (una semana) |
 | 5. Costos y presupuesto | Crítica | 8 de noviembre |
-| 6. Semana solo con notificaciones | Crítica | Al terminar la semana; entrevistas antes del 8 de noviembre |
+| 6. Semana solo con notificaciones | Crítica | El autor entrega las entrevistas y los resultados el 11 de noviembre |
 | 7. Presentación | Alta | Borrador el 15 de noviembre; ensayo el 22 |
 | 8. Memoria: datos, portada y entrega | Alta | 15 de noviembre; entrega el 1 de diciembre |
 | 9. Pendientes menores | Baja | 15 de noviembre |
@@ -164,7 +164,7 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 
 ## 6. Semana solo con notificaciones: cierre y comparación
 
-**Estado:** en curso. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
+**Estado:** esperando los datos del autor, que llegan el 11 de noviembre. **Anotada:** 25 de octubre de 2026. **Riesgo:** crítico ([riesgo 3](registro-de-riesgos.md)).
 
 ### Por qué
 
@@ -176,6 +176,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Cerrar el viernes 30 de octubre**, cuando la tercera persona cumple sus 21 días (la primera los cumple el 28 y la segunda el 29). Cerrar a las tres el mismo día evita coordinar tres fechas.
 - [ ] Al terminar la semana, aplicar el [instrumento de cierre](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md) ([PDF para imprimir](../07_validacion/instrumentos/instrumento-de-cierre.pdf)): las escalas, la comparación y el cierre de la app 2.33, en papel (D-144). Es preferible a iniciar ahora la semana en la app, que la contaría desde el día 1.
 - [ ] Entrevista de cierre de unos 15 minutos con cada persona, con la guía del mismo instrumento, y revisión de los fallos críticos.
+- [ ] **Recibir del autor, el 11 de noviembre** (anotado el 10 de noviembre):
+  - la entrevista final con las personas de la prueba, según cómo usó cada una la app;
+  - los resultados finales de la prueba;
+  - los resultados de la semana solo con notificaciones.
+
+  La entrevista de la app es la del 9 de noviembre, según la guía de los profesores (D-177, rama `android-4.6`), que reemplaza a la del instrumento del 28 de octubre. Se guarda solo con códigos, sin nombres.
 - [ ] Exportar por última vez los datos de las tres personas y guardarlos solo en `datos_sensibles/`.
 - [ ] Unir los datos con `unir-datos.js` y actualizar los resultados, las conclusiones y los anexos.
 
@@ -215,7 +221,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Portada oficial:** logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
-- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6).
+- [ ] **Resultados finales:** sumar la semana solo con notificaciones, las escalas, las entrevistas y el objeto propio (tareas 4 y 6). Los datos llegan el 11 de noviembre.
 - [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
 - [ ] **Depósito en la Biblioteca**, después del examen. La [pauta](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) ya se revisó: pide carta, Arial 12 y una portada en mayúsculas, y para las carreras de Diseño nombra «tesis no convencionales» sin dar reglas. Hay que preguntar a la Coordinación o a la Biblioteca si se acepta el A3 y si hace falta una portada institucional. Al depositar: PDF sin clave nombrado con el RUT y el formulario de autorización.
 
@@ -296,6 +302,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **El planteamiento del problema debe leerse mejor.** El apunte añade «el 03 no es», que apunta al capítulo 3. Reescrito en la v6.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Datos del cierre
+
+- **Qué cambió:** la tarea 6 anota que el autor entrega el 11 de noviembre la entrevista final con las personas, los resultados finales de la prueba y los de la semana solo con notificaciones. El calendario y la tarea 8 dicen lo mismo.
+- **Cómo estaba antes:** la tarea 6 estaba en curso, con las entrevistas antes del 8 de noviembre.
+- **Por qué:** el autor avisó cuándo llegan los datos y pidió anotarlo.
 
 ### 2026-11-08 — Peso del examen resuelto
 
