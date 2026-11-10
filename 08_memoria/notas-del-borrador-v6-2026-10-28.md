@@ -175,6 +175,10 @@ El 10 de noviembre, el autor pidió resolver lo que quedaba de la [evaluación c
 - **Capítulo 14:** el primer supuesto es compatible, no probado; las versiones posteriores incorporaron nueve cambios; las proyecciones suman el control progresivo que sugirió Parra y un fondo concursable para ampliar la prueba.
 - **Lo que no se pudo hacer:** describir cómo se reclutó a las tres personas, su relación con el autor y su edad exacta, porque esos datos solo los tiene el autor. El objeto no se imprime: el mismo día, el autor decidió que queda como propuesta (D-178), y el capítulo 11 lo dice.
 
+## Decimosexta ronda: el cierre de la prueba
+
+El 10 de noviembre, el autor entregó los cierres de la segunda y la tercera persona; la primera respondió en la app. El [análisis](../07_validacion/analisis/analisis-cierre-de-la-prueba-2026-11-10.md) los lee por caso, con los tres supuestos. El capítulo 13 suma un párrafo con lo que dijeron, la prueba se da por cerrada el 10 de noviembre y las proyecciones bajan a cuatro pasos; el capítulo 14 dice que dos de tres preferirían el teléfono por el ruido. El Anexo I suma la Tabla I7.
+
 ## Extensión
 
 Capítulos 1 a 14: unas 18 000 palabras desde el 10 de noviembre, con los resultados finales y las correcciones de la evaluación (antes, 16 451); con portada, agradecimientos, resumen, abstract e índices, unas 19 100. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
@@ -198,7 +202,7 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
 - **Aplicación:** de la Tabla 5 quedan el botón y el volumen de Relevo, que dependen del objeto impreso, y la propuesta de mantener el objeto como señal principal con un sonido más suave. Los demás cambios ya están en las versiones 4.0 y 4.4.
-- **Resultados:** sumar lo que digan las entrevistas de cierre. La etapa con el teléfono ya está, con el Resumen, el Abstract y las Conclusiones.
+- **Resultados:** completos desde el 10 de noviembre, con la etapa con el teléfono y el cierre de las tres personas.
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
 - **IDML en Affinity:** en el PDF del autor, la Tabla 3 salió invisible y las etiquetas de la Figura 9 se cortaron. En el PDF del generador no pasa: hay que dar holgura a los marcos de texto del IDML.
@@ -206,6 +210,12 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Decimosexta ronda
+
+- **Qué cambió:** se registra el cierre de la prueba en la memoria y en el Anexo I.
+- **Cómo estaba antes:** el cierre estaba pendiente.
+- **Por qué:** el autor entregó los cierres de las tres personas y pidió analizarlos.
 
 ### 2026-11-10 — Frase de marca y las tres personas
 

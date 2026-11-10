@@ -254,13 +254,37 @@ La Tabla I6 reúne, por persona y soporte, lo que respondieron después de cada 
 
 *Nota.* Elaboración propia a partir de los registros de la aplicación. Las personas se numeran como en el capítulo 13 de la memoria; no son las de las entrevistas del Anexo A. No se cuentan los relevos eliminados antes de sonar: siete con el Tag y dos con el teléfono. La pregunta sobre el aviso se hizo solo con el teléfono. Una respuesta es la que la persona dio después de una señal; las que quedaron sin responder no se cuentan.
 
-El 8 de noviembre, con la versión 4.6 de la app, las tres personas respondieron la encuesta del rediseño. Las tres dijeron que la app nueva era mejor que la anterior, y en las dos preguntas del UMUX-Lite, de 1 a 7, sobre si la app tiene las funciones que necesitan y si es fácil de usar, respondieron 7 y 7, 5 y 6, y 4 y 5. Las entrevistas de cierre están pendientes.
+El 8 de noviembre, con la versión 4.6 de la app, las tres personas respondieron la encuesta del rediseño. Las tres dijeron que la app nueva era mejor que la anterior, y en las dos preguntas del UMUX-Lite, de 1 a 7, sobre si la app tiene las funciones que necesitan y si es fácil de usar, respondieron 7 y 7, 5 y 6, y 4 y 5. El 10 de noviembre, las tres personas respondieron el cuestionario y la entrevista de cierre: la primera, en la app 4.7.2, y las otras dos, en una planilla con las mismas preguntas. La Tabla I7 reúne sus escalas y sus respuestas cerradas.
+
+**Tabla I7**
+
+*Cuestionario de cierre, por persona*
+
+| Pregunta | Primera | Segunda | Tercera |
+| --- | --- | --- | --- |
+| Con el Tag: ¿te costó preparar Relevo? ¿Te molestó el sonido? ¿El sonido tenía que ver con el lugar? | 1 · 2 · 5 | 3 · 5 · 5 | 2 · 3 · 4 |
+| Con el teléfono: las mismas tres escalas | 1 · 1 · 3 | 2 · 1 · 2 | 2 · 1 · 2 |
+| Con el teléfono, ¿recordaste más, igual o menos? | Más | Menos | Igual |
+| ¿Qué te ayudó más a recordar? | Los dos por igual | El objeto | Los dos por igual |
+| ¿Con qué te gustaría que sonara? | Un objeto | El teléfono | El teléfono |
+| ¿Seguirías usando Relevo? | Sí | Sí | Sí |
+| ¿Dónde quedó el objeto? | En su escritorio | Junto a la guitarra | En el escritorio, junto a la croquera |
+
+*Nota.* Elaboración propia. Escalas de 1 («Nada») a 5 («Mucho»). La primera persona respondió 19 de las 26 preguntas; la segunda, 25, y la tercera, 20.
+
+En la entrevista, las tres contaron que sabían qué querían hacer al sonar. Con el objeto miraban hacia la actividad, y con el teléfono les era más fácil seguir en lo que estaban. El pitido del Tag molestó a la segunda persona y a quien vivía con ella, y una señal sonó a la tercera fuera de casa, lejos del Tag. Empezar dependió de las ganas, la hora y el lugar donde estaban. No apareció ninguno de los fallos críticos del protocolo, salvo una incomodidad leve frente a otras personas por el sonido.
 
 ## Referencias
 
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Cierre de la prueba
+
+- **Qué cambió:** I.8 suma el cierre de las tres personas: la Tabla I7, con sus escalas y respuestas cerradas, y un resumen de las entrevistas.
+- **Cómo estaba antes:** decía que las entrevistas de cierre estaban pendientes.
+- **Por qué:** el autor entregó los cierres de las tres personas y pidió analizarlos.
 
 ### 2026-11-10 — Mayoría de edad
 

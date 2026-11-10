@@ -329,6 +329,8 @@
 | 10 nov. | Decisión y consulta | El objeto no se imprime y queda como propuesta; el Pase no tiene presentación, es solo la revisión de la memoria, y la presentación es la del examen. Preguntó si es necesario describir a las tres personas de la prueba y qué opciones hay para la frase de marca. | D-178: Relevo queda como propuesta, y el capítulo 11, la Figura 19, Por hacer, riesgos y el resumen lo dicen; el calendario y la tarea 7 separan el Pase, sin presentación, del examen. Se le propusieron frases de marca a partir de la vigente, «Hazle lugar a lo que quieres hacer». | D-178 |
 | 10 nov. | Decisión | Eligió la frase de marca vigente, «Hazle lugar a lo que quieres hacer», y decidió no describir en la memoria a las tres personas de la prueba, sino responderlo en el examen. | La frase queda confirmada en el Anexo H y en el documento de marca; la tarea 7 suma esa respuesta a la preparación del examen. | — |
 | 10 nov. | Decisión | No generar todavía la memoria diseñada ni los anexos en Word y PDF para la entrega interna del 11 de noviembre. | No se generó ningún archivo; los textos quedan al día en `main`. | — |
+| 10 nov. | Consulta | ¿Respondió un usuario las preguntas de cierre? Pidió el Excel con sus respuestas. | Sí: la primera persona respondió en la app 4.7.2 las cinco partes, 19 de 26 preguntas. Se entregó un Excel con su código, guardado solo fuera del repositorio. | — |
+| 10 nov. | Encargo | Entregó los cierres de la segunda y la tercera persona en Excel, pidió subirlos al repositorio y un análisis bien hecho de los tres. | Las planillas quedan fuera de GitHub, en la carpeta privada, porque el repositorio es público y tienen respuestas de personas. El [análisis](../07_validacion/analisis/analisis-cierre-de-la-prueba-2026-11-10.md) lee cada caso con los tres supuestos, una matriz, los fallos críticos y los registros de la app: el objeto ayudó a recordar igual o más que el teléfono, pero su ruido hizo que dos de tres prefirieran el teléfono. La memoria (capítulos 13 y 14) y el Anexo I (Tabla I7) lo suman. | — |
 
 ## Lo que muestra el registro
 
@@ -339,6 +341,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Cierre de la prueba
+
+- **Qué cambió:** se registraron la consulta por el cierre de la primera persona y el encargo de analizar los tres.
+- **Cómo estaba antes:** el último pedido era no generar todavía los archivos.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Archivos para después
 
