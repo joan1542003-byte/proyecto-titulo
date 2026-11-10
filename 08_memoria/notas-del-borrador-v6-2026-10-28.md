@@ -160,9 +160,24 @@ El 10 de noviembre, el autor entregó los datos finales de las tres personas, ex
 - **Capítulo 14, resumen y abstract:** dicen el resultado de la comparación; la app llegó a la versión 4.7.2.
 - **Se quitan** los dos `[CONFIRMAR]`. La entrevista de cierre sigue pendiente.
 
+## Decimoquinta ronda: correcciones de la evaluación como comisión y financiamiento
+
+El 10 de noviembre, el autor pidió resolver lo que quedaba de la [evaluación como comisión](evaluacion-como-comision-v6-2026-11-08.md) y sumar los fondos para financiar el proyecto.
+
+- **Capítulo 3:** el sistema que elige qué viene después, con la respuesta de Denis Parra, autorizada para citarse con su nombre, Covington et al. (2016) y Kleinberg et al. (2023).
+- **Repeticiones (capítulos 4 a 6, 9 y 11):** Lyngs et al. (2019), one sec y de Segovia Vicente et al. (2024) se presentan una vez y después se remite; Montag et al. (2019) no se repite en el capítulo 6.
+- **Fuentes recientes:** Ball et al. (2025), sobre recordatorios, y Ullmer et al. (2022), sobre interacción tangible y corporizada; Sheeran y Webb (2016) suma la brecha entre intención y conducta a «recordar no basta». Las cuatro y las de Parra se comprobaron en Crossref.
+- **Capítulo 9:** el criterio 1 suma lo que dice Parra sobre partir de lo declarado; el criterio 4 remite al estudio de one sec.
+- **Capítulo 10:** dice que el segundo supuesto queda para una etapa con más personas, y suma la consulta a Parra como opinión experta; la Figura 11 llega a noviembre.
+- **Capítulo 11:** la accesibilidad suma la señal sonora y qué falta para una persona con baja audición.
+- **Capítulo 12:** la Tabla 3 separa el prototipo del proceso; la sección «Financiamiento» nombra Fondart Nacional (línea de Investigación) para el piloto, y Semilla Inicia de Corfo y Capital Semilla Emprende de Sercotec para el producto, con sus fuentes oficiales consultadas el 10 de noviembre; la Figura 20 y «Actores del proyecto» los suman.
+- **Capítulo 13:** los resultados son «compatibles» con las decisiones, no las prueban; el criterio 6 se cumple a medias; «Alcance de esta etapa» declara el límite del autorreporte; la Tabla 5 marca nueve cambios hechos en las versiones 4.0 y 4.4.
+- **Capítulo 14:** el primer supuesto es compatible, no probado; las versiones posteriores incorporaron nueve cambios; las proyecciones suman el control progresivo que sugirió Parra y un fondo concursable para ampliar la prueba.
+- **Lo que no se pudo hacer:** describir cómo se reclutó a las tres personas, su relación con el autor y su edad exacta, porque esos datos solo los tiene el autor; e imprimir el objeto.
+
 ## Extensión
 
-Capítulos 1 a 14: unas 17 100 palabras desde el 10 de noviembre, con los resultados finales (antes, 16 451); con portada, agradecimientos, resumen, abstract e índices, unas 18 200. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
+Capítulos 1 a 14: unas 18 000 palabras desde el 10 de noviembre, con los resultados finales y las correcciones de la evaluación (antes, 16 451); con portada, agradecimientos, resumen, abstract e índices, unas 19 100. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
 
 ## Fuentes de lo nuevo
 
@@ -175,14 +190,14 @@ Lo nuevo sale de documentos del repositorio, no de memoria:
 
 ## Lo que solo el autor puede completar
 
-Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta. El 10 de noviembre, el autor confirmó tres de ellos: su nombre legal, el título y la mención, que coinciden con la portada; que las entrevistas se grabaron en audio y se pasaron a texto, y que las tres personas de la prueba son mayores de edad. El capítulo 7 suma la grabación, y el 13, la mayoría de edad. Siguen por confirmar la frase de marca y los datos de la encuesta.
+Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últimos, por los resultados de la semana con el teléfono, se resolvieron con los datos finales. El autor quitó en su edición los otros once: grabación y transcripción de las entrevistas, fecha y convocatoria de la encuesta, revisión de la clasificación de la encuesta, fuente del localizador, frase de marca, estado de la impresión, revisión del consentimiento, mayoría de edad de las tres personas, revisión ética y detalle por persona de las demás respuestas. Quedan registrados aquí por si alguno vuelve a hacer falta. El 10 de noviembre, el autor confirmó tres de ellos: su nombre legal, el título y la mención, que coinciden con la portada; que las entrevistas se grabaron en audio y se pasaron a texto, y que las tres personas de la prueba son mayores de edad. El capítulo 7 suma la grabación, y el 13, la mayoría de edad. Sigue por confirmar la frase de marca; los datos de la encuesta, según el autor, ya están en el repositorio. Para describir a las tres personas de la prueba faltan cómo se convocaron, su relación con el autor y su edad.
 
 ## Pendiente
 
 - **Fotos de la prueba:** la memoria ya no lo menciona, pero las personas deben haber autorizado su publicación.
 - **Etapas tempranas:** si hay bocetos o fotos del objeto anterior, sumarlos al capítulo 11.
 - **Marca:** corregir el fundamento del color en los documentos 39 a 42 y en el Anexo H, como se hizo en la memoria: la alegría es del rosa, no del rojo, y las proporciones no son promedios.
-- **Aplicación:** implementar lo que la Tabla 5 marca «Por implementar» y decidir las «Propuestas».
+- **Aplicación:** de la Tabla 5 quedan el botón y el volumen de Relevo, que dependen del objeto impreso, y la propuesta de mantener el objeto como señal principal con un sonido más suave. Los demás cambios ya están en las versiones 4.0 y 4.4.
 - **Resultados:** sumar lo que digan las entrevistas de cierre. La etapa con el teléfono ya está, con el Resumen, el Abstract y las Conclusiones.
 - **Diseño de figuras (próximo PDF):** ordenar las Figuras 7 y 21; terminar las Figuras 2, 3 y 9, que el autor marcó «en desarrollo»; la Figura 17 debe mostrar las fichas de la interfaz o rotular aparte las luces del logo.
 - **Cursiva en Affinity:** instalar `letra/estaticas/InstrumentSans-Italic.ttf` antes de abrir el IDML; en el PDF del 30 de octubre, los títulos de figuras y las notas salieron en redonda (documento 43, sección 14.2).
@@ -191,6 +206,12 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Decimoquinta ronda
+
+- **Qué cambió:** se registran las correcciones de la evaluación como comisión y la sección de financiamiento, la nueva extensión y lo que queda.
+- **Cómo estaba antes:** la última ronda era la de los resultados finales.
+- **Por qué:** el autor pidió resolver lo que quedaba de las correcciones de la evaluación como comisión y sumar a la memoria los fondos para financiar el proyecto.
 
 ### 2026-11-10 — Datos del autor
 

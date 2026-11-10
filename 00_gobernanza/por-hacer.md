@@ -212,6 +212,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 ### Qué hacer
 
 - [x] **Fechas por escrito:** confirmadas por los profesores el 10 de noviembre: entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre.
+- [ ] **Describir a las tres personas de la prueba** (lo pide la evaluación como comisión): cómo se convocaron, su relación con el autor y su edad. Solo lo sabe el autor.
 - [ ] **Datos por confirmar**, que solo sabe el autor:
   - [x] nombre legal, título y mención: confirmados el 10 de noviembre; coinciden con la portada de la memoria;
   - [ ] frase de marca;
@@ -733,6 +734,12 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Correcciones de la comisión
+
+- **Qué cambió:** la tarea 8 suma describir a las tres personas, lo único de la evaluación como comisión que depende de datos del autor, además de imprimir el objeto (tarea 4).
+- **Cómo estaba antes:** no estaba anotado.
+- **Por qué:** el autor pidió resolver lo que quedaba de las correcciones de la evaluación como comisión y sumar a la memoria los fondos para financiar el proyecto.
 
 ### 2026-11-10 — Fechas confirmadas y datos del autor
 

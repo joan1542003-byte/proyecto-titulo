@@ -324,6 +324,8 @@
 | 10 nov. | Decisión | Juntar también la app en `main`, si es la versión más reciente. | Es la 4.7.2 (`versionCode` 63); ninguna otra rama pasa de la 4.5. Entró a `main` con los íconos propios, la entrevista de cierre del 9 de noviembre y las decisiones D-155 a D-167 y D-175 a D-177; el registro de decisiones queda completo, de D-001 a D-177. La carpeta de la app quedó idéntica a la de la rama, así que vale su verificación: 106 pruebas. No se generó ningún archivo. Detalle en la [fusión](fusion-de-textos-en-main-2026-11-10.md#segunda-fusión-la-app-472). | — |
 | 10 nov. | Encargo | Entregó los relevos finales de las tres personas —solo falta la entrevista con ellas— y pidió capturas de la versión más reciente de la app, actualizar los anexos si hacía falta, dejar listos los pendientes y decirle qué queda. | Los datos se unieron sin nombres. Con el Tag coinciden con lo ya informado; con el teléfono, del 21 de octubre al 8 de noviembre, recordaron igual, pero notaron el aviso tarde o no lo notaron en 10 de 21 respuestas. La memoria suma la Tabla 4 y la lectura del tercer supuesto, y ya no tiene datos por confirmar; el Anexo I suma la entrevista según la guía y los resultados por persona, y el Anexo G, la versión 4.7.2 con sus capturas. | — |
 | 10 nov. | Datos | Confirmó su nombre legal y la mención —Diseño, mención Gráfico—, que las tres personas de la prueba son mayores de edad y que las entrevistas de inicio de año fueron presenciales, grabadas en audio y pasadas a texto. | El nombre, el título y la mención coinciden con la portada. El capítulo 7, el Anexo A y la declaración de procedencia suman la grabación en audio; el capítulo 13 y el Anexo I, la mayoría de edad. Siguen por confirmar la frase de marca y los datos de la encuesta. | — |
+| 10 nov. | Datos y decisión | Confirmó las fechas de sus profesores (entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre); dijo que la encuesta y la portada ya estaban, que Parra está listo y que la presentación sigue pendiente, y preguntó cuál pregunta de investigación faltaba. | Calendario, Por hacer, riesgos y resumen con las fechas nuevas; encuesta, portada y Parra resueltos. La tarea de la pregunta de investigación ya estaba resuelta en la memoria (opción C): no queda nada por elegir. | — |
+| 10 nov. | Encargo | Resolver lo que quedaba de las correcciones de la evaluación como comisión y sumar a la memoria los fondos para financiar el proyecto. | La memoria suma a Parra (capítulos 3, 9, 10, 12 y 14), cuatro fuentes comprobadas en Crossref, la accesibilidad auditiva, la Tabla 3 separada y una sección «Financiamiento» con Fondart Nacional, Semilla Inicia de Corfo y Capital Semilla Emprende de Sercotec, de fuentes oficiales; los resultados se leen como compatibles, con el límite del autorreporte, y la Tabla 5 marca nueve cambios ya hechos. Quedan del autor: imprimir el objeto y describir a las tres personas. | — |
 
 ## Lo que muestra el registro
 
@@ -334,6 +336,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Fechas, comisión y fondos
+
+- **Qué cambió:** se registraron las fechas confirmadas y el encargo de resolver la evaluación como comisión y sumar los fondos.
+- **Cómo estaba antes:** el último pedido era el de los datos del autor.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-10 — Datos del autor
 

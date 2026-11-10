@@ -111,7 +111,7 @@ La memoria está bien construida y es honesta. El problema está formulado con p
 
 ## Qué hacer primero
 
-**Antes del Pase, el 25 de noviembre:**
+**Antes del Pase, el 18 de noviembre** (fecha confirmada por los profesores el 10 de noviembre):
 
 1. Informar la semana con el teléfono, caso por caso, y quitar los dos `[CONFIRMAR]`.
 2. Reescribir las afirmaciones del capítulo 13 y de las conclusiones como compatibles con los criterios, no como prueba, y declarar el límite del autorreporte.
@@ -126,7 +126,29 @@ La memoria está bien construida y es honesta. El problema está formulado con p
 8. Quitar repeticiones entre los capítulos 2 a 6.
 9. Agregar la accesibilidad auditiva y una fuente de financiamiento viable para el piloto.
 
+## Estado al 10 de noviembre
+
+| Punto | Estado |
+| --- | --- |
+| 1. Semana con el teléfono y los dos `[CONFIRMAR]` | Hecho: Tabla 4 nueva, por persona y soporte; el tercer supuesto se sostiene en parte. |
+| 2. Resultados como compatibles y límite del autorreporte | Hecho en los capítulos 13 y 14. |
+| 3. Imprimir el objeto, medir la placa y fotografiarlo | Pendiente del autor. |
+| 4. Describir a las tres personas | En parte: la memoria dice que son mayores de edad; faltan, del autor, cómo se convocaron, su relación con él y su edad. |
+| 5. Insertar las 20 figuras | Al generar la memoria diseñada. |
+| 6. «Tres semanas», «21 días» y el criterio 6 | Hecho: la prueba dura un mes y el criterio 6 se cumple a medias. El Anexo I conserva el «protocolo de 21 días» como el protocolo preparado, distinto de la prueba aplicada. |
+| 7. Parra y una fuente reciente de interacción tangible | Hecho: Parra en los capítulos 3, 9, 10, 12 y 14; Ullmer et al. (2022) y Ball et al. (2025). |
+| 8. Repeticiones de los capítulos 2 a 6 | Hecho para Lyngs et al. (2019), one sec y de Segovia Vicente et al. (2024). |
+| 9. Accesibilidad auditiva y financiamiento | Hecho: capítulo 11 y sección «Financiamiento» del capítulo 12. |
+
+También se resolvieron las observaciones de la formulación (el segundo supuesto queda dicho en el capítulo 10), de «recordar no basta» (Sheeran y Webb, 2016), de la voz experta, de las suscripciones de IA como costo del proceso y de la codificación con IA de la encuesta, que el autor ya había quitado.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-10 — Estado al 10 de noviembre
+
+- **Qué cambió:** se suma qué puntos de la lista quedaron hechos y cuáles dependen del autor; el Pase pasa al 18 de noviembre.
+- **Cómo estaba antes:** la lista no tenía estado y el Pase figuraba el 25 de noviembre.
+- **Por qué:** el autor pidió resolver lo que quedaba de las correcciones de la evaluación como comisión y sumar a la memoria los fondos para financiar el proyecto.
 
 ### 2026-11-08 — Creación
 
