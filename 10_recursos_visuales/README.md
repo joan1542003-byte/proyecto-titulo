@@ -81,6 +81,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 44. [Las decisiones de diseño de Relevo](43_decisiones-de-diseno-2026-11-02.md): documento interno que explica y verifica cada decisión —sistema, señal, objeto, marca, letra, color, íconos, interfaz, experiencia, escritura y memoria diseñada—, con los errores encontrados y su solución, las incoherencias entre documentos y respuestas para defender cada decisión ante la comisión.
 45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
+47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -110,6 +111,18 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-12 — Presentación rehecha con la marca
+
+- **Qué cambió:** la descripción del documento 45 dice ahora veinticinco láminas hechas con la marca.
+- **Cómo estaba antes:** decía trece láminas.
+- **Por qué:** el autor pidió rehacer la presentación con menos texto y con las directrices de Relevo.
+
+### 2026-11-12 — Presentación de Relevo
+
+- **Qué cambió:** se enlaza el documento 45, con la presentación en Figma Slides.
+- **Cómo estaba antes:** el último documento enlazado era el 44.
+- **Por qué:** el autor pidió una presentación de 7 a 10 minutos sobre Relevo.
 
 ### 2026-11-06 — Íconos desde lo que pide la app
 
