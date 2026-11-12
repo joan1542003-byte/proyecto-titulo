@@ -332,6 +332,8 @@
 | 10 nov. | Consulta | ¿Respondió un usuario las preguntas de cierre? Pidió el Excel con sus respuestas. | Sí: la primera persona respondió en la app 4.7.2 las cinco partes, 19 de 26 preguntas. Se entregó un Excel con su código, guardado solo fuera del repositorio. | — |
 | 10 nov. | Encargo | Entregó los cierres de la segunda y la tercera persona en Excel, pidió subirlos al repositorio y un análisis bien hecho de los tres. | Las planillas quedan fuera de GitHub, en la carpeta privada, porque el repositorio es público y tienen respuestas de personas. El [análisis](../07_validacion/analisis/analisis-cierre-de-la-prueba-2026-11-10.md) lee cada caso con los tres supuestos, una matriz, los fallos críticos y los registros de la app: el objeto ayudó a recordar igual o más que el teléfono, pero su ruido hizo que dos de tres prefirieran el teléfono. La memoria (capítulos 13 y 14) y el Anexo I (Tabla I7) lo suman. | — |
 | 12 nov. | Consulta y encargo | Preguntó si había conexión con Figma y pidió leer la memoria reciente y hacer una presentación de 7 a 10 minutos sobre todo Relevo. | Sí hay conexión. [Presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) de trece láminas en Figma Slides, con la identidad de Relevo, las capturas de la app 4.7.2 y notas del orador para unos 9 minutos. Se hizo desde la memoria del 10 de noviembre, la más reciente en el repositorio. | Pendiente de la revisión del autor |
+| 12 nov. | Corrección | Perfeccionar las láminas: menos texto, más figuras, datos y cifras, una frase que resuma cada cosa y más láminas, para que alguien que no conoce el proyecto entienda su evolución. | Se incorporó al rediseño de la fila siguiente. | — |
+| 12 nov. | Corrección y orden | No pedir permisos y editar lo necesario. El diseño no seguía las directrices de Relevo: tenía demasiada información, palabras difíciles y títulos innecesarios. Debía ser formal, directo y fácil de leer, con iconografía y degradados como los de la app, después de revisar la marca y el repositorio. | Se dejaron permitidas las herramientas de Figma en la configuración local de la sesión. La [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) se rehízo en 25 láminas, con una idea por lámina, frases en dos tonos, cifras grandes, fondos de aura y cielos generados con el Taller de auras, íconos propios en fichas y el Tag con sus anillos, y con notas para unos 9 minutos y 30 segundos. | Pendiente de la revisión del autor |
 
 ## Lo que muestra el registro
 
@@ -342,6 +344,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-12 — Presentación rehecha
+
+- **Qué cambió:** se registraron los dos pedidos de corrección de la presentación: menos texto y más cifras, y un diseño con las directrices de Relevo.
+- **Cómo estaba antes:** el último pedido era la primera versión de la presentación.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-12 — Presentación de Relevo
 
