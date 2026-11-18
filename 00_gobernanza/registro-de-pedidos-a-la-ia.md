@@ -335,6 +335,7 @@
 | 12 nov. | Corrección | Perfeccionar las láminas: menos texto, más figuras, datos y cifras, una frase que resuma cada cosa y más láminas, para que alguien que no conoce el proyecto entienda su evolución. | Se incorporó al rediseño de la fila siguiente. | — |
 | 12 nov. | Corrección y orden | No pedir permisos y editar lo necesario. El diseño no seguía las directrices de Relevo: tenía demasiada información, palabras difíciles y títulos innecesarios. Debía ser formal, directo y fácil de leer, con iconografía y degradados como los de la app, después de revisar la marca y el repositorio. | Se dejaron permitidas las herramientas de Figma en la configuración local de la sesión. La [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) se rehízo en 25 láminas, con una idea por lámina, frases en dos tonos, cifras grandes, fondos de aura y cielos generados con el Taller de auras, íconos propios en fichas y el Tag con sus anillos, y con notas para unos 9 minutos y 30 segundos. | Pendiente de la revisión del autor |
 | 18 nov. | Consulta | Preguntó qué falencias tiene la versión más actual del proyecto: riesgos, nota probable, cosas dudosas y lo que se podría criticar. | Respuesta en la conversación, con la memoria v6 de `main` (commit `9a26da1`), la evaluación como comisión, los riesgos, el protocolo y el consentimiento del Anexo I. Al revisar se corrigió la lámina 21 de la [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), que comparaba con el Tag algo que solo se midió con el teléfono. | — |
+| 18 nov. | Consulta | Entregó la memoria en PDF del Pase (67 páginas, del 11 de noviembre) y los anexos en PDF (127 páginas), y pidió evaluar el proyecto según lo que dicen la memoria y los anexos, no por lo que falta hacer. | Respuesta en la conversación: evaluación por criterio de la rúbrica, con las páginas del PDF que la sostienen. Los PDF no se suben al repositorio. | — |
 
 ## Lo que muestra el registro
 
@@ -348,7 +349,7 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 
 ### 2026-11-18 — Falencias del proyecto
 
-- **Qué cambió:** se registró la consulta sobre las falencias, los riesgos y la nota probable del proyecto.
+- **Qué cambió:** se registraron la consulta sobre las falencias, los riesgos y la nota probable del proyecto, y la evaluación de la memoria y los anexos en PDF.
 - **Cómo estaba antes:** el último pedido era el rediseño de la presentación.
 - **Por qué:** regla de registrar cada pedido el mismo día.
 
