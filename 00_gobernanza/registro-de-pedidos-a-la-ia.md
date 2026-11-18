@@ -334,6 +334,7 @@
 | 12 nov. | Consulta y encargo | Preguntó si había conexión con Figma y pidió leer la memoria reciente y hacer una presentación de 7 a 10 minutos sobre todo Relevo. | Sí hay conexión. [Presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) de trece láminas en Figma Slides, con la identidad de Relevo, las capturas de la app 4.7.2 y notas del orador para unos 9 minutos. Se hizo desde la memoria del 10 de noviembre, la más reciente en el repositorio. | Pendiente de la revisión del autor |
 | 12 nov. | Corrección | Perfeccionar las láminas: menos texto, más figuras, datos y cifras, una frase que resuma cada cosa y más láminas, para que alguien que no conoce el proyecto entienda su evolución. | Se incorporó al rediseño de la fila siguiente. | — |
 | 12 nov. | Corrección y orden | No pedir permisos y editar lo necesario. El diseño no seguía las directrices de Relevo: tenía demasiada información, palabras difíciles y títulos innecesarios. Debía ser formal, directo y fácil de leer, con iconografía y degradados como los de la app, después de revisar la marca y el repositorio. | Se dejaron permitidas las herramientas de Figma en la configuración local de la sesión. La [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) se rehízo en 25 láminas, con una idea por lámina, frases en dos tonos, cifras grandes, fondos de aura y cielos generados con el Taller de auras, íconos propios en fichas y el Tag con sus anillos, y con notas para unos 9 minutos y 30 segundos. | Pendiente de la revisión del autor |
+| 18 nov. | Consulta | Preguntó qué falencias tiene la versión más actual del proyecto: riesgos, nota probable, cosas dudosas y lo que se podría criticar. | Respuesta en la conversación, con la memoria v6 de `main` (commit `9a26da1`), la evaluación como comisión, los riesgos, el protocolo y el consentimiento del Anexo I. Al revisar se corrigió la lámina 21 de la [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), que comparaba con el Tag algo que solo se midió con el teléfono. | — |
 
 ## Lo que muestra el registro
 
@@ -344,6 +345,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Falencias del proyecto
+
+- **Qué cambió:** se registró la consulta sobre las falencias, los riesgos y la nota probable del proyecto.
+- **Cómo estaba antes:** el último pedido era el rediseño de la presentación.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-12 — Presentación rehecha
 

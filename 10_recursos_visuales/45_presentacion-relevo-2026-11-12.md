@@ -31,7 +31,7 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 | 18 | La prueba | «Tres personas usaron Relevo en su casa durante un mes.» | 3 personas, 1 mes, 58 relevos, y las etapas con el Tag y con el teléfono. | 13 | 6:20 |
 | 19 | Resultados con el Tag | «Con el Tag, el ciclo funcionó en los tres hogares.» | 23 de 24, 19 de 21, 21 de 21 y 10 de 21. | 13 | 6:45 |
 | 20 | La decisión | «Recordar no obliga a empezar. Cada persona decidió a su manera.» | 10, 9 y 2, y las siete respuestas de cada persona. | 13 | 7:10 |
-| 21 | Tag o teléfono | «Con el teléfono recordaron igual, pero notaron el aviso más tarde.» | Segundos hasta responder por persona, 10 de 21 y 2 de 3. | 13 | 7:35 |
+| 21 | Tag o teléfono | «Con el teléfono recordaron igual, pero el aviso a veces pasó de largo.» | Segundos hasta responder por persona, 10 de 21 y 2 de 3. | 13 | 7:35 |
 | 22 | Lo que cambió | «Lo que mostró la prueba ya cambió la aplicación.» | De 11 a 3 pantallas y cuatro de los nueve cambios. | 11 y 13 | 8:05 |
 | 23 | La hipótesis hoy | «La prueba sostiene una parte de la hipótesis. El lugar queda por probar.» | Los tres supuestos, con su estado. | 10, 13 y 14 | 8:30 |
 | 24 | Lo que sigue | «El siguiente paso: un piloto en seis hogares, con Relevo impreso.» | Prototipo, piloto y producto, con costos y fondos. | 12 y 14 | 8:55 |
@@ -52,8 +52,15 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 
 - Revisión del autor: texto, orden y tiempos.
 - La presentación del examen, del 14 o 15 de diciembre, es de 15 minutos ([Por hacer, tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)). Esta versión puede ser su base, con una demostración y más detalle del flujo técnico.
+- Las láminas 13 y 17 usan dos fotos de la prueba. Antes de mostrar la presentación hay que confirmar por escrito que las personas autorizan publicarlas (D-140 sigue abierta).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Lámina 21 sin comparar lo que no se midió
+
+- **Qué cambió:** la frase de la lámina 21 dice ahora que «el aviso a veces pasó de largo», y sus notas aclaran que la pregunta sobre el aviso se hizo solo con el teléfono y que la primera persona respondió antes con el teléfono. Se suma como pendiente la autorización de las fotos.
+- **Cómo estaba antes:** decía que con el teléfono «notaron el aviso más tarde», una comparación con el Tag que los datos no permiten, porque esa pregunta no se hizo con el Tag.
+- **Por qué:** al revisar el proyecto completo, a pedido del autor, se vio que la frase afirmaba más que la evidencia.
 
 ### 2026-11-12 — Rehecha con la marca Relevo
 
