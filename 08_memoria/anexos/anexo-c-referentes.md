@@ -1,14 +1,12 @@
 # Anexo C. Estado del arte y referentes
 
-Documenta cómo se buscaron y compararon los productos, servicios y proyectos del capítulo 8: el método de la búsqueda, una ficha por referente y la revisión de prototipos y patentes con piezas parecidas a Relevo.
+El capítulo 8 ordena en un mapa lo que ya existe para ayudar a regular el uso del teléfono. Este anexo muestra cómo se buscó y se comparó ese material: el método de la búsqueda, una ficha por cada referente del mapa y los prototipos y patentes con piezas parecidas a Relevo.
 
 ## C.1 Estrategia de búsqueda
 
-**Pregunta.** Qué mecanismos, productos y antecedentes técnicos existen para apoyar la regulación del uso del teléfono, y qué límites de evidencia, adopción, compatibilidad, privacidad y modelo económico hay que considerar al diseñar un sistema *phygital* como Relevo.
+La búsqueda partió de una pregunta: qué mecanismos, productos y antecedentes técnicos existen para apoyar la regulación del uso del teléfono, y qué límites de evidencia, adopción, compatibilidad, privacidad y modelo económico hay que considerar al diseñar un sistema *phygital* como Relevo. Para responderla se compararon mecanismos, no apariencias: qué ocurre cuando una solución mide, interrumpe, bloquea, dificulta el acceso, deja una señal en el entorno o vincula una acción digital con un objeto, y si su efecto tiene evidencia independiente o solo la promesa del fabricante.
 
-**Enfoque.** Se compararon mecanismos, no apariencias: qué ocurre cuando una solución mide, interrumpe, bloquea, dificulta el acceso, deja una señal en el entorno o vincula una acción digital con un objeto, y si su efecto tiene evidencia independiente o solo la promesa del fabricante.
-
-**Fechas.** El corte fue el 24 de agosto de 2026, con una verificación de vigencia en las páginas oficiales el 26 de agosto. El 25 de octubre se sumaron las memorias de título chilenas. Es una búsqueda exploratoria: arma un mapa de mecanismos para formular una oportunidad de diseño; no es una revisión sistemática ni un estudio de mercado.
+La búsqueda se cerró el 24 de agosto de 2026, y dos días después se comprobó en las páginas oficiales que cada producto siguiera vigente; el 25 de octubre se sumaron las memorias de título chilenas. Es exploratoria: arma un mapa de mecanismos para formular una oportunidad de diseño, y no es una revisión sistemática ni un estudio de mercado. Sus términos se combinaron entre los campos de la Tabla C1.
 
 **Tabla C1**
 
@@ -23,23 +21,21 @@ Documenta cómo se buscaron y compararon los productos, servicios y proyectos de
 | Productos | Pause Point; Digital Wellbeing; Screen Time; one sec; Brick; Brick Zone; Unpluq; Screenless Breaker; Focusaur | los mismos nombres, con official, research, evidence, pricing y compatibility |
 | Uso sostenido | adopción; abandono; habituación; retención; configuración | adoption; abandonment; habituation; retention; reconfiguration; sustained engagement |
 
-*Nota.* Elaboración propia. Los términos se combinaron entre campos. Como no se guardó cada consulta, la tabla reconstruye sus familias: permite repetir una búsqueda equivalente.
+*Nota.* Elaboración propia. Como no se guardó cada consulta, la tabla reconstruye sus familias: permite repetir una búsqueda equivalente.
 
-**Fuentes.** La documentación oficial de Google y Apple, para las funciones del sistema; los sitios oficiales de cada producto, para su mecanismo, precio y modelo económico; las publicaciones con DOI de Wiley, ACM, PNAS, Springer, Sage, JMIR e IET, para la evidencia, y los repositorios y registros académicos, para verificar autoría, año y acceso. Las tiendas y reseñas se leyeron solo como señal comercial.
+Cada tipo de fuente respondió a algo distinto. La documentación de Google y Apple mostró lo que hacen las funciones del sistema; los sitios oficiales de cada producto, su mecanismo, precio y modelo económico; las publicaciones con DOI de Wiley, ACM, PNAS, Springer, Sage, JMIR e IET, la evidencia, y los repositorios y registros académicos permitieron verificar autoría, año y acceso. Las tiendas y reseñas se leyeron solo como señal comercial.
 
-**Criterios de inclusión.** Publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores que cumplen una función fundacional, como The Tangible Reminder, de 2007. Productos vigentes al corte, con una página oficial que permita verificar su mecanismo. Y referentes que iluminan una decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono.
+Entraron publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores con una función fundacional, como The Tangible Reminder, de 2007; productos vigentes al cierre de la búsqueda, con una página oficial que permitiera verificar su mecanismo, y referentes que iluminan alguna decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono. Quedaron fuera Aro, porque su disponibilidad no pudo verificarse con una fuente oficial; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
 
-**Exclusiones.** Aro, porque su disponibilidad no pudo verificarse con una fuente oficial al corte; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
-
-**Peso de la evidencia.** De más a menos: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria. Cuando dos niveles chocaron, se mantuvo la afirmación más limitada.
+Cuando dos fuentes se contradecían, se mantuvo la afirmación más limitada, según este orden de peso: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria.
 
 **Memorias de título chilenas.** El Pase de junio pidió incorporar al menos una tesis local. El 25 de octubre de 2026 se buscó en el Repositorio Académico de la Universidad de Chile con «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», junto a «diseño» o «diseñadora». Entraron dos memorias de Diseño, Venegas Álvarez (2026) y Riveros Oltra (2023), leídas completas, y una de Sociología, Cortés Concha (2016), de la que se usa su ficha bibliográfica. Se descartó una de Diseño Gráfico sobre el acoso en redes sociales. La base de memorias de Diseño UC no respondió, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
 
-**Alcance.** Precios, compatibilidades y disponibilidad son los del corte, en su moneda original. No hay cifras de ventas, retención ni tamaño del mercado, el corpus se inclina a fuentes en inglés y la mayor parte de la evidencia independiente estudia intervenciones en la pantalla, no objetos. Por eso la oportunidad se formula sobre lo revisado y no como una novedad absoluta.
+**Alcance.** Precios, compatibilidades y disponibilidad son los del cierre de la búsqueda, en su moneda original. No hay cifras de ventas, retención ni tamaño del mercado; el corpus se inclina a fuentes en inglés, y la mayor parte de la evidencia independiente estudia intervenciones en la pantalla, no objetos. Por eso la oportunidad se formula sobre lo revisado y no como una novedad absoluta.
 
 ## C.2 Fichas de referentes
 
-Cada ficha separa lo que el producto declara, que es una afirmación comercial, de la evidencia independiente, que se reserva para estudios académicos o evaluaciones externas. Los datos comerciales son los del 24 de agosto de 2026.
+Cada ficha separa lo que el producto declara, que es una afirmación comercial, de la evidencia independiente, que se reserva para estudios académicos o evaluaciones externas, y termina con lo que el referente le enseña a Relevo. Los datos comerciales son los del 24 de agosto de 2026.
 
 ### Google Digital Wellbeing y Pause Point
 
@@ -185,6 +181,8 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 ### Evidencia no asociada a productos
 
+Cuatro estudios, sin un producto detrás, ayudan a leer las fichas anteriores:
+
 - Biedermann et al. (2021) revisaron 28 intervenciones de autocontrol digital: resultados variables, baja confianza general y poca eficacia de las que solo buscan conciencia.
 - Monge Roffarello y De Russis (2023) sintetizaron la literatura sobre herramientas de autocontrol digital: estudios breves y medidas heterogéneas. Su metaanálisis da un efecto promedio, no una garantía para un producto.
 - Chiu y Gilbert (2024) mostraron que aumentar el esfuerzo de dejar un recordatorio reduce su uso: el objeto debe justificar lo que cuesta configurarlo y llevarlo.
@@ -192,7 +190,7 @@ Cada ficha separa lo que el producto declara, que es una afirmación comercial, 
 
 ## C.3 Prototipos y patentes similares
 
-No se encontró un producto, una patente ni un prototipo que reúna los cinco elementos de Relevo: una intención formulada por la persona, un primer paso concreto, una condición digital comprensible, una señal sin texto emitida desde donde comienza la actividad y una decisión que queda abierta, sin bloqueo, premio, castigo ni evaluación. Cada pieza existe por separado, y también varias combinaciones parciales (Tabla C2). Por eso Relevo no se defiende por tener una app, un objeto conectado o una señal ambiental, sino por investigar si esa combinación ayuda a recuperar una intención mejor que una notificación en el teléfono.
+Ningún producto, patente ni prototipo encontrado reúne los cinco elementos de Relevo: una intención formulada por la persona, un primer paso concreto, una condición digital comprensible, una señal sin texto emitida desde donde comienza la actividad y una decisión que queda abierta, sin bloqueo, premio, castigo ni evaluación. Cada pieza existe por separado, y también varias combinaciones parciales (Tabla C2). Por eso Relevo no se defiende por tener una app, un objeto conectado o una señal ambiental, sino por investigar si esa combinación ayuda a recuperar una intención mejor que una notificación en el teléfono.
 
 **Tabla C2**
 
@@ -210,12 +208,12 @@ No se encontró un producto, una patente ni un prototipo que reúna los cinco el
 
 *Nota.* Elaboración propia a partir de las fuentes de cada referente, consultadas el 24 de agosto de 2026. Wobble y The Tangible Reminder están en C.2.
 
-**Cuatro patentes con coincidencias parciales:**
+Cuatro patentes tienen coincidencias parciales:
 
-- **US7577522B2** (Rosenberg, 2009): un recordatorio personal escrito por la persona y asociado a un área, con salida digital.
-- **US11321677B1** (Newman y Newman, 2022): un dispositivo situado donde comienza una acción, con un recordatorio pasivo; usa una pantalla y no el teléfono.
-- **US20230267422A1**, de Apple (Herman y Akmal, 2023): intención, posición de un objeto y recordatorio cuando el objeto está a la vista, con salida electrónica.
-- **US20260082231A1**, de Brick (Driver y Nasgowitz, 2026): un objeto cercano que cambia la configuración del teléfono; su mecanismo es el bloqueo.
+- **Rosenberg (2009):** un recordatorio personal escrito por la persona y asociado a un área, con salida digital.
+- **Newman y Newman (2022):** un dispositivo situado donde comienza una acción, con un recordatorio pasivo; usa una pantalla y no el teléfono.
+- **Herman y Akmal (2023)**, de Apple: intención, posición de un objeto y recordatorio cuando el objeto está a la vista, con salida electrónica.
+- **Driver y Nasgowitz (2026)**, de Brick: un objeto cercano que cambia la configuración del teléfono; su mecanismo es el bloqueo.
 
 Estas patentes impiden presentar como nuevo el concepto amplio de recordatorios, objetos y lugares. La revisión fue exploratoria: no permite concluir infracción, patentabilidad ni libertad de operación, que exigirían una búsqueda profesional.
 
@@ -294,6 +292,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el texto pasó a ser el del PDF de anexos del Pase: cambiaron 16 de sus 138 párrafos, ítems y filas de tabla. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-09 — Smits
 

@@ -1,29 +1,42 @@
 # Anexo E. Uso de inteligencia artificial
 
-Declara qué herramientas de inteligencia artificial se usaron, en qué tareas ayudaron y qué hizo el autor. La inteligencia artificial fue una herramienta que permitió optimizar el tiempo y ahorrar recursos; la investigación, el diseño y las decisiones son del autor.
+Este anexo declara qué herramientas de inteligencia artificial se usaron en el proyecto y en qué ayudaron. Sirvieron para ganar tiempo y ahorrar recursos; la investigación, el diseño y las decisiones son trabajo propio.
 
 ## E.1 Herramientas
 
-- **Codex, de OpenAI**, desde marzo de 2026: revisó la redacción de los textos del autor y ayudó a programar las primeras versiones de la app y de las piezas web.
-- **Claude Code, de Anthropic**, desde fines de septiembre de 2026: desarrolló la app, llevando a Android Studio los prototipos, las ideas, los bocetos y los *wireframes* de Figma del autor, y ayudó a leer y ordenar el proceso del proyecto.
+Se usaron tres herramientas, en este orden:
+
+- **Cursor**, de Anysphere, la primera: ayudó a programar los primeros prototipos de la app.
+- **Codex**, de OpenAI, desde marzo de 2026: también ayudó a programar los primeros prototipos de la app, además de las piezas web, y revisó la redacción de los textos.
+- **Claude Code**, de Anthropic, desde fines de septiembre de 2026: desarrolló la app a partir de prototipos, bocetos y *wireframes* propios, hechos a mano y en Figma, y ayudó a ordenar el proceso del proyecto.
+
+Claude ayudó, además, a modelar el objeto en 3D a partir de bocetos propios, y las herramientas apoyaron la revisión de la redacción y la verificación de citas.
 
 ## E.2 Tareas apoyadas
 
-1. **Programar la app y su base de datos.** Es la intervención de mayor alcance. El autor no programa en Kotlin: la app existe porque estas herramientas escribieron el código a partir de sus prototipos y especificaciones —qué debía ocurrir, en qué pantalla y con qué palabras—. El autor instaló y probó cada versión, informó las fallas y decidió qué se incorporaba (Anexo G).
-2. **Modelar el objeto en 3D**, a partir de las especificaciones del autor.
-3. **Revisar la redacción.** Los textos son del autor; la herramienta señaló errores, repeticiones y palabras que podían confundir, y el autor decidió qué cambiar. Es el uso que acepta la editorial académica Springer Nature: un modelo de lenguaje puede pulir o afinar la redacción, porque la inteligencia artificial apoya y no reemplaza el criterio de las personas, y una persona responde siempre por el trabajo (Springer Nature, s. f.).
-4. **Buscar fuentes y verificar citas.** La herramienta propuso fuentes sin muro de pago, cada una con su ficha; el autor las revisó una por una y leyó las que servían antes de incorporarlas. También se revisó que cada cita tuviera su referencia, y cada referencia su cita, y el formato APA 7 de la lista.
-5. **Leer y ordenar el proceso:** las decisiones, las versiones de la app y los documentos de distintas fechas.
+Ayudaron en cinco tareas:
 
-## E.3 Trabajo del autor
+1. **Programar la app y su base de datos.** Es la intervención de mayor alcance. El autor no programa en Kotlin, el lenguaje de Android: la app existe porque estas herramientas escribieron su código a partir de prototipos y especificaciones propias, que decían qué debía ocurrir, en qué pantalla y con qué palabras. Cada versión se instaló y se probó, sus fallas se informaron y se decidió qué se incorporaba (Anexo G).
+2. **Modelar el objeto en 3D**, a partir de los bocetos y las especificaciones del proyecto.
+3. **Revisar la redacción.** Los textos son propios; la herramienta señaló errores, repeticiones y palabras que podían confundir, y en cada caso se decidió qué cambiar. Es el uso que acepta la editorial académica Springer Nature: un modelo de lenguaje puede pulir o afinar la redacción, porque la inteligencia artificial apoya y no reemplaza el criterio de las personas, y una persona responde siempre por el trabajo (Springer Nature, s. f.).
+4. **Buscar fuentes y verificar citas.** La herramienta propuso fuentes sin muro de pago, cada una con su ficha; se revisaron una por una, y las que servían se leyeron antes de incorporarlas. También se revisó que cada cita tuviera su referencia, y cada referencia su cita, y el formato APA 7 de la lista.
+5. **Ordenar el proceso:** las decisiones, los cambios de la app y los documentos de distintas fechas.
 
-El autor definió el problema, la pregunta, la hipótesis y los objetivos; hizo la investigación y escribió la memoria; convocó a las personas entrevistadas e hizo las entrevistas y sus repreguntas; formuló los ocho criterios de diseño; diseñó la identidad visual, los íconos, los prototipos y los *wireframes* en Figma, a partir de sus bocetos; decidió qué versión de la app se instaló en los teléfonos de la prueba, y responde por las citas y por las conclusiones. Cada resultado de una herramienta fue una propuesta que el autor revisó, corrigió o descartó. Ninguna herramienta generó datos, participantes, citas ni resultados.
+## E.3 Trabajo propio
+
+Son del autor la definición del problema, la pregunta, la hipótesis y los objetivos; la investigación y la escritura de la memoria; la convocatoria de las personas entrevistadas, las entrevistas y sus repreguntas; los ocho criterios de diseño; la identidad visual, los íconos, los prototipos y los *wireframes* en Figma, a partir de sus bocetos; la elección de la app que se instaló en los teléfonos de la prueba, y la responsabilidad por las citas y las conclusiones. Todo lo que propuso una herramienta se revisó, se corrigió o se descartó, y ninguna generó datos, participantes, citas ni resultados.
 
 ## Referencias
 
 Springer Nature. (s. f.). *AI guidance for researchers, editors and reviewers*. Recuperado el 8 de noviembre de 2026, de https://group.springernature.com/gp/group/ai/ai-guidance-for-researchers-editors-reviewers
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el anexo pasó a ser el del PDF de anexos del Pase, con 12 de sus 14 párrafos e ítems reescritos: suma Cursor como primera herramienta y el modelado 3D con Claude, cambia «E.3 Trabajo del autor» por «E.3 Trabajo propio» y usa la forma impersonal. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-09 — Referencias en APA 7
 

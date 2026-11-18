@@ -1,8 +1,10 @@
 # Anexo D. Trazabilidad de los criterios de diseño
 
-Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —estudios, entrevistas y encuesta—, con la forma en que Relevo lo aplica y con lo que mostró la prueba en los hogares, del 8 al 19 de octubre de 2026. Cierra con lo que la app ya cambió a partir de esos resultados.
+Los ocho criterios del capítulo 9 nacen de estudios, de las entrevistas y de la encuesta, y cada uno se tradujo en una decisión concreta de Relevo. Este anexo sigue ese camino criterio por criterio, hasta lo que mostró la prueba en los hogares, y termina con lo que la app cambió después a partir de esos resultados.
 
 ## D.1 Matriz de trazabilidad
+
+La Tabla D1 se lee de izquierda a derecha: de dónde viene cada criterio, cómo lo aplica Relevo y qué pasó en la prueba.
 
 **Tabla D1**
 
@@ -17,13 +19,13 @@ Relaciona cada uno de los ocho criterios del capítulo 9 con su evidencia —est
 | **5. El sistema interviene solo cuando hace falta** | Tonietto et al. (2021). En las entrevistas, las personas 6 y 7 valoraron una videollamada y un pódcast. | Sin un relevo preparado, Relevo no suena; la activación automática es opcional y viene apagada. | Las personas usaron Relevo a su gusto, cuando quisieron, y activaron 31 relevos en dos semanas. |
 | **6. Prepararlo toma poco esfuerzo** | Chiu y Gilbert (2024). En la encuesta, prepararlo fue uno de los motivos más citados para descartarlo: 7 de 53. | Pocas preguntas de un toque, y «Preparar de nuevo» repite el último relevo. | Siete de los 31 relevos se editaron o eliminaron antes de sonar, con la edición que se sumó el 9 de octubre a pedido de una persona. |
 | **7. Lo que la persona escribe es privado** | En la encuesta, 12 de 53 aceptarían solo un registro en su teléfono, o ninguno. | Los datos van con un código y se borran desde la app; la notificación de la pantalla bloqueada no muestra la actividad. | Los datos de las tres personas se guardaron con su código. |
-| **8. El objeto suma algo que el teléfono no da** | O’Rear y Radvansky (2019). | El Tag suena junto al primer paso; del 21 de octubre al 8 de noviembre, la señal llegó solo al teléfono, para comparar. | El Tag sonó en 23 de 24 ciclos, y el único que no sonó ocurrió fuera de casa, lejos del Tag. En 19 de 21 respuestas, la persona supo qué quería hacer antes de mirar la pantalla. |
+| **8. El objeto suma algo que el teléfono no da** | O’Rear y Radvansky (2019). | El Tag suena junto al primer paso; del 21 de octubre al 8 de noviembre, la señal llegó solo al teléfono, para comparar. | El Tag sonó en 23 de 24 ciclos, y el único que no sonó ocurrió fuera de casa, lejos del Tag. En 19 de 21 respuestas, la persona supo qué quería hacer antes de mirar la pantalla. Con el teléfono recordaron igual, pero notaron el aviso tarde o no lo notaron en 10 de 21 respuestas. |
 
 *Nota.* Elaboración propia. Criterios y evidencia, capítulo 9 de la memoria; aplicación, capítulo 11; resultados de la prueba, capítulo 13.
 
 ## D.2 Cambios en la app
 
-La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron una lista de cambios (Tabla 5 de la memoria). Los técnicos se corrigieron durante la prueba, y la versión 4.4 de la app, del 5 de noviembre, incorpora siete de los que la tabla dejaba por implementar o como propuesta.
+La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron una lista de cambios, que el capítulo 13 de la memoria reúne con su estado. Los técnicos se corrigieron durante la prueba; los de uso llegaron después, con el rediseño de la app de noviembre, que incorporó nueve. La Tabla D2 muestra siete de ellos, cada uno con el criterio al que responde.
 
 **Tabla D2**
 
@@ -39,7 +41,7 @@ La prueba y la revisión con los profesores del 28 de octubre de 2026 dejaron un
 | De noche, la señal se oye desde la cama y no lleva a levantarse. | 5 | Horas sin sonar: en el horario que define la persona, Relevo no cuenta, no suena y no se activa solo. |
 | La respuesta fue «La dejé para después» en 9 de 21 señales. | 4 | Al responderla, la app pregunta si la deja lista; si sí, Inicio la ofrece con «Activar ahora». |
 
-*Nota.* Elaboración propia a partir de la Tabla 5 de la memoria y de la documentación de la versión 4.4. Las versiones 4.5 a 4.7.2, del 6 al 9 de noviembre, las mantienen. Son posteriores a la prueba en los hogares.
+*Nota.* Elaboración propia a partir del capítulo 13 de la memoria. Los cambios son del 5 de noviembre de 2026, posteriores a la prueba en los hogares, y siguen en la versión más reciente de la app, del 9 de noviembre.
 
 ## Referencias
 
@@ -62,6 +64,12 @@ Silverman, J. y Barasch, A. (2023). On or off track: How (broken) streaks affect
 Tonietto, G. N., Malkoc, S. A., Reczek, R. W. y Norton, M. I. (2021). Viewing leisure as wasteful undermines enjoyment. *Journal of Experimental Social Psychology, 97*, Artículo 104198. https://doi.org/10.1016/j.jesp.2021.104198
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el texto pasó a ser el del PDF de anexos del Pase: cambiaron 6 de sus 35 párrafos y filas de tabla. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-10 — Etapa con el teléfono
 

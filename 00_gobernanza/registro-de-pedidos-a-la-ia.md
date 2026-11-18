@@ -336,6 +336,8 @@
 | 12 nov. | Corrección y orden | No pedir permisos y editar lo necesario. El diseño no seguía las directrices de Relevo: tenía demasiada información, palabras difíciles y títulos innecesarios. Debía ser formal, directo y fácil de leer, con iconografía y degradados como los de la app, después de revisar la marca y el repositorio. | Se dejaron permitidas las herramientas de Figma en la configuración local de la sesión. La [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md) se rehízo en 25 láminas, con una idea por lámina, frases en dos tonos, cifras grandes, fondos de aura y cielos generados con el Taller de auras, íconos propios en fichas y el Tag con sus anillos, y con notas para unos 9 minutos y 30 segundos. | Pendiente de la revisión del autor |
 | 18 nov. | Consulta | Preguntó qué falencias tiene la versión más actual del proyecto: riesgos, nota probable, cosas dudosas y lo que se podría criticar. | Respuesta en la conversación, con la memoria v6 de `main` (commit `9a26da1`), la evaluación como comisión, los riesgos, el protocolo y el consentimiento del Anexo I. Al revisar se corrigió la lámina 21 de la [presentación](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), que comparaba con el Tag algo que solo se midió con el teléfono. | — |
 | 18 nov. | Consulta | Entregó la memoria en PDF del Pase (67 páginas, del 11 de noviembre) y los anexos en PDF (127 páginas), y pidió evaluar el proyecto según lo que dicen la memoria y los anexos, no por lo que falta hacer. | Respuesta en la conversación: evaluación por criterio de la rúbrica, con las páginas del PDF que la sostienen. Los PDF no se suben al repositorio. | — |
+| 18 nov. | Encargo | Extraer el texto de los PDF de la memoria y los anexos del Pase y actualizar en el repositorio la memoria y los anexos para que coincidan con ellos, con sus errores, y registrar los errores y las áreas a mejorar en un To Do. | [Borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md), copia del PDF del Pase con sus figuras; los [anexos A a I](../08_memoria/anexos/README.md) con el texto del PDF de anexos, comprobado al armar el Word en una copia aparte (99,97 % de coincidencia); la [tarea 15 de Por hacer](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase), con índices, erratas, extensión, frases que afirman más que los datos y puntos de método y ética. El Word y el PDF de los anexos no se regeneraron. | — |
+| 18 nov. | Consulta | Preguntó cómo se justifica la elección de la paleta de colores y qué es el método Framework. | Respuesta en la conversación, con la memoria v7 (capítulo 11, «Paleta cromática», capítulo 7 y glosario) y los Anexos H.4 y A.3. | — |
 
 ## Lo que muestra el registro
 
@@ -346,6 +348,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Memoria y anexos del Pase
+
+- **Qué cambió:** se registraron el encargo de copiar al repositorio la memoria y los anexos del Pase, con sus errores, y de anotar los errores y las mejoras en Por hacer, y la consulta sobre la paleta de colores y el método Framework.
+- **Cómo estaba antes:** el último pedido era la evaluación de la memoria y los anexos en PDF.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-18 — Falencias del proyecto
 

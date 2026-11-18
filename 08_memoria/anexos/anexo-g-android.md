@@ -1,41 +1,34 @@
 # Anexo G. Prototipo Android y registro de versiones
 
-Describe el prototipo funcional de la prueba: la app Android, su conexión con el Tag, la base de datos y el panel, con el registro de las versiones desde la 2.7, la primera preparada para la prueba. La descripción técnica corresponde a la app que se usó en los hogares, de la versión 2.32 a la 3.3; el registro suma las versiones posteriores, hasta la 4.7.2, con sus pantallas, y las palabras clave con que la app reconoce cada actividad desde la 4.3.
+La app Android es la parte del prototipo que la persona tiene en la mano: con ella prepara cada relevo, y la app cuenta el tiempo y hace sonar el Tag cuando corresponde. Este anexo explica cómo funciona la app que se usó en la prueba, qué datos guarda y cómo los cuida, cómo cambió entre septiembre y noviembre de 2026 y con qué palabras reconoce cada actividad.
 
-## G.1 Versión 3.3 de la app
+## G.1 Pantallas de la app
+
+El recorrido es corto: la persona elige una actividad, prepara el relevo y sigue en el teléfono; cuando se cumple el tiempo, Relevo suena, pregunta con un toque y deja decidir (Figura G1).
 
 **Figura G1**
 
-*Pantallas de la app en un teléfono Android*
+*Pantallas de la app en octubre de 2026*
 
 | Inicio | Relevo listo | Señal | Cuatro preguntas | Decisión |
 | --- | --- | --- | --- | --- |
 | ![Inicio](imagenes/app-3.3-1-inicio.jpg) | ![Relevo listo](imagenes/app-3.3-2-todo-listo.jpg) | ![Señal](imagenes/app-3.3-4-suena.jpg) | ![Cuatro preguntas](imagenes/app-3.3-5-preguntas.jpg) | ![Decisión](imagenes/app-3.3-6-decidir.jpg) |
 
-*Nota.* Capturas de la versión 3.3: la actividad en Inicio, el relevo listo, la señal, las preguntas de un toque y la decisión.
+*Nota.* Capturas de la versión 3.3, del 20 de octubre de 2026, con los mismos pasos que la app de la prueba y la identidad visual nueva: la actividad en Inicio, el relevo listo, la señal, las preguntas de un toque y la decisión.
 
 ## G.2 Arquitectura del sistema
+
+Relevo no es solo la app. Para funcionar necesita el Tag, el registro de tiempo de uso que lleva Android, una base de datos remota y un panel para seguir la prueba (Figura G2).
 
 **Figura G2**
 
 *Componentes de Relevo y su comunicación*
 
-```mermaid
-flowchart LR
-  P([Persona]) -- prepara y responde --> APP[App Android<br/>Kotlin + Compose]
-  APP -- cuenta el uso<br/>Tiempo de uso de Android --> APP
-  APP -- órdenes por Bluetooth<br/>de baja energía --> TAG[Tag<br/>localizador iTag]
-  TAG -- suena junto al<br/>primer paso --> P
-  APP -- sonido --> OUT[Parlante, reloj<br/>o teléfono]
-  APP -- copia local --> DOC[(Documentos/Relevo<br/>JSON y CSV)]
-  APP -- HTTPS con sesión anónima --> SB[(Supabase<br/>Postgres + Auth)]
-  SB -- mensajes en tiempo real --> APP
-  PANEL[Panel del testeo<br/>página HTML] -- consultas SQL --> SRV[Servidor local<br/>en el computador] -- API de administración --> SB
-  INV([Investigador]) --> PANEL
-  SB -. datos de la prueba .-> MEM[Memoria y<br/>decisiones de diseño]
-```
+![Componentes de Relevo y su comunicación](imagenes/pase-G2-componentes.png)
 
 *Nota.* Elaboración propia. La flecha punteada no es una conexión técnica: indica que los datos alimentan el análisis.
+
+La Tabla G1 dice qué hace cada pieza y con qué está hecha.
 
 **Tabla G1**
 
@@ -43,50 +36,23 @@ flowchart LR
 
 | Componente | Función | Tecnología |
 | --- | --- | --- |
-| App Android | Prepara relevos, cuenta el uso, hace sonar la señal y registra las respuestas. | Kotlin 2.3 y Jetpack Compose, para Android 12 o posterior |
+| App Android | Prepara relevos, cuenta el uso, hace sonar la señal y registra las respuestas. | Kotlin y Jetpack Compose, para Android 12 o posterior |
 | Tag | Suena junto al primer paso, y su botón calla la señal. | Localizador iTag comercial, con Bluetooth de baja energía |
-| Base remota | Guarda sesiones, eventos, respuestas, uso y mensajes, con reglas por persona. | Supabase: Postgres, autenticación anónima, REST y tiempo real |
-| Panel del testeo | Muestra el estado de cada participante, los resultados y los mensajes. | Página HTML y JavaScript, con un servidor Node local |
-| Copia local | Respaldo legible en el teléfono, que la persona puede descargar. | Archivos JSON y CSV |
-| Herramientas de diseño | Íconos, *wireframes* de la app, exploraciones de color y logo. | Páginas HTML autónomas |
+| Base remota | Guarda los relevos, sus momentos, las respuestas, el uso y los mensajes, con reglas por persona. | Supabase, una base de datos en línea con sesiones anónimas y mensajes en tiempo real |
+| Panel del testeo | Muestra el estado de cada participante, los resultados y los mensajes. | Página web, con un servidor local en el computador del investigador |
+| Copia local | Respaldo legible en el teléfono, que la persona puede descargar. | Un archivo con todo el registro y dos planillas |
 
 *Nota.* Elaboración propia.
 
 ## G.3 Funcionamiento de la app
 
-### Tecnologías
+La app está escrita en Kotlin, el lenguaje de Android, con Jetpack Compose para la interfaz, y funciona desde Android 12, la primera versión del sistema con las funciones de tiempo de uso y de Bluetooth que necesita. Habla con la base de datos con lo que ya trae Android, sin bibliotecas adicionales: así depende de menos piezas y se controla exactamente qué datos salen del teléfono.
 
-**Tabla G2**
-
-*Tecnologías de la app*
-
-| Pieza | Versión | Uso |
-| --- | --- | --- |
-| Kotlin | 2.3.20 | El lenguaje de toda la app. |
-| Jetpack Compose y Material 3 | BOM 2026.03.01 | La interfaz: cada pantalla es una función que dibuja el estado. |
-| Android Gradle Plugin | 9.0.1 | La compilación, optimizada con R8 desde la 2.28. |
-| SDK de Android | Mínimo 31 (Android 12); objetivo y compilación, 36 | Las funciones de Tiempo de uso y Bluetooth que usa la app existen desde Android 12. |
-| Lifecycle y ViewModel | 2.10.0 | Un estado que sobrevive a rotaciones y cierres de pantalla. |
-| Coroutines | 1.10.2 | Tareas en segundo plano sin bloquear la pantalla. |
-| OkHttp | 4.12.0 | La conexión WebSocket de los mensajes en tiempo real. |
-| Haze | 1.6.10 | El desenfoque de vidrio de la barra de pestañas y las hojas. |
-| JUnit | 4.13.2 | Las pruebas unitarias. |
-
-*Nota.* Elaboración propia a partir del código de la app.
-
-La app no usa bibliotecas de Supabase: habla con su API REST mediante `HttpURLConnection`, que ya trae Android. Así tiene menos dependencias y se controla exactamente qué datos salen.
-
-### Organización del código
-
-La app separa lo que se ve de las reglas y de los datos, y cada capa conoce solo a la de abajo:
-
-- **`domain`**, las reglas, sin depender de Android para poder probarlas solas: los estados de un relevo, el calendario de la prueba, la ruta de pasos y el protocolo del Tag.
-- **`data`**, lo que se guarda: los ajustes, el perfil, la ruta, el relevo y el Tag en archivos de preferencias; el registro de investigación en una base SQLite, y el envío a Supabase.
-- **`monitor`**, el servicio que sigue con la app cerrada: cuenta el uso, entrega la señal, escucha los mensajes del proyecto y se reanuda al reiniciar el teléfono.
-- **`signal`**, el sonido: en el teléfono, el parlante o el reloj, y el control del Tag.
-- **`ui`**, las pantallas, con un solo `RelevoViewModel` que reúne el estado y las acciones para que todas vean lo mismo.
+El código separa lo que se ve de las reglas y de los datos. Las reglas —los estados de un relevo, el calendario de la prueba, la ruta de pasos y la forma de hablarle al Tag— no dependen de Android, así que se pueden probar solas. Un servicio sigue funcionando con la app cerrada: cuenta el uso, entrega la señal, recibe los mensajes del proyecto y se reanuda si el teléfono se reinicia. Todas las pantallas leen un mismo estado, para mostrar siempre lo mismo.
 
 ### Ciclo de un relevo
+
+Un relevo pasa por seis estados, del borrador al cierre (Figura G3).
 
 **Figura G3**
 
@@ -114,79 +80,47 @@ stateDiagram-v2
 
 *Nota.* Elaboración propia a partir del código de la app.
 
-Cada relevo tiene un identificador de sesión y queda asociado al día y a la condición de la semana en que se activó, a la salida de sonido, a la versión de la app y a si se activó a mano o solo.
+Cada relevo queda registrado con el día y la semana de la prueba en que se activó, dónde sonó y si se activó a mano o solo.
 
 ### Conteo del tiempo
 
+Que la señal llegue a tiempo depende de contar bien, y la app lo hace en cinco pasos:
+
 1. Al activar un relevo, la app inicia un servicio en primer plano: un proceso que Android no cierra mientras muestra una notificación visible.
-2. Cada segundo, el servicio lee los eventos de Tiempo de uso de Android (`UsageStatsManager`): qué app se abrió, cuál se pausó y cuándo se apagó la pantalla.
-3. Con esos eventos reconstruye qué app está en primer plano, y suma el tiempo solo si es una de las seleccionadas. Al empezar revisa 15 minutos hacia atrás, para saber qué app ya estaba abierta.
-4. El avance se guarda en cada vuelta: si el teléfono se reinicia o la app se actualiza, el conteo se reanuda. Si la persona quita el permiso, el conteo se pausa y aparece un aviso para reactivarlo.
-5. Al llegar al límite, el servicio entrega la señal y guarda cuánto se usaron las apps seleccionadas en los 10 minutos anteriores y posteriores.
+2. Cada segundo, ese servicio lee el registro de tiempo de uso de Android: qué app se abrió, cuál se pausó y cuándo se apagó la pantalla.
+3. Con eso reconstruye qué app está en primer plano y suma el tiempo solo si es una de las seleccionadas. Al empezar mira los últimos 15 minutos, para saber qué app ya estaba abierta.
+4. Guarda el avance en cada vuelta: si el teléfono se reinicia o la app se actualiza, el conteo sigue donde iba. Si la persona quita el permiso, el conteo se pausa y aparece un aviso para reactivarlo.
+5. Al llegar al límite, entrega la señal y guarda cuánto se usaron las apps seleccionadas en los 10 minutos anteriores y posteriores.
 
 La app conoce solo el nombre de la app en primer plano y su tiempo, nunca lo que pasa dentro de ella.
 
 ### Señal sonora
 
-La señal va a la salida que define la persona y nunca cambia de salida sin avisar. Si la salida no responde, el teléfono vibra, aparece una notificación y la señal queda registrada como fallida.
+La señal suena donde la persona decidió, y nunca cambia de salida sin avisar. Si esa salida no responde, el teléfono vibra, aparece una notificación y la señal queda registrada como fallida.
 
-- **Teléfono y parlante:** la firma sonora de Relevo, dos golpes de un timbre de madera que bajan de 587 a 440 Hz y duran 2,2 s. Se repite siete veces, cada 4,4 s, durante unos 30 s, y las tres primeras van al 40, 60 y 80 % del volumen, para no sobresaltar.
+- **Teléfono y parlante:** el sonido de Relevo, dos golpes de un timbre de madera que bajan de tono. Se repite siete veces en unos 30 segundos, y las tres primeras van subiendo de volumen, para no sobresaltar.
 - **Reloj:** la señal viaja como audio de llamada hacia un reloj que contesta llamadas por Bluetooth. Es una salida experimental, que no se probó con un reloj real.
-- **Tag:** la app le escribe la orden de alerta por Bluetooth y la repite cada segundo durante 30 s, o hasta que se aprieta su botón. El Tag tiene solo su propio pitido, continuo y de volumen fijo.
+- **Tag:** la app le envía la orden de alerta y la repite cada segundo durante 30 segundos, o hasta que se aprieta su botón. El Tag solo tiene su propio pitido, continuo y de volumen fijo.
 - **Siempre**, al empezar la señal, el teléfono vibra una vez y muestra una notificación.
 
 ### Tag
 
-El Tag es un localizador iTag comercial, con una pila CR2032 y un botón. La app lo controla con un protocolo verificado en código abierto y en los registros de la prueba.
+El Tag es un localizador iTag comercial, con una pila de botón y un botón. La app le habla por Bluetooth de baja energía con funciones que el Tag ya trae: una alerta que lo hace pitar, el aviso de su botón, que calla la señal, y la lectura de su pila. Su alarma por desconexión, que suena cuando pierde la conexión con el teléfono, se deja siempre apagada, y un interruptor propio del fabricante —que, según el modelo, lo hace pitar o enciende esa alarma— se activa solo mientras suena. Mientras un relevo espera, la app mantiene la conexión con el Tag y la retoma si se corta, como hace la app del fabricante, para que el Tag no se apague.
 
-**Tabla G3**
-
-*Servicios Bluetooth del Tag usados por la app*
-
-| Servicio (código) | Característica | Uso en Relevo |
-| --- | --- | --- |
-| Alerta inmediata (0x1802) | Nivel de alerta (0x2A06) | Encender el pitido, en nivel 1 o 2, y apagarlo, en 0. |
-| Propio del fabricante (0xFFE0) | FFE1 | Avisa cuando se aprieta el botón: calla la señal. |
-| Propio del fabricante (0xFFE0) | FFE2 | Según el modelo, hace pitar o activa la alarma por desconexión; se pone en 1 solo mientras suena. |
-| Pérdida de enlace (0x1803) | Nivel de alerta (0x2A06) | La alarma por desconexión, que se deja en 0. |
-| Batería (0x180F) | Nivel de batería (0x2A19) | La carga de la pila, que la app muestra y registra. |
-
-*Nota.* Elaboración propia a partir del código de la app.
-
-Al conectarse, la app busca el Tag guardado, pide una conexión rápida, descubre sus servicios, apaga primero la alarma por desconexión y la alerta, y después activa el aviso del botón y lee la pila. Mientras el relevo espera, mantiene la conexión abierta y la reabre cada 30 s si se corta, como la app del fabricante, para que el Tag no se apague por falta de conexión.
-
-**Tabla G4**
-
-*Aprendizajes del Tag real*
-
-| Versión | Problema observado | Cambio |
-| --- | --- | --- |
-| 2.26 | El Tag aceptaba la orden, pero no pitaba. | La prueba de sonido pregunta si se escuchó, y ya no se apaga FFE2 a ciegas. |
-| 2.27 | Pitaba en la prueba y no en la señal. | FFE2 en 1 junto con la alerta, y un pitido continuo con la orden repetida. |
-| 2.29 | El nivel alto no pitaba y el medio sí. | La prueba empieza por el nivel medio. |
-| 2.31 | Siguió pitando tras la prueba y, más tarde, sonó sin parar. | Callarlo con confirmación, una desconexión que espera a Android y la lectura de la pila. |
-| 2.32 | Tras mucho tiempo sin uso, sonaba lento y sin parar hasta reiniciarlo. | Nunca cortar la conexión con la alarma por desconexión encendida, y más paciencia con un Tag lento. |
-
-*Nota.* Elaboración propia a partir de los documentos de cada versión.
-
-La lección general: que el objeto acepte una orden no prueba que haya sonado. Por eso la prueba de sonido le pregunta a la persona, y el registro guarda cuánto tardó el Tag en responder y cómo quedó al callarlo.
-
-### Datos guardados en el teléfono
-
-- **Preferencias**, en archivos privados de la app: el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba, el Tag vinculado y el estado del envío.
-- **Base SQLite**, con cinco tablas: cada relevo y su resultado (`sessions`); sus momentos, como activarlo, entrar y salir de las apps, la señal y la respuesta (`events`); las respuestas (`answers`); el uso de la propia app (`app_events`), y el uso diario de las apps seleccionadas y el tiempo total de pantalla (`daily_usage`).
-- **Copia legible**, en `Documentos/Relevo`: un JSON con todo y dos CSV, de relevos y de respuestas. Se reescribe en cada envío y se borra con «Borrar mis datos».
+Ese funcionamiento se aprendió usando el Tag. El 7 de octubre, con el Tag real, se vio que aceptaba la orden pero no pitaba, que pitaba en la prueba de sonido y no en la señal, y que su nivel de alerta alto no sonaba, pero el medio sí: desde entonces, la prueba de sonido pregunta si se escuchó y empieza por el nivel medio, y la señal enciende el interruptor del fabricante junto con la alerta y repite la orden, para que el pitido sea continuo. Durante la prueba aparecieron dos fallas más. El 14 de octubre, el Tag siguió pitando después de una prueba de sonido y, más tarde, sonó sin parar, así que la app pasó a callarlo con confirmación, a esperar a Android antes de desconectarse y a leer su pila; el 17 de octubre, tras mucho tiempo sin uso, sonaba lento y sin parar hasta reiniciarlo, y la app dejó de cortar la conexión con la alarma por desconexión encendida y empezó a esperar más a un Tag lento. La lección general es que el objeto acepte una orden no prueba que haya sonado: por eso la prueba de sonido le pregunta a la persona, y el registro guarda cuánto tardó el Tag en responder y cómo quedó al callarlo.
 
 ### Funciones de continuidad
 
-**Tabla G5**
+Además del ciclo, la app tiene funciones que ayudan a seguir usándola sin volverla una obligación (Tabla G2).
+
+**Tabla G2**
 
 *Funciones de continuidad*
 
 | Función | Descripción | Relación con los criterios |
 | --- | --- | --- |
-| Ruta | Pasos pequeños por interés; tras tres respuestas «Comencé», ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
-| Actividades propias | Guarda actividades propias para preparar en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
+| Ruta | Pasos pequeños por interés; después de tres respuestas «Comencé», ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
+| Actividades propias | Guarda actividades propias para prepararlas en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
 | Editar un relevo activo | Cambia lo preparado sin borrarlo y conserva el tiempo contado si las apps son las mismas. | Lo pidió una persona de la prueba. |
 | Activación automática | Repite el último relevo al abrir una de sus apps, con 30 minutos de pausa. | Viene apagada, y la app registra cómo se activó cada relevo. |
 | Aviso semanal | Avisa una vez tras una semana sin abrir la app. | Apagado, salvo que la persona lo pida. |
@@ -195,36 +129,27 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 *Nota.* Elaboración propia a partir del código de la app.
 
-## G.4 Datos y panel del testeo
+## G.4 Datos y su cuidado
 
-**Sesión anónima.** Supabase reúne una base de datos Postgres, autenticación y una API REST. Cuando la persona acepta participar, la app pide a Supabase un usuario nuevo, sin correo ni contraseña, y recibe un identificador (`user_id`) y un token que se renueva solo; cada fila que envía lleva ese identificador. Sin participar, la app no abre ninguna sesión. Usa la clave publicable del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de servicio nunca está en la app.
+Lo que una persona prepara y responde es personal. Por eso la app guarda lo justo, lo identifica con un código en lugar del nombre y deja borrarlo.
 
-**Tabla G6**
+**Datos en el teléfono.** La app guarda en archivos privados lo preparado —el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba y el Tag vinculado— y, en una base de datos local, el registro de la prueba: cada relevo y su resultado, sus momentos, las respuestas, el uso de la propia app y el uso diario de las apps seleccionadas, con el tiempo total de pantalla. Además deja una copia legible en la carpeta Documentos del teléfono, con un archivo que reúne todo y dos planillas, de relevos y de respuestas; se reescribe en cada envío y se borra con «Borrar mis datos».
 
-*Tablas de la base remota*
+**Sesión anónima.** La base remota es Supabase, que reúne la base de datos, la autenticación y el acceso desde la app. Cuando la persona acepta participar, la app abre una sesión anónima, sin correo ni contraseña, y cada dato que envía lleva el identificador de esa sesión; sin participar, no abre ninguna. La app solo lleva la clave pública del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de administración nunca está en el teléfono.
 
-| Tabla | Contenido | Columnas principales |
-| --- | --- | --- |
-| `relevo_sessions` | Cada relevo. | Actividad, primer paso, lugar, apps, límite, condición y día de la prueba, salida, si sonó, respuesta, segundos hasta responder, uso antes y después, versión y forma de activación. |
-| `relevo_events` | Los momentos de cada relevo. | Tipo de evento, como `armed`, `target_entered`, `signal_emitted` o `responded`, la app y los segundos. |
-| `relevo_answers` | Las respuestas. | Pregunta, respuesta y relevo. |
-| `relevo_app_events` | El uso de la propia app. | Evento, como una pantalla, la prueba de sonido o el perfil del Tag, su detalle y la versión. |
-| `relevo_daily_usage` | El uso diario. | Día, app seleccionada o `_total`, segundos y aperturas. |
-| `relevo_participant_state` | El estado del teléfono, en una fila por persona. | Permisos, modelo, ajustes, ruta y relevo actual, en JSON. |
-| `relevo_participants` | El nombre, aparte. | Código y nombre. |
-| `relevo_messages` y `relevo_message_receipts` | Los mensajes del proyecto y su recepción. | Destinatario, título, texto, llegada y apertura. |
+**Datos en la base remota.** Cada relevo se guarda con lo preparado, su resultado y sus momentos —activarlo, entrar y salir de las apps, la señal y la respuesta—, junto con las respuestas a sus preguntas. Aparte quedan el uso de la propia app, el uso diario, el estado del teléfono, los mensajes del proyecto y, en una tabla separada, el nombre de la persona con su código. La base, creada el 22 de septiembre de 2026, tiene vistas listas para analizar los relevos, las respuestas, los resultados por condición, el uso y los participantes.
 
-*Nota.* Elaboración propia. El esquema empezó el 22 de septiembre de 2026 y suma 16 migraciones; el esquema `analisis` tiene vistas listas para leer los relevos, las respuestas, el resumen por condición, el uso y los participantes.
+**Acceso a los datos propios.** Una regla de la base revisa cada consulta: un teléfono solo puede leer, guardar, cambiar o borrar las filas que llevan su propio identificador, además de los mensajes generales y los dirigidos a él. Así, un teléfono nunca puede leer los datos de otro, ni siquiera con la clave pública. El panel entra con una clave personal de administración, que está solo en el computador del investigador.
 
-**Acceso a los datos propios.** Todas las tablas `relevo_*` tienen seguridad por fila: la base revisa cada consulta con una regla. Solo un usuario cuyo identificador coincide con el de la fila puede leerla, insertarla, actualizarla o borrarla, y cada teléfono lee los mensajes generales y los dirigidos a él. Así, un teléfono nunca puede leer los datos de otro, ni siquiera con la clave publicable. El panel entra con un token personal de administración, que vive solo en el computador del investigador.
+**Envío y borrado.** Cada registro nace en el teléfono como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta el dato, queda enviado; si lo rechaza, queda marcado y la cola sigue, y si falla la red, se reintenta después. «Borrar mis datos» borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
 
-**Envío de datos.** Cada registro nace en SQLite como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta la fila, queda enviada; si la rechaza de forma definitiva, queda rechazada y la cola sigue, y si falla la red, se reintenta después. «Borrar mis datos» borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
+**Mensajes en tiempo real.** Mientras el servicio cuenta o espera, la app mantiene abierta una conexión con la base, y un mensaje del proyecto llega en menos de un segundo. Como respaldo, la app revisa los mensajes al abrirse y cada cierto tiempo, por si la conexión se cortó.
 
-**Mensajes en tiempo real.** Mientras el servicio cuenta o espera, la app mantiene una conexión WebSocket con el canal de tiempo real de Supabase: un mensaje del investigador llega en menos de un segundo, y en el emulador se midieron 0,8 s. Como respaldo, la app revisa los mensajes al abrirse, cada 60 segundos mientras el servicio corre y cada 15 minutos con una tarea programada de Android.
+**Panel del testeo.** Es una página web con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Abierto directamente, muestra datos de ejemplo inventados; con su servidor local, que funciona solo en el computador del investigador y cambia su clave en cada arranque, consulta la base real. Ningún dato real se guarda junto al código del panel.
 
-**Panel del testeo.** Una página HTML con cuatro pestañas: **Ahora**, con lo que pasa en el momento y a quién escribirle; **Participantes**, con la ficha de cada persona, su uso, relevos, respuestas, ajustes y prueba; **Respuestas**, con los resultados por condición y por día, y **Mensajes**, para enviar avisos y ver si llegaron. Permite borrar los datos de una persona en dos clics y descargarlos. Con doble clic muestra datos de ejemplo inventados; con `node servidor.js`, un servidor sin dependencias que escucha solo en el computador, con una clave que cambia en cada arranque, consulta la base real. Ningún dato real se guarda junto al código del panel.
+La Tabla G3 resume qué sale del teléfono y qué no.
 
-**Tabla G7**
+**Tabla G3**
 
 *Datos que salen del teléfono y datos que no salen*
 
@@ -234,90 +159,52 @@ La lección general: que el objeto acepte una orden no prueba que haya sonado. P
 
 *Nota.* Elaboración propia.
 
-## G.5 Registro de versiones
+## G.5 Iteraciones del prototipo
 
-Cada versión tiene su documento en la carpeta de la app, con lo que cambió, por qué y cómo se probó. Desde la 2.7 hasta la 3.3 hay 31 versiones: la línea 2 sostuvo la prueba en los teléfonos de las personas, y la línea 3, desde el 12 de octubre de 2026, aplica la identidad nueva sin cambiar los datos.
+El prototipo cambió casi a diario entre el 21 de septiembre y el 9 de noviembre de 2026, y cada cambio respondió a algo aprendido al desarrollarlo o al usarlo. Las primeras vueltas resolvieron el recorrido antes de tener un objeto, y las de octubre respondieron a lo que contaron las personas de la prueba. La Tabla G4 reúne esas iteraciones, con su motivo; los párrafos siguientes cuentan cada etapa completa, también la de noviembre.
 
-**Tabla G8**
+**Tabla G4**
 
-*Versiones de la app, de la 2.7 a la 3.3*
+*Iteraciones del prototipo*
 
-| Versión | Fecha | Cambios |
+| Fecha (2026) | Cambio | Motivo |
 | --- | --- | --- |
-| 2.7 | 25 sep. | La app que pide el protocolo de la prueba |
-| 2.8 | 26 sep. | Sistema de marca «Vuelve a lo que querías hacer», perfil, ruta y regreso |
-| 2.9 | 27 sep. | Vidrio, formas redondeadas, emoji y textos naturales |
-| 2.10 | 27 sep. | Participación en la prueba, textos claros, tono de las fotos y más emoji |
-| 2.11 | 28 sep. | «Cómo funciona», video vertical y datos guardados en dos lugares |
-| 2.12 | 29 sep. | Más simple para la persona y más datos para el proyecto |
-| 2.13 | 29 sep. | Guía de la primera vez, intereses concretos y nombre guardado aparte |
-| 2.14 | 29 sep. | Guía con contexto y primer relevo acompañado |
-| 2.15 | 29 sep. | El reloj como objeto que suena, experimental |
-| 2.16 | 30 sep. | Activación automática y mensajes del proyecto |
-| 2.17 | 30 sep. | Mensajes al instante |
-| 2.18 | 30 sep. | Registro completo, relevos que se pueden eliminar y avisos de campos faltantes |
-| 2.19 | 5 oct. | El llavero iTag como objeto que suena |
-| 2.20 | 6 oct. | La persona elige dónde suena |
-| 2.21 | 6 oct. | Íconos con degradado y nada marcado de antemano |
-| 2.22 | 6 oct. | Volver a comparar y lenguaje claro |
-| 2.23 | 7 oct. | Degradados de varios colores, más actividades y opciones listas |
-| 2.24 | 7 oct. | Cómo usar el llavero |
-| 2.25 | 7 oct. | El Tag y su guía paso a paso |
-| 2.26 | 7 oct. | El Tag pita, y la prueba pregunta si se escuchó |
-| 2.27 | 7 oct. | El Tag suena en la señal, seguido |
-| 2.28 | 7 oct. | El Tag por defecto, lugares concretos y una app más fluida |
-| 2.29 | 7 oct. | La prueba del Tag empieza por la forma que pita |
-| 2.30 | 9 oct. | Editar un relevo sin borrarlo |
-| 2.31 | 14 oct. | El Tag se calla siempre |
-| 2.32 | 17 oct. | El Tag no se corta con la alarma encendida |
-| 2.33 | 20 oct. | Semana de comparación y preguntas de la experiencia |
-| 3.0 | 12 oct. | La línea nueva, sin perder nada |
-| 3.1 | 12 oct. | Las pantallas de «Relevo, la app» |
-| 3.2 | 12 oct. | Igual a «Relevo, la app» |
-| 3.3 | 20 oct. | La línea nueva con la semana para comparar |
+| 21–24 de septiembre | Preparar un relevo, contar el tiempo de una o varias aplicaciones y sonar en un parlante o en el teléfono. | El recorrido podía probarse antes de tener un objeto propio. |
+| 25 de septiembre | Una señal de unos 30 segundos que termina sola, y preguntas después de cada señal. | Una señal que no se detiene insiste, y una de 3 segundos no se oiría. |
+| 27 de septiembre | Las pautas de diseño de Apple como referencia visual. | Una interfaz bien diseñada, expresiva y fácil, sin sobrediseñar ni sobreexplicar. |
+| 30 de septiembre | Activación automática de un relevo, de forma opcional. | Preparar un relevo cada vez añadía esfuerzo. |
+| 5 de octubre | Sonar en un localizador Bluetooth. | Se buscaba un objeto barato y ya fabricado. |
+| 6–7 de octubre | Opciones de un toque para cómo y dónde empezar. | Escribir añadía esfuerzo extra. |
+| 7 de octubre | Prueba de sonido con confirmación, y el Tag como salida. | Que el Tag reciba la orden no asegura que haya sonado. |
+| 9 de octubre | Editar un relevo activo. | Una persona de la prueba pidió corregirlo sin borrarlo. |
+| 12 de octubre | Identidad visual nueva en toda la interfaz. | Fundamentos del diseño de la aplicación. |
+| 14 de octubre | El Tag se calla con confirmación y muestra la carga de su pila. | Una persona contó que el Tag siguió sonando después de la prueba de sonido, y pensó que fallaba la pila. |
+| 17 de octubre | Relevo espera más a un Tag que responde lento. | Después de horas sin uso, el Tag sonaba lento y sin parar. |
+| 20 de octubre | Una semana con la señal solo en el teléfono. | Hacía falta comparar el objeto con el teléfono. |
 
-*Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
+*Nota.* Elaboración propia.
 
-Después de la prueba, la app siguió en versiones propias. La 1.0.0, del 4 de noviembre, quitó la prueba de 21 días y pasó el consentimiento a la versión 14. La línea 4 rediseñó la interfaz; la 4.4 la volvió actualizable sobre la app instalada y sumó lo de la 1.0.0, y la 4.7.2, del 9 de noviembre de 2026, es la versión más reciente: suma el cierre de la prueba en la app, con el cuestionario y la entrevista del Anexo I.
+**Septiembre: una app para probar.** Entre el 21 y el 24 de septiembre, la primera app ya preparaba un relevo, contaba el tiempo de una o varias apps y sonaba en un parlante o en el teléfono. El 25 se ajustó a lo que pedía el protocolo de la prueba (Anexo I), y en los días siguientes sumó un sistema de marca, el perfil, una ruta de pasos, textos más claros y las pautas de Apple como referencia visual. El 28 y el 29 llegaron un video de «Cómo funciona», una guía para la primera vez, intereses concretos tomados de las entrevistas, un primer relevo acompañado y el reloj como salida experimental, y el 30, la activación automática, los mensajes del proyecto al instante y un registro completo de cada relevo.
 
-**Tabla G9**
+**Octubre: el Tag y la prueba.** El 5 de octubre, Relevo empezó a sonar en un llavero iTag, el Tag. El 6 se probó dejar que la persona eligiera dónde suena, y ese mismo día se volvió a las semanas para comparar, con un lenguaje más claro y sin opciones marcadas de antemano. El 7, el día en que empezó la prueba, la app se preparó para el Tag —una guía paso a paso, una prueba de sonido que pregunta si se escuchó, el Tag como salida por defecto y opciones de un toque para el primer paso y el lugar— y sumó más actividades. Lo que contaron las personas se convirtió en cambios: editar un relevo sin borrarlo, el 9 de octubre, y las dos correcciones del Tag, el 14 y el 17. El 20 de octubre se sumó la semana para comparar con el teléfono. En paralelo, desde el 12 de octubre, la identidad visual nueva se aplicó a toda la interfaz en una línea aparte, sin cambiar los datos; las personas de la prueba siguieron con la interfaz que conocían, para no cambiarla a mitad de camino.
 
-*Versiones posteriores a la prueba*
-
-| Versión | Fecha | Cambios |
-| --- | --- | --- |
-| 4.0 | 5 nov. | Rediseño de la interfaz |
-| 4.1 | 5 nov. | Anillos simétricos, textos con función, sin viudas y movimiento al tacto |
-| 4.2 | 5 nov. | Un solo comentario, las preguntas de cada actividad, predefinidas primero, el borde como en iOS e Inicio con color |
-| 4.2.1 | 5 nov. | Preparar desde una idea abre lo que falta, no un relevo desde cero |
-| 4.3 | 5 nov. | Sugerencias que corresponden, varios relevos a la vez, sonido fundamentado y una app más clara |
-| 4.4 | 5 nov. | La 4.3, actualizable, con lo de la 1.0.0 |
-| 4.5 | 6 nov. | Menos amarillo, el saludo del relevo y más palabras |
-| 4.6 | 6 nov. | La encuesta del rediseño |
-| 4.6.1 | 7 nov. | Revisión de la primera vez, la encuesta y la accesibilidad |
-| 4.6.2 | 7 nov. | Textos que dicen qué cuentan y el Bluetooth solo al buscar el Tag |
-| 4.6.3 | 7 nov. | El pulido y la señal que sonaba dos veces |
-| 4.7 | 9 nov. | El cierre de la prueba en la app |
-| 4.7.1 | 9 nov. | El cierre sin perder ninguna respuesta |
-| 4.7.2 | 9 nov. | La entrevista de cierre según la guía de los profesores |
-
-*Nota.* Elaboración propia a partir de la documentación de cada versión. Fechas de 2026.
+**Noviembre: el rediseño.** El 4 de noviembre, una versión aparte quitó de la app la prueba de 21 días y actualizó el consentimiento. El 5 llegó el rediseño: la interfaz en blanco cálido y negro, las actividades en anillos de color, tres pestañas —Inicio, Actividades y Perfil—, textos que cumplen una función, sugerencias según lo que la persona escribe (G.6), varios relevos a la vez y cuatro sonidos para elegir. Ese mismo día, la app pasó a instalarse como actualización sobre la anterior, sin perder datos, y sumó nueve de los cambios que dejó la prueba (Anexo D). Del 6 al 9 de noviembre vinieron los ajustes finos: los once íconos rehechos (Anexo H), menos amarillo, un saludo en el color del relevo activo, más palabras del español de Chile, una encuesta sobre el rediseño para las personas de la prueba, una revisión de la primera vez y de la accesibilidad, textos que dicen qué cuentan, el Bluetooth encendido solo al buscar el Tag y la corrección de una señal que sonaba dos veces. La Figura G4 muestra la app del 9 de noviembre, la más reciente.
 
 **Figura G4**
 
-*Pantallas de la versión 4.7.2*
+*Pantallas de la app en noviembre de 2026*
 
 | Bienvenida | Actividad | Relevo listo | Inicio |
 | --- | --- | --- | --- |
 | ![Bienvenida](imagenes/app-4.7.2-1-bienvenida.jpg) | ![Actividad](imagenes/app-4.7.2-2-actividad.jpg) | ![Relevo listo](imagenes/app-4.7.2-3-todo-listo.jpg) | ![Inicio](imagenes/app-4.7.2-4-inicio.jpg) |
-| **Señal** | **Cuatro preguntas** | **Decisión** | **Entrevista de cierre** |
-| ![Señal](imagenes/app-4.7.2-5-senal.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-6-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-7-decidir.jpg) | ![Entrevista de cierre](imagenes/app-4.7.2-8-entrevista.jpg) |
+| **Señal** | **Cuatro preguntas** | **Decisión** | |
+| ![Señal](imagenes/app-4.7.2-5-senal.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-6-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-7-decidir.jpg) | |
 
-*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un relevo de ejemplo que suena en el teléfono: la bienvenida, la actividad, el relevo listo, Inicio mientras cuenta, la señal, las preguntas de un toque, la decisión y la primera parte de la entrevista de cierre.
+*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un relevo de ejemplo que suena en el teléfono: la bienvenida, la actividad, el relevo listo, Inicio mientras cuenta, la señal, las preguntas de un toque y la decisión.
 
 ## G.6 Palabras clave y sugerencias
 
-Desde la versión 4.3, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. La versión 4.5 sumó palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete»: la app reconoce 34 actividades en siete familias, con 634 palabras, 121 frases y 31 palabras débiles, y sugiere 91 primeros pasos y 61 lugares.
+Desde el rediseño del 5 de noviembre, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. El 6 de noviembre se sumaron palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete». Hoy la app reconoce 34 actividades en siete familias, con 634 palabras y 121 frases, y sugiere 91 primeros pasos y 61 lugares.
 
 **Reconocimiento de una actividad.**
 
@@ -326,15 +213,15 @@ Desde la versión 4.3, cuando la persona escribe su propia actividad, la app rec
 3. Suma puntos por actividad: cada palabra suma 1; cada frase completa, 2, y cada palabra débil, medio punto, porque sola no decide, como «ver», «jugar» o «tocar».
 4. Elige la actividad con más puntos, si suma al menos 1; ante un empate, la que va primero en la lista. Si ninguna llega a 1, no sugiere nada.
 
-Las frases resuelven los casos dudosos: «maratón de series» es de películas y no de correr; «leer una novela gráfica», de manga y no de leer, y «dar una vuelta en bici», de bicicleta y no de caminar. Ninguna palabra pertenece a dos actividades. Las sugerencias nombran un objeto concreto, como «Elegir la película» o «Elegir el libro», y no algo abierto, como «Elegir qué ver»; si la actividad es una de las ideas de la app o un paso de una ruta, primero aparecen sus propias sugerencias, y se muestran hasta cinco.
+Las frases resuelven los casos dudosos: «maratón de series» es de películas y no de correr; «leer una novela gráfica», de manga y no de leer, y «dar una vuelta en bici», de bicicleta y no de caminar. Ninguna palabra pertenece a dos actividades. Las sugerencias nombran un objeto concreto, como «Elegir la película» o «Elegir el libro», y no algo abierto, como «Elegir qué ver»; si la actividad es una de las ideas de la app o un paso de una ruta, primero aparecen sus propias sugerencias, y se muestran hasta cinco (Tabla G5).
 
-**Tabla G10**
+**Tabla G5**
 
 *Actividades reconocidas por la app*
 
 | Actividad | Palabras clave, por ejemplo | Primer paso sugerido | Lugar sugerido |
 | --- | --- | --- | --- |
-| **Moverse** | | | |
+| **Moverse** |  |  |  |
 | Pasear al perro | perro, perrito, cachorro, quiltro, mascota, correa | Tomar la correa; Sacar su pelota; Llenar su botella de agua | Junto a la puerta; Donde está la correa |
 | Correr | correr, trotar, trote, running, maratón, trail | Ponerte las zapatillas; Ponerte ropa deportiva; Llenar la botella de agua | Junto a la puerta; Junto a las zapatillas |
 | Caminar | caminar, caminata, pasear, cerro, parque, trekking | Ponerte las zapatillas; Llenar la botella de agua; Elegir el recorrido | Junto a la puerta; Junto a las zapatillas |
@@ -344,20 +231,20 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 | Nadar | nadar, natación, piscina, acuagym, brazadas | Preparar el traje de baño; Echar la toalla al bolso | Junto a la puerta; Junto al bolso |
 | Deportes con pelota | fútbol, pichanga, básquetbol, vóleibol, tenis, pádel | Preparar las zapatillas; Inflar la pelota; Avisar al equipo | Junto a la puerta |
 | Cuidar las plantas | plantas, regar, jardín, huerto, suculentas, compost | Llenar la regadera; Ponerte los guantes | Junto a las plantas; Junto a la regadera |
-| **Leer y aprender** | | | |
+| **Leer y aprender** |  |  |  |
 | Manga y cómics | manga, manhwa, cómic, historieta, tomo, webtoon | Sacar el tomo del estante; Abrir el tomo donde quedaste | Junto al estante; En el velador |
 | Leer | leer, libro, novela, cuento, poesía, audiolibro | Elegir el libro; Abrir el libro en el marcador; Dejar el libro a la vista | En el velador; En el sillón; Junto al estante |
 | Estudiar | estudiar, apuntes, certamen, ramo, preu, PAES | Abrir los apuntes; Despejar el escritorio; Abrir el cuaderno en la tarea | En el escritorio |
 | Idiomas | inglés, idioma, francés, japonés, vocabulario, Duolingo | Abrir el cuaderno de vocabulario; Abrir el libro del curso | En el escritorio |
 | Escribir | escribir, diario, journaling, carta, poema, guion | Abrir el cuaderno; Dejar un lápiz sobre el cuaderno | En el escritorio; En el velador |
-| **Crear** | | | |
+| **Crear** |  |  |  |
 | Dibujar | dibujar, dibujo, boceto, ilustración, croquis, lettering | Sacar el cuaderno y un lápiz; Abrir el cuaderno en ese dibujo; Sacar los lápices | En el escritorio; En la mesa |
 | Pintar | pintar, acuarela, óleo, acrílico, pincel, mural | Preparar las acuarelas; Llenar un vaso con agua; Sacar los pinceles | En la mesa; En el escritorio |
 | Tejer y coser | tejer, crochet, bordar, coser, lana, amigurumi | Sacar el tejido; Enhebrar la aguja; Dejar la lana a mano | En el sillón; En la mesa |
 | Maquetas | maqueta, modelismo, lego, miniatura, gunpla | Abrir la caja de la maqueta; Dejar la pieza a la vista; Ordenar las piezas | En la mesa; En la mesa de trabajo |
 | Manualidades | manualidades, collage, origami, cerámica, greda, mostacillas | Sacar los materiales; Despejar la mesa; Dejar la tijera y el pegamento a mano | En la mesa de trabajo; En la mesa |
 | Fotografía | foto, fotografía, cámara, rollo, analógica, revelado | Cargar la batería de la cámara; Sacar la cámara del estuche | Junto a la puerta; En el escritorio |
-| **Jugar y disfrutar** | | | |
+| **Jugar y disfrutar** |  |  |  |
 | Piano | piano, órgano, sintetizador | Abrir la tapa del piano; Dejar la partitura a la vista | Junto al piano |
 | Otro instrumento | guitarra, ukelele, violín, charango, flauta, batería | Sacar el instrumento del estuche; Afinar el instrumento; Dejar la partitura a la vista | Junto al instrumento |
 | Cantar | cantar, canto, coro, karaoke, vocalizar | Elegir la canción; Tomar un vaso de agua | En el sillón |
@@ -366,19 +253,25 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 | Películas y series | película, serie, anime, dorama, documental, teleserie | Elegir la película; Elegir el capítulo; Preparar cabritas; Avisar a quien ve contigo | Junto a la tele; En el sillón |
 | Cartas | cartas, naipes, carioca, póker, truco, brisca | Sacar el mazo; Despejar la mesa; Avisar a quien juega contigo | En la mesa |
 | Juegos de mesa | ajedrez, rompecabezas, dominó, ludo, Catan, sudoku | Sacar la caja; Despejar la mesa; Avisar a quien juega contigo | En la mesa |
-| **En casa** | | | |
+| **En casa** |  |  |  |
 | Cocinar | cocinar, receta, hornear, queque, empanadas, sopaipillas | Reunir los ingredientes; Dejar la receta a la vista; Lavar la tabla de picar | En el mesón de la cocina |
 | Ordenar y limpiar | ordenar, limpiar, aseo, trapear, loza, clóset | Juntar la ropa en el canasto; Vaciar el cajón sobre la cama; Abrir la ventana | Junto al cajón; Junto al canasto; Junto a la cama |
-| **Descansar** | | | |
+| **Descansar** |  |  |  |
 | Dormir | dormir, acostarme, siesta, descansar, sueño | Dejar el teléfono cargando lejos de la cama; Apagar la luz grande; Ponerte el pijama | Junto al cargador; Junto a la cama |
 | Meditar | meditar, respirar, mindfulness, relajarme, rezar, qigong | Sentarte en el cojín; Apagar la luz grande | Junto al cojín; Junto a la cama |
-| **Con otras personas** | | | |
+| **Con otras personas** |  |  |  |
 | Llamar | llamar, llamada, videollamada, FaceTime, conversar | Buscar su número; Escribirle que vas a llamar | En el sillón |
 | Compartir | visitar, juntarme, carrete, asado, abuela, polola | Avisar que vas; Preparar algo para llevar; Poner la mesa | Junto a la puerta; En la mesa del comedor |
 
-*Nota.* Elaboración propia a partir del código de la versión 4.6.3, que tiene las mismas palabras y sugerencias que la 4.5. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
+*Nota.* Elaboración propia a partir del código de la app de noviembre de 2026. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el anexo pasó a ser el del PDF de anexos del Pase, reescrito en lenguaje menos técnico: cambiaron 63 de sus 130 párrafos, ítems y filas de tabla. Las partes son ahora «G.1 Pantallas de la app», «G.4 Datos y su cuidado» y «G.5 Iteraciones del prototipo»; salen las tablas de tecnologías, servicios Bluetooth, aprendizajes del Tag, tablas de la base remota y versiones, y entra la Tabla G4, «Iteraciones del prototipo». La Figura G2 es la imagen del PDF, distinta del diagrama anterior, y la Figura G4 muestra siete pantallas, sin la de la entrevista de cierre. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-10 — Versión 4.7.2 y sus pantallas
 

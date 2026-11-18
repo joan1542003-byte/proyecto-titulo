@@ -1,10 +1,10 @@
 # Anexo B. Encuesta: 53 respuestas
 
-La encuesta en línea contrastó con más personas lo que mostraron las entrevistas, y pidió una opinión sobre la propuesta de septiembre de 2026. Se informa en recuentos y categorías, sin citas textuales, y la codificación de cada respuesta permite rehacer cada cifra que usa la memoria.
+La encuesta llegó después de las entrevistas, cuando la propuesta ya existía, para contrastar con más personas lo que ellas mostraron y pedir una opinión sobre Relevo. Este anexo reúne sus preguntas, cómo se analizaron las respuestas, los resultados, lo que cada hallazgo cambió en el diseño y la categoría de cada respuesta abierta, que permite rehacer cada cifra de la memoria.
 
 ## B.1 Instrumento y muestra
 
-Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19 a 30 años, con una mediana de 22, numeradas del 1 al 53. El formulario informaba el propósito académico y el uso anónimo de las respuestas. Sus preguntas describen la propuesta de septiembre de 2026, con un parlante; el archivo se entregó el 29 de septiembre.
+Fue un formulario de Google Forms de 16 preguntas, aplicado en septiembre de 2026, cuando la propuesta usaba un parlante como objeto. Lo respondieron 53 personas de 19 a 30 años, con una mediana de 22, y el formulario informaba el propósito académico y que las respuestas serían anónimas. Las preguntas recorren el último episodio en que la persona siguió en una app más de lo que quería y, después, su opinión sobre Relevo:
 
 1. Edad.
 2. En los últimos siete días, en cuántos días siguió usando una app de entretenimiento más tiempo del que quería.
@@ -23,13 +23,15 @@ Un formulario de Google Forms con 16 preguntas, respondido por 53 personas de 19
 15. Qué registro aceptaría para una prueba académica.
 16. Qué cambiaría de la propuesta.
 
-**Alcance.** Las respuestas se corrigieron, resumieron u ordenaron antes de exportarse; por eso se usan recuentos y categorías, y no frases textuales. La muestra no es representativa, y las opiniones sobre Relevo se dieron tras leer una descripción, sin usar la app ni oír el sonido. Las respuestas completas no se publican: reunidas, algunas podrían ayudar a reconocer a alguien.
+**Alcance.** Las respuestas se corrigieron, resumieron u ordenaron antes de exportarse; por eso se informan en recuentos y categorías, y no con frases textuales. La muestra no es representativa, y las opiniones sobre Relevo se dieron después de leer una descripción, sin usar la app ni oír el sonido. Las respuestas completas no se publican: reunidas, algunas podrían ayudar a reconocer a alguien.
 
 ## B.2 Método
 
-Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14 recibieron una categoría principal por persona (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el resultado de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad.
+Las preguntas cerradas y numéricas se contaron directamente. En las respuestas abiertas de las preguntas 8, 9, 10, 12 y 14, cada persona recibió una categoría principal (B.5). Cada cifra se calcula sobre quienes respondieron esa pregunta: el desenlace de la actividad, por ejemplo, se cuenta sobre los 43 episodios en que había otra actividad.
 
 ## B.3 Resultados
+
+La mayoría siguió en una app más de lo que quería al menos un día de la última semana, casi siempre en casa y con otra actividad en mente (Tabla B1).
 
 **Tabla B1**
 
@@ -45,13 +47,40 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 *Nota.* Elaboración propia a partir de las 53 respuestas.
 
-**Desenlace de la actividad (43 episodios).** No la empezó, 21; la empezó, a veces mucho más tarde, 14; cambió de idea, 3; no podía empezarla en ese momento, 3; no lo recuerda, 2.
-
-**Usos del teléfono que querían mantener (53).** Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta, 18; conversar o compartir con alguien, 15; un contenido buscado a propósito, 11; descansar, 6; jugar con amigos, 2; no responde, 1.
-
-**Estrategias para dejar una app (53).** Alejar, guardar o silenciar el teléfono, 11; una alarma, un límite o una nota, 10; bloquear o borrar la app, 8; dejar preparado el comienzo de la actividad, 8; apoyarse en otras personas, 5; otra estrategia o ninguna, 11.
+Casi todas sabían cómo habrían empezado esa actividad; aun así, en casi la mitad de los episodios no la empezaron. La Tabla B2 muestra ese desenlace, junto con los usos del teléfono que sí querían mantener y lo que hacen hoy para dejar una app.
 
 **Tabla B2**
+
+*Desenlace de la actividad, usos que querían mantener y estrategias*
+
+| Respuesta | Recuento |
+| --- | --- |
+| **Desenlace de la actividad, en 43 episodios** |  |
+| No la empezó | 21 |
+| La empezó, a veces mucho más tarde | 14 |
+| Cambió de idea | 3 |
+| No podía empezarla en ese momento | 3 |
+| No lo recuerda | 2 |
+| **Uso del teléfono que quería mantener, en 53 respuestas** |  |
+| Aprender o resolver algo, muchas veces para la misma actividad, como un tutorial o una receta | 18 |
+| Conversar o compartir con alguien | 15 |
+| Un contenido buscado a propósito | 11 |
+| Descansar | 6 |
+| Jugar con amigos | 2 |
+| No responde | 1 |
+| **Estrategia para dejar una app, en 53 respuestas** |  |
+| Alejar, guardar o silenciar el teléfono | 11 |
+| Una alarma, un límite o una nota | 10 |
+| Bloquear o borrar la app | 8 |
+| Dejar preparado el comienzo de la actividad | 8 |
+| Apoyarse en otras personas | 5 |
+| Otra estrategia o ninguna | 11 |
+
+*Nota.* Elaboración propia a partir de las 53 respuestas.
+
+Después de leer la descripción de Relevo, casi todas las personas entendieron cómo funciona, y la mayoría pondría el parlante junto a la actividad (Tabla B3). Los motivos para descartarlo, en cambio, se reparten entre muchos (Tabla B4).
+
+**Tabla B3**
 
 *Opiniones sobre Relevo*
 
@@ -65,11 +94,32 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 *Nota.* Elaboración propia a partir de las 53 respuestas.
 
-**Motivo principal para descartarlo (53).** Que suene en un mal momento, 8; prepararlo y mantenerlo, 7; el ruido y la convivencia, 7; no entender cuándo suena, 4; sentir presión u obligación, 4; necesitar otro aparato o un teléfono compatible, 4; no necesitarlo, 4; no escucharlo, 3; la privacidad de los datos, 3; acostumbrarse y apagarlo, 3; el audio o la conexión del parlante, 3; otros motivos, como dónde dejarlo, la accesibilidad con un lector de pantalla o no tener una intención clara, 3.
+**Tabla B4**
+
+*Motivo principal para descartar Relevo*
+
+| Motivo | Respuestas |
+| --- | --- |
+| Que suene en un mal momento | 8 |
+| Prepararlo y mantenerlo | 7 |
+| El ruido y la convivencia | 7 |
+| No entender cuándo suena | 4 |
+| Sentir presión u obligación | 4 |
+| Necesitar otro aparato o un teléfono compatible | 4 |
+| No necesitarlo | 4 |
+| No escucharlo | 3 |
+| La privacidad de los datos | 3 |
+| Acostumbrarse y apagarlo | 3 |
+| El audio o la conexión del parlante | 3 |
+| Otros motivos, como dónde dejarlo, la accesibilidad con un lector de pantalla o no tener una intención clara | 3 |
+
+*Nota.* Elaboración propia a partir de las 53 respuestas.
 
 ## B.4 Aportes al diseño
 
-**Tabla B3**
+Cada hallazgo se tradujo en una decisión de Relevo, y algunas se pusieron después a prueba en los hogares (Tabla B5).
+
+**Tabla B5**
 
 *Aportes de la encuesta al diseño*
 
@@ -87,9 +137,9 @@ Las preguntas cerradas y numéricas se contaron directamente. Las respuestas abi
 
 ## B.5 Codificación por respuesta
 
-Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante (pregunta 12), el **motivo** principal para descartarlo (14), la **comprensión** del funcionamiento (10), el **uso** que quería mantener (9) y la **estrategia** para dejar una app (8).
+Para que cada cifra pueda rehacerse, la Tabla B6 da la categoría principal de cada respuesta abierta: el **lugar** del parlante (pregunta 12), el **motivo** principal para descartarlo (14), la **comprensión** del funcionamiento (10), el **uso** que quería mantener (9) y la **estrategia** para dejar una app (8).
 
-**Tabla B4**
+**Tabla B6**
 
 *Categorías por respuesta*
 
@@ -152,6 +202,12 @@ Cada respuesta abierta tiene una categoría principal: el **lugar** del parlante
 *Nota.* Elaboración propia. Los números identifican las respuestas, no a las personas.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el texto pasó a ser el del PDF de anexos del Pase: cambiaron 35 de sus 131 párrafos, ítems y filas de tabla. Se suman la Tabla B2, «Desenlace de la actividad, usos que querían mantener y estrategias», y la B4, «Motivo principal para descartar Relevo», y las demás pasan a ser B3, B5 y B6. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-09 — Títulos formales
 

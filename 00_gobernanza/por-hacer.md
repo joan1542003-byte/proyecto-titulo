@@ -733,7 +733,89 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - No subir al repositorio PDF ni textos con derechos de autor.
 - Al aplicar los cambios, revisar que el Resumen y el Abstract sigan siendo coherentes con lo que dice la memoria.
 
+## 15. Errores y mejoras de la memoria y los anexos del Pase
+
+**Estado:** por hacer. **Anotada:** 18 de noviembre de 2026. **Origen:** el autor entregó la memoria y los anexos en PDF del Pase y pidió copiarlos al repositorio tal cual, con sus errores, y anotar aquí los errores y lo que conviene mejorar. El texto copiado está en el [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md) y en los [anexos A a I](../08_memoria/anexos/README.md). Las páginas son las del PDF de la memoria. **Riesgo:** medio: las erratas se notan en la primera lectura, y algunas frases afirman más de lo que muestran tres casos. Todo se puede corregir antes de la entrega del 2 de diciembre.
+
+### A. Índices
+
+- [ ] **Índice (p. 5):** desde el capítulo 12, cada número está corrido en uno. Factibilidad empieza en la 47 (dice 48); Plan de desarrollo, en la 51 (52); Conclusiones, en la 58 (59); Referencias, en la 60 (61); Glosario, en la 64 (65), y Anexos, en la 66 (67).
+- [ ] **Índice de tablas y figuras (p. 6):** pasa lo mismo con las cuatro tablas y con las Figuras 22 a 27. La Tabla 1 está en la 46 (dice 47); la 2, en la 48 (49); la 3, en la 55 (56); la 4, en la 57 (58); la Figura 22, en la 49 (50); la 23 y la 24, en la 52 (53); la 25, en la 53 (54); la 26, en la 56 (57), y la 27, en la 59 (60).
+- [ ] **Títulos que no coinciden (p. 6):** el índice dice «Discurso y conducta de las personas», y la Figura 6, «Lo que las personas cuentan y lo que hacen»; «Ocho criterios de diseño, en tres grupos», y la Figura 11 no lleva la coma; «Flujo de la aplicación, de preparar a decidir», y la Figura 14 dice solo «Flujo de la aplicación.»; «Recordar no basta para empezar», y la Figura 26 agrega «algo.». En APA 7, el título de una figura no termina en punto: quitarlo en la 14 y en la 26.
+
+### B. Erratas
+
+- [ ] p. 11: «una muestra pequeña que nos da un indicio de que…» → «una muestra pequeña, pero un indicio de que…». Es la única primera persona plural fuera de la Motivación.
+- [ ] p. 14: «no es una solución valida para todos» → «válida».
+- [ ] p. 15: «(Sohn et al. (2005) llevaron esa idea…» → «Sohn et al. (2005) llevaron esa idea…».
+- [ ] p. 21, Figura 6: «Qupe deciden después» → «Qué deciden después».
+- [ ] p. 28, Figura 11: el tercer grupo se llama «Esfuerzo»; en el capítulo, «Justificar el esfuerzo».
+- [ ] p. 29: «El fundamento parte de decidir de antemano cuándo, dónde y cómo actuar ayuda a pasar de la intención a la acción» no se entiende → «Su fundamento: decidir de antemano cuándo, dónde y cómo actuar ayuda a pasar de la intención a la acción».
+- [ ] p. 32: «se usa como opinión experta que aporta un valor importante al proyecto» → «se usa como opinión experta».
+- [ ] p. 34: «cada uno se diseñó para pedir lo mínimo (Figura 14)»: el recorrido es la Figura 13.
+- [ ] p. 38: «Lo que pertenece al sistema; los permisos, las notificaciones y el gesto para volver atrás, se ve como…» → «Lo que pertenece al sistema —los permisos, las notificaciones y el gesto para volver atrás— se ve como…».
+- [ ] p. 39: «De ese estudio salió una tono de voz/comunicacional con cuatro rasgos» → «De ese estudio salió un tono de voz con cuatro rasgos».
+- [ ] p. 39: «Tambien pregunta en vez de rotular “¿Cómo empiezas?” sus botones empiezan con un verbo…» → «También pregunta en vez de rotular («¿Cómo empiezas?»), y sus botones empiezan con un verbo…».
+- [ ] p. 40, Figura 17: «“Anotado, Gracias por tu sugerencia.”» → «“Anotado. Gracias por tu sugerencia.”». El cuarto ejemplo, «Como los datos que recopila la app.», no es un texto de la aplicación, aunque la nota dice que todos lo son: reemplazarlo por uno real de la pantalla «Qué no vemos».
+- [ ] p. 42: «un llavero antipérdida Bluetooth: que resultó ser barato» → «un llavero antipérdida Bluetooth, que resultó barato».
+- [ ] p. 43: «sobre el logo,El sonido sale» → «sobre el logo. El sonido sale».
+- [ ] p. 47: «Relevo Go, para quienes son más “desordenados”»: coloquial → «Relevo Go, para quienes prefieren llevarlo consigo».
+- [ ] p. 48: «unos 111 000 pesos, entre el Tag. las herramientas de inteligencia artificial para el desarrollo de la app, y el trabajo del autor». Sobra el punto, y los 111 000 pesos son el Tag y las herramientas: el trabajo del autor se valora aparte, en la nota de la Tabla 2 (entre 1 070 000 y 1 577 000 pesos) → «unos 111 000 pesos, entre el Tag y las herramientas de inteligencia artificial, además del trabajo del autor».
+- [ ] p. 52, Figura 23: «Tag sobre un mueble junto mangas.» → «Tag sobre un mueble, junto a unos mangas».
+- [ ] p. 54: «la solución es que una señal más breve bastaría» → «una señal más breve podría bastar; queda por probar».
+- [ ] p. 55: «El cierre confirmó esa teoría» → «Lo que contaron al cerrar coincide con esa lectura».
+- [ ] p. 56: «que salieron de la prueba.(Anexos D y G).» → «que salieron de la prueba (Anexos D y G).».
+
+### C. Extensión
+
+- [ ] La Introducción tiene unas 540 palabras, y la pauta pide entre 600 y 1200; la Justificación, unas 260, y pide entre 300 y 600. Los textos propuestos en la tarea 14 (B y D) las dejan dentro del rango.
+- [ ] Los capítulos 1 a 14 suman unas 13 900 palabras de prosa, sin figuras ni tablas, como el PDF anterior. Las propuestas de la tarea 12, punto C, siguen vigentes.
+
+### D. Frases que afirman más que los datos
+
+- [ ] **Resumen (p. 3) y capítulo 13 (p. 56):** «La prueba validó el ciclo» y «Esta etapa validó el uso real del ciclo». Con tres personas, la prueba muestra que el ciclo funcionó en tres hogares; «validó» promete más → «La prueba mostró que el ciclo funciona en el uso cotidiano».
+- [ ] **Resumen y Abstract (pp. 3 y 4):** «la notificación, en cambio, era más fácil de pasar por alto». La pregunta sobre el aviso se hizo solo con el teléfono (nota de la Tabla 3), así que no hay un dato del Tag con que comparar → «con la notificación, a menudo la notaron tarde o no la notaron». La lámina 21 de la presentación ya se corrigió por lo mismo.
+- [ ] **p. 55:** «la señal pertenece al lugar de la actividad», apoyado en el único relevo que no sonó, fuera de casa. Lo que eso muestra es que la señal depende de estar cerca del objeto → «El primero es que la señal depende del objeto: el único relevo que no sonó ocurrió fuera de casa, lejos del Tag».
+- [ ] **pp. 47 y 59:** «mostraría si sonar desde el lugar de la actividad aporta en una escala mayor» y «si sonar desde el lugar mantiene su aporte» dan por probado un aporte del lugar que la prueba no aisló → «si sonar desde el lugar de la actividad aporta».
+- [ ] **p. 35:** «haciendo la experiencia más fluida y rápida»: no se midió. Decir el cambio (de once pantallas a tres) y, si se quiere valorar, con lo que dijeron las personas.
+
+### E. Método y ética
+
+- [ ] **La hipótesis y el lugar.** La hipótesis une la actividad «con el lugar donde comienza», pero el segundo supuesto ya no es «Lugar», como en la v6, sino «Decisión», y el capítulo 10 dice que «La prueba en los hogares examina los tres». Ninguna etapa comparó el objeto junto al primer paso con el mismo objeto en otro lugar (Anexo I, I.1). Decirlo, como lo hacía la v6, y dejar esa comparación como el paso siguiente: es la pregunta más probable de la comisión.
+- [ ] **Tag frente a teléfono.** La comparación mezcla cuatro diferencias: el sonido (el pitido de fábrica del Tag y el sonido propio de Relevo en el teléfono), el texto que muestra la notificación, el orden (el teléfono vino siempre después del Tag) y que la pregunta sobre el aviso se hizo solo con el teléfono. La p. 54 ya dice que la comparación «describe lo que vivió cada una, no un efecto del soporte»; el Resumen, el Abstract y las Conclusiones deben decir lo mismo.
+- [ ] **Consentimiento.** El texto que aceptaron dice «Por 21 días lo usas en tu día a día» y «El parlante es provisorio» (Anexo I, I.4), pero la prueba duró cinco semanas y usó el Tag. Explicar en I.1 o en I.4 cómo aceptaron la etapa con el teléfono y si el consentimiento se renovó; si no se renovó, decirlo como límite.
+- [ ] **Las tres personas.** Ni el capítulo 13 ni el Anexo I dicen cómo se las eligió ni si conocían al autor. Agregarlo en una frase.
+- [ ] **Entrevistas.** La pauta se escribió para la idea anterior, y las notas de las preguntas 12 y 13 ya no están (Anexo A, A.1). El capítulo 7 debería decirlo; la tarea 12, punto C, propone unas 150 palabras.
+- [ ] **Fogg (2009).** Es la única fuente de la Figura 26 y es una ponencia de 2009. Buscar una fuente reciente y revisada por pares que sostenga la matriz de motivación y facilidad; un candidato por leer es el modelo COM-B (Michie et al., 2011), que se cita solo después de verificarlo.
+
+### F. Anexos
+
+- [ ] **Anexo I, Tabla I1:** el supuesto 3 se observa en «La semana con el teléfono frente a las semanas con el Tag», pero la etapa con el teléfono duró del 21 de octubre al 8 de noviembre → «Las semanas con el teléfono frente a las semanas con el Tag».
+- [ ] **Anexo I, I.4:** el consentimiento (punto E).
+- [ ] **Word y PDF de los anexos:** los de la carpeta son del 9 y el 10 de noviembre y no coinciden con el PDF del Pase. Regenerarlos con `node construir-anexos.js` en el computador del autor, que tiene Chrome y Arial. Con los Markdown actuales, el texto sale igual al del PDF del Pase: se comprobó en la nube, con un 99,97 % de coincidencia, y solo cambian los encabezados de tabla que se repiten en los saltos de página.
+- [ ] **Lectura completa:** una revisión automática de palabras nuevas y de signos no encontró erratas en los anexos, pero no reemplaza leerlos.
+
+### Orden sugerido
+
+1. **A y B** (una tarde): índices y erratas, en Affinity.
+2. **D** (una hora), y revisar que el Resumen y el Abstract digan lo mismo.
+3. **E** (medio día), con el autor: son decisiones sobre cómo contar la prueba.
+4. **C**, junto con las tareas 12 y 14.
+5. **F**: regenerar el Word y el PDF de los anexos al final.
+
+### Reglas
+
+- Corregir en Affinity y en el Markdown a la vez, para que sigan coincidiendo.
+- No cambiar datos ni citas sin revisar su fuente.
+- Al terminar, actualizar el resumen breve, el registro de pedidos y este documento.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Errores y mejoras del Pase
+
+- **Qué cambió:** se agregó la tarea 15, con los índices, las erratas, la extensión, las frases que afirman más que los datos y los puntos de método y ética de la memoria y los anexos en PDF del Pase.
+- **Cómo estaba antes:** las listas de errores eran las de la memoria v6 (tarea 12) y de los capítulos 1 a 6 (tarea 14).
+- **Por qué:** el autor pidió copiar al repositorio los PDF del Pase, con sus errores, y registrar los errores y las áreas a mejorar en un To Do.
 
 ### 2026-11-10 — Cierre de la prueba
 
