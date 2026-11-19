@@ -809,7 +809,55 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - No cambiar datos ni citas sin revisar su fuente.
 - Al terminar, actualizar el resumen breve, el registro de pedidos y este documento.
 
+## 16. Revisión con los profesores después del Pase
+
+**Estado:** por hacer. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía. **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+
+### A. Lo que valoraron
+
+- La memoria es muy buena y agradable de leer, y la documentación se lee bien.
+
+### B. Formulación y argumento
+
+- [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
+- [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
+- [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así.
+- [ ] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina.
+- [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
+- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. Un objetivo específico debe nombrar las señales concretas de que el sistema funciona. El capítulo 13 ya tiene una base: que el Tag suene cuando corresponde, que la persona sepa qué quería hacer sin leer la pantalla, que recuerde cómo empezar y que siga usando Relevo.
+- [ ] **Redacción.** Simplificar las frases complejas.
+- [ ] **Cierre.** Los hallazgos del comentario final son muy específicos: dejarlos en los anexos y dejar en la memoria lo general.
+
+### C. Figuras y diseño de la memoria
+
+- [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales.
+- [ ] **«Figuras en bibliografías, al final; antes del planteamiento del problema».** La nota no es clara: confirmar con el autor si se refiere a mover el índice de figuras, a ubicar alguna figura antes del capítulo 3 o a otra cosa.
+- [ ] **Bocetos como fondo o textura** en la memoria diseñada.
+- [ ] **Explorar el color de Relevo** en la memoria diseñada.
+
+### D. Anexos
+
+- [ ] Un anexo con todas las pantallas de la APK.
+
+### E. Proyecciones
+
+- [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con un especialista que sugirieron los profesores (su nombre está en las notas del autor; no se registra aquí porque el repositorio es público).
+- [ ] **La actividad pendiente y su lugar.** Desarrollar la relación entre la actividad pendiente, su lugar de inicio y el lugar oportuno para hacerla.
+- [ ] **Taskscape.** Explorar el concepto, que se contrapone a *landscape*: el paisaje de las tareas, que se reconoce por sus sonidos. Sirve para pensar Relevo como una forma de espacializar la casa por medio de sonidos. El término es de Ingold (1993); leer el artículo antes de citarlo.
+- [ ] **Publicación de la app.** Diseñar cómo se publicaría: una maqueta de su ficha en Play Store y App Store.
+
+### Reglas
+
+- Los cambios de formulación (punto B) se deciden con el autor antes de tocar la memoria, y se revisa que el Resumen y el Abstract sigan diciendo lo mismo.
+- Coordinar con la tarea 15: muchas correcciones caen en los mismos párrafos.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-19 — Revisión con los profesores
+
+- **Qué cambió:** se agregó la tarea 16, con las notas de la revisión de los profesores ordenadas en formulación, figuras, anexos y proyecciones.
+- **Cómo estaba antes:** la última revisión anotada era la del 28 de octubre (tarea 10).
+- **Por qué:** el autor entregó sus notas de la revisión, algo dispersas, para dejarlas claras.
 
 ### 2026-11-18 — Errores y mejoras del Pase
 
