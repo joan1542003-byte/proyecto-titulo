@@ -1,12 +1,14 @@
 # Anexos de la memoria
 
-**Fecha:** 8 de noviembre de 2026
-**Documento principal:** [borrador v6 de la memoria](../borrador-memoria-v6-2026-10-28.md), sección «Anexos»
+**Fecha:** 18 de noviembre de 2026
+**Documento principal:** [borrador v7 de la memoria](../borrador-memoria-v7-2026-11-11.md), sección «Anexos»
+**Versión:** los Markdown copian el texto del PDF de anexos que el autor entregó para el Pase (127 páginas), con sus errores; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
 
 Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
 - **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
+- **Pendiente:** el Word y el PDF de esta carpeta son del 9 y el 10 de noviembre y todavía no coinciden con el PDF del Pase. Se regeneran con `node construir-anexos.js` en el computador del autor; con los Markdown actuales, el texto sale igual al del PDF del Pase.
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
@@ -17,10 +19,10 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [B. Encuesta: 53 respuestas](anexo-b-encuesta.md) | Las 16 preguntas, el método, los recuentos, lo que tomó el diseño y la codificación de cada respuesta, sin citas textuales. |
 | [C. Estado del arte y referentes](anexo-c-referentes.md) | La búsqueda, una ficha por referente del mapa del capítulo 8 y los prototipos y patentes con piezas parecidas. |
 | [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
-| [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las herramientas, las cinco tareas en que ayudaron y lo que hizo el autor. |
-| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los *wireframes* de las 39 pantallas de la app. |
-| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | La app de la prueba, el Tag, los datos, la seguridad y el panel, cada versión desde la 2.7 hasta la 4.7.2 y las palabras clave con que la app reconoce cada actividad. |
-| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, las dos tipografías, los 72 íconos y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
+| [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las tres herramientas, las cinco tareas en que ayudaron y el trabajo propio. |
+| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app. |
+| [G. Prototipo Android y registro de versiones](anexo-g-android.md) | Cómo funciona la app que se usó en la prueba, qué datos guarda y cómo los cuida, cómo cambió entre septiembre y noviembre de 2026 y con qué palabras reconoce cada actividad. |
+| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, con sus bocetos y su construcción, las dos tipografías, los 118 íconos, comparados con Lucide, y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
 ## Cómo se arman
@@ -54,6 +56,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** los nueve Markdown pasan al texto del PDF de anexos que el autor entregó para el Pase, con sus errores: cambian la redacción de buena parte de los anexos E, G y H, algunas tablas y figuras, y los títulos de E.3, G.1, G.4, G.5 y H.7. Las figuras nuevas o que cambiaron se extrajeron del PDF a `imagenes/` (las que empiezan con «pase-»); los bocetos del logo son los de la Figura 19 de la memoria. El documento principal pasa al borrador v7, y se anota que el Word y el PDF de esta carpeta siguen siendo los del 9 y el 10 de noviembre.
+- **Cómo estaba antes:** los Markdown tenían la versión del 10 de noviembre, y el documento principal era el borrador v6.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase. Antes de guardarlos se comprobó, en una copia aparte, que el constructor arma con ellos un documento cuyo texto coincide en un 99,97 % con el del PDF del Pase; esa copia no se guardó porque en la nube no está Arial y la lámina de los degradados habría salido con otra letra.
 
 ### 2026-11-10 — Versión 4.7.2 y resultados
 

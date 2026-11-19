@@ -1,12 +1,12 @@
 # Anexo F. Estados del ciclo y *wireframes*
 
-Muestra cómo se diseñó el recorrido completo de Relevo: primero, los 35 estados del ciclo que se definieron en agosto de 2026, con sus *wireframes*; después, los *wireframes* de las 39 pantallas de la app de octubre, ordenados por recorrido.
+El recorrido de Relevo se diseñó dos veces. En agosto de 2026 fue un ciclo de estados que debía funcionar de principio a fin, también cuando algo falla; en octubre, las pantallas de la app que se usó en la prueba. Este anexo muestra los dos momentos: los 35 estados del ciclo con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, ordenados por recorrido.
 
 ## F.1 Estados del ciclo
 
-En agosto de 2026, antes del Tag, el objeto se pensó con un control propio. Para comprobar que el ciclo podía representarse de principio a fin, con sus validaciones, decisiones voluntarias, fallos técnicos y estados límite, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app configura, informa el estado y ayuda a recuperarse de un fallo. En estos *wireframes*, «armar» es activar un relevo, y el «pulso» es la señal.
+En agosto, antes de que el prototipo usara el Tag, el objeto se pensaba con un control propio. Para comprobar que el ciclo podía representarse completo —con sus validaciones, sus decisiones voluntarias, sus fallos técnicos y sus estados límite—, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app sirve para configurar, informar el estado y recuperarse de un fallo. En estos *wireframes*, «armar» es activar un relevo, y el «pulso» es la señal.
 
-Seis reglas delimitan el ciclo:
+El ciclo se rige por seis reglas:
 
 - Un ciclo tiene una intención, un primer paso, una condición, un objeto y una señal.
 - La persona puede seguir, ignorar, silenciar, modificar, desarmar o cerrar, sin que el sistema juzgue lo que hace.
@@ -15,20 +15,22 @@ Seis reglas delimitan el ciclo:
 - Después de un cierre, un vencimiento, un silencio o un desarme, nada se vuelve a armar solo.
 - Los fallos se comunican como estados técnicos recuperables, no como incumplimientos.
 
+Con esas reglas, los 35 estados se agrupan por fase, de la configuración al cierre (Tabla F1).
+
 **Tabla F1**
 
 *Estados del ciclo*
 
 | Estado | Momento en que ocurre | Acciones posibles |
 | --- | --- | --- |
-| **Configuración** | | |
+| **Configuración** |  |  |
 | Sin configurar | No hay un ciclo activo. | Crear una intención. |
 | Datos incompletos | Falta la intención, el primer paso, la condición o la vigencia. | Completar o corregir. |
 | Permiso requerido | La condición necesita un permiso de Android. | Revisar y pedir el permiso. |
 | Permiso denegado | La persona lo rechaza o Android no lo concede. | Abrir los ajustes o cambiar la condición. |
 | Revisión | Los datos mínimos están completos. | Confirmar o editar. |
 | Salida voluntaria | La persona decide no continuar. | Descartar el borrador o volver. |
-| **Vinculación y prueba física** | | |
+| **Vinculación y prueba física** |  |  |
 | Buscando el objeto | Comienza la asociación física. | Esperar, reintentar o cancelar. |
 | Elegir y confirmar el objeto | Aparecen uno o más dispositivos. | Identificar y vincular el correcto. |
 | Objeto incorrecto o no reconocido | El dispositivo no coincide o no responde. | Volver a buscar. |
@@ -37,19 +39,19 @@ Seis reglas delimitan el ciclo:
 | Señal no percibida | La persona no detecta el pulso de prueba. | Ajustar la señal o reubicar. |
 | Señal intrusiva | El pulso se percibe, pero interfiere con el contexto. | Reducir, reubicar o volver a probar. |
 | Listo para armar | Lugar, enlace y pulso comprobados. | Armar de forma explícita. |
-| **Armado** | | |
+| **Armado** |  |  |
 | Armando | Se pide armar el ciclo. | Esperar la confirmación o cancelar. |
 | Armado | Android y el objeto confirman el ciclo. | Dejar el teléfono o desarmar. |
 | Confirmación dudosa o fallo | No hay confirmación suficiente. | Reintentar, revisar el enlace o cancelar. |
 | Desarmado voluntario | La persona detiene el ciclo. | Cerrar o volver a preparar. |
 | Editar mientras está armado | Se intenta cambiar un ciclo activo. | Desarmar antes de editar o conservarlo. |
-| **Espera y señal** | | |
+| **Espera y señal** |  |  |
 | Armado en espera | El ciclo está activo y la condición aún no ocurre. | Consultar el estado o desarmar. |
 | Condición cumplida | Android reconoce la condición dentro de la vigencia. | Enviar la orden al objeto. |
 | Orden tardía o vencida | La orden llega fuera de la vigencia. | Cerrar sin pulso o preparar otro ciclo. |
 | Señal activa | El objeto emite el único pulso. | Percibir y decidir libremente. |
 | Silenciar, ignorar o seguir | La persona responde sin obligación de actuar. | Silenciar y cerrar; actuar queda fuera del registro. |
-| **Cierre y recuperación** | | |
+| **Cierre y recuperación** |  |  |
 | Cierre | La persona decide terminar el ciclo. | Cerrar sin registrar cumplimiento. |
 | Intención cambiada | La persona ya no quiere hacer lo que formuló. | Cerrar o reformular. |
 | Permiso revocado | Android retira un permiso durante el ciclo. | Recuperar el permiso o cerrar. |
@@ -64,7 +66,7 @@ Seis reglas delimitan el ciclo:
 
 *Nota.* Elaboración propia, agosto de 2026.
 
-La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y confirmar el objeto, probar el lugar, listo para armar, armado, armado en espera, señal activa y cierre. Los demás no son una segunda experiencia: hacen visibles las bifurcaciones que vuelven el sistema comprensible y recuperable. Hay cinco tipos de ruta: la principal, la validación previa, la salida voluntaria, el fallo técnico y el estado límite.
+La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y confirmar el objeto, probar el lugar, listo para armar, armado, armado en espera, señal activa y cierre. Los demás no son una segunda experiencia: muestran las bifurcaciones que hacen el sistema comprensible y recuperable. En total hay cinco tipos de ruta —la principal, la validación previa, la salida voluntaria, el fallo técnico y el estado límite—, y la Figura F1 los recorre en *wireframes*.
 
 ## F.2 *Wireframes* de agosto de 2026
 
@@ -104,41 +106,57 @@ La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y co
 
 ## F.3 *Wireframes* de la app (octubre de 2026)
 
-Las 39 pantallas de la versión 2.32, en muy baja fidelidad y con sus textos reales, en cinco recorridos. Se dibujaron pieza por pieza sobre una retícula común, a partir de la posición de cada elemento en el emulador.
+En octubre, el recorrido ya era una app. Antes de dibujar sus *wireframes*, el primer uso se bocetó a mano en tres pantallas: una bienvenida que da contexto; los términos y condiciones, obligatorios porque la app usa datos, y el perfil, con nombre, intereses, foto y tal vez un color (Figura F2).
 
 **Figura F2**
+
+*Bocetos del primer uso*
+
+![Bocetos del primer uso](imagenes/pase-F2-bocetos-del-primer-uso.jpg)
+
+*Nota.* Elaboración propia.
+
+En los *wireframes*, los términos pasaron a ser el consentimiento de la prueba, y la foto, un emoji (Figura F3). Son las 39 pantallas de la app que se usó en la prueba, en muy baja fidelidad y con sus textos reales, en cinco recorridos: el primer uso, la preparación de un relevo, el conteo con la señal y la decisión, las tres pestañas de la app y el perfil (Figuras F3 a F7). Se dibujaron sobre una retícula común, con cada elemento en la posición que tenía en la app.
+
+**Figura F3**
 
 *Primer uso*
 
 ![La primera vez](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/1-primera-vez.png)
 
-**Figura F3**
+**Figura F4**
 
 *Preparación de un relevo*
 
 ![Preparar un relevo](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/2-preparar-un-relevo.png)
 
-**Figura F4**
+**Figura F5**
 
 *Conteo, señal y decisión*
 
 ![Contar, sonar y decidir](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/3-contar-sonar-y-decidir.png)
 
-**Figura F5**
+**Figura F6**
 
 *Inicio, ruta y perfil*
 
 ![Inicio, ruta y perfil](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/4-inicio-ruta-y-perfil.png)
 
-**Figura F6**
+**Figura F7**
 
 *Perfil*
 
 ![Perfil](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/5-perfil.png)
 
-*Nota.* Elaboración propia, a partir de la versión 2.32 de la app en el emulador.
+*Nota.* Elaboración propia, a partir de las pantallas de la app que se usó en la prueba, en octubre de 2026.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el texto pasó a ser el del PDF de anexos del Pase: cambiaron 11 de sus 61 párrafos, ítems y filas de tabla. Se suma la Figura F2, «Bocetos del primer uso», y los *wireframes* de octubre pasan a ser las Figuras F3 a F7. En el PDF esas hojas aparecen recortadas, sin su título ni sus rótulos; aquí se enlazan las hojas completas, con los mismos dibujos. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-09 — Títulos formales
 

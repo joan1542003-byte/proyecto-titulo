@@ -1,8 +1,10 @@
 # Anexo A. Entrevistas: pauta, corpus y análisis
 
-Ocho entrevistas semiestructuradas, hechas en persona en Santiago el 11 y el 12 de junio de 2026, con personas de 19 a 27 años. Este anexo reúne la pauta, la síntesis anonimizada de cada entrevista y el análisis que sostiene el capítulo 7: el método, el libro de 23 códigos, la lectura de cada caso y la comparación que dio los dos tipos de usuario.
+Las entrevistas fueron el primer acercamiento a cómo viven las personas su ocio digital. Se hicieron ocho, en persona, en Santiago, el 11 y el 12 de junio de 2026, con personas de 19 a 27 años. Este anexo reúne la pauta con que se hicieron, una síntesis de lo que respondió cada persona y el análisis que llevó a los dos tipos de usuario del capítulo 7: el método, el libro de 23 códigos y la lectura de cada caso.
 
 ## A.1 Pauta y condiciones
+
+La Tabla A1 resume cómo se hizo el levantamiento.
 
 **Tabla A1**
 
@@ -16,12 +18,12 @@ Ocho entrevistas semiestructuradas, hechas en persona en Santiago el 11 y el 12 
 | Edades | 19, 19, 20, 21, 21, 22, 22 y 27 años |
 | Convocatoria | Por referencias de contactos cercanos; el único criterio común fue la edad |
 | Consentimiento | Informado y oral |
-| Preguntas | Todas las formuló el investigador, también las repreguntas |
+| Preguntas | Todas, también las repreguntas, las hizo el mismo entrevistador |
 | Registro | Grabación en audio y transcripción posterior, con ortografía y puntuación regularizadas |
 
 *Nota.* Elaboración propia.
 
-La pauta se escribió cuando el proyecto trabajaba sobre una idea anterior: un objeto donde dejar el teléfono, que después mostraría una señal del descanso. Por eso no pregunta directamente por otra actividad que la persona quisiera hacer; esa categoría surgió en el análisis.
+La pauta se escribió cuando el proyecto trabajaba sobre una idea anterior: un objeto donde dejar el teléfono, que después mostraría una señal del descanso. Por eso no pregunta directamente por otra actividad que la persona quisiera hacer; esa categoría apareció en el análisis. Sus once preguntas recorren el tiempo libre, la última sesión de ocio en el teléfono y su valoración; un bloque final de dos, los intentos de descansar sin celular y la reacción ante el objeto.
 
 ### Secuencia principal
 
@@ -42,35 +44,35 @@ La pauta se escribió cuando el proyecto trabajaba sobre una idea anterior: un o
 12. ¿Alguna vez intentaste descansar sin celular? ¿Qué estrategias usaste?
 13. ¿Cómo reaccionarías a la idea de depositar el teléfono en un objeto y luego recibir una señal de ese descanso? ¿Qué tendría que mostrar para que no se sintiera como castigo?
 
-Las repreguntas cambiaron según cada respuesta: sirvieron para aclarar significados, pedir ejemplos y reconstruir episodios concretos. Las respuestas a las preguntas 12 y 13 se registraron en notas y se integraron después al registro.
+Las repreguntas cambiaron según cada respuesta: sirvieron para aclarar significados, pedir ejemplos y reconstruir episodios concretos. Las respuestas a las preguntas 12 y 13 quedaron en notas, que después se sumaron al registro.
 
-**Alcance.** Es un levantamiento cualitativo y exploratorio: describe ocho casos y no representa a los adultos jóvenes. Como la transcripción se regularizó y las notas originales de las preguntas 12 y 13 ya no están disponibles, las respuestas se usan como paráfrasis y no como citas textuales.
+**Alcance.** Es un levantamiento cualitativo y exploratorio: describe ocho casos y no representa a los adultos jóvenes en general. Como la transcripción se regularizó y las notas de las preguntas 12 y 13 ya no están disponibles, las respuestas se usan como paráfrasis y no como citas textuales.
 
 ## A.2 Síntesis de las entrevistas
 
-Cada respuesta está resumida en tercera persona, sin nombres y con el número de su pregunta; cuando el investigador repreguntó, la respuesta sigue en la misma línea. Las respuestas breves o no contestadas se conservan como tales. Las expresiones coloquiales o de autodiagnóstico, como «dopamina» o «uso adictivo», son de las personas y no categorías del análisis.
+Lo que respondió cada persona va resumido en tercera persona, con el número de la pregunta; si hubo una repregunta, su respuesta sigue en el mismo párrafo. Las respuestas breves se dejan breves, y expresiones como «dopamina» o «uso adictivo» son de las personas, no categorías del análisis.
 
 ### Persona 1 · 21 años · 12 de junio
 
 **1.** Jugar, disfrutar tiempo con sus perros y ver películas o series. Al repreguntarle por el tiempo con sus perros, explicó que consiste en disfrutar con ellos, porque ellos estarán una parte de su vida, pero para ellos será toda su vida.
 
-**2.** Hacer ejercicio y cocinar. Al repreguntarle cuándo se desconecta, respondió que cuando está concentrado haciendo lo que le gusta; si se desconcentra, algo puede salir mal.
+**2.** Hacer ejercicio y cocinar. Cuando se le preguntó en qué momento se desconecta, respondió que cuando está concentrado haciendo lo que le gusta; si se desconcentra, algo puede salir mal.
 
-**3.** Hace unos días leyó manga en el teléfono. Al repreguntarle por qué decidió leer, lo describió como un momento tranquilo, buscando una dopamina más saludable.
+**3.** Hace unos días leyó manga en el teléfono. Al preguntarle por qué decidió leer, lo describió como un momento tranquilo, buscando una dopamina más saludable.
 
-**4.** Feliz, tranquilo y reflexivo. Al repreguntarle por la reflexión, dijo que depende del manga: algunos contenidos le hacen reflexionar.
+**4.** Feliz, tranquilo y reflexivo. Sobre la reflexión, dijo que depende del manga: algunos contenidos le hacen reflexionar.
 
-**5.** Satisfecho con usar su tiempo para cosas mejores. Al repreguntarle cuáles, mencionó leer, en vez de ocupar el teléfono para TikTok o actividades similares.
+**5.** Satisfecho con usar su tiempo para cosas mejores. Al pedirle ejemplos, mencionó leer, en vez de ocupar el teléfono para TikTok o actividades similares.
 
 **6.** Dormir.
 
-**7.** Sí, porque ya había hecho cosas temprano. Al repreguntarle qué había hecho, mencionó ir a la universidad.
+**7.** Sí, porque ya había hecho cosas temprano. Al preguntarle qué había hecho, mencionó ir a la universidad.
 
 **8.** Sí.
 
-**9.** Considera que toda actividad libre que haga sentir bien es buen tiempo de ocio. Al repreguntarle qué es sentirse bien, lo definió como sentirse feliz y desconectado de las obligaciones.
+**9.** Considera que toda actividad libre que haga sentir bien es buen tiempo de ocio. Sentirse bien, precisó después, es sentirse feliz y desconectado de las obligaciones.
 
-**10.** Hacer ejercicio, ver una película o practicar algún deporte. Al repreguntarle por el ejercicio, precisó que necesita terminar cansado y adolorido para quedar satisfecho.
+**10.** Hacer ejercicio, ver una película o practicar algún deporte. Sobre el ejercicio, precisó que necesita terminar cansado y adolorido para quedar satisfecho.
 
 **11.** No.
 
@@ -80,9 +82,9 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 2 · 22 años · 12 de junio
 
-**1.** Descansa, ve videos y revisa redes sociales. Al repreguntarle por los contenidos, dijo que son memes o temas de su interés, generalmente para reírse.
+**1.** Descansa, ve videos y revisa redes sociales. Sobre los contenidos, dijo que son memes o temas de su interés, generalmente para reírse.
 
-**2.** Acostarse a ver videos, jugar en el computador o estar con su pareja. Al repreguntarle qué videos la desconectan, mencionó los de humor.
+**2.** Acostarse a ver videos, jugar en el computador o estar con su pareja. Al preguntarle qué videos la desconectan, mencionó los de humor.
 
 **3.** Durante la entrevista se puso a ver memes en Instagram al acostarse.
 
@@ -96,9 +98,9 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** A veces, pero muy poco.
 
-**9.** Considera más válidas las actividades de interés personal que no consisten en permanecer desplazándose por el celular. Al repreguntarle qué actividad le parece productiva, la describió como una que permita desconectarse y se sienta plena, y mencionó manualidades, pintura y dibujo.
+**9.** Considera más válidas las actividades de interés personal que no consisten en permanecer desplazándose por el celular. Cuando se le preguntó qué actividad le parece productiva, la describió como una que permita desconectarse y se sienta plena, y mencionó manualidades, pintura y dibujo.
 
-**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. Al repreguntarle qué es hacer lo que quiere, lo definió como realizar sus *hobbies* en paz.
+**10.** No tener obligaciones al llegar a casa para no utilizar tiempo crucial; disponer de los materiales necesarios, desconectarse del celular y hacer lo que tenga ganas de hacer. Hacer lo que quiere, precisó, es realizar sus *hobbies* en paz.
 
 **11.** No por el momento.
 
@@ -110,25 +112,25 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **1.** Jugar en el computador y practicar artes marciales.
 
-**2.** Dormir, ver una serie, jugar en el computador y meditar. Al repreguntarle por la desconexión al jugar, dijo que disfruta saber que no tiene la presión de hacer algo.
+**2.** Dormir, ver una serie, jugar en el computador y meditar. Sobre la desconexión al jugar, dijo que disfruta saber que no tiene la presión de hacer algo.
 
 **3.** Ese día miró videos humorísticos en Instagram.
 
 **4.** Sintió que estaba matando el tiempo sin ser consciente de él. Al repreguntarle si notó el paso del tiempo, dijo que no tenía noción del tiempo mientras lo hacía.
 
-**5.** No se sintió mal ni bien; pensó que tenía mejores cosas que hacer. Al repreguntarle por esas otras cosas, dijo que sentía que perdía parte del día viendo el celular.
+**5.** No se sintió mal ni bien; pensó que tenía mejores cosas que hacer. Al preguntarle por esas otras cosas, dijo que sentía que perdía parte del día viendo el celular.
 
 **6.** Habría dicho la verdad, pero no especificó el contenido del relato.
 
-**7.** Sí contó como descanso porque no hizo lo que debía y se despejó de las responsabilidades. Al repreguntarle por sus obligaciones, dijo que sabía que tenía algo pendiente y aun así continuó descansando.
+**7.** Sí contó como descanso porque no hizo lo que debía y se despejó de las responsabilidades. Sobre sus obligaciones, dijo que sabía que tenía algo pendiente y aun así siguió descansando.
 
-**8.** Le suele ocurrir y le provoca sentirse un poco mal consigo mismo. Al repreguntarle por qué, dijo que piensa que podría haber hecho algo más productivo.
+**8.** Le suele ocurrir y le provoca sentirse un poco mal consigo mismo. Al preguntarle por qué, dijo que piensa que podría haber hecho algo más productivo.
 
 **9.** Considera todas las actividades igualmente válidas, aunque algunas entregan habilidades aplicables a la vida cotidiana.
 
-**10.** Invertir el ocio en actividades que le hagan crecer o entreguen un beneficio. Al repreguntarle por el beneficio, habló de actividades que le hagan sentirse pleno o sentir que vive.
+**10.** Invertir el ocio en actividades que le hagan crecer o entreguen un beneficio. Sobre ese beneficio, habló de actividades que le hagan sentirse pleno o sentir que vive.
 
-**11.** Considera relevante la normalización de perder tiempo con el celular y luego sentir que podría haber hecho algo mejor. Al repreguntarle en qué situaciones, mencionó permanecer bastante tiempo viendo memes o contenido en TikTok o Instagram.
+**11.** Considera relevante la normalización de perder tiempo con el celular y luego sentir que podría haber hecho algo mejor. Al pedirle situaciones concretas, mencionó permanecer bastante tiempo viendo memes o contenido en TikTok o Instagram.
 
 **12.** Cuando entrena, juega en el computador o medita intenta dejar el celular lejos. A veces activa no molestar, pero si está cerca vuelve a tomarlo para revisar Instagram.
 
@@ -136,7 +138,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 4 · 22 años · 11 de junio
 
-**1.** Ver una película o estar en el teléfono. Al repreguntarle qué hace en el teléfono, mencionó revisar redes sociales.
+**1.** Ver una película o estar en el teléfono. Al preguntarle qué hace en el teléfono, mencionó revisar redes sociales.
 
 **2.** Pasear a su perro y escuchar música tranquila o enérgica.
 
@@ -144,7 +146,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **4.** Tranquila.
 
-**5.** Concentrada y relajada. Al repreguntarle por la concentración, explicó que el juego exigía atención y que, al terminar, pudo enfocarse en su entorno.
+**5.** Concentrada y relajada. Sobre la concentración, explicó que el juego exigía atención y que, al terminar, pudo enfocarse en su entorno.
 
 **6.** Diría que no hizo nada porque considera que jugar es técnicamente una forma de no hacer nada.
 
@@ -166,7 +168,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **1.** Pasa tiempo en TikTok, Instagram y Facebook.
 
-**2.** Ordenar su pieza, peinar sus muñecas y estar con el celular. Al repreguntarle por sus muñecas, las asoció con la calma.
+**2.** Ordenar su pieza, peinar sus muñecas y estar con el celular. Sobre sus muñecas, las asoció con la calma.
 
 **3.** Durante la entrevista veía TikTok, específicamente videos de God of War.
 
@@ -180,9 +182,9 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** Sí.
 
-**9.** Considera más válida cualquier actividad distinta de estar en el celular porque permite hacer cosas productivas. Al repreguntarle qué es productivo, mencionó ordenar, hacer ejercicio o algo que ayude a la vida.
+**9.** Considera más válida cualquier actividad distinta de estar en el celular porque permite hacer cosas productivas. Al preguntarle qué es productivo, mencionó ordenar, hacer ejercicio o algo que ayude a la vida.
 
-**10.** Hacer algo productivo y no estar todo el tiempo con el celular. Al repreguntarle qué actividades, mencionó ordenar, limpiar o aprender algo nuevo.
+**10.** Hacer algo productivo y no estar todo el tiempo con el celular. Al pedirle ejemplos, mencionó ordenar, limpiar o aprender algo nuevo.
 
 **11.** No.
 
@@ -192,15 +194,15 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ### Persona 6 · 27 años · 11 de junio
 
-**1.** Jugar, leer, realizar videollamadas y cenar con su familia. Al repreguntarle cómo juega, contó que se instala con algo para comer y beber y comprueba si alguien está disponible para jugar.
+**1.** Jugar, leer, realizar videollamadas y cenar con su familia. Sobre cómo juega, contó que se instala con algo para comer y beber y comprueba si alguien está disponible para jugar.
 
 **2.** Escuchar música, armar maquetas y resolver sudoku, principalmente durante la noche.
 
-**3.** El día anterior estuvo varias horas en videollamada con una amiga que vive fuera del país. Al repreguntarle qué hicieron, contó que conversaron sobre su semana, jugaron y planearon otra llamada.
+**3.** El día anterior estuvo varias horas en videollamada con una amiga que vive fuera del país. Al preguntarle qué hicieron, contó que conversaron sobre su semana, jugaron y planearon otra llamada.
 
-**4.** Contenta, porque hacía tiempo que no hablaba con su amiga por videollamada. Al repreguntarle de qué hablaron, mencionó los acontecimientos de la semana y experiencias personales.
+**4.** Contenta, porque hacía tiempo que no hablaba con su amiga por videollamada. Sobre lo que conversaron, mencionó los acontecimientos de la semana y experiencias personales.
 
-**5.** Con ganas de repetir la videollamada. Al repreguntarle por qué, habló de emoción y nostalgia.
+**5.** Con ganas de repetir la videollamada. Al preguntarle por qué, habló de emoción y nostalgia.
 
 **6.** Diría que estuvo en videollamada con una amiga muy cercana y podría describir temas como universidad, trabajo, viajes y salidas.
 
@@ -208,7 +210,7 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 **8.** Sí le ha ocurrido no poder describir bien otros usos del teléfono.
 
-**9.** Algunas actividades parecen más válidas porque puede sentir que desaprovechó horas en acciones rutinarias que realiza todos los días. Al repreguntarle por ejemplos, mencionó revisar redes sociales o escuchar música en la cama.
+**9.** Algunas actividades parecen más válidas porque puede sentir que desaprovechó horas en acciones rutinarias que realiza todos los días. Al pedirle ejemplos, mencionó revisar redes sociales o escuchar música en la cama.
 
 **10.** No pensar en trabajo ni estudios y concentrarse por completo en leer, construir u otra actividad.
 
@@ -276,14 +278,14 @@ Cada respuesta está resumida en tercera persona, sin nombres y con el número d
 
 ## A.3 Método de análisis
 
-El análisis buscó dos cosas: comparar a cada persona como un caso completo y encontrar patrones entre casos, sin reducirlos a mucho o poco uso del teléfono. Siguió cuatro capas, cada una cerrada antes de abrir la siguiente:
+Con las ocho síntesis, el análisis buscó dos cosas: entender a cada persona como un caso completo y encontrar patrones entre casos, sin reducirlos a mucho o poco uso del teléfono. Avanzó en cuatro capas, y cada una se cerró antes de abrir la siguiente:
 
 1. **Análisis Framework** (Goldsmith, 2021). Una matriz con las ocho personas en las filas y los temas en las columnas, armada en cinco momentos: familiarización, marco analítico, indexación, matriz e interpretación. Los temas combinaron dimensiones fijadas de antemano —si la sesión fue decidida o automática, la percepción del tiempo, el recuerdo, la existencia de una alternativa valorada, el conflicto posterior, el contexto, las estrategias previas, la reacción ante una intervención física y la autonomía— con códigos que surgieron de la lectura.
 2. **Tipos ideales** (Stapley et al., 2022). Un tipo ideal reúne un patrón coherente observado en varios casos; no describe a una persona promedio. Se reconstruyó cada caso, se armaron tipos provisionales, se identificaron los casos que mejor los expresan, se describieron, se comprobó su credibilidad y se compararon. Cada tipo exige más de una evidencia y registra los casos mixtos y la evidencia contraria.
 3. **Perfiles situacionales.** Cada tipo se tradujo en condiciones, necesidades y límites que pueden aparecer en momentos distintos de una misma persona, sin nombre, fotografía ni biografía.
 4. **Recorridos.** La experiencia actual, sin Relevo, y un escenario con Relevo, planteado como hipótesis de diseño.
 
-El análisis usó tres unidades: el caso, que es la entrevista completa; el episodio, una sesión o situación concreta, y el fragmento, la respuesta que respalda un código. Los tipos se construyeron sobre casos y episodios, no sobre frases sueltas.
+El análisis trabajó con tres unidades: el caso, que es la entrevista completa; el episodio, una sesión o situación concreta, y el fragmento, la respuesta que respalda un código. Los tipos se construyeron sobre casos y episodios, no sobre frases sueltas, y cada hallazgo llevó un nivel de confianza según cuánto lo respalda lo dicho (Tabla A2).
 
 **Tabla A2**
 
@@ -291,23 +293,23 @@ El análisis usó tres unidades: el caso, que es la entrevista completa; el epis
 
 | Nivel | Criterio de asignación | Uso en el análisis |
 | --- | --- | --- |
-| Alto | Contenido explícito y en contexto en la transcripción, o dato confirmado por el autor | En el análisis y la redacción |
+| Alto | Contenido explícito y en contexto en la transcripción, o un dato que el entrevistador confirmó | En el análisis y la redacción |
 | Medio | Interpretación respaldada por más de un fragmento, que requiere síntesis | Como hallazgo, siempre con la persona y la pregunta que lo respaldan |
 | Bajo | Pasaje ambiguo, contradicción no resuelta o inferencia sin respuesta directa | Como pregunta o memo, nunca como conclusión |
 
 *Nota.* Elaboración propia.
 
-Cinco reglas acompañaron todo el análisis:
+Cinco reglas acompañaron todo el análisis, para que cada hallazgo pudiera rastrearse y no confirmara solo lo esperado:
 
 - cada código tiene definición, criterio de inclusión y de exclusión, ejemplo y fecha de cambio;
-- un memo registró lo que el investigador esperaba encontrar, para buscar activamente los casos que contradicen la propuesta;
+- un memo registró lo que se esperaba encontrar, para buscar a propósito los casos que contradicen la propuesta;
 - cada síntesis remite a su persona y su pregunta;
 - la cantidad de menciones no se lee como frecuencia en la población, y no se calculan porcentajes;
 - la ausencia de una mención no se lee como ausencia del fenómeno.
 
 ## A.4 Libro de códigos
 
-El libro define 23 códigos para reconocer cómo se relacionan el tipo de actividad, la intención previa, la continuidad de la sesión, el recuerdo, la valoración del ocio y la disposición ante una intervención *phygital*. Los códigos pueden coexistir en un mismo episodio, y una misma persona puede mostrar patrones distintos según la situación. Se agrupan en seis familias: el contexto, la forma del episodio, la intención y cómo termina —el tiempo, el recuerdo y el cierre—, las normas sobre el ocio, las estrategias actuales y la relación con la propuesta.
+La codificación ordenó lo dicho en 23 códigos (Tabla A3), que reconocen cómo se relacionan el tipo de actividad, la intención previa, la continuidad de la sesión, el recuerdo, la valoración del ocio y la disposición ante una intervención *phygital*. Los códigos pueden coexistir en un mismo episodio, y una misma persona puede mostrar patrones distintos según la situación. Se agrupan en seis familias: el contexto, la forma del episodio, la intención y cómo termina —el tiempo, el recuerdo y el cierre—, las normas sobre el ocio, las estrategias actuales y la relación con la propuesta.
 
 Se codificó con ocho reglas:
 
@@ -326,16 +328,16 @@ Se codificó con ocho reglas:
 
 | Código | Definición | Evidencia |
 | --- | --- | --- |
-| **Contexto** | | |
+| **Contexto** |  |  |
 | Obligación pendiente | Una obligación, necesidad corporal o meta compite con la sesión. | Persona 2, preguntas 4 y 7: tenía sueño y siguió mirando el celular. |
 | Sin obligaciones pendientes | La persona no tiene obligaciones pendientes y legitima el ocio desde ahí. | Persona 7, preguntas 7 y 10; Persona 8, pregunta 7. |
 | Teléfono cerca | La cercanía del teléfono favorece revisarlo o retomarlo. | Personas 1, 3 y 5, pregunta 12. |
-| **Forma del episodio** | | |
+| **Forma del episodio** |  |  |
 | Uso dirigido | Actividad digital con contenido, propósito o cierre reconocible. | Persona 1, preguntas 3 y 4; Persona 4, preguntas 3 a 5. |
 | Uso de continuidad | Consumo guiado por un *feed* o una rutina, sin un final que decida la persona. | Persona 3, preguntas 3 y 4; Persona 5, preguntas 3 a 5; Persona 8, preguntas 3 y 8. |
 | Uso relacional | Uso digital cuyo valor principal es la relación con otras personas. | Persona 6, preguntas 3 a 7. |
 | Alternativa valorada | Actividad que la persona valora y podría hacer si la intención vuelve a estar disponible. | Persona 2, preguntas 9 y 10; Persona 3, preguntas 5 y 10; Persona 8, pregunta 10. |
-| **Intención, tiempo, recuerdo y cierre** | | |
+| **Intención, tiempo, recuerdo y cierre** |  |  |
 | Intención clara | La sesión coincide con una decisión reconocible de la persona. | Persona 1, preguntas 3 y 4; Persona 6, preguntas 3 a 7. |
 | Intención desplazada | Aparece una intención, necesidad o alternativa que la persona reconoce y no ejecuta. | Persona 2, preguntas 4 y 7; Persona 3, preguntas 5 y 7. |
 | Pérdida de la noción del tiempo | Disminuye la conciencia del paso del tiempo. | Persona 3, preguntas 4 y 11. |
@@ -343,14 +345,14 @@ Se codificó con ocho reglas:
 | Recuerdo débil | El episodio queda reducido a una fórmula general, una rutina o una dificultad explícita para describirlo. | Personas 4 y 8, pregunta 8. |
 | Cierre positivo | El episodio termina con satisfacción, descanso, conexión, concentración o ganas de repetirlo. | Persona 1, pregunta 5; personas 4 y 6, preguntas 5 y 7. |
 | Cierre ambivalente o negativo | El cierre es neutro, ambivalente o negativo: aburrimiento, pérdida, autocrítica o descanso incompleto. | Persona 2, preguntas 5 y 7; Persona 3, pregunta 5; Persona 5, preguntas 5 a 7. |
-| **Normas sobre el ocio** | | |
+| **Normas sobre el ocio** |  |  |
 | Ocio medido por su productividad | La persona jerarquiza el ocio según productividad, aprendizaje, salud o beneficio. | Personas 3 y 5, preguntas 9 y 10. |
 | Autonomía del ocio | La persona considera legítimo su ocio y rechaza una jerarquía universal. | Persona 7, preguntas 9 y 10; Persona 8, pregunta 9. |
-| **Estrategias actuales** | | |
+| **Estrategias actuales** |  |  |
 | Separación física | Separación material entre la persona y el teléfono. | Personas 1, 2 y 7, pregunta 12. |
 | Ajuste digital | Un ajuste digital para revisar menos: silencio, no molestar, ocultar o borrar una app. | Personas 3, 4 y 8, pregunta 12. |
 | Estrategia frágil | La estrategia no se sostiene o depende de una situación excepcional. | Personas 3, 5 y 7, pregunta 12. |
-| **Relación con la propuesta** | | |
+| **Relación con la propuesta** |  |  |
 | Aceptación con condiciones | Disposición a probar el objeto con condiciones explícitas: simple, discreto, de ayuda y sin castigo. | Personas 1, 2 y 7, pregunta 13. |
 | Sin necesidad de intervenir | La persona delimita situaciones en que el objeto no haría falta. | Personas 6 y 7, pregunta 13. |
 | Señal breve | Preferencia por una señal breve que haga perceptible el descanso sin evaluarlo. | Personas 1, 3 y 8, pregunta 13. |
@@ -360,6 +362,8 @@ Se codificó con ocho reglas:
 
 ### Cuatro distinciones
 
+Cuatro distinciones evitaron confundir patrones parecidos:
+
 - **Recuerdo débil no es usuario principal.** La Persona 8 reconoce que su rutina en Instagram es difícil de describir, pero descansa cuando está al día y no expresa arrepentimiento.
 - **Recuerdo claro no elimina el conflicto.** La Persona 2 recuerda el episodio con detalle y, aun así, siguió en el teléfono después de reconocer que debía dormir.
 - **Uso digital no es continuidad inercial.** Leer manga, resolver un sudoku, hablar por videollamada o ver un pódcast son usos digitales dirigidos o relacionales.
@@ -367,25 +371,42 @@ Se codificó con ocho reglas:
 
 ## A.5 Análisis por caso
 
-Cada entrevista se leyó primero como un caso completo, antes de comparar entre personas. Un caso no es todavía un tipo: una misma persona puede aportar a más de un patrón.
+Antes de comparar entre personas, cada entrevista se leyó como un caso completo. Un caso no es todavía un tipo: una misma persona puede aportar a más de un patrón. Los párrafos siguientes resumen cada lectura, y la Tabla A4 reúne sus códigos y el nivel de confianza.
 
-**Persona 1. Ocio digital dirigido, en contraste con el *feed*.** Leer manga en el teléfono fue tranquilo, reflexivo y satisfactorio, y lo contrapone a TikTok. Cuando lee, cocina o hace ejercicio separa el teléfono, porque si está cerca lo mira. El teléfono no es el problema: la dificultad aparece en episodios menos delimitados. Queda abierto qué quiso decir al resumir la tarde como dormir (pregunta 6). *Códigos:* uso dirigido, alternativa valorada, intención clara, recuerdo débil, cierre positivo, autonomía del ocio, teléfono cerca, separación física, aceptación con condiciones y señal breve. *Confianza:* media-alta.
+**Persona 1. Ocio digital dirigido, en contraste con el *feed*.** Leer manga en el teléfono fue tranquilo, reflexivo y satisfactorio, y lo contrapone a TikTok. Cuando lee, cocina o hace ejercicio separa el teléfono, porque si está cerca lo mira. El teléfono no es el problema: la dificultad aparece en episodios menos delimitados. Queda abierto qué quiso decir al resumir la tarde como dormir (pregunta 6).
 
-**Persona 2. Continuidad que desplaza el sueño.** Abrió Instagram al acostarse, reconoció que debía dormir y siguió. Recuerda la sesión con detalle y la evalúa como más o menos: el conflicto no viene del olvido, sino de una necesidad reconocida que no cambia la conducta. Es la evidencia más clara de que Relevo no debe definirse solo por un recuerdo débil. *Códigos:* uso de continuidad, alternativa valorada, recuerdo claro, intención desplazada, obligación pendiente, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital y aceptación con condiciones. *Confianza:* alta.
+**Persona 2. Continuidad que desplaza el sueño.** Abrió Instagram al acostarse, reconoció que debía dormir y siguió. Recuerda la sesión con detalle y la evalúa como más o menos: el conflicto no viene del olvido, sino de una necesidad reconocida que no cambia la conducta. Es la evidencia más clara de que Relevo no debe definirse solo por un recuerdo débil.
 
-**Persona 3. Pérdida de la noción del tiempo y otra actividad reconocida.** Vio videos humorísticos sin conciencia del tiempo, sintió que perdía parte del día y que tenía mejores cosas que hacer; aun así, la sesión le sirvió de pausa. Reúne continuidad, pérdida de la noción del tiempo, intención desplazada, recuerdo débil y una valoración negativa. Una intervención que califique ese rato solo como pérdida reforzaría la culpa que el proyecto quiere evitar. *Códigos:* uso de continuidad, alternativa valorada, intención desplazada, pérdida de la noción del tiempo, recuerdo débil, cierre ambivalente o negativo, obligación pendiente, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital, estrategia frágil, aceptación con condiciones y señal breve. *Confianza:* alta para el conflicto; media para atribuir el recuerdo débil a ese episodio.
+**Persona 3. Pérdida de la noción del tiempo y otra actividad reconocida.** Vio videos humorísticos sin conciencia del tiempo, sintió que perdía parte del día y que tenía mejores cosas que hacer; aun así, la sesión le sirvió de pausa. Reúne continuidad, pérdida de la noción del tiempo, intención desplazada, recuerdo débil y una valoración negativa. Una intervención que califique ese rato solo como pérdida reforzaría la culpa que el proyecto quiere evitar.
 
-**Persona 4. Concentración en el sudoku, continuidad en TikTok.** El sudoku en el teléfono fue tranquilo, la concentró y le sirvió de descanso; TikTok, en cambio, es una sucesión de videos que no le quedan en la mente. El mecanismo depende del episodio, no del aparato, y eso respalda una intervención selectiva. Que resuma el juego como no hacer nada muestra una jerarquía del ocio que el sistema no debe reforzar. *Códigos:* uso dirigido, uso de continuidad, intención clara, recuerdo débil, cierre positivo, ocio medido por su productividad, separación física, ajuste digital, aceptación con condiciones y señal breve. *Confianza:* alta.
+**Persona 4. Concentración en el sudoku, continuidad en TikTok.** El sudoku en el teléfono fue tranquilo, la concentró y le sirvió de descanso; TikTok, en cambio, es una sucesión de videos que no le quedan en la mente. El mecanismo depende del episodio, no del aparato, y eso respalda una intervención selectiva. Que resuma el juego como no hacer nada muestra una jerarquía del ocio que el sistema no debe reforzar.
 
-**Persona 5. Entretenimiento que termina en vacío.** Se entretuvo en TikTok y terminó aburrida; resumiría la tarde como nada. Para ordenar su pieza o peinar sus muñecas deja el teléfono en otro lugar, pero vuelve a mirarlo. Es un caso fuerte para un apoyo situado, siempre que el sistema no convierta su autocrítica en castigo. *Códigos:* uso de continuidad, alternativa valorada, recuerdo débil, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, estrategia frágil, aceptación con condiciones, señal breve y dificultad para separar el teléfono. *Confianza:* alta para la valoración ambivalente y la estrategia frágil; media para la intención desplazada, porque no nombra una meta concreta durante el episodio.
+**Persona 5. Entretenimiento que termina en vacío.** Se entretuvo en TikTok y terminó aburrida; resumiría la tarde como nada. Para ordenar su pieza o peinar sus muñecas deja el teléfono en otro lugar, pero vuelve a mirarlo. Es un caso fuerte para un apoyo situado, siempre que el sistema no convierta su autocrítica en castigo.
 
-**Persona 6. Ocio relacional y criterio selectivo.** Pasó horas en videollamada con una amiga que vive fuera del país: lo recuerda con detalle, terminó con ganas de repetirlo y lo valoró como descanso. Una sesión larga en el teléfono puede ser deseada, memorable y valiosa; la duración no justifica intervenir. Reserva el objeto para cuando mira redes sin pensar, así que su propia distinción sostiene una tipología de episodios, no de personas. *Códigos:* uso relacional, uso de continuidad, intención clara, recuerdo claro, cierre positivo, alternativa valorada, sin necesidad de intervenir y aceptación con condiciones. *Confianza:* alta.
+**Persona 6. Ocio relacional y criterio selectivo.** Pasó horas en videollamada con una amiga que vive fuera del país: lo recuerda con detalle, terminó con ganas de repetirlo y lo valoró como descanso. Una sesión larga en el teléfono puede ser deseada, memorable y valiosa; la duración no justifica intervenir. Reserva el objeto para cuando mira redes sin pensar, así que su propia distinción sostiene una tipología de episodios, no de personas.
 
-**Persona 7. Autonomía del ocio, sin lagunas.** Vio un pódcast de fútbol mientras comía, lo recuerda y lo considera descanso porque no tenía obligaciones. No experimenta lagunas al usar el teléfono y defiende que cada persona use su tiempo libre como quiera. Es el caso límite de no intervención, y fija condiciones éticas: probaría el objeto si fuera discreto, sin notas ni comparaciones entre días. *Códigos:* uso dirigido, intención clara, recuerdo claro, sin obligaciones pendientes, autonomía del ocio, cierre positivo, separación física, ajuste digital, sin necesidad de intervenir y aceptación con condiciones. *Confianza:* alta para el episodio; media para otros contextos apenas mencionados.
+**Persona 7. Autonomía del ocio, sin lagunas.** Vio un pódcast de fútbol mientras comía, lo recuerda y lo considera descanso porque no tenía obligaciones. No experimenta lagunas al usar el teléfono y defiende que cada persona use su tiempo libre como quiera. Es el caso límite de no intervención, y fija condiciones éticas: probaría el objeto si fuera discreto, sin notas ni comparaciones entre días.
 
-**Persona 8. Rutina difícil de narrar, sin malestar.** Revisó Instagram consumiendo lo primero que aparecía; le cuesta describirlo porque siempre es lo mismo, pero lo valora como descanso porque estaba al día. Separa el recuerdo débil del malestar: Relevo solo tendría sentido si la persona declara antes otra intención. *Códigos:* uso de continuidad, recuerdo débil, cierre positivo, sin obligaciones pendientes, autonomía del ocio, alternativa valorada, ajuste digital, aceptación con condiciones, señal breve y dificultad para separar el teléfono. *Confianza:* alta para la ausencia de malestar; media para la necesidad futura del objeto.
+**Persona 8. Rutina difícil de narrar, sin malestar.** Revisó Instagram consumiendo lo primero que aparecía; le cuesta describirlo porque siempre es lo mismo, pero lo valora como descanso porque estaba al día. Separa el recuerdo débil del malestar: Relevo solo tendría sentido si la persona declara antes otra intención.
 
-Los ocho casos dejan cuatro hallazgos:
+**Tabla A4**
+
+*Códigos y confianza de cada caso*
+
+| Caso | Códigos | Confianza |
+| --- | --- | --- |
+| Persona 1 | Uso dirigido, alternativa valorada, intención clara, recuerdo débil, cierre positivo, autonomía del ocio, teléfono cerca, separación física, aceptación con condiciones y señal breve | Media-alta |
+| Persona 2 | Uso de continuidad, alternativa valorada, recuerdo claro, intención desplazada, obligación pendiente, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital y aceptación con condiciones | Alta |
+| Persona 3 | Uso de continuidad, alternativa valorada, intención desplazada, pérdida de la noción del tiempo, recuerdo débil, cierre ambivalente o negativo, obligación pendiente, ocio medido por su productividad, teléfono cerca, separación física, ajuste digital, estrategia frágil, aceptación con condiciones y señal breve | Alta para el conflicto; media para atribuir el recuerdo débil a ese episodio |
+| Persona 4 | Uso dirigido, uso de continuidad, intención clara, recuerdo débil, cierre positivo, ocio medido por su productividad, separación física, ajuste digital, aceptación con condiciones y señal breve | Alta |
+| Persona 5 | Uso de continuidad, alternativa valorada, recuerdo débil, cierre ambivalente o negativo, ocio medido por su productividad, teléfono cerca, separación física, estrategia frágil, aceptación con condiciones, señal breve y dificultad para separar el teléfono | Alta para la valoración ambivalente y la estrategia frágil; media para la intención desplazada, porque no nombra una meta concreta durante el episodio |
+| Persona 6 | Uso relacional, uso de continuidad, intención clara, recuerdo claro, cierre positivo, alternativa valorada, sin necesidad de intervenir y aceptación con condiciones | Alta |
+| Persona 7 | Uso dirigido, intención clara, recuerdo claro, sin obligaciones pendientes, autonomía del ocio, cierre positivo, separación física, ajuste digital, sin necesidad de intervenir y aceptación con condiciones | Alta para el episodio; media para otros contextos apenas mencionados |
+| Persona 8 | Uso de continuidad, recuerdo débil, cierre positivo, sin obligaciones pendientes, autonomía del ocio, alternativa valorada, ajuste digital, aceptación con condiciones, señal breve y dificultad para separar el teléfono | Alta para la ausencia de malestar; media para la necesidad futura del objeto |
+
+*Nota.* Elaboración propia.
+
+Leídos juntos, los ocho casos dejan cuatro hallazgos:
 
 1. El *feed* continuo aparece con pérdida de la noción del tiempo, dificultad para narrar o un cierre ambivalente, pero no siempre con malestar.
 2. Las actividades digitales dirigidas o relacionales pueden recordarse, descansar y coincidir con la intención.
@@ -399,9 +420,9 @@ La comparación entre casos definió dos tipos situacionales: patrones de experi
 1. **Usuario principal: continuidad digital con intención desplazada.**
 2. **Usuario límite: ocio digital con sentido.** Marca cuándo la propuesta no debe intervenir y protege el alcance ético y funcional del proyecto.
 
-Se compararon dos estructuras: dividir el público en dos variantes —por ejemplo, olvido y culpa frente a no lograr empezar— o definir un patrón que justifica apoyo y otro que delimita cuándo no intervenir. Se eligió la segunda (Tabla A4).
+Se compararon dos maneras de ordenar el público: dividirlo en dos variantes —por ejemplo, olvido y culpa frente a no lograr empezar— o definir un patrón que justifica apoyo y otro que delimita cuándo no intervenir. Se eligió la segunda, porque explica mejor el corpus y dice cuándo el sistema debe callar (Tabla A5).
 
-**Tabla A4**
+**Tabla A5**
 
 *Comparación de las dos estructuras*
 
@@ -445,6 +466,8 @@ La actividad digital coincide con lo que la persona quiere o cumple una función
 - **Riesgos:** que se interrumpa una conversación, un juego o una lectura; una falsa alarma por tiempo o por app; convertir el descanso en una tarea medible, y la sensación de vigilancia.
 - **Implicancia para Relevo:** el comportamiento correcto puede ser no actuar. Sin una intención declarada, o si la persona decide seguir, el sistema calla y no juzga.
 
+La persona no pertenece a un tipo: pasa de uno a otro según lo que ocurre en la sesión (Figura A1).
+
 **Figura A1**
 
 *Tránsito entre los dos tipos de usuario*
@@ -463,7 +486,9 @@ stateDiagram-v2
 
 *Nota.* Elaboración propia. El cambio depende de la intención de la persona, no de una clasificación automática de la app.
 
-**Tabla A5**
+La Tabla A6 resume en qué se diferencian, y qué debe hacer Relevo en cada caso.
+
+**Tabla A6**
 
 *Comparación de los dos tipos de usuario*
 
@@ -486,6 +511,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el texto pasó a ser el del PDF de anexos del Pase: cambiaron 64 de sus 263 párrafos, ítems y filas de tabla, entre ellos la introducción y la ficha del levantamiento. Se suma la Tabla A4, «Códigos y confianza de cada caso», y las comparaciones pasan a ser las Tablas A5 y A6. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-10 — Grabación en audio
 

@@ -2424,7 +2424,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativa descartada:** imprimir, medir la placa y fotografiar el objeto antes de la entrega.
 - **Documentos:** [Por hacer, tarea 4](../00_gobernanza/por-hacer.md#4-objeto-propio-la-carcasa-del-tag) y la [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), capítulo 11.
 
+## D-179 — Los nombres de profesionales pueden ir en el repositorio
+
+- **Fecha:** 2026-11-19.
+- **Estado:** vigente.
+- **Contexto:** al ordenar las notas de la revisión con los profesores, el nombre de un especialista externo se dejó fuera porque el repositorio es público. El autor pidió subirlo: el repositorio es parte del proceso y que sea público es esencial.
+- **Decisión:** el repositorio puede nombrar a profesionales que participan en el proyecto por su oficio —profesores, especialistas consultados, autores de fuentes—. Las personas de las entrevistas, la encuesta y la prueba siguen anonimizadas (P1 a P8, Persona 1 a Persona 8, primera a tercera persona), y no se suben correos, teléfonos ni otros datos de contacto.
+- **Alternativas descartadas:** seguir omitiendo todos los nombres, que deja la trazabilidad incompleta.
+- **Documentos:** `CLAUDE.md` y la tarea 16 de [Por hacer](../00_gobernanza/por-hacer.md).
+
+## D-180 — El índice de tablas y figuras va al final de la memoria
+
+- **Fecha:** 2026-11-19.
+- **Estado:** por aplicar en la memoria diseñada.
+- **Contexto:** en la revisión después del Pase, los profesores pidieron sacar las figuras de antes del planteamiento del problema; el autor precisó que se refieren al índice de figuras.
+- **Decisión:** el índice de tablas y figuras deja de ir después del índice general y pasa al final de la memoria.
+- **Documentos:** tarea 16 de [Por hacer](../00_gobernanza/por-hacer.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-19 — D-179 y D-180
+
+- **Qué cambió:** se registraron D-179, que permite nombrar a profesionales en el repositorio, y D-180, el índice de figuras al final.
+- **Cómo estaba antes:** la última decisión era D-178.
+- **Por qué:** pedidos del autor del 19 de noviembre de 2026.
 
 ### 2026-11-10 — D-178
 

@@ -3,7 +3,7 @@
 Repositorio de investigación, desarrollo y documentación del proyecto de titulación de Johan Yantén, carrera de Diseño, Universidad Diego Portales.
 
 
-**Base académica:** [borrador v6 de la memoria](08_memoria/borrador-memoria-v6-2026-10-28.md), reescrito en torno a las decisiones de diseño (D-146 a D-152), con su [versión diseñada en 1920 × 1080](08_memoria/memoria-1920x1080/README.md) y sus [anexos A a I](08_memoria/anexos/README.md). El [borrador v5](08_memoria/borrador-memoria-v5-2026-10-11.md), su [versión en A3](08_memoria/memoria-a3/README.md) y la [memoria v4](08_memoria/memoria-vigente-v4.md) quedan como antecedentes.
+**Base académica:** [borrador v7 de la memoria](08_memoria/borrador-memoria-v7-2026-11-11.md), el texto del PDF entregado para el Pase, copiado tal cual, con sus [anexos A a I](08_memoria/anexos/README.md) en la misma versión; sus errores y mejoras están en la [tarea 15 de Por hacer](00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). El [borrador v6](08_memoria/borrador-memoria-v6-2026-10-28.md), reescrito en torno a las decisiones de diseño (D-146 a D-152), y su [versión diseñada en 1920 × 1080](08_memoria/memoria-1920x1080/README.md) son la base de la que salió. El [borrador v5](08_memoria/borrador-memoria-v5-2026-10-11.md), su [versión en A3](08_memoria/memoria-a3/README.md) y la [memoria v4](08_memoria/memoria-vigente-v4.md) quedan como antecedentes.
 
 **Revisión y limpieza de textos:** [Correcciones y comprobaciones del 9 de septiembre](00_gobernanza/auditoria-textual-2026-09-09.md). Estados, decisiones, enlaces y referencias reconciliados; las entregas antiguas conservan su fecha y sus límites.
 
@@ -175,6 +175,12 @@ Las reglas completas están en [Directrices de trabajo](https://github.com/joan1
 Las acciones pendientes se registran como GitHub Issues. Los documentos Markdown conservan el razonamiento, la evidencia y los resultados; las Issues conservan el estado operativo y los criterios de cierre.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Memoria y anexos del Pase
+
+- **Qué cambió:** la base académica pasa al borrador v7, que copia el texto de la memoria en PDF del Pase, y a los anexos actualizados con el PDF de anexos; el v6 queda como la base de la que salió.
+- **Cómo estaba antes:** la base académica era el borrador v6 del 28 de octubre.
+- **Por qué:** el autor entregó la memoria y los anexos del Pase en PDF y pidió que el repositorio coincida con ellos, con sus errores.
 
 ### 2026-11-04 — Estado al 4 de noviembre
 

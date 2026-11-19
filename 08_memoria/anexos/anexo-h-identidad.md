@@ -1,6 +1,6 @@
 # Anexo H. Identidad visual y sistema de marca
 
-Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, y cómo llegó a ella: el logo de cuatro círculos, las dos tipografías, los 72 íconos propios y la paleta cromática, cada decisión con su fundamento; lo que se mantiene de la marca del 16 de septiembre, y las propuestas anteriores.
+La identidad de Relevo quedó definida el 11 de octubre de 2026, después de más de veinte propuestas. Este anexo muestra cómo se construye cada pieza y en qué se funda —el logo, la tipografía, los íconos y la paleta cromática—, qué se mantiene de la marca del 16 de septiembre y qué dejó cada propuesta anterior.
 
 ## H.1 Logo
 
@@ -27,39 +27,65 @@ Documenta la identidad que diseñó el autor, cerrada el 11 de octubre de 2026, 
 
 **Concepto.** El logo dibuja un relevo: cuatro círculos que se pasan el turno, en el sentido del reloj desde arriba. Cada uno es una de las cuatro partes de un relevo, en el orden del modelo del proyecto (capítulo 11): el tiempo, en amarillo; el primer paso, en celeste; el lugar donde empieza la actividad, en verde, y la decisión de la persona, en rosa. Cada círculo queda bajo el siguiente, como el traspaso en una carrera de relevos, y el centro queda abierto: es el paso de la pantalla a lo que la persona quería hacer.
 
-**Construcción.** El logo se dibuja solo con círculos y sus cortes, sin trazos a mano (Figura H2):
+**Bocetos.** El logo se buscó primero a mano, en tres hojas. La primera prueba la R de Relevo, el gesto de una mano que le pasa algo a otra y el infinito del desplazamiento por la pantalla (Figura H2).
+
+**Figura H2**
+
+*Bocetos del logo: letra, gesto y desplazamiento*
+
+![Bocetos del logo: letra, gesto y desplazamiento](../figuras/pase-figura-19a-la-r-y-el-gesto.jpg)
+
+*Nota.* Elaboración propia.
+
+La segunda prueba formas simples —círculos que se cruzan, el infinito, el marcador de un lugar— y anota lo que reúne un relevo: la decisión, la persona, el lugar, el objeto y la actividad (Figura H3).
+
+**Figura H3**
+
+*Bocetos del logo: formas y lugar*
+
+![Bocetos del logo: formas y lugar](../figuras/pase-figura-19b-formas.jpg)
+
+*Nota.* Elaboración propia.
+
+En la tercera aparece el concepto: los cuatro pasos de un relevo se vuelven cuatro círculos que giran alrededor de un centro y se pasan el turno (Figura H4).
+
+**Figura H4**
+
+*Bocetos del logo: cuatro pasos y cuatro círculos*
+
+![Bocetos del logo: cuatro pasos y cuatro círculos](../figuras/pase-figura-19c-pasos-del-recorrido.jpg)
+
+*Nota.* Elaboración propia.
+
+**Construcción.** Del boceto, el logo pasó a una geometría exacta: se dibuja solo con círculos y sus cortes, sin trazos a mano. La Figura H5 muestra los círculos, el corte y la marca terminada:
 
 1. Una retícula de 100 × 100 unidades, con su centro marcado.
 2. Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro: arriba, a la derecha, abajo y a la izquierda. Juntos ocupan exactamente el cuadrado de 100.
 3. Cada círculo se recorta con el siguiente, en el sentido del reloj, agrandado en 3,4 unidades. El corte deja una línea blanca que separa las formas y hace que cada círculo parezca pasar bajo el siguiente.
 4. Como el centro queda dentro de los cuatro círculos, los cortes lo dejan vacío: ese centro abierto es el traspaso.
-5. Cada forma es un trazado plano de dos arcos, uno de radio 29 y otro de 32,4, sin máscaras, transparencias ni mezclas, así que funciona igual en cualquier programa y en una sola tinta.
-6. En tamaños chicos, el corte se ensancha para que la línea blanca no se cierre: 6,5 unidades de 16 a 23 px y 7 en el ícono de notificación de 24 dp.
-7. Cada círculo lleva el color de su parte en la paleta cromática, en su versión más intensa: amarillo `#FFD54A`, celeste `#9DD6F4`, verde `#B3E788` y rosa `#F6A3CB`.
+5. Cada forma es un trazado plano de dos arcos, sin máscaras, transparencias ni mezclas, así que funciona igual en cualquier programa y en una sola tinta.
+6. En tamaños chicos, el corte se ensancha para que la línea blanca no se cierre: 6,5 unidades en la marca chica y 7 en el ícono de las notificaciones.
+7. Cada círculo lleva el color de su parte en la paleta cromática, en su versión más intensa.
 
-**Figura H2**
+**Figura H5**
 
 *Construcción del logo*
 
-<!-- lamina: CONSTRUCCION -->
-Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cuadrado de 100; cada uno se recorta con el siguiente, agrandado en 3,4.
+![Construcción del logo](imagenes/pase-H5-construccion-del-logo.png)
 
-![Marca de Relevo](../../10_recursos_visuales/logo-relevo-2026-10-11/relevo-marca.svg)
-<!-- /lamina -->
+*Nota.* Elaboración propia, a partir de los trazados del logo.
 
-*Nota.* Elaboración propia, a partir de los archivos del logo.
+**Logotipo y composición.** «relevo» va siempre en minúsculas, en Chillax Semibold convertida a trazos (H.2). En la versión horizontal, la marca mide 1,18 veces la altura de la «l», se centra en ella y se separa del nombre por 0,30 del cuerpo tipográfico; en la vertical, la marca va sobre el nombre.
 
-**Logotipo y composición.** «relevo» va siempre en minúsculas, en Chillax Semibold convertida a trazos (H.2). En la versión horizontal, la marca mide 1,18 veces la altura de la «l» y se centra en ella, con una separación de 0,30 del cuerpo tipográfico; en la vertical, la marca va sobre el nombre.
-
-**Versiones.**
+**Versiones.** Cada versión responde a un uso (Figura H1):
 
 - **Horizontal:** la principal.
 - **Vertical:** espacios cuadrados y portadas.
-- **Marca sola:** desde 24 px; de 16 a 23 px, la versión chica, con el corte más ancho.
-- **Con degradado:** desde 48 px; cada círculo es más claro afuera y más intenso hacia el centro, con los tonos calculados en OKLCH.
+- **Marca sola:** desde 24 px; entre 16 y 23 px, la versión chica, con el corte más ancho.
+- **Con degradado:** desde 48 px; cada círculo es más claro afuera y más intenso hacia el centro.
 - **Una tinta y blanca:** impresión, sellos y fondos oscuros.
-- **Ícono de la app:** una superelipse blanca con la marca al 62 %.
-- **Notificación:** la silueta blanca de 24 dp.
+- **Ícono de la app:** la marca sobre una superelipse blanca.
+- **Notificación:** la silueta blanca de la marca.
 
 **Reglas de uso.**
 
@@ -68,7 +94,7 @@ Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cua
 - El logotipo va siempre en minúsculas, en negro o en blanco, nunca de colores; el blanco, solo sobre fondos oscuros.
 - No se gira, no se rellena el centro, no se cambia el orden de los círculos y no se le agregan sombras ni brillos.
 
-**Fundamentos.**
+**Fundamentos.** Cada decisión del logo tiene una razón:
 
 - **Modelo del proyecto.** La marca representa con cuatro círculos las cuatro partes de un relevo. Ese modelo se apoya en que los recordatorios eficaces aluden a la vez a la ocasión y a la acción prevista (Guynn et al., 1998): el tiempo es la ocasión, y el primer paso, la acción. El tercer círculo es el lugar, la hipótesis del proyecto —que el sitio donde comienza la actividad aporte a la señal—, y no el localizador del prototipo, así que la marca sigue valiendo si el objeto cambia.
 - **Nombre.** Un relevo es el paso de algo de una mano a otra. La forma lo muestra con círculos que se pasan el turno y un centro que no pertenece a ninguno.
@@ -78,7 +104,7 @@ Cuatro círculos iguales, de radio 29, con sus centros a 21 del centro de un cua
 
 ## H.2 Tipografía
 
-La identidad usa dos tipografías sin serifa: una para el nombre y otra para todo lo demás.
+La identidad usa dos tipografías sin serifa: una para el nombre y otra para todo lo demás (Tabla H1).
 
 **Tabla H1**
 
@@ -91,120 +117,105 @@ La identidad usa dos tipografías sin serifa: una para el nombre y otra para tod
 
 *Nota.* Elaboración propia.
 
-**Selección de la tipografía del logotipo.** Se compararon 20 tipografías sin serifa de Fontshare, y llegaron cinco a la final: Chillax 600 y 700, Cabinet Grotesk 800, Pally 700 y Panchang 600, con Instrument Sans 700 como referencia. Ganó Chillax Semibold porque sus formas son redondas como los círculos del logo: su «o» es casi un círculo, con un ancho y un alto de 1,03; la «e» y la «r» terminan en curvas abiertas, y en tamaño chico no pierde la forma, con una altura x de 0,495 del cuerpo. No es de Google Fonts, como buscaba el autor para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con un interletrado de −0,02.
+**Selección de la tipografía del logotipo.** Para el logotipo se compararon 20 tipografías sin serifa de Fontshare. Pasaron a la final Chillax, en dos pesos, Cabinet Grotesk, Pally y Panchang, con Instrument Sans como referencia, y ganó Chillax Semibold porque sus formas conversan con los círculos del logo: su «o» es casi un círculo; la «e» y la «r» terminan en curvas abiertas, que hacen amable la palabra, y su altura x, de casi la mitad del cuerpo, la mantiene legible en tamaño chico. Además, no es de Google Fonts, una condición que se fijó para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con el interletrado levemente cerrado.
 
 ## H.3 Iconografía
 
-**Figura H3**
+Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24, de un solo color y siempre acompañados de su palabra. Siguen las reglas de construcción de Lucide, un conjunto abierto de íconos de línea, pero los dibujos son de Relevo, porque lo que la app tiene que mostrar —el Tag, la señal y las actividades que nombraron las personas entrevistadas— no está en ningún conjunto o está solo en una forma genérica (Figura H6).
 
-*Conjunto de 72 íconos propios*
+**Figura H6**
 
-<!-- lamina: ICONOS -->
-Los 72 íconos propios, en una retícula de 24 con trazo de 1,6 ([archivos SVG](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg)).
+*Conjunto de 118 íconos de la app*
 
-| Abrir | Advertencia | Agregar | Ajustes | Apps elegidas | Personalización | Avance | Avisos |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Abrir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/abrir.svg) | ![Advertencia](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/advertencia.svg) | ![Agregar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/agregar.svg) | ![Ajustes](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ajustes.svg) | ![Apps elegidas](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/apps.svg) | ![Personalización](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/aura.svg) | ![Avance](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avance.svg) | ![Avisos](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/avisos.svg) |
+![Conjunto de 118 íconos de la app](imagenes/pase-H6-iconos.jpg)
 
-| Ayuda | Pila | Salir en bicicleta | Borrar | Buscar | Calendario | Cambié de idea | Caminar |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Ayuda](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ayuda.svg) | ![Pila](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/bateria.svg) | ![Salir en bicicleta](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/bicicleta.svg) | ![Borrar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/borrar.svg) | ![Buscar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/buscar.svg) | ![Calendario](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/calendario.svg) | ![Cambié de idea](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/cambie.svg) | ![Caminar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/caminar.svg) |
+*Nota.* Elaboración propia, con los dibujos, el trazo y el centro óptico de la app de noviembre de 2026. Las actividades van en sus siete familias de color; la agrupación de los demás es de esta figura. Los íconos con asterisco no aparecen en ninguna pantalla.
 
-| Cerrar | Cocinar | Comentario | Conexión | Contando | Contraer | Decidir | Descargar |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Cerrar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/cerrar.svg) | ![Cocinar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/cocinar.svg) | ![Comentario](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/comentario.svg) | ![Conexión](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/conexion.svg) | ![Contando](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/contando.svg) | ![Contraer](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/contraer.svg) | ![Decidir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/decidir.svg) | ![Descargar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/descargar.svg) |
+**Conjunto.** El conjunto creció con la app. Empezó con los íconos de la identidad del 11 de octubre; el rediseño del 5 de noviembre sumó los de la navegación, como la tuerca de los ajustes y los cuatro anillos de Actividades, y trece actividades, como nadar, tejer o tocar el piano, y el 6 de noviembre se rehicieron once, después de revisar qué pide la app de cada uno. Hoy se reúnen en tres grupos: 19 propios de Relevo —el objeto, la señal, el ciclo de un relevo y la decisión—; 34 actividades, en siete familias de color, que reúnen las ideas que salen de las entrevistas y las que la app reconoce en lo que escribe cada persona, y 65 de la interfaz y la prueba. La app usa 97; los otros 21 se conservan, aunque ninguna pantalla los muestra.
 
-| Después | Dibujar | Dormir | Editar | Hacer ejercicio | Empecé | Enviar | Error |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Después](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/despues.svg) | ![Dibujar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/dibujar.svg) | ![Dormir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/dormir.svg) | ![Editar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/editar.svg) | ![Hacer ejercicio](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ejercicio.svg) | ![Empecé](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/empece.svg) | ![Enviar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/enviar.svg) | ![Error](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/error.svg) |
-
-| Escribir | Favorita | Estudiar | Expandir | Sacar fotos | Tocar guitarra | Información | Inicio |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Escribir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/escribir.svg) | ![Favorita](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/estrella.svg) | ![Estudiar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/estudiar.svg) | ![Expandir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/expandir.svg) | ![Sacar fotos](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/fotografia.svg) | ![Tocar guitarra](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/guitarra.svg) | ![Información](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/info.svg) | ![Inicio](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/inicio.svg) |
-
-| Jugar un juego de mesa | Leer | Listo | Llamar a alguien | Lugar | Hacer manualidades | Armar una maqueta | Más opciones |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Jugar un juego de mesa](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/juego-de-mesa.svg) | ![Leer](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/leer.svg) | ![Listo](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/listo.svg) | ![Llamar a alguien](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/llamar.svg) | ![Lugar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/lugar.svg) | ![Hacer manualidades](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/manualidades.svg) | ![Armar una maqueta](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/maqueta.svg) | ![Más opciones](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/mas.svg) |
-
-| Meditar | Escuchar música | Ordenar la pieza | Parlante | Pasear al perro | Pausar | Ver una película | Perfil |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Meditar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/meditar.svg) | ![Escuchar música](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/musica.svg) | ![Ordenar la pieza](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ordenar.svg) | ![Parlante](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/parlante.svg) | ![Pasear al perro](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/pasear-perro.svg) | ![Pausar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/pausar.svg) | ![Ver una película](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/pelicula.svg) | ![Perfil](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/perfil.svg) |
-
-| Permiso | Pintar | Cuidar las plantas | Primer paso | Privacidad | Reintentar | Reproducir | Ruta |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Permiso](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/permiso.svg) | ![Pintar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/pintar.svg) | ![Cuidar las plantas](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/plantas.svg) | ![Primer paso](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/primer-paso.svg) | ![Privacidad](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/privacidad.svg) | ![Reintentar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/reintentar.svg) | ![Reproducir](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/reproducir.svg) | ![Ruta](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/ruta.svg) |
-
-| Siguiente | Silenciar | Suena | Tag | Teléfono | Tiempo | Jugar videojuegos | Volver |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ![Siguiente](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/siguiente.svg) | ![Silenciar](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/silenciar.svg) | ![Suena](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/suena.svg) | ![Tag](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/tag.svg) | ![Teléfono](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/telefono.svg) | ![Tiempo](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/tiempo.svg) | ![Jugar videojuegos](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/videojuegos.svg) | ![Volver](../../10_recursos_visuales/iconos-relevo-2026-10-11/svg/volver.svg) |
-<!-- /lamina -->
-
-*Nota.* Elaboración propia. Retícula de 24 y trazo de 1,6.
-
-**Definición del conjunto.** Se contaron los íconos que usaba la app: 80 del kit de la marca anterior, en pestañas, filas, avisos y la preparación del relevo. Se revisaron además sus tres pestañas, Inicio, Ruta y Perfil, y las 21 ideas de actividad del código, cada una con su origen en las entrevistas. El conjunto cubre esos usos y suma uno que no existía: Suena, el Tag con sus anillos, para la fila «Suena» de la preparación.
+**Tamaños en la app.** Un mismo ícono aparece chico en las filas, los botones y la barra de pestañas, y grande dentro del anillo de una actividad: va de unos 16 px a casi 48. Como una actividad puede verse a unos 17 px, cada dibujo tiene que leerse en ese tamaño. La Tabla H2 resume cómo se construyen, junto a las reglas de Lucide.
 
 **Tabla H2**
 
-*Construcción de los íconos*
+*Reglas de construcción de los íconos, comparadas con Lucide*
 
-| Decisión | Fundamento | Referentes |
-| --- | --- | --- |
-| Retícula de 24 y área viva de 20 | Se alinean en listas, botones y barras, con 2 de margen. | Google, Material Design: íconos de sistema |
-| Cuatro formas de base: círculo (r 9), cuadrado (16), vertical (14 × 18) y horizontal (18 × 14) | Un ícono redondo y uno con esquinas miden lo mismo a la vista. | Google, Material Design: keylines |
-| Trazo de 1,6 | El asta de Instrument Sans Medium mide 0,105 de su cuerpo; junto a una tipografía de 15 px, la de las fichas, da 1,6: el ícono pesa lo mismo que su palabra. | Apple, SF Symbols, y medición propia del 11 de octubre |
-| Tamaños ópticos: 16 → 2,0; 20 → 1,8; 24 → 1,6; 32 → 1,4; 48 → 1,3 | Se ve igual de firme en una lista que en tamaño grande. | Google, eje de tamaño óptico de Material Symbols |
-| Puntas y uniones redondas | Conversan con las cápsulas y las fichas, y a tamaño chico no dejan picos. | Decisión propia |
-| Un solo peso; solo se rellenan los puntos que marcan algo | El punto del primer peldaño y la argolla del Tag. | Decisión propia |
-| Siempre con una palabra | Casi ningún ícono tiene un significado único, y la app ya los muestra con su rótulo. | Harley, Nielsen Norman Group |
+| Regla | Relevo | Lucide | Origen y fundamento |
+| --- | --- | --- | --- |
+| Retícula y margen | Retícula de 24 con un área viva de 20: ningún trazo entra en los 2 de margen. | Lienzo de 24, con el trazo a 1 o más del borde. | Material Design limita el ícono a un área viva de 20, con 2 de margen (Google, s. f.-b). |
+| Formas base | Un círculo de radio 9, un cuadrado de 16 y dos rectángulos de 14 × 18, uno vertical y otro horizontal. | Un peso visual parecido al de su círculo y su cuadrado, que se compara desenfocándolos. | Las formas base de Material Design, algo más chicas (Google, s. f.-b): un ícono redondo y uno con esquinas miden lo mismo a la vista. |
+| Trazo | 1,6 en el tamaño base de 24. | 2, en todos los tamaños. | En Instrument Sans Medium, el asta mide una décima del cuerpo, según una medición propia: 1,56 en un cuerpo de 15, casi el trazo de un ícono de 24. Así, el ícono pesa lo mismo que su palabra. SF Symbols también alinea sus símbolos con la tipografía (Apple, s. f.). |
+| Tamaños ópticos | El trazo se afina a medida que el ícono crece: 2,0 en los más chicos y 1,3 en los más grandes. | Un solo trazo. | El eje de tamaño óptico de Material Symbols ajusta el trazo al tamaño (Google, s. f.-a): el ícono se ve igual de firme en una fila que en un anillo grande. |
+| Puntas y uniones | Redondas, con el trazo centrado en la línea. | Igual. | A tamaño chico no dejan picos, y conversan con los círculos del logo y los anillos de las actividades. |
+| Esquinas | Radios de 1 a 3,6, según la forma. | 2 en las formas de 8 o más y 1 en las menores. | Unificarlas como Lucide queda pendiente. |
+| Equilibrio | Centro óptico: la app corre cada dibujo un poco hacia donde pesa su tinta; se ajustan 100 de los 118. | Centrados a la vista; los asimétricos se corren un poco. | Un dibujo más pesado abajo no se ve caído, y uno simétrico no se mueve. |
+| Detalle | Se quita lo que no se distingue en el tamaño más chico. | Poco detalle. | Las actividades se ven desde unos 17 px. |
+| Color y relleno | Un solo color. Se rellenan los puntos, como la argolla del Tag o los ojos del perro, y las partes cuyo relleno es el significado: la mitad del signo de contraste, las estrellas y las teclas negras del piano. | Contorno, en el color del texto. | El color queda para las actividades, en su anillo. |
+| Palabra | Cada ícono va con su palabra; los botones que solo llevan ícono, como volver, tienen su nombre para los lectores de pantalla. | No lo define. | Casi ningún ícono tiene un significado único, y su palabra aclara qué significa en ese contexto (Harley, 2014). |
 
-*Nota.* Elaboración propia.
+*Nota.* Elaboración propia. Las medidas de Relevo son las de la app; las de Lucide, las de su especificación (Lucide Contributors, s. f.-a, s. f.-b).
 
-**Metáforas.**
+**Construcción.** Cada ícono parte de la geometría y termina en un ajuste a ojo. La Figura H7 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Leer, una actividad, abajo:
 
-- **Conceptos propios de Relevo,** dibujados con su objeto y sus ideas: el Tag como es, redondo, con su botón y su argolla; el sonido como anillos que se abren; el primer paso como un punto en el primer peldaño, y el tiempo como un cronómetro, porque se cuentan minutos de uso.
+1. **Retícula.** 24 × 24, con un área viva de 20 y cuatro formas base —un círculo, un cuadrado y dos rectángulos— que igualan el peso de un ícono redondo y el de uno con esquinas.
+2. **Geometría.** Suena dibuja el Tag como es, con su botón y su argolla, y dos arcos de sonido que nacen de su eje; Leer, dos páginas reflejadas en el lomo, con los bordes en curva.
+3. **Trazo.** 1,6, centrado en la línea, con terminaciones y uniones redondas; solo se rellena lo que es un punto, como la argolla.
+4. **Centro óptico.** El dibujo se corre hacia donde pesa su tinta: los dos suben menos de media unidad, lo justo para no verse caídos.
+5. **Tamaños ópticos.** El trazo se afina a medida que el ícono crece —de 2,0 en 16 px a 1,3 en 48 px— para que pese lo mismo en una fila que en un anillo grande.
+
+**Figura H7**
+
+*Construcción de dos íconos: Suena y Leer*
+
+![Construcción de dos íconos: Suena y Leer](imagenes/pase-H7-construccion-suena-y-leer.png)
+
+*Nota.* Elaboración propia, con las medidas de la app. Las cotas están en unidades de la retícula; en el paso 5, cada par indica el tamaño del ícono y su trazo.
+
+**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Design se tomaron la retícula, el área viva y las formas base (Google, s. f.-b); de Material Symbols, los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). La inspiración del dibujo es Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) y dibuja sus propios íconos (Figura H8). La razón no fue que faltaran: al revisar su lista, el 5 de noviembre de 2026, Material Symbols ya tenía equivalentes genéricos de casi todas las actividades. Fueron otras:
+
+- **Lo propio de Relevo no está en ningún conjunto.** El Tag se dibuja como el objeto que la persona tiene en la mano, y un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
+- **Cerca de lo que la persona nombró.** Un conjunto general nombra categorías; Relevo dibuja cada actividad con el objeto con que empieza, como lo sugiere la app: el tomo para leer manga, el colgador para ordenar, una pieza para armar una maqueta.
+- **Una sola voz.** Mezclar conjuntos daría dos trazos y dos geometrías en la misma pantalla.
+
+**Figura H8**
+
+*Mismo concepto en Lucide y en Relevo*
+
+![Mismo concepto en Lucide y en Relevo](imagenes/pase-H8-lucide-y-relevo.png)
+
+*Nota.* Elaboración propia. Los íconos de Lucide se reproducen sin cambios, con licencia ISC (Lucide Contributors, 2026); son, en orden, book-open, dog, timer, map-pin, circle-dashed, settings, house y volume-2. Los de Relevo son los de la app. Cada ícono va en su lienzo de 24; el lienzo vacío corresponde a Suena.
+
+**Reglas tomadas y dibujos propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H8):
+
+- **Las reglas, no los dibujos.** De Lucide se tomaron la retícula de 24, las puntas y uniones redondas, el trazo centrado, el poco detalle, el peso parejo y un solo color. El trazo, en cambio, es más fino y ligado a Instrument Sans, así que junto a Lucide Relevo se ve más liviano; probar el trazo de 2 junto a la tipografía de la app queda pendiente.
+- **Signos que la gente ya conoce.** En Sin respuesta, Lugar, Tiempo, Ajustes, Inicio y Probar sonido, Relevo usa el mismo signo que Lucide —un círculo punteado, un marcador, un cronómetro, una tuerca, una casa y un parlante—, con su propia geometría: el círculo punteado es algo más chico, el marcador es más angosto, el cronómetro suma la perilla lateral y dos manecillas, la tuerca tiene dientes rectos y la casa lleva la puerta en el mismo trazo.
+- **Dibujos propios.** Leer curva los bordes de sus páginas, donde Lucide dibuja dos rectángulos unidos por el lomo; Perro es una cabeza larga, con las orejas caídas y separadas de ella para leerse en tamaño chico, donde Lucide dibuja una cara ancha con las orejas unidas, y Suena dibuja el Tag con su botón y su argolla, que no tiene equivalente en Lucide.
+
+**Metáforas.** Los íconos hablan en tres registros:
+
+- **Conceptos propios de Relevo,** dibujados con su objeto y sus ideas: el sonido como anillos que se abren desde el Tag; el tiempo como un cronómetro, porque se cuentan minutos de uso; la decisión como una bandera, y un relevo sin respuesta como un círculo punteado, sin juicio. El primer paso usa el mismo triángulo en un círculo que la respuesta «Comencé».
 - **Acciones comunes a cualquier app,** con formas conocidas, como volver, borrar o buscar: lo que la gente reconoce de otras apps le ahorra aprender.
-- **Dos íconos se rehicieron tras verlos a 16 px.** «Caminar» pasó de una zapatilla, que parecía una bota, a dos huellas, y «Primer paso» perdió un «+» que se confundía con «Agregar».
+- **Un significado, un dibujo.** El 6 de noviembre se rehicieron once íconos: tres significados compartían el mismo lápiz —Actividad, Editar y Dibujar—; Meditar y Estirar eran iguales; varios dibujos decían otra cosa, como los destellos de Apariencia, que se leían como inteligencia artificial, o el cubo de Armar una maqueta, que se leía como un paquete, y cuatro actividades no se leían en su tamaño más chico: Leer manga, Perro, Aprender un idioma y Tejer. Entre los íconos sin uso quedan dos pares iguales: Historial, igual a Avance, y Cómo empieza, igual a Ruta.
 
 ## H.4 Paleta cromática
 
-**Figura H4**
+**Figura H9**
 
 *Paleta cromática: colores de las partes y colores de base*
 
-<!-- lamina: PALETA -->
-Seis colores claros, uno por parte de un relevo, y los colores de base.
-
-| Parte | Nombre | Color |
-| --- | --- | --- |
-| Tiempo | Amarillo claro | `#F4E496` |
-| Primer paso | Celeste | `#B3E5FC` |
-| Lugar | Verde claro | `#C6EEAE` |
-| Decisión | Rosa | `#FAC8D9` |
-| Personalización | Lila | `#DFD1FC` |
-| Después de la señal | Durazno | `#FBD1B3` |
-
-| Color | Uso | Código |
-| --- | --- | --- |
-| Blanco cálido | Fondo de las pantallas | `#F7F4F0` |
-| Gris claro | Botones secundarios y los íconos del Tag y del teléfono | `#EEE9E3` |
-| Gris de borde | Líneas de separación | `#E4DED6` |
-| Gris oscuro | Información secundaria | `#6B655F` |
-| Negro | Tipografía, acciones y selección | `#141312` |
-| Rojo | Solo errores, siempre con ícono y palabra | `#B3261E` |
-<!-- /lamina -->
+![Paleta cromática: colores de las partes y colores de base](imagenes/pase-H9-paleta.png)
 
 *Nota.* Elaboración propia.
 
 **Paleta por función.** La paleta cromática se decidió por la función que cumple cada color en la interfaz, no por un efecto emocional esperado: la investigación sobre psicología del color está en una etapa inicial y sus efectos dependen del contexto (Elliot y Maier, 2014), y el significado de un color cambia según el producto en que aparece (Kauppinen-Räisänen y Luomala, 2010). El color distingue de forma estable tres cosas: las partes de un relevo, las actividades de cada persona y los momentos del ciclo. Los seis colores de las partes tienen casi la misma luminosidad percibida, así que pesan lo mismo: distinguen sin jerarquizar.
 
-**Evidencia.** Las asociaciones entre color y emoción son tendencias compartidas, no efectos sobre la conducta, y en Relevo sirvieron sobre todo para descartar.
+**Evidencia.** Las asociaciones entre color y emoción son tendencias compartidas, no efectos sobre la conducta, y en Relevo sirvieron sobre todo para descartar:
 
-- En 30 países, las asociaciones resultaron muy similares, con una similitud media de r = 0,88, y más aún entre países que comparten lengua o cercanía geográfica (Jonauskaite et al., 2020).
-- En 31 países, las asociaciones que escogió el 40 % o más de las personas vinculan el rojo con el amor (69,2 %) y la rabia (55,2 %); el amarillo, con la alegría (55,7 %); el rosa, con el amor (53,2 %); el negro, con la tristeza (53,7 %) y el miedo (48,7 %); el gris, con la tristeza (47,7 %), y el naranja, con la alegría (44,6 %) y la diversión (41,0 %). Ninguna emoción llega a ese umbral con el verde, el azul ni el morado, y los colores más claros se asocian con emociones más positivas (Jonauskaite et al., 2024).
+- En 30 países, las asociaciones resultaron muy parecidas, y más aún entre países que comparten lengua o cercanía geográfica (Jonauskaite et al., 2020).
+- En 31 países, las asociaciones que comparten al menos cuatro de cada diez personas unen el rojo con el amor y la rabia; el amarillo, con la alegría; el rosa, con el amor; el negro, con la tristeza y el miedo; el gris, con la tristeza, y el naranja, con la alegría y la diversión. El verde, el azul y el morado no llegan a ese umbral con ninguna emoción, y los colores más claros se asocian con emociones más positivas (Jonauskaite et al., 2024).
 - La saturación y el brillo elevan la activación, que crece del azul y el verde hacia el rojo (Wilms y Oberfeld, 2018).
-- No se encontró un estudio solo con población chilena. En una encuesta a 1066 personas de México, Argentina y Chile, el miedo se asoció sobre todo con el negro (52,4 %), el rojo (13,5 %) y el gris (8,9 %), y el celeste claro y el magenta fueron los colores menos asociados con el miedo; es un boletín de prensa sobre una ponencia, sin revisión por pares (Universidad Nacional Autónoma de México [UNAM], 2023). En Medellín, con 2400 universitarios, el verde se asoció con la naturaleza y la esperanza; el azul, con el mar y el cielo; el rosa, con la ternura; el morado, con el luto, y el gris, con el mal tiempo y la tristeza (Restrepo Betancur, 2022). En Ecuador, con 260 universitarios, los conceptos con raíz sensorial o cultural recibieron colores consistentes, y los abstractos, como «creativo», se dispersaron (Sánchez-Borrero et al., 2026).
+- No se encontró un estudio solo con población chilena. En una encuesta a 1066 personas de México, Argentina y Chile, el miedo se asoció sobre todo con el negro, en más de la mitad de las respuestas, y muy por detrás con el rojo y el gris, mientras el celeste claro y el magenta fueron los colores menos asociados con el miedo; es un boletín de prensa sobre una ponencia, sin revisión por pares (Universidad Nacional Autónoma de México [UNAM], 2023). En Medellín, con 2400 universitarios, el verde se asoció con la naturaleza y la esperanza; el azul, con el mar y el cielo; el rosa, con la ternura; el morado, con el luto, y el gris, con el mal tiempo y la tristeza (Restrepo Betancur, 2022). En Ecuador, con 260 universitarios, los conceptos con raíz sensorial o cultural recibieron colores consistentes, y los abstractos, como «creativo», se dispersaron (Sánchez-Borrero et al., 2026).
 
-**Seis criterios para la paleta.**
+**Seis criterios para la paleta.** De esa evidencia salen seis criterios:
 
 1. **Familias, no tonos exactos.** Ningún tono preciso produce por sí mismo una emoción.
 2. **Colores claros y poco saturados,** para no elevar la activación, como propone la *calm technology* (Weiser y Brown, 1997): informar desde la periferia de la atención.
@@ -213,7 +224,7 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 5. **Contraste medido:** 4,5:1 para la tipografía (criterio 1.4.3) y 3:1 para los gráficos que informan (criterio 1.4.11; World Wide Web Consortium, 2024).
 6. **Un color, un significado.** Cada color significa siempre lo mismo. El color es difícil de apropiar como rasgo de una marca (Ward et al., 2020), así que su aporte está en la coherencia del sistema.
 
-**Colores de las partes.** Seis colores claros, de luminosidad perceptual equivalente —entre 0,88 y 0,91 en OKLCH (Ottosson, 2020)—, distinguen las partes de un relevo (Tabla H3). Donde existe, la asignación sigue la convención de la señalética de seguridad: la norma ISO 3864-1 asigna el rojo a la prohibición, el amarillo a la precaución, el azul a la acción obligatoria y el verde a la condición segura, como una salida o un botiquín (International Organization for Standardization [ISO], 2011).
+**Colores de las partes.** Seis colores claros, de luminosidad percibida equivalente, medida en el espacio de color OKLCH (Ottosson, 2020), distinguen las partes de un relevo (Tabla H3). Donde existe, la asignación sigue la convención de la señalética de seguridad: la norma ISO 3864-1 asigna el rojo a la prohibición, el amarillo a la precaución, el azul a la acción obligatoria y el verde a la condición segura, como una salida o un botiquín (International Organization for Standardization [ISO], 2011).
 
 **Tabla H3**
 
@@ -221,18 +232,18 @@ Seis colores claros, uno por parte de un relevo, y los colores de base.
 
 | Parte | Color | Evidencia |
 | --- | --- | --- |
-| Tiempo, la condición que activa la señal | Amarillo claro, `#F4E496` | El color más asociado con la alegría; en la señalética pide atención sin prohibir. Poco saturado, para no elevar la activación. |
-| Primer paso | Celeste, `#B3E5FC` | En la señalética indica una acción, y está entre los colores menos asociados con el miedo. |
-| Lugar donde empieza la actividad | Verde claro, `#C6EEAE` | En la señalética, el verde indica dónde está algo; en Medellín se asocia con la naturaleza y la esperanza. |
-| Decisión | Rosa, `#FAC8D9` | Conserva el amor y la alegría del rojo sin su asociación con la rabia, para que la decisión no se juzgue. |
-| Personalización | Lila, `#DFD1FC` | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
-| Después de la señal | Durazno, `#FBD1B3` | El naranja se asocia con la alegría y la diversión. |
+| Tiempo, la condición que activa la señal | Amarillo claro | El color más asociado con la alegría; en la señalética pide atención sin prohibir. Poco saturado, para no elevar la activación. |
+| Primer paso | Celeste | En la señalética indica una acción, y está entre los colores menos asociados con el miedo. |
+| Lugar donde empieza la actividad | Verde claro | En la señalética, el verde indica dónde está algo; en Medellín se asocia con la naturaleza y la esperanza. |
+| Decisión | Rosa | Conserva el amor y la alegría del rojo sin su asociación con la rabia, para que la decisión no se juzgue. |
+| Personalización | Lila | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
+| Después de la señal | Durazno | El naranja se asocia con la alegría y la diversión. |
 
-*Nota.* Elaboración propia. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de 12,7:1 a 14,5:1.
+*Nota.* Elaboración propia. Los códigos de cada color están en la Figura H9. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de al menos 12,7:1, muy por sobre el 4,5:1 que piden las WCAG.
 
-**Degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos.
+**Degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos (Figura H10 y Tabla H4).
 
-**Figura H5**
+**Figura H10**
 
 *Degradados de las siete familias de actividades*
 
@@ -250,7 +261,7 @@ Siete familias, cada una con un color de base y cuatro o cinco manchas de color.
 | Con otras personas | `#F4C9D2` | `#C8325A` `#F7A9BE` `#FFFFFF` `#E0617F` |
 <!-- /lamina -->
 
-*Nota.* Elaboración propia. Cada degradado combina un color de base con cuatro o cinco manchas de color, tomados del código de la app.
+*Nota.* Elaboración propia. Cada degradado combina un color de base con cuatro o cinco manchas de color, tomados de la app.
 
 **Tabla H4**
 
@@ -268,21 +279,23 @@ Siete familias, cada una con un color de base y cuatro o cinco manchas de color.
 
 *Nota.* Elaboración propia. Cada persona puede cambiar el color de una actividad.
 
-La tipografía blanca sobre los degradados claros no alcanzó 4,5:1 —se midieron entre 2,6:1 y 3,7:1—, así que el nombre de la actividad va en una cápsula blanca con tipografía negra, que alcanza entre 15:1 y 17,8:1 sobre cualquier degradado. El degradado aparece solo donde está la actividad y cubre la pantalla completa en el momento de la señal, cuando la interfaz debe hacer visible la actividad.
+Sobre los degradados claros, la tipografía blanca no alcanzaba el contraste mínimo de 4,5:1, así que el nombre de la actividad va en una cápsula blanca con tipografía negra, que lo supera con holgura sobre cualquier degradado. El degradado aparece solo donde está la actividad y cubre la pantalla completa en el momento de la señal, cuando la interfaz debe hacer visible la actividad.
 
 **Verificación.** La luminosidad y la saturación se midieron en OKLCH, y el contraste, según las WCAG 2.2; el de la tipografía sobre los degradados, en capturas, sobre el píxel más desfavorable del fondo. Las deficiencias de visión del color se simularon con el modelo de Machado et al. (2009).
 
 ## H.5 Nombre, frase y descriptor
 
+El sistema se completa con tres piezas verbales.
+
 **Nombre.** Un relevo es el momento en que algo pasa de una mano a otra, como en una carrera de relevos. El nombre cuenta lo que busca el sistema: que la atención pase de la pantalla a lo que la persona quería hacer, sin que nadie se la quite. Es breve, se pronuncia sin trabas en español y viene del mundo de los traspasos y los turnos, no de las prohibiciones. Una comercialización exigiría revisar antes la disponibilidad jurídica del nombre, los dominios y las coincidencias comerciales.
 
-**Frase de marca.** «Hazle lugar a lo que quieres hacer.» Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error. Es la frase definitiva desde el 10 de noviembre de 2026.
+**Frase de marca.** «Hazle lugar a lo que quieres hacer.» Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error. Quedó confirmada como definitiva el 10 de noviembre de 2026.
 
 **Descriptor.** «Un recordatorio físico preparado desde el teléfono.» Acompaña al nombre cuando quien lo lee todavía no conoce el producto: su función es aclarar, no emocionar.
 
 ## H.6 Propuestas anteriores
 
-Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas de identidad, y cada una dejó algo en la final.
+Entre septiembre y octubre de 2026 se exploraron más de veinte propuestas de identidad, y cada una dejó algo en la final (Tabla H5).
 
 **Tabla H5**
 
@@ -292,20 +305,23 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 | --- | --- | --- | --- |
 | 16 sep. | Sistema de marca del proyecto | Nombre, descriptor, frase, tipografía, paleta cromática y logotipo. | Se mantienen el nombre, el descriptor y la frase; la tipografía, la paleta cromática y el logotipo se reemplazaron en octubre. |
 | 25 sep. | Punto y pulso | Una identidad a partir de un punto que late. | Se reemplazó el mismo día. |
-| 25 sep. | «Antes de que sea después» | Una plataforma de marca sobre el momento en que aún se puede elegir. | El autor la juzgó confusa para la comisión, y la reemplazó «Vuelve a lo que querías hacer». |
-| 25 sep. | «Vuelve a lo que querías hacer» | El mismo centro, en palabras directas. | Se aplicó en la app de la 2.8 a la 2.30. |
-| 27 sep. | Sistema de marca 2.0 en Figma | Variables, componentes y pantallas en Figma. | La superaron las propuestas de fines de septiembre. |
+| 25 sep. | «Antes de que sea después» | Una plataforma de marca sobre el momento en que aún se puede elegir. | Se descartó porque podía confundir a la comisión, y la reemplazó «Vuelve a lo que querías hacer». |
+| 25 sep. | «Vuelve a lo que querías hacer» | El mismo centro, en palabras directas. | Se aplicó en la app del 26 de septiembre al 9 de octubre. |
+| 27 sep. | Sistema de marca en Figma | Variables, componentes y pantallas en Figma. | La superaron las propuestas de fines de septiembre. |
 | 30 sep. | Subrayado | Una identidad alrededor de un renglón azul. | Se descartó porque no decía qué hace Relevo; el renglón quedó como línea de escritura. |
-| 2 oct. | Sistema de diseño 3.1 | Un renglón que hace lugar, dos voces y los colores de la casa. | Fue la base de las propuestas 3.2 a 3.5. |
-| 3 oct. | Relevo vivo, Volver a enfocar, Las ganas estaban y Cuándo va color | Color vivo, tipografía manuscrita, serifa y reglas de cuándo usar color. | El autor descartó la tipografía manuscrita y la serifa; quedó la regla de cuándo va color. |
+| 2 oct. | Sistema de diseño | Un renglón que hace lugar, dos voces y los colores de la casa. | Fue la base de las propuestas del 3 de octubre. |
+| 3 oct. | Relevo vivo, Volver a enfocar, Las ganas estaban y Cuándo va color | Color vivo, tipografía manuscrita, serifa y reglas de cuándo usar color. | Se descartaron la tipografía manuscrita y la serifa; quedó la regla de cuándo va color. |
 | 3 oct. | Traspaso | La marca como un traspaso de mano en mano. | La idea del traspaso sigue en el logo de cuatro círculos. |
 | 4 oct. | Tipografías para el logotipo | Una búsqueda amplia de tipografías display. | Llevó a elegir Chillax para el logo del 11 de octubre. |
-| 10 y 11 oct. | Identidad final | Fichas por color, íconos propios, degradados y el logo de cuatro círculos. | **Cerrada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde la 3.0. |
-| 5 nov. | Rediseño de la app 4.0 | La interfaz en blanco cálido y negro, con las actividades en anillos. | Es la base de las versiones 4.0 a 4.7.2 de la app. |
+| 10 y 11 oct. | Identidad final | Fichas por color, íconos propios, degradados y el logo de cuatro círculos. | **Cerrada el 11 de octubre:** es la identidad de la memoria, aplicada en la app desde el 12 de octubre. |
+| 5 nov. | Rediseño de la app | La interfaz en blanco cálido y negro, con las actividades en anillos. | Es la base de la app actual. |
+| 6 nov. | Íconos según lo que pide la app | Un inventario de los íconos que usa la app, con cinco reglas: un significado por dibujo, cada actividad con el objeto con que empieza, legible en su tamaño más chico, neutro donde la app no juzga y la construcción de siempre. | Se rehicieron once íconos, que usa la app actual. |
 
 *Nota.* Elaboración propia. Fechas de 2026.
 
-## H.7 Referentes visuales del autor
+## H.7 Referentes visuales
+
+Tres referentes visuales dejaron algo en la identidad, y también algo que se descartó (Tabla H6).
 
 **Tabla H6**
 
@@ -313,7 +329,7 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 
 | Referente | Aporte | Elementos incorporados | Elementos descartados |
 | --- | --- | --- | --- |
-| Dafi (Mambo Mambo) | Íconos de línea sobre cuadrados de color y fichas en escalera. | Las fichas con ícono de línea, ahora con un color por parte del relevo. | Sus dibujos: los 72 íconos se trazaron de nuevo. |
+| Dafi (Mambo Mambo) | Íconos de línea sobre cuadrados de color y fichas en escalera. | Las fichas con ícono de línea, ahora con un color por parte del relevo. | Sus dibujos: los íconos de Relevo se trazaron de nuevo. |
 | DAYO | Personajes que nacen de cuatro estados emocionales, ordenados con el modelo de valencia y activación. | Fundamentar el color en estudios de emoción, con datos de 31 países y la saturación como activación. | El volumen peludo en 3D, que a 16 px se pierde; el volumen de Relevo está en sus degradados. |
 | Biceps Grotesk | Una tipografía modular de cuadrados y triángulos en una retícula de 30 px, en rojos y rosas. | La construcción modular: las mismas formas de base y una sola retícula; de sus rojos, el lado rosa. | La tipografía para la interfaz, que es para lucirse en grande. |
 
@@ -321,9 +337,19 @@ Entre septiembre y octubre de 2026, el autor exploró más de veinte propuestas 
 
 ## Referencias
 
+Apple. (s. f.). *SF Symbols*. Apple Developer. Recuperado el 10 de noviembre de 2026, de https://developer.apple.com/sf-symbols/
+
 Elliot, A. J. y Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
 
+Google. (s. f.-a). *Material Symbols guide*. Google for Developers. Recuperado el 10 de noviembre de 2026, de https://developers.google.com/fonts/docs/material_symbols
+
+Google. (s. f.-b). *System icons*. Material Design. Recuperado el 10 de noviembre de 2026, de https://m2.material.io/design/iconography/system-icons.html
+
 Guynn, M. J., McDaniel, M. A. y Einstein, G. O. (1998). Prospective memory: When reminders fail. *Memory & Cognition, 26*(2), 287–298. https://doi.org/10.3758/BF03201140
+
+Harley, A. (2014, 27 de julio). *Icon usability*. Nielsen Norman Group. https://www.nngroup.com/articles/icon-usability/
+
+Hou, G. y Pan, Y. (2025). What’s behind the graphic? The impact of pictogram-semantic mapping structure on icon understanding. *International Journal of Human–Computer Interaction, 41*(20), 12959–12969. https://doi.org/10.1080/10447318.2025.2466063
 
 International Organization for Standardization. (2011). *Graphical symbols — Safety colours and safety signs — Part 1: Design principles for safety signs and safety markings* (Norma ISO n.º 3864-1:2011). https://www.iso.org/standard/51021.html
 
@@ -335,6 +361,12 @@ Jonauskaite, D., Epicoco, D., Al-Rasheed, A. S., Aruta, J. J. B. R., Bogushevska
 
 Kauppinen-Räisänen, H. y Luomala, H. T. (2010). Exploring consumers’ product-specific colour meanings. *Qualitative Market Research: An International Journal, 13*(3), 287–308. https://doi.org/10.1108/13522751011053644
 
+Lucide Contributors. (s. f.-a). *Icon design specification*. Lucide. Recuperado el 10 de noviembre de 2026, de https://lucide.dev/contribute/icons/specification
+
+Lucide Contributors. (s. f.-b). *Lucide design language*. Lucide. Recuperado el 10 de noviembre de 2026, de https://lucide.dev/contribute/icons/design-principles
+
+Lucide Contributors. (2026). *Lucide* (Versión 1.71.0) [Software]. GitHub. https://github.com/lucide-icons/lucide
+
 Luffarelli, J., Mukesh, M. y Mahmood, A. (2019). Let the logo do the talking: The influence of logo descriptiveness on brand equity. *Journal of Marketing Research, 56*(5), 862–878. https://doi.org/10.1177/0022243719845000
 
 Machado, G. M., Oliveira, M. M. y Fernandes, L. A. F. (2009). A physiologically-based model for simulation of color vision deficiency. *IEEE Transactions on Visualization and Computer Graphics, 15*(6), 1291–1298. https://doi.org/10.1109/TVCG.2009.113
@@ -344,6 +376,8 @@ Ottosson, B. (2020, 23 de diciembre). *A perceptual color space for image proces
 Restrepo Betancur, L. F. (2022). Preferencia por los colores en universitarios de la ciudad de Medellín, Colombia. *Anuario Electrónico de Estudios en Comunicación Social «Disertaciones», 15*(1), 1–15. https://doi.org/10.12804/revistas.urosario.edu.co/disertaciones/a.10455
 
 Sánchez-Borrero, G., Quelal-Moncayo, S. y Bustos-Cevallos, S. (2026). Asociaciones culturales latinoamericanas del color: estudio desde la psicología cromática en estudiantes universitarios de la Pontificia Universidad Católica del Ecuador. *Kepes, 23*(33), 105–145. https://doi.org/10.17151/kepes.2026.23.33.5
+
+Shen, Z., Xue, C. y Wang, H. (2018). Effects of users’ familiarity with the objects depicted in icons on the cognitive performance of icon identification. *i-Perception, 9*(3), Artículo 2041669518780807. https://doi.org/10.1177/2041669518780807
 
 Slack. (2019, 16 de enero). *Say hello, new logo*. https://slack.com/blog/news/say-hello-new-logo
 
@@ -358,6 +392,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-18 — Texto del PDF de anexos del Pase
+
+- **Qué cambió:** el anexo pasó a ser el del PDF de anexos del Pase: cambiaron 101 de sus 178 párrafos, ítems y filas de tabla. Suma los bocetos del logo (Figuras H2 a H4, los mismos de la Figura 19 de la memoria), la construcción de dos íconos y su comparación con Lucide (Figuras H7 y H8, y Tabla H2), y el conjunto pasa de 72 a 118 íconos (Figura H6); «H.7 Referentes visuales del autor» pasa a ser «H.7 Referentes visuales». La construcción del logo, los íconos y la paleta cromática son ahora las imágenes del PDF, porque cambiaron respecto de las láminas que armaba el constructor; el logo y los degradados siguen como láminas. El texto se copió tal como está en el PDF, con sus erratas; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- **Cómo estaba antes:** este Markdown tenía la versión del 10 de noviembre; el texto siguió cambiando fuera del repositorio hasta el PDF del Pase, que entregó el autor el 18 de noviembre.
+- **Por qué:** el autor pidió que el repositorio coincida con la memoria y los anexos en PDF del Pase, con sus errores.
 
 ### 2026-11-10 — Frase de marca definitiva
 
