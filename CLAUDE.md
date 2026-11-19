@@ -14,6 +14,7 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 - No inventes entrevistas, participantes, pruebas, resultados, citas, consentimiento, inventario, precios ni especificaciones. Los únicos participantes del corpus original son P1–P8, anonimizados.
 - No añadas nombres, correos, claves secretas, tokens ni datos identificables al repositorio. La clave publicable de Supabase no es una clave de servicio; nunca publiques `service_role` ni secretos.
 - Excepción decidida por el autor (D-161, 5 de noviembre de 2026): la clave de firma de la app (`06_desarrollo_y_factibilidad/app-android/firma/relevo-debug.keystore`) y la dirección y la clave publicable de Supabase (`06_desarrollo_y_factibilidad/app-android/relevo.properties`) están en el repositorio a propósito, para que cualquier computador compile versiones actualizables. No las borres ni las cambies.
+- Excepción decidida por el autor (D-179, 19 de noviembre de 2026): se pueden nombrar profesionales que participan por su oficio —profesores, especialistas consultados, autores de fuentes—. Las personas de entrevistas, encuestas y pruebas siguen anonimizadas, y nunca se suben datos de contacto.
 - No borres ni muevas archivos de manera amplia. Conserva versiones históricas y cambios del usuario. Usa `apply_patch` para editar texto.
 - Al final de cada Markdown nuevo o modificado añade un registro de cambios que indique qué cambió, cómo estaba antes y por qué.
 - Si se cambia el texto académico, conserva los títulos, el orden progresivo y los límites de palabras exigidos por la memoria vigente; después actualiza el resumen breve y comprueba APA 7 y coherencia.
@@ -26,6 +27,12 @@ Antes de responder o editar, lee [`00_gobernanza/traspaso-a-claude-2026-09-24.md
 El documento de traspaso incluye un prompt breve para iniciar el trabajo y las lecturas prioritarias. La rama principal actual al 24 de septiembre de 2026 es `main`; el estado de Issues debe consultarse en GitHub porque no se verificó en este entorno.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-19 — Nombres de profesionales
+
+- **Qué cambió:** se añadió la excepción que permite nombrar a profesionales (D-179).
+- **Cómo estaba antes:** la regla de no subir nombres no distinguía entre participantes y profesionales.
+- **Por qué:** el autor pidió registrar el nombre de un especialista externo, porque el repositorio público es parte del proceso.
 
 ### 2026-11-05 — Firma y Supabase en el repositorio
 

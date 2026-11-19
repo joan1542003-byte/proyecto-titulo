@@ -831,7 +831,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 ### C. Figuras y diseño de la memoria
 
 - [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales.
-- [ ] **«Figuras en bibliografías, al final; antes del planteamiento del problema».** La nota no es clara: confirmar con el autor si se refiere a mover el índice de figuras, a ubicar alguna figura antes del capítulo 3 o a otra cosa.
+- [ ] **Índice de figuras al final.** El índice de tablas y figuras pasa al final de la memoria, después de los anexos o junto a las referencias, y deja de estar antes del planteamiento del problema (D-180).
 - [ ] **Bocetos como fondo o textura** en la memoria diseñada.
 - [ ] **Explorar el color de Relevo** en la memoria diseñada.
 
@@ -841,7 +841,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### E. Proyecciones
 
-- [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con un especialista que sugirieron los profesores (su nombre está en las notas del autor; no se registra aquí porque el repositorio es público).
+- [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con Martin Bravo, especialista que sugirieron los profesores. El autor dará más datos de él; confirmar la escritura de su nombre.
 - [ ] **La actividad pendiente y su lugar.** Desarrollar la relación entre la actividad pendiente, su lugar de inicio y el lugar oportuno para hacerla.
 - [ ] **Taskscape.** Explorar el concepto, que se contrapone a *landscape*: el paisaje de las tareas, que se reconoce por sus sonidos. Sirve para pensar Relevo como una forma de espacializar la casa por medio de sonidos. El término es de Ingold (1993); leer el artículo antes de citarlo.
 - [ ] **Publicación de la app.** Diseñar cómo se publicaría: una maqueta de su ficha en Play Store y App Store.
@@ -850,8 +850,16 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 - Los cambios de formulación (punto B) se deciden con el autor antes de tocar la memoria, y se revisa que el Resumen y el Abstract sigan diciendo lo mismo.
 - Coordinar con la tarea 15: muchas correcciones caen en los mismos párrafos.
+- La propuesta de redacción para la cadena hipótesis, objetivos y proyecto, y para el objetivo 4, está en la [propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md).
+- Faltan los comentarios específicos que los profesores hicieron sobre la memoria; el autor los entregará.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-19 — Índice al final y especialista externo
+
+- **Qué cambió:** la tarea 16 dice que el índice de figuras va al final (D-180), nombra al especialista externo (D-179) y enlaza la propuesta de formulación.
+- **Cómo estaba antes:** la nota del índice estaba por confirmar y el nombre del especialista no se había registrado.
+- **Por qué:** el autor confirmó el sentido de la nota y pidió registrar los nombres de profesionales.
 
 ### 2026-11-19 — Revisión con los profesores
 

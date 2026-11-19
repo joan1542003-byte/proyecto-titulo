@@ -339,6 +339,7 @@
 | 18 nov. | Encargo | Extraer el texto de los PDF de la memoria y los anexos del Pase y actualizar en el repositorio la memoria y los anexos para que coincidan con ellos, con sus errores, y registrar los errores y las áreas a mejorar en un To Do. | [Borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md), copia del PDF del Pase con sus figuras; los [anexos A a I](../08_memoria/anexos/README.md) con el texto del PDF de anexos, comprobado al armar el Word en una copia aparte (99,97 % de coincidencia); la [tarea 15 de Por hacer](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase), con índices, erratas, extensión, frases que afirman más que los datos y puntos de método y ética. El Word y el PDF de los anexos no se regeneraron. | — |
 | 18 nov. | Consulta | Preguntó cómo se justifica la elección de la paleta de colores y qué es el método Framework. | Respuesta en la conversación, con la memoria v7 (capítulo 11, «Paleta cromática», capítulo 7 y glosario) y los Anexos H.4 y A.3. | — |
 | 19 nov. | Encargo | Entregó las notas de la revisión con los profesores guía, algo dispersas: la memoria es muy buena y agradable de leer, y hay observaciones de formulación, objetivos, figuras, anexos y proyecciones. | Notas ordenadas en la [tarea 16 de Por hacer](por-hacer.md#16-revisión-con-los-profesores-después-del-pase). El nombre del especialista externo no se registró por ser el repositorio público. | — |
+| 19 nov. | Decisión y encargo | Precisó que el índice de figuras va al final; pidió subir el nombre del especialista externo, porque el repositorio público es parte del proceso y puede tener nombres de profesionales, y aceptó que se redacte una propuesta para el objetivo 4 y la cadena hipótesis, objetivos y proyecto. Anunció comentarios específicos sobre la memoria. | [Propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md), tarea 16 actualizada y excepción en `CLAUDE.md`. | D-179, D-180 |
 
 ## Lo que muestra el registro
 
@@ -349,6 +350,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-19 — Índice, nombres y formulación
+
+- **Qué cambió:** se registraron D-179, D-180 y el encargo de la propuesta de formulación.
+- **Cómo estaba antes:** el último pedido era la entrega de las notas de la revisión.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-19 — Revisión con los profesores
 

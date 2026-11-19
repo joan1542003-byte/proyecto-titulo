@@ -7,6 +7,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos activos
 
 - [Borrador v7 de la memoria: el PDF del Pase (11 de noviembre de 2026)](borrador-memoria-v7-2026-11-11.md): el texto de la memoria en PDF que el autor entregó para el Pase («RELEVO PASE», 67 páginas), copiado tal cual, con sus erratas, sus 27 figuras y 4 tablas y su índice con las páginas del PDF. Los esquemas van en marcadores con su texto exacto; las capturas, los bocetos y los modelos 3D se extrajeron del PDF a [figuras](figuras/). Los capítulos suman unas 13 900 palabras de prosa. Sus errores y lo que conviene mejorar están en la [tarea 15 de Por hacer](../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- [Propuesta de formulación (19 de noviembre de 2026)](propuesta-formulacion-2026-11-19.md): responde a los profesores después del Pase. Ata cada objetivo a la hipótesis, reescribe el objetivo 4 con cuatro señales observables, propone el párrafo que presenta el proyecto como consecuencia de los objetivos y compara *agencia*, *autonomía* e *intención desplazada* para nombrar el fenómeno. No modifica la memoria.
 - [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md), base del v7: reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-154). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 478 palabras.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 62 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas, ninguna figura que corte la lectura y ninguna columna de texto sola. Reemplaza a la versión A3.
 - [Verificación de citas y referencias (9 de noviembre de 2026)](verificacion-de-referencias-2026-11-09.md): las 107 obras de la memoria v6 y los anexos, con su registro, su acceso y las correcciones en APA 7 (D-173).
@@ -95,6 +96,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-19 — Propuesta de formulación
+
+- **Cambio:** se suma la propuesta de formulación a los documentos activos.
+- **Versión anterior:** no había una respuesta escrita a las observaciones de la revisión después del Pase.
+- **Motivo:** el autor aceptó que se redactara una propuesta para el objetivo 4 y la cadena hipótesis, objetivos y proyecto.
 
 ### 2026-11-18 — Memoria y anexos del Pase
 
