@@ -1,8 +1,10 @@
 # Memoria en 1920 × 1080
 
-**Decisiones:** D-146 a D-152. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
+**Decisiones:** D-146 a D-152, D-182 y D-183. Reemplaza a la [versión A3](../memoria-a3/README.md), que queda como registro.
 
-**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 62 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
+**Después del 11 de noviembre:** el autor abrió el IDML de esta versión en Affinity y terminó ahí la memoria que entregó para el Pase. Desde entonces, la memoria se corrige en su documento de Affinity, y su texto es el [borrador v7](../borrador-memoria-v7-2026-11-11.md). Este generador no se ha vuelto a usar.
+
+**Para leer:** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 68 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
 
 **Para editar en Affinity:** `memoria-relevo-1920x1080.idml`, que se abre en Affinity Publisher o InDesign. No se guarda en el repositorio, porque sus imágenes se enlazan con la ruta completa del computador donde se generó: se genera en la carpeta donde se va a trabajar. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
 
@@ -18,9 +20,9 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | --- | --- |
 | Hoja | 1920 × 1080 puntos (677,3 × 381 mm), papel `#F7F4F0` hasta el borde. Tres columnas. |
 | Escala | El generador compone a escala 7:11, en una hoja de 431 × 242 mm, y amplía el PDF y el IDML por 22/14. Así conserva las piezas, las proporciones y la escala tipográfica de la versión A3. |
-| Texto | Instrument Sans de 23 pt, con interlineado de 34,6 pt (1,5 veces la letra) y media línea entre párrafos. En el PDF, 8,1 palabras por línea en promedio. 26 líneas por columna. |
+| Texto | Instrument Sans de 24 pt, con interlineado de 36,1 pt (1,5 veces la letra) y media línea entre párrafos. Desde el 11 de noviembre de 2026, todo el texto —cuerpo, tablas, figuras, notas, referencias y paneles— va un punto más grande que antes (D-183). 25 líneas por columna. |
 | Escala completa | 14, 17, 19, 22, 28 y 44 pt en el cuerpo, las tablas y las figuras (la escala de la A3, por 22/14). |
-| Aperturas | Número de 94 pt en peso regular —el más liviano de Instrument Sans, que no tiene versión light— y título de 63 pt: manda el título. |
+| Aperturas | Número de 95 pt en peso regular —el más liviano de Instrument Sans, que no tiene versión light— y título de 64 pt en negrita (700): manda el título. |
 | Rótulos | Como en una tesis: «Figura 1» o «Tabla 1» en negrita y el título en cursiva, debajo; nada en cápsulas. Cabeceras de tabla, encabezados y fechas de 17 pt. |
 | Tablas | Como antes de D-148: cada fila en una ficha blanca, con números sueltos y sin círculos ni cápsulas; el total, con un borde. |
 | Números y fondos | Números sueltos, sin círculos. El fondo blanco queda para los esquemas y gráficos; las fotos, las capturas, las cifras, la identidad y la línea de la prueba van sobre el papel con sus propias fichas blancas. Ninguna ficha ni cuadro de color va dentro de otra ficha. |
@@ -28,9 +30,10 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | Cortes | Un párrafo de cinco líneas o menos no se corta. Al cortar uno, quedan al menos tres líneas arriba y pasan al menos tres a la columna siguiente, o cuatro si la siguiente está en otra página. |
 | Cifras | Los miles se separan con un espacio que no se corta: «1 577 000» va siempre en una sola línea. |
 | Secciones | Cada una abre en una página nueva, con su panel de aura en la primera columna. |
-| Final de cada sección | El texto llena cada columna de arriba abajo, sin repartirse en columnas parejas. Ningún capítulo termina en una columna sola: si pasa, se resuelve con el contenido —una figura de concepto o lo repetido dicho una vez—. Una tabla o figura que queda después del último texto de su sección vuelve a esa página solo si cabe bajo el texto. |
-| Tablas y figuras | Al pie de la página siguiente a su mención, en el orden en que aparecen, con el título arriba y la nota abajo: el texto sigue arriba, hacia el lado, y nunca continúa debajo de una figura. Una página solo de piezas las centra en el alto. Una tabla más alta que la página llena la primera con todas las filas que caben, y esa página no lleva texto; la continuación repite la cabecera y lleva al menos dos filas y la nota. |
+| Final de cada sección | El texto llena cada columna de arriba abajo, sin repartirse en columnas parejas (se quitó el reparto del 10 de noviembre, que dejaba páginas con columnas cortas). Ningún capítulo termina en una columna sola: si pasa, se resuelve con el contenido —una figura de concepto o lo repetido dicho una vez—. Una tabla o figura que queda después del último texto de su sección vuelve a esa página solo si cabe bajo el texto. |
+| Tablas y figuras | En la página de su primera mención o en la siguiente, nunca más lejos ni antes (D-183): una búsqueda prueba reservar cada pieza en esas páginas y se queda con el reparto que deja menos piezas lejos, menos finales cortos y menos páginas a medio llenar. Por defecto, al pie de la página siguiente a su mención, en el orden en que aparecen, con el título arriba y la nota abajo: el texto sigue arriba, hacia el lado, y nunca continúa debajo de una figura. Una página solo de piezas las centra en el alto. Una tabla más alta que la página llena la primera con todas las filas que caben, y esa página no lleva texto; la continuación repite la cabecera y lleva al menos dos filas y la nota. |
 | Orden de lectura | Como en una página doble: el texto llena cada columna y sigue hacia el lado. Sobre una pieza, el texto ocupa al menos siete líneas y media por columna; si no caben, la página queda para la pieza. Un subtítulo no queda solo al pie de una columna. |
+| Figuras de dos columnas | El mapa de la Figura 10 y las fotos, capturas y bocetos de las Figuras 14, 16, 19, 20, 21 y 23 ocupan dos columnas a la derecha, junto a la columna de texto que las menciona (marca `(doble)` o `<!-- doble -->` en la v6). |
 | Figuras de una columna | Los esquemas breves (Figuras 1 a 5, 8 y 10) van en su propia columna, a la derecha y desde arriba, junto al texto que los menciona: el texto nunca sigue debajo de una figura en la misma columna. |
 | Imágenes | Las imágenes enteras de una figura quedan del mismo alto, en columnas proporcionales; los flujos llevan flechas; las figuras anchas usan todo el ancho. Las personas llevan el ícono de perfil. |
 | Índice | Las secciones en una página, y las tablas y figuras en otra, como exige la pauta de la Biblioteca. Las filas de tablas y figuras se reparten donde las dos columnas quedan parejas, medidas. |
@@ -38,19 +41,20 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 
 ## Figuras nuevas
 
-El generador dibuja once tipos de figura, que leen su contenido de la propia v6 (grupos separados por «; » y campos por « | »), y compone fotos y capturas sin recortarlas:
+El generador dibuja once tipos de figura, que leen su contenido de la propia v6 (grupos separados por «; » y campos por « | »), y compone fotos, capturas y bocetos sin recortarlos (numeración del 11 de noviembre de 2026):
 
-- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: el recorrido del usuario (Figura 12), la arquitectura de información (Figura 14), la voz de Relevo (Figura 15) y las etapas del proyecto (Figura 19); en una columna, una intención que vuelve tarde (Figura 1), las ideas de McDaniel y Einstein (Figura 2), Norman (Figura 3) y Sanders y Stappers (Figura 5), las dos situaciones de uso (Figura 8) y los ocho criterios (Figura 10).
-- **Mapa de dos ejes:** qué hace cada herramienta —limitar el uso del teléfono o recordar lo que la persona quería hacer— y si ocurre en la pantalla o fuera de ella (Figura 9).
-- **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en primer y en segundo plano (Figura 4).
-- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 23), a dos columnas de ancho.
-- **Cronología:** el proceso del proyecto, de marzo a octubre (Figura 11).
-- **Lámina de identidad:** logo, colores con las preguntas de la aplicación, letra e íconos, cada uno en su ficha blanca (Figura 16).
-- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 20).
-- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 22).
-- **Fotos y modelos:** el Tag durante la prueba (Figura 17) y Relevo en 3D (Figura 18), con su pie numerado.
-- **Gráfico de barras:** opiniones de la encuesta (Figura 7), con barras horizontales y el número al lado.
-- **Flujo con flechas:** el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 13); las 39 pantallas están en el Anexo F.
+- **Esquema en filas y columnas:** cada grupo, una columna con su cabecera y sus filas: el recorrido del usuario (Figura 13), la arquitectura de información (Figura 15), la voz de Relevo (Figura 17) y las etapas del proyecto (Figura 22); en una columna, las causas (Figura 2), los caminos de la memoria prospectiva (Figura 3), la señal y el mensaje (Figura 4), las fuentes (Figura 6), las situaciones de uso (Figura 9), los criterios (Figura 11) y las condiciones para que una intención vuelva a tiempo (Figura 27).
+- **Mapa de dos ejes:** qué hace cada herramienta —limitar el uso del teléfono o recordar lo que la persona quería hacer— y si ocurre en la pantalla o fuera de ella, con Relevo en su cuadrante (Figura 10), a dos columnas junto al texto.
+- **Momentos de la atención:** antes de la señal, cuando suena y cuando termina, con lo que queda en primer y en segundo plano (Figura 5).
+- **Matriz de dos por dos:** motivación y facilidad para empezar (Figura 26), en una columna.
+- **Cronología:** el proceso del proyecto, de marzo a noviembre (Figura 12).
+- **Lámina de identidad:** logo, colores, tipografía e íconos, cada uno en su ficha blanca (Figura 18).
+- **Cifras:** una ficha por dato, con una barra de progreso del color de su papel (Figura 7).
+- **Prueba aplicada:** las cuatro etapas de la prueba en los hogares (Figura 24).
+- **Resultados por persona:** un punto por respuesta, lleno si declaró haber empezado (Figura 25).
+- **Fotos, bocetos y modelos:** bocetos del logo (Figura 19) y del objeto (Figura 20), Relevo en 3D (Figura 21) y el Tag durante la prueba (Figura 23), con su pie numerado.
+- **Gráfico de barras:** opiniones de la encuesta (Figura 8), con barras horizontales y el número al lado.
+- **Flujo con flechas:** el flujo de la aplicación, de preparar a decidir, en seis capturas (Figura 14); las pantallas de la prueba están en el Anexo F.
 
 ## Cómo se genera
 
@@ -62,6 +66,8 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Verificación
 
+- **Novena ronda, el 11 de noviembre de 2026:** 68 páginas, sin avisos del generador. Cada tabla y figura queda en la página de su primera mención o en la siguiente, ningún capítulo termina en una columna sola o corta y no queda ninguna tabla partida. Las únicas páginas solo de piezas son la Tabla 1, al cierre del capítulo 11, y la Tabla 4, al cierre del 13. Se revisó la vista de todas y, de cerca, las páginas 10, 11, 22, 27, 43 a 45, 49, 53, 54, 56, 57 y 62.
+- **Octava ronda, el 10 de noviembre de 2026:** 75 páginas, sin avisos del generador. Se revisó la vista de todas y, de cerca, cada figura: sin texto desbordado, sin etiquetas sobre los ejes y sin encabezados partidos. Los íconos de las figuras salen del código de la app 4.7.2 (`marca-e-iconos.json`); un capítulo que termina en una sola columna corta reparte esa página en dos; la contraportada lleva la frase de marca. Las cursivas usan Instrument Sans Italic y SemiBold Italic, incluidas en `letra/`. PDF de 9,4 MB.
 - **Séptima ronda, el 29 de octubre de 2026:** 62 páginas, sin avisos del generador; ningún texto sigue debajo de una figura en su columna y ningún capítulo termina en una columna sola. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 7 de 1458 líneas pasan de 12, por cifras. PDF de 7,2 MB. El IDML enlaza sus 60 imágenes, y el índice de tablas y figuras se mide bien: antes, sus filas compartían la clase de la medición y el IDML recibía posiciones encimadas.
 - **Sexta ronda, el 29 de octubre de 2026:** 66 páginas, sin avisos del generador; el texto llena cada columna y sigue hacia el lado, sin continuar debajo de una figura; ningún subtítulo queda solo al pie de una columna. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 7 de 1521 líneas pasan de 12, por cifras. PDF de 7,2 MB (el máximo del instructivo es 15). El IDML enlaza sus 58 imágenes.
 - **Quinta ronda, el 29 de octubre de 2026:** 68 páginas, sin avisos del generador; ninguna tabla partida deja texto entre sus partes, y bajo cada pieza el texto ocupa al menos siete líneas por columna. Se revisó la vista de todas. Texto: 8,1 palabras por línea en promedio; 11 de 1686 líneas pasan de 12, por cifras. El IDML enlaza sus 57 imágenes y declara solo los cinco estilos de Instrument Sans.
@@ -77,10 +83,28 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 - El IDML está en el repositorio desde el 29 de octubre de 2026, pero sus imágenes se enlazan con la ruta del computador donde se generó: en otro computador hay que volver a enlazarlas desde `figuras/idml/`, o generar el IDML de nuevo con `node construir-idml.js`.
 - Algunas tablas y láminas altas quedan en páginas propias, con aire debajo, porque no dejan espacio útil para texto.
-- Las capturas de la aplicación son de la línea 3.x; la prueba usó la interfaz de la 2.30.
+- Las capturas de la aplicación son de la versión actual; la prueba usó otra interfaz, con los mismos pasos.
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — La memoria sigue en Affinity
+
+- **Qué cambió:** se aclara que, desde el 11 de noviembre, la memoria se corrige en el documento de Affinity del autor y no con este generador.
+- **Cómo estaba antes:** el README describía el generador como la forma de producir la memoria; esta versión, del 11 de noviembre, estaba solo en la copia local del autor.
+- **Por qué:** al ordenar los pendientes se trajo al repositorio el trabajo del 10 y el 11 de noviembre.
+
+### 2026-11-11 — Memoria final, segunda vuelta
+
+- **Qué cambió:** todo el texto sube un punto; los títulos de apertura van en negrita y el número sigue en regular; vuelven los agradecimientos; las cifras de la Figura 7 llevan una barra de progreso de un color en vez de una barra por respuesta; los segundos de la Tabla 3 van sueltos, sin círculo; hay figuras de dos columnas junto al texto; cada pieza queda en la página de su mención o la siguiente, con una búsqueda que lo comprueba y avisa si no; se quitó el reparto de los finales en columnas cortas y se avisa cuando un capítulo termina en una columna sola o corta.
+- **Cómo estaba antes:** texto de 23 pt, títulos en seminegrita, sin agradecimientos, una barra por respuesta, segundos en círculos, figuras a dos o tres páginas de su mención (por ejemplo, la Tabla 1 y las Figuras 12 y 13) y finales repartidos en dos columnas cortas, que dejaban páginas casi vacías (13, 16 y 63, entre otras).
+- **Por qué:** pedido del autor del 10 de noviembre de 2026, en la noche (D-183).
+
+### 2026-11-10 — Memoria final
+
+- **Qué cambió:** los íconos de las figuras son los de la app 4.7.2; la lámina de identidad muestra siete; el mapa evita que una etiqueta cruce el eje; un capítulo que termina en una sola columna corta reparte esa página en dos, y la contraportada lleva la frase de marca.
+- **Cómo estaba antes:** los íconos eran los del 11 de octubre, la contraportada decía «Un recordatorio físico preparado desde el teléfono» y los finales de capítulo nunca se repartían.
+- **Por qué:** pedido del autor del 10 de noviembre de 2026 (D-182).
 
 ### 2026-11-09 — Lámina de identidad
 

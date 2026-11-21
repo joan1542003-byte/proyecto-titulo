@@ -2441,7 +2441,58 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Decisión:** el índice de tablas y figuras deja de ir después del índice general y pasa al final de la memoria.
 - **Documentos:** tarea 16 de [Por hacer](../00_gobernanza/por-hacer.md).
 
+## D-181 — Relevo pasa a la versión 1: Relevo Home y Relevo Go, más cercanos al Tag
+
+- **Fecha:** 2026-11-10.
+- **Registro:** anotada el 21 de noviembre de 2026. En la copia local del autor, sin subir, se llamaba D-179; cambió de número porque D-179 y D-180 ya se habían usado el 19 de noviembre.
+- **Estado:** hecha en [`version-1-home-y-go`](../06_desarrollo_y_factibilidad/testigo-impresion-3d/version-1-home-y-go/README.md); modelada y sin imprimir, como dispone D-178.
+- **Contexto:** al ver la versión 0, el autor notó que el logo calado, la ranura y los ocho agujeros la hacían parecer un ventilador o un aromatizante. Pidió un objeto más parecido al Tag y retomó sus bocetos: una variante portátil y otra para el hogar.
+- **Decisión:**
+  - **Núcleo común:** chasis, pulsador y tapa roscada iguales en las dos variantes.
+  - **Relevo Home:** 52 × 13,4 mm, base ancha y rebaje para una goma antideslizante.
+  - **Relevo Go:** gota de 44 × 54,5 × 11,4 mm con agujero para argolla, según el boceto del autor.
+  - **En las dos:** la cara entera es el botón, el logo va a ras en sus cuatro colores y el sonido sale por la junta.
+  - **Imágenes:** sin ningún texto dentro; el título y la nota los pone la memoria.
+- **Alternativas descartadas:** afinar la ranura del medallón; agujeros de sonido en la cara; una cúpula que se flexione, que en PLA se fatiga.
+- **Consecuencias:** las medidas de la placa siguen estimadas; las dos variantes quedan fuera de la envolvente de 42 a 48 × 12 a 16 mm de la versión 0, que se conserva.
+- **Documentos:** [versión 1](../06_desarrollo_y_factibilidad/testigo-impresion-3d/version-1-home-y-go/README.md) y [memoria v6](../08_memoria/borrador-memoria-v6-2026-10-28.md), capítulos 11 y 12.
+
+## D-182 — Memoria final: fuentes ajustadas, sin inteligencia artificial en el presupuesto y sin columnas solas
+
+- **Fecha:** 2026-11-10.
+- **Registro:** anotada el 21 de noviembre de 2026. En la copia local del autor, sin subir, se llamaba D-180; cambió de número porque D-179 y D-180 ya se habían usado el 19 de noviembre.
+- **Estado:** aplicada en el borrador v6, la versión en 1920 × 1080 y los anexos.
+- **Contexto:** el autor pidió la memoria final, con los resultados y las entrevistas de cierre ya en el repositorio.
+- **Decisión:**
+  - **Sin mencionar:** la falsabilidad y la autorización de las fotos.
+  - **Rango de edad:** de 19 a 30 años, como un acotamiento para empezar el estudio, con posibilidad de ampliarlo.
+  - **Inteligencia artificial:** una declaración breve en el capítulo 10 y el Anexo E; el presupuesto no incluye herramientas de inteligencia artificial.
+  - **Citas:** dicen lo que su fuente sostiene; las fuentes que no se consiguieron completas quedan como están, sin mencionarlo en la memoria.
+  - **Imágenes:** sin pies, notas ni títulos dentro, porque los pone el texto en APA 7; los íconos salen del código de la aplicación vigente.
+  - **Diagramación:** un capítulo que termina en una sola columna corta reparte esa página en dos columnas.
+- **Documentos:** [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md), decimoséptima ronda, y [cambios de las fuentes](../01_contexto_y_fuentes/fuentes-de-la-memoria/cambios-memoria-final-2026-11-10.md).
+
+## D-183 — Memoria final, segunda vuelta: lectura por persona, menos cifras y cada figura junto a su mención
+
+- **Fecha:** 2026-11-11.
+- **Registro:** anotada el 21 de noviembre de 2026. En la copia local del autor, sin subir, se llamaba D-181; cambió de número porque D-179 y D-180 ya se habían usado el 19 de noviembre.
+- **Estado:** aplicada en el borrador v6, la versión en 1920 × 1080 y los anexos. El autor siguió la memoria en Affinity desde ese IDML y entregó el PDF del Pase desde ahí; su texto es el [borrador v7](../08_memoria/borrador-memoria-v7-2026-11-11.md).
+- **Contexto:** al revisar la memoria final (D-182), el autor pidió títulos de apertura en negrita con el número liviano, el texto un punto más grande, anexos más naturales y sin tantos números de versión, no decir que la entrevista se hizo en la app, ninguna página con párrafos cortados o casi vacía, la Figura 9 con Relevo, el plan de trabajo sin versiones, citar la fuente de los estudios propios, Lucide como referente de código abierto, figuras junto a su mención, sin «boceto del autor», los modelos 3D hechos con ayuda de Claude a partir de sus bocetos, la inteligencia artificial en el presupuesto, los resultados por persona, los segundos sin círculo, la Figura 6 con una barra de progreso, más bocetos, agradecimientos y menos cifras en la lectura.
+- **Decisión:**
+  - **Texto:** resultados contados por persona; cifras en palabras donde no hacen falta; sin números de versión de la app; cada estudio propio cita lo que estudió; sin adelantar capítulos ni anexos.
+  - **Inteligencia artificial:** Cursor, Codex y Claude Code en la declaración del capítulo 10 y el Anexo E; en el presupuesto, cinco meses de suscripción, unos 100 000 pesos (revierte lo que D-182 decidía sobre el presupuesto).
+  - **Figuras y tablas:** 27 figuras y 4 tablas. Entran las causas, los bocetos del logo y del objeto y las condiciones de una intención que vuelve; sale la figura de cifras en conjunto; la tabla de iteraciones pasa al Anexo G.
+  - **Diagramación:** cada pieza en la página de su mención o en la siguiente; figuras de dos columnas junto al texto; ningún final de capítulo repartido en columnas cortas: se resuelve con el contenido, como dice D-152 (revierte lo que D-182 decidía sobre la diagramación).
+- **Alternativas descartadas:** repartir los finales en columnas parejas, que dejaba páginas casi vacías, y dejar una tabla partida con texto entre sus partes.
+- **Documentos:** [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md), decimoctava ronda, y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — D-181, D-182 y D-183
+
+- **Qué cambió:** se registraron tres decisiones del 10 y el 11 de noviembre que estaban solo en la copia local del autor: la versión 1 del objeto, con Relevo Home y Relevo Go (D-181); la memoria final (D-182), y su segunda vuelta (D-183).
+- **Cómo estaba antes:** en esa copia se llamaban D-179, D-180 y D-181, números que la rama ya usaba desde el 19 de noviembre para otras decisiones. La última decisión registrada aquí era D-180.
+- **Por qué:** al ordenar las tareas el 21 de noviembre se vio que esas decisiones, que están en la memoria del Pase, no estaban en el repositorio. Se renumeraron en vez de cambiar las del 19, que ya se citan en otros documentos.
 
 ### 2026-11-19 — D-179 y D-180
 

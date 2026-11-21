@@ -179,6 +179,20 @@ El 10 de noviembre, el autor pidió resolver lo que quedaba de la [evaluación c
 
 El 10 de noviembre, el autor entregó los cierres de la segunda y la tercera persona; la primera respondió en la app. El [análisis](../07_validacion/analisis/analisis-cierre-de-la-prueba-2026-11-10.md) los lee por caso, con los tres supuestos. El capítulo 13 suma un párrafo con lo que dijeron, la prueba se da por cerrada el 10 de noviembre y las proyecciones bajan a cuatro pasos; el capítulo 14 dice que dos de tres preferirían el teléfono por el ruido. El Anexo I suma la Tabla I7.
 
+## Decimoséptima ronda: memoria final (D-181 y D-182)
+
+El 10 de noviembre, el autor pidió dejar la memoria final: el rigor pendiente, sin mencionar la falsabilidad ni la autorización de las fotos; APA 7 sin errores; sin rastros de inteligencia artificial fuera de su declaración ni en el presupuesto; figuras sin texto de relleno, sin desbordes ni flechas mal puestas, y sus bocetos del logo, del objeto y de la primera vez.
+
+- **Rigor:** el capítulo 7 justifica el rango de 19 a 30 años desde el problema: acota el estudio para empezar con experiencias comparables y deja abierta su ampliación a otras edades.
+- **Inteligencia artificial:** la declaración del capítulo 10 queda en dos frases; la Tabla 3 ya no incluye las suscripciones, y salen las referencias de Anthropic, OpenAI, Mindicador y Springer Nature. El prototipo costó 10 990 pesos.
+- **Fuentes y APA 7:** 21 cambios de la revisión con los textos conseguidos (Fogg, Guynn et al., Waggoner et al. y la tesis de Kalchik, que dio origen a O’Rear y Radvansky): trece citas se ajustan a lo que dice su fuente, Ullmer et al. (2022) sale porque no se consiguió, Kleinberg et al. pasa a 2024 y los dos Sanders llevan iniciales. Quedan 87 referencias, todas citadas. El detalle está en `01_contexto_y_fuentes/fuentes-de-la-memoria/cambios-memoria-final-2026-11-10.md`.
+- **Aplicación 4.7.2:** el capítulo 11 describe la versión vigente —Inicio, Actividades y Perfil; tres pantallas antes del primer relevo; las preguntas de la aplicación; cuatro sonidos; 118 íconos propios con las reglas de Lucide— y las Figuras 13 y 15 usan sus capturas.
+- **Objeto (D-181):** Relevo Home y Relevo Go, más cercanos al Tag, con la cara lisa y el sonido por la junta; la Figura 19 suma los bocetos del autor.
+- **Figuras:** íconos tomados del código de la 4.7.2; lámina de identidad sin texto de más; mapa sin etiquetas sobre el eje; cronología y etapas sin rótulos partidos; Tabla 4 sin encabezados cortados, y contraportada con la frase de marca.
+- **Diagramación:** un capítulo que termina en una sola columna corta reparte esa última página en dos.
+
+Capítulos 1 a 14: unas 18 400 palabras; hasta antes de las referencias, unas 19 400.
+
 ## Extensión
 
 Capítulos 1 a 14: unas 18 000 palabras desde el 10 de noviembre, con los resultados finales y las correcciones de la evaluación (antes, 16 451); con portada, agradecimientos, resumen, abstract e índices, unas 19 100. El instructivo de la Escuela sugiere de 15 000 a 20 000. Se cuentan también las tablas y el texto de las figuras. Las palabras de los anexos no cuentan.
@@ -209,7 +223,37 @@ Desde el 10 de noviembre no quedan marcadores `[CONFIRMAR: …]`: los dos últim
 - **Fuentes por conseguir (tarea 14, punto H):** el 9 de noviembre se verificaron en Crossref los datos de McDaniel y Einstein (2000), Kirsh (1995), O’Rear y Radvansky (2019) y la versión publicada de Sohn et al. (2005), que es la que se cita; sus textos completos siguen siendo de pago. La edición de Norman que se usó es la de Basic Books de 2002: se confirmó el 9 de noviembre con la copia leída, y la cita pasó a 1988/2002.
 - **Confirmar con la participante** que el único relevo que no sonó fue fuera de casa (capítulo 13).
 
+## Decimoctava ronda: evaluación y segunda vuelta de la memoria final (D-183)
+
+**Evaluación antes de editar.** La memoria estaba completa y bien fundada, pero tenía cinco problemas de lectura. Uno: el resumen, los capítulos 3, 7, 13 y 14 y algunas notas apilaban cifras («19 de 21», «42 de 43», «23 de 24»), que ya están en las figuras y tablas. Dos: los resultados contaban primero los datos de las tres personas juntas, cuando con tres personas dice más lo que hizo cada una. Tres: seguían los números de versión de la app (4.0, 4.4, 4.7.2) en el plan de trabajo, las notas de las capturas, la Tabla 5 y las conclusiones. Cuatro: los estudios propios —el de los textos, la luminosidad de la paleta, la elección tipográfica y la búsqueda de patentes— no citaban lo que se estudió. Cinco: en la versión diseñada había figuras a dos o tres páginas de su mención y finales de capítulo repartidos en columnas cortas, que dejaban páginas casi vacías.
+
+**Texto.**
+- Agradecimientos a los profesores guía, a las personas de las entrevistas, la encuesta y la prueba, y a Denis Parra, después de los del autor.
+- Resumen, abstract y conclusiones con palabras en vez de cifras: «durante cinco semanas», «casi siempre», «cerca de la mitad de las veces».
+- Resultados por persona: qué hizo cada una con el Tag y con el teléfono, con sus citas; la figura de cifras en conjunto (antes Figura 22) sale.
+- Sin números de versión: el plan de trabajo dice «Rediseño de la aplicación», las notas dicen «capturas de la aplicación» y la tabla de hallazgos dice «Hecho después de la prueba».
+- Estudios propios con su fuente: guías de escritura de Apple, Google y Microsoft; luminosidad medida en OKLCH (Ottosson, 2020); Chillax, elegida entre veinte tipografías de Fontshare (Indian Type Foundry, s. f.); Instrument Sans (Fuenzalida y Egstad, s. f.); las cuatro patentes, por sus inventores, y la licencia de Lucide.
+- Lucide como referente: código abierto, con licencia ISC, que permite usar, modificar y redistribuir sus íconos conservando su aviso; partir de sus reglas agilizó el trabajo.
+- Inteligencia artificial: Cursor, la primera, y Codex ayudaron con los primeros prototipos; Claude Code desarrolló la app, y Claude ayudó a modelar el objeto en 3D a partir de los bocetos. El presupuesto vuelve a incluirlas: un mes de Cursor, uno de ChatGPT Plus y tres de Claude Pro, unos 100 000 pesos; total, unos 111 000.
+- Figuras: la Figura 10 (antes 9) muestra a Relevo en su cuadrante y va en «Oportunidad»; nuevas, la Figura 2 (causas), la 19 (bocetos del logo), la 20 (bocetos del objeto, con el boceto nuevo de Home y Go) y la 27 (condiciones para que una intención vuelva a tiempo); las fotos del Tag pasan al capítulo 13.
+- Tablas: la de iteraciones sale del cuerpo y queda en el Anexo G, contada en prosa en «Iteraciones»; la Tabla 1 cierra el capítulo 11, en una página; la de hallazgos queda en once filas, en una página. Quedan cuatro tablas, todas de comparación o de cifras, como pide la matriz de pase.
+- Sin adelantar capítulos ni anexos («como detalla el capítulo 5», «El capítulo 11 explica…»), sin «del autor» en los bocetos y con cada párrafo que dice por qué está y da paso al siguiente; los recortes quitaron lo repetido.
+
+**Verificación.** 15 075 palabras en los capítulos 1 a 14 (15 799 con las páginas iniciales); 97 referencias, todas citadas; 27 figuras y 4 tablas, numeradas en el orden de su primera mención; 68 páginas sin avisos del generador. Risko y Gilbert (2016) se comprobó en la copia que publica Gilbert: define la descarga cognitiva como una acción física que reduce la demanda cognitiva de una tarea y da el ejemplo de dejar un objeto junto a la puerta, como dicen el capítulo 6 y el glosario. La licencia de Lucide se leyó en su sitio (ISC). Los libros se comprobaron el 11 de noviembre en las copias del autor (carpeta de Bibliografía), página por página: Kolko (2011, p. 40) dice que la síntesis traduce la oportunidad que describe la investigación en criterios de diseño específicos; Nielsen (1993) trata los prototipos con medios simples que conservan lo esencial (pp. 96–97), la evaluación formativa (p. 170) y el registro que muestra qué hizo la persona pero no por qué (p. 221); Sanders y Stappers (2012, p. 69), que lo que la gente dice difiere de lo que hace, y Norman (1988/2002), el sonido que se percibe aunque la atención esté en otra parte y por eso es intrusivo (p. 103). En la p. 73, Norman dice que un recordatorio tiene señal y mensaje y que el ideal tiene los dos; la memoria le atribuía que «la señal no necesita contener un mensaje», y se corrigió en los capítulos 6 y 13: un objeto puesto en el lugar indicado, como el libro junto a la puerta, da los dos a la vez.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-11 — Decimoctava ronda
+
+- **Qué cambió:** se registró la evaluación y la segunda vuelta de la memoria final.
+- **Cómo estaba antes:** la última ronda era la decimoséptima.
+- **Por qué:** pedido del autor del 10 de noviembre de 2026, en la noche (D-183).
+
+### 2026-11-10 — Decimoséptima ronda
+
+- **Qué cambió:** se registra la ronda de la memoria final.
+- **Cómo estaba antes:** la última ronda era la del cierre de la prueba.
+- **Por qué:** pedido del autor del 10 de noviembre de 2026 (D-181 y D-182).
 
 ### 2026-11-10 — Decimosexta ronda
 

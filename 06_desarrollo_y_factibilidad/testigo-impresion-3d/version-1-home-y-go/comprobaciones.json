@@ -1,0 +1,240 @@
+{
+ "alturas": {
+  "Z_PILA": 1.4,
+  "Z_PB": 5.0,
+  "Z_P": 6.0,
+  "Z_COMP": 8.0,
+  "S": 8.75,
+  "Z_BASE": 8.3,
+  "Z_REPISA": 7.3,
+  "Z_EMB": 7.65,
+  "Z_CH": 4.4,
+  "RECORRIDO": 0.45,
+  "R_CH": 17.4,
+  "R_REPISA": 18.7,
+  "R_PASO": 19.45,
+  "R_ROSCA": 19.15,
+  "R_ROSCA_MAYOR": 20.2
+ },
+ "variantes": {
+  "home": {
+   "diametro_pie": 52.0,
+   "diametro_junta": 48.48,
+   "alto": 13.35,
+   "radio_abombado": 46.0,
+   "tapa_entra_girando": true,
+   "pulsador_y_chasis_pasan_por_abajo": true,
+   "boton": {
+    "espacio_arriba": 0.15,
+    "hunde_el_boton_apretado": 0.3,
+    "junta_en_reposo": 0.3,
+    "junta_arriba": 0.45
+   },
+   "gramos_macizo": {
+    "base": 7.85,
+    "cupula-un-color": 9.03
+   },
+   "total_gramos_macizo": 20.3,
+   "costo_material_clp": [
+    197,
+    282
+   ]
+  },
+  "go": {
+   "diametro_pie": 44.0,
+   "diametro_junta": 44.0,
+   "alto": 11.35,
+   "radio_abombado": 164.2,
+   "ancho": 44.0,
+   "largo": 54.5,
+   "gota": {
+    "centro_del_agujero_desde_el_centro": 27.5,
+    "base_lisa_entre_cupula_y_agujero": 3.0,
+    "material_entre_agujero_y_punta": 3.1,
+    "material_entre_agujero_y_rosca": 4.7,
+    "quiebre_maximo_del_contorno_grados": 1.92
+   },
+   "cupula_gira_libre_grados": [
+    0.7,
+    0.7
+   ],
+   "tapa_entra_girando": true,
+   "pulsador_y_chasis_pasan_por_abajo": true,
+   "boton": {
+    "espacio_arriba": 0.15,
+    "hunde_el_boton_apretado": 0.3,
+    "junta_en_reposo": 0.3,
+    "junta_arriba": 0.45
+   },
+   "gramos_macizo": {
+    "base": 5.13,
+    "cupula-un-color": 4.36
+   },
+   "total_gramos_macizo": 12.9,
+   "costo_material_clp": [
+    125,
+    179
+   ]
+  }
+ },
+ "nucleo_gramos_macizo": {
+  "chasis": 0.56,
+  "pulsador": 0.2,
+  "tapa": 2.64
+ },
+ "calce": {
+  "pared_go_junto_a_la_rosca_a_0_5_mm": 1.22,
+  "placa_en_chasis_radial": 0.2,
+  "canto_de_la_placa_toca_el_cono_en_z": 6.0,
+  "ventana_sobre_componentes_radio": 15.0,
+  "aire_sobre_componentes_apretado": 0.3,
+  "chasis_pasa_por_la_rosca": true,
+  "tapa_a_ras_tope_en_postes_z": 4.4
+ },
+ "archivos": {
+  "imprimir/go/base.stl": {
+   "cerrado": true,
+   "volumen_mm3": 4141.0
+  },
+  "imprimir/go/cupula-un-color.stl": {
+   "cerrado": true,
+   "volumen_mm3": 3516.4
+  },
+  "imprimir/go/cupula-cuatro-colores/color-1-tiempo-amarillo.stl": {
+   "cerrado": true,
+   "volumen_mm3": 11.1
+  },
+  "imprimir/go/cupula-cuatro-colores/color-2-primer-paso-celeste.stl": {
+   "cerrado": true,
+   "volumen_mm3": 11.1
+  },
+  "imprimir/go/cupula-cuatro-colores/color-3-lugar-verde-lima.stl": {
+   "cerrado": true,
+   "volumen_mm3": 11.1
+  },
+  "imprimir/go/cupula-cuatro-colores/color-4-decision-rosado.stl": {
+   "cerrado": true,
+   "volumen_mm3": 11.1
+  },
+  "imprimir/go/cupula-cuatro-colores/cupula-cuerpo.stl": {
+   "cerrado": true,
+   "volumen_mm3": 3438.4
+  },
+  "imprimir/home/base.stl": {
+   "cerrado": true,
+   "volumen_mm3": 6327.5
+  },
+  "imprimir/home/cupula-un-color.stl": {
+   "cerrado": true,
+   "volumen_mm3": 7282.7
+  },
+  "imprimir/home/cupula-cuatro-colores/color-1-tiempo-amarillo.stl": {
+   "cerrado": true,
+   "volumen_mm3": 19.8
+  },
+  "imprimir/home/cupula-cuatro-colores/color-2-primer-paso-celeste.stl": {
+   "cerrado": true,
+   "volumen_mm3": 19.8
+  },
+  "imprimir/home/cupula-cuatro-colores/color-3-lugar-verde-lima.stl": {
+   "cerrado": true,
+   "volumen_mm3": 19.8
+  },
+  "imprimir/home/cupula-cuatro-colores/color-4-decision-rosado.stl": {
+   "cerrado": true,
+   "volumen_mm3": 19.8
+  },
+  "imprimir/home/cupula-cuatro-colores/cupula-cuerpo.stl": {
+   "cerrado": true,
+   "volumen_mm3": 7144.1
+  },
+  "imprimir/nucleo/chasis.stl": {
+   "cerrado": true,
+   "volumen_mm3": 448.9
+  },
+  "imprimir/nucleo/pulsador.stl": {
+   "cerrado": true,
+   "volumen_mm3": 157.9
+  },
+  "imprimir/nucleo/tapa.stl": {
+   "cerrado": true,
+   "volumen_mm3": 2129.4
+  }
+ },
+ "voladizos_mas_de_47_grados": {
+  "chasis": [],
+  "pulsador": [
+   {
+    "z": 2.25,
+    "area_mm2": 8.11,
+    "caja_mm": [
+     34.9,
+     30.3
+    ]
+   }
+  ],
+  "tapa": [
+   {
+    "z": 0.4,
+    "area_mm2": 10.59,
+    "caja_mm": [
+     10.0,
+     2.6
+    ]
+   },
+   {
+    "z": 0.7,
+    "area_mm2": 19.2,
+    "caja_mm": [
+     12.0,
+     1.6
+    ]
+   }
+  ],
+  "home/base": [],
+  "home/cupula-un-color": [
+   {
+    "z": 0.85,
+    "area_mm2": 156.04,
+    "caja_mm": [
+     34.0,
+     29.5
+    ]
+   }
+  ],
+  "go/base": [],
+  "go/cupula-un-color": [
+   {
+    "z": 0.85,
+    "area_mm2": 156.04,
+    "caja_mm": [
+     34.0,
+     29.5
+    ]
+   }
+  ]
+ },
+ "go_segun_placa": {
+  "24": {
+   "diametro": 36.0,
+   "largo": 46.5
+  },
+  "27": {
+   "diametro": 39.0,
+   "largo": 49.5
+  },
+  "30": {
+   "diametro": 42.0,
+   "largo": 52.5
+  },
+  "32": {
+   "diametro": 44.0,
+   "largo": 54.5
+  },
+  "35": {
+   "diametro": 47.0,
+   "largo": 57.5
+  }
+ },
+ "errores": []
+}

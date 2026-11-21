@@ -1,0 +1,59 @@
+{
+  "nota": "Medidas compartidas de Relevo Home y Relevo Go (versión 1). Todo en milímetros. Las medidas de la placa del Tag (iTag NEWOTAG-BL) son las mismas supuestas de la versión 0: no se han medido. Hay una contradicción sin resolver sobre el tamaño del Tag completo: el README y las medidas de la versión 0 dicen 38 × 7 mm según el vendedor, y la búsqueda de productos del 11 de septiembre anotó «aproximadamente 30 mm de diámetro» en la publicación. Con un Tag de 30 mm, la placa no podría medir 32 mm. Mide la placa con un pie de metro, cambia «valor» y «estado» y vuelve a generar con modelo.py: todas las piezas se recalculan.",
+  "placa": {
+    "diametro": {"valor": 32.0, "estado": "supuesto", "que_es": "Diámetro de la placa del Tag, sin la pila.", "como_medir": "Con el pie de metro, de borde a borde por el centro. Si no es redonda, la medida mayor."},
+    "grosor": {"valor": 1.0, "estado": "supuesto", "que_es": "Grosor de la placa sola.", "como_medir": "En el borde, donde no hay componentes."},
+    "alto_componentes": {"valor": 2.0, "estado": "supuesto", "que_es": "Altura del componente más alto en la cara del botón, sin contar el botón.", "como_medir": "Con la sonda de profundidad del pie de metro, desde la cara de la placa."},
+    "alto_boton": {"valor": 1.5, "estado": "supuesto", "que_es": "Altura del botón desde la cara de la placa, sin apretar.", "como_medir": "Con la sonda de profundidad, sobre el centro del botón."},
+    "alto_bajo_placa": {"valor": 3.6, "estado": "supuesto", "que_es": "De la cara de abajo de la placa a la cara de afuera de la pila puesta.", "como_medir": "Con la pila puesta, mide placa más pila y resta el grosor de la placa."},
+    "recorrido_boton": {"valor": 0.25, "estado": "supuesto", "que_es": "Cuánto baja el botón del Tag hasta hacer clic. Es el mismo valor implícito de la versión 0.", "como_medir": "Difícil con pie de metro: se comprueba al armar; si no hace clic, sube holguras.boton a 0 o baja este valor."}
+  },
+  "holguras": {
+    "rosca": {"valor": 0.3, "por_que": "Holgura radial de la rosca de la tapa, la misma de la versión 0. Si cuesta girar, 0,4; si baila, 0,2."},
+    "placa": {"valor": 0.2, "por_que": "Holgura radial entre la placa y el chasis: la placa entra sin forzar y queda centrada."},
+    "juego": {"valor": 0.25, "por_que": "Holgura radial entre una pieza que se mueve y una fija (pulsador y chasis, pulsador y repisa). Con boquilla de 0,4 mm, menos de 0,2 suele pegarse."},
+    "boton": {"valor": 0.15, "por_que": "Espacio entre el émbolo y el botón con la cúpula arriba. Nunca negativo: el botón quedaría apretado."},
+    "componentes": {"valor": 0.3, "por_que": "Aire entre los componentes de la placa y los rayos del pulsador, con la cúpula apretada a fondo."},
+    "apoyo_pila": {"valor": 0.0, "por_que": "Cuánto más bajo queda el piso de la tapa bajo la pila. Con una almohadilla de espuma de 1 mm, pon 0,8."}
+  },
+  "nucleo": {
+    "pared": {"valor": 1.2, "por_que": "Tres líneas de la boquilla de 0,4 mm: la pared más delgada que queda maciza y firme en PLA."},
+    "piso_tapa": {"valor": 1.4, "por_que": "La ranura de la moneda, de 0,7 mm, y 0,7 mm de piso bajo ella: unas seis capas de 0,12 mm."},
+    "paso_rosca": {"valor": 2.0, "por_que": "Más fino que el de la versión 0 (2,5) para ahorrar diámetro; con flancos de 45° se imprime de pie y sin soportes."},
+    "profundidad_rosca": {"valor": 0.75, "por_que": "Tres cuartos de milímetro de diente: suficiente para cerrar a mano y 0,15 mm menos que la versión 0."},
+    "repisa": {"valor": 1.0, "por_que": "Grosor del anillo de la base que retiene el pulsador y sostiene el chasis: unas ocho capas de 0,12 mm."},
+    "solape": {"valor": 0.5, "por_que": "Cuánto entran las pestañas del pulsador y los postes del chasis bajo la repisa."},
+    "canal": {"valor": 0.8, "por_que": "Grosor de los rayos del pulsador, que van pegados dentro de canales de la cúpula y así no suman alto."},
+    "radio_embolo": {"valor": 2.5, "por_que": "El émbolo, de 5 mm, cubre el botón supuesto de 3 × 4 mm aunque la placa quede algo corrida."},
+    "ancho_rayo": {"valor": 2.4, "por_que": "Seis líneas de boquilla: rígido para empujar el botón sin doblarse."},
+    "ancho_pata": {"valor": 3.6, "por_que": "Ancho de cada pata y su pestaña: tres pestañas de 3,6 × 0,5 mm retienen la cúpula."},
+    "ancho_poste": {"valor": 3.0, "por_que": "Ancho de cada poste del chasis: apoya en la repisa y recibe la tapa."},
+    "chaflan": {"valor": 0.4, "por_que": "Chaflán de las aristas que tocan la placa de impresión: evita la pata de elefante y marca la junta."}
+  },
+  "variantes": {
+    "go": {
+      "radio_minimo_pared": {"valor": 1.2, "por_que": "Pared mínima entre el fondo de la rosca y el exterior, medida sobre el chaflán de entrada (0,5 mm de la cara de abajo): el diámetro de Go sale de aquí."},
+      "radio_canto_inferior": {"valor": 1.2, "por_que": "Ancho del canto de abajo: lo que permite la pared junto a la rosca."},
+      "alto_canto_inferior": {"valor": 3.5, "por_que": "Alto del canto de abajo, elíptico: el lado se ve redondeado, como el del Tag, sin restar pared a la rosca."},
+      "inclinacion_lado": {"valor": 0, "por_que": "Lado recto: el diámetro mínimo."},
+      "alto_cupula": {"valor": 2.6, "por_que": "Lo mínimo para un canal de 0,8 mm, la incrustación de 0,4 mm y 1,4 mm de piel entre ambos."},
+      "lado_cupula": {"valor": 0.6, "por_que": "Tramo recto sobre la junta, apenas más que el chaflán."},
+      "radio_canto_cupula": {"valor": 1.6, "por_que": "Canto suave que da paso al abombado."},
+      "diametro_logo": {"valor": 15.0, "por_que": "Las cuatro formas de color quedan separadas por 1 mm: el mínimo que se imprime limpio con boquilla de 0,4 mm."},
+      "radio_meseta": {"valor": 9.0, "por_que": "Meseta plana de 18 mm al centro: el logo queda plano, se puede planchar al imprimir y marca dónde apretar."},
+      "gota": {"separacion_agujero": 5.5, "radio_agujero": 1.9, "chaflan_agujero": 0.6, "radio_punta": 5.0, "radio_lados": 60.0, "por_que": "Planta de gota, como el llavero del boceto «Portátil» del autor: el círculo del cuerpo, dos lados convexos de 60 mm de radio y una punta de 5 mm de radio, concéntrica con el agujero de la argolla, todos tangentes entre sí. La punta tiene el alto entero de la base y el mismo canto que el cuerpo, así que no se lee como una pestaña pegada. El agujero, de 3,8 mm, tiene su centro 5,5 mm por fuera del borde del cuerpo: quedan 3 mm de base lisa entre la cúpula y el chaflán del agujero, para que la argolla no apriete la cúpula, y 3,1 mm de material entre el agujero y la punta."},
+      "traba_de_giro": {"ancho": 1.2, "por_que": "Dos trabas de 1,2 mm (tres líneas de boquilla) en la repisa, a los lados de una pata del pulsador y con su mismo juego de 0,25 mm: la cúpula no gira y el logo queda derecho respecto de la punta, que es como se ve cuando Go cuelga de la argolla."}
+    },
+    "home": {
+      "radio_pie": {"valor": 26.0, "por_que": "Pie de 52 mm, más ancho que la cúpula: estable sobre una mesa o junto a un libro."},
+      "radio_canto_inferior": {"valor": 2.6, "por_que": "Canto de abajo generoso, de guijarro; el pie es ancho y lo permite."},
+      "inclinacion_lado": {"valor": 20, "por_que": "El lado se cierra 20° hacia la junta: forma de guijarro y voladizo de solo 20° al imprimir la base boca abajo."},
+      "alto_cupula": {"valor": 4.6, "por_que": "Un abombado visible, cercano al del Tag, y logo de 20 mm a la vista."},
+      "lado_cupula": {"valor": 0.8, "por_que": "Tramo recto sobre la junta."},
+      "radio_canto_cupula": {"valor": 2.6, "por_que": "Canto suave, más amplio que en Go."},
+      "diametro_logo": {"valor": 20.0, "por_que": "Logo visible desde lejos; las formas de color quedan separadas por 1,3 mm."},
+      "radio_meseta": {"valor": 11.5, "por_que": "Meseta plana de 23 mm al centro, 1,5 mm más ancha que el logo por lado."},
+      "goma": {"radio_interior": 21.0, "radio_exterior": 23.4, "profundidad": 0.8, "por_que": "Rebaje anular para una goma antideslizante de 1 mm cortada a medida: sobresale 0,2 mm."}
+    }
+  }
+}

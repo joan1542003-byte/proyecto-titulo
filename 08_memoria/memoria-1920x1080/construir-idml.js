@@ -58,9 +58,9 @@ const AIRE_BANDA = 12;                      // entre las tablas o figuras de arr
 const AIRE_PIEZAS = 12;                     // entre dos tablas o figuras de una misma página
 const MIN_TEXTO = 58;                       // con menos alto libre (siete líneas y media), la página queda solo para tablas y figuras
 const HOLGURA = 2.4;                        // cada marco mide lo que ocupa su texto más esto: no cabe otra línea
-// Por ahora, a pedido del autor (28 de octubre): sin agradecimientos y un índice solo de secciones. La Biblioteca
-// exige los índices de tablas y de figuras para el depósito: se vuelven a poner con INDICE_DE_PIEZAS = true.
-const OMITIR = ['Agradecimientos'];
+// Desde el 11 de noviembre de 2026, a pedido del autor, la memoria lleva sus agradecimientos. El índice de secciones
+// va en una página y el de tablas y figuras, que la Biblioteca exige para el depósito, en la siguiente.
+const OMITIR = [];
 const INDICE_DE_PIEZAS = false;
 
 // Estilos de párrafo (pt). Los mismos números sirven para el IDML, para medir y para el PDF.
@@ -95,6 +95,12 @@ const E = {
   'Portada dato': { tamano: 14, interlineado: 23 },
   'Contraportada': { tamano: 18, interlineado: 24, color: 'Color/Gris', alineacion: 'CenterAlign' },
 };
+// El 11 de noviembre de 2026 el autor pidió todo el texto un punto más grande: un punto del PDF, que se compone a
+// escala, así que cada cuerpo sube 1/ESCALA y su interlineado crece en la misma proporción.
+const MAS = 1 / ESCALA;
+for (const e of Object.values(E)) { const k = (e.tamano + MAS) / e.tamano; e.tamano = +(e.tamano + MAS).toFixed(2); e.interlineado = +(e.interlineado * k).toFixed(2); }
+/** Lo mismo para los cuerpos fijos de las piezas (figuras, tablas, paneles): un punto más y su interlineado. */
+const masUno = (css) => css.replace(/font-size:([\d.]+)pt/g, (_, n) => `font-size:${(+n + MAS).toFixed(2)}pt`).replace(/line-height:([\d.]+)pt/g, (_, n) => `line-height:${(+n * (1 + MAS / 13)).toFixed(2)}pt`);
 const AIRE_SUBTITULO = { 'Subtítulo': 15, 'Subtítulo menor': 6 };   // aire extra sobre un subtítulo: lo lleva el párrafo anterior
 const LUCES = [['Amarillo', [244, 228, 150]], ['Cielo', [179, 229, 252]], ['Lima', [198, 238, 174]], ['Rubor', [250, 200, 217]], ['Lila', [223, 209, 252]], ['Durazno', [251, 209, 179]]];
 const rgb = (n) => 'rgb(' + LUCES.find((l) => l[0] === n)[1].join(',') + ')';
@@ -166,6 +172,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       const f = { flotante: m[1] === 'Tabla' ? 'tabla' : 'figura', n: +m[2] };
       i++; sig();
       f.titulo = lineas[i].trim().replace(/^\*|\*$/g, ''); i++; sig();
+      if (/^<!-- doble -->$/.test(lineas[i].trim())) { f.columna = true; f.doble = true; i++; sig(); }   // dos columnas, junto al texto
       if (f.flotante === 'tabla') {
         const filas = [];
         while (i < lineas.length && /^\|/.test(lineas[i])) { filas.push(lineas[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); i++; }
@@ -173,10 +180,11 @@ function bloques(lineas, estiloTexto = 'Texto') {
       } else if (/^!\[/.test(lineas[i])) {
         // Fotografías: ![pie](ruta relativa a la memoria), varias en una línea.
         f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])) }));
-        f.descripcion = ''; f.columna = f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src); i++;   // la portada de una fuente va en una columna
+        f.descripcion = ''; f.columna = !!f.doble || (f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src)); i++;   // la portada de una fuente va en una columna
       } else {
         f.descripcion = lineas[i].trim().replace(/^\[FIGURA POR INSERTAR: |\]$/g, ''); i++;
         if (/^\(columna\) /.test(f.descripcion)) { f.columna = true; f.descripcion = f.descripcion.replace(/^\(columna\) /, ''); }
+        if (/^\(doble\) /.test(f.descripcion)) { f.columna = true; f.doble = true; f.descripcion = f.descripcion.replace(/^\(doble\) /, ''); }   // dos columnas, junto al texto
       }
       sig();
       if (i < lineas.length && /^\*Nota\.\*/.test(lineas[i])) { f.nota = lineas[i].trim(); i++; }
@@ -213,18 +221,18 @@ const PESO = { Regular: 400, Italic: 400, Medium: 500, SemiBold: 600, Bold: 700 
 const clase = (estilo) => 'e' + Object.keys(E).indexOf(estilo);
 const tieneCursiva = fs.existsSync(path.join(AQUI, CURSIVA));
 
-const CSS_BASE = `@font-face{font-family:"Instrument Sans";src:url("${LETRA}");font-weight:400 700;font-stretch:75% 100%;font-style:normal}
+const CSS_BASE = masUno(`@font-face{font-family:"Instrument Sans";src:url("${LETRA}");font-weight:400 700;font-stretch:75% 100%;font-style:normal}
 ${tieneCursiva ? `@font-face{font-family:"Instrument Sans";src:url("${CURSIVA}");font-weight:400 700;font-stretch:75% 100%;font-style:italic}` : ''}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 html,body{background:transparent}
 body{font-family:"Instrument Sans",sans-serif;color:#141312;font-kerning:normal;-webkit-font-smoothing:antialiased}
 b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.pd{color:#6E6964}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}
 svg.ic{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
-`;
+`);
 // Una clase por estilo de párrafo, con los números del IDML.
 const CSS_E = Object.entries(E).map(([n, e], i) => `.e${i}{font-size:${e.tamano}pt;line-height:${e.interlineado}pt;font-weight:${PESO[e.estilo] || 400};${e.estilo === 'Italic' ? 'font-style:italic;' : ''}${e.color === 'Color/Gris' ? 'color:#6E6964;' : ''}${e.seguimiento ? `letter-spacing:${e.seguimiento / 1000}em;` : ''}${e.alineacion === 'RightAlign' ? 'text-align:right;' : e.alineacion === 'CenterAlign' ? 'text-align:center;' : ''}padding-left:${e.sangria || 0}pt;text-indent:${e.primera || 0}pt;tab-size:${e.sangria || 22}pt;white-space:pre-wrap;overflow-wrap:break-word}`).join('\n') + '\n';
 // Piezas de la marca: fichas blancas, círculos de tinta, cápsulas, barras, paneles de aura.
-const CSS_PIEZAS = `.n{padding-right:3%}
+const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .cir{flex:none;width:9.5mm;height:9.5mm;border-radius:50%;background:#141312;color:#F7F4F0;display:flex;align-items:center;justify-content:center;font-size:10pt;font-weight:600;line-height:1}
 .cir svg{width:5.6mm;height:5.6mm}
 .fic{flex:none;min-width:7mm;font-size:12pt;font-weight:600;line-height:1.2}
@@ -232,14 +240,14 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .pil{display:inline-flex;flex:none;align-items:center;height:8.6mm;padding:0 4.4mm;border-radius:4.3mm;border:.3mm solid #141312;font-size:12pt;font-weight:600;line-height:1;white-space:nowrap}
 .pil.lleno{background:#141312;color:#fff}.pil.hueco{border:.3mm dashed #6E6964;color:#6E6964}.pil.blanca{background:#fff;border-color:#fff}.pil.clara{background:#fff;border-color:#E4DED6}.pil.amarilla{background:#F4E496;border-color:#F4E496}
 .chip{width:6.4mm;height:6.4mm;border-radius:50%;border:.3mm solid #141312;display:flex;align-items:center;justify-content:center;font-size:9pt;font-weight:600;line-height:1}
-.rot{display:flex;flex-direction:column;align-items:flex-start;gap:1.2mm;margin-bottom:5mm}.rot .n{align-self:stretch}
-.nota{margin-top:4mm;max-width:${COL}mm}.nota.dos{max-width:${DOBLE}mm}.n.dos{column-count:2;column-gap:${MED}mm}
+.rot{display:flex;flex-direction:column;align-items:flex-start;gap:1.2mm;margin-bottom:4mm}.rot .n{align-self:stretch}
+.nota{margin-top:3.2mm;max-width:${COL}mm}.nota.dos{max-width:${DOBLE}mm}.n.dos{column-count:2;column-gap:${MED}mm}
 .ang{display:grid;grid-template-columns:${DOBLE}mm 1fr;column-gap:${MED}mm;align-items:start}
 .ang .rot{margin-bottom:0}
-.tb{display:flex;flex-direction:column;gap:1.8mm}
+.tb{display:flex;flex-direction:column;gap:1.4mm}
 .cab,.fila{display:grid;column-gap:7mm;padding-left:5mm;padding-right:6mm}
 .cab{padding-bottom:1mm;align-items:end}
-.fila{background:#fff;border-radius:5mm;padding-top:3.6mm;padding-bottom:3.8mm;align-items:start}
+.fila{background:#fff;border-radius:5mm;padding-top:2.3mm;padding-bottom:2.5mm;align-items:start}
 .fila.total{box-shadow:inset 0 0 0 .35mm #141312}
 .pri{display:flex;gap:4mm;align-items:flex-start;min-width:0}
 .pri .tx{display:flex;flex-direction:column;gap:.5mm;min-width:0;flex:1}
@@ -257,8 +265,8 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .mz .mc{background:#fff;padding:3.2mm 5mm;border-top:.25mm solid #E9E4DD}.mz .mc.p{border-top-color:#fff}
 .mz .mu{border-radius:0 0 5mm 5mm;padding-bottom:4mm}
 .dt{display:grid;gap:4.5mm}.fb{background:#fff;border-radius:6mm;padding:6mm}.fcol .fb{padding:5mm}.fcol .dt{grid-template-columns:1fr 1fr !important;gap:3mm}.fcol .dc{padding:4.5mm}.fcol .dc .cir{margin-bottom:5mm}.fcol .bar,.fcol .pts{margin-top:4mm}
-.dc{background:#fff;border-radius:6mm;padding:6mm 6.5mm 6.5mm;display:flex;flex-direction:column}
-.dc .cir{margin-bottom:9mm}.dc .dx{flex:1;margin-top:2mm}
+.dc{background:#fff;border-radius:6mm;padding:5mm 6mm 5.5mm;display:flex;flex-direction:column}
+.dc .cir{margin-bottom:5mm}.dc .dx{flex:1;margin-top:2mm}
 .bar{display:flex;align-items:flex-end;gap:.45mm;height:9mm;margin-top:7mm}
 .bar span{flex:1;height:38%;border-radius:.6mm;background:#DDD7CF}.bar span.s{height:100%;background:var(--c)}.bar span.m{height:68%;background:var(--c)}
 .pts{display:flex;gap:2mm;height:9mm;margin-top:7mm}
@@ -274,7 +282,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .rama{display:flex;align-items:center;gap:3.5mm;padding:1.6mm 0;font-size:12.5pt;line-height:16pt;font-weight:600}
 .rama .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.rama .cuad svg{width:6mm;height:6mm}
 .fig4{display:grid;grid-template-columns:1fr 1.15fr 1.15fr 1.15fr .9fr;gap:3.5mm}
-.etapa{background:#fff;border-radius:6mm;padding:6mm;display:grid;gap:3mm;align-content:start;font-size:12.5pt;line-height:17pt}
+.etapa{background:#fff;border-radius:6mm;padding:5mm;display:grid;gap:2.2mm;align-content:start;font-size:12.5pt;line-height:17pt}
 .etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:11pt;line-height:14pt;font-weight:600;color:#6E6964}
 .etapa ul{display:grid;gap:1.4mm;list-style:none}.etapa li{position:relative;padding-left:4mm}
 .etapa li::before{content:"";position:absolute;left:0;top:2.1mm;width:1.5mm;height:1.5mm;border-radius:50%;background:#141312}
@@ -288,30 +296,30 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .fig2 .pie{display:flex;align-items:center;gap:2.4mm;margin-top:3.5mm;font-size:12.5pt;line-height:16pt;font-weight:600}
 .fig2 .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .fot{display:grid;gap:5mm}
-.fot img{width:100%;height:112mm;object-fit:cover;display:block;border-radius:5.5mm}
+.fot img{width:100%;height:82mm;object-fit:cover;display:block;border-radius:5.5mm}
 .fot .pie{display:flex;align-items:flex-start;gap:2.4mm;margin-top:3.5mm}.fot .pie .n{flex:1;padding-top:.3mm}
 .fot .cir{width:6.6mm;height:6.6mm;font-size:9pt}
-.fot.nat img{height:auto;aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:118mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
+.fot.nat img{height:auto;aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:96mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
 .esq{display:grid;gap:9mm;align-items:start}.esq-c{display:flex;flex-direction:column}.fcol .esq-c+.esq-c{border-top:.25mm solid #E4DED6;padding-top:4mm}
 .esq-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding:0 0 3mm}.esq-h .tx{display:flex;flex-direction:column;gap:.6mm;min-width:0;flex:1}
 .esq-l{display:flex;flex-direction:column;margin-top:1mm}.esq-i{padding:1.8mm 0;border-top:.2mm solid #DDD7CF}.esq-i:first-child{border-top:0}
 .fcol .esq{grid-template-columns:1fr !important;gap:5mm}
-.cro{display:grid;grid-template-rows:auto 9mm auto;column-gap:3mm;row-gap:0}
-.cro-r{display:flex;flex-direction:column;gap:1.2mm;padding:0 3mm 3mm 0}.cro-r.ar{grid-row:1;align-self:end;padding-bottom:4mm}.cro-r.ab{grid-row:3;padding-top:4mm}
+.cro{display:grid;grid-template-rows:auto 7mm auto;column-gap:3mm;row-gap:0}
+.cro-r{display:flex;flex-direction:column;gap:.8mm;padding:0 3mm 2mm 0}.cro-r.ar{grid-row:1;align-self:end;padding-bottom:3mm}.cro-r.ab{grid-row:3;padding-top:3mm}
 .cro-l{grid-row:2;align-self:center;height:.5mm;background:#141312}.cro-p{grid-row:2;align-self:center;width:5mm;height:5mm;border-radius:50%;background:#141312;border:1.2mm solid #F7F4F0;box-sizing:content-box;margin-left:-1.2mm}
 .idn{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:4mm}
 .idn-logo{grid-row:1 / span 2;display:flex;align-items:center;justify-content:center;padding:14mm}.idn-logo svg{width:100%;height:auto;display:block}
 .idn-luces{grid-column:2 / span 2;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
 .idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm;flex:1;min-width:0}
 .idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
-.prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:3.2mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
+.prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:1.6mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
 .prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
 .prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:12pt;line-height:16pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
-.fot.grande.nat img{max-height:165mm}
+.fot.grande.nat img{max-height:120mm}
 .fl{align-self:center;justify-self:center;width:6mm;height:6mm;color:#6E6964;margin-top:-10mm}.fl svg{width:100%;height:100%}
 .fig2.flujo{grid-template-columns:49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm;justify-content:stretch}.fig2.flujo .fl{margin-top:-12mm}
 .fot.flujo{column-gap:2.5mm}.fot.flujo img{border-radius:3.5mm}
-.fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
+.fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol>img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
 .brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
 .brs-b{height:6mm;background:#EEE9E3;border-radius:3mm;overflow:hidden}.brs-b span{display:block;height:100%;background:#141312;border-radius:3mm}
 .mp{display:flex;flex-direction:column;gap:4mm}.mp-arr,.mp-aba{text-align:center}
@@ -336,7 +344,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .at-f{display:grid;grid-template-columns:5mm 1fr;column-gap:3mm;row-gap:.4mm;align-items:start}.at-f>.n{grid-column:2}
 .at-m{grid-row:1 / span 2;width:4mm;height:4mm;border-radius:50%;margin-top:1.2mm}.at-m.c{background:#141312}.at-m.p{background:${rgb('Cielo')};border:.35mm solid #141312}
 .m2{display:flex;flex-direction:column;gap:3mm}
-.fb:has(>.m2){width:${DOBLE}mm}.fb:has(>.m2) .m2-c{min-height:18mm}                                         /* la matriz ancha ocupa dos columnas, no tres */
+.fb:has(>.m2){width:${DOBLE}mm}.fb:has(>.m2) .m2-c{min-height:18mm}.fcol .fb:has(>.m2){width:auto}.fcol .m2-c{padding:3mm}                                         /* la matriz ancha ocupa dos columnas, no tres */
 .m2-g{display:grid;grid-template-columns:1fr 1fr;border-top:.35mm solid #141312;border-left:.35mm solid #141312}
 .m2-c{display:flex;flex-direction:column;gap:1.2mm;padding:4mm;border-right:.35mm solid #141312;border-bottom:.35mm solid #141312;min-height:30mm}
 .m2-c.fuerte{background:${rgb('Lima')}}
@@ -346,7 +354,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .panel>.pm{position:absolute;right:9mm;top:9mm;width:11mm;height:11mm}.panel .pm svg{width:100%;height:100%;display:block}
 .panel .pn{font-size:60pt;line-height:.9;font-weight:400;letter-spacing:-.04em;margin:12mm 0 0 -.5mm;font-feature-settings:"tnum"}
 .panel.corto .pn{margin-top:4mm}
-.panel .pt{font-size:40pt;line-height:43pt;font-weight:600;letter-spacing:-.03em;margin-top:6mm}
+.panel .pt{font-size:40pt;line-height:43pt;font-weight:700;letter-spacing:-.03em;margin-top:6mm}
 .panel .ph{flex:1}
 .panel ol{list-style:none;margin-top:auto;padding-top:8mm;display:grid;gap:2.2mm}
 .panel li{display:flex;align-items:baseline;gap:3mm;font-size:13pt;line-height:16pt;font-weight:600}
@@ -356,7 +364,7 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}
 .ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
 .ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
-.ir.m.c{padding:1.3mm 4.5mm 1.3mm 3.2mm;min-height:8.8mm;margin-bottom:1.3mm}
+.ir.m.c{padding:.8mm 4.5mm .8mm 3.2mm;min-height:7.2mm;margin-bottom:.8mm}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
@@ -366,7 +374,10 @@ const CSS_PIEZAS = `.n{padding-right:3%}
 .portada .p-marca{position:absolute;left:22mm;top:44mm;width:130mm}.portada .p-marca svg{width:100%;height:auto;display:block}
 .portada .p-tit{position:absolute;left:22mm;top:88mm;width:230mm}
 .portada .p-datos{position:absolute;left:22mm;bottom:18mm;width:300mm}
-`;
+.prog{display:flex;height:3.6mm;margin-top:5mm;border-radius:1.8mm;background:#EEE9E3;overflow:hidden}.prog span{display:block;height:100%;background:var(--c)}.prog span.m{opacity:.45}.fcol .prog{margin-top:4mm}
+.fot.nat.boc img,.fot.grande.nat.boc img{max-height:84mm}
+.fcol .fot:not(.nat) img{height:64mm}
+`);
 
 /** Guarda un PDF con el cuerpo dado, del tamaño exacto de la pieza. */
 function pdf(nombre, anchoMm, altoMm, cuerpo, css = '') {
@@ -497,7 +508,7 @@ function tablaFichas(b, T, ancho) {
   const [cab, ...filas] = b.filas; const cols = cab.length, ult = cols - 1;
   const todas = (b.todas || b.filas).slice(1);                        // en una tabla partida, las dos partes miden igual
   const conEstado = todas.every((f) => ESTADO.test(plano(f[ult])));
-  const chips = cab.map((_, k) => k > 0 && todas.every((f) => /^(\d+( y \d+)*|Todos)$/.test(f[k])));
+  const chips = cab.map(() => false);                                 // los números van sueltos, nunca en círculos (pedido del autor, 28 de octubre y 11 de noviembre)
   const version = todas.every((f) => /^(Hasta la )?[\d.–]+, /.test(f[0]));
   const peso = cab.map((_, k) => {
     if (chips[k]) return 0.46;
@@ -555,13 +566,14 @@ function matriz(b, T) {
   return out + '</div>';
 }
 
-/** Cifras: una ficha por dato, con el valor en grande, su explicación y una barra o un punto por cada caso. */
+/** Cifras: una ficha por dato, con el valor en grande, su explicación y una barra de progreso del color de su papel. */
+const INTENSO = { Amarillo: '#FFD54A', Cielo: '#9DD6F4', Lima: '#B3E788', Rubor: '#F6A3CB', Lila: '#C5B2F6', Durazno: '#F9B68A' };
 function fichasDatos(b, T) {
   const datos = b.descripcion.replace(/^[^:]*: /, '').split('; ').map((d) => d.match(/^(\d+) de (\d+), (.*)$/)).filter(Boolean);
   return `<div class="dt" style="grid-template-columns:repeat(${datos.length},1fr)">${datos.map(([, k, n, t]) => {
-    const [, ic, color] = ROL_DATO.find(([re]) => re.test(t)); const medias = /una a medias/.test(t);
-    const marcas = Array.from({ length: +n }, (_, i) => `<span class="${i < +k ? 's' : medias && i === +k ? 'm' : ''}"></span>`).join('');
-    return `<div class="dc" style="--c:${rgb(color)}">${circulo(svgIcono(ic))}${T('Dato', [{ texto: k }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}${T('Celda', mayus(t), 'dx')}<div class="${+n <= 10 ? 'pts' : 'bar'}">${marcas}</div></div>`;
+    const [, ic, color] = ROL_DATO.find(([re]) => re.test(t)); const medias = (t.match(/y (\d+) a medias/) || [])[1];
+    const ancho = (x) => ((100 * x) / +n).toFixed(2) + '%';
+    return `<div class="dc" style="--c:${INTENSO[color]}">${circulo(svgIcono(ic))}${T('Dato', [{ texto: k }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}${T('Celda', mayus(t), 'dx')}<div class="prog"><span style="width:${ancho(+k)}"></span>${medias ? `<span class="m" style="width:${ancho(+medias)}"></span>` : ''}</div></div>`;
   }).join('')}</div>`;
 }
 
@@ -607,7 +619,8 @@ function fotos(b, T) {
   // Con imágenes enteras, cada columna mide según la proporción de su imagen: todas quedan del mismo alto.
   const fr = b.fotos.map((f) => (natural ? `${proporcion(f).toFixed(3)}fr` : '1fr'));
   const cols = flujo ? fr.map((x, i) => (i ? `6mm ${x}` : x)).join(' ') : fr.join(' ');
-  return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
+  const boc = b.fotos.every((f) => /bocetos/.test(f.src));
+  return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}${boc ? ' boc' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
     const m = f.pie.match(/^([a-z0-9]+)\. (.*)$/);
     return `${flujo && i ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? `<div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div>` : ''}</div>`;
   }).join('')}</div>`;
@@ -615,16 +628,16 @@ function fotos(b, T) {
 
 /** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
 function piezaColumna(b) {
-  const f = b.fotos && b.fotos[0];
-  const cuerpo = (T) => (f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, COL)}</div>` : cuerpoFlotante(b, T, COL));
-  return pieza(`figura-${b.n}`, COL, (T) => `<div class="fcol"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+  const f = b.fotos && b.fotos[0]; const ancho = b.doble ? DOBLE : COL;
+  const cuerpo = (T) => (b.fotos && b.doble ? fotos(b, T) : f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
+  return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
 }
 
 /** Mapa de posicionamiento en dos ejes: «izquierda | derecha | abajo | arriba; Referente | x | y; …», con x e y de 0 a 10. */
 function mapa(b, T) {
   const [[izq, der, abajo, arriba], ...pts] = partes(b);
   const punto = ([nom, x, y]) => {
-    const yo = /^Relevo/.test(nom), l = +x >= 7.5;
+    const yo = /^Relevo/.test(nom), l = +x >= 7.5 || (+x > 4 && +x < 5);   // la etiqueta no cruza el eje vertical
     return `<div class="mp-p${yo ? ' yo' : ''}${l ? ' l' : ''}" style="left:${+x * 10}%;top:${100 - +y * 10}%"><i></i>${T(yo ? 'Celda primera' : 'Celda', nom)}</div>`;
   };
   return `<div class="mp">${T('Celda suave', arriba, 'mp-arr')}<div class="mp-a"><span class="mp-x"></span><span class="mp-y"></span>` +
@@ -687,12 +700,12 @@ function pruebaAplicada(b, T) {
 
 /** La identidad en una lámina: logo, los cuatro círculos con su parte, la tipografía y una muestra de íconos. */
 function identidad(T) {
-  const luces = [['#FFD54A', 'tiempo', 'Tiempo'], ['#9DD6F4', 'primer-paso', 'Primer paso'], ['#B3E788', 'lugar', 'Lugar'], ['#F6A3CB', 'decidir', 'Decisión']];
-  const iconos = ['tag', 'suena', 'primer-paso', 'lugar', 'tiempo', 'leer', 'dibujar', 'decidir'];
+  const luces = [['#FFD54A', 'tiempo', 'Tiempo'], ['#9DD6F4', 'comence', 'Primer paso'], ['#B3E788', 'lugar', 'Lugar'], ['#F6A3CB', 'decision', 'Decisión']];
+  const iconos = ['objeto', 'suena', 'comence', 'lugar', 'tiempo', 'leer', 'decision'];
   return `<div class="idn"><div class="blanco idn-logo">${lockup()}</div>` +
     `<div class="idn-luces">${luces.map(([c, ic, tx]) => `<div class="idn-luz"><span class="cuad" style="background:${c}">${svgIcono(ic)}</span><div class="tx">${T('Celda primera', tx)}${T('Celda cabecera', c)}</div></div>`).join('')}</div>` +
     `<div class="blanco idn-letra">${T('Dato', 'Aa')}<div class="tx">${T('Celda primera', 'Instrument Sans')}${T('Celda suave', 'Regular, Medium y SemiBold')}</div></div>` +
-    `<div class="blanco idn-iconos"><div class="ics">${iconos.map((k) => `<span class="cuad">${svgIcono(k)}</span>`).join('')}</div>${T('Celda suave', '72 íconos propios: retícula de 24 y trazo de 1,6')}</div></div>`;
+    `<div class="blanco idn-iconos"><div class="ics">${iconos.map((k) => `<span class="cuad">${svgIcono(k)}</span>`).join('')}</div>${T('Celda suave', 'Íconos propios: retícula de 24, trazo de 1,6')}</div></div>`;
 }
 
 /** Resultados por persona: un punto por respuesta; lleno, si declaró haber empezado. */
@@ -824,7 +837,8 @@ let cur = { p: 0, k: 0 };                              // la primera columna lib
 // hacia el lado, sin que ninguna figura lo corte. Varias figuras se apilan en la misma columna mientras quepan; si no,
 // abren otra a su izquierda, siempre en el orden en que se mencionan.
 const figCols = (p) => pag(p).figCols || [];
-const ocupada = (p, k) => figCols(p).some((f) => f.k === k);
+const anchoFig = (f) => (f.doble ? 2 : 1);           // una figura doble ocupa dos columnas
+const ocupada = (p, k) => figCols(p).some((f) => k >= f.k && k < f.k + anchoFig(f));
 const altoFig = (p) => figCols(p).reduce((m, f) => Math.max(m, f.alto), 0);
 const normalizar = () => {
   for (let v = 0; v < 600; v++) {
@@ -860,11 +874,13 @@ function componer(c) {
   pag(cur.p).paneles.push({ c, k: 0, y: TOP, alto: BOTTOM - TOP });
   // Las tablas y figuras que en una pasada anterior quedaron después del texto de su sección se reservan
   // arriba de su última página de texto, para que no queden solas en una página.
-  c.bloques.filter((b) => b.flotante && b.rel).forEach((b) => {
+  c.bloques.filter((b) => b.flotante && b.rel != null).forEach((b) => {
     let q = c.pagina + b.rel;
     while (pag(q).banda > 0 && pag(q).banda + AIRE_PIEZAS + b.pieza.alto > BOTTOM - TOP) q++;
     ubicar(b, q, c); b.reservada = true;
   });
+  // Una pieza reservada en la página de apertura va al pie, y el panel se acorta sobre ella.
+  if (pag(c.pagina).banda) pag(c.pagina).paneles.forEach((pn) => { pn.alto = colBot(c.pagina) - TOP; });
   siguiente();
 
   c.marcos = [];
@@ -882,11 +898,11 @@ function componer(c) {
       if (q > cur.p && soloPiezas(q)) continue;
       const alto = colBot(q) - TOP; if (a > alto) continue;
       const fc = figCols(q), ult = fc[fc.length - 1];
-      if (ult && ult.alto + AIRE_PIEZAS + a <= alto) { ult.items.push(b); ult.alto += AIRE_PIEZAS + a; b.pagina = q; return; }
-      const desde = q === cur.p ? cur.k + 1 : 0, n = fc.length + 1;        // la primera columna que el texto aún no usa
+      if (ult && !ult.doble && !b.doble && ult.alto + AIRE_PIEZAS + a <= alto) { ult.items.push(b); ult.alto += AIRE_PIEZAS + a; b.pagina = q; return; }
+      const desde = q === cur.p ? cur.k + 1 : 0, n = fc.reduce((t, f) => t + anchoFig(f), 0) + (b.doble ? 2 : 1);   // la primera columna que el texto aún no usa
       if (3 - n < desde) continue;
-      const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a }];
-      pg.figCols.forEach((f, i) => { f.k = 3 - n + i; });
+      const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a, doble: !!b.doble }];
+      { let k = 3; for (let i = pg.figCols.length - 1; i >= 0; i--) { k -= anchoFig(pg.figCols[i]); pg.figCols[i].k = k; } }
       if (!pg.rotulo) pg.rotuloPieza = c;
       b.pagina = q; return;
     }
@@ -1012,8 +1028,72 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   });
   if (cambio) pgAnexos = repartir();
 }
-// Los finales de sección no se equilibran: el texto llena cada columna de arriba abajo, como en una página doble,
-// y sigue hacia el lado (pedido del autor del 29 de octubre de 2026).
+// Cada tabla o figura debe quedar en la página de su primera mención o en la siguiente (pedido del autor, 11 de noviembre).
+const menciones = () => {
+  const paginaDe = new Map();
+  cuerpo.forEach((c) => c.marcos.forEach((m) => m.cont.forEach((x) => { const r = paginaDe.get(x.b) || [m.p, m.p]; paginaDe.set(x.b, [Math.min(r[0], m.p), Math.max(r[1], m.p)]); })));
+  return flot.filter((b) => !b.continua).map((b) => {
+    const re = new RegExp(`${b.flotante === 'tabla' ? 'Tabla' : 'Figura'}s?[ \\u00A0](\\d+[ \\u00A0]y[ \\u00A0])?${b.n}(?!\\d)`);
+    let men = null;
+    for (const c of cuerpo) { for (const x of c.bloques) if (x.partes && re.test(textoDe(x.partes))) { men = paginaDe.get(x); break; } if (men) break; }
+    return { b, men, lejos: !men || b.pagina > men[1] + 1 || b.pagina < men[0] };
+  });
+};
+/** Lo que cuesta un reparto: piezas lejos de su mención, capítulos que terminan en una columna sola o con una
+ * columna de pocas líneas, páginas solo de piezas a medio llenar y el total de páginas. */
+function costo() {
+  let k = 0;
+  menciones().forEach(({ b, men }) => {
+    if (!men) return;
+    const d = b.pagina - men[1];
+    if (d > 1) k += 12 * (d - 1);
+    if (b.pagina < men[0]) k += 20 * (men[0] - b.pagina);
+  });
+  cuerpo.forEach((c) => {
+    if (!c.marcos.length) return;
+    const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
+    const cols = [0, 1, 2].map((x) => c.marcos.filter((m) => m.p === q && m.k === x).reduce((t, m) => t + m.usado, 0) * PT).filter((x) => x > 0);
+    const otras = pg.paneles.length + figCols(q).length;
+    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda) k += 25;
+    if (cols.length && cols[cols.length - 1] < 60) k += 12;
+  });
+  paginas.forEach((pg, q) => { if (!pg.marcos.length && !pg.paneles.length && !figCols(q).length && pg.banda && pg.banda < 0.75 * (BOTTOM - TOP)) k += 5; });
+  cuerpo.forEach((c) => {                                                       // piezas que quedan después del último texto de su capítulo
+    if (!c.marcos.length) return;
+    const ultima = Math.max(...c.marcos.map((m) => m.p));
+    c.bloques.forEach((b) => { if (b.flotante && b.pagina > ultima) k += 15; });
+  });
+  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && b.pagina < fs[i - 1].pagina) k += 40; }); });   // nunca fuera de orden
+  return k + paginas.length;
+}
+// Búsqueda local: cada tabla o figura ancha puede reservarse en la página de su mención o en la siguiente; se queda
+// la opción que baja el costo (pedido del autor del 11 de noviembre: ninguna figura lejos de donde se la nombra).
+{
+  const candidatas = flot.filter((b) => !b.columna && !b.continua);
+  let mejor = costo();
+  for (let ronda = 0; ronda < 3; ronda++) {
+    let cambio = false;
+    for (const b of candidatas) {
+      const c = cuerpo.find((x) => x.bloques.includes(b));
+      const m = menciones().find((x) => x.b === b); if (!m || !m.men) continue;
+      const apertura = b.pieza.alto <= BOTTOM - TOP - AIRE_BANDA - 70;   // al pie de la apertura, solo si el texto conserva siete líneas o más
+      const opciones = [...new Set([undefined, b.rel, m.men[0] - 1 - c.pagina, m.men[0] - c.pagina, m.men[1] - c.pagina, m.men[1] + 1 - c.pagina].filter((r) => r === undefined || r >= 1 || (r === 0 && apertura)))];
+      const original = b.rel; let elegida = original; const sigue = flot[flot.indexOf(b) + 1] && flot[flot.indexOf(b) + 1].continua ? flot[flot.indexOf(b) + 1] : null;
+      for (const r of opciones) {
+        if (r === original) continue;
+        b.rel = r; if (sigue) sigue.rel = r == null ? undefined : r + 1;   // la continuación de una tabla va en la página siguiente
+        pgAnexos = repartir(); const k = costo();
+        if (k < mejor - 0.01) { mejor = k; elegida = r; cambio = true; }
+      }
+      b.rel = elegida; if (sigue) sigue.rel = elegida == null ? undefined : elegida + 1; pgAnexos = repartir();
+    }
+    if (!cambio) break;
+  }
+  if (process.env.DIAG) console.log(`Costo del reparto: ${mejor}`);
+}
+// Los finales de sección no se equilibran ni se reparten en columnas cortas: el texto llena cada columna de arriba
+// abajo y sigue hacia el lado, como en una página doble (pedido del autor del 29 de octubre de 2026). Que ningún
+// capítulo termine en una columna sola se resuelve con el contenido (D-152), y el generador avisa dónde pasa.
 pag(pgAnexos).rotulo = { titulo: 'Anexos' };
 const total = Math.max(pgAnexos, ultimaConPieza) + 1; pag(total - 1);
 paginas.forEach((pg, q) => { if (!pg.rotulo) pg.rotulo = pg.rotuloPieza || (paginas.slice(0, q).reverse().find((x) => x.rotulo) || {}).rotulo; });
@@ -1051,6 +1131,19 @@ if (pIndice2.alto > BOTTOM - TOP) console.log(`Atención: el índice de tablas y
 if (pIndice.alto > BOTTOM - TOP) console.log(`Atención: el índice mide ${Math.round(pIndice.alto)} mm y no cabe en su página.`);
 if (pAnexos.alto > BOTTOM - TOP) console.log(`Atención: los anexos miden ${Math.round(pAnexos.alto)} mm y no caben en su página.`);
 
+menciones().forEach(({ b, men, lejos }) => { if (lejos || process.env.DIAG) console.log(`${lejos ? 'Atención: lejos de su mención' : 'Mención'} · ${b.flotante} ${b.n}: mencionada en ${men ? men.map(numPag).join('–') : '?'}, puesta en ${numPag(b.pagina)}`); });
+cuerpo.forEach((c) => {
+  if (!c.marcos.length) return;
+  const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
+  const cols = [0, 1, 2].map((k) => { const ms = c.marcos.filter((m) => m.p === q && m.k === k); return ms.length ? Math.round(ms.reduce((t, m) => t + m.usado, 0) * PT) : 0; });
+  const otras = pg.paneles.length + figCols(q).length; const conTexto = cols.filter((x) => x > 0).length;
+  const sola = q !== c.pagina && conTexto === 1 && !otras && !pg.banda;
+  const corta = cols.filter((x) => x > 0).pop() < 60;
+  if (sola || corta || process.env.DIAG) console.log(`${sola || corta ? 'Atención: final' : 'Final'} · ${c.n != null ? c.n + '. ' : ''}${c.titulo}: página ${numPag(q)}${q === c.pagina ? ' (la de apertura)' : ''}, columnas ${cols.join(' / ')} mm${pg.banda ? `, piezas al pie ${Math.round(pg.banda)} mm` : ''}${figCols(q).length ? ', figuras en columna' : ''}`);
+});
+if (process.env.SOLO_REPARTO && process.env.DIAG) { flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}${b.columna ? 'c' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto))); paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), '| figcol', figCols(q).map((f) => f.items.map((b) => 'f' + b.n).join('+')).join(','), '| marcos', pg.marcos.map((m) => `${m.k}:${Math.round(m.usado * PT)}`).join(' '))); }
+if (process.env.SOLO_REPARTO) { cuerpo.forEach((c) => console.log(`  ${String(numPag(c.pagina)).padStart(2)}  ${c.n != null ? c.n + '. ' : ''}${c.titulo}`)); console.log(`  ${numPag(pgAnexos)}  Anexos · ${numPag(pgAnexos) + 1} páginas`); process.exit(0); }
+
 // ---------------------------------------------------------------- Modelo de páginas: lo mismo para el IDML y para el PDF
 
 // Cada elemento: { tipo: 'pieza', pieza, x, y } · { tipo: 'panel', html, nombre, x, y, alto } · { tipo: 'marco', marco } · { tipo: 'imagen', archivo, rect }
@@ -1074,8 +1167,9 @@ paginas.forEach((pg, q) => {
   // Si el texto termina antes, las columnas de figuras se corren hasta quedar junto a él, sin una columna vacía entre ambos.
   const usadas = [...pg.marcos.map((m) => m.k), ...pg.paneles.map((pn) => pn.k)];
   const ultima = usadas.length ? Math.max(...usadas) : -1;
-  fc.forEach((f, i) => {
-    const x = sinTexto ? MX + ((3 - fc.length) / 2 + i) * (COL + MED) : colX(Math.min(f.k, ultima + 1 + i));
+  const unidades = fc.reduce((t, f) => t + anchoFig(f), 0); let antes = 0;
+  fc.forEach((f) => {
+    const x = sinTexto ? MX + ((3 - unidades) / 2 + antes) * (COL + MED) : colX(Math.min(f.k, ultima + 1 + antes)); antes += anchoFig(f);
     let yy = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - (pg.banda ? pg.banda + AIRE_BANDA : 0) - f.alto) / 2) : TOP;
     f.items.forEach((b) => { items.push({ tipo: 'pieza', pieza: b.pieza, x, y: yy, nombre: b.rotulo }); yy += b.pieza.alto + AIRE_PIEZAS; });
   });
@@ -1097,7 +1191,7 @@ console.log(`Dibujando ${piezasUnicas.length} piezas y ${hojas.flatMap((hj) => h
 piezasUnicas.forEach((pz) => { pz.fondo = pdf(pz.id, pz.ancho, pz.alto, `<div style="width:${pz.ancho}mm">${pz.html}</div>`, '[data-t]{visibility:hidden}'); });
 hojas.forEach((hj) => hj.items.forEach((it) => { if (it.tipo === 'panel') it.fondo = pdf(it.nombre, COL, it.alto, it.html); }));
 const logo = pdf('logo', 150, 31.5, lockup().replace('<svg ', '<svg style="width:150mm;height:31.5mm;display:block" '));
-const DESCRIPTOR = 'Un recordatorio físico preparado desde el teléfono';
+const DESCRIPTOR = 'Hazle lugar a lo que quieres hacer';
 
 // ---------------------------------------------------------------- IDML
 
@@ -1118,7 +1212,7 @@ for (const [nombre, e] of Object.entries(E)) {
 doc.caracter('Cursiva', { estilo: 'Italic' });
 doc.caracter('Negrita', { estilo: 'SemiBold' });
 doc.caracter('Negrita cursiva', { estilo: 'SemiBold Italic' });
-doc.caracter('Dato resto', { tamano: 18, estilo: 'Medium', color: 'Color/Gris', seguimiento: 0 });
+doc.caracter('Dato resto', { tamano: +(18 + MAS).toFixed(2), estilo: 'Medium', color: 'Color/Gris', seguimiento: 0 });
 doc.caracter('Confirmar', { subrayado: 'true', subColor: MARCADOR, subGrosor: 15, subDesplaz: -4 });
 doc.caracter('Pendiente', { color: 'Color/Gris' });
 

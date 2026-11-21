@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Relevo Home y Go · vistas</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #FFFFFF; overflow: hidden; }
+  canvas { display: block; }
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<script type="module">
+// Vistas para la memoria: sin ningún texto (el título y la nota de cada figura los pone la memoria, en APA), sobre
+// blanco puro. vistas.py recorta después el blanco sobrante.
+import * as THREE from 'three';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { mergeVertices, toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const q = new URLSearchParams(location.search);
+const V = q.get('v') || 'home', vista = q.get('vista') || 'principal';
+const W = innerWidth, Hh = innerHeight;
+// En perspectiva, la profundidad logarítmica evita que, con el suavizado de SwiftShader, asomen líneas finas de las
+// paredes ocultas bajo la cúpula (los canales del pulsador).
+const perspectiva = vista === 'principal' || vista === 'explosion';
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, logarithmicDepthBuffer: perspectiva });
+renderer.setPixelRatio(devicePixelRatio); renderer.setSize(W, Hh);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.prepend(renderer.domElement);
+
+const escena = new THREE.Scene();
+escena.background = new THREE.Color('#FFFFFF');
+escena.add(new THREE.HemisphereLight('#ffffff', '#d9d2c8', 1.1));
+const sol = new THREE.DirectionalLight('#fff6ec', 2.4);
+sol.position.set(-60, 140, 90); sol.castShadow = true;
+sol.shadow.mapSize.set(4096, 4096); Object.assign(sol.shadow.camera, { left: -120, right: 120, top: 120, bottom: -120 });
+sol.shadow.bias = -0.0004; sol.shadow.radius = 6; escena.add(sol);
+const relleno = new THREE.DirectionalLight('#eef4ff', 0.7); relleno.position.set(80, 40, -60); escena.add(relleno);
+const suelo = new THREE.Mesh(new THREE.PlaneGeometry(800, 800), new THREE.ShadowMaterial({ opacity: 0.16 }));
+suelo.rotation.x = -Math.PI / 2; suelo.receiveShadow = true; escena.add(suelo);
+
+const PAPEL = '#EFE9E1', CHASIS = '#D3CABE', PULSADOR = '#C7BBAE';
+const COLORES = ['#FFD54A', '#9DD6F4', '#B3E788', '#F6A3CB'];   // los de relevo-marca-chica.svg
+const mat = (c, r = 0.82, m = 0) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: m });
+const corte = vista === 'corte';
+const MAT = {
+  base: mat(PAPEL), cupula: mat(corte ? '#F8F5F0' : PAPEL), tapa: mat(corte ? '#E4DDD3' : PAPEL), chasis: mat(CHASIS), pulsador: mat(PULSADOR),
+  'tag-placa': mat('#2E6B52', 0.6), 'tag-pila': mat('#C8CCD2', 0.35, 0.8), 'tag-boton': mat('#2a2a2a', 0.5), 'tag-componente': mat('#55524e', 0.5),
+  tag: mat('#F4F1EA', 0.28),
+};
+COLORES.forEach((c, i) => { MAT['color-' + (i + 1)] = mat(c, 0.7); });
+
+const cargar = (url) => new Promise((ok, mal) => new THREE.FileLoader().load(url, ok, undefined, mal));
+const datos = JSON.parse(await cargar('_piezas/datos.json'));
+const cargador = new STLLoader();
+const leer = (carpeta, n) => new Promise((ok) => cargador.load(`_piezas/${carpeta}/${n}.stl`, (g) => {
+  let geo = mergeVertices(g, 1e-4); geo = toCreasedNormals(geo, Math.PI / 6);
+  const m = new THREE.Mesh(geo, MAT[n.replace(/^corte-/, '')] || mat(PAPEL));
+  m.castShadow = true; m.receiveShadow = true; m.userData.n = n; ok(m);
+}, undefined, () => ok(null)));
+const leerTodas = async (carpeta, nombres) => (await Promise.all(nombres.map((n) => leer(carpeta, n)))).filter(Boolean);
+
+// Modelo con Z arriba: (x, y, z) del modelo pasa a (x, z, -y) en three. Ningún objeto se gira: el logo queda como en la
+// marca oficial (el amarillo hacia +y) y la punta de Go, también hacia +y.
+const nuevoGrupo = (dx = 0) => { const g = new THREE.Group(); g.rotation.x = -Math.PI / 2; g.position.x = dx; escena.add(g); return g; };
+const LUCES = ['color-1', 'color-2', 'color-3', 'color-4'];
+const ARMADO = ['base', 'cupula', 'tapa', ...LUCES];
+const TODO = ['base', 'cupula', 'tapa', 'chasis', 'pulsador', 'tag-placa', 'tag-pila', 'tag-boton', 'tag-componente', ...LUCES];
+const D = datos[V] || {};
+// Cámara de frente (desde -y del modelo), con la elevación dada, apuntando al centro del objeto en planta.
+const deFrente = (fov, elev, dist, centro) => {
+  const c = new THREE.PerspectiveCamera(fov, W / Hh, 1, 3000), e = elev * Math.PI / 180;
+  c.position.set(centro.x, centro.y + dist * Math.sin(e), centro.z + dist * Math.cos(e)); c.lookAt(centro); return c;
+};
+
+if (vista === 'principal') {
+  // La misma cámara en Home y en Go: el logo se ve igual en las dos, y la punta de Go queda atrás, hacia arriba.
+  const grupo = nuevoGrupo();
+  (await leerTodas(V, ARMADO)).forEach((m) => grupo.add(m));
+  renderer.render(escena, deFrente(22, 38, 175, new THREE.Vector3(0, D.H * 0.35, -(D.ymin + D.ymax) / 2)));
+} else if (vista === 'explosion') {
+  const grupo = nuevoGrupo();
+  const mallas = await leerTodas(V, TODO);
+  const sube = { cupula: 36, pulsador: 20, base: 0, chasis: -16, 'tag-placa': -31, 'tag-pila': -31, 'tag-boton': -31, 'tag-componente': -31, tapa: -47 };
+  LUCES.forEach((n) => { sube[n] = 36; });
+  mallas.forEach((m) => { m.position.z = sube[m.userData.n] || 0; grupo.add(m); });
+  suelo.visible = false;                         // las piezas flotan: una sombra en el suelo quedaría a media altura
+  renderer.render(escena, deFrente(24, 24, 330, new THREE.Vector3(0, -3, -(D.ymin + D.ymax) / 2)));
+} else if (vista === 'corte') {
+  // Media pieza (x < 0) vista desde +x: la punta de Go queda a la derecha.
+  const grupo = nuevoGrupo();
+  (await leerTodas(V, TODO.map((n) => 'corte-' + n))).forEach((m) => grupo.add(m));
+  suelo.visible = false; sol.position.set(160, 90, 40);
+  const s = Math.min((W - 240) / (D.ymax - D.ymin), 0.5 * Hh / D.H);              // px por mm
+  const yc = (D.ymin + D.ymax) / 2, zc = D.H / 2;
+  const camara = new THREE.OrthographicCamera(-W / (2 * s), W / (2 * s), Hh / (2 * s), -Hh / (2 * s), 1, 1000);
+  camara.position.set(200, zc, -yc); camara.lookAt(0, zc, -yc);
+  renderer.render(escena, camara);
+} else if (vista === 'comparacion') {
+  // El Tag, Home y Go, de izquierda a derecha y a la misma escala: arriba en planta, abajo de frente.
+  const s = 7.0, sep = 14, m = 40, gap = 12;                                     // px por mm; mm entre objetos y entre filas
+  const R = { tag: 19, home: datos.home.R_pie, go: datos.go.R_pie };
+  const X = { tag: 0 }; X.home = X.tag + R.tag + sep + R.home; X.go = X.home + R.home + sep + R.go;
+  const g = { tag: nuevoGrupo(X.tag), home: nuevoGrupo(X.home), go: nuevoGrupo(X.go) };
+  g.tag.add(await leer('tag', 'tag'));
+  for (const v of ['home', 'go']) (await leerTodas(v, ARMADO)).forEach((mm) => g[v].add(mm));
+  suelo.visible = false;
+  const xc = (X.go + R.go - R.tag) / 2;
+  const y0 = Math.min(-R.tag, datos.home.ymin, datos.go.ymin), y1 = Math.max(R.tag, datos.home.ymax, datos.go.ymax);
+  const alto = Math.max(7, datos.home.H, datos.go.H);
+  const hP = (y1 - y0) * s, hA = alto * s, yP = m + hP / 2, yA = m + hP + gap * s + hA / 2;   // centros de cada fila, en px desde arriba
+  const orto = () => new THREE.OrthographicCamera(-W / (2 * s), W / (2 * s), Hh / (2 * s), -Hh / (2 * s), 1, 1000);
+  const planta = orto(), alzado = orto();
+  const cy = (y0 + y1) / 2 - (Hh / 2 - yP) / s;                                  // y del modelo que cae en el centro de la pantalla
+  planta.position.set(xc, 300, -cy); planta.up.set(0, 0, -1); planta.lookAt(xc, 0, -cy);
+  const cz = alto / 2 - (Hh / 2 - yA) / s;
+  alzado.position.set(xc, cz, 300); alzado.lookAt(xc, cz, 0);
+  renderer.setClearColor('#FFFFFF', 1); renderer.clear();                       // todo el lienzo en blanco antes de las franjas
+  renderer.setScissorTest(true);
+  const franja = (top, h) => { renderer.setScissor(0, Hh - top - h, W, h); };
+  franja(0, m + hP + gap * s / 2); sol.position.set(-20, 200, -30); renderer.render(escena, planta);
+  franja(m + hP + gap * s / 2, Hh - (m + hP + gap * s / 2)); sol.position.set(-60, 90, 120); renderer.render(escena, alzado);
+}
+// vistas.py lee el lienzo tal cual (no una captura de la ventana) y lo recorta.
+const png = document.createElement('pre'); png.id = 'png'; png.hidden = true;
+png.textContent = renderer.domElement.toDataURL('image/png'); document.body.append(png);
+document.title = 'listo';
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # Respuesta a los comentarios de los profesores sobre la memoria del Pase
 
-**Fecha:** 21 de noviembre de 2026. Tercera versión, revisada el mismo día después de leer la memoria entera.
+**Fecha:** 21 de noviembre de 2026. Cuarta versión, contrastada el mismo día con las notas del PDF.
 **Base:** el [borrador v7](borrador-memoria-v7-2026-11-11.md), copia del PDF del Pase. Las páginas son las del PDF.
-**Comentarios:** los que los profesores guía dejaron sobre el PDF y que el autor entregó el 21 de noviembre. Completan las notas de la revisión del miércoles 18, que están en la [tarea 16 de Por hacer](../00_gobernanza/por-hacer.md).
+**Comentarios:** los que los profesores guía dejaron sobre el PDF el 18 de noviembre. Su texto literal, quién hizo cada uno y el mensaje con que el autor los entregó están en los [comentarios de los profesores](comentarios-de-los-profesores-2026-11-18.md). Completan las notas de la revisión del miércoles 18, que están en la [tarea 16 de Por hacer](../00_gobernanza/por-hacer.md).
 **Estado:** propuestas para que el autor decida. La memoria no se modificó.
 
 ## Cómo se revisó
@@ -11,33 +11,42 @@
 - **Se cambia lo mínimo.** Los profesores dijeron que la memoria es muy buena y agradable de leer, así que se conservan las frases del autor. Solo cambia lo que pide cada comentario y lo que deja de cuadrar por ese cambio.
 - **Todo está comprobado.** Cada frase citada como «antes» se buscó en el texto de la memoria y aparece una vez, tal como está. Cada cifra se recalculó desde la Tabla 3 de la memoria y la Tabla I6 del Anexo I.
 - **Recuentos, no porcentajes.** El 28 de octubre los profesores pidieron «sin porcentajes, mejor como números», porque son tres personas.
-- **Las dudas se dicen.** Cuando un comentario admite dos lecturas, se explica cuál se eligió y qué cambia si era la otra. Las tres preguntas para los profesores están en la sección 9.
+- **Las dudas se dicen.** Cuando un comentario admite dos lecturas, se explica cuál se eligió y qué cambia si era la otra. Las preguntas para los profesores están en la sección 10.
+- **Se contrastó con el PDF.** La cuarta versión comparó la lista del autor con las notas del PDF. Agregó los cuatro comentarios que faltaban (14 a 17), confirmó que el 8 y el 9 estaban cruzados en la lista y corrigió el alcance de los comentarios 3 y 10.
 
-## Los trece comentarios
+## Los diecisiete comentarios
 
-| N.º | Página | Comentario | Cambio propuesto | Tamaño |
-| --- | --- | --- | --- | --- |
-| 1 | 6 | El índice de tablas y figuras no funciona con cajas blancas y filas apretadas. | Solo texto, con el aire del índice general (sección 1). | Diseño |
-| 2 | 3 | Definir qué es ocio digital. | Una oración de definición al comienzo del Resumen (sección 2). | Una oración |
-| 3 | 3 | Sacar «—por ejemplo, junto a un libro, si quiere leer—». | Se quita (sección 2). | Un inciso |
-| 4 | 3 | «Al contar su último rato» es informal, y «contar» confunde. | «Se entrevistó a ocho personas sobre su última sesión de ocio digital» (sección 2). | Una frase |
-| 5 | 15 | El marco teórico iría antes. | Antecedentes y marco teórico antes del planteamiento del problema, como ordena la pauta (sección 3). | Orden de capítulos |
-| 6 | 19 | «Y no… y no…» se repite mucho. | Dos frases reescritas sin la repetición (sección 4). | Dos frases |
-| 7 | 30 | Reformular la pregunta. | La pregunta que propone el profesor (sección 5). | Pregunta y un párrafo |
-| 8 | 31 | «Probar si funciona» es muy general: usar un indicador explícito. | Objetivo 4 con su indicador (sección 5). | Un objetivo |
-| 9 | 31 | Tomar ese texto para hacer la pregunta. | La pregunta sale de la hipótesis (sección 5). | — |
-| 10 | 53 a 55 | Ese texto iría a los hallazgos. | Una sección «Hallazgos» con los mismos párrafos, y el relato de cada persona en el Anexo I (sección 6). | Reordenar |
-| 11 | 57 | Una escala de frecuencia en la Tabla 4. | Columna «Frecuencia», con su base (sección 7). | Una columna |
-| 12 | 58 | Quitar «preciso». | Se quita (sección 8). | Una palabra |
-| 13 | 58 | Separar lo que la prueba permite afirmar de lo que no, y sugerir una comparación sin el sesgo de preparación previa. | Dos párrafos de conclusiones y uno de proyecciones (sección 8). | Tres párrafos |
+M: Sergio Majluf. G: el profesor Gallardo.
 
-**Sobre los comentarios 8 y 9.** En la lista del autor, «probar si funciona» aparece después de la hipótesis y «tomar esta para hacer la pregunta», después del objetivo 4. Es probable que estén cruzados: «probar si funciona» cita el objetivo 4, que dice «si el sistema funciona», y la pregunta que propone el profesor es la hipótesis convertida en pregunta. Las propuestas de la sección 5 sirven con cualquiera de las dos lecturas.
+| N.º | Página | Prof. | Comentario | Cambio propuesto | Tamaño |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 6 | M | El índice de tablas y figuras no funciona con cajas blancas y filas apretadas. | Solo texto, con el aire del índice general (sección 1). | Diseño |
+| 2 | 3 | G | «Definiciones», sobre «ocio digital». | Una oración de definición al comienzo del Resumen (sección 2). | Una oración |
+| 3 | 3 | G | «Lo sacaría», sobre el ejemplo del libro y el final de la oración. | Se quita el ejemplo, o el ejemplo y el final de la oración (sección 2). | Un inciso o media oración |
+| 4 | 3 | M | «Al contar su último rato» es informal, y «contar» confunde. | «Se entrevistó a ocho personas sobre su última sesión de ocio digital» (sección 2). | Una frase |
+| 5 | 16 | G | «Lo pondría antes», sobre el título del marco teórico. | Antecedentes y marco teórico antes del planteamiento del problema, como ordena la pauta (sección 3). | Orden de capítulos |
+| 6 | 19 | G | «Y no… y no…» se repite mucho. | Dos frases reescritas sin la repetición (sección 4). | Dos frases |
+| 7 | 30 | G | Reformular la pregunta, con una pregunta propuesta. | La pregunta que propone el profesor (sección 5). | Pregunta y un párrafo |
+| 8 | 31 | M | Sobre «si el sistema funciona» (objetivo 4): es muy general; usar un indicador explícito. | Objetivo 4 con su indicador (sección 5). | Un objetivo |
+| 9 | 31 | G | Sobre la hipótesis: tomarla para hacer la pregunta. | La pregunta sale de la hipótesis (sección 5). | — |
+| 10 | 54 | G | El texto de la p. 54 «irá a los hallazgos». | Una sección «Hallazgos» con los mismos párrafos (sección 6). | Reordenar |
+| 11 | 57 | G | Una escala de frecuencia en la Tabla 4, según el n de las respuestas. | Columna «Frecuencia», con su base (sección 7). | Una columna |
+| 12 | 58 | G | Quitar «preciso». | Se quita (sección 8). | Una palabra |
+| 13 | 58 | M | Separar lo que la prueba permite afirmar de lo que no, y sugerir una comparación sin el sesgo de preparación previa. | Dos párrafos de conclusiones y uno de proyecciones (sección 8). | Tres párrafos |
+| 14 | 5 | M | Más margen dentro de las cajas blancas del índice general, a ambos lados. | Más margen interior a la izquierda y a la derecha de cada caja (sección 1). | Diseño |
+| 15 | 1 | G | «Logo diip», en el rincón vacío de la portada, arriba a la derecha. | Preguntar a qué logo se refiere (secciones 9 y 10). | Por confirmar |
+| 16 | 3 | G | «.», sobre «phygital». | Probablemente pide definirlo, como «ocio digital» (sección 9). | Por confirmar |
+| 17 | 30 | G | «y iOS», sobre «una aplicación para Android y un objeto». | Decir que la aplicación es hoy para Android y que iOS queda como proyección (sección 9). | Una frase |
 
-## 1. Índice de tablas y figuras (comentario 1)
+**Sobre los comentarios 8 y 9.** En la lista del autor, «probar si funciona» aparecía después de la hipótesis, y «tomar esta para hacer la pregunta», después del objetivo 4. El PDF confirma que estaban cruzados. La nota de Majluf está sobre «si el sistema funciona», al final del objetivo 4, y la de Gallardo, sobre la hipótesis.
 
-**Lectura.** En el índice general (p. 5), cada capítulo va en una caja blanca, con aire entre una y otra; eso funciona. En la página «Tablas y figuras» (p. 6) se usaron las mismas cajas, pero más bajas y más juntas, con letra más chica. El comentario apunta a esa página, que el PDF titula justamente «Tablas y figuras».
+## 1. Los índices (comentarios 1 y 14)
 
-**Propuesta para Affinity:**
+**Lectura.** En el índice general (p. 5), cada capítulo va en una caja blanca, con aire entre una y otra. Majluf dice que eso funciona, pero pide «un poco más de margen dentro de la caja blanca en ambos lados» (comentario 14): el número del capítulo y el de la página quedan muy pegados a los bordes. En la página «Tablas y figuras» (p. 6) se usaron las mismas cajas, pero más bajas y más juntas, con letra más chica. El comentario 1 apunta a esa página.
+
+**Propuesta para Affinity, índice general (p. 5):** más margen interior a la izquierda y a la derecha de cada caja, el mismo en todas, para que el número del capítulo y el de la página se separen del borde. El ancho de la caja no cambia; si un título largo pasa a dos líneas, como «Bajada proyectual: decisiones de diseño», todas las cajas de dos líneas deben quedar con la misma altura.
+
+**Propuesta para Affinity, tablas y figuras (p. 6):**
 
 - solo texto, sin cajas: «Tabla 1» o «Figura 1» en semibold, el título en regular y la página alineada a la derecha;
 - el mismo interlineado del índice general, con el mismo espacio entre entradas;
@@ -50,7 +59,11 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 **Lo que pidieron los profesores:**
 
 1. **Definir ocio digital.** Se suma una primera oración con la definición de la Introducción, abreviada y con sus mismas palabras clave, «tiempo disponible» y los cuatro propósitos: «El ocio digital es lo que una persona hace con sus dispositivos en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros». Por eso, la oración siguiente dice «una sesión» en vez de «una sesión de ocio digital».
-2. **Sacar el ejemplo:** se quita «—por ejemplo, junto a un libro, si quiere leer—».
+2. **Sacar el ejemplo.** El resaltado de Gallardo cubre el ejemplo y también el final de la oración: «—por ejemplo, junto a un libro, si quiere leer— y que suena cuando se cumple el tiempo que ella fijó para ciertas aplicaciones». Hay dos opciones:
+   - **A. Quitar solo el ejemplo.** Es lo que hace el Resumen propuesto más abajo, porque conserva cuándo suena Relevo.
+   - **B. Quitar todo lo resaltado.** La oración termina en «…de los cuales nace Relevo: una aplicación y un objeto que la persona deja donde empieza su actividad». El Abstract termina en «…an app and an object that the person places where the activity begins». Quedan en 285 y 281 palabras. Cuándo suena lo explica el capítulo 10.
+
+   **Recomendación: la B**, porque es lo que el profesor marcó, y el Resumen sigue diciendo qué es Relevo. Si el autor prefiere conservar cuándo suena, la A, y se confirma con Gallardo (sección 10).
 3. **Cambiar «al contar su último rato».** Las dos oraciones del método quedan en una:
 
    **Antes:**
@@ -96,7 +109,7 @@ Dice «el sistema» y no «el ciclo», porque el Resumen se lee solo y no explic
 
 ## 3. El marco teórico antes del planteamiento (comentario 5)
 
-**Lectura.** El miércoles 18 el profesor dijo dónde iría el marco teórico: «antes del planteamiento del problema». Es el orden de la [pauta de contenidos](../01_contexto_y_fuentes/pauta-contenidos-proyectos.md) de la Escuela. Su segunda parte, «Antecedentes», reúne los antecedentes generales, la discusión bibliográfica, el marco teórico y el estado de la cuestión; la tercera, «Fundamentación», reúne el planteamiento del problema y la justificación.
+**Lectura.** En el PDF, Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16), sin decir antes de qué. Entre las notas del miércoles 18 hay una que dice «Figuras en bibliografías, al final; antes del planteamiento del problema». El 19 de noviembre se leyó como el lugar del índice de figuras (D-180); el autor recuerda que el profesor dijo, además, dónde iría el marco teórico. Si fue «antes del planteamiento del problema», coincide con el orden de la [pauta de contenidos](../01_contexto_y_fuentes/pauta-contenidos-proyectos.md) de la Escuela, y la propuesta se apoya en esa pauta, no solo en la nota. Su segunda parte, «Antecedentes», reúne los antecedentes generales, la discusión bibliográfica, el marco teórico y el estado de la cuestión; la tercera, «Fundamentación», reúne el planteamiento del problema y la justificación.
 
 **Orden propuesto:**
 
@@ -110,7 +123,7 @@ Dice «el sistema» y no «el ciclo», porque el Resumen se lee solo y no explic
 | 6. Marco teórico por ámbitos | 6. Justificación |
 | 7 a 14 | Sin cambios |
 
-Los antecedentes van antes del marco teórico, como en la pauta, porque el marco teórico empieza con «Los antecedentes dicen qué se ha intentado, pero no por qué una intención deja de orientar lo que se hace». Si el profesor quiso decir solo «el marco teórico antes de los antecedentes», habría que reescribir esa oración; conviene confirmarlo (sección 9).
+Los antecedentes van antes del marco teórico, como en la pauta, porque el marco teórico empieza con «Los antecedentes dicen qué se ha intentado, pero no por qué una intención deja de orientar lo que se hace». Si el profesor quiso decir solo «el marco teórico antes de los antecedentes», habría que reescribir esa oración; conviene confirmarlo (sección 10).
 
 **Lo que no cambia.** Con el orden nuevo, cambia el capítulo que va antes de tres de ellos: los antecedentes, el planteamiento y el capítulo 7. Los dos primeros se leen bien sin cambios:
 
@@ -129,7 +142,7 @@ El marco teórico sigue a los antecedentes y la justificación sigue al planteam
    **Después:**
    > Los capítulos anteriores explican el fenómeno en general; faltaba saber cómo lo viven las personas.
 
-   La oración nueva sirve con cualquier respuesta de los profesores sobre el lugar del marco teórico (sección 9).
+   La oración nueva sirve con cualquier respuesta de los profesores sobre el lugar del marco teórico (sección 10).
 2. **Una remisión del marco teórico.** El capítulo 3 queda después, pero la Introducción ya describe esos patrones, con la misma cita (Montag et al., 2019):
 
    **Antes:**
@@ -250,13 +263,18 @@ El profesor sugiere como indicador la «proporción de señales que llevan a ret
 - **Como prueba de la hipótesis, «empezar» le daría ventaja al teléfono** (13 frente a 10), y esa diferencia tampoco se puede atribuir al soporte, por los sesgos de la sección 8.
 - **Con el teléfono, «supo antes de mirar la pantalla» no se compara bien,** porque la notificación ya trae escrita la actividad.
 
-**Recomendación.** El objetivo 4 propuesto incluye los dos: mide el recuerdo, la variable de la hipótesis, y registra el comienzo, que es resultado de la decisión. Conviene preguntarle al profesor qué quiso decir con «retomar» (sección 9). Si se refería a volver a tener presente la actividad, coincide con el primer indicador.
+**Recomendación.** El objetivo 4 propuesto incluye los dos: mide el recuerdo, la variable de la hipótesis, y registra el comienzo, que es resultado de la decisión. Conviene preguntarle al profesor qué quiso decir con «retomar» (sección 10). Si se refería a volver a tener presente la actividad, coincide con el primer indicador.
 
 ## 6. Hallazgos (comentario 10)
 
-**Lectura.** El comentario va sobre el texto de las pp. 53 a 55, desde los relatos de cada persona hasta la lectura contra el tercer supuesto, y dice que eso «irá a los hallazgos». El miércoles los profesores agregaron que los hallazgos muy específicos podrían ir a los anexos. El 28 de octubre, en cambio, habían pedido ver el detalle de cada persona, «ya que son pocos usuarios».
+**Lectura.** El resaltado de Gallardo cubre la p. 54, desde «Segunda persona» hasta «no un efecto del soporte»: los relatos de la segunda y la tercera persona, la comparación con el teléfono y las lecturas contra los criterios y contra el tercer supuesto. Dice que eso «irá a los hallazgos». La propuesta suma, por coherencia, el relato de la primera persona (p. 53) y los párrafos del cierre y de los dos hallazgos (p. 55), que el resaltado no toca. El miércoles los profesores agregaron que los hallazgos muy específicos podrían ir a los anexos. El 28 de octubre, en cambio, habían pedido ver el detalle de cada persona, «ya que son pocos usuarios».
 
-**Propuesta.** Las tres cosas se pueden cumplir a la vez:
+**Dos opciones:**
+
+- **Mínima, la del PDF:** una sección «Hallazgos» con el texto de la p. 54 tal como está, relatos incluidos, cada párrafo con una etiqueta corta. No se mueve nada al Anexo I.
+- **La de esta respuesta:** además, los relatos de cada persona pasan al Anexo I, como pidieron el miércoles. Va más allá del comentario del PDF, así que conviene confirmarla con Gallardo (sección 10).
+
+**Propuesta.** En la segunda opción, las tres cosas se pueden cumplir a la vez:
 
 - el detalle por persona sigue visible en la memoria, en la Figura 25 y en la Tabla 3;
 - los relatos de cada persona pasan al Anexo I, I.8, que ya los tiene con sus citas;
@@ -292,10 +310,10 @@ Con este orden se resuelven tres puntos de la tarea 15: «la solución es que» 
 
 ## 7. Escala de frecuencia en la Tabla 4 (comentario 11)
 
-Se suma una columna «Frecuencia». Cada valor lleva su base: respuestas, relevos o personas. La escala, de cuatro niveles como pidió el profesor, se fija así:
+Se suma una columna «Frecuencia». Gallardo la pide «según el n de las respuestas», así que la base preferida son las 21 respuestas de cada etapa. Cuando un hallazgo no se puede contar por respuesta, porque lo contó una persona o salió de la revisión del 28 de octubre, la fila dice su base. La escala usa sus cuatro niveles —«no ocurre, no frecuentemente, frecuentemente o muy frecuentemente»—, escritos como adjetivos para la tabla:
 
 - **No ocurre:** ninguna vez.
-- **Poco frecuente:** hasta un tercio de la base.
+- **No frecuente:** hasta un tercio de la base.
 - **Frecuente:** más de un tercio y hasta dos tercios.
 - **Muy frecuente:** más de dos tercios.
 
@@ -303,15 +321,15 @@ La nota de la tabla dice que los hallazgos salen de la prueba y de la revisión 
 
 | Hallazgo | Frecuencia |
 | --- | --- |
-| El Tag siguió sonando o respondía lento tras horas sin uso. | Poco frecuente (lo contó 1 de 3 personas; cuántas veces, por contar en los registros) |
-| Corregir un relevo exigía borrarlo y crearlo de nuevo. | Poco frecuente (lo pidió 1 de 3 personas) |
-| Fuera de casa, el Tag no sonó. | Poco frecuente (1 de 24 relevos) |
+| El Tag siguió sonando o respondía lento tras horas sin uso. | No frecuente (lo contó 1 de 3 personas; cuántas veces, por contar en los registros) |
+| Corregir un relevo exigía borrarlo y crearlo de nuevo. | No frecuente (lo pidió 1 de 3 personas) |
+| Fuera de casa, el Tag no sonó. | No frecuente (1 de 24 relevos) |
 | La primera vez tenía once pantallas y resultó larga. | Observación de la revisión del 28 de octubre (las tres personas la completaron) |
 | La pantalla del relevo activo mostraba demasiado. | Observación de la revisión del 28 de octubre |
-| Un límite de 45 minutos resultó largo frente a un video. | Poco frecuente (1 de 3 personas) |
-| De noche, la señal se oye desde la cama y no lleva a levantarse. | Poco frecuente (1 de 3 personas) |
+| Un límite de 45 minutos resultó largo frente a un video. | No frecuente (1 de 3 personas) |
+| De noche, la señal se oye desde la cama y no lleva a levantarse. | No frecuente (1 de 3 personas) |
 | «La dejé para después» fue una respuesta frecuente. | Frecuente (9 de 21 respuestas con el Tag) |
-| El pitido del Tag sonó como una alarma y molestó a otros. | Poco frecuente (1 de 3 personas; el sonido fue «mal» en 2 de 21 respuestas) |
+| El pitido del Tag sonó como una alarma y molestó a otros. | No frecuente (1 de 3 personas; el sonido fue «mal» en 2 de 21 respuestas) |
 | El botón del Tag no se encontraba ni se sentía. | Por confirmar el origen y contar |
 | Con el teléfono, el aviso se notó tarde o no se notó. | Frecuente (10 de 21 respuestas con el teléfono) |
 
@@ -319,7 +337,7 @@ Las cifras salen de la Tabla 3, del Anexo I y del Anexo G, y los casos de una pe
 
 **Nota de la tabla propuesta:**
 
-> *Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se mide sobre la base que indica cada fila: no ocurre, ninguna vez; poco frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026; todos los cambios están en el Anexo D.
+> *Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se mide sobre la base que indica cada fila: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026; todos los cambios están en el Anexo D.
 
 ## 8. Conclusiones (comentarios 12 y 13)
 
@@ -395,21 +413,67 @@ Ese párrafo ya reconoce el sesgo de la preparación. Solo hay que alinear su pr
 **Después:**
 > Esta etapa probó el ciclo en uso real con tres personas durante cinco semanas: el ciclo funciona en un hogar, la señal se entiende, los fallos que aparecieron se corrigieron durante la prueba y la comparación con el teléfono mostró cómo vivió cada persona ambos soportes.
 
-## 9. Qué confirmar con los profesores
+## 9. Los cuatro comentarios que faltaban (comentarios 14 a 17)
 
-1. **Marco teórico.** ¿Va después de los antecedentes y antes del planteamiento del problema, como ordena la pauta, o antes también de los antecedentes?
-2. **«Retomar la actividad».** ¿Significa empezarla, o volver a tenerla presente? De eso depende cuál es el indicador principal del objetivo 4 (sección 5.3).
-3. **«Sesgo de preparación previa».** ¿Se refiere a haber preparado el relevo poco antes o a haber pasado antes por el Tag? El diseño propuesto cubre los dos, pero conviene nombrar el que quiso decir.
+No estaban en la lista que el autor entregó, y aparecieron al leer el PDF.
 
-## 10. Orden sugerido para aplicarlos
+**14. Margen en el índice general (p. 5, Majluf).** Está en la sección 1.
 
-1. **Lo que no depende de nadie:** el índice de la p. 6, la p. 19, «preciso», el Resumen y el Abstract, la sección «Hallazgos», la escala de la Tabla 4 y «Alcance de esta etapa».
+**15. «Logo diip» (p. 1, Gallardo).** El resaltado no cubre texto. Marca el rincón vacío arriba a la derecha de la portada, frente al logo de la Facultad y la Escuela. No queda claro a qué logo se refiere: hay que preguntarle (sección 10). El rincón tiene espacio, y el resto de la portada no cambia.
+
+**16. «.» sobre *phygital* (p. 3, Gallardo).** Lo marcó cinco minutos después de escribir «Definiciones» sobre «ocio digital», así que probablemente pide definirlo también. El Resumen lo explica solo con un paréntesis, «(físico y digital)». Se puede decir mejor:
+
+> …un sistema *phygital*, que une un objeto físico y una aplicación, para recuperar esa intención a tiempo…
+
+> …a phygital system, one that combines a physical object and an app, to bring that intention back in time…
+
+Suma cinco palabras en el Resumen y seis en el Abstract. Con la opción B de la sección 2 quedan en 290 y 287; con la A, el Resumen pasaría de 300 y habría que recortar en otra parte. Conviene confirmar qué quiso decir con el punto (sección 10).
+
+**17. iOS (p. 30, Gallardo).** Sobre «una aplicación para Android y un objeto», escribió «y iOS». El prototipo existe solo en Android, así que la memoria no puede decir que es para los dos. Se puede decir lo que es hoy y dejar iOS como proyección:
+
+**Antes:**
+> Relevo es un sistema *phygital*: una aplicación para Android y un objeto que se deja junto al primer paso de una actividad.
+
+**Después:**
+> Relevo es un sistema *phygital*: una aplicación, hoy para Android, y un objeto que se deja junto al primer paso de una actividad.
+
+En «Alcances y proyecciones», la versión para iOS se suma como un paso más. Antes de escribirlo, hay que comprobar en la documentación de Apple cómo una aplicación de iOS puede medir el tiempo que la persona pasa en otras aplicaciones, que es lo que Relevo hace en Android. Hasta comprobarlo, la memoria no debe decir que es factible.
+
+## 10. Qué confirmar con los profesores
+
+Se pueden mandar juntas, en un solo correo. Cada una dice a quién va.
+
+1. **Marco teórico (Gallardo).** ¿Va después de los antecedentes y antes del planteamiento del problema, como ordena la pauta, o antes también de los antecedentes?
+2. **«Retomar la actividad» (Majluf).** ¿Significa empezarla, o volver a tenerla presente? De eso depende cuál es el indicador principal del objetivo 4 (sección 5.3).
+3. **«Sesgo de preparación previa» (Majluf).** ¿Se refiere a haber preparado el relevo poco antes o a haber pasado antes por el Tag? El diseño propuesto cubre los dos, pero conviene nombrar el que quiso decir.
+4. **«Lo sacaría» (Gallardo).** ¿Solo el ejemplo del libro, o también «y que suena cuando se cumple el tiempo que ella fijó»? (sección 2).
+5. **«Irá a los hallazgos» (Gallardo).** ¿Los relatos de cada persona van en la sección de hallazgos, o al Anexo I, como se dijo el miércoles? (sección 6).
+6. **«Logo diip» (Gallardo).** ¿Qué logo va arriba a la derecha de la portada? (sección 9).
+7. **El punto sobre *phygital* (Gallardo).** ¿Pide definirlo, como «ocio digital»? (sección 9).
+
+## 11. Orden sugerido para aplicarlos
+
+1. **Lo que no depende de nadie:** los dos índices (pp. 5 y 6), la p. 19, «preciso», «hoy para Android» (p. 30), el Resumen y el Abstract (con la opción elegida en la sección 2), la sección «Hallazgos», la escala de la Tabla 4 y «Alcance de esta etapa».
 2. **Después de confirmar con los profesores:** la pregunta, el objetivo 4 y las Conclusiones, que dependen de la pregunta.
 3. **Al final, el orden de los capítulos:** cambia números de capítulos y de figuras en toda la memoria, y la primera oración del capítulo 7, así que conviene hacerlo cuando el resto esté listo.
 
 Cada cambio se hace en Affinity y en el Markdown a la vez, y al terminar se revisa que el Resumen y el Abstract sigan diciendo lo mismo que las Conclusiones.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Cuarta versión, contrastada con las notas del PDF
+
+- **Qué cambió:** las notas del PDF del Pase se leyeron una por una y se compararon con la lista del autor. Su texto literal quedó en los [comentarios de los profesores](comentarios-de-los-profesores-2026-11-18.md). Cambios:
+  - la tabla dice qué profesor hizo cada comentario;
+  - se suman cuatro comentarios que faltaban: el margen del índice general, «Logo diip», el punto sobre *phygital* e iOS (secciones 1 y 9);
+  - el PDF confirma que los comentarios 8 y 9 estaban cruzados en la lista;
+  - «lo sacaría» cubre también el final de la oración, y se recomienda quitar todo lo resaltado;
+  - el marco teórico está en la p. 16, y su lectura se apoya en la pauta de la Escuela, porque la nota del miércoles se había leído antes como el lugar del índice de figuras (D-180);
+  - «irá a los hallazgos» cubre la p. 54, y llevar los relatos al Anexo I va más allá del comentario;
+  - la escala usa las palabras del profesor y prefiere las respuestas como base;
+  - pasan de tres a siete las preguntas para los profesores, cada una con su destinatario.
+- **Cómo estaba antes:** la tercera versión trabajaba sobre la lista que el autor copió a mano, con trece comentarios y sin saber quién hizo cada uno.
+- **Por qué:** el autor entregó el PDF con las notas y pidió revisar que la interpretación fuera fiel y dejar todo ordenado.
 
 ### 2026-11-21 — Tercera versión, tras leer la memoria entera
 

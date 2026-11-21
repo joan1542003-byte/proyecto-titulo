@@ -5,7 +5,7 @@ Este documento indica dónde comenzar, qué archivo funciona como referencia vig
 **Para migrar a Claude:** abre [`CLAUDE.md`](../CLAUDE.md), usa las [instrucciones de inicio](INICIO-CLAUDE.md) y el [traspaso completo](traspaso-a-claude-2026-09-24.md), que se actualiza con cada cambio. El estado al día está en el [estado del proyecto al 4 de noviembre](estado-del-proyecto-2026-11-04.md): dónde está cada cosa, el trabajo de las cinco ramas que todavía no entran a `main`, lo que ya existe y lo que hay que aclarar con el autor. El estado de Issues debe confirmarse directamente en GitHub.
 
 
-**Base académica:** [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md), el texto del PDF del Pase copiado tal cual, con sus [anexos A a I](../08_memoria/anexos/README.md) en la misma versión y sus errores en la [tarea 15 de Por hacer](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). El [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) (D-146 a D-152), con su [versión en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), es la base de la que salió. El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) (D-123) y la [coherencia del 9 de septiembre](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md) quedan como antecedentes.
+**Base académica:** [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md), el texto del PDF del Pase copiado tal cual, con sus [anexos A a I](../08_memoria/anexos/README.md) en la misma versión y sus errores en la [tarea 15 de Por hacer](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). Los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md) sobre ese PDF, con su texto literal, y la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) a cada uno están en la tarea 16. Lo que queda, en orden, está al comienzo de [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-21-de-noviembre-de-2026). El [borrador v6](../08_memoria/borrador-memoria-v6-2026-10-28.md) (D-146 a D-152), con su [versión en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md), es la base de la que salió. El [borrador v5](../08_memoria/borrador-memoria-v5-2026-10-11.md) (D-123) y la [coherencia del 9 de septiembre](../08_memoria/auditoria-coherencia-memoria-2026-09-09.md) quedan como antecedentes.
 
 **Consulta del feedback:** [Las 23 preguntas y sus documentos responsables](../01_contexto_y_fuentes/feedback-2026-09-02.md). Respuesta documental disponible; validación empírica pendiente.
 
@@ -81,6 +81,12 @@ El material de archivo puede orientar una comparación, pero no debe presentarse
 La [auditoría del 9 de septiembre](auditoria-feedback-2026-09-09.md) registra correcciones, alcance y verificación de las 23 respuestas. Se consulta junto a las auditorías anteriores para reconstruir cambios; estas conservan sus fechas de corte.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Comentarios de los profesores y pendientes en orden
+
+- **Qué cambió:** la base académica enlaza los comentarios literales de los profesores, su respuesta y la lista ordenada de lo que queda.
+- **Cómo estaba antes:** solo enlazaba la tarea 15.
+- **Por qué:** el autor pidió dejar ordenados los pendientes después del Pase.
 
 ### 2026-11-18 — Memoria y anexos del Pase
 

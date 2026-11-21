@@ -1,10 +1,45 @@
 # Por hacer
 
-Tareas acordadas con el autor: las de cierre hacia el Pase (4 a 9) y las que esperan su indicación para empezar. Cada una dice cuándo se hace, qué incluye y qué reglas sigue. Al cerrarlas, se marcan, se enlaza el commit y se registran en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
+Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entrega final y el examen; abajo, el detalle de cada tarea, de la 1 a la 16. Al cerrar una tarea, se marca, se enlaza el commit y se registra en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
+
+## Lo que queda, en orden (al 21 de noviembre de 2026)
+
+**Fechas:**
+
+- **Entrega final:** miércoles 2 de diciembre. Conviene entregar el martes 1, como margen.
+- **Examen:** lunes 14 y martes 15 de diciembre.
+
+**Dónde se corrige:** la memoria vive en Affinity, en el documento del autor. El [borrador v7](../08_memoria/borrador-memoria-v7-2026-11-11.md) es su copia en el repositorio, y cada cambio se hace en los dos.
+
+**Hasta la entrega final:**
+
+1. **Preguntar a los profesores** las siete dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
+2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
+3. **Corregir lo que no depende de nadie**, en Affinity y en el Markdown:
+   - los dos índices;
+   - las erratas, los términos y los signos (tarea 15, A, B y G);
+   - el Resumen y el Abstract, «preciso», la p. 19, «hoy para Android», la escala de la Tabla 4 y la sección «Hallazgos» (tarea 16, F, y [respuesta, sección 11](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#11-orden-sugerido-para-aplicarlos)).
+4. **Las frases que afirman más que los datos y los puntos de método y ética** (tarea 15, D y E).
+5. **La formulación**, con lo que respondan los profesores: la pregunta, el objetivo 4, las Conclusiones y las proyecciones (tarea 16, B).
+6. **Lo que queda de los capítulos 1 a 6.** La Introducción y la Justificación siguen bajo el mínimo de la pauta, y quedan dos citas por precisar (tarea 14, con su estado al 21 de noviembre, y tarea 15, C).
+7. **El orden de los capítulos**, al final, porque cambia la numeración de capítulos y figuras (tarea 16, B).
+8. **Los anexos**: las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
+9. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
+
+**Hasta el examen:**
+
+10. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
+11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
+
+**Después del examen:**
+
+12. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
+
+**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2.
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
-**Estado:** hecha el 20 de octubre de 2026, a pedido del autor; en revisión del autor antes de cerrarla. **Anotada:** 20 de octubre de 2026. **Issue:** [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14).
+**Estado:** cerrada en la práctica. Lo hecho el 20 de octubre pasó a la v6 y a la memoria del Pase (v7). Falta cerrar el Issue #14 en GitHub, si sigue abierto. **Anotada:** 20 de octubre de 2026. **Issue:** [#14](https://github.com/joan1542003-byte/proyecto-titulo/issues/14).
 
 ### Por qué
 
@@ -42,19 +77,19 @@ El detalle, con cada cambio, está en las [notas del borrador](../08_memoria/not
 
 ## 2. Memoria: decisiones pendientes tras revisar las guías de la Escuela
 
-**Estado:** en espera de decisiones del autor. **Anotada:** 20 de octubre de 2026.
+**Estado:** casi resuelta. Según la memoria del Pase, comprobada el 21 de noviembre, quedan dos decisiones del autor: la antigüedad de las fuentes y lo que se informa de las entrevistas. **Anotada:** 20 de octubre de 2026.
 
 ### Por qué
 
 El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta de bibliografía del autor (D-141). Se aplicó lo que no requería decidir; esto otro sí:
 
-- [ ] **Fotos de la prueba (Figura 17 de la v6, antes Figura 4):** quién las tomó, si las personas autorizan publicarlas (un mensaje escrito basta; conviene guardarlo con el consentimiento) y de quién es el lugar de la foto c.
+- [x] **Fotos de la prueba (Figura 17 de la v6, antes Figura 4):** quién las tomó, si las personas autorizan publicarlas (un mensaje escrito basta; conviene guardarlo con el consentimiento) y de quién es el lugar de la foto c. *El autor decidió no mencionar la autorización en la memoria (D-182). Guardarla sigue en la tarea 9.*
 - [ ] **Antigüedad de las fuentes:** la charla de marco teórico pide, para el estado del arte, fuentes de no más de 5 años. La memoria declara «desde 2019» y usa antecedentes anteriores (Sohn et al., 2005; Hermann et al., 2007; Zekveld et al., 2017). Decidir si se explica la excepción (antecedentes de mecanismo sin equivalente reciente) o se buscan fuentes más nuevas.
-- [ ] **Uso de inteligencia artificial (capítulo 10):** la charla trata como plagio pegar texto de IA sin reelaborarlo. Precisar qué partes tuvieron borrador de IA y cómo se revisaron, y cerrar el marcador de herramientas y versiones.
-- [ ] **Fecha de consulta de las páginas web:** la memoria usa «Recuperado el … de» (APA 7 en español); la guía de material digital de la Escuela usa «Consultado el …». Elegir una forma para todo el documento.
-- [ ] **Color (capítulo 11):** un boletín de prensa de la UNAM respalda una decisión de color, y la clase de escritura pide evitar fuentes no especializadas. Reemplazarlo por el estudio de origen o quitarlo.
+- [x] **Uso de inteligencia artificial (capítulo 10):** la charla trata como plagio pegar texto de IA sin reelaborarlo. Precisar qué partes tuvieron borrador de IA y cómo se revisaron, y cerrar el marcador de herramientas y versiones. *La memoria del Pase declara las tres herramientas y para qué se usaron; el detalle está en el Anexo E (D-182 y D-183).*
+- [x] **Fecha de consulta de las páginas web:** la memoria usa «Recuperado el … de» (APA 7 en español); la guía de material digital de la Escuela usa «Consultado el …». Elegir una forma para todo el documento. *Toda la memoria del Pase usa «Recuperado el».*
+- [x] **Color (capítulo 11):** un boletín de prensa de la UNAM respalda una decisión de color, y la clase de escritura pide evitar fuentes no especializadas. Reemplazarlo por el estudio de origen o quitarlo. *Ya no se cita.*
 - [ ] **Entrevistas (capítulo 7):** qué se informó en el consentimiento oral; si se evaluó la saturación; si los textos se anonimizaron antes de usar herramientas de IA.
-- [ ] **Indicadores:** la clase de estrategia pide un indicador de logro por objetivo. La memoria tiene umbrales para la etapa con seis personas y estados en la Tabla 11. Decidir si se agrega un indicador a cada objetivo.
+- [x] **Indicadores:** la clase de estrategia pide un indicador de logro por objetivo. La memoria tiene umbrales para la etapa con seis personas y estados en la Tabla 11. Decidir si se agrega un indicador a cada objetivo. *Pasa a la tarea 16: los profesores pidieron un indicador explícito para el objetivo 4.*
 
 ### Qué se hizo ya
 
@@ -69,7 +104,7 @@ El 20 de octubre se revisó la memoria contra las guías y clases de la carpeta 
 
 ## 3. App: actualizar los textos según el estudio
 
-**Estado:** aplicada. La 4.0 a la 4.3 aplicaron las propuestas que no tocaban la prueba (D-155 a D-158). La 4.4 suma las que dependían de quitarla y la ruta llamada «Actividades» (D-159). **Anotada:** 24 de octubre de 2026.
+**Estado:** cerrada. La 4.0 a la 4.3 aplicaron las propuestas que no tocaban la prueba (D-155 a D-158). La 4.4 suma las que dependían de quitarla y la ruta llamada «Actividades» (D-159). Las casillas de abajo quedan como registro de lo que se decidió entonces. **Anotada:** 24 de octubre de 2026.
 
 ### Por qué
 
@@ -98,16 +133,28 @@ El autor pidió estudiar cómo comunicarse en la app y documentar cada texto y c
 
 ## Calendario de cierre
 
-Fechas confirmadas por los profesores el 10 de noviembre ([calendario](calendario-oficial-segundo-semestre-2026.md#fechas-confirmadas-por-los-profesores)): **entrega interna el miércoles 11 de noviembre, feedback y Pase el miércoles 18 de noviembre, entrega final el miércoles 2 de diciembre y examen el lunes 14 y el martes 15 de diciembre.** Los cierres internos son el 31 de octubre (producto) y el 15 de noviembre (producto, evidencia y memoria). La entrega interna del 11 de noviembre la sube el autor a las 23:30. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
+Fechas confirmadas por los profesores el 10 de noviembre ([calendario](calendario-oficial-segundo-semestre-2026.md#fechas-confirmadas-por-los-profesores)): entrega interna el miércoles 11 de noviembre, feedback y Pase el miércoles 18 de noviembre, **entrega final el miércoles 2 de diciembre y examen el lunes 14 y el martes 15 de diciembre.** La entrega interna y el Pase ya pasaron. Los riesgos de cada tarea están en el [registro de riesgos](registro-de-riesgos.md).
 
-| Tarea | Prioridad | Plazo |
+Estado de cada tarea al 21 de noviembre de 2026:
+
+| Tarea | Estado | Plazo |
 | --- | --- | --- |
-| 4. Objeto propio | Cerrada | Queda como propuesta (D-178) |
-| 5. Costos y presupuesto | Crítica | 8 de noviembre |
-| 6. Semana solo con notificaciones | Cerrada | Datos y cierre de las tres personas, 10 de noviembre |
-| 7. Presentación del examen | Alta | Borrador a fines de noviembre; ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
-| 8. Memoria: datos, portada y entrega | Alta | Entrega interna el 11 de noviembre a las 23:30; entrega final el 2 de diciembre (entregar el 1) |
-| 9. Pendientes menores | Baja | 15 de noviembre |
+| 1. Logros con seguridad | Cerrada en la práctica; falta el Issue #14 | — |
+| 2. Guías de la Escuela | Quedan dos decisiones | Antes del 1 de diciembre |
+| 3. Textos de la app | Cerrada | — |
+| 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
+| 5. Costos y presupuesto | Hecha | — |
+| 6. Semana solo con notificaciones | Cerrada | — |
+| 7. Presentación del examen | Por hacer | Borrador a fines de noviembre; ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
+| 9. Pendientes menores | Por hacer | Sin fecha |
+| 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
+| 11. Formulación | Reemplazada por la tarea 16 | — |
+| 12. Correcciones de la v6 | Cerrada en la memoria del Pase; lo que queda pasa a las tareas 7, 9 y 15 | — |
+| 13. Camino al 7 | Reemplazada; lo que queda pasa a las tareas 9, 15 y 16 | — |
+| 14. Capítulos 1 a 6 | Casi toda aplicada; queda la extensión y dos citas | Antes del 1 de diciembre |
+| 15. Errores del Pase | Por hacer | Antes del 1 de diciembre |
+| 16. Revisión con los profesores | Por hacer; la formulación espera sus respuestas | Antes del 1 de diciembre |
 
 ## 4. Objeto propio: la carcasa del Tag
 
@@ -154,7 +201,7 @@ La matriz de pase marcaba el presupuesto como no logrado (8.2): la Tabla 9 de la
 
 ### Qué hacer
 
-- [x] **Montos pagados:** el Tag costó 10 990 con envío; el teléfono y Supabase, nada; las suscripciones de inteligencia artificial, unos 171 000. Total: unos 182 000.
+- [x] **Montos pagados:** el Tag costó 10 990 con envío; el teléfono y Supabase, nada. El 10 de noviembre de 2026 el autor fijó las suscripciones de inteligencia artificial en un mes de Cursor, uno de ChatGPT Plus y tres de Claude Pro, a unos 20 dólares al mes: unos 100 000 pesos. Total: unos 111 000 (D-183). Antes decía cinco meses de ChatGPT Plus y tres de Claude Pro, unos 171 000, y un total de unos 182 000.
 - [x] **Fuente de financiamiento:** propia, con ingresos del trabajo a tiempo parcial del autor.
 - [x] **Valor hora de referencia:** entre 5750 y 8480 pesos, de los ingresos de titulados de Diseño publicados por el Ministerio de Educación y la jornada legal de 42 horas.
 - [x] **Horas:** 186 en total. 114 medidas en el repositorio entre el 23 de agosto y el 27 de octubre, repartidas por área, y 72 del primer semestre, estimadas en cuatro horas semanales sobre la planificación oficial del seminario.
@@ -200,8 +247,8 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - el flujo de la persona y el técnico, por separado;
   - la evidencia y sus límites.
 
-  Son los puntos que la comisión de julio no entendió.
-- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad.
+  Son los puntos que la comisión de julio no entendió. La base es la [presentación del 12 de noviembre](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), en Figma Slides: 25 láminas para 7 a 10 minutos, hechas desde la memoria del 10 de noviembre. Hay que llevarla a 15 minutos y ponerla al día con la memoria final. Si cambia la pregunta, se cambia la lámina 11, que la muestra literal. La lámina 21 ya se corrigió el 18 de noviembre.
+- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
@@ -219,10 +266,11 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
   - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
   - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
+  - [ ] el nombre del segundo profesor guía. La portada de la memoria y el repositorio dicen «Simón Gallardo», pero sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)). Puede ser el nombre de su cuenta; conviene confirmarlo antes de la entrega;
 - [x] **Portada oficial:** ya está en la memoria, según confirmó el autor el 10 de noviembre. logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
-- [ ] **Resultados finales:** la etapa solo con notificaciones ya está en la memoria (10 de noviembre); las escalas y las entrevistas de cierre están desde el mismo día, y el objeto propio queda como propuesta (D-178).
+- [x] **Resultados finales:** la etapa solo con notificaciones ya está en la memoria (10 de noviembre); las escalas y las entrevistas de cierre están desde el mismo día, y el objeto propio queda como propuesta (D-178).
 - [ ] **Antes de entregar:** PDF de menos de 15 MB, páginas simples, de 15.000 a 20.000 palabras, y el archivo nombrado con el nombre y la mención, por ejemplo «Johan Yantén Dis.[mención].pdf». Entregar el 1 de diciembre como margen.
 - [ ] **Depósito en la Biblioteca**, después del examen. La [pauta](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) ya se revisó: pide carta, Arial 12 y una portada en mayúsculas, y para las carreras de Diseño nombra «tesis no convencionales» sin dar reglas. Hay que preguntar a la Coordinación o a la Biblioteca si se acepta el A3 y si hace falta una portada institucional. Al depositar: PDF sin clave nombrado con el RUT y el formulario de autorización.
 
@@ -231,21 +279,24 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
 - [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). El autor descargó los PDF de las dos de diseño, y su lectura completa corrigió el párrafo.
-- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 17 de la v6).
+- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 23 de la memoria del Pase; Figura 17 de la v6). La memoria no las menciona, por decisión del autor (D-182).
+- [ ] **El relevo que no sonó:** confirmar con la tercera persona que fue fuera de casa, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
+- [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). Viene de la tarea 10.
+- [ ] **Aviso de licencia de Lucide** (anotado el 11 de noviembre): si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
 
-**Estado:** en curso: el borrador v6 y la memoria en 1920 × 1080 recogen la mayor parte (D-146 a D-152). **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
+**Estado:** cerrada al 21 de noviembre. La memoria del Pase recoge todo lo que tocaba a la memoria (D-146 a D-152, D-182 y D-183). Lo que queda pasa a otras tareas: la validación por expertos, a la tarea 9, y la revisión de formalidad y fidelidad, a las tareas 15 y 16. **Anotada:** 28 de octubre de 2026. **Origen:** apuntes del autor. **Riesgo:** alto, porque toca la memoria, que es el criterio del Pase.
 
 ### Lo primero
 
 > «El Pase, el criterio es la memoria: formalidad y fidelidad.»
 
-- [ ] **Mandar la memoria al profesor el viernes 30 de octubre para que la revise.** No es la entrega oficial, que sigue en diciembre. El autor empieza a escribirla el 29. Las figuras pueden desarrollarse después.
-- [ ] Revisar que la memoria cumpla formalidad —formato, citas, estructura— y fidelidad: que lo que dice sea lo que se hizo.
+- [x] **Mandar la memoria al profesor el viernes 30 de octubre para que la revise.** No es la entrega oficial, que sigue en diciembre. El autor empieza a escribirla el 29. Las figuras pueden desarrollarse después. *Se mandó el 30 de octubre (tarea 12).*
+- [x] Revisar que la memoria cumpla formalidad —formato, citas, estructura— y fidelidad: que lo que dice sea lo que se hizo. *Sigue en las tareas 15 y 16, sobre la memoria del Pase.*
 
 ### Las decisiones de diseño son el centro
 
@@ -265,14 +316,14 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] **Informar los resultados como casos y recuentos**, nunca en porcentajes, porque son tres personas. Hecho en la v6.
 - [x] **Separar los resultados por persona**: comprobar si la mitad de los casos corresponde a una sola, y decirlo. Hecho en la v6: la primera persona aporta cinco de los diez comienzos. Falta el detalle por persona de las demás respuestas.
 - [x] **Distinguir el detalle de cada caso**, que con pocas personas aporta más que un promedio. Figura 22 de la v6.
-- [ ] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 4), con tres mejoras propuestas a partir de los datos (D-147); los cambios de la aplicación siguen pendientes.
-- [ ] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media. Corregido en el capítulo 11 de la v6; faltan los documentos de marca y el Anexo H.
+- [x] **Iterar con los resultados:** arreglar lo que la prueba mostró —pasar de 7 de 10 a 10 de 10— y contar esa iteración. La v6 cuenta la iteración (Tabla 4), con tres mejoras propuestas a partir de los datos (D-147); los cambios de la aplicación siguen pendientes. *Hecho: la memoria del Pase cuenta los nueve cambios del rediseño del 5 al 9 de noviembre (Tabla 4 y Anexos D y G).*
+- [x] **La decisión cromática no se apoya en promedios.** La corrección apunta al color: la mitad asocia el rojo al amor y la otra mitad el rosa, así que el promedio esconde esa división. Revisar el [fundamento del color](../10_recursos_visuales/41_fundamento-del-color-texto-academico-2026-10-11.md), el [documento de marca](../10_recursos_visuales/42_marca-relevo-2026-10-25.md) y las láminas de color: usar la mediana o mostrar la dispersión, en vez de la media. Corregido en el capítulo 11 de la v6. *El Anexo H del Pase no usa promedios, y los documentos de trabajo de la marca quedaron como historia del proceso (9 de noviembre).*
 
 ### La aplicación, según lo que mostró la prueba
 
 - [x] **El onboarding es muy largo**, aunque las tres personas lo completaron. Partirlo: una parte al empezar y el resto después. Hecho en la 4.4: tres pantallas antes del primer relevo y el perfil después (D-159).
 - [x] **La pantalla del relevo tiene demasiada información.** Hecho en la 4.0: la actividad, cuánto falta y una acción (D-155).
-- [ ] **Separar los problemas técnicos de los de usabilidad:** los pitidos del Tag son lo primero y están condicionados por el objeto comprado.
+- [x] **Separar los problemas técnicos de los de usabilidad:** los pitidos del Tag son lo primero y están condicionados por el objeto comprado. *Hecho en el capítulo 13, «Iterar con los resultados».*
 - [x] **Cambiar el texto de «Elige tu emoji».** Hecho en la 4.0: «¿Con qué te identificas?». Que vas a elegir un emoji ya se ve; la pregunta debe ser por la persona: «¿Con qué te identificas?» o algo así.
 - [x] **Si no hay Tag al cumplirse el tiempo, la aplicación debe intentar conectarse a uno antes de que el tiempo termine; si no lo consigue, suena en el teléfono.** Es un cambio de comportamiento, no solo de aviso. Hecho en la 4.4: lo busca a un minuto y medio del final; falta probarlo con un Tag real (D-159).
 - [x] **«¿Tienes un Tag? No → consíguelo acá»:** ofrecer esa salida en el flujo, para quien no tiene el objeto. Hecho en la 4.4, con una búsqueda en Mercado Libre y las notificaciones mientras tanto (D-159).
@@ -286,16 +337,16 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ### Entrevistas
 
-- [ ] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.]
-- [ ] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria. Como no evaluó la propuesta, se sumaron tres perfiles para validarla por correo ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)); falta que el autor los envíe.
+- [x] **Entrevistar a las personas de la prueba a partir de sus conversaciones**, donde ya se tomaron decisiones. [POR ACLARAR: el apunte dice «el anexo 24»; falta saber a cuál se refiere.] *Hecho: entrevistas de cierre del 9 y el 10 de noviembre (Anexo I).*
+- [x] **Buscar perfiles para entrevistar en Chile**, preparar las preguntas y el material que se les mostrará: el guion completo. Preparado el 2 de noviembre en [Entrevistas a expertos](../02_investigacion/entrevistas-expertos/README.md): cinco personas en Chile con el correo vigente, la guía, el material y los correos; las de otros países quedan en reserva. Falta que el autor envíe las invitaciones (3 de noviembre) y haga al menos una entrevista antes del 15 de noviembre. **6 de noviembre:** Denis Parra respondió por escrito y autorizó la cita con su nombre ([ficha](../02_investigacion/entrevistas-expertos/ficha-parra.md)); falta enviarle el párrafo antes de usarlo y llevar su respuesta a la memoria. Como no evaluó la propuesta, se sumaron tres perfiles para validarla por correo ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)); falta que el autor los envíe. *La respuesta de Parra está en la memoria del Pase (capítulos 3, 9, 10, 12 y 14); los correos de validación pasan a la tarea 9.*
 
 ### La memoria diseñada
 
 - [x] **Rehacer la memoria diseñada en 1920 × 1080 píxeles.** Reemplaza el A3 horizontal, así que cambia toda la diagramación: la retícula, el largo de línea, el corte de las páginas y la generación del IDML. Hecho: [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) (D-146).
 - [x] **Subir un poco el tamaño de la tipografía** y **aumentar ligeramente el interlineado**; revisar interlineado y peso. Hecho: texto de 23 pt con interlineado de 34,6 (D-148).
 - [x] **Ninguna página puede quedar con un solo párrafo** ni con una columna sola y poco texto. Hecho: el final de cada sección se reparte en columnas parejas, y debajo de una tabla o figura el texto ocupa al menos siete líneas por columna (D-149 y D-150).
-- [ ] **Los anexos no se diseñan como la memoria**, pero deben estar bien presentados.
-- [ ] **Las palabras de los anexos no cuentan** para el límite de extensión.
+- [x] **Los anexos no se diseñan como la memoria**, pero deben estar bien presentados. *Hecho: anexos en Word y PDF, con portada.*
+- [x] **Las palabras de los anexos no cuentan** para el límite de extensión.
 - [x] **Buscar Affinity Publisher**, equivalente a InDesign, para la diagramación. El IDML de la memoria se abre en Affinity Publisher, y las tipografías están en el repositorio.
 
 ### El texto
@@ -304,7 +355,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 ## 11. Formulación: la pregunta de investigación y sus dos partes
 
-**Estado:** por decidir el autor. **Anotada:** 30 de octubre de 2026. **Origen:** lectura completa del borrador v6, que el autor pidió para proponer una pregunta de investigación. **Riesgo:** medio. No afecta ningún dato ni resultado, pero toca la trazabilidad, que en el Pase se evalúa como formalidad.
+**Estado:** reemplazada por la tarea 16. La opción C está aplicada desde la v6, y el 18 de noviembre el profesor Gallardo propuso una pregunta nueva, que sale de la hipótesis. Si el autor la adopta, esta tarea se cierra; si mantiene la pregunta actual, queda como está. **Anotada:** 30 de octubre de 2026. **Origen:** lectura completa del borrador v6, que el autor pidió para proponer una pregunta de investigación. **Riesgo:** medio. No afecta ningún dato ni resultado, pero toca la trazabilidad, que en el Pase se evalúa como formalidad.
 
 ### El problema
 
@@ -365,7 +416,7 @@ La **C**, y si el autor quiere además declarar las preguntas específicas, la *
 
 ## 12. Memoria v6: lo que hay que corregir antes del Pase
 
-**Estado:** por hacer. **Anotada:** 30 de octubre de 2026. **Origen:** el autor envió al profesor el PDF de 58 páginas y pidió una revisión completa y una crítica con la rúbrica. **Riesgo:** alto. La memoria es el criterio del Pase y el instructivo evalúa de forma explícita legibilidad, ortografía, redacción y citación.
+**Estado:** cerrada en la memoria del Pase, comprobada el 21 de noviembre contra el borrador v7. A, B, D, E y F están resueltos: ya no aparecen las marcas, las fallas ni las erratas listadas, y el Resumen tiene su método. C pasa a la tarea 15, C, y H, a la tarea 7. De G, la autoría es la declaración breve que eligió el autor (D-182 y D-183), la frase de la concentricidad ya no está, la Tabla 1 está corregida, la nota de los modelos 3D nombra a Claude por decisión del autor (D-183), y el glosario y los anexos están en el PDF. Las fotos y el relevo fuera de casa pasan a la tarea 9. **Anotada:** 30 de octubre de 2026. **Origen:** el autor envió al profesor el PDF de 58 páginas y pidió una revisión completa y una crítica con la rúbrica. **Riesgo:** alto. La memoria es el criterio del Pase y el instructivo evalúa de forma explícita legibilidad, ortografía, redacción y citación.
 
 ### Por qué
 
@@ -513,7 +564,7 @@ La tarea 4 —imprimir el objeto y levantar los planos— sigue siendo la que m�
 
 ## 13. Camino al 7: cerrar los huecos de la rúbrica
 
-**Estado:** por hacer. **Anotada:** 30 de octubre de 2026. **Origen:** el autor pidió apuntar a la nota máxima y que cada paso diga qué camino tomar y cómo. **Riesgo:** alto, pero manejable: casi todo depende solo del autor.
+**Estado:** reemplazada al 21 de noviembre. El calendario y las notas estimadas eran para un Pase el 25 de noviembre, que fue el 18. A quedó sin efecto con D-178, porque el objeto no se imprime. B se hizo el 10 de noviembre. De C, D y E, la memoria del Pase resuelve C3, C4, C5, C6, D2 y D3 (C3 y C6, por decisión del autor, D-182). Quedan C1, que también está en la tarea 15, E; C2 y E2, opcionales, y E4, en la tarea 9. D1 sigue en la tarea 16. **Anotada:** 30 de octubre de 2026. **Origen:** el autor pidió apuntar a la nota máxima y que cada paso diga qué camino tomar y cómo. **Riesgo:** alto, pero manejable: casi todo depende solo del autor.
 
 ### De dónde se parte
 
@@ -546,11 +597,11 @@ La rúbrica pondera Formulación 20 %, Desarrollo de la investigación 40 % y Pr
 
 Hoy la hipótesis tiene tres supuestos y la memoria examina uno y medio. La semana de comparación cerró el 30 de octubre: **ese dato convierte un supuesto declarado en un supuesto probado**, y es lo que separa una memoria que promete de una que responde.
 
-- [ ] **B1. Exportar y unir los datos** de las tres personas: guardar en `datos_sensibles/` y correr `node unir-datos.js` en [`07_validacion/analisis`](../07_validacion/analisis/).
-- [ ] **B2. Aplicar el instrumento de cierre** ([ficha y entrevista](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md)) y transcribir.
-- [ ] **B3. Escribir los resultados de la comparación** en el capítulo 13 (~250 palabras), con el mismo criterio que el resto: por persona, en recuentos, sin porcentajes.
-- [ ] **B4. Actualizar el Resumen, el Abstract y las Conclusiones**, que hoy dan la comparación por pendiente.
-- [ ] **B5. Decir con claridad qué quedó probado y qué no.** El supuesto 2, el del lugar, sigue sin probarse y es correcto declararlo. Una memoria que distingue lo que probó de lo que supone se lee como rigurosa, no como incompleta.
+- [x] **B1. Exportar y unir los datos** de las tres personas: guardar en `datos_sensibles/` y correr `node unir-datos.js` en [`07_validacion/analisis`](../07_validacion/analisis/).
+- [x] **B2. Aplicar el instrumento de cierre** ([ficha y entrevista](../07_validacion/instrumentos/instrumento-de-cierre-2026-10-28.md)) y transcribir.
+- [x] **B3. Escribir los resultados de la comparación** en el capítulo 13 (~250 palabras), con el mismo criterio que el resto: por persona, en recuentos, sin porcentajes.
+- [x] **B4. Actualizar el Resumen, el Abstract y las Conclusiones**, que hoy dan la comparación por pendiente.
+- [x] **B5. Decir con claridad qué quedó probado y qué no.** *Hecho en el Pase; los profesores pidieron separarlo aún más en las Conclusiones (tarea 16).* El supuesto 2, el del lugar, sigue sin probarse y es correcto declararlo. Una memoria que distingue lo que probó de lo que supone se lee como rigurosa, no como incompleta.
 
 ### C. Convertir las debilidades metodológicas en rigor
 
@@ -558,16 +609,16 @@ La comisión va a ver estas tres cosas. Si las nombras tú primero, dejan de ser
 
 - [ ] **C1. Los límites de la pauta de entrevistas** (~150 palabras, capítulo 7). La memoria ya reconoce que la pauta no preguntaba por el fenómeno y que la categoría surgió en el análisis. Desarrollarlo: qué implica para la validez, por qué la encuesta y la prueba en hogares compensan en parte, y qué habría que preguntar en una ronda nueva.
 - [ ] **C2. Declarar la encuesta como confirmatoria** (~80 palabras, capítulo 7). Llegó después de la propuesta, así que contrasta y no descubre. Decirlo protege el dato en vez de debilitarlo.
-- [ ] **C3. Justificar el rango de 19 a 30 años desde el problema**, no desde quiénes participaron (capítulo 7). Hoy el argumento es circular. Hay datos de la Subtel ya citados que pueden sostenerlo.
-- [ ] **C4. Arreglar la Figura 9** (capítulo 8). Hoy ubica a Relevo en 8,9 y 9,4 —el mejor en los dos ejes— con un método que la propia nota dice que no mide eficacia. Dos caminos: **(a)** explicar en la nota con qué criterio se asignó cada posición, o **(b)** sacar a Relevo del mapa y ubicarlo en el texto como la oportunidad que el mapa deja ver. La **b** es más honesta y más fuerte.
-- [ ] **C5. Anexo con la codificación de la encuesta**: las categorías, quién codificó y cómo se revisó. Hoy «49 de 53 explicaron bien cómo funcionaba» no tiene respaldo visible.
-- [ ] **C6. Enunciar la falsabilidad** (~80 palabras, capítulo 13): qué habría tenido que ocurrir en la prueba para concluir que Relevo no sirve. Sin eso, la prueba no se lee como prueba.
+- [x] **C3. Justificar el rango de 19 a 30 años desde el problema** (10 de noviembre: como acotamiento para empezar, con posibilidad de ampliarlo), no desde quiénes participaron (capítulo 7). Hoy el argumento es circular. Hay datos de la Subtel ya citados que pueden sostenerlo.
+- [x] **C4. Arreglar la Figura 9** (capítulo 8). *El autor pidió mostrar a Relevo en el mapa (D-183); en el Pase es la Figura 10.* Hoy ubica a Relevo en 8,9 y 9,4 —el mejor en los dos ejes— con un método que la propia nota dice que no mide eficacia. Dos caminos: **(a)** explicar en la nota con qué criterio se asignó cada posición, o **(b)** sacar a Relevo del mapa y ubicarlo en el texto como la oportunidad que el mapa deja ver. La **b** es más honesta y más fuerte.
+- [x] **C5. Anexo con la codificación de la encuesta**: *está en el Anexo B.* las categorías, quién codificó y cómo se revisó. Hoy «49 de 53 explicaron bien cómo funcionaba» no tiene respaldo visible.
+- [x] **C6. Enunciar la falsabilidad** (10 de noviembre: el autor decidió no mencionarla) (~80 palabras, capítulo 13): qué habría tenido que ocurrir en la prueba para concluir que Relevo no sirve. Sin eso, la prueba no se lee como prueba.
 
 ### D. Formulación
 
 - [ ] **D1. Resolver las dos partes de la pregunta** → [tarea 11](#11-formulación-la-pregunta-de-investigación-y-sus-dos-partes).
-- [ ] **D2. Devolver el objetivo general**: hoy dice «diseñar y evaluar **el funcionamiento** de Relevo». Esas dos palabras lo reducen a si el aparato anda. Volver a evaluar el sistema.
-- [ ] **D3. Hacer trabajar la metodología** (~150 palabras, capítulo 10): qué aportó la investigación a través del diseño que no habría aportado otro enfoque. Hoy Zimmerman et al. (2007) se cita una vez y no vuelve.
+- [x] **D2. Devolver el objetivo general**: *hecho; ya no dice «el funcionamiento».* hoy dice «diseñar y evaluar **el funcionamiento** de Relevo». Esas dos palabras lo reducen a si el aparato anda. Volver a evaluar el sistema.
+- [x] **D3. Hacer trabajar la metodología** *(el capítulo 10 del Pase dice qué aportó investigar con el prototipo en uso)* (~150 palabras, capítulo 10): qué aportó la investigación a través del diseño que no habría aportado otro enfoque. Hoy Zimmerman et al. (2007) se cita una vez y no vuelve.
 
 ### E. Factibilidad y ética
 
@@ -614,7 +665,7 @@ Estimaciones sobre la simulación del 30 de octubre, para decidir qué soltar si
 
 ## 14. Capítulos 1 a 6: fundamentar lo que presenta el proyecto
 
-**Estado:** por hacer. **Anotada:** 2 de noviembre de 2026. **Origen:** el autor pidió revisar con rigor el apartado que empieza a describir el proyecto y leer completo cada referente de la memoria. El análisis está en la [fundamentación de los capítulos 1 a 6](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md), con el texto propuesto para cada cambio, y en la [verificación de sus 40 citas](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md), con página y fragmento de cada fuente. **Riesgo:** alto: son los capítulos que la comisión lee primero y el instructivo evalúa la citación. La memoria no se modificó: los cambios se aplican cuando el autor lo decida.
+**Estado:** casi toda aplicada en la memoria del Pase, comprobada el 21 de noviembre contra el borrador v7. Las casillas marcadas están hechas. Quedan cuatro cosas: la extensión de la Introducción (544 palabras; la pauta pide de 600 a 1200, punto B) y de la Justificación (262; pide de 300 a 600, punto D); «creando hábitos» y el coautor de one sec (punto E); y las fuentes que siguen sin verificar (G y H). **Anotada:** 2 de noviembre de 2026. **Origen:** el autor pidió revisar con rigor el apartado que empieza a describir el proyecto y leer completo cada referente de la memoria. El análisis está en la [fundamentación de los capítulos 1 a 6](../08_memoria/fundamentacion-capitulos-1-a-6-2026-11-02.md), con el texto propuesto para cada cambio, y en la [verificación de sus 40 citas](../01_contexto_y_fuentes/fuentes-de-la-memoria/verificacion-capitulos-1-a-6.md), con página y fragmento de cada fuente. **Riesgo:** alto: son los capítulos que la comisión lee primero y el instructivo evalúa la citación. La memoria no se modificó: los cambios se aplican cuando el autor lo decida.
 
 ### Por qué
 
@@ -631,23 +682,23 @@ Las erratas de estos capítulos ya están en la tarea 12, punto D. Aquí van sol
 
 ### A. Motivación personal (capítulo 1)
 
-- [ ] Reemplazar «Me inquieta la diferencia entre elegir seguir y darme cuenta contra el automatismo que genera el dispositivo. Está decidiendo por mi» por la frase de la v6: «Me inquieta la diferencia entre elegir seguir y darme cuenta, después, de que no volví a considerar lo demás». Propuesta 3.1.
-- [ ] Reponer la frase de la v6: «La pregunta nace de mi experiencia; lo que esta memoria afirma sobre otras personas proviene de la investigación».
+- [x] Reemplazar «Me inquieta la diferencia entre elegir seguir y darme cuenta contra el automatismo que genera el dispositivo. Está decidiendo por mi» por la frase de la v6: «Me inquieta la diferencia entre elegir seguir y darme cuenta, después, de que no volví a considerar lo demás». Propuesta 3.1. *Resuelto de otra forma: «…seguir por inercia, como si el dispositivo decidiera por mí».*
+- [x] Reponer la frase de la v6: «La pregunta nace de mi experiencia; lo que esta memoria afirma sobre otras personas proviene de la investigación».
 
 ### B. Introducción (capítulo 2)
 
-- [ ] Reescribir el segundo párrafo: el ejemplo de la sesión larga y la breve es propio, y la cita de Lukoff et al. (2018) pasa a sostener lo que el estudio encontró, que el sentido de cada uso depende de su motivo y de su tipo. Propuesta 3.2.
-- [ ] «esa intención deja de tener una presencia, cuando la persona vuelve» → «esa intención deja de orientar el paso siguiente; cuando la persona vuelve», y reponer «El proyecto se dirige a la primera; queda abierto si también puede ayudar en la segunda».
-- [ ] Reponer «Estos patrones no determinan la conducta, pero reducen…»: Montag et al. (2019) es una revisión y no mide el efecto.
+- [x] Reescribir el segundo párrafo: el ejemplo de la sesión larga y la breve es propio, y la cita de Lukoff et al. (2018) pasa a sostener lo que el estudio encontró, que el sentido de cada uso depende de su motivo y de su tipo. Propuesta 3.2.
+- [x] «esa intención deja de tener una presencia, cuando la persona vuelve» → «esa intención deja de orientar el paso siguiente; cuando la persona vuelve», y reponer «El proyecto se dirige a la primera; queda abierto si también puede ayudar en la segunda».
+- [x] Reponer «Estos patrones no determinan la conducta, pero reducen…»: Montag et al. (2019) es una revisión y no mide el efecto.
 - [ ] Reponer el párrafo final de la v6 (método, propuesta y prueba) y añadir el párrafo nuevo con el estado del proyecto y la organización del documento, que la pauta pide y ninguna versión tiene. Actualizar la oración del estado al momento de entregar.
 - **Resultado:** unas 790 palabras.
 
 ### C. Planteamiento del problema (capítulo 3)
 
-- [ ] Añadir el párrafo con el dato que falta. Lukoff et al. (2018, p. 22:16), ya citados: la proporción de usos con un objetivo concreto baja del 65,6 % al 51,4 % mientras la sesión continúa. A eso se suma el indicio de la encuesta del capítulo 7: de 43 personas que tenían otra cosa que hacer, 21 no la empezaron. Propuesta 3.3. Responde a la pregunta de la comisión anotada en la tarea 12, punto H: «¿por qué creer que existe más allá de la experiencia del autor?».
-- [ ] Precisar el estudio de de Segovia Vicente et al. (2024): el desplazamiento sin propósito se midió en redes sociales, y los registros del teléfono cubren a 691 de las 1315 personas. El conflicto de metas fue bajo en promedio (1,95 de 7), lo que confirma que el problema ocurre «durante algunas sesiones».
-- [ ] McDaniel y Einstein (2000): verificar en el texto completo que una actividad absorbente hace depender el recuerdo de una señal del entorno (opción A). Si no se consigue el texto, reformular dentro de lo que dice el resumen (opción B).
-- [ ] «La interfaz no actúa sola, pero decide cuándo aparecen los cierres» → «…pero organiza…», como en la v6: «decide» contradice lo anterior.
+- [x] Añadir el párrafo con el dato que falta. Lukoff et al. (2018, p. 22:16), ya citados: la proporción de usos con un objetivo concreto baja del 65,6 % al 51,4 % mientras la sesión continúa. A eso se suma el indicio de la encuesta del capítulo 7: de 43 personas que tenían otra cosa que hacer, 21 no la empezaron. Propuesta 3.3. Responde a la pregunta de la comisión anotada en la tarea 12, punto H: «¿por qué creer que existe más allá de la experiencia del autor?».
+- [x] Precisar el estudio de de Segovia Vicente et al. (2024): el desplazamiento sin propósito se midió en redes sociales, y los registros del teléfono cubren a 691 de las 1315 personas. El conflicto de metas fue bajo en promedio (1,95 de 7), lo que confirma que el problema ocurre «durante algunas sesiones».
+- [x] McDaniel y Einstein (2000): verificar en el texto completo que una actividad absorbente hace depender el recuerdo de una señal del entorno (opción A). Si no se consigue el texto, reformular dentro de lo que dice el resumen (opción B). *La memoria del Pase la cita con página (p. S138).*
+- [x] «La interfaz no actúa sola, pero decide cuándo aparecen los cierres» → «…pero organiza…», como en la v6: «decide» contradice lo anterior.
 - **Resultado:** entre 660 y 700 palabras.
 
 ### D. Justificación (capítulo 4)
@@ -656,38 +707,38 @@ Las erratas de estos capítulos ya están en la tarea 12, punto D. Aquí van sol
   - Terzimehić et al. (2022, pp. 1818–1819): las intervenciones contra el uso distraído del teléfono casi no incluyen el entorno físico.
   - Lyngs et al. (2019): las herramientas que recuerdan una meta lo hacen en la misma pantalla.
   - Monge Roffarello y De Russis (2023): el tiempo de pantalla es una medida demasiado gruesa.
-- [ ] «Este criterio se traduce en decisiones de diseño, una necesidad psicológica básica» perdió la palabra «autonomía». Reponerla y anclarla en Ryan y Deci (2000, p. 70): las órdenes y las metas impuestas debilitan la motivación propia; la posibilidad de elegir la fortalece.
-- [ ] Sacar a Waggoner et al. (2026) de la frase «El diseño permite crear una interacción entre componentes físicos y digitales»: es una revisión de métodos para bibliotecas y no la sostiene. Se mantiene en el capítulo 6 para definir *phygital*.
+- [x] «Este criterio se traduce en decisiones de diseño, una necesidad psicológica básica» perdió la palabra «autonomía». Reponerla y anclarla en Ryan y Deci (2000, p. 70): las órdenes y las metas impuestas debilitan la motivación propia; la posibilidad de elegir la fortalece.
+- [x] Sacar a Waggoner et al. (2026) de la frase «El diseño permite crear una interacción entre componentes físicos y digitales»: es una revisión de métodos para bibliotecas y no la sostiene. Se mantiene en el capítulo 6 para definir *phygital*. *Hoy solo está en el glosario, para definir* phygital.
 - [ ] Comprobar que el aporte descrito coincida con el plan del capítulo 13.
 - **Resultado:** unas 440 palabras. Sumados B, C y D, el cuerpo gana unas 650 palabras en lugares que la pauta exige; cuentan para las 1000 que faltan en la tarea 12, punto C.
 
 ### E. Antecedentes y estado de la cuestión (capítulo 5)
 
-- [ ] «Este apartado permitirá definir los conceptos…» → «Este capítulo revisa qué se ha estudiado y qué se ha probado; el siguiente define los conceptos».
+- [x] «Este apartado permitirá definir los conceptos…» → «Este capítulo revisa qué se ha estudiado y qué se ha probado; el siguiente define los conceptos».
 - [ ] de Segovia Vicente et al. (2024): separar la inferencia propia («reducir el uso no basta como criterio») de lo que el estudio midió.
 - [ ] Lyngs et al. (2019): quitar «creando hábitos», que no aparece en el artículo; escribir «recordándola en la pantalla o pidiendo fijarla (35 %)».
 - [ ] Grüning et al. (2023) y Haliburton et al. (2024): declarar que un coautor desarrolló one sec, como dicen los propios artículos.
-- [ ] Haliburton et al. (2024): «el efecto no persiste» → «el uso sube durante las pausas de la intervención y vuelve a bajar al retomarla».
-- [ ] O'Rear y Radvansky (2019): «Llegar al lugar bastó» → «Las señales del lugar favorecieron el recuerdo». Confirmar con el texto completo (punto H).
-- [ ] Sohn et al. (2005): «no se podían colocar» → «no se podían atender», como dice el original.
+- [x] Haliburton et al. (2024): «el efecto no persiste» → «el uso sube durante las pausas de la intervención y vuelve a bajar al retomarla».
+- [ ] O'Rear y Radvansky (2019): «Llegar al lugar bastó» → «Las señales del lugar favorecieron el recuerdo». Confirmar con el texto completo (punto H). *El Pase dice «entrar solía bastar para recordarla»: confirmarlo con el texto completo (H).*
+- [x] Sohn et al. (2005): «no se podían colocar» → «no se podían atender», como dice el original. *La frase ya no está.*
 
 ### F. Marco teórico por ámbitos (capítulo 6)
 
-- [ ] «Se le llama decisión renovada» → «En esta memoria se llama *decisión renovada*», y añadir el término al glosario.
-- [ ] «forman lo que se llama arquitectura de atención»: el término no está en Montag et al. (2019). Presentarlo como término de la memoria o quitarlo.
-- [ ] «pero si es excesiva puede llegar a frustrar»: Grüning et al. (2023) no lo dicen. Reemplazar por la interferencia con usos legítimos que documentan Haliburton et al. (2024, p. 8).
-- [ ] de Segovia Vicente et al. (2024): definir el conflicto de metas como lo midió el estudio y dejar «sin establecer cuál debería prevalecer» como postura del proyecto.
-- [ ] Ryan y Deci (2000): la traducción al diseño (aceptar, ajustar o rechazar la ayuda) queda declarada como del proyecto, con la p. 70 como anclaje.
-- [ ] McDaniel y Einstein (2000): «si la señal es llamativa y está fuertemente asociada a la acción» necesita la página del texto completo; si no se consigue, usar la opción B.
-- [ ] «De ahí formularon una hipótesis» → «De ahí se desprende la hipótesis de este proyecto»: hoy se lee como si fuera de O'Rear y Radvansky.
-- [ ] Risko y Gilbert (2016): añadir el término *descarga de intenciones*, el más exacto para lo que hace Relevo.
-- [ ] Guynn et al. (1998), opcional: los recordatorios que solo nombraban la acción ayudaron, pero menos que los que nombraban ocasión y acción.
-- [ ] Kirsh (1995): completar la frase del rollo de película, que quedó cortada, y confirmar que el ejemplo está en el artículo (punto H).
-- [ ] Figura 4: «El objeto junto un primer paso» → «junto a un primer paso».
+- [x] «Se le llama decisión renovada» → «En esta memoria se llama *decisión renovada*», y añadir el término al glosario.
+- [x] «forman lo que se llama arquitectura de atención»: el término no está en Montag et al. (2019). Presentarlo como término de la memoria o quitarlo.
+- [x] «pero si es excesiva puede llegar a frustrar»: Grüning et al. (2023) no lo dicen. Reemplazar por la interferencia con usos legítimos que documentan Haliburton et al. (2024, p. 8).
+- [x] de Segovia Vicente et al. (2024): definir el conflicto de metas como lo midió el estudio y dejar «sin establecer cuál debería prevalecer» como postura del proyecto.
+- [x] Ryan y Deci (2000): la traducción al diseño (aceptar, ajustar o rechazar la ayuda) queda declarada como del proyecto, con la p. 70 como anclaje.
+- [x] McDaniel y Einstein (2000): «si la señal es llamativa y está fuertemente asociada a la acción» necesita la página del texto completo; si no se consigue, usar la opción B. *Citada con página (p. S138).*
+- [x] «De ahí formularon una hipótesis» → «De ahí se desprende la hipótesis de este proyecto»: hoy se lee como si fuera de O'Rear y Radvansky.
+- [x] Risko y Gilbert (2016): añadir el término *descarga de intenciones*, el más exacto para lo que hace Relevo.
+- [x] Guynn et al. (1998), opcional: los recordatorios que solo nombraban la acción ayudaron, pero menos que los que nombraban ocasión y acción.
+- [x] Kirsh (1995): completar la frase del rollo de película, que quedó cortada, y confirmar que el ejemplo está en el artículo (punto H). *Reemplazado por el ejemplo de dejar algo junto a la puerta (p. 38).*
+- [x] Figura 4: «El objeto junto un primer paso» → «junto a un primer paso».
 
 ### G. APA y versiones de las fuentes
 
-- [ ] **Norman:** la copia que leyó el autor es de la edición de 2002 y la referencia cita la de 1990. Confirmar las páginas 73 y 103 en la copia usada; si es la de 2002, cambiar la referencia a esa edición, con la editorial de su página legal, y las citas a «Norman, 1988/2002».
+- [x] **Norman:** la copia que leyó el autor es de la edición de 2002 y la referencia cita la de 1990. Confirmar las páginas 73 y 103 en la copia usada; si es la de 2002, cambiar la referencia a esa edición, con la editorial de su página legal, y las citas a «Norman, 1988/2002». *Hecho el 11 de noviembre: copia de 2002, pp. 73 y 103 comprobadas, «Norman, 1988/2002».*
 - [ ] **Sohn et al. (2005):** las cifras salieron del informe técnico de marzo de 2005. Confirmarlas en la versión publicada que cita la memoria, o citar el informe.
 - [ ] **Manuscritos de autor** (Monge Roffarello y De Russis, Risko y Gilbert, Meier y Reinecke, Jiang et al.): sus páginas no son las de la revista. En la memoria, citar sin página o por sección, o comprobar la página en la versión publicada.
 - [ ] **Gollwitzer y Sheeran (2006):** el texto se leyó con OCR; revisar el escaneo antes de citarlo textualmente.
@@ -771,14 +822,16 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] p. 39: «Tambien pregunta en vez de rotular “¿Cómo empiezas?” sus botones empiezan con un verbo…» → «También pregunta en vez de rotular («¿Cómo empiezas?»), y sus botones empiezan con un verbo…».
 - [ ] p. 39: «con palabras cotidianas “querer” antes que “desear”, “usar” antes que “utilizar”, como recomienda…» → «con palabras cotidianas —«querer» antes que «desear», «usar» antes que «utilizar»—, como recomienda…».
 - [ ] p. 39: «…sumar una señal visual y una vibración, una etapa futura podría probarlo con personas con baja audición» → «…sumar una señal visual y una vibración; una etapa futura podría probarlo con personas con baja audición».
-- [ ] p. 40, Figura 17: «“Anotado, Gracias por tu sugerencia.”» → «“Anotado. Gracias por tu sugerencia.”». El cuarto ejemplo, «Como los datos que recopila la app.», no es un texto de la aplicación, aunque la nota dice que todos lo son: reemplazarlo por uno real de la sección «Qué no se ve» del consentimiento, como «Relevo no lee mensajes, fotos, búsquedas ni lo que hay en la pantalla.».
+- [ ] p. 40, Figura 17: «“Anotado, Gracias por tu sugerencia.”» no es un texto de la aplicación, y la nota dice que todos lo son. El de la app 4.7.2, cuando la persona empieza, es «Queda anotado. Gracias por decirlo.» (`Common.kt`, rama `android-4.6`): usar ese. El cuarto ejemplo, «Como los datos que recopila la app.», tampoco es de la aplicación: reemplazarlo por uno real de la sección «Qué no se ve» del consentimiento, «Relevo no lee mensajes, fotos, búsquedas ni lo que hay en la pantalla.» (`FirstRunScreens.kt`). *Corregido el 21 de noviembre: la propuesta anterior, «Anotado. Gracias por tu sugerencia.», tampoco existe en la aplicación.*
 - [ ] p. 40: «permite calcular como lo percibe el ojo y no como la guarda la pantalla» → «permite calcular cómo lo percibe el ojo y no cómo lo guarda la pantalla».
 - [ ] p. 42: «un llavero antipérdida Bluetooth: que resultó ser barato» → «un llavero antipérdida Bluetooth, que resultó barato».
 - [ ] p. 42: «la jerarquía sigue la de iOS; título grande, título, encabezado, texto y nota» → «la jerarquía sigue la de iOS: título grande, título, encabezado, texto y nota».
+- [ ] p. 42: «conserva el sonido ya probado, el objeto suma forma, control y marca» junta dos oraciones con una coma → «conserva el sonido ya probado y suma forma, control y marca».
+- [ ] p. 42: «Su forma sigue la del Tag, redondo y cara casi plana» → «Su forma sigue la del Tag: redonda y de cara casi plana».
 - [ ] p. 43: «sobre el logo,El sonido sale» → «sobre el logo. El sonido sale».
-- [ ] p. 43: «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, permitiendo una mayor portabilidad, para quienes cambian de lugar sus actividades constantemente» no tiene verbo → «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, es más fácil de llevar, para quienes cambian a menudo de lugar sus actividades».
+- [ ] p. 42: «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, permitiendo una mayor portabilidad, para quienes cambian de lugar sus actividades constantemente» no tiene verbo → «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, es más fácil de llevar, para quienes cambian a menudo de lugar sus actividades».
 - [ ] p. 43: en «por tres razones: para encontrarlo…; para controlarlo…», la tercera queda pegada a la segunda («…se ve y se siente y porque sus detalles necesitan espacio para imprimirse») → «…se ve y se siente, y para imprimir sus detalles, que necesitan espacio».
-- [ ] p. 44: «una luz o una imagen piden mirar, y la persona está mirando otra cosa» y, en la oración siguiente, «una señal visual no alcanza a quien mira otra cosa» dicen lo mismo. La segunda puede quedar así: «En las entrevistas, las personas imaginaban señales calmadas o visuales; por eso el sonido se diseñó breve y amable».
+- [ ] p. 43: «una luz o una imagen piden mirar, y la persona está mirando otra cosa» y, en la oración siguiente, «una señal visual no alcanza a quien mira otra cosa» dicen lo mismo. La segunda puede quedar así: «En las entrevistas, las personas imaginaban señales calmadas o visuales; por eso el sonido se diseñó breve y amable».
 - [ ] p. 45: «la sección “Qué no se ve”, explica lo que la aplicación no registra» → «la sección «Qué no se ve» explica lo que la aplicación no registra».
 - [ ] p. 47: «Relevo Go, para quienes son más “desordenados”»: coloquial → «Relevo Go, para quienes prefieren llevarlo consigo».
 - [ ] p. 48: «unos 111 000 pesos, entre el Tag. las herramientas de inteligencia artificial para el desarrollo de la app, y el trabajo del autor». Sobra el punto, y los 111 000 pesos son el Tag y las herramientas: el trabajo del autor se valora aparte, en la nota de la Tabla 2 (entre 1 070 000 y 1 577 000 pesos) → «unos 111 000 pesos, entre el Tag y las herramientas de inteligencia artificial, además del trabajo del autor».
@@ -804,6 +857,9 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **p. 55:** «la señal pertenece al lugar de la actividad», apoyado en el único relevo que no sonó, fuera de casa. Lo que eso muestra es que la señal depende de estar cerca del objeto → «El primero es que la señal depende del objeto: el único relevo que no sonó ocurrió fuera de casa, lejos del Tag».
 - [ ] **pp. 47 y 59:** «mostraría si sonar desde el lugar de la actividad aporta en una escala mayor» y «si sonar desde el lugar mantiene su aporte» dan por probado un aporte del lugar que la prueba no aisló → «si sonar desde el lugar de la actividad aporta».
 - [ ] **p. 35:** «haciendo la experiencia más fluida y rápida»: no se midió. Decir el cambio (de once pantallas a tres) y, si se quiere valorar, con lo que dijeron las personas.
+- [ ] **p. 18:** «Para alcanzar a alguien atrapado en una pantalla»: «atrapado» juzga el ocio digital, algo que la memoria evita en todo lo demás → «Para alcanzar a alguien absorto en una pantalla».
+- [ ] **p. 42 y Figura 21:** las medidas de Relevo Home (52 × 13,4 mm) y Relevo Go (44 × 54,5 × 11,4 mm) salen del modelo 3D, que usa medidas estimadas de la placa del Tag ([medidas de la versión 1](../06_desarrollo_y_factibilidad/testigo-impresion-3d/version-1-home-y-go/medidas.json), «supuesto»). Decirlo en la nota de la Figura 21: «Las medidas de la placa del Tag son estimadas».
+- [ ] **p. 56:** «los resultados describen casos y no permiten generalizar a gran escala»: con tres personas no se puede generalizar a ninguna escala → «no permiten generalizar».
 - [ ] **p. 26:** «El opuesto […] está casi vacío, y su único referente, The Tangible Reminder, se pensó para citas y medicamentos, no para el ocio digital» deja fuera a Wobble, que el mismo capítulo y el capítulo 5 presentan como un recordatorio en el hogar, fuera de la pantalla; el Anexo C, C.2, los trata juntos → «…está casi vacío: sus dos referentes, The Tangible Reminder y Wobble, son prototipos de investigación, y ninguno se pensó para el ocio digital (Anexo C)». La Figura 10 tampoco ubica a Wobble: sumarlo al mapa o decirlo en la nota.
 
 ### E. Método y ética
@@ -843,7 +899,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 16. Revisión con los profesores después del Pase
 
-**Estado:** por hacer. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los comentarios que dejaron sobre el PDF. Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+**Estado:** por hacer; la formulación espera la respuesta de los profesores. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
 
 ### A. Lo que valoraron
 
@@ -851,9 +907,9 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
-- [ ] **El indicador de la hipótesis.** El profesor sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar al profesor qué quiso decir con «retomar» (respuesta, sección 5.3).
-- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
+- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **El indicador del objetivo 4.** Majluf, sobre «si el sistema funciona» (p. 31), sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar a Majluf qué quiso decir con «retomar» (respuesta, sección 5.3).
+- [ ] **Marco teórico antes del planteamiento.** Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16). Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
 - [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así.
@@ -861,13 +917,15 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
 - [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad. El recuerdo se mide y el comienzo se registra, porque las tres respuestas valen lo mismo (criterio 4); la base son las respuestas, como en la Tabla 3 (respuesta, sección 5.2). Los otros tres objetivos no cambian.
 - [ ] **Redacción.** Simplificar las frases complejas.
-- [ ] **Hallazgos.** Los párrafos de las pp. 53 a 55 pasan a una sección «Hallazgos», casi sin cambios y con una etiqueta corta cada uno. Los relatos de cada persona van al Anexo I, I.8, que antes debe sumar lo que hoy solo está en la memoria: las aplicaciones y los límites de cada persona y la sugerencia de la primera. La Figura 25 y la Tabla 3 mantienen en la memoria el detalle por persona, que los profesores pidieron el 28 de octubre (respuesta, sección 6).
-- [ ] **Conclusiones.** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación, y que el lugar sea lo que ayuda). Proponer una comparación sin los dos sesgos que la memoria ya nombra: que el teléfono viniera siempre después del Tag, y que recordaran por haber preparado el relevo poco antes. La base es el protocolo de 21 días del Anexo I, con seis personas en órdenes distintos, más algunos relevos sin señal (respuesta, sección 8).
+- [ ] **Hallazgos.** Gallardo marcó el texto de la p. 54, de «Segunda persona» a «no un efecto del soporte», y escribió «irá a los hallazgos». La opción mínima es una sección «Hallazgos» con ese texto tal como está, cada párrafo con una etiqueta corta. La respuesta propone además sumar los párrafos de las pp. 53 y 55 y llevar los relatos de cada persona al Anexo I, I.8, como se dijo el miércoles; eso va más allá del comentario y conviene confirmarlo con Gallardo. En ese caso, el Anexo I, I.8, debe sumar antes lo que hoy solo está en la memoria: las aplicaciones y los límites de cada persona y la sugerencia de la primera. La Figura 25 y la Tabla 3 mantienen en la memoria el detalle por persona, que los profesores pidieron el 28 de octubre (respuesta, sección 6).
+- [ ] **Conclusiones (Majluf, p. 58).** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación, y que el lugar sea lo que ayuda). Proponer una comparación sin los dos sesgos que la memoria ya nombra: que el teléfono viniera siempre después del Tag, y que recordaran por haber preparado el relevo poco antes. La base es el protocolo de 21 días del Anexo I, con seis personas en órdenes distintos, más algunos relevos sin señal (respuesta, sección 8).
 
 ### C. Figuras y diseño de la memoria
 
 - [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales.
-- [ ] **Índice de tablas y figuras solo con texto.** Las fichas blancas y las filas apretadas no funcionan; usar solo texto, con el interlineado del índice general (respuesta, sección 1).
+- [ ] **Índice de tablas y figuras solo con texto (Majluf, p. 6).** Las fichas blancas y las filas apretadas no funcionan; usar solo texto, con el interlineado del índice general (respuesta, sección 1).
+- [ ] **Más margen en el índice general (Majluf, p. 5):** «dale un poco más de margen dentro de la caja blanca en ambos lados». El número del capítulo y el de la página quedan pegados al borde (respuesta, sección 1).
+- [ ] **Logo en la portada (Gallardo, p. 1):** marcó el rincón vacío arriba a la derecha y escribió «Logo diip». Preguntar a qué logo se refiere (respuesta, secciones 9 y 10).
 - [ ] **Índice de figuras al final.** El índice de tablas y figuras pasa al final de la memoria, después de los anexos o junto a las referencias, y deja de estar antes del planteamiento del problema (D-180).
 - [ ] **Bocetos como fondo o textura** en la memoria diseñada.
 - [ ] **Explorar el color de Relevo** en la memoria diseñada.
@@ -881,19 +939,23 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con Martin Bravo, especialista que sugirieron los profesores. El autor dará más datos de él; confirmar la escritura de su nombre.
 - [ ] **Taskscape.** Explorar el concepto, que se contrapone a *landscape*: el paisaje de las tareas, que se reconoce por sus sonidos. Sirve para pensar Relevo como una forma de espacializar la casa por medio de sonidos. El término es de Ingold (1993); leer el artículo antes de citarlo.
 - [ ] **Publicación de la app.** Diseñar cómo se publicaría: una maqueta de su ficha en Play Store y App Store.
+- [ ] **Versión para iOS (Gallardo, p. 30).** Sumarla a «Alcances y proyecciones» solo después de comprobar en la documentación de Apple cómo una aplicación de iOS puede medir el tiempo que la persona pasa en otras aplicaciones (respuesta, sección 9).
 
-### F. Comentarios sobre el texto (entregados el 21 de noviembre)
+### F. Comentarios sobre el texto (del PDF, entregados el 21 de noviembre)
 
 Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
 
-- [ ] **Resumen y Abstract (pp. 3 y 4):** definir ocio digital con la definición de la Introducción, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «se entrevistó a ocho personas sobre su última sesión de ocio digital». También cambia la última oración, que no puede afirmar lo que la prueba no permite y dice «el sistema», porque el Resumen no explica qué es el ciclo. Quedan en 299 y 295 palabras (sección 2).
+- [ ] **Resumen y Abstract (pp. 3 y 4):** definir ocio digital con la definición de la Introducción, quitar lo que Gallardo marcó con «lo sacaría» y cambiar «al contar su último rato» por «se entrevistó a ocho personas sobre su última sesión de ocio digital». El resaltado cubre el ejemplo del libro y también «y que suena cuando se cumple el tiempo que ella fijó»: la respuesta recomienda quitar los dos (285 y 281 palabras) o, si se prefiere conservar cuándo suena, solo el ejemplo (299 y 295). También cambia la última oración, que no puede afirmar lo que la prueba no permite y dice «el sistema», porque el Resumen no explica qué es el ciclo. Si el punto de Gallardo sobre *phygital* pide definirlo, se suma «que une un objeto físico y una aplicación» (sección 9).
 - [ ] **p. 19:** quitar la repetición de «y no» (sección 4).
-- [ ] **Tabla 4 (p. 57):** sumar una columna «Frecuencia» —no ocurre, poco frecuente, frecuente, muy frecuente— con su base. Ocho filas se pueden completar ya, una de ellas en parte; dos vienen de la revisión del 28 de octubre y no llevan frecuencia, y una falta contarla en los registros de la prueba (sección 7).
+- [ ] **p. 30:** «una aplicación para Android y un objeto» → «una aplicación, hoy para Android, y un objeto», porque Gallardo escribió «y iOS» y el prototipo existe solo en Android (sección 9).
+- [ ] **Tabla 4 (p. 57):** sumar una columna «Frecuencia» con la escala de Gallardo —no ocurre, no frecuente, frecuente, muy frecuente—, «según el n de las respuestas» cuando se pueda, y si no, con su base. Ocho filas se pueden completar ya, una de ellas en parte; dos vienen de la revisión del 28 de octubre y no llevan frecuencia, y una falta contarla en los registros de la prueba (sección 7).
 - [ ] **p. 58:** quitar «preciso» de «un problema de diseño preciso».
 
 ### Confirmar con los profesores
 
-- [ ] Si el marco teórico va después de los antecedentes, como en la pauta, o antes también de ellos; qué quiso decir con «retomar la actividad»; y si el «sesgo de preparación previa» es haber preparado el relevo poco antes o haber pasado antes por el Tag ([respuesta, sección 9](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#9-qué-confirmar-con-los-profesores)).
+- [ ] Mandar en un solo correo las siete preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores):
+  - a Gallardo: dónde va el marco teórico; si «lo sacaría» incluye cuándo suena; si los relatos van en los hallazgos o al Anexo I; qué logo va en la portada, y si el punto sobre *phygital* pide definirlo;
+  - a Majluf: qué quiso decir con «retomar la actividad» y a qué sesgo de preparación previa se refiere.
 
 ### Reglas
 
@@ -903,6 +965,29 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Tareas ordenadas y notas del PDF del Pase
+
+- **Qué cambió:**
+  - arriba se suma «Lo que queda, en orden», con lo que falta hasta la entrega final, el examen y después;
+  - el calendario de cierre pasa a ser una tabla con el estado de las 16 tareas;
+  - las tareas 1, 2, 3, 10, 11, 12, 13 y 14 tienen su estado comprobado contra el borrador v7, con las casillas hechas marcadas y lo que queda enviado a las tareas vigentes;
+  - la tarea 15 corrige el texto propuesto para la Figura 17 («Queda anotado. Gracias por decirlo.» es el texto real de la aplicación), dos números de página y suma cinco puntos de la revisión del documento de Affinity del 11 de noviembre que seguían en el PDF;
+  - la tarea 16 suma los cuatro comentarios del PDF que faltaban (el margen del índice, «Logo diip», el punto sobre *phygital* e iOS), dice qué profesor hizo cada uno, corrige el alcance de «lo sacaría» y de «irá a los hallazgos», y pasa de tres a siete las preguntas para los profesores;
+  - la tarea 8 suma confirmar el nombre del profesor Gallardo.
+- **Cómo estaba antes:** la lista empezaba por tareas cerradas o reemplazadas, el calendario era del Pase y la tarea 16 se basaba en la lista que el autor copió a mano, sin el PDF.
+- **Por qué:** el autor entregó el PDF con las notas de sus profesores y pidió revisar la interpretación y dejar ordenados los pendientes.
+
+### 2026-11-21 — Lo anotado el 10 y el 11 de noviembre, que no se había subido
+
+- **Qué cambió:** se trajeron a esta rama los cambios que quedaron en la copia local del 10 y el 11 de noviembre:
+  - el presupuesto de la tarea 5 con las suscripciones que fijó el autor, unos 111 000 pesos (D-183);
+  - C3 y C6 de la tarea 13, resueltos por decisión del autor (D-182);
+  - el aviso de licencia de Lucide, que pasa a la tarea 9.
+
+  La tarea local «15. Figuras de la memoria» no se trae: quedó sin efecto cuando el autor armó las figuras del Pase en Affinity, y el número 15 lo usa hoy otra tarea.
+- **Cómo estaba antes:** esos cambios estaban solo en el computador del autor, en una copia de `main` sin subir.
+- **Por qué:** al ordenar las tareas se vio que esa copia tenía trabajo y decisiones que la rama no registraba.
 
 ### 2026-11-21 — Lectura completa de la memoria
 

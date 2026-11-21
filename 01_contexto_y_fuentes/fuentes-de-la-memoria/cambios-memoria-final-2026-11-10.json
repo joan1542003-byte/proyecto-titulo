@@ -1,0 +1,107 @@
+[
+  {
+    "buscar": "puede confundir ambas cosas (Kleinberg et al., 2023).",
+    "reemplazar": "puede confundir ambas cosas (Kleinberg et al., 2024).",
+    "motivo": "1. Forma (APA 7). El artículo ya está en un número de Management Science: volumen 70, número 9, de septiembre de 2024, págs. 6336–6355 (página de INFORMS, en la copia de Internet Archive del 29 de enero de 2026, y registro de RePEc; Crossref aún no lo actualiza). La memoria usa el año del número, como en de Segovia Vicente et al. (2024) y O’Rear y Radvansky (2019). Va junto con el cambio 18."
+  },
+  {
+    "buscar": "Esa señal ayuda: con muchas cosas que recordar, una alarma mejoró el cumplimiento de intenciones tanto en personas jóvenes como en mayores (Ball et al., 2025).",
+    "reemplazar": "Esa señal ayuda: en un experimento con muchas cosas que recordar, tenerlas a la vista en la pantalla mejoró el cumplimiento de intenciones tanto en personas jóvenes como en mayores (Ball et al., 2025).",
+    "motivo": "2. Fondo. En el estudio no hubo alarma: el recordatorio era la lista de palabras por recordar, visible en lo alto de la pantalla durante toda la tarea. Con mucha carga, jóvenes y mayores se beneficiaron por igual en el experimento 1 (resumen y método del manuscrito aceptado en PubMed Central). La alarma para un medicamento aparece solo como ejemplo general en el resumen."
+  },
+  {
+    "buscar": "O’Rear y Radvansky (2019) probaron si el lugar basta como recordatorio.",
+    "reemplazar": "O’Rear y Radvansky (2019) estudiaron si el lugar sirve como recordatorio.",
+    "motivo": "3. Fondo. El estudio explora la memoria prospectiva basada en el lugar y no compara el lugar con otras señales, así que no prueba que «baste» (resumen de PubMed). La tesis de maestría de Kalchik (2016, p. 31), con el mismo título, el mismo director y el mismo diseño, plantea el primer experimento como una prueba de si el lugar es una señal eficaz."
+  },
+  {
+    "buscar": "Las señales del lugar favorecieron el recuerdo, y el desempeño no cambió según cuánto rato hubiera pasado desde que recibieron el encargo.",
+    "reemplazar": "En el primer experimento, las señales del lugar fueron eficaces y el desempeño no cambió según cuánto rato hubiera pasado desde que recibieron el encargo.",
+    "motivo": "4. Fondo. El resumen da ambos resultados solo para el experimento 1. En la tesis de Kalchik (2016, págs. 45–47 y 56), con los mismos dos experimentos, el segundo sí mostró que el desempeño bajaba con más demora; dicha en general, la frase contradecía ese resultado. «Favorecieron» suponía una comparación que el estudio no hizo; «fueron eficaces» es lo que dice el resumen («effective»)."
+  },
+  {
+    "buscar": "The Tangible Reminder mostraba cada compromiso en un objeto cotidiano que cambiaba de color al acercarse el plazo (Hermann et al., 2007);",
+    "reemplazar": "The Tangible Reminder asociaba cada compromiso a un objeto cotidiano que se dejaba en una bandeja, y la bandeja cambiaba de color al acercarse el plazo (Hermann et al., 2007);",
+    "motivo": "5. Fondo. El objeto no cambia de color: se deja en una bandeja, y la pantalla de la bandeja, detrás del objeto, muestra un color según la cercanía del plazo (verde al comienzo) y parpadea cuando se acerca (Hermann et al., 2007, págs. 144 y 146)."
+  },
+  {
+    "buscar": "y los que solo anunciaban la ocasión no mejoraban el recuerdo (Guynn et al., 1998).",
+    "reemplazar": "y los que solo mencionaban la ocasión no mejoraban el recuerdo (Guynn et al., 1998, p. 296).",
+    "motivo": "6. Forma: precisión y página, verificadas en el PDF de Memory & Cognition. Esos recordatorios pedían recordar las tres palabras señal estudiadas al comienzo; no anunciaban que la ocasión había llegado. La conclusión está en la discusión general (p. 296) y en el resumen (p. 287)."
+  },
+  {
+    "buscar": "Exige atención constante, Falla si otra actividad la absorbe; Recuperar ante una señal | Algo del entorno trae de vuelta la intención | Funciona aunque la atención esté en otra parte",
+    "reemplazar": "Exige atención constante, Se vuelve difícil si otra actividad la absorbe; Recuperar ante una señal | Algo del entorno trae de vuelta la intención | Puede funcionar aunque la atención esté en otra parte",
+    "motivo": "7. Fondo. La nota atribuye la figura a McDaniel y Einstein (2000), cuyo resumen (p. S127) dice que vigilar consume recursos y que la probabilidad de que el camino automático funcione varía según la tarea, la señal, la actividad en curso y la persona: no dice que vigilar «falle» ni que el otro camino funcione siempre. Se usa la misma idea del capítulo 3 («vigilar se vuelve difícil»). El autor, que dibuja las figuras, debe llevar esta redacción a la Figura 2."
+  },
+  {
+    "buscar": "Kirsh (1995) muestra que la disposición de los objetos puede simplificar la elección, la percepción y el cálculo mental. Dejar algo junto a la puerta para no olvidar llevarlo es un ejemplo cotidiano: el lugar recuerda la intención sin que haya que pensar en ella.",
+    "reemplazar": "Kirsh (1995, p. 31) muestra que la disposición de los objetos puede simplificar la elección, la percepción y el cálculo mental. Dejar algo junto a la puerta para no olvidar llevarlo es uno de sus ejemplos: el objeto, puesto en el lugar indicado, llama la atención en el momento oportuno y trae de vuelta la intención (Kirsh, 1995, p. 38).",
+    "motivo": "8. Fondo. El ejemplo es de Kirsh (p. 38: un rollo de película junto a la puerta para no salir sin llevarlo a revelar) y se leía como propio. «Sin que haya que pensar en ella» no está en la fuente: según Kirsh, esos recordatorios sirven porque llaman la atención en el momento justo, por ejemplo por estar en el lugar indicado, y suelen llevar a pensar en la tarea. La p. 31 (resumen) sostiene las tres categorías."
+  },
+  {
+    "buscar": " Veinticinco años después, uno de esos autores y sus colegas describen el campo como interacción tangible y corporizada, que suma el cuerpo a los objetos y al espacio (Ullmer et al., 2022).",
+    "reemplazar": "",
+    "motivo": "9. Decisión del autor: Ullmer et al. (2022) sale de la memoria porque no se consiguió y no es imprescindible; además, «que suma el cuerpo a los objetos y al espacio» era una glosa propia. El párrafo sigue correcto con Ishii y Ullmer (1997, p. 234): objetos y superficies del espacio en primer plano y medios del ambiente en segundo plano, que es de donde sale «el espacio» de la frase siguiente. Va junto con el cambio 19."
+  },
+  {
+    "buscar": "A un sistema así, que reparte su trabajo entre lo físico y lo digital, se le llama *phygital* (Waggoner et al., 2026).",
+    "reemplazar": "A una experiencia así, que se mueve entre lo físico y lo digital, se le llama *phygital* (Waggoner et al., 2026, p. 3); en esta memoria, el término nombra también el sistema que la hace posible.",
+    "motivo": "10. Fondo. Waggoner et al. definen *phygital* en la p. 3 (sección 2, «“Phygital” user experiences»): una combinación de *physical* y *digital* para experiencias en que el recorrido del usuario pasa por espacios físicos y digitales, y los autores lo usan para experiencias de usuario que se mueven entre esos espacios. No hablan de un sistema que reparte su trabajo. Que el término nombre también al sistema es un uso de esta memoria, como ya dice el glosario."
+  },
+  {
+    "buscar": "Sanders y Stappers (2012, p. 69), en su guía de investigación generativa,",
+    "reemplazar": "E. B.-N. Sanders y Stappers (2012, p. 69), en su guía de investigación generativa,",
+    "motivo": "11. Forma (APA 7, 8.20). Dos referencias tienen primeros autores con el mismo apellido e iniciales distintas (E. B.-N. Sanders y S. Sanders): APA pide las iniciales en todas sus citas en el texto. Van juntos los cambios 11, 12 y 13."
+  },
+  {
+    "buscar": "*Nota.* Elaboración propia a partir de Sanders y Stappers (2012, p. 69).",
+    "reemplazar": "*Nota.* Elaboración propia a partir de E. B.-N. Sanders y Stappers (2012, p. 69).",
+    "motivo": "12. Forma (APA 7, 8.20), igual que el cambio 11."
+  },
+  {
+    "buscar": "que sea considerada distractora (Sanders, 2026).",
+    "reemplazar": "que sea considerada distractora (S. Sanders, 2026).",
+    "motivo": "13. Forma (APA 7, 8.20), igual que el cambio 11."
+  },
+  {
+    "buscar": "Kolko (2011, p. 40) llama síntesis a este paso, en que lo aprendido se convierte en una oportunidad concreta de diseño.",
+    "reemplazar": "Kolko (2011, p. 40) llama síntesis a este paso, que traduce en criterios de diseño específicos la oportunidad que describe la investigación.",
+    "motivo": "14. Fondo. En la p. 40, la investigación describe una oportunidad y la síntesis la traduce en criterios de diseño específicos («specific design criteria»). La memoria lo decía al revés: lo aprendido se convertía en la oportunidad. La nueva versión calza con el capítulo, que trata de criterios."
+  },
+  {
+    "buscar": "lo reduce (Miller et al., 2007), y ofrecer una opción real ayuda más que insistir (criterio 4).",
+    "reemplazar": "lo reduce (Miller et al., 2007); además, ofrecer una opción real ayuda más que insistir (criterio 4).",
+    "motivo": "15. Fondo. La segunda parte quedaba pegada a la cita y se leía como de Miller et al., que no comparan ofrecer opciones con insistir; viene del criterio 4 (Grüning et al., 2023). El punto y coma la separa sin sacarla de la segunda razón."
+  },
+  {
+    "buscar": "queda para los errores, y el negro, el gris y el rojo quedan fuera de los estados de la persona, como en la convención de la señalética (International Organization for Standardization [ISO], 2011).",
+    "reemplazar": "queda para los errores, como en la señalética, cuya norma fija colores de seguridad para prevenir accidentes (International Organization for Standardization, 2011); el negro y el gris tampoco se usan para los estados de la persona.",
+    "motivo": "16. Fondo. Dejar fuera el negro y el gris no está en el resumen oficial de la norma ni en la convención de colores que recoge la Directiva 92/58/CEE, la alternativa abierta que usó el informe previo; queda como decisión propia. Como la norma es de pago, la cita se ajusta a su resumen oficial en iso.org (leído en la copia de Internet Archive del 18 de octubre de 2026): establece los colores de seguridad para prevenir accidentes, proteger contra incendios, informar riesgos para la salud y evacuar. Sale «[ISO]», porque el grupo autor aparece una sola vez en la memoria y APA no abrevia lo que no se repite."
+  },
+  {
+    "buscar": "siempre que respondan a la orden estándar de alerta: es un camino que no obliga a fabricar electrónica, aunque depende de modelos que varían entre fabricantes (Gembali, 2023, p. 53).",
+    "reemplazar": "siempre que respondan a la orden estándar de alerta. Aprovechar un dispositivo que ya existe evita desarrollar y fabricar electrónica, aunque puede no ofrecer justo las funciones que se necesitan (Gembali, 2023, p. 53).",
+    "motivo": "17. Fondo. La tesis no habla de localizadores de otras marcas ni de una orden estándar de alerta, que quedan como propuesta del proyecto, sin cita. Lo que sí dice, en la p. 53: comprar un dispositivo que ya existe y venderlo con marca propia evita invertir en desarrollarlo y fabricarlo, aunque puede no tener justo las funciones que se necesitan."
+  },
+  {
+    "buscar": "Kleinberg, J., Mullainathan, S. y Raghavan, M. (2023). The challenge of understanding what users want: Inconsistent preferences and engagement optimization. *Management Science*. Publicación anticipada en línea. https://doi.org/10.1287/mnsc.2022.03683",
+    "reemplazar": "Kleinberg, J., Mullainathan, S. y Raghavan, M. (2024). The challenge of understanding what users want: Inconsistent preferences and engagement optimization. *Management Science, 70*(9), 6336–6355. https://doi.org/10.1287/mnsc.2022.03683",
+    "motivo": "18. Forma (APA 7): el artículo dejó de ser publicación anticipada; está en el volumen 70, número 9 (septiembre de 2024), págs. 6336–6355, según INFORMS y RePEc. Mismo orden alfabético. Va junto con el cambio 1."
+  },
+  {
+    "buscar": "Ullmer, B., Shaer, O., Mazalek, A. y Hummels, C. (2022). *Weaving fire into form: Aspirations for tangible and embodied interaction*. Association for Computing Machinery. https://doi.org/10.1145/3544564\n\n",
+    "reemplazar": "",
+    "motivo": "19. Decisión del autor: sale la referencia, con su línea en blanco, porque su única cita sale con el cambio 9."
+  },
+  {
+    "buscar": "Abarca sistemas basados en la interacción corporal, la manipulación de objetos, la representación física de datos y su inserción en el espacio real (Ishii y Ullmer, 1997).",
+    "reemplazar": "En su formulación inicial, une esa información a objetos que se pueden tomar y a superficies del espacio, y usa medios del ambiente, como la luz y el sonido, para informar en segundo plano (Ishii y Ullmer, 1997).",
+    "motivo": "20. Fondo. El artículo de 1997 no habla de interacción corporal; esa enumeración corresponde a definiciones posteriores del campo. Su resumen (p. 234, versión oficial de las actas de CHI 97 en acm.org) propone tomar y manipular la información unida a objetos cotidianos y a superficies del espacio, y percibirla en segundo plano con medios del ambiente como la luz, el sonido, el aire o el agua. Coincide con lo que dice el capítulo 6."
+  },
+  {
+    "buscar": "Cuando la actividad en curso absorbe la atención, lo segundo es más probable si la señal es llamativa y está fuertemente asociada a la acción (McDaniel y Einstein, 2000).",
+    "reemplazar": "Que ocurra lo segundo depende de la señal, de la actividad en curso y de la persona (McDaniel y Einstein, 2000).",
+    "motivo": "21. Fondo. Que la señal sea «llamativa» y esté «fuertemente asociada» no está en el resumen (p. S127), que es lo que se pudo leer. Ajustada al resumen: que la intención vuelva sola depende de la tarea, la señal, la actividad en curso y la persona. Se usan los mismos tres factores que los capítulos 3, 6 y 10."
+  }
+]

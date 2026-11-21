@@ -2,6 +2,8 @@
 
 **Versión:** 0, del 28 de octubre de 2026 (D-143). **Estado:** listo para imprimir la prueba de calce; las medidas de la placa del Tag son supuestas y nada se ha impreso todavía.
 
+**Versión vigente:** la [versión 1](version-1-home-y-go/README.md), del 10 de noviembre de 2026, con Relevo Home y Relevo Go (D-181). Es la que muestra la memoria del Pase. Esta versión 0 se conserva como registro, y el objeto queda como propuesta, sin imprimir (D-178).
+
 El testigo es el objeto propio de Relevo: una carcasa impresa que lleva adentro la placa y la pila del Tag. El Tag sigue siendo el hardware —su Bluetooth, su botón y su pitido—, y la forma, el control y la marca pasan a ser diseño propio. Sigue la especificación de la memoria (capítulo 11): planta circular de 42 a 48 mm, de 12 a 16 mm de alto, sin frente, con el botón accesible y la pila cambiable.
 
 ![El testigo armado](vistas/testigo-heroe.png)
@@ -178,6 +180,12 @@ python3 preparar-impresiones.py
 ```
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Enlace a la versión 1
+
+- **Qué cambió:** se enlaza la versión 1, con Relevo Home y Relevo Go, como la vigente.
+- **Cómo estaba antes:** la versión 1 existía solo en la copia local del autor, y este README describía la versión 0 como la única.
+- **Por qué:** al ordenar los pendientes se trajo al repositorio el trabajo del 10 de noviembre (D-181).
 
 ### 2026-10-28 — Proyectos de Bambu Studio
 
