@@ -819,18 +819,18 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11 y cambia un párrafo del capítulo 10 y otro del 14 ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-pregunta-hipótesis-indicador-y-objetivos-comentarios-7-8-y-9)).
-- [ ] **Hipótesis con indicador.** Nombrar sus variables y el indicador de la dependiente. El profesor sugiere la «proporción de señales que llevan a retomar la actividad»; la respuesta recomienda medir el recuerdo (supo qué quería hacer antes de mirar la pantalla) y reportar «empezó la actividad» como resultado de la decisión, porque con el Tag empezaron 10 de 21 veces y con el teléfono 13 de 21. Preguntar al profesor qué quiso decir con «retomar».
-- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación, con cuatro frases que ajustar ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
+- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11 y cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **El indicador de la hipótesis.** El profesor sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar al profesor qué quiso decir con «retomar» (respuesta, sección 5.3).
+- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
 - [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así.
 - [ ] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina.
 - [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
-- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. Debe nombrar el indicador: la proporción de señales tras las cuales la persona supo qué quería hacer antes de mirar la pantalla y recordó cómo empezar, y la proporción que la llevó a retomar la actividad. Texto propuesto en la respuesta, sección 5.3.
+- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: en cuántas de las señales supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar, y en cuántas empezaron la actividad (respuesta, sección 5.2). Los otros tres objetivos no cambian.
 - [ ] **Redacción.** Simplificar las frases complejas.
-- [ ] **Hallazgos.** Los resultados por persona y su lectura (pp. 53 a 55) pasan a una sección de hallazgos, con cinco afirmaciones y su dato, y el relato de cada persona queda en el Anexo I, I.8 (respuesta, sección 6). Lo muy específico va a los anexos.
-- [ ] **Conclusiones.** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación), y proponer la comparación sin el sesgo de preparación previa: el protocolo de seis personas y tres condiciones del Anexo I, I.2 (respuesta, sección 8).
+- [ ] **Hallazgos.** Los párrafos de las pp. 53 a 55 pasan a una sección «Hallazgos», casi sin cambios y con una etiqueta corta cada uno. Los relatos de cada persona van al Anexo I, I.8, que antes debe sumar lo que hoy solo está en la memoria: las aplicaciones y los límites de cada persona y la sugerencia de la primera. La Figura 25 y la Tabla 3 mantienen en la memoria el detalle por persona, que los profesores pidieron el 28 de octubre (respuesta, sección 6).
+- [ ] **Conclusiones.** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación, y que el lugar sea lo que ayuda). Proponer una comparación sin los dos sesgos que la memoria ya nombra: que el teléfono viniera siempre después del Tag, y que recordaran por haber preparado el relevo poco antes. La base es el protocolo de 21 días del Anexo I, con seis personas en órdenes distintos, más algunos relevos sin señal (respuesta, sección 8).
 
 ### C. Figuras y diseño de la memoria
 
@@ -854,10 +854,14 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
 
-- [ ] **Resumen y Abstract (p. 3):** definir ocio digital, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «los relatos de ocho personas sobre su última sesión de ocio digital». Texto nuevo de 297 y 290 palabras (sección 2).
+- [ ] **Resumen y Abstract (pp. 3 y 4):** definir ocio digital con la definición de la Introducción, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «se entrevistó a ocho personas sobre su última sesión de ocio digital». También cambia la última oración, que no puede afirmar lo que la prueba no permite. Quedan en 299 y 295 palabras (sección 2).
 - [ ] **p. 19:** quitar la repetición de «y no» (sección 4).
-- [ ] **Tabla 4 (p. 57):** sumar una columna de frecuencia —no ocurre, poco frecuente, frecuente, muy frecuente— con su n. Cuatro filas se pueden completar ya; las demás piden contar en los registros de la prueba (sección 7).
+- [ ] **Tabla 4 (p. 57):** sumar una columna «Frecuencia» —no ocurre, poco frecuente, frecuente, muy frecuente— con su base. Ocho filas se pueden completar ya, una de ellas en parte; dos vienen de la revisión del 28 de octubre y no llevan frecuencia, y una falta contarla en los registros de la prueba (sección 7).
 - [ ] **p. 58:** quitar «preciso» de «un problema de diseño preciso».
+
+### Confirmar con los profesores
+
+- [ ] Si el marco teórico va después de los antecedentes, como en la pauta, o antes también de ellos; qué quiso decir con «retomar la actividad»; y si el «sesgo de preparación previa» es haber preparado el relevo poco antes o haber pasado antes por el Tag ([respuesta, sección 9](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#9-qué-confirmar-con-los-profesores)).
 
 ### Reglas
 
@@ -867,6 +871,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Tarea 16 según la respuesta revisada
+
+- **Qué cambió:** los puntos de la tarea 16 siguen la segunda versión de la respuesta a los profesores. La hipótesis no cambia; el objetivo 4 conserva sus dos primeras partes; los hallazgos reordenan los párrafos existentes; el marco teórico obliga a renumerar cinco figuras; las conclusiones cubren los dos sesgos. Se suman las tres preguntas para los profesores.
+- **Cómo estaba antes:** la tarea seguía la primera versión de la respuesta, que reescribía más de lo necesario.
+- **Por qué:** el autor pidió revisar las propuestas con calma y cuidado.
 
 ### 2026-11-21 — Comentarios de los profesores sobre el texto
 
