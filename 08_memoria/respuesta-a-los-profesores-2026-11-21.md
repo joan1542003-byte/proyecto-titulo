@@ -3,7 +3,7 @@
 **Fecha:** 21 de noviembre de 2026. Cuarta versión, contrastada el mismo día con las notas del PDF.
 **Base:** el [borrador v7](borrador-memoria-v7-2026-11-11.md), copia del PDF del Pase. Las páginas son las del PDF.
 **Comentarios:** los que los profesores guía dejaron sobre el PDF el 18 de noviembre. Su texto literal, quién hizo cada uno y el mensaje con que el autor los entregó están en los [comentarios de los profesores](comentarios-de-los-profesores-2026-11-18.md). Completan las notas de la revisión del miércoles 18, que están en la [tarea 16 de Por hacer](../00_gobernanza/por-hacer.md).
-**Estado:** propuestas para que el autor decida. La memoria no se modificó.
+**Estado:** aplicadas el 21 de noviembre en el [borrador v8](borrador-memoria-v8-2026-11-21.md), con la opción recomendada en cada caso. Los [cambios de la v8](cambios-v8-2026-11-21.md) dicen qué se aplicó y qué no. Quedan las preguntas de la sección 10.
 
 ## Cómo se revisó
 
@@ -460,6 +460,12 @@ Se pueden mandar juntas, en un solo correo. Cada una dice a quién va.
 Cada cambio se hace en Affinity y en el Markdown a la vez, y al terminar se revisa que el Resumen y el Abstract sigan diciendo lo mismo que las Conclusiones.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Aplicada en el borrador v8
+
+- **Qué cambió:** el estado dice que las propuestas se aplicaron en el borrador v8.
+- **Cómo estaba antes:** decía que la memoria no se había modificado.
+- **Por qué:** el autor pidió escribir la memoria con los cambios.
 
 ### 2026-11-21 — Nota del miércoles, citada tal cual
 

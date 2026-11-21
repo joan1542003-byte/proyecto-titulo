@@ -7,6 +7,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos activos
 
 - [Borrador v7 de la memoria: el PDF del Pase (11 de noviembre de 2026)](borrador-memoria-v7-2026-11-11.md): el texto de la memoria en PDF que el autor entregó para el Pase («RELEVO PASE», 67 páginas), copiado tal cual, con sus erratas, sus 27 figuras y 4 tablas y su índice con las páginas del PDF. Los esquemas van en marcadores con su texto exacto; las capturas, los bocetos y los modelos 3D se extrajeron del PDF a [figuras](figuras/). Los capítulos suman unas 13 900 palabras de prosa. Sus errores y lo que conviene mejorar están en la [tarea 15 de Por hacer](../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+- [Borrador v8 de la memoria (21 de noviembre de 2026)](borrador-memoria-v8-2026-11-21.md): el v7 con los comentarios de los profesores y las erratas corregidas, conservando la redacción del autor (D-184). Tiene la pregunta nueva, el objetivo 4 con sus indicadores, el marco teórico antes del planteamiento, la sección «Hallazgos», la frecuencia en la Tabla 4, las Conclusiones separadas y el índice de tablas y figuras al final. Falta pasarlo a Affinity.
+- [Cambios de la v8 (21 de noviembre de 2026)](cambios-v8-2026-11-21.md): cómo se respondió a cada comentario de los profesores y los 95 cambios, cada uno con su página del PDF del Pase, su antes, su después y su motivo, para aplicarlos en Affinity. También dice qué no se cambió y por qué.
 - [Comentarios de los profesores (18 de noviembre de 2026)](comentarios-de-los-profesores-2026-11-18.md): el texto literal de las 18 notas que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF del Pase —17 comentarios—, quién hizo cada una, y el mensaje con que el autor se las pasó a Claude. Dice qué cambia al leer el PDF: cuatro comentarios que faltaban en la lista y dos que estaban cruzados.
 - [Respuesta a los profesores (21 de noviembre de 2026)](respuesta-a-los-profesores-2026-11-21.md): una propuesta para cada uno de los diecisiete comentarios que los profesores dejaron sobre el PDF del Pase, en su cuarta versión, contrastada con las notas del PDF. Cambia lo mínimo y muestra cada cambio con su texto exacto, antes y después. Indica también qué más arrastra cada cambio: figuras, remisiones, Anexo I y presentación. Cierra con siete preguntas para los profesores, cada una con su destinatario. No modifica la memoria.
 - [Propuesta de formulación (19 de noviembre de 2026)](propuesta-formulacion-2026-11-19.md): responde a los profesores después del Pase. Ata cada objetivo a la hipótesis, propone un objetivo 4 que la respuesta a los profesores reemplazó, propone el párrafo que presenta el proyecto como consecuencia de los objetivos y compara *agencia*, *autonomía* e *intención desplazada* para nombrar el fenómeno. No modifica la memoria.
@@ -98,6 +100,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-21 — Borrador v8
+
+- **Cambio:** se suman el borrador v8 y sus cambios.
+- **Versión anterior:** el último borrador era el v7, copia del PDF del Pase.
+- **Motivo:** el autor pidió escribir la memoria con los cambios de sus profesores.
 
 ### 2026-11-21 — Comentarios literales y trabajo del 10 y el 11 de noviembre
 

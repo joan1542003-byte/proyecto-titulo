@@ -2486,7 +2486,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** repartir los finales en columnas parejas, que dejaba páginas casi vacías, y dejar una tabla partida con texto entre sus partes.
 - **Documentos:** [notas de la v6](../08_memoria/notas-del-borrador-v6-2026-10-28.md), decimoctava ronda, y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-184 — Borrador v8: los cambios de los profesores, con la voz del autor
+
+- **Fecha:** 2026-11-21.
+- **Estado:** aplicada en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md); falta pasarla a Affinity y confirmar siete puntos con los profesores.
+- **Contexto:** los profesores comentaron el PDF del Pase y revisaron la memoria el 18 de noviembre. El autor pidió escribir la memoria con esos cambios, conservando su forma de escribir y corrigiendo solo los errores.
+- **Decisión:**
+  - **Formulación:** la pregunta de investigación es la que propuso el profesor Gallardo, tal cual; la hipótesis no cambia, y el objetivo 4 mide el recuerdo oportuno y registra en cuántas respuestas empezaron.
+  - **Orden:** antecedentes, marco teórico, planteamiento del problema y justificación, como en la pauta de la Escuela.
+  - **Resultados:** una sección «Hallazgos» con el texto que marcó Gallardo; los relatos de cada persona se quedan en la memoria.
+  - **Tabla 4:** una columna de frecuencia con la escala del profesor.
+  - **Conclusiones:** separan lo que la prueba permite afirmar de lo que no, y la comparación futura cubre los dos sesgos.
+  - **Resumen:** define el ocio digital y quita todo lo que Gallardo marcó con «lo sacaría»; *phygital* conserva el paréntesis del autor.
+  - **Estilo:** solo se corrigen errores. Las sugerencias de estilo quedan anotadas, sin aplicar.
+- **Alternativas descartadas:** quitar solo el ejemplo del Resumen; llevar los relatos al Anexo I; reescribir el planteamiento o simplificar la redacción, que habría cambiado la voz del autor.
+- **Documentos:** [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) y [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — D-184
+
+- **Qué cambió:** se registró D-184, el borrador v8 con los cambios de los profesores.
+- **Cómo estaba antes:** la última decisión era D-183.
+- **Por qué:** pedido del autor del 21 de noviembre de 2026.
 
 ### 2026-11-21 — D-181, D-182 y D-183
 

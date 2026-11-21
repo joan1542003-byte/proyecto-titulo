@@ -9,31 +9,32 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 - **Entrega final:** miércoles 2 de diciembre. Conviene entregar el martes 1, como margen.
 - **Examen:** lunes 14 y martes 15 de diciembre.
 
-**Dónde se corrige:** la memoria vive en Affinity, en el documento del autor. El [borrador v7](../08_memoria/borrador-memoria-v7-2026-11-11.md) es su copia en el repositorio, y cada cambio se hace en los dos.
+**Dónde se corrige:** la memoria vive en Affinity, en el documento del autor. El [borrador v7](../08_memoria/borrador-memoria-v7-2026-11-11.md) es la copia del PDF del Pase, y el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), del 21 de noviembre, ya tiene los comentarios de los profesores y las erratas. Falta pasarlo a Affinity.
 
 **Hasta la entrega final:**
 
 1. **Preguntar a los profesores** las siete dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
 2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
-3. **Corregir lo que no depende de nadie**, en Affinity y en el Markdown:
-   - los dos índices;
-   - las erratas, los términos y los signos (tarea 15, A, B y G);
-   - el Resumen y el Abstract, «preciso», la p. 19, «hoy para Android», la escala de la Tabla 4 y la sección «Hallazgos» (tarea 16, F, y [respuesta, sección 11](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#11-orden-sugerido-para-aplicarlos)).
-4. **Las frases que afirman más que los datos y los puntos de método y ética** (tarea 15, D y E).
-5. **La formulación**, con lo que respondan los profesores: la pregunta, el objetivo 4, las Conclusiones y las proyecciones (tarea 16, B).
-6. **Lo que queda de los capítulos 1 a 6.** La Introducción y la Justificación siguen bajo el mínimo de la pauta, y quedan dos citas por precisar (tarea 14, con su estado al 21 de noviembre, y tarea 15, C).
-7. **El orden de los capítulos**, al final, porque cambia la numeración de capítulos y figuras (tarea 16, B).
-8. **Los anexos**: las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
-9. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
+3. **Pasar el borrador v8 a Affinity.** Los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen, por página del PDF del Pase, qué texto cambiar y qué hacer en el diseño: el orden de los capítulos, las Figuras 1 a 5, los dos índices y la Tabla 4.
+4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
+5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
+   - cómo se eligió a las tres personas;
+   - el consentimiento de la etapa con el teléfono;
+   - la pauta de las entrevistas;
+   - una fuente reciente para Fogg (tarea 15, E);
+   - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
+   - la extensión de la Introducción y la Justificación (tarea 15, C).
+6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
+7. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
 
-10. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
-11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
+8. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
+9. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
 **Después del examen:**
 
-12. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
+10. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
 
 **Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2.
 
@@ -153,8 +154,8 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 12. Correcciones de la v6 | Cerrada en la memoria del Pase; lo que queda pasa a las tareas 7, 9 y 15 | — |
 | 13. Camino al 7 | Reemplazada; lo que queda pasa a las tareas 9, 15 y 16 | — |
 | 14. Capítulos 1 a 6 | Casi toda aplicada; queda la extensión y dos citas | Antes del 1 de diciembre |
-| 15. Errores del Pase | Por hacer | Antes del 1 de diciembre |
-| 16. Revisión con los profesores | Por hacer; la formulación espera sus respuestas | Antes del 1 de diciembre |
+| 15. Errores del Pase | Aplicada en el borrador v8; falta pasarla a Affinity | Antes del 1 de diciembre |
+| 16. Revisión con los profesores | Aplicada en el borrador v8; quedan las preguntas, el diseño y tres puntos de fondo | Antes del 1 de diciembre |
 
 ## 4. Objeto propio: la carcasa del Tag
 
@@ -786,7 +787,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 15. Errores y mejoras de la memoria y los anexos del Pase
 
-**Estado:** por hacer. **Anotada:** 18 de noviembre de 2026; ampliada el 21, después de leer la memoria entera. **Origen:** el autor entregó la memoria y los anexos en PDF del Pase y pidió copiarlos al repositorio tal cual, con sus errores, y anotar aquí los errores y lo que conviene mejorar. El texto copiado está en el [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md) y en los [anexos A a I](../08_memoria/anexos/README.md). Las páginas son las del PDF de la memoria. **Riesgo:** medio: las erratas se notan en la primera lectura, y algunas frases afirman más de lo que muestran tres casos. Todo se puede corregir antes de la entrega del 2 de diciembre.
+**Estado:** aplicada en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md) el 21 de noviembre, salvo lo que dicen los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md), en «Lo que no se cambió»: el punto E, que necesita datos del autor; C, la extensión; F, los anexos, y algunas sugerencias de estilo. Falta pasarla a Affinity. **Anotada:** 18 de noviembre de 2026; ampliada el 21, después de leer la memoria entera. **Origen:** el autor entregó la memoria y los anexos en PDF del Pase y pidió copiarlos al repositorio tal cual, con sus errores, y anotar aquí los errores y lo que conviene mejorar. El texto copiado está en el [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md) y en los [anexos A a I](../08_memoria/anexos/README.md). Las páginas son las del PDF de la memoria. **Riesgo:** medio: las erratas se notan en la primera lectura, y algunas frases afirman más de lo que muestran tres casos. Todo se puede corregir antes de la entrega del 2 de diciembre.
 
 ### A. Índices
 
@@ -899,7 +900,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 16. Revisión con los profesores después del Pase
 
-**Estado:** por hacer; la formulación espera la respuesta de los profesores. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor, cuyo [texto literal](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18) se guardó el 21; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+**Estado:** los comentarios del PDF y lo que se podía aplicar de las notas del miércoles están en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), del 21 de noviembre. Ahí se dice, uno por uno, qué se hizo con cada comentario ([cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md)). Quedan las siete preguntas para los profesores, el diseño en Affinity, los anexos, las proyecciones y tres puntos de fondo de B: el fenómeno, la tensión y el planteamiento. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor, cuyo [texto literal](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18) se guardó el 21; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
 
 ### A. Lo que valoraron
 
@@ -965,6 +966,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Borrador v8
+
+- **Qué cambió:** lo que queda, en orden, parte por pasar el borrador v8 a Affinity. Las tareas 15 y 16 dicen qué aplicó la v8 y qué no.
+- **Cómo estaba antes:** las correcciones estaban propuestas, sin aplicar.
+- **Por qué:** el autor pidió escribir la memoria con los cambios solicitados.
 
 ### 2026-11-21 — Notas literales del miércoles 18
 
