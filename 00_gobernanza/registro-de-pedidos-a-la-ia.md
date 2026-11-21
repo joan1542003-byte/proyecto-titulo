@@ -360,6 +360,7 @@
 | 21 nov. | Encargo | Pidió leer la memoria entera para tener todo el contexto. | Se leyó la memoria v7 de la portada al glosario y se contrastó con la respuesta a los profesores, la propuesta de formulación y la tarea 15. La [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) pasa a su tercera versión: advierte que, con el orden nuevo, el capítulo 7 ya no seguiría al marco teórico y cambia su primera oración, separa en el objetivo 4 el recuerdo del comienzo y cuenta sobre las respuestas, y dice «el sistema» en el Resumen. La [tarea 15](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase) suma 25 erratas, el orden de las Figuras 6 y 7, el «único referente» del capítulo 8 y los términos y signos. La memoria no se modificó. | — |
 | 21 nov. | Consulta | Avisó que el repositorio tuvo cambios y preguntó si se tenían los comentarios de sus profesores: lo que escribió de forma literal a Claude y lo que Claude interpretó. | Se trajo la rama `presentacion-relevo-2026-11-12`. La interpretación estaba en la respuesta a los profesores y en la tarea 16; el texto literal, no. | — |
 | 21 nov. | Encargo | Entregó el PDF de la memoria del Pase con las notas de sus profesores y el mensaje literal con que se las pasó a Claude. Pidió revisar si la memoria y los anexos del repositorio son los que comentaron y dejar ordenados los pendientes, con tiempo. | [Comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md): 18 notas, que son 17 comentarios, 5 de Majluf y 12 de Gallardo; cuatro no estaban en la lista del autor. El texto del borrador v7 coincide con el PDF, y los anexos A a I están en la rama. La [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) pasa a su cuarta versión, y [Por hacer](por-hacer.md) queda ordenado: lo que queda, en orden; el estado de cada tarea, y las tareas 15 y 16 al día. Se trajo a la rama el trabajo local del 10 y el 11 de noviembre: el generador de la memoria, el modelo de Relevo Home y Go, las notas y tres decisiones, renumeradas D-181 a D-183. | D-181 a D-183 |
+| 21 nov. | Orden | Subir todo a GitHub, porque necesita que esté al día. | Commit `cbddf7b` en la rama `presentacion-relevo-2026-11-12`, a su nombre. `main` avanzó hasta ese commit sin fusión, así que la rama principal y la de trabajo quedan iguales y al día. | — |
 
 ## Lo que muestra el registro
 
@@ -370,6 +371,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Subida a GitHub
+
+- **Qué cambió:** se registró el pedido de subir todo a GitHub y cómo quedaron las ramas.
+- **Cómo estaba antes:** el registro terminaba en el encargo de ordenar los pendientes.
+- **Por qué:** `CLAUDE.md` pide registrar cada pedido el mismo día.
 
 ### 2026-11-21 — Notas del PDF, tareas ordenadas y pedidos del 10 y el 11 de noviembre
 
