@@ -34,9 +34,9 @@ M: Sergio Majluf. G: el profesor Gallardo.
 | 12 | 58 | G | Quitar «preciso». | Se quita (sección 8). | Una palabra |
 | 13 | 58 | M | Separar lo que la prueba permite afirmar de lo que no, y sugerir una comparación sin el sesgo de preparación previa. | Dos párrafos de conclusiones y uno de proyecciones (sección 8). | Tres párrafos |
 | 14 | 5 | M | Más margen dentro de las cajas blancas del índice general, a ambos lados. | Más margen interior a la izquierda y a la derecha de cada caja (sección 1). | Diseño |
-| 15 | 1 | G | «Logo diip», en el rincón vacío de la portada, arriba a la derecha. | Preguntar a qué logo se refiere (secciones 9 y 10). | Por confirmar |
+| 15 | 1 | G | «Logo diip», en el rincón vacío de la portada, arriba a la derecha. | El logo DIP, Diseño de Interfaces Phigitales, arriba a la derecha (sección 9). | Resuelto |
 | 16 | 3 | G | «.», sobre «phygital». | Probablemente pide definirlo, como «ocio digital» (sección 9). | Por confirmar |
-| 17 | 30 | G | «y iOS», sobre «una aplicación para Android y un objeto». | Decir que la aplicación es hoy para Android y que iOS queda como proyección (sección 9). | Una frase |
+| 17 | 30 | G | «y iOS», sobre «una aplicación para Android y un objeto». | Aclarar que la aplicación es solo para Android y remitir al capítulo 12 (sección 9). | Una frase |
 
 **Sobre los comentarios 8 y 9.** En la lista del autor, «probar si funciona» aparecía después de la hipótesis, y «tomar esta para hacer la pregunta», después del objetivo 4. El PDF confirma que estaban cruzados. La nota de Majluf está sobre «si el sistema funciona», al final del objetivo 4, y la de Gallardo, sobre la hipótesis.
 
@@ -419,7 +419,7 @@ No estaban en la lista que el autor entregó, y aparecieron al leer el PDF.
 
 **14. Margen en el índice general (p. 5, Majluf).** Está en la sección 1.
 
-**15. «Logo diip» (p. 1, Gallardo).** El resaltado no cubre texto. Marca el rincón vacío arriba a la derecha de la portada, frente al logo de la Facultad y la Escuela. No queda claro a qué logo se refiere: hay que preguntarle (sección 10). El rincón tiene espacio, y el resto de la portada no cambia.
+**15. «Logo diip» (p. 1, Gallardo).** El resaltado no cubre texto. Marca el rincón vacío arriba a la derecha de la portada, frente al logo de la Facultad y la Escuela. Es el logo DIP, Diseño de Interfaces Phigitales, que el autor entregó el 21 de noviembre: va en ese rincón, con fondo transparente (`figuras/logo-dip/`).
 
 **16. «.» sobre *phygital* (p. 3, Gallardo).** Lo marcó cinco minutos después de escribir «Definiciones» sobre «ocio digital», así que probablemente pide definirlo también. El Resumen lo explica solo con un paréntesis, «(físico y digital)». Se puede decir mejor:
 
@@ -429,27 +429,22 @@ No estaban en la lista que el autor entregó, y aparecieron al leer el PDF.
 
 Suma cinco palabras en el Resumen y seis en el Abstract. Con la opción B de la sección 2 quedan en 290 y 287; con la A, el Resumen pasaría de 300 y habría que recortar en otra parte. Conviene confirmar qué quiso decir con el punto (sección 10).
 
-**17. iOS (p. 30, Gallardo).** Sobre «una aplicación para Android y un objeto», escribió «y iOS». El prototipo existe solo en Android, así que la memoria no puede decir que es para los dos. Se puede decir lo que es hoy y dejar iOS como proyección:
+**17. iOS (p. 30, Gallardo).** Sobre «una aplicación para Android y un objeto», escribió «y iOS». La aplicación no es para iOS: el iPhone se descartó en esta etapa, y el capítulo 12 explica por qué. Como esa explicación llega después, el capítulo 10 la adelanta con una oración, al final de «Definición y alcance de Relevo»:
 
-**Antes:**
-> Relevo es un sistema *phygital*: una aplicación para Android y un objeto que se deja junto al primer paso de una actividad.
+> La aplicación es solo para Android; el capítulo 12 explica por qué se descartó el iPhone.
 
-**Después:**
-> Relevo es un sistema *phygital*: una aplicación, hoy para Android, y un objeto que se deja junto al primer paso de una actividad.
-
-En «Alcances y proyecciones», la versión para iOS se suma como un paso más. Antes de escribirlo, hay que comprobar en la documentación de Apple cómo una aplicación de iOS puede medir el tiempo que la persona pasa en otras aplicaciones, que es lo que Relevo hace en Android. Hasta comprobarlo, la memoria no debe decir que es factible.
+El autor decidió no proponer una versión para iOS en las proyecciones (21 de noviembre).
 
 ## 10. Qué confirmar con los profesores
 
-Se pueden mandar juntas, en un solo correo. Cada una dice a quién va.
+Se pueden mandar juntas, en un solo correo. Cada una dice a quién va. La pregunta por el logo ya no hace falta: es el logo DIP.
 
 1. **Marco teórico (Gallardo).** ¿Va después de los antecedentes y antes del planteamiento del problema, como ordena la pauta, o antes también de los antecedentes?
 2. **«Retomar la actividad» (Majluf).** ¿Significa empezarla, o volver a tenerla presente? De eso depende cuál es el indicador principal del objetivo 4 (sección 5.3).
 3. **«Sesgo de preparación previa» (Majluf).** ¿Se refiere a haber preparado el relevo poco antes o a haber pasado antes por el Tag? El diseño propuesto cubre los dos, pero conviene nombrar el que quiso decir.
 4. **«Lo sacaría» (Gallardo).** ¿Solo el ejemplo del libro, o también «y que suena cuando se cumple el tiempo que ella fijó»? (sección 2).
 5. **«Irá a los hallazgos» (Gallardo).** ¿Los relatos de cada persona van en la sección de hallazgos, o al Anexo I, como se dijo el miércoles? (sección 6).
-6. **«Logo diip» (Gallardo).** ¿Qué logo va arriba a la derecha de la portada? (sección 9).
-7. **El punto sobre *phygital* (Gallardo).** ¿Pide definirlo, como «ocio digital»? (sección 9).
+6. **El punto sobre *phygital* (Gallardo).** ¿Pide definirlo, como «ocio digital»? (sección 9).
 
 ## 11. Orden sugerido para aplicarlos
 
@@ -460,6 +455,12 @@ Se pueden mandar juntas, en un solo correo. Cada una dice a quién va.
 Cada cambio se hace en Affinity y en el Markdown a la vez, y al terminar se revisa que el Resumen y el Abstract sigan diciendo lo mismo que las Conclusiones.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Logo DIP e iOS
+
+- **Qué cambió:** el comentario 15 queda resuelto con el logo DIP; el 17 se responde aclarando que la aplicación es solo para Android, sin proponer iOS. Las preguntas para los profesores pasan de siete a seis.
+- **Cómo estaba antes:** se preguntaba por el logo y se proponía iOS como proyección.
+- **Por qué:** el autor entregó el logo y pidió quitar iOS.
 
 ### 2026-11-21 — Aplicada en el borrador v8
 

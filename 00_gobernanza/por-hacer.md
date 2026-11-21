@@ -13,9 +13,9 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta la entrega final:**
 
-1. **Preguntar a los profesores** las siete dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
+1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
 2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
-3. **Pasar el borrador v8 a Affinity.** Los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen, por página del PDF del Pase, qué texto cambiar y qué hacer en el diseño: el orden de los capítulos, las Figuras 1 a 5, los dos índices y la Tabla 4.
+3. **Pasar el borrador v8 a Affinity.** Los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen, por página del PDF del Pase, qué texto cambiar y qué hacer en el diseño: el orden de los capítulos, las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) y la numeración de todas, el logo DIP en la portada, los dos índices y la Tabla 4.
 4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
 5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
    - cómo se eligió a las tres personas;
@@ -900,7 +900,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 16. Revisión con los profesores después del Pase
 
-**Estado:** los comentarios del PDF y lo que se podía aplicar de las notas del miércoles están en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), del 21 de noviembre. Ahí se dice, uno por uno, qué se hizo con cada comentario ([cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md)). Quedan las siete preguntas para los profesores, el diseño en Affinity, los anexos, las proyecciones y tres puntos de fondo de B: el fenómeno, la tensión y el planteamiento. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor, cuyo [texto literal](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18) se guardó el 21; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+**Estado:** los comentarios del PDF y lo que se podía aplicar de las notas del miércoles están en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), del 21 de noviembre. Ahí se dice, uno por uno, qué se hizo con cada comentario ([cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md)). Quedan las seis preguntas para los profesores, el diseño en Affinity, los anexos, las proyecciones y tres puntos de fondo de B: el fenómeno, la tensión y el planteamiento. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor, cuyo [texto literal](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18) se guardó el 21; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
 
 ### A. Lo que valoraron
 
@@ -923,10 +923,10 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### C. Figuras y diseño de la memoria
 
-- [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales.
+- [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales. *21 de noviembre: siete figuras nuevas comparten un mismo sistema —ficha blanca, cajas de papel, íconos de la app y la paleta de Relevo— y explican el método Framework, la formulación, el método del proyecto, los estados de un relevo, el sistema, el registro de la prueba y la comparación futura ([figuras/v8](../08_memoria/figuras/v8/README.md)). Falta llevar las figuras anteriores al mismo nivel, si el autor lo pide.*
 - [ ] **Índice de tablas y figuras solo con texto (Majluf, p. 6).** Las fichas blancas y las filas apretadas no funcionan; usar solo texto, con el interlineado del índice general (respuesta, sección 1).
 - [ ] **Más margen en el índice general (Majluf, p. 5):** «dale un poco más de margen dentro de la caja blanca en ambos lados». El número del capítulo y el de la página quedan pegados al borde (respuesta, sección 1).
-- [ ] **Logo en la portada (Gallardo, p. 1):** marcó el rincón vacío arriba a la derecha y escribió «Logo diip». Preguntar a qué logo se refiere (respuesta, secciones 9 y 10).
+- [x] **Logo en la portada (Gallardo, p. 1):** marcó el rincón vacío arriba a la derecha y escribió «Logo diip». *Es el logo DIP, Diseño de Interfaces Phigitales, que el autor entregó el 21 de noviembre: va en la portada del borrador v8 ([logo](../08_memoria/figuras/logo-dip/)); falta ponerlo en Affinity.*
 - [ ] **Índice de figuras al final.** El índice de tablas y figuras pasa al final de la memoria, después de los anexos o junto a las referencias, y deja de estar antes del planteamiento del problema (D-180).
 - [ ] **Bocetos como fondo o textura** en la memoria diseñada.
 - [ ] **Explorar el color de Relevo** en la memoria diseñada. La nota dice solo «Relevo, explorar el color»: puede referirse también a la paleta de la marca.
@@ -940,7 +940,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con Martin Bravo, especialista que sugirieron los profesores. El autor dará más datos de él; confirmar la escritura de su nombre.
 - [ ] **Taskscape.** Explorar el concepto, que se contrapone a *landscape*: el paisaje de las tareas, que se reconoce por sus sonidos. Sirve para pensar Relevo como una forma de espacializar la casa por medio de sonidos. El término es de Ingold (1993); leer el artículo antes de citarlo.
 - [ ] **Publicación de la app.** Diseñar cómo se publicaría: una maqueta de su ficha en Play Store y App Store.
-- [ ] **Versión para iOS (Gallardo, p. 30).** Sumarla a «Alcances y proyecciones» solo después de comprobar en la documentación de Apple cómo una aplicación de iOS puede medir el tiempo que la persona pasa en otras aplicaciones (respuesta, sección 9).
+- [x] **iOS (Gallardo, p. 30).** *El autor decidió no proponer una versión para iOS (21 de noviembre): la aplicación es solo para Android, el capítulo 12 explica por qué y el 10 lo adelanta.*
 
 ### F. Comentarios sobre el texto (del PDF, entregados el 21 de noviembre)
 
@@ -954,8 +954,8 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### Confirmar con los profesores
 
-- [ ] Mandar en un solo correo las siete preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores):
-  - a Gallardo: dónde va el marco teórico; si «lo sacaría» incluye cuándo suena; si los relatos van en los hallazgos o al Anexo I; qué logo va en la portada, y si el punto sobre *phygital* pide definirlo;
+- [ ] Mandar en un solo correo las seis preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores):
+  - a Gallardo: dónde va el marco teórico; si «lo sacaría» incluye cuándo suena; si los relatos van en los hallazgos o al Anexo I, y si el punto sobre *phygital* pide definirlo;
   - a Majluf: qué quiso decir con «retomar la actividad» y a qué sesgo de preparación previa se refiere.
 
 ### Reglas
@@ -966,6 +966,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Figuras nuevas, logo DIP e iOS
+
+- **Qué cambió:** lo que queda suma colocar las siete figuras nuevas y el logo DIP en Affinity. En la tarea 16, el logo queda resuelto, iOS se descarta como proyección y los diagramas estandarizados quedan en curso. Las preguntas para los profesores pasan a seis.
+- **Cómo estaba antes:** se preguntaba por el logo, iOS era una proyección y los diagramas estaban por hacer.
+- **Por qué:** pedidos del autor del 21 de noviembre.
 
 ### 2026-11-21 — Borrador v8
 

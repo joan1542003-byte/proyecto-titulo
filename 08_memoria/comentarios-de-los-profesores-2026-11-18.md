@@ -17,7 +17,7 @@ Son 18 notas: 17 resaltados con comentario y una nota de texto que acompaña al 
 
 | N.º | Pág. | Profesor | Texto marcado | Comentario, literal | En la lista del autor (21 nov.) | Dónde se trabaja |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 1 | Gallardo | Nada: marca el rincón vacío arriba a la derecha de la portada. | «Logo diip» | No | Respuesta, sección 9; confirmar a qué logo se refiere |
+| 1 | 1 | Gallardo | Nada: marca el rincón vacío arriba a la derecha de la portada. | «Logo diip» | No | Resuelto: es el logo DIP, Diseño de Interfaces Phigitales, que el autor entregó el 21 de noviembre; va en la portada del borrador v8 |
 | 2 | 3 | Majluf | «personas al contar su último rato» | «esa frase es muy informal y la palabra contar es confusa; contabilizar o narrar?» | Sí | Respuesta, sección 2 |
 | 3 | 3 | Gallardo | «ocio digital» | «Definiciones» | Sí («Definir qué es ocio digital») | Respuesta, sección 2 |
 | 4 | 3 | Gallardo | «phygital» | «.» | No | Respuesta, sección 9 |
@@ -26,7 +26,7 @@ Son 18 notas: 17 resaltados con comentario y una nota de texto que acompaña al 
 | 7 | 6 | Majluf | Toda la página «Tablas y figuras» | «lo que funcionaba visualmente para el índice, acá no funciona bien. Es raro que hayas cambiado el espaciado vertical entre filas para "apretarlas". Sería más limpio y claro usar sólo textos sin las cajas blancas?» | Sí | Respuesta, sección 1 |
 | 8 | 16 | Gallardo | El título «Marco teórico por ámbitos», en la apertura del capítulo 6 | «Lo pondria antes» | Sí (como p. 15) | Respuesta, sección 3 |
 | 9 | 19 | Gallardo | «y no» | «y no y no» | Sí | Respuesta, sección 4 |
-| 10 | 30 | Gallardo | «Android y», en «Relevo es un sistema *phygital*: una aplicación para Android y un objeto…» | «y Ios» | No | Respuesta, sección 9 |
+| 10 | 30 | Gallardo | «Android y», en «Relevo es un sistema *phygital*: una aplicación para Android y un objeto…» | «y Ios» | No | Borrador v8: la aplicación es solo para Android, y el capítulo 10 lo aclara |
 | 11 | 30 | Gallardo | La pregunta de investigación completa | «Reformular», con una nota de texto: «¿Cuál es el efecto de un sistema phygital que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?» | Sí | Respuesta, sección 5 |
 | 12 | 31 | Majluf | «si el sistema funciona.», al final del objetivo específico 4 | «"probar si funciona" es muy general. Intenta conun indicador explícito de la variable de la hipótesis (proporción de señales que llevan a retomar la actividad» | Sí, pero puesto después de la hipótesis | Respuesta, sección 5 |
 | 13 | 31 | Gallardo | La hipótesis completa: «Si se diseña un sistema phygital que vincula…» | «tomar esta para hacer la pregunta de la página anterior» | Sí, pero puesto después del objetivo 4 | Respuesta, sección 5 |
@@ -233,6 +233,12 @@ El índice de tablas y figuras está en la p. 6, antes del capítulo 1, y no jus
 **«Comentario final».** La nota no dice a qué texto se refiere. La tarea 16 la une con la nota de Gallardo sobre la p. 54, «irá a los hallazgos», que trata de los mismos hallazgos.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Logo DIP e iOS
+
+- **Qué cambió:** el comentario 1 queda resuelto: «Logo diip» es el logo DIP, Diseño de Interfaces Phigitales. El comentario 10, iOS, se responde aclarando que la aplicación es solo para Android.
+- **Cómo estaba antes:** los dos estaban por confirmar.
+- **Por qué:** el autor entregó el logo y pidió no presentar iOS como proyección.
 
 ### 2026-11-21 — Notas del miércoles 18
 

@@ -2502,7 +2502,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** quitar solo el ejemplo del Resumen; llevar los relatos al Anexo I; reescribir el planteamiento o simplificar la redacción, que habría cambiado la voz del autor.
 - **Documentos:** [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) y [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
 
+## D-185 — Figuras que explican los sistemas y los métodos, con un mismo sistema visual
+
+- **Fecha:** 2026-11-21.
+- **Estado:** aplicada en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md); falta colocarlas en Affinity.
+- **Contexto:** la memoria tenía 27 figuras, casi todas fichas de texto, y el autor pidió esquemas que expliquen lo complejo, como los diagramas de los anexos, para la memoria y para la presentación. El profesor Gallardo había pedido, además, diagramas estandarizados a un mismo nivel de información.
+- **Decisión:**
+  - **Qué explican:** siete figuras nuevas: el método Framework, la cadena de la formulación, el método del proyecto, los estados de un relevo, cómo funcionan juntos la persona, la aplicación y el objeto, qué se registró en la prueba y la comparación propuesta.
+  - **Cómo se ven:** una ficha blanca con cajas color papel, Instrument Sans, la paleta de Relevo y los íconos propios de la app 4.7.2, sin título ni nota dentro.
+  - **Medidas:** a la escala de Affinity, con el ancho del texto, de 1742 pt.
+  - **Archivos:** un HTML que es la fuente, un PDF vectorial para Affinity y un PNG; un solo generador las rehace.
+  - **Numeración:** todas las figuras se numeran por su primera mención; pasan de 27 a 34.
+  - **Portada e iOS:** la portada suma el logo DIP. La aplicación queda como solo para Android, y no se propone iOS.
+- **Alternativas descartadas:** reproducir los diagramas de Mermaid de los anexos tal como están, que no siguen la línea visual de la memoria, y rehacer ahora las 27 figuras anteriores.
+- **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — D-185
+
+- **Qué cambió:** se registró D-185, las figuras nuevas de la v8.
+- **Cómo estaba antes:** la última decisión era D-184.
+- **Por qué:** pedido del autor del 21 de noviembre de 2026.
 
 ### 2026-11-21 — D-184
 

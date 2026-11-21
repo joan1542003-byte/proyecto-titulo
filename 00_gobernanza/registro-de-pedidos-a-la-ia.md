@@ -363,6 +363,7 @@
 | 21 nov. | Orden | Subir todo a GitHub, porque necesita que esté al día. | Commit `cbddf7b` en la rama `presentacion-relevo-2026-11-12`, a su nombre. `main` avanzó hasta ese commit sin fusión, así que la rama principal y la de trabajo quedan iguales y al día. | — |
 | 21 nov. | Consulta | Volvió a pegar sus notas de la revisión del miércoles 18, «un tanto desordenadas», y preguntó si se tenían. | Sí: todas estaban ordenadas en la tarea 16 desde el 19 de noviembre, pero sin su texto literal. Ahora están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18), con dónde quedó cada una. Hay dos diferencias: la nota dice «lugar oportuno», donde la pregunta escrita en el PDF dice «recuerdo oportuno», y «explorar el color» no dice si es el de la memoria o el de la marca. Las dos se corrigieron en la tarea 16 y en la respuesta. | — |
 | 21 nov. | Encargo | Escribir la memoria con los cambios solicitados, idealmente como la dejó: él hizo cambios con su forma de escribir, así que solo se corrigen los errores ortográficos. Debe ser clara y fácil de leer, sin errores, y hay que avisarle cada cambio y cómo se respondió a sus profesores. | [Borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), sobre el v7, con 95 cambios, cada uno con su página del PDF, su antes y su después en los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md). Se aplicaron los 17 comentarios del PDF —salvo «Logo diip», que hay que preguntar— y lo que se podía de las notas del miércoles. Se corrigieron los errores de la tarea 15 y no se tocaron las decisiones de estilo del autor. Quedan comprobados el Resumen (299 palabras) y el Abstract (290), el orden de las figuras y las tablas, las citas contra las referencias y la ortografía, con el corrector en español. | D-184 |
+| 21 nov. | Corrección y encargo | Pidió cambiar «a través de dispositivos», que le pareció muy bajo, y quitar iOS, porque la aplicación no es para iOS y eso ya se explica; si no queda claro antes, aclararlo. Dijo que no entendió qué tenía que hacer él. Entregó el logo DIP y pidió más figuras y esquemas, bien hechos y ordenados como los de los anexos, que expliquen los sistemas y los métodos complejos; también servirán para la presentación. | En el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md): «con dispositivos digitales» en el Resumen, el Abstract, la Introducción y el glosario; iOS fuera de las proyecciones, y una oración en el capítulo 10 que aclara que la aplicación es solo para Android. El logo DIP, con fondo transparente, va en la portada. Se hicieron [siete figuras nuevas](../08_memoria/figuras/v8/README.md): el método Framework, la cadena de la formulación, el método del proyecto, los estados de un relevo, la persona y el sistema, el registro de la prueba y la comparación futura. La memoria pasa a 34 figuras, renumeradas por su primera mención, y los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) suman la tabla de numeración para Affinity. Lo que le toca hacer al autor se le explicó paso a paso en la conversación. | D-185 |
 
 ## Lo que muestra el registro
 
@@ -373,6 +374,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Figuras nuevas
+
+- **Qué cambió:** se registró el pedido de las figuras nuevas, del logo DIP, de «con dispositivos digitales» y de iOS.
+- **Cómo estaba antes:** el registro terminaba en el borrador v8.
+- **Por qué:** `CLAUDE.md` pide registrar cada pedido el mismo día.
 
 ### 2026-11-21 — Borrador v8
 
