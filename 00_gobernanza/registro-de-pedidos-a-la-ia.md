@@ -340,6 +340,7 @@
 | 18 nov. | Consulta | Preguntó cómo se justifica la elección de la paleta de colores y qué es el método Framework. | Respuesta en la conversación, con la memoria v7 (capítulo 11, «Paleta cromática», capítulo 7 y glosario) y los Anexos H.4 y A.3. | — |
 | 19 nov. | Encargo | Entregó las notas de la revisión con los profesores guía, algo dispersas: la memoria es muy buena y agradable de leer, y hay observaciones de formulación, objetivos, figuras, anexos y proyecciones. | Notas ordenadas en la [tarea 16 de Por hacer](por-hacer.md#16-revisión-con-los-profesores-después-del-pase). El nombre del especialista externo no se registró por ser el repositorio público. | — |
 | 19 nov. | Decisión y encargo | Precisó que el índice de figuras va al final; pidió subir el nombre del especialista externo, porque el repositorio público es parte del proceso y puede tener nombres de profesionales, y aceptó que se redacte una propuesta para el objetivo 4 y la cadena hipótesis, objetivos y proyecto. Anunció comentarios específicos sobre la memoria. | [Propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md), tarea 16 actualizada y excepción en `CLAUDE.md`. | D-179, D-180 |
+| 21 nov. | Encargo | Entregó los comentarios que sus profesores dejaron sobre la memoria del Pase, cada uno con su texto: el índice de tablas y figuras, el Resumen, el marco teórico antes, la repetición de la p. 19, la pregunta, el indicador de la hipótesis, el objetivo 4, los hallazgos, la escala de la Tabla 4 y las Conclusiones. | [Respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md), con un texto propuesto para cada comentario, y la [tarea 16](por-hacer.md#16-revisión-con-los-profesores-después-del-pase) actualizada. La memoria no se modificó. | — |
 
 ## Lo que muestra el registro
 
@@ -350,6 +351,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Comentarios de los profesores
+
+- **Qué cambió:** se registró la entrega de los comentarios de los profesores sobre la memoria del Pase.
+- **Cómo estaba antes:** el último pedido era del 19 de noviembre.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-19 — Índice, nombres y formulación
 

@@ -3,6 +3,7 @@
 **Fecha:** 19 de noviembre de 2026
 **Base:** capítulo 10 del [borrador v7](borrador-memoria-v7-2026-11-11.md) y las observaciones de los profesores después del Pase ([tarea 16 de Por hacer](../00_gobernanza/por-hacer.md)).
 **Estado:** propuesta para que el autor la revise. La memoria no se modificó.
+**Actualización (21 de noviembre):** la [respuesta a los profesores](respuesta-a-los-profesores-2026-11-21.md) reemplaza el objetivo 4 de la sección 2 y propone una pregunta nueva, con el indicador que pidieron los profesores. Las secciones 1, 3, 4 y 5 siguen vigentes.
 
 Los profesores pidieron tres cosas que se resuelven juntas: que los objetivos salgan de la hipótesis y el proyecto de los objetivos; que la memoria se pueda leer al revés sin que se corte la cadena, y que el objetivo específico 4 diga con qué señales concretas se sabe que el sistema funciona. Esta propuesta cambia poco texto: ordena lo que la memoria ya tiene.
 
@@ -69,6 +70,12 @@ Los profesores pidieron explicar cómo funciona la tensión en la decisión. La 
 > Durante la sesión, dos cosas que la persona valora compiten: seguir en el teléfono y lo que quería hacer. La tensión no se resuelve porque una de las dos deja de estar presente: la sesión sigue sin que la persona vuelva a decidir. Relevo actúa en ese punto. No elige por ella ni corta la sesión: hace presente la otra opción, en el lugar donde empieza, para que la decisión vuelva a ser suya.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Remite a la respuesta a los profesores
+
+- **Qué cambió:** una nota al comienzo dice que el objetivo 4 y la pregunta se actualizan en la respuesta a los profesores.
+- **Cómo estaba antes:** esta propuesta era la única sobre la formulación.
+- **Por qué:** los profesores comentaron la pregunta y pidieron un indicador explícito para la hipótesis.
 
 ### 2026-11-19 — Creación
 

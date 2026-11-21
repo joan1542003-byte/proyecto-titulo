@@ -811,7 +811,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 16. Revisión con los profesores después del Pase
 
-**Estado:** por hacer. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía. **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+**Estado:** por hacer. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los comentarios que dejaron sobre el PDF. Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
 
 ### A. Lo que valoraron
 
@@ -819,18 +819,23 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
+- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11 y cambia un párrafo del capítulo 10 y otro del 14 ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-pregunta-hipótesis-indicador-y-objetivos-comentarios-7-8-y-9)).
+- [ ] **Hipótesis con indicador.** Nombrar sus variables y el indicador de la dependiente. El profesor sugiere la «proporción de señales que llevan a retomar la actividad»; la respuesta recomienda medir el recuerdo (supo qué quería hacer antes de mirar la pantalla) y reportar «empezó la actividad» como resultado de la decisión, porque con el Tag empezaron 10 de 21 veces y con el teléfono 13 de 21. Preguntar al profesor qué quiso decir con «retomar».
+- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación, con cuatro frases que ajustar ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
 - [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así.
 - [ ] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina.
 - [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
-- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. Un objetivo específico debe nombrar las señales concretas de que el sistema funciona. El capítulo 13 ya tiene una base: que el Tag suene cuando corresponde, que la persona sepa qué quería hacer sin leer la pantalla, que recuerde cómo empezar y que siga usando Relevo.
+- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. Debe nombrar el indicador: la proporción de señales tras las cuales la persona supo qué quería hacer antes de mirar la pantalla y recordó cómo empezar, y la proporción que la llevó a retomar la actividad. Texto propuesto en la respuesta, sección 5.3.
 - [ ] **Redacción.** Simplificar las frases complejas.
-- [ ] **Cierre.** Los hallazgos del comentario final son muy específicos: dejarlos en los anexos y dejar en la memoria lo general.
+- [ ] **Hallazgos.** Los resultados por persona y su lectura (pp. 53 a 55) pasan a una sección de hallazgos, con cinco afirmaciones y su dato, y el relato de cada persona queda en el Anexo I, I.8 (respuesta, sección 6). Lo muy específico va a los anexos.
+- [ ] **Conclusiones.** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación), y proponer la comparación sin el sesgo de preparación previa: el protocolo de seis personas y tres condiciones del Anexo I, I.2 (respuesta, sección 8).
 
 ### C. Figuras y diseño de la memoria
 
 - [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales.
+- [ ] **Índice de tablas y figuras solo con texto.** Las fichas blancas y las filas apretadas no funcionan; usar solo texto, con el interlineado del índice general (respuesta, sección 1).
 - [ ] **Índice de figuras al final.** El índice de tablas y figuras pasa al final de la memoria, después de los anexos o junto a las referencias, y deja de estar antes del planteamiento del problema (D-180).
 - [ ] **Bocetos como fondo o textura** en la memoria diseñada.
 - [ ] **Explorar el color de Relevo** en la memoria diseñada.
@@ -842,18 +847,32 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 ### E. Proyecciones
 
 - [ ] **Prueba externa** de la marca, la interactividad y la experiencia de usuario con Martin Bravo, especialista que sugirieron los profesores. El autor dará más datos de él; confirmar la escritura de su nombre.
-- [ ] **La actividad pendiente y su lugar.** Desarrollar la relación entre la actividad pendiente, su lugar de inicio y el lugar oportuno para hacerla.
 - [ ] **Taskscape.** Explorar el concepto, que se contrapone a *landscape*: el paisaje de las tareas, que se reconoce por sus sonidos. Sirve para pensar Relevo como una forma de espacializar la casa por medio de sonidos. El término es de Ingold (1993); leer el artículo antes de citarlo.
 - [ ] **Publicación de la app.** Diseñar cómo se publicaría: una maqueta de su ficha en Play Store y App Store.
+
+### F. Comentarios sobre el texto (entregados el 21 de noviembre)
+
+Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
+
+- [ ] **Resumen y Abstract (p. 3):** definir ocio digital, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «los relatos de ocho personas sobre su última sesión de ocio digital». Texto nuevo de 297 y 290 palabras (sección 2).
+- [ ] **p. 19:** quitar la repetición de «y no» (sección 4).
+- [ ] **Tabla 4 (p. 57):** sumar una columna de frecuencia —no ocurre, poco frecuente, frecuente, muy frecuente— con su n. Cuatro filas se pueden completar ya; las demás piden contar en los registros de la prueba (sección 7).
+- [ ] **p. 58:** quitar «preciso» de «un problema de diseño preciso».
 
 ### Reglas
 
 - Los cambios de formulación (punto B) se deciden con el autor antes de tocar la memoria, y se revisa que el Resumen y el Abstract sigan diciendo lo mismo.
 - Coordinar con la tarea 15: muchas correcciones caen en los mismos párrafos.
-- La propuesta de redacción para la cadena hipótesis, objetivos y proyecto, y para el objetivo 4, está en la [propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md).
-- Faltan los comentarios específicos que los profesores hicieron sobre la memoria; el autor los entregará.
+- La propuesta de redacción para la cadena hipótesis, objetivos y proyecto está en la [propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md); la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) la actualiza con la pregunta y el indicador que ellos pidieron.
+- Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Comentarios de los profesores sobre el texto
+
+- **Qué cambió:** la tarea 16 suma los comentarios que los profesores dejaron sobre el PDF: la pregunta, el indicador de la hipótesis, el marco teórico antes del planteamiento, los hallazgos, las conclusiones, el índice solo con texto y los del punto F. La nota «actividad pendiente con su lugar de inicio» pasa de las proyecciones a la pregunta de investigación.
+- **Cómo estaba antes:** la tarea solo tenía las notas de la revisión del 18 de noviembre, y esa nota estaba leída como una proyección.
+- **Por qué:** el autor entregó los comentarios uno por uno, con su texto.
 
 ### 2026-11-19 — Índice al final y especialista externo
 
