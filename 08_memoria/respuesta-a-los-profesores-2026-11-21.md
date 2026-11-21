@@ -187,7 +187,7 @@ La que propone el profesor sale de la hipótesis y nombra sus dos variables:
 
 > ¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?
 
-Es la misma idea de la nota del miércoles, «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que la tarea 16 había leído como una proyección.
+Es la misma idea de la nota del miércoles, «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que la tarea 16 había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita dice «recuerdo oportuno»: probablemente se copió al oído, y vale la versión escrita en el PDF.
 
 La hipótesis ya dice lo mismo con otras palabras, así que **no hace falta cambiarla**:
 
@@ -460,6 +460,12 @@ Se pueden mandar juntas, en un solo correo. Cada una dice a quién va.
 Cada cambio se hace en Affinity y en el Markdown a la vez, y al terminar se revisa que el Resumen y el Abstract sigan diciendo lo mismo que las Conclusiones.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Nota del miércoles, citada tal cual
+
+- **Qué cambió:** la sección 5.1 cita la nota del miércoles con su texto literal, «sobre el lugar oportuno de su actividad», y explica por qué vale la versión del PDF.
+- **Cómo estaba antes:** la citaba como «sobre el [recuerdo] oportuno», sin decir qué palabra reemplazaba el corchete.
+- **Por qué:** el autor entregó sus notas del miércoles 18 tal como las escribió.
 
 ### 2026-11-21 — Cuarta versión, contrastada con las notas del PDF
 

@@ -361,6 +361,7 @@
 | 21 nov. | Consulta | Avisó que el repositorio tuvo cambios y preguntó si se tenían los comentarios de sus profesores: lo que escribió de forma literal a Claude y lo que Claude interpretó. | Se trajo la rama `presentacion-relevo-2026-11-12`. La interpretación estaba en la respuesta a los profesores y en la tarea 16; el texto literal, no. | — |
 | 21 nov. | Encargo | Entregó el PDF de la memoria del Pase con las notas de sus profesores y el mensaje literal con que se las pasó a Claude. Pidió revisar si la memoria y los anexos del repositorio son los que comentaron y dejar ordenados los pendientes, con tiempo. | [Comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md): 18 notas, que son 17 comentarios, 5 de Majluf y 12 de Gallardo; cuatro no estaban en la lista del autor. El texto del borrador v7 coincide con el PDF, y los anexos A a I están en la rama. La [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) pasa a su cuarta versión, y [Por hacer](por-hacer.md) queda ordenado: lo que queda, en orden; el estado de cada tarea, y las tareas 15 y 16 al día. Se trajo a la rama el trabajo local del 10 y el 11 de noviembre: el generador de la memoria, el modelo de Relevo Home y Go, las notas y tres decisiones, renumeradas D-181 a D-183. | D-181 a D-183 |
 | 21 nov. | Orden | Subir todo a GitHub, porque necesita que esté al día. | Commit `cbddf7b` en la rama `presentacion-relevo-2026-11-12`, a su nombre. `main` avanzó hasta ese commit sin fusión, así que la rama principal y la de trabajo quedan iguales y al día. | — |
+| 21 nov. | Consulta | Volvió a pegar sus notas de la revisión del miércoles 18, «un tanto desordenadas», y preguntó si se tenían. | Sí: todas estaban ordenadas en la tarea 16 desde el 19 de noviembre, pero sin su texto literal. Ahora están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18), con dónde quedó cada una. Hay dos diferencias: la nota dice «lugar oportuno», donde la pregunta escrita en el PDF dice «recuerdo oportuno», y «explorar el color» no dice si es el de la memoria o el de la marca. Las dos se corrigieron en la tarea 16 y en la respuesta. | — |
 
 ## Lo que muestra el registro
 
@@ -371,6 +372,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Notas del miércoles 18
+
+- **Qué cambió:** se registró la consulta sobre las notas del miércoles 18.
+- **Cómo estaba antes:** el registro terminaba en la subida a GitHub.
+- **Por qué:** `CLAUDE.md` pide registrar cada pedido el mismo día.
 
 ### 2026-11-21 — Subida a GitHub
 

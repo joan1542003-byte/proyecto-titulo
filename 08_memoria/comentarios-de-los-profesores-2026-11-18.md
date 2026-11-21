@@ -9,7 +9,7 @@
 - Sergio Majluf dejó 5 notas.
 - El profesor Gallardo dejó 13. Sus notas van firmadas «MANUEL GALLARDO», mientras que la portada de la memoria dice «Simón Gallardo»: conviene confirmar el nombre (tarea 8 de [Por hacer](../00_gobernanza/por-hacer.md)).
 
-**Para qué sirve este documento:** guardar el texto literal de cada comentario y del mensaje con que el autor los entregó, para contrastarlos con su interpretación en la [respuesta a los profesores](respuesta-a-los-profesores-2026-11-21.md) y en la tarea 16 de [Por hacer](../00_gobernanza/por-hacer.md).
+**Para qué sirve este documento:** guardar el texto literal de cada comentario, del mensaje con que el autor los entregó y de sus notas de la revisión del miércoles 18, para contrastarlos con su interpretación en la [respuesta a los profesores](respuesta-a-los-profesores-2026-11-21.md) y en la tarea 16 de [Por hacer](../00_gobernanza/por-hacer.md).
 
 ## Los 17 comentarios del PDF
 
@@ -164,16 +164,81 @@ El texto de la p. 54 se abrevió entre corchetes porque es idéntico al de la me
 
 ## Las notas del miércoles 18
 
-Las notas que el autor tomó en la revisión del miércoles 18 están ordenadas en la tarea 16 de Por hacer. Su texto literal no se guardó; la primera versión de esa tarea, del 19 de noviembre (commit `b40e08e`), es la más cercana a él.
+Son las notas que el autor tomó durante la revisión con los profesores, el miércoles 18 de noviembre. Las entregó el 19 y volvió a pegarlas el 21; esta es su copia literal. En la tarea 16 de Por hacer están ordenadas por tema.
 
-Una de esas notas decía «Figuras en bibliografías, al final; antes del planteamiento del problema». Se leyó de dos maneras:
+```text
+Memoria
+Anexo con todas las pantallas del apk.
+- Documentación y la memoria se lee bien
+
+* Diagramas, estandarizados a un nivel de informacion, que podría paertmiri añadir otros, que nos permite indicar todos los conceptos para conclusiónnes visuales.
+* Figuras en bibliografías, al final.
+antes del planteamiento del problema
+* El planteamiento del problema es mi universo, en base a mi experiencia, a otros usuarios, a esta dimensión contextual, esto es un problema y lo escribo de esta manera.
+* formulacion: como funciona el sistema de tensión, en la decisión del usuario, 
+* Reformular 
+- Desde la hipótesis, los objetivos, 
+* Desde el proyecto, como consecuencia de los objetivos, que busca
+* Leer la memoria al revés, deconstruirla
+- Las personas al contar su ultimo rato en el telefono, ese seria algo pertinente a la pregunta de investigación, el problema es que no se usa agencia. *Verificar que palabras seria la correcta para eso* - la idea es poder d definir el fenómenomeno de forma correcta-
+* Objetivos espeficifos, el cuarto: cuando el sistema funciona, Sobre el sistema, si funciona, pero que. Cosa del sistema? Es demasiado general, buscar que señales concretas (esto es un objetivo espeficio) que señales concretas, nos duran que el sistema funciona.
+*  La redacción es compleja, debemos mejorarla
+- Comentario final, los hallazgos, es muy espeficiso, podrían ir a los anexos.
+- Usar como fondo/textura los bocetos. 
+- Relevo, explorar el color, 
+*  Probar externamente, Martin Bravo la marca, interactibvilidad, experiencia del usuario,  el podría ayudarnos.
+- Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad.
+- a
+- Tascape, se contrapone al landscape, el taskcape son actividades sonoras, explorar esa idea eSPACIALIZAR LA casa por medio de sonidos 
+- Diseñar cómo se publican la app, maqueta en la playstore/appstore
+```
+
+### Dónde quedó cada nota
+
+Todas las notas están en la tarea 16; ninguna se perdió. La línea «- a» parece una nota sin terminar.
+
+| Nota | Dónde está | Cómo se leyó |
+| --- | --- | --- |
+| Anexo con todas las pantallas del apk | Tarea 16, D | Fiel |
+| La documentación y la memoria se leen bien | Tarea 16, A | Fiel |
+| Diagramas estandarizados a un nivel de información | Tarea 16, C | Fiel |
+| Figuras en bibliografías, al final | Tarea 16, C, y D-180 | Fiel: el índice de tablas y figuras pasa al final |
+| Antes del planteamiento del problema | Tarea 16, B y C, y respuesta, sección 3 | Dos lecturas (abajo) |
+| El planteamiento del problema es mi universo | Tarea 16, B | Fiel |
+| Formulación: cómo funciona el sistema de tensión en la decisión del usuario | Tarea 16, B, «La tensión en la decisión» | Fiel; la tarea agrega «y dónde actúa Relevo» |
+| Reformular desde la hipótesis, los objetivos y el proyecto | Tarea 16, B, «Reformular en cadena» | Fiel |
+| Leer la memoria al revés, deconstruirla | Tarea 16, B | Fiel; la tarea agrega el orden en que se revisa |
+| Las personas al contar su último rato; agencia | Tarea 16, B, «Definir el fenómeno» | Fiel |
+| El objetivo 4 es demasiado general | Tarea 16, B, «Objetivo específico 4» | Fiel; coincide con la nota de Majluf en el PDF |
+| La redacción es compleja | Tarea 16, B, «Redacción» | Fiel |
+| Comentario final: los hallazgos son muy específicos, podrían ir a los anexos | Tarea 16, B, «Hallazgos», y respuesta, sección 6 | Fiel; la nota dice «podrían», así que es una opción, no una orden |
+| Usar los bocetos como fondo o textura | Tarea 16, C | Fiel |
+| Relevo, explorar el color | Tarea 16, C | La tarea lo leyó como el color de la memoria diseñada; la nota no lo precisa |
+| Probar externamente con Martin Bravo | Tarea 16, E | Fiel |
+| Actividad pendiente con su lugar de inicio | Tarea 16, B, «Pregunta de investigación», y respuesta, sección 5.1 | La nota dice «lugar oportuno» (abajo) |
+| *Taskscape* | Tarea 16, E | Fiel; la tarea suma el autor del término, Ingold (1993), que falta leer |
+| Diseñar cómo se publica la app | Tarea 16, E | Fiel |
+
+### Tres puntos que conviene saber
+
+**«Lugar oportuno».** La nota dice «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad». La pregunta que Gallardo escribió en el PDF dice «…que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad…». Es la misma frase, con «lugar» donde el PDF dice «recuerdo»; probablemente la nota la copió al oído. Vale la versión escrita en el PDF. La respuesta la había citado como «sobre el [recuerdo] oportuno», sin decir que la nota decía «lugar».
+
+**«Antes del planteamiento del problema».** Va en una línea aparte, sin viñeta, justo después de «Figuras en bibliografías, al final». Se leyó de dos maneras:
 
 - el 19 de noviembre, como el lugar del índice de figuras (D-180);
 - el 21, en la respuesta, como el lugar que el profesor dijo para el marco teórico.
 
-El autor recuerda que el profesor dijo dónde iría el marco teórico. Si fue «antes del planteamiento del problema», coincide con la pauta de la Escuela, que pone los antecedentes y el marco teórico antes de la fundamentación. El índice de figuras al final no depende de esa lectura, porque la nota dice «al final».
+El índice de tablas y figuras está en la p. 6, antes del capítulo 1, y no justo antes del planteamiento, que es el capítulo 3; eso favorece la segunda lectura. El autor recuerda, además, que el profesor dijo dónde iría el marco teórico. Si fue «antes del planteamiento del problema», coincide con la pauta de la Escuela, que pone los antecedentes y el marco teórico antes de la fundamentación. El índice al final no depende de esa lectura, porque la línea anterior dice «al final».
+
+**«Comentario final».** La nota no dice a qué texto se refiere. La tarea 16 la une con la nota de Gallardo sobre la p. 54, «irá a los hallazgos», que trata de los mismos hallazgos.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Notas del miércoles 18
+
+- **Qué cambió:** se sumaron el texto literal de las notas que el autor tomó en la revisión del miércoles 18, dónde quedó cada una en la tarea 16 y tres puntos: «lugar oportuno», «antes del planteamiento del problema» y «comentario final».
+- **Cómo estaba antes:** la sección decía que el texto literal de esas notas no se había guardado.
+- **Por qué:** el autor volvió a pegar sus notas y preguntó si se tenían.
 
 ### 2026-11-21 — Creación
 

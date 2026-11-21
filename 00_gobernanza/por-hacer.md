@@ -899,7 +899,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 16. Revisión con los profesores después del Pase
 
-**Estado:** por hacer; la formulación espera la respuesta de los profesores. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
+**Estado:** por hacer; la formulación espera la respuesta de los profesores. **Anotada:** 19 de noviembre de 2026, a partir de las notas del autor, cuyo [texto literal](../08_memoria/comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18) se guardó el 21; los comentarios sobre el texto, el 21. **Origen:** revisión de la memoria y los anexos del Pase con los profesores guía, el miércoles 18 de noviembre, y los 17 comentarios que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF. El texto literal de cada uno, quién lo hizo y el mensaje con que el autor los entregó están en los [comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md). Las propuestas para cada comentario están en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md). **Riesgo:** medio: casi todo es de redacción y estructura, pero el punto B toca la formulación, que la comisión evalúa primero.
 
 ### A. Lo que valoraron
 
@@ -907,7 +907,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que antes se había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita en el PDF dice «recuerdo oportuno»; vale la versión escrita. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
 - [ ] **El indicador del objetivo 4.** Majluf, sobre «si el sistema funciona» (p. 31), sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar a Majluf qué quiso decir con «retomar» (respuesta, sección 5.3).
 - [ ] **Marco teórico antes del planteamiento.** Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16). Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
@@ -928,7 +928,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **Logo en la portada (Gallardo, p. 1):** marcó el rincón vacío arriba a la derecha y escribió «Logo diip». Preguntar a qué logo se refiere (respuesta, secciones 9 y 10).
 - [ ] **Índice de figuras al final.** El índice de tablas y figuras pasa al final de la memoria, después de los anexos o junto a las referencias, y deja de estar antes del planteamiento del problema (D-180).
 - [ ] **Bocetos como fondo o textura** en la memoria diseñada.
-- [ ] **Explorar el color de Relevo** en la memoria diseñada.
+- [ ] **Explorar el color de Relevo** en la memoria diseñada. La nota dice solo «Relevo, explorar el color»: puede referirse también a la paleta de la marca.
 
 ### D. Anexos
 
@@ -965,6 +965,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Notas literales del miércoles 18
+
+- **Qué cambió:** la tarea 16 enlaza el texto literal de las notas del miércoles 18. La pregunta cita la nota tal como está, «sobre el lugar oportuno de su actividad», y el color de Relevo aclara que la nota no dice si es el de la memoria o el de la marca.
+- **Cómo estaba antes:** la pregunta citaba la nota como «sobre el [recuerdo] oportuno», sin decir que decía «lugar», y el color se daba por el de la memoria diseñada.
+- **Por qué:** el autor volvió a pegar sus notas del miércoles y preguntó si se tenían; al compararlas, todas estaban en la tarea 16, con esas dos diferencias.
 
 ### 2026-11-21 — Tareas ordenadas y notas del PDF del Pase
 
