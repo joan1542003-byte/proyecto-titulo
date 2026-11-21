@@ -3,7 +3,7 @@
 **Fecha:** 19 de noviembre de 2026
 **Base:** capítulo 10 del [borrador v7](borrador-memoria-v7-2026-11-11.md) y las observaciones de los profesores después del Pase ([tarea 16 de Por hacer](../00_gobernanza/por-hacer.md)).
 **Estado:** propuesta para que el autor la revise. La memoria no se modificó.
-**Actualización (21 de noviembre):** la [respuesta a los profesores](respuesta-a-los-profesores-2026-11-21.md) reemplaza la sección 2. Allí solo cambia el objetivo 4, que conserva sus dos primeras partes y suma el indicador que pidieron los profesores; los otros tres objetivos y la hipótesis se mantienen. La respuesta propone, además, la pregunta del profesor. Las secciones 1, 3, 4 y 5 siguen vigentes como propuesta.
+**Actualización (21 de noviembre):** la [respuesta a los profesores](respuesta-a-los-profesores-2026-11-21.md) reemplaza la sección 2. Allí solo cambia el objetivo 4, que conserva sus dos primeras partes y suma el indicador que pidieron los profesores; los otros tres objetivos y la hipótesis se mantienen. La respuesta propone, además, la pregunta del profesor. Las secciones 1, 3, 4 y 5 siguen vigentes como propuesta; la 1 y la 3 se ajustaron después de leer la memoria entera.
 
 Los profesores pidieron tres cosas que se resuelven juntas: que los objetivos salgan de la hipótesis y el proyecto de los objetivos; que la memoria se pueda leer al revés sin que se corte la cadena, y que el objetivo específico 4 diga con qué señales concretas se sabe que el sistema funciona. Esta propuesta cambia poco texto: ordena lo que la memoria ya tiene.
 
@@ -14,7 +14,7 @@ Leída desde el final, cada pieza debería responder a la anterior. Hoy la caden
 | Pieza | Qué dice hoy | Dónde se corta |
 | --- | --- | --- |
 | Conclusiones | El ciclo funciona y deja la decisión abierta; recordar no basta para empezar. | — |
-| Prueba (cap. 13) | Cuatro condiciones para dar el ciclo por logrado. | Esas condiciones no aparecen en los objetivos: el objetivo 4 dice solo «si el sistema funciona». |
+| Prueba (cap. 13) | Tres condiciones para dar el ciclo por logrado: que el Tag suene, que la persona sepa qué quería hacer sin leer la pantalla y que siga usando Relevo. | Esas condiciones no aparecen en los objetivos: el objetivo 4 dice solo «si el sistema funciona». |
 | Objetivos (cap. 10) | Cuatro objetivos específicos. | No se dice de qué supuesto sale cada uno. El 3 compara soportes y el 4 mezcla comprensión, comodidad y funcionamiento. |
 | Hipótesis | Tres supuestos: asociación, decisión y soporte. | — |
 | Pregunta | ¿Bajo qué condiciones vuelve a tiempo la intención, con la decisión en manos de la persona? | — |
@@ -49,7 +49,7 @@ Las cifras son las de la memoria v7; antes de usarlas en el capítulo 10 se revi
 
 Al cerrar el capítulo 10, un párrafo puede decir qué parte del proyecto responde a cada objetivo. Propuesta:
 
-> Cada parte de Relevo responde a un objetivo. La investigación de los capítulos 3 a 8 cumple el primero y deja los criterios del capítulo 9. La aplicación y el objeto, del capítulo 11, cumplen el segundo: la aplicación guarda la intención y cuenta el tiempo; el objeto la trae de vuelta desde el lugar donde la actividad empieza. La prueba en los hogares, del capítulo 13, cumple el tercero y el cuarto: compara el objeto con una notificación y comprueba, con cuatro señales, que el ciclo funciona en el uso diario.
+> Cada parte de Relevo responde a un objetivo. La investigación de los capítulos 3 a 8 cumple el primero y deja los criterios del capítulo 9. La aplicación y el objeto, del capítulo 11, cumplen el segundo: la aplicación guarda la intención y cuenta el tiempo; el objeto la trae de vuelta desde el lugar donde la actividad empieza. La prueba en los hogares, del capítulo 13, cumple el tercero y el cuarto: compara el objeto con una notificación, mide el recuerdo oportuno y registra en cuántas respuestas las personas empezaron la actividad.
 
 ## 4. Nombrar el fenómeno
 
@@ -70,6 +70,12 @@ Los profesores pidieron explicar cómo funciona la tensión en la decisión. La 
 > Durante la sesión, dos cosas que la persona valora compiten: seguir en el teléfono y lo que quería hacer. La tensión no se resuelve porque una de las dos deja de estar presente: la sesión sigue sin que la persona vuelva a decidir. Relevo actúa en ese punto. No elige por ella ni corta la sesión: hace presente la otra opción, en el lugar donde empieza, para que la decisión vuelva a ser suya.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Ajustes tras leer la memoria entera
+
+- **Qué cambió:** la sección 1 dice que el capítulo 13 fija tres condiciones para dar el ciclo por logrado, y las nombra; el párrafo de la sección 3 sigue el objetivo 4 de la respuesta a los profesores: mide el recuerdo oportuno y registra cuántas veces empezaron la actividad.
+- **Cómo estaba antes:** la sección 1 hablaba de cuatro condiciones, y la sección 3, de «cuatro señales», las del objetivo 4 que la respuesta reemplazó.
+- **Por qué:** el autor pidió leer la memoria entera; esa lectura mostró que la memoria nombra tres condiciones (capítulo 13) y que la sección 3 seguía el objetivo anterior.
 
 ### 2026-11-21 — La sección 2 queda reemplazada
 

@@ -1,13 +1,13 @@
 # Respuesta a los comentarios de los profesores sobre la memoria del Pase
 
-**Fecha:** 21 de noviembre de 2026. Segunda versión, revisada el mismo día.
+**Fecha:** 21 de noviembre de 2026. Tercera versión, revisada el mismo día después de leer la memoria entera.
 **Base:** el [borrador v7](borrador-memoria-v7-2026-11-11.md), copia del PDF del Pase. Las páginas son las del PDF.
 **Comentarios:** los que los profesores guía dejaron sobre el PDF y que el autor entregó el 21 de noviembre. Completan las notas de la revisión del miércoles 18, que están en la [tarea 16 de Por hacer](../00_gobernanza/por-hacer.md).
 **Estado:** propuestas para que el autor decida. La memoria no se modificó.
 
 ## Cómo se revisó
 
-- **Se leyó el contexto completo.** Se releyeron enteros los capítulos 2 a 6, 10, 13 y 14, el Anexo I y las notas de la revisión del 28 de octubre (tarea 10 de Por hacer), para que cada cambio calce con lo que lo rodea.
+- **Se leyó la memoria entera.** De la portada al glosario, además del Anexo I y de las notas de la revisión del 28 de octubre (tarea 10 de Por hacer), para que cada cambio calce con lo que lo rodea y con lo que la memoria dice en otras partes.
 - **Se cambia lo mínimo.** Los profesores dijeron que la memoria es muy buena y agradable de leer, así que se conservan las frases del autor. Solo cambia lo que pide cada comentario y lo que deja de cuadrar por ese cambio.
 - **Todo está comprobado.** Cada frase citada como «antes» se buscó en el texto de la memoria y aparece una vez, tal como está. Cada cifra se recalculó desde la Tabla 3 de la memoria y la Tabla I6 del Anexo I.
 - **Recuentos, no porcentajes.** El 28 de octubre los profesores pidieron «sin porcentajes, mejor como números», porque son tres personas.
@@ -49,7 +49,7 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 
 **Lo que pidieron los profesores:**
 
-1. **Definir ocio digital.** Se suma una primera oración con la definición de la Introducción, abreviada y con sus cuatro propósitos: «El ocio digital es lo que una persona hace con sus dispositivos en su tiempo libre para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros». Por eso, la oración siguiente dice «una sesión» en vez de «una sesión de ocio digital».
+1. **Definir ocio digital.** Se suma una primera oración con la definición de la Introducción, abreviada y con sus mismas palabras clave, «tiempo disponible» y los cuatro propósitos: «El ocio digital es lo que una persona hace con sus dispositivos en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros». Por eso, la oración siguiente dice «una sesión» en vez de «una sesión de ocio digital».
 2. **Sacar el ejemplo:** se quita «—por ejemplo, junto a un libro, si quiere leer—».
 3. **Cambiar «al contar su último rato».** Las dos oraciones del método quedan en una:
 
@@ -67,7 +67,9 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 > La prueba validó el ciclo en el uso cotidiano; la notificación, en cambio, era más fácil de pasar por alto.
 
 **Después:**
-> El ciclo funcionó en el uso cotidiano, aunque con tres personas no puede afirmarse que el objeto supere a la notificación.
+> El sistema funcionó en el uso cotidiano, aunque con tres personas no puede afirmarse que el objeto supere a la notificación.
+
+Dice «el sistema» y no «el ciclo», porque el Resumen se lee solo y no explica qué es el ciclo; el capítulo 13 sí lo explica.
 
 **Para no pasar de 300 palabras.** Con la definición, el Resumen llegaba a 314. Se ganan las palabras sin tocar ningún contenido:
 
@@ -78,11 +80,11 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 
 **Resumen propuesto** (299 palabras; la pauta pide entre 200 y 300):
 
-> El ocio digital es lo que una persona hace con sus dispositivos en su tiempo libre para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. A veces una sesión se prolonga sin que la persona haya decidido seguir, y otra actividad que también quería hacer —leer, dibujar, salir a caminar— deja de estar presente cuando aún podía empezarla. Este proyecto diseñó y evaluó un sistema *phygital* (físico y digital) para recuperar esa intención a tiempo, sin bloquear el teléfono ni decidir por la persona.
+> El ocio digital es lo que una persona hace con sus dispositivos en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. A veces una sesión se prolonga sin que la persona haya decidido seguir, y otra actividad que también quería hacer —leer, dibujar, salir a caminar— deja de estar presente cuando aún podía empezarla. Este proyecto diseñó y evaluó un sistema *phygital* (físico y digital) para recuperar esa intención a tiempo, sin bloquear el teléfono ni decidir por la persona.
 >
 > Para entenderlo, se entrevistó a ocho personas sobre su última sesión de ocio digital, se encuestó a 53 sobre la última vez que siguieron en una aplicación más de lo que querían y se revisaron las herramientas existentes a la luz de estudios sobre memoria y atención. Así apareció que la duración no basta para valorar una sesión, que la mayoría de las herramientas actúan sobre el uso del teléfono y no sobre lo que se deja de hacer, y que no corresponde intervenir cuando el ocio digital tiene sentido para quien lo experimenta. De ahí salieron ocho criterios de diseño, de los cuales nace Relevo: una aplicación y un objeto que la persona deja donde empieza su actividad y que suena cuando se cumple el tiempo que ella fijó para ciertas aplicaciones.
 >
-> Tres personas usaron Relevo en sus hogares durante cinco semanas: primero con un localizador Bluetooth comercial como objeto y después con una notificación en el teléfono. Con el objeto, casi siempre supieron qué querían hacer antes de mirar la pantalla y siempre recordaron cómo empezar; con la notificación recordaron igual, pero a menudo la notaron tarde o no la notaron. El ciclo funcionó en el uso cotidiano, aunque con tres personas no puede afirmarse que el objeto supere a la notificación.
+> Tres personas usaron Relevo en sus hogares durante cinco semanas: primero con un localizador Bluetooth comercial como objeto y después con una notificación en el teléfono. Con el objeto, casi siempre supieron qué querían hacer antes de mirar la pantalla y siempre recordaron cómo empezar; con la notificación recordaron igual, pero a menudo la notaron tarde o no la notaron. El sistema funcionó en el uso cotidiano, aunque con tres personas no puede afirmarse que el objeto supere a la notificación.
 
 **Abstract propuesto**, con los mismos cambios (295 palabras):
 
@@ -90,7 +92,7 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 >
 > To understand this, the project interviewed eight people about their last digital leisure session, surveyed 53 people about the last time they stayed in an app longer than they wanted, and reviewed existing tools in light of studies on memory and attention. This showed that duration alone does not define how much a session matters, that most tools act on phone use rather than on what is left undone, and that no intervention is called for when digital leisure is meaningful to the person experiencing it. These findings led to eight design criteria, from which Relevo was born: an app and an object that the person places where the activity begins and that sounds once the time they set for certain apps has run out.
 >
-> Three people used Relevo at home for five weeks: first with a commercial Bluetooth tracker as the object, then with a phone notification. With the object, they almost always knew what they wanted to do before looking at the screen and always remembered how to start; with the notification, they remembered just as well, but often noticed it late or not at all. The cycle worked in everyday use, although with three people it cannot be claimed that the object outperforms the notification.
+> Three people used Relevo at home for five weeks: first with a commercial Bluetooth tracker as the object, then with a phone notification. With the object, they almost always knew what they wanted to do before looking at the screen and always remembered how to start; with the notification, they remembered just as well, but often noticed it late or not at all. The system worked in everyday use, although with three people it cannot be claimed that the object outperforms the notification.
 
 ## 3. El marco teórico antes del planteamiento (comentario 5)
 
@@ -110,14 +112,25 @@ Con D-180, esta página pasa al final de la memoria. Las tablas del texto tambi�
 
 Los antecedentes van antes del marco teórico, como en la pauta, porque el marco teórico empieza con «Los antecedentes dicen qué se ha intentado, pero no por qué una intención deja de orientar lo que se hace». Si el profesor quiso decir solo «el marco teórico antes de los antecedentes», habría que reescribir esa oración; conviene confirmarlo (sección 9).
 
-**Lo que no cambia.** Los capítulos movidos se leen bien en su nuevo lugar:
+**Lo que no cambia.** Con el orden nuevo, cambia el capítulo que va antes de tres de ellos: los antecedentes, el planteamiento y el capítulo 7. Los dos primeros se leen bien sin cambios:
 
 - los antecedentes empiezan con «Antes de proponer una respuesta, conviene saber qué se ha estudiado…», que sigue bien a la Introducción, porque esta termina presentando el desafío;
-- el capítulo 7 sigue a la Justificación, como ahora.
+- el planteamiento, que ahora sigue al marco teórico, empieza por el contexto en Chile y no remite al capítulo anterior.
+
+El marco teórico sigue a los antecedentes y la justificación sigue al planteamiento, como ahora.
 
 **Lo que sí hay que cambiar:**
 
-1. **Una remisión del marco teórico.** El capítulo 3 queda después, pero la Introducción ya describe esos patrones, con la misma cita (Montag et al., 2019):
+1. **La primera oración del capítulo 7.** Hoy el capítulo 7 sigue al marco teórico y empieza remitiéndose a él; con el orden nuevo, lo sigue la justificación:
+
+   **Antes:**
+   > La teoría explica el fenómeno en general; faltaba saber cómo lo viven las personas.
+
+   **Después:**
+   > Los capítulos anteriores explican el fenómeno en general; faltaba saber cómo lo viven las personas.
+
+   La oración nueva sirve con cualquier respuesta de los profesores sobre el lugar del marco teórico (sección 9).
+2. **Una remisión del marco teórico.** El capítulo 3 queda después, pero la Introducción ya describe esos patrones, con la misma cita (Montag et al., 2019):
 
    **Antes:**
    > Los patrones de interfaz descritos en el capítulo 3, como el desplazamiento infinito, orientan lo que se percibe y cómo avanza la interacción.
@@ -125,10 +138,10 @@ Los antecedentes van antes del marco teórico, como en la pauta, porque el marco
    **Después:**
    > Los patrones de interfaz descritos en la Introducción, como el desplazamiento infinito, orientan lo que se percibe y cómo avanza la interacción.
 
-2. **Las remisiones de otros capítulos:**
+3. **Las remisiones de otros capítulos:**
    - en el capítulo 8, «The Tangible Reminder y Wobble (capítulo 5)» y «medir el tiempo de uso (capítulo 5)» pasan a «(capítulo 3)»;
    - en el capítulo 12, «Actores del proyecto», «Denis Parra, respondió preguntas del proyecto (capítulo 3)» pasa a «(capítulo 5)».
-3. **El número de cinco figuras.** Las figuras se numeran en el orden en que aparecen, así que las tres del marco teórico pasan adelante:
+4. **El número de cinco figuras.** Las figuras se numeran en el orden en que se mencionan por primera vez, así que las tres del marco teórico pasan adelante:
 
    | Figura | Número actual | Número nuevo |
    | --- | --- | --- |
@@ -138,10 +151,10 @@ Los antecedentes van antes del marco teórico, como en la pauta, porque el marco
    | Ejemplo de una intención que vuelve tarde | 1 | 4 |
    | Causas de que una intención vuelva tarde | 2 | 5 |
 
-   Cambian sus rótulos y sus seis menciones en el texto: dos en el planteamiento y cuatro en el marco teórico. Desde la Figura 6 en adelante no cambia nada.
-4. **El índice, los encabezados de página y las tarjetas de capítulo.**
+   Cambian sus rótulos y sus seis menciones en el texto: dos en el planteamiento y cuatro en el marco teórico. Desde la Figura 6 en adelante el orden nuevo no cambia nada. Aparte, la v7 ya tiene un cruce: el capítulo 7 menciona la Figura 7 (p. 20) antes que la 6 (p. 21). Basta quitar «(Figura 7)» de la oración de la encuesta, porque la figura se vuelve a citar más adelante en el mismo capítulo (tarea 15, punto A).
+5. **El índice, los encabezados de página y las tarjetas de capítulo.**
 
-Los anexos no nombran los capítulos 3 a 6, así que no cambian.
+Los anexos solo nombran los capítulos 7 a 13, así que no cambian.
 
 ## 4. Página 19: «y no» (comentario 6)
 
@@ -172,6 +185,8 @@ La hipótesis ya dice lo mismo con otras palabras, así que **no hace falta camb
 
 La pregunta actual tiene dos partes: que la intención vuelva a tiempo y que la decisión siga siendo de la persona. La del profesor deja la segunda fuera. No se pierde, porque está en el objetivo general («la decisión en sus manos») y en el segundo supuesto. Si el autor quiere conservarla en la pregunta, se puede terminar así: «…durante el ocio digital, sin decidir por la persona?».
 
+**Una palabra para mirar: «pendiente».** La memoria cuida que la intención no se vuelva un deber: la voz de Relevo evita *meta*, *tarea* y *alarma* (capítulo 11), y la justificación dice que tener una intención no debería crear una deuda con el sistema. «Pendiente» puede leerse como algo que se debe, aunque la memoria la usa una vez en sentido neutro, en el capítulo 7 («lo que dejaron pendiente»). La pregunta del profesor puede quedar como está; si el autor prefiere el vocabulario de la hipótesis, puede decir «una actividad que la persona quiere hacer», sin cambiar el sentido.
+
 **Lo que cambia con la pregunta nueva:**
 
 1. **El párrafo que sigue a la pregunta** (capítulo 10). Se conservan dos de sus tres oraciones:
@@ -186,6 +201,9 @@ La pregunta actual tiene dos partes: que la intención vuelva a tiempo y que la 
 3. **El Anexo I, I.1**, que cita la pregunta textual: «La memoria pregunta: «¿Bajo qué condiciones…»».
 4. **La lámina 11 de la presentación**, que muestra la pregunta. Hay que cambiarla antes del examen.
 5. **La tarea 11 de Por hacer**, que dejaba la pregunta pidiendo condiciones (opción C), queda reemplazada.
+6. **El glosario**, que suma la expresión nueva, en orden alfabético entre «Racha» y «Relevo»: «**Recuerdo oportuno.** Recuerdo de una intención cuando todavía se puede actuar; es lo que estudia la memoria prospectiva. En esta memoria, que al sonar la señal la persona sepa qué quería hacer y cómo empezar antes de leerlo en la pantalla».
+
+La oración final de los antecedentes, «ninguna de estas muestra bajo qué condiciones…», no cambia: plantea el vacío que el proyecto responde con sus criterios, y la pregunta nueva se centra en uno de ellos, el lugar donde la actividad comienza (criterio 8).
 
 **Una advertencia sobre «efecto».** Preguntar por un efecto pide comparar: medir el recuerdo con el sistema y sin él, o con otra señal. Con tres personas, la prueba no estima ese efecto; muestra cómo funcionó el sistema y lo compara de forma descriptiva con una notificación. Las Conclusiones deben decirlo, y lo dicen en la propuesta de la sección 8. La pregunta del profesor sigue siendo la mejor, porque nombra las variables. Lo que hace falta es que la memoria no prometa más de lo que responde.
 
@@ -197,11 +215,25 @@ El comentario pide cambiar «si el sistema funciona» por un indicador explícit
 > 4. Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona.
 
 **Después:**
-> 4. Probar en hogares si las personas entienden la señal y si les resulta cómoda, y medir el recuerdo oportuno: en cuántas de las señales supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar, y en cuántas empezaron la actividad.
+> 4. Probar en hogares si las personas entienden la señal y si les resulta cómoda, medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad.
 
-«En cuántas de las señales» expresa una proporción como recuento, como pidieron el 28 de octubre. El indicador ya está definido en la memoria: es el que usa el párrafo que sigue a la pregunta y el que la aplicación preguntó tras cada señal.
+Tres precisiones:
+
+- **«En cuántas respuestas a la señal»** expresa una proporción como recuento, como pidieron el 28 de octubre, y usa la base de la Tabla 3: las respuestas, no las señales, porque no todas las señales tuvieron respuesta. Con el Tag sonaron 23 y hubo 21 respuestas; con el teléfono, 24 y 21.
+- **El recuerdo y el comienzo van separados.** El recuerdo oportuno es la variable de la hipótesis; empezar es una de las tres respuestas, que valen lo mismo (criterio 4). Por eso el objetivo los nombra con verbos distintos: el primero se mide y el segundo se registra.
+- **El indicador ya está en la memoria:** es el que define el párrafo que sigue a la pregunta y el que la aplicación preguntó tras cada señal.
 
 Los otros tres objetivos no cambian. Al cambiar el cuarto, hay que ajustar una frase de las Conclusiones, «el cuarto, probarlo en hogares», en la sección 8. En el Anexo I, la Tabla I5 puede sumar «y objetivo 4» a la fila del recuerdo.
+
+Para que la cadena calce también al leerla al revés, la oración del capítulo 13 que dice cuándo se da el ciclo por logrado puede sumar el recuerdo de cómo empezar, que hoy no nombra:
+
+**Antes:**
+> Para dar el ciclo por logrado, el Tag debía sonar cuando correspondía, la persona debía saber qué quería hacer al oír la señal, sin leer la pantalla, y debía seguir usando Relevo durante las dos semanas.
+
+**Después:**
+> Para dar el ciclo por logrado, el Tag debía sonar cuando correspondía; al oír la señal, la persona debía saber qué quería hacer sin leer la pantalla y recordar cómo empezar, y debía seguir usando Relevo durante las dos semanas.
+
+No es un criterio nuevo puesto después de ver los datos: el primer supuesto ya dice «recuerda su actividad y cómo empezar», y la aplicación lo preguntó desde el comienzo de la prueba. Siguen siendo tres condiciones, y el resultado no cambia: recordaron cómo empezar en 21 de 21 respuestas.
 
 ### 5.3 Sobre «retomar la actividad»
 
@@ -218,7 +250,7 @@ El profesor sugiere como indicador la «proporción de señales que llevan a ret
 - **Como prueba de la hipótesis, «empezar» le daría ventaja al teléfono** (13 frente a 10), y esa diferencia tampoco se puede atribuir al soporte, por los sesgos de la sección 8.
 - **Con el teléfono, «supo antes de mirar la pantalla» no se compara bien,** porque la notificación ya trae escrita la actividad.
 
-**Recomendación.** El objetivo 4 propuesto mide los dos: el recuerdo, como variable de la hipótesis, y el comienzo, como resultado de la decisión. Conviene preguntarle al profesor qué quiso decir con «retomar» (sección 9). Si se refería a volver a tener presente la actividad, coincide con el primer indicador.
+**Recomendación.** El objetivo 4 propuesto incluye los dos: mide el recuerdo, la variable de la hipótesis, y registra el comienzo, que es resultado de la decisión. Conviene preguntarle al profesor qué quiso decir con «retomar» (sección 9). Si se refería a volver a tener presente la actividad, coincide con el primer indicador.
 
 ## 6. Hallazgos (comentario 10)
 
@@ -311,7 +343,7 @@ Las cifras salen de la Tabla 3, del Anexo I y del Anexo G, y los casos de una pe
 
 **Cuarto párrafo.** Se reemplaza por dos. El primero separa lo que se puede afirmar de lo que no. El segundo conserva las frases del autor sobre las condiciones y el aporte.
 
-> La pregunta de investigación indagaba el efecto de vincular una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno. La prueba permite afirmar que, con el objeto en ese lugar, el ciclo funciona en el uso cotidiano de tres hogares: al oír la señal, la persona casi siempre supo qué quería hacer antes de leerlo, siempre recordó cómo empezar y decidió con libertad. Esos resultados son compatibles con la hipótesis, aunque no bastan para probarla. No permiten afirmar que el objeto supere a la notificación. Con el teléfono recordaron igual, y aunque notaron el aviso tarde o no lo notaron cerca de la mitad de las veces, esa pregunta se hizo solo con el teléfono. Además, esa etapa vino siempre después de las semanas con el Tag, y en las dos las personas habían preparado el relevo poco antes de que sonara. El sonido del Tag, además, molestó más a quienes estaban cerca. Tampoco permiten afirmar que el lugar sea lo que ayuda, porque ninguna etapa dejó el objeto lejos de la actividad.
+> La pregunta de investigación indagaba el efecto de vincular una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno. La prueba permite afirmar que, con el objeto en ese lugar, el ciclo funciona en el uso cotidiano de tres hogares: al oír la señal, la persona casi siempre supo qué quería hacer antes de leerlo, siempre recordó cómo empezar y decidió con libertad. Esos resultados son compatibles con la hipótesis, aunque no bastan para probarla. No permiten afirmar que el objeto supere a la notificación. Con el teléfono recordaron igual, y aunque notaron el aviso tarde o no lo notaron cerca de la mitad de las veces, esa pregunta se hizo solo con el teléfono. Además, esa etapa vino siempre después de las semanas con el Tag, y en las dos las personas habían preparado el relevo poco antes de que sonara. El sonido del Tag, por su parte, molestó más a quienes estaban cerca. Tampoco permiten afirmar que el lugar sea lo que ayuda, porque ninguna etapa dejó el objeto lejos de la actividad.
 >
 > La investigación sí precisó las condiciones que debe cumplir una ayuda así: partir de una actividad que la persona elige, unirla a un primer paso concreto, sonar cuando ella lo decidió y dejar abierta la decisión. Construido así, Relevo devolvió la intención sin decidir por nadie (Figura 27). El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones, sin reducirla a una cuestión de disciplina.
 
@@ -349,7 +381,7 @@ Las preguntas tras cada señal deben ser las mismas en las tres condiciones, inc
 **Después:**
 > El trabajo puede seguir en cuatro pasos: seguir aplicando lo que mostró la prueba, sumando opciones de control a medida que la persona gana experiencia, como sugirió D. Parra (comunicación personal, 4 de noviembre de 2026); imprimir y probar Relevo; repetir la prueba con más personas y una comparación sin los sesgos de esta, con un fondo concursable, y explorar Relevo Home y Relevo Go con localizadores de otras marcas.
 >
-> Esa comparación debe evitar dos sesgos de esta prueba: que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal, y que pudieran recordar por haber preparado el relevo poco antes, y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero: seis personas pasan por tres semanas —el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono—, cada una en un orden distinto. Para el segundo, se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse a la señal y al lugar.
+> Esa comparación debe evitar dos sesgos de esta prueba: que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal, y que pudieran recordar por haber preparado el relevo poco antes, y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero: seis personas pasan por tres semanas —el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono—, cada una en un orden distinto. Para el segundo, se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar.
 
 La oración «Más adelante, un hardware propio permitiría diseñar también el sonido y el control» queda al final, como ahora.
 
@@ -373,11 +405,23 @@ Ese párrafo ya reconoce el sesgo de la preparación. Solo hay que alinear su pr
 
 1. **Lo que no depende de nadie:** el índice de la p. 6, la p. 19, «preciso», el Resumen y el Abstract, la sección «Hallazgos», la escala de la Tabla 4 y «Alcance de esta etapa».
 2. **Después de confirmar con los profesores:** la pregunta, el objetivo 4 y las Conclusiones, que dependen de la pregunta.
-3. **Al final, el orden de los capítulos:** cambia números de capítulos y de figuras en toda la memoria, así que conviene hacerlo cuando el resto esté listo.
+3. **Al final, el orden de los capítulos:** cambia números de capítulos y de figuras en toda la memoria, y la primera oración del capítulo 7, así que conviene hacerlo cuando el resto esté listo.
 
 Cada cambio se hace en Affinity y en el Markdown a la vez, y al terminar se revisa que el Resumen y el Abstract sigan diciendo lo mismo que las Conclusiones.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Tercera versión, tras leer la memoria entera
+
+- **Qué cambió:** con la memoria leída de la portada al glosario, se corrigieron cinco puntos y se sumaron tres:
+  - el orden de los capítulos: el capítulo 7 sigue hoy al marco teórico, no a la justificación, así que con el orden nuevo cambia su primera oración;
+  - el objetivo 4 separa el recuerdo, que se mide, del comienzo, que se registra, y cuenta sobre las respuestas, no sobre las señales;
+  - el Resumen y el Abstract dicen «el sistema» en vez de «el ciclo», que el Resumen no explica, y la definición conserva «tiempo disponible»;
+  - en las Conclusiones sale un «además» repetido, y la comparación futura ya no promete atribuir las diferencias a la señal y al lugar, sino atribuirlas «con más confianza»;
+  - las figuras se numeran por su primera mención, y se avisa que la v7 ya cita la Figura 7 antes que la 6;
+  - se suman la entrada «Recuerdo oportuno» del glosario, una nota sobre la palabra «pendiente» y una alineación opcional de las condiciones del capítulo 13 con el objetivo 4.
+- **Cómo estaba antes:** la segunda versión se basaba en los capítulos 2 a 6, 10, 13 y 14; decía que el capítulo 7 «sigue a la Justificación, como ahora», ponía el comienzo de la actividad dentro de la medida del recuerdo y contaba sobre «las señales».
+- **Por qué:** el autor pidió leer la memoria entera para tener todo el contexto.
 
 ### 2026-11-21 — Segunda versión, revisada con cuidado
 

@@ -342,6 +342,7 @@
 | 19 nov. | Decisión y encargo | Precisó que el índice de figuras va al final; pidió subir el nombre del especialista externo, porque el repositorio público es parte del proceso y puede tener nombres de profesionales, y aceptó que se redacte una propuesta para el objetivo 4 y la cadena hipótesis, objetivos y proyecto. Anunció comentarios específicos sobre la memoria. | [Propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md), tarea 16 actualizada y excepción en `CLAUDE.md`. | D-179, D-180 |
 | 21 nov. | Encargo | Entregó los comentarios que sus profesores dejaron sobre la memoria del Pase, cada uno con su texto: el índice de tablas y figuras, el Resumen, el marco teórico antes, la repetición de la p. 19, la pregunta, el indicador de la hipótesis, el objetivo 4, los hallazgos, la escala de la Tabla 4 y las Conclusiones. | [Respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md), con un texto propuesto para cada comentario, y la [tarea 16](por-hacer.md#16-revisión-con-los-profesores-después-del-pase) actualizada. La memoria no se modificó. | — |
 | 21 nov. | Corrección | Pidió tomarse el tiempo y ser cuidadoso con todo antes de recomendar textos: a los profesores les gustó mucho la memoria, y los cambios son menores pero muy importantes. | [Respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) en su segunda versión. Se releyeron enteros los capítulos afectados y se verificaron las frases citadas y las cifras. Las propuestas cambian lo mínimo: la hipótesis no cambia y del objetivo 4 cambia solo una parte. Se suman las consecuencias que faltaban y tres preguntas para los profesores. | — |
+| 21 nov. | Encargo | Pidió leer la memoria entera para tener todo el contexto. | Se leyó la memoria v7 de la portada al glosario y se contrastó con la respuesta a los profesores, la propuesta de formulación y la tarea 15. La [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) pasa a su tercera versión: advierte que, con el orden nuevo, el capítulo 7 ya no seguiría al marco teórico y cambia su primera oración, separa en el objetivo 4 el recuerdo del comienzo y cuenta sobre las respuestas, y dice «el sistema» en el Resumen. La [tarea 15](por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase) suma 25 erratas, el orden de las Figuras 6 y 7, el «único referente» del capítulo 8 y los términos y signos. La memoria no se modificó. | — |
 
 ## Lo que muestra el registro
 
@@ -352,6 +353,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Lectura completa de la memoria
+
+- **Qué cambió:** se registró el pedido de leer la memoria entera y lo que esa lectura corrigió.
+- **Cómo estaba antes:** el último pedido era la revisión cuidadosa de las propuestas.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-21 — Respuesta revisada con cuidado
 

@@ -7,8 +7,8 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos activos
 
 - [Borrador v7 de la memoria: el PDF del Pase (11 de noviembre de 2026)](borrador-memoria-v7-2026-11-11.md): el texto de la memoria en PDF que el autor entregó para el Pase («RELEVO PASE», 67 páginas), copiado tal cual, con sus erratas, sus 27 figuras y 4 tablas y su índice con las páginas del PDF. Los esquemas van en marcadores con su texto exacto; las capturas, los bocetos y los modelos 3D se extrajeron del PDF a [figuras](figuras/). Los capítulos suman unas 13 900 palabras de prosa. Sus errores y lo que conviene mejorar están en la [tarea 15 de Por hacer](../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
-- [Respuesta a los profesores (21 de noviembre de 2026)](respuesta-a-los-profesores-2026-11-21.md): una propuesta para cada uno de los trece comentarios que los profesores dejaron sobre el PDF del Pase, en su segunda versión, revisada con calma. Cambia lo mínimo y muestra cada cambio con su texto exacto, antes y después. Indica también qué más arrastra cada cambio: figuras, remisiones, Anexo I y presentación. Cierra con tres preguntas para los profesores. No modifica la memoria.
-- [Propuesta de formulación (19 de noviembre de 2026)](propuesta-formulacion-2026-11-19.md): responde a los profesores después del Pase. Ata cada objetivo a la hipótesis, reescribe el objetivo 4 con cuatro señales observables, propone el párrafo que presenta el proyecto como consecuencia de los objetivos y compara *agencia*, *autonomía* e *intención desplazada* para nombrar el fenómeno. No modifica la memoria.
+- [Respuesta a los profesores (21 de noviembre de 2026)](respuesta-a-los-profesores-2026-11-21.md): una propuesta para cada uno de los trece comentarios que los profesores dejaron sobre el PDF del Pase, en su tercera versión, revisada después de leer la memoria entera. Cambia lo mínimo y muestra cada cambio con su texto exacto, antes y después. Indica también qué más arrastra cada cambio: figuras, remisiones, Anexo I y presentación. Cierra con tres preguntas para los profesores. No modifica la memoria.
+- [Propuesta de formulación (19 de noviembre de 2026)](propuesta-formulacion-2026-11-19.md): responde a los profesores después del Pase. Ata cada objetivo a la hipótesis, propone un objetivo 4 que la respuesta a los profesores reemplazó, propone el párrafo que presenta el proyecto como consecuencia de los objetivos y compara *agencia*, *autonomía* e *intención desplazada* para nombrar el fenómeno. No modifica la memoria.
 - [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md), base del v7: reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-154). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 478 palabras.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 62 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152). Texto de 23 pt, unas 8 palabras por línea, tablas en fichas blancas, ninguna figura que corte la lectura y ninguna columna de texto sola. Reemplaza a la versión A3.
 - [Verificación de citas y referencias (9 de noviembre de 2026)](verificacion-de-referencias-2026-11-09.md): las 107 obras de la memoria v6 y los anexos, con su registro, su acceso y las correcciones en APA 7 (D-173).
@@ -97,6 +97,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-21 — Lectura completa de la memoria
+
+- **Cambio:** la respuesta a los profesores se describe en su tercera versión, y la propuesta de formulación aclara que su objetivo 4 quedó reemplazado.
+- **Versión anterior:** describía la segunda versión de la respuesta, y la propuesta parecía conservar su objetivo 4 «con cuatro señales».
+- **Motivo:** el autor pidió leer la memoria entera; esa lectura corrigió ambos documentos.
 
 ### 2026-11-21 — Respuesta revisada
 

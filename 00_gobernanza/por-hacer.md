@@ -735,36 +735,62 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ## 15. Errores y mejoras de la memoria y los anexos del Pase
 
-**Estado:** por hacer. **Anotada:** 18 de noviembre de 2026. **Origen:** el autor entregó la memoria y los anexos en PDF del Pase y pidió copiarlos al repositorio tal cual, con sus errores, y anotar aquí los errores y lo que conviene mejorar. El texto copiado está en el [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md) y en los [anexos A a I](../08_memoria/anexos/README.md). Las páginas son las del PDF de la memoria. **Riesgo:** medio: las erratas se notan en la primera lectura, y algunas frases afirman más de lo que muestran tres casos. Todo se puede corregir antes de la entrega del 2 de diciembre.
+**Estado:** por hacer. **Anotada:** 18 de noviembre de 2026; ampliada el 21, después de leer la memoria entera. **Origen:** el autor entregó la memoria y los anexos en PDF del Pase y pidió copiarlos al repositorio tal cual, con sus errores, y anotar aquí los errores y lo que conviene mejorar. El texto copiado está en el [borrador v7 de la memoria](../08_memoria/borrador-memoria-v7-2026-11-11.md) y en los [anexos A a I](../08_memoria/anexos/README.md). Las páginas son las del PDF de la memoria. **Riesgo:** medio: las erratas se notan en la primera lectura, y algunas frases afirman más de lo que muestran tres casos. Todo se puede corregir antes de la entrega del 2 de diciembre.
 
 ### A. Índices
 
 - [ ] **Índice (p. 5):** desde el capítulo 12, cada número está corrido en uno. Factibilidad empieza en la 47 (dice 48); Plan de desarrollo, en la 51 (52); Conclusiones, en la 58 (59); Referencias, en la 60 (61); Glosario, en la 64 (65), y Anexos, en la 66 (67).
 - [ ] **Índice de tablas y figuras (p. 6):** pasa lo mismo con las cuatro tablas y con las Figuras 22 a 27. La Tabla 1 está en la 46 (dice 47); la 2, en la 48 (49); la 3, en la 55 (56); la 4, en la 57 (58); la Figura 22, en la 49 (50); la 23 y la 24, en la 52 (53); la 25, en la 53 (54); la 26, en la 56 (57), y la 27, en la 59 (60).
 - [ ] **Títulos que no coinciden (p. 6):** el índice dice «Discurso y conducta de las personas», y la Figura 6, «Lo que las personas cuentan y lo que hacen»; «Ocho criterios de diseño, en tres grupos», y la Figura 11 no lleva la coma; «Flujo de la aplicación, de preparar a decidir», y la Figura 14 dice solo «Flujo de la aplicación.»; «Recordar no basta para empezar», y la Figura 26 agrega «algo.». En APA 7, el título de una figura no termina en punto: quitarlo en la 14 y en la 26.
+- [ ] **Orden de las Figuras 6 y 7 (pp. 20 a 22):** el capítulo 7 cita la Figura 7 en la p. 20, antes que la 6, en la p. 21, y APA 7 numera las figuras en el orden en que se mencionan por primera vez. Basta quitar «(Figura 7)» de la oración de la encuesta («…y cómo la habría empezado (Figura 7), y pidió su opinión…»), porque la figura se vuelve a citar en la p. 22.
 
 ### B. Erratas
 
+- [ ] p. 7: «Lo que me inquieta, es la diferencia» → «Lo que me inquieta es la diferencia»: la coma separa el sujeto del verbo.
 - [ ] p. 11: «una muestra pequeña que nos da un indicio de que…» → «una muestra pequeña, pero un indicio de que…». Es la única primera persona plural fuera de la Motivación.
 - [ ] p. 14: «no es una solución valida para todos» → «válida».
-- [ ] p. 15: «(Sohn et al. (2005) llevaron esa idea…» → «Sohn et al. (2005) llevaron esa idea…».
+- [ ] p. 15: «…aunque hubiera pasado tiempo desde el encargo (Sohn et al. (2005) llevaron esa idea…» junta dos párrafos y deja un paréntesis abierto → «…aunque hubiera pasado tiempo desde el encargo.» y, en un párrafo aparte, «Sohn et al. (2005) llevaron esa idea…».
+- [ ] p. 16: «(Lukoff et al., 2018), por eso conviene mirar…» → «(Lukoff et al., 2018); por eso conviene mirar…».
+- [ ] p. 17: «como abrirla rápido para una tarea breve, como puede ser tomar una nota o responder un mensaje» repite «como» → «como abrirla rápido para tomar una nota o responder un mensaje».
+- [ ] p. 20: «salieron dos tipos ideales en base a situaciones típicas que reúnen casos parecidos» → «salieron dos tipos ideales: situaciones típicas que reúnen casos parecidos». La RAE desaconseja «en base a», que también está en la Figura 12 (p. 32): «Cambios y mejoras en base a las sugerencias de los usuarios» → «Cambios y mejoras a partir de las sugerencias de los usuarios».
 - [ ] p. 21, Figura 6: «Qupe deciden después» → «Qué deciden después».
+- [ ] p. 24, Figura 9: «Por ejemplo, la videollamada o pódcast al comer.» es la única línea de las tarjetas con punto final → «Por ejemplo, la videollamada o el pódcast al comer».
+- [ ] p. 26: «La evidencia es desigual, los estudios sobre herramientas digitales suelen ser breves…» → «La evidencia es desigual: los estudios…».
 - [ ] p. 28, Figura 11: el tercer grupo se llama «Esfuerzo»; en el capítulo, «Justificar el esfuerzo».
 - [ ] p. 29: «El fundamento parte de decidir de antemano cuándo, dónde y cómo actuar ayuda a pasar de la intención a la acción» no se entiende → «Su fundamento: decidir de antemano cuándo, dónde y cómo actuar ayuda a pasar de la intención a la acción».
+- [ ] p. 30: «significa que al sonar la señal, la persona recuerda» → «significa que, al sonar la señal, la persona recuerda». La respuesta a los profesores lo corrige si cambia la pregunta (sección 5.1).
+- [ ] p. 31: «es en sí mismo, una forma de investigar» → «es, en sí mismo, una forma de investigar».
 - [ ] p. 32: «se usa como opinión experta que aporta un valor importante al proyecto» → «se usa como opinión experta».
+- [ ] p. 32: «Cursor, de Anysphere y Codex, de OpenAI, ayudaron» → «Cursor, de Anysphere, y Codex, de OpenAI, ayudaron».
 - [ ] p. 34: «cada uno se diseñó para pedir lo mínimo (Figura 14)»: el recorrido es la Figura 13.
+- [ ] p. 34: «Cada dato de un Relevo activo» → «Cada dato de un relevo activo»: con minúscula es cada actividad preparada; con mayúscula, el sistema o el objeto (glosario).
+- [ ] p. 36: «y las acciones con verbos “Preparar un relevo”, “Activar el relevo”, para que…» → «y las acciones con verbos —«Preparar un relevo», «Activar el relevo»—, para que…».
+- [ ] p. 36: «…tarjetas, botones y ventanas, todo se siente parte de una misma forma» → «…tarjetas, botones y ventanas: todo se siente parte de una misma forma».
 - [ ] p. 38: «Lo que pertenece al sistema; los permisos, las notificaciones y el gesto para volver atrás, se ve como…» → «Lo que pertenece al sistema —los permisos, las notificaciones y el gesto para volver atrás— se ve como…».
 - [ ] p. 39: «De ese estudio salió una tono de voz/comunicacional con cuatro rasgos» → «De ese estudio salió un tono de voz con cuatro rasgos».
 - [ ] p. 39: «Tambien pregunta en vez de rotular “¿Cómo empiezas?” sus botones empiezan con un verbo…» → «También pregunta en vez de rotular («¿Cómo empiezas?»), y sus botones empiezan con un verbo…».
-- [ ] p. 40, Figura 17: «“Anotado, Gracias por tu sugerencia.”» → «“Anotado. Gracias por tu sugerencia.”». El cuarto ejemplo, «Como los datos que recopila la app.», no es un texto de la aplicación, aunque la nota dice que todos lo son: reemplazarlo por uno real de la pantalla «Qué no vemos».
+- [ ] p. 39: «con palabras cotidianas “querer” antes que “desear”, “usar” antes que “utilizar”, como recomienda…» → «con palabras cotidianas —«querer» antes que «desear», «usar» antes que «utilizar»—, como recomienda…».
+- [ ] p. 39: «…sumar una señal visual y una vibración, una etapa futura podría probarlo con personas con baja audición» → «…sumar una señal visual y una vibración; una etapa futura podría probarlo con personas con baja audición».
+- [ ] p. 40, Figura 17: «“Anotado, Gracias por tu sugerencia.”» → «“Anotado. Gracias por tu sugerencia.”». El cuarto ejemplo, «Como los datos que recopila la app.», no es un texto de la aplicación, aunque la nota dice que todos lo son: reemplazarlo por uno real de la sección «Qué no se ve» del consentimiento, como «Relevo no lee mensajes, fotos, búsquedas ni lo que hay en la pantalla.».
+- [ ] p. 40: «permite calcular como lo percibe el ojo y no como la guarda la pantalla» → «permite calcular cómo lo percibe el ojo y no cómo lo guarda la pantalla».
 - [ ] p. 42: «un llavero antipérdida Bluetooth: que resultó ser barato» → «un llavero antipérdida Bluetooth, que resultó barato».
+- [ ] p. 42: «la jerarquía sigue la de iOS; título grande, título, encabezado, texto y nota» → «la jerarquía sigue la de iOS: título grande, título, encabezado, texto y nota».
 - [ ] p. 43: «sobre el logo,El sonido sale» → «sobre el logo. El sonido sale».
+- [ ] p. 43: «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, permitiendo una mayor portabilidad, para quienes cambian de lugar sus actividades constantemente» no tiene verbo → «Relevo Go, de 44 × 54,5 mm y 11,4 mm de alto, es más fácil de llevar, para quienes cambian a menudo de lugar sus actividades».
+- [ ] p. 43: en «por tres razones: para encontrarlo…; para controlarlo…», la tercera queda pegada a la segunda («…se ve y se siente y porque sus detalles necesitan espacio para imprimirse») → «…se ve y se siente, y para imprimir sus detalles, que necesitan espacio».
+- [ ] p. 44: «una luz o una imagen piden mirar, y la persona está mirando otra cosa» y, en la oración siguiente, «una señal visual no alcanza a quien mira otra cosa» dicen lo mismo. La segunda puede quedar así: «En las entrevistas, las personas imaginaban señales calmadas o visuales; por eso el sonido se diseñó breve y amable».
+- [ ] p. 45: «la sección “Qué no se ve”, explica lo que la aplicación no registra» → «la sección «Qué no se ve» explica lo que la aplicación no registra».
 - [ ] p. 47: «Relevo Go, para quienes son más “desordenados”»: coloquial → «Relevo Go, para quienes prefieren llevarlo consigo».
 - [ ] p. 48: «unos 111 000 pesos, entre el Tag. las herramientas de inteligencia artificial para el desarrollo de la app, y el trabajo del autor». Sobra el punto, y los 111 000 pesos son el Tag y las herramientas: el trabajo del autor se valora aparte, en la nota de la Tabla 2 (entre 1 070 000 y 1 577 000 pesos) → «unos 111 000 pesos, entre el Tag y las herramientas de inteligencia artificial, además del trabajo del autor».
+- [ ] p. 48: «El piloto es la cifra que decide el paso siguiente» → «El costo del piloto es la cifra que decide el paso siguiente».
+- [ ] p. 48: «entre 10.100 y 12.150 pesos» y «entre 60.500 y 72.900» usan punto, y la Tabla 2 y la Figura 22, espacio («10 990», «10 100») → espacio en todas, como recomienda la RAE para las cifras de cinco dígitos o más.
 - [ ] p. 52, Figura 23: «Tag sobre un mueble junto mangas.» → «Tag sobre un mueble, junto a unos mangas».
 - [ ] p. 54: «la solución es que una señal más breve bastaría» → «una señal más breve podría bastar; queda por probar».
 - [ ] p. 55: «El cierre confirmó esa teoría» → «Lo que contaron al cerrar coincide con esa lectura».
 - [ ] p. 56: «que salieron de la prueba.(Anexos D y G).» → «que salieron de la prueba (Anexos D y G).».
+- [ ] p. 58: «tomó decisiones en todas las escalas; el sistema, el recorrido…» → «tomó decisiones en todas las escalas: el sistema, el recorrido…».
+- [ ] p. 58: «Así, los dos primeros objetivos: entender el problema y diseñar el sistema, se cumplieron» → «Así, los dos primeros objetivos —entender el problema y diseñar el sistema— se cumplieron». La respuesta a los profesores lo corrige junto con el resto de la oración (sección 8.2).
+- [ ] p. 59: a «ampliar la prueba a más personas, con un fondo concursable, explorar Relevo Home y Relevo Go…» le falta la «y» del último paso. La respuesta a los profesores lo corrige (sección 8.3).
 
 ### C. Extensión
 
@@ -773,11 +799,12 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### D. Frases que afirman más que los datos
 
-- [ ] **Resumen (p. 3) y capítulo 13 (p. 56):** «La prueba validó el ciclo» y «Esta etapa validó el uso real del ciclo». Con tres personas, la prueba muestra que el ciclo funcionó en tres hogares; «validó» promete más → «La prueba mostró que el ciclo funciona en el uso cotidiano».
+- [ ] **Resumen (p. 3) y capítulo 13 (p. 56):** «La prueba validó el ciclo» y «Esta etapa validó el uso real del ciclo». Con tres personas, la prueba muestra que el ciclo funcionó en tres hogares; «validó» promete más. En el Resumen, que no explica qué es el ciclo → «El sistema funcionó en el uso cotidiano…»; en el capítulo 13 → «Esta etapa probó el ciclo en uso real…» (respuesta a los profesores, secciones 2 y 8.4).
 - [ ] **Resumen y Abstract (pp. 3 y 4):** «la notificación, en cambio, era más fácil de pasar por alto». La pregunta sobre el aviso se hizo solo con el teléfono (nota de la Tabla 3), así que no hay un dato del Tag con que comparar → «con la notificación, a menudo la notaron tarde o no la notaron». La lámina 21 de la presentación ya se corrigió por lo mismo.
 - [ ] **p. 55:** «la señal pertenece al lugar de la actividad», apoyado en el único relevo que no sonó, fuera de casa. Lo que eso muestra es que la señal depende de estar cerca del objeto → «El primero es que la señal depende del objeto: el único relevo que no sonó ocurrió fuera de casa, lejos del Tag».
 - [ ] **pp. 47 y 59:** «mostraría si sonar desde el lugar de la actividad aporta en una escala mayor» y «si sonar desde el lugar mantiene su aporte» dan por probado un aporte del lugar que la prueba no aisló → «si sonar desde el lugar de la actividad aporta».
 - [ ] **p. 35:** «haciendo la experiencia más fluida y rápida»: no se midió. Decir el cambio (de once pantallas a tres) y, si se quiere valorar, con lo que dijeron las personas.
+- [ ] **p. 26:** «El opuesto […] está casi vacío, y su único referente, The Tangible Reminder, se pensó para citas y medicamentos, no para el ocio digital» deja fuera a Wobble, que el mismo capítulo y el capítulo 5 presentan como un recordatorio en el hogar, fuera de la pantalla; el Anexo C, C.2, los trata juntos → «…está casi vacío: sus dos referentes, The Tangible Reminder y Wobble, son prototipos de investigación, y ninguno se pensó para el ocio digital (Anexo C)». La Figura 10 tampoco ubica a Wobble: sumarlo al mapa o decirlo en la nota.
 
 ### E. Método y ética
 
@@ -795,9 +822,14 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **Word y PDF de los anexos:** los de la carpeta son del 9 y el 10 de noviembre y no coinciden con el PDF del Pase. Regenerarlos con `node construir-anexos.js` en el computador del autor, que tiene Chrome y Arial. Con los Markdown actuales, el texto sale igual al del PDF del Pase: se comprobó en la nube, con un 99,97 % de coincidencia, y solo cambian los encabezados de tabla que se repiten en los saltos de página.
 - [ ] **Lectura completa:** una revisión automática de palabras nuevas y de signos no encontró erratas en los anexos, pero no reemplaza leerlos.
 
+### G. Términos y signos
+
+- [ ] **«Ciclo».** El glosario lo define como el «periodo en que una intención y su condición de activación están vigentes», pero el Resumen y el capítulo 13 lo usan para el recorrido completo: «el ciclo completo funcionó», «para dar el ciclo por logrado». Ajustar la definición al uso: «Recorrido completo de un relevo: prepararlo, seguir en el teléfono mientras cuenta el tiempo, oír la señal y decidir. La interfaz llama «relevo» a cada uno».
+- [ ] **Comillas.** Los capítulos usan las latinas («…») 14 veces y las inglesas (“…”) 22 para lo mismo: textos de la aplicación, palabras y citas. Usar un solo tipo; la RAE recomienda las latinas, y las inglesas para las comillas dentro de otras.
+
 ### Orden sugerido
 
-1. **A y B** (una tarde): índices y erratas, en Affinity.
+1. **A, B y G** (una tarde): índices, erratas, términos y signos, en Affinity.
 2. **D** (una hora), y revisar que el Resumen y el Abstract digan lo mismo.
 3. **E** (medio día), con el autor: son decisiones sobre cómo contar la prueba.
 4. **C**, junto con las tareas 12 y 14.
@@ -819,15 +851,15 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11 y cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **Pregunta de investigación.** El profesor propone: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «actividad pendiente con su lugar de inicio sobre el [recuerdo] oportuno», que antes se había leído como una proyección. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
 - [ ] **El indicador de la hipótesis.** El profesor sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar al profesor qué quiso decir con «retomar» (respuesta, sección 5.3).
-- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
+- [ ] **Marco teórico antes del planteamiento.** Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
 - [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así.
 - [ ] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina.
 - [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
-- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: en cuántas de las señales supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar, y en cuántas empezaron la actividad (respuesta, sección 5.2). Los otros tres objetivos no cambian.
+- [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad. El recuerdo se mide y el comienzo se registra, porque las tres respuestas valen lo mismo (criterio 4); la base son las respuestas, como en la Tabla 3 (respuesta, sección 5.2). Los otros tres objetivos no cambian.
 - [ ] **Redacción.** Simplificar las frases complejas.
 - [ ] **Hallazgos.** Los párrafos de las pp. 53 a 55 pasan a una sección «Hallazgos», casi sin cambios y con una etiqueta corta cada uno. Los relatos de cada persona van al Anexo I, I.8, que antes debe sumar lo que hoy solo está en la memoria: las aplicaciones y los límites de cada persona y la sugerencia de la primera. La Figura 25 y la Tabla 3 mantienen en la memoria el detalle por persona, que los profesores pidieron el 28 de octubre (respuesta, sección 6).
 - [ ] **Conclusiones.** Separar lo que la prueba permite afirmar (el ciclo funciona en tres hogares) de lo que no (que el objeto supere a la notificación, y que el lugar sea lo que ayuda). Proponer una comparación sin los dos sesgos que la memoria ya nombra: que el teléfono viniera siempre después del Tag, y que recordaran por haber preparado el relevo poco antes. La base es el protocolo de 21 días del Anexo I, con seis personas en órdenes distintos, más algunos relevos sin señal (respuesta, sección 8).
@@ -854,7 +886,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md).
 
-- [ ] **Resumen y Abstract (pp. 3 y 4):** definir ocio digital con la definición de la Introducción, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «se entrevistó a ocho personas sobre su última sesión de ocio digital». También cambia la última oración, que no puede afirmar lo que la prueba no permite. Quedan en 299 y 295 palabras (sección 2).
+- [ ] **Resumen y Abstract (pp. 3 y 4):** definir ocio digital con la definición de la Introducción, quitar «—por ejemplo, junto a un libro, si quiere leer—» y cambiar «al contar su último rato» por «se entrevistó a ocho personas sobre su última sesión de ocio digital». También cambia la última oración, que no puede afirmar lo que la prueba no permite y dice «el sistema», porque el Resumen no explica qué es el ciclo. Quedan en 299 y 295 palabras (sección 2).
 - [ ] **p. 19:** quitar la repetición de «y no» (sección 4).
 - [ ] **Tabla 4 (p. 57):** sumar una columna «Frecuencia» —no ocurre, poco frecuente, frecuente, muy frecuente— con su base. Ocho filas se pueden completar ya, una de ellas en parte; dos vienen de la revisión del 28 de octubre y no llevan frecuencia, y una falta contarla en los registros de la prueba (sección 7).
 - [ ] **p. 58:** quitar «preciso» de «un problema de diseño preciso».
@@ -871,6 +903,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Lectura completa de la memoria
+
+- **Qué cambió:** la tarea 15 suma 25 erratas, en orden de página; corrige dos que estaban incompletas (el párrafo de Sohn et al., que además pide un punto y un párrafo aparte, y el nombre real de la sección «Qué no se ve», con un texto de la aplicación para la Figura 17); agrega el orden de las Figuras 6 y 7 (punto A), el «único referente» del capítulo 8 (punto D) y un punto G sobre «ciclo» y las comillas. La tarea 16 sigue la tercera versión de la respuesta: el objetivo 4 separa el recuerdo del comienzo, el orden nuevo cambia la primera oración del capítulo 7 y la pregunta nueva suma «Recuerdo oportuno» al glosario.
+- **Cómo estaba antes:** la tarea 15 salía de una revisión automática y de la lectura de los capítulos afectados; la tarea 16 seguía la segunda versión de la respuesta.
+- **Por qué:** el autor pidió leer la memoria entera para tener todo el contexto.
 
 ### 2026-11-21 — Tarea 16 según la respuesta revisada
 
