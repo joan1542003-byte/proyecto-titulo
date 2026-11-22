@@ -309,7 +309,7 @@ Después de leer la propuesta de diseño, casi todas las personas explicaron bie
 
 *Opiniones sobre la propuesta*
 
-[FIGURA POR INSERTAR: gráfico de barras: Ubicación preferida del parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
+[FIGURA POR INSERTAR: (doble) gráfico de barras: Ubicación preferida del parlante | Junto a la actividad: 36, En un lugar general de la casa: 7, No lo usaría o no sabe dónde: 10; Duración preferida del sonido | 1 a 5 segundos: 16, 6 a 15 segundos: 25, 16 a 30 segundos: 3, Que no sonara: 7, No sabe: 2; Probabilidad de probarlo, de 1 a 5 | 5: 3, 4: 20, 3: 18, 2: 8, 1: 3, No sabe: 1]
 
 *Nota.* Elaboración propia a partir de la encuesta en línea del proyecto (53 respuestas). Número de personas por respuesta.
 
@@ -375,7 +375,7 @@ El mapa de la Figura 11 resume lo revisado: casi todas las herramientas limitan 
 
 *Función y lugar de cada herramienta y de Relevo*
 
-[FIGURA POR INSERTAR: mapa de posicionamiento: Limita el uso del teléfono | Recuerda lo que la persona quería hacer | En la pantalla | Fuera de la pantalla; Screen Time y Bienestar | 1.2 | 1.5; one sec y Pause Point | 2.2 | 3.1; MindPhone | 5.6 | 2.3; Place-Its | 7.7 | 3.5; Brick y Unpluq | 1.3 | 7.4; kSafe y dejar el teléfono lejos | 1.7 | 8.8; Focusaur | 4.6 | 6.4; The Tangible Reminder | 7.7 | 7.6; Relevo | 9.2 | 9.1]
+[FIGURA POR INSERTAR: (doble) mapa de posicionamiento: Limita el uso del teléfono | Recuerda lo que la persona quería hacer | En la pantalla | Fuera de la pantalla; Screen Time y Bienestar | 1.2 | 1.5; one sec y Pause Point | 2.2 | 3.1; MindPhone | 5.6 | 2.3; Place-Its | 7.7 | 3.5; Brick y Unpluq | 1.3 | 7.4; kSafe y dejar el teléfono lejos | 1.7 | 8.8; Focusaur | 4.6 | 6.4; The Tangible Reminder | 7.7 | 7.6; Relevo | 9.2 | 9.1]
 
 *Nota.* Elaboración propia. Ubicación aproximada, según la documentación de cada producto y los estudios citados; no busca medir la eficacia. Relevo se ubica por lo que propone, no por resultados. Las fichas de cada referente están en el Anexo C.
 
@@ -478,7 +478,7 @@ El proyecto sigue un enfoque de investigación a través del diseño: diseñar e
 
 *Proceso del proyecto, de marzo a noviembre de 2026*
 
-[FIGURA POR INSERTAR: cronología del proyecto: Marzo a junio | Seminario: un objeto para dejar el teléfono; 11 y 12 de junio | Ocho entrevistas; 20 de julio | Examen: aclarar el objeto, el contexto y el usuario; Fines de agosto | Análisis de entrevistas y criterios; Septiembre | Señal sonora, Tag y primera aplicación; 29 de septiembre | Hipótesis y encuesta; 5 al 7 de octubre | El Tag en el prototipo y comienzo de la prueba; 9 al 20 de octubre | Cambios y mejoras a partir de las sugerencias de los usuarios; 21 de octubre al 8 de noviembre | La señal, solo en el teléfono; 28 de octubre | Modelo de Relevo en 3D; 29 de octubre al 9 de noviembre | Rediseño de la aplicación]
+[FIGURA POR INSERTAR: (columna) cronología del proyecto: Marzo a junio | Seminario: un objeto para dejar el teléfono; 11 y 12 de junio | Ocho entrevistas; 20 de julio | Examen: aclarar el objeto, el contexto y el usuario; Fines de agosto | Análisis de entrevistas y criterios; Septiembre | Señal sonora, Tag y primera aplicación; 29 de septiembre | Hipótesis y encuesta; 5 al 7 de octubre | El Tag en el prototipo y comienzo de la prueba; 9 al 20 de octubre | Cambios y mejoras a partir de las sugerencias de los usuarios; 21 de octubre al 8 de noviembre | La señal, solo en el teléfono; 28 de octubre | Modelo de Relevo en 3D; 29 de octubre al 9 de noviembre | Rediseño de la aplicación]
 
 *Nota.* Elaboración propia.
 
@@ -517,6 +517,8 @@ El recorrido tiene cuatro momentos —preparar, seguir en el teléfono, oír la 
 **Figura 17**
 
 *Flujo de la aplicación*
+
+<!-- doble -->
 
 ![1. Actividad](figuras/pase-figura-14-1-actividad.png) ![2. Condición](figuras/pase-figura-14-2-condicion.png) ![3. Salida](figuras/pase-figura-14-3-salida.png) ![4. Inicio, mientras cuenta](figuras/pase-figura-14-4-inicio.png) ![5. Preguntas](figuras/pase-figura-14-5-preguntas.png) ![6. Decisión](figuras/pase-figura-14-6-decision.png)
 
@@ -567,6 +569,8 @@ La jerarquía también se construye con lo que pasa: el color aparece relacionad
 **Figura 20**
 
 *Calma, presencia y señal: el color sube con el momento*
+
+<!-- doble -->
 
 ![a. Al preparar: blanco, negro y el anillo de la actividad](figuras/pase-figura-16a-al-preparar.png) ![b. Inicio: la actividad, en una tarjeta con su degradado](figuras/pase-figura-16b-inicio.png) ![c. Cuando suena: el degradado en toda la pantalla](figuras/pase-figura-16c-cuando-suena.jpg)
 
@@ -620,6 +624,8 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 *Bocetos del logo*
 
+<!-- doble -->
+
 ![a. La R y el gesto de pasar algo de una mano a otra](figuras/pase-figura-19a-la-r-y-el-gesto.jpg) ![b. Formas](figuras/pase-figura-19b-formas.jpg) ![c. Los pasos del recorrido de Relevo](figuras/pase-figura-19c-pasos-del-recorrido.jpg)
 
 *Nota.* Elaboración propia.
@@ -631,6 +637,8 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 **Figura 24**
 
 *Bocetos del objeto*
+
+<!-- doble -->
 
 ![a. Tres formatos, para llevar o para dejar en el hogar](figuras/pase-figura-20a-tres-formatos.jpg) ![b. Relevo Home y Relevo Go, con sus vistas y sus piezas](figuras/pase-figura-20b-home-y-go.jpg)
 
@@ -645,6 +653,8 @@ Relevo es más grande que el Tag por tres razones: para encontrarlo, porque un o
 **Figura 25**
 
 *Relevo Home y Relevo Go, con la placa del Tag adentro*
+
+<!-- doble -->
 
 ![a. Relevo Home](figuras/pase-figura-21a-relevo-home.png) ![b. Relevo Go](figuras/pase-figura-21b-relevo-go.png) ![c. Piezas, con la placa y la pila del Tag](figuras/pase-figura-21c-piezas.png)
 
@@ -837,7 +847,7 @@ Con el teléfono, recordar fue igual de fácil, pero notar la señal no (Tabla 3
 
 *Recordar no basta para empezar algo*
 
-[FIGURA POR INSERTAR: matriz de dos por dos: Motivación: de baja (abajo) a alta (arriba) | Facilidad para empezar: de difícil (izquierda) a fácil (derecha); Mucha motivación y comienzo difícil | Quiere hacerlo, pero el primer paso cuesta; Mucha motivación y comienzo fácil | La señal basta para empezar; Poca motivación y comienzo difícil | La señal recuerda, pero no lleva a empezar; Poca motivación y comienzo fácil | Puede empezar o dejarlo para después]
+[FIGURA POR INSERTAR: (columna) matriz de dos por dos: Motivación: de baja (abajo) a alta (arriba) | Facilidad para empezar: de difícil (izquierda) a fácil (derecha); Mucha motivación y comienzo difícil | Quiere hacerlo, pero el primer paso cuesta; Mucha motivación y comienzo fácil | La señal basta para empezar; Poca motivación y comienzo difícil | La señal recuerda, pero no lleva a empezar; Poca motivación y comienzo fácil | Puede empezar o dejarlo para después]
 
 *Nota.* Elaboración propia a partir de Fogg (2009).
 
@@ -1242,6 +1252,12 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 - **I** Prueba en los hogares: el protocolo, el consentimiento, los instrumentos y los resultados por persona.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Marcas de diagramación
+
+- **Qué cambió:** solo marcas para componer la memoria, sin cambios de texto. Vuelven las marcas de dos columnas del Pase en las Figuras 11, 17, 20, 23, 24 y 25; la 9 (opiniones de la encuesta) pasa a dos columnas; la 15 (proceso del proyecto) y la 32 (motivación y facilidad), a una, y la 28 (el Tag en la prueba), a lo ancho.
+- **Cómo estaba antes:** la v8 venía del texto del PDF del Pase, que no conserva esas marcas.
+- **Por qué:** para componer la v8 con el generador, con cada figura junto a su mención (D-186).
 
 ### 2026-11-21 — Figuras nuevas, logo DIP, «con dispositivos digitales» e iOS
 

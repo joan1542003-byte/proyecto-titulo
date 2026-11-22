@@ -26,11 +26,19 @@ const { execFileSync } = require('child_process');
 const { Idml } = require('./idml.js');
 
 const AQUI = __dirname;
-const FUENTE = path.join(AQUI, '..', 'borrador-memoria-v6-2026-10-28.md');
-const SALIDA = path.join(AQUI, 'memoria-relevo-1920x1080.idml');
-const SALIDA_HTML = path.join(AQUI, 'memoria-relevo-1920x1080.html');
-const SALIDA_PDF = path.join(AQUI, 'memoria-relevo-1920x1080.pdf');
-const GEN = path.join(AQUI, 'figuras', 'idml');
+// Desde el 21 de noviembre de 2026 se compone el borrador v8 (D-186). La versión del 11 de noviembre, del borrador v6,
+// queda con sus archivos: se obtiene con FUENTE=borrador-memoria-v6-2026-10-28.md.
+const FUENTE = path.join(AQUI, '..', process.env.FUENTE || 'borrador-memoria-v8-2026-11-21.md');
+const V8 = /-v8-/.test(FUENTE);
+const NOMBRE = V8 ? 'memoria-relevo-v8-1920x1080' : 'memoria-relevo-1920x1080';
+const SALIDA = path.join(AQUI, NOMBRE + '.idml');
+const SALIDA_HTML = path.join(AQUI, NOMBRE + '.html');
+const SALIDA_PDF = path.join(AQUI, NOMBRE + '.pdf');
+const GEN = path.join(AQUI, 'figuras', V8 ? 'idml-v8' : 'idml');
+// Figuras dibujadas aparte (../figuras/v8/construir-figuras.py): cada una trae su ancho de diseño, que es su ancho en la
+// página —una columna, dos o las tres—, y se coloca a ese tamaño, sin escalar: su letra queda como la de las demás figuras.
+const FIGURAS_V8 = path.join(AQUI, '..', 'figuras', 'v8');
+const MEDIDAS_V8 = fs.existsSync(path.join(FIGURAS_V8, 'medidas.json')) ? JSON.parse(fs.readFileSync(path.join(FIGURAS_V8, 'medidas.json'), 'utf8')) : {};
 const AURAS = path.join(AQUI, 'figuras', 'aura');
 const LETRA = '../../06_desarrollo_y_factibilidad/app-android/app/src/main/res/font/instrument_sans.ttf';
 const CURSIVA = 'letra/InstrumentSans-Italic.ttf';
@@ -104,6 +112,15 @@ const masUno = (css) => css.replace(/font-size:([\d.]+)pt/g, (_, n) => `font-siz
 const AIRE_SUBTITULO = { 'Subtítulo': 15, 'Subtítulo menor': 6 };   // aire extra sobre un subtítulo: lo lleva el párrafo anterior
 const LUCES = [['Amarillo', [244, 228, 150]], ['Cielo', [179, 229, 252]], ['Lima', [198, 238, 174]], ['Rubor', [250, 200, 217]], ['Lila', [223, 209, 252]], ['Durazno', [251, 209, 179]]];
 const rgb = (n) => 'rgb(' + LUCES.find((l) => l[0] === n)[1].join(',') + ')';
+// Degradados sutiles, como los de la app (21 de noviembre de 2026, pedido del autor): tres tonos vecinos de cada papel,
+// de luminosidad parecida, para superficies; y, en barras y puntos, del papel al tono intenso de la identidad.
+const INTENSO = { Amarillo: '#FFD54A', Cielo: '#9DD6F4', Lima: '#B3E788', Rubor: '#F6A3CB', Lila: '#C5B2F6', Durazno: '#F9B68A' };
+const DEGRADE = {
+  Amarillo: ['#FBF0C0', '#F4E496', '#F6D9A0'], Cielo: ['#D9F2FE', '#B3E5FC', '#BCD9FA'], Lima: ['#E3F6D6', '#C6EEAE', '#BDE8C2'],
+  Rubor: ['#FDE3EC', '#FAC8D9', '#EEC9EC'], Lila: ['#EEE7FE', '#DFD1FC', '#D2D8FB'], Durazno: ['#FDE7D6', '#FBD1B3', '#F9C9C2'],
+};
+const grad = (n, ang = 135) => `linear-gradient(${ang}deg,${DEGRADE[n].join(',')})`;
+const gradIntenso = (n, ang = 90) => `linear-gradient(${ang}deg,${rgb(n)},${INTENSO[n]})`;
 // Affinity apoya la primera línea de un marco en la altura de las mayúsculas; Chrome la centra en su interlineado.
 // Esta es la diferencia (mm) para un estilo: se usa para que el texto vivo caiga donde Chrome lo dibujó.
 const baja = (estilo) => { const e = E[estilo]; return ((e.interlineado - 1.22 * e.tamano) / 2 + 0.25 * e.tamano) * PT; };
@@ -173,6 +190,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       i++; sig();
       f.titulo = lineas[i].trim().replace(/^\*|\*$/g, ''); i++; sig();
       if (/^<!-- doble -->$/.test(lineas[i].trim())) { f.columna = true; f.doble = true; i++; sig(); }   // dos columnas, junto al texto
+      else if (/^<!-- columna -->$/.test(lineas[i].trim())) { f.columna = true; i++; sig(); }        // una columna, junto al texto
       if (f.flotante === 'tabla') {
         const filas = [];
         while (i < lineas.length && /^\|/.test(lineas[i])) { filas.push(lineas[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); i++; }
@@ -180,7 +198,14 @@ function bloques(lineas, estiloTexto = 'Texto') {
       } else if (/^!\[/.test(lineas[i])) {
         // Fotografías: ![pie](ruta relativa a la memoria), varias en una línea.
         f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])) }));
-        f.descripcion = ''; f.columna = !!f.doble || (f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src)); i++;   // la portada de una fuente va en una columna
+        f.descripcion = ''; f.columna = !!f.columna || (f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src)); i++;   // la portada de una fuente va en una columna
+        // Una figura de ../figuras/v8 se coloca en su versión vectorial (SVG), al ancho con que se diseñó.
+        const v8 = f.fotos.length === 1 && f.fotos[0].src.match(/figuras[\/\\]v8[\/\\]([^\/\\]+)\.png$/);
+        if (v8 && MEDIDAS_V8[v8[1]]) {
+          const m = MEDIDAS_V8[v8[1]]; const cols = m.ancho < 800 ? 1 : m.ancho < 1400 ? 2 : 3;
+          f.v8 = { ...m, src: path.relative(AQUI, path.join(FIGURAS_V8, v8[1] + '.svg')) };
+          f.columna = cols < 3; f.doble = cols === 2;
+        }
       } else {
         f.descripcion = lineas[i].trim().replace(/^\[FIGURA POR INSERTAR: |\]$/g, ''); i++;
         if (/^\(columna\) /.test(f.descripcion)) { f.columna = true; f.descripcion = f.descripcion.replace(/^\(columna\) /, ''); }
@@ -223,7 +248,7 @@ const tieneCursiva = fs.existsSync(path.join(AQUI, CURSIVA));
 
 const CSS_BASE = masUno(`@font-face{font-family:"Instrument Sans";src:url("${LETRA}");font-weight:400 700;font-stretch:75% 100%;font-style:normal}
 ${tieneCursiva ? `@font-face{font-family:"Instrument Sans";src:url("${CURSIVA}");font-weight:400 700;font-stretch:75% 100%;font-style:italic}` : ''}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;background-repeat:no-repeat !important;background-size:100% 100% !important}
 html,body{background:transparent}
 body{font-family:"Instrument Sans",sans-serif;color:#141312;font-kerning:normal;-webkit-font-smoothing:antialiased}
 b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.pd{color:#6E6964}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}
@@ -268,9 +293,9 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .dc{background:#fff;border-radius:6mm;padding:5mm 6mm 5.5mm;display:flex;flex-direction:column}
 .dc .cir{margin-bottom:5mm}.dc .dx{flex:1;margin-top:2mm}
 .bar{display:flex;align-items:flex-end;gap:.45mm;height:9mm;margin-top:7mm}
-.bar span{flex:1;height:38%;border-radius:.6mm;background:#DDD7CF}.bar span.s{height:100%;background:var(--c)}.bar span.m{height:68%;background:var(--c)}
+.bar span{flex:1;height:38%;border-radius:.6mm;background:#DDD7CF}.bar span.s{height:100%;background:linear-gradient(180deg,var(--c),var(--c0))}.bar span.m{height:68%;background:linear-gradient(180deg,var(--c),var(--c0))}
 .pts{display:flex;gap:2mm;height:9mm;margin-top:7mm}
-.pts span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.pts span.s{background:var(--c);border-color:var(--c)}.pts span.m{background:linear-gradient(90deg,var(--c) 50%,#fff 50%);border-color:var(--c)}
+.pts span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.pts span.s{background:linear-gradient(135deg,var(--c0),var(--c));border-color:transparent}.pts span.m{background:linear-gradient(90deg,var(--c) 50%,#fff 50%);border-color:var(--c)}
 .blanco{background:#fff;border-radius:6mm;padding:8mm}
 .fig1{display:grid;grid-template-columns:1fr 8mm 78mm;align-items:center}
 .fig1-fila{display:flex;align-items:flex-start;gap:2mm}
@@ -286,7 +311,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .etapa b{font-size:14pt;line-height:18pt}.etapa .dia{font-size:11pt;line-height:14pt;font-weight:600;color:#6E6964}
 .etapa ul{display:grid;gap:1.4mm;list-style:none}.etapa li{position:relative;padding-left:4mm}
 .etapa li::before{content:"";position:absolute;left:0;top:2.1mm;width:1.5mm;height:1.5mm;border-radius:50%;background:#141312}
-.etapa.inicio{background:${rgb('Lima')}}.etapa.cierre{background:${rgb('Rubor')}}
+.etapa.inicio{background:${grad('Lima')}}.etapa.cierre{background:${grad('Rubor')}}
 .conds{display:flex;gap:1.6mm}
 .conds u,.fig4-ley u{text-decoration:none;width:7.4mm;height:7.4mm;border-radius:2.4mm;display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:9pt;line-height:1;background:#EEE9E3}
 .conds u:nth-child(1),.fig4-ley span:nth-child(1) u{background:${rgb('Cielo')}}.conds u:nth-child(2),.fig4-ley span:nth-child(2) u{background:${rgb('Lima')}}.conds u:nth-child(3),.fig4-ley span:nth-child(3) u{background:${rgb('Amarillo')}}
@@ -297,6 +322,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .fig2 .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .fot{display:grid;gap:5mm}
 .fot img{width:100%;height:82mm;object-fit:cover;display:block;border-radius:5.5mm}
+.fot.ancha img{height:68mm}
 .fot .pie{display:flex;align-items:flex-start;gap:2.4mm;margin-top:3.5mm}.fot .pie .n{flex:1;padding-top:.3mm}
 .fot .cir{width:6.6mm;height:6.6mm;font-size:9pt}
 .fot.nat img{height:auto;aspect-ratio:auto;object-fit:contain;width:auto;max-width:100%;max-height:96mm;margin:0 auto;border:.3mm solid #E4DED6;background:#fff}
@@ -305,6 +331,8 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .esq-l{display:flex;flex-direction:column;margin-top:1mm}.esq-i{padding:1.8mm 0;border-top:.2mm solid #DDD7CF}.esq-i:first-child{border-top:0}
 .fcol .esq{grid-template-columns:1fr !important;gap:5mm}
 .cro{display:grid;grid-template-rows:auto 7mm auto;column-gap:3mm;row-gap:0}
+.cro-v{display:grid;row-gap:2.6mm;position:relative;padding-left:7mm}.cro-v::before{content:"";position:absolute;left:2.05mm;top:2.4mm;bottom:2.4mm;width:.45mm;background:#141312}
+.cro-vi{position:relative}.cro-vi::before{content:"";position:absolute;left:-7mm;top:1.25mm;width:4.5mm;height:4.5mm;border-radius:50%;background:#141312;border:1.05mm solid #fff;box-sizing:border-box}
 .cro-r{display:flex;flex-direction:column;gap:.8mm;padding:0 3mm 2mm 0}.cro-r.ar{grid-row:1;align-self:end;padding-bottom:3mm}.cro-r.ab{grid-row:3;padding-top:3mm}
 .cro-l{grid-row:2;align-self:center;height:.5mm;background:#141312}.cro-p{grid-row:2;align-self:center;width:5mm;height:5mm;border-radius:50%;background:#141312;border:1.2mm solid #F7F4F0;box-sizing:content-box;margin-left:-1.2mm}
 .idn{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:4mm}
@@ -313,14 +341,14 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm;flex:1;min-width:0}
 .idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
 .prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:1.6mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
-.prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
-.prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:12pt;line-height:16pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${rgb('Rubor')};border-color:${rgb('Rubor')}}
+.prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${gradIntenso('Rubor', 135)};border-color:transparent}
+.prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:12pt;line-height:16pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${gradIntenso('Rubor', 135)};border-color:transparent}
 .fot.grande.nat img{max-height:120mm}
 .fl{align-self:center;justify-self:center;width:6mm;height:6mm;color:#6E6964;margin-top:-10mm}.fl svg{width:100%;height:100%}
 .fig2.flujo{grid-template-columns:49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm;justify-content:stretch}.fig2.flujo .fl{margin-top:-12mm}
 .fot.flujo{column-gap:2.5mm}.fot.flujo img{border-radius:3.5mm}
 .fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol>img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
-.brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
+.brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol.dbl .brs{grid-template-columns:1fr 1fr !important;column-gap:10mm;row-gap:6mm}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
 .brs-b{height:6mm;background:#EEE9E3;border-radius:3mm;overflow:hidden}.brs-b span{display:block;height:100%;background:#141312;border-radius:3mm}
 .mp{display:flex;flex-direction:column;gap:4mm}.mp-arr,.mp-aba{text-align:center}
 .mp-a{position:relative;height:100mm;margin:0 3mm}
@@ -329,7 +357,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .mp-p{position:absolute;display:flex;align-items:center;gap:2.2mm;transform:translate(-1.6mm,-50%);white-space:nowrap}
 .mp-p .n{white-space:nowrap;padding-right:0}.mp-p i{flex:none;width:3.2mm;height:3.2mm;border-radius:50%;background:#141312}
 .mp-p.l{flex-direction:row-reverse;transform:translate(calc(-100% + 1.6mm),-50%)}
-.mp-p.yo i{width:5.5mm;height:5.5mm;background:${rgb('Lila')};border:.4mm solid #141312}
+.mp-p.yo i{width:5.5mm;height:5.5mm;background:${gradIntenso('Lila', 135)};border:.4mm solid #141312}
 .pf{display:grid;grid-template-columns:80mm 1fr;column-gap:12mm;align-items:center}.fcol .pf{grid-template-columns:1fr;row-gap:6mm}
 .pf-a{position:relative;width:78mm;height:78mm}.fcol .pf-a{margin:0 auto}
 .pf-o{position:absolute;inset:0;border-radius:50%;background:${rgb('Cielo')}}
@@ -342,18 +370,19 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .at-p{display:grid;gap:2.6mm}.fcol .at-p+.at-p{border-top:.25mm solid #E4DED6;padding-top:4mm}
 .at-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding-bottom:2.4mm}
 .at-f{display:grid;grid-template-columns:5mm 1fr;column-gap:3mm;row-gap:.4mm;align-items:start}.at-f>.n{grid-column:2}
-.at-m{grid-row:1 / span 2;width:4mm;height:4mm;border-radius:50%;margin-top:1.2mm}.at-m.c{background:#141312}.at-m.p{background:${rgb('Cielo')};border:.35mm solid #141312}
+.at-m{grid-row:1 / span 2;width:4mm;height:4mm;border-radius:50%;margin-top:1.2mm}.at-m.c{background:#141312}.at-m.p{background:${gradIntenso('Cielo', 135)};border:.35mm solid #141312}
 .m2{display:flex;flex-direction:column;gap:3mm}
 .fb:has(>.m2){width:${DOBLE}mm}.fb:has(>.m2) .m2-c{min-height:18mm}.fcol .fb:has(>.m2){width:auto}.fcol .m2-c{padding:3mm}                                         /* la matriz ancha ocupa dos columnas, no tres */
 .m2-g{display:grid;grid-template-columns:1fr 1fr;border-top:.35mm solid #141312;border-left:.35mm solid #141312}
 .m2-c{display:flex;flex-direction:column;gap:1.2mm;padding:4mm;border-right:.35mm solid #141312;border-bottom:.35mm solid #141312;min-height:30mm}
-.m2-c.fuerte{background:${rgb('Lima')}}
+.m2-c.fuerte{background:${grad('Lima')}}
 .pend{border:.5mm dashed #6E6964;border-radius:6mm;padding:10mm 12mm;min-height:60mm;width:${DOBLE}mm;display:grid;align-content:center;justify-items:start;gap:4mm;background:rgba(255,255,255,.5);font-size:14pt;line-height:20pt;color:#6E6964}
 .fondo{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
 .panel{width:${COL}mm;border-radius:9mm;padding:9mm 9mm 9.5mm;display:flex;flex-direction:column;position:relative;border:.3mm solid rgba(20,19,18,.06);overflow:hidden}.panel>*{position:relative}.panel>.fondo{position:absolute}
 .panel>.pm{position:absolute;right:9mm;top:9mm;width:11mm;height:11mm}.panel .pm svg{width:100%;height:100%;display:block}
 .panel .pn{font-size:60pt;line-height:.9;font-weight:400;letter-spacing:-.04em;margin:12mm 0 0 -.5mm;font-feature-settings:"tnum"}
 .panel.corto .pn{margin-top:4mm}
+.panel.mini .pn{font-size:44pt;margin-top:1mm}.panel.mini .pt{font-size:28pt;line-height:30pt;margin-top:3mm}
 .panel .pt{font-size:40pt;line-height:43pt;font-weight:700;letter-spacing:-.03em;margin-top:6mm}
 .panel .ph{flex:1}
 .panel ol{list-style:none;margin-top:auto;padding-top:8mm;display:grid;gap:2.2mm}
@@ -361,7 +390,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .frase{width:${COL}mm;border-radius:7mm;padding:6.5mm 7.5mm 8mm;position:relative;overflow:hidden;border:.3mm solid rgba(20,19,18,.06)}.frase>*{position:relative}.frase>.fondo{position:absolute}
 .frase .n{margin-top:4.5mm}
 .idx{display:grid;grid-template-columns:${COL}mm ${COL}mm;column-gap:${MED}mm;align-items:start}
-.idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}
+.idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}.idx.ancho{grid-template-columns:1fr 1fr}
 .ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
 .ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
 .ir.m.c{padding:.8mm 4.5mm .8mm 3.2mm;min-height:7.2mm;margin-bottom:.8mm}
@@ -371,10 +400,11 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .anexo .fic{width:12mm;font-size:14pt}                                  /* la letra sola: sin cuadro de color dentro de la ficha blanca */
 .portada{width:${W}mm;height:${H}mm;position:relative}
 .portada .p-inst{position:absolute;left:22mm;top:18mm}.portada .p-inst img{height:15mm;width:auto;display:block}
+.portada .p-dip{position:absolute;right:22mm;top:14mm}.portada .p-dip img{height:27mm;width:auto;display:block}
 .portada .p-marca{position:absolute;left:22mm;top:44mm;width:130mm}.portada .p-marca svg{width:100%;height:auto;display:block}
 .portada .p-tit{position:absolute;left:22mm;top:88mm;width:230mm}
 .portada .p-datos{position:absolute;left:22mm;bottom:18mm;width:300mm}
-.prog{display:flex;height:3.6mm;margin-top:5mm;border-radius:1.8mm;background:#EEE9E3;overflow:hidden}.prog span{display:block;height:100%;background:var(--c)}.prog span.m{opacity:.45}.fcol .prog{margin-top:4mm}
+.prog{display:flex;height:3.6mm;margin-top:5mm;border-radius:1.8mm;background:#EEE9E3;overflow:hidden}.prog span{display:block;height:100%;background:linear-gradient(90deg,var(--c0),var(--c))}.prog span.m{opacity:.45}.fcol .prog{margin-top:4mm}
 .fot.nat.boc img,.fot.grande.nat.boc img{max-height:84mm}
 .fcol .fot:not(.nat) img{height:64mm}
 `);
@@ -442,7 +472,7 @@ const ICONOS = [
   [/^Tag con pila/, 'tag'], [/^Teléfono Android/, 'telefono'], [/^Servicio remoto/, 'enviar'], [/^Placas/, 'maqueta'],
 ];
 // Cifras: el icono y el color del papel que cumple cada dato en el sistema («un color, un papel»).
-const ROL_DATO = [[/^personas|personas que/, 'perfil', 'Lila'], [/primer paso/, 'primer-paso', 'Cielo'], [/sonido|sonó|suena/, 'suena', 'Durazno'], [/en casa|lugar/, 'lugar', 'Lima'], [/empezado|empezó/, 'empece', 'Rubor'], [/tiempo/, 'tiempo', 'Amarillo'], [/./, 'estrella', 'Lila']];
+const ROL_DATO = [[/^personas|personas que/i, 'perfil', 'Lila'], [/primer paso/i, 'primer-paso', 'Cielo'], [/sonido|sonó|suena/i, 'suena', 'Durazno'], [/en casa|lugar/i, 'lugar', 'Lima'], [/empezado|empezó/i, 'empece', 'Rubor'], [/tiempo/i, 'tiempo', 'Amarillo'], [/./, 'estrella', 'Lila']];
 
 /** Una pieza es un trozo de página compuesto en Chrome: su fondo va al IDML como PDF y sus textos, vivos encima. */
 function pieza(id, ancho, armar) {
@@ -457,6 +487,7 @@ function pieza(id, ancho, armar) {
 }
 
 function tipoFigura(b) {
+  if (b.v8) return 'v8';
   if (b.fotos) return 'fotos';
   const d = b.descripcion;
   return /^gráfico de barras/.test(d) ? 'barras' : /^mapa de posicionamiento/.test(d) ? 'mapa' : /^centro y periferia/.test(d) ? 'periferia' : /^pasos de atención/.test(d) ? 'atencion' : /^matriz de dos por dos/.test(d) ? 'matriz2' : /^esquema de/.test(d) ? 'esquema' : /^cronología/.test(d) ? 'cronologia' : /^línea de tiempo de la prueba aplicada/.test(d) ? 'prueba'
@@ -481,7 +512,11 @@ function piezaFlotante(b) {
     return rot + fondo(cuerpoFlotante(b, T, ANCHO)) + nota;
   });
 }
+/** Figura dibujada aparte: su SVG, al ancho de la pieza, que es el ancho con que se diseñó. */
+// El alto sale de la proporción de diseño, no de la imagen cargada: así se mide bien aunque el SVG aún no se haya leído.
+const figuraV8 = (b) => `<img class="v8" src="${h(b.v8.src.split(path.sep).join('/'))}" alt="" style="display:block;width:100%;height:auto;max-width:none;max-height:none;border:0;aspect-ratio:${b.v8.ancho}/${b.v8.alto}">`;
 function cuerpoFlotante(b, T, ancho) {
+  if (b.tipo === 'v8') return figuraV8(b);
   if (b.tipo === 'datos') return fichasDatos(b, T);
   if (b.tipo === 'diagrama') return diagrama();
   if (b.tipo === 'tiempo') return lineaDeTiempo();
@@ -558,7 +593,7 @@ function matriz(b, T) {
   const [cab, ...filas] = b.filas;
   const rol = (t) => (/primer paso/i.test(t) ? 'Cielo' : /lugar/i.test(t) ? 'Lima' : /teléfono/i.test(t) ? 'Amarillo' : 'Lila');
   let out = `<div class="mz" style="grid-template-columns:56mm repeat(${cab.length - 1},1fr)"><div class="mh0">${T('Celda cabecera', cab[0])}</div>`;
-  out += cab.slice(1).map((c) => { const m = c.match(/^([A-Z])\. (.*)$/); return `<div class="mh" style="background:${rgb(rol(c))}">${circulo(m[1])}${T('Celda primera', m[2])}</div>`; }).join('');
+  out += cab.slice(1).map((c) => { const m = c.match(/^([A-Z])\. (.*)$/); return `<div class="mh" style="background:${grad(rol(c))}">${circulo(m[1])}${T('Celda primera', m[2])}</div>`; }).join('');
   filas.forEach((f, r) => {
     const cls = (r === 0 ? ' p' : '') + (r === filas.length - 1 ? ' mu' : '');
     out += `<div class="ma">${T('Celda primera', f[0])}</div>` + f.slice(1).map((c) => `<div class="mc${cls}">${T(/^(El mismo|La misma)$/.test(c) ? 'Celda suave' : 'Celda', c)}</div>`).join('');
@@ -567,13 +602,12 @@ function matriz(b, T) {
 }
 
 /** Cifras: una ficha por dato, con el valor en grande, su explicación y una barra de progreso del color de su papel. */
-const INTENSO = { Amarillo: '#FFD54A', Cielo: '#9DD6F4', Lima: '#B3E788', Rubor: '#F6A3CB', Lila: '#C5B2F6', Durazno: '#F9B68A' };
 function fichasDatos(b, T) {
   const datos = b.descripcion.replace(/^[^:]*: /, '').split('; ').map((d) => d.match(/^(\d+) de (\d+), (.*)$/)).filter(Boolean);
   return `<div class="dt" style="grid-template-columns:repeat(${datos.length},1fr)">${datos.map(([, k, n, t]) => {
     const [, ic, color] = ROL_DATO.find(([re]) => re.test(t)); const medias = (t.match(/y (\d+) a medias/) || [])[1];
     const ancho = (x) => ((100 * x) / +n).toFixed(2) + '%';
-    return `<div class="dc" style="--c:${INTENSO[color]}">${circulo(svgIcono(ic))}${T('Dato', [{ texto: k }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}${T('Celda', mayus(t), 'dx')}<div class="prog"><span style="width:${ancho(+k)}"></span>${medias ? `<span class="m" style="width:${ancho(+medias)}"></span>` : ''}</div></div>`;
+    return `<div class="dc" style="--c:${INTENSO[color]};--c0:${rgb(color)}">${circulo(svgIcono(ic))}${T('Dato', [{ texto: k }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}${T('Celda', mayus(t), 'dx')}<div class="prog"><span style="width:${ancho(+k)}"></span>${medias ? `<span class="m" style="width:${ancho(+medias)}"></span>` : ''}</div></div>`;
   }).join('')}</div>`;
 }
 
@@ -620,7 +654,7 @@ function fotos(b, T) {
   const fr = b.fotos.map((f) => (natural ? `${proporcion(f).toFixed(3)}fr` : '1fr'));
   const cols = flujo ? fr.map((x, i) => (i ? `6mm ${x}` : x)).join(' ') : fr.join(' ');
   const boc = b.fotos.every((f) => /bocetos/.test(f.src));
-  return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}${boc ? ' boc' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
+  return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}${boc ? ' boc' : ''}${!natural && !b.columna ? ' ancha' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
     const m = f.pie.match(/^([a-z0-9]+)\. (.*)$/);
     return `${flujo && i ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? `<div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div>` : ''}</div>`;
   }).join('')}</div>`;
@@ -629,8 +663,8 @@ function fotos(b, T) {
 /** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
 function piezaColumna(b) {
   const f = b.fotos && b.fotos[0]; const ancho = b.doble ? DOBLE : COL;
-  const cuerpo = (T) => (b.fotos && b.doble ? fotos(b, T) : f ? `<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
-  return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+  const cuerpo = (T) => (b.v8 ? figuraV8(b) : b.fotos && b.doble ? fotos(b, T) : f ?`<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
+  return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol${b.doble ? ' dbl' : ''}"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
 }
 
 /** Mapa de posicionamiento en dos ejes: «izquierda | derecha | abajo | arriba; Referente | x | y; …», con x e y de 0 a 10. */
@@ -653,7 +687,10 @@ function periferia(b, T) {
 
 /** Matriz de dos por dos: «Eje vertical | bajo | alto; Eje horizontal | izquierda | derecha; cuatro cuadrantes | texto», de arriba a la izquierda a abajo a la derecha. */
 function matriz2(b, T) {
-  const [[ev, bajo, alto], [eh, izq, der], ...cuad] = partes(b);
+  let g = partes(b);
+  const ejes = g[0].map((t) => t.match(/^(.*): de (.*) \((?:abajo|izquierda)\) a (.*) \((?:arriba|derecha)\)$/));
+  if (ejes.length === 2 && ejes.every(Boolean)) g = [ejes[0].slice(1), ejes[1].slice(1), ...g.slice(1)];
+  const [[ev, bajo, alto], [eh, izq, der], ...cuad] = g;
   return `<div class="m2">${T('Celda suave', `${ev}: de ${bajo.toLowerCase()} (abajo) a ${alto.toLowerCase()} (arriba)`)}<div class="m2-g">` +
     cuad.map(([t, d], i) => `<div class="m2-c${i === 1 ? ' fuerte' : ''}">${T('Celda primera', t)}${T('Celda', d)}</div>`).join('') +
     `</div>${T('Celda suave', `${eh}: de ${izq.toLowerCase()} (izquierda) a ${der.toLowerCase()} (derecha)`)}</div>`;
@@ -661,7 +698,8 @@ function matriz2(b, T) {
 
 /** Momentos de la atención: «Momento | lo que está en el centro | lo que queda en la periferia», uno por fila. */
 function atencion(b, T) {
-  return `<div class="at">${partes(b).map(([tit, cen, per], i) => `<div class="at-p"><div class="at-h">${circulo(i + 1)}${T('Celda primera', tit)}</div>` +
+  const sinRotulo = (t) => t.replace(/^En (primer|segundo) plano: /, '');
+  return `<div class="at">${partes(b).map((g) => g.map(sinRotulo)).map(([tit, cen, per], i) => `<div class="at-p"><div class="at-h">${circulo(i + 1)}${T('Celda primera', tit)}</div>` +
     `<div class="at-f"><span class="at-m c"></span>${T('Celda suave', 'En primer plano')}${T('Celda', cen)}</div>` +
     `<div class="at-f"><span class="at-m p"></span>${T('Celda suave', 'En segundo plano')}${T('Celda', per)}</div></div>`).join('')}</div>`;
 }
@@ -669,9 +707,10 @@ function atencion(b, T) {
 /** Gráfico de barras horizontales, uno por grupo: «Título | etiqueta: valor, etiqueta: valor». */
 function barras(b, T) {
   const grupos = partes(b).map(([tit, datos]) => [tit, datos.split(', ').map((d) => { const m = d.match(/^(.*): (\d+)$/); return [m[1], +m[2]]; })]);
+  const colorDe = (t) => (/parlante|ubicaci|lugar/i.test(t) ? 'Lima' : /sonido|duraci/i.test(t) ? 'Durazno' : /prob/i.test(t) ? 'Lila' : 'Cielo');
   return `<div class="brs" style="grid-template-columns:repeat(${grupos.length},1fr)">${grupos.map(([tit, datos]) => {
-    const max = Math.max(...datos.map((d) => d[1]));
-    return `<div class="brs-g">${T('Celda primera', tit)}${datos.map(([et, v]) => `<div class="brs-f">${T('Celda', et)}<div class="brs-b"><span style="width:${(v / max) * 100}%"></span></div>${T('Celda primera', String(v))}</div>`).join('')}</div>`;
+    const max = Math.max(...datos.map((d) => d[1])); const fondo = gradIntenso(colorDe(tit));
+    return `<div class="brs-g">${T('Celda primera', tit)}${datos.map(([et, v]) => `<div class="brs-f">${T('Celda', et)}<div class="brs-b"><span style="width:${(v / max) * 100}%;background:${fondo}"></span></div>${T('Celda primera', String(v))}</div>`).join('')}</div>`;
   }).join('')}</div>`;
 }
 
@@ -688,6 +727,8 @@ function esquema(b, T) {
 /** Cronología: una línea con un punto por hito; los rótulos se alternan arriba y abajo para tener espacio. */
 function cronologia(b, T) {
   const hitos = partes(b); const n = hitos.length;
+  // En una columna (21 de noviembre de 2026): una línea vertical con un punto por hito; la fecha, en negrita, abre su línea.
+  if (b.columna) return `<div class="cro-v">${hitos.map(([f, t]) => `<div class="cro-vi">${T('Celda', `**${f}** ${t}`)}</div>`).join('')}</div>`;
   const rot = ([f, t], i) => `<div class="cro-r ${i % 2 ? 'ab' : 'ar'}" style="grid-column:${i + 1} / span ${i < n - 1 ? 2 : 1}">${T('Celda cabecera', f)}${T('Celda', t)}</div>`;
   return `<div class="cro" style="grid-template-columns:repeat(${n},1fr)">${hitos.map(rot).join('')}<div class="cro-l" style="grid-column:1 / span ${n}"></div>${hitos.map((_, i) => `<span class="cro-p" style="grid-column:${i + 1}"></span>`).join('')}</div>`;
 }
@@ -695,7 +736,7 @@ function cronologia(b, T) {
 /** La prueba aplicada: una etapa por tarjeta, con su fecha, su nombre y lo que ocurre. */
 function pruebaAplicada(b, T) {
   const etapas = partes(b); const color = ['Lima', 'Cielo', 'Amarillo', 'Rubor'];
-  return `<div class="fig4" style="grid-template-columns:repeat(${etapas.length},1fr)">${etapas.map(([f, tit, tx], i) => `<div class="etapa" style="background:${i === 0 || i === etapas.length - 1 ? rgb(color[i ? 3 : 0]) : '#fff'}">${T('Celda cabecera', f)}${T('Celda primera', tit)}${T('Celda', tx)}</div>`).join('')}</div>`;
+  return `<div class="fig4" style="grid-template-columns:repeat(${etapas.length},1fr)">${etapas.map(([f, tit, tx], i) => `<div class="etapa" style="background:${i === 0 || i === etapas.length - 1 ? grad(color[i ? 3 : 0]) : '#fff'}">${T('Celda cabecera', f)}${T('Celda primera', tit)}${T('Celda', tx)}</div>`).join('')}</div>`;
 }
 
 /** La identidad en una lámina: logo, los cuatro círculos con su parte, la tipografía y una muestra de íconos. */
@@ -710,14 +751,15 @@ function identidad(T) {
 
 /** Resultados por persona: un punto por respuesta; lleno, si declaró haber empezado. */
 function personas(b, T) {
-  return `<div class="prs">${partes(b).map(([quien, det, n, emp], i) => `<div class="prs-f">${circulo(i + 1)}<div class="tx">${T('Celda primera', quien)}${T('Celda suave', det)}</div><div class="prs-p">${Array.from({ length: +n }, (_, k) => `<span class="${k < +emp ? 's' : ''}"></span>`).join('')}</div>${T('Dato', [{ texto: emp }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}</div>`).join('')}` +
+  const filas = partes(b).filter((g) => g[0] !== 'leyenda').map(([quien, det, n, emp]) => { const m = String(n).match(/^(\d+) de (\d+)$/); return m ? [quien, det, m[2], m[1]] : [quien, det, n, emp]; });
+  return `<div class="prs">${filas.map(([quien, det, n, emp], i) => `<div class="prs-f">${circulo(i + 1)}<div class="tx">${T('Celda primera', quien)}${T('Celda suave', det)}</div><div class="prs-p">${Array.from({ length: +n }, (_, k) => `<span class="${k < +emp ? 's' : ''}"></span>`).join('')}</div>${T('Dato', [{ texto: emp }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}</div>`).join('')}` +
     `<div class="prs-ley"><span><i class="s"></i>Empezó la actividad</span><span><i></i>La dejó para después o cambió de idea</span></div></div>`;
 }
 
 /** Panel de apertura: el aura, el número, el título y las secciones. */
 function panelHtml({ n, titulo, secciones = [], aura, alto }) {
   const lista = secciones.length && alto >= 128 + secciones.length * 13.6 ? `<ol>${secciones.map((s, k) => `<li><span class="fic">${k + 1}</span><span>${h(s)}</span></li>`).join('')}</ol>` : '';
-  return `<div class="panel${alto < 150 ? ' corto' : ''}" style="height:${alto}mm"><img class="fondo" src="figuras/aura/${aura}.jpg" alt=""><div class="pm">${marca()}</div>` +
+  return `<div class="panel${alto < 150 ? ' corto' : ''}${alto < 100 ? ' mini' : ''}" style="height:${alto}mm"><img class="fondo" src="figuras/aura/${aura}.jpg" alt=""><div class="pm">${marca()}</div>` +
     (n != null ? `<div class="pn">${String(n).padStart(2, '0')}</div><div class="pt">${h(titulo)}</div>${lista}` : `<div class="ph"></div><div class="pt">${h(titulo)}</div>`) + '</div>';
 }
 
@@ -725,18 +767,24 @@ function panelHtml({ n, titulo, secciones = [], aura, alto }) {
 
 const secciones = leer();
 const sec = (titulo) => secciones.find((s) => s.titulo === titulo);
-const inicio = secciones[0].lineas.filter((l) => l.trim());          // institución, antes de «# Relevo»
+// Antes de «# Relevo»: en la v6, la institución; en la v8, los logos de la portada (FaAAD y DIP), que no son texto.
+const lineasInicio = secciones[0].lineas.filter((l) => l.trim());
+const inicio = lineasInicio.filter((l) => !/^!\[|^<!--/.test(l));
+const logoDip = (lineasInicio.map((l) => l.match(/^!\[DIP[^\]]*\]\(([^)]+)\)/)).find(Boolean) || [])[1];
 const portada = sec('Relevo').lineas.filter((l) => l.trim());       // subtítulo e identificación
 const capitulos = secciones.filter((s) => /^\d+\. /.test(s.titulo)).map((s) => {
   const n = +s.titulo.match(/^(\d+)/)[1];
   return { n, titulo: s.titulo.replace(/^\d+\. /, ''), bloques: bloques(s.lineas), aura: `panel-${10 + n}` };
 });
+// En la v8, a pedido de los profesores, el índice de tablas y figuras va al final, después de las referencias.
+const INDICE_AL_FINAL = !!sec('Índice de tablas y figuras');
 const finales = [
   { titulo: 'Referencias', bloques: bloques(sec('Referencias').lineas, 'Referencia'), aura: 'panel-30' },
+  ...(INDICE_AL_FINAL ? [{ titulo: 'Índice de tablas y figuras', panel: 'Tablas y figuras', bloques: [], aura: 'panel-5', indicePiezas: true }] : []),
   { titulo: 'Glosario', bloques: bloques(sec('Glosario').lineas, 'Glosario'), aura: 'panel-31' },
 ];
 const cuerpo = [...capitulos, ...finales];
-const anexos = sec('Anexos').lineas.filter((l) => /^- /.test(l)).map((l) => l.slice(2).match(/^\*\*Anexo ([A-Z])\.\*\* (.*)$/));
+const anexos = sec('Anexos').lineas.filter((l) => /^- /.test(l)).map((l) => l.slice(2).match(/^\*\*(?:Anexo )?([A-Z])\.?\*\* (.*)$/)).filter(Boolean);
 // Páginas de entrada: resumen y abstract, con su panel y el texto en columnas, como el cuerpo.
 const entradaDe = (titulo, clave) => {
   if (!sec(titulo) || OMITIR.includes(titulo)) return null;
@@ -749,7 +797,7 @@ const entradas = [
   { titulo: 'Resumen', aura: 'panel-2', bloques: entradaDe('Resumen', /^Palabras clave/) },
   { titulo: 'Abstract', aura: 'panel-4', bloques: entradaDe('Abstract', /^Keywords/) },
 ].filter((e) => e.bloques);
-const PRIMERA = entradas.length + 4;                                  // portada + entradas + dos páginas de índice; número de la primera página del cuerpo
+const PRIMERA = entradas.length + (INDICE_AL_FINAL ? 3 : 4);          // portada + entradas + una o dos páginas de índice; número de la primera página del cuerpo
 
 fs.mkdirSync(GEN, { recursive: true });
 for (const f of fs.readdirSync(GEN)) fs.unlinkSync(path.join(GEN, f));
@@ -774,6 +822,7 @@ const subtitulo = (portada[0] || '').replace(/ (?=intenciones |durante )/g, '\n'
 const enGris = (partes) => partes.map((r) => (r.estilo === 'Confirmar' ? { ...r, estilo: 'Pendiente' } : r));
 const pPortada = pieza('portada', W, (T) => `<div class="portada">
 <div class="p-inst"><img src="figuras/faad-escuela-diseno.svg" alt=""></div>
+${logoDip ? `<div class="p-dip"><img src="${h(path.relative(AQUI, path.join(path.dirname(FUENTE), logoDip)).split(path.sep).join('/'))}" alt=""></div>` : ''}
 <div class="p-marca">${lockup()}</div>
 <div class="p-tit">${subtitulo.map((l) => T('Portada título', l)).join('')}</div>
 <div class="p-datos">${[...portada.slice(1, -1), ...inicio.slice(1), ...portada.slice(-1)].map((l) => T('Portada dato', enGris(tramos(l)))).join('')}</div></div>`);
@@ -840,6 +889,12 @@ const figCols = (p) => pag(p).figCols || [];
 const anchoFig = (f) => (f.doble ? 2 : 1);           // una figura doble ocupa dos columnas
 const ocupada = (p, k) => figCols(p).some((f) => k >= f.k && k < f.k + anchoFig(f));
 const altoFig = (p) => figCols(p).reduce((m, f) => Math.max(m, f.alto), 0);
+const libre = (q, k) => k >= 0 && k < 3 && !ocupada(q, k) && !pag(q).paneles.some((pn) => pn.k === k) && !pag(q).marcos.some((m) => m.k === k) && !pag(q).frases.some((f) => f.k === k);
+/** La primera (izq) o la última (der) tira de w columnas libres de la página q, desde la columna dada. */
+const columnaLibre = (q, w, desde, lado) => {
+  const ks = [0, 1, 2].filter((k) => k >= desde && k + w <= 3 && Array.from({ length: w }, (_, i) => libre(q, k + i)).every(Boolean));
+  return ks.length ? (lado === 'izq' ? ks[0] : ks[ks.length - 1]) : null;
+};
 const normalizar = () => {
   for (let v = 0; v < 600; v++) {
     if (soloPiezas(cur.p)) { cur.p++; cur.k = 0; continue; }
@@ -871,6 +926,8 @@ function componer(c) {
   // columna y el texto desde la segunda.
   paginaNueva(); while (pag(cur.p).banda > 0 || figCols(cur.p).length) cur.p++;
   c.pagina = cur.p; pag(cur.p).rotulo = c;                // la página lleva el nombre de la sección que abre en ella
+  // El índice de tablas y figuras (al final, en la v8) ocupa su página entera, a lo ancho y sin panel: son 38 filas.
+  if (c.indicePiezas) { pag(cur.p).indicePiezas = true; c.marcos = []; cur.k = 0; cur.p++; return; }
   pag(cur.p).paneles.push({ c, k: 0, y: TOP, alto: BOTTOM - TOP });
   // Las tablas y figuras que en una pasada anterior quedaron después del texto de su sección se reservan
   // arriba de su última página de texto, para que no queden solas en una página.
@@ -881,6 +938,15 @@ function componer(c) {
   });
   // Una pieza reservada en la página de apertura va al pie, y el panel se acorta sobre ella.
   if (pag(c.pagina).banda) pag(c.pagina).paneles.forEach((pn) => { pn.alto = colBot(c.pagina) - TOP; });
+  // Figuras de columna reservadas por la búsqueda: en la página y al lado elegidos, antes de que llegue el texto.
+  c.bloques.filter((b) => b.columna && b.reserva).forEach((b) => {
+    const q = c.pagina + b.reserva.rel, a = b.pieza.alto;
+    if (a > colBot(q) - TOP) return;
+    const k = columnaLibre(q, anchoFig(b), 0, b.reserva.lado); if (k == null) return;
+    const pg = pag(q); pg.figCols = [...figCols(q), { items: [b], alto: a, doble: !!b.doble, k, fija: true }];
+    if (!pg.rotulo) pg.rotuloPieza = c;
+    b.pagina = q; b.reservada = true;
+  });
   siguiente();
 
   c.marcos = [];
@@ -899,10 +965,12 @@ function componer(c) {
       const alto = colBot(q) - TOP; if (a > alto) continue;
       const fc = figCols(q), ult = fc[fc.length - 1];
       if (ult && !ult.doble && !b.doble && ult.alto + AIRE_PIEZAS + a <= alto) { ult.items.push(b); ult.alto += AIRE_PIEZAS + a; b.pagina = q; return; }
-      const desde = q === cur.p ? cur.k + 1 : 0, n = fc.reduce((t, f) => t + anchoFig(f), 0) + (b.doble ? 2 : 1);   // la primera columna que el texto aún no usa
-      if (3 - n < desde) continue;
-      const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a, doble: !!b.doble }];
-      { let k = 3; for (let i = pg.figCols.length - 1; i >= 0; i--) { k -= anchoFig(pg.figCols[i]); pg.figCols[i].k = k; } }
+      // En la página de la mención, la primera columna libre después del texto: la figura queda junto a la columna que la
+      // menciona (pedido del autor del 21 de noviembre). En una página siguiente, a la derecha.
+      const desde = q === cur.p ? cur.k + 1 : 0;
+      const k = columnaLibre(q, anchoFig(b), desde, q === cur.p ? 'izq' : 'der');
+      if (k == null) continue;
+      const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a, doble: !!b.doble, k, junto: q === cur.p }];
       if (!pg.rotulo) pg.rotuloPieza = c;
       b.pagina = q; return;
     }
@@ -911,7 +979,7 @@ function componer(c) {
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
-    if (b.columna) { colocar(b); continue; }
+    if (b.columna) { if (!b.reservada) colocar(b); continue; }
     if (b.frase) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
@@ -1041,54 +1109,140 @@ const menciones = () => {
 };
 /** Lo que cuesta un reparto: piezas lejos de su mención, capítulos que terminan en una columna sola o con una
  * columna de pocas líneas, páginas solo de piezas a medio llenar y el total de páginas. */
-function costo() {
-  let k = 0;
+/**
+ * Lo que cuesta un reparto. Con [hasta] (una pieza), solo lo ya decidido: las piezas hasta ella y los capítulos y páginas
+ * hasta los suyos; así la búsqueda en orden no castiga de antemano a las piezas que aún no decide.
+ */
+function costo(det, hasta) {
+  let k = 0; const suma = (n, motivo) => { k += n; if (det && n) det.push(`${n} ${motivo}`); };
+  const iTope = hasta ? flot.indexOf(hasta) : Infinity;
+  const cTope = hasta ? cuerpo.findIndex((c) => c.bloques.includes(hasta)) : Infinity;
+  const pTope = hasta ? hasta.pagina : Infinity;
   menciones().forEach(({ b, men }) => {
-    if (!men) return;
-    const d = b.pagina - men[1];
-    if (d > 1) k += 12 * (d - 1);
-    if (b.pagina < men[0]) k += 20 * (men[0] - b.pagina);
+    if (!men || flot.indexOf(b) > iTope) return;
+    const d = b.pagina - men[1], nom = `${b.flotante[0]}${b.n}`;
+    if (d >= 1) suma(4, `${nom} en la página siguiente`);                 // se prefiere la de la mención (pedido del autor del 21 de noviembre)
+    if (d > 1) suma(30 * (d - 1), `${nom} lejos`);                        // nunca más lejos que la página siguiente
+    if (b.pagina < men[0]) suma(60 * (men[0] - b.pagina), `${nom} antes de su mención`);   // ni antes de su mención
   });
-  cuerpo.forEach((c) => {
-    if (!c.marcos.length) return;
+  cuerpo.forEach((c, ci) => {
+    if (!c.marcos.length || ci >= cTope) return;
     const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
     const cols = [0, 1, 2].map((x) => c.marcos.filter((m) => m.p === q && m.k === x).reduce((t, m) => t + m.usado, 0) * PT).filter((x) => x > 0);
     const otras = pg.paneles.length + figCols(q).length;
-    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda) k += 25;
-    if (cols.length && cols[cols.length - 1] < 60) k += 12;
+    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda) suma(25, `${c.titulo}: termina en una columna sola`);
+    if (cols.length && cols[cols.length - 1] < 60) suma(12, `${c.titulo}: termina en una columna corta`);
   });
-  paginas.forEach((pg, q) => { if (!pg.marcos.length && !pg.paneles.length && !figCols(q).length && pg.banda && pg.banda < 0.75 * (BOTTOM - TOP)) k += 5; });
-  cuerpo.forEach((c) => {                                                       // piezas que quedan después del último texto de su capítulo
-    if (!c.marcos.length) return;
+  paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && !figCols(q).length && pg.banda && pg.banda < 0.75 * (BOTTOM - TOP)) suma(5, `página ${q + PRIMERA} solo con una pieza a medio llenar`); });
+  paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && figCols(q).length) suma(3, `página ${q + PRIMERA} solo con figuras`); });
+  cuerpo.forEach((c, ci) => {                                                   // piezas que quedan después del último texto de su capítulo
+    if (!c.marcos.length || ci >= cTope) return;
     const ultima = Math.max(...c.marcos.map((m) => m.p));
-    c.bloques.forEach((b) => { if (b.flotante && b.pagina > ultima) k += 15; });
+    c.bloques.forEach((b) => { if (b.flotante && b.pagina > ultima) suma(15, `${b.flotante[0]}${b.n} después del texto de su capítulo`); });
   });
-  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && b.pagina < fs[i - 1].pagina) k += 40; }); });   // nunca fuera de orden
-  return k + paginas.length;
+  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina < fs[i - 1].pagina) suma(40, `${t} ${b.n} fuera de orden`); }); });   // nunca fuera de orden
+  // En la misma página, también en orden de lectura: una figura de columna se lee según su columna; una al pie, al final.
+  const lugarEn = (b) => { if (!b.columna) return 9; const f = figCols(b.pagina).find((x) => x.items.includes(b)); return f ? f.k + f.items.indexOf(b) * 0.1 : 0; };
+  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t && !b.continua); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina === fs[i - 1].pagina && lugarEn(b) < lugarEn(fs[i - 1])) suma(40, `${t} ${b.n} antes que la anterior en su página`); }); });
+  return k + (hasta ? 0 : paginas.length);
 }
-// Búsqueda local: cada tabla o figura ancha puede reservarse en la página de su mención o en la siguiente; se queda
-// la opción que baja el costo (pedido del autor del 11 de noviembre: ninguna figura lejos de donde se la nombra).
+// Reparto de tablas y figuras (pedidos del autor del 11 y del 21 de noviembre de 2026): cada pieza en la página de su
+// primera mención o en la siguiente, de preferencia en la misma y junto al texto que la nombra. Cada pieza tiene pocas
+// opciones —una ancha, la página donde va al pie; una de columna, su página y su lado— y se eligen en tres pasos:
+//   1. En orden, con un haz: pieza por pieza, en el orden de la memoria, con las siguientes en su lugar por defecto;
+//      se guardan los mejores repartos parciales (HAZ fija cuántos).
+//   2. Ajuste local: cada pieza prueba sus opciones con las demás quietas, hasta que nada mejore.
+//   3. Al azar, con semilla fija: cambia dos o tres piezas seguidas a la vez (BUSQUEDA_MS fija su duración).
 {
-  const candidatas = flot.filter((b) => !b.columna && !b.continua);
+  const candidatas = flot.filter((b) => !b.continua);
+  const estado = (b) => (b.columna ? b.reserva || null : b.rel);
+  const poner = (b, v) => {
+    if (b.columna) { b.reserva = v; return; }
+    b.rel = v; const s = flot[flot.indexOf(b) + 1]; if (s && s.continua) s.rel = v == null ? undefined : v + 1;   // la continuación de una tabla va en la página siguiente
+  };
+  const igual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  const opcionesDe = (b, men) => {
+    const c = cuerpo.find((x) => x.bloques.includes(b));
+    if (b.columna) {
+      // Una figura de columna: su página (la de la mención, la última de la mención o la siguiente) y su lado.
+      const ps = [...new Set([men[0], men[1], men[1] + 1])].map((q) => q - c.pagina).filter((r) => r >= 0);
+      return [null, ...ps.flatMap((rel) => ['der', 'izq'].map((lado) => ({ rel, lado })))];
+    }
+    const apertura = b.pieza.alto <= BOTTOM - TOP - AIRE_BANDA - 70;   // al pie de la apertura, solo si el texto conserva siete líneas o más
+    return [...new Set([undefined, men[0] - 1 - c.pagina, men[0] - c.pagina, men[1] - c.pagina, men[1] + 1 - c.pagina])].filter((r) => r === undefined || r >= 1 || (r === 0 && apertura));
+  };
+  const mencionDe = (b) => (menciones().find((m) => m.b === b) || {}).men;
+  const inicial = candidatas.map(estado);
+  // 1. En orden, con un haz.
+  {
+    const HAZ = +(process.env.HAZ || 8);
+    let haz = [{ asign: inicial.slice(), k: Infinity }];
+    for (let i = 0; i < candidatas.length; i++) {
+      const nuevos = [];
+      for (const hz of haz) {
+        candidatas.forEach((b, j) => poner(b, j < i ? hz.asign[j] : inicial[j]));
+        pgAnexos = repartir();
+        const men = mencionDe(candidatas[i]);
+        const ops = men ? opcionesDe(candidatas[i], men) : [];
+        if (!ops.some((o) => igual(o, inicial[i]))) ops.push(inicial[i]);
+        for (const o of ops) {
+          poner(candidatas[i], o); pgAnexos = repartir();
+          nuevos.push({ asign: [...hz.asign.slice(0, i), o, ...inicial.slice(i + 1)], k: costo(null, candidatas[i]) + costo() / 1000 });
+        }
+      }
+      const vistos = new Set();
+      haz = nuevos.sort((a, b) => a.k - b.k).filter((hz) => { const c = JSON.stringify(hz.asign.slice(0, i + 1)); if (vistos.has(c)) return false; vistos.add(c); return true; }).slice(0, HAZ);
+    }
+    candidatas.forEach((b, j) => poner(b, haz[0].asign[j])); pgAnexos = repartir();
+  }
   let mejor = costo();
+  if (process.env.DIAG) console.log(`Costo después del haz: ${mejor}`);
+  // 2. Ajuste local.
   for (let ronda = 0; ronda < 3; ronda++) {
     let cambio = false;
     for (const b of candidatas) {
-      const c = cuerpo.find((x) => x.bloques.includes(b));
-      const m = menciones().find((x) => x.b === b); if (!m || !m.men) continue;
-      const apertura = b.pieza.alto <= BOTTOM - TOP - AIRE_BANDA - 70;   // al pie de la apertura, solo si el texto conserva siete líneas o más
-      const opciones = [...new Set([undefined, b.rel, m.men[0] - 1 - c.pagina, m.men[0] - c.pagina, m.men[1] - c.pagina, m.men[1] + 1 - c.pagina].filter((r) => r === undefined || r >= 1 || (r === 0 && apertura)))];
-      const original = b.rel; let elegida = original; const sigue = flot[flot.indexOf(b) + 1] && flot[flot.indexOf(b) + 1].continua ? flot[flot.indexOf(b) + 1] : null;
-      for (const r of opciones) {
-        if (r === original) continue;
-        b.rel = r; if (sigue) sigue.rel = r == null ? undefined : r + 1;   // la continuación de una tabla va en la página siguiente
-        pgAnexos = repartir(); const k = costo();
-        if (k < mejor - 0.01) { mejor = k; elegida = r; cambio = true; }
+      const men = mencionDe(b); if (!men) continue;
+      const original = estado(b); let elegida = original;
+      for (const o of opcionesDe(b, men)) {
+        if (igual(o, original)) continue;
+        poner(b, o); pgAnexos = repartir(); const k = costo();
+        if (k < mejor - 0.01) { mejor = k; elegida = o; cambio = true; }
       }
-      b.rel = elegida; if (sigue) sigue.rel = elegida == null ? undefined : elegida + 1; pgAnexos = repartir();
+      poner(b, elegida); pgAnexos = repartir();
     }
     if (!cambio) break;
   }
+  // 3. Al azar, con semilla fija: el resultado es siempre el mismo.
+  {
+    const LIMITE = +(process.env.BUSQUEDA_MS || 15000);
+    let semilla = 11; const azar = () => ((semilla = (semilla * 1664525 + 1013904223) % 4294967296) / 4294967296);
+    const t0 = Date.now(); let pruebas = 0, mejoras = 0;
+    while (LIMITE > 0 && Date.now() - t0 < LIMITE) {
+      const ms = new Map(menciones().map((m) => [m.b, m.men]));
+      const i = Math.floor(azar() * candidatas.length);
+      const grupo = [candidatas[i]];
+      if (azar() < 0.6 && i + 1 < candidatas.length) grupo.push(candidatas[i + 1]);
+      if (azar() < 0.3 && i + 2 < candidatas.length) grupo.push(candidatas[i + 2]);
+      if (grupo.some((b) => !ms.get(b))) continue;
+      const antes = grupo.map(estado);
+      grupo.forEach((b) => { const os = opcionesDe(b, ms.get(b)); poner(b, os[Math.floor(azar() * os.length)]); });
+      pgAnexos = repartir(); const k = costo(); pruebas++;
+      if (k < mejor - 0.01) { mejor = k; mejoras++; } else { grupo.forEach((b, j) => poner(b, antes[j])); pgAnexos = repartir(); }
+    }
+    pgAnexos = repartir();
+    if (process.env.DIAG) console.log(`Búsqueda al azar: ${pruebas} pruebas, ${mejoras} mejoras`);
+  }
+  // Para revisar a mano: PROBAR="f17=36izq f18=37" fija piezas en páginas impresas (y lado, para las de columna).
+  if (process.env.PROBAR) {
+    for (const t of process.env.PROBAR.split(/\s+/).filter(Boolean)) {
+      const m = t.match(/^([ft])(\d+)=(\d+)(izq|der)?$/); if (!m) continue;
+      const b = flot.find((x) => x.flotante[0] === m[1] && x.n === +m[2] && !x.continua); const c = cuerpo.find((x) => x.bloques.includes(b));
+      const rel = +m[3] - PRIMERA - c.pagina;
+      poner(b, b.columna ? { rel, lado: m[4] || 'der' } : rel);
+    }
+    pgAnexos = repartir(); mejor = costo();
+  }
+  if (process.env.DIAG) { const det = []; costo(det); console.log('Desglose del costo: ' + det.join(' · ')); }
   if (process.env.DIAG) console.log(`Costo del reparto: ${mejor}`);
 }
 // Los finales de sección no se equilibran ni se reparten en columnas cortas: el texto llena cada columna de arriba
@@ -1113,11 +1267,11 @@ const pIndice = pieza('indice', DOBLE, (T) => {
   return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${filas.join('')}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
 });
 // Tablas y figuras en dos columnas: las figuras se reparten donde las dos columnas quedan más parejas, medidas.
-const indicePiezas = (k, id) => pieza(id, DOBLE, (T) => {
+const indicePiezas = (k, id) => pieza(id, INDICE_AL_FINAL ? ANCHO : DOBLE, (T) => {
   const fila = (b, nombre) => `<div class="ir m c"><span class="irl">${T('Índice rótulo', `${nombre} ${b.n}`)}</span>${T('Índice menor', b.titulo)}${T('Índice menor página', String(numPag(b.pagina)))}</div>`;
   const tablas = flot.filter((b) => b.flotante === 'tabla' && !b.continua).map((b) => fila(b, 'Tabla'));
   const figuras = flot.filter((b) => b.flotante === 'figura').map((b) => fila(b, 'Figura'));
-  return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${tablas.join('')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${figuras.slice(0, k).join('')}</div><div><div class="ih">${T('Subtítulo', ' ')}</div>${figuras.slice(k).join('')}</div></div>`;
+  return `<div class="idx${INDICE_AL_FINAL ? ' ancho' : ''}"><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${tablas.join('')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${figuras.slice(0, k).join('')}</div><div><div class="ih">${T('Subtítulo', ' ')}</div>${figuras.slice(k).join('')}</div></div>`;
 });
 const candidatas = flot.filter((b) => b.flotante === 'figura').map((_, k) => indicePiezas(k, `indice-piezas-${k}`));
 let pIndice2;
@@ -1131,7 +1285,13 @@ if (pIndice2.alto > BOTTOM - TOP) console.log(`Atención: el índice de tablas y
 if (pIndice.alto > BOTTOM - TOP) console.log(`Atención: el índice mide ${Math.round(pIndice.alto)} mm y no cabe en su página.`);
 if (pAnexos.alto > BOTTOM - TOP) console.log(`Atención: los anexos miden ${Math.round(pAnexos.alto)} mm y no caben en su página.`);
 
-menciones().forEach(({ b, men, lejos }) => { if (lejos || process.env.DIAG) console.log(`${lejos ? 'Atención: lejos de su mención' : 'Mención'} · ${b.flotante} ${b.n}: mencionada en ${men ? men.map(numPag).join('–') : '?'}, puesta en ${numPag(b.pagina)}`); });
+// La columna donde empieza el párrafo que nombra cada pieza, para revisar a mano si quedan juntas.
+const columnaDe = (b) => {
+  const re = new RegExp(`${b.flotante === 'tabla' ? 'Tabla' : 'Figura'}s?[ \\u00A0](\\d+[ \\u00A0]y[ \\u00A0])?${b.n}(?!\\d)`);
+  for (const c of cuerpo) for (const m of c.marcos) for (const x of m.cont) if (x.b.partes && re.test(textoDe(x.b.partes))) return m.k;
+  return '?';
+};
+menciones().forEach(({ b, men, lejos }) => { if (lejos || process.env.DIAG) console.log(`${lejos ? 'Atención: lejos de su mención' : 'Mención'} · ${b.flotante} ${b.n}: mencionada en ${men ? men.map(numPag).join('–') : '?'}, puesta en ${numPag(b.pagina)} (mención en la columna ${columnaDe(b)}; pieza ${b.columna ? 'de columna' : 'ancha'})`); });
 cuerpo.forEach((c) => {
   if (!c.marcos.length) return;
   const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
@@ -1149,16 +1309,18 @@ if (process.env.SOLO_REPARTO) { cuerpo.forEach((c) => console.log(`  ${String(nu
 // Cada elemento: { tipo: 'pieza', pieza, x, y } · { tipo: 'panel', html, nombre, x, y, alto } · { tipo: 'marco', marco } · { tipo: 'imagen', archivo, rect }
 const hojas = [];
 const sinTildes = (s) => s.toLowerCase().normalize('NFD').replace(/[^a-z]/g, '');
-const panelDe = (o, x, y, a) => ({ tipo: 'panel', nombre: 'panel-' + (o.n != null ? o.n : sinTildes(o.titulo)), html: panelHtml({ n: o.n, titulo: o.titulo, secciones: (o.bloques || []).filter((b) => b.seccion).map((b) => b.seccion), aura: o.aura, alto: a }), x, y, alto: a });
+const panelDe = (o, x, y, a) => ({ tipo: 'panel', nombre: 'panel-' + (o.n != null ? o.n : sinTildes(o.titulo)), html: panelHtml({ n: o.n, titulo: o.panel || o.titulo, secciones: (o.bloques || []).filter((b) => b.seccion).map((b) => b.seccion), aura: o.aura, alto: a }), x, y, alto: a });
 hojas.push({ sinMaestra: true, items: [{ tipo: 'imagen', archivo: 'figuras/aura/portada.jpg', rect: [-3, -3, W + 6, H + 6], nombre: 'Aura de la portada' }, { tipo: 'pieza', pieza: pPortada, x: 0, y: 0, nombre: 'Portada' }] });
 entradas.forEach((e) => {
   fluir(e, [colX(1), colX(2)]);
   hojas.push({ rotulo: e.titulo, items: [panelDe(e, colX(0), TOP, BOTTOM - TOP), ...e.marcos.map((m) => ({ tipo: 'marco', marco: m }))] });
 });
 hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Índice', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice, x: colX(1), y: TOP, nombre: 'Índice' }] });
-hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Tablas y figuras', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice2, x: colX(1), y: TOP, nombre: 'Índice de tablas y figuras' }] });
+if (!INDICE_AL_FINAL) hojas.push({ rotulo: 'Índice', items: [panelDe({ titulo: 'Tablas y figuras', aura: 'panel-5' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pIndice2, x: colX(1), y: TOP, nombre: 'Índice de tablas y figuras' }] });
 paginas.forEach((pg, q) => {
   const items = [];
+  // El índice de tablas y figuras, en su página del final (v8).
+  if (pg.indicePiezas) items.push({ tipo: 'pieza', pieza: pIndice2, x: colX(0), y: TOP, nombre: 'Índice de tablas y figuras' });
   // Una página solo de tablas o figuras las centra en el alto, para que no quede un hueco abajo.
   const fc = pg.figCols || [];
   const sinTexto = !pg.marcos.length && !pg.paneles.length && !pg.frases.length;
@@ -1168,9 +1330,11 @@ paginas.forEach((pg, q) => {
   const usadas = [...pg.marcos.map((m) => m.k), ...pg.paneles.map((pn) => pn.k)];
   const ultima = usadas.length ? Math.max(...usadas) : -1;
   const unidades = fc.reduce((t, f) => t + anchoFig(f), 0); let antes = 0;
-  fc.forEach((f) => {
-    const x = sinTexto ? MX + ((3 - unidades) / 2 + antes) * (COL + MED) : colX(Math.min(f.k, ultima + 1 + antes)); antes += anchoFig(f);
-    let yy = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - (pg.banda ? pg.banda + AIRE_BANDA : 0) - f.alto) / 2) : TOP;
+  const quietas = fc.some((f) => f.fija || f.junto);
+  [...fc].sort((f, g) => f.k - g.k).forEach((f) => {
+    const x = sinTexto ? MX + ((3 - unidades) / 2 + antes) * (COL + MED) : colX(quietas ? f.k : Math.min(f.k, ultima + 1 + antes)); antes += anchoFig(f);
+    const altoGrupo = Math.max(...fc.map((g) => g.alto));
+    let yy = sinTexto ? TOP + Math.max(0, (BOTTOM - TOP - (pg.banda ? pg.banda + AIRE_BANDA : 0) - altoGrupo) / 2) : TOP;
     f.items.forEach((b) => { items.push({ tipo: 'pieza', pieza: b.pieza, x, y: yy, nombre: b.rotulo }); yy += b.pieza.alto + AIRE_PIEZAS; });
   });
   pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
@@ -1227,7 +1391,7 @@ doc.maestra.push(marcoTexto([W - MX - 30, Y_FOLIO, 30, 7], [{ estilo: 'Folio', p
 
 // Una historia por sección: todos sus párrafos, enlazados de marco en marco.
 const historiaDe = new Map();
-[...entradas, ...cuerpo].forEach((c) => historiaDe.set(c, doc.historia(c.bloques.filter((b) => b.partes && !b.frase).map((b) => ({ estilo: b.estilo, partes: conPeso(b.estilo, b.partes), despues: b.extra ? (E[b.estilo].despues || 0) + b.extra : undefined })))));
+[...entradas, ...cuerpo].filter((c) => c.bloques.some((b) => b.partes && !b.frase)).forEach((c) => historiaDe.set(c, doc.historia(c.bloques.filter((b) => b.partes && !b.frase).map((b) => ({ estilo: b.estilo, partes: conPeso(b.estilo, b.partes), despues: b.extra ? (E[b.estilo].despues || 0) + b.extra : undefined })))));
 
 function itemsPieza(it) {
   const pz = it.pieza; const out = [{ tipo: 'imagen', archivo: pz.fondo, rect: [it.x, it.y, pz.ancho, pz.alto], ajuste: 'contener', nombre: `${it.nombre}: fondo` }];

@@ -2517,7 +2517,28 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** reproducir los diagramas de Mermaid de los anexos tal como están, que no siguen la línea visual de la memoria, y rehacer ahora las 27 figuras anteriores.
 - **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md).
 
+## D-186 — Figuras a su tamaño real, junto a su mención, simples y con degradados
+
+- **Fecha:** 2026-11-21.
+- **Estado:** aplicada en la [memoria v8 compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), con su IDML para Affinity.
+- **Contexto:** las siete figuras de D-185 medían todas el ancho del texto y tenían letra de 13,5 a 19 pt, más chica que la de las demás figuras del Pase (20,6 pt). El autor pidió íconos más grandes, anchos de 1/3 o 2/3, que su tamaño sea el correcto en la memoria real y que una figura y su mención queden juntas; después, diagramas simples, sin cajas, y degradados sutiles como los de la app.
+- **Decisión:**
+  - **Tamaño:** cada figura se diseña al ancho que ocupa en la página —una columna, dos o el ancho del texto— y se coloca al 100 %, con la letra de las demás figuras y los íconos de la app de 28 a 40 pt.
+  - **Diseño:** diagramas de líneas, puntos, flechas y texto, sin cajas que no expliquen nada y sin números en círculos.
+  - **Color:** degradados sutiles: tres tonos vecinos en las superficies y, en barras y puntos, del papel al tono intenso de la identidad. Se imprimen como vectores.
+  - **Composición:** la v8 se compone con el generador de la memoria. Cada figura va en la página de su mención o en la siguiente, de preferencia en la misma; ahí va junto a la columna que la nombra, y las figuras de una página se leen en orden. Para lograrlo, cuatro figuras cambian de ancho: la 9 pasa a dos columnas, la 15 a una, de arriba abajo, la 18 a una y la 28 a lo ancho.
+  - **Índice y portada:** el índice de tablas y figuras va al final, a lo ancho, y la portada suma el logo DIP.
+- **Alternativas descartadas:** dejar las figuras al ancho del texto y achicarlas al colocarlas, porque su letra quedaría más chica que la de las demás figuras; pasar los cambios a mano en Affinity; aceptar figuras a dos páginas de su mención.
+- **Pendiente:** los capítulos 4, 10 y 14 y el glosario terminan en una columna corta, y la continuación de la Tabla 4 ocupa sola una página; se resuelve con el contenido, como pide el autor desde el 10 de noviembre (D-152, D-183).
+- **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — D-186
+
+- **Qué cambió:** se registró D-186, las figuras a su tamaño real y la memoria v8 compuesta.
+- **Cómo estaba antes:** la última decisión era D-185.
+- **Por qué:** pedidos del autor del 21 de noviembre de 2026.
 
 ### 2026-11-21 — D-185
 

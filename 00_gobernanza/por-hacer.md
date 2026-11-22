@@ -15,7 +15,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
 2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
-3. **Pasar el borrador v8 a Affinity.** Los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen, por página del PDF del Pase, qué texto cambiar y qué hacer en el diseño: el orden de los capítulos, las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) y la numeración de todas, el logo DIP en la portada, los dos índices y la Tabla 4.
+3. **Revisar la memoria v8 compuesta.** Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, y en IDML para Affinity, con las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) a su tamaño real y cada figura en la página de su mención o en la siguiente (D-186). Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales cortos de los capítulos 4, 10 y 14 y del glosario, y la página con la continuación de la Tabla 4.
 4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
 5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
    - cómo se eligió a las tres personas;
@@ -923,7 +923,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### C. Figuras y diseño de la memoria
 
-- [ ] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales. *21 de noviembre: siete figuras nuevas comparten un mismo sistema —ficha blanca, cajas de papel, íconos de la app y la paleta de Relevo— y explican el método Framework, la formulación, el método del proyecto, los estados de un relevo, el sistema, el registro de la prueba y la comparación futura ([figuras/v8](../08_memoria/figuras/v8/README.md)). Falta llevar las figuras anteriores al mismo nivel, si el autor lo pide.*
+- [x] **Diagramas estandarizados** en un mismo nivel de información, de modo que se puedan sumar otros y que juntos lleven a conclusiones visuales. *21 de noviembre: siete figuras nuevas comparten un mismo sistema —diagramas simples de líneas, puntos y texto, la letra de la memoria, los íconos de la app y degradados sutiles— y explican el método Framework, la formulación, el método del proyecto, los estados de un relevo, el sistema, el registro de la prueba y la comparación futura ([figuras/v8](../08_memoria/figuras/v8/README.md)). Los colores de las figuras anteriores llevan los mismos degradados en la [memoria v8 compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) (D-186).*
 - [ ] **Índice de tablas y figuras solo con texto (Majluf, p. 6).** Las fichas blancas y las filas apretadas no funcionan; usar solo texto, con el interlineado del índice general (respuesta, sección 1).
 - [ ] **Más margen en el índice general (Majluf, p. 5):** «dale un poco más de margen dentro de la caja blanca en ambos lados». El número del capítulo y el de la página quedan pegados al borde (respuesta, sección 1).
 - [x] **Logo en la portada (Gallardo, p. 1):** marcó el rincón vacío arriba a la derecha y escribió «Logo diip». *Es el logo DIP, Diseño de Interfaces Phigitales, que el autor entregó el 21 de noviembre: va en la portada del borrador v8 ([logo](../08_memoria/figuras/logo-dip/)); falta ponerlo en Affinity.*
@@ -966,6 +966,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — Memoria v8 compuesta
+
+- **Qué cambió:** el punto 3 de lo que queda pasa de «pasar el borrador v8 a Affinity» a revisar la memoria v8 compuesta, con su IDML; los diagramas estandarizados de la tarea 16 quedan hechos.
+- **Cómo estaba antes:** había que pasar los cambios a mano en Affinity, y los diagramas estaban en curso.
+- **Por qué:** pedidos del autor del 21 de noviembre (D-186).
 
 ### 2026-11-21 — Figuras nuevas, logo DIP e iOS
 
