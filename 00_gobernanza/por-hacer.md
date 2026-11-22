@@ -2,7 +2,7 @@
 
 Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entrega final y el examen; abajo, el detalle de cada tarea, de la 1 a la 16. Al cerrar una tarea, se marca, se enlaza el commit y se registra en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
 
-## Lo que queda, en orden (al 21 de noviembre de 2026)
+## Lo que queda, en orden (al 22 de noviembre de 2026)
 
 **Fechas:**
 
@@ -25,16 +25,18 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
    - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
    - la extensión de la Introducción y la Justificación (tarea 15, C).
 6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
-7. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
+7. **Decidir los íconos** (tarea 17), de preferencia el 25 de noviembre, después de probar el APK 4.8.2 en el teléfono. Si la app de la entrega y del examen es la 4.8.2, con los íconos de Lucide, cambian el párrafo «Iconografía» de la memoria, el Anexo H —su texto, la Tabla H2 y las Figuras H6 y H8; la H7 ya está rehecha— y los íconos de las figuras; las capturas pueden quedarse, porque son de la versión de la prueba. Si no, sigue la 4.7.2 y los íconos de Lucide quedan para después del examen.
+8. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
 
-8. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
-9. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
+9. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
+10. **El video de respaldo** del ciclo completo, una pila nueva y un segundo Tag para la demostración (tarea 7).
+11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
 **Después del examen:**
 
-10. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
+12. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
 
 **Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2.
 
@@ -283,7 +285,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 23 de la memoria del Pase; Figura 17 de la v6). La memoria no las menciona, por decisión del autor (D-182).
 - [ ] **El relevo que no sonó:** confirmar con la tercera persona que fue fuera de casa, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
 - [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). Viene de la tarea 10.
-- [ ] **Aviso de licencia de Lucide** (anotado el 11 de noviembre): si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
+- [x] **Aviso de licencia de Lucide:** desde la app 4.8 los íconos salen de Lucide, y su aviso va en el repositorio y dentro del APK (D-187). Está en la rama `iconos-lucide`; llega a `main` si se une. Lo anotado el 11 de noviembre: si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
 - [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
@@ -998,6 +1000,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Lo que queda, al 22 de noviembre
+
+- **Qué cambió:** el orden de lo que queda suma la decisión de los íconos y el video de respaldo con un segundo Tag, y en la tarea 9 queda hecho el aviso de licencia de Lucide.
+- **Cómo estaba antes:** el orden era del 21 de noviembre, antes del trabajo de los íconos, y el aviso de licencia seguía pendiente.
+- **Por qué:** el autor preguntó qué falta, a tres semanas del examen.
 
 ### 2026-11-22 — Tarea 17, la nueva Figura H7
 
