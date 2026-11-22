@@ -982,7 +982,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 - [ ] **Memoria v8, «Iconografía»:** reemplazar «Los íconos de la aplicación son propios: 118 dibujos de línea…» por el texto propuesto en el documento 46. Usa las mismas referencias de Lucide.
 - [ ] **Memoria v8, lámina de identidad:** «Íconos propios: retícula de 24, trazo de 1,6» → «Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6».
-- [ ] **Anexo H, H.3:** el texto (propuesta en el documento 46); en la Tabla H2, las filas de retícula, esquinas, y color y relleno, y recontar cuántos íconos corre el centro óptico; rehacer las Figuras H6 (el conjunto), H7 (la construcción con Suena y Leer) y H8 (Lucide y Relevo). Después, regenerar el Word y el PDF de los anexos.
+- [ ] **Anexo H, H.3:** el texto (propuesta en el documento 46); en la Tabla H2, las filas de retícula, formas base, esquinas, y color y relleno, y recontar cuántos íconos corre el centro óptico; poner la nueva Figura H7, [la construcción con Suena y Meditar](../10_recursos_visuales/iconos-lucide/construccion/construccion-suena-y-meditar.png), con su texto propuesto, y rehacer las Figuras H6 (el conjunto) y H8 (Lucide y Relevo). Después, regenerar el Word y el PDF de los anexos.
 - [ ] **Figuras de la memoria:** pasar [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json) a los íconos de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app (`tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`); no hace falta dibujarlos, porque ya tienen par: Objeto, `flag`, `circle-play`, `hourglass`, `dog` y `contrast`.
 - [ ] **Capturas:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores; tomar las de la 4.8 si se quiere que coincidan.
 
@@ -998,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tarea 17, la nueva Figura H7
+
+- **Qué cambió:** la tarea 17 dice que la Figura H7, la construcción, ya está rehecha con Suena y Meditar, y suma la fila de las formas base a las de la Tabla H2.
+- **Cómo estaba antes:** pedía rehacer la Figura H7 con Suena y Leer.
+- **Por qué:** el autor pidió hacer la construcción como se había hecho antes.
 
 ### 2026-11-22 — Tarea 17, propuestas de más íconos
 

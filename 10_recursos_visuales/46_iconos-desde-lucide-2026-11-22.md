@@ -191,9 +191,9 @@ Nada de esto se cambió todavía, porque depende de que el autor apruebe los íc
 - **Memoria v8, lámina de identidad:** dice «Íconos propios: retícula de 24, trazo de 1,6». Propuesta: «Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6».
 - **Anexo H, H.3:**
   - el texto;
-  - la Tabla H2: retícula, esquinas, color y relleno, y el número de íconos que corre el centro óptico;
+  - la Tabla H2: retícula, formas base, esquinas, color y relleno, y el número de íconos que corre el centro óptico;
   - la Figura H6, el conjunto;
-  - la Figura H7, la construcción con Suena y Leer;
+  - la Figura H7, la construcción: ya está rehecha, con Suena y Meditar (texto propuesto más abajo); falta llevarla al anexo;
   - la Figura H8, Lucide y Relevo.
 - **Figuras de la memoria:** toman los íconos de [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json), los de la app 4.7.2. Hay que pasarlos a los de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app: `tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`. Los seis ya tienen par en Lucide o en Objeto (sección «Más íconos: propuestas»).
 - **Capturas de la app:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores.
@@ -210,7 +210,27 @@ Usa las dos referencias de Lucide que la memoria ya tiene, así que no suma cita
 
 > Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea: 118 dibujos en una retícula de 24, de un solo color y siempre acompañados de su palabra. De ellos, 109 son de Lucide tal cual, seis se adaptaron y tres se dibujaron con sus reglas de construcción, porque lo que la app tiene que mostrar —el Tag y algunas actividades que nombraron las personas entrevistadas— no está en Lucide (Figura H6).
 
-En la Tabla H2 cambian tres filas. La retícula y el margen pasan a ser los de Lucide: lienzo de 24, con el trazo a 1 o más del borde. Las esquinas, 2 en las formas de 8 o más y 1 en las menores. En color y relleno, contorno y un solo color; solo se rellenan los puntos de la paleta, como en Lucide, y la estrella llena. Las filas del trazo, los tamaños ópticos y el equilibrio no cambian. Hay que recontar cuántos íconos corre el centro óptico.
+En la Tabla H2 cambian cuatro filas. La retícula y el margen pasan a ser los de Lucide: lienzo de 24, con el trazo a 1 o más del borde. Las formas base, el círculo de radio 10 y el cuadrado de 18 de Lucide, con los que se compara el peso al desenfocar. Las esquinas, 2 en las formas de 8 o más y 1 en las menores. En color y relleno, contorno y un solo color; solo se rellenan los puntos de la paleta, como en Lucide, y la estrella llena. Las filas del trazo, los tamaños ópticos y el equilibrio no cambian. Hay que recontar cuántos íconos corre el centro óptico.
+
+#### La construcción, Figura H7
+
+La Figura H7 del Pase seguía cinco pasos con Suena y Leer. Se rehízo con los mismos cinco pasos y la misma composición, en Arial y negro sobre blanco, pero con el método de Lucide. Leer cambió por Meditar, porque Leer es ahora `book-open` de Lucide tal cual, y Meditar es la actividad que Relevo dibuja con sus reglas. La lámina se genera desde los SVG de la app con [`construir_lamina.js`](iconos-lucide/construccion/construir_lamina.js), que mide también la mancha y el corrimiento de cada ícono.
+
+![Construcción de dos íconos con las reglas de Lucide: Suena y Meditar](iconos-lucide/construccion/construccion-suena-y-meditar.png)
+
+Texto propuesto, en lugar del párrafo «Construcción» y sus cinco pasos:
+
+> **Construcción.** Los íconos que salen de Lucide conservan su construcción. Los que Relevo adapta o dibuja se arman con las piezas y las reglas de Lucide, y terminan en una prueba a la vista. La Figura H7 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Meditar, una actividad que Lucide no tiene, abajo:
+>
+> 1. **Retícula.** La de Lucide: 24 × 24, con el trazo a 1 o más del borde, y su círculo y su cuadrado, con los que se compara el peso de cada ícono.
+> 2. **Geometría.** Lo que ya existe en Lucide se toma igual. Suena dibuja el Tag como un círculo con un punto al centro y le suma los dos anillos del ícono de radio de Lucide, abiertos 45° a cada lado y separados por 4. Meditar arma tres pétalos con pares de arcos, cerrados como las hojas del ícono de flor de Lucide, sobre el suelo de su ícono de brote.
+> 3. **Trazo y aire.** Trazo de 2, centrado en la línea, con puntas y uniones redondas. Entre elementos distintos queda al menos 2 de aire: 2 entre el Tag y su primer anillo, y 3 entre los pétalos y el suelo.
+> 4. **Peso y centro.** Desenfocado dos unidades, el ícono deja una mancha —las unidades cuadradas con al menos un 12 % de tinta— que debe parecerse a la del círculo y el cuadrado de Lucide, 366 y 418. Suena deja 407 y Meditar, 399, cerca de la mediana de los íconos de Lucide de la app, 411. Después, la app corre cada ícono hacia su centro óptico: Suena, 0,12 a la derecha, y Meditar, 0,17 hacia abajo.
+> 5. **Tamaños ópticos.** El trazo se afina a medida que el ícono crece —de 2,0 en 16 px a 1,3 en 48 px— para que pese lo mismo en una fila que en un anillo grande.
+
+> **Figura H7.** *Construcción de dos íconos: Suena y Meditar.* *Nota.* Elaboración propia, con las reglas de Lucide (Lucide Contributors, s. f.-a) y las medidas de la app. Las cotas están en unidades de la retícula; en el paso 4, cada número es la mancha del ícono al desenfocarlo, y en el paso 5, cada par indica el tamaño del ícono y su trazo.
+
+La mancha se mide como en la sección «Tamaño óptico»: el ícono, a 480 px con trazo de 2, se desenfoca dos unidades, y se cuentan las unidades cuadradas que quedan con al menos un 12 % de tinta.
 
 ## Referencias
 
@@ -223,6 +243,12 @@ Lucide Contributors. (s. f.-c). *SVG conventions*. Lucide. Recuperado el 22 de n
 Lucide Contributors. (2026). *lucide-static* (Versión 1.70.0) [Software]. npm. https://www.npmjs.com/package/lucide-static/v/1.70.0
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — La construcción, Figura H7
+
+- **Qué cambió:** se rehízo la lámina de construcción de los íconos, la Figura H7 del Anexo H, con Suena y Meditar y el método de Lucide, y se suma su texto propuesto. La Tabla H2 suma la fila de las formas base a las que cambian.
+- **Cómo estaba antes:** la Figura H7 del Pase mostraba Suena y Leer con la retícula de Material Design, un área viva de 20 y el trazo de 1,6, y el documento solo la anotaba como pendiente.
+- **Por qué:** el autor pidió hacer la construcción como se había hecho antes.
 
 ### 2026-11-22 — Más íconos: propuestas
 
