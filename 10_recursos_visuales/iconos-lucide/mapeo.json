@@ -400,9 +400,9 @@
    "archivo": "lucide/plant-pot.svg"
   },
   "PRIMER_PASO": {
-   "categoria": "propio",
+   "categoria": "adaptado",
    "archivo": "propios/primer-paso.svg",
-   "nota": "La escalera con un punto en el primer escalón. Sin uso en la app."
+   "nota": "De «footprints»: una sola huella, más grande e inclinada hacia adelante, el primer paso. Sin uso en la app."
   },
   "PRIVACIDAD": {
    "categoria": "lucide",
@@ -448,7 +448,7 @@
   "SILENCIAR": {
    "categoria": "adaptado",
    "archivo": "propios/silenciar.svg",
-   "nota": "De «volume-x»: el Tag en lugar del parlante, con la misma cruz."
+   "nota": "De «volume-x»: el Tag en lugar del parlante, con la cruz."
   },
   "SIN_CONEXION": {
    "categoria": "lucide",
@@ -509,7 +509,7 @@
   "SUENA": {
    "categoria": "adaptado",
    "archivo": "propios/suena.svg",
-   "nota": "De «volume-2»: el Tag en lugar del parlante, con los mismos anillos."
+   "nota": "De «volume-2»: el Tag en lugar del parlante, con dos anillos concéntricos que se abren desde él."
   },
   "RUTA": {
    "categoria": "lucide",

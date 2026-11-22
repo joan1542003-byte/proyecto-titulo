@@ -2535,21 +2535,29 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-187 — Los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene
 
 - **Fecha:** 2026-11-21, aplicada el 22.
-- **Estado:** aplicada en la app 4.8, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas.
+- **Estado:** aplicada en la app 4.8 y ajustada en la 4.8.1, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas.
 - **Contexto:** desde D-124, Relevo dibujaba sus propios íconos con las reglas de construcción de Lucide, un conjunto de íconos de línea de código abierto; en noviembre eran 118 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)). El autor propuso usar los de Lucide, adaptar los que lo requieran y crear nuevos con sus reglas solo cuando Lucide no tenga algo que el usuario hace.
 - **Decisión:**
   - **Lucide primero:** cada ícono de la app es el de Lucide 1.70.0 que dice lo mismo, tal cual: 109 de 118.
-  - **Adaptar cuando hace falta:** cinco parten de un ícono de Lucide y cambian una pieza. Suena y Silenciar llevan el Tag en vez del parlante; Sistema phygital, el Tag junto al teléfono; Actividades, cuatro círculos como los del logo, y Leer manga, un globo de diálogo en el libro.
-  - **Dibujar solo lo que falta:** cuatro son propios, porque Lucide no los tiene: el Tag, la colchoneta de Estirar, la flor de loto de Meditar y la escalera de Cómo empieza. Se dibujan con su especificación: lienzo de 24, 1 de margen, esquinas de 2 o 1 y 2 de aire entre trazos.
+  - **Adaptar cuando hace falta:** seis parten de un ícono de Lucide y cambian una pieza. Suena y Silenciar llevan el Tag en vez del parlante; Sistema phygital, el Tag junto al teléfono; Actividades, cuatro círculos como los del logo; Leer manga, un globo de diálogo en el libro, y Cómo empieza, una sola huella inclinada hacia adelante, el primer paso.
+  - **Dibujar solo lo que falta:** tres son propios, porque Lucide no los tiene: el Tag, la colchoneta de Estirar y la flor de loto de Meditar. Se dibujan con su especificación: lienzo de 24, 1 de margen, esquinas de 2 o 1 y, en lo posible, 2 de aire entre trazos.
+  - **Tamaño óptico, no matemático:** un ícono adaptado o propio debe pesar como sus vecinos de Lucide, aunque sus medidas no coincidan. Se comprueba con la prueba del desenfoque, que pide Lucide: el ícono se desenfoca y su mancha se compara con la de los íconos de Lucide de la app y con la de su equivalente (`medir_tamano_optico.js`). Cuando la regla de los 2 de aire achica un ícono, prima la vista.
   - **Siguen vigentes:** las reglas de D-162 para elegir entre los íconos de Lucide: cada actividad con el objeto con que empieza, un significado por dibujo, legible a 17 px y neutro donde la app no juzga. También el trazo según el tamaño (D-124) y el centro óptico (D-156).
   - **Licencia:** Lucide usa la licencia ISC, y los íconos que vienen de Feather, la MIT. Su aviso va en el repositorio y dentro del APK.
 - **Fundamento:** usar un conjunto abierto y probado deja el dibujo propio para lo que es de Relevo: el Tag y las actividades que Lucide no tiene. Mantiene además una sola voz, porque los íconos propios siguen las mismas reglas, y evita mantener 118 dibujos a mano. La familiaridad con lo dibujado y con el estilo ayuda a reconocer un ícono y a que guste (Shen et al., 2018; Zheng et al., 2026; ver el documento 43).
 - **Alternativas descartadas:** seguir con los 118 dibujos propios (D-124 y D-162); usar Material Symbols, con otra geometría; mezclar Lucide con los dibujos anteriores, que daría dos estilos.
 - **Por revisar con el autor:** Ordenar es una polera, porque Lucide no tiene un colgador; Tejer, un carrete de hilo; Pelota, una de vóleibol; Dormir, la cama, y Escribir y Estudiar, dos cuadernos.
-- **Verificación:** los 118 trazados generados dibujan lo mismo que sus SVG, píxel a píxel. Pasan las 110 pruebas unitarias, 4 de ellas nuevas, que comprueban que Android lee cada trazado completo y que ningún ícono repite el dibujo de otro. El APK 4.8 se firma con la clave de siempre. No se vio en un teléfono.
-- **Documentos:** [Íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md), [carpeta con el mapeo, los SVG y el generador](../10_recursos_visuales/iconos-lucide/README.md) y [app 4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md).
+- **Ajuste del 22 de noviembre (4.8.1):** el autor pidió que el primer paso no fuera una escalera y que el tamaño de los íconos propios fuera óptico, no matemático. El primer paso pasó a ser una huella. Suena, Silenciar, Estirar y Meditar, que quedaban entre el 11 % y el 22 % más chico de los íconos de Lucide de la app, crecieron: Suena llegó a la mitad, Estirar y Meditar al 38 %, y Silenciar quedó a la par de `volume-x`.
+- **Verificación:** los 118 trazados generados dibujan lo mismo que sus SVG, píxel a píxel. Pasan las 110 pruebas unitarias, 4 de ellas nuevas, que comprueban que Android lee cada trazado completo y que ningún ícono repite el dibujo de otro. Los APK 4.8 y 4.8.1 se firman con la clave de siempre. No se vio en un teléfono.
+- **Documentos:** [Íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md), [carpeta con el mapeo, los SVG y el generador](../10_recursos_visuales/iconos-lucide/README.md) y [app 4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md) y [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — D-187, tamaño óptico
+
+- **Qué cambió:** D-187 suma la regla del tamaño óptico, comprobado con la prueba del desenfoque, y el ajuste de la 4.8.1: el primer paso es una huella adaptada de Lucide, y Suena, Silenciar, Estirar y Meditar crecieron. Quedan seis adaptados y tres propios.
+- **Cómo estaba antes:** el primer paso era una escalera propia; había cinco adaptados y cuatro propios, y el tamaño se cuidaba solo con las medidas de la especificación.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
 
 ### 2026-11-22 — D-187
 

@@ -1,6 +1,6 @@
-<!-- Relevo · Propio. La colchoneta a medio desenrollar. Con las reglas de construcción de Lucide (ISC). -->
+<!-- Relevo · Propio. La colchoneta a medio desenrollar. Tamaño ajustado a la vista, con la prueba del desenfoque. Con las reglas de construcción de Lucide (ISC). -->
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="8" cy="12" r="6"/>
-  <path d="M10 12a2 2 0 1 1-2-2"/>
-  <path d="M8 18h12a2 2 0 0 0 0-4h-6.343"/>
+  <circle cx="9" cy="12" r="7"/>
+  <path d="M12 12a3 3 0 1 1-3-3"/>
+  <path d="M9 19h11a2 2 0 0 0 0-4h-4.675"/>
 </svg>

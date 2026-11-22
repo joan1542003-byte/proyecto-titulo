@@ -82,7 +82,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
-48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, cinco adaptados y cuatro propios con sus reglas, porque Lucide no los tiene; cómo se eligió cada uno y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
+48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, seis adaptados y tres propios con sus reglas, porque Lucide no los tiene; cómo se eligió cada uno, su tamaño óptico medido con la prueba del desenfoque y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -112,6 +112,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tamaño óptico
+
+- **Qué cambió:** la entrada del documento 46 cuenta seis adaptados y tres propios, y menciona el tamaño óptico.
+- **Cómo estaba antes:** contaba cinco adaptados y cuatro propios.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
 
 ### 2026-11-22 — Íconos desde Lucide
 

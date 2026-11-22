@@ -368,6 +368,7 @@
 | 21 nov. | Corrección | Antes de seguir: la app usa degradados sutiles y la memoria ya los tiene; pidió usarlos en los colores, como las barras de estadística y de porcentaje, sutiles y acordes a cada color. Algunos diagramas le parecieron muy desordenados: no hace falta usar cuadrados ni cajas; pueden ser diagramas normales y simples, que se entiendan bien, expliquen de forma natural y directa y sean fáciles de leer. | Las siete figuras pasaron a [diagramas simples](../08_memoria/figuras/v8/README.md), de líneas, puntos, flechas y texto; «Estados de un relevo» y «Método del proyecto» se leen de arriba abajo, en una columna. Los colores de la memoria llevan degradados sutiles: tres tonos vecinos en las superficies y, en las barras de las cifras, el gráfico de barras y los puntos de resultados, del papel al tono intenso. Los degradados se imprimen como vectores. | D-186 |
 | 21 nov. | Decisión y encargo | Sobre los íconos: usar los de Lucide, que son de código abierto, adaptar los que lo requieran o crear nuevos siguiendo cómo funcionan los de Lucide; si el usuario hace algo y Lucide no tiene un ícono de eso, hay que crearlo. | App [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md), en la rama `iconos-lucide`: de los 118 íconos, 109 son de Lucide tal cual, cinco adaptados y cuatro propios con sus reglas. El generador, el mapeo, los SVG y la licencia están en [`iconos-lucide`](../10_recursos_visuales/iconos-lucide/README.md), y el detalle, en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). Pasan 110 pruebas y el APK se firma con la clave de siempre; no se vio en un teléfono. La memoria, el Anexo H y las figuras quedan en la [tarea 17](por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria). | D-187 |
 | 22 nov. | Orden | «Inténtalo de nuevo», después de que la sesión se reinició a mitad del trabajo de los íconos. | Se retomó desde lo que había quedado guardado, sin perder trabajo, y se terminó la 4.8 con su documentación. | — |
+| 22 nov. | Corrección | El ícono del primer paso no debe ser una escalera. Además, algunos íconos propios se ven muy pequeños: «el tamaño debe ser perfecto, óptico, no matemático». | App [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md): el primer paso es una huella adaptada de Lucide, inclinada hacia adelante. Suena, Silenciar, Estirar y Meditar crecieron hasta pesar como sus vecinos, medidos con la prueba del desenfoque, que ahora está en el repositorio (`medir_tamano_optico.js`). Pasan 110 pruebas; no se vio en un teléfono. Detalle en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico). | D-187 |
 
 ## Lo que muestra el registro
 
@@ -378,6 +379,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tamaño óptico de los íconos
+
+- **Qué cambió:** se registró el pedido de cambiar el ícono del primer paso y de ajustar a la vista el tamaño de los íconos propios.
+- **Cómo estaba antes:** el último pedido era reintentar los íconos tras el reinicio de la sesión.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-22 — Íconos desde Lucide
 

@@ -967,11 +967,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ## 17. Íconos desde Lucide: revisar y llevar a la memoria
 
-**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
+**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.1 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
 
 ### A. Revisar la app
 
-- [ ] Instalar el [APK 4.8](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
+- [ ] Instalar el [APK 4.8.1](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8.1-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
+- [ ] Revisar la huella del primer paso, que reemplaza a la escalera, y el tamaño de Suena, Silenciar, Estirar y Meditar, que crecieron en la 4.8.1 ([tamaño óptico](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico)).
 - [ ] Decidir cinco elecciones: Ordenar (una polera, porque Lucide no tiene un colgador), Tejer (un carrete de hilo), Pelota (una de vóleibol), Dormir (la cama) y Escribir y Estudiar (dos cuadernos).
 - [ ] Si se aprueba, unir la rama `iconos-lucide` a `main`.
 
@@ -994,6 +995,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tarea 17, la 4.8.1
+
+- **Qué cambió:** la tarea 17 apunta al APK 4.8.1 y suma revisar la huella del primer paso y los cuatro íconos que crecieron.
+- **Cómo estaba antes:** apuntaba al APK 4.8.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
 
 ### 2026-11-22 — Tarea 17
 

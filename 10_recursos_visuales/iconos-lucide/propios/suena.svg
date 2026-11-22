@@ -1,7 +1,7 @@
-<!-- Relevo · Adaptado de Lucide «volume-2»: el Tag en lugar del parlante, con los mismos anillos. Con las reglas de construcción de Lucide (ISC). -->
+<!-- Relevo · Adaptado de Lucide «volume-2»: el Tag en lugar del parlante y dos anillos concéntricos que se abren desde él. Tamaño ajustado a la vista, con la prueba del desenfoque. Con las reglas de construcción de Lucide (ISC). -->
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="7" cy="12" r="5"/>
-  <path d="M7 12h.01"/>
-  <path d="M16 9a5 5 0 0 1 0 6"/>
-  <path d="M19.364 18.364a9 9 0 0 0 0-12.728"/>
+  <circle cx="8" cy="12" r="6"/>
+  <circle cx="8" cy="12" r="2"/>
+  <path d="M15.66 5.57A10 10 0 0 1 15.66 18.43"/>
+  <path d="M19.47 3.97A14 14 0 0 1 19.47 20.03"/>
 </svg>

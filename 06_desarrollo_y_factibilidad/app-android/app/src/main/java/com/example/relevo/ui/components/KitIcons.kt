@@ -404,9 +404,9 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
   ESTIRAR(
     "Estirar",
     listOf(
-      KitShape("M2 12A6 6 0 1 0 14 12A6 6 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M10 12a2 2 0 1 1 -2 -2", true, KitFill.NONE),
-      KitShape("M8 18h12a2 2 0 0 0 0 -4h-6.343", true, KitFill.NONE),
+      KitShape("M2 12A7 7 0 1 0 16 12A7 7 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M12 12a3 3 0 1 1 -3 -3", true, KitFill.NONE),
+      KitShape("M9 19h11a2 2 0 0 0 0 -4h-4.675", true, KitFill.NONE),
     ),
   ),
   /** Lucide «star». La estrella de Lucide, rellena. */
@@ -705,12 +705,12 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M5 17h14", true, KitFill.NONE),
     ),
   ),
-  /** Propio, con las reglas de construcción de Lucide (D-187). La escalera con un punto en el primer escalón. Sin uso en la app. */
+  /** Adaptado de Lucide (D-187). De «footprints»: una sola huella, más grande e inclinada hacia adelante, el primer paso. Sin uso en la app. */
   PRIMER_PASO(
     "Cómo empieza",
     listOf(
-      KitShape("M2 20h5v-5h5v-5h5V5h5", true, KitFill.NONE),
-      KitShape("M3 16h0.01", true, KitFill.NONE),
+      KitShape("M6.5 17.98L7.52 15.18C8.42 12.69 7.64 11.08 8.74 8.15C9.94 4.97 13.06 1.74 16.59 3.03C18.79 3.83 18.76 6.21 18.04 8.21C16.71 11.86 13.27 14 11.97 17.55L11.2 19.69A2.5 2.5 20 1 1 6.5 17.98Z", true, KitFill.NONE),
+      KitShape("M7.78 14.46L12.48 16.17", true, KitFill.NONE),
     ),
   ),
   /** Lucide «lock». */
@@ -793,14 +793,14 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("m12 5 7 7 -7 7", true, KitFill.NONE),
     ),
   ),
-  /** Adaptado de Lucide (D-187). De «volume-x»: el Tag en lugar del parlante, con la misma cruz. */
+  /** Adaptado de Lucide (D-187). De «volume-x»: el Tag en lugar del parlante, con la cruz. */
   SILENCIAR(
     "Silenciar",
     listOf(
-      KitShape("M2 12A5 5 0 1 0 12 12A5 5 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M7 12h0.01", true, KitFill.NONE),
-      KitShape("m16.5 14.5 5 -5", true, KitFill.NONE),
-      KitShape("m16.5 9.5 5 5", true, KitFill.NONE),
+      KitShape("M2 12A6 6 0 1 0 14 12A6 6 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M6 12A2 2 0 1 0 10 12A2 2 0 1 0 6 12Z", true, KitFill.NONE),
+      KitShape("m17 9.5 5 5", true, KitFill.NONE),
+      KitShape("m22 9.5 -5 5", true, KitFill.NONE),
     ),
   ),
   /** Lucide «cloud-off». */
@@ -899,14 +899,14 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M19 12H5", true, KitFill.NONE),
     ),
   ),
-  /** Adaptado de Lucide (D-187). De «volume-2»: el Tag en lugar del parlante, con los mismos anillos. */
+  /** Adaptado de Lucide (D-187). De «volume-2»: el Tag en lugar del parlante, con dos anillos concéntricos que se abren desde él. */
   SUENA(
     "Suena",
     listOf(
-      KitShape("M2 12A5 5 0 1 0 12 12A5 5 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M7 12h0.01", true, KitFill.NONE),
-      KitShape("M16 9a5 5 0 0 1 0 6", true, KitFill.NONE),
-      KitShape("M19.364 18.364a9 9 0 0 0 0 -12.728", true, KitFill.NONE),
+      KitShape("M2 12A6 6 0 1 0 14 12A6 6 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M6 12A2 2 0 1 0 10 12A2 2 0 1 0 6 12Z", true, KitFill.NONE),
+      KitShape("M15.66 5.57A10 10 0 0 1 15.66 18.43", true, KitFill.NONE),
+      KitShape("M19.47 3.97A14 14 0 0 1 19.47 20.03", true, KitFill.NONE),
     ),
   ),
   /** Lucide «route». */
@@ -1046,10 +1046,10 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
   MEDITAR(
     "Meditar",
     listOf(
-      KitShape("M12 4c2 1.8 3 4 3 6.5s-1 4.7 -3 6.5c-2 -1.8 -3 -4 -3 -6.5S10 5.8 12 4z", true, KitFill.NONE),
-      KitShape("M12 17c-3.9 0 -7.3 -2.7 -8.8 -6.4 2.3 -0.4 4.4 0.1 6.1 1", true, KitFill.NONE),
-      KitShape("M12 17c3.9 0 7.3 -2.7 8.8 -6.4 -2.3 -0.4 -4.4 0.1 -6.1 1", true, KitFill.NONE),
-      KitShape("M7 21h10", true, KitFill.NONE),
+      KitShape("M12 3c2.2 2 3.3 4.4 3.3 7.2s-1.1 5.2 -3.3 7.2c-2.2 -2 -3.3 -4.4 -3.3 -7.2S9.8 5 12 3z", true, KitFill.NONE),
+      KitShape("M12 17.4c-4.3 0 -8 -3 -9.6 -7 2.6 -0.5 5 0.1 6.9 1.2", true, KitFill.NONE),
+      KitShape("M12 17.4c4.3 0 8 -3 9.6 -7 -2.6 -0.5 -5 0.1 -6.9 1.2", true, KitFill.NONE),
+      KitShape("M6.5 21h11", true, KitFill.NONE),
     ),
   ),
   /** Lucide «languages». */
