@@ -1,0 +1,8 @@
+<!-- Relevo · Propuesta, sin aplicar en la app. Propio: el ovillo de lana. La bola, tres hebras paralelas con 2 de aire y la punta suelta en el suelo. Para Tejer, en vez del carrete. Con la guía, la especificación y las convenciones de Lucide (ISC). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="11.5" cy="11.5" r="9"/>
+  <path d="M2.636 9.942A6.5 6.5 0 0 0 9.942 2.636"/>
+  <path d="M2.848 13.98A10.5 10.5 0 0 0 13.98 2.848"/>
+  <path d="M5.175 17.903A14.5 14.5 0 0 0 17.903 5.175"/>
+  <path d="M11.5 20.5H22"/>
+</svg>

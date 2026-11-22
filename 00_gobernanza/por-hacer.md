@@ -974,6 +974,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] Instalar el [APK 4.8.2](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8.2-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
 - [ ] Revisar los cinco que se corrigieron en la 4.8.2 con las reglas de Lucide: Suena, Silenciar, Estirar, Meditar y la huella del primer paso, ahora recta ([tamaño óptico](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico)).
 - [ ] Confirmar los dos dibujos del Tag: con botón y argolla en Objeto, y como un círculo con un punto en Suena, Silenciar y Sistema phygital.
+- [ ] Elegir entre las [propuestas de más íconos](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#más-íconos-propuestas): la pelota de fútbol para Pelota y el ovillo para Tejer, que se recomiendan, y, de las cosas cotidianas de Chile, la once, el cerro, el asado y el volantín. Lo elegido se aplica en una versión nueva de la app, con sus conceptos en el catastro de palabras.
 - [ ] Decidir cinco elecciones: Ordenar (una polera, porque Lucide no tiene un colgador), Tejer (un carrete de hilo), Pelota (una de vóleibol), Dormir (la cama) y Escribir y Estudiar (dos cuadernos).
 - [ ] Si se aprueba, unir la rama `iconos-lucide` a `main`.
 
@@ -982,7 +983,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] **Memoria v8, «Iconografía»:** reemplazar «Los íconos de la aplicación son propios: 118 dibujos de línea…» por el texto propuesto en el documento 46. Usa las mismas referencias de Lucide.
 - [ ] **Memoria v8, lámina de identidad:** «Íconos propios: retícula de 24, trazo de 1,6» → «Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6».
 - [ ] **Anexo H, H.3:** el texto (propuesta en el documento 46); en la Tabla H2, las filas de retícula, esquinas, y color y relleno, y recontar cuántos íconos corre el centro óptico; rehacer las Figuras H6 (el conjunto), H7 (la construcción con Suena y Leer) y H8 (Lucide y Relevo). Después, regenerar el Word y el PDF de los anexos.
-- [ ] **Figuras de la memoria:** pasar [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json) a los íconos de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app (`tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`): ver dónde se usan y dibujarlos con las reglas de Lucide.
+- [ ] **Figuras de la memoria:** pasar [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json) a los íconos de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app (`tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`); no hace falta dibujarlos, porque ya tienen par: Objeto, `flag`, `circle-play`, `hourglass`, `dog` y `contrast`.
 - [ ] **Capturas:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores; tomar las de la 4.8 si se quiere que coincidan.
 
 ### C. Lo que seguía pendiente
@@ -997,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tarea 17, propuestas de más íconos
+
+- **Qué cambió:** la tarea 17 suma elegir entre las propuestas de más íconos, y dice que los seis íconos de la memoria ya tienen par en Lucide o en Objeto.
+- **Cómo estaba antes:** no había propuestas, y pedía dibujar esos seis íconos con las reglas de Lucide.
+- **Por qué:** el autor preguntó si quedaban íconos por hacer y propuso sumar cosas cotidianas de Chile.
 
 ### 2026-11-22 — Tarea 17, la 4.8.2
 

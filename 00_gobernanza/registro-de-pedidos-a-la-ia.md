@@ -370,6 +370,7 @@
 | 22 nov. | Orden | «Inténtalo de nuevo», después de que la sesión se reinició a mitad del trabajo de los íconos. | Se retomó desde lo que había quedado guardado, sin perder trabajo, y se terminó la 4.8 con su documentación. | — |
 | 22 nov. | Corrección | El ícono del primer paso no debe ser una escalera. Además, algunos íconos propios se ven muy pequeños: «el tamaño debe ser perfecto, óptico, no matemático». | App [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md): el primer paso es una huella adaptada de Lucide, inclinada hacia adelante. Suena, Silenciar, Estirar y Meditar crecieron hasta pesar como sus vecinos, medidos con la prueba del desenfoque, que ahora está en el repositorio (`medir_tamano_optico.js`). Pasan 110 pruebas; no se vio en un teléfono. Detalle en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico). | D-187 |
 | 22 nov. | Corrección y encargo | Sobre los íconos de la 4.8.1: «Mejorables, perfecciónalos. Estudia cómo funcionan». | Se estudiaron la guía de Lucide y sus 2.029 íconos; las reglas y lo medido quedaron en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#cómo-funcionan-los-íconos-de-lucide). Cinco de los nueve íconos adaptados o propios no cumplían alguna regla y se corrigieron en la app [4.8.2](../06_desarrollo_y_factibilidad/app-android/version-4.8.2-iconos-con-las-reglas-de-lucide-2026-11-22.md): Silenciar y Meditar tenían menos de 2 de aire, Estirar terminaba en un corte brusco, la huella estaba girada y los anillos de Suena no venían de Lucide. Un script nuevo, `verificar_reglas.py`, comprueba el margen y el aire. Pasan 110 pruebas; no se vio en un teléfono. | D-187 |
+| 22 nov. | Consulta e idea | Si hay más íconos que hacer o perfeccionar, inspirados directamente en Lucide; también se podrían incluir cosas cotidianas de Chile, «o por ahí, no sé». | [Propuestas](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#más-íconos-propuestas), todavía sin aplicar en la app. Se recomiendan una pelota de fútbol para Pelota, porque P7 juega fútbol, y un ovillo para Tejer, porque Lucide no tiene esos objetos. De las cosas de Chile, que no aparecen en las entrevistas, se proponen la once y el cerro con íconos de Lucide, y una parrilla y un volantín propios. El mate se descartó porque se lee como una fruta. Los seis íconos que solo usa la memoria ya tienen par y no hay que dibujarlos. | D-187 |
 
 ## Lo que muestra el registro
 
@@ -380,6 +381,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Más íconos y cosas de Chile
+
+- **Qué cambió:** se registró la consulta sobre más íconos y la idea de sumar cosas cotidianas de Chile.
+- **Cómo estaba antes:** el último pedido era el de perfeccionar los íconos con las reglas de Lucide.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-22 — Íconos con las reglas de Lucide
 

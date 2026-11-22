@@ -10,6 +10,7 @@ Fuente de los 118 íconos de la app desde la 4.8 (D-187). El fundamento y cada e
   - `propio`: un dibujo con las reglas de Lucide, porque Lucide no tiene ese objeto; son 3.
 - **[`lucide/`](lucide):** los 108 SVG de Lucide 1.70.0 que usa la app, copiados sin cambios del paquete [`lucide-static`](https://www.npmjs.com/package/lucide-static/v/1.70.0). Son 108 para 109 íconos, porque la estrella llena y la vacía comparten el dibujo.
 - **[`propios/`](propios):** los nueve adaptados o propios, dibujados con la [guía](https://lucide.dev/contribute/icons/design-principles), la [especificación](https://lucide.dev/contribute/icons/specification) y las [convenciones de SVG](https://lucide.dev/contribute/icons/code-conventions) de Lucide. El comentario de cada SVG dice de dónde sale. Las reglas, resumidas, están en el [documento 46](../46_iconos-desde-lucide-2026-11-22.md#cómo-funcionan-los-íconos-de-lucide).
+- **[`propuestas/`](propuestas):** bocetos que todavía no están en la app y esperan la elección del autor: una pelota de fútbol, un ovillo, una parrilla y un volantín, con su [hoja de revisión](propuestas/propuestas-2026-11-22.png). Su fundamento está en el [documento 46](../46_iconos-desde-lucide-2026-11-22.md#más-íconos-propuestas). El generador no los lee mientras no tengan una entrada en el mapeo.
 - **[`generar_kiticons.py`](generar_kiticons.py):** escribe `KitIcons.kt`, el archivo de íconos de la app, desde el mapeo y los SVG.
 - **[`verificar_reglas.py`](verificar_reglas.py):** comprueba las reglas medibles de Lucide en los nueve adaptados o propios: el trazo a 1 o más del borde y 2 o más de aire entre elementos distintos. Las piezas que el dibujo une, como los brazos de una cruz, se declaran en el mapeo como `uniones`. También cuenta los números que quedan fuera de la retícula. Necesita Python con numpy, y termina con error si un ícono no cumple.
 - **[`medir_tamano_optico.js`](medir_tamano_optico.js):** la prueba del desenfoque. Mide la mancha de cada ícono adaptado o propio y la compara con la de los íconos de Lucide de la app. Necesita Node y Playwright.
@@ -33,6 +34,12 @@ Fuente de los 118 íconos de la app desde la 4.8 (D-187). El fundamento y cada e
 Para agregar un ícono nuevo, primero se suma a `KitIcons.kt` con su nombre y su palabra, y después se le da una entrada en el mapeo. El generador conserva el orden y las palabras de `KitIcons.kt`, y avisa si el mapeo no calza.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Propuestas
+
+- **Qué cambió:** se suma la carpeta `propuestas/`, con cuatro bocetos y su hoja de revisión.
+- **Cómo estaba antes:** la carpeta tenía solo los íconos que usa la app.
+- **Por qué:** el autor preguntó si quedaban íconos por hacer y propuso sumar cosas cotidianas de Chile.
 
 ### 2026-11-22 — Reglas de Lucide
 

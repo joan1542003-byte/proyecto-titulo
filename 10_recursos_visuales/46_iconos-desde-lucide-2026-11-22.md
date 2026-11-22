@@ -149,6 +149,40 @@ La hoja de abajo muestra la 4.8.1 y la 4.8.2 de cada uno, a 40 px y a 17 px dent
 4. **Dos dibujos del Tag:** con botón y argolla en Objeto, donde es el protagonista, y como un círculo con un punto en Suena, Silenciar y Sistema phygital, donde comparte el lienzo. Lucide pide representar igual los elementos compartidos; aquí cambia el nivel de detalle según el tamaño, y conviene confirmarlo.
 5. **El trazo:** la app dibuja los íconos de Lucide con su trazo según el tamaño (1,6 a 24 px), no con el de 2 de Lucide. Probar la línea de 2 sigue pendiente desde el documento 43.
 
+## Más íconos: propuestas
+
+Al revisar la 4.8.2, el autor preguntó si quedaban íconos por hacer o por perfeccionar, inspirados directamente en Lucide, y propuso sumar cosas cotidianas de Chile. Se revisaron las actividades que la app reconoce, lo que Lucide tiene y lo que dicen las entrevistas. Los bocetos cumplen las reglas de Lucide y están en [`propuestas/`](iconos-lucide/propuestas). **Todavía no están en la app:** esperan la elección del autor.
+
+![Más íconos: propuestas, con lo que muestra hoy la app, cada boceto en un anillo y entre sus vecinos](iconos-lucide/propuestas/propuestas-2026-11-22.png)
+
+**Donde Lucide no tiene el objeto y hoy va un sustituto:**
+
+| Ícono | Hoy | Propuesta | Por qué |
+| --- | --- | --- | --- |
+| **Pelota** | `volleyball` | Una pelota de fútbol, propia: el círculo de 10 de `volleyball`, un pentágono de radio 5 y cinco costuras hasta el borde. | P7 nombra el fútbol entre lo que ayuda a desconectarse y entre sus formas de descansar sin teléfono (corpus, Q2 y Q12). En el habla chilena, «jugar a la pelota» suele ser jugar fútbol, y la app ya entiende «pichanga». |
+| **Tejer** | `spool` | Un ovillo, propio: la bola, tres hebras con 2 de aire y la punta suelta en el suelo. | El ovillo es «la lana», uno de sus primeros pasos («Dejar la lana a mano»); el carrete dice coser. Tejer no sale de las entrevistas: es una propuesta del [documento 23](23_actividades-e-imagenes-2026-09-29.md). |
+
+**Cosas cotidianas de Chile.** Ninguna aparece en las entrevistas P1–P8. Desde la 4.5, la app entiende «once», «cerro» y «asado» (D-163), pero los dibuja con el ícono de otra actividad, y no reconoce «volantín». Sumarlas no cambia las ideas de Inicio, que siguen saliendo de las entrevistas (D-088): agrega conceptos al catastro de palabras, que da ícono y sugerencias a la actividad que escribe la persona. Cada concepto nuevo necesita además sus primeros pasos y sus lugares.
+
+| Actividad | Hoy | Propuesta | Origen del ícono |
+| --- | --- | --- | --- |
+| **Tomar once** | Cocinar (`cooking-pot`) | Una taza | `coffee`, de Lucide |
+| **Subir el cerro** | Caminar (`footprints`) | Un cerro | `mountain`, de Lucide |
+| **Asado** | Compartir (`users`) | Una parrilla: la rejilla, el tambor, las patas y el humo | Propio, porque Lucide no tiene parrilla; el humo usa el largo del vapor de `coffee` |
+| **Volantín** | Actividad (`shapes`) | Un volantín: el rombo, sus dos varillas y el hilo | Propio, porque Lucide no tiene volantín |
+
+Al desenfocarlos, la taza (416), el cerro (393), la parrilla (386) y el volantín (354) quedan dentro de la mitad central de los íconos de Lucide de la app, que va de 347 a 458. La pelota (504) y el ovillo (478) pesan como lo que reemplazan: `volleyball` (505) y `spool` (494).
+
+**Descartado:** el mate. A tamaño de ícono, la calabaza con la bombilla se lee como una fruta con su tallo, y tampoco aparece en las entrevistas.
+
+**Lo que no hace falta dibujar:**
+
+- **Los seis íconos que solo usa la memoria** (en [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json)) ya tienen par: `tag` es Objeto; `decidir`, `flag`; `empece`, `circle-play`; `contando`, `hourglass`; `pasear-perro`, `dog`, y `aura`, `contrast`.
+- **Ordenar** puede quedarse con la polera: Lucide tiene una escoba (`broom`), pero ordenar la pieza no es barrer.
+- **Los nueve adaptados o propios** ya cumplen las reglas de Lucide desde la 4.8.2.
+
+**Recomendación.** Aplicar la pelota de fútbol y el ovillo, que siguen D-187 y, en el caso del fútbol, se apoyan en P7. De las cosas de Chile, la once y el cerro son las más fáciles de sumar, porque usan íconos de Lucide y palabras que la app ya entiende. El asado y el volantín piden dibujos propios y no salen de las entrevistas: conviene sumarlos solo si el autor quiere ese gesto local.
+
 ## Lo que arrastra el cambio
 
 Nada de esto se cambió todavía, porque depende de que el autor apruebe los íconos:
@@ -161,7 +195,7 @@ Nada de esto se cambió todavía, porque depende de que el autor apruebe los íc
   - la Figura H6, el conjunto;
   - la Figura H7, la construcción con Suena y Leer;
   - la Figura H8, Lucide y Relevo.
-- **Figuras de la memoria:** toman los íconos de [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json), los de la app 4.7.2. Hay que pasarlos a los de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app: `tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`.
+- **Figuras de la memoria:** toman los íconos de [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json), los de la app 4.7.2. Hay que pasarlos a los de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app: `tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`. Los seis ya tienen par en Lucide o en Objeto (sección «Más íconos: propuestas»).
 - **Capturas de la app:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores.
 - **Documentos 43 y 44:** quedan como el fundamento de la etapa anterior. Sus reglas para elegir siguen vigentes.
 - **El kit de marca** en [`marca-a-tiempo/iconos`](marca-a-tiempo/iconos) queda como antecedente. La fuente de los íconos es ahora [`iconos-lucide`](iconos-lucide/README.md).
@@ -189,6 +223,12 @@ Lucide Contributors. (s. f.-c). *SVG conventions*. Lucide. Recuperado el 22 de n
 Lucide Contributors. (2026). *lucide-static* (Versión 1.70.0) [Software]. npm. https://www.npmjs.com/package/lucide-static/v/1.70.0
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Más íconos: propuestas
+
+- **Qué cambió:** se suma la sección «Más íconos: propuestas», con bocetos de una pelota de fútbol, un ovillo, una parrilla y un volantín; la taza y el cerro de Lucide para la once y el cerro; el mate descartado; los pares de Lucide de los seis íconos de la memoria y una recomendación.
+- **Cómo estaba antes:** el documento llegaba a la 4.8.2 y no revisaba si faltaban íconos ni cosas cotidianas de Chile.
+- **Por qué:** el autor preguntó si quedaban íconos por hacer o por perfeccionar, inspirados en Lucide, y propuso sumar cosas cotidianas de Chile.
 
 ### 2026-11-22 — Reglas de Lucide (4.8.2)
 
