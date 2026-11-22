@@ -2,6 +2,8 @@
 
 **Fecha:** 6 de noviembre de 2026. **Qué es:** el fundamento de haber dibujado íconos propios en vez de usar un set existente, con fuentes y una comparación con Lucide, su inspiración. No agrega una decisión: reúne lo que sostiene a D-073, D-124 y D-158. **Íconos de la app:** 117 en la 4.4 ([`KitIcons.kt`](../06_desarrollo_y_factibilidad/app-android/app/src/main/java/com/example/relevo/ui/components/KitIcons.kt)), del kit D-073 ampliado en la 4.0 y la 4.3. Usan la retícula de 24 y, desde la 4.1, los tamaños ópticos de D-124 ([documento 39](39_iconos-y-color-con-fundamento-2026-10-11.md)).
 
+**Actualización del 22 de noviembre de 2026 (D-187):** desde la app 4.8, los íconos salen de Lucide. De los 118, 109 son de Lucide tal cual, cinco se adaptaron y cuatro se dibujaron con sus reglas porque Lucide no los tiene ([documento 46](46_iconos-desde-lucide-2026-11-22.md)). Este documento queda como el fundamento de la etapa de los íconos propios. Siguen vigentes sus razones para dibujar lo que es de Relevo, como el Tag, y las reglas de D-162 para elegir.
+
 ## En breve
 
 - **Primero se investigó y después se dibujó.** El 11 de octubre (D-124) se estudiaron Material Design, SF Symbols y Nielsen Norman Group. De ellos se tomaron la retícula, los tamaños ópticos y la regla de acompañar cada ícono con una palabra; los dibujos se hicieron en Relevo.
@@ -166,6 +168,12 @@ Zhang, Y., Shao, J., Qin, L., Zhan, Y., Zhao, X., Geng, M. y Chen, B. (2024). Se
 Zheng, J., Silvennoinen, J. y Kujala, T. (2026). The association between aesthetic appeal and semantic distance of icons varying in concreteness: Shedding light on the aesthetic-usability effect. *International Journal of Human-Computer Studies, 211*, Artículo 103799. https://doi.org/10.1016/j.ijhcs.2026.103799
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Los íconos pasan a Lucide
+
+- **Qué cambió:** una nota al comienzo dice que, desde la 4.8, los íconos salen de Lucide (D-187), y qué sigue vigente de este documento.
+- **Cómo estaba antes:** el documento explicaba por qué Relevo dibujaba todos sus íconos.
+- **Por qué:** el autor propuso usar los íconos de Lucide y dibujar solo lo que Lucide no tiene.
 
 ### 2026-11-06 — La inspiración es Lucide
 

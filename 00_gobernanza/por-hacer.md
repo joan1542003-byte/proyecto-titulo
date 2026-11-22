@@ -965,7 +965,41 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - La propuesta de redacción para la cadena hipótesis, objetivos y proyecto está en la [propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md); la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) la actualiza con la pregunta y el indicador que ellos pidieron.
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
+## 17. Íconos desde Lucide: revisar y llevar a la memoria
+
+**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
+
+### A. Revisar la app
+
+- [ ] Instalar el [APK 4.8](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
+- [ ] Decidir cinco elecciones: Ordenar (una polera, porque Lucide no tiene un colgador), Tejer (un carrete de hilo), Pelota (una de vóleibol), Dormir (la cama) y Escribir y Estudiar (dos cuadernos).
+- [ ] Si se aprueba, unir la rama `iconos-lucide` a `main`.
+
+### B. Llevarlo a la memoria y los anexos
+
+- [ ] **Memoria v8, «Iconografía»:** reemplazar «Los íconos de la aplicación son propios: 118 dibujos de línea…» por el texto propuesto en el documento 46. Usa las mismas referencias de Lucide.
+- [ ] **Memoria v8, lámina de identidad:** «Íconos propios: retícula de 24, trazo de 1,6» → «Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6».
+- [ ] **Anexo H, H.3:** el texto (propuesta en el documento 46); en la Tabla H2, las filas de retícula, esquinas, y color y relleno, y recontar cuántos íconos corre el centro óptico; rehacer las Figuras H6 (el conjunto), H7 (la construcción con Suena y Leer) y H8 (Lucide y Relevo). Después, regenerar el Word y el PDF de los anexos.
+- [ ] **Figuras de la memoria:** pasar [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json) a los íconos de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app (`tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`): ver dónde se usan y dibujarlos con las reglas de Lucide.
+- [ ] **Capturas:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores; tomar las de la 4.8 si se quiere que coincidan.
+
+### C. Lo que seguía pendiente
+
+- [ ] **Comprensión:** mostrar cada ícono sin su palabra y pedir que digan qué significa (ISO 9186-1), como proponía el documento 43.
+- [ ] **El trazo de 2 de Lucide:** probarlo junto al texto de la app; hoy se dibujan con el trazo de la app, de 1,6 a 24 px.
+
+### Reglas
+
+- Los íconos se cambian en el [mapeo](../10_recursos_visuales/iconos-lucide/mapeo.json) o en sus SVG, y se generan de nuevo con `generar_kiticons.py`; `KitIcons.kt` no se edita a mano.
+- Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tarea 17
+
+- **Qué cambió:** se añadió la tarea 17: revisar los íconos de Lucide en la app 4.8 y llevarlos a la memoria, el Anexo H y las figuras.
+- **Cómo estaba antes:** la última tarea era la 16.
+- **Por qué:** el autor propuso usar los íconos de Lucide y dibujar solo lo que Lucide no tiene (D-187).
 
 ### 2026-11-21 — Memoria v8 compuesta
 

@@ -33,10 +33,10 @@ import cl.udp.relevo.R
 import com.example.relevo.theme.Relevo
 
 /**
- * Ícono de Relevo (D-124). El trazo cambia con el tamaño, como los tamaños ópticos de Material
- * Symbols: 16 → 2,0; 20 → 1,8; 24 → 1,6; 32 → 1,4; 48 → 1,3 (en unidades de la retícula de 24).
- * Los recortes («avisos», «ajustes») usan el color del fondo. Desde la 4.1 cada ícono se dibuja al centro
- * óptico de su retícula ([kitGeometry]).
+ * Ícono de Relevo (D-124). Desde la 4.8 los dibujos salen de Lucide o siguen sus reglas (D-187), y el trazo
+ * sigue cambiando con el tamaño, como los tamaños ópticos de Material Symbols: 16 → 2,0; 20 → 1,8; 24 → 1,6;
+ * 32 → 1,4; 48 → 1,3 (en unidades de la retícula de 24). Si un ícono tuviera recortes, usarían el color del
+ * fondo. Desde la 4.1 cada ícono se dibuja al centro óptico de su retícula ([kitGeometry]).
  */
 @Composable
 fun RelevoIcon(

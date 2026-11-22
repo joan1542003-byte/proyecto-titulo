@@ -1,0 +1,615 @@
+{
+ "lucide_version": "1.70.0",
+ "fuente": "https://www.npmjs.com/package/lucide-static/v/1.70.0",
+ "iconos": {
+  "ACCESIBILIDAD": {
+   "categoria": "lucide",
+   "lucide": "accessibility",
+   "archivo": "lucide/accessibility.svg"
+  },
+  "ACTIVIDAD": {
+   "categoria": "lucide",
+   "lucide": "shapes",
+   "archivo": "lucide/shapes.svg",
+   "nota": "Las formas de base: una actividad cualquiera (D-162)."
+  },
+  "ADVERTENCIA": {
+   "categoria": "lucide",
+   "lucide": "triangle-alert",
+   "archivo": "lucide/triangle-alert.svg"
+  },
+  "AGREGAR": {
+   "categoria": "lucide",
+   "lucide": "plus",
+   "archivo": "lucide/plus.svg"
+  },
+  "AJUSTES": {
+   "categoria": "lucide",
+   "lucide": "sliders-horizontal",
+   "archivo": "lucide/sliders-horizontal.svg"
+  },
+  "APPS": {
+   "categoria": "lucide",
+   "lucide": "layout-grid",
+   "archivo": "lucide/layout-grid.svg"
+  },
+  "AVISOS": {
+   "categoria": "lucide",
+   "lucide": "bell",
+   "archivo": "lucide/bell.svg"
+  },
+  "AYUDA": {
+   "categoria": "lucide",
+   "lucide": "circle-question-mark",
+   "archivo": "lucide/circle-question-mark.svg"
+  },
+  "BATERIA": {
+   "categoria": "lucide",
+   "lucide": "battery-medium",
+   "archivo": "lucide/battery-medium.svg"
+  },
+  "BICICLETA": {
+   "categoria": "lucide",
+   "lucide": "bike",
+   "archivo": "lucide/bike.svg"
+  },
+  "BORRAR": {
+   "categoria": "lucide",
+   "lucide": "trash-2",
+   "archivo": "lucide/trash-2.svg"
+  },
+  "BUSCAR": {
+   "categoria": "lucide",
+   "lucide": "search",
+   "archivo": "lucide/search.svg"
+  },
+  "CALENDARIO": {
+   "categoria": "lucide",
+   "lucide": "calendar",
+   "archivo": "lucide/calendar.svg"
+  },
+  "CAMBIE": {
+   "categoria": "lucide",
+   "lucide": "arrow-right-left",
+   "archivo": "lucide/arrow-right-left.svg",
+   "nota": "Las mismas flechas opuestas de antes."
+  },
+  "CAMINAR": {
+   "categoria": "lucide",
+   "lucide": "footprints",
+   "archivo": "lucide/footprints.svg"
+  },
+  "CARTA": {
+   "categoria": "lucide",
+   "lucide": "mail",
+   "archivo": "lucide/mail.svg"
+  },
+  "CERRAR_SESION": {
+   "categoria": "lucide",
+   "lucide": "log-out",
+   "archivo": "lucide/log-out.svg"
+  },
+  "CERRAR": {
+   "categoria": "lucide",
+   "lucide": "x",
+   "archivo": "lucide/x.svg"
+  },
+  "COCINAR": {
+   "categoria": "lucide",
+   "lucide": "cooking-pot",
+   "archivo": "lucide/cooking-pot.svg"
+  },
+  "CODIGO": {
+   "categoria": "lucide",
+   "lucide": "hash",
+   "archivo": "lucide/hash.svg"
+  },
+  "COMENCE": {
+   "categoria": "lucide",
+   "lucide": "circle-play",
+   "archivo": "lucide/circle-play.svg"
+  },
+  "COMENTARIO": {
+   "categoria": "lucide",
+   "lucide": "message-square",
+   "archivo": "lucide/message-square.svg"
+  },
+  "CONEXION": {
+   "categoria": "lucide",
+   "lucide": "bluetooth",
+   "archivo": "lucide/bluetooth.svg"
+  },
+  "CONSENTIMIENTO": {
+   "categoria": "lucide",
+   "lucide": "file-check",
+   "archivo": "lucide/file-check.svg"
+  },
+  "CONTRAER": {
+   "categoria": "lucide",
+   "lucide": "chevron-up",
+   "archivo": "lucide/chevron-up.svg"
+  },
+  "COPIAR": {
+   "categoria": "lucide",
+   "lucide": "copy",
+   "archivo": "lucide/copy.svg"
+  },
+  "DATOS": {
+   "categoria": "lucide",
+   "lucide": "clipboard-list",
+   "archivo": "lucide/clipboard-list.svg"
+  },
+  "DECISION": {
+   "categoria": "lucide",
+   "lucide": "flag",
+   "archivo": "lucide/flag.svg"
+  },
+  "DESBLOQUEADO": {
+   "categoria": "lucide",
+   "lucide": "lock-open",
+   "archivo": "lucide/lock-open.svg"
+  },
+  "DESCARGAR": {
+   "categoria": "lucide",
+   "lucide": "download",
+   "archivo": "lucide/download.svg"
+  },
+  "DESPUES": {
+   "categoria": "lucide",
+   "lucide": "rotate-cw-clock",
+   "archivo": "lucide/rotate-cw-clock.svg",
+   "nota": "El mismo dibujo de antes: un reloj con la flecha hacia adelante."
+  },
+  "DETENER": {
+   "categoria": "lucide",
+   "lucide": "square",
+   "archivo": "lucide/square.svg"
+  },
+  "DIBUJAR": {
+   "categoria": "lucide",
+   "lucide": "pencil-line",
+   "archivo": "lucide/pencil-line.svg",
+   "nota": "El lápiz con el trazo que deja; Editar es el lápiz solo (D-162)."
+  },
+  "DORMIR": {
+   "categoria": "lucide",
+   "lucide": "bed",
+   "archivo": "lucide/bed.svg",
+   "nota": "La cama, el objeto de la actividad. Deja la luna con destello: D-162 evitó los destellos, que se leen como inteligencia artificial."
+  },
+  "EDITAR": {
+   "categoria": "lucide",
+   "lucide": "pencil",
+   "archivo": "lucide/pencil.svg"
+  },
+  "EJERCICIO": {
+   "categoria": "lucide",
+   "lucide": "dumbbell",
+   "archivo": "lucide/dumbbell.svg"
+  },
+  "ENLACE_EXTERNO": {
+   "categoria": "lucide",
+   "lucide": "external-link",
+   "archivo": "lucide/external-link.svg"
+  },
+  "ENTREVISTAS": {
+   "categoria": "lucide",
+   "lucide": "messages-square",
+   "archivo": "lucide/messages-square.svg"
+  },
+  "ENVIAR": {
+   "categoria": "lucide",
+   "lucide": "send",
+   "archivo": "lucide/send.svg"
+  },
+  "ERROR": {
+   "categoria": "lucide",
+   "lucide": "circle-x",
+   "archivo": "lucide/circle-x.svg"
+  },
+  "ESCRIBIR": {
+   "categoria": "lucide",
+   "lucide": "notebook-pen",
+   "archivo": "lucide/notebook-pen.svg",
+   "nota": "«Dejar un lápiz sobre el cuaderno», como sugiere la app."
+  },
+  "ESPERANDO": {
+   "categoria": "lucide",
+   "lucide": "hourglass",
+   "archivo": "lucide/hourglass.svg"
+  },
+  "ESTIRAR": {
+   "categoria": "propio",
+   "archivo": "propios/estirar.svg",
+   "nota": "La colchoneta a medio desenrollar (D-162). Lucide no tiene colchoneta."
+  },
+  "ESTRELLA_LLENA": {
+   "categoria": "lucide",
+   "lucide": "star",
+   "archivo": "lucide/star.svg",
+   "relleno": true,
+   "nota": "La estrella de Lucide, rellena."
+  },
+  "ESTRELLA_MEDIA": {
+   "categoria": "lucide",
+   "lucide": "star-half",
+   "archivo": "lucide/star-half.svg"
+  },
+  "ESTRELLA": {
+   "categoria": "lucide",
+   "lucide": "star",
+   "archivo": "lucide/star.svg"
+  },
+  "ESTUDIAR": {
+   "categoria": "lucide",
+   "lucide": "notebook-text",
+   "archivo": "lucide/notebook-text.svg",
+   "nota": "«Abrir los apuntes», como sugiere la app."
+  },
+  "EXPANDIR": {
+   "categoria": "lucide",
+   "lucide": "chevron-down",
+   "archivo": "lucide/chevron-down.svg"
+  },
+  "EXPORTAR": {
+   "categoria": "lucide",
+   "lucide": "share",
+   "archivo": "lucide/share.svg"
+  },
+  "FILTRAR": {
+   "categoria": "lucide",
+   "lucide": "funnel",
+   "archivo": "lucide/funnel.svg"
+  },
+  "FOTOGRAFIA": {
+   "categoria": "lucide",
+   "lucide": "camera",
+   "archivo": "lucide/camera.svg"
+  },
+  "GUITARRA": {
+   "categoria": "lucide",
+   "lucide": "guitar",
+   "archivo": "lucide/guitar.svg"
+  },
+  "HIPOTESIS": {
+   "categoria": "lucide",
+   "lucide": "flask-conical",
+   "archivo": "lucide/flask-conical.svg"
+  },
+  "HISTORIAL": {
+   "categoria": "lucide",
+   "lucide": "history",
+   "archivo": "lucide/history.svg",
+   "nota": "Sin uso en la app."
+  },
+  "INFO": {
+   "categoria": "lucide",
+   "lucide": "info",
+   "archivo": "lucide/info.svg"
+  },
+  "INICIO": {
+   "categoria": "lucide",
+   "lucide": "house",
+   "archivo": "lucide/house.svg"
+  },
+  "INVESTIGACION": {
+   "categoria": "lucide",
+   "lucide": "file-search",
+   "archivo": "lucide/file-search.svg"
+  },
+  "JUEGO_DE_MESA": {
+   "categoria": "lucide",
+   "lucide": "dice-3",
+   "archivo": "lucide/dice-3.svg"
+  },
+  "LEER": {
+   "categoria": "lucide",
+   "lucide": "book-open",
+   "archivo": "lucide/book-open.svg"
+  },
+  "LISTO": {
+   "categoria": "lucide",
+   "lucide": "check",
+   "archivo": "lucide/check.svg"
+  },
+  "VIDEOJUEGOS": {
+   "categoria": "lucide",
+   "lucide": "gamepad-2",
+   "archivo": "lucide/gamepad-2.svg"
+  },
+  "LLAMAR": {
+   "categoria": "lucide",
+   "lucide": "phone",
+   "archivo": "lucide/phone.svg"
+  },
+  "LUGAR": {
+   "categoria": "lucide",
+   "lucide": "map-pin",
+   "archivo": "lucide/map-pin.svg"
+  },
+  "MANUALIDADES": {
+   "categoria": "lucide",
+   "lucide": "scissors",
+   "archivo": "lucide/scissors.svg"
+  },
+  "MAS": {
+   "categoria": "lucide",
+   "lucide": "ellipsis",
+   "archivo": "lucide/ellipsis.svg"
+  },
+  "MENU": {
+   "categoria": "lucide",
+   "lucide": "menu",
+   "archivo": "lucide/menu.svg"
+  },
+  "MOSTRAR": {
+   "categoria": "lucide",
+   "lucide": "eye",
+   "archivo": "lucide/eye.svg"
+  },
+  "MUSICA": {
+   "categoria": "lucide",
+   "lucide": "headphones",
+   "archivo": "lucide/headphones.svg"
+  },
+  "OBJETO": {
+   "categoria": "propio",
+   "archivo": "propios/objeto.svg",
+   "nota": "El Tag visto desde arriba: cuerpo, botón y argolla. Lucide no tiene el Tag."
+  },
+  "OCULTAR": {
+   "categoria": "lucide",
+   "lucide": "eye-off",
+   "archivo": "lucide/eye-off.svg"
+  },
+  "ORDENAR": {
+   "categoria": "lucide",
+   "lucide": "shirt",
+   "archivo": "lucide/shirt.svg",
+   "nota": "Lucide no tiene un colgador: la polera dice «juntar la ropa», la primera sugerencia de la app. Revisar."
+  },
+  "PARLANTE": {
+   "categoria": "lucide",
+   "lucide": "speaker",
+   "archivo": "lucide/speaker.svg"
+  },
+  "PAUSAR": {
+   "categoria": "lucide",
+   "lucide": "pause",
+   "archivo": "lucide/pause.svg"
+  },
+  "PERFIL": {
+   "categoria": "lucide",
+   "lucide": "user",
+   "archivo": "lucide/user.svg"
+  },
+  "PERMISO": {
+   "categoria": "lucide",
+   "lucide": "shield-check",
+   "archivo": "lucide/shield-check.svg"
+  },
+  "PINTAR": {
+   "categoria": "lucide",
+   "lucide": "palette",
+   "archivo": "lucide/palette.svg",
+   "nota": "«Preparar las acuarelas», como sugiere la app, y se distingue mejor del lápiz de Dibujar."
+  },
+  "PLANTAS": {
+   "categoria": "lucide",
+   "lucide": "plant-pot",
+   "archivo": "lucide/plant-pot.svg"
+  },
+  "PRIMER_PASO": {
+   "categoria": "propio",
+   "archivo": "propios/primer-paso.svg",
+   "nota": "La escalera con un punto en el primer escalón. Sin uso en la app."
+  },
+  "PRIVACIDAD": {
+   "categoria": "lucide",
+   "lucide": "lock",
+   "archivo": "lucide/lock.svg"
+  },
+  "PROBAR": {
+   "categoria": "lucide",
+   "lucide": "volume-2",
+   "archivo": "lucide/volume-2.svg"
+  },
+  "PROBLEMA": {
+   "categoria": "lucide",
+   "lucide": "bug",
+   "archivo": "lucide/bug.svg"
+  },
+  "REINTENTAR": {
+   "categoria": "lucide",
+   "lucide": "rotate-cw",
+   "archivo": "lucide/rotate-cw.svg"
+  },
+  "RELEVOS": {
+   "categoria": "lucide",
+   "lucide": "list",
+   "archivo": "lucide/list.svg"
+  },
+  "REPRODUCIR": {
+   "categoria": "lucide",
+   "lucide": "play",
+   "archivo": "lucide/play.svg"
+  },
+  "SALIR": {
+   "categoria": "lucide",
+   "lucide": "door-open",
+   "archivo": "lucide/door-open.svg",
+   "nota": "Salir de la casa; la huella de mascota decía otra cosa (D-162)."
+  },
+  "SIGUIENTE": {
+   "categoria": "lucide",
+   "lucide": "arrow-right",
+   "archivo": "lucide/arrow-right.svg"
+  },
+  "SILENCIAR": {
+   "categoria": "adaptado",
+   "archivo": "propios/silenciar.svg",
+   "nota": "De «volume-x»: el Tag en lugar del parlante, con la misma cruz."
+  },
+  "SIN_CONEXION": {
+   "categoria": "lucide",
+   "lucide": "cloud-off",
+   "archivo": "lucide/cloud-off.svg"
+  },
+  "SINCRONIZAR": {
+   "categoria": "lucide",
+   "lucide": "cloud-upload",
+   "archivo": "lucide/cloud-upload.svg"
+  },
+  "SISTEMA": {
+   "categoria": "adaptado",
+   "archivo": "propios/sistema.svg",
+   "nota": "De «smartphone»: el teléfono junto al Tag. Sin uso en la app."
+  },
+  "TELEFONO": {
+   "categoria": "lucide",
+   "lucide": "smartphone",
+   "archivo": "lucide/smartphone.svg"
+  },
+  "TEMA": {
+   "categoria": "lucide",
+   "lucide": "contrast",
+   "archivo": "lucide/contrast.svg",
+   "nota": "El signo de contraste (D-162)."
+  },
+  "TEXTO": {
+   "categoria": "lucide",
+   "lucide": "a-large-small",
+   "archivo": "lucide/a-large-small.svg"
+  },
+  "TIEMPO": {
+   "categoria": "lucide",
+   "lucide": "timer",
+   "archivo": "lucide/timer.svg"
+  },
+  "USO": {
+   "categoria": "lucide",
+   "lucide": "clock",
+   "archivo": "lucide/clock.svg"
+  },
+  "USUARIO": {
+   "categoria": "lucide",
+   "lucide": "user-round",
+   "archivo": "lucide/user-round.svg"
+  },
+  "VALIDACION": {
+   "categoria": "lucide",
+   "lucide": "clipboard-check",
+   "archivo": "lucide/clipboard-check.svg"
+  },
+  "VOLVER": {
+   "categoria": "lucide",
+   "lucide": "arrow-left",
+   "archivo": "lucide/arrow-left.svg"
+  },
+  "SUENA": {
+   "categoria": "adaptado",
+   "archivo": "propios/suena.svg",
+   "nota": "De «volume-2»: el Tag en lugar del parlante, con los mismos anillos."
+  },
+  "RUTA": {
+   "categoria": "lucide",
+   "lucide": "route",
+   "archivo": "lucide/route.svg"
+  },
+  "AVANCE": {
+   "categoria": "lucide",
+   "lucide": "chart-no-axes-column",
+   "archivo": "lucide/chart-no-axes-column.svg"
+  },
+  "ABRIR": {
+   "categoria": "lucide",
+   "lucide": "chevron-right",
+   "archivo": "lucide/chevron-right.svg"
+  },
+  "TUERCA": {
+   "categoria": "lucide",
+   "lucide": "settings",
+   "archivo": "lucide/settings.svg"
+  },
+  "ACTIVIDADES": {
+   "categoria": "adaptado",
+   "archivo": "propios/actividades.svg",
+   "nota": "De «layout-grid»: cuatro círculos, como los del logo (D-155)."
+  },
+  "PERRO": {
+   "categoria": "lucide",
+   "lucide": "dog",
+   "archivo": "lucide/dog.svg"
+  },
+  "CORRER": {
+   "categoria": "lucide",
+   "lucide": "sport-shoe",
+   "archivo": "lucide/sport-shoe.svg",
+   "nota": "La zapatilla: «Ponerte las zapatillas», como sugiere la app."
+  },
+  "NADAR": {
+   "categoria": "lucide",
+   "lucide": "waves-ladder",
+   "archivo": "lucide/waves-ladder.svg",
+   "nota": "La escalera de la piscina."
+  },
+  "PELOTA": {
+   "categoria": "lucide",
+   "lucide": "volleyball",
+   "archivo": "lucide/volleyball.svg",
+   "nota": "Una pelota genérica: el concepto reúne fútbol, básquetbol, vóleibol y otros deportes. Revisar."
+  },
+  "PELICULA": {
+   "categoria": "lucide",
+   "lucide": "clapperboard",
+   "archivo": "lucide/clapperboard.svg"
+  },
+  "MANGA": {
+   "categoria": "adaptado",
+   "archivo": "propios/manga.svg",
+   "nota": "De «book»: el tomo con un globo de diálogo (D-162)."
+  },
+  "MAQUETA": {
+   "categoria": "lucide",
+   "lucide": "toy-brick",
+   "archivo": "lucide/toy-brick.svg"
+  },
+  "TEJER": {
+   "categoria": "lucide",
+   "lucide": "spool",
+   "archivo": "lucide/spool.svg",
+   "nota": "El carrete de hilo: «Enhebrar la aguja», como sugiere la app. Lucide no tiene un ovillo. Revisar."
+  },
+  "PIANO": {
+   "categoria": "lucide",
+   "lucide": "piano",
+   "archivo": "lucide/piano.svg"
+  },
+  "MEDITAR": {
+   "categoria": "propio",
+   "archivo": "propios/meditar.svg",
+   "nota": "La flor de loto. Lucide no tiene un ícono de meditar."
+  },
+  "IDIOMAS": {
+   "categoria": "lucide",
+   "lucide": "languages",
+   "archivo": "lucide/languages.svg"
+  },
+  "CARTAS": {
+   "categoria": "lucide",
+   "lucide": "playing-cards",
+   "archivo": "lucide/playing-cards.svg"
+  },
+  "COMPARTIR": {
+   "categoria": "lucide",
+   "lucide": "users",
+   "archivo": "lucide/users.svg"
+  },
+  "SIN_RESPUESTA": {
+   "categoria": "lucide",
+   "lucide": "circle-dashed",
+   "archivo": "lucide/circle-dashed.svg",
+   "nota": "Círculo punteado, sin juicio (D-162)."
+  }
+ }
+}

@@ -2532,7 +2532,30 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** los capítulos 4, 10 y 14 y el glosario terminan en una columna corta, y la continuación de la Tabla 4 ocupa sola una página; se resuelve con el contenido, como pide el autor desde el 10 de noviembre (D-152, D-183).
 - **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-187 — Los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene
+
+- **Fecha:** 2026-11-21, aplicada el 22.
+- **Estado:** aplicada en la app 4.8, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas.
+- **Contexto:** desde D-124, Relevo dibujaba sus propios íconos con las reglas de construcción de Lucide, un conjunto de íconos de línea de código abierto; en noviembre eran 118 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)). El autor propuso usar los de Lucide, adaptar los que lo requieran y crear nuevos con sus reglas solo cuando Lucide no tenga algo que el usuario hace.
+- **Decisión:**
+  - **Lucide primero:** cada ícono de la app es el de Lucide 1.70.0 que dice lo mismo, tal cual: 109 de 118.
+  - **Adaptar cuando hace falta:** cinco parten de un ícono de Lucide y cambian una pieza. Suena y Silenciar llevan el Tag en vez del parlante; Sistema phygital, el Tag junto al teléfono; Actividades, cuatro círculos como los del logo, y Leer manga, un globo de diálogo en el libro.
+  - **Dibujar solo lo que falta:** cuatro son propios, porque Lucide no los tiene: el Tag, la colchoneta de Estirar, la flor de loto de Meditar y la escalera de Cómo empieza. Se dibujan con su especificación: lienzo de 24, 1 de margen, esquinas de 2 o 1 y 2 de aire entre trazos.
+  - **Siguen vigentes:** las reglas de D-162 para elegir entre los íconos de Lucide: cada actividad con el objeto con que empieza, un significado por dibujo, legible a 17 px y neutro donde la app no juzga. También el trazo según el tamaño (D-124) y el centro óptico (D-156).
+  - **Licencia:** Lucide usa la licencia ISC, y los íconos que vienen de Feather, la MIT. Su aviso va en el repositorio y dentro del APK.
+- **Fundamento:** usar un conjunto abierto y probado deja el dibujo propio para lo que es de Relevo: el Tag y las actividades que Lucide no tiene. Mantiene además una sola voz, porque los íconos propios siguen las mismas reglas, y evita mantener 118 dibujos a mano. La familiaridad con lo dibujado y con el estilo ayuda a reconocer un ícono y a que guste (Shen et al., 2018; Zheng et al., 2026; ver el documento 43).
+- **Alternativas descartadas:** seguir con los 118 dibujos propios (D-124 y D-162); usar Material Symbols, con otra geometría; mezclar Lucide con los dibujos anteriores, que daría dos estilos.
+- **Por revisar con el autor:** Ordenar es una polera, porque Lucide no tiene un colgador; Tejer, un carrete de hilo; Pelota, una de vóleibol; Dormir, la cama, y Escribir y Estudiar, dos cuadernos.
+- **Verificación:** los 118 trazados generados dibujan lo mismo que sus SVG, píxel a píxel. Pasan las 110 pruebas unitarias, 4 de ellas nuevas, que comprueban que Android lee cada trazado completo y que ningún ícono repite el dibujo de otro. El APK 4.8 se firma con la clave de siempre. No se vio en un teléfono.
+- **Documentos:** [Íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md), [carpeta con el mapeo, los SVG y el generador](../10_recursos_visuales/iconos-lucide/README.md) y [app 4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — D-187
+
+- **Qué cambió:** se registró D-187: los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene.
+- **Cómo estaba antes:** la última decisión era D-186; los íconos eran dibujos propios con las reglas de Lucide (D-124 y D-162).
+- **Por qué:** pedido del autor del 21 de noviembre de 2026.
 
 ### 2026-11-21 — D-186
 
