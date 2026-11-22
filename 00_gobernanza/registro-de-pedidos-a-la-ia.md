@@ -369,6 +369,7 @@
 | 21 nov. | Decisión y encargo | Sobre los íconos: usar los de Lucide, que son de código abierto, adaptar los que lo requieran o crear nuevos siguiendo cómo funcionan los de Lucide; si el usuario hace algo y Lucide no tiene un ícono de eso, hay que crearlo. | App [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md), en la rama `iconos-lucide`: de los 118 íconos, 109 son de Lucide tal cual, cinco adaptados y cuatro propios con sus reglas. El generador, el mapeo, los SVG y la licencia están en [`iconos-lucide`](../10_recursos_visuales/iconos-lucide/README.md), y el detalle, en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). Pasan 110 pruebas y el APK se firma con la clave de siempre; no se vio en un teléfono. La memoria, el Anexo H y las figuras quedan en la [tarea 17](por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria). | D-187 |
 | 22 nov. | Orden | «Inténtalo de nuevo», después de que la sesión se reinició a mitad del trabajo de los íconos. | Se retomó desde lo que había quedado guardado, sin perder trabajo, y se terminó la 4.8 con su documentación. | — |
 | 22 nov. | Corrección | El ícono del primer paso no debe ser una escalera. Además, algunos íconos propios se ven muy pequeños: «el tamaño debe ser perfecto, óptico, no matemático». | App [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md): el primer paso es una huella adaptada de Lucide, inclinada hacia adelante. Suena, Silenciar, Estirar y Meditar crecieron hasta pesar como sus vecinos, medidos con la prueba del desenfoque, que ahora está en el repositorio (`medir_tamano_optico.js`). Pasan 110 pruebas; no se vio en un teléfono. Detalle en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico). | D-187 |
+| 22 nov. | Corrección y encargo | Sobre los íconos de la 4.8.1: «Mejorables, perfecciónalos. Estudia cómo funcionan». | Se estudiaron la guía de Lucide y sus 2.029 íconos; las reglas y lo medido quedaron en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#cómo-funcionan-los-íconos-de-lucide). Cinco de los nueve íconos adaptados o propios no cumplían alguna regla y se corrigieron en la app [4.8.2](../06_desarrollo_y_factibilidad/app-android/version-4.8.2-iconos-con-las-reglas-de-lucide-2026-11-22.md): Silenciar y Meditar tenían menos de 2 de aire, Estirar terminaba en un corte brusco, la huella estaba girada y los anillos de Suena no venían de Lucide. Un script nuevo, `verificar_reglas.py`, comprueba el margen y el aire. Pasan 110 pruebas; no se vio en un teléfono. | D-187 |
 
 ## Lo que muestra el registro
 
@@ -379,6 +380,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Íconos con las reglas de Lucide
+
+- **Qué cambió:** se registró el pedido de perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
+- **Cómo estaba antes:** el último pedido era el del primer paso y el tamaño óptico.
+- **Por qué:** regla de registrar cada pedido el mismo día.
 
 ### 2026-11-22 — Tamaño óptico de los íconos
 

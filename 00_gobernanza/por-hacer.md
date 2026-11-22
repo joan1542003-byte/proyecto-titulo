@@ -967,12 +967,13 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ## 17. Íconos desde Lucide: revisar y llevar a la memoria
 
-**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.1 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
+**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.2 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
 
 ### A. Revisar la app
 
-- [ ] Instalar el [APK 4.8.1](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8.1-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
-- [ ] Revisar la huella del primer paso, que reemplaza a la escalera, y el tamaño de Suena, Silenciar, Estirar y Meditar, que crecieron en la 4.8.1 ([tamaño óptico](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico)).
+- [ ] Instalar el [APK 4.8.2](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8.2-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
+- [ ] Revisar los cinco que se corrigieron en la 4.8.2 con las reglas de Lucide: Suena, Silenciar, Estirar, Meditar y la huella del primer paso, ahora recta ([tamaño óptico](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico)).
+- [ ] Confirmar los dos dibujos del Tag: con botón y argolla en Objeto, y como un círculo con un punto en Suena, Silenciar y Sistema phygital.
 - [ ] Decidir cinco elecciones: Ordenar (una polera, porque Lucide no tiene un colgador), Tejer (un carrete de hilo), Pelota (una de vóleibol), Dormir (la cama) y Escribir y Estudiar (dos cuadernos).
 - [ ] Si se aprueba, unir la rama `iconos-lucide` a `main`.
 
@@ -992,9 +993,16 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 ### Reglas
 
 - Los íconos se cambian en el [mapeo](../10_recursos_visuales/iconos-lucide/mapeo.json) o en sus SVG, y se generan de nuevo con `generar_kiticons.py`; `KitIcons.kt` no se edita a mano.
+- Un ícono adaptado o propio debe pasar `verificar_reglas.py`: las reglas obligatorias de Lucide no se rompen para ganar tamaño.
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Tarea 17, la 4.8.2
+
+- **Qué cambió:** la tarea 17 apunta al APK 4.8.2; suma revisar los cinco íconos corregidos con las reglas de Lucide, confirmar los dos dibujos del Tag y la regla de pasar `verificar_reglas.py`.
+- **Cómo estaba antes:** apuntaba al APK 4.8.1 y pedía revisar la huella y los cuatro íconos que crecieron.
+- **Por qué:** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
 
 ### 2026-11-22 — Tarea 17, la 4.8.1
 

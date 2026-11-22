@@ -404,9 +404,9 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
   ESTIRAR(
     "Estirar",
     listOf(
-      KitShape("M2 12A7 7 0 1 0 16 12A7 7 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M12 12a3 3 0 1 1 -3 -3", true, KitFill.NONE),
-      KitShape("M9 19h11a2 2 0 0 0 0 -4h-4.675", true, KitFill.NONE),
+      KitShape("M2 12A6.5 6.5 0 1 0 15 12A6.5 6.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M11 12a2.5 2.5 0 1 1 -2.5 -2.5", true, KitFill.NONE),
+      KitShape("M8.5 18.5H20a2 2 0 0 0 0 -4h-1.5", true, KitFill.NONE),
     ),
   ),
   /** Lucide «star». La estrella de Lucide, rellena. */
@@ -705,12 +705,12 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M5 17h14", true, KitFill.NONE),
     ),
   ),
-  /** Adaptado de Lucide (D-187). De «footprints»: una sola huella, más grande e inclinada hacia adelante, el primer paso. Sin uso en la app. */
+  /** Adaptado de Lucide (D-187). De «footprints»: una sola huella, sin girar y más grande, el primer paso. Sin uso en la app. */
   PRIMER_PASO(
     "Cómo empieza",
     listOf(
-      KitShape("M6.5 17.98L7.52 15.18C8.42 12.69 7.64 11.08 8.74 8.15C9.94 4.97 13.06 1.74 16.59 3.03C18.79 3.83 18.76 6.21 18.04 8.21C16.71 11.86 13.27 14 11.97 17.55L11.2 19.69A2.5 2.5 20 1 1 6.5 17.98Z", true, KitFill.NONE),
-      KitShape("M7.78 14.46L12.48 16.17", true, KitFill.NONE),
+      KitShape("M9 19.5v-2.975C9 13.875 7.713 12.625 7.75 9.5c0.038 -3.4 1.863 -7.5 5.625 -7.5C15.713 2 16.5 4.25 16.5 6.375c0 3.888 -2.5 7.075 -2.5 10.85V19.5a2.5 2.5 0 1 1 -5 0Z", true, KitFill.NONE),
+      KitShape("M9 16h5", true, KitFill.NONE),
     ),
   ),
   /** Lucide «lock». */
@@ -793,12 +793,12 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("m12 5 7 7 -7 7", true, KitFill.NONE),
     ),
   ),
-  /** Adaptado de Lucide (D-187). De «volume-x»: el Tag en lugar del parlante, con la cruz. */
+  /** Adaptado de Lucide (D-187). De «volume-x»: el mismo Tag de Suena, con la cruz de «volume-x». */
   SILENCIAR(
     "Silenciar",
     listOf(
-      KitShape("M2 12A6 6 0 1 0 14 12A6 6 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M6 12A2 2 0 1 0 10 12A2 2 0 1 0 6 12Z", true, KitFill.NONE),
+      KitShape("M2 12A5.5 5.5 0 1 0 13 12A5.5 5.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M7.5 12h0.01", true, KitFill.NONE),
       KitShape("m17 9.5 5 5", true, KitFill.NONE),
       KitShape("m22 9.5 -5 5", true, KitFill.NONE),
     ),
@@ -899,14 +899,14 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M19 12H5", true, KitFill.NONE),
     ),
   ),
-  /** Adaptado de Lucide (D-187). De «volume-2»: el Tag en lugar del parlante, con dos anillos concéntricos que se abren desde él. */
+  /** Adaptado de Lucide (D-187). De «radio» y «volume-2»: el Tag en lugar del parlante, con los anillos concéntricos de «radio». */
   SUENA(
     "Suena",
     listOf(
-      KitShape("M2 12A6 6 0 1 0 14 12A6 6 0 1 0 2 12Z", true, KitFill.NONE),
-      KitShape("M6 12A2 2 0 1 0 10 12A2 2 0 1 0 6 12Z", true, KitFill.NONE),
-      KitShape("M15.66 5.57A10 10 0 0 1 15.66 18.43", true, KitFill.NONE),
-      KitShape("M19.47 3.97A14 14 0 0 1 19.47 20.03", true, KitFill.NONE),
+      KitShape("M2 12A5.5 5.5 0 1 0 13 12A5.5 5.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M7.5 12h0.01", true, KitFill.NONE),
+      KitShape("M14.218 5.282a9.5 9.5 0 0 1 0 13.435", true, KitFill.NONE),
+      KitShape("M17.046 2.454a13.5 13.5 0 0 1 0 19.092", true, KitFill.NONE),
     ),
   ),
   /** Lucide «route». */
@@ -1042,14 +1042,14 @@ enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
       KitShape("M6 13v4", true, KitFill.NONE),
     ),
   ),
-  /** Propio, con las reglas de construcción de Lucide (D-187). La flor de loto. Lucide no tiene un ícono de meditar. */
+  /** Propio, con las reglas de construcción de Lucide (D-187). La flor de loto, con pétalos como las hojas de «flower-2». Lucide no tiene un ícono de meditar. */
   MEDITAR(
     "Meditar",
     listOf(
-      KitShape("M12 3c2.2 2 3.3 4.4 3.3 7.2s-1.1 5.2 -3.3 7.2c-2.2 -2 -3.3 -4.4 -3.3 -7.2S9.8 5 12 3z", true, KitFill.NONE),
-      KitShape("M12 17.4c-4.3 0 -8 -3 -9.6 -7 2.6 -0.5 5 0.1 6.9 1.2", true, KitFill.NONE),
-      KitShape("M12 17.4c4.3 0 8 -3 9.6 -7 -2.6 -0.5 -5 0.1 -6.9 1.2", true, KitFill.NONE),
-      KitShape("M6.5 21h11", true, KitFill.NONE),
+      KitShape("M12 2A9 9 0 0 1 12 16A9 9 0 0 1 12 2Z", true, KitFill.NONE),
+      KitShape("M12 16A7 7 0 0 1 3 10A7 7 0 0 1 12 16Z", true, KitFill.NONE),
+      KitShape("M21 10A7 7 0 0 1 12 16A7 7 0 0 1 21 10Z", true, KitFill.NONE),
+      KitShape("M5 21h14", true, KitFill.NONE),
     ),
   ),
   /** Lucide «languages». */

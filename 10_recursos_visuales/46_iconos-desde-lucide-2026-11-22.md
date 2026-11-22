@@ -1,14 +1,14 @@
 # Íconos desde Lucide
 
-**Fecha:** 22 de noviembre de 2026. **Decisión:** [D-187](../09_decisiones/registro-de-decisiones.md). **Rama:** `iconos-lucide`. **App:** [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md) y [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md). **Carpeta:** [iconos-lucide](iconos-lucide/README.md), con el mapeo, los SVG, el generador y la licencia. **Imágenes:** [antes y después](iconos-lucide/antes-y-despues.png), [los 118 íconos](iconos-lucide/set-completo.png) y [los propios junto a Lucide](iconos-lucide/propios-junto-a-lucide.png) y [el tamaño óptico](iconos-lucide/tamano-optico.png).
+**Fecha:** 22 de noviembre de 2026. **Decisión:** [D-187](../09_decisiones/registro-de-decisiones.md). **Rama:** `iconos-lucide`. **App:** [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md), [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md) y [4.8.2](../06_desarrollo_y_factibilidad/app-android/version-4.8.2-iconos-con-las-reglas-de-lucide-2026-11-22.md). **Carpeta:** [iconos-lucide](iconos-lucide/README.md), con el mapeo, los SVG, el generador, los scripts de prueba y la licencia. **Imágenes:** [antes y después](iconos-lucide/antes-y-despues.png), [los 118 íconos](iconos-lucide/set-completo.png), [los propios junto a Lucide](iconos-lucide/propios-junto-a-lucide.png) y [de la 4.8.1 a la 4.8.2](iconos-lucide/tamano-optico.png).
 
 ## Qué se pidió
 
-El autor propuso usar los íconos de Lucide, que son de código abierto, adaptar los que lo requieran y crear nuevos siguiendo cómo funcionan los de Lucide: «si nuestro usuario hace algo, pero Lucide no tiene un ícono de ese algo, habría que crearlo». Al revisar la 4.8 pidió dos ajustes: que el primer paso no fuera una escalera y que el tamaño de los íconos propios fuera «perfecto, óptico, no matemático», porque algunos se veían muy pequeños.
+El autor propuso usar los íconos de Lucide, que son de código abierto, adaptar los que lo requieran y crear nuevos siguiendo cómo funcionan los de Lucide: «si nuestro usuario hace algo, pero Lucide no tiene un ícono de ese algo, habría que crearlo». Al revisar la 4.8 pidió dos ajustes: que el primer paso no fuera una escalera y que el tamaño de los íconos propios fuera «perfecto, óptico, no matemático», porque algunos se veían muy pequeños. Al revisar la 4.8.1 pidió perfeccionarlos y estudiar cómo funcionan los íconos de Lucide.
 
 ## Qué cambió
 
-Hasta la 4.7.2, Relevo dibujaba sus 118 íconos a mano, con las reglas de construcción de Lucide como referencia ([documento 43](43_por-que-iconos-propios-2026-11-06.md)). Desde la 4.8, cada ícono sale de Lucide 1.70.0. Así quedan en la 4.8.1:
+Hasta la 4.7.2, Relevo dibujaba sus 118 íconos a mano, con las reglas de construcción de Lucide como referencia ([documento 43](43_por-que-iconos-propios-2026-11-06.md)). Desde la 4.8, cada ícono sale de Lucide 1.70.0. Así quedan en la 4.8.2:
 
 | Origen | Cuántos | Cuáles |
 | --- | --- | --- |
@@ -46,41 +46,86 @@ Los casos con más de una opción:
 
 El mapeo completo, con el origen y la nota de cada ícono, está en [`mapeo.json`](iconos-lucide/mapeo.json).
 
+## Cómo funcionan los íconos de Lucide
+
+Para perfeccionar los nueve íconos que no son de Lucide tal cual, se estudió cómo se construye un ícono de Lucide en dos fuentes: su guía de diseño (Lucide Contributors, s. f.-a) y sus convenciones para el código (Lucide Contributors, s. f.-c). Después se midieron los 2.029 íconos de la versión 1.70.0. El paquete trae 2.322 archivos, porque 293 son nombres antiguos que repiten el dibujo de otro.
+
+La guía separa lo obligatorio de lo recomendable. Lo obligatorio solo admite las excepciones que defina Lucide:
+
+- un lienzo cuadrado de 24 × 24, con el trazo a 1 o más del borde;
+- un trazo de 2, centrado en su línea, con puntas y uniones redondas;
+- 2 o más de aire entre elementos distintos.
+
+Lo recomendable cede solo si el ícono queda mejor:
+
+- **Esquinas:** casi todas redondeadas: con radio 2 en las formas de 8 o más y 1 en las menores; con 2,41 (1 + √2) donde dos diagonales se juntan en ángulo recto, y en punta donde se juntan más de dos líneas.
+- **Aire interior:** 2 o más. Se prueba con un círculo de 2 de ancho: si cabe sin tocar el trazo, alcanza. Un elemento tampoco debe terminar en un corte brusco contra otro.
+- **Peso:** cada ícono debe pesar como `circle` y `square`. La prueba es desenfocarlo junto a ellos: no debe verse mucho más claro ni más oscuro.
+- **Centro:** el ícono simétrico va al centro exacto; el asimétrico, al centro que ve el ojo.
+- **Densidad:** solo los detalles necesarios para reconocerlo.
+- **Curvas:** suaves y simples; arcos y curvas cuadráticas antes que cúbicas.
+- **Retícula:** coordenadas y centros en números enteros cuando se pueda, sin dañar la forma.
+- **Formas establecidas:** lo que ya existe en Lucide se toma igual, sin cambiar su geometría, su lugar ni su orientación, y los agregados comunes mantienen su forma, su tamaño y su posición.
+
+En el código, cada SVG lleva los mismos atributos y solo trazados, líneas, polilíneas, polígonos, círculos, elipses y rectángulos. No usa transformaciones, filtros, rellenos ni colores de trazo propios, y redondea los trazados a tres decimales.
+
+Medidos, los 2.029 íconos muestran cómo se aplican esas reglas:
+
+| Qué | Cómo lo hace Lucide |
+| --- | --- |
+| Atributos | Los mismos en todos: lienzo de 24, sin relleno, trazo de 2 del color del texto, puntas y uniones redondas. |
+| Elementos | El 85 % son trazados (`path`); el 8 %, círculos; el 6 %, rectángulos, y el 2 %, líneas. Elipses, polilíneas y polígonos casi no aparecen. |
+| Círculos | Los radios más usados son 2, 3, 10 —el círculo que llena el lienzo—, 1 y 4. |
+| Rectángulos | Esquinas de 2 (316 de 457) o de 1 (131). |
+| Puntos | Un trazo de largo 0,01 (`h.01`), que la punta redonda vuelve un punto: 338 veces, frente a 84 círculos de radio 1 o menos. |
+| Retícula | Son enteras el 81 % de las coordenadas donde empiezan los trazados y el 90 % de las de los centros de los círculos. Con los medios, como 7,5, los centros llegan al 98,5 %. |
+| Rellenos | Solo 12 íconos rellenan algo, como los puntos de `palette`. |
+
+**Lo que cambia en Relevo.** Revisados con estas reglas, cinco de los nueve no cumplían alguna (sección siguiente). De aquí salen tres criterios:
+
+1. Lo que ya existe en Lucide se toma igual: los anillos de `radio`, la cruz de `volume-x`, la huella de `footprints` y el suelo de `sprout`.
+2. Los 2 de aire entre elementos distintos son obligatorios. Si un ícono se ve chico, se redibuja para que gane peso; no se acercan sus piezas.
+3. El peso se mide como pide Lucide, desenfocado (sección «Tamaño óptico»).
+
+[`verificar_reglas.py`](iconos-lucide/verificar_reglas.py) comprueba el margen y el aire de los nueve, y cuenta cuántas coordenadas quedan fuera de la retícula.
+
 ## Los nueve que no son de Lucide tal cual
 
 | Ícono | Origen | Qué dibuja | Por qué |
 | --- | --- | --- | --- |
 | **Objeto** | Propio | El Tag visto desde arriba: el cuerpo, el botón y el agujero de la argolla. | Lucide no tiene un llavero localizador. El objeto físico y la pantalla se nombran igual: es lo *phygital* del proyecto. |
-| **Suena** | Adaptado de `volume-2` | El Tag, con su botón, y dos anillos concéntricos que se abren desde él. | El Tag reemplaza al parlante, porque suena el objeto; los anillos son el sonido que se abre desde el objeto, como en la memoria. |
-| **Silenciar** | Adaptado de `volume-x` | El mismo Tag, con una cruz de 5, como la de `volume-x`. | Callar el Tag, como explica la guía del Tag. |
+| **Suena** | Adaptado de `volume-2` y `radio` | El Tag, con un punto al centro como el cono de `speaker`, y los dos anillos de `radio`, centrados en él. | El Tag reemplaza al parlante, porque suena el objeto; los anillos son el sonido que se abre desde el objeto, como en la memoria. |
+| **Silenciar** | Adaptado de `volume-x` | El mismo Tag, con la cruz de 5 de `volume-x`, a 2,3 de él. | Callar el Tag, como explica la guía del Tag. |
 | **Sistema phygital** | Adaptado de `smartphone` | El teléfono, más angosto, junto al Tag. | Sin uso en pantalla; se conserva. |
 | **Actividades** | Adaptado de `layout-grid` | Cuatro círculos en vez de cuatro cuadrados. | Son los círculos del logo (D-155); Apps elegidas conserva los cuadrados. |
 | **Leer manga** | Adaptado de `book` | El libro con un globo de diálogo en la tapa. | «Sacar el tomo del estante» (D-162). |
-| **Estirar** | Propio | La colchoneta a medio desenrollar. | «Desenrollar la colchoneta» (D-162). Lucide no tiene colchoneta. |
-| **Meditar** | Propio | La flor de loto sobre una base. | Lucide no tiene un ícono de meditar. |
-| **Cómo empieza** | Adaptado de `footprints` | Una sola huella, más grande e inclinada hacia adelante. | El primer paso, literal: dar el paso. Se distingue de Caminar, que son dos huellas rectas. Sin uso en pantalla todavía; hasta la 4.8 era una escalera. |
+| **Estirar** | Propio | La colchoneta a medio desenrollar: el rollo, con su vuelta interior, y la parte estirada, cuya cara de arriba se detiene a 2 del rollo. | «Desenrollar la colchoneta» (D-162). Lucide no tiene colchoneta. |
+| **Meditar** | Propio | La flor de loto: tres pétalos cerrados que nacen de un punto, como las hojas de `flower-2`, sobre el suelo de `sprout`. | Lucide no tiene un ícono de meditar. |
+| **Cómo empieza** | Adaptado de `footprints` | La huella izquierda de `footprints`, sola, sin girar y 1,25 veces más grande. | El primer paso, literal: dar el paso. Se distingue de Caminar, que son dos huellas. Sin uso en pantalla todavía; hasta la 4.8 era una escalera. |
 
 ![Los nueve, junto a su referente de Lucide, a 48, 24 y 17 px y dentro de un anillo](iconos-lucide/propios-junto-a-lucide.png)
 
-**Cómo se dibujaron.** Con la [especificación de Lucide](https://lucide.dev/contribute/icons/specification): lienzo de 24 con 1 de margen, trazo de 2 en el diseño, puntas y uniones redondas, esquinas de 2 en las formas de 8 o más y de 1 en las menores, y 2 de aire entre trazos. Los puntos son trazos de largo casi nulo («h.01»), como los de Lucide. La especificación no basta para el tamaño: en la 4.8, cumplirla al pie de la letra dejó chicos a Suena y Silenciar, porque el Tag tuvo que encogerse para dejar 2 de aire con los anillos. En la 4.8.1 prima la vista: el Tag tiene radio 6 y su botón; los anillos de Suena son concéntricos, con 2 de aire parejo, y la cruz de Silenciar queda a 1 del Tag (sección «Tamaño óptico»).
+**Cómo se dibujaron.** Con las reglas de la sección anterior. En la 4.8 se cumplió la especificación al pie de la letra, y Suena y Silenciar quedaron chicos, porque el Tag tuvo que encogerse para dejar 2 de aire con los anillos. En la 4.8.1 se agrandaron a la vista, pero algunos rompieron reglas: la cruz de Silenciar quedó a 1,35 del Tag; la base de Meditar, a 1,6 de los pétalos; la cara de arriba de la colchoneta terminaba justo sobre el rollo, en un corte brusco; la huella estaba girada, y los anillos de Suena y el botón del Tag, un círculo dentro de otro, no venían de Lucide. En la 4.8.2 se redibujaron con formas que Lucide ya tiene, y el peso se ganó con el dibujo, sin bajar de 2 el aire. Así, el Tag de Suena y Silenciar es ahora un círculo de radio 5,5 con un punto, y Meditar cambió sus pétalos abiertos por tres cerrados.
 
 ## Tamaño óptico
 
 Un ícono se ve del tamaño correcto cuando pesa como sus vecinos, aunque sus medidas no coincidan. Lucide lo comprueba desenfocando el ícono y comparándolo con su círculo y su cuadrado de base. Aquí se hizo con todos los íconos de la app. Cada uno se dibuja a 480 px con trazo de 2 y se desenfoca dos unidades de la retícula. Después se mide su **mancha**: cuántas unidades cuadradas quedan con al menos un 12 % de tinta. Lo hace [`medir_tamano_optico.js`](iconos-lucide/medir_tamano_optico.js).
 
-Entre los 109 íconos de Lucide de la app, la mancha mediana es 411, y la mitad central va de 347 a 458. Así se movieron los que se veían chicos; entre paréntesis, su percentil entre esos 109:
+Entre los 109 íconos de Lucide de la app, la mancha mediana es 411, y la mitad central va de 347 a 458. Así se movieron los cinco que cambiaron; entre paréntesis, su percentil entre esos 109:
 
-| Ícono | 4.8 | 4.8.1 | Su equivalente en Lucide | Qué cambió |
+| Ícono | 4.8 | 4.8.1 | 4.8.2 | Su equivalente en Lucide |
 | --- | --- | --- | --- | --- |
-| Suena | 326 (17 %) | 402 (48 %) | `volume-2`, 379 | El Tag, de radio 5 a 6, con su botón; los anillos, concéntricos. |
-| Silenciar | 276 (11 %) | 317 (15 %) | `volume-x`, 329 | El mismo Tag y una cruz de 5. La cruz es liviana por naturaleza: queda a la par de `volume-x`. |
-| Estirar | 331 (18 %) | 374 (38 %) | `bed`, 372 | El rollo, de radio 6 a 7; la colchoneta, más alta. |
-| Meditar | 336 (22 %) | 374 (38 %) | `plant-pot`, 379 | Los pétalos más llenos y la base más ancha. |
-| Cómo empieza | 214 (9 %) | 292 (13 %) | `footprints`, 429 | La escalera pasó a ser una huella. Es angosta, como Bluetooth o el visto, y ocupa todo el alto del lienzo. |
+| Suena | 326 (17 %) | 402 (48 %) | 407 (49 %) | `volume-2`, 379 |
+| Silenciar | 276 (11 %) | 317 (15 %) | 297 (13 %) | `volume-x`, 329 |
+| Estirar | 331 (18 %) | 374 (38 %) | 351 (27 %) | `bed`, 372 |
+| Meditar | 336 (22 %) | 374 (38 %) | 399 (48 %) | `plant-pot`, 379 |
+| Cómo empieza | 214 (9 %) | 292 (13 %) | 287 (12 %) | `footprints`, 429 |
 
-La hoja de abajo muestra cada uno a 32 px y a 17 px dentro de un anillo. Objeto (503), Actividades (491) y Leer manga (520) quedan sobre la mediana porque son formas llenas, como sus equivalentes en Lucide; no se achicaron.
+En la 4.8.1 crecieron a la vista: el Tag pasó de radio 5 a 6, el rollo de Estirar de 6 a 7 y los pétalos de Meditar se llenaron, y la escalera pasó a ser una huella. En la 4.8.2, Suena y Meditar quedan en la mediana. Estirar queda dentro de la mitad central, cerca de su borde liviano, porque el rollo bajó a 6,5 para dejar 2 de aire a la colchoneta. Silenciar queda algo más liviano que `volume-x`, porque la cruz necesita 2 de aire y el Tag es el mismo de Suena. La huella es angosta, como Bluetooth (262), y ocupa todo el alto del lienzo.
 
-![Tamaño óptico: la 4.8, la 4.8.1 y su equivalente en Lucide](iconos-lucide/tamano-optico.png)
+La hoja de abajo muestra la 4.8.1 y la 4.8.2 de cada uno, a 40 px y a 17 px dentro de un anillo; después, la nueva desenfocada junto al círculo y el cuadrado de Lucide, como pide su guía, y en una fila con íconos que la rodean en la app. Objeto (503), Actividades (491) y Leer manga (520) quedan sobre la mediana porque son formas llenas, como sus equivalentes en Lucide; no se achicaron.
+
+![De la 4.8.1 a la 4.8.2: cada ícono en un anillo, desenfocado junto al círculo y el cuadrado de Lucide, y entre sus vecinos](iconos-lucide/tamano-optico.png)
 
 ## Antes y después
 
@@ -88,19 +133,21 @@ La hoja de abajo muestra cada uno a 32 px y a 17 px dentro de un anillo. Objeto 
 
 ## Verificación
 
-- **Los dibujos:** cada trazado generado se dibujó junto a su SVG de origen, a 96 px, y los 118 coincidieron píxel a píxel, en la 4.8 y en la 4.8.1.
+- **Los dibujos:** cada trazado generado se dibujó junto a su SVG de origen, a 96 px, y los 118 coincidieron píxel a píxel, en la 4.8, la 4.8.1 y la 4.8.2.
+- **Las reglas:** `verificar_reglas.py` mide los nueve adaptados o propios. Los nueve tienen 1 o más de margen y 2 o más de aire entre elementos distintos. Solo se tocan las piezas que el dibujo une: los brazos de la cruz, la colchoneta con su rollo, los tres pétalos y la huella con su línea.
 - **El tamaño:** la prueba del desenfoque de la sección «Tamaño óptico», repetible con `medir_tamano_optico.js`.
 - **En Android:** las 110 pruebas unitarias pasan. Cuatro son nuevas y comprueban que el lector de trazados de Android lee cada paso de cada trazado, que las banderas de los arcos van separadas y que ningún ícono repite el dibujo de otro.
 - **Un detalle técnico:** seis SVG de Lucide escriben pegadas las banderas de sus arcos («A5 5 0 0012 5»), como permite el estándar. El generador las separa, porque Android podría leer «0012» como un solo número.
-- **APK 4.8 y 4.8.1:** firmados con la clave de siempre y con el aviso de licencia de Lucide adentro.
+- **APK 4.8, 4.8.1 y 4.8.2:** firmados con la clave de siempre y con el aviso de licencia de Lucide adentro.
 - **No se vio en un teléfono** ni en un emulador.
 
 ## Por revisar con el autor
 
 1. **En el teléfono:** los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande.
 2. **Cinco elecciones:** Ordenar (la polera), Tejer (el carrete), Pelota (la de vóleibol), Dormir (la cama), y Escribir y Estudiar, que son dos cuadernos.
-3. **La huella del primer paso:** inclinada hacia adelante. Hay también una versión recta y una más ancha, si se prefieren.
-4. **El trazo:** la app dibuja los íconos de Lucide con su trazo según el tamaño (1,6 a 24 px), no con el de 2 de Lucide. Probar la línea de 2 sigue pendiente desde el documento 43.
+3. **La huella del primer paso:** desde la 4.8.2 va recta, como en `footprints`. Inclinarla, como en la 4.8.1, se aparta de la regla de conservar la orientación de lo que se toma de Lucide.
+4. **Dos dibujos del Tag:** con botón y argolla en Objeto, donde es el protagonista, y como un círculo con un punto en Suena, Silenciar y Sistema phygital, donde comparte el lienzo. Lucide pide representar igual los elementos compartidos; aquí cambia el nivel de detalle según el tamaño, y conviene confirmarlo.
+5. **El trazo:** la app dibuja los íconos de Lucide con su trazo según el tamaño (1,6 a 24 px), no con el de 2 de Lucide. Probar la línea de 2 sigue pendiente desde el documento 43.
 
 ## Lo que arrastra el cambio
 
@@ -137,9 +184,17 @@ Lucide Contributors. (s. f.-a). *Lucide design language*. Lucide. Recuperado el 
 
 Lucide Contributors. (s. f.-b). *Lucide license*. Lucide. Recuperado el 10 de noviembre de 2026, de https://lucide.dev/license
 
+Lucide Contributors. (s. f.-c). *SVG conventions*. Lucide. Recuperado el 22 de noviembre de 2026, de https://lucide.dev/contribute/icons/code-conventions
+
 Lucide Contributors. (2026). *lucide-static* (Versión 1.70.0) [Software]. npm. https://www.npmjs.com/package/lucide-static/v/1.70.0
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Reglas de Lucide (4.8.2)
+
+- **Qué cambió:** se suma la sección «Cómo funcionan los íconos de Lucide», con sus reglas obligatorias y recomendables, sus convenciones de código y lo medido en sus 2.029 íconos. Se actualizan los nueve, cómo se dibujaron, el tamaño óptico con la 4.8.2, la verificación con `verificar_reglas.py`, lo que hay que revisar y las referencias, que suman las convenciones de SVG de Lucide.
+- **Cómo estaba antes:** el documento llegaba a la 4.8.1, cuando la vista primaba sobre los 2 de aire: Silenciar y Meditar quedaban con menos, Estirar terminaba en un corte brusco y la huella estaba inclinada.
+- **Por qué:** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
 
 ### 2026-11-22 — Tamaño óptico y primer paso
 

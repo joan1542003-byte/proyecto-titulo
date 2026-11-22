@@ -221,7 +221,13 @@
   "ESTIRAR": {
    "categoria": "propio",
    "archivo": "propios/estirar.svg",
-   "nota": "La colchoneta a medio desenrollar (D-162). Lucide no tiene colchoneta."
+   "nota": "La colchoneta a medio desenrollar (D-162). Lucide no tiene colchoneta.",
+   "uniones": [
+    [
+     0,
+     2
+    ]
+   ]
   },
   "ESTRELLA_LLENA": {
    "categoria": "lucide",
@@ -402,7 +408,13 @@
   "PRIMER_PASO": {
    "categoria": "adaptado",
    "archivo": "propios/primer-paso.svg",
-   "nota": "De «footprints»: una sola huella, más grande e inclinada hacia adelante, el primer paso. Sin uso en la app."
+   "nota": "De «footprints»: una sola huella, sin girar y más grande, el primer paso. Sin uso en la app.",
+   "uniones": [
+    [
+     0,
+     1
+    ]
+   ]
   },
   "PRIVACIDAD": {
    "categoria": "lucide",
@@ -448,7 +460,13 @@
   "SILENCIAR": {
    "categoria": "adaptado",
    "archivo": "propios/silenciar.svg",
-   "nota": "De «volume-x»: el Tag en lugar del parlante, con la cruz."
+   "nota": "De «volume-x»: el mismo Tag de Suena, con la cruz de «volume-x».",
+   "uniones": [
+    [
+     2,
+     3
+    ]
+   ]
   },
   "SIN_CONEXION": {
    "categoria": "lucide",
@@ -509,7 +527,7 @@
   "SUENA": {
    "categoria": "adaptado",
    "archivo": "propios/suena.svg",
-   "nota": "De «volume-2»: el Tag en lugar del parlante, con dos anillos concéntricos que se abren desde él."
+   "nota": "De «radio» y «volume-2»: el Tag en lugar del parlante, con los anillos concéntricos de «radio»."
   },
   "RUTA": {
    "categoria": "lucide",
@@ -588,7 +606,21 @@
   "MEDITAR": {
    "categoria": "propio",
    "archivo": "propios/meditar.svg",
-   "nota": "La flor de loto. Lucide no tiene un ícono de meditar."
+   "nota": "La flor de loto, con pétalos como las hojas de «flower-2». Lucide no tiene un ícono de meditar.",
+   "uniones": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ]
+   ]
   },
   "IDIOMAS": {
    "categoria": "lucide",

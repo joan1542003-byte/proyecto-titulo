@@ -1,7 +1,7 @@
-<!-- Relevo · Adaptado de Lucide «volume-2»: el Tag en lugar del parlante y dos anillos concéntricos que se abren desde él. Tamaño ajustado a la vista, con la prueba del desenfoque. Con las reglas de construcción de Lucide (ISC). -->
+<!-- Relevo · Adaptado de Lucide «radio» y «volume-2»: el Tag (círculo de radio 5,5 con su punto, como el cono de «speaker») y dos anillos concéntricos a ±45°, cada 4, como los de «radio». Con la guía, la especificación y las convenciones de Lucide (ISC). -->
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="8" cy="12" r="6"/>
-  <circle cx="8" cy="12" r="2"/>
-  <path d="M15.66 5.57A10 10 0 0 1 15.66 18.43"/>
-  <path d="M19.47 3.97A14 14 0 0 1 19.47 20.03"/>
+  <circle cx="7.5" cy="12" r="5.5"/>
+  <path d="M7.5 12h.01"/>
+  <path d="M14.218 5.282a9.5 9.5 0 0 1 0 13.435"/>
+  <path d="M17.046 2.454a13.5 13.5 0 0 1 0 19.092"/>
 </svg>
