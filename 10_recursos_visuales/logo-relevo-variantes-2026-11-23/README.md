@@ -118,6 +118,21 @@ Sirve para abrir una presentación, un video o la app.
 | `relevo-turno-sutil-centro-claro-texto-color-del-turno` | cambia con el turno | papel |
 | `relevo-marca-turno-sutil-centro-claro` | solo la marca | papel |
 
+**Pasa el turno, sin fondo (la versión final).** Es la versión pulida de «pasa el turno» con puntas claras. Va sin fondo, para ponerla sobre una lámina.
+
+- **Giro más fino:** el resorte casi no rebota; se pasa un 2 % y se asienta. La anticipación es de 4°, y cada turno dura 1,5 s, lo que da un ritmo más calmo.
+- **El color del texto pasa con un barrido:** el color nuevo recorre la palabra de izquierda a derecha, con un borde suave, mientras la marca gira. Antes se mezclaba en toda la palabra a la vez y pasaba por un tono turbio.
+- **Formatos:** el GIF sin fondo va a 25 cuadros por segundo, nítido, sin mezclar cuadros: la mezcla dejaba imágenes dobles en los movimientos rápidos. Tiene los bordes preparados para fondo blanco o claro. La versión «para fondo oscuro» tiene los bordes preparados para la tinta. El WebM tiene transparencia real y se ve bien sobre cualquier fondo.
+
+| Archivo | Texto | Para |
+| --- | --- | --- |
+| `relevo-turno-sin-fondo.gif` y `.webm` | cambia con el turno | fondo claro (el WebM, cualquiera) |
+| `relevo-turno-sin-fondo-para-fondo-oscuro.gif` | cambia con el turno | fondo oscuro |
+| `relevo-turno-texto-tinta-sin-fondo.gif` y `.webm` | tinta | fondo claro |
+| `relevo-marca-turno-sin-fondo.gif` y `.webm` | solo la marca | fondo claro |
+
+Las animaciones que explican la app sin palabras están en [animaciones-de-relevo-2026-11-23](../animaciones-de-relevo-2026-11-23/README.md).
+
 ### Fuentes
 
 - Renderforest. (2026). *Logo animation trends 2026: 10 styles that work*. https://www.renderforest.com/blog/logo-animation-trends
@@ -134,14 +149,23 @@ node scripts/gen.js
 bash scripts/render-gif.sh papel
 bash scripts/render-gif.sh tinta
 bash scripts/render-familia.sh
+# pasa el turno, sin fondo (GIF, GIF para fondo oscuro y WebM)
+cd scripts && node render.js motion.js relevo-turno-sin-fondo ../animacion-logo --gif 720 --mates claro,oscuro --webm -- turno turno transparente horizontal puntas-claras
 ```
 
 - **`gen.js`:** escribe los SVG y la lámina HTML. La lámina se pasa a PNG abriéndola en Chrome a 1600 px de ancho.
 - **`render-gif.sh`:** dibuja los 160 cuadros en una carpeta temporal y deja el GIF y el MP4 en `gif/`.
+- **`render.js`:** renderiza con fondo transparente. Arma el GIF sin fondo, con los bordes fundidos en blanco o en tinta, y opcionalmente un WebM con transparencia y un MP4 sobre blanco.
 - **`motion.js`, `render-motion.sh` y `render-familia.sh`:** la familia de animaciones del logo. `render-familia.sh` rehace todas y las deja en `animacion-logo/`.
 - **`color.js`:** las conversiones a OKLCH y el cálculo de contraste.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Pasa el turno pulido y sin fondo
+
+- **Qué cambió:** se sumó la versión final de «pasa el turno», sin fondo. El giro es más fino: resorte que se pasa un 2 %, anticipación de 4° y un turno cada 1,5 s. El color del texto pasa con un barrido de izquierda a derecha. Está en GIF para fondo claro y para fondo oscuro, y en WebM con transparencia. También se sumó `render.js`, que renderiza con fondo transparente.
+- **Cómo estaba antes:** los GIF tenían fondo de papel o de tinta. El color del texto se mezclaba en toda la palabra a la vez.
+- **Por qué:** el autor pidió perfeccionar «pasa el turno» y recordó que los GIF van sin fondo.
 
 ### 2026-11-23 — Degradado sutil de un solo color
 

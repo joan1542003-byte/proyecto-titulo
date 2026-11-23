@@ -2,7 +2,7 @@
 // Uso: node motion.js <carpeta> <escena> <texto> <fondo> <formato>
 //   escena:  revela | turno
 //   texto:   tinta | blanco | cuatro | amarillo | cielo | lima | rubor | turno (toma el color de quien tiene el turno)
-//   fondo:   papel | tinta
+//   fondo:   papel | tinta | transparente
 //   formato: horizontal | marca
 //   estilo:  vecinos (cada círculo va de su claro a su color y a un tono vecino)
 //            puntas-claras (cada círculo va de su color original, cerca del centro, a su tono claro en las puntas)
@@ -72,12 +72,12 @@ function stopsTexto(t) {
 
 // --- Escenas: estado de los círculos, del grupo y de las letras en el tiempo t ---
 let DUR;
-const BEAT = 1.3; // un turno
+const BEAT = 1.5; // un turno
 function turnoColor(t) {
   // En «revela» el texto toma el amarillo, que tiene el primer turno.
   if (ESCENA !== 'turno') return { k: 0, m: 0 };
   const k = Math.floor(t / BEAT) % 4, tau = t % BEAT;
-  return { k, m: estandar((tau - 0.2) / 0.55) };
+  return { k, m: estandar((tau - 0.28) / 0.75) }; // m: avance del barrido de color en el texto
 }
 function escena(t) {
   if (ESCENA === 'revela') {
@@ -99,17 +99,17 @@ function escena(t) {
     });
     return { circ, rot, let_ };
   }
-  // turno: la marca armada pasa el turno al siguiente cada 1,3 s. Primero se recoge apenas hacia atrás
-  // (anticipación), luego gira un cuarto de vuelta con un resorte suave y el texto cambia al color que llega arriba.
+  // turno: la marca armada pasa el turno al siguiente cada 1,5 s. Primero se recoge 4° hacia atrás (anticipación,
+  // 180 ms); luego gira un cuarto de vuelta con un resorte casi sin rebote (se pasa un 2 %) y se queda quieta.
+  // El círculo que sube a tomar el turno crece apenas, y el texto cambia a su color con un barrido de izquierda a derecha.
   DUR = BEAT * 4;
   const k = Math.floor(t / BEAT), tau = t - k * BEAT;
-  const ant = 6 * Math.sin(Math.PI * clamp(tau / 0.32)) * (tau < 0.16 ? 1 : 0) + (tau >= 0.16 ? 6 * (1 - resorte(tau - 0.16, 0.6, 0.9)) : 0);
-  const giro = -90 * resorte(tau - 0.16, 0.6, 0.9);
-  const rot = -90 * k + giro + ant;
-  // el círculo que recibe el turno crece apenas cuando llega arriba
+  const ANT = 0.18;
+  const giro = tau < ANT ? 4 * estandar(tau / ANT) : -90 * resorte(tau - ANT, 0.78, 0.95) + 4 * (1 - resorte(tau - ANT, 0.78, 0.95));
+  const rot = -90 * k + giro;
   const circ = C.map((_, j) => {
-    const llega = (j === (k + 1) % 4) ? Math.sin(Math.PI * clamp((tau - 0.3) / 0.7)) : 0;
-    return { a: ANG[j], d: D + 2 * llega, r: R + 1.2 * llega };
+    const llega = (j === (k + 1) % 4) ? Math.sin(Math.PI * clamp((tau - 0.35) / 0.75)) : 0;
+    return { a: ANG[j], d: D + 1.6 * llega, r: R + 1 * llega };
   });
   return { circ, rot, let_: letras.map(() => ({ y: 0 })) };
 }
@@ -137,12 +137,26 @@ function marca(S, id) {
   });
   return { defs, body: `<g transform="rotate(${S.rot.toFixed(3)} 50 50)">${body}</g>` };
 }
-function texto(S, t, id) {
-  const st = stopsTexto(t).map(([o, c]) => `<stop offset="${(+o).toFixed(4)}" stop-color="${c}"/>`).join('');
+function grad(id, stops) {
   const eje = SUTIL && TEXTO !== 'cuatro' ? 'x1="0" y1="0" x2="0" y2="-72.3"' : 'x1="6" y1="0" x2="297.5" y2="0"'; // vertical con el degradado sutil
-  const defs = `<linearGradient id="${id}w" gradientUnits="userSpaceOnUse" ${eje}>${st}</linearGradient><clipPath id="${id}c"><rect x="-10" y="-90" width="320" height="92.5"/></clipPath>`;
-  const body = `<g transform="translate(109.314 72.3)" clip-path="url(#${id}c)" fill="url(#${id}w)">${letras.map((l, i) => `<path transform="translate(0 ${S.let_[i].y.toFixed(3)})" d="${l.d}"/>`).join('')}</g>`;
-  return { defs, body };
+  return `<linearGradient id="${id}" gradientUnits="userSpaceOnUse" ${eje}>${stops.map(([o, c]) => `<stop offset="${(+o).toFixed(4)}" stop-color="${c}"/>`).join('')}</linearGradient>`;
+}
+function texto(S, t, id) {
+  const letrasSvg = letras.map((l, i) => `<path transform="translate(0 ${S.let_[i].y.toFixed(3)})" d="${l.d}"/>`).join('');
+  let defs = `<clipPath id="${id}c"><rect x="-10" y="-90" width="320" height="92.5"/></clipPath>`;
+  let capas;
+  if (TEXTO === 'turno' && ESCENA === 'turno') {
+    // Dos capas: el color de quien tenía el turno y, encima, el de quien lo recibe, descubierto por un borde suave que avanza.
+    const { k, m } = turnoColor(t);
+    const BANDA = 24, E = 6 - BANDA / 2 + (297.5 - 6 + BANDA) * m;
+    defs += grad(`${id}wa`, unColor(C[k])) + grad(`${id}wb`, unColor(C[(k + 1) % 4]));
+    defs += `<linearGradient id="${id}bm" gradientUnits="userSpaceOnUse" x1="${(E - BANDA / 2).toFixed(2)}" y1="0" x2="${(E + BANDA / 2).toFixed(2)}" y2="0"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient><mask id="${id}mb" maskUnits="userSpaceOnUse" x="-20" y="-100" width="340" height="120"><rect x="-20" y="-100" width="340" height="120" fill="url(#${id}bm)"/></mask>`;
+    capas = `<g fill="url(#${id}wa)">${letrasSvg}</g>` + (m > 0 ? `<g mask="url(#${id}mb)" fill="url(#${id}wb)">${letrasSvg}</g>` : '');
+  } else {
+    defs += grad(`${id}w`, stopsTexto(t));
+    capas = `<g fill="url(#${id}w)">${letrasSvg}</g>`;
+  }
+  return { defs, body: `<g transform="translate(109.314 72.3)" clip-path="url(#${id}c)">${capas}</g>` };
 }
 const FPS = 50;
 escena(0);
@@ -157,7 +171,7 @@ function cuadro(i) {
 const [W, H] = FORMATO === 'marca' ? [480, 480] : [880, 260];
 const POR_PAGINA = FORMATO === 'marca' ? 10 : 16;
 const paginas = Math.ceil(N / POR_PAGINA);
-const bg = FONDO === 'tinta' ? TINTA : PAPEL;
+const bg = FONDO === 'tinta' ? TINTA : FONDO === 'transparente' ? 'transparent' : PAPEL;
 for (let p = 0; p < paginas; p++) {
   let html = '';
   for (let i = p * POR_PAGINA; i < Math.min(N, (p + 1) * POR_PAGINA); i++) html += `<div class="f">${cuadro(i)}</div>`;
