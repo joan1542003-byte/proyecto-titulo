@@ -2,7 +2,7 @@
 
 Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entrega final y el examen; abajo, el detalle de cada tarea, de la 1 a la 16. Al cerrar una tarea, se marca, se enlaza el commit y se registra en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
 
-## Lo que queda, en orden (al 22 de noviembre de 2026)
+## Lo que queda, en orden (al 23 de noviembre de 2026)
 
 **Fechas:**
 
@@ -14,7 +14,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 **Hasta la entrega final:**
 
 1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
-2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
+2. **Pedir por escrito la autorización de las fotos de la prueba** (D-140, tarea 9). Están en la Figura 28 de la memoria y en las láminas 14, 18 y 20 de la presentación.
 3. **Revisar la memoria v8 compuesta.** Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, y en IDML para Affinity, con las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) a su tamaño real y cada figura en la página de su mención o en la siguiente (D-186). Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales cortos de los capítulos 4, 10 y 14 y del glosario, y la página con la continuación de la Tabla 4.
 4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
 5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
@@ -24,21 +24,21 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
    - una fuente reciente para Fogg (tarea 15, E);
    - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
    - la extensión de la Introducción y la Justificación (tarea 15, C).
-6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
-7. **Decidir los íconos** (tarea 17), de preferencia el 25 de noviembre, después de probar el APK 4.8.2 en el teléfono. Si la app de la entrega y del examen es la 4.8.2, con los íconos de Lucide, cambian el párrafo «Iconografía» de la memoria, el Anexo H —su texto, la Tabla H2 y las Figuras H6 y H8; la H7 ya está rehecha— y los íconos de las figuras; las capturas pueden quedarse, porque son de la versión de la prueba. Si no, sigue la 4.7.2 y los íconos de Lucide quedan para después del examen.
+6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D), que puede salir de las [110 capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md) o de las de la 4.7.2, según la versión que se elija. El Word y el PDF se regeneran al final.
+7. **Decidir la versión de la app y los íconos** (tarea 17), de preferencia el 25 de noviembre. La 4.8.2 ya se grabó en un emulador el 23 de noviembre, y la presentación la muestra. Si la entrega y el examen usan la 4.8.2, hay que corregir «Editar» un relevo activo, que vuelve a Inicio (tarea 7), y cambiar el párrafo «Iconografía» de la memoria, el Anexo H —su texto, la Tabla H2 y las Figuras H6 y H8; la H7 ya está rehecha— y los íconos de las figuras; las capturas de la memoria pueden quedarse, porque son de la versión de la prueba. Si no, sigue la 4.7.2, los íconos de Lucide quedan para después del examen y la presentación vuelve a las capturas de la 4.7.2.
 8. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
 
-9. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Ya hay una versión de 8 minutos en Figma, hecha desde la memoria v8 ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)), que espera tu revisión. Conviene confirmar con los profesores si el examen pide 15 minutos.
-10. **El video de respaldo** del ciclo completo, una pila nueva y un segundo Tag para la demostración (tarea 7).
+9. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Ya hay una versión de 8 minutos en Figma, hecha desde la memoria v8 y con menos texto ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)), que espera tu revisión. Conviene confirmar con los profesores si el examen pide 15 minutos.
+10. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
 **Después del examen:**
 
 12. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
 
-**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2.
+**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2. En GitHub: cerrar el Issue #14 (tarea 1), decidir los PR #12 y #13 (tarea 9) y unir el PR #22, de la rama `iconos-lucide`, a `main` cuando se apruebe (tarea 17).
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
@@ -264,13 +264,13 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Fechas por escrito:** confirmadas por los profesores el 10 de noviembre: entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre.
 - [x] **Describir a las tres personas de la prueba:** el autor decidió no hacerlo en la memoria (10 de noviembre); la respuesta se prepara para el examen (tarea 7).
-- [ ] **Datos por confirmar**, que solo sabe el autor:
+- [x] **Datos por confirmar**, que solo sabe el autor:
   - [x] nombre legal, título y mención: confirmados el 10 de noviembre; coinciden con la portada de la memoria;
   - [x] frase de marca: «Hazle lugar a lo que quieres hacer», confirmada el 10 de noviembre (Anexo H);
   - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
   - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
   - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
-  - [ ] el nombre del segundo profesor guía. La portada de la memoria y el repositorio dicen «Simón Gallardo», pero sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)). Puede ser el nombre de su cuenta; conviene confirmarlo antes de la entrega;
+  - [x] el nombre del segundo profesor guía: «Simón Gallardo», como dicen la portada de la memoria y el repositorio, confirmado por el autor el 23 de noviembre. La firma «MANUEL GALLARDO» de sus notas en el PDF del Pase ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)) no cambia la portada;
 - [x] **Portada oficial:** ya está en la memoria, según confirmó el autor el 10 de noviembre. logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
@@ -1001,6 +1001,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Lo que queda, al 23 de noviembre
+
+- **Qué cambió:** el nombre del profesor Gallardo queda confirmado y sale de la lista; entra la autorización de las fotos, que estaba sin fecha en la tarea 9. La decisión de los íconos pasa a ser la de la versión de la app, con las capturas de la 4.8.2 y el error de «Editar»; la presentación y el video de respaldo dicen su estado, y se suman los pendientes de GitHub.
+- **Cómo estaba antes:** la lista era del 22 de noviembre y pedía confirmar el nombre, y la autorización de las fotos no tenía fecha.
+- **Por qué:** el autor preguntó qué queda para ir cerrándolo y confirmó que los nombres de la portada están correctos.
 
 ### 2026-11-23 — «Editar» antes del examen
 

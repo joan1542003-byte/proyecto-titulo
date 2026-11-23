@@ -377,6 +377,7 @@
 | 22 nov. | Corrección | La presentación era muy crítica: debe hablar de lo que hay en la memoria, no de lo que falta. Los títulos y las bajadas eran demasiado poéticos; pidió títulos directos, los íconos nuevos, los degradados sutiles de la memoria, menos texto, un tono directo y formal, y el orden de la memoria, para que se sienta como una narrativa, «no literalmente». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), rehecha en 26 láminas en el orden de la memoria v8, con el diseño de la memoria diagramada, los íconos de Lucide de la app 4.8.2, sus degradados y notas para 8 minutos. Títulos que dicen lo que muestra cada lámina; el problema, la pregunta, la hipótesis y el aporte, literales. El alcance de la prueba queda en las notas, no en pantalla. | Pendiente de la revisión del autor |
 | 23 nov. | Encargo | Con la versión más reciente de la app, la de los íconos nuevos, hacer un GIF de cada pantalla e interacción —la primera vez, crear un relevo, editar el perfil, cuando suena, todo— y capturas de todas las pantallas; usar su nombre, Johan, en las grabaciones. | [10 GIF, 10 MP4 y 110 capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md), grabados en una copia de prueba sin conexión. Al grabar se encontró que «Editar» un relevo activo vuelve a Inicio en vez de abrir la edición; la causa está descrita y la corrección queda pendiente | — |
 | 23 nov. | Corrección | Avisó que subió capturas y GIF reales de la app, que podrían servir. Las láminas le parecieron bien, pero reduciría un poco más el texto: «va por buen camino». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), con el texto recortado en 21 láminas y lo que explica en las notas. Las láminas 14 a 16 muestran la app 4.8.2: una pantalla por momento del recorrido y un GIF de cómo se prepara un relevo, con un cuadro fijo debajo para el PDF. Se anotó como pendiente el error de «Editar» que encontró la grabación, porque la lámina 23 nombra ese cambio. | Pendiente de la revisión del autor |
+| 23 nov. | Consulta y confirmación | Qué cosas quedan pendientes en el proyecto, para ir cerrándolas. Confirmó que los nombres de la portada están correctos. | Respuesta en la conversación, con lo que queda ordenado por fecha y separado entre lo que decide o hace el autor y lo que puede hacer la IA. «Simón Gallardo» queda confirmado en la tarea 8, y [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-23-de-noviembre-de-2026) se puso al día: la autorización de las fotos pasa a la lista antes de la entrega, y se suman la versión de la app y los pendientes de GitHub. | Nombre de la portada confirmado |
 
 ## Lo que muestra el registro
 
@@ -387,6 +388,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Lo que queda y los nombres
+
+- **Qué cambió:** se registraron la consulta sobre lo que queda y la confirmación de los nombres de la portada.
+- **Cómo estaba antes:** el último pedido era la corrección de la presentación con menos texto.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — Menos texto en la presentación
 
