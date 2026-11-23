@@ -383,6 +383,7 @@
 | 23 nov. | Corrección y encargo | Los colores de las variantes del logo estaban muy apagados y no eran los mismos de la marca: debían ser un degradado más claro, con el color original. Pidió subir cada variante en SVG, bien nombrada, al repositorio. | [Variantes del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md) rehechas con los cuatro colores originales, cada uno de su tono claro a su color: 16 SVG numerados y con nombres descriptivos, la lámina y los dos GIF. |
 | 23 nov. | Consulta | Cuándo se sube la memoria oficial para la comisión. | El miércoles 2 de diciembre, según las [fechas que confirmaron los profesores](calendario-oficial-segundo-semestre-2026.md#fechas-confirmadas-por-los-profesores) el 10 de noviembre. El instructivo dice «hasta las 12:00», con la fecha mal escrita como 2 de noviembre. Conviene subirla el martes 1 de diciembre, como margen. | — |
 | 23 nov. | Encargo | Animar también el logo: no el texto, sino la forma, con una animación que tenga sentido. | [Animaciones de la marca](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md#animaciones-de-la-marca). En «se arma», cada círculo sale del anterior y toma su lugar, y el último cierra con el primero. En «pasa el turno», el turno recorre los cuatro círculos en el sentido del reloj. Las dos van solas y junto al logotipo, en GIF y MP4. |
+| 23 nov. | Corrección y encargo | La animación del logo es mejorable: «yo la haría mejor». Pidió estudiar motion graphics y el mercado actual antes de rehacerla, recordar dar color al texto en negrita y hacer variantes del GIF. | [Familia de animaciones del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md#animaciones-del-logo), con lo que se revisó (Renderforest, Google Design, Carbon de IBM y Creative Boom) y cómo se aplicó. Son 13 GIF y MP4: «revela», en que la marca se despliega en arco y las letras suben desde la línea base, y «pasa el turno», con anticipación. El texto va en tinta, blanco, los cuatro colores, cada color o el color del turno, y también hay versiones de la marca sola. |
 
 ## Lo que muestra el registro
 
@@ -393,6 +394,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Animación del logo rehecha
+
+- **Qué cambió:** se registró la corrección del autor a la animación del logo y el pedido de variantes del GIF con el texto en color.
+- **Cómo estaba antes:** la entrada anterior del registro era «Animación de la marca».
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — Animación de la marca
 

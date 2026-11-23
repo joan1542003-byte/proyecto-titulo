@@ -13,7 +13,7 @@ Los trazados son los mismos del logo vigente (los cuatro círculos y «relevo» 
 - **`gif/relevo-colores-papel.gif`:** el logotipo pasa por los cuatro colores, con un degradado sutil, sobre el papel. Dura 6,4 segundos y se repite sin corte.
 - **`gif/relevo-colores-tinta.gif`:** lo mismo sobre la tinta.
 - **`gif/*.mp4`:** los mismos movimientos en video, más nítidos y livianos.
-- **`animacion-marca/`:** dos animaciones de la marca (los cuatro círculos), sola y junto al logotipo, en GIF y MP4.
+- **`animacion-logo/`:** la familia de animaciones del logo: la marca se despliega y el logotipo aparece, y el turno pasa de un círculo al siguiente, con el texto en varios colores. En GIF y MP4.
 - **`scripts/`:** lo que genera todo, para rehacerlo o ajustar un color.
 
 ## Las variantes
@@ -51,17 +51,63 @@ Se usan los cuatro colores originales de la marca, sin oscurecer. Cada degradado
 - Cada color se queda quieto un momento y luego se desliza hacia el siguiente, de izquierda a derecha.
 - Mientras está quieto, el logotipo va de su tono claro a su color original. Nunca muestra los cuatro colores a la vez.
 
-## Animaciones de la marca
+## Animaciones del logo
 
-Se mueve la forma, no el texto. Cada círculo es una parte del relevo, en el sentido del reloj desde arriba: tu tiempo (amarillo), tu primer paso (cielo), el lugar (lima) y lo que decides (rubor). Las dos animaciones cuentan que el turno pasa de uno al siguiente.
+Cada círculo es una parte del relevo, en el sentido del reloj desde arriba: tu tiempo (amarillo), tu primer paso (cielo), el lugar (lima) y lo que decides (rubor). Las animaciones cuentan que el turno pasa de uno al siguiente.
 
-| Archivo | Qué hace | Duración |
+### Cómo se pensó el movimiento
+
+Antes de animar se revisó cómo se trabaja hoy el movimiento de marca:
+
+- **Una familia, no una sola animación:** cada marca tiene una versión larga para abrir, una corta que se repite y una versión quieta. También se piensa en la marca sola, sin el logotipo (Renderforest, 2026).
+- **Un solo gesto memorable:** se anima una idea, no cada pieza por separado. Lo que delata un trabajo amateur son las explosiones de partículas, los efectos sin motivo de marca y el texto que se tuerce y rebota antes de quedarse quieto (Renderforest, 2026).
+- **Arcos y aceleración natural:** el movimiento sigue un arco, gana velocidad y se frena al llegar (Google Design, «Making motion meaningful»).
+- **Duración y curvas medidas:** se usan las curvas expresivas del sistema Carbon de IBM: entrada `cubic-bezier(0, 0, .3, 1)`, salida `cubic-bezier(.4, .14, 1, 1)` y estándar `cubic-bezier(.4, .14, .3, 1)`. Las salidas son más cortas que las entradas (Carbon; Creative Boom).
+- **Legibilidad:** el logotipo aparece y se queda quieto el tiempo suficiente para leerse (Renderforest, 2026).
+
+### Cómo se aplicó
+
+- **Resortes suaves:** cada círculo llega con un resorte amortiguado que se pasa un 8 % y se asienta, sin rebotar varias veces.
+- **Acciones que se superponen:** cada círculo sale 90 ms después del anterior. Las letras empiezan a subir mientras la marca todavía se asienta.
+- **Logotipo desde su línea base:** cada letra sube desde una máscara en la línea base, una tras otra, cada 45 ms. Las letras no giran ni rebotan.
+- **Anticipación:** antes de pasar el turno, la marca se recoge 6° hacia atrás.
+- **Se dibuja a 50 cuadros por segundo y al doble de resolución.** El GIF va a 25 cuadros por segundo; cada cuadro mezcla dos, lo que da un desenfoque de movimiento leve. El MP4 queda a 50.
+
+### Las animaciones
+
+**Revela** (4,6 s, se repite):
+
+1. La marca se despliega desde el centro, girando en arco.
+2. Las letras suben una tras otra.
+3. Todo se queda quieto casi dos segundos.
+4. Sale más rápido de lo que entró.
+
+Sirve para abrir una presentación, un video o la app.
+
+| Archivo | Texto | Fondo |
 | --- | --- | --- |
-| `relevo-marca-arma-marca.gif` y `relevo-marca-arma-horizontal.gif` | **La marca se arma.** El amarillo aparece primero. Cada círculo siguiente sale del anterior y gira un cuarto de vuelta hasta su lugar, abriéndose espacio en él. El último, el rubor, cierra el círculo con el primero. Los cuatro se quedan quietos un momento, se recogen hacia el centro y vuelve a empezar. | 5,2 s |
-| `relevo-marca-turno-marca.gif` y `relevo-marca-turno-horizontal.gif` | **Pasa el turno.** La marca está armada y el turno la recorre en el sentido del reloj. Quien lo tiene da un paso afuera y crece apenas; después se lo pasa al siguiente. | 3,6 s, sin corte |
+| `relevo-revela-texto-tinta` | tinta | papel |
+| `relevo-revela-texto-cuatro-colores` | los cuatro colores, del claro al original | papel |
+| `relevo-revela-texto-amarillo`, `-cielo`, `-lima`, `-rubor` | un color, del claro al original | papel |
+| `relevo-revela-fondo-tinta-texto-cuatro-colores` | los cuatro colores | tinta |
+| `relevo-revela-fondo-tinta-texto-blanco` | blanco | tinta |
+| `relevo-marca-revela` | solo la marca | papel |
 
-- **Cómo se dibuja:** las animaciones usan los mismos círculos del logo (radio 29, a 21 del centro) con el mordisco del siguiente. Por eso, cuando un círculo se mueve o crece, el corte entre los dos lo sigue. La marca lleva los tres tonos vecinos de la variante 02.
-- **Usos posibles:** «Se arma» sirve para abrir una presentación, un video o la pantalla de inicio de la app. «Pasa el turno» sirve para esperas o para el momento en que suena un relevo.
+**Pasa el turno** (5,2 s, se repite sin corte). La marca armada se recoge apenas y gira un cuarto de vuelta. El círculo que sigue sube a tomar el turno y crece apenas al llegar arriba. Con «color del turno», el texto toma el color de quien llega arriba: amarillo, cielo, lima y rubor. Sirve para esperas, para cuando suena un relevo o para un fondo de pantalla.
+
+| Archivo | Texto | Fondo |
+| --- | --- | --- |
+| `relevo-turno-texto-color-del-turno` | cambia con el turno | papel |
+| `relevo-turno-fondo-tinta-texto-color-del-turno` | cambia con el turno | tinta |
+| `relevo-turno-texto-tinta` | tinta | papel |
+| `relevo-marca-turno` | solo la marca | papel |
+
+### Fuentes
+
+- Renderforest. (2026). *Logo animation trends 2026: 10 styles that work*. https://www.renderforest.com/blog/logo-animation-trends
+- Google Design. *Making motion meaningful*. https://design.google/library/making-motion-meaningful
+- IBM. *Carbon Design System: Motion*. https://carbondesignsystem.com/elements/motion/overview/
+- Creative Boom. *How to do motion-first branding better*. https://www.creativeboom.com/insight/how-to-do-motion-first-branding-better/
 
 ## Cómo rehacerlo
 
@@ -71,18 +117,21 @@ Se necesitan Node, Google Chrome y ffmpeg. Desde esta carpeta:
 node scripts/gen.js
 bash scripts/render-gif.sh papel
 bash scripts/render-gif.sh tinta
-bash scripts/render-marca.sh arma marca
-bash scripts/render-marca.sh arma horizontal
-bash scripts/render-marca.sh turno marca
-bash scripts/render-marca.sh turno horizontal
+bash scripts/render-familia.sh
 ```
 
 - **`gen.js`:** escribe los SVG y la lámina HTML. La lámina se pasa a PNG abriéndola en Chrome a 1600 px de ancho.
 - **`render-gif.sh`:** dibuja los 160 cuadros en una carpeta temporal y deja el GIF y el MP4 en `gif/`.
-- **`marca-anim.js` y `render-marca.sh`:** las animaciones de la marca; dejan el GIF y el MP4 en `animacion-marca/`.
+- **`motion.js`, `render-motion.sh` y `render-familia.sh`:** la familia de animaciones del logo. `render-familia.sh` rehace todas y las deja en `animacion-logo/`.
 - **`color.js`:** las conversiones a OKLCH y el cálculo de contraste.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Familia de animaciones del logo
+
+- **Qué cambió:** las dos animaciones de la marca se rehicieron como una familia de 13, en `animacion-logo/`. Ahora la marca se despliega en arco con resortes suaves, el logotipo aparece letra por letra desde su línea base, y el turno pasa con anticipación. El texto va en tinta, blanco, los cuatro colores, un color o el color de quien tiene el turno. Se sumó cómo se pensó el movimiento, con sus fuentes.
+- **Cómo estaba antes:** había dos animaciones de la marca en `animacion-marca/`, con círculos que aparecían uno por uno y el logotipo quieto en tinta.
+- **Por qué:** el autor las encontró mejorables. Pidió estudiar el motion graphics actual antes de rehacerlas, dar color al texto y hacer variantes del GIF.
 
 ### 2026-11-23 — Animaciones de la marca
 
