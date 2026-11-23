@@ -381,6 +381,7 @@
 | 23 nov. | Decisión, confirmación y encargo | Respondió lo que queda. El correo a los profesores está resuelto, «es un tema muy atrasado». Las fotos están autorizadas y no hace falta mencionarlo. La app es siempre la última versión. Preguntó si importa cómo se eligió a las tres personas y explicó cómo llegaron; no lo mencionaría, o buscaría una forma profesional de decirlo, y si afecta al proyecto, no mencionarlo. Las personas aceptaron la etapa con el teléfono desde la app, y la pauta está en el repositorio. Revisará la memoria esta noche. El relevo que no sonó fue porque esa persona no estaba en casa y tenía configurado el Tag. Pidió no proponer texto todavía, buscar fuentes y redactar los puntos de fondo para tenerlos, sin editar la memoria ni los anexos. Preguntó qué significa el punto de la notificación. | [Puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md), con fuentes verificadas: *sentido de agencia* para el fenómeno (Lukoff et al., 2021; Moore, 2016), la tensión en la decisión, el planteamiento como universo, Agha et al. (2019) para acompañar a Fogg y una respuesta para la comisión sobre la selección. Se registraron D-140, ya hecha, y D-188, siempre la última versión de la app. [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-23-de-noviembre-de-2026) quedó al día. La memoria y los anexos no se tocaron. | D-140, D-188 |
 | 23 nov. | Encargo | Revisar el logo: agregar degradados sutiles a los colores y dar color al logotipo, que va en negro (los cuatro colores, uno solo o blanco), «ir probando variantes». Al terminar, un GIF en que el texto «relevo» pase por los cuatro colores con un degradado sutil. | [Variantes del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md): 14 variantes en una lámina, con tonos hondos legibles sobre el papel y sin pasar por el oliva, y dos GIF del logotipo pasando por los cuatro colores, sobre papel y sobre tinta. El logo vigente no cambia hasta que el autor elija. |
 | 23 nov. | Corrección y encargo | Los colores de las variantes del logo estaban muy apagados y no eran los mismos de la marca: debían ser un degradado más claro, con el color original. Pidió subir cada variante en SVG, bien nombrada, al repositorio. | [Variantes del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md) rehechas con los cuatro colores originales, cada uno de su tono claro a su color: 16 SVG numerados y con nombres descriptivos, la lámina y los dos GIF. |
+| 23 nov. | Consulta | Cuándo se sube la memoria oficial para la comisión. | El miércoles 2 de diciembre, según las [fechas que confirmaron los profesores](calendario-oficial-segundo-semestre-2026.md#fechas-confirmadas-por-los-profesores) el 10 de noviembre. El instructivo dice «hasta las 12:00», con la fecha mal escrita como 2 de noviembre. Conviene subirla el martes 1 de diciembre, como margen. | — |
 
 ## Lo que muestra el registro
 
@@ -391,6 +392,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Fecha de la memoria oficial
+
+- **Qué cambió:** se registró la consulta sobre la fecha de entrega de la memoria oficial.
+- **Cómo estaba antes:** el último pedido era la corrección de los colores de las variantes del logo.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — Colores originales en el logo
 
