@@ -387,6 +387,7 @@
 | 23 nov. | Consulta y encargo | Le gustó «pasa el turno». Preguntó qué pasa si los colores llevan un degradado sutil de cada color, del original a uno un poco más claro, y pidió subirlos al repositorio: «me gustan». | [Pasa el turno con degradado sutil](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md#animaciones-del-logo): cada círculo va de su color original a su tono claro, y el texto también, de abajo hacia arriba. Son seis GIF y MP4, en dos versiones (puntas claras y centro claro), y dos SVG nuevos del logo (17 y 18). La familia anterior ya estaba en el repositorio. |
 | 23 nov. | Corrección y encargo | Perfeccionar «pasa el turno» y recordar que los GIF van sin fondo. Pidió más animaciones, «algo que uno vea y entienda la app, sin palabras, solo animación», de calidad altísima, al nivel de Apple. | [Pasa el turno, sin fondo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md#animaciones-del-logo): giro más fino, barrido de color en el texto, GIF para fondo claro y oscuro y WebM con transparencia. [Animaciones sin palabras de Relevo](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md): una película de 15,6 s (tu tiempo, el lugar, tu primer paso, lo que decides y la marca) y cuatro animaciones cortas, sin fondo. |
 | 23 nov. | Encargo | Que en «relevo tiempo» el teléfono, al activarse Relevo, se transforme en actividades, para que se entienda fácilmente, perfeccionado al nivel de Apple. | [Tu tiempo en actividades](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-se-transforma-el-teléfono): el anillo se completa, la pantalla queda en blanco con la marca, el teléfono se disuelve y la marca se abre en cuatro actividades como en la app (guitarra, leer, pasear al perro y dibujar), con sus íconos de Lucide y un gesto cada una. |
+| 23 nov. | Corrección y encargo | Recordó que cada color tiene un significado y no se usa a la ligera. Pidió mejorar la animación, porque con esto se puede crear una narrativa interesante. | [Cómo funciona](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): el teléfono se transforma en el círculo amarillo (tu tiempo). El turno pasa por el cielo (tu primer paso: el libro se abre), el lima (el lugar: suena el Tag) y el rubor (lo que decides: la bandera), con los íconos de la app. Vuelve a tu tiempo y los cuatro forman el logo. Se borró la versión que asignaba los colores a actividades. |
 
 ## Lo que muestra el registro
 
@@ -397,6 +398,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Colores con significado
+
+- **Qué cambió:** se registró la corrección del autor sobre el significado de los colores y el pedido de una narrativa.
+- **Cómo estaba antes:** la entrada anterior del registro era «El teléfono se transforma en actividades».
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — El teléfono se transforma en actividades
 
