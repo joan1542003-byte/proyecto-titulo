@@ -1,0 +1,122 @@
+{
+ "C": [
+  {
+   "n": "amarillo",
+   "i": "#FFD54A",
+   "claro": "#FFE57E",
+   "vecino": "#F6C06A",
+   "hondo": "#C27F08",
+   "hondo2": "#9F620D"
+  },
+  {
+   "n": "cielo",
+   "i": "#9DD6F4",
+   "claro": "#B5E3FC",
+   "vecino": "#A9C6F2",
+   "hondo": "#5594B4",
+   "hondo2": "#317697"
+  },
+  {
+   "n": "lima",
+   "i": "#B3E788",
+   "claro": "#C8F3A6",
+   "vecino": "#9FDDA6",
+   "hondo": "#659B2A",
+   "hondo2": "#4C7D09"
+  },
+  {
+   "n": "rubor",
+   "i": "#F6A3CB",
+   "claro": "#FDB7D8",
+   "vecino": "#E9A3D8",
+   "hondo": "#C7729D",
+   "hondo2": "#A9517F"
+  }
+ ],
+ "V": [
+  {
+   "id": "01-actual",
+   "titulo": "Actual",
+   "nota": "La marca con su degradado radial y el logotipo en tinta (D-125, D-127).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "02-marca-tres-tonos",
+   "titulo": "Marca con tres tonos vecinos",
+   "nota": "Cada círculo va de su tono claro a su color y a un tono vecino, en diagonal: el degradado sutil de las figuras de la memoria v8. Logotipo en tinta.",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "03-marca-pasa-el-turno",
+   "titulo": "Marca que pasa el turno",
+   "nota": "Cada círculo termina en el color del siguiente, en el sentido del reloj: los cuatro se tocan sin un corte de color. Logotipo en tinta.",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "04-logotipo-cuatro-colores",
+   "titulo": "Logotipo con los cuatro colores",
+   "nota": "El logotipo recorre los cuatro colores ordenados por tono —lima, cielo, rubor, amarillo— para que el paso sea limpio y no pase por el oliva, en sus tonos hondos, legibles sobre el papel (contraste 3:1).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "05-logotipo-cuatro-colores-claros",
+   "titulo": "Logotipo con los cuatro colores, claros",
+   "nota": "Los mismos colores de la marca, sin oscurecer. Es el más luminoso, pero sobre el papel se lee poco (contraste de 1,3 a 1,7).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "06a-logotipo-amarillo",
+   "titulo": "Logotipo en amarillo",
+   "nota": "Un solo color, con un degradado sutil de su tono hondo a uno más profundo (#C27F08 → #9F620D).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "06b-logotipo-cielo",
+   "titulo": "Logotipo en cielo",
+   "nota": "Un solo color, con un degradado sutil de su tono hondo a uno más profundo (#5594B4 → #317697).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "06c-logotipo-lima",
+   "titulo": "Logotipo en lima",
+   "nota": "Un solo color, con un degradado sutil de su tono hondo a uno más profundo (#659B2A → #4C7D09).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "06d-logotipo-rubor",
+   "titulo": "Logotipo en rubor",
+   "nota": "Un solo color, con un degradado sutil de su tono hondo a uno más profundo (#C7729D → #A9517F).",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "07-tinta-con-color",
+   "titulo": "Tinta que se tiñe",
+   "nota": "El logotipo empieza en tinta y termina, apenas, en el celeste hondo. Casi no se nota de lejos.",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "08-sobre-tinta-blanco",
+   "titulo": "Sobre tinta, logotipo blanco",
+   "nota": "La marca en color y el logotipo en blanco, sobre la tinta.",
+   "fondo": "#141312"
+  },
+  {
+   "id": "09-sobre-tinta-cuatro-colores",
+   "titulo": "Sobre tinta, logotipo con los cuatro colores",
+   "nota": "Sobre la tinta los colores claros se leen bien (contraste de 11 a 13): el logotipo puede llevarlos sin oscurecer.",
+   "fondo": "#141312"
+  },
+  {
+   "id": "10-blanco-sobre-color",
+   "titulo": "Todo en blanco, sobre los colores",
+   "nota": "Marca y logotipo en blanco, sobre un degradado de los cuatro tonos hondos.",
+   "fondo": "url(#bg)"
+  },
+  {
+   "id": "11-blanco-sobre-cielo",
+   "titulo": "Todo en blanco, sobre un color",
+   "nota": "Marca y logotipo en blanco, sobre el celeste hondo con un degradado sutil.",
+   "fondo": "linear-gradient(135deg, #5594B4, #317697)"
+  }
+ ]
+}
