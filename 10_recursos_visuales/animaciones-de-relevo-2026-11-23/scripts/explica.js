@@ -1,6 +1,6 @@
 // Animaciones sin palabras que explican Relevo.
 // Uso: node explica.js <carpeta> <escena> [fondo]
-//   escena: pelicula | como-funciona | tiempo | suena | primer-paso | decides
+//   escena: como-funciona (simple) | como-funciona-detallada | pelicula | tiempo | suena | primer-paso | decides
 //   fondo:  transparente (por defecto) | blanco
 // Con la variable PREVIEW="0.5,1,2.4" escribe una sola página con esos instantes, en una grilla, para revisar.
 //
@@ -492,10 +492,109 @@ function comoFunciona(t, id) {
   }
   return { defs, body };
 }
+// --- Cómo funciona, versión simple ---
+// La misma historia que «como-funciona-detallada», sin efectos, como hecha en un editor básico:
+// colores planos, sin sombras ni degradados, sin rebotes (solo entradas y salidas suaves), íconos que aparecen,
+// un punto sin estela y «relevo» que aparece de una vez.
+const suave = bezier(0.42, 0, 0.58, 1); // ease-in-out
+const alSalir = bezier(0, 0, 0.58, 1); // ease-out
+const PLANO = { amarillo: '#FFD54A', cielo: '#9DD6F4', lima: '#B3E788', rubor: '#F6A3CB' };
+function comoFuncionaSimple(t, id) {
+  // 13,2 s, se repite.
+  // 0,4–2,6 s  el anillo amarillo cuenta el tiempo alrededor del teléfono.
+  // 2,7 s      el teléfono se va y el anillo se vuelve el círculo amarillo, arriba, con el reloj.
+  // 4,5 s      el turno pasa al cielo (el libro se abre), 6,1 s al lima (el Tag suena), 8 s al rubor (la bandera).
+  // 9,3 s      el turno vuelve a tu tiempo. 10,1 s: los cuatro se juntan en la marca. 11 s: «relevo».
+  const CX = 480, CY = 270, RD = 150, RC = 56;
+  const fuera = 1 - seg(t, 12.8, 13.2);
+  const pos = k => [CX + RD * Math.cos((ANG[k] * Math.PI) / 180), CY + RD * Math.sin((ANG[k] * Math.PI) / 180)];
+  let defs = '', body = '';
+  // 1. El teléfono: un rectángulo negro con la pantalla blanca y tres bloques grises que suben.
+  const ve = seg(t, 0, 0.3) * (1 - suave(seg(t, 2.7, 3.0)));
+  if (ve > 0) {
+    const sc = 1 - 0.1 * suave(seg(t, 2.7, 3.0));
+    const scroll = [0.5, 1.3, 2.1].reduce((a, b) => a + 112 * suave(seg(t, b, b + 0.55)), 0);
+    let contenido = '';
+    for (let n = Math.floor(scroll / 112) - 1; n < Math.floor(scroll / 112) + 4; n++) {
+      const y = -132 + n * 112 - scroll;
+      contenido += `<rect x="-59" y="${n2(y)}" width="118" height="68" rx="10" fill="#E8E4E0"/><rect x="-59" y="${n2(y + 78)}" width="${[84, 70, 92, 64][((n % 4) + 4) % 4]}" height="7" rx="3.5" fill="#EEEBE8"/><rect x="-59" y="${n2(y + 91)}" width="${[56, 48, 62, 44][((n % 4) + 4) % 4]}" height="7" rx="3.5" fill="#EEEBE8"/>`;
+    }
+    defs += `<clipPath id="${id}pa"><rect x="-69" y="-144" width="138" height="288" rx="21"/></clipPath>`;
+    body += `<g transform="translate(${CX} ${CY}) scale(${n3(sc)})" opacity="${n3(ve)}"><rect x="-75" y="-150" width="150" height="300" rx="26" fill="${TINTA}"/><rect x="-69" y="-144" width="138" height="288" rx="21" fill="#FFFFFF"/><g clip-path="url(#${id}pa)">${contenido}</g></g>`;
+  }
+  // el anillo del tiempo: se llena y después se vuelve el círculo amarillo
+  const lleno = seg(t, 0.4, 2.6);
+  const m = suave(seg(t, 2.75, 3.35)); // del anillo alrededor del teléfono al círculo
+  const [ax, ay] = pos(0);
+  if (lleno > 0.002 && t < 3.4) {
+    const w = lerp(168, 2 * RC, m), h = lerp(318, 2 * RC, m), rx = lerp(35, RC, m);
+    const x = lerp(CX, ax, m), y = lerp(CY, ay, m);
+    // rectángulo redondeado que empieza arriba al centro y sigue el sentido del reloj, para recortarlo con la línea punteada
+    const L = x - w / 2, R2 = x + w / 2, T = y - h / 2, B = y + h / 2, r = Math.min(rx, w / 2, h / 2);
+    const d = `M${n2(x)} ${n2(T)}H${n2(R2 - r)}A${n2(r)} ${n2(r)} 0 0 1 ${n2(R2)} ${n2(T + r)}V${n2(B - r)}A${n2(r)} ${n2(r)} 0 0 1 ${n2(R2 - r)} ${n2(B)}H${n2(L + r)}A${n2(r)} ${n2(r)} 0 0 1 ${n2(L)} ${n2(B - r)}V${n2(T + r)}A${n2(r)} ${n2(r)} 0 0 1 ${n2(L + r)} ${n2(T)}Z`;
+    const relleno = suave(seg(t, 3.05, 3.35));
+    if (relleno > 0) body += `<path d="${d}" fill="${PLANO.amarillo}" fill-opacity="${n3(relleno)}"/>`;
+    body += `<path d="${d}" pathLength="1" fill="none" stroke="${PLANO.amarillo}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${n3(lleno)} 2"/>`;
+  }
+  // los cuatro círculos: aparecen, se juntan en la marca y la marca se corre para dejar lugar a «relevo»
+  const junta = suave(seg(t, 10.1, 10.8));
+  const lock = suave(seg(t, 11.0, 11.6));
+  const SM = lerp(1.5, 1.25, lock);
+  const ESC_L = SM / 0.853;
+  const mx = lerp(CX, CX - (406.214 * ESC_L) / 2 + 42.66 * ESC_L, lock);
+  const aparece = [t >= 3.4 ? 1 : 0, alSalir(seg(t, 5.1, 5.45)), alSalir(seg(t, 6.7, 7.05)), alSalir(seg(t, 8.6, 8.95))];
+  const circ = PARTES.map((p, k) => {
+    const ang = (ANG[k] * Math.PI) / 180, d = lerp(RD, D * SM, junta), r = lerp(RC * aparece[k], R * SM, junta);
+    return { x: mx + d * Math.cos(ang), y: CY + d * Math.sin(ang), r };
+  });
+  circ.forEach((c, k) => {
+    if (c.r < 0.5) return;
+    const nx = circ[(k + 1) % 4];
+    defs += `<mask id="${id}m${k}" maskUnits="userSpaceOnUse" x="0" y="0" width="960" height="540"><rect width="960" height="540" fill="#fff"/>${nx.r > 0.5 ? `<circle cx="${n2(nx.x)}" cy="${n2(nx.y)}" r="${n2(nx.r + GAP * (nx.r / R))}" fill="#000"/>` : ''}</mask>`;
+    body += `<circle cx="${n2(c.x)}" cy="${n2(c.y)}" r="${n2(c.r)}" fill="${PLANO[PARTES[k].n]}" mask="url(#${id}m${k})" opacity="${n3(fuera)}"/>`;
+  });
+  // íconos en tinta: aparecen con un fundido y se van antes de que los círculos se junten
+  const sinIconos = 1 - suave(seg(t, 9.9, 10.15));
+  const icono = (k, inner, op) => {
+    const c = circ[k], esc = (RC * 0.82) / 24;
+    return `<g transform="translate(${n2(c.x - 12 * esc)} ${n2(c.y - 12 * esc)}) scale(${n3(esc)})" fill="none" stroke="${TINTA}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" opacity="${n3(op * sinIconos)}">${inner}</g>`;
+  };
+  const camino = d => `<path d="${d}"/>`;
+  if (t > 3.35) {
+    const giro = 360 * suave(seg(t, 3.65, 4.4));
+    body += icono(0, ICONOS.tiempo.trazos.map(camino).join('') + `<g transform="rotate(${n2(giro)} 12 14)">${camino(ICONOS.tiempo.aguja)}</g>`, suave(seg(t, 3.35, 3.6)));
+  }
+  if (t > 5.35) {
+    const sx = Math.cos(Math.PI * (1 - suave(seg(t, 5.6, 6.05)))); // la tapa gira sobre el lomo: de cerrado (-1) a abierto (1)
+    const tr = ICONOS.primerPaso.trazos.map(camino).join('');
+    defs += `<clipPath id="${id}li"><rect x="-2" y="-2" width="14.4" height="28"/></clipPath><clipPath id="${id}ld"><rect x="11.6" y="-2" width="14.4" height="28"/></clipPath>`;
+    body += icono(1, `<g clip-path="url(#${id}ld)">${tr}</g><g transform="translate(12 0) scale(${n3(sx)} 1) translate(-12 0)"><g clip-path="url(#${id}li)">${tr}</g></g>`, suave(seg(t, 5.35, 5.55)));
+  }
+  if (t > 6.95) {
+    const titila = j => (t < 7.25 ? 1 : 0.3 + 0.7 * Math.max(Math.cos(Math.PI * seg(t, 7.25 + j * 0.1, 7.65 + j * 0.1)) ** 2, Math.cos(Math.PI * seg(t, 7.75 + j * 0.1, 8.15 + j * 0.1)) ** 2)); // las ondas del Tag laten dos veces: suena
+    body += icono(2, ICONOS.lugar.trazos.map(camino).join('') + ICONOS.lugar.ondas.map((d, j) => `<g opacity="${n3(titila(j))}">${camino(d)}</g>`).join(''), suave(seg(t, 6.95, 7.15)));
+  }
+  if (t > 8.85) body += icono(3, ICONOS.decides.trazos.map(camino).join(''), suave(seg(t, 8.85, 9.05)));
+  // el turno pasa: un punto del color de quien lo entrega, por el arco
+  for (const [k, a, b] of [[0, 4.5, 5.1], [1, 6.1, 6.7], [2, 8.0, 8.6], [3, 9.3, 9.9]]) {
+    if (t < a || t > b) continue;
+    const ang = ((ANG[k] + 22 + 46 * suave(seg(t, a, b))) * Math.PI) / 180;
+    body += `<circle cx="${n2(CX + RD * Math.cos(ang))}" cy="${n2(CY + RD * Math.sin(ang))}" r="6" fill="${PLANO[PARTES[k].n]}"/>`;
+  }
+  // «relevo» en tinta, de una vez
+  if (t > 11.1) {
+    const a = alSalir(seg(t, 11.1, 11.6));
+    const L = letras.map(l => `<path d="${l.d}"/>`).join('');
+    const x0 = mx - 42.66 * ESC_L + 10 * (1 - a), y0 = CY - (85.314 * ESC_L) / 2;
+    body += `<g transform="translate(${n2(x0)} ${n2(y0)}) scale(${n3(ESC_L)})" opacity="${n3(a * fuera)}"><g transform="translate(109.314 72.3)" fill="${TINTA}">${L}</g></g>`;
+  }
+  return { defs, body };
+}
 const ESC = {
   pelicula: { f: pelicula, W: 960, H: 540, dur: 15.6 },
   tiempo: { f: bucleTiempo, W: 540, H: 540, dur: 4.8 },
-  'como-funciona': { f: comoFunciona, W: 960, H: 540, dur: 13.0 },
+  'como-funciona': { f: comoFuncionaSimple, W: 960, H: 540, dur: 13.2 },
+  'como-funciona-detallada': { f: comoFunciona, W: 960, H: 540, dur: 13.0 },
   suena: { f: bucleSuena, W: 540, H: 540, dur: 2.4 },
   'primer-paso': { f: buclePrimerPaso, W: 540, H: 540, dur: 4.6 },
   decides: { f: bucleDecides, W: 540, H: 540, dur: 4.4 },

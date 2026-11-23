@@ -1,6 +1,6 @@
 # Animaciones sin palabras de Relevo
 
-Seis animaciones que explican Relevo solo con imágenes y movimiento, sin texto. Todas van sin fondo, para ponerlas sobre una lámina o una página. Se hicieron el 23 de noviembre de 2026, a pedido del autor: algo que uno vea y entienda la app, sin palabras.
+Siete animaciones que explican Relevo solo con imágenes y movimiento, sin texto. Todas van sin fondo, para ponerlas sobre una lámina o una página. Se hicieron el 23 de noviembre de 2026, a pedido del autor: algo que uno vea y entienda la app, sin palabras.
 
 Son ilustraciones, no capturas de la app. El teléfono, el contenido que se desliza y el Tag son genéricos: no copian ninguna marca ni ninguna app real.
 
@@ -27,7 +27,8 @@ Están en `animaciones/`. Cada animación tiene tres formatos:
 
 | Archivo | Qué muestra | Duración |
 | --- | --- | --- |
-| `relevo-como-funciona` | Un relevo completo en las cuatro partes de la marca. Termina en el logo (16:9). | 13 s, se repite |
+| `relevo-como-funciona` | Un relevo completo en las cuatro partes de la marca. Termina en el logo (16:9). **Versión simple**, la principal: colores planos y sin efectos. | 13,2 s, se repite |
+| `relevo-como-funciona-detallada` | La misma historia con degradados, resortes, íconos que se dibujan, ondas y estela. | 13 s, se repite |
 | `relevo-sin-palabras` | Un relevo contado como escena: el teléfono, el velador, el libro y la marca (16:9). | 15,6 s |
 | `relevo-tu-tiempo` | El teléfono con el contenido que se desliza. El anillo amarillo se llena y llega el aviso. | 4,8 s, se repite |
 | `relevo-suena-donde-empieza` | El velador con el libro y el Tag, que suena dos veces y descansa. | 2,4 s, se repite |
@@ -37,6 +38,18 @@ Están en `animaciones/`. Cada animación tiene tres formatos:
 Las animaciones cortas son cuadradas y sirven por separado, una por idea.
 
 ## Cómo funciona: la marca cuenta la app
+
+Hay dos versiones de la misma historia. La principal es la simple: el autor pidió que pareciera menos hecha por IA, más minimalista y como hecha en un editor básico, con la misma calidad y menos efectos.
+
+- **Simple (`relevo-como-funciona`):** colores planos, sin degradados ni sombras.
+  - **Movimiento:** solo entradas y salidas suaves (ease-in-out), sin rebotes.
+  - **Teléfono:** un rectángulo negro con tres bloques grises que suben.
+  - **Íconos y logotipo:** los íconos aparecen con un fundido, y «relevo» aparece de una vez.
+  - **El punto que pasa el turno:** va sin estela y sin huella.
+  - **Ritmo:** las ondas del Tag laten dos veces. La bandera y los círculos no se mueven por su cuenta.
+- **Detallada (`relevo-como-funciona-detallada`):** la primera versión, con degradados sutiles, resortes, íconos que se dibujan trazo a trazo, ondas que salen del círculo lima, la bandera que flamea, la huella gris del relevo y las letras que suben una por una.
+
+Lo que sigue vale para las dos:
 
 `relevo-como-funciona` usa el ejemplo de la app: leer, con el primer paso de abrir el libro. Cada parte aparece en su color, en el lugar que ocupa en la marca, con el ícono que usa la app:
 
@@ -79,12 +92,18 @@ node ../../logo-relevo-variantes-2026-11-23/scripts/render.js explica.js relevo-
 node ../../logo-relevo-variantes-2026-11-23/scripts/render.js explica.js relevo-tu-tiempo ../animaciones --gif 540 --webm --mp4 -- tiempo
 ```
 
-Las escenas son `como-funciona`, `pelicula`, `tiempo`, `suena`, `primer-paso` y `decides`. Para revisar cuadros sueltos sin renderizar todo, se usa `PREVIEW="1,4.5,9" node explica.js <carpeta> como-funciona`, que escribe una página con esos instantes.
+Las escenas son `como-funciona` (la simple), `como-funciona-detallada`, `pelicula`, `tiempo`, `suena`, `primer-paso` y `decides`. Para revisar cuadros sueltos sin renderizar todo, se usa `PREVIEW="1,4.5,9" node explica.js <carpeta> como-funciona`, que escribe una página con esos instantes.
 
 - **`explica.js`:** dibuja cada cuadro: el teléfono, el anillo del tiempo, los círculos de las cuatro partes, el velador, el libro, el Tag, el visto y la marca.
 - **`render.js`:** está en la carpeta del logo. Fotografía los cuadros con fondo transparente y arma el GIF, el WebM y el MP4.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Cómo funciona, versión simple
+
+- **Qué cambió:** `relevo-como-funciona` es ahora la versión simple, con colores planos, sin sombras, degradados ni rebotes, íconos con fundido, un punto sin estela y un teléfono más simple. La versión anterior pasó a llamarse `relevo-como-funciona-detallada`.
+- **Cómo estaba antes:** la única versión tenía degradados, resortes, íconos que se dibujaban, ondas, estela y letras que subían una por una.
+- **Por qué:** al autor le gustó, pero pidió que pareciera menos hecha por IA, más minimalista y como hecha en un editor básico, con la misma calidad y menos efectos.
 
 ### 2026-11-23 — Cómo funciona, con cada color en su significado
 
