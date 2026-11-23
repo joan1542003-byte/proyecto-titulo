@@ -1,6 +1,6 @@
 // Animaciones sin palabras que explican Relevo.
 // Uso: node explica.js <carpeta> <escena> [fondo]
-//   escena: pelicula | tiempo | suena | primer-paso | decides
+//   escena: pelicula | tiempo | transforma | suena | primer-paso | decides
 //   fondo:  transparente (por defecto) | blanco
 // Con la variable PREVIEW="0.5,1,2.4" escribe una sola página con esos instantes, en una grilla, para revisar.
 //
@@ -124,6 +124,7 @@ function telefono(p) {
   s += `<rect x="-88" y="-180" width="176" height="360" rx="31" fill="url(#gTinta)"/>`;
   s += `<g clip-path="url(#clipPantalla)"><rect x="-81" y="-173" width="162" height="346" fill="#FBFAF9"/>${feed(p.scroll || 0)}`;
   if (p.dim) s += `<rect x="-81" y="-173" width="162" height="346" fill="${TINTA}" fill-opacity="${n3(0.1 * p.dim)}"/>`;
+  if (p.blanca) s += `<rect x="-81" y="-173" width="162" height="346" fill="#FFFFFF" fill-opacity="${n3(p.blanca)}"/>`; // la pantalla se vuelve blanca (dentro del teléfono, para que se desvanezcan juntos)
   if (p.banner) s += bannerRelevo(p.banner);
   if (p.apagado) s += `<rect x="-81" y="-173" width="162" height="346" fill="#0F0E0D" fill-opacity="${n3(p.apagado)}"/>`;
   s += `</g><rect x="-22" y="-165" width="44" height="13" rx="6.5" fill="${TINTA}"/></g>`;
@@ -343,9 +344,91 @@ function bucleDecides(t) {
   const vis = { x: lb.x, y: 380 - 110 * lb.s - 44, s: resorte(t - 1.25, 0.62, 0.7) * v, rot: -12 * (1 - resorte(t - 1.25, 0.7, 0.8)) };
   return { defs: '', body: telefono(ph) + libro(lb) + visto(vis) };
 }
+// --- Tu tiempo se vuelve actividades ---
+// Íconos de Lucide 1.70.0 que usa la app (ISC): guitarra, libro abierto, perro y lápiz con línea.
+const ICONOS = {
+  guitarra: ['m11.9 12.1 4.514-4.514', 'M20.1 2.3a1 1 0 0 0-1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414-.586L21.7 5.3a1 1 0 0 0 0-1.4z', 'm6 16 2 2', 'M8.23 9.85A3 3 0 0 1 11 8a5 5 0 0 1 5 5 3 3 0 0 1-1.85 2.77l-.92.38A2 2 0 0 0 12 18a4 4 0 0 1-4 4 6 6 0 0 1-6-6 4 4 0 0 1 4-4 2 2 0 0 0 1.85-1.23z'],
+  libro: ['M12 5v16', 'M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z'],
+  perro: ['M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309', 'M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5', 'M11.25 16.25h1.5L12 17z', 'M8 14v.5', 'M16 14v.5'],
+  lapiz: ['M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z', 'm15 5 4 4', 'M13 21h8'],
+};
+// Cada color con su actividad, en el sentido del reloj desde arriba a la izquierda, como el ícono «Actividades» de la app.
+const ACT = [
+  { n: 'amarillo', icono: 'guitarra' },
+  { n: 'cielo', icono: 'libro' },
+  { n: 'lima', icono: 'perro' },
+  { n: 'rubor', icono: 'lapiz' },
+];
+function bucleTransforma(t, id) {
+  // 7,4 s, se repite.
+  // 0,2–2,6 s: el anillo amarillo se llena mientras se desliza el contenido (tu tiempo).
+  // 2,6 s: se completa. La pantalla queda en blanco y aparece la marca de Relevo.
+  // 3,05 s: el teléfono se disuelve hacia afuera y la marca crece.
+  // 3,55 s: la marca se abre: sus cuatro círculos giran un octavo de vuelta, se separan y crecen hasta ser cuatro actividades.
+  // 4,1 s: cada círculo queda como en la app (blanco con un anillo de color) y su ícono se dibuja.
+  // 5,0–6,2 s: cada actividad hace su gesto. 6,3 s: todo vuelve al teléfono, más rápido, y el ciclo empieza otra vez.
+  const C0 = 270;
+  const fin = u => 1 - estandar(seg(t, 6.3 + u * 1.1, 6.3 + (u + 0.35) * 1.1)); // tramos de la vuelta (u de 0 a 0,65)
+  const scroll = t < 3 ? [0.25, 1.0, 1.75].reduce((a, b) => a + 150 * entra(seg(t, b, b + 0.75)), 0) : 0;
+  const disuelve = estandar(seg(t, 3.0, 3.5)) * fin(0.55);
+  const pantalla = entra(seg(t, 2.7, 3.0)) * fin(0.65); // el contenido se va a blanco
+  const ph = {
+    x: C0, y: 262, s: 1 + 0.16 * disuelve, op: 1 - disuelve,
+    scroll, pista: 1, traza: seg(t, 0.2, 2.6) * (t < 6.3 ? 1 : 0), pulso: Math.sin(Math.PI * seg(t, 2.6, 2.95)), blanca: pantalla,
+  };
+  let defs = '', body = '';
+  if (ph.op > 0.001) body += telefono(ph);
+  // la marca y las actividades son los mismos cuatro círculos
+  const aparece = resorte(t - 2.8, 0.74, 0.8) * fin(0.3);
+  const crece = resorte(t - 3.05, 0.78, 0.9) * fin(0.25);
+  const abre = resorte(t - 3.55, 0.76, 0.95) * fin(0.1);
+  const SM = (lerp(84, 150, crece) / 100) * aparece; // escala de la marca (100 unidades)
+  const giro = -30 * (1 - aparece) - 45 * abre;
+  const cy0 = lerp(262, C0, crece); // la marca nace en el centro de la pantalla y termina en el centro del cuadro
+  const circ = ACT.map((a, k) => {
+    const ang = ((ANG[k] + giro) * Math.PI) / 180;
+    const d = lerp(D * SM, 118.8, abre), r = lerp(R * SM, 64, abre);
+    return { x: C0 + d * Math.cos(ang), y: cy0 + d * Math.sin(ang), r, d };
+  });
+  if (aparece > 0.001) {
+    const blanco = estandar(seg(t, 4.1, 4.6)) * fin(0.05); // de color lleno a blanco con anillo
+    circ.forEach((c, k) => {
+      const nx = circ[(k + 1) % 4], col = COL[ACT[k].n];
+      const gap = GAP * (nx.r / R);
+      defs += `<mask id="${id}m${k}" maskUnits="userSpaceOnUse" x="0" y="0" width="540" height="540"><rect width="540" height="540" fill="#fff"/><circle cx="${n2(nx.x)}" cy="${n2(nx.y)}" r="${n2(nx.r + gap)}" fill="#000"/></mask>`;
+      defs += `<radialGradient id="${id}g${k}" gradientUnits="userSpaceOnUse" cx="${C0}" cy="${n2(cy0)}" r="${n2(c.d + c.r)}"><stop offset=".3" stop-color="${col.i}"/><stop offset="1" stop-color="${col.c}"/></radialGradient>`;
+      const anillo = 8.5 * blanco;
+      let g = `<g mask="url(#${id}m${k})">`;
+      if (blanco > 0) g += `<circle cx="${n2(c.x)}" cy="${n2(c.y)}" r="${n2(c.r)}" fill="#FFFFFF"/>`;
+      g += `<circle cx="${n2(c.x)}" cy="${n2(c.y)}" r="${n2(c.r)}" fill="url(#${id}g${k})" fill-opacity="${n3(1 - blanco)}"/>`;
+      if (anillo > 0.05) g += `<circle cx="${n2(c.x)}" cy="${n2(c.y)}" r="${n2(c.r - anillo / 2)}" fill="none" stroke="url(#gh_${ACT[k].n})" stroke-width="${n2(anillo)}"/>`;
+      g += '</g>';
+      body += g;
+      // el ícono se dibuja, hace su gesto y se borra al volver
+      const dib = estandar(seg(t, 4.3 + k * 0.09, 4.95 + k * 0.09)) * (1 - estandar(seg(t, 6.3, 6.55)));
+      if (dib > 0.002) {
+        const esc = (c.r * 0.86) / 12; // el ícono ocupa un poco menos que el círculo
+        const tg = 5.0 + k * 0.28; // su gesto
+        let gesto = '';
+        if (ACT[k].icono === 'guitarra') gesto = `rotate(${n2(-9 * Math.sin(Math.PI * 2 * seg(t, tg, tg + 0.7)) * (1 - seg(t, tg, tg + 0.7)))} 12 12)`;
+        if (ACT[k].icono === 'libro') { const b = Math.sin(Math.PI * seg(t, tg, tg + 0.45)); gesto = `translate(12 12) scale(${n3(1 + 0.1 * b)} ${n3(1 - 0.05 * b)}) translate(-12 -12)`; }
+        if (ACT[k].icono === 'perro') gesto = `rotate(${n2(8 * Math.sin(Math.PI * 4 * seg(t, tg, tg + 0.8)) * (1 - seg(t, tg, tg + 0.8)))} 12 14)`;
+        if (ACT[k].icono === 'lapiz') gesto = `translate(${n2(1.6 * Math.sin(Math.PI * seg(t, tg, tg + 0.9)))} 0)`;
+        const paths = ICONOS[ACT[k].icono].map((d, j) => {
+          let dash = dib;
+          if (ACT[k].icono === 'lapiz' && j === 2 && t > tg && t < tg + 0.9) dash = Math.min(dib, Math.abs(Math.cos(Math.PI * seg(t, tg, tg + 0.9)))); // el lápiz vuelve a trazar su línea
+          return `<path d="${d}" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="${n3(1 - dash)}"/>`;
+        }).join('');
+        body += `<g transform="translate(${n2(c.x - 12 * esc / 2)} ${n2(c.y - 12 * esc / 2)}) scale(${n3(esc / 2)}) ${gesto}" fill="none" stroke="${TINTA}" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" opacity="${n3(clamp(dib * 4))}">${paths}</g>`;
+      }
+    });
+  }
+  return { defs, body };
+}
 const ESC = {
   pelicula: { f: pelicula, W: 960, H: 540, dur: 15.6 },
   tiempo: { f: bucleTiempo, W: 540, H: 540, dur: 4.8 },
+  transforma: { f: bucleTransforma, W: 540, H: 540, dur: 7.4 },
   suena: { f: bucleSuena, W: 540, H: 540, dur: 2.4 },
   'primer-paso': { f: buclePrimerPaso, W: 540, H: 540, dur: 4.6 },
   decides: { f: bucleDecides, W: 540, H: 540, dur: 4.4 },
