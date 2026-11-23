@@ -13,6 +13,7 @@ Los trazados son los mismos del logo vigente (los cuatro círculos y «relevo» 
 - **`gif/relevo-colores-papel.gif`:** el logotipo pasa por los cuatro colores, con un degradado sutil, sobre el papel. Dura 6,4 segundos y se repite sin corte.
 - **`gif/relevo-colores-tinta.gif`:** lo mismo sobre la tinta.
 - **`gif/*.mp4`:** los mismos movimientos en video, más nítidos y livianos.
+- **`animacion-marca/`:** dos animaciones de la marca (los cuatro círculos), sola y junto al logotipo, en GIF y MP4.
 - **`scripts/`:** lo que genera todo, para rehacerlo o ajustar un color.
 
 ## Las variantes
@@ -50,6 +51,18 @@ Se usan los cuatro colores originales de la marca, sin oscurecer. Cada degradado
 - Cada color se queda quieto un momento y luego se desliza hacia el siguiente, de izquierda a derecha.
 - Mientras está quieto, el logotipo va de su tono claro a su color original. Nunca muestra los cuatro colores a la vez.
 
+## Animaciones de la marca
+
+Se mueve la forma, no el texto. Cada círculo es una parte del relevo, en el sentido del reloj desde arriba: tu tiempo (amarillo), tu primer paso (cielo), el lugar (lima) y lo que decides (rubor). Las dos animaciones cuentan que el turno pasa de uno al siguiente.
+
+| Archivo | Qué hace | Duración |
+| --- | --- | --- |
+| `relevo-marca-arma-marca.gif` y `relevo-marca-arma-horizontal.gif` | **La marca se arma.** El amarillo aparece primero. Cada círculo siguiente sale del anterior y gira un cuarto de vuelta hasta su lugar, abriéndose espacio en él. El último, el rubor, cierra el círculo con el primero. Los cuatro se quedan quietos un momento, se recogen hacia el centro y vuelve a empezar. | 5,2 s |
+| `relevo-marca-turno-marca.gif` y `relevo-marca-turno-horizontal.gif` | **Pasa el turno.** La marca está armada y el turno la recorre en el sentido del reloj. Quien lo tiene da un paso afuera y crece apenas; después se lo pasa al siguiente. | 3,6 s, sin corte |
+
+- **Cómo se dibuja:** las animaciones usan los mismos círculos del logo (radio 29, a 21 del centro) con el mordisco del siguiente. Por eso, cuando un círculo se mueve o crece, el corte entre los dos lo sigue. La marca lleva los tres tonos vecinos de la variante 02.
+- **Usos posibles:** «Se arma» sirve para abrir una presentación, un video o la pantalla de inicio de la app. «Pasa el turno» sirve para esperas o para el momento en que suena un relevo.
+
 ## Cómo rehacerlo
 
 Se necesitan Node, Google Chrome y ffmpeg. Desde esta carpeta:
@@ -58,13 +71,24 @@ Se necesitan Node, Google Chrome y ffmpeg. Desde esta carpeta:
 node scripts/gen.js
 bash scripts/render-gif.sh papel
 bash scripts/render-gif.sh tinta
+bash scripts/render-marca.sh arma marca
+bash scripts/render-marca.sh arma horizontal
+bash scripts/render-marca.sh turno marca
+bash scripts/render-marca.sh turno horizontal
 ```
 
 - **`gen.js`:** escribe los SVG y la lámina HTML. La lámina se pasa a PNG abriéndola en Chrome a 1600 px de ancho.
 - **`render-gif.sh`:** dibuja los 160 cuadros en una carpeta temporal y deja el GIF y el MP4 en `gif/`.
+- **`marca-anim.js` y `render-marca.sh`:** las animaciones de la marca; dejan el GIF y el MP4 en `animacion-marca/`.
 - **`color.js`:** las conversiones a OKLCH y el cálculo de contraste.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Animaciones de la marca
+
+- **Qué se añadió:** dos animaciones de los cuatro círculos, «se arma» y «pasa el turno», sola y junto al logotipo, en GIF y MP4, con los scripts que las generan.
+- **Cómo estaba antes:** solo se animaba el color del logotipo; la marca quedaba quieta.
+- **Por qué:** el autor pidió animar la forma del logo, no el texto, con una animación que tenga sentido.
 
 ### 2026-11-23 — Colores originales y nombres
 
