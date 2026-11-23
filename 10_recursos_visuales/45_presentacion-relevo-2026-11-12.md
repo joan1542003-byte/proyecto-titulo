@@ -3,7 +3,7 @@
 **Archivo:** [Relevo — presentación (noviembre 2026)](https://www.figma.com/slides/oaMrbyVIg2TI3k6CN2uJQO), en Figma Slides, en la cuenta del autor.
 **Duración:** 7 a 10 minutos. Las notas del orador suman unos 9 minutos y 30 segundos, en 25 láminas.
 **Fuente:** el [borrador v6 de la memoria](../08_memoria/borrador-memoria-v6-2026-10-28.md), en su versión del 10 de noviembre de 2026 (commit `9a26da1`). Todas las cifras salen de ahí.
-**Estado:** segunda versión, rehecha con la marca Relevo y pendiente de la revisión del autor.
+**Estado:** segunda versión, rehecha con la marca Relevo. Para el examen la reemplaza la [presentación del 23 de noviembre](47_presentacion-examen-2026-11-23.md), hecha desde la memoria v8; esta queda como registro.
 
 ## Estructura
 
@@ -55,6 +55,12 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 - Las láminas 13 y 17 usan dos fotos de la prueba. Antes de mostrar la presentación hay que confirmar por escrito que las personas autorizan publicarlas (D-140 sigue abierta).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Reemplazada para el examen
+
+- **Qué cambió:** el estado dice que, para el examen, la reemplaza la presentación del 23 de noviembre.
+- **Cómo estaba antes:** decía que estaba pendiente de la revisión del autor.
+- **Por qué:** el autor pidió una presentación nueva desde la memoria v8, con su diseño y su orden.
 
 ### 2026-11-18 — Lámina 21 sin comparar lo que no se midió
 

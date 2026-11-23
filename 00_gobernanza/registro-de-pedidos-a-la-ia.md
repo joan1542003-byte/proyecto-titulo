@@ -373,6 +373,8 @@
 | 22 nov. | Consulta e idea | Si hay más íconos que hacer o perfeccionar, inspirados directamente en Lucide; también se podrían incluir cosas cotidianas de Chile, «o por ahí, no sé». | [Propuestas](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#más-íconos-propuestas), todavía sin aplicar en la app. Se recomiendan una pelota de fútbol para Pelota, porque P7 juega fútbol, y un ovillo para Tejer, porque Lucide no tiene esos objetos. De las cosas de Chile, que no aparecen en las entrevistas, se proponen la once y el cerro con íconos de Lucide, y una parrilla y un volantín propios. El mate se descartó porque se lee como una fruta. Los seis íconos que solo usa la memoria ya tienen par y no hay que dibujarlos. | D-187 |
 | 22 nov. | Encargo | «Haz la construcción, como se hizo»: la lámina de construcción de los íconos, como la Figura H7 del Anexo H. | La Figura H7 rehecha con los mismos cinco pasos y la misma composición, pero con el método de Lucide: [Suena y Meditar](../10_recursos_visuales/iconos-lucide/construccion/construccion-suena-y-meditar.png), con la retícula de 24 y su margen de 1, la geometría tomada de Lucide, el trazo de 2 con su aire, la mancha al desenfocar y el centro óptico de la app, y los tamaños ópticos. Leer cambió por Meditar, porque Leer es ahora de Lucide tal cual. Un script la genera desde los SVG de la app. El texto propuesto para el Anexo H está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#la-construcción-figura-h7); el anexo no se tocó. | D-187 |
 | 22 nov. | Consulta | Viendo el estado del repositorio y del proyecto, qué falta, «solo estamos a 3 semanas». | Se recordó que la memoria se entrega el 2 de diciembre, en diez días, y el examen es el 14 y el 15. Se repasaron [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-22-de-noviembre-de-2026), la memoria v8, los anexos, la presentación y los riesgos. La investigación, la prueba, la app y la memoria compuesta están; faltan el correo a los profesores, los datos que solo tiene el autor, la extensión de la Introducción y la Justificación, los anexos, decidir los íconos, la revisión final y, para el examen, la presentación de 15 minutos, el video de respaldo y el ensayo. «Por hacer» suma la decisión de los íconos y el video. | — |
+| 22 nov. | Encargo | Hacer la presentación del proyecto en Figma: 10 minutos como máximo, idealmente 8, con todo lo relevante de la memoria, para una comisión que no conoce el proyecto. Nivel Apple, sin palabrería, directa y fácil de entender, diseñada como la memoria y la app, con la gráfica de Relevo, y sin pedir permiso para los cambios. | Una primera versión de 19 láminas en Figma Slides, que el autor corrigió el mismo día (fila siguiente). | — |
+| 22 nov. | Corrección | La presentación era muy crítica: debe hablar de lo que hay en la memoria, no de lo que falta. Los títulos y las bajadas eran demasiado poéticos; pidió títulos directos, los íconos nuevos, los degradados sutiles de la memoria, menos texto, un tono directo y formal, y el orden de la memoria, para que se sienta como una narrativa, «no literalmente». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), rehecha en 26 láminas en el orden de la memoria v8, con el diseño de la memoria diagramada, los íconos de Lucide de la app 4.8.2, sus degradados y notas para 8 minutos. Títulos que dicen lo que muestra cada lámina; el problema, la pregunta, la hipótesis y el aporte, literales. El alcance de la prueba queda en las notas, no en pantalla. | Pendiente de la revisión del autor |
 
 ## Lo que muestra el registro
 
@@ -383,6 +385,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Presentación del examen
+
+- **Qué cambió:** se registraron el encargo de la presentación del examen y su corrección.
+- **Cómo estaba antes:** el último pedido era la consulta sobre lo que falta.
+- **Por qué:** regla de registrar cada pedido; los dos se hicieron el 22 de noviembre y se registran al cerrar el trabajo, pasada la medianoche.
 
 ### 2026-11-22 — Qué falta
 

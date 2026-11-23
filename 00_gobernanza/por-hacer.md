@@ -30,7 +30,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta el examen:**
 
-9. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
+9. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Ya hay una versión de 8 minutos en Figma, hecha desde la memoria v8 ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)), que espera tu revisión. Conviene confirmar con los profesores si el examen pide 15 minutos.
 10. **El video de respaldo** del ciclo completo, una pila nueva y un segundo Tag para la demostración (tarea 7).
 11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
@@ -148,7 +148,7 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
 | 5. Costos y presupuesto | Hecha | — |
 | 6. Semana solo con notificaciones | Cerrada | — |
-| 7. Presentación del examen | Por hacer | Borrador a fines de noviembre; ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 7. Presentación del examen | En curso: versión de 8 minutos en Figma, por revisar (23 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Por hacer | Sin fecha |
 | 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
@@ -250,7 +250,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - el flujo de la persona y el técnico, por separado;
   - la evidencia y sus límites.
 
-  Son los puntos que la comisión de julio no entendió. La base es la [presentación del 12 de noviembre](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), en Figma Slides: 25 láminas para 7 a 10 minutos, hechas desde la memoria del 10 de noviembre. Hay que llevarla a 15 minutos y ponerla al día con la memoria final. Si cambia la pregunta, se cambia la lámina 11, que la muestra literal. La lámina 21 ya se corrigió el 18 de noviembre.
+  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del 23 de noviembre](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene 26 láminas en el orden de la memoria v8 y notas para 8 minutos. Muestra el objeto, el hogar, el recorrido de la persona y la evidencia; el flujo técnico no tiene lámina propia, y el alcance de la prueba queda en las notas, como pidió el autor. Falta su revisión y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 12, que la muestra literal. La del 12 de noviembre queda como registro.
 - [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
@@ -1000,6 +1000,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Presentación del examen
+
+- **Qué cambió:** la tarea 7 y el punto 9 de lo que queda enlazan la presentación del 23 de noviembre, de 8 minutos, y dicen qué cubre y qué falta: la revisión del autor y confirmar la duración con los profesores.
+- **Cómo estaba antes:** la tarea estaba por hacer y tomaba como base la presentación del 12 de noviembre, que había que llevar a 15 minutos.
+- **Por qué:** el autor pidió una presentación de 8 a 10 minutos desde la memoria y la corrigió el mismo día.
 
 ### 2026-11-22 — Lo que queda, al 22 de noviembre
 
