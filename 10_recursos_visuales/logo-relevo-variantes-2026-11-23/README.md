@@ -4,11 +4,11 @@ Revisión del [logo vigente](../logo-relevo-2026-10-11/) pedida por el autor el 
 
 Los trazados son los mismos del logo vigente (los cuatro círculos y «relevo» en Chillax Semibold, en curvas). Solo cambian los rellenos y el fondo.
 
-![Lámina con las 16 variantes](lamina-variantes.png)
+![Lámina con las 18 variantes](lamina-variantes.png)
 
 ## Qué hay en la carpeta
 
-- **`lamina-variantes.png` y `lamina-variantes.html`:** las 16 variantes lado a lado, con una nota por cada una.
+- **`lamina-variantes.png` y `lamina-variantes.html`:** las 18 variantes lado a lado, con una nota por cada una.
 - **`svg/`:** cada variante como SVG del logo horizontal, con el mismo número y nombre que en la lámina. Las que van sobre tinta o sobre color traen su fondo.
 - **`gif/relevo-colores-papel.gif`:** el logotipo pasa por los cuatro colores, con un degradado sutil, sobre el papel. Dura 6,4 segundos y se repite sin corte.
 - **`gif/relevo-colores-tinta.gif`:** lo mismo sobre la tinta.
@@ -30,6 +30,8 @@ Los trazados son los mismos del logo vigente (los cuatro círculos y «relevo» 
 | `relevo-logo-11` a `14-fondo-tinta-logotipo-<color>.svg` | Sobre tinta: el logotipo en amarillo, cielo, lima o rubor. |
 | `relevo-logo-15-fondo-cuatro-colores.svg` | Fondo con los cuatro colores, la marca en blanco y el logotipo en tinta. |
 | `relevo-logo-16-fondo-cielo.svg` | Fondo cielo, la marca en blanco y el logotipo en tinta. |
+| `relevo-logo-17-marca-sutil-puntas-claras.svg` | Degradado sutil de un solo color: cada círculo va de su color original, cerca del centro, a su tono claro en las puntas. Logotipo en tinta. |
+| `relevo-logo-18-marca-sutil-centro-claro.svg` | Al revés: cada círculo tiene su tono claro hacia el centro y su color original en el borde. Logotipo en tinta. |
 
 ## Los colores
 
@@ -102,6 +104,20 @@ Sirve para abrir una presentación, un video o la app.
 | `relevo-turno-texto-tinta` | tinta | papel |
 | `relevo-marca-turno` | solo la marca | papel |
 
+**Pasa el turno con degradado sutil.** Es el mismo movimiento con otro color. Cada círculo tiene un degradado de un solo color: de su color original a su tono claro, sin pasar a un tono vecino. El texto va de su color original en la línea base a su tono claro arriba. El degradado se ordena en torno al centro de la marca, así que se ve igual mientras la marca gira.
+
+- **Puntas claras:** el color original va cerca del centro y el tono claro en las puntas. Es la versión principal.
+- **Centro claro:** al revés, el tono claro hacia el centro y el color original en el borde.
+
+| Archivo | Texto | Fondo |
+| --- | --- | --- |
+| `relevo-turno-sutil-puntas-claras-texto-color-del-turno` | cambia con el turno | papel |
+| `relevo-turno-sutil-puntas-claras-fondo-tinta-texto-color-del-turno` | cambia con el turno | tinta |
+| `relevo-turno-sutil-puntas-claras-texto-tinta` | tinta | papel |
+| `relevo-marca-turno-sutil-puntas-claras` | solo la marca | papel |
+| `relevo-turno-sutil-centro-claro-texto-color-del-turno` | cambia con el turno | papel |
+| `relevo-marca-turno-sutil-centro-claro` | solo la marca | papel |
+
 ### Fuentes
 
 - Renderforest. (2026). *Logo animation trends 2026: 10 styles that work*. https://www.renderforest.com/blog/logo-animation-trends
@@ -126,6 +142,12 @@ bash scripts/render-familia.sh
 - **`color.js`:** las conversiones a OKLCH y el cálculo de contraste.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Degradado sutil de un solo color
+
+- **Qué cambió:** se sumaron seis animaciones de «pasa el turno» y dos variantes del logo (17 y 18) con un degradado sutil de un solo color. Cada círculo va de su color original a su tono claro, con las puntas claras o el centro claro. El texto va de su color original a su tono claro, de abajo hacia arriba. Los scripts aceptan este estilo como opción.
+- **Cómo estaba antes:** los círculos iban de su tono claro a su color y a un tono vecino, y el texto se aclaraba de izquierda a derecha.
+- **Por qué:** al autor le gustó «pasa el turno» y preguntó cómo se vería con un degradado sutil de cada color, del original a uno un poco más claro. Pidió subir el resultado.
 
 ### 2026-11-23 — Familia de animaciones del logo
 

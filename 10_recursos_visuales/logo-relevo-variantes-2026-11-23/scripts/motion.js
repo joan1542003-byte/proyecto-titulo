@@ -4,6 +4,9 @@
 //   texto:   tinta | blanco | cuatro | amarillo | cielo | lima | rubor | turno (toma el color de quien tiene el turno)
 //   fondo:   papel | tinta
 //   formato: horizontal | marca
+//   estilo:  vecinos (cada círculo va de su claro a su color y a un tono vecino)
+//            puntas-claras (cada círculo va de su color original, cerca del centro, a su tono claro en las puntas)
+//            centro-claro (al revés: su tono claro en el centro y su color original en el borde)
 //
 // Principios (ver README, «Cómo se pensó el movimiento»): un solo gesto memorable, recorridos en arco,
 // acciones que se superponen, resortes suaves en vez de rebotes, el logotipo que aparece desde su línea
@@ -11,7 +14,8 @@
 const fs = require('fs');
 const path = require('path');
 const { oklch2hex, rgb2oklch } = require('./color.js');
-const [OUT, ESCENA = 'revela', TEXTO = 'tinta', FONDO = 'papel', FORMATO = 'horizontal'] = process.argv.slice(2);
+const [OUT, ESCENA = 'revela', TEXTO = 'tinta', FONDO = 'papel', FORMATO = 'horizontal', ESTILO = 'vecinos'] = process.argv.slice(2);
+const SUTIL = ESTILO !== 'vecinos'; // degradado sutil de un solo color: del original a su tono claro
 fs.mkdirSync(OUT, { recursive: true });
 const src = fs.readFileSync(path.join(__dirname, '..', '..', 'logo-relevo-2026-10-11', 'relevo-logo-horizontal-degradado.svg'), 'utf8');
 const word = src.match(/<path fill="#141312" transform="translate\(109.314 72.3\)" d="([^"]+)"/)[1];
@@ -56,7 +60,8 @@ function mixOk(a, b, t) { const A = rgb2oklch(a), B = rgb2oklch(b); let dh = B[2
 const ORD = [2, 1, 3, 0];
 function rampa(cols) { const out = []; const n = cols.length - 1; for (let k = 0; k < n; k++) for (let j = 0; j < 4; j++) out.push([(k + j / 4) / n, mixOk(cols[k], cols[k + 1], j / 4)]); out.push([1, cols[n]]); return out; }
 const cuatro = rampa(ORD.flatMap(i => [C[i].claro, C[i].i]));
-const unColor = c => [[0, c.claro], [0.55, c.i], [1, c.i]];
+// Con el degradado sutil, el texto va de su color original en la línea base a su tono claro arriba.
+const unColor = c => (SUTIL ? [[0, c.i], [1, c.claro]] : [[0, c.claro], [0.55, c.i], [1, c.i]]);
 function stopsTexto(t) {
   if (TEXTO === 'tinta') return [[0, TINTA], [1, TINTA]];
   if (TEXTO === 'blanco') return [[0, '#FFFFFF'], [1, '#FFFFFF']];
@@ -110,7 +115,11 @@ function escena(t) {
 }
 
 // --- Dibujo ---
-const vec = id => C.map((c, k) => `<linearGradient id="${id}v${k}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100"><stop offset="0" stop-color="${c.claro}"/><stop offset=".55" stop-color="${c.i}"/><stop offset="1" stop-color="${c.vecino}"/></linearGradient>`).join('');
+const vec = id => C.map((c, k) => {
+  if (ESTILO === 'puntas-claras') return `<radialGradient id="${id}v${k}" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50"><stop offset=".3" stop-color="${c.i}"/><stop offset="1" stop-color="${c.claro}"/></radialGradient>`;
+  if (ESTILO === 'centro-claro') return `<radialGradient id="${id}v${k}" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50"><stop offset=".15" stop-color="${c.claro}"/><stop offset=".85" stop-color="${c.i}"/></radialGradient>`;
+  return `<linearGradient id="${id}v${k}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="100"><stop offset="0" stop-color="${c.claro}"/><stop offset=".55" stop-color="${c.i}"/><stop offset="1" stop-color="${c.vecino}"/></linearGradient>`;
+}).join('');
 const pos = s => [50 + s.d * Math.cos((s.a * Math.PI) / 180), 50 + s.d * Math.sin((s.a * Math.PI) / 180)];
 function marca(S, id) {
   let defs = vec(id), body = '';
@@ -130,7 +139,8 @@ function marca(S, id) {
 }
 function texto(S, t, id) {
   const st = stopsTexto(t).map(([o, c]) => `<stop offset="${(+o).toFixed(4)}" stop-color="${c}"/>`).join('');
-  const defs = `<linearGradient id="${id}w" gradientUnits="userSpaceOnUse" x1="6" y1="0" x2="297.5" y2="0">${st}</linearGradient><clipPath id="${id}c"><rect x="-10" y="-90" width="320" height="92.5"/></clipPath>`;
+  const eje = SUTIL && TEXTO !== 'cuatro' ? 'x1="0" y1="0" x2="0" y2="-72.3"' : 'x1="6" y1="0" x2="297.5" y2="0"'; // vertical con el degradado sutil
+  const defs = `<linearGradient id="${id}w" gradientUnits="userSpaceOnUse" ${eje}>${st}</linearGradient><clipPath id="${id}c"><rect x="-10" y="-90" width="320" height="92.5"/></clipPath>`;
   const body = `<g transform="translate(109.314 72.3)" clip-path="url(#${id}c)" fill="url(#${id}w)">${letras.map((l, i) => `<path transform="translate(0 ${S.let_[i].y.toFixed(3)})" d="${l.d}"/>`).join('')}</g>`;
   return { defs, body };
 }
@@ -154,4 +164,4 @@ for (let p = 0; p < paginas; p++) {
   fs.writeFileSync(path.join(OUT, `p${String(p).padStart(2, '0')}.html`), `<!doctype html><meta charset="utf-8"><style>html,body{margin:0;background:${bg}}.f{width:${W}px;height:${H}px;display:flex;align-items:center;justify-content:center}</style>${html}`);
 }
 fs.writeFileSync(path.join(OUT, 'info.json'), JSON.stringify({ N, FPS, W, H, POR_PAGINA, paginas, letras: letras.length }));
-console.log({ ESCENA, TEXTO, FONDO, FORMATO, N, paginas, letras: letras.length });
+console.log({ ESCENA, TEXTO, FONDO, FORMATO, ESTILO, N, paginas, letras: letras.length });

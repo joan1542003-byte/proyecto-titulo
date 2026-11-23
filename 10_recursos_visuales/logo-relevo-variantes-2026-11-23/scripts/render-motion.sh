@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Familia de animaciones del logo.
-# Uso, desde esta carpeta: bash render-motion.sh <escena> <texto> <fondo> <formato> <nombre>
+# Uso, desde esta carpeta: bash render-motion.sh <escena> <texto> <fondo> <formato> <nombre> [estilo]
 #   ej.: bash render-motion.sh revela cuatro papel horizontal relevo-revela-texto-cuatro-colores
 # Necesita Node, Google Chrome y ffmpeg. Dibuja a 50 cuadros por segundo y al doble de resolución.
 set -e
-E="$1"; X="$2"; B="$3"; F="$4"; NOMBRE="$5"
+E="$1"; X="$2"; B="$3"; F="$4"; NOMBRE="$5"; ESTILO="${6:-vecinos}"
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 T="$(mktemp -d)"
-node "$AQUI/motion.js" "$T" "$E" "$X" "$B" "$F"
+node "$AQUI/motion.js" "$T" "$E" "$X" "$B" "$F" "$ESTILO"
 eval "$(node -e "const i=JSON.parse(require('fs').readFileSync(process.argv[1]));console.log('N='+i.N,'W='+i.W,'H='+i.H,'PP='+i.POR_PAGINA,'NP='+i.paginas)" "$(cygpath -m "$T/info.json" 2>/dev/null || echo "$T/info.json")")"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 win(){ cygpath -w "$1" 2>/dev/null || echo "$1"; }

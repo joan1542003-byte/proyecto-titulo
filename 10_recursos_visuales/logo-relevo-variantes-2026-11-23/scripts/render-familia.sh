@@ -16,3 +16,10 @@ r turno  turno    tinta horizontal relevo-turno-fondo-tinta-texto-color-del-turn
 r turno  tinta    papel horizontal relevo-turno-texto-tinta
 r revela tinta    papel marca      relevo-marca-revela
 r turno  tinta    papel marca      relevo-marca-turno
+# Degradado sutil: cada color va de su original a su tono claro (puntas claras o centro claro)
+r turno  turno    papel horizontal relevo-turno-sutil-puntas-claras-texto-color-del-turno puntas-claras
+r turno  turno    tinta horizontal relevo-turno-sutil-puntas-claras-fondo-tinta-texto-color-del-turno puntas-claras
+r turno  tinta    papel horizontal relevo-turno-sutil-puntas-claras-texto-tinta puntas-claras
+r turno  tinta    papel marca      relevo-marca-turno-sutil-puntas-claras puntas-claras
+r turno  turno    papel horizontal relevo-turno-sutil-centro-claro-texto-color-del-turno centro-claro
+r turno  tinta    papel marca      relevo-marca-turno-sutil-centro-claro centro-claro

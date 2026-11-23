@@ -89,6 +89,16 @@ const bgCielo = `<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offse
 add('16-fondo-cielo', 'Sobre cielo', 'Fondo cielo, de su tono claro a su color. La marca en blanco y el logotipo en tinta.', { css: `linear-gradient(135deg, ${C[1].claro}, ${C[1].i})`, defs: bgCielo, fill: 'url(#bg)' },
   '', blanco, wordSvg(TINTA));
 
+// Degradado sutil de un solo color por círculo: del color original a su tono claro, en torno al centro de la marca.
+const sutil = dir => C.map((c, k) => `<radialGradient id="s${k}" gradientUnits="userSpaceOnUse" cx="50" cy="50" r="50">${dir === 'puntas'
+  ? `<stop offset=".3" stop-color="${c.i}"/><stop offset="1" stop-color="${c.claro}"/>`
+  : `<stop offset=".15" stop-color="${c.claro}"/><stop offset=".85" stop-color="${c.i}"/>`}</radialGradient>`).join('');
+const mS = marcaSvg(C.map((_, k) => `url(#s${k})`));
+add('17-marca-sutil-puntas-claras', 'Marca con degradado sutil, puntas claras', 'Cada círculo va de su color original, cerca del centro, a su tono claro en las puntas. Un solo color por círculo. Logotipo en tinta.', papel,
+  sutil('puntas'), mS, wordSvg(TINTA));
+add('18-marca-sutil-centro-claro', 'Marca con degradado sutil, centro claro', 'Al revés: cada círculo tiene su tono claro hacia el centro y su color original en el borde. Logotipo en tinta.', papel,
+  sutil('centro'), mS, wordSvg(TINTA));
+
 fs.writeFileSync(path.join(__dirname, 'variantes.json'), JSON.stringify({ C, V: V.map(v => ({ id: v.id, titulo: v.titulo, nota: v.nota, fondo: v.fondo })) }, null, 1));
 for (const v of V) fs.writeFileSync(path.join(OUT, 'svg', `relevo-logo-${v.id}.svg`), v.svgArchivo);
 

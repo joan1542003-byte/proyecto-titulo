@@ -121,6 +121,18 @@
    "titulo": "Sobre cielo",
    "nota": "Fondo cielo, de su tono claro a su color. La marca en blanco y el logotipo en tinta.",
    "fondo": "linear-gradient(135deg, #B5E3FC, #9DD6F4)"
+  },
+  {
+   "id": "17-marca-sutil-puntas-claras",
+   "titulo": "Marca con degradado sutil, puntas claras",
+   "nota": "Cada círculo va de su color original, cerca del centro, a su tono claro en las puntas. Un solo color por círculo. Logotipo en tinta.",
+   "fondo": "#F6F4F3"
+  },
+  {
+   "id": "18-marca-sutil-centro-claro",
+   "titulo": "Marca con degradado sutil, centro claro",
+   "nota": "Al revés: cada círculo tiene su tono claro hacia el centro y su color original en el borde. Logotipo en tinta.",
+   "fondo": "#F6F4F3"
   }
  ]
 }
