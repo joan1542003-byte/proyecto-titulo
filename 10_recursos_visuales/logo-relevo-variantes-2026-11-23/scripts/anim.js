@@ -2,7 +2,7 @@
 // Uso: node anim.js <carpeta> <papel|tinta>
 const fs = require('fs');
 const path = require('path');
-const { legible, oklch2hex, rgb2oklch } = require('./color.js');
+const { oklch2hex, rgb2oklch } = require('./color.js');
 const OUT = process.argv[2];
 const MODO = process.argv[3] || 'papel';
 fs.mkdirSync(OUT, { recursive: true });
@@ -17,15 +17,12 @@ const C = [
   { n: 'lima', i: '#B3E788', claro: '#C8F3A6', vecino: '#9FDDA6' },
   { n: 'rubor', i: '#F6A3CB', claro: '#FDB7D8', vecino: '#E9A3D8' },
 ];
-for (const c of C) {
-  const h = c.n === 'amarillo' ? -25 : 0;
-  c.a = MODO === 'papel' ? legible(c.i, PAPEL, 3, h) : c.claro; // color de partida
-  c.b = MODO === 'papel' ? legible(c.i, PAPEL, 4.5, h) : c.i; // un poco más profundo, para el degradado sutil
-}
+// Los colores originales: cada uno va de su tono claro (a) a su color (b).
+for (const c of C) { c.a = c.claro; c.b = c.i; }
 const ORD = [2, 1, 3, 0].map(i => C[i]); // lima, cielo, rubor, amarillo: por tono, sin pasar por el oliva
 
 const lerp = (a, b, t) => a + (b - a) * t;
-// Mezcla en OKLCH por el tono más corto. Entre amarillo y lima el medio se aclara un poco para no pasar por el oliva.
+// Mezcla en OKLCH por el tono más corto; «alza» aclara el medio del paso si hiciera falta.
 function mix(x, y, t, alza = 0) {
   const A = rgb2oklch(x), B = rgb2oklch(y);
   let dh = B[2] - A[2]; if (dh > 180) dh -= 360; if (dh < -180) dh += 360;
@@ -39,10 +36,9 @@ function col(u) {
   const k = Math.floor(u), t = u - k;
   const c = ORD[k], nx = ORD[(k + 1) % 4];
   const PASO = 0.3; // fracción del tramo dedicada al paso al color siguiente
-  if (t < 1 - PASO) return mix(c.a, c.b, (t / (1 - PASO)) * 0.6);
-  const own = mix(c.a, c.b, 0.6);
-  const alza = c.n === 'amarillo' && MODO === 'papel' ? 0.18 : 0;
-  return mix(own, nx.a, ss((t - (1 - PASO)) / PASO), alza);
+  if (t < 1 - PASO) return mix(c.a, c.b, Math.min(1, t / 0.5)); // llega a su color a mitad del tramo
+  const own = c.b;
+    return mix(own, nx.a, ss((t - (1 - PASO)) / PASO));
 }
 
 // Marca fija: tres tonos vecinos por círculo, como la variante 02.

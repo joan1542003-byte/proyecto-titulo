@@ -380,6 +380,7 @@
 | 23 nov. | Consulta y confirmación | Qué cosas quedan pendientes en el proyecto, para ir cerrándolas. Confirmó que los nombres de la portada están correctos. | Respuesta en la conversación, con lo que queda ordenado por fecha y separado entre lo que decide o hace el autor y lo que puede hacer la IA. «Simón Gallardo» queda confirmado en la tarea 8, y [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-23-de-noviembre-de-2026) se puso al día: la autorización de las fotos pasa a la lista antes de la entrega, y se suman la versión de la app y los pendientes de GitHub. | Nombre de la portada confirmado |
 | 23 nov. | Decisión, confirmación y encargo | Respondió lo que queda. El correo a los profesores está resuelto, «es un tema muy atrasado». Las fotos están autorizadas y no hace falta mencionarlo. La app es siempre la última versión. Preguntó si importa cómo se eligió a las tres personas y explicó cómo llegaron; no lo mencionaría, o buscaría una forma profesional de decirlo, y si afecta al proyecto, no mencionarlo. Las personas aceptaron la etapa con el teléfono desde la app, y la pauta está en el repositorio. Revisará la memoria esta noche. El relevo que no sonó fue porque esa persona no estaba en casa y tenía configurado el Tag. Pidió no proponer texto todavía, buscar fuentes y redactar los puntos de fondo para tenerlos, sin editar la memoria ni los anexos. Preguntó qué significa el punto de la notificación. | [Puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md), con fuentes verificadas: *sentido de agencia* para el fenómeno (Lukoff et al., 2021; Moore, 2016), la tensión en la decisión, el planteamiento como universo, Agha et al. (2019) para acompañar a Fogg y una respuesta para la comisión sobre la selección. Se registraron D-140, ya hecha, y D-188, siempre la última versión de la app. [Por hacer](por-hacer.md#lo-que-queda-en-orden-al-23-de-noviembre-de-2026) quedó al día. La memoria y los anexos no se tocaron. | D-140, D-188 |
 | 23 nov. | Encargo | Revisar el logo: agregar degradados sutiles a los colores y dar color al logotipo, que va en negro (los cuatro colores, uno solo o blanco), «ir probando variantes». Al terminar, un GIF en que el texto «relevo» pase por los cuatro colores con un degradado sutil. | [Variantes del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md): 14 variantes en una lámina, con tonos hondos legibles sobre el papel y sin pasar por el oliva, y dos GIF del logotipo pasando por los cuatro colores, sobre papel y sobre tinta. El logo vigente no cambia hasta que el autor elija. |
+| 23 nov. | Corrección y encargo | Los colores de las variantes del logo estaban muy apagados y no eran los mismos de la marca: debían ser un degradado más claro, con el color original. Pidió subir cada variante en SVG, bien nombrada, al repositorio. | [Variantes del logo](../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md) rehechas con los cuatro colores originales, cada uno de su tono claro a su color: 16 SVG numerados y con nombres descriptivos, la lámina y los dos GIF. |
 
 ## Lo que muestra el registro
 
@@ -390,6 +391,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Colores originales en el logo
+
+- **Qué cambió:** se registró la corrección del autor a los colores de las variantes del logo y el pedido de subir cada variante en SVG.
+- **Cómo estaba antes:** el último pedido era el encargo de las variantes del logo.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — Variantes del logo
 
