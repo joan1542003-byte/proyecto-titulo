@@ -376,6 +376,7 @@
 | 22 nov. | Encargo | Hacer la presentación del proyecto en Figma: 10 minutos como máximo, idealmente 8, con todo lo relevante de la memoria, para una comisión que no conoce el proyecto. Nivel Apple, sin palabrería, directa y fácil de entender, diseñada como la memoria y la app, con la gráfica de Relevo, y sin pedir permiso para los cambios. | Una primera versión de 19 láminas en Figma Slides, que el autor corrigió el mismo día (fila siguiente). | — |
 | 22 nov. | Corrección | La presentación era muy crítica: debe hablar de lo que hay en la memoria, no de lo que falta. Los títulos y las bajadas eran demasiado poéticos; pidió títulos directos, los íconos nuevos, los degradados sutiles de la memoria, menos texto, un tono directo y formal, y el orden de la memoria, para que se sienta como una narrativa, «no literalmente». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), rehecha en 26 láminas en el orden de la memoria v8, con el diseño de la memoria diagramada, los íconos de Lucide de la app 4.8.2, sus degradados y notas para 8 minutos. Títulos que dicen lo que muestra cada lámina; el problema, la pregunta, la hipótesis y el aporte, literales. El alcance de la prueba queda en las notas, no en pantalla. | Pendiente de la revisión del autor |
 | 23 nov. | Encargo | Con la versión más reciente de la app, la de los íconos nuevos, hacer un GIF de cada pantalla e interacción —la primera vez, crear un relevo, editar el perfil, cuando suena, todo— y capturas de todas las pantallas; usar su nombre, Johan, en las grabaciones. | [10 GIF, 10 MP4 y 110 capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md), grabados en una copia de prueba sin conexión. Al grabar se encontró que «Editar» un relevo activo vuelve a Inicio en vez de abrir la edición; la causa está descrita y la corrección queda pendiente | — |
+| 23 nov. | Corrección | Avisó que subió capturas y GIF reales de la app, que podrían servir. Las láminas le parecieron bien, pero reduciría un poco más el texto: «va por buen camino». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), con el texto recortado en 21 láminas y lo que explica en las notas. Las láminas 14 a 16 muestran la app 4.8.2: una pantalla por momento del recorrido y un GIF de cómo se prepara un relevo, con un cuadro fijo debajo para el PDF. Se anotó como pendiente el error de «Editar» que encontró la grabación, porque la lámina 23 nombra ese cambio. | Pendiente de la revisión del autor |
 
 ## Lo que muestra el registro
 
@@ -386,6 +387,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Menos texto en la presentación
+
+- **Qué cambió:** se registró la corrección de la presentación: menos texto y las capturas de la 4.8.2.
+- **Cómo estaba antes:** el último pedido era el encargo de los GIF y las capturas de la 4.8.2.
+- **Por qué:** regla de registrar cada pedido del autor el mismo día.
 
 ### 2026-11-23 — GIF y capturas de la 4.8.2
 

@@ -3,7 +3,7 @@
 **Archivo:** [presentación en Figma Slides](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1), en la cuenta del autor.
 **Duración:** 8 minutos, según las notas del orador, en 26 láminas.
 **Fuente:** el [borrador v8 de la memoria](../08_memoria/borrador-memoria-v8-2026-11-21.md) y su [versión diagramada](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), del 21 de noviembre. Todas las cifras, las citas y los textos literales salen de ahí.
-**Estado:** primera versión para el examen, pendiente de la revisión del autor. Las 26 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-23.jpg).
+**Estado:** segunda versión para el examen, con menos texto y con capturas y un GIF de la app 4.8.2. Falta la revisión del autor. Las 26 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-23.jpg).
 
 ## Estructura
 
@@ -14,7 +14,7 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 1 | Portada | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital» | El logotipo, el título de la memoria y los datos de la portada, sobre el aura de portada. | Portada | 0:00 |
 | 2 | Ocio digital | «El ocio digital» | La definición, cuatro propósitos con su ícono y el sentido según el motivo y el tipo de uso (Lukoff et al., 2018). | 2 | 0:10 |
 | 3 | Antecedentes | «Las herramientas actuales actúan sobre el uso del teléfono» | Medir, bloquear, pausar y recordar, con ejemplos, y 3 de cada 4 entre 367 herramientas (Lyngs et al., 2019). | 3 | 0:30 |
-| 4 | Marco teórico | «Una intención puede volver con una señal del entorno» | Memoria prospectiva, señal y mensaje, y los dos caminos de la Figura 1. | 4 | 0:50 |
+| 4 | Marco teórico | «Una intención puede volver con una señal del entorno» | Memoria prospectiva y los dos caminos de la Figura 1. | 4 | 0:50 |
 | 5 | Problema | Apertura del capítulo 5 y el problema, literal | El ejemplo del dibujo: antes, durante y después (Figura 4). | 5 | 1:10 |
 | 6 | Causas | «Tres causas explican por qué la intención vuelve tarde» | 65,6 % y 51,4 % (Lukoff et al., 2018) y las tres causas de la Figura 5. | 5 | 1:30 |
 | 7 | Desafío | «Desafío de diseño» | El desafío, literal, y las siete variables que el diseño ha creado, de la Justificación. | 5 y 6 | 1:50 |
@@ -22,11 +22,11 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 9 | Situaciones de uso | «Dos situaciones de uso» | El usuario principal, el usuario límite y el hogar como contexto. | 7 | 2:30 |
 | 10 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo marcado. | 8 | 2:45 |
 | 11 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios de la Figura 12. | 9 | 3:05 |
-| 12 | Formulación | Apertura del capítulo 10, la pregunta y la hipótesis, literales | Y qué es el recuerdo oportuno. | 10 | 3:25 |
+| 12 | Formulación | Apertura del capítulo 10 | La pregunta y la hipótesis, literales. | 10 | 3:25 |
 | 13 | Objetivos | «Objetivos» | El objetivo general, los cuatro específicos y el método. | 10 | 3:50 |
-| 14 | Relevo | «Relevo une una aplicación, un objeto y un lugar» | Una captura de la app, Relevo Home y el Tag junto a unos mangas. | 11 | 4:05 |
-| 15 | Recorrido | «El recorrido tiene cuatro momentos» | Preparar, seguir en el teléfono, oír la señal y decidir (Figura 16). | 11 | 4:25 |
-| 16 | Aplicación | «La aplicación» | Tres decisiones y cinco capturas de la 4.7.2. | 11 | 4:45 |
+| 14 | Relevo | «Relevo une una aplicación, un objeto y un lugar» | Una captura de la app 4.8.2, Relevo Home y el Tag junto a unos mangas. | 11 | 4:05 |
+| 15 | Recorrido | «El recorrido tiene cuatro momentos» | Los cuatro momentos de la Figura 16, cada uno con su pantalla de la app 4.8.2. | 11 | 4:25 |
+| 16 | Aplicación | «La aplicación» | Un GIF de cómo se prepara un relevo y dos pantallas de la 4.8.2: Inicio y las preguntas de un toque. | 11 | 4:45 |
 | 17 | Identidad | «Identidad» | El logo y sus cuatro papeles, Instrument Sans, la paleta y los íconos nuevos. | 11 | 5:00 |
 | 18 | Objeto | «El objeto» | El Tag de la prueba, Relevo Home y Relevo Go, con sus medidas. | 11 | 5:15 |
 | 19 | Factibilidad | «Factibilidad: tecnología, costos y etapas» | Android y Bluetooth, los montos de la Tabla 2 y las etapas y fondos de la Figura 27. | 12 | 5:30 |
@@ -45,7 +45,8 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 - **Lo que hay en la memoria:** las láminas muestran lo que se hizo y lo que se encontró. El alcance de la prueba no va en pantalla: queda en las notas de la lámina 24, para responder si la comisión pregunta.
 - **Íconos nuevos:** los de Lucide que usa la app desde la 4.8.2 ([documento 46](46_iconos-desde-lucide-2026-11-22.md)), con trazo de 1,6 en la retícula de 24, sobre un círculo con el degradado de su color. Solo uno no está en la app: el billete de Lucide 1.70.0 («banknote»), para los costos.
 - **Degradados sutiles de la memoria:** los mismos tonos de [`construir-figuras.py`](../08_memoria/figuras/v8/construir-figuras.py): dos tonos vecinos a 135° en las superficies y, en las barras y los puntos, del tono claro al intenso. Cada color conserva su papel: amarillo para el tiempo, celeste para el primer paso, verde para el lugar y el sonido, y rosa para la decisión. El neutro queda para lo que no es de Relevo, como las otras herramientas o el teléfono en la comparación.
-- **Imágenes:** las auras de la memoria; capturas de la app 4.7.2 con un perfil de prueba, dos de ellas subidas ahora (Inicio y la pantalla cuando suena); los modelos 3D de Relevo, y tres fotos de la prueba que ya están en la Figura 28.
+- **Poco texto:** cada lámina deja un título y lo esencial: una cifra, una frase o una figura. Lo que explica o matiza, como la señal y el mensaje de Norman, la definición de recuerdo oportuno, el plan gratuito de Supabase o la impresión 3D sin soportes, pasó a las notas del orador.
+- **Imágenes:** las auras de la memoria; siete capturas y un GIF de la app 4.8.2, de las [capturas que grabó el autor](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md) en un emulador con datos de ejemplo; los modelos 3D de Relevo, y tres fotos de la prueba que ya están en la Figura 28. El GIF lleva debajo uno de sus cuadros, fijo, para que en el PDF y en las miniaturas no se vea el teléfono vacío.
 - **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, de 10 a 25 segundos, y suman 8 minutos. Las notas complementan la lámina: no repiten lo que dice.
 
 ## Pendiente
@@ -54,11 +55,19 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 - **Duración del examen:** Por hacer anotaba una presentación de 15 minutos; para esta versión, el autor pidió 10 como máximo e idealmente 8. Conviene confirmarlo con los profesores.
 - **Fotos de la prueba** (láminas 14, 18 y 20): confirmar por escrito que las personas autorizan mostrarlas (D-140 sigue abierta).
 - **Portada:** dice «Simón Gallardo», como la memoria; sus notas en el PDF del Pase van firmadas «Manuel Gallardo» ([Por hacer, punto 2](../00_gobernanza/por-hacer.md#lo-que-queda-en-orden-al-22-de-noviembre-de-2026)).
-- **Capturas:** son de la 4.7.2, la versión de la prueba y de la memoria. Si el autor decide entregar la 4.8.2, se pueden cambiar por capturas con los íconos de Lucide.
+- **Versión de la app:** las láminas muestran la 4.8.2, con los íconos de Lucide; la memoria muestra la 4.7.2. Si la entrega sigue con la 4.7.2 ([tarea 17](../00_gobernanza/por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria)), conviene decidir cuál mostrar en el examen.
+- **«Editar» un relevo activo:** al grabar las capturas se encontró que en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 23 nombra ese cambio, así que conviene corregirlo antes del examen.
+- **GIF:** se reproduce en el modo presentación de Figma; conviene comprobarlo en el computador del examen.
 - **Textos literales:** si antes del 2 de diciembre cambia la pregunta, la hipótesis o alguna cifra de la memoria, hay que cambiar las láminas que la copian (5, 7, 12, 21, 22 y 25).
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Menos texto y la app 4.8.2
+
+- **Qué cambió:** se recortó el texto de 21 láminas: definiciones más cortas, una línea por idea y lo que explica en las notas. Las láminas 14 a 16 muestran la app 4.8.2: la 15, una pantalla por momento del recorrido, y la 16, un GIF de cómo se prepara un relevo. En la lámina 7, el rótulo dice ahora «Un problema de diseño: involucra variables que el diseño creó». La hoja de revisión se rehízo.
+- **Cómo estaba antes:** había más texto por lámina: el recorrido eran cuatro listas, y la aplicación, cinco capturas de la 4.7.2 con tres bloques de texto. El rótulo de la lámina 7 decía «Es un problema de diseño: sus variables las creó el diseño».
+- **Por qué:** el autor dijo que las láminas iban bien, pero pidió reducir un poco más el texto, y avisó que había subido capturas y GIF reales de la app.
 
 ### 2026-11-23 — Creación
 

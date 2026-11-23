@@ -253,6 +253,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del 23 de noviembre](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene 26 láminas en el orden de la memoria v8 y notas para 8 minutos. Muestra el objeto, el hogar, el recorrido de la persona y la evidencia; el flujo técnico no tiene lámina propia, y el alcance de la prueba queda en las notas, como pidió el autor. Falta su revisión y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 12, que la muestra literal. La del 12 de noviembre queda como registro.
 - [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
+- [ ] Si en el examen se muestra la 4.8.2, corregir antes «Editar» un relevo activo, que vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 23 de la presentación nombra ese cambio.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
 ## 8. Memoria: datos por confirmar, portada y entrega
@@ -1000,6 +1001,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — «Editar» antes del examen
+
+- **Qué cambió:** la tarea 7 suma corregir «Editar» un relevo activo en la 4.8.2 antes de mostrarla.
+- **Cómo estaba antes:** el error estaba descrito en las capturas de la 4.8.2, pero no en Por hacer.
+- **Por qué:** la presentación ahora muestra la 4.8.2 y nombra ese cambio en la lámina 23.
 
 ### 2026-11-23 — Presentación del examen
 
