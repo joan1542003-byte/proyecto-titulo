@@ -53,14 +53,19 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 
 - **Revisión del autor:** texto, orden y tiempos, y el ensayo con cronómetro ([tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)).
 - **Duración del examen:** Por hacer anotaba una presentación de 15 minutos; para esta versión, el autor pidió 10 como máximo e idealmente 8. Conviene confirmarlo con los profesores.
-- **Fotos de la prueba** (láminas 14, 18 y 20): confirmar por escrito que las personas autorizan mostrarlas (D-140 sigue abierta).
-- **Versión de la app:** las láminas muestran la 4.8.2, con los íconos de Lucide; la memoria muestra la 4.7.2. Si la entrega sigue con la 4.7.2 ([tarea 17](../00_gobernanza/por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria)), conviene decidir cuál mostrar en el examen.
+- **Versión de la app:** las láminas muestran la 4.8.2, con los íconos de Lucide, y la entrega y el examen usan siempre la última versión ([D-188](../09_decisiones/registro-de-decisiones.md#d-188--la-entrega-y-el-examen-usan-la-última-versión-de-la-app)). Si sale una versión nueva antes del examen, conviene cambiar las capturas de las láminas 14 a 16.
 - **«Editar» un relevo activo:** al grabar las capturas se encontró que en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 23 nombra ese cambio, así que conviene corregirlo antes del examen.
 - **GIF:** se reproduce en el modo presentación de Figma; conviene comprobarlo en el computador del examen.
 - **Textos literales:** si antes del 2 de diciembre cambia la pregunta, la hipótesis o alguna cifra de la memoria, hay que cambiar las láminas que la copian (5, 7, 12, 21, 22 y 25).
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Fotos autorizadas y versión de la app
+
+- **Qué cambió:** sale de lo pendiente la autorización de las fotos, y la versión de la app queda decidida: siempre la última (D-188).
+- **Cómo estaba antes:** pedía confirmar la autorización de las fotos por escrito y decidir si se mostraba la 4.8.2 o la 4.7.2.
+- **Por qué:** el autor confirmó que las fotos están autorizadas y decidió usar siempre la última versión de la app.
 
 ### 2026-11-23 — Nombres de la portada confirmados
 

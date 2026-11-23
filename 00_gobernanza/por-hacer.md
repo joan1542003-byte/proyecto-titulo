@@ -13,32 +13,29 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta la entrega final:**
 
-1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
-2. **Pedir por escrito la autorización de las fotos de la prueba** (D-140, tarea 9). Están en la Figura 28 de la memoria y en las láminas 14, 18 y 20 de la presentación.
-3. **Revisar la memoria v8 compuesta.** Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, y en IDML para Affinity, con las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) a su tamaño real y cada figura en la página de su mención o en la siguiente (D-186). Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales cortos de los capítulos 4, 10 y 14 y del glosario, y la página con la continuación de la Tabla 4.
-4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
-5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
-   - cómo se eligió a las tres personas;
-   - el consentimiento de la etapa con el teléfono;
-   - la pauta de las entrevistas;
-   - una fuente reciente para Fogg (tarea 15, E);
-   - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
-   - la extensión de la Introducción y la Justificación (tarea 15, C).
-6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D), que puede salir de las [110 capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md) o de las de la 4.7.2, según la versión que se elija. El Word y el PDF se regeneran al final.
-7. **Decidir la versión de la app y los íconos** (tarea 17), de preferencia el 25 de noviembre. La 4.8.2 ya se grabó en un emulador el 23 de noviembre, y la presentación la muestra. Si la entrega y el examen usan la 4.8.2, hay que corregir «Editar» un relevo activo, que vuelve a Inicio (tarea 7), y cambiar el párrafo «Iconografía» de la memoria, el Anexo H —su texto, la Tabla H2 y las Figuras H6 y H8; la H7 ya está rehecha— y los íconos de las figuras; las capturas de la memoria pueden quedarse, porque son de la versión de la prueba. Si no, sigue la 4.7.2, los íconos de Lucide quedan para después del examen y la presentación vuelve a las capturas de la 4.7.2.
-8. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
+1. **Revisar la memoria v8 compuesta**: el autor la revisa la noche del 23 de noviembre. Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, y en IDML para Affinity, con las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) a su tamaño real y cada figura en la página de su mención o en la siguiente (D-186). Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales cortos de los capítulos 4, 10 y 14 y del glosario, y la página con la continuación de la Tabla 4.
+2. **Lo que la v8 no resolvió.** Por pedido del autor, del 23 de noviembre, la memoria y los anexos no se tocan hasta que él decida; los borradores quedan en los [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md):
+   - **cómo se eligió a las tres personas:** por conveniencia, en la red de contactos del autor (23 de noviembre). Por ahora la memoria no lo menciona; la respuesta para la comisión está en los puntos de fondo, sección 5;
+   - **el consentimiento de la etapa con el teléfono:** según el autor, las personas lo aceptaron desde la app;
+   - **la pauta de las entrevistas:** está en el Anexo A, A.1, que ya dice que se escribió para la idea anterior; falta decirlo en el capítulo 7, si el autor quiere (tarea 15, E);
+   - **una fuente para acompañar a Fogg** (tarea 15, E): Agha et al. (2019), en los puntos de fondo, sección 4;
+   - **el fenómeno, la tensión en la decisión y el planteamiento como universo** (tarea 16, B): borradores en los puntos de fondo, secciones 1 a 3, con *sentido de agencia* como palabra para el fenómeno;
+   - **la extensión de la Introducción y la Justificación** (tarea 15, C): el autor pidió no proponer texto todavía.
+3. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D), que puede salir de las [110 capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md). No se editan hasta que el autor lo pida. El Word y el PDF se regeneran al final.
+4. **La versión de la app es la última** (D-188, 23 de noviembre): hoy, la 4.8.2. Falta corregir «Editar» un relevo activo, que vuelve a Inicio (tarea 7), y, cuando el autor lo decida, cambiar el párrafo «Iconografía» de la memoria, el Anexo H —su texto, la Tabla H2 y las Figuras H6 y H8; la H7 ya está rehecha— y los íconos de las figuras (tarea 17). Las capturas de la memoria pueden quedarse, porque son de la versión de la prueba.
+5. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
 
-9. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Ya hay una versión de 8 minutos en Figma, hecha desde la memoria v8 y con menos texto ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)), que espera tu revisión. Conviene confirmar con los profesores si el examen pide 15 minutos.
-10. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
-11. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
+6. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Ya hay una versión de 8 minutos en Figma, hecha desde la memoria v8 y con menos texto ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)), que espera tu revisión. Conviene confirmar con los profesores si el examen pide 15 minutos.
+7. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
+8. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
 **Después del examen:**
 
-12. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
+9. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
 
-**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2. En GitHub: cerrar el Issue #14 (tarea 1), decidir los PR #12 y #13 (tarea 9) y unir el PR #22, de la rama `iconos-lucide`, a `main` cuando se apruebe (tarea 17).
+**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 —la revisión ética de la Escuela, los correos de validación por expertos y las mejoras opcionales— y las dos decisiones que quedan de la tarea 2. En GitHub: cerrar el Issue #14 (tarea 1), decidir los PR #12 y #13 (tarea 9) y unir el PR #22, de la rama `iconos-lucide`, a `main` cuando se apruebe (tarea 17).
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
@@ -283,12 +280,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
 - [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). El autor descargó los PDF de las dos de diseño, y su lectura completa corrigió el párrafo.
-- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 23 de la memoria del Pase; Figura 17 de la v6). La memoria no las menciona, por decisión del autor (D-182).
-- [ ] **El relevo que no sonó:** confirmar con la tercera persona que fue fuera de casa, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
-- [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). Viene de la tarea 10.
+- [ ] **Ética:** preguntar si la Escuela exige una revisión ética. Las fotos de la prueba están autorizadas, según confirmó el autor el 23 de noviembre (D-140); la memoria no menciona la autorización, por decisión del autor (D-182).
+- [x] **El relevo que no sonó:** confirmado por el autor el 23 de noviembre: no sonó porque la tercera persona no estaba en casa y tenía configurado el Tag, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
+- [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). El texto de cada correo está listo; se envían desde el correo de la UDP del autor. Viene de la tarea 10.
 - [x] **Aviso de licencia de Lucide:** desde la app 4.8 los íconos salen de Lucide, y su aviso va en el repositorio y dentro del APK (D-187). Está en la rama `iconos-lucide`; llega a `main` si se une. Lo anotado el 11 de noviembre: si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
-- [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
+- [x] **Notificación de la señal:** en la etapa con el teléfono, el aviso traía escrita la actividad y su primer paso («Empieza por…»), así que recordar con el teléfono pudo deberse a leerlo. Queda declarado en el capítulo 13 de la v8: «aunque el aviso ya trae escrita la actividad». Cerrada el 23 de noviembre.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
@@ -957,7 +954,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### Confirmar con los profesores
 
-- [ ] Mandar en un solo correo las seis preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores):
+- [x] Mandar en un solo correo las seis preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores). El autor lo dio por resuelto el 23 de noviembre: «es un tema muy atrasado». La v8 queda como está en esos puntos. Las preguntas eran:
   - a Gallardo: dónde va el marco teórico; si «lo sacaría» incluye cuándo suena; si los relatos van en los hallazgos o al Anexo I, y si el punto sobre *phygital* pide definirlo;
   - a Majluf: qué quiso decir con «retomar la actividad» y a qué sesgo de preparación previa se refiere.
 
@@ -970,7 +967,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ## 17. Íconos desde Lucide: revisar y llevar a la memoria
 
-**Estado:** por hacer. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.2 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
+**Estado:** decidida la versión: la entrega y el examen usan la última, hoy la 4.8.2 (D-188, 23 de noviembre); queda llevar los íconos a la memoria cuando el autor lo decida. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.2 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
 
 ### A. Revisar la app
 
@@ -1001,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — Respuestas del autor a lo que queda
+
+- **Qué cambió:** salen de la lista la autorización de las fotos (D-140) y el correo a los profesores, que el autor dio por resuelto. La versión de la app queda decidida: siempre la última (D-188). Lo que la v8 no resolvió dice el estado de cada punto, con los borradores de los puntos de fondo. En la tarea 9 se cierran el relevo que no sonó y la notificación de la señal, y la lista se renumera del 1 al 9.
+- **Cómo estaba antes:** la lista pedía el correo, la autorización escrita de las fotos, decidir la versión y seis datos o textos del autor, y la tarea 9 tenía abiertos el relevo que no sonó y la notificación.
+- **Por qué:** el autor respondió punto por punto, pidió buscar fuentes y redactar los puntos de fondo para tenerlos, y pidió no editar la memoria ni los anexos.
 
 ### 2026-11-23 — Lo que queda, al 23 de noviembre
 

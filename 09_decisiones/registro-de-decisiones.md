@@ -1787,7 +1787,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-140 — La Figura 4 muestra fotos reales de la prueba, sin datos que identifiquen
 
 - **Fecha:** 2026-10-20.
-- **Estado:** hecha; falta que el autor confirme quién tomó las fotos, que las personas autorizan publicarlas y de quién es el lugar de la foto c.
+- **Estado:** hecha. El 23 de noviembre de 2026 el autor confirmó que las personas autorizaron las fotos; la memoria no menciona la autorización, por decisión del autor.
 - **Contexto:** el autor entregó tres fotos del Tag y de una persona tras configurar un relevo. La Figura 4 era un marcador («Fotografía pendiente»).
 - **Decisión:**
   - **Contenido:** a) un relevo preparado y el Tag en la mano (7 de octubre); b) el Tag sobre un mueble del mismo hogar (7 de octubre); c) el Tag sobre un escritorio (17 de octubre).
@@ -2553,7 +2553,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Verificación:** los 118 trazados generados dibujan lo mismo que sus SVG, píxel a píxel, y los nueve adaptados o propios pasan `verificar_reglas.py`. Pasan las 110 pruebas unitarias, 4 de ellas nuevas, que comprueban que Android lee cada trazado completo y que ningún ícono repite el dibujo de otro. Los APK 4.8, 4.8.1 y 4.8.2 se firman con la clave de siempre. No se vio en un teléfono.
 - **Documentos:** [Íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md), [carpeta con el mapeo, los SVG y el generador](../10_recursos_visuales/iconos-lucide/README.md) y app [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md), [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md) y [4.8.2](../06_desarrollo_y_factibilidad/app-android/version-4.8.2-iconos-con-las-reglas-de-lucide-2026-11-22.md).
 
+## D-188 — La entrega y el examen usan la última versión de la app
+
+- **Fecha:** 2026-11-23.
+- **Estado:** decidida. Hoy la última es la 4.8.2, con los íconos de Lucide (D-187), en la rama `iconos-lucide`.
+- **Contexto:** la tarea 17 pedía elegir, de preferencia el 25 de noviembre, si la entrega y el examen mostraban la 4.7.2, la versión de la prueba, o la 4.8.2. El autor grabó la 4.8.2 en un emulador el 23 de noviembre, y la presentación del examen ya la muestra.
+- **Decisión:** se usa siempre la última versión de la app. Las capturas de la memoria que son de la prueba pueden quedar en la 4.7.2, porque muestran lo que usaron las personas.
+- **Consecuencias:**
+  - corregir «Editar» un relevo activo, que en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar));
+  - llevar los íconos de Lucide a la memoria —el párrafo «Iconografía», el Anexo H y los íconos de las figuras—, cuando el autor lo decida;
+  - unir la rama `iconos-lucide` a `main`.
+- **Fundamento:** el autor prefiere mostrar siempre la versión más reciente. Así, la comisión ve la app tal como es al entregar y al presentar.
+- **Alternativa descartada:** seguir con la 4.7.2 hasta el examen y dejar los íconos de Lucide para después.
+- **Documentos:** [tarea 17 de Por hacer](../00_gobernanza/por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria) y [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-23 — D-140 y D-188
+
+- **Qué cambió:** D-140 queda hecha, con las fotos autorizadas según el autor, y se suma D-188: la entrega y el examen usan la última versión de la app.
+- **Cómo estaba antes:** D-140 esperaba que el autor confirmara la autorización, quién tomó las fotos y de quién es el lugar de la foto c, y la versión de la app estaba por decidir en la tarea 17.
+- **Por qué:** el autor confirmó que la autorización está y que no hace falta mencionarla, y decidió que siempre se usa la última versión de la app.
 
 ### 2026-11-22 — D-187, reglas de Lucide
 

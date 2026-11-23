@@ -13,6 +13,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 - [Comentarios de los profesores (18 de noviembre de 2026)](comentarios-de-los-profesores-2026-11-18.md): el texto literal de las 18 notas que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF del Pase —17 comentarios—, quién hizo cada una, y el mensaje con que el autor se las pasó a Claude. Dice qué cambia al leer el PDF: cuatro comentarios que faltaban en la lista y dos que estaban cruzados.
 - [Respuesta a los profesores (21 de noviembre de 2026)](respuesta-a-los-profesores-2026-11-21.md): una propuesta para cada uno de los diecisiete comentarios que los profesores dejaron sobre el PDF del Pase, en su cuarta versión, contrastada con las notas del PDF. Cambia lo mínimo y muestra cada cambio con su texto exacto, antes y después. Indica también qué más arrastra cada cambio: figuras, remisiones, Anexo I y presentación. Cierra con seis preguntas para los profesores, cada una con su destinatario. No modifica la memoria.
 - [Propuesta de formulación (19 de noviembre de 2026)](propuesta-formulacion-2026-11-19.md): responde a los profesores después del Pase. Ata cada objetivo a la hipótesis, propone un objetivo 4 que la respuesta a los profesores reemplazó, propone el párrafo que presenta el proyecto como consecuencia de los objetivos y compara *agencia*, *autonomía* e *intención desplazada* para nombrar el fenómeno. No modifica la memoria.
+- [Puntos de fondo (23 de noviembre de 2026)](puntos-de-fondo-2026-11-23.md): borradores, para tener, del fenómeno —con *sentido de agencia* como palabra y su definición—, la tensión en la decisión y el planteamiento como universo. Suma una fuente revisada por pares para acompañar a Fogg (2009) y una respuesta para la comisión sobre cómo se eligió a las tres personas. Las fuentes se verificaron el 23 de noviembre. No modifica la memoria ni los anexos.
 - [Borrador v6 de la memoria (28 de octubre de 2026)](borrador-memoria-v6-2026-10-28.md), base del v7: reescrito en torno a las decisiones de diseño, con 23 figuras y 4 tablas —entre ellas, esquemas propios de las ideas de los autores, el flujo de la aplicación y las tablas de decisiones, iteraciones, presupuesto y hallazgos—, con las ediciones que el autor hizo sobre el PDF enviado al profesor el 30 de octubre (D-146 a D-154). Sus [notas](notas-del-borrador-v6-2026-10-28.md) dicen qué cambió en cada capítulo y qué falta. Capítulos 1 a 14: 16 478 palabras. Sus últimas rondas, del 10 y el 11 de noviembre (D-181 a D-183), suman 27 figuras y 4 tablas, y son la base del archivo para Affinity desde el que el autor terminó la memoria del Pase.
 - [Memoria v6 en 1920 × 1080](memoria-1920x1080/README.md): la v6 compuesta con la línea de Relevo, en un [PDF de 68 páginas](memoria-1920x1080/memoria-relevo-1920x1080.pdf) y en un archivo editable para Affinity, con las tipografías en el repositorio (D-146 a D-152, D-182 y D-183). Texto de 24 pt, tablas en fichas blancas, cada figura en la página de su mención o en la siguiente y ningún final de capítulo en una columna corta. Reemplaza a la versión A3. Desde el 11 de noviembre la memoria sigue en Affinity, en el documento del autor; lo que entregó para el Pase es el borrador v7.
 - [Verificación de citas y referencias (9 de noviembre de 2026)](verificacion-de-referencias-2026-11-09.md): las 107 obras de la memoria v6 y los anexos, con su registro, su acceso y las correcciones en APA 7 (D-173).
@@ -101,6 +102,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-23 — Puntos de fondo
+
+- **Qué cambió:** se suma al índice el documento de los puntos de fondo.
+- **Cómo estaba antes:** el último documento de trabajo del índice era la propuesta de formulación del 19 de noviembre.
+- **Por qué:** el autor pidió buscar fuentes y redactar los puntos de fondo para tenerlos, sin editar la memoria.
 
 ### 2026-11-21 — Memoria v8 compuesta
 
