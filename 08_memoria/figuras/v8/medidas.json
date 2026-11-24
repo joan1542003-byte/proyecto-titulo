@@ -1,30 +1,30 @@
 {
  "figura-v8-comparacion": {
   "ancho": 550.9,
-  "alto": 726
+  "alto": 715
  },
  "figura-v8-estados": {
-  "ancho": 550.9,
-  "alto": 708
+  "ancho": 1741.8,
+  "alto": 258
  },
  "figura-v8-formulacion": {
   "ancho": 1146.4,
-  "alto": 633
+  "alto": 616
  },
  "figura-v8-framework": {
   "ancho": 1146.4,
-  "alto": 686
+  "alto": 684
  },
  "figura-v8-metodo": {
   "ancho": 550.9,
-  "alto": 680
+  "alto": 693
  },
  "figura-v8-registro": {
   "ancho": 1741.8,
-  "alto": 416
+  "alto": 423
  },
  "figura-v8-sistema": {
-  "ancho": 1741.8,
-  "alto": 397
+  "ancho": 1146.4,
+  "alto": 413
  }
 }

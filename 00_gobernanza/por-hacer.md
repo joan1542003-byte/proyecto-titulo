@@ -13,7 +13,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta la entrega final:**
 
-1. **Revisar la memoria v8 compuesta**: el autor la revisa la noche del 23 de noviembre. Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, y en IDML para Affinity, con las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) a su tamaño real y cada figura en la página de su mención o en la siguiente (D-186). Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales cortos de los capítulos 4, 10 y 14 y del glosario, y la página con la continuación de la Tabla 4.
+1. **Revisar la memoria v8 compuesta.** Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 72 páginas, y en IDML para Affinity. Las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) y los esquemas son diagramas claros, y cada figura está en la página de su mención o en la siguiente, en orden (D-186, D-190). El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales de los capítulos 4 (una columna sola en la página 14), 10, 13 (la continuación de la Tabla 4) y 14, y del glosario.
 2. **Lo que la v8 no resolvió.** Por pedido del autor, del 23 de noviembre, la memoria y los anexos no se tocan hasta que él decida; los borradores quedan en los [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md):
    - **cómo se eligió a las tres personas:** por conveniencia, en la red de contactos del autor (23 de noviembre). Por ahora la memoria no lo menciona; la respuesta para la comisión está en los puntos de fondo, sección 5;
    - **el consentimiento de la etapa con el teléfono:** según el autor, las personas lo aceptaron desde la app;
@@ -999,11 +999,23 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-24 — D-190
+
+- **Qué cambió:** la decisión de las figuras claras y en orden, esquemas sin fichas y menos comas se cita como D-190.
+- **Cómo estaba antes:** se citaba como D-187, el mismo número que la rama `iconos-lucide` usa para los íconos de Lucide.
+- **Por qué:** al unir `main` con la rama, los dos D-187 chocaban; se renumeró el que tenía menos referencias y ninguna en el código de la app.
+
 ### 2026-11-24 — Tarea 7: presentación perfeccionada
 
 - **Qué cambió:** la tarea 7 describe la presentación de 46 láminas, legible, sin animaciones y de unos 9 minutos y medio, con el flujo técnico en su lámina y el guion.
 - **Cómo estaba antes:** describía 41 láminas y decía que el flujo técnico no tenía lámina propia.
 - **Por qué:** el autor canceló los GIF y pidió perfeccionar la presentación en PDF, de 9 a 10 minutos.
+
+### 2026-11-24 — Memoria v8 más clara
+
+- **Qué cambió:** el punto 3 dice que la v8 tiene 72 páginas, figuras claras y en orden, menos comas, y qué finales quedan por resolver con el contenido.
+- **Cómo estaba antes:** decía 73 páginas y no mencionaba la revisión del texto.
+- **Por qué:** pedido del autor del 21 de noviembre de 2026 (D-190).
 
 ### 2026-11-24 — El color de la presentación, como en la memoria
 
