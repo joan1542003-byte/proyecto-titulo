@@ -7,7 +7,7 @@ Integrar los resultados validados en una narrativa académica clara. Este direct
 ## Documentos activos
 
 - [Borrador v7 de la memoria: el PDF del Pase (11 de noviembre de 2026)](borrador-memoria-v7-2026-11-11.md): el texto de la memoria en PDF que el autor entregó para el Pase («RELEVO PASE», 67 páginas), copiado tal cual, con sus erratas, sus 27 figuras y 4 tablas y su índice con las páginas del PDF. Los esquemas van en marcadores con su texto exacto; las capturas, los bocetos y los modelos 3D se extrajeron del PDF a [figuras](figuras/). Los capítulos suman unas 13 900 palabras de prosa. Sus errores y lo que conviene mejorar están en la [tarea 15 de Por hacer](../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
-- [Borrador v8 de la memoria (21 de noviembre de 2026)](borrador-memoria-v8-2026-11-21.md): el v7 con los comentarios de los profesores y las erratas corregidas, conservando la redacción del autor (D-184). Tiene la pregunta nueva, el objetivo 4 con sus indicadores, el marco teórico antes del planteamiento, la sección «Hallazgos», la frecuencia en la Tabla 4, las Conclusiones separadas, el índice de tablas y figuras al final, el logo DIP en la portada y 34 figuras, siete de ellas nuevas. Está compuesto en la [memoria v8 en 1920 × 1080](memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 73 páginas, con su IDML para Affinity (D-186).
+- [Borrador v8 de la memoria (21 de noviembre de 2026)](borrador-memoria-v8-2026-11-21.md): el v7 con los comentarios de los profesores y las erratas corregidas, conservando la redacción del autor (D-184). Tiene la pregunta nueva, el objetivo 4 con sus indicadores, el marco teórico antes del planteamiento, la sección «Hallazgos», la frecuencia en la Tabla 4, las Conclusiones separadas, el índice de tablas y figuras al final, el logo DIP en la portada y 34 figuras, siete de ellas nuevas. Está compuesto en la [memoria v8 en 1920 × 1080](memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 72 páginas, con su IDML para Affinity (D-186, D-187).
 - [Figuras nuevas de la v8 (21 de noviembre de 2026)](figuras/v8/README.md): siete diagramas simples que explican los sistemas y los métodos complejos, cada uno a su ancho real en la página, con degradados sutiles; en PDF vectorial para Affinity, en SVG y en PNG, con su generador (D-185 y D-186).
 - [Cambios de la v8 (21 de noviembre de 2026)](cambios-v8-2026-11-21.md): cómo se respondió a cada comentario de los profesores y todos los cambios, cada uno con su página del PDF del Pase, su antes, su después y su motivo, para aplicarlos en Affinity. También dice qué no se cambió y por qué.
 - [Comentarios de los profesores (18 de noviembre de 2026)](comentarios-de-los-profesores-2026-11-18.md): el texto literal de las 18 notas que Sergio Majluf y el profesor Gallardo dejaron sobre el PDF del Pase —17 comentarios—, quién hizo cada una, y el mensaje con que el autor se las pasó a Claude. Dice qué cambia al leer el PDF: cuatro comentarios que faltaban en la lista y dos que estaban cruzados.
@@ -101,6 +101,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 ---
 
 ## Registro de cambios
+
+### 2026-11-24 — Memoria v8 más clara
+
+- **Cambio:** la memoria v8 compuesta tiene 72 páginas, esquemas claros y menos comas.
+- **Versión anterior:** tenía 73 páginas.
+- **Motivo:** pedido del autor del 21 de noviembre de 2026 (D-187).
 
 ### 2026-11-21 — Memoria v8 compuesta
 

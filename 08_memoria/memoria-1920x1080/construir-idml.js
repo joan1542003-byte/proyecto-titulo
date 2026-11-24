@@ -291,6 +291,8 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .mz .mu{border-radius:0 0 5mm 5mm;padding-bottom:4mm}
 .dt{display:grid;gap:4.5mm}.fb{background:#fff;border-radius:6mm;padding:6mm}.fcol .fb{padding:5mm}.fcol .dt{grid-template-columns:1fr 1fr !important;gap:3mm}.fcol .dc{padding:4.5mm}.fcol .dc .cir{margin-bottom:5mm}.fcol .bar,.fcol .pts{margin-top:4mm}
 .dc{background:#fff;border-radius:6mm;padding:5mm 6mm 5.5mm;display:flex;flex-direction:column}
+.fcol .dt.lista{grid-template-columns:minmax(0,1fr) !important;gap:0;background:#fff;border-radius:6mm;padding:5mm}
+.dl{display:grid;grid-template-columns:31mm minmax(0,1fr);column-gap:4mm;row-gap:2.6mm;align-items:center;padding:3.8mm 0;border-top:.25mm solid #E4DED6}.dl:first-child{border-top:0;padding-top:0}.dl:last-child{padding-bottom:0}.dl .prog{grid-column:1 / span 2;margin-top:0}
 .dc .cir{margin-bottom:5mm}.dc .dx{flex:1;margin-top:2mm}
 .bar{display:flex;align-items:flex-end;gap:.45mm;height:9mm;margin-top:7mm}
 .bar span{flex:1;height:38%;border-radius:.6mm;background:#DDD7CF}.bar span.s{height:100%;background:linear-gradient(180deg,var(--c),var(--c0))}.bar span.m{height:68%;background:linear-gradient(180deg,var(--c),var(--c0))}
@@ -330,6 +332,22 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .esq-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding:0 0 3mm}.esq-h .tx{display:flex;flex-direction:column;gap:.6mm;min-width:0;flex:1}
 .esq-l{display:flex;flex-direction:column;margin-top:1mm}.esq-i{padding:1.8mm 0;border-top:.2mm solid #DDD7CF}.esq-i:first-child{border-top:0}
 .fcol .esq{grid-template-columns:1fr !important;gap:5mm}
+.eq{display:grid;align-items:start}.eq.h{column-gap:8mm}.eq.h.sec{column-gap:2.6mm}.eq.v{grid-template-columns:minmax(0,1fr)}
+.eq.v:not(.sec) .eq-g+.eq-g{margin-top:4.2mm;padding-top:4.2mm;border-top:.25mm solid #E4DED6}
+.eq-g{display:grid;grid-template-columns:5.8mm minmax(0,1fr);column-gap:3.4mm;row-gap:1.4mm;align-items:start}
+.eq-p{width:5.8mm;height:5.8mm;border-radius:50%;margin-top:.25mm}
+.eq-t{display:flex;gap:2.2mm;align-items:baseline;min-width:0}.eq-t .num{min-width:0;color:#6E6964}.eq-t>.n{flex:1;min-width:0}
+.eq-c{grid-column:2;display:flex;flex-direction:column;gap:2.2mm;min-width:0}
+.eq-l{display:grid;gap:1.6mm}
+.eq-i{position:relative;padding-left:3.8mm}.eq-i::before{content:"";position:absolute;left:0;top:2.55mm;width:1.3mm;height:1.3mm;border-radius:50%;background:#141312}
+.eq-pl{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:4mm;row-gap:1.2mm}.eq-pl .eq-pr{white-space:nowrap}
+.eq-f{display:flex;align-items:center;justify-content:center}.eq.h .eq-f{height:6.3mm}.eq.v .eq-f{justify-content:flex-start;padding:1.8mm 0 1.8mm .7mm}
+.eq-fs{display:block;overflow:visible;fill:none;stroke:#141312;stroke-width:.49;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.eq-fs.h{width:9mm;height:4.4mm}.eq-fs.v{width:4.4mm;height:8mm}.eq-fs.sube{transform:rotate(180deg);height:5.4mm}
+.m2{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);column-gap:2.4mm;row-gap:2.4mm;align-items:stretch}
+.m2-ev{grid-column:1 / span 3;display:flex;align-items:center;gap:2mm}.m2-eh{grid-column:2 / span 2;display:flex;align-items:center;gap:2.4mm;justify-content:center}
+.m2-y{align-self:center;padding-right:1.6mm}.m2-x{text-align:center}
+.m2-c{border-radius:3.4mm;padding:3.2mm 3.6mm;min-height:22mm;background:#F3EFE9;display:flex;align-items:center}.m2-c.fuerte{background:${grad('Lima')}}
 .cro{display:grid;grid-template-rows:auto 7mm auto;column-gap:3mm;row-gap:0}
 .cro-v{display:grid;row-gap:2.6mm;position:relative;padding-left:7mm}.cro-v::before{content:"";position:absolute;left:2.05mm;top:2.4mm;bottom:2.4mm;width:.45mm;background:#141312}
 .cro-vi{position:relative}.cro-vi::before{content:"";position:absolute;left:-7mm;top:1.25mm;width:4.5mm;height:4.5mm;border-radius:50%;background:#141312;border:1.05mm solid #fff;box-sizing:border-box}
@@ -340,7 +358,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .idn-luces{grid-column:2 / span 2;display:grid;grid-template-columns:1fr 1fr;gap:3mm}
 .idn-luz{display:flex;gap:4mm;align-items:center;background:#fff;border-radius:5mm;padding:3.5mm}.idn-luz .tx,.idn-letra .tx{display:flex;flex-direction:column;gap:.6mm;flex:1;min-width:0}
 .idn-letra{display:flex;gap:6mm;align-items:center}.idn-iconos{display:flex;flex-direction:column;gap:4mm}.idn-iconos .ics{display:flex;gap:2.4mm;flex-wrap:wrap}.idn-iconos .cuad{width:11mm;height:11mm;border-radius:3.4mm;background:none}.idn-iconos .cuad svg{width:6.4mm;height:6.4mm}
-.prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:7mm 1fr auto 46mm;align-items:center;column-gap:7mm;padding:1.6mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
+.prs{display:grid;gap:0}.prs-f{display:grid;grid-template-columns:1fr auto 46mm;align-items:center;column-gap:7mm;padding:1.6mm 0;border-bottom:.2mm solid #DDD7CF}.prs-f .tx{display:flex;flex-direction:column;gap:.8mm;min-width:0}
 .prs-p{display:flex;gap:2.2mm}.prs-p span{width:9mm;height:9mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-p span.s{background:${gradIntenso('Rubor', 135)};border-color:transparent}
 .prs-ley{display:flex;gap:9mm;margin-top:2mm;font-size:12pt;line-height:16pt;color:#6E6964}.prs-ley span{display:inline-flex;align-items:center;gap:2.4mm}.prs-ley i{width:5mm;height:5mm;border-radius:50%;border:.3mm solid #CCC6BE}.prs-ley i.s{background:${gradIntenso('Rubor', 135)};border-color:transparent}
 .fot.grande.nat img{max-height:120mm}
@@ -348,7 +366,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .fig2.flujo{grid-template-columns:49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm 1fr 49mm;justify-content:stretch}.fig2.flujo .fl{margin-top:-12mm}
 .fot.flujo{column-gap:2.5mm}.fot.flujo img{border-radius:3.5mm}
 .fcol{display:flex;flex-direction:column;gap:3mm}.fcol .rot{margin-bottom:0}.fcol>img{display:block;max-width:100%;max-height:92mm;width:auto;align-self:flex-start;border:.3mm solid #E4DED6}
-.brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol.dbl .brs{grid-template-columns:1fr 1fr !important;column-gap:10mm;row-gap:6mm}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
+.brs{display:grid;gap:9mm}.fcol .brs{grid-template-columns:1fr !important;gap:6mm}.fcol.dbl .brs{grid-template-columns:1fr 1fr !important;column-gap:10mm;row-gap:6mm}.fcol.dbl .brs>.brs-g:nth-child(2){grid-column:1;grid-row:2}.fcol.dbl .brs>.brs-g:nth-child(3){grid-column:2;grid-row:1 / span 2}.fcol .brs-f{grid-template-columns:40mm 1fr 8mm}.brs-g{display:grid;gap:3mm;align-content:start}.brs-f{display:grid;grid-template-columns:52mm 1fr 10mm;align-items:center;column-gap:4mm}
 .brs-b{height:6mm;background:#EEE9E3;border-radius:3mm;overflow:hidden}.brs-b span{display:block;height:100%;background:#141312;border-radius:3mm}
 .mp{display:flex;flex-direction:column;gap:4mm}.mp-arr,.mp-aba{text-align:center}
 .mp-a{position:relative;height:100mm;margin:0 3mm}
@@ -371,11 +389,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .at-h{display:flex;gap:3mm;align-items:baseline;border-bottom:.35mm solid #141312;padding-bottom:2.4mm}
 .at-f{display:grid;grid-template-columns:5mm 1fr;column-gap:3mm;row-gap:.4mm;align-items:start}.at-f>.n{grid-column:2}
 .at-m{grid-row:1 / span 2;width:4mm;height:4mm;border-radius:50%;margin-top:1.2mm}.at-m.c{background:#141312}.at-m.p{background:${gradIntenso('Cielo', 135)};border:.35mm solid #141312}
-.m2{display:flex;flex-direction:column;gap:3mm}
 .fb:has(>.m2){width:${DOBLE}mm}.fb:has(>.m2) .m2-c{min-height:18mm}.fcol .fb:has(>.m2){width:auto}.fcol .m2-c{padding:3mm}                                         /* la matriz ancha ocupa dos columnas, no tres */
-.m2-g{display:grid;grid-template-columns:1fr 1fr;border-top:.35mm solid #141312;border-left:.35mm solid #141312}
-.m2-c{display:flex;flex-direction:column;gap:1.2mm;padding:4mm;border-right:.35mm solid #141312;border-bottom:.35mm solid #141312;min-height:30mm}
-.m2-c.fuerte{background:${grad('Lima')}}
 .pend{border:.5mm dashed #6E6964;border-radius:6mm;padding:10mm 12mm;min-height:60mm;width:${DOBLE}mm;display:grid;align-content:center;justify-items:start;gap:4mm;background:rgba(255,255,255,.5);font-size:14pt;line-height:20pt;color:#6E6964}
 .fondo{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
 .panel{width:${COL}mm;border-radius:9mm;padding:9mm 9mm 9.5mm;display:flex;flex-direction:column;position:relative;border:.3mm solid rgba(20,19,18,.06);overflow:hidden}.panel>*{position:relative}.panel>.fondo{position:absolute}
@@ -604,6 +618,13 @@ function matriz(b, T) {
 /** Cifras: una ficha por dato, con el valor en grande, su explicación y una barra de progreso del color de su papel. */
 function fichasDatos(b, T) {
   const datos = b.descripcion.replace(/^[^:]*: /, '').split('; ').map((d) => d.match(/^(\d+) de (\d+), (.*)$/)).filter(Boolean);
+  // En una columna, las cifras van en lista: la cifra a la izquierda, lo que mide a la derecha y su barra debajo.
+  if (b.columna && !b.doble) {
+    return `<div class="dt lista">${datos.map(([, k, n, t]) => {
+      const [, , color] = ROL_DATO.find(([re]) => re.test(t));
+      return `<div class="dl" style="--c:${INTENSO[color]};--c0:${rgb(color)}">${T('Subtítulo', [{ texto: k }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}${T('Celda', mayus(t))}<div class="prog"><span style="width:${((100 * +k) / +n).toFixed(2)}%"></span></div></div>`;
+    }).join('')}</div>`;
+  }
   return `<div class="dt" style="grid-template-columns:repeat(${datos.length},1fr)">${datos.map(([, k, n, t]) => {
     const [, ic, color] = ROL_DATO.find(([re]) => re.test(t)); const medias = (t.match(/y (\d+) a medias/) || [])[1];
     const ancho = (x) => ((100 * x) / +n).toFixed(2) + '%';
@@ -685,23 +706,29 @@ function periferia(b, T) {
     `<div class="pf-t">${g.map(([t, d], i) => `<div class="pf-r"><span class="pf-m m${i}"></span><div>${T('Celda primera', t)}${T('Celda', d)}</div></div>`).join('')}</div></div>`;
 }
 
-/** Matriz de dos por dos: «Eje vertical | bajo | alto; Eje horizontal | izquierda | derecha; cuatro cuadrantes | texto», de arriba a la izquierda a abajo a la derecha. */
+/** Matriz de dos por dos: «Eje vertical: de bajo (abajo) a alto (arriba) | Eje horizontal: de izquierda (izquierda) a
+ * derecha (derecha); cuatro cuadrantes | texto», de arriba a la izquierda a abajo a la derecha. Los ejes llevan su
+ * nombre y sus extremos; cada celda dice solo lo que pasa, porque su lugar ya dice la combinación. */
 function matriz2(b, T) {
   let g = partes(b);
   const ejes = g[0].map((t) => t.match(/^(.*): de (.*) \((?:abajo|izquierda)\) a (.*) \((?:arriba|derecha)\)$/));
   if (ejes.length === 2 && ejes.every(Boolean)) g = [ejes[0].slice(1), ejes[1].slice(1), ...g.slice(1)];
   const [[ev, bajo, alto], [eh, izq, der], ...cuad] = g;
-  return `<div class="m2">${T('Celda suave', `${ev}: de ${bajo.toLowerCase()} (abajo) a ${alto.toLowerCase()} (arriba)`)}<div class="m2-g">` +
-    cuad.map(([t, d], i) => `<div class="m2-c${i === 1 ? ' fuerte' : ''}">${T('Celda primera', t)}${T('Celda', d)}</div>`).join('') +
-    `</div>${T('Celda suave', `${eh}: de ${izq.toLowerCase()} (izquierda) a ${der.toLowerCase()} (derecha)`)}</div>`;
+  const celda = ([, d], i) => `<div class="m2-c${i === 1 ? ' fuerte' : ''}">${T('Celda', d)}</div>`;
+  return `<div class="m2"><div class="m2-ev">${T('Celda primera', ev)}${flechaSvg(true).replace('eq-fs v', 'eq-fs v sube')}</div>` +
+    `${T('Celda suave', mayus(alto), 'm2-y')}${celda(cuad[0], 0)}${celda(cuad[1], 1)}` +
+    `${T('Celda suave', mayus(bajo), 'm2-y')}${celda(cuad[2], 2)}${celda(cuad[3], 3)}` +
+    `<div></div>${T('Celda suave', mayus(izq), 'm2-x')}${T('Celda suave', mayus(der), 'm2-x')}` +
+    `<div class="m2-eh">${T('Celda primera', eh)}${flechaSvg(false)}</div></div>`;
 }
 
-/** Momentos de la atención: «Momento | lo que está en el centro | lo que queda en la periferia», uno por fila. */
+/** Momentos de la atención: «Momento | lo que está en primer plano | lo que queda en segundo plano», en secuencia. */
 function atencion(b, T) {
   const sinRotulo = (t) => t.replace(/^En (primer|segundo) plano: /, '');
-  return `<div class="at">${partes(b).map((g) => g.map(sinRotulo)).map(([tit, cen, per], i) => `<div class="at-p"><div class="at-h">${circulo(i + 1)}${T('Celda primera', tit)}</div>` +
-    `<div class="at-f"><span class="at-m c"></span>${T('Celda suave', 'En primer plano')}${T('Celda', cen)}</div>` +
-    `<div class="at-f"><span class="at-m p"></span>${T('Celda suave', 'En segundo plano')}${T('Celda', per)}</div></div>`).join('')}</div>`;
+  const col = coloresEsquema(b.descripcion);
+  const grupos = partes(b).map((g) => g.map(sinRotulo)).map(([tit, cen, per], i) => `<div class="eq-g">${cabezaGrupo(col[i % col.length], i + 1, tit, T)}` +
+    `<div class="eq-c"><div class="eq-pl">${T('Celda suave', 'Primer plano', 'eq-pr')}${T('Celda', cen)}${T('Celda suave', 'Segundo plano', 'eq-pr')}${T('Celda', per)}</div></div></div>`);
+  return envolverEsquema(grupos, true, !!b.columna && !b.doble);
 }
 
 /** Gráfico de barras horizontales, uno por grupo: «Título | etiqueta: valor, etiqueta: valor». */
@@ -718,10 +745,40 @@ function barras(b, T) {
 // campos separados por « | ». Así el texto sigue en la memoria y el dibujo, en el generador.
 const partes = (b) => b.descripcion.replace(/^[^:]*: /, '').split('; ').map((g) => g.split(' | '));
 
-/** Esquema en columnas: cada grupo con su número, su título, una bajada y sus elementos. */
+// Listas de un esquema: se separan por «, » solo antes de una mayúscula, «¿», «¡» o «««, para que una coma dentro de
+// una frase o de una cita no la parta en dos (21 de noviembre de 2026: una cita de la Figura 21 salía en tres líneas).
+const elementos = (s) => (s || '').split(/, (?=[A-ZÁÉÍÓÚÑ¿¡«])/).filter(Boolean);
+// Esquemas que cuentan una secuencia: llevan número y una flecha de un grupo al siguiente.
+const SECUENCIA = /^(esquema de (problema|recorrido|etapas)|pasos de atención)/;
+// Un color por grupo, con el degradado de los puntos de la app. El recorrido usa los colores de la identidad (primer
+// paso, tiempo, lugar y decisión); las situaciones, los de los dos tipos de la Figura 6; la atención, los de los estados.
+const coloresEsquema = (d) => (/^esquema de recorrido/.test(d) ? ['Cielo', 'Amarillo', 'Lima', 'Rubor']
+  : /^esquema de situaciones/.test(d) ? ['Rubor', 'Lima']
+  : /^pasos de atención/.test(d) ? ['Amarillo', 'Durazno', 'Rubor']
+  : ['Lila', 'Cielo', 'Amarillo', 'Lima', 'Rubor', 'Durazno']);
+const puntoColor = (c) => `linear-gradient(135deg,${DEGRADE[c][0]},${INTENSO[c]})`;
+// Flechas como las de las figuras nuevas: trazo de 2,2 pt y punta abierta.
+const flechaSvg = (vertical) => (vertical
+  ? '<svg class="eq-fs v" viewBox="0 0 4.4 8"><path d="M2.2 .3V7.6M.58 5.69L2.2 7.6L3.82 5.69"/></svg>'
+  : '<svg class="eq-fs h" viewBox="0 0 9 4.4"><path d="M.3 2.2H8.6M6.69 .58L8.6 2.2L6.69 3.82"/></svg>');
+/** Junta los grupos de un esquema: en una columna, uno bajo otro; a lo ancho, uno al lado del otro. */
+function envolverEsquema(grupos, sec, vertical) {
+  const fl = `<div class="eq-f">${flechaSvg(vertical)}</div>`;
+  const cols = vertical ? '' : ` style="grid-template-columns:${grupos.map(() => 'minmax(0,1fr)').join(sec ? ' 9mm ' : ' ')}"`;
+  return `<div class="eq ${vertical ? 'v' : 'h'}${sec ? ' sec' : ''}"${cols}>${grupos.join(sec ? fl : '')}</div>`;
+}
+const cabezaGrupo = (color, num, titulo, T) => `<span class="eq-p" style="background:${puntoColor(color)}"></span>` +
+  `<div class="eq-t">${num ? `<span class="num">${num}</span>` : ''}${T('Celda primera', titulo)}</div>`;
+
+/** Esquema: cada grupo con un punto de color, su título, una bajada y sus elementos, sin cajas ni reglas de tabla. */
 function esquema(b, T) {
-  const grupos = partes(b);
-  return `<div class="esq" style="grid-template-columns:repeat(${grupos.length},1fr)">${grupos.map(([tit, sub, items], i) => `<div class="esq-c"><div class="esq-h">${circulo(i + 1)}<div class="tx">${T('Celda primera', tit)}${sub ? T('Celda suave', sub) : ''}</div></div><div class="esq-l">${(items || '').split(', ').filter(Boolean).map((it) => `<div class="esq-i">${T('Celda', it)}</div>`).join('')}</div></div>`).join('')}</div>`;
+  const d = b.descripcion, sec = SECUENCIA.test(d), col = coloresEsquema(d);
+  const grupos = partes(b).map(([tit, sub, items], i) => {
+    const lista = elementos(items);
+    return `<div class="eq-g">${cabezaGrupo(col[i % col.length], sec ? i + 1 : 0, tit, T)}<div class="eq-c">${sub ? T('Celda suave', sub) : ''}` +
+      `${lista.length ? `<div class="eq-l">${lista.map((it) => `<div class="eq-i">${T('Celda', it)}</div>`).join('')}</div>` : ''}</div></div>`;
+  });
+  return envolverEsquema(grupos, sec, !!b.columna && !b.doble);
 }
 
 /** Cronología: una línea con un punto por hito; los rótulos se alternan arriba y abajo para tener espacio. */
@@ -752,7 +809,7 @@ function identidad(T) {
 /** Resultados por persona: un punto por respuesta; lleno, si declaró haber empezado. */
 function personas(b, T) {
   const filas = partes(b).filter((g) => g[0] !== 'leyenda').map(([quien, det, n, emp]) => { const m = String(n).match(/^(\d+) de (\d+)$/); return m ? [quien, det, m[2], m[1]] : [quien, det, n, emp]; });
-  return `<div class="prs">${filas.map(([quien, det, n, emp], i) => `<div class="prs-f">${circulo(i + 1)}<div class="tx">${T('Celda primera', quien)}${T('Celda suave', det)}</div><div class="prs-p">${Array.from({ length: +n }, (_, k) => `<span class="${k < +emp ? 's' : ''}"></span>`).join('')}</div>${T('Dato', [{ texto: emp }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}</div>`).join('')}` +
+  return `<div class="prs">${filas.map(([quien, det, n, emp], i) => `<div class="prs-f"><div class="tx">${T('Celda primera', quien)}${T('Celda suave', det)}</div><div class="prs-p">${Array.from({ length: +n }, (_, k) => `<span class="${k < +emp ? 's' : ''}"></span>`).join('')}</div>${T('Dato', [{ texto: emp }, { texto: ` de ${n}`, estilo: 'Dato resto' }])}</div>`).join('')}` +
     `<div class="prs-ley"><span><i class="s"></i>Empezó la actividad</span><span><i></i>La dejó para después o cambió de idea</span></div></div>`;
 }
 
@@ -875,11 +932,13 @@ flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: l
 // ---------------------------------------------------------------- Reparto en páginas, línea por línea
 
 let paginas = [];                                      // páginas del cuerpo
-const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, flot: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
+const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, der: 0, flot: [], flotDer: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
 const colTop = () => TOP;                              // el texto empieza siempre arriba y sigue hacia el lado
-const colBot = (i) => BOTTOM - (pag(i).banda ? pag(i).banda + AIRE_BANDA : 0);   // las piezas anchas, al pie
+// Al pie de la página, una pieza ancha ocupa las tres columnas (banda); una de dos columnas puede ir al pie de las columnas
+// 2 y 3 (der), bajo su texto, y deja la primera entera: así una apertura conserva su panel completo (21 de noviembre de 2026).
+const colBot = (i, k = 0) => BOTTOM - Math.max(pag(i).banda ? pag(i).banda + AIRE_BANDA : 0, k >= 1 && pag(i).der ? pag(i).der + AIRE_BANDA : 0);
 let topes = new Map();                                 // sección → página (desde su apertura) y alto máximo de sus columnas, para equilibrar su final
-const altoCol = (i) => colBot(i) - TOP;
+const altoCol = (i, k = 0) => colBot(i, k) - TOP;
 const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && colBot(i) - TOP < MIN_TEXTO);
 let cur = { p: 0, k: 0 };                              // la primera columna libre
 // Una figura de una columna ocupa una columna entera, a la derecha del texto de su página: el texto la salta y sigue
@@ -917,7 +976,7 @@ function programar(b, p, seccion) {
   if (b.reservada) { ultimaConPieza = Math.max(ultimaConPieza, b.pagina); return; }
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
   const pie = (x) => (pag(x).banda > 0 ? pag(x).banda + AIRE_PIEZAS : 0) + a;
-  while (pag(q).sola || pie(q) > BOTTOM - TOP || (figCols(q).length && altoFig(q) + AIRE_BANDA + pie(q) > BOTTOM - TOP)) q++;
+  while (pag(q).sola || pag(q).der || pie(q) > BOTTOM - TOP || (figCols(q).length && altoFig(q) + AIRE_BANDA + pie(q) > BOTTOM - TOP)) q++;
   ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
@@ -941,8 +1000,22 @@ function componer(c) {
   // Figuras de columna reservadas por la búsqueda: en la página y al lado elegidos, antes de que llegue el texto.
   c.bloques.filter((b) => b.columna && b.reserva).forEach((b) => {
     const q = c.pagina + b.reserva.rel, a = b.pieza.alto;
+    if (b.reserva.lado === 'pie') {
+      // Al pie de las columnas 2 y 3, con siete líneas y media de texto encima, como bajo una banda.
+      const pg = pag(q);
+      if (!b.doble || pg.der || pg.banda || pg.sola || figCols(q).some((f) => f.k + anchoFig(f) > 1) || BOTTOM - TOP - a - AIRE_BANDA < MIN_TEXTO) return;
+      pg.der = a; pg.flotDer = [b]; if (!pg.rotulo) pg.rotuloPieza = c;
+      b.pagina = q; b.reservada = true; return;
+    }
+    if (b.reserva.lado === 'bajo') {
+      // Bajo la figura de columna anterior de la página, si cabe: dos figuras chicas comparten su columna.
+      const fc = figCols(q), ult = fc[fc.length - 1];
+      if (b.doble || !ult || ult.doble || ult.alto + AIRE_PIEZAS + a > colBot(q, ult.k) - TOP) return;
+      ult.items.push(b); ult.alto += AIRE_PIEZAS + a; b.pagina = q; b.reservada = true; return;
+    }
     if (a > colBot(q) - TOP) return;
     const k = columnaLibre(q, anchoFig(b), 0, b.reserva.lado); if (k == null) return;
+    if (a > Math.min(colBot(q, k), colBot(q, k + anchoFig(b) - 1)) - TOP) return;
     const pg = pag(q); pg.figCols = [...figCols(q), { items: [b], alto: a, doble: !!b.doble, k, fija: true }];
     if (!pg.rotulo) pg.rotuloPieza = c;
     b.pagina = q; b.reservada = true;
@@ -951,7 +1024,7 @@ function componer(c) {
 
   c.marcos = [];
   let y = 0, marco = null, previo = null;              // y: puntos desde arriba de la columna
-  const cap = () => altoCol(cur.p) / PT;
+  const cap = () => altoCol(cur.p, cur.k) / PT;
   const abrir = () => {
     if (marco) return;
     marco = { c, p: cur.p, k: cur.k, y0: y, usado: 0, cont: [] };
@@ -970,6 +1043,7 @@ function componer(c) {
       const desde = q === cur.p ? cur.k + 1 : 0;
       const k = columnaLibre(q, anchoFig(b), desde, q === cur.p ? 'izq' : 'der');
       if (k == null) continue;
+      if (a > Math.min(colBot(q, k), colBot(q, k + anchoFig(b) - 1)) - TOP) continue;
       const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a, doble: !!b.doble, k, junto: q === cur.p }];
       if (!pg.rotulo) pg.rotuloPieza = c;
       b.pagina = q; return;
@@ -1130,11 +1204,13 @@ function costo(det, hasta) {
     const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
     const cols = [0, 1, 2].map((x) => c.marcos.filter((m) => m.p === q && m.k === x).reduce((t, m) => t + m.usado, 0) * PT).filter((x) => x > 0);
     const otras = pg.paneles.length + figCols(q).length;
-    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda) suma(25, `${c.titulo}: termina en una columna sola`);
+    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda && !pg.der) suma(25, `${c.titulo}: termina en una columna sola`);
     if (cols.length && cols[cols.length - 1] < 60) suma(12, `${c.titulo}: termina en una columna corta`);
   });
   paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && !figCols(q).length && pg.banda && pg.banda < 0.75 * (BOTTOM - TOP)) suma(5, `página ${q + PRIMERA} solo con una pieza a medio llenar`); });
   paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && figCols(q).length) suma(3, `página ${q + PRIMERA} solo con figuras`); });
+  // Una página sin texto con una sola figura de una columna queda casi vacía (pedido del autor del 10 de noviembre): cuesta como un final en una columna sola.
+  paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && !pg.banda && figCols(q).length && figCols(q).reduce((t, f) => t + (f.doble ? 2 : 1), 0) < 2) suma(25, `página ${q + PRIMERA} casi vacía, con una figura de una columna`); });
   cuerpo.forEach((c, ci) => {                                                   // piezas que quedan después del último texto de su capítulo
     if (!c.marcos.length || ci >= cTope) return;
     const ultima = Math.max(...c.marcos.map((m) => m.p));
@@ -1142,7 +1218,7 @@ function costo(det, hasta) {
   });
   ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina < fs[i - 1].pagina) suma(40, `${t} ${b.n} fuera de orden`); }); });   // nunca fuera de orden
   // En la misma página, también en orden de lectura: una figura de columna se lee según su columna; una al pie, al final.
-  const lugarEn = (b) => { if (!b.columna) return 9; const f = figCols(b.pagina).find((x) => x.items.includes(b)); return f ? f.k + f.items.indexOf(b) * 0.1 : 0; };
+  const lugarEn = (b) => { if (!b.columna || pag(b.pagina).flotDer.includes(b)) return 9; const f = figCols(b.pagina).find((x) => x.items.includes(b)); return f ? f.k + f.items.indexOf(b) * 0.1 : 0; };
   ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t && !b.continua); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina === fs[i - 1].pagina && lugarEn(b) < lugarEn(fs[i - 1])) suma(40, `${t} ${b.n} antes que la anterior en su página`); }); });
   return k + (hasta ? 0 : paginas.length);
 }
@@ -1166,10 +1242,11 @@ function costo(det, hasta) {
     if (b.columna) {
       // Una figura de columna: su página (la de la mención, la última de la mención o la siguiente) y su lado.
       const ps = [...new Set([men[0], men[1], men[1] + 1])].map((q) => q - c.pagina).filter((r) => r >= 0);
-      return [null, ...ps.flatMap((rel) => ['der', 'izq'].map((lado) => ({ rel, lado })))];
+      return [null, ...ps.flatMap((rel) => (b.doble ? ['der', 'izq', 'pie'] : ['der', 'izq', 'bajo']).map((lado) => ({ rel, lado })))];
     }
-    const apertura = b.pieza.alto <= BOTTOM - TOP - AIRE_BANDA - 70;   // al pie de la apertura, solo si el texto conserva siete líneas o más
-    return [...new Set([undefined, men[0] - 1 - c.pagina, men[0] - c.pagina, men[1] - c.pagina, men[1] + 1 - c.pagina])].filter((r) => r === undefined || r >= 1 || (r === 0 && apertura));
+    // Nunca al pie de la página que abre la sección: el panel de apertura conserva su columna entera (pedido del autor del
+    // 21 de noviembre de 2026; los paneles acortados no funcionan).
+    return [...new Set([undefined, men[0] - 1 - c.pagina, men[0] - c.pagina, men[1] - c.pagina, men[1] + 1 - c.pagina])].filter((r) => r === undefined || r >= 1);
   };
   const mencionDe = (b) => (menciones().find((m) => m.b === b) || {}).men;
   const inicial = candidatas.map(estado);
@@ -1235,7 +1312,7 @@ function costo(det, hasta) {
   // Para revisar a mano: PROBAR="f17=36izq f18=37" fija piezas en páginas impresas (y lado, para las de columna).
   if (process.env.PROBAR) {
     for (const t of process.env.PROBAR.split(/\s+/).filter(Boolean)) {
-      const m = t.match(/^([ft])(\d+)=(\d+)(izq|der)?$/); if (!m) continue;
+      const m = t.match(/^([ft])(\d+)=(\d+)(izq|der|bajo|pie)?$/); if (!m) continue;
       const b = flot.find((x) => x.flotante[0] === m[1] && x.n === +m[2] && !x.continua); const c = cuerpo.find((x) => x.bloques.includes(b));
       const rel = +m[3] - PRIMERA - c.pagina;
       poner(b, b.columna ? { rel, lado: m[4] || 'der' } : rel);
@@ -1301,7 +1378,7 @@ cuerpo.forEach((c) => {
   const corta = cols.filter((x) => x > 0).pop() < 60;
   if (sola || corta || process.env.DIAG) console.log(`${sola || corta ? 'Atención: final' : 'Final'} · ${c.n != null ? c.n + '. ' : ''}${c.titulo}: página ${numPag(q)}${q === c.pagina ? ' (la de apertura)' : ''}, columnas ${cols.join(' / ')} mm${pg.banda ? `, piezas al pie ${Math.round(pg.banda)} mm` : ''}${figCols(q).length ? ', figuras en columna' : ''}`);
 });
-if (process.env.SOLO_REPARTO && process.env.DIAG) { flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}${b.columna ? 'c' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto))); paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), '| figcol', figCols(q).map((f) => f.items.map((b) => 'f' + b.n).join('+')).join(','), '| marcos', pg.marcos.map((m) => `${m.k}:${Math.round(m.usado * PT)}`).join(' '))); }
+if (process.env.SOLO_REPARTO && process.env.DIAG) { flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}${b.columna ? 'c' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto))); paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), pg.der ? `| pie 2-3: f${pg.flotDer[0].n}:${Math.round(pg.der)}` : '', '| figcol', figCols(q).map((f) => f.items.map((b) => 'f' + b.n).join('+')).join(','), '| marcos', pg.marcos.map((m) => `${m.k}:${Math.round(m.usado * PT)}`).join(' '))); }
 if (process.env.SOLO_REPARTO) { cuerpo.forEach((c) => console.log(`  ${String(numPag(c.pagina)).padStart(2)}  ${c.n != null ? c.n + '. ' : ''}${c.titulo}`)); console.log(`  ${numPag(pgAnexos)}  Anexos · ${numPag(pgAnexos) + 1} páginas`); process.exit(0); }
 
 // ---------------------------------------------------------------- Modelo de páginas: lo mismo para el IDML y para el PDF
@@ -1338,10 +1415,11 @@ paginas.forEach((pg, q) => {
     f.items.forEach((b) => { items.push({ tipo: 'pieza', pieza: b.pieza, x, y: yy, nombre: b.rotulo }); yy += b.pieza.alto + AIRE_PIEZAS; });
   });
   pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
+  pg.flotDer.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: colX(1), y: BOTTOM - pg.der, nombre: `Figura ${b.n}` }));
   pg.paneles.forEach((pn) => items.push(panelDe(pn.c, colX(pn.k), pn.y, pn.alto)));
   pg.frases.forEach((f) => items.push({ tipo: 'pieza', pieza: f.b.pieza, x: colX(f.k), y: f.y, nombre: f.b.rotulo }));
   pg.marcos.forEach((m) => {
-    if (m.x == null) { m.x = colX(m.k); m.y = colTop(m.p) + m.y0 * PT; m.ancho = COL; m.alto = m.ultimo ? colBot(m.p) - m.y : Math.min(colBot(m.p) - m.y, m.usado * PT + HOLGURA); }
+    if (m.x == null) { m.x = colX(m.k); m.y = colTop(m.p) + m.y0 * PT; m.ancho = COL; m.alto = m.ultimo ? colBot(m.p, m.k) - m.y : Math.min(colBot(m.p, m.k) - m.y, m.usado * PT + HOLGURA); }
     items.push({ tipo: 'marco', marco: m });
   });
   if (q === pgAnexos) items.push(panelDe({ titulo: 'Anexos', aura: 'panel-32' }, colX(0), TOP, BOTTOM - TOP), { tipo: 'pieza', pieza: pAnexos, x: colX(1), y: TOP, nombre: 'Anexos' });

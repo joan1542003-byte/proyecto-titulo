@@ -2532,7 +2532,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** los capítulos 4, 10 y 14 y el glosario terminan en una columna corta, y la continuación de la Tabla 4 ocupa sola una página; se resuelve con el contenido, como pide el autor desde el 10 de noviembre (D-152, D-183).
 - **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
+## D-187 — Figuras con un orden de lectura claro, esquemas sin fichas y menos comas
+
+- **Fecha:** 2026-11-21.
+- **Estado:** aplicada en la [memoria v8 compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en las [figuras de la v8](../08_memoria/figuras/v8/README.md).
+- **Contexto:** el autor no entendía la Figura 6: la fila de la persona 3 resaltada hacía creer que ella había activado todo. Le costaba entender otras figuras, desordenadas o sin un punto claro. Pidió conservar los paneles de apertura a toda la altura, como el de Introducción, porque los paneles acortados no funcionan. Señaló que se abusa de las comas, que «la aplicación registra, en cada tramo» suena poético y que «un toque» suena informal. Pidió perfección óptica y revisar todo contra las pruebas, las entrevistas y la encuesta.
+- **Decisión:**
+  - **Figuras nuevas:** cada una se lee en un solo sentido y cada rótulo va pegado a la línea que nombra. «Estados de un relevo» pasa a lo ancho, de izquierda a derecha, con los nombres del Anexo G («En espera»). «Cómo funciona Relevo» pasa a dos columnas. La matriz del método Framework no destaca a ninguna persona: una fila es un caso completo y una columna muestra lo que se repite.
+  - **Esquemas de la memoria:** dejan las fichas con reglas de tabla. Cada grupo lleva un punto de color; las secuencias llevan número y flechas. La matriz de dos por dos tiene ejes con nombre y extremos. Una cita de la Figura 21 y un ejemplo de la Figura 10 ya no se parten en las comas. La Figura 2 dice qué es la señal y qué es el mensaje en Relevo.
+  - **Paneles:** las aperturas conservan su panel completo; una figura doble puede ir al pie de las otras dos columnas.
+  - **Texto:** frases más cortas y directas, sin incisos innecesarios; sin «un toque».
+  - **Verificación:** las cifras de las Figuras 8, 9 y 31 coinciden con el Anexo B y con los resultados; los estados, con el Anexo G; las preguntas, con el Anexo I.
+- **Alternativas descartadas:** dejar los esquemas como fichas y corregir solo los textos, porque seguían pareciendo formularios; rotar los rótulos de los estados a lo largo de sus líneas, porque cuesta leerlos.
+- **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md), [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-21 — D-187
+
+- **Qué cambió:** se registró D-187, figuras con un orden de lectura claro, esquemas sin fichas y menos comas.
+- **Cómo estaba antes:** la última decisión era D-186.
+- **Por qué:** pedido del autor del 21 de noviembre de 2026.
 
 ### 2026-11-21 — D-186
 
