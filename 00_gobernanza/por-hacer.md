@@ -27,7 +27,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta el examen:**
 
-6. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). La versión del 24 de noviembre, en Figma, tiene 41 láminas y unos 9 minutos: una idea por lámina, con poco texto, imágenes y acentos de color con su significado, los fundamentos completos y tus 22 anotaciones resueltas ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)); espera tu revisión, sobre todo la tabla de comparación con los referentes. Conviene confirmar con los profesores si el examen pide 15 minutos.
+6. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). La versión del 24 de noviembre, en Figma, tiene 41 láminas y unos 9 minutos: una idea por lámina, con poco texto, imágenes y el color como en la memoria, los fundamentos completos y tus 22 anotaciones resueltas ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)); espera tu revisión, sobre todo la tabla de comparación con los referentes. Conviene confirmar con los profesores si el examen pide 15 minutos.
 7. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 8. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
@@ -998,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — El color de la presentación, como en la memoria
+
+- **Qué cambió:** el punto 6 de lo que queda dice que la presentación usa el color como la memoria.
+- **Cómo estaba antes:** decía que llevaba acentos de color con su significado.
+- **Por qué:** el autor pidió no abusar de los fondos de color y seguir la app y el diseño de la memoria.
 
 ### 2026-11-24 — Acentos de color en la presentación
 

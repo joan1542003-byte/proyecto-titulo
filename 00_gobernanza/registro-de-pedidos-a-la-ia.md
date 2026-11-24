@@ -393,6 +393,7 @@
 | 24 nov. | Consulta y corrección | Preguntó si no eran muchas láminas. Dijo que tenían demasiado texto, que el diseño era flojo y que les faltaban imágenes y color, «es mejorable», y que algunas cosas merecen su propia lámina, breve, en vez de mezclarlo todo en una. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) se rediseñó con una idea por lámina: son 41 láminas, más que antes, pero más cortas, y las notas suman 8:49 en vez de 9:55. El texto en pantalla bajó y el detalle pasó a las notas. Los fondos de aura y los paneles usan el color de lo que muestran, se sumaron ilustraciones de la animación «sin palabras», y lo que falta en los antecedentes, el ejemplo del problema, su evidencia y la hipótesis tienen lámina propia ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v2.jpg)). | — |
 | 24 nov. | Corrección | No abusar del color: «hablo de detalles, toques, no de inundar la pantalla». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) quedó sobre el papel, sin las auras de fondo de 22 láminas ni los paneles de color de otras 18. Las fichas son blancas y el color está en detalles, cada uno con su significado: el círculo de cada ícono, el punto del rótulo, las barras de la prueba, el logo y las imágenes. El logo de la portada y del cierre se rehízo sobre el papel ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v3.jpg)). | — |
 | 24 nov. | Corrección | Perfeccionar el diseño: quedó demasiado plano, «muy blanco»; faltan acentos de color y degradados sutiles, sin llenar la pantalla. Recordó que, según la memoria, cada color tiene su significado. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) suma una luz suave en 19 láminas, en el color de lo que dicen, fichas con un degradado leve y círculos de ícono más vivos. Se revisó cada color con la paleta de la memoria y la Tabla H3 del Anexo H —amarillo, el tiempo; celeste, el primer paso; verde, el lugar; rosa, la decisión, y los cuatro, Relevo— y se corrigieron los que no tenían ese significado; el documento tiene ahora una tabla con las láminas de cada color ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v4.jpg)). | — |
+| 24 nov. | Corrección | No abusar de los fondos de color: otros elementos deberían tener color, pero no todos; el color sobre color queda mal y los degradados deben ser sutiles. Pidió mirar la app y el diseño de la memoria, y el estudio sobre Relevo de los artefactos. | Se revisaron la memoria diagramada (portada, aperturas y Figuras 8, 22, 29, 30 y 31), la app 4.8.2 y los estudios de los artefactos: «Cuándo va color» (D-103 y D-104), la marca del 25 de octubre y el sistema 3.1. La [presentación](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) quitó las luces y los degradados de las fichas. Los fondos de color quedan donde la memoria los usa —portada, cierre, la pregunta y la hipótesis, y dos etapas de la prueba—, las láminas de datos siguen a la Figura 8 y los degradados van dentro de un mismo tono ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v5.jpg)). | — |
 
 ## Lo que muestra el registro
 
@@ -403,6 +404,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — El color de la presentación, como en la memoria
+
+- **Qué cambió:** se registró el pedido del 24 de noviembre de no abusar de los fondos de color y de seguir la app, la memoria y el estudio de los artefactos.
+- **Cómo estaba antes:** el registro terminaba en el pedido de sumar acentos de color.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-24 — Acentos de color en la presentación
 

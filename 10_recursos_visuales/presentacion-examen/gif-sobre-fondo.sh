@@ -11,6 +11,10 @@
 #
 # Desde la quinta versión (24 de noviembre de 2026) la portada y el cierre van sobre el papel:
 #   portada:  la misma animación, 1056 312 «#F7F4F0» 0; cierre: 1160 343 «#F7F4F0» 0
+# Desde la séptima versión, la portada y el cierre van sobre las auras de la memoria
+# (08_memoria/memoria-1920x1080/figuras/aura/portada.jpg y contraportada.jpg), ajustadas a
+# 1920 × 1080 como las ajusta Figma; el fondo del GIF es el recorte de la zona del logo,
+# a 1,5 veces: portada 32,145 de 704 × 208 (1056 312) y cierre 580,497 de 774 × 229 (1160 343).
 # Usos en la cuarta versión, desde 10_recursos_visuales/:
 #   portada:  logo-relevo-variantes-2026-11-23/animacion-logo/relevo-turno-texto-tinta-sin-fondo.webm 1056 312, aura de portada recortada, 0
 #   cierre:   la misma, 1160 343, aura de contraportada recortada, 0
