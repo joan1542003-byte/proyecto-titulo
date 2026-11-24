@@ -407,6 +407,12 @@ Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts ex
 - **Cómo estaba antes:** el registro terminaba en el pedido de la versión simple de «Cómo funciona».
 - **Por qué:** cada pedido del autor se registra el mismo día; el trabajo terminó el 24 de noviembre.
 
+### 2026-11-23 — Logo y animaciones en main
+
+- **Qué cambió:** se sumaron los nueve pedidos del 23 de noviembre sobre el logo y las animaciones. Son las variantes del logo con degradados sutiles, su animación, «pasa el turno» sin fondo y las animaciones que explican la app sin palabras, hasta «Cómo funciona» en su versión simple. Las carpetas `10_recursos_visuales/logo-relevo-variantes-2026-11-23` y `10_recursos_visuales/animaciones-de-relevo-2026-11-23` llegaron desde la rama `iconos-lucide`.
+- **Cómo estaba antes:** estos pedidos y sus archivos estaban solo en la rama `iconos-lucide`.
+- **Por qué:** el autor pidió subir las animaciones al repositorio y eligió traer a main solo el logo y las animaciones; lo demás de la rama sigue aparte.
+
 ### 2026-11-23 — Cómo funciona, más simple
 
 - **Qué cambió:** se registró el pedido de una versión de «Cómo funciona» con menos efectos.
