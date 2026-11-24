@@ -13,7 +13,7 @@ Estos son los seis GIF que usa la [presentación del examen](../../47_presentaci
 
 ## Dónde se mueven
 
-Según la [ayuda de Figma](https://help.figma.com/hc/en-us/articles/25427361244183-Add-images-and-videos-to-slides), los GIF se ven quietos en el editor de Figma Slides y se mueven solo en el modo presentación. Un PDF no reproduce animaciones: Figma exporta un cuadro de cada GIF. Por eso cada GIF empieza en un cuadro representativo, el mismo de su cuadro fijo:
+Según la [ayuda de Figma](https://help.figma.com/hc/en-us/articles/25427361244183-Add-images-and-videos-to-slides), los GIF se ven quietos en el editor de Figma Slides y se mueven solo en el modo presentación. Un PDF no reproduce animaciones: Figma exporta un cuadro de cada GIF. Para un PDF con las animaciones en marcha, está el [armador del PDF animado](../pdf-animado/README.md). Cada GIF empieza en un cuadro representativo, el mismo de su cuadro fijo:
 
 - **«Cómo funciona» (lámina 28)** empezaba en un cuadro en blanco. Ahora empieza en el segundo 9,92, con los cuatro círculos, y lo anterior pasa al final.
 - **«Seguir en el teléfono» (lámina 29)** empieza en el segundo 4,2, con el anillo completo.
@@ -38,6 +38,12 @@ El cuadro fijo de abajo se deja como está.
 - **Los que se quitaron:** los de Preparar (un libro que se abre), Oír la señal (el libro sobre la cómoda) y Decidir (el teléfono junto al libro) salieron de la lámina 29, que ahora muestra el ícono de cada momento. Las animaciones originales siguen en [animaciones-de-relevo-2026-11-23](../../animaciones-de-relevo-2026-11-23/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Enlace al PDF animado
+
+- **Qué cambió:** se enlaza el armador del PDF con los GIF animados.
+- **Cómo estaba antes:** decía solo que un PDF no reproduce animaciones.
+- **Por qué:** el autor preguntó si había forma de poner los GIF en el PDF.
 
 ### 2026-11-24 — Primer cuadro representativo y tres GIF menos
 
