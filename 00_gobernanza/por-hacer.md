@@ -27,7 +27,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta el examen:**
 
-6. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). La versión del 24 de noviembre, en Figma, tiene 37 láminas y unos 10 minutos, con los fundamentos completos y tus 22 anotaciones resueltas ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)); espera tu revisión, sobre todo la tabla de comparación con los referentes. Conviene confirmar con los profesores si el examen pide 15 minutos.
+6. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). La versión del 24 de noviembre, en Figma, tiene 41 láminas y unos 9 minutos: una idea por lámina, con poco texto, color e imágenes, los fundamentos completos y tus 22 anotaciones resueltas ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)); espera tu revisión, sobre todo la tabla de comparación con los referentes. Conviene confirmar con los profesores si el examen pide 15 minutos.
 7. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 8. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
@@ -145,7 +145,7 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
 | 5. Costos y presupuesto | Hecha | — |
 | 6. Semana solo con notificaciones | Cerrada | — |
-| 7. Presentación del examen | En curso: versión de 37 láminas y unos 10 minutos en Figma, por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 7. Presentación del examen | En curso: versión rediseñada de 41 láminas y unos 9 minutos en Figma, por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Por hacer | Sin fecha |
 | 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
@@ -247,10 +247,10 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - el flujo de la persona y el técnico, por separado;
   - la evidencia y sus límites.
 
-  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene desde el 24 de noviembre 37 láminas en el orden de la memoria v8 y notas para unos 10 minutos, con los antecedentes, el marco teórico y las causas del problema en láminas propias. Muestra el objeto, el hogar, el recorrido de la persona y la evidencia; el flujo técnico no tiene lámina propia, y el alcance de la prueba queda en las notas, como pidió el autor. Falta su revisión y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 22, que la muestra literal. La del 12 de noviembre queda como registro.
+  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene desde el 24 de noviembre 41 láminas en el orden de la memoria v8, una idea por lámina, y notas para unos 9 minutos, con los antecedentes, el marco teórico y las causas del problema en láminas propias. Muestra el objeto, el hogar, el recorrido de la persona y la evidencia; el flujo técnico no tiene lámina propia, y el alcance de la prueba queda en las notas, como pidió el autor. Falta su revisión y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 25, que la muestra literal. La del 12 de noviembre queda como registro.
 - [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
-- [ ] Si en el examen se muestra la 4.8.2, corregir antes «Editar» un relevo activo, que vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 33 de la presentación nombra ese cambio.
+- [ ] Si en el examen se muestra la 4.8.2, corregir antes «Editar» un relevo activo, que vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 de la presentación nombra ese cambio.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
 ## 8. Memoria: datos por confirmar, portada y entrega
@@ -908,7 +908,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que antes se había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita en el PDF dice «recuerdo oportuno»; vale la versión escrita. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que antes se había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita en el PDF dice «recuerdo oportuno»; vale la versión escrita. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 25 de la presentación del examen, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
 - [ ] **El indicador del objetivo 4.** Majluf, sobre «si el sistema funciona» (p. 31), sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar a Majluf qué quiso decir con «retomar» (respuesta, sección 5.3).
 - [ ] **Marco teórico antes del planteamiento.** Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16). Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
@@ -998,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación rediseñada
+
+- **Qué cambió:** el punto 6 de lo que queda y la tarea 7 describen la presentación rediseñada, de 41 láminas y unos 9 minutos; la pregunta pasa a la lámina 25, también en la tarea 16, y el cambio de «Editar», a la 37.
+- **Cómo estaba antes:** describían la versión de 37 láminas y unos 10 minutos, con la pregunta en la lámina 22 y «Editar» en la 33; la tarea 16 aún nombraba la lámina 11 de la presentación del 12 de noviembre.
+- **Por qué:** el autor pidió menos texto, más imágenes y color, y láminas propias para algunas ideas.
 
 ### 2026-11-24 — Presentación de 37 láminas
 

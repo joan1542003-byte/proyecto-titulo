@@ -390,6 +390,7 @@
 | 23 nov. | Corrección y encargo | Recordó que cada color tiene un significado y no se usa a la ligera. Pidió mejorar la animación, porque con esto se puede crear una narrativa interesante. | [Cómo funciona](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): el teléfono se transforma en el círculo amarillo (tu tiempo). El turno pasa por el cielo (tu primer paso: el libro se abre), el lima (el lugar: suena el Tag) y el rubor (lo que decides: la bandera), con los íconos de la app. Vuelve a tu tiempo y los cuatro forman el logo. Se borró la versión que asignaba los colores a actividades. |
 | 23 nov. | Corrección | Le gustó «Cómo funciona». Pidió que pareciera menos hecha por IA, quitar algunos detalles, minimalista pero efectiva, como hecha en un editor básico, con la misma calidad y menos efectos. | [Cómo funciona, versión simple](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): la misma historia con colores planos, sin sombras, degradados ni rebotes, íconos con fundido, un punto sin estela y un teléfono más simple. La anterior quedó como «detallada». |
 | 23 nov. | Corrección y encargo | Dejó anotaciones en rojo en la presentación para revisarlas y solucionarlas; pidió usar los GIF y las variantes nuevas del logo; revisar mejor el planteamiento del problema y el marco teórico —«te saltaste los 3 de una, lo que lo hace perder los cimientos del proyecto»—, y leer toda la memoria para tener el mejor contexto. | Se leyeron completos la memoria v8 y el Anexo C. La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) pasó a 37 láminas y 9:55: antecedentes en sus tres líneas, el marco teórico en sus tres ámbitos y una síntesis, el planteamiento con su evidencia y una lámina por causa, y la justificación. Se resolvieron las 22 anotaciones, cada una explicada en el documento; se quitaron las aperturas con aura, y se sumaron conclusiones por objetivo y una comparación con los referentes según las condiciones del Anexo C. La portada, la identidad y el cierre usan «pasa el turno»; Relevo, «Cómo funciona», y los cuatro momentos, las animaciones cortas ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24.jpg)). | — |
+| 24 nov. | Consulta y corrección | Preguntó si no eran muchas láminas. Dijo que tenían demasiado texto, que el diseño era flojo y que les faltaban imágenes y color, «es mejorable», y que algunas cosas merecen su propia lámina, breve, en vez de mezclarlo todo en una. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) se rediseñó con una idea por lámina: son 41 láminas, más que antes, pero más cortas, y las notas suman 8:49 en vez de 9:55. El texto en pantalla bajó y el detalle pasó a las notas. Los fondos de aura y los paneles usan el color de lo que muestran, se sumaron ilustraciones de la animación «sin palabras», y lo que falta en los antecedentes, el ejemplo del problema, su evidencia y la hipótesis tienen lámina propia ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v2.jpg)). | — |
 
 ## Lo que muestra el registro
 
@@ -400,6 +401,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Rediseño de la presentación
+
+- **Qué cambió:** se registró el pedido del 24 de noviembre de rediseñar la presentación con menos texto, más imágenes y color, y láminas propias para algunas ideas.
+- **Cómo estaba antes:** el registro terminaba en el pedido de las anotaciones en rojo de la presentación.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-24 — Anotaciones de la presentación y fundamentos
 
