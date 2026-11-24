@@ -40,7 +40,7 @@ A las personas que me dieron su tiempo en las entrevistas, en las encuestas y en
 
 El ocio digital es el conjunto de actividades que una persona realiza con dispositivos digitales en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros. A veces una sesión se prolonga sin que la persona haya decidido seguir, y otra actividad que también quería hacer —leer, dibujar, salir a caminar— deja de estar presente cuando aún podía empezarla. Este proyecto diseñó y evaluó un sistema *phygital* (físico y digital) para recuperar esa intención a tiempo, sin bloquear el teléfono ni decidir por la persona.
 
-Para entenderlo se entrevistó a ocho personas sobre su última sesión de ocio digital. Además, se encuestó a 53 personas sobre la última vez que siguieron en una aplicación más de lo que querían. También se revisó qué hacen las herramientas que ya existen y se relacionó lo encontrado con estudios sobre la memoria y la atención. Así se vio que la duración no basta para definir la importancia de una sesión, que la mayoría de las herramientas actúan sobre el uso del teléfono y no sobre lo que se deja de hacer, y que no corresponde intervenir cuando el ocio digital tiene sentido para quien lo experimenta. De esos hallazgos surgieron ocho criterios de diseño. De ellos nace Relevo: una aplicación y un objeto que la persona deja donde empieza su actividad.
+Para entenderlo se entrevistó a ocho personas sobre su última sesión de ocio digital. Además, se encuestó a 53 personas sobre la última vez que siguieron en una aplicación más de lo que querían. También se revisaron las herramientas existentes a la luz de estudios sobre la memoria y la atención. Así se vio que la duración no basta para definir la importancia de una sesión, que la mayoría de las herramientas actúan sobre el uso del teléfono y no sobre lo que se deja de hacer, y que no corresponde intervenir cuando el ocio digital tiene sentido para quien lo experimenta. De esos hallazgos surgieron ocho criterios de diseño. De ellos nace Relevo: una aplicación y un objeto que la persona deja donde empieza su actividad.
 
 Tres personas usaron Relevo en sus hogares durante cinco semanas: primero con un localizador Bluetooth comercial como objeto y después con una notificación en el teléfono. Con el objeto casi siempre supieron qué querían hacer antes de mirar la pantalla y siempre recordaron cómo empezar; con la notificación recordaron igual, pero a menudo la notaron tarde o no la notaron. El sistema funcionó en el uso cotidiano, aunque con tres personas no puede afirmarse que el objeto supere a la notificación.
 
@@ -97,11 +97,21 @@ El problema aparece en un momento preciso. Al comenzar una sesión de ocio digit
 
 Ese momento no ocurre en el vacío. Muchas aplicaciones están diseñadas para que la actividad continúe: el *desplazamiento infinito* carga contenido nuevo sin un final, y la reproducción automática inicia un contenido apenas termina otro. Estos patrones no determinan la conducta, pero reducen los momentos en que algo termina y aparece la oportunidad de elegir si seguir (Montag et al., 2019).
 
-Las respuestas más difundidas actúan de forma directa y a veces drástica: las herramientas de bienestar digital miden el tiempo, fijan límites, bloquean aplicaciones o ponen una pausa antes de abrirlas (Lyngs et al., 2019). Sirven cuando alguien quiere reducir una conducta concreta. Pero detener lo que se está haciendo no devuelve lo que se quería hacer: un bloqueo puede cerrar una aplicación y dejar igualmente ausente la otra intención, o cortar un descanso que la persona sí quería.
+Las respuestas más difundidas actúan de forma directa y a veces drástica: las herramientas de bienestar digital miden el tiempo, fijan límites, bloquean aplicaciones o ponen una pausa antes de abrirlas (Lyngs et al., 2019; Figura 1). Sirven cuando alguien quiere reducir una conducta concreta. Pero detener lo que se está haciendo no devuelve lo que se quería hacer: un bloqueo puede cerrar una aplicación y dejar igualmente ausente la otra intención, o cortar un descanso que la persona sí quería.
 
 La psicología ofrece un concepto que conviene revisar. La *memoria prospectiva* es la capacidad de recordar una acción que se quiere realizar cuando llega la ocasión de hacerla (McDaniel y Einstein, 2000). Recordar al final del día que se quería leer no equivale a recuperar esa intención cuando todavía era posible abrir el libro. Así planteado, el desafío no es frenar el uso del teléfono, sino lograr que una intención vuelva a tiempo sin convertirse en una obligación.
 
 Este proyecto aborda ese desafío desde el diseño. Busca que una persona vuelva a considerar una actividad que ella misma eligió mientras la sesión continúa, sin prohibir la actividad actual ni decidir por ella qué forma de descanso vale más.
+
+**Figura 1**
+
+*Funciones de 367 herramientas de autocontrol digital*
+
+<!-- cola 85 -->
+
+![](figuras/fuentes/lyngs-2019-funciones-de-las-herramientas.png)
+
+*Nota.* Tomado de Lyngs et al. (2019, p. 8). Porcentaje de herramientas con cada función, en cuatro grupos: bloquear o quitar (rojo), registrar el uso (naranja), avanzar hacia una meta (verde) y premiar o castigar (azul).
 
 # 3. Antecedentes y estado de la cuestión
 
@@ -157,9 +167,9 @@ Preparar el comienzo también ayuda. Las *intenciones de implementación* son pl
 
 La memoria prospectiva se distingue del recuerdo de acontecimientos pasados porque nadie pide explícitamente recordar: la intención debe volver por sí misma cuando todavía es posible actuar (McDaniel y Einstein, 2000).
 
-El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (McDaniel y Einstein, 2000; Figura 1). Que ocurra lo segundo depende de la señal, de la actividad en curso y de la persona. Los recordatorios que más ayudaron fueron los que nombraban a la vez el momento de actuar y la acción que había que hacer; los que solo nombraban el momento no mejoraron el recuerdo (Guynn et al., 1998, p. 296). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio (O’Rear y Radvansky, 2019). Una señal que proviene del lugar donde comienza la actividad podría indicar qué hacer y con qué empezar.
+El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (McDaniel y Einstein, 2000; Figura 2). Que ocurra lo segundo depende de la señal, de la actividad en curso y de la persona. Los recordatorios que más ayudaron fueron los que nombraban a la vez el momento de actuar y la acción que había que hacer; los que solo nombraban el momento no mejoraron el recuerdo (Guynn et al., 1998, p. 296). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio (O’Rear y Radvansky, 2019). Una señal que proviene del lugar donde comienza la actividad podría indicar qué hacer y con qué empezar.
 
-**Figura 1**
+**Figura 2**
 
 *Dos caminos para que vuelva una intención*
 
@@ -167,9 +177,9 @@ El *marco multiproceso* explica cómo vuelve una intención: la persona puede vi
 
 *Nota.* Elaboración propia a partir de McDaniel y Einstein (2000).
 
-Una nota, un libro sobre la mesa o una alarma son formas de *descarga cognitiva*: la acción física que reduce la demanda cognitiva de una tarea. Cuando se usa el entorno para dejar un aviso de una intención que se cumplirá después, se habla de *descarga de intenciones* (Risko y Gilbert, 2016). Todo recordatorio reúne una señal que avisa que hay algo que recordar y un mensaje que dice qué es. El ideal tiene los dos (Norman, 1988/2002, p. 73; Figura 2).
+Una nota, un libro sobre la mesa o una alarma son formas de *descarga cognitiva*: la acción física que reduce la demanda cognitiva de una tarea. Cuando se usa el entorno para dejar un aviso de una intención que se cumplirá después, se habla de *descarga de intenciones* (Risko y Gilbert, 2016). Todo recordatorio reúne una señal que avisa que hay algo que recordar y un mensaje que dice qué es. El ideal tiene los dos (Norman, 1988/2002, p. 73; Figura 3).
 
-**Figura 2**
+**Figura 3**
 
 *Señal y mensaje de un recordatorio*
 
@@ -179,9 +189,9 @@ Una nota, un libro sobre la mesa o una alarma son formas de *descarga cognitiva*
 
 Kirsh (1995, p. 31) muestra que la disposición de los objetos puede simplificar la elección, la percepción y el cálculo mental. Dejar algo junto a la puerta para no olvidar llevarlo es uno de sus ejemplos: el objeto puesto en el lugar indicado llama la atención en el momento oportuno y trae de vuelta la intención (Kirsh, 1995, p. 38).
 
-La *interacción tangible* lleva la información digital a objetos que se pueden tocar. Ishii y Ullmer (1997) propusieron que la información se integrara en objetos y superficies cotidianos. Distinguieron dos formas de recibirla. En primer plano están los objetos que se usan con atención. En segundo plano están las señales del ambiente que informan sin pedir atención, como una luz, un sonido o una corriente de aire (Figura 3). Para este proyecto es relevante entender que un objeto puede decir algo por dónde está, más que por lo que se hace con él.
+La *interacción tangible* lleva la información digital a objetos que se pueden tocar. Ishii y Ullmer (1997) propusieron que la información se integrara en objetos y superficies cotidianos. Distinguieron dos formas de recibirla. En primer plano están los objetos que se usan con atención. En segundo plano están las señales del ambiente que informan sin pedir atención, como una luz, un sonido o una corriente de aire (Figura 4). Para este proyecto es relevante entender que un objeto puede decir algo por dónde está, más que por lo que se hace con él.
 
-**Figura 3**
+**Figura 4**
 
 *Paso de la señal del segundo plano al primero*
 
@@ -189,11 +199,11 @@ La *interacción tangible* lleva la información digital a objetos que se pueden
 
 *Nota.* Elaboración propia a partir de Weiser y Brown (1997).
 
-La *calm technology* es un término de Weiser y Brown (1997) que describe el ideal de esas señales: informar en segundo plano, pasar al primero solo cuando hace falta y luego volver (Figura 3).
+La *calm technology* es un término de Weiser y Brown (1997) que describe el ideal de esas señales: informar en segundo plano, pasar al primero solo cuando hace falta y luego volver (Figura 4).
 
 Una señal sonora tensiona ese ideal. Para alcanzar a alguien absorto en una pantalla, la señal tiene que pasar al primer plano. El sonido lo logra porque se oye aunque la atención esté en otra parte; esa misma virtud lo vuelve intrusivo (Norman, 1988/2002, p. 103).
 
-La experiencia del ocio digital pide mirar cada sesión por su sentido más que por su duración y respetar el descanso cuando es justo lo que la persona quería. El diseño de la atención pide crear una ocasión de decidir sin una fricción que estorbe, y dejar que la persona acepte, ajuste o rechace la ayuda. El recuerdo de intenciones pide una señal que llegue en el momento oportuno, que remita a la acción y no solo a la ocasión, y que vuelva al segundo plano después de aparecer.
+La experiencia del ocio digital pide mirar cada sesión por su sentido más que por su duración y respetar el descanso cuando es justo lo que la persona quería. El diseño de la atención pide crear una ocasión de decidir sin una fricción que estorbe, y dejar que la persona acepte, ajuste o rechace la ayuda. El recuerdo de intenciones pide una señal que llegue en el momento oportuno, que remita a la acción, no solo a la ocasión, y que vuelva al segundo plano después de aparecer.
 
 Juntas, esas condiciones dejan una idea de diseño: una ayuda podría devolver a tiempo lo que la persona quería hacer si llega desde fuera de la pantalla, desde el lugar donde la actividad comienza, y si deja la decisión en sus manos.
 
@@ -203,9 +213,9 @@ En Chile el teléfono es el principal medio de acceso a internet: el 96,6 % de l
 
 ## Problemática
 
-Una persona abre una aplicación para descansar unos minutos antes de dibujar, algo que quería hacer desde la tarde. Una hora después la cierra y ya es tarde para empezar. No decidió abandonar el dibujo: mientras la sesión de ocio digital seguía, el dibujo no volvió a aparecer. Que lo recuerde después muestra que la intención no se perdió. Lo que faltó fue que volviera a tiempo, cuando todavía podía orientar la decisión (Figura 4).
+Una persona abre una aplicación para descansar unos minutos antes de dibujar, algo que quería hacer desde la tarde. Una hora después la cierra y ya es tarde para empezar. No decidió abandonar el dibujo: mientras la sesión de ocio digital seguía, el dibujo no volvió a aparecer. Que lo recuerde después muestra que la intención no se perdió. Lo que faltó fue que volviera a tiempo, cuando todavía podía orientar la decisión (Figura 5).
 
-**Figura 4**
+**Figura 5**
 
 *Ejemplo de una intención que vuelve tarde*
 
@@ -221,9 +231,9 @@ Hay datos de que una intención pierde fuerza mientras la sesión continúa. Luk
 
 ## Causas
 
-Tres causas ayudan a explicar por qué una intención deja de volver a tiempo (Figura 5).
+Tres causas ayudan a explicar por qué una intención deja de volver a tiempo (Figura 6).
 
-**Figura 5**
+**Figura 6**
 
 *Causas de que una intención vuelva tarde*
 
@@ -247,9 +257,19 @@ El teléfono reúne actividades que no pueden evaluarse con una sola regla. Las 
 
 Cuando las alternativas se reducen a bloquear, contabilizar o comparar, una ayuda puede volverse otra fuente de presión. Tener una intención no debería crear una deuda con el sistema: ignorar una señal, cambiar de idea o seguir en el teléfono son resultados legítimos porque la posibilidad de elegir fortalece la motivación propia y las órdenes la debilitan (Ryan y Deci, 2000, p. 70).
 
-La mayoría de las respuestas actuales trabajan dentro de la pantalla, incluso las que recuerdan una meta (Lyngs et al., 2019). Las intervenciones contra el uso distraído del teléfono casi no incluyen el entorno físico de las personas (Terzimehić et al., 2022). Ese vacío corresponde al diseño: la interacción tangible estudia cómo los objetos y el espacio físico participan en la relación con la información digital (Ishii y Ullmer, 1997). Un recordatorio ubicado en el entorno podría devolver una intención desde fuera de la pantalla que concentra la atención.
+La mayoría de las respuestas actuales trabajan dentro de la pantalla, incluso las que recuerdan una meta (Lyngs et al., 2019). Las intervenciones contra el uso distraído del teléfono casi no incluyen el entorno físico de las personas (Terzimehić et al., 2022). Ese vacío corresponde al diseño: la interacción tangible estudia cómo los objetos y el espacio físico participan en la relación con la información digital (Ishii y Ullmer, 1997). Un recordatorio ubicado en el entorno podría devolver una intención desde fuera de la pantalla que concentra la atención, como lo explora Wobble, un objeto que recuerda desde la casa (Zekveld et al., 2017; Figura 7).
 
 El problema involucra variables que el diseño ha creado: continuidad, cierres, momentos, canales, jerarquías, esfuerzo y control.
+
+**Figura 7**
+
+*Wobble, un recordatorio que se queda en la casa*
+
+<!-- cola 38 -->
+
+![](figuras/fuentes/zekveld-2017-wobble.jpg)
+
+*Nota.* Tomado de Zekveld et al. (2017).
 
 # 7. Usuario, contexto y hallazgos de entrevistas
 
@@ -261,9 +281,9 @@ Los capítulos anteriores explican el fenómeno en general; faltaba saber cómo 
 
 Para entender el problema desde quienes lo viven, el proyecto combinó dos fuentes que se complementan. Las entrevistas dieron profundidad: cómo una actividad que la persona quería hacer —leer, dibujar, ordenar su pieza— se pierde de vista mientras sigue en el teléfono, por qué ocurre y cuándo ese tiempo en el teléfono sí vale la pena. La encuesta mostró qué tan común es esa situación, dónde ocurre y si las personas sabrían cómo empezar lo que dejaron pendiente.
 
-En junio de 2026 se entrevistó a ocho personas de 19 a 27 años sobre su tiempo libre, su última sesión de ocio digital, cómo la valoraban, sus intentos de descansar sin el teléfono y una propuesta de diseño anterior (Anexo A). Las conversaciones se grabaron, se transcribieron y se ordenaron con el método Framework, que cruza personas y temas en una matriz para ver qué se repite y qué cambia de un caso a otro (Goldsmith, 2021; Figura 6). De esa comparación surgieron dos tipos ideales a partir de situaciones típicas que reúnen casos parecidos (Stapley et al., 2022).
+En junio de 2026 se entrevistó a ocho personas de 19 a 27 años sobre su tiempo libre, su última sesión de ocio digital, cómo la valoraban, sus intentos de descansar sin el teléfono y una propuesta de diseño anterior (Anexo A). Las conversaciones se grabaron, se transcribieron y se ordenaron con el método Framework, que cruza personas y temas en una matriz para ver qué se repite y qué cambia de un caso a otro (Goldsmith, 2021; Figura 8). De esa comparación surgieron dos tipos ideales a partir de situaciones típicas que reúnen casos parecidos (Stapley et al., 2022).
 
-**Figura 6**
+**Figura 8**
 
 *Análisis de las entrevistas con el método Framework*
 
@@ -273,9 +293,9 @@ En junio de 2026 se entrevistó a ocho personas de 19 a 27 años sobre su tiempo
 
 La encuesta tuvo 16 preguntas y 53 respuestas de personas de 19 a 30 años. Preguntó por la última vez que alguien siguió en una aplicación más tiempo del que quería, qué otra cosa quería hacer en ese momento y cómo la habría empezado. También pidió su opinión sobre una propuesta de diseño. Las respuestas abiertas se agruparon en categorías. Las preguntas, las categorías y los recuentos están en el Anexo B.
 
-Ambas fuentes recogen lo que las personas recuerdan y cuentan, una forma que se completa observando lo que hacen en el momento (E. B.-N. Sanders y Stappers, 2012, p. 69). Por eso sus hallazgos orientan el diseño, y el uso lo pone después a prueba (Figura 7).
+Ambas fuentes recogen lo que las personas recuerdan y cuentan, una forma que se completa observando lo que hacen en el momento (E. B.-N. Sanders y Stappers, 2012, p. 69). Por eso sus hallazgos orientan el diseño, y el uso lo pone después a prueba (Figura 9).
 
-**Figura 7**
+**Figura 9**
 
 *Lo que las personas cuentan y lo que hacen*
 
@@ -293,9 +313,9 @@ Para descansar sin el teléfono casi todas las personas entrevistadas lo alejan,
 
 Ante una propuesta de proyecto anterior la mayoría pidió señales simples, calmadas, discretas o visuales. Una persona expresó su rechazo ante las calificaciones, rachas y comparaciones entre días de uso en aplicaciones.
 
-La encuesta mostró que el caso estudiado es frecuente y ocurre mayoritariamente en casa (Figura 8). De quienes querían hacer otra cosa la última vez, casi la mitad no la empezó y una de cada tres la empezó, a veces mucho más tarde. El *primer paso* es la acción breve con que la actividad comienza, como abrir un libro para leer o ponerse las zapatillas para salir a correr. Casi todas esas personas sabían cuál habría sido el suyo.
+La encuesta mostró que el caso estudiado es frecuente y ocurre mayoritariamente en casa (Figura 10). De quienes querían hacer otra cosa la última vez, casi la mitad no la empezó y una de cada tres la empezó, a veces mucho más tarde. El *primer paso* es la acción breve con que la actividad comienza, como abrir un libro para leer o ponerse las zapatillas para salir a correr. Casi todas esas personas sabían cuál habría sido el suyo.
 
-**Figura 8**
+**Figura 10**
 
 *Última vez que siguieron en el teléfono, según la encuesta*
 
@@ -303,9 +323,9 @@ La encuesta mostró que el caso estudiado es frecuente y ocurre mayoritariamente
 
 *Nota.* Elaboración propia a partir de la encuesta en línea del proyecto (53 respuestas). Cada total corresponde a quienes respondieron esa pregunta.
 
-Después de leer la propuesta de diseño casi todas las personas explicaron bien cómo funcionaba. La mayoría pondría un parlante junto a la actividad y preferiría un sonido de 15 segundos o menos. La disposición a probarla quedó repartida (Figura 9). Quienes no la probarían temían sobre todo que sonara en un mal momento, el esfuerzo de prepararla y el ruido que podía causar.
+Después de leer la propuesta de diseño casi todas las personas explicaron bien cómo funcionaba. La mayoría pondría un parlante junto a la actividad y preferiría un sonido de 15 segundos o menos. La disposición a probarla quedó repartida (Figura 11). Quienes no la probarían temían sobre todo que sonara en un mal momento, el esfuerzo de prepararla y el ruido que podía causar.
 
-**Figura 9**
+**Figura 11**
 
 *Opiniones sobre la propuesta*
 
@@ -315,9 +335,9 @@ Después de leer la propuesta de diseño casi todas las personas explicaron bien
 
 ## Dos situaciones de uso
 
-Los hallazgos dejan ver dos situaciones típicas, o tipos ideales (Stapley et al., 2022): una en la que ayudar tiene sentido y otra en la que no. Por convención cada una se nombra como un usuario: el usuario principal y el usuario límite (Figura 10).
+Los hallazgos dejan ver dos situaciones típicas, o tipos ideales (Stapley et al., 2022): una en la que ayudar tiene sentido y otra en la que no. Por convención cada una se nombra como un usuario: el usuario principal y el usuario límite (Figura 12).
 
-**Figura 10**
+**Figura 12**
 
 *Situaciones de uso*
 
@@ -369,9 +389,9 @@ La evidencia es desigual: los estudios sobre herramientas digitales suelen ser b
 
 ## Oportunidad
 
-El mapa de la Figura 11 resume lo revisado: casi todas las herramientas limitan el uso del teléfono o trabajan dentro de la pantalla. El opuesto —recordar lo que la persona quería hacer desde fuera de la pantalla— está casi vacío. Sus dos referentes, The Tangible Reminder y Wobble, son prototipos de investigación que no se pensaron para el ocio digital.
+El mapa de la Figura 13 resume lo revisado: casi todas las herramientas limitan el uso del teléfono o trabajan dentro de la pantalla. El opuesto —recordar lo que la persona quería hacer desde fuera de la pantalla— está casi vacío. Sus dos referentes, The Tangible Reminder y Wobble, son prototipos de investigación que no se pensaron para el ocio digital.
 
-**Figura 11**
+**Figura 13**
 
 *Función y lugar de cada herramienta y de Relevo*
 
@@ -379,15 +399,25 @@ El mapa de la Figura 11 resume lo revisado: casi todas las herramientas limitan 
 
 *Nota.* Elaboración propia. Ubicación aproximada, según la documentación de cada producto y los estudios citados; no busca medir la eficacia. Relevo se ubica por lo que propone, no por resultados. Las fichas de cada referente están en el Anexo C.
 
-Ahí está la oportunidad: una ayuda que parta de lo que la persona quiere hacer, la una a un primer paso concreto, use una condición que ella entienda, suene desde el lugar donde la actividad empieza y deje la decisión en sus manos. Cada una de esas piezas ya existe por separado, incluso en patentes que vinculan el teléfono o los recordatorios con lugares y objetos (Driver y Nasgowitz, 2026; Herman y Akmal, 2023; Newman y Newman, 2022; Rosenberg, 2009). Lo que no se encontró es un producto, un prototipo ni un estudio que las reúna, ni que compare esa señal con una notificación en el teléfono (Anexo C).
+Ahí está la oportunidad: una ayuda que parta de lo que la persona quiere hacer, la una a un primer paso concreto, use una condición que ella entienda, suene desde el lugar donde la actividad empieza y deje la decisión en sus manos. Cada una de esas piezas ya existe por separado, incluso en patentes que vinculan el teléfono o los recordatorios con lugares y objetos (Driver y Nasgowitz, 2026; Herman y Akmal, 2023; Newman y Newman, 2022; Rosenberg, 2009; Figura 14). Lo que no se encontró es un producto, un prototipo ni un estudio que las reúna, ni que compare esa señal con una notificación en el teléfono (Anexo C).
 
 De ahí nace una pregunta de diseño: ¿vuelve mejor una intención si la trae una señal desde el lugar donde la actividad comienza que si la trae una notificación?
 
+**Figura 14**
+
+*Un recordatorio asociado a un lugar, en una patente de 2009*
+
+<!-- cola 64 -->
+
+![](figuras/fuentes/rosenberg-2009-figura-5.png)
+
+*Nota.* Tomado de Rosenberg (2009, fig. 5). Al llegar al lugar, el aparato muestra la lista y ofrece terminar, aplazar o editar el recordatorio.
+
 # 9. Criterios de diseño
 
-De lo investigado surgen ocho criterios de diseño: reglas que guían cada decisión de Relevo y que después sirven para evaluarlo. Kolko (2011, p. 40) llama síntesis a este paso, que traduce en criterios de diseño específicos la oportunidad que describe la investigación. Los criterios se agrupan en tres ideas (Figura 12): partir de la persona, dejarle las decisiones y justificar el esfuerzo.
+De lo investigado surgen ocho criterios de diseño: reglas que guían cada decisión de Relevo y que después sirven para evaluarlo. Kolko (2011, p. 40) llama síntesis a este paso, que traduce en criterios de diseño específicos la oportunidad que describe la investigación. Los criterios se agrupan en tres ideas (Figura 15): partir de la persona, dejarle las decisiones y justificar el esfuerzo.
 
-**Figura 12**
+**Figura 15**
 
 *Ocho criterios de diseño en tres grupos*
 
@@ -452,9 +482,9 @@ Los objetivos específicos son:
 3. Comparar el sonido del objeto junto al primer paso con una notificación en el teléfono.
 4. Probar en hogares si las personas entienden la señal y si les resulta cómoda, medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad.
 
-La Figura 13 muestra cómo se encadenan el problema, la pregunta, la hipótesis, los objetivos, la prueba y las conclusiones.
+La Figura 16 muestra cómo se encadenan el problema, la pregunta, la hipótesis, los objetivos, la prueba y las conclusiones.
 
-**Figura 13**
+**Figura 16**
 
 *Cadena de la formulación, del problema a las conclusiones*
 
@@ -464,9 +494,9 @@ La Figura 13 muestra cómo se encadenan el problema, la pregunta, la hipótesis,
 
 ## Enfoque metodológico y plan de trabajo
 
-El proyecto sigue un enfoque de investigación a través del diseño: diseñar el objeto y la aplicación es en sí mismo una forma de investigar, y su resultado es un aporte (Zimmerman et al., 2007; Figura 14). La Figura 15 muestra el camino que ha tenido el proyecto: un proceso con cambios de rumbo en que cada decisión respondió a lo que se iba aprendiendo.
+El proyecto sigue un enfoque de investigación a través del diseño: diseñar el objeto y la aplicación es en sí mismo una forma de investigar, y su resultado es un aporte (Zimmerman et al., 2007; Figura 17). La Figura 18 muestra el camino que ha tenido el proyecto: un proceso con cambios de rumbo en que cada decisión respondió a lo que se iba aprendiendo.
 
-**Figura 14**
+**Figura 17**
 
 *Método del proyecto, de la investigación a la iteración*
 
@@ -474,7 +504,7 @@ El proyecto sigue un enfoque de investigación a través del diseño: diseñar e
 
 *Nota.* Elaboración propia. Los cambios están en los Anexos D y G.
 
-**Figura 15**
+**Figura 18**
 
 *Proceso del proyecto, de marzo a noviembre de 2026*
 
@@ -482,7 +512,7 @@ El proyecto sigue un enfoque de investigación a través del diseño: diseñar e
 
 *Nota.* Elaboración propia.
 
-Probar el prototipo en hogares permitió observar lo que las personas hacen y no solo lo que dicen. Cada cambio del prototipo puso a prueba una decisión concreta, con consecuencias visibles en el uso.
+Probar el prototipo en hogares permitió observar lo que las personas hacen y no solo lo que dicen (E. B.-N. Sanders y Stappers, 2012, p. 66; Figura 19). Cada cambio del prototipo puso a prueba una decisión concreta, con consecuencias visibles en el uso.
 
 Para entender mejor una de las causas del problema —el sistema que decide qué contenido viene después— se consultó por escrito a Denis Parra, especialista en sistemas de recomendación de la Pontificia Universidad Católica de Chile. Su respuesta del 4 de noviembre de 2026 suma a los estudios la mirada de quien diseña esos sistemas. Se usa como opinión experta que aporta un valor importante al proyecto.
 
@@ -490,15 +520,25 @@ Para entender mejor una de las causas del problema —el sistema que decide qué
 
 El proyecto usó tres herramientas de inteligencia artificial generativa. Cursor de Anysphere y Codex de OpenAI ayudaron a programar los primeros prototipos de la aplicación. Claude Code de Anthropic la desarrolló a partir de los prototipos, bocetos y *wireframes* del autor. Además, Claude ayudó a modelar el objeto en 3D a partir de los bocetos. Las tres apoyaron la revisión de la redacción y la verificación de citas (Anexo E).
 
+**Figura 19**
+
+*Decir, hacer y crear: tres formas de investigar con las personas*
+
+<!-- cola 90 -->
+
+![](figuras/fuentes/sanders-stappers-2012-decir-hacer-crear.png)
+
+*Nota.* Tomado de E. B.-N. Sanders y Stappers (2012, p. 66). Lo que las personas dicen, lo que hacen y lo que crean se complementan.
+
 # 11. Bajada proyectual: decisiones de diseño
 
 Con el problema y los criterios claros comienza la etapa de diseño. La meta es que Relevo se sienta liviano: que prepararlo tome poco, que acompañe sin pedir atención y que al sonar devuelva algo que la persona misma eligió. Cada decisión de este capítulo responde a esa idea.
 
 ## Funcionamiento de Relevo
 
-Relevo reúne tres piezas: una aplicación, un objeto y un lugar. En la aplicación la persona anota algo que quiere hacer y cómo empezaría. Deja el objeto junto a ese primer paso —sobre el libro o al lado de la guitarra— y elige cuánto tiempo quiere darse en ciertas aplicaciones. Cuando ese tiempo se cumple, Relevo suena desde ese lugar. El sonido llega desde fuera de la pantalla y desde donde la actividad empieza: la persona no necesita leer nada para saber qué era (Figura 16).
+Relevo reúne tres piezas: una aplicación, un objeto y un lugar. En la aplicación la persona anota algo que quiere hacer y cómo empezaría. Deja el objeto junto a ese primer paso —sobre el libro o al lado de la guitarra— y elige cuánto tiempo quiere darse en ciertas aplicaciones. Cuando ese tiempo se cumple, Relevo suena desde ese lugar. El sonido llega desde fuera de la pantalla y desde donde la actividad empieza: la persona no necesita leer nada para saber qué era (Figura 20).
 
-**Figura 16**
+**Figura 20**
 
 *Recorrido del usuario*
 
@@ -512,9 +552,9 @@ Relevo reúne tres piezas: una aplicación, un objeto y un lugar. En la aplicaci
 
 ## Recorrido del usuario
 
-El recorrido tiene cuatro momentos: preparar, seguir en el teléfono, oír la señal y decidir. Cada uno se diseñó para pedir lo mínimo (Figura 17).
+El recorrido tiene cuatro momentos: preparar, seguir en el teléfono, oír la señal y decidir. Cada uno se diseñó para pedir lo mínimo (Figura 21).
 
-**Figura 17**
+**Figura 21**
 
 *Flujo de la aplicación*
 
@@ -528,9 +568,9 @@ El recorrido tiene cuatro momentos: preparar, seguir en el teléfono, oír la se
 
 **Seguir en el teléfono.** Mientras cuenta el tiempo, Relevo queda en segundo plano: la persona usa el teléfono como siempre. El tiempo que se cuenta es el que suman las aplicaciones que ella eligió, de 1 minuto a 6 horas: una regla fácil de entender y de ajustar. Una persona de la prueba bajó su límite de 45 a 35 minutos porque al sonar ya estaba demasiado inmersa en un video.
 
-**Oír la señal.** Cuando se cumple el tiempo, Relevo suena desde el lugar de la actividad. El sonido dura unos 30 segundos y termina solo. La persona puede silenciarlo antes desde la aplicación o con el botón del Tag (Figura 18).
+**Oír la señal.** Cuando se cumple el tiempo, Relevo suena desde el lugar de la actividad. El sonido dura unos 30 segundos y termina solo. La persona puede silenciarlo antes desde la aplicación o con el botón del Tag (Figura 22).
 
-**Figura 18**
+**Figura 22**
 
 *Estados de un relevo*
 
@@ -544,9 +584,9 @@ El recorrido tiene cuatro momentos: preparar, seguir en el teléfono, oír la se
 
 ## Arquitectura de información
 
-La aplicación tiene tres destinos en una barra de navegación inferior: Inicio, Actividades y Perfil (Figura 19). Los destinos se nombran con sustantivos y las acciones con verbos —«Preparar un relevo», «Activar el relevo»— para que la persona distinga dónde está de lo que puede hacer. Inicio pone primero lo más próximo: el relevo que sonará antes o, después de una señal, la actividad con su primer paso y la opción de prepararla de nuevo. Debajo quedan los demás relevos y un resumen de la semana que solo cuenta hechos. En la prueba la pantalla de un relevo activo mostraba demasiado. Ahora deja a la vista solo la actividad, el tiempo que falta y una acción. Cuando la persona vuelve después de unos días, la aplicación saluda con «Hola de nuevo» sin decir cuántos días pasaron: contarlos convertiría el regreso en una falta o castigo. Así la aplicación acompaña sin convertirse en algo que hay que revisar. Actividades reúne las que la persona creó, los pasos de las que quiere sostener en el tiempo y algunas ideas. Perfil reúne lo que es suyo: sus relevos, sus actividades, sus pasos, sus aplicaciones y los ajustes.
+La aplicación tiene tres destinos en una barra de navegación inferior: Inicio, Actividades y Perfil (Figura 23). Los destinos se nombran con sustantivos y las acciones con verbos —«Preparar un relevo», «Activar el relevo»— para que la persona distinga dónde está de lo que puede hacer. Inicio pone primero lo más próximo: el relevo que sonará antes o, después de una señal, la actividad con su primer paso y la opción de prepararla de nuevo. Debajo quedan los demás relevos y un resumen de la semana que solo cuenta hechos. En la prueba la pantalla de un relevo activo mostraba demasiado. Ahora deja a la vista solo la actividad, el tiempo que falta y una acción. Cuando la persona vuelve después de unos días, la aplicación saluda con «Hola de nuevo» sin decir cuántos días pasaron: contarlos convertiría el regreso en una falta o castigo. Así la aplicación acompaña sin convertirse en algo que hay que revisar. Actividades reúne las que la persona creó, los pasos de las que quiere sostener en el tiempo y algunas ideas. Perfil reúne lo que es suyo: sus relevos, sus actividades, sus pasos, sus aplicaciones y los ajustes.
 
-**Figura 19**
+**Figura 23**
 
 *Arquitectura de información de la aplicación*
 
@@ -564,9 +604,9 @@ Para Relevo eso significa una aplicación que se aprende sin instrucciones y que
 
 La forma se repite en todas las escalas. Las cápsulas de los botones, las esquinas de las tarjetas y los círculos del logo comparten una misma curva. Por eso la aplicación, la marca y el objeto se reconocen como una familia. El desenfoque es sutil y aparece solo en la barra de navegación y en las ventanas que suben desde el borde, nunca sobre el contenido. Separa lo que se lee de lo que sirve para moverse, como proponen las pautas de Apple (Apple, 2025a). Junto con una opacidad progresiva sugiere que hay más contenido abajo y evita que el usuario dé por hecho que el contenido termina antes.
 
-La jerarquía también se construye con lo que pasa: el color aparece relacionado con el momento (Figura 20). Al preparar un relevo dominan el blanco y el negro, y el color aparece solo en el anillo de la actividad. En Inicio la actividad se presenta en una tarjeta con su degradado. Cuando suena, ese degradado llena toda la pantalla. Si suena el objeto, el sonido se dibuja en los anillos de la actividad. El color es la herramienta de jerarquía más fuerte de la interfaz y se guarda para el único momento que debe pasar al primer plano. El resto del tiempo Relevo informa desde el segundo plano, como propone la *calm technology* (Weiser y Brown, 1997).
+La jerarquía también se construye con lo que pasa: el color aparece relacionado con el momento (Figura 24). Al preparar un relevo dominan el blanco y el negro, y el color aparece solo en el anillo de la actividad. En Inicio la actividad se presenta en una tarjeta con su degradado. Cuando suena, ese degradado llena toda la pantalla. Si suena el objeto, el sonido se dibuja en los anillos de la actividad. El color es la herramienta de jerarquía más fuerte de la interfaz y se guarda para el único momento que debe pasar al primer plano. El resto del tiempo Relevo informa desde el segundo plano, como propone la *calm technology* (Weiser y Brown, 1997).
 
-**Figura 20**
+**Figura 24**
 
 *Calma, presencia y señal: el color sube con el momento*
 
@@ -584,9 +624,9 @@ La jerarquía también se construye con lo que pasa: el color aparece relacionad
 
 ## Voz de Relevo
 
-Las palabras también son parte de la interfaz. Los textos de Relevo partieron de un estudio de las guías de escritura de interfaces de Apple (2024, 2025b), Google (s. f.-b) y Microsoft (2021), y de la investigación sobre el lenguaje que presiona y el que deja elegir (Miller et al., 2007; Smit et al., 2019). De ese estudio surgió una voz con cuatro rasgos (Figura 21).
+Las palabras también son parte de la interfaz. Los textos de Relevo partieron de un estudio de las guías de escritura de interfaces de Apple (2024, 2025b), Google (s. f.-b) y Microsoft (2021), y de la investigación sobre el lenguaje que presiona y el que deja elegir (Miller et al., 2007; Smit et al., 2019). De ese estudio surgió una voz con cuatro rasgos (Figura 25).
 
-**Figura 21**
+**Figura 25**
 
 *Rasgos de la voz de Relevo*
 
@@ -602,9 +642,9 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 **Nombre.** Un relevo es el momento en que algo pasa de una mano a otra, como en una carrera de relevos. El nombre cuenta lo que el sistema busca: que la atención pase de la pantalla a lo que la persona quería hacer, sin que nadie se la quite. Es breve, se pronuncia con facilidad en español y viene del mundo de los traspasos y los turnos, no de las prohibiciones o límites.
 
-**Logo.** Cuatro círculos se pasan el turno en el sentido del reloj y cada uno queda bajo el siguiente. Son el tiempo, el primer paso, el lugar y la decisión (Figura 22). El centro queda abierto: ese vacío es el traspaso de la pantalla a la actividad. Las formas circulares se asocian con suavidad y cuidado (Jiang et al., 2016). Los colores planos y sin transparencias se reproducen igual en pantalla, en papel o impresos sobre el objeto. Su construcción paso a paso y sus variantes están en el Anexo H.
+**Logo.** Cuatro círculos se pasan el turno en el sentido del reloj y cada uno queda bajo el siguiente. Son el tiempo, el primer paso, el lugar y la decisión (Figura 26). El centro queda abierto: ese vacío es el traspaso de la pantalla a la actividad. Las formas circulares se asocian con suavidad y cuidado (Jiang et al., 2016). Los colores planos y sin transparencias se reproducen igual en pantalla, en papel o impresos sobre el objeto. Su construcción paso a paso y sus variantes están en el Anexo H.
 
-**Figura 22**
+**Figura 26**
 
 *Sistema de identidad de Relevo*
 
@@ -612,15 +652,26 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 *Nota.* Elaboración propia.
 
-**Paleta cromática.** La paleta se decidió por su función. Seis fichas pastel con el mismo peso visual acompañan cada una un momento: el amarillo para el tiempo, el celeste para el primer paso, el verde para el lugar, el rosa para la decisión y otros dos para la personalización y lo que viene después de la señal. Las seis tienen casi la misma luminosidad medida en OKLCH, un espacio de color que permite calcular cómo lo percibe el ojo y no cómo lo guarda la pantalla (Ottosson, 2020). Por eso pesan lo mismo: el color distingue sin jerarquizar. Es la traducción visual del principio de que ningún momento vale más que otro. Albers (2013) mostró que un color cambia de apariencia según los que tiene al lado. Igualar su luminosidad mantiene ese peso cuando las fichas aparecen juntas. Son claras y poco saturadas porque la saturación eleva la activación emocional (Wilms y Oberfeld, 2018). Cada color significa siempre lo mismo. La selección va en negro y no en color: si usara el amarillo, el amarillo significaría dos cosas. La tipografía sobre cada ficha mantiene el contraste que piden las WCAG 2.2 (World Wide Web Consortium, 2024). Los círculos del logo (Figura 22) son la versión más intensa de cuatro de esas fichas. Las asociaciones entre colores y emociones cambian según el contexto y la persona (Elliot y Maier, 2014; Jonauskaite et al., 2024). El rojo está muy ligado a la rabia y es el tono que más activa (Wilms y Oberfeld, 2018). Queda para los errores, como en las señaléticas, cuya norma fija colores de seguridad para prevenir accidentes (International Organization for Standardization, 2011). El negro y el gris tampoco se usan para los estados de la persona.
+**Paleta cromática.** La paleta se decidió por la función de cada color y no por la emoción que podría despertar, porque las asociaciones entre colores y emociones cambian según el contexto y la persona (Elliot y Maier, 2014; Jonauskaite et al., 2024). En Relevo el color distingue las partes de un relevo sin decir cuál importa más: es la traducción visual del principio de que ningún momento vale más que otro. Por eso las seis fichas son pastel y tienen casi la misma luminosidad, medida en OKLCH, un espacio de color que calcula cómo lo percibe el ojo y no cómo lo guarda la pantalla (Ottosson, 2020). Así pesan lo mismo cuando aparecen juntas, porque un color cambia de apariencia según los que tiene al lado (Albers, 2013). Son claras y poco saturadas porque la saturación eleva la activación emocional (Wilms y Oberfeld, 2018), y una ayuda que acompaña no debería sobresaltar. Cada color significa siempre lo mismo. Por eso la selección va en negro: si fuera amarilla, el amarillo significaría dos cosas. El color tampoco informa solo, porque siempre va con una palabra y un ícono, y la tipografía negra sobre cualquier ficha supera el contraste que piden las WCAG 2.2 (World Wide Web Consortium, 2024).
+
+**Cada color.** Donde existe, la asignación sigue la señalética de seguridad, cuya norma da un significado estable a cuatro colores (International Organization for Standardization, 2011). Los códigos de cada color están en el Anexo H.
+
+- **Amarillo, el tiempo**, la condición que hace sonar la señal. En la señalética pide atención sin prohibir, y es el color más asociado con la alegría (Jonauskaite et al., 2024).
+- **Celeste, el primer paso.** En la señalética, el azul indica una acción que hay que realizar.
+- **Verde, el lugar** donde empieza la actividad. En la señalética, el verde indica dónde está algo, como una salida o un botiquín.
+- **Rosa, la decisión.** Conserva el amor que se asocia al rojo sin su asociación con la rabia, para que ninguna respuesta se sienta juzgada (Jonauskaite et al., 2024).
+- **Lila, lo que la persona personaliza.** No tiene una asociación emocional compartida (Jonauskaite et al., 2024).
+- **Durazno, lo que viene después de la señal.** El naranja se asocia con la alegría y la diversión (Jonauskaite et al., 2024).
+
+Los círculos del logo son la versión más intensa de los cuatro primeros (Figura 26). El rojo, el tono que más activa y muy ligado a la rabia (Wilms y Oberfeld, 2018), queda solo para los errores, como en la señalética. El negro y el gris no se usan para los estados de la persona.
 
 **Tipografía.** La identidad usa dos tipografías sin serifa y cada una tiene su propio fin. El logotipo «relevo» va siempre en minúsculas y en Chillax Semibold (Indian Type Foundry, s. f.), convertida a trazos. Se eligió entre veinte tipografías sin serifa de Fontshare, el catálogo gratuito de esa fundición. Hubo tres razones: su «o» es casi un círculo y se relaciona con los círculos del símbolo; la «e» y la «r» terminan en curvas abiertas que hacen la palabra amable, y en tamaños pequeños no pierde la forma. La aplicación usa Instrument Sans, una grotesca de código abierto codiseñada por Rodrigo Fuenzalida, diseñador radicado en Santiago, y Jordan Egstad (Fuenzalida y Egstad, s. f.). Se eligió porque se lee bien en pantallas y en papel, porque sus pesos y anchos resuelven toda la jerarquía con una sola familia y su forma sobria deja el carácter al logotipo. En la aplicación la jerarquía sigue la de iOS: título grande, título, encabezado, texto y nota. Los títulos van en semibold y el texto en regular, siempre con una mayúscula inicial y sin interletrado abierto para que cada línea se lea como una frase.
 
 **Iconografía.** Los íconos de la aplicación son propios: 118 dibujos de línea en una retícula de 24, con un trazo de 1,6 en su tamaño base y terminaciones redondas. El trazo se afina en los tamaños grandes y se engruesa en los pequeños para que el ícono tenga un peso parecido al de la palabra que siempre lo acompaña. El referente es Lucide, un conjunto de íconos de línea de código abierto. Su licencia permite usarlos, modificarlos y redistribuirlos siempre que se conserve su aviso (Lucide Contributors, s. f.-b). Partir de sus reglas de construcción agilizó el trabajo (Lucide Contributors, s. f.-a). Cada dibujo se adaptó a Relevo: el sonido son anillos que se abren desde el objeto; cada actividad se dibuja con el objeto con que empieza, como un libro abierto para leer. Su construcción está en el Anexo H.
 
-**Proceso de la identidad.** Entre septiembre y octubre de 2026 se exploraron más de veinte propuestas de identidad. Un subrayado azul, que venía de «relevar» como resaltar, se descartó porque no decía qué hace Relevo. Las tipografías con serifa y las manuscritas se exploraron y se dejaron. El 11 de octubre quedaron definidos el logo de cuatro círculos, la paleta cromática de seis colores y los primeros íconos, que en noviembre se ajustaron a lo que pide la aplicación. Los bocetos partieron de la R, del gesto de pasar algo de una mano a otra y de los pasos del recorrido, que terminaron en los cuatro círculos (Figura 23). Las propuestas anteriores están en el Anexo H.
+**Proceso de la identidad.** Entre septiembre y octubre de 2026 se exploraron más de veinte propuestas de identidad. Un subrayado azul, que venía de «relevar» como resaltar, se descartó porque no decía qué hace Relevo. Las tipografías con serifa y las manuscritas se exploraron y se dejaron. El 11 de octubre quedaron definidos el logo de cuatro círculos, la paleta cromática de seis colores y los primeros íconos, que en noviembre se ajustaron a lo que pide la aplicación. Los bocetos partieron de la R, del gesto de pasar algo de una mano a otra y de los pasos del recorrido, que terminaron en los cuatro círculos (Figura 27). Las propuestas anteriores están en el Anexo H.
 
-**Figura 23**
+**Figura 27**
 
 *Bocetos del logo*
 
@@ -632,9 +683,9 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 ## Objeto
 
-**Proceso.** En sus primeras fases el objeto era un lugar donde dejar el teléfono. Después pasó a ser una señal en el lugar donde empieza la actividad. Los primeros bocetos lo exploraron en tres formatos —un disco, una pastilla y un cilindro— y para dos usos: llevarlo como llavero o dejarlo en el hogar. Los siguientes definieron las dos variantes Relevo Home y Relevo Go con sus vistas y sus piezas: tapa, placa, carcasa y base (Figura 24).
+**Proceso.** En sus primeras fases el objeto era un lugar donde dejar el teléfono. Después pasó a ser una señal en el lugar donde empieza la actividad. Los primeros bocetos lo exploraron en tres formatos —un disco, una pastilla y un cilindro— y para dos usos: llevarlo como llavero o dejarlo en el hogar. Los siguientes definieron las dos variantes Relevo Home y Relevo Go con sus vistas y sus piezas: tapa, placa, carcasa y base (Figura 28).
 
-**Figura 24**
+**Figura 28**
 
 *Bocetos del objeto*
 
@@ -648,9 +699,9 @@ El vocabulario también es una decisión. La aplicación habla de «actividad» 
 
 **Objeto propio.** Relevo es una carcasa que lleva adentro la placa y la pila del Tag: conserva el sonido ya probado y suma forma, control y marca. Su forma sigue la del Tag: redonda y de cara casi plana. Tiene dos variantes con las mismas piezas interiores. Relevo Home mide 52 mm de diámetro y 13,4 mm de alto. Se deja junto al primer paso de una actividad: su base ancha y una goma antideslizante lo mantienen quieto sobre una mesa o un estante. Relevo Go mide 44 × 54,5 mm y 11,4 mm de alto. Es más portátil y sirve a quienes cambian de lugar sus actividades constantemente. En los dos la cara entera es el botón para silenciar que se aprieta sobre el logo. El sonido sale por esa misma zona. La tapa de abajo se abre con una moneda para cambiar la pila.
 
-Relevo es más grande que el Tag por tres razones. La primera es encontrarlo: un objeto que hay que hallar para silenciarlo no puede quedar tapado sobre una mesa. La segunda es controlarlo: una persona de la prueba nunca encontró el botón del Tag, y un botón del tamaño de la cara se ve y se siente. La tercera es fabricarlo: sus detalles necesitan espacio para imprimirse. Los modelos 3D se hicieron con ayuda de Claude a partir de los bocetos (Figura 25). Ambas variantes se imprimen en 3D sin soportes. Como solo una pieza depende de la placa, podrían recibir otros localizadores. En esta etapa el objeto Relevo queda como propuesta: la prueba se hizo con el Tag.
+Relevo es más grande que el Tag por tres razones. La primera es encontrarlo: un objeto que hay que hallar para silenciarlo no puede quedar tapado sobre una mesa. La segunda es controlarlo: una persona de la prueba nunca encontró el botón del Tag, y un botón del tamaño de la cara se ve y se siente. La tercera es fabricarlo: sus detalles necesitan espacio para imprimirse. Los modelos 3D se hicieron con ayuda de Claude a partir de los bocetos (Figura 29). Ambas variantes se imprimen en 3D sin soportes. Como solo una pieza depende de la placa, podrían recibir otros localizadores. En esta etapa el objeto Relevo queda como propuesta: la prueba se hizo con el Tag.
 
-**Figura 25**
+**Figura 29**
 
 *Relevo Home y Relevo Go, con la placa del Tag adentro*
 
@@ -658,7 +709,7 @@ Relevo es más grande que el Tag por tres razones. La primera es encontrarlo: un
 
 ![a. Relevo Home](figuras/pase-figura-21a-relevo-home.png) ![b. Relevo Go](figuras/pase-figura-21b-relevo-go.png) ![c. Piezas, con la placa y la pila del Tag](figuras/pase-figura-21c-piezas.png)
 
-*Nota.* Elaboración propia. Modelos 3D hechos con ayuda de Claude a partir de los bocetos de la Figura 24. Las medidas de la placa del Tag son estimadas.
+*Nota.* Elaboración propia. Modelos 3D hechos con ayuda de Claude a partir de los bocetos de la Figura 28. Las medidas de la placa del Tag son estimadas.
 
 ## Señal
 
@@ -697,9 +748,9 @@ Cada una de estas decisiones responde a un criterio y deja atrás otras opciones
 
 ## Tecnología
 
-Relevo funciona en teléfonos Android porque ese sistema permite las dos cosas que necesita: saber cuánto tiempo se usan otras aplicaciones, con un permiso que la persona concede en los ajustes, y comunicarse por Bluetooth con un objeto cercano (Google, 2026a, 2026b; Figura 26). El iPhone se descartó en esta etapa porque allí consultar el uso de otras aplicaciones exige una autorización especial de Apple (Apple, s. f.-a) y trabajar en los dos sistemas habría duplicado el desarrollo. Entre el teléfono y el objeto solo viajan dos órdenes: sonar y callar. Lo que la persona escribe se queda en el teléfono. La aplicación se instala como archivo sin pasar por una tienda. Los datos de la prueba caben en el plan gratuito del servicio que los guarda (Supabase, s. f.), de modo que la escala de esta etapa no exige infraestructura propia.
+Relevo funciona en teléfonos Android porque ese sistema permite las dos cosas que necesita: saber cuánto tiempo se usan otras aplicaciones, con un permiso que la persona concede en los ajustes, y comunicarse por Bluetooth con un objeto cercano (Google, 2026a, 2026b; Figura 30). El iPhone se descartó en esta etapa porque allí consultar el uso de otras aplicaciones exige una autorización especial de Apple (Apple, s. f.-a) y trabajar en los dos sistemas habría duplicado el desarrollo. Entre el teléfono y el objeto solo viajan dos órdenes: sonar y callar. Lo que la persona escribe se queda en el teléfono. La aplicación se instala como archivo sin pasar por una tienda. Los datos de la prueba caben en el plan gratuito del servicio que los guarda (Supabase, s. f.), de modo que la escala de esta etapa no exige infraestructura propia.
 
-**Figura 26**
+**Figura 30**
 
 *Cómo funciona Relevo: la persona, la aplicación y el objeto*
 
@@ -729,9 +780,9 @@ El prototipo no exigió fabricar nada: el Tag es un producto terminado. Su únic
 
 El proyecto puede crecer en tres etapas. Cada una empieza solo si la anterior entrega evidencia. Un piloto en seis hogares y con Relevo impreso mostraría si sonar desde el lugar de la actividad aporta. Por último, el producto podría abrirse en las dos variantes ya modeladas. Relevo Home se deja en la casa junto al primer paso de una actividad. Relevo Go es para quienes son más «desordenados». Ambas podrían funcionar con localizadores de otras marcas que respondan a la orden estándar de alerta que Relevo usa. Así la persona podría usar el que ya tiene. Aprovechar un dispositivo que ya existe evita desarrollar y fabricar electrónica, aunque puede no ofrecer justo las funciones que se necesitan (Gembali, 2023, p. 53).
 
-El costo del piloto es la cifra que decide el paso siguiente. Cada hogar necesita un localizador, una pila de repuesto y una carcasa impresa: entre 10 100 y 12 150 pesos. Los seis hogares suman entre 60 500 y 72 900 en total. La carcasa casi no cuesta material: lo que se paga es el trabajo de impresión. Por eso conviene imprimir las seis de una vez y repartir el mínimo que cobra un servicio por trabajo. En cambio, un producto exigiría cotizar molde, ensamblaje y ensayos, que solo se justifican con volumen. La Figura 27 resume las tres etapas.
+El costo del piloto es la cifra que decide el paso siguiente. Cada hogar necesita un localizador, una pila de repuesto y una carcasa impresa: entre 10 100 y 12 150 pesos. Los seis hogares suman entre 60 500 y 72 900 en total. La carcasa casi no cuesta material: lo que se paga es el trabajo de impresión. Por eso conviene imprimir las seis de una vez y repartir el mínimo que cobra un servicio por trabajo. En cambio, un producto exigiría cotizar molde, ensamblaje y ensayos, que solo se justifican con volumen. La Figura 31 resume las tres etapas.
 
-**Figura 27**
+**Figura 31**
 
 *Etapas del proyecto*
 
@@ -748,7 +799,7 @@ Hasta ahora el proyecto se financió con recursos propios: unos 111 000 pesos en
 
 ## Actores del proyecto
 
-Las tres personas de la prueba aportaron su uso y sus comentarios, que cambiaron el diseño durante la prueba. Un comercio vendió el Tag y los datos se guardan en un servicio externo. Un objeto piloto sumaría un servicio de impresión 3D y una revisión especializada en accesibilidad y en protección de datos (Figura 27). El proyecto también toma prestados saberes de otras disciplinas, como la psicología de la memoria, la acústica y la electrónica de consumo. El especialista en sistemas de recomendación Denis Parra respondió preguntas del proyecto (capítulo 5). Los fondos concursables suman a Corfo, a Sercotec y al Ministerio de las Culturas como posibles financiamientos.
+Las tres personas de la prueba aportaron su uso y sus comentarios, que cambiaron el diseño durante la prueba. Un comercio vendió el Tag y los datos se guardan en un servicio externo. Un objeto piloto sumaría un servicio de impresión 3D y una revisión especializada en accesibilidad y en protección de datos (Figura 31). El proyecto también toma prestados saberes de otras disciplinas, como la psicología de la memoria, la acústica y la electrónica de consumo. El especialista en sistemas de recomendación Denis Parra respondió preguntas del proyecto (capítulo 5). Los fondos concursables suman a Corfo, a Sercotec y al Ministerio de las Culturas como posibles financiamientos.
 
 ## Seguridad y alcance
 
@@ -760,9 +811,9 @@ Lo diseñado se puso a prueba en el uso real: tres personas usaron Relevo en sus
 
 ## Procedimiento de la prueba
 
-Cada persona aceptó el consentimiento en la aplicación, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer (Figura 28). La prueba comenzó el 7 de octubre de 2026 y tuvo cuatro etapas (Figura 29). Durante dos semanas usaron Relevo a su gusto y cuando quisieron. Cada una fijó su propio límite. Las tres completaron esas dos semanas. Tras cada señal la aplicación preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono para comparar ambos soportes. La aplicación preguntó además si notaron el aviso. La prueba cerró el 10 de noviembre con un cuestionario y una entrevista a cada persona. El consentimiento y las preguntas de la aplicación están en el Anexo I.
+Cada persona aceptó el consentimiento en la aplicación, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer (Figura 32). La prueba comenzó el 7 de octubre de 2026 y tuvo cuatro etapas (Figura 33). Durante dos semanas usaron Relevo a su gusto y cuando quisieron. Cada una fijó su propio límite. Las tres completaron esas dos semanas. Tras cada señal la aplicación preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono para comparar ambos soportes. La aplicación preguntó además si notaron el aviso. La prueba cerró el 10 de noviembre con un cuestionario y una entrevista a cada persona. El consentimiento y las preguntas de la aplicación están en el Anexo I.
 
-**Figura 28**
+**Figura 32**
 
 *Tag durante la prueba en el hogar*
 
@@ -772,7 +823,7 @@ Cada persona aceptó el consentimiento en la aplicación, preparó su primer rel
 
 *Nota.* Fotografías de la prueba en los hogares. En a, la pantalla muestra la actividad, el primer paso y el lugar donde sonará el Tag; se difuminó el nombre de la persona.
 
-**Figura 29**
+**Figura 33**
 
 *Prueba en los hogares*
 
@@ -782,11 +833,11 @@ Cada persona aceptó el consentimiento en la aplicación, preparó su primer rel
 
 ## Registro y cuidado de los datos
 
-La aplicación registró cada relevo: cuándo se activó, si sonó y cómo se calló. También registró las respuestas de cada persona (Figura 30). Esas preguntas completan el registro automático, que muestra qué hizo la persona, pero no por qué (Nielsen, 1993, p. 221). Una señal que falló por un problema de conexión o del objeto no se cuenta.
+La aplicación registró cada relevo: cuándo se activó, si sonó y cómo se calló. También registró las respuestas de cada persona (Figura 34). Esas preguntas completan el registro automático, que muestra qué hizo la persona, pero no por qué (Nielsen, 1993, p. 221). Una señal que falló por un problema de conexión o del objeto no se cuenta.
 
 Para dar el ciclo por logrado se debían cumplir tres condiciones: que el Tag sonara cuando correspondía; que al oír la señal la persona supiera qué quería hacer sin leer la pantalla y recordara cómo empezar, y que siguiera usando Relevo durante las dos semanas.
 
-**Figura 30**
+**Figura 34**
 
 *Qué se registró en cada relevo*
 
@@ -800,9 +851,9 @@ Las tres personas son mayores de edad y participaron de forma voluntaria y sin p
 
 Durante las semanas con el Tag el ciclo completo funcionó en los tres hogares. El Tag sonó en todos los relevos que llegaron a su límite, salvo uno que se cumplió fuera de casa y lejos del objeto. Al oír la señal, la persona casi siempre supo qué quería hacer antes de mirar la pantalla y siempre recordó cómo empezar. Las tres condiciones para dar el ciclo por logrado se cumplieron. Los fallos técnicos del objeto comprado se corrigieron durante la prueba.
 
-Con tres personas, lo que hizo cada una dice más que las cifras en conjunto (Figura 31). Cada una repitió sus actividades en un mismo lugar con sus propias aplicaciones y su propio límite. Las tres respondieron el mismo número de veces después de una señal: las diferencias están en lo que hicieron, no en cuánto participaron.
+Con tres personas, lo que hizo cada una dice más que las cifras en conjunto (Figura 35). Cada una repitió sus actividades en un mismo lugar con sus propias aplicaciones y su propio límite. Las tres respondieron el mismo número de veces después de una señal: las diferencias están en lo que hicieron, no en cuánto participaron.
 
-**Figura 31**
+**Figura 35**
 
 *Decisión de cada persona después de la señal*
 
@@ -837,21 +888,29 @@ Con el teléfono recordar fue igual de fácil, pero notar la señal no (Tabla 3)
 
 **Criterios de diseño.** Contrastados con los criterios del capítulo 9, los resultados son compatibles con varias decisiones de diseño. El primer paso (criterio 2) pudo servir de ancla porque siempre recordaron cómo empezar. Que casi siempre supieran qué querían hacer antes de mirar la pantalla es compatible con que el lugar y el sonido (criterio 8) lleven el mensaje sin texto. Es lo que hace el objeto puesto en el lugar indicado: avisa y dice qué hacer a la vez (Norman, 1988/2002, p. 73). La decisión quedó abierta (criterio 4). La preparación (criterio 6) se cumplió a medias: siguieron preparando relevos por su cuenta, pero la primera vez resultó larga.
 
-**Sonido.** Lo que hicieron también matiza lo que habían dicho (Figura 7): en las entrevistas nadie pidió una señal sonora y en la encuesta la mayoría prefirió un sonido breve. En la prueba el sonido de unos 30 segundos les pareció bueno o neutro casi siempre, pero la mayoría de las veces lo callaron antes de que terminara. Una señal más breve podría bastar, y queda por probar.
+**Sonido.** Lo que hicieron también matiza lo que habían dicho (Figura 9): en las entrevistas nadie pidió una señal sonora y en la encuesta la mayoría prefirió un sonido breve. En la prueba el sonido de unos 30 segundos les pareció bueno o neutro casi siempre, pero la mayoría de las veces lo callaron antes de que terminara. Una señal más breve podría bastar, y queda por probar.
 
 **Objeto frente a notificación.** Contrastados con el tercer supuesto de la hipótesis —que el objeto ayude al menos tanto como una notificación, sin más molestia—, los resultados lo sostienen en parte. Con el Tag recordaron tanto como con el teléfono y dos de las tres personas respondieron antes. Pero su sonido molestó más a quienes estaban cerca. Como la etapa con el teléfono vino después de las semanas con el Tag, las personas ya sabían qué significaba la señal: la comparación describe lo que vivió cada una, no un efecto del soporte.
 
 **Cierre de la prueba.** Las tres contaron que al sonar sabían qué querían hacer y lo situaron en el lugar: el escritorio, la guitarra, la croquera. Con el objeto miraban hacia la actividad; con el teléfono el aviso llegaba donde ya estaba la atención. Las tres seguirían usando Relevo y ninguna se sintió obligada: empezar dependió de las ganas, la hora y dónde estaban (Anexo I).
 
-**Dos hallazgos para el diseño.** El primero es que la señal depende del objeto: el único relevo que no sonó ocurrió fuera de casa y lejos del Tag. El segundo es que recordar no obliga a empezar: la intención de hacer algo explica solo en parte lo que una persona hace después (Sheeran y Webb, 2016), y una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento (Fogg, 2009, p. 1; Figura 32). Relevo actúa sobre la facilidad porque deja la señal junto a un primer paso concreto. No actúa sobre la motivación: como pide el criterio 4, la señal devuelve la intención y la decisión sigue siendo de la persona.
+**Dos hallazgos para el diseño.** El primero es que la señal depende del objeto: el único relevo que no sonó ocurrió fuera de casa y lejos del Tag. El segundo es que recordar no obliga a empezar: la intención de hacer algo explica solo en parte lo que una persona hace después (Sheeran y Webb, 2016), y una señal lleva a actuar solo si coincide con la motivación y la capacidad del momento (Fogg, 2009, p. 1; Figura 36). Fogg lo representa en dos ejes, la motivación y la capacidad: cuanto más altas, más probable es que una señal lleve a la conducta (Figura 37). Relevo actúa sobre la facilidad porque deja la señal junto a un primer paso concreto. No actúa sobre la motivación: como pide el criterio 4, la señal devuelve la intención y la decisión sigue siendo de la persona.
 
-**Figura 32**
+**Figura 36**
 
 *Recordar no basta para empezar algo*
 
 [FIGURA POR INSERTAR: (columna) matriz de dos por dos: Motivación: de baja (abajo) a alta (arriba) | Facilidad para empezar: de difícil (izquierda) a fácil (derecha); Mucha motivación y comienzo difícil | Quiere hacerlo, pero el primer paso cuesta; Mucha motivación y comienzo fácil | La señal basta para empezar; Poca motivación y comienzo difícil | La señal recuerda, pero no lleva a empezar; Poca motivación y comienzo fácil | Puede empezar o dejarlo para después]
 
 *Nota.* Elaboración propia a partir de Fogg (2009).
+
+**Figura 37**
+
+*Modelo de conducta de Fogg*
+
+![](figuras/fuentes/fogg-2009-modelo-de-conducta.png)
+
+*Nota.* Tomado de Fogg (2009, p. 2). La conducta ocurre cuando coinciden la motivación, la capacidad y una señal; cuanto más altas son las dos primeras, más probable es que la señal lleve a actuar.
 
 ## Alcance de esta etapa
 
@@ -893,9 +952,9 @@ El avance se ve en el propio prototipo. Entre septiembre y noviembre la propuest
 
 La pregunta de investigación indagaba el efecto de vincular una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno. La prueba permite afirmar que el ciclo funciona en el uso cotidiano de tres hogares con el objeto en ese lugar: al oír la señal, la persona casi siempre supo qué quería hacer antes de leerlo, siempre recordó cómo empezar y decidió con libertad. Esos resultados son compatibles con la hipótesis, aunque no bastan para probarla. No permiten afirmar que el objeto supere a la notificación: con el teléfono recordaron igual. Aunque notaron el aviso tarde o no lo notaron cerca de la mitad de las veces, la pregunta sobre el aviso se hizo solo con el teléfono. Además, esa etapa vino siempre después de las semanas con el Tag. En ambas etapas las personas habían preparado el relevo poco antes de que sonara. Por su parte, el sonido del Tag molestó más a quienes estaban cerca. Tampoco permiten afirmar que el lugar sea lo que ayuda, porque ninguna etapa dejó el objeto lejos de la actividad.
 
-La investigación sí precisó las condiciones que debe cumplir una ayuda así: partir de una actividad que la persona elige, unirla a un primer paso concreto, sonar cuando ella lo decidió y dejar abierta la decisión. Construido así, Relevo devolvió la intención sin decidir por nadie (Figura 33). El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones, sin reducirla a una cuestión de disciplina.
+La investigación sí precisó las condiciones que debe cumplir una ayuda así: partir de una actividad que la persona elige, unirla a un primer paso concreto, sonar cuando ella lo decidió y dejar abierta la decisión. Construido así, Relevo devolvió la intención sin decidir por nadie (Figura 38). El aporte del proyecto al diseño es haber convertido una tensión cotidiana en decisiones verificables: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones, sin reducirla a una cuestión de disciplina.
 
-**Figura 33**
+**Figura 38**
 
 *Condiciones para que una intención vuelva a tiempo*
 
@@ -905,11 +964,11 @@ La investigación sí precisó las condiciones que debe cumplir una ayuda así: 
 
 ## Alcances y proyecciones
 
-El trabajo puede seguir en cuatro pasos: seguir aplicando lo que mostró la prueba, sumando opciones de control a medida que la persona gana experiencia, como sugirió D. Parra (comunicación personal, 4 de noviembre de 2026); imprimir y probar Relevo; repetir la prueba con más personas y una comparación sin los sesgos de esta, con un fondo concursable, y explorar Relevo Home y Relevo Go con localizadores de otras marcas.
+El trabajo puede seguir en cuatro pasos: seguir aplicando lo que mostró la prueba, sumando opciones de control a medida que la persona gana experiencia, como sugirió D. Parra (comunicación personal, 4 de noviembre de 2026); imprimir y probar Relevo; repetir la prueba con más personas y una comparación sin los sesgos de esta, con un fondo concursable, y explorar Relevo Home y Relevo Go con localizadores de otras marcas (Figura 39).
 
-Esa comparación debe evitar dos sesgos de esta prueba. El primero es que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal. El segundo es que pudieran recordar por haber preparado el relevo poco antes y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero. Seis personas pasan por tres semanas en un orden distinto cada una: el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono (Figura 34). Para el segundo se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar.
+Esa comparación debe evitar dos sesgos de esta prueba. El primero es que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal. El segundo es que pudieran recordar por haber preparado el relevo poco antes y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero. Seis personas pasan por tres semanas en un orden distinto cada una: el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono (Figura 40). Para el segundo se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar.
 
-**Figura 34**
+**Figura 40**
 
 *Comparación propuesta para la etapa siguiente*
 
@@ -918,6 +977,16 @@ Esa comparación debe evitar dos sesgos de esta prueba. El primero es que la eta
 *Nota.* Elaboración propia a partir del protocolo de 21 días (Anexo I).
 
 Más adelante un hardware propio permitiría diseñar también el sonido y el control.
+
+**Figura 39**
+
+*El Tag, Relevo Home y Relevo Go, a la misma escala*
+
+<!-- cola -->
+
+![](figuras/fuentes/relevo-tag-home-y-go-a-escala.jpg)
+
+*Nota.* Elaboración propia. Vistas desde arriba y de costado del modelo 3D.
 
 # Referencias
 
@@ -1128,40 +1197,46 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 ## Figuras
 
-- Figura 1. Dos caminos para que vuelva una intención
-- Figura 2. Señal y mensaje de un recordatorio
-- Figura 3. Paso de la señal del segundo plano al primero
-- Figura 4. Ejemplo de una intención que vuelve tarde
-- Figura 5. Causas de que una intención vuelva tarde
-- Figura 6. Análisis de las entrevistas con el método Framework
-- Figura 7. Lo que las personas cuentan y lo que hacen
-- Figura 8. Última vez que siguieron en el teléfono, según la encuesta
-- Figura 9. Opiniones sobre la propuesta
-- Figura 10. Situaciones de uso
-- Figura 11. Función y lugar de cada herramienta y de Relevo
-- Figura 12. Ocho criterios de diseño en tres grupos
-- Figura 13. Cadena de la formulación, del problema a las conclusiones
-- Figura 14. Método del proyecto, de la investigación a la iteración
-- Figura 15. Proceso del proyecto, de marzo a noviembre de 2026
-- Figura 16. Recorrido del usuario
-- Figura 17. Flujo de la aplicación
-- Figura 18. Estados de un relevo
-- Figura 19. Arquitectura de información de la aplicación
-- Figura 20. Calma, presencia y señal: el color sube con el momento
-- Figura 21. Rasgos de la voz de Relevo
-- Figura 22. Sistema de identidad de Relevo
-- Figura 23. Bocetos del logo
-- Figura 24. Bocetos del objeto
-- Figura 25. Relevo Home y Relevo Go, con la placa del Tag adentro
-- Figura 26. Cómo funciona Relevo: la persona, la aplicación y el objeto
-- Figura 27. Etapas del proyecto
-- Figura 28. Tag durante la prueba en el hogar
-- Figura 29. Prueba en los hogares
-- Figura 30. Qué se registró en cada relevo
-- Figura 31. Decisión de cada persona después de la señal
-- Figura 32. Recordar no basta para empezar algo
-- Figura 33. Condiciones para que una intención vuelva a tiempo
-- Figura 34. Comparación propuesta para la etapa siguiente
+- Figura 1. Funciones de 367 herramientas de autocontrol digital
+- Figura 2. Dos caminos para que vuelva una intención
+- Figura 3. Señal y mensaje de un recordatorio
+- Figura 4. Paso de la señal del segundo plano al primero
+- Figura 5. Ejemplo de una intención que vuelve tarde
+- Figura 6. Causas de que una intención vuelva tarde
+- Figura 7. Wobble, un recordatorio que se queda en la casa
+- Figura 8. Análisis de las entrevistas con el método Framework
+- Figura 9. Lo que las personas cuentan y lo que hacen
+- Figura 10. Última vez que siguieron en el teléfono, según la encuesta
+- Figura 11. Opiniones sobre la propuesta
+- Figura 12. Situaciones de uso
+- Figura 13. Función y lugar de cada herramienta y de Relevo
+- Figura 14. Un recordatorio asociado a un lugar, en una patente de 2009
+- Figura 15. Ocho criterios de diseño en tres grupos
+- Figura 16. Cadena de la formulación, del problema a las conclusiones
+- Figura 17. Método del proyecto, de la investigación a la iteración
+- Figura 18. Proceso del proyecto, de marzo a noviembre de 2026
+- Figura 19. Decir, hacer y crear: tres formas de investigar con las personas
+- Figura 20. Recorrido del usuario
+- Figura 21. Flujo de la aplicación
+- Figura 22. Estados de un relevo
+- Figura 23. Arquitectura de información de la aplicación
+- Figura 24. Calma, presencia y señal: el color sube con el momento
+- Figura 25. Rasgos de la voz de Relevo
+- Figura 26. Sistema de identidad de Relevo
+- Figura 27. Bocetos del logo
+- Figura 28. Bocetos del objeto
+- Figura 29. Relevo Home y Relevo Go, con la placa del Tag adentro
+- Figura 30. Cómo funciona Relevo: la persona, la aplicación y el objeto
+- Figura 31. Etapas del proyecto
+- Figura 32. Tag durante la prueba en el hogar
+- Figura 33. Prueba en los hogares
+- Figura 34. Qué se registró en cada relevo
+- Figura 35. Decisión de cada persona después de la señal
+- Figura 36. Recordar no basta para empezar algo
+- Figura 37. Modelo de conducta de Fogg
+- Figura 38. Condiciones para que una intención vuelva a tiempo
+- Figura 39. El Tag, Relevo Home y Relevo Go, a la misma escala
+- Figura 40. Comparación propuesta para la etapa siguiente
 
 # Glosario
 
@@ -1211,8 +1286,6 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 **Método Framework.** Método de análisis cualitativo que resume el material codificado en una matriz de unidades de análisis y temas, para identificar patrones dentro de cada caso y entre casos.
 
-**NFC (comunicación de campo cercano).** Tecnología inalámbrica de muy corto alcance. Una etiqueta NFC se lee al acercarle el teléfono.
-
 **Ocio digital.** Actividades que una persona realiza con dispositivos digitales en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros.
 
 **_Phygital_.** Término formado por *physical* y *digital* que designa experiencias que integran lo físico y lo digital (Waggoner et al., 2026). En esta memoria nombra el tipo de sistema.
@@ -1255,16 +1328,19 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 
 ## Registro de cambios (disclaimer)
 
-### 2026-11-24 — Menos comas, frases directas y esquemas más claros
+### 2026-11-24 — Menos comas, imágenes reales, paleta explicada y esquemas más claros
 
 - **Qué cambió:**
   - el cuerpo, del Resumen a las Conclusiones, tiene frases más cortas y directas: se quitaron incisos entre comas, se partieron las oraciones encadenadas y se cambiaron giros poéticos o informales («la puerta principal a internet», «conversa con», «se hace a un lado», «chica», «un toque»). Las comas del cuerpo bajaron de 942 a unas 540. Las citas, las cifras, las referencias y las afirmaciones quedan iguales;
-  - los esquemas dicen con claridad lo que muestran: la Figura 2 nombra la señal y el mensaje en Relevo; la 16 dice que las tres respuestas tienen el mismo peso; la 19 usa las bajadas del texto y deja «Ideas» sin barra; la 27 deja «y/o»;
-  - la nota de la Figura 18 suma que un relevo en espera que se edita conserva el tiempo contado si las aplicaciones son las mismas;
-  - la Figura 18 se cita en «Oír la señal», donde el texto habla de silenciarla, y no en «Preparar»: así las Figuras 17 y 18 quedan en orden, cada una en su página o en la siguiente;
-  - marcas de diagramación: la Figura 8 va en una columna, en lista, y la 16 en dos columnas.
-- **Cómo estaba antes:** muchas oraciones encadenaban ideas con comas e incisos; algunos esquemas tenían elementos sin explicar, como «Objeto» en la Figura 2.
-- **Por qué:** el autor señaló que se abusa de las comas y que algunas frases suenan poéticas o informales, y pidió figuras que se entiendan (D-187).
+  - la paleta cromática explica la decisión y cada color, con la señalética de seguridad y las asociaciones del Anexo H;
+  - seis figuras nuevas con imágenes reales de las fuentes y del objeto, al final de los capítulos que terminaban en una columna corta: las funciones de las herramientas de autocontrol (Lyngs et al., 2019; Figura 1), Wobble (Zekveld et al., 2017; Figura 7), una patente de recordatorios asociados a un lugar (Rosenberg, 2009; Figura 14), decir, hacer y crear (E. B.-N. Sanders y Stappers, 2012; Figura 19), el modelo de Fogg (2009; Figura 37) y el Tag con Relevo Home y Go a escala (Figura 39). Cada una se menciona en el texto, y las figuras se renumeraron por su primera mención: ahora son 40;
+  - los esquemas dicen con claridad lo que muestran: la Figura 3 nombra la señal y el mensaje en Relevo; la 20 dice que las tres respuestas tienen el mismo peso; la 23 usa las bajadas del texto y deja «Ideas» sin barra; la 31 deja «y/o»;
+  - la nota de la Figura 22 suma que un relevo en espera que se edita conserva el tiempo contado si las aplicaciones son las mismas;
+  - la Figura 22 se cita en «Oír la señal», donde el texto habla de silenciarla, y no en «Preparar»: así las Figuras 21 y 22 quedan en orden, cada una en su página o en la siguiente;
+  - el glosario deja «NFC», que el capítulo 8 ya explica en su primera mención, para no terminar en una columna diminuta;
+  - marcas de diagramación: la Figura 10 va en una columna, en lista, y la 20 en dos columnas; las imágenes de cierre llevan `<!-- cola -->`, que las pone bajo la última columna de su capítulo.
+- **Cómo estaba antes:** muchas oraciones encadenaban ideas con comas e incisos; la paleta nombraba los colores sin explicar cada uno; cinco capítulos y el glosario terminaban en una columna corta; algunos esquemas tenían elementos sin explicar, como «Objeto» en la Figura 3; eran 34 figuras.
+- **Por qué:** el autor señaló que se abusa de las comas y que algunas frases suenan poéticas o informales; pidió explicar mejor la cromática, que ninguna página quede con una columna diminuta de texto y rellenar con imágenes reales de libros, autores, objetos o referentes (D-187).
 
 ### 2026-11-21 — Marcas de diagramación
 

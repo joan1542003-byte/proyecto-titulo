@@ -191,6 +191,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       f.titulo = lineas[i].trim().replace(/^\*|\*$/g, ''); i++; sig();
       if (/^<!-- doble -->$/.test(lineas[i].trim())) { f.columna = true; f.doble = true; i++; sig(); }   // dos columnas, junto al texto
       else if (/^<!-- columna -->$/.test(lineas[i].trim())) { f.columna = true; i++; sig(); }        // una columna, junto al texto
+      else if ((m = lineas[i].trim().match(/^<!-- cola(?: (\d+))? -->$/))) { f.columna = true; f.cola = true; f.altoImagen = m[1] ? +m[1] : null; i++; sig(); }   // bajo la última columna del capítulo
       if (f.flotante === 'tabla') {
         const filas = [];
         while (i < lineas.length && /^\|/.test(lineas[i])) { filas.push(lineas[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); i++; }
@@ -407,7 +408,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}.idx.ancho{grid-template-columns:1fr 1fr}
 .ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
 .ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
-.ir.m.c{padding:.8mm 4.5mm .8mm 3.2mm;min-height:7.2mm;margin-bottom:.8mm}
+.ir.m.c{padding:.75mm 4.5mm .75mm 3.2mm;min-height:7.1mm;margin-bottom:.65mm}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
@@ -684,7 +685,8 @@ function fotos(b, T) {
 /** Figura de una columna: una imagen con su rótulo, su título, su pie y su nota (APA 7), dentro del texto. */
 function piezaColumna(b) {
   const f = b.fotos && b.fotos[0]; const ancho = b.doble ? DOBLE : COL;
-  const cuerpo = (T) => (b.v8 ? figuraV8(b) : b.fotos && b.doble ? fotos(b, T) : f ?`<img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
+  const tope = b.altoImagen ? ` style="max-height:${b.altoImagen}mm"` : '';
+  const cuerpo = (T) => (b.v8 ? figuraV8(b) : b.fotos && b.doble ? fotos(b, T) : f ?`<img src="${h(f.src.split(path.sep).join('/'))}" alt=""${tope}>${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
   return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol${b.doble ? ' dbl' : ''}"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
 }
 
@@ -1053,7 +1055,7 @@ function componer(c) {
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
-    if (b.columna) { if (!b.reservada) colocar(b); continue; }
+    if (b.columna) { if (b.cola) continue; if (!b.reservada) colocar(b); continue; }
     if (b.frase) {
       const a = b.pieza.alto / PT; const antes = y > 0 ? 5 : 0;
       if (y + antes + a > cap() + 0.5) saltar(); else y += antes;
@@ -1239,6 +1241,7 @@ function costo(det, hasta) {
   const igual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   const opcionesDe = (b, men) => {
     const c = cuerpo.find((x) => x.bloques.includes(b));
+    if (b.cola) return [null];
     if (b.columna) {
       // Una figura de columna: su página (la de la mención, la última de la mención o la siguiente) y su lado.
       const ps = [...new Set([men[0], men[1], men[1] + 1])].map((q) => q - c.pagina).filter((r) => r >= 0);
@@ -1322,6 +1325,23 @@ function costo(det, hasta) {
   if (process.env.DIAG) { const det = []; costo(det); console.log('Desglose del costo: ' + det.join(' · ')); }
   if (process.env.DIAG) console.log(`Costo del reparto: ${mejor}`);
 }
+// Figuras «cola» (24 de noviembre de 2026, pedido del autor): una imagen real —un libro, un autor, un objeto, un
+// referente— bajo la última columna de texto de su capítulo, cuando esa columna quedó corta. No mueve el texto. Si
+// no cabe debajo, va arriba de una columna libre de esa página.
+cuerpo.forEach((c) => {
+  const colas = c.bloques.filter((b) => b.cola);
+  if (!colas.length || !c.marcos.length) return;
+  const q = Math.max(...c.marcos.map((m) => m.p)), pg = pag(q); pg.colas = pg.colas || [];
+  const enQ = c.marcos.filter((m) => m.p === q), k = Math.max(...enQ.map((m) => m.k));
+  let y = TOP + Math.max(...enQ.filter((m) => m.k === k).map((m) => (m.y0 + m.usado) * PT)) + AIRE_PIEZAS;
+  colas.forEach((b) => {
+    const a = b.pieza.alto;
+    if (y + a <= colBot(q, k)) { pg.colas.push({ b, k, y }); b.pagina = q; y += a + AIRE_PIEZAS; return; }
+    const libre = [0, 1, 2].find((x) => x > k && !ocupada(q, x) && !pg.paneles.some((pn) => pn.k === x) && !pg.colas.some((t) => t.k === x) && a <= colBot(q, x) - TOP);
+    if (libre != null) { pg.colas.push({ b, k: libre, y: TOP }); b.pagina = q; return; }
+    console.log(`Atención: la figura ${b.n} mide ${Math.round(a)} mm y no cabe al final de ${c.titulo} (quedan ${Math.round(colBot(q, k) - y)} mm).`);
+  });
+});
 // Los finales de sección no se equilibran ni se reparten en columnas cortas: el texto llena cada columna de arriba
 // abajo y sigue hacia el lado, como en una página doble (pedido del autor del 29 de octubre de 2026). Que ningún
 // capítulo termine en una columna sola se resuelve con el contenido (D-152), y el generador avisa dónde pasa.
@@ -1416,6 +1436,7 @@ paginas.forEach((pg, q) => {
   });
   pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
   pg.flotDer.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: colX(1), y: BOTTOM - pg.der, nombre: `Figura ${b.n}` }));
+  (pg.colas || []).forEach((t) => items.push({ tipo: 'pieza', pieza: t.b.pieza, x: colX(t.k), y: t.y, nombre: t.b.rotulo }));
   pg.paneles.forEach((pn) => items.push(panelDe(pn.c, colX(pn.k), pn.y, pn.alto)));
   pg.frases.forEach((f) => items.push({ tipo: 'pieza', pieza: f.b.pieza, x: colX(f.k), y: f.y, nombre: f.b.rotulo }));
   pg.marcos.forEach((m) => {
