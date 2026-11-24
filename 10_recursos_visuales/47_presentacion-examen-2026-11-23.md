@@ -1,61 +1,82 @@
 # Presentación del examen (23 de noviembre de 2026)
 
-**Archivo:** [presentación en Figma Slides](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1), en la cuenta del autor.
-**Duración:** unos 9 minutos (8:49 según las notas del orador), en 41 láminas.
+**Archivo:** [presentación en Figma Slides](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1), en la cuenta del autor. [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf), de 7,96 MB, y [guion](presentacion-examen/guion-examen-2026-11-24.md) para ensayar.
+**Duración:** 9:26 a 140 palabras por minuto, entre 8:54 y 10:04 según el ritmo, en 46 láminas.
 **Fuente:** el [borrador v8 de la memoria](../08_memoria/borrador-memoria-v8-2026-11-21.md), leído completo, y su [Anexo C](../08_memoria/anexos/anexo-c-referentes.md), para la comparación con los referentes. Todas las cifras, las citas y los textos literales salen de ahí.
-**Estado:** octava versión, del 24 de noviembre: una idea por lámina, poco texto, imágenes sin el libro ni la cómoda y el color como en la memoria y la app. Falta la revisión del autor. Las 41 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v6.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24-v5.jpg`](presentacion-examen/laminas-2026-11-24-v5.jpg), [`laminas-2026-11-24-v4.jpg`](presentacion-examen/laminas-2026-11-24-v4.jpg), [`laminas-2026-11-24-v3.jpg`](presentacion-examen/laminas-2026-11-24-v3.jpg), [`laminas-2026-11-24-v2.jpg`](presentacion-examen/laminas-2026-11-24-v2.jpg), [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
+**Estado:** novena versión, del 24 de noviembre: un PDF sin animaciones ([D-189](../09_decisiones/registro-de-decisiones.md#d-189--la-presentación-del-examen-es-un-pdf-sin-animaciones-de-9-a-10-minutos)), con texto legible al proyectar, cinco láminas nuevas —método, proceso, flujo técnico, señal y ética— y un guion de 1213 palabras. Se revisó en cuatro rondas; falta la revisión del autor. Las 46 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v7.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24-v6.jpg`](presentacion-examen/laminas-2026-11-24-v6.jpg), [`v5`](presentacion-examen/laminas-2026-11-24-v5.jpg), [`v4`](presentacion-examen/laminas-2026-11-24-v4.jpg), [`v3`](presentacion-examen/laminas-2026-11-24-v3.jpg), [`v2`](presentacion-examen/laminas-2026-11-24-v2.jpg), [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
 
 ## Estructura
 
-Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una dice arriba a la derecha de qué capítulo viene; la motivación personal, del capítulo 1, va en las notas de la lámina 2. Cada lámina dice una sola cosa. Las ideas de peso —lo que falta en los antecedentes, la idea de diseño, el problema, la tercera causa, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— tienen una lámina propia, con el enunciado en grande sobre el papel.
+Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una dice arriba a la derecha de qué capítulo viene; la motivación personal, del capítulo 1, va en las notas de la lámina 2. Cada lámina dice una sola cosa. Las ideas de peso —lo que falta en los antecedentes, la idea de diseño, el problema, la tercera causa, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— tienen una lámina propia, con el enunciado en grande sobre el papel. El inicio de cada lámina sale del [guion](presentacion-examen/guion-examen-2026-11-24.md).
 
 | N.º | Lámina | Título o enunciado | Qué muestra | Capítulo | Inicio |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Portada | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital» | El logo animado «pasa el turno» sobre el aura de la portada de la memoria. | Portada | 0:00 |
-| 2 | Ocio digital | «El ocio digital» | La definición, cuatro usos y el sentido según el motivo, con la ilustración del teléfono. | 1 y 2 | 0:08 |
-| 3 | Antecedentes 1 | «Reducir el uso no basta como criterio» | Tres hallazgos, con su fuente. | 3 | 0:23 |
-| 4 | Antecedentes 2 | «3 de 4» | Herramientas que bloquean, el 36 % de one sec y la pregunta de MindPhone. | 3 | 0:35 |
-| 5 | Antecedentes 3 | «Un lugar o un objeto pueden recordarnos qué hacer» | El lugar, el esfuerzo y el objeto. | 3 | 0:50 |
+| 1 | Portada | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital» | El logo fijo sobre el aura de la portada de la memoria. | Portada | 0:00 |
+| 2 | Ocio digital | «El ocio digital» | La definición, cuatro usos y el sentido según el motivo, con la ilustración del teléfono. | 1 y 2 | 0:09 |
+| 3 | Antecedentes 1 | «Reducir el uso no basta como criterio» | Tres hallazgos, con su fuente. | 3 | 0:27 |
+| 4 | Antecedentes 2 | «3 de 4» | Herramientas que bloquean, el 36 % de one sec y la pregunta de MindPhone. | 3 | 0:40 |
+| 5 | Antecedentes 3 | «Un lugar o un objeto pueden recordarnos qué hacer» | El lugar, el esfuerzo y el objeto. | 3 | 0:52 |
 | 6 | Lo que falta | «Ninguna de estas respuestas muestra cuándo…» | El alcance de los antecedentes. | 3 | 1:02 |
-| 7 | Marco teórico 1 | «El motivo se pierde mientras se usa» | De abrir a propósito a seguir por costumbre, y lo que pide ese ámbito. | 4 | 1:10 |
-| 8 | Marco teórico 2 | «Elegir fortalece la motivación; las órdenes la debilitan» | La autonomía, la fricción y los planes. | 4 | 1:22 |
-| 9 | Marco teórico 3 | «Una intención vuelve por dos caminos» | Vigilar o una señal del entorno, en dos fichas. | 4 | 1:34 |
-| 10 | Marco teórico 3 | «Un buen recordatorio tiene señal y mensaje» | La señal y el mensaje, en dos fichas, y la idea de informar en segundo plano. | 4 | 1:49 |
-| 11 | Idea de diseño | La idea de diseño, literal | — | 4 | 2:01 |
-| 12 | Contexto | «En Chile, el teléfono es la puerta a internet» | 96,6 % y 99,1 % (Subsecretaría de Telecomunicaciones, 2025). | 5 | 2:11 |
-| 13 | Ejemplo | «Una intención que vuelve tarde» | Antes, durante y después, en tres fichas. | 5 | 2:21 |
-| 14 | Problema | El problema, literal | — | 5 | 2:33 |
-| 15 | Evidencia | «La intención pierde fuerza durante la sesión» | 65,6 % y 51,4 % (Lukoff et al., 2018) y 21 de 43 episodios de la encuesta. | 5 | 2:45 |
-| 16 | Causa 1 | «La atención está ocupada» | McDaniel y Einstein (2000) y el estudio de más de mil personas. | 5 | 3:00 |
-| 17 | Causa 2 | «La interfaz no tiene final» | El teléfono sin final, la cita de Denis Parra, YouTube y Kleinberg et al. (2024). | 5 | 3:12 |
-| 18 | Causa 3 | «Ver el ocio como una pérdida de tiempo le quita disfrute» | Tonietto et al. (2021). | 5 | 3:30 |
-| 19 | Desafío | El desafío, literal | — | 5 | 3:40 |
-| 20 | Justificación | «Por qué es un problema de diseño» | Tres razones y las siete variables que el diseño ha creado. | 6 | 3:52 |
-| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, como la Figura 8 de la memoria: íconos en tinta y una barra de color en cada una. | 7 | 4:04 |
-| 22 | Situaciones | «Dos situaciones de uso» | El usuario principal y el límite, como tipos ideales. | 7 | 4:19 |
-| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo marcado y su símbolo. | 8 | 4:31 |
-| 24 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios en tres fichas, una por idea. | 9 | 4:46 |
-| 25 | Pregunta | La pregunta, literal | En la tarjeta de aura de la memoria, y qué es el recuerdo oportuno. | 10 | 5:04 |
-| 26 | Hipótesis | La hipótesis, literal | En la tarjeta de aura de la memoria, y sus tres supuestos. | 10 | 5:16 |
-| 27 | Objetivos | «Objetivos» | El general y los cuatro específicos. | 10 | 5:28 |
-| 28 | Relevo | «Relevo: una aplicación y un objeto» | La animación «Cómo funciona», tres pasos y qué es el Tag. | 10 y 11 | 5:43 |
-| 29 | Cómo se usa | «Cómo se usa: los cuatro momentos de un relevo» | El ícono de cada momento en su color, y la animación del tiempo en el teléfono. | 11 | 5:58 |
-| 30 | Aplicación | «La aplicación» | Tres pantallas de la 4.8.2. | 11 | 6:16 |
-| 31 | Identidad | «Identidad» | El logo animado, la tipografía, la paleta y los íconos. | 11 | 6:28 |
-| 32 | Objeto | «El objeto» | Lo probado (el Tag) y lo propuesto (Home y Go). | 11 | 6:38 |
-| 33 | Factibilidad | «Factibilidad: tecnología, costos y etapas» | Android y Bluetooth, y las tres etapas de la Figura 27. | 12 | 6:50 |
-| 34 | Prueba | «Prueba en los hogares» | Una foto, las cuatro etapas como en la Figura 29 y las preguntas tras cada señal. | 13 | 7:05 |
-| 35 | Resultados | «Con el Tag, el ciclo funcionó en los tres hogares» | 23 de 24, 19 de 21, 21 de 21 y 10 de 21, con íconos en tinta y barras de color. | 13 | 7:17 |
-| 36 | Tag y teléfono | «Con el teléfono recordaron igual, pero dos de tres personas respondieron más tarde» | La mediana de segundos y una cita. | 13 | 7:32 |
-| 37 | Cambios | «Cambios implementados a partir de la prueba» | De 11 a 3 pantallas y nueve cambios con su estado. | 13 | 7:47 |
-| 38 | Conclusiones | «El ciclo funciona en el uso real de tres hogares» | El estado de cada objetivo y la hipótesis. | 14 | 7:59 |
-| 39 | Comparación | «Relevo frente a los referentes» | Las cinco condiciones del Anexo C en cada familia de herramientas. | 14 | 8:14 |
-| 40 | Aporte | El aporte, literal | Y lo que sigue. | 14 | 8:32 |
-| 41 | Cierre | «Gracias» | El logo animado sobre el aura de la contraportada de la memoria. | — | 8:44 |
+| 7 | Marco teórico 1 | «El motivo se pierde mientras se usa» | De abrir a propósito a seguir por costumbre, y lo que pide ese ámbito. | 4 | 1:12 |
+| 8 | Marco teórico 2 | «Elegir fortalece la motivación; las órdenes la debilitan» | La fricción y los planes. | 4 | 1:25 |
+| 9 | Marco teórico 3 | «Una intención vuelve por dos caminos» | Vigilar o una señal del entorno. | 4 | 1:38 |
+| 10 | Marco teórico 3 | «Un buen recordatorio tiene señal y mensaje» | La señal, el mensaje y la idea de informar en segundo plano. | 4 | 1:47 |
+| 11 | Idea de diseño | La idea de diseño, literal | — | 4 | 1:58 |
+| 12 | Contexto | «En Chile, el teléfono es la puerta a internet» | 96,6 % y 99,1 %. | 5 | 2:11 |
+| 13 | Ejemplo | «Una intención que vuelve tarde» | Antes, durante y después. | 5 | 2:22 |
+| 14 | Problema | El problema, literal | — | 5 | 2:35 |
+| 15 | Evidencia | «La intención pierde fuerza durante la sesión» | 65,6 % y 51,4 % y 21 de 43. | 5 | 2:47 |
+| 16 | Causa 1 | «La atención está ocupada» | McDaniel y Einstein (2000) y el estudio de más de mil personas. | 5 | 3:01 |
+| 17 | Causa 2 | «La interfaz no tiene final» | La cita de Denis Parra, YouTube y Kleinberg et al. (2024). | 5 | 3:12 |
+| 18 | Causa 3 | «Ver el ocio como una pérdida de tiempo le quita disfrute» | Tonietto et al. (2021). | 5 | 3:25 |
+| 19 | Desafío | El desafío, literal | — | 5 | 3:31 |
+| 20 | Justificación | «Por qué es un problema de diseño» | Tres razones y siete variables. | 6 | 3:42 |
+| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, como la Figura 8. | 7 | 3:54 |
+| 22 | Situaciones | «Dos situaciones de uso» | El usuario principal y el límite. | 7 | 4:07 |
+| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11. | 8 | 4:19 |
+| 24 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios. | 9 | 4:29 |
+| 25 | Pregunta | La pregunta, literal | Y qué es el recuerdo oportuno. | 10 | 4:41 |
+| 26 | Hipótesis | La hipótesis, literal | Y sus tres supuestos. | 10 | 4:54 |
+| 27 | Objetivos | «Objetivos» | El general y los cuatro específicos, literales. | 10 | 5:07 |
+| 28 | Método | «Método: investigar a través del diseño» | Lo investigado y el ciclo de diseñar, probar y cambiar, como la Figura 14; el especialista consultado y el uso de IA. | 10 | 5:20 |
+| 29 | Proceso | «De un objeto para dejar el teléfono a un sistema probado en tres hogares» | Siete hitos de marzo a noviembre, de la Figura 15. | 10 | 5:33 |
+| 30 | Relevo | «Relevo: una aplicación, un objeto y un lugar» | Una foto de la prueba y los tres pasos. | 10 y 11 | 5:49 |
+| 31 | Cómo se usa | «Cómo se usa: los cuatro momentos de un relevo» | El ícono de cada momento en su color. | 11 | 6:04 |
+| 32 | Aplicación | «La aplicación» | Tres pantallas de la 4.8.2. | 11 | 6:18 |
+| 33 | Identidad | «Identidad» | El logo, la tipografía, la paleta y los íconos. | 11 | 6:30 |
+| 34 | Objeto | «El objeto» | Lo probado (el Tag) y lo propuesto (Home y Go). | 11 | 6:43 |
+| 35 | Señal | «La señal es un sonido, porque alcanza a quien mira una pantalla» | La duración, el tono y el lugar, y la preferencia de la encuesta. | 11 | 6:55 |
+| 36 | Flujo técnico | «Por dentro: la persona, la aplicación y el Tag» | La Figura 26: qué hace cada uno en los cuatro momentos, las dos órdenes y por qué Android. | 12 | 7:08 |
+| 37 | Factibilidad | «Factibilidad: tres etapas, cada una con evidencia» | Las tres etapas de la Figura 27. | 12 | 7:22 |
+| 38 | Ética | «Ética: cuidar a las personas y sus datos» | Consentimiento, código en vez del nombre, borrado y libertad para salir. | 11 a 13 | 7:35 |
+| 39 | Prueba | «Prueba en los hogares» | Las cuatro etapas de la Figura 29 y las preguntas tras cada señal. | 13 | 7:49 |
+| 40 | Resultados | «Con el Tag, el ciclo funcionó en los tres hogares» | 23 de 24, 19 de 21, 21 de 21 y 10 de 21, y las condiciones del ciclo. | 13 | 8:03 |
+| 41 | Tag y teléfono | «Con el teléfono recordaron igual, pero dos de tres personas respondieron más tarde» | La mediana de segundos y una cita. | 13 | 8:16 |
+| 42 | Cambios | «Cambios implementados a partir de la prueba» | De 11 a 3 pantallas y nueve cambios con su estado. | 13 | 8:29 |
+| 43 | Conclusiones | «El ciclo funciona en el uso real de tres hogares» | El estado de cada objetivo y la hipótesis. | 14 | 8:42 |
+| 44 | Comparación | «Relevo frente a los referentes» | Las cinco condiciones del Anexo C en cada familia de herramientas. | 14 | 8:57 |
+| 45 | Aporte | El aporte, literal | Y lo que sigue. | 14 | 9:07 |
+| 46 | Cierre | «Gracias» | El logo fijo sobre el aura de la contraportada. | — | 9:22 |
+
+## Cómo debe ser esta presentación
+
+- **Qué evalúa la comisión.** El instructivo de examen 2026 pide demostrar siete dimensiones: el problema, los objetivos, el marco metodológico y el plan de trabajo, el marco teórico, el usuario y su contexto, la solución de diseño y la factibilidad; la rúbrica suma los referentes, las tecnologías y el marco ético ([criterios oficiales](../01_contexto_y_fuentes/criterios-oficiales-memoria-proyecto-titulo.md)). La comisión de julio no entendió qué es el objeto, dónde vive y cómo funciona, quién lo usa, el flujo de la persona y el técnico, ni la evidencia y sus límites ([tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)), y el examen anterior marcó la falta de fundamentación sensorial. La versión anterior no tenía metodología, proceso, flujo técnico, señal ni ética; ahora cada uno tiene su lámina (28, 29, 35, 36 y 38).
+- **Una idea por lámina, con un título que la dice.** Las láminas con una oración como título y evidencia visual mejoraron la comprensión y bajaron la carga cognitiva frente a las de título de tema y viñetas, en un estudio con 110 estudiantes (Garner y Alley, 2013). Quitar lo que sobra, señalar la estructura y poner cada palabra junto a la imagen que explica ayudan a entender (Mayer, 2023).
+- **Texto legible al proyectar.** Una pauta de presentaciones técnicas recomienda títulos de 32 puntos, puntos principales de 24 y secundarios de 20 a 18 en una lámina de 7,5 pulgadas de alto (University of Waterloo, s. f.). La lámina de Figma mide 1080 px de alto, así que cada punto equivale a 2 px: títulos de 64 px, texto principal de 40 a 48 px y nada bajo 36 px en lo que hay que leer. Las fuentes, las notas y las etiquetas, que no hace falta leer para seguir la exposición, van en 26 a 32 px. Antes, el texto principal medía de 20 a 30 px y la tabla de referentes, 17.
+- **El tiempo se cuenta en palabras.** Las notas anteriores sumaban unas 2.300 palabras, unos 16 minutos a un ritmo normal, aunque sus tiempos decían 8:49. El guion nuevo tiene 1213: a 140 palabras por minuto, con un segundo para pasar cada lámina, dura 9:26. Las cifras y los textos literales se mantienen; se recortan las explicaciones, que van en las respuestas «Si preguntan».
+- **Cuatro rondas de revisión.** La primera revisó la estructura y el contenido frente a la rúbrica; la segunda, el diseño, con los tamaños medidos en Figma y las capturas de cada lámina; la tercera, cada texto frente a la memoria, y la cuarta, el PDF completo. Lo que encontró cada ronda está en el registro de cambios.
+
+### Referencias
+
+Garner, J. K. y Alley, M. P. (2013). How the design of presentation slides affects audience comprehension: A case for the assertion-evidence approach. *International Journal of Engineering Education, 29*(6), 1564–1579.
+
+Mayer, R. E. (2023). Research-based principles for designing multimedia instruction. En C. E. Overson, C. M. Hakala, L. L. Kordonowy y V. A. Benassi (Eds.), *In their own words: What scholars and teachers want you to know about why and how to apply the science of learning in your academic setting* (pp. 143–157). Society for the Teaching of Psychology. https://www.unh.edu/teaching-learning-resource-hub/sites/default/files/media/2023-06/itow-research-based-principles-for-designing-multimedia-instruction-mayer.pdf
+
+University of Waterloo. (s. f.). *5.2.3 Font size*. Technical Presentation Proficiency Examination. https://ece.uwaterloo.ca/~dwharder/Presentations/Guidelines/VisualAids/TextFormat/Size/
 
 ## Anotaciones del autor (23 de noviembre)
 
-El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cada una se resolvió con el texto de la memoria y se borró de la lámina; los números entre paréntesis son los de la versión actual.
+El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cada una se resolvió con el texto de la memoria y se borró de la lámina; los números entre paréntesis son los de la octava versión, de 41 láminas.
 
 | Lámina anterior | Anotación | Cómo se resolvió |
 | --- | --- | --- |
@@ -86,38 +107,46 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 
 - **Una idea por lámina:** cada lámina dice una sola cosa y el detalle va en las notas del orador. Lo que antes se mezclaba en una lámina —el contexto y el ejemplo, la pregunta y la hipótesis, el problema y su evidencia— ahora tiene la suya. Por eso hay más láminas, pero cada una se pasa más rápido y la presentación dura menos.
 - **El color, como en la memoria y la app:** se revisaron la memoria diagramada (la portada, las aperturas y las Figuras 8, 22, 29, 30 y 31), la app 4.8.2 y los estudios de color del proyecto: «[Cuándo va color](32_cuando-va-color-2026-10-03.md)» (D-103), que deja las láminas que se leen en papel y tinta y el color en lo que importa, y la [marca del 25 de octubre](42_marca-relevo-2026-10-25.md), con tarjetas blancas y una ficha de color en cada una. El fondo es el papel y las fichas son blancas. El color va en elementos chicos —el círculo de un ícono, una barra, un punto—, no en todos, y nunca un color sobre otro. Hay fondos de color solo donde la memoria los usa: la portada y el cierre llevan las auras de la portada y la contraportada de la memoria, la pregunta y la hipótesis van en sus tarjetas de aura y la prueba marca en verde y en rosa la primera y la última etapa, como la Figura 29. Las láminas de datos siguen a la Figura 8: íconos en tinta y el color en la barra. Los degradados son sutiles, del tono claro al color dentro de un mismo tono, con los pares de la memoria. Cada color significa siempre lo mismo, según la paleta cromática de la memoria y la Tabla H3 del Anexo H (tabla de abajo). Las auras y los paneles de la cuarta versión salían del motor del [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html) ([generador](presentacion-examen/fondos/generador-de-fondos.html) y [script](presentacion-examen/fondos/renderizar-fondos.js)); ya no se usan.
-- **Imágenes:** las ilustraciones del teléfono salen de cuadros de la animación [«sin palabras»](animaciones-de-relevo-2026-11-23/README.md), con fondo transparente; las del libro y la cómoda, y sus GIF, se quitaron a pedido del autor. Se suman las capturas de la 4.8.2, las fotos de la prueba, los modelos 3D y las animaciones del 23 de noviembre.
-- **Enunciados en grande:** las ideas de peso van solas, en 56 a 76 puntos, sobre el papel, con un punto de color en el rótulo; cuando el enunciado es de Relevo —la idea de diseño, el desafío, las conclusiones y el aporte— son cuatro puntos, uno de cada color. La pregunta y la hipótesis van en las tarjetas de aura de la memoria, con el rótulo en una cápsula blanca. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria.
+- **Imágenes:** las ilustraciones del teléfono salen de cuadros de la animación [«sin palabras»](animaciones-de-relevo-2026-11-23/README.md), con fondo transparente; las del libro y la cómoda se quitaron a pedido del autor, y por la misma razón no se usa la foto del Tag junto a unos mangas. La lámina de Relevo (30) muestra la foto del relevo preparado y el Tag en la mano; la del objeto (34), el Tag en un escritorio, y la de la prueba (39) no lleva foto, para no repetirlas. Se suman las capturas de la 4.8.2 y los modelos 3D.
+- **Enunciados en grande:** las ideas de peso van solas, en 64 a 76 px, sobre el papel, con un punto de color en el rótulo; cuando el enunciado es de Relevo —la idea de diseño, el desafío, las conclusiones y el aporte— son cuatro puntos, uno de cada color. La pregunta y la hipótesis van en las tarjetas de aura de la memoria, con el rótulo en una cápsula blanca. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria. Los demás títulos miden 64 px.
 - **Como la memoria diagramada:** papel, tinta y gris, Instrument Sans y la cabecera «Relevo · Proyecto de Título» con el capítulo, ahora con nombres cortos («5 · Problema»). Las fichas tienen esquinas de 36 y los íconos son los de Lucide que usa la app, sobre un círculo blanco o de su color.
 - **Lo que hay en la memoria:** las láminas muestran lo que se hizo y lo que se encontró. Lo que matiza, como el alcance de la prueba o que la etapa con el teléfono vino después, queda en las notas.
 - **Comparación con los referentes:** usa las cinco condiciones que, según el Anexo C, ningún producto, patente ni prototipo reúne, cada una con su criterio de diseño, y las familias del mapa de la Figura 11. Cada celda es una lectura de las fichas del Anexo C, no una medición de eficacia.
-- **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y la animación del tiempo en el teléfono en el segundo de los cuatro momentos; las del libro, el libro en la cómoda y el teléfono junto al libro se quitaron a pedido del autor. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina —el de la portada y el del cierre, sobre las auras de la memoria—, con un cuadro fijo debajo, y empieza en un cuadro representativo, que es el que muestran el editor y el PDF ([script](presentacion-examen/gif-sobre-fondo.sh) y [GIF](presentacion-examen/gif/README.md)).
-- **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, de 5 a 18 segundos, y suman 8:49.
+- **Sin animaciones ([D-189](../09_decisiones/registro-de-decisiones.md#d-189--la-presentación-del-examen-es-un-pdf-sin-animaciones-de-9-a-10-minutos)):** la presentación se muestra y se entrega en PDF. El logo de la portada, la identidad y el cierre es una imagen fija con fondo transparente, de 2640 × 780 px, hecha con el script del logo: el primer cuadro de «pasa el turno», con el texto en tinta ([`logo-relevo-tinta-3x.png`](presentacion-examen/logo-relevo-tinta-3x.png)). «Cómo funciona» se cambió por una foto de la prueba; «Seguir en el teléfono», por el ícono del tiempo en amarillo, como los otros tres momentos, y el GIF de la app, por una captura fija. Los GIF siguen en [`presentacion-examen/gif/`](presentacion-examen/gif/README.md) como registro.
+- **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, calculados por sus palabras a 140 por minuto, más un segundo para pasarla, y suman 9:26. Las notas traen además respuestas breves, marcadas «Si preguntan», que no se dicen ni cuentan en el tiempo ([guion](presentacion-examen/guion-examen-2026-11-24.md)).
 
 Dónde aparece cada color:
 
 | Color | Qué significa (Tabla H3 del Anexo H) | Láminas |
 | --- | --- | --- |
-| Amarillo | El tiempo, la condición que activa la señal | 7, 14 a 18, 21, 22, 28 y 29 |
-| Celeste | El primer paso | 10, 21, 24, 28, 29 y 35 |
-| Verde | El lugar donde empieza la actividad, donde está el Tag | 5, 9, 10, 21, 24, 26 a 29 y 34 a 36 |
-| Rosa | La decisión | 4, 7, 8, 22, 24, 26, 29, 34 y 35 |
+| Amarillo | El tiempo, la condición que activa la señal | 7, 14 a 18, 21, 22, 30, 31 y 35 |
+| Celeste | El primer paso | 10, 21, 24, 30, 31 y 40 |
+| Verde | El lugar donde empieza la actividad, donde está el Tag | 5, 9, 10, 21, 24, 26, 27, 30, 31, 35 y 39 a 41 |
+| Rosa | La decisión | 4, 7, 8, 22, 24, 26, 31, 39 y 40 |
 | Lila | La personalización | 21, en la barra de la primera cifra, como en la Figura 8 de la memoria |
-| Los cuatro | Relevo, como en el logo | 1, 11, 19, 23, 25, 26, 31, 38, 40 y 41 |
-| Gris y tinta | Lo que no es una de esas partes, la selección y los estados | Las demás fichas e íconos; las láminas 2, 3, 6, 12, 13, 20, 30, 32, 33, 37 y 39 no llevan color, salvo sus imágenes |
+| Los cuatro | Relevo, como en el logo | 1, 11, 19, 23, 25, 26, 33, 43, 45 y 46 |
+| Gris y tinta | Lo que no es una de esas partes, la selección y los estados | Las demás fichas e íconos; las láminas 2, 3, 6, 12, 13, 20, 29, 32, 34, 37, 38, 42 y 44 no llevan color, salvo sus imágenes |
+
+Las láminas 28 y 36 reproducen dos figuras de la memoria con sus colores: el método (Figura 14), con un color por paso, y el flujo técnico (Figura 26), con la persona en rosa, la aplicación en celeste y el Tag en verde.
 
 ## Pendiente
 
-- **Revisión del autor:** texto, orden y tiempos, y el ensayo con cronómetro ([tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)). Con 41 láminas cortas, el ritmo es de unos 13 segundos por lámina: conviene ensayarlo varias veces.
-- **La tabla de la lámina 39:** es una lectura de las fichas del Anexo C; conviene que el autor revise cada celda antes del examen.
-- **Duración del examen:** Por hacer anotaba una presentación de 15 minutos; el autor pidió 10 como máximo. Conviene confirmarlo con los profesores.
-- **Versión de la app:** la lámina 30 muestra la 4.8.2, y la entrega y el examen usan siempre la última versión ([D-188](../09_decisiones/registro-de-decisiones.md#d-188--la-entrega-y-el-examen-usan-la-última-versión-de-la-app)).
-- **«Editar» un relevo activo:** en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 nombra ese cambio, así que conviene corregirlo antes del examen.
-- **GIF:** seis láminas —1, 28 a 31 y 41— tienen un GIF cada una, también guardado en [`presentacion-examen/gif/`](presentacion-examen/gif/README.md). En el editor y en el PDF se ven quietos, en su primer cuadro; según la ayuda de Figma, se mueven solo en el modo presentación. Conviene comprobarlo en el computador del examen. Si alguno no se mueve, se reemplaza desde la sección Fill ([cómo](presentacion-examen/gif/README.md#si-en-el-modo-presentación-no-se-mueven)). Para un PDF con los GIF animados está el [armador](presentacion-examen/pdf-animado/README.md): ese PDF se mueve en Adobe Acrobat Reader, no en los navegadores ni en Vista Previa, y falta armarlo sobre el PDF que exporte el autor.
-- **Textos literales:** si antes del 2 de diciembre cambia algún texto o cifra de la memoria, hay que cambiar las láminas que lo copian: 6, 11, 14, 15, 19, 25 a 27, 35 a 37 y 40.
-- **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
+- **Revisión del autor:** texto, orden y tiempos, y el ensayo con cronómetro ([tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)). Con 46 láminas, el ritmo es de unos 12 segundos por lámina.
+- **PDF final:** exportarlo desde Figma (File → Export slides to → PDF), para que el texto quede vectorial, y comprobar que pese 15 MB o menos. El [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf) está armado con capturas de 1920 × 1080: se ve igual que Figma en un proyector de esa resolución, pero en pantallas de más resolución el texto es más nítido en el exportado.
+- **La tabla de la lámina 44:** es una lectura de las fichas del Anexo C; conviene que el autor revise cada celda antes del examen.
+- **Duración del examen:** el instructivo 2026 pide una exposición de unos 15 minutos; el autor pidió de 9 a 10. Conviene confirmarlo con los profesores.
+- **Versión de la app:** la lámina 32 muestra la 4.8.2, y la entrega y el examen usan siempre la última versión ([D-188](../09_decisiones/registro-de-decisiones.md#d-188--la-entrega-y-el-examen-usan-la-última-versión-de-la-app)).
+- **«Editar» un relevo activo:** en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 42 nombra ese cambio, así que conviene corregirlo antes del examen.
+- **Textos literales:** si antes del 2 de diciembre cambia algún texto o cifra de la memoria, hay que cambiar las láminas que lo copian: 6, 11, 14, 15, 19, 25 a 27, 40 a 42 y 45.
+- **Video de respaldo:** un video del ciclo completo, por si falla la demostración, como pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Novena versión: un PDF legible, sin animaciones y de 9 a 10 minutos
+
+- **Qué cambió:** se estudió qué evalúa la comisión y cómo debe ser una presentación de este tipo (sección «Cómo debe ser esta presentación») y se rehízo en Figma con cuatro rondas de revisión. Son 46 láminas: se sumaron el método (28), el proceso (29), la señal (35), el flujo técnico (36) y la ética (38). Todo el texto se agrandó: títulos de 64 px, texto principal de 40 a 48 px y nada bajo 26 px; se reacomodaron las láminas para que quepa y se recortó el texto que sobraba. Se quitaron los GIF: el logo es una imagen fija de alta resolución, «Cómo funciona» pasó a una foto de la prueba, el segundo momento a un ícono y la app a una captura fija. El guion bajó de unas 2.300 a 1213 palabras, con el minuto de cada lámina y respuestas para las preguntas probables. La primera ronda corrigió dos flechas fuera de lugar (28), una línea de tiempo muy tenue (29), un encabezado sobre su línea (36), una foto repetida (39), un nombre partido en la tabla (44) y títulos de dos tamaños; la segunda, una barra que tapaba texto (21), el texto de la Figura 26 (36) y el equilibrio de las láminas 3 y 5; la tercera, la redacción de las láminas 30, 33, 36 y 37, y la cuarta, unas viñetas encimadas en la 37. Quedan el [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf), de 7,96 MB, la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v7.jpg) y el [guion](presentacion-examen/guion-examen-2026-11-24.md).
+- **Cómo estaba antes:** 41 láminas con el texto principal de 20 a 30 px y la tabla de referentes en 17, sin metodología, proceso, flujo técnico, señal ni ética; seis GIF que se veían quietos en el PDF, y notas de unas 2.300 palabras, que a un ritmo normal duran unos 16 minutos, aunque sus tiempos sumaban 8:49.
+- **Por qué:** el autor canceló todo lo de los GIF y pidió mejorar y perfeccionar la presentación en PDF, con varias revisiones: estudiar cómo debe ser una presentación de este tipo y qué conviene mostrar, revisar los tamaños de texto y el diseño, que no deje dudas del proyecto ni de su proceso, y que dure de 9 a 10 minutos como máximo.
 
 ### 2026-11-24 — Sin imágenes del libro ni de la cómoda, y PDF animado
 

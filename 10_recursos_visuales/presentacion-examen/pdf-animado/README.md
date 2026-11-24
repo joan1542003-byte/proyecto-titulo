@@ -1,5 +1,7 @@
 # PDF de la presentación con los GIF animados
 
+**Descontinuado el 24 de noviembre de 2026:** el autor canceló todo lo de los GIF, y la presentación se muestra y se entrega en PDF sin animaciones ([D-189](../../../09_decisiones/registro-de-decisiones.md#d-189--la-presentación-del-examen-es-un-pdf-sin-animaciones-de-9-a-10-minutos)). El armador queda como registro. Antes de cancelarlo, el autor pidió que el PDF pesara 15 MB como máximo; se midió que el peso venía de los logos con transparencia, que pdfTeX guardaba dos veces, y de los cuadros de los GIF, pero no se llegó a cambiar el armador.
+
 Un PDF exportado desde Figma muestra los GIF quietos. [`armar-pdf-animado.py`](armar-pdf-animado.py) toma ese PDF y pone encima cada animación, en la misma posición y con el mismo tamaño que tiene en Figma, con el paquete [`animate`](https://ctan.org/pkg/animate) de LaTeX. Cada animación empieza sola al abrir su lámina y se repite sin fin.
 
 ## Dónde se mueven
@@ -35,6 +37,12 @@ La base puede ser el PDF exportado desde Figma (File → Export slides to → PD
 Se armó un PDF de prueba sobre capturas de las 41 láminas, de 1920 × 1080. Tiene 41 páginas y el JavaScript de las animaciones. Al convertirlo en imagen, el primer cuadro de cada animación coincide con la lámina de Figma: la diferencia media va de 1 a 5 niveles de 255, por la compresión. No se pudo abrir en Acrobat Reader desde este entorno, así que falta ver las animaciones en marcha. Con el PDF que exporte el autor desde Figma, el texto queda vectorial y más nítido.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Descontinuado
+
+- **Qué cambió:** se avisa que el armador quedó descontinuado y qué se alcanzó a medir para bajar el peso.
+- **Cómo estaba antes:** el armador estaba en uso y faltaba armarlo sobre el PDF del autor.
+- **Por qué:** el autor pidió un PDF de 15 MB como máximo y después canceló todo lo de los GIF.
 
 ### 2026-11-24 — Creación
 

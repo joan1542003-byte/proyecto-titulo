@@ -145,7 +145,7 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
 | 5. Costos y presupuesto | Hecha | — |
 | 6. Semana solo con notificaciones | Cerrada | — |
-| 7. Presentación del examen | En curso: versión rediseñada de 41 láminas y unos 9 minutos en Figma, por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 7. Presentación del examen | En curso: 46 láminas y unos 9 minutos y medio, en Figma y en PDF, sin animaciones; por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Por hacer | Sin fecha |
 | 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
@@ -247,7 +247,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - el flujo de la persona y el técnico, por separado;
   - la evidencia y sus límites.
 
-  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene desde el 24 de noviembre 41 láminas en el orden de la memoria v8, una idea por lámina, y notas para unos 9 minutos, con los antecedentes, el marco teórico y las causas del problema en láminas propias. Muestra el objeto, el hogar, el recorrido de la persona y la evidencia; el flujo técnico no tiene lámina propia, y el alcance de la prueba queda en las notas, como pidió el autor. Falta su revisión y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 25, que la muestra literal. La del 12 de noviembre queda como registro.
+  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene desde el 24 de noviembre 46 láminas en el orden de la memoria v8, una idea por lámina, texto legible al proyectar y un [guion](../10_recursos_visuales/presentacion-examen/guion-examen-2026-11-24.md) de 1213 palabras, para unos 9 minutos y medio. Muestra el objeto, el hogar, el recorrido de la persona, el flujo técnico (lámina 36), el método y el proceso, la ética y la evidencia; el alcance de la prueba va en las respuestas «Si preguntan» de las notas. Se muestra y se entrega en PDF, sin animaciones (D-189); falta exportar el PDF final desde Figma, la revisión del autor y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 25, que la muestra literal. La del 12 de noviembre queda como registro.
 - [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
 - [ ] Si en el examen se muestra la 4.8.2, corregir antes «Editar» un relevo activo, que vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 de la presentación nombra ese cambio.
@@ -998,6 +998,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Tarea 7: presentación perfeccionada
+
+- **Qué cambió:** la tarea 7 describe la presentación de 46 láminas, legible, sin animaciones y de unos 9 minutos y medio, con el flujo técnico en su lámina y el guion.
+- **Cómo estaba antes:** describía 41 láminas y decía que el flujo técnico no tenía lámina propia.
+- **Por qué:** el autor canceló los GIF y pidió perfeccionar la presentación en PDF, de 9 a 10 minutos.
 
 ### 2026-11-24 — El color de la presentación, como en la memoria
 

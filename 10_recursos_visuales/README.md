@@ -83,7 +83,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
 48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, seis adaptados y tres propios con sus reglas, porque Lucide no los tiene; cómo funcionan los íconos de Lucide, cómo se eligió cada uno, su tamaño óptico medido con la prueba del desenfoque, propuestas de más íconos, con cosas cotidianas de Chile, y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
-49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): cuarenta y una láminas en Figma Slides para unos 9 minutos, en el orden de la memoria v8 y con su diseño. Cada lámina dice una sola cosa, con poco texto, el color como en la memoria —fichas blancas, el color en elementos chicos y fondos de aura solo en la portada, el cierre, la pregunta y la hipótesis— e ilustraciones de la animación «sin palabras»; los antecedentes, el marco teórico y las causas del problema tienen láminas propias, y se suman el logo animado y las animaciones del 23 de noviembre, capturas de la app 4.8.2 y una comparación con los referentes. Con su estructura, las anotaciones del autor y cómo se resolvieron, sus decisiones, lo pendiente, el [generador de fondos](presentacion-examen/fondos/generador-de-fondos.html) de la cuarta versión, una [hoja de revisión](presentacion-examen/laminas-2026-11-24-v6.jpg), los [seis GIF](presentacion-examen/gif/README.md), con el número de su lámina y su cuadro fijo, y el [armador del PDF animado](presentacion-examen/pdf-animado/README.md). Para el examen reemplaza a la del 12 de noviembre.
+49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): cuarenta y seis láminas en Figma Slides para unos 9 minutos y medio, en el orden de la memoria v8 y con su diseño, pensadas para mostrarse y entregarse en PDF, sin animaciones (D-189). Cada lámina dice una sola cosa, con texto legible al proyectar —títulos de 64 px y nada bajo 26 px—, el color como en la memoria y láminas propias para los antecedentes, el marco teórico, las causas, el método, el proceso, la señal, el flujo técnico y la ética. Con su estructura, cómo debe ser una presentación de este tipo y sus fuentes, las anotaciones del autor, sus decisiones, lo pendiente, el [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf), el [guion](presentacion-examen/guion-examen-2026-11-24.md) con el minuto de cada lámina, una [hoja de revisión](presentacion-examen/laminas-2026-11-24-v7.jpg) y el logo fijo. Los [GIF](presentacion-examen/gif/README.md) y el [armador del PDF animado](presentacion-examen/pdf-animado/README.md) quedan como registro. Para el examen reemplaza a la del 12 de noviembre.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -113,6 +113,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación perfeccionada
+
+- **Qué cambió:** la entrada 49 describe la novena versión de la presentación: 46 láminas, legible, sin animaciones, con su PDF de revisión y su guion.
+- **Cómo estaba antes:** describía 41 láminas con GIF y el armador del PDF animado.
+- **Por qué:** el autor canceló los GIF y pidió perfeccionar la presentación en PDF.
 
 ### 2026-11-24 — PDF animado
 

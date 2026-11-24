@@ -1,5 +1,7 @@
 # GIF de la presentación del examen
 
+**Ya no se usan:** desde el 24 de noviembre la presentación es un PDF sin animaciones ([D-189](../../../09_decisiones/registro-de-decisiones.md#d-189--la-presentación-del-examen-es-un-pdf-sin-animaciones-de-9-a-10-minutos)); en Figma quedó solo la imagen fija de cada uno, o una foto, un ícono o el logo fijo en su lugar. Estos archivos quedan como registro.
+
 Estos son los seis GIF que usa la [presentación del examen](../../47_presentacion-examen-2026-11-23.md), tal como están en Figma Slides. Su huella SHA-1 coincide con la de la imagen de cada lámina, así que son los mismos archivos. En Figma, cada GIF va sobre su [cuadro fijo](cuadros-fijos/), que es igual a su primer cuadro. Todos se repiten sin fin.
 
 | Lámina | GIF | Qué muestra | Tamaño | Cuadros y duración |
@@ -38,6 +40,12 @@ El cuadro fijo de abajo se deja como está.
 - **Los que se quitaron:** los de Preparar (un libro que se abre), Oír la señal (el libro sobre la cómoda) y Decidir (el teléfono junto al libro) salieron de la lámina 29, que ahora muestra el ícono de cada momento. Las animaciones originales siguen en [animaciones-de-relevo-2026-11-23](../../animaciones-de-relevo-2026-11-23/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Ya no se usan
+
+- **Qué cambió:** se avisa que la presentación ya no usa los GIF.
+- **Cómo estaba antes:** los seis GIF estaban en Figma, sobre su cuadro fijo.
+- **Por qué:** el autor canceló todo lo de los GIF.
 
 ### 2026-11-24 — Enlace al PDF animado
 

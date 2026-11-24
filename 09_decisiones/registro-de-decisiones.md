@@ -2567,7 +2567,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativa descartada:** seguir con la 4.7.2 hasta el examen y dejar los íconos de Lucide para después.
 - **Documentos:** [tarea 17 de Por hacer](../00_gobernanza/por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria) y [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md).
 
+## D-189 — La presentación del examen es un PDF sin animaciones, de 9 a 10 minutos
+
+- **Fecha:** 2026-11-24.
+- **Estado:** decidida.
+- **Contexto:** la presentación tenía seis GIF. En el editor de Figma y en el PDF se ven quietos; se probó un PDF animado con el paquete `animate` de LaTeX, que pesaba 36,5 MB y se movía solo en Adobe Acrobat Reader. El autor pidió que pesara 15 MB como máximo, sin perder calidad, y después canceló todo lo de los GIF.
+- **Decisión:** la presentación se muestra y se entrega en PDF, sin animaciones, y dura de 9 a 10 minutos. El logo va fijo, y lo que mostraban los GIF va en fotos, íconos y capturas fijas.
+- **Consecuencias:**
+  - el [armador del PDF animado](../10_recursos_visuales/presentacion-examen/pdf-animado/README.md) queda descontinuado, y los [GIF](../10_recursos_visuales/presentacion-examen/gif/README.md) quedan como registro;
+  - la presentación se rehízo para leerse al proyectar, con cinco láminas nuevas y un guion de 1213 palabras;
+  - el PDF final se exporta desde Figma y debe pesar 15 MB o menos.
+- **Fundamento:** un PDF se ve igual en cualquier computador y se puede entregar; los GIF se mueven solo en el modo presentación de Figma o en Acrobat Reader.
+- **Alternativa descartada:** el PDF animado para Acrobat Reader y los GIF en Figma.
+- **Documentos:** [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) y [guion](../10_recursos_visuales/presentacion-examen/guion-examen-2026-11-24.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — D-189
+
+- **Qué cambió:** se suma D-189: la presentación del examen es un PDF sin animaciones, de 9 a 10 minutos.
+- **Cómo estaba antes:** la presentación tenía seis GIF y se estaba armando un PDF animado para Acrobat Reader.
+- **Por qué:** el autor canceló todo lo de los GIF y pidió perfeccionar la presentación en PDF, de 9 a 10 minutos.
 
 ### 2026-11-23 — D-140 y D-188
 
