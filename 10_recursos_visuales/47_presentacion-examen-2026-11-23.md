@@ -113,11 +113,17 @@ Dónde aparece cada color:
 - **Duración del examen:** Por hacer anotaba una presentación de 15 minutos; el autor pidió 10 como máximo. Conviene confirmarlo con los profesores.
 - **Versión de la app:** la lámina 30 muestra la 4.8.2, y la entrega y el examen usan siempre la última versión ([D-188](../09_decisiones/registro-de-decisiones.md#d-188--la-entrega-y-el-examen-usan-la-última-versión-de-la-app)).
 - **«Editar» un relevo activo:** en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 nombra ese cambio, así que conviene corregirlo antes del examen.
-- **GIF:** siete láminas tienen animaciones; se reproducen en el modo presentación de Figma, y conviene comprobarlo en el computador del examen.
+- **GIF:** seis láminas —1, 28 a 31 y 41— tienen nueve GIF. Se comprobó que están en Figma sobre su cuadro fijo, que sus bytes son los de cada archivo y que todos se mueven y se repiten sin fin; están también en [`presentacion-examen/gif/`](presentacion-examen/gif/README.md), con el número de su lámina. Se mueven en el modo presentación de Figma, y conviene comprobarlo en el computador del examen.
 - **Textos literales:** si antes del 2 de diciembre cambia algún texto o cifra de la memoria, hay que cambiar las láminas que lo copian: 6, 11, 14, 15, 19, 25 a 27, 35 a 37 y 40.
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Los GIF, comprobados y guardados
+
+- **Qué cambió:** el pendiente de los GIF dice cuáles son, que se comprobaron en Figma y dónde están los archivos.
+- **Cómo estaba antes:** decía que siete láminas tenían animaciones, sin decir cuáles ni dónde estaban los archivos; en realidad son seis láminas con nueve GIF.
+- **Por qué:** el autor preguntó si los GIF funcionan y pidió tenerlos aparte, con su enlace de descarga y su lámina.
 
 ### 2026-11-24 — El color, como en la memoria y la app
 
