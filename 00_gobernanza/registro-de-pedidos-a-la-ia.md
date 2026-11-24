@@ -389,6 +389,7 @@
 | 23 nov. | Encargo | Que en «relevo tiempo» el teléfono, al activarse Relevo, se transforme en actividades, para que se entienda fácilmente, perfeccionado al nivel de Apple. | [Tu tiempo en actividades](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-se-transforma-el-teléfono): el anillo se completa, la pantalla queda en blanco con la marca, el teléfono se disuelve y la marca se abre en cuatro actividades como en la app (guitarra, leer, pasear al perro y dibujar), con sus íconos de Lucide y un gesto cada una. |
 | 23 nov. | Corrección y encargo | Recordó que cada color tiene un significado y no se usa a la ligera. Pidió mejorar la animación, porque con esto se puede crear una narrativa interesante. | [Cómo funciona](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): el teléfono se transforma en el círculo amarillo (tu tiempo). El turno pasa por el cielo (tu primer paso: el libro se abre), el lima (el lugar: suena el Tag) y el rubor (lo que decides: la bandera), con los íconos de la app. Vuelve a tu tiempo y los cuatro forman el logo. Se borró la versión que asignaba los colores a actividades. |
 | 23 nov. | Corrección | Le gustó «Cómo funciona». Pidió que pareciera menos hecha por IA, quitar algunos detalles, minimalista pero efectiva, como hecha en un editor básico, con la misma calidad y menos efectos. | [Cómo funciona, versión simple](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): la misma historia con colores planos, sin sombras, degradados ni rebotes, íconos con fundido, un punto sin estela y un teléfono más simple. La anterior quedó como «detallada». |
+| 23 nov. | Corrección y encargo | Dejó anotaciones en rojo en la presentación para revisarlas y solucionarlas; pidió usar los GIF y las variantes nuevas del logo; revisar mejor el planteamiento del problema y el marco teórico —«te saltaste los 3 de una, lo que lo hace perder los cimientos del proyecto»—, y leer toda la memoria para tener el mejor contexto. | Se leyeron completos la memoria v8 y el Anexo C. La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) pasó a 37 láminas y 9:55: antecedentes en sus tres líneas, el marco teórico en sus tres ámbitos y una síntesis, el planteamiento con su evidencia y una lámina por causa, y la justificación. Se resolvieron las 22 anotaciones, cada una explicada en el documento; se quitaron las aperturas con aura, y se sumaron conclusiones por objetivo y una comparación con los referentes según las condiciones del Anexo C. La portada, la identidad y el cierre usan «pasa el turno»; Relevo, «Cómo funciona», y los cuatro momentos, las animaciones cortas ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24.jpg)). | — |
 
 ## Lo que muestra el registro
 
@@ -399,6 +400,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Anotaciones de la presentación y fundamentos
+
+- **Qué cambió:** se registró el pedido del 23 de noviembre sobre las anotaciones en rojo de la presentación, el logo y las animaciones nuevas y los fundamentos del proyecto.
+- **Cómo estaba antes:** el registro terminaba en el pedido de la versión simple de «Cómo funciona».
+- **Por qué:** cada pedido del autor se registra el mismo día; el trabajo terminó el 24 de noviembre.
 
 ### 2026-11-23 — Cómo funciona, más simple
 

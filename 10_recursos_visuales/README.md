@@ -83,7 +83,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
 48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, seis adaptados y tres propios con sus reglas, porque Lucide no los tiene; cómo funcionan los íconos de Lucide, cómo se eligió cada uno, su tamaño óptico medido con la prueba del desenfoque, propuestas de más íconos, con cosas cotidianas de Chile, y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
-49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): veintiséis láminas en Figma Slides para 8 minutos, en el orden de la memoria v8 y con su diseño, los íconos de Lucide, los degradados sutiles de la memoria y capturas y un GIF de la app 4.8.2, con su estructura, sus decisiones, lo pendiente y una [hoja de revisión](presentacion-examen/laminas-2026-11-23.jpg). Para el examen reemplaza a la del 12 de noviembre.
+49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): treinta y siete láminas en Figma Slides para unos 10 minutos, en el orden de la memoria v8 y con su diseño, con los antecedentes, el marco teórico y las causas del problema en láminas propias, el logo animado y las animaciones del 23 de noviembre, capturas de la app 4.8.2 y una comparación con los referentes; con su estructura, las anotaciones del autor y cómo se resolvieron, sus decisiones, lo pendiente y una [hoja de revisión](presentacion-examen/laminas-2026-11-24.jpg). Para el examen reemplaza a la del 12 de noviembre.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -113,6 +113,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación de 37 láminas
+
+- **Qué cambió:** la entrada 49 describe la presentación del 24 de noviembre y enlaza su nueva hoja de revisión.
+- **Cómo estaba antes:** describía la versión de 26 láminas para 8 minutos.
+- **Por qué:** el autor pidió resolver sus anotaciones, usar el logo y las animaciones nuevas y completar los fundamentos.
 
 ### 2026-11-23 — Presentación con la app 4.8.2
 
