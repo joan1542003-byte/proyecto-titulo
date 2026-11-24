@@ -3,7 +3,7 @@
 **Archivo:** [presentación en Figma Slides](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1), en la cuenta del autor.
 **Duración:** unos 9 minutos (8:49 según las notas del orador), en 41 láminas.
 **Fuente:** el [borrador v8 de la memoria](../08_memoria/borrador-memoria-v8-2026-11-21.md), leído completo, y su [Anexo C](../08_memoria/anexos/anexo-c-referentes.md), para la comparación con los referentes. Todas las cifras, las citas y los textos literales salen de ahí.
-**Estado:** quinta versión, del 24 de noviembre: una idea por lámina, poco texto, imágenes y el color solo en detalles. Falta la revisión del autor. Las 41 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v3.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24-v2.jpg`](presentacion-examen/laminas-2026-11-24-v2.jpg), [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
+**Estado:** sexta versión, del 24 de noviembre: una idea por lámina, poco texto, imágenes y acentos de color con su significado. Falta la revisión del autor. Las 41 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v4.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24-v3.jpg`](presentacion-examen/laminas-2026-11-24-v3.jpg), [`laminas-2026-11-24-v2.jpg`](presentacion-examen/laminas-2026-11-24-v2.jpg), [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
 
 ## Estructura
 
@@ -31,9 +31,9 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 18 | Causa 3 | «Ver el ocio como una pérdida de tiempo le quita disfrute» | Tonietto et al. (2021). | 5 | 3:30 |
 | 19 | Desafío | El desafío, literal | — | 5 | 3:40 |
 | 20 | Justificación | «Por qué es un problema de diseño» | Tres razones y las siete variables que el diseño ha creado. | 6 | 3:52 |
-| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, cada una con el ícono y el color de su significado. | 7 | 4:04 |
+| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, con su ícono; las del tiempo, el primer paso y el lugar llevan su color. | 7 | 4:04 |
 | 22 | Situaciones | «Dos situaciones de uso» | El usuario principal y el límite, como tipos ideales. | 7 | 4:19 |
-| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo marcado. | 8 | 4:31 |
+| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo en los cuatro colores. | 8 | 4:31 |
 | 24 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios en tres fichas, una por idea. | 9 | 4:46 |
 | 25 | Pregunta | La pregunta, literal | Y qué es el recuerdo oportuno. | 10 | 5:04 |
 | 26 | Hipótesis | La hipótesis, literal | Y sus tres supuestos. | 10 | 5:16 |
@@ -85,14 +85,25 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 ## Decisiones
 
 - **Una idea por lámina:** cada lámina dice una sola cosa y el detalle va en las notas del orador. Lo que antes se mezclaba en una lámina —el contexto y el ejemplo, la pregunta y la hipótesis, el problema y su evidencia— ahora tiene la suya. Por eso hay más láminas, pero cada una se pasa más rápido y la presentación dura menos.
-- **Color en detalles:** el fondo es el papel en todas las láminas y las fichas son blancas. El color aparece solo en toques: el círculo de cada ícono, el punto del rótulo, las barras de la prueba, el logo y las imágenes. Cada toque usa el color de lo que muestra, como en la app: amarillo para el tiempo, celeste para el primer paso, verde para el lugar y el sonido del Tag, rosa para la decisión y los cuatro colores juntos para Relevo, en un círculo con los cuatro tonos o en cuatro puntos. Lo que no es de Relevo —los estudios y las otras herramientas— va en gris. Por eso las láminas de antecedentes y contexto casi no llevan color, y el color aparece cuando entra Relevo. Los círculos llevan un degradado sutil, como los de la memoria diagramada. Los fondos de aura y los paneles de color de la cuarta versión, que se quitaron, salían del motor del [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html) ([generador](presentacion-examen/fondos/generador-de-fondos.html) y [script](presentacion-examen/fondos/renderizar-fondos.js)).
+- **Acentos de color con significado:** el fondo es el papel y las fichas son blancas; el color entra en acentos y degradados sutiles, nunca como fondo de toda la lámina. Los enunciados y otras láminas llevan una luz: un degradado circular suave en una esquina, o detrás de la ilustración o de las pantallas. Las fichas llevan un degradado leve desde su esquina, y el círculo de cada ícono va del tono claro de su ficha al color del logo. Cada color significa siempre lo mismo, como dicen la paleta cromática de la memoria y la Tabla H3 del Anexo H (tabla de abajo). Los cuatro juntos son Relevo, como en el logo: cuatro luces en su orden —arriba el tiempo, a la derecha el primer paso, abajo el lugar y a la izquierda la decisión—, un círculo con los cuatro colores o cuatro puntos en el rótulo. Lo que no es una de esas partes va en gris, y la selección y los estados, en tinta. El lila, la personalización, y el durazno, lo que viene después de la señal, no aparecen, porque ninguna lámina trata de eso. Los fondos de aura y los paneles de color de la cuarta versión, que se quitaron, salían del motor del [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html) ([generador](presentacion-examen/fondos/generador-de-fondos.html) y [script](presentacion-examen/fondos/renderizar-fondos.js)).
 - **Imágenes:** las ilustraciones del teléfono, del lugar y de la señal salen de cuadros de la animación [«sin palabras»](animaciones-de-relevo-2026-11-23/README.md), con fondo transparente; se suman las capturas de la 4.8.2, las fotos de la prueba, los modelos 3D y las animaciones del 23 de noviembre.
-- **Enunciados en grande:** las ideas de peso van solas, en 56 a 76 puntos, sobre el papel, con un punto de color en el rótulo. Cuando el enunciado es de Relevo —la idea de diseño, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— son cuatro puntos, uno de cada color. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria.
+- **Enunciados en grande:** las ideas de peso van solas, en 56 a 76 puntos, sobre el papel, con un punto de color en el rótulo y una luz del mismo color en la esquina. Cuando el enunciado es de Relevo —la idea de diseño, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— son cuatro puntos y cuatro luces, una de cada color. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria.
 - **Como la memoria diagramada:** papel, tinta y gris, Instrument Sans y la cabecera «Relevo · Proyecto de Título» con el capítulo, ahora con nombres cortos («5 · Problema»). Las fichas tienen esquinas de 36 y los íconos son los de Lucide que usa la app, sobre un círculo blanco o de su color.
 - **Lo que hay en la memoria:** las láminas muestran lo que se hizo y lo que se encontró. Lo que matiza, como el alcance de la prueba o que la etapa con el teléfono vino después, queda en las notas.
 - **Comparación con los referentes:** usa las cinco condiciones que, según el Anexo C, ningún producto, patente ni prototipo reúne, cada una con su criterio de diseño, y las familias del mapa de la Figura 11. Cada celda es una lectura de las fichas del Anexo C, no una medición de eficacia.
 - **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y las cuatro animaciones cortas en los cuatro momentos. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina —el de la portada y el del cierre, sobre el papel—, con un cuadro fijo debajo ([script](presentacion-examen/gif-sobre-fondo.sh)).
 - **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, de 5 a 18 segundos, y suman 8:49.
+
+Dónde aparece cada color:
+
+| Color | Qué significa (Tabla H3 del Anexo H) | Láminas |
+| --- | --- | --- |
+| Amarillo | El tiempo, la condición que activa la señal | 2, 3, 6, 7, 13 a 18, 21, 22, 28 y 29 |
+| Celeste | El primer paso | 10, 21, 24, 28, 29 y 35 |
+| Verde | El lugar donde empieza la actividad, donde está el Tag | 5, 9, 10, 21, 24, 26 a 29 y 34 a 36 |
+| Rosa | La decisión | 4, 7, 8, 22, 24, 26, 29 y 35 |
+| Los cuatro | Relevo, como en el logo | 1, 11, 19, 23, 25 a 28, 30, 31, 33 y 38 a 41 |
+| Gris | Lo que no es una de esas partes: estudios, contexto y otras herramientas | Las demás fichas e íconos; las láminas 12, 20, 32 y 37 no llevan color, salvo sus imágenes |
 
 ## Pendiente
 
@@ -106,6 +117,12 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Acentos de color y degradados sutiles
+
+- **Qué cambió:** se sumaron acentos de color con su significado: 19 láminas llevan una luz suave en el color de lo que dicen —en una esquina, o detrás de la ilustración o las pantallas—, 21 fichas llevan un degradado leve desde su esquina y el círculo de cada ícono va del tono claro al color del logo. Se revisó cada color con la paleta de la memoria y la Tabla H3 del Anexo H, y se corrigieron los que no tenían ese significado. «Antes» en el ejemplo, «Piloto», el objetivo «Probar», la tecnología de la factibilidad y las cifras de «querían hacer otra cosa» y «supieron qué querían hacer» pasaron a gris. El usuario principal, que necesita recordar a tiempo, pasó a amarillo; el soporte de la hipótesis, que es el objeto, a verde, y «volver a decidir», a rosa. El punto de «Probado en hogares» va en tinta, porque es un estado. La [hoja de revisión](presentacion-examen/laminas-2026-11-24-v4.jpg) es nueva; la estructura, los textos y los tiempos no cambian.
+- **Cómo estaba antes:** sobre el papel, con fichas blancas y el color solo en el círculo de los íconos, los puntos del rótulo, las barras del Tag y las imágenes.
+- **Por qué:** el autor dijo que quedó demasiado plano, «muy blanco», que faltaban acentos de color y degradados sutiles, sin llenar la pantalla, y recordó que, según la memoria, cada color tiene su significado.
 
 ### 2026-11-24 — Color en detalles
 

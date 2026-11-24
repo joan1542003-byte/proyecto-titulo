@@ -392,6 +392,7 @@
 | 23 nov. | Corrección y encargo | Dejó anotaciones en rojo en la presentación para revisarlas y solucionarlas; pidió usar los GIF y las variantes nuevas del logo; revisar mejor el planteamiento del problema y el marco teórico —«te saltaste los 3 de una, lo que lo hace perder los cimientos del proyecto»—, y leer toda la memoria para tener el mejor contexto. | Se leyeron completos la memoria v8 y el Anexo C. La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) pasó a 37 láminas y 9:55: antecedentes en sus tres líneas, el marco teórico en sus tres ámbitos y una síntesis, el planteamiento con su evidencia y una lámina por causa, y la justificación. Se resolvieron las 22 anotaciones, cada una explicada en el documento; se quitaron las aperturas con aura, y se sumaron conclusiones por objetivo y una comparación con los referentes según las condiciones del Anexo C. La portada, la identidad y el cierre usan «pasa el turno»; Relevo, «Cómo funciona», y los cuatro momentos, las animaciones cortas ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24.jpg)). | — |
 | 24 nov. | Consulta y corrección | Preguntó si no eran muchas láminas. Dijo que tenían demasiado texto, que el diseño era flojo y que les faltaban imágenes y color, «es mejorable», y que algunas cosas merecen su propia lámina, breve, en vez de mezclarlo todo en una. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) se rediseñó con una idea por lámina: son 41 láminas, más que antes, pero más cortas, y las notas suman 8:49 en vez de 9:55. El texto en pantalla bajó y el detalle pasó a las notas. Los fondos de aura y los paneles usan el color de lo que muestran, se sumaron ilustraciones de la animación «sin palabras», y lo que falta en los antecedentes, el ejemplo del problema, su evidencia y la hipótesis tienen lámina propia ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v2.jpg)). | — |
 | 24 nov. | Corrección | No abusar del color: «hablo de detalles, toques, no de inundar la pantalla». | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) quedó sobre el papel, sin las auras de fondo de 22 láminas ni los paneles de color de otras 18. Las fichas son blancas y el color está en detalles, cada uno con su significado: el círculo de cada ícono, el punto del rótulo, las barras de la prueba, el logo y las imágenes. El logo de la portada y del cierre se rehízo sobre el papel ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v3.jpg)). | — |
+| 24 nov. | Corrección | Perfeccionar el diseño: quedó demasiado plano, «muy blanco»; faltan acentos de color y degradados sutiles, sin llenar la pantalla. Recordó que, según la memoria, cada color tiene su significado. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) suma una luz suave en 19 láminas, en el color de lo que dicen, fichas con un degradado leve y círculos de ícono más vivos. Se revisó cada color con la paleta de la memoria y la Tabla H3 del Anexo H —amarillo, el tiempo; celeste, el primer paso; verde, el lugar; rosa, la decisión, y los cuatro, Relevo— y se corrigieron los que no tenían ese significado; el documento tiene ahora una tabla con las láminas de cada color ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v4.jpg)). | — |
 
 ## Lo que muestra el registro
 
@@ -402,6 +403,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Acentos de color en la presentación
+
+- **Qué cambió:** se registró el pedido del 24 de noviembre de sumar acentos de color y degradados sutiles a la presentación, con el significado de cada color.
+- **Cómo estaba antes:** el registro terminaba en el pedido de llevar el color a los detalles.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-24 — El color de la presentación, en detalles
 
