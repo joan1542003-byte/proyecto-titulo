@@ -395,6 +395,7 @@
 | 24 nov. | Corrección | Perfeccionar el diseño: quedó demasiado plano, «muy blanco»; faltan acentos de color y degradados sutiles, sin llenar la pantalla. Recordó que, según la memoria, cada color tiene su significado. | La [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) suma una luz suave en 19 láminas, en el color de lo que dicen, fichas con un degradado leve y círculos de ícono más vivos. Se revisó cada color con la paleta de la memoria y la Tabla H3 del Anexo H —amarillo, el tiempo; celeste, el primer paso; verde, el lugar; rosa, la decisión, y los cuatro, Relevo— y se corrigieron los que no tenían ese significado; el documento tiene ahora una tabla con las láminas de cada color ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v4.jpg)). | — |
 | 24 nov. | Corrección | No abusar de los fondos de color: otros elementos deberían tener color, pero no todos; el color sobre color queda mal y los degradados deben ser sutiles. Pidió mirar la app y el diseño de la memoria, y el estudio sobre Relevo de los artefactos. | Se revisaron la memoria diagramada (portada, aperturas y Figuras 8, 22, 29, 30 y 31), la app 4.8.2 y los estudios de los artefactos: «Cuándo va color» (D-103 y D-104), la marca del 25 de octubre y el sistema 3.1. La [presentación](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) quitó las luces y los degradados de las fichas. Los fondos de color quedan donde la memoria los usa —portada, cierre, la pregunta y la hipótesis, y dos etapas de la prueba—, las láminas de datos siguen a la Figura 8 y los degradados van dentro de un mismo tono ([hoja de revisión](../10_recursos_visuales/presentacion-examen/laminas-2026-11-24-v5.jpg)). | — |
 | 24 nov. | Consulta y encargo | Si los GIF funcionan; por si acaso, adjuntarlos en el chat con su enlace de descarga y la lámina que corresponde a cada uno. | Se comprobaron los nueve GIF de seis láminas: en Figma cada uno está sobre su cuadro fijo, sus bytes coinciden con los archivos y todos se mueven y se repiten sin fin. Se guardaron en [`presentacion-examen/gif/`](../10_recursos_visuales/presentacion-examen/gif/README.md), con el número de su lámina, y se adjuntaron en la conversación con sus enlaces. | — |
+| 24 nov. | Corrección y consulta | Eliminar los GIF del libro y del libro en la cómoda. No ve moverse los GIF: arreglarlo en Figma «o algo»; los exportó como PDF y no se ven. | La lámina 29 quedó sin los GIF del libro (Preparar), del libro en la cómoda (Oír la señal) y del teléfono junto al libro (Decidir); va el ícono de cada momento en su color. Según la ayuda de Figma, los GIF se ven quietos en el editor y se mueven solo en el modo presentación, y un PDF no reproduce animaciones. «Cómo funciona», que empezaba en un cuadro en blanco, y otros dos GIF empiezan ahora en un cuadro representativo, que es el que muestran el editor y el PDF. Se explicó cómo reemplazar un GIF desde la sección Fill si no se mueve ([GIF](../10_recursos_visuales/presentacion-examen/gif/README.md)). | — |
 
 ## Lo que muestra el registro
 
@@ -405,6 +406,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — GIF del libro y GIF que no se mueven
+
+- **Qué cambió:** se registró el pedido de quitar los GIF del libro y la consulta sobre los GIF que no se mueven en Figma ni en el PDF.
+- **Cómo estaba antes:** el registro terminaba en la consulta sobre si los GIF funcionan.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-24 — Los GIF de la presentación
 

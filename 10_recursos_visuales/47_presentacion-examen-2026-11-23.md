@@ -39,7 +39,7 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 26 | Hipótesis | La hipótesis, literal | En la tarjeta de aura de la memoria, y sus tres supuestos. | 10 | 5:16 |
 | 27 | Objetivos | «Objetivos» | El general y los cuatro específicos. | 10 | 5:28 |
 | 28 | Relevo | «Relevo: una aplicación y un objeto» | La animación «Cómo funciona», tres pasos y qué es el Tag. | 10 y 11 | 5:43 |
-| 29 | Cómo se usa | «Cómo se usa: los cuatro momentos de un relevo» | Una animación por momento. | 11 | 5:58 |
+| 29 | Cómo se usa | «Cómo se usa: los cuatro momentos de un relevo» | El ícono de cada momento en su color, y la animación del tiempo en el teléfono. | 11 | 5:58 |
 | 30 | Aplicación | «La aplicación» | Tres pantallas de la 4.8.2. | 11 | 6:16 |
 | 31 | Identidad | «Identidad» | El logo animado, la tipografía, la paleta y los íconos. | 11 | 6:28 |
 | 32 | Objeto | «El objeto» | Lo probado (el Tag) y lo propuesto (Home y Go). | 11 | 6:38 |
@@ -91,7 +91,7 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 - **Como la memoria diagramada:** papel, tinta y gris, Instrument Sans y la cabecera «Relevo · Proyecto de Título» con el capítulo, ahora con nombres cortos («5 · Problema»). Las fichas tienen esquinas de 36 y los íconos son los de Lucide que usa la app, sobre un círculo blanco o de su color.
 - **Lo que hay en la memoria:** las láminas muestran lo que se hizo y lo que se encontró. Lo que matiza, como el alcance de la prueba o que la etapa con el teléfono vino después, queda en las notas.
 - **Comparación con los referentes:** usa las cinco condiciones que, según el Anexo C, ningún producto, patente ni prototipo reúne, cada una con su criterio de diseño, y las familias del mapa de la Figura 11. Cada celda es una lectura de las fichas del Anexo C, no una medición de eficacia.
-- **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y las cuatro animaciones cortas en los cuatro momentos. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina —el de la portada y el del cierre, sobre las auras de la memoria—, con un cuadro fijo debajo ([script](presentacion-examen/gif-sobre-fondo.sh)).
+- **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y la animación del tiempo en el teléfono en el segundo de los cuatro momentos; las del libro, el libro en la cómoda y el teléfono junto al libro se quitaron a pedido del autor. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina —el de la portada y el del cierre, sobre las auras de la memoria—, con un cuadro fijo debajo, y empieza en un cuadro representativo, que es el que muestran el editor y el PDF ([script](presentacion-examen/gif-sobre-fondo.sh) y [GIF](presentacion-examen/gif/README.md)).
 - **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, de 5 a 18 segundos, y suman 8:49.
 
 Dónde aparece cada color:
@@ -113,11 +113,17 @@ Dónde aparece cada color:
 - **Duración del examen:** Por hacer anotaba una presentación de 15 minutos; el autor pidió 10 como máximo. Conviene confirmarlo con los profesores.
 - **Versión de la app:** la lámina 30 muestra la 4.8.2, y la entrega y el examen usan siempre la última versión ([D-188](../09_decisiones/registro-de-decisiones.md#d-188--la-entrega-y-el-examen-usan-la-última-versión-de-la-app)).
 - **«Editar» un relevo activo:** en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 nombra ese cambio, así que conviene corregirlo antes del examen.
-- **GIF:** seis láminas —1, 28 a 31 y 41— tienen nueve GIF. Se comprobó que están en Figma sobre su cuadro fijo, que sus bytes son los de cada archivo y que todos se mueven y se repiten sin fin; están también en [`presentacion-examen/gif/`](presentacion-examen/gif/README.md), con el número de su lámina. Se mueven en el modo presentación de Figma, y conviene comprobarlo en el computador del examen.
+- **GIF:** seis láminas —1, 28 a 31 y 41— tienen un GIF cada una, también guardado en [`presentacion-examen/gif/`](presentacion-examen/gif/README.md). En el editor y en el PDF se ven quietos, en su primer cuadro; según la ayuda de Figma, se mueven solo en el modo presentación. Conviene comprobarlo en el computador del examen. Si alguno no se mueve, se reemplaza desde la sección Fill ([cómo](presentacion-examen/gif/README.md#si-en-el-modo-presentación-no-se-mueven)).
 - **Textos literales:** si antes del 2 de diciembre cambia algún texto o cifra de la memoria, hay que cambiar las láminas que lo copian: 6, 11, 14, 15, 19, 25 a 27, 35 a 37 y 40.
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Sin los GIF del libro, y GIF que empiezan en un buen cuadro
+
+- **Qué cambió:** la lámina 29 ya no tiene los GIF del libro (Preparar), del libro en la cómoda (Oír la señal) ni del teléfono junto al libro (Decidir); en su lugar va el ícono de cada momento en su color. «Cómo funciona», «Seguir en el teléfono» y el GIF de la app empiezan en un cuadro representativo, el de su cuadro fijo. El pendiente de los GIF explica dónde se mueven y qué hacer si no se mueven.
+- **Cómo estaba antes:** la lámina 29 tenía cuatro GIF, y «Cómo funciona» empezaba en un cuadro en blanco, que es el que muestran el editor y el PDF.
+- **Por qué:** el autor pidió eliminar los GIF del libro y del libro en la cómoda, dijo que no veía moverse los GIF y que en el PDF no se veían.
 
 ### 2026-11-24 — Los GIF, comprobados y guardados
 
