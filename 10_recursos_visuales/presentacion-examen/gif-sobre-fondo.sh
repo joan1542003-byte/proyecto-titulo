@@ -22,7 +22,7 @@
 set -e
 IN=$1; OUT=$2; W=$3; H=$4; BG=$5; PT=$6
 if [ "$BG" = "white" ]; then BGIN=(-f lavfi -i "color=c=white:s=${W}x${H}:r=25")
-elif [[ "$BG" == \#* ]]; then BGIN=(-f lavfi -i "color=c=0x${BG#\#}:s=${W}x${H}:r=25")
+elif [[ "$BG" == \#* ]]; then BGIN=(-f lavfi -i "color=c=0x${BG#\#}:s=${W}x${H}:r=25,format=rgb24")
 else BGIN=(-loop 1 -framerate 25 -i "$BG"); fi
 FC="[1:v]scale=${W}:${H},format=rgba[bg];[0:v]fps=25,scale=${W}:${H}:flags=lanczos,format=rgba[fg];[bg][fg]overlay=shortest=1:format=auto,format=rgb24"
 ffmpeg -v error -y -c:v libvpx-vp9 -i "$IN" "${BGIN[@]}" -filter_complex "$FC,split[a][b];[a]palettegen=max_colors=256:stats_mode=full[p];[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle" -loop 0 "$OUT.gif"
