@@ -3,15 +3,15 @@
 **Archivo:** [presentación en Figma Slides](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1), en la cuenta del autor.
 **Duración:** unos 9 minutos (8:49 según las notas del orador), en 41 láminas.
 **Fuente:** el [borrador v8 de la memoria](../08_memoria/borrador-memoria-v8-2026-11-21.md), leído completo, y su [Anexo C](../08_memoria/anexos/anexo-c-referentes.md), para la comparación con los referentes. Todas las cifras, las citas y los textos literales salen de ahí.
-**Estado:** cuarta versión, del 24 de noviembre: el rediseño con menos texto, color e imágenes, y una idea por lámina. Falta la revisión del autor. Las 41 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v2.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
+**Estado:** quinta versión, del 24 de noviembre: una idea por lámina, poco texto, imágenes y el color solo en detalles. Falta la revisión del autor. Las 41 láminas se pueden ver juntas en la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v3.jpg); las de las versiones anteriores quedan en [`laminas-2026-11-24-v2.jpg`](presentacion-examen/laminas-2026-11-24-v2.jpg), [`laminas-2026-11-24.jpg`](presentacion-examen/laminas-2026-11-24.jpg) y [`laminas-2026-11-23.jpg`](presentacion-examen/laminas-2026-11-23.jpg).
 
 ## Estructura
 
-Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una dice arriba a la derecha de qué capítulo viene; la motivación personal, del capítulo 1, va en las notas de la lámina 2. Cada lámina dice una sola cosa. Las ideas de peso —lo que falta en los antecedentes, la idea de diseño, el problema, la tercera causa, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— tienen una lámina propia, con el enunciado en grande sobre un aura.
+Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una dice arriba a la derecha de qué capítulo viene; la motivación personal, del capítulo 1, va en las notas de la lámina 2. Cada lámina dice una sola cosa. Las ideas de peso —lo que falta en los antecedentes, la idea de diseño, el problema, la tercera causa, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— tienen una lámina propia, con el enunciado en grande sobre el papel.
 
 | N.º | Lámina | Título o enunciado | Qué muestra | Capítulo | Inicio |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Portada | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital» | El logo animado «pasa el turno» sobre el aura de portada. | Portada | 0:00 |
+| 1 | Portada | «Sistema *phygital* para recuperar intenciones personales durante el ocio digital» | El logo animado «pasa el turno» sobre el papel. | Portada | 0:00 |
 | 2 | Ocio digital | «El ocio digital» | La definición, cuatro usos y el sentido según el motivo, con la ilustración del teléfono. | 1 y 2 | 0:08 |
 | 3 | Antecedentes 1 | «Reducir el uso no basta como criterio» | Tres hallazgos, con su fuente. | 3 | 0:23 |
 | 4 | Antecedentes 2 | «3 de 4» | Herramientas que bloquean, el 36 % de one sec y la pregunta de MindPhone. | 3 | 0:35 |
@@ -23,7 +23,7 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 10 | Marco teórico 3 | «Un buen recordatorio tiene señal y mensaje» | La señal y el mensaje, aplicados a Relevo, con la ilustración del lugar. | 4 | 1:49 |
 | 11 | Idea de diseño | La idea de diseño, literal | — | 4 | 2:01 |
 | 12 | Contexto | «En Chile, el teléfono es la puerta a internet» | 96,6 % y 99,1 % (Subsecretaría de Telecomunicaciones, 2025). | 5 | 2:11 |
-| 13 | Ejemplo | «Una intención que vuelve tarde» | Antes, durante y después, en tres paneles de color. | 5 | 2:21 |
+| 13 | Ejemplo | «Una intención que vuelve tarde» | Antes, durante y después, en tres fichas. | 5 | 2:21 |
 | 14 | Problema | El problema, literal | — | 5 | 2:33 |
 | 15 | Evidencia | «La intención pierde fuerza durante la sesión» | 65,6 % y 51,4 % (Lukoff et al., 2018) y 21 de 43 episodios de la encuesta. | 5 | 2:45 |
 | 16 | Causa 1 | «La atención está ocupada» | McDaniel y Einstein (2000) y el estudio de más de mil personas. | 5 | 3:00 |
@@ -31,16 +31,16 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 18 | Causa 3 | «Ver el ocio como una pérdida de tiempo le quita disfrute» | Tonietto et al. (2021). | 5 | 3:30 |
 | 19 | Desafío | El desafío, literal | — | 5 | 3:40 |
 | 20 | Justificación | «Por qué es un problema de diseño» | Tres razones y las siete variables que el diseño ha creado. | 6 | 3:52 |
-| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, cada una en el color de su significado. | 7 | 4:04 |
+| 21 | Usuario | «Seguir más de lo que se quería es frecuente y pasa en casa» | Las cuatro cifras de la encuesta, cada una con el ícono y el color de su significado. | 7 | 4:04 |
 | 22 | Situaciones | «Dos situaciones de uso» | El usuario principal y el límite, como tipos ideales. | 7 | 4:19 |
-| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo en color. | 8 | 4:31 |
-| 24 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios en tres paneles de color. | 9 | 4:46 |
+| 23 | Estado del arte | «Casi todas las herramientas limitan el uso o trabajan en la pantalla» | El mapa de la Figura 11, con el cuadrante de Relevo marcado. | 8 | 4:31 |
+| 24 | Criterios | «Ocho criterios de diseño, en tres ideas» | Los ocho criterios en tres fichas, una por idea. | 9 | 4:46 |
 | 25 | Pregunta | La pregunta, literal | Y qué es el recuerdo oportuno. | 10 | 5:04 |
 | 26 | Hipótesis | La hipótesis, literal | Y sus tres supuestos. | 10 | 5:16 |
 | 27 | Objetivos | «Objetivos» | El general y los cuatro específicos. | 10 | 5:28 |
 | 28 | Relevo | «Relevo: una aplicación y un objeto» | La animación «Cómo funciona», tres pasos y qué es el Tag. | 10 y 11 | 5:43 |
 | 29 | Cómo se usa | «Cómo se usa: los cuatro momentos de un relevo» | Una animación por momento. | 11 | 5:58 |
-| 30 | Aplicación | «La aplicación» | Tres pantallas de la 4.8.2 sobre un aura. | 11 | 6:16 |
+| 30 | Aplicación | «La aplicación» | Tres pantallas de la 4.8.2. | 11 | 6:16 |
 | 31 | Identidad | «Identidad» | El logo animado, la tipografía, la paleta y los íconos. | 11 | 6:28 |
 | 32 | Objeto | «El objeto» | Lo probado (el Tag) y lo propuesto (Home y Go). | 11 | 6:38 |
 | 33 | Factibilidad | «Factibilidad: tecnología, costos y etapas» | Android y Bluetooth, y las tres etapas de la Figura 27. | 12 | 6:50 |
@@ -51,7 +51,7 @@ Las láminas siguen el orden de la memoria, del capítulo 2 al 14, y cada una di
 | 38 | Conclusiones | «El ciclo funciona en el uso real de tres hogares» | El estado de cada objetivo y la hipótesis. | 14 | 7:59 |
 | 39 | Comparación | «Relevo frente a los referentes» | Las cinco condiciones del Anexo C en cada familia de herramientas. | 14 | 8:14 |
 | 40 | Aporte | El aporte, literal | Y lo que sigue. | 14 | 8:32 |
-| 41 | Cierre | «Gracias» | El logo animado sobre el aura de cierre. | — | 8:44 |
+| 41 | Cierre | «Gracias» | El logo animado sobre el papel. | — | 8:44 |
 
 ## Anotaciones del autor (23 de noviembre)
 
@@ -85,13 +85,13 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 ## Decisiones
 
 - **Una idea por lámina:** cada lámina dice una sola cosa y el detalle va en las notas del orador. Lo que antes se mezclaba en una lámina —el contexto y el ejemplo, la pregunta y la hipótesis, el problema y su evidencia— ahora tiene la suya. Por eso hay más láminas, pero cada una se pasa más rápido y la presentación dura menos.
-- **Color con significado:** los fondos de aura y los paneles de las fichas usan el color de lo que muestran, como en la app: amarillo para el tiempo, celeste para el primer paso, verde para el lugar y el sonido, rosa para la decisión y los cuatro colores juntos para Relevo. Lo que no es de Relevo —los estudios y las otras herramientas— va en un panel neutro. Los fondos y los paneles se generaron con el motor del [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html), con presets ordenados por significado ([generador](presentacion-examen/fondos/generador-de-fondos.html) y [script](presentacion-examen/fondos/renderizar-fondos.js)).
+- **Color en detalles:** el fondo es el papel en todas las láminas y las fichas son blancas. El color aparece solo en toques: el círculo de cada ícono, el punto del rótulo, las barras de la prueba, el logo y las imágenes. Cada toque usa el color de lo que muestra, como en la app: amarillo para el tiempo, celeste para el primer paso, verde para el lugar y el sonido del Tag, rosa para la decisión y los cuatro colores juntos para Relevo, en un círculo con los cuatro tonos o en cuatro puntos. Lo que no es de Relevo —los estudios y las otras herramientas— va en gris. Por eso las láminas de antecedentes y contexto casi no llevan color, y el color aparece cuando entra Relevo. Los círculos llevan un degradado sutil, como los de la memoria diagramada. Los fondos de aura y los paneles de color de la cuarta versión, que se quitaron, salían del motor del [Taller de auras](relevo-con-aura-2026-10-10/taller-de-auras.html) ([generador](presentacion-examen/fondos/generador-de-fondos.html) y [script](presentacion-examen/fondos/renderizar-fondos.js)).
 - **Imágenes:** las ilustraciones del teléfono, del lugar y de la señal salen de cuadros de la animación [«sin palabras»](animaciones-de-relevo-2026-11-23/README.md), con fondo transparente; se suman las capturas de la 4.8.2, las fotos de la prueba, los modelos 3D y las animaciones del 23 de noviembre.
-- **Enunciados en grande:** las ideas de peso van solas, en 56 a 76 puntos, sobre un aura que deja el texto en el papel. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria.
+- **Enunciados en grande:** las ideas de peso van solas, en 56 a 76 puntos, sobre el papel, con un punto de color en el rótulo. Cuando el enunciado es de Relevo —la idea de diseño, el desafío, la pregunta, la hipótesis, las conclusiones y el aporte— son cuatro puntos, uno de cada color. El problema, el desafío, la idea de diseño, la pregunta, la hipótesis, los objetivos y el aporte se copian literales de la memoria.
 - **Como la memoria diagramada:** papel, tinta y gris, Instrument Sans y la cabecera «Relevo · Proyecto de Título» con el capítulo, ahora con nombres cortos («5 · Problema»). Las fichas tienen esquinas de 36 y los íconos son los de Lucide que usa la app, sobre un círculo blanco o de su color.
 - **Lo que hay en la memoria:** las láminas muestran lo que se hizo y lo que se encontró. Lo que matiza, como el alcance de la prueba o que la etapa con el teléfono vino después, queda en las notas.
 - **Comparación con los referentes:** usa las cinco condiciones que, según el Anexo C, ningún producto, patente ni prototipo reúne, cada una con su criterio de diseño, y las familias del mapa de la Figura 11. Cada celda es una lectura de las fichas del Anexo C, no una medición de eficacia.
-- **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y las cuatro animaciones cortas en los cuatro momentos. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina, con un cuadro fijo debajo ([script](presentacion-examen/gif-sobre-fondo.sh)).
+- **Logo y animaciones del 23 de noviembre:** «pasa el turno» en la portada, la identidad y el cierre; «Cómo funciona» en la lámina de Relevo, y las cuatro animaciones cortas en los cuatro momentos. Cada GIF se rehízo desde su WebM sobre el fondo exacto de su lámina —el de la portada y el del cierre, sobre el papel—, con un cuadro fijo debajo ([script](presentacion-examen/gif-sobre-fondo.sh)).
 - **Tiempo:** cada nota del orador empieza con el minuto y la duración de su lámina, de 5 a 18 segundos, y suman 8:49.
 
 ## Pendiente
@@ -106,6 +106,12 @@ El autor dejó 22 anotaciones en rojo sobre la versión del 23 de noviembre. Cad
 - **Lo que no tiene lámina propia:** el flujo técnico (Figura 26) y el video de respaldo del ciclo, que pide la tarea 7.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Color en detalles
+
+- **Qué cambió:** se quitaron los fondos de aura de 22 láminas y los paneles de color de las fichas de otras 18. Todas las láminas van sobre el papel, las fichas son blancas y el color quedó en detalles: el círculo de cada ícono, un punto en el rótulo de los enunciados —cuatro, uno de cada color, en los de Relevo—, las barras de la prueba, el logo y las imágenes. El logo animado de la portada y del cierre se rehízo sobre el papel, y la [hoja de revisión](presentacion-examen/laminas-2026-11-24-v3.jpg) es nueva. La estructura, los textos y los tiempos no cambian.
+- **Cómo estaba antes:** 22 láminas tenían un aura de fondo a pantalla completa, y las fichas de 18 eran paneles con la textura de su color.
+- **Por qué:** el autor pidió no abusar del color: «hablo de detalles, toques, no de inundar la pantalla».
 
 ### 2026-11-24 — Rediseño: menos texto, color e imágenes
 

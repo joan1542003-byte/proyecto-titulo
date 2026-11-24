@@ -5,6 +5,7 @@
 // posiciones (der, ardr, abdr, hor, izq), más un panel de cada color para las fichas.
 // Uso: node renderizar-fondos.js <carpeta de salida>
 // Necesita Playwright con Chromium. Los PNG no se guardan en el repositorio: se subieron a Figma.
+// Se usaron en la cuarta versión (24 de noviembre de 2026). La quinta los quitó y dejó el color en detalles.
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 (async () => {
   const out = process.argv[2] || '.';
