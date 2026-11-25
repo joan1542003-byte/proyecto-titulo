@@ -103,6 +103,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-11-25 — Puntos de fondo, íconos de Lucide y primeros conceptos
+
+- **Qué cambió:** el borrador v8 y la memoria compuesta suman los tres puntos de fondo de los profesores (D-191) y los íconos de la app 4.8.2 (D-192): 73 páginas y 41 figuras. Los anexos suman los primeros conceptos de Relevo y describen los íconos nuevos: 135 páginas.
+- **Cómo estaba antes:** la v8 compuesta tenía 72 páginas y 40 figuras, y los puntos de fondo eran borradores.
+- **Por qué:** el autor tomó esas decisiones el 25 de noviembre.
+
 ### 2026-11-24 — D-190
 
 - **Qué cambió:** la decisión de las figuras claras y en orden, esquemas sin fichas y menos comas se cita como D-190.

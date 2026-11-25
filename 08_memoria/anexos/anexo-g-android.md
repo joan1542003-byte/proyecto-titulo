@@ -188,7 +188,7 @@ El prototipo cambió casi a diario entre el 21 de septiembre y el 9 de noviembre
 
 **Octubre: el Tag y la prueba.** El 5 de octubre, Relevo empezó a sonar en un llavero iTag, el Tag. El 6 se probó dejar que la persona eligiera dónde suena, y ese mismo día se volvió a las semanas para comparar, con un lenguaje más claro y sin opciones marcadas de antemano. El 7, el día en que empezó la prueba, la app se preparó para el Tag —una guía paso a paso, una prueba de sonido que pregunta si se escuchó, el Tag como salida por defecto y opciones de un toque para el primer paso y el lugar— y sumó más actividades. Lo que contaron las personas se convirtió en cambios: editar un relevo sin borrarlo, el 9 de octubre, y las dos correcciones del Tag, el 14 y el 17. El 20 de octubre se sumó la semana para comparar con el teléfono. En paralelo, desde el 12 de octubre, la identidad visual nueva se aplicó a toda la interfaz en una línea aparte, sin cambiar los datos; las personas de la prueba siguieron con la interfaz que conocían, para no cambiarla a mitad de camino.
 
-**Noviembre: el rediseño.** El 4 de noviembre, una versión aparte quitó de la app la prueba de 21 días y actualizó el consentimiento. El 5 llegó el rediseño: la interfaz en blanco cálido y negro, las actividades en anillos de color, tres pestañas —Inicio, Actividades y Perfil—, textos que cumplen una función, sugerencias según lo que la persona escribe (G.6), varios relevos a la vez y cuatro sonidos para elegir. Ese mismo día, la app pasó a instalarse como actualización sobre la anterior, sin perder datos, y sumó nueve de los cambios que dejó la prueba (Anexo D). Del 6 al 9 de noviembre vinieron los ajustes finos: los once íconos rehechos (Anexo H), menos amarillo, un saludo en el color del relevo activo, más palabras del español de Chile, una encuesta sobre el rediseño para las personas de la prueba, una revisión de la primera vez y de la accesibilidad, textos que dicen qué cuentan, el Bluetooth encendido solo al buscar el Tag y la corrección de una señal que sonaba dos veces. La Figura G4 muestra la app del 9 de noviembre, la más reciente.
+**Noviembre: el rediseño.** El 4 de noviembre, una versión aparte quitó de la app la prueba de 21 días y actualizó el consentimiento. El 5 llegó el rediseño: la interfaz en blanco cálido y negro, las actividades en anillos de color, tres pestañas —Inicio, Actividades y Perfil—, textos que cumplen una función, sugerencias según lo que la persona escribe (G.6), varios relevos a la vez y cuatro sonidos para elegir. Ese mismo día, la app pasó a instalarse como actualización sobre la anterior, sin perder datos, y sumó nueve de los cambios que dejó la prueba (Anexo D). Del 6 al 9 de noviembre vinieron los ajustes finos: los once íconos rehechos (Anexo H), menos amarillo, un saludo en el color del relevo activo, más palabras del español de Chile, una encuesta sobre el rediseño para las personas de la prueba, una revisión de la primera vez y de la accesibilidad, textos que dicen qué cuentan, el Bluetooth encendido solo al buscar el Tag y la corrección de una señal que sonaba dos veces. La Figura G4 muestra la app del 9 de noviembre, la versión 4.7.2. El 22 de noviembre, la 4.8 cambió solo los íconos: desde entonces salen de Lucide, y la 4.8.2 ajustó los nueve que Relevo adapta o dibuja (Anexo H).
 
 **Figura G4**
 
@@ -268,6 +268,12 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 *Nota.* Elaboración propia a partir del código de la app de noviembre de 2026. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Versión 4.8
+
+- **Qué cambió:** G.5 dice que la 4.8, del 22 de noviembre, cambió solo los íconos, que desde entonces salen de Lucide.
+- **Cómo estaba antes:** llamaba a la 4.7.2 la versión más reciente.
+- **Por qué:** el autor decidió llevar los íconos de la 4.8.2 a la memoria y a los anexos (D-192).
 
 ### 2026-11-24 — Figura G4 con sus capturas
 

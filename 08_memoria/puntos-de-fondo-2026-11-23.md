@@ -1,6 +1,7 @@
 # Puntos de fondo: borradores para tener (23 de noviembre de 2026)
 
 **Qué es:** borradores de los tres puntos de fondo que los profesores pidieron después del Pase —el fenómeno, la tensión en la decisión y el planteamiento como universo— ([notas del miércoles 18](comentarios-de-los-profesores-2026-11-18.md#las-notas-del-miércoles-18); [tarea 16, B](../00_gobernanza/por-hacer.md#16-revisión-con-los-profesores-después-del-pase)). Además, una fuente para acompañar a Fogg (2009) y una respuesta para la comisión sobre cómo se eligió a las tres personas de la prueba.
+**Estado:** el 25 de noviembre el autor decidió las secciones 1 a 3: *sentido de agencia*, la tensión en la Formulación con un párrafo y un esquema, y el planteamiento como universo en párrafos corridos. Están aplicadas en el [borrador v8](borrador-memoria-v8-2026-11-21.md) y en la memoria compuesta (D-191). Las secciones 4 y 5 siguen como borradores.
 **Qué no es:** no es una propuesta para aplicar ahora. Por pedido del autor, la memoria y los anexos no se tocaron; estos textos quedan para tenerlos cuando él decida.
 **Fuentes:** todas se buscaron y se verificaron el 23 de noviembre: las de texto completo, con su página, y las demás, con su resumen y sus datos confirmados en Crossref o Europe PMC. El estado de cada una está al final. Las que ya están en la memoria se citan como allí.
 
@@ -117,6 +118,12 @@ Las referencias nuevas, en APA 7:
 Las demás —de Segovia Vicente et al. (2024), Fogg (2009), McDaniel y Einstein (2000), Montag et al. (2019), Nielsen (1993), Ryan y Deci (2000) y Subsecretaría de Telecomunicaciones (2025)— ya están en las referencias de la memoria. Las páginas de Lukoff et al. (2021) son las de la versión de arXiv; conviene confirmarlas en la de ACM antes de citarlas con página.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Secciones 1 a 3 aplicadas
+
+- **Qué cambió:** se anota que las secciones 1 a 3 están aplicadas en la memoria, con los textos ajustados a su redacción.
+- **Cómo estaba antes:** eran borradores para tener, sin aplicar.
+- **Por qué:** el autor decidió los tres puntos (D-191).
 
 ### 2026-11-23 — Creación
 

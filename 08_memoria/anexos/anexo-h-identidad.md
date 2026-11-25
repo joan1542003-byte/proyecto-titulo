@@ -135,17 +135,17 @@ La identidad usa dos tipografías sin serifa: una para el nombre y otra para tod
 
 ## H.3 Iconografía
 
-Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24, de un solo color y siempre acompañados de su palabra. Siguen las reglas de construcción de Lucide, un conjunto abierto de íconos de línea, pero los dibujos son de Relevo, porque lo que la app tiene que mostrar —el Tag, la señal y las actividades que nombraron las personas entrevistadas— no está en ningún conjunto o está solo en una forma genérica (Figura H7).
+Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea: 118 dibujos en una retícula de 24, de un solo color y siempre acompañados de su palabra. De ellos, 109 son de Lucide tal cual, seis se adaptaron y tres se dibujaron con sus reglas de construcción, porque lo que la app tiene que mostrar —el Tag y algunas actividades que nombraron las personas entrevistadas— no está en Lucide (Figura H7).
 
 **Figura H7**
 
 *Conjunto de 118 íconos de la app*
 
-![Conjunto de 118 íconos de la app](imagenes/pase-H6-iconos.jpg)
+![Conjunto de 118 íconos de la app](imagenes/iconos-4.8.2-conjunto.png)
 
-*Nota.* Elaboración propia, con los dibujos, el trazo y el centro óptico de la app de noviembre de 2026. Las actividades van en sus siete familias de color; la agrupación de los demás es de esta figura. Los íconos con asterisco no aparecen en ninguna pantalla.
+*Nota.* Elaboración propia, con los íconos de la app 4.8.2, de noviembre de 2026, a 28 px y en orden alfabético por su palabra. Los de Lucide se reproducen sin cambios, con licencia ISC (Lucide Contributors, 2026).
 
-**Conjunto.** El conjunto creció con la app. Empezó con los íconos de la identidad del 11 de octubre; el rediseño del 5 de noviembre sumó los de la navegación, como la tuerca de los ajustes y los cuatro anillos de Actividades, y trece actividades, como nadar, tejer o tocar el piano, y el 6 de noviembre se rehicieron once, después de revisar qué pide la app de cada uno. Hoy se reúnen en tres grupos: 19 propios de Relevo —el objeto, la señal, el ciclo de un relevo y la decisión—; 34 actividades, en siete familias de color, que reúnen las ideas que salen de las entrevistas y las que la app reconoce en lo que escribe cada persona, y 65 de la interfaz y la prueba. La app usa 97; los otros 21 se conservan, aunque ninguna pantalla los muestra.
+**Conjunto.** El conjunto creció con la app. Empezó con los íconos de la identidad del 11 de octubre; el rediseño del 5 de noviembre sumó los de la navegación, como la tuerca de los ajustes y los cuatro anillos de Actividades, y trece actividades, como nadar, tejer o tocar el piano, y el 6 de noviembre se rehicieron once, después de revisar qué pide la app de cada uno. Hasta la versión 4.7.2 los 118 eran dibujos propios, con las reglas de Lucide como referencia. Desde la 4.8, del 22 de noviembre, cada ícono sale de Lucide: primero se buscó el que dice lo mismo, por su nombre y sus etiquetas; si había varios, se compararon a los tamaños de la app; si tenía una pieza, se adaptó, y si no tenía el objeto, se dibujó con sus reglas. Hoy se reúnen en tres grupos: 19 de conceptos de Relevo —el objeto, la señal, el ciclo de un relevo y la decisión—; 34 actividades, en siete familias de color, que reúnen las ideas que salen de las entrevistas y las que la app reconoce en lo que escribe cada persona, y 65 de la interfaz y la prueba. La app usa 97; los otros 21 se conservan, aunque ninguna pantalla los muestra.
 
 **Tamaños en la app.** Un mismo ícono aparece chico en las filas, los botones y la barra de pestañas, y grande dentro del anillo de una actividad: va de unos 16 px a casi 48. Como una actividad puede verse a unos 17 px, cada dibujo tiene que leerse en ese tamaño. La Tabla H2 resume cómo se construyen, junto a las reglas de Lucide.
 
@@ -155,60 +155,61 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 
 | Regla | Relevo | Lucide | Origen y fundamento |
 | --- | --- | --- | --- |
-| Retícula y margen | Retícula de 24 con un área viva de 20: ningún trazo entra en los 2 de margen. | Lienzo de 24, con el trazo a 1 o más del borde. | Material Design limita el ícono a un área viva de 20, con 2 de margen (Google, s. f.-b). |
-| Formas base | Un círculo de radio 9, un cuadrado de 16 y dos rectángulos de 14 × 18, uno vertical y otro horizontal. | Un peso visual parecido al de su círculo y su cuadrado, que se compara desenfocándolos. | Las formas base de Material Design, algo más chicas (Google, s. f.-b): un ícono redondo y uno con esquinas miden lo mismo a la vista. |
+| Retícula y margen | La de Lucide: lienzo de 24, con el trazo a 1 o más del borde. | Igual. | Hasta la 4.7.2, la retícula tenía un área viva de 20, como en Material Design (Google, s. f.-b). |
+| Formas base | El círculo de radio 10 y el cuadrado de 18 de Lucide, con los que se compara el peso de cada ícono al desenfocarlo. | Un peso visual parecido al de su círculo y su cuadrado, que se compara desenfocándolos. | La prueba del desenfoque: cada ícono adaptado o propio debe pesar como sus vecinos de Lucide. |
 | Trazo | 1,6 en el tamaño base de 24. | 2, en todos los tamaños. | En Instrument Sans Medium, el asta mide una décima del cuerpo, según una medición propia: 1,56 en un cuerpo de 15, casi el trazo de un ícono de 24. Así, el ícono pesa lo mismo que su palabra. SF Symbols también alinea sus símbolos con la tipografía (Apple, s. f.). |
 | Tamaños ópticos | El trazo se afina a medida que el ícono crece: 2,0 en los más chicos y 1,3 en los más grandes. | Un solo trazo. | El eje de tamaño óptico de Material Symbols ajusta el trazo al tamaño (Google, s. f.-a): el ícono se ve igual de firme en una fila que en un anillo grande. |
 | Puntas y uniones | Redondas, con el trazo centrado en la línea. | Igual. | A tamaño chico no dejan picos, y conversan con los círculos del logo y los anillos de las actividades. |
-| Esquinas | Radios de 1 a 3,6, según la forma. | 2 en las formas de 8 o más y 1 en las menores. | Unificarlas como Lucide queda pendiente. |
-| Equilibrio | Centro óptico: la app corre cada dibujo un poco hacia donde pesa su tinta; se ajustan 100 de los 118. | Centrados a la vista; los asimétricos se corren un poco. | Un dibujo más pesado abajo no se ve caído, y uno simétrico no se mueve. |
+| Esquinas | 2 en las formas de 8 o más y 1 en las menores. | Igual. | Desde la 4.8, como en Lucide. |
+| Equilibrio | Centro óptico: la app corre cada dibujo un poco hacia donde pesa su tinta, también los que salen de Lucide. | Centrados a la vista; los asimétricos se corren un poco. | Un dibujo más pesado abajo no se ve caído, y uno simétrico no se mueve. |
 | Detalle | Se quita lo que no se distingue en el tamaño más chico. | Poco detalle. | Las actividades se ven desde unos 17 px. |
-| Color y relleno | Un solo color. Se rellenan los puntos, como la argolla del Tag o los ojos del perro, y las partes cuyo relleno es el significado: la mitad del signo de contraste, las estrellas y las teclas negras del piano. | Contorno, en el color del texto. | El color queda para las actividades, en su anillo. |
+| Color y relleno | Contorno y un solo color. Solo se rellenan los puntos, como en Lucide, y la estrella llena. | Contorno, en el color del texto. | El color queda para las actividades, en su anillo. |
 | Palabra | Cada ícono va con su palabra; los botones que solo llevan ícono, como volver, tienen su nombre para los lectores de pantalla. | No lo define. | Casi ningún ícono tiene un significado único, y su palabra aclara qué significa en ese contexto (Harley, 2014). |
 
-*Nota.* Elaboración propia. Las medidas de Relevo son las de la app; las de Lucide, las de su especificación (Lucide Contributors, s. f.-a, s. f.-b).
+*Nota.* Elaboración propia. Las medidas de Relevo son las de la app 4.8.2; las de Lucide, las de su especificación (Lucide Contributors, s. f.-a, s. f.-b).
 
-**Construcción.** Cada ícono parte de la geometría y termina en un ajuste a ojo. La Figura H8 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Leer, una actividad, abajo:
+**Construcción.** Los íconos que salen de Lucide conservan su construcción. Los que Relevo adapta o dibuja se arman con las piezas y las reglas de Lucide, y terminan en una prueba a la vista. La Figura H8 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Meditar, una actividad que Lucide no tiene, abajo:
 
-1. **Retícula.** 24 × 24, con un área viva de 20 y cuatro formas base —un círculo, un cuadrado y dos rectángulos— que igualan el peso de un ícono redondo y el de uno con esquinas.
-2. **Geometría.** Suena dibuja el Tag como es, con su botón y su argolla, y dos arcos de sonido que nacen de su eje; Leer, dos páginas reflejadas en el lomo, con los bordes en curva.
-3. **Trazo.** 1,6, centrado en la línea, con terminaciones y uniones redondas; solo se rellena lo que es un punto, como la argolla.
-4. **Centro óptico.** El dibujo se corre hacia donde pesa su tinta: los dos suben menos de media unidad, lo justo para no verse caídos.
+1. **Retícula.** La de Lucide: 24 × 24, con el trazo a 1 o más del borde, y su círculo y su cuadrado, con los que se compara el peso de cada ícono.
+2. **Geometría.** Lo que ya existe en Lucide se toma igual. Suena dibuja el Tag como un círculo con un punto al centro y le suma los dos anillos del ícono de radio de Lucide, abiertos 45° a cada lado y separados por 4. Meditar arma tres pétalos con pares de arcos, cerrados como las hojas del ícono de flor de Lucide, sobre el suelo de su ícono de brote.
+3. **Trazo y aire.** Trazo de 2, centrado en la línea, con puntas y uniones redondas. Entre elementos distintos queda al menos 2 de aire: 2 entre el Tag y su primer anillo, y 3 entre los pétalos y el suelo.
+4. **Peso y centro.** Desenfocado dos unidades, el ícono deja una mancha —las unidades cuadradas con al menos un 12 % de tinta— que debe parecerse a la del círculo y el cuadrado de Lucide, 366 y 418. Suena deja 407 y Meditar, 399, cerca de la mediana de los íconos de Lucide de la app, 411. Después, la app corre cada ícono hacia su centro óptico: Suena, 0,12 a la derecha, y Meditar, 0,17 hacia abajo.
 5. **Tamaños ópticos.** El trazo se afina a medida que el ícono crece —de 2,0 en 16 px a 1,3 en 48 px— para que pese lo mismo en una fila que en un anillo grande.
 
 **Figura H8**
 
-*Construcción de dos íconos: Suena y Leer*
+*Construcción de dos íconos: Suena y Meditar*
 
-![Construcción de dos íconos: Suena y Leer](imagenes/pase-H7-construccion-suena-y-leer.png)
+![Construcción de dos íconos: Suena y Meditar](imagenes/iconos-4.8.2-construccion-suena-y-meditar.png)
 
-*Nota.* Elaboración propia, con las medidas de la app. Las cotas están en unidades de la retícula; en el paso 5, cada par indica el tamaño del ícono y su trazo.
+*Nota.* Elaboración propia, con las reglas de Lucide (Lucide Contributors, s. f.-a) y las medidas de la app. Las cotas están en unidades de la retícula; en el paso 4, cada número es la mancha del ícono al desenfocarlo, y en el paso 5, cada par indica el tamaño del ícono y su trazo.
 
-**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Design se tomaron la retícula, el área viva y las formas base (Google, s. f.-b); de Material Symbols, los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). La inspiración del dibujo es Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) y dibuja sus propios íconos (Figura H9). La razón no fue que faltaran: al revisar su lista, el 5 de noviembre de 2026, Material Symbols ya tenía equivalentes genéricos de casi todas las actividades. Fueron otras:
+**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Symbols se tomaron los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). Desde la 4.8 el dibujo sale de Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) también en los nueve íconos que adapta o dibuja (Figura H9). Usar un solo conjunto tiene tres razones:
 
-- **Lo propio de Relevo no está en ningún conjunto.** El Tag se dibuja como el objeto que la persona tiene en la mano, y un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
-- **Cerca de lo que la persona nombró.** Un conjunto general nombra categorías; Relevo dibuja cada actividad con el objeto con que empieza, como lo sugiere la app: el tomo para leer manga, el colgador para ordenar, una pieza para armar una maqueta.
+- **Lo propio de Relevo se dibuja con sus reglas.** El Tag no está en ningún conjunto: se dibuja como el objeto que la persona tiene en la mano, porque un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
+- **Cerca de lo que la persona nombró.** Entre las opciones de Lucide, cada actividad se dibuja con el objeto con que empieza, como lo sugiere la app: el libro abierto para leer, la polera para ordenar, el carrete para tejer.
 - **Una sola voz.** Mezclar conjuntos daría dos trazos y dos geometrías en la misma pantalla.
 
 **Figura H9**
 
-*Mismo concepto en Lucide y en Relevo*
+*Los nueve íconos adaptados o propios, junto a su referente de Lucide*
 
-![Mismo concepto en Lucide y en Relevo](imagenes/pase-H8-lucide-y-relevo.png)
+![Los nueve íconos adaptados o propios, junto a su referente de Lucide](imagenes/iconos-4.8.2-propios-junto-a-lucide.png)
 
-*Nota.* Elaboración propia. Los íconos de Lucide se reproducen sin cambios, con licencia ISC (Lucide Contributors, 2026); son, en orden, book-open, dog, timer, map-pin, circle-dashed, settings, house y volume-2. Los de Relevo son los de la app. Cada ícono va en su lienzo de 24; el lienzo vacío corresponde a Suena.
+*Nota.* Elaboración propia, con la app 4.8.2. Cada ícono se muestra a 48, 24 y 17 px y dentro de un anillo de 40 px; a la derecha, los íconos de Lucide de los que salen sus piezas, sin cambios, con licencia ISC (Lucide Contributors, 2026).
 
-**Reglas tomadas y dibujos propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H9):
+**Adaptados y propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H9):
 
-- **Las reglas, no los dibujos.** De Lucide se tomaron la retícula de 24, las puntas y uniones redondas, el trazo centrado, el poco detalle, el peso parejo y un solo color. El trazo, en cambio, es más fino y ligado a Instrument Sans, así que junto a Lucide Relevo se ve más liviano; probar el trazo de 2 junto a la tipografía de la app queda pendiente.
-- **Signos que la gente ya conoce.** En Sin respuesta, Lugar, Tiempo, Ajustes, Inicio y Probar sonido, Relevo usa el mismo signo que Lucide —un círculo punteado, un marcador, un cronómetro, una tuerca, una casa y un parlante—, con su propia geometría: el círculo punteado es algo más chico, el marcador es más angosto, el cronómetro suma la perilla lateral y dos manecillas, la tuerca tiene dientes rectos y la casa lleva la puerta en el mismo trazo.
-- **Dibujos propios.** Leer curva los bordes de sus páginas, donde Lucide dibuja dos rectángulos unidos por el lomo; Perro es una cabeza larga, con las orejas caídas y separadas de ella para leerse en tamaño chico, donde Lucide dibuja una cara ancha con las orejas unidas, y Suena dibuja el Tag con su botón y su argolla, que no tiene equivalente en Lucide.
+- **Lucide tal cual.** Son 109: toda la interfaz y 31 de las 34 actividades.
+- **Adaptados.** Seis toman una pieza de Lucide y le cambian otra: Suena y Silenciar llevan el Tag en lugar del parlante; Actividades, cuatro círculos como los del logo; Leer manga, el libro con un globo de diálogo; Sistema phygital, el teléfono junto al Tag, y Cómo empieza, una sola huella.
+- **Propios.** Tres que Lucide no tiene: el Tag, la colchoneta de Estirar y la flor de loto de Meditar, dibujados con su retícula, su trazo y 2 de aire entre elementos distintos.
+- **El peso, a la vista.** Los nueve se ajustaron hasta pesar como sus vecinos de Lucide al desenfocarlos; Suena y Meditar quedan en la mediana de los íconos de la app.
 
 **Metáforas.** Los íconos hablan en tres registros:
 
-- **Conceptos propios de Relevo,** dibujados con su objeto y sus ideas: el sonido como anillos que se abren desde el Tag; el tiempo como un cronómetro, porque se cuentan minutos de uso; la decisión como una bandera, y un relevo sin respuesta como un círculo punteado, sin juicio. El primer paso usa el mismo triángulo en un círculo que la respuesta «Comencé».
+- **Conceptos propios de Relevo,** dibujados con su objeto y sus ideas: el sonido como anillos que se abren desde el Tag; el tiempo como un cronómetro, porque se cuentan minutos de uso; la decisión como una bandera, y un relevo sin respuesta como un círculo punteado, sin juicio. El primer paso es una huella: dar el paso, literal.
 - **Acciones comunes a cualquier app,** con formas conocidas, como volver, borrar o buscar: lo que la gente reconoce de otras apps le ahorra aprender.
-- **Un significado, un dibujo.** El 6 de noviembre se rehicieron once íconos: tres significados compartían el mismo lápiz —Actividad, Editar y Dibujar—; Meditar y Estirar eran iguales; varios dibujos decían otra cosa, como los destellos de Apariencia, que se leían como inteligencia artificial, o el cubo de Armar una maqueta, que se leía como un paquete, y cuatro actividades no se leían en su tamaño más chico: Leer manga, Perro, Aprender un idioma y Tejer. Entre los íconos sin uso quedan dos pares iguales: Historial, igual a Avance, y Cómo empieza, igual a Ruta.
+- **Un significado, un dibujo.** El 6 de noviembre se rehicieron once íconos: tres significados compartían el mismo lápiz —Actividad, Editar y Dibujar—; Meditar y Estirar eran iguales; varios dibujos decían otra cosa, como los destellos de Apariencia, que se leían como inteligencia artificial, o el cubo de Armar una maqueta, que se leía como un paquete, y cuatro actividades no se leían en su tamaño más chico: Leer manga, Perro, Aprender un idioma y Tejer. Desde la 4.8 ningún ícono repite el dibujo de otro, y la app lo comprueba en sus pruebas.
 
 ## H.4 Paleta cromática
 
@@ -379,7 +380,7 @@ Lucide Contributors. (s. f.-a). *Icon design specification*. Lucide. Recuperado 
 
 Lucide Contributors. (s. f.-b). *Lucide design language*. Lucide. Recuperado el 10 de noviembre de 2026, de https://lucide.dev/contribute/icons/design-principles
 
-Lucide Contributors. (2026). *Lucide* (Versión 1.71.0) [Software]. GitHub. https://github.com/lucide-icons/lucide
+Lucide Contributors. (2026). *Lucide* (Versión 1.70.0) [Software]. GitHub. https://github.com/lucide-icons/lucide
 
 Luffarelli, J., Mukesh, M. y Mahmood, A. (2019). Let the logo do the talking: The influence of logo descriptiveness on brand equity. *Journal of Marketing Research, 56*(5), 862–878. https://doi.org/10.1177/0022243719845000
 
@@ -406,6 +407,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Íconos de Lucide (4.8.2)
+
+- **Qué cambió:** H.3 describe los íconos de la app 4.8.2, que salen de Lucide: 109 tal cual, seis adaptados y tres propios. La Figura H7 muestra los 118 nuevos; la Tabla H2 cambia la retícula, las formas base, las esquinas, el equilibrio y el color y relleno; la construcción (Figura H8) sigue a Suena y Meditar con el método de Lucide, y la Figura H9 muestra los nueve adaptados o propios junto a su referente. La referencia de Lucide pasa a la versión 1.70.0, la que usa la app.
+- **Cómo estaba antes:** los íconos eran dibujos propios con las reglas de Lucide como referencia, la construcción seguía a Suena y Leer, y la Figura H9 comparaba el mismo concepto en Lucide y en Relevo.
+- **Por qué:** el autor decidió llevar los íconos de la 4.8.2 a la memoria y a los anexos (D-192).
 
 ### 2026-11-24 — Variantes del logo
 

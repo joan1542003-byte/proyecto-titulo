@@ -3,7 +3,7 @@
 Cada figura se diseña a su tamaño real en la memoria de 1920 × 1080 pt: una columna (551 pt), dos columnas
 (1146 pt) o el ancho del texto (1742 pt). Así se colocan al 100 %, sin escalar, y su letra es la de las demás
 figuras de la memoria, medida en el PDF del Pase: 20,6 pt en el texto de las figuras y 19,9 pt en los rótulos,
-nunca menos. Los íconos son los de la app 4.7.2 (marca-e-iconos.json), de 30 a 40 pt; los números van sueltos,
+nunca menos. Los íconos son los de la app 4.8.2, desde Lucide (marca-e-iconos.json), de 30 a 40 pt; los números van sueltos,
 sin círculos, como pidió el autor el 10 de noviembre.
 
 Desde la tercera vuelta (21 de noviembre, a pedido del autor) son diagramas simples —líneas, puntos, flechas y

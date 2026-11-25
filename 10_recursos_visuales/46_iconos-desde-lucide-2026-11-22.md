@@ -185,6 +185,8 @@ Al desenfocarlos, la taza (416), el cerro (393), la parrilla (386) y el volantí
 
 ## Lo que arrastra el cambio
 
+**Estado, 25 de noviembre de 2026:** aplicado. La memoria y el Anexo H usan los textos de abajo, ajustados a la numeración vigente del anexo (la construcción es la Figura H8, y la comparación con Lucide, la H9), y las figuras de la memoria usan los íconos de la 4.8.2 (D-192). Las capturas siguen en la 4.7.2, la versión de la prueba.
+
 Nada de esto se cambió todavía, porque depende de que el autor apruebe los íconos:
 
 - **Memoria v8, «Iconografía»:** dice que los íconos «son propios: 118 dibujos de línea». Texto propuesto más abajo.
@@ -243,6 +245,12 @@ Lucide Contributors. (s. f.-c). *SVG conventions*. Lucide. Recuperado el 22 de n
 Lucide Contributors. (2026). *lucide-static* (Versión 1.70.0) [Software]. npm. https://www.npmjs.com/package/lucide-static/v/1.70.0
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Llevado a la memoria
+
+- **Qué cambió:** «Lo que arrastra el cambio» dice que ya se aplicó en la memoria y en los anexos.
+- **Cómo estaba antes:** esperaba la decisión del autor.
+- **Por qué:** el autor decidió llevar los íconos de la 4.8.2 a la memoria (D-192).
 
 ### 2026-11-22 — La construcción, Figura H7
 

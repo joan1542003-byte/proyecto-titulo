@@ -23,7 +23,7 @@
 - **Diagramas simples:** líneas, puntos, flechas y texto; sin cajas que no expliquen nada. Los números van sueltos, sin círculos.
 - **Lectura:** cada figura se lee en un solo sentido, de izquierda a derecha o de arriba abajo, y cada rótulo va pegado a la línea o a la flecha que nombra. Los rótulos son directos y llevan pocas comas. La matriz del método Framework no destaca a ninguna persona.
 - **Color:** degradados sutiles, como los de la app: dos tonos vecinos de cada color para las superficies, y del papel al tono intenso en puntos y barras. Los degradados quedan como vectores en el PDF y en el SVG, sin imágenes.
-- **Íconos:** los de la app 4.7.2 (`../../memoria-1920x1080/marca-e-iconos.json`), de 28 a 34 pt.
+- **Íconos:** los de la app 4.8.2, desde Lucide (`../../memoria-1920x1080/marca-e-iconos.json`), de 28 a 34 pt.
 - **Sin título ni nota dentro:** los pone la memoria, en APA 7, como pide el autor para todas las figuras.
 - **Datos:** solo los que dicen la memoria, los anexos y el código de la app. Los estados del relevo y sus nombres son los del Anexo G (`DRAFT` Borrador, `READY` Listo, `WAITING` En espera, `SIGNALLED` Sonando, `SILENCED` Silenciado, `CLOSED` Cerrado); las preguntas y sus opciones, las del Anexo I (I.5). La matriz del método Framework muestra la forma del análisis, con las personas en filas y los temas en columnas, como el Anexo A, y no las respuestas. La comparación futura es una propuesta.
 
@@ -46,6 +46,12 @@ python3 construir-figuras.py
 Con una clave, solo esa figura, por ejemplo `python3 construir-figuras.py sistema`. Las claves son framework, formulacion, metodo, estados, sistema, registro y comparacion. Después, para verlas en la memoria, se vuelve a componer con `node construir-idml.js` en `../../memoria-1920x1080/`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Íconos de la 4.8.2
+
+- **Qué cambió:** las siete figuras se volvieron a generar con los íconos de la app 4.8.2, que salen de Lucide.
+- **Cómo estaban antes:** usaban los íconos propios de la 4.7.2.
+- **Por qué:** el autor decidió que la memoria lleve los íconos de la 4.8.2 (D-192).
 
 ### 2026-11-24 — Números nuevos
 

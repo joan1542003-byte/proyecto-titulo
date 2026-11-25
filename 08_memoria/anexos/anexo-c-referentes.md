@@ -25,7 +25,7 @@ La búsqueda se cerró el 24 de agosto de 2026, y dos días después se comprob�
 
 Cada tipo de fuente respondió a algo distinto. La documentación de Google y Apple mostró lo que hacen las funciones del sistema; los sitios oficiales de cada producto, su mecanismo, precio y modelo económico; las publicaciones con DOI de Wiley, ACM, PNAS, Springer, Sage, JMIR e IET, la evidencia, y los repositorios y registros académicos permitieron verificar autoría, año y acceso. Las tiendas y reseñas se leyeron solo como señal comercial.
 
-Entraron publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores con una función fundacional, como The Tangible Reminder, de 2007; productos vigentes al cierre de la búsqueda, con una página oficial que permitiera verificar su mecanismo, y referentes que iluminan alguna decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono. Quedaron fuera Aro, porque su disponibilidad no pudo verificarse con una fuente oficial; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
+Entraron publicaciones desde 2019 sobre autocontrol digital, fricción, intención, recordatorios situados o uso sostenido, y obras anteriores con una función fundacional, como Place-Its, de 2005, The Tangible Reminder, de 2007, y Wobble, de 2017; productos vigentes al cierre de la búsqueda, con una página oficial que permitiera verificar su mecanismo, y referentes que iluminan alguna decisión de Relevo: dónde suena la señal, bloquear o no, qué la activa, el lugar, la configuración, la privacidad, el modelo de negocio o el abandono. Quedaron fuera Aro, porque su disponibilidad no pudo verificarse con una fuente oficial; AirTag, porque localiza objetos y no apoya la regulación del uso del teléfono, y las herramientas clínicas, de control parental o de vigilancia, porque Relevo es un apoyo que la persona elige.
 
 Cuando dos fuentes se contradecían, se mantuvo la afirmación más limitada, según este orden de peso: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria.
 
@@ -292,6 +292,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Obras fundacionales
+
+- **Qué cambió:** el criterio de selección nombra las tres obras anteriores a 2019 que se conservan por su función fundacional: Place-Its (2005), The Tangible Reminder (2007) y Wobble (2017).
+- **Cómo estaba antes:** solo nombraba The Tangible Reminder como ejemplo.
+- **Por qué:** el autor decidió conservar esas fuentes porque son fundamentales; no es obligatorio que sean recientes.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

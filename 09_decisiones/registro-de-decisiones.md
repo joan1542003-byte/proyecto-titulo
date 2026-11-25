@@ -2535,7 +2535,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-187 — Los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene
 
 - **Fecha:** 2026-11-21, aplicada el 22.
-- **Estado:** aplicada en la app 4.8 y ajustada en la 4.8.1 y la 4.8.2, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas.
+- **Estado:** aplicada en la app 4.8 y ajustada en la 4.8.1 y la 4.8.2, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas. Desde el 25 de noviembre está en `main`, y la memoria y el Anexo H la describen (D-192).
 - **Contexto:** desde D-124, Relevo dibujaba sus propios íconos con las reglas de construcción de Lucide, un conjunto de íconos de línea de código abierto; en noviembre eran 118 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)). El autor propuso usar los de Lucide, adaptar los que lo requieran y crear nuevos con sus reglas solo cuando Lucide no tenga algo que el usuario hace.
 - **Decisión:**
   - **Lucide primero:** cada ícono de la app es el de Lucide 1.70.0 que dice lo mismo, tal cual: 109 de 118.
@@ -2597,7 +2597,34 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** dejar los esquemas como fichas y corregir solo los textos, porque seguían pareciendo formularios; rotar los rótulos de los estados a lo largo de sus líneas, porque cuesta leerlos.
 - **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md), [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md).
 
+## D-191 — El fenómeno es una pérdida del sentido de agencia, y la memoria explica la tensión en la decisión y el universo del problema
+
+- **Fecha:** 2026-11-25.
+- **Estado:** aplicada en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md) y en la [memoria compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf).
+- **Contexto:** después del Pase, los profesores pidieron verificar la palabra correcta para el fenómeno —al contar su último rato con el teléfono, las personas describen que no ejercen agencia—, explicar en la Formulación cómo funciona la tensión en la decisión del usuario y escribir el planteamiento como el universo del proyecto. El 23 de noviembre quedaron borradores con fuentes verificadas en los [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md), sin tocar la memoria.
+- **Decisión:**
+  - **El fenómeno:** una pérdida del *sentido de agencia* (Lukoff et al., 2021; Moore, 2016), en la Introducción, el Planteamiento, la Formulación y el glosario.
+  - **La tensión en la decisión:** un párrafo y un esquema al abrir el capítulo 10, la nueva Figura 16: querer dos cosas a la vez, la decisión que deja de tomarse, que seguir no siempre es un error y dónde actúa Relevo.
+  - **El universo del problema:** el capítulo 5 abre con la experiencia del autor, la de otras personas y el contexto, en párrafos corridos y no como lista. Después del ejemplo dice por qué es un problema y por qué se formula así, y termina en el mismo enunciado.
+- **Alternativas descartadas:** *agencia* a secas, porque pierde la diferencia entre lo que se siente en el momento y lo que se juzga después; solo el párrafo de la tensión, sin esquema; sumar al capítulo 5 solo los dos cierres.
+- **Documentos:** [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md), [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
+
+## D-192 — La memoria lleva los íconos de la 4.8.2 y las pantallas de la 4.7.2
+
+- **Fecha:** 2026-11-25.
+- **Estado:** aplicada en la memoria compuesta y en los anexos F, G y H.
+- **Contexto:** desde la app 4.8 los íconos salen de Lucide (D-187), y la entrega usa la última versión de la app (D-188). La memoria seguía describiendo los íconos como propios, y sus pantallas son las de la 4.7.2, la versión con que cerró la prueba.
+- **Decisión:** el párrafo «Iconografía», la lámina de identidad, los íconos de las figuras y el Anexo H pasan a la 4.8.2. Las capturas siguen en la 4.7.2, porque muestran lo que se probó, y los anexos F y G dicen que la 4.8 cambió solo los íconos. En la presentación del examen, la lámina 20 muestra la 4.7.2; la lámina 21 todavía describe los íconos como propios y queda por corregir.
+- **Alternativas descartadas:** cambiar también las capturas por las de la 4.8.2, porque mostrarían una versión que nadie usó en la prueba; dejar la memoria en la 4.7.2, porque contradice D-188.
+- **Documentos:** [íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md) y [Anexo H](../08_memoria/anexos/anexo-h-identidad.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — D-191 y D-192
+
+- **Qué cambió:** se suman D-191, los tres puntos de fondo de los profesores en la memoria, y D-192, los íconos de la 4.8.2 con las pantallas de la 4.7.2. D-187 anota que ya está en `main` y en la memoria.
+- **Cómo estaba antes:** los puntos de fondo eran borradores y la memoria describía los íconos como propios.
+- **Por qué:** el autor tomó las dos decisiones el 25 de noviembre.
 
 ### 2026-11-24 — D-190
 

@@ -1,6 +1,6 @@
 # Anexo F. Estados del ciclo y *wireframes*
 
-El recorrido de Relevo se diseñó dos veces. En agosto de 2026 fue un ciclo de estados que debía funcionar de principio a fin, también cuando algo falla; en octubre, las pantallas de la app que se usó en la prueba. Este anexo muestra los dos momentos: los 35 estados del ciclo con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, ordenados por recorrido. Al final muestra cómo quedó la app después de la prueba, con 18 capturas de su versión más reciente, la 4.7.2.
+Antes de llamarse Relevo, el proyecto pasó por otros conceptos, desde In(Visible), y este anexo los muestra primero. Después, el recorrido de Relevo se diseñó dos veces. En agosto de 2026 fue un ciclo de estados que debía funcionar de principio a fin, también cuando algo falla; en octubre, las pantallas de la app que se usó en la prueba. Este anexo muestra los dos momentos: los 35 estados del ciclo con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, ordenados por recorrido. Al final muestra cómo quedó la app después de la prueba, con 18 capturas de la versión 4.7.2; la 4.8 cambió solo los íconos (Anexo H).
 
 ## F.1 Estados del ciclo
 
@@ -66,11 +66,33 @@ Con esas reglas, los 35 estados se agrupan por fase, de la configuración al cie
 
 *Nota.* Elaboración propia, agosto de 2026.
 
-La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y confirmar el objeto, probar el lugar, listo para armar, armado, armado en espera, señal activa y cierre. Los demás no son una segunda experiencia: muestran las bifurcaciones que hacen el sistema comprensible y recuperable. En total hay cinco tipos de ruta —la principal, la validación previa, la salida voluntaria, el fallo técnico y el estado límite—, y la Figura F1 los recorre en *wireframes*.
+La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y confirmar el objeto, probar el lugar, listo para armar, armado, armado en espera, señal activa y cierre. Los demás no son una segunda experiencia: muestran las bifurcaciones que hacen el sistema comprensible y recuperable. En total hay cinco tipos de ruta —la principal, la validación previa, la salida voluntaria, el fallo técnico y el estado límite—, y la Figura F3 los recorre en *wireframes*.
 
-## F.2 *Wireframes* de agosto de 2026
+## F.2 Los primeros conceptos (marzo a julio de 2026)
+
+Antes de llamarse Relevo, el proyecto se llamó In(Visible). En el Seminario de Título, de marzo a junio de 2026, abordaba la *amnesia del ocio digital*: horas de entretenimiento en el teléfono que después no se recuerdan como propias y dejan culpa. La propuesta era un objeto *phygital* de registro pasivo, una base donde la persona dejaba el teléfono al llegar a su espacio de descanso y que, al retirarlo, le mostraba su registro (Figura F1).
 
 **Figura F1**
+
+*Recorrido de In(Visible), primer semestre de 2026*
+
+![Recorrido de In(Visible)](imagenes/conceptos-invisible-recorrido.png)
+
+*Nota.* Elaboración propia, primer semestre de 2026.
+
+En julio, al cerrar el semestre, el proyecto ya se llamaba Relevo y había cambiado de foco: en vez de alejar el teléfono, buscaba que las intenciones propias volvieran a la decisión durante el ocio digital. Se compararon tres propuestas —una pausa en el teléfono, preparar el entorno antes del ocio y una pausa con apoyo físico— y se eligió la tercera, que unía la app con un objeto en el lugar (Figura F2).
+
+**Figura F2**
+
+*Tres propuestas del cierre del primer semestre*
+
+![Tres propuestas del cierre del primer semestre](imagenes/conceptos-julio-tres-propuestas.png)
+
+*Nota.* Elaboración propia, julio de 2026. Se eligió la propuesta C.
+
+## F.3 *Wireframes* de agosto de 2026
+
+**Figura F3**
 
 *Recorrido del ciclo en *wireframes*, agosto de 2026*
 
@@ -104,11 +126,25 @@ La ruta principal pasa por nueve estados: sin configurar, revisión, elegir y co
 
 *Nota.* Elaboración propia, agosto de 2026.
 
-## F.3 *Wireframes* de la app (octubre de 2026)
+## F.4 La primera versión de la app
 
-En octubre, el recorrido ya era una app. Antes de dibujar sus *wireframes*, el primer uso se bocetó a mano en tres pantallas: una bienvenida que da contexto; los términos y condiciones, obligatorios porque la app usa datos, y el perfil, con nombre, intereses, foto y tal vez un color (Figura F2).
+Antes de los *wireframes* de octubre, la app tuvo una primera versión, en oscuro, que llamaba *testigo* al objeto y probaba su pulso antes de armar el ciclo. Dos de sus pantallas muestran cómo se formulaba la intención, con su primer paso, y cómo llegaba la señal desde el lugar (Figura F4).
 
-**Figura F2**
+**Figura F4**
+
+*Dos pantallas de la primera versión de la app*
+
+| Formular la intención | Señal situada |
+| --- | --- |
+| ![Formular la intención](imagenes/app-primera-version-formular.png) | ![Señal situada](imagenes/app-primera-version-senal.png) |
+
+*Nota.* Elaboración propia, anterior a octubre de 2026.
+
+## F.5 *Wireframes* de la app (octubre de 2026)
+
+En octubre, el recorrido ya era una app. Antes de dibujar sus *wireframes*, el primer uso se bocetó a mano en tres pantallas: una bienvenida que da contexto; los términos y condiciones, obligatorios porque la app usa datos, y el perfil, con nombre, intereses, foto y tal vez un color (Figura F5).
+
+**Figura F5**
 
 *Bocetos del primer uso*
 
@@ -116,33 +152,33 @@ En octubre, el recorrido ya era una app. Antes de dibujar sus *wireframes*, el p
 
 *Nota.* Elaboración propia.
 
-En los *wireframes*, los términos pasaron a ser el consentimiento de la prueba, y la foto, un emoji (Figura F3). Son las 39 pantallas de la app que se usó en la prueba, en muy baja fidelidad y con sus textos reales, en cinco recorridos: el primer uso, la preparación de un relevo, el conteo con la señal y la decisión, las tres pestañas de la app y el perfil (Figuras F3 a F7). Se dibujaron sobre una retícula común, con cada elemento en la posición que tenía en la app.
+En los *wireframes*, los términos pasaron a ser el consentimiento de la prueba, y la foto, un emoji (Figura F6). Son las 39 pantallas de la app que se usó en la prueba, en muy baja fidelidad y con sus textos reales, en cinco recorridos: el primer uso, la preparación de un relevo, el conteo con la señal y la decisión, las tres pestañas de la app y el perfil (Figuras F6 a F7). Se dibujaron sobre una retícula común, con cada elemento en la posición que tenía en la app.
 
-**Figura F3**
+**Figura F6**
 
 *Primer uso*
 
 ![La primera vez](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/1-primera-vez.png)
 
-**Figura F4**
+**Figura F7**
 
 *Preparación de un relevo*
 
 ![Preparar un relevo](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/2-preparar-un-relevo.png)
 
-**Figura F5**
+**Figura F8**
 
 *Conteo, señal y decisión*
 
 ![Contar, sonar y decidir](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/3-contar-sonar-y-decidir.png)
 
-**Figura F6**
+**Figura F9**
 
 *Inicio, ruta y perfil*
 
 ![Inicio, ruta y perfil](../../06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/wireframes-png/hojas/4-inicio-ruta-y-perfil.png)
 
-**Figura F7**
+**Figura F10**
 
 *Perfil*
 
@@ -150,11 +186,11 @@ En los *wireframes*, los términos pasaron a ser el consentimiento de la prueba,
 
 *Nota.* Elaboración propia, a partir de las pantallas de la app que se usó en la prueba, en octubre de 2026.
 
-## F.4 Pantallas de la aplicación 4.7.2
+## F.6 Pantallas de la aplicación 4.7.2
 
-Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 llegó el rediseño, y el 9, la versión 4.7.2, la más reciente (Anexo G). Dieciocho capturas la recorren en el orden de su uso: el primer uso y los seis pasos con que se prepara un relevo (Figura F8); el conteo del tiempo, la señal, las preguntas, la decisión y el cierre de la prueba, hasta volver a Inicio (Figura F9), y el perfil y los ajustes (Figura F10).
+Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 llegó el rediseño, y el 9, la versión 4.7.2 (Anexo G). Desde la 4.8, del 22 de noviembre, los íconos salen de Lucide (Anexo H); las pantallas no cambiaron. Dieciocho capturas la recorren en el orden de su uso: el primer uso y los seis pasos con que se prepara un relevo (Figura F11); el conteo del tiempo, la señal, las preguntas, la decisión y el cierre de la prueba, hasta volver a Inicio (Figura F12), y el perfil y los ajustes (Figura F13).
 
-**Figura F8**
+**Figura F11**
 
 *Primer uso y preparación de un relevo*
 
@@ -168,7 +204,7 @@ Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 lleg�
 
 *Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un perfil de prueba y datos inventados. El relevo de ejemplo, «Leer», suena en el teléfono tras 15 minutos en Chrome.
 
-**Figura F9**
+**Figura F12**
 
 *Conteo, señal, decisión y cierre*
 
@@ -182,7 +218,7 @@ Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 lleg�
 
 *Nota.* Capturas de la versión 4.7.2, con el mismo perfil de prueba. Para mostrar el cierre de la prueba se usó una copia de la app marcada como la de alguien que ya usaba Relevo; de las cinco partes del cierre se ven la primera y la cuarta.
 
-**Figura F10**
+**Figura F13**
 
 *Perfil y ajustes*
 
@@ -193,6 +229,12 @@ Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 lleg�
 *Nota.* Capturas de la versión 4.7.2, con el mismo perfil de prueba. Ajustes muestra cuántas partes del cierre de la prueba faltan.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Los primeros conceptos
+
+- **Qué cambió:** se suma F.2, con In(Visible), el concepto del primer semestre (Figura F1), y las tres propuestas del cierre de julio (Figura F2), y F.4, con dos pantallas de la primera versión de la app (Figura F4). Las demás secciones y figuras se renumeran: F.3 a F.6 y F3 a F13. La introducción y F.6 dicen que la 4.8 cambió solo los íconos.
+- **Cómo estaba antes:** el anexo empezaba en los *wireframes* de agosto, tenía diez figuras y llamaba a la 4.7.2 la versión más reciente.
+- **Por qué:** el autor pidió poner en los anexos los primeros conceptos de Relevo, de cuando se llamaba Invisible, y un par de *wireframes* viejos.
 
 ### 2026-11-24 — Pantallas de la versión 4.7.2
 

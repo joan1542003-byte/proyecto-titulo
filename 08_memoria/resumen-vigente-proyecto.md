@@ -4,7 +4,7 @@
 
 ## Qué es
 
-Relevo es un sistema *phygital*, con un componente físico y uno digital, para que lo que una persona quería hacer vuelva a estar presente a tiempo mientras usa una aplicación de ocio digital.
+Relevo es un sistema *phygital*, con un componente físico y uno digital, para que lo que una persona quería hacer vuelva a estar presente a tiempo mientras usa una aplicación de ocio digital. El fenómeno que aborda es una pérdida del *sentido de agencia*: la sesión sigue sin que la persona vuelva a decidirla (D-191).
 
 1. En la app Android escribe la actividad, su primer paso y dónde empieza.
 2. Elige las apps que cuentan y cuánto tiempo.
@@ -45,6 +45,12 @@ El detalle está en el [estado del proyecto](../00_gobernanza/estado-del-proyect
 - la presentación del examen, el 14 o el 15 de diciembre; el Pase del 18 de noviembre es solo la revisión de la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Nombre del fenómeno
+
+- **Qué cambió:** «Qué es» nombra el fenómeno como una pérdida del sentido de agencia.
+- **Cómo estaba antes:** no lo nombraba.
+- **Por qué:** el autor eligió ese término para la memoria (D-191). El resto del resumen sigue al 29 de octubre.
 
 ### 2026-11-10 — Cierre de la prueba
 

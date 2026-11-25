@@ -88,7 +88,7 @@ const E = {
   'Celda cabecera': { tamano: 12, interlineado: 15, estilo: 'SemiBold', color: 'Color/Gris' },
   'Celda primera': { tamano: 12.5, interlineado: 17, estilo: 'SemiBold' },
   'Dato': { tamano: 44, interlineado: 46, estilo: 'SemiBold', seguimiento: -20 },
-  'Referencia': { tamano: 11, interlineado: 14, despues: 1.5, sangria: 18, primera: -18 },
+  'Referencia': { tamano: 11, interlineado: 13.4, despues: 1.2, sangria: 18, primera: -18 },
   'Glosario': { tamano: 11, interlineado: 15, despues: 7 },
   'Índice': { tamano: 14, interlineado: 18, estilo: 'SemiBold' },
   'Índice página': { tamano: 14, interlineado: 18, estilo: 'SemiBold', color: 'Color/Gris', alineacion: 'RightAlign' },
@@ -751,12 +751,13 @@ const partes = (b) => b.descripcion.replace(/^[^:]*: /, '').split('; ').map((g) 
 // una frase o de una cita no la parta en dos (21 de noviembre de 2026: una cita de la Figura 21 salía en tres líneas).
 const elementos = (s) => (s || '').split(/, (?=[A-ZÁÉÍÓÚÑ¿¡«])/).filter(Boolean);
 // Esquemas que cuentan una secuencia: llevan número y una flecha de un grupo al siguiente.
-const SECUENCIA = /^(esquema de (problema|recorrido|etapas)|pasos de atención)/;
+const SECUENCIA = /^(esquema de (problema|recorrido|etapas|tensión)|pasos de atención)/;
 // Un color por grupo, con el degradado de los puntos de la app. El recorrido usa los colores de la identidad (primer
 // paso, tiempo, lugar y decisión); las situaciones, los de los dos tipos de la Figura 6; la atención, los de los estados.
 const coloresEsquema = (d) => (/^esquema de recorrido/.test(d) ? ['Cielo', 'Amarillo', 'Lima', 'Rubor']
   : /^esquema de situaciones/.test(d) ? ['Rubor', 'Lima']
   : /^pasos de atención/.test(d) ? ['Amarillo', 'Durazno', 'Rubor']
+  : /^esquema de tensión/.test(d) ? ['Lila', 'Amarillo', 'Lima', 'Rubor']
   : ['Lila', 'Cielo', 'Amarillo', 'Lima', 'Rubor', 'Durazno']);
 const puntoColor = (c) => `linear-gradient(135deg,${DEGRADE[c][0]},${INTENSO[c]})`;
 // Flechas como las de las figuras nuevas: trazo de 2,2 pt y punta abierta.
@@ -805,7 +806,7 @@ function identidad(T) {
   return `<div class="idn"><div class="blanco idn-logo">${lockup()}</div>` +
     `<div class="idn-luces">${luces.map(([c, ic, tx]) => `<div class="idn-luz"><span class="cuad" style="background:${c}">${svgIcono(ic)}</span><div class="tx">${T('Celda primera', tx)}${T('Celda cabecera', c)}</div></div>`).join('')}</div>` +
     `<div class="blanco idn-letra">${T('Dato', 'Aa')}<div class="tx">${T('Celda primera', 'Instrument Sans')}${T('Celda suave', 'Regular, Medium y SemiBold')}</div></div>` +
-    `<div class="blanco idn-iconos"><div class="ics">${iconos.map((k) => `<span class="cuad">${svgIcono(k)}</span>`).join('')}</div>${T('Celda suave', 'Íconos propios: retícula de 24, trazo de 1,6')}</div></div>`;
+    `<div class="blanco idn-iconos"><div class="ics">${iconos.map((k) => `<span class="cuad">${svgIcono(k)}</span>`).join('')}</div>${T('Celda suave', 'Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6')}</div></div>`;
 }
 
 /** Resultados por persona: un punto por respuesta; lleno, si declaró haber empezado. */
