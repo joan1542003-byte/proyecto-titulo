@@ -108,6 +108,12 @@ La versión de la app (4.7.2 en las capturas de la prueba) y el nombre del profe
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-25 — La cita de Guynn en la lámina 9
+
+- **Qué cambió:** la lámina 9 dice que ayudan más los recordatorios que nombran la acción y la ocasión, no solo la ocasión (Guynn et al., 1998, p. 296).
+- **Cómo estaba antes:** decía “el momento” en lugar de “la ocasión”.
+- **Por qué:** la verificación de referencias del 25 de noviembre mostró que el estudio usó eventos, no horas del reloj, y la memoria se corrigió igual.
+
 ### 2026-11-25 — La lámina 24 con la pregunta y la hipótesis tal cual
 
 - **Qué cambió:** la lámina 24 muestra la pregunta y la hipótesis tal cual, la respuesta, el resultado de la hipótesis y los tres supuestos con lo que se cumplió y lo que no. El soporte se nombra como el Tag. El guion la sigue y dura unos 13 min 59 s.
