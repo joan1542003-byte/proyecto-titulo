@@ -29,7 +29,7 @@ Entraron publicaciones desde 2019 sobre autocontrol digital, fricción, intenci�
 
 Cuando dos fuentes se contradecían, se mantuvo la afirmación más limitada, según este orden de peso: revisiones sistemáticas y metaanálisis; experimentos y estudios de campo; documentación de las plataformas, para lo que una función hace; documentación del fabricante, para su mecanismo, precio y promesa; tiendas, reseñas y cifras de usuarios, y prensa o blogs, solo para llegar a la fuente primaria.
 
-**Memorias de título chilenas.** El Pase de junio pidió incorporar al menos una tesis local. El 25 de octubre de 2026 se buscó en el Repositorio Académico de la Universidad de Chile con «celular», «smartphone», «redes sociales», «tiempo libre», «desconexión digital», «bienestar digital» y «uso del celular», junto a «diseño» o «diseñadora». Entraron dos memorias de Diseño, Venegas Álvarez (2026) y Riveros Oltra (2023), leídas completas, y una de Sociología, Cortés Concha (2016), de la que se usa su ficha bibliográfica. Se descartó una de Diseño Gráfico sobre el acoso en redes sociales. La base de memorias de Diseño UC no respondió, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
+**Memorias de título chilenas.** El Pase de junio pidió incorporar al menos una tesis local. El 25 de octubre de 2026 se buscó en el Repositorio Académico de la Universidad de Chile con “celular”, “smartphone”, “redes sociales”, “tiempo libre”, “desconexión digital”, “bienestar digital” y “uso del celular”, junto a “diseño” o “diseñadora”. Entraron dos memorias de Diseño, Venegas Álvarez (2026) y Riveros Oltra (2023), leídas completas, y una de Sociología, Cortés Concha (2016), de la que se usa su ficha bibliográfica. Se descartó una de Diseño Gráfico sobre el acoso en redes sociales. La base de memorias de Diseño UC no respondió, y no se encontraron en línea memorias de diseño de la UDP ni de la UDD sobre el tema.
 
 **Alcance.** Precios, compatibilidades y disponibilidad son los del cierre de la búsqueda, en su moneda original. No hay cifras de ventas, retención ni tamaño del mercado; el corpus se inclina a fuentes en inglés, y la mayor parte de la evidencia independiente estudia intervenciones en la pantalla, no objetos. Por eso la oportunidad se formula sobre lo revisado y no como una novedad absoluta.
 
@@ -292,6 +292,12 @@ Venegas Álvarez, S. A. (2026). *Gratitud digitalizada: un enfoque en el diseño
 Zekveld, J., Bakker, S., Zijlema, A. y van den Hoven, E. (2017). Wobble: Shaping unobtrusive reminders for prospective memories in the home context. En *Proceedings of the Eleventh International Conference on Tangible, Embedded, and Embodied Interaction* (pp. 31–35). Association for Computing Machinery. https://doi.org/10.1145/3024969.3024984
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-25 — Obras fundacionales
 

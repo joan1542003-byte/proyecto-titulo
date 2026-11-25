@@ -2618,7 +2618,37 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** cambiar también las capturas por las de la 4.8.2, porque mostrarían una versión que nadie usó en la prueba; dejar la memoria en la 4.7.2, porque contradice D-188.
 - **Documentos:** [íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md) y [Anexo H](../08_memoria/anexos/anexo-h-identidad.md).
 
+## D-193 — Cada figura va en la página de su mención; en la siguiente, solo a página completa
+
+- **Fecha:** 2026-11-25.
+- **Estado:** aplicada en el [generador](../08_memoria/memoria-1920x1080/construir-idml.js) y en la [memoria compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf).
+- **Contexto:** desde D-183 y D-186 una figura podía ir en la página siguiente a su mención. El autor pidió que una figura no se mencione en una página y aparezca en la siguiente. Aceptó una excepción: la figura en la página siguiente si usa la lámina completa y está diseñada para ese espacio. También pidió capturas más grandes, figuras vecinas que empiecen a la misma altura, que ningún capítulo termine en una columna sola, y rehacer las figuras que no se entendían.
+- **Decisión:**
+  - **La página de la mención:** es la de la línea que nombra la figura, no la del párrafo.
+  - **Junto al texto:** una figura de columna se coloca al llegar a esa línea, al pie de la columna de la mención o en una columna libre a su derecha; una doble, en las columnas 2 y 3.
+  - **Página completa:** si no cabe, va sola en la página siguiente, compuesta para esa página: las capturas del flujo y del color, en la resolución original de la 4.7.2; el método Framework, la formulación, el registro y la identidad, junto a su rótulo y su nota; la Tabla 1, estirada. Vale también una página sin texto cuyas figuras de columna llenan las tres columnas, alineadas arriba y abajo.
+  - **Finales de capítulo:** ninguno termina en una columna sola ni con dos o tres líneas solas. Se resuelve con contenido (D-152): una síntesis de los tres ámbitos cierra el capítulo 4 y las necesidades de diseño, el capítulo 7.
+  - **Figuras rehechas:** el método Framework con los códigos reales de cada entrevista, los estados de un relevo con “En preparación”, cómo funciona Relevo en ocho pasos y el mapa con la marca de Relevo.
+  - **Mismo resultado en cualquier computador:** la búsqueda al azar cuenta pruebas, no segundos.
+- **Alternativas descartadas:** aceptar la página siguiente, como antes; agrandar una figura chica para llenar una página; dejar páginas con una figura a medio llenar.
+- **Documentos:** [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md) y [figuras v8](../08_memoria/figuras/v8/README.md).
+
+## D-194 — Las figuras de otras fuentes no se reproducen: se citan o se rehacen
+
+- **Fecha:** 2026-11-25.
+- **Estado:** aplicada en el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md).
+- **Contexto:** el autor preguntó si es legal y ético usar figuras de otros lugares. En Chile, la Ley 17.336 permite incluir fragmentos breves de una obra a título de cita, con fines de crítica, enseñanza o investigación (art. 71 B), y el uso incidental con fines académicos (art. 71 Q). Una fotografía o un dibujo completo es una obra en sí, y difícilmente cuenta como fragmento breve. APA 7 pide, para reproducir o adaptar una figura, la nota de derechos de autor y, a veces, permiso. Las ideas y los datos no están protegidos.
+- **Decisión:** la Figura 1, antes tomada de Lyngs et al. (2019), es propia, con sus cifras verificadas en el texto completo (pp. 7–8). Salen la foto de Wobble (Zekveld et al., 2017), el esquema de Sanders y Stappers (2012), que la Figura 9 propia ya resume, y el modelo de Fogg (2009), que la matriz propia aplica. Las tres fuentes se siguen citando en el texto. La patente de Rosenberg (2009) salió por pedido del autor.
+- **Alternativas descartadas:** pedir permiso a cada editorial; mantener “Tomado de” con una nota de derechos completa.
+- **Documentos:** [Ley 17.336 en la BCN](https://www.bcn.cl/leychile/navegar?idNorma=28933) y la guía de APA sobre [figuras](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/sample-figures).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — D-193 y D-194
+
+- **Qué cambió:** se suman D-193, cada figura en la página de su mención salvo a página completa, y D-194, las figuras de otras fuentes que no se reproducen.
+- **Cómo estaba antes:** D-183 y D-186 aceptaban la página siguiente, y la memoria reproducía cinco figuras de otras fuentes.
+- **Por qué:** segunda revisión del autor del 25 de noviembre.
 
 ### 2026-11-25 — D-191 y D-192
 

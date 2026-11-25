@@ -103,6 +103,12 @@ La estructura puede ajustarse por evidencia nueva, pero reemplaza como base a la
 
 ## Registro de cambios
 
+### 2026-11-25 — Figuras junto a su mención y figuras propias
+
+- **Qué cambió:** la memoria compuesta tiene 75 páginas y 39 figuras. Cada figura queda en la página de su mención o, a página completa, en la siguiente (D-193). Las figuras de otras fuentes se rehicieron o salieron (D-194). Los anexos usan comillas “ ” y el Anexo G llama “En preparación” al primer estado de un relevo.
+- **Cómo estaba antes:** 73 páginas y 41 figuras; algunas figuras iban en la página siguiente a su mención y cinco eran de otras fuentes.
+- **Por qué:** segunda revisión del autor del 25 de noviembre.
+
 ### 2026-11-25 — Puntos de fondo, íconos de Lucide y primeros conceptos
 
 - **Qué cambió:** el borrador v8 y la memoria compuesta suman los tres puntos de fondo de los profesores (D-191) y los íconos de la app 4.8.2 (D-192): 73 páginas y 41 figuras. Los anexos suman los primeros conceptos de Relevo y describen los íconos nuevos: 135 páginas.

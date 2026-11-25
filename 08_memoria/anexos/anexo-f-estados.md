@@ -4,7 +4,7 @@ Antes de llamarse Relevo, el proyecto pasó por otros conceptos, desde In(Visibl
 
 ## F.1 Estados del ciclo
 
-En agosto, antes de que el prototipo usara el Tag, el objeto se pensaba con un control propio. Para comprobar que el ciclo podía representarse completo —con sus validaciones, sus decisiones voluntarias, sus fallos técnicos y sus estados límite—, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app sirve para configurar, informar el estado y recuperarse de un fallo. En estos *wireframes*, «armar» es activar un relevo, y el «pulso» es la señal.
+En agosto, antes de que el prototipo usara el Tag, el objeto se pensaba con un control propio. Para comprobar que el ciclo podía representarse completo —con sus validaciones, sus decisiones voluntarias, sus fallos técnicos y sus estados límite—, cada estado tuvo su *wireframe*. Eso no significa que la persona mire el teléfono durante todo el recorrido: lo central es la señal del objeto, y la app sirve para configurar, informar el estado y recuperarse de un fallo. En estos *wireframes*, “armar” es activar un relevo, y el “pulso” es la señal.
 
 El ciclo se rige por seis reglas:
 
@@ -202,7 +202,7 @@ Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 lleg�
 | --- | --- | --- | --- |
 | ![Lugar (3 de 6)](imagenes/app-4.7.2-pantalla-05-en-que-lugar.jpg) | ![Cuándo suena (4 de 6)](imagenes/app-4.7.2-pantalla-06-cuando-suena.jpg) | ![Dónde suena (5 de 6)](imagenes/app-4.7.2-pantalla-07-donde-suena.jpg) | ![Todo listo (6 de 6)](imagenes/app-4.7.2-pantalla-08-todo-listo.jpg) |
 
-*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un perfil de prueba y datos inventados. El relevo de ejemplo, «Leer», suena en el teléfono tras 15 minutos en Chrome.
+*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un perfil de prueba y datos inventados. El relevo de ejemplo, “Leer”, suena en el teléfono tras 15 minutos en Chrome.
 
 **Figura F12**
 
@@ -229,6 +229,12 @@ Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 lleg�
 *Nota.* Capturas de la versión 4.7.2, con el mismo perfil de prueba. Ajustes muestra cuántas partes del cierre de la prueba faltan.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-25 — Los primeros conceptos
 

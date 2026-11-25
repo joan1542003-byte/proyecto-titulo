@@ -75,7 +75,7 @@ En la tercera aparece el concepto: los cuatro pasos de un relevo se vuelven cuat
 
 *Nota.* Elaboración propia, a partir de los trazados del logo.
 
-**Logotipo y composición.** «relevo» va siempre en minúsculas, en Chillax Semibold convertida a trazos (H.2). En la versión horizontal, la marca mide 1,18 veces la altura de la «l», se centra en ella y se separa del nombre por 0,30 del cuerpo tipográfico; en la vertical, la marca va sobre el nombre.
+**Logotipo y composición.** “relevo” va siempre en minúsculas, en Chillax Semibold convertida a trazos (H.2). En la versión horizontal, la marca mide 1,18 veces la altura de la “l”, se centra en ella y se separa del nombre por 0,30 del cuerpo tipográfico; en la vertical, la marca va sobre el nombre.
 
 **Versiones.** Cada versión responde a un uso (Figura H1):
 
@@ -114,7 +114,7 @@ En la tercera aparece el concepto: los cuatro pasos de un relevo se vuelven cuat
 
 ![Variantes del logo, de la 9 a la 18](imagenes/logo-variantes-2026-11-23-parte-2.png)
 
-*Nota.* Elaboración propia, 23 de noviembre de 2026. En la lámina, «papel» es el fondo claro; «tinta», el negro, y cielo, lima y rubor, el celeste, el verde y el rosa.
+*Nota.* Elaboración propia, 23 de noviembre de 2026. En la lámina, “papel” es el fondo claro; “tinta”, el negro, y cielo, lima y rubor, el celeste, el verde y el rosa.
 
 ## H.2 Tipografía
 
@@ -131,7 +131,7 @@ La identidad usa dos tipografías sin serifa: una para el nombre y otra para tod
 
 *Nota.* Elaboración propia.
 
-**Selección de la tipografía del logotipo.** Para el logotipo se compararon 20 tipografías sin serifa de Fontshare. Pasaron a la final Chillax, en dos pesos, Cabinet Grotesk, Pally y Panchang, con Instrument Sans como referencia, y ganó Chillax Semibold porque sus formas conversan con los círculos del logo: su «o» es casi un círculo; la «e» y la «r» terminan en curvas abiertas, que hacen amable la palabra, y su altura x, de casi la mitad del cuerpo, la mantiene legible en tamaño chico. Además, no es de Google Fonts, una condición que se fijó para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con el interletrado levemente cerrado.
+**Selección de la tipografía del logotipo.** Para el logotipo se compararon 20 tipografías sin serifa de Fontshare. Pasaron a la final Chillax, en dos pesos, Cabinet Grotesk, Pally y Panchang, con Instrument Sans como referencia, y ganó Chillax Semibold porque sus formas conversan con los círculos del logo: su “o” es casi un círculo; la “e” y la “r” terminan en curvas abiertas, que hacen amable la palabra, y su altura x, de casi la mitad del cuerpo, la mantiene legible en tamaño chico. Además, no es de Google Fonts, una condición que se fijó para el logotipo. Su licencia, la ITF Free Font License, permite el uso personal y comercial, y un logo hecho con ella no es obra derivada. El logotipo va convertido a trazos, con el interletrado levemente cerrado.
 
 ## H.3 Iconografía
 
@@ -188,7 +188,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 
 - **Lo propio de Relevo se dibuja con sus reglas.** El Tag no está en ningún conjunto: se dibuja como el objeto que la persona tiene en la mano, porque un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
 - **Cerca de lo que la persona nombró.** Entre las opciones de Lucide, cada actividad se dibuja con el objeto con que empieza, como lo sugiere la app: el libro abierto para leer, la polera para ordenar, el carrete para tejer.
-- **Una sola voz.** Mezclar conjuntos daría dos trazos y dos geometrías en la misma pantalla.
+- **Un solo estilo.** Mezclar conjuntos daría dos trazos y dos geometrías en la misma pantalla.
 
 **Figura H9**
 
@@ -228,7 +228,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 - En 30 países, las asociaciones resultaron muy parecidas, y más aún entre países que comparten lengua o cercanía geográfica (Jonauskaite et al., 2020).
 - En 31 países, las asociaciones que comparten al menos cuatro de cada diez personas unen el rojo con el amor y la rabia; el amarillo, con la alegría; el rosa, con el amor; el negro, con la tristeza y el miedo; el gris, con la tristeza, y el naranja, con la alegría y la diversión. El verde, el azul y el morado no llegan a ese umbral con ninguna emoción, y los colores más claros se asocian con emociones más positivas (Jonauskaite et al., 2024).
 - La saturación y el brillo elevan la activación, que crece del azul y el verde hacia el rojo (Wilms y Oberfeld, 2018).
-- No se encontró un estudio solo con población chilena. En una encuesta a 1066 personas de México, Argentina y Chile, el miedo se asoció sobre todo con el negro, en más de la mitad de las respuestas, y muy por detrás con el rojo y el gris, mientras el celeste claro y el magenta fueron los colores menos asociados con el miedo; es un boletín de prensa sobre una ponencia, sin revisión por pares (Universidad Nacional Autónoma de México [UNAM], 2023). En Medellín, con 2400 universitarios, el verde se asoció con la naturaleza y la esperanza; el azul, con el mar y el cielo; el rosa, con la ternura; el morado, con el luto, y el gris, con el mal tiempo y la tristeza (Restrepo Betancur, 2022). En Ecuador, con 260 universitarios, los conceptos con raíz sensorial o cultural recibieron colores consistentes, y los abstractos, como «creativo», se dispersaron (Sánchez-Borrero et al., 2026).
+- No se encontró un estudio solo con población chilena. En una encuesta a 1066 personas de México, Argentina y Chile, el miedo se asoció sobre todo con el negro, en más de la mitad de las respuestas, y muy por detrás con el rojo y el gris, mientras el celeste claro y el magenta fueron los colores menos asociados con el miedo; es un boletín de prensa sobre una ponencia, sin revisión por pares (Universidad Nacional Autónoma de México [UNAM], 2023). En Medellín, con 2400 universitarios, el verde se asoció con la naturaleza y la esperanza; el azul, con el mar y el cielo; el rosa, con la ternura; el morado, con el luto, y el gris, con el mal tiempo y la tristeza (Restrepo Betancur, 2022). En Ecuador, con 260 universitarios, los conceptos con raíz sensorial o cultural recibieron colores consistentes, y los abstractos, como “creativo”, se dispersaron (Sánchez-Borrero et al., 2026).
 
 **Seis criterios para la paleta.** De esa evidencia salen seis criterios:
 
@@ -304,9 +304,9 @@ El sistema se completa con tres piezas verbales.
 
 **Nombre.** Un relevo es el momento en que algo pasa de una mano a otra, como en una carrera de relevos. El nombre cuenta lo que busca el sistema: que la atención pase de la pantalla a lo que la persona quería hacer, sin que nadie se la quite. Es breve, se pronuncia sin trabas en español y viene del mundo de los traspasos y los turnos, no de las prohibiciones. Una comercialización exigiría revisar antes la disponibilidad jurídica del nombre, los dominios y las coincidencias comerciales.
 
-**Frase de marca.** «Hazle lugar a lo que quieres hacer.» Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error. Quedó confirmada como definitiva el 10 de noviembre de 2026.
+**Frase de marca.** “Hazle lugar a lo que quieres hacer.” Hacer lugar es reservar un espacio físico para la señal y volver a considerar una actividad dentro de la decisión, sin obligar a hacerla ni presentar el teléfono como enemigo. Va en portadas, presentaciones y piezas de introducción, no en las pantallas de uso ni en los mensajes de error. Quedó confirmada como definitiva el 10 de noviembre de 2026.
 
-**Descriptor.** «Un recordatorio físico preparado desde el teléfono.» Acompaña al nombre cuando quien lo lee todavía no conoce el producto: su función es aclarar, no emocionar.
+**Descriptor.** “Un recordatorio físico preparado desde el teléfono.” Acompaña al nombre cuando quien lo lee todavía no conoce el producto: su función es aclarar, no emocionar.
 
 ## H.6 Propuestas anteriores
 
@@ -320,8 +320,8 @@ Entre septiembre y octubre de 2026 se exploraron más de veinte propuestas de id
 | --- | --- | --- | --- |
 | 16 sep. | Sistema de marca del proyecto | Nombre, descriptor, frase, tipografía, paleta cromática y logotipo. | Se mantienen el nombre, el descriptor y la frase; la tipografía, la paleta cromática y el logotipo se reemplazaron en octubre. |
 | 25 sep. | Punto y pulso | Una identidad a partir de un punto que late. | Se reemplazó el mismo día. |
-| 25 sep. | «Antes de que sea después» | Una plataforma de marca sobre el momento en que aún se puede elegir. | Se descartó porque podía confundir a la comisión, y la reemplazó «Vuelve a lo que querías hacer». |
-| 25 sep. | «Vuelve a lo que querías hacer» | El mismo centro, en palabras directas. | Se aplicó en la app del 26 de septiembre al 9 de octubre. |
+| 25 sep. | “Antes de que sea después” | Una plataforma de marca sobre el momento en que aún se puede elegir. | Se descartó porque podía confundir a la comisión, y la reemplazó “Vuelve a lo que querías hacer”. |
+| 25 sep. | “Vuelve a lo que querías hacer” | El mismo centro, en palabras directas. | Se aplicó en la app del 26 de septiembre al 9 de octubre. |
 | 27 sep. | Sistema de marca en Figma | Variables, componentes y pantallas en Figma. | La superaron las propuestas de fines de septiembre. |
 | 30 sep. | Subrayado | Una identidad alrededor de un renglón azul. | Se descartó porque no decía qué hace Relevo; el renglón quedó como línea de escritura. |
 | 2 oct. | Sistema de diseño | Un renglón que hace lugar, dos voces y los colores de la casa. | Fue la base de las propuestas del 3 de octubre. |
@@ -388,7 +388,7 @@ Machado, G. M., Oliveira, M. M. y Fernandes, L. A. F. (2009). A physiologically-
 
 Ottosson, B. (2020, 23 de diciembre). *A perceptual color space for image processing*. https://bottosson.github.io/posts/oklab/
 
-Restrepo Betancur, L. F. (2022). Preferencia por los colores en universitarios de la ciudad de Medellín, Colombia. *Anuario Electrónico de Estudios en Comunicación Social «Disertaciones», 15*(1), 1–15. https://doi.org/10.12804/revistas.urosario.edu.co/disertaciones/a.10455
+Restrepo Betancur, L. F. (2022). Preferencia por los colores en universitarios de la ciudad de Medellín, Colombia. *Anuario Electrónico de Estudios en Comunicación Social “Disertaciones”, 15*(1), 1–15. https://doi.org/10.12804/revistas.urosario.edu.co/disertaciones/a.10455
 
 Sánchez-Borrero, G., Quelal-Moncayo, S. y Bustos-Cevallos, S. (2026). Asociaciones culturales latinoamericanas del color: estudio desde la psicología cromática en estudiantes universitarios de la Pontificia Universidad Católica del Ecuador. *Kepes, 23*(33), 105–145. https://doi.org/10.17151/kepes.2026.23.33.5
 
@@ -407,6 +407,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ” y la regla de los íconos se llama “Un solo estilo”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-25 — Íconos de Lucide (4.8.2)
 

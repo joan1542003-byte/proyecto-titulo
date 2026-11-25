@@ -4,8 +4,8 @@
   "alto": 715
  },
  "figura-v8-estados": {
-  "ancho": 1741.8,
-  "alto": 258
+  "ancho": 1146.4,
+  "alto": 432
  },
  "figura-v8-formulacion": {
   "ancho": 1146.4,
@@ -13,18 +13,18 @@
  },
  "figura-v8-framework": {
   "ancho": 1146.4,
-  "alto": 684
+  "alto": 743
  },
  "figura-v8-metodo": {
   "ancho": 550.9,
   "alto": 693
  },
  "figura-v8-registro": {
-  "ancho": 1741.8,
-  "alto": 423
+  "ancho": 1146.4,
+  "alto": 825
  },
  "figura-v8-sistema": {
   "ancho": 1146.4,
-  "alto": 413
+  "alto": 417
  }
 }

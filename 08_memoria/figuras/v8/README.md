@@ -47,6 +47,12 @@ Con una clave, solo esa figura, por ejemplo `python3 construir-figuras.py sistem
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-25 — Framework con datos, estados más claros y el sistema en pasos
+
+- **Qué cambió:** el método Framework muestra los códigos de cada entrevista (Anexo A, Tabla A4), con el color del tipo al que acercan; los estados de un relevo van en dos columnas, bajo los cuatro momentos, con “En preparación” en vez de “Borrador” y los otros caminos en palabras; cómo funciona Relevo son ocho pasos numerados, con quién actúa en cada uno; lo que se registró va en dos columnas, una lista sobre otra, para ir a página completa. La formulación y el método dicen “tres personas”.
+- **Cómo estaba antes:** la matriz iba vacía, los estados usaban arcos con rótulos sueltos y el sistema iba en carriles con órdenes entre ellos.
+- **Por qué:** el autor dijo que esas figuras eran difíciles de entender (D-193).
+
 ### 2026-11-25 — Íconos de la 4.8.2
 
 - **Qué cambió:** las siete figuras se volvieron a generar con los íconos de la app 4.8.2, que salen de Lucide.

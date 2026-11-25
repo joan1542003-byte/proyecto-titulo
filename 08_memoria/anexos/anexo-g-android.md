@@ -52,7 +52,7 @@ El código separa lo que se ve de las reglas y de los datos. Las reglas —los e
 
 ### Ciclo de un relevo
 
-Un relevo pasa por seis estados, del borrador al cierre (Figura G3).
+Un relevo pasa por seis estados, de la preparación al cierre (Figura G3).
 
 **Figura G3**
 
@@ -60,7 +60,7 @@ Un relevo pasa por seis estados, del borrador al cierre (Figura G3).
 
 ```mermaid
 stateDiagram-v2
-  state "Borrador" as DRAFT
+  state "En preparación" as DRAFT
   state "Listo" as READY
   state "En espera" as WAITING
   state "Sonando" as SIGNALLED
@@ -119,7 +119,7 @@ Además del ciclo, la app tiene funciones que ayudan a seguir usándola sin volv
 
 | Función | Descripción | Relación con los criterios |
 | --- | --- | --- |
-| Ruta | Pasos pequeños por interés; después de tres respuestas «Comencé», ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
+| Ruta | Pasos pequeños por interés; después de tres respuestas “Comencé”, ofrece el siguiente. | Sin puntos: el paso siguiente es una oferta. |
 | Actividades propias | Guarda actividades propias para prepararlas en un toque. | Reduce el esfuerzo de prepararlo (criterio 6). |
 | Editar un relevo activo | Cambia lo preparado sin borrarlo y conserva el tiempo contado si las apps son las mismas. | Lo pidió una persona de la prueba. |
 | Activación automática | Repite el último relevo al abrir una de sus apps, con 30 minutos de pausa. | Viene apagada, y la app registra cómo se activó cada relevo. |
@@ -133,7 +133,7 @@ Además del ciclo, la app tiene funciones que ayudan a seguir usándola sin volv
 
 Lo que una persona prepara y responde es personal. Por eso la app guarda lo justo, lo identifica con un código en lugar del nombre y deja borrarlo.
 
-**Datos en el teléfono.** La app guarda en archivos privados lo preparado —el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba y el Tag vinculado— y, en una base de datos local, el registro de la prueba: cada relevo y su resultado, sus momentos, las respuestas, el uso de la propia app y el uso diario de las apps seleccionadas, con el tiempo total de pantalla. Además deja una copia legible en la carpeta Documentos del teléfono, con un archivo que reúne todo y dos planillas, de relevos y de respuestas; se reescribe en cada envío y se borra con «Borrar mis datos».
+**Datos en el teléfono.** La app guarda en archivos privados lo preparado —el relevo en curso y el último, el perfil, la ruta, las actividades propias, los ajustes, la prueba y el Tag vinculado— y, en una base de datos local, el registro de la prueba: cada relevo y su resultado, sus momentos, las respuestas, el uso de la propia app y el uso diario de las apps seleccionadas, con el tiempo total de pantalla. Además deja una copia legible en la carpeta Documentos del teléfono, con un archivo que reúne todo y dos planillas, de relevos y de respuestas; se reescribe en cada envío y se borra con “Borrar mis datos”.
 
 **Sesión anónima.** La base remota es Supabase, que reúne la base de datos, la autenticación y el acceso desde la app. Cuando la persona acepta participar, la app abre una sesión anónima, sin correo ni contraseña, y cada dato que envía lleva el identificador de esa sesión; sin participar, no abre ninguna. La app solo lleva la clave pública del proyecto, que por sí sola no da acceso a los datos de nadie; la clave de administración nunca está en el teléfono.
 
@@ -141,7 +141,7 @@ Lo que una persona prepara y responde es personal. Por eso la app guarda lo just
 
 **Acceso a los datos propios.** Una regla de la base revisa cada consulta: un teléfono solo puede leer, guardar, cambiar o borrar las filas que llevan su propio identificador, además de los mensajes generales y los dirigidos a él. Así, un teléfono nunca puede leer los datos de otro, ni siquiera con la clave pública. El panel entra con una clave personal de administración, que está solo en el computador del investigador.
 
-**Envío y borrado.** Cada registro nace en el teléfono como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta el dato, queda enviado; si lo rechaza, queda marcado y la cola sigue, y si falla la red, se reintenta después. «Borrar mis datos» borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
+**Envío y borrado.** Cada registro nace en el teléfono como pendiente y se envía al activar un relevo, al sonar, al cerrar la app y cada 15 minutos mientras el servicio cuenta; el estado del teléfono y el uso diario, cada 30 minutos como máximo. Si la base acepta el dato, queda enviado; si lo rechaza, queda marcado y la cola sigue, y si falla la red, se reintenta después. “Borrar mis datos” borra primero en la base remota; si no puede, la app deja de guardar y conserva lo del teléfono para intentarlo otra vez. El borrado se comprobó en el emulador, en las dos copias.
 
 **Mensajes en tiempo real.** Mientras el servicio cuenta o espera, la app mantiene abierta una conexión con la base, y un mensaje del proyecto llega en menos de un segundo. Como respaldo, la app revisa los mensajes al abrirse y cada cierto tiempo, por si la conexión se cortó.
 
@@ -184,7 +184,7 @@ El prototipo cambió casi a diario entre el 21 de septiembre y el 9 de noviembre
 
 *Nota.* Elaboración propia.
 
-**Septiembre: una app para probar.** Entre el 21 y el 24 de septiembre, la primera app ya preparaba un relevo, contaba el tiempo de una o varias apps y sonaba en un parlante o en el teléfono. El 25 se ajustó a lo que pedía el protocolo de la prueba (Anexo I), y en los días siguientes sumó un sistema de marca, el perfil, una ruta de pasos, textos más claros y las pautas de Apple como referencia visual. El 28 y el 29 llegaron un video de «Cómo funciona», una guía para la primera vez, intereses concretos tomados de las entrevistas, un primer relevo acompañado y el reloj como salida experimental, y el 30, la activación automática, los mensajes del proyecto al instante y un registro completo de cada relevo.
+**Septiembre: una app para probar.** Entre el 21 y el 24 de septiembre, la primera app ya preparaba un relevo, contaba el tiempo de una o varias apps y sonaba en un parlante o en el teléfono. El 25 se ajustó a lo que pedía el protocolo de la prueba (Anexo I), y en los días siguientes sumó un sistema de marca, el perfil, una ruta de pasos, textos más claros y las pautas de Apple como referencia visual. El 28 y el 29 llegaron un video de “Cómo funciona”, una guía para la primera vez, intereses concretos tomados de las entrevistas, un primer relevo acompañado y el reloj como salida experimental, y el 30, la activación automática, los mensajes del proyecto al instante y un registro completo de cada relevo.
 
 **Octubre: el Tag y la prueba.** El 5 de octubre, Relevo empezó a sonar en un llavero iTag, el Tag. El 6 se probó dejar que la persona eligiera dónde suena, y ese mismo día se volvió a las semanas para comparar, con un lenguaje más claro y sin opciones marcadas de antemano. El 7, el día en que empezó la prueba, la app se preparó para el Tag —una guía paso a paso, una prueba de sonido que pregunta si se escuchó, el Tag como salida por defecto y opciones de un toque para el primer paso y el lugar— y sumó más actividades. Lo que contaron las personas se convirtió en cambios: editar un relevo sin borrarlo, el 9 de octubre, y las dos correcciones del Tag, el 14 y el 17. El 20 de octubre se sumó la semana para comparar con el teléfono. En paralelo, desde el 12 de octubre, la identidad visual nueva se aplicó a toda la interfaz en una línea aparte, sin cambiar los datos; las personas de la prueba siguieron con la interfaz que conocían, para no cambiarla a mitad de camino.
 
@@ -206,16 +206,16 @@ El prototipo cambió casi a diario entre el 21 de septiembre y el 9 de noviembre
 
 ## G.6 Palabras clave y sugerencias
 
-Desde el rediseño del 5 de noviembre, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: «tocar guitarra» sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y «Leer un capítulo de manga» podía contar como una película. El 6 de noviembre se sumaron palabras y frases del español de Chile, como «pichanga», «carioca», «once» o «carrete». Hoy la app reconoce 34 actividades en siete familias, con 634 palabras y 121 frases, y sugiere 91 primeros pasos y 61 lugares.
+Desde el rediseño del 5 de noviembre, cuando la persona escribe su propia actividad, la app reconoce de qué se trata por sus palabras. Con eso elige el ícono de la actividad y sugiere, para elegir con un toque, con qué empezar y dónde dejar el Tag: “tocar guitarra” sugiere sacarla del estuche, y nunca un libro. Antes, las sugerencias se mezclaban por el ícono y por partes de palabras, y “Leer un capítulo de manga” podía contar como una película. El 6 de noviembre se sumaron palabras y frases del español de Chile, como “pichanga”, “carioca”, “once” o “carrete”. Hoy la app reconoce 34 actividades en siete familias, con 634 palabras y 121 frases, y sugiere 91 primeros pasos y 61 lugares.
 
 **Reconocimiento de una actividad.**
 
-1. Pasa el texto a minúsculas y sin tildes: «Película» y «pelicula» son lo mismo.
-2. Compara cada palabra entera. Algunas valen también con lo que sigue, como «dibuj…», que reconoce dibujar, dibujo y dibujando.
-3. Suma puntos por actividad: cada palabra suma 1; cada frase completa, 2, y cada palabra débil, medio punto, porque sola no decide, como «ver», «jugar» o «tocar».
+1. Pasa el texto a minúsculas y sin tildes: “Película” y “pelicula” son lo mismo.
+2. Compara cada palabra entera. Algunas valen también con lo que sigue, como “dibuj…”, que reconoce dibujar, dibujo y dibujando.
+3. Suma puntos por actividad: cada palabra suma 1; cada frase completa, 2, y cada palabra débil, medio punto, porque sola no decide, como “ver”, “jugar” o “tocar”.
 4. Elige la actividad con más puntos, si suma al menos 1; ante un empate, la que va primero en la lista. Si ninguna llega a 1, no sugiere nada.
 
-Las frases resuelven los casos dudosos: «maratón de series» es de películas y no de correr; «leer una novela gráfica», de manga y no de leer, y «dar una vuelta en bici», de bicicleta y no de caminar. Ninguna palabra pertenece a dos actividades. Las sugerencias nombran un objeto concreto, como «Elegir la película» o «Elegir el libro», y no algo abierto, como «Elegir qué ver»; si la actividad es una de las ideas de la app o un paso de una ruta, primero aparecen sus propias sugerencias, y se muestran hasta cinco (Tabla G5).
+Las frases resuelven los casos dudosos: “maratón de series” es de películas y no de correr; “leer una novela gráfica”, de manga y no de leer, y “dar una vuelta en bici”, de bicicleta y no de caminar. Ninguna palabra pertenece a dos actividades. Las sugerencias nombran un objeto concreto, como “Elegir la película” o “Elegir el libro”, y no algo abierto, como “Elegir qué ver”; si la actividad es una de las ideas de la app o un paso de una ruta, primero aparecen sus propias sugerencias, y se muestran hasta cinco (Tabla G5).
 
 **Tabla G5**
 
@@ -265,9 +265,15 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 | Llamar | llamar, llamada, videollamada, FaceTime, conversar | Buscar su número; Escribirle que vas a llamar | En el sillón |
 | Compartir | visitar, juntarme, carrete, asado, abuela, polola | Avisar que vas; Preparar algo para llevar; Poner la mesa | Junto a la puerta; En la mesa del comedor |
 
-*Nota.* Elaboración propia a partir del código de la app de noviembre de 2026. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
+*Nota.* Elaboración propia a partir del código de la app de noviembre de 2026. Las sugerencias se transcriben tal como las muestra la app. En “Otro instrumento”, la app nombra el que escribió la persona: con “guitarra”, sugiere “Sacar la guitarra del estuche” y “Junto a la guitarra”.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ” y el primer estado de un relevo se llama “En preparación”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-25 — Versión 4.8
 

@@ -192,6 +192,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       if (/^<!-- doble -->$/.test(lineas[i].trim())) { f.columna = true; f.doble = true; i++; sig(); }   // dos columnas, junto al texto
       else if (/^<!-- columna -->$/.test(lineas[i].trim())) { f.columna = true; i++; sig(); }        // una columna, junto al texto
       else if ((m = lineas[i].trim().match(/^<!-- cola(?: (\d+))? -->$/))) { f.columna = true; f.cola = true; f.altoImagen = m[1] ? +m[1] : null; i++; sig(); }   // bajo la última columna del capítulo
+      else if (/^<!-- página -->$/.test(lineas[i].trim())) { f.completa = true; i++; sig(); }   // sola en la página siguiente a su mención, a página completa
       if (f.flotante === 'tabla') {
         const filas = [];
         while (i < lineas.length && /^\|/.test(lineas[i])) { filas.push(lineas[i].trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())); i++; }
@@ -214,6 +215,7 @@ function bloques(lineas, estiloTexto = 'Texto') {
       }
       sig();
       if (i < lineas.length && /^\*Nota\.\*/.test(lineas[i])) { f.nota = lineas[i].trim(); i++; }
+      if (f.completa) { f.columna = false; f.doble = false; }
       out.push(f); continue;
     }
     if (/^### /.test(l)) { out.push({ estilo: 'Subtítulo menor', partes: tituloSinViuda(tramos(l.slice(4).trim())) }); i++; continue; }
@@ -422,6 +424,22 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .prog{display:flex;height:3.6mm;margin-top:5mm;border-radius:1.8mm;background:#EEE9E3;overflow:hidden}.prog span{display:block;height:100%;background:linear-gradient(90deg,var(--c0),var(--c))}.prog span.m{opacity:.45}.fcol .prog{margin-top:4mm}
 .fot.nat.boc img,.fot.grande.nat.boc img{max-height:84mm}
 .fcol .fot:not(.nat) img{height:64mm}
+.lc{display:flex}.lc.enfila{flex-direction:column;justify-content:space-between}.lc .rot{margin-bottom:0}
+.lc-gs{display:flex;justify-content:space-between}.lc-g{display:flex;flex-direction:column;gap:5mm}
+.lc-gh{display:flex;align-items:baseline;gap:2.4mm;padding-bottom:3mm;border-bottom:1.4mm solid var(--c)}.lc-gh .num{color:#6E6964}
+.lc-is{display:flex}.lc-i{display:flex;flex-direction:column;gap:3.2mm}
+.lc-i img{display:block;object-fit:cover;border-radius:4.5mm;border:.3mm solid #E4DED6;background:#fff;box-sizing:border-box}
+.lc-i .pie{display:flex;align-items:flex-start;gap:2.2mm}.lc-i .pie .n{flex:1;padding-top:.4mm}.lc .cir{width:6.6mm;height:6.6mm;font-size:9pt}
+.lc-senal{display:flex;align-items:center;justify-content:center;border-radius:4.5mm;background:linear-gradient(160deg,var(--c0),var(--c));box-sizing:border-box}
+.lc-sc{width:30mm;height:30mm;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.lc-sc svg{width:15mm;height:15mm}
+.lc.lado{align-items:center;justify-content:space-between}.lc-tx{width:${COL}mm;display:flex;flex-direction:column;justify-content:space-between}
+.lc-ley{display:flex;flex-direction:column;gap:7mm}.lc-li{display:flex;gap:3mm;align-items:flex-start}.lc-li .tx{flex:1;display:flex;flex-direction:column;gap:1mm}
+.lc-li .prog{--c0:#CFE9F7;--c:#6FB7E3;margin-top:2.6mm}.lc-im{width:${DOBLE}mm;display:flex;justify-content:space-between}
+.fcol[style*="--cuerpo"]>.rot+*{min-height:var(--cuerpo);box-sizing:border-box}
+.lc.arriba{flex-direction:column;justify-content:space-between}.lc-cuerpo{flex:1;display:flex;align-items:center;justify-content:center;padding:6mm 0}
+.lc-par{display:flex;align-items:stretch;justify-content:space-between;width:100%}.lc-sola{width:${COL}mm;display:flex;flex-direction:column;justify-content:space-between}.lc-fig{width:${DOBLE}mm}.lc-fig .mp-a{height:146mm}
+.lc-t{display:flex;flex-direction:column}.lc-tb{flex:1;display:flex;flex-direction:column;min-height:0;margin-bottom:3mm}.lc-tb>.tb{flex:1}.lc-tb>.tb>.fila{flex:1;align-items:center}
+.mp-p.yo{transform:translate(-3.6mm,-50%)}.mp-p.yo.l{transform:translate(calc(-100% + 3.6mm),-50%)}.mp-m{flex:none;width:7.2mm;height:7.2mm;display:block}.mp-m svg{width:100%;height:100%;display:block}
 `);
 
 /** Guarda un PDF con el cuerpo dado, del tamaño exacto de la pieza. */
@@ -523,6 +541,7 @@ function piezaFlotante(b) {
     const larga = b.nota && !b.angosta && plano(b.nota).length > 240;
     const nota = b.nota ? `<div class="nota${larga ? ' dos' : ''}">${T('Nota', b.nota, larga ? 'dos' : '')}</div>` : '';
     const fondo = (html) => (b.flotante === 'figura' && CON_FONDO.includes(b.tipo) ? `<div class="fb">${html}</div>` : html);
+    if (b.estirada) return `<div class="lc-t" style="height:${ALTO_COMPLETA.toFixed(2)}mm">${rot}<div class="lc-tb">${fondo(cuerpoFlotante(b, T, ANCHO))}</div>${nota}</div>`;
     if (b.angosta) return `<div class="ang"><div>${fondo(cuerpoFlotante(b, T, DOBLE))}</div><div>${rot}${nota}</div></div>`;
     return rot + fondo(cuerpoFlotante(b, T, ANCHO)) + nota;
   });
@@ -652,7 +671,7 @@ function lineaDeTiempo() {
 
 /** Las seis pantallas de «Preparar», con su número y su nombre. */
 function capturas(b) {
-  const nombres = [...b.descripcion.matchAll(/«([^»]+)»/g)].map((m) => m[1]);
+  const nombres = [...b.descripcion.matchAll(/[«“]([^»”]+)[»”]/g)].map((m) => m[1]);
   return `<div class="fig2 flujo">${[1, 2, 3, 4, 5, 6].map((i) => `${i > 1 ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="figuras/preparar-p${i}.png" alt=""><div class="pie">${circulo(i)}<span>${h(nombres[i - 1] || '')}</span></div></div>`).join('')}</div>`;
 }
 
@@ -687,7 +706,80 @@ function piezaColumna(b) {
   const f = b.fotos && b.fotos[0]; const ancho = b.doble ? DOBLE : COL;
   const tope = b.altoImagen ? ` style="max-height:${b.altoImagen}mm"` : '';
   const cuerpo = (T) => (b.v8 ? figuraV8(b) : b.fotos && b.doble ? fotos(b, T) : f ?`<img src="${h(f.src.split(path.sep).join('/'))}" alt=""${tope}>${f.pie ? T('Celda suave', f.pie) : ''}` : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
-  return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol${b.doble ? ' dbl' : ''}"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+  return pieza(`figura-${b.n}`, ancho, (T) => `<div class="fcol${b.doble ? ' dbl' : ''}"${b.cuerpoMin ? ` style="--cuerpo:${b.cuerpoMin.toFixed(2)}mm"` : ''}><div class="rot"${b.rotMin ? ` style="min-height:${b.rotMin.toFixed(2)}mm"` : ''}>${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo)}</div>${cuerpo(T)}${b.nota ? T('Nota', b.nota) : ''}</div>`);
+}
+
+/**
+ * Figura a página completa (pedido del autor del 25 de noviembre de 2026). Va sola en la página siguiente a su mención y
+ * llena el área de texto, con imágenes grandes. Cada imagen lleva «Grupo | a. pie»; una imagen «señal:ícono» es una
+ * tarjeta con ese ícono, para lo que pasa fuera de la pantalla. Con cuatro imágenes o más, en fila, bajo sus momentos
+ * numerados; con menos, a un lado: el rótulo, el título y lo que muestra cada imagen en la primera columna, y las
+ * imágenes en las otras dos.
+ */
+const ALTO_COMPLETA = BOTTOM - TOP - 0.4;
+const PANTALLA = 1080 / 2400;                         // proporción de las capturas de la app
+const COLOR_MOMENTO = ['Cielo', 'Amarillo', 'Lima', 'Rubor'];   // preparar, seguir en el teléfono, oír la señal y decidir
+function piezaCompleta(b) {
+  if (b.v8 || !b.fotos) {
+    return pieza(`figura-${b.n}`, ANCHO, (T) => `<div class="lc lado" style="height:${ALTO_COMPLETA.toFixed(2)}mm"><div class="lc-par">` +
+      `<div class="lc-sola"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo, 'tp')}</div>${b.nota ? T('Nota', b.nota) : ''}</div>` +
+      `<div class="lc-fig">${b.v8 ? figuraV8(b) : `<div class="fb">${cuerpoFlotante(b, T, DOBLE)}</div>`}</div></div></div>`);
+  }
+  const items = b.fotos.map((f) => {
+    const m = f.pie.match(/^(?:(.+?) \| )?(?:([a-z0-9]+)\. )?(.*)$/);
+    return { grupo: m[1] || '', letra: m[2] || '', pie: m[3], src: f.src.split(path.sep).join('/'), senal: (f.src.match(/señal:([\w-]+)$/) || [])[1] };
+  });
+  const grupos = [];
+  items.forEach((it) => { const g = grupos[grupos.length - 1]; if (g && g.nombre === it.grupo) g.items.push(it); else grupos.push({ nombre: it.grupo, items: [it] }); });
+  const imagen = (it, alto) => (it.senal
+    ? `<div class="lc-senal" style="width:${(alto * PANTALLA).toFixed(2)}mm;height:${alto.toFixed(2)}mm"><span class="lc-sc">${svgIcono(it.senal)}</span></div>`
+    : `<img src="${h(it.src)}" alt="" style="width:${(alto * PANTALLA).toFixed(2)}mm;height:${alto.toFixed(2)}mm">`);
+  return pieza(`figura-${b.n}`, ANCHO, (T) => {
+    const rot = `<div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo, 'tp')}</div>`;
+    const nota = b.nota ? T('Nota', b.nota) : '';
+    if (items.length >= 4) {
+      const DENTRO = 4, ENTRE = 11;
+      const huecos = (items.length - grupos.length) * DENTRO + (grupos.length - 1) * ENTRE;
+      const alto = Math.min((ANCHO - huecos) / items.length / PANTALLA, 136);
+      return `<div class="lc enfila" style="height:${ALTO_COMPLETA.toFixed(2)}mm">${rot}<div class="lc-gs" style="column-gap:${ENTRE}mm">${grupos.map((g, i) => {
+        const c = COLOR_MOMENTO[i % 4];
+        return `<div class="lc-g" style="--c:${INTENSO[c]};--c0:${rgb(c)}"><div class="lc-gh"><span class="num">${i + 1}</span>${T('Celda primera', g.nombre)}</div>` +
+          `<div class="lc-is" style="column-gap:${DENTRO}mm">${g.items.map((it) => `<div class="lc-i">${imagen(it, alto)}<div class="pie">${circulo(it.letra)}${T('Celda', it.pie)}</div></div>`).join('')}</div></div>`;
+      }).join('')}</div>${nota}</div>`;
+    }
+    const ENTRE = 8;
+    const alto = Math.min((DOBLE - (items.length - 1) * ENTRE) / items.length / PANTALLA, ALTO_COMPLETA - 14);
+    const nivel = items.map((_, i) => Math.round(18 + (82 * i) / Math.max(1, items.length - 1)));   // cuánto color hay en cada momento
+    return `<div class="lc lado" style="height:${ALTO_COMPLETA.toFixed(2)}mm"><div class="lc-tx" style="height:${(alto + 10).toFixed(2)}mm">${rot}` +
+      `<div class="lc-ley">${items.map((it, i) => `<div class="lc-li">${circulo(it.letra)}<div class="tx">${T('Celda primera', it.grupo)}${T('Celda', mayus(it.pie))}` +
+      `<div class="prog"><span style="width:${nivel[i]}%"></span></div></div></div>`).join('')}</div>${nota}</div>` +
+      `<div class="lc-im" style="column-gap:${ENTRE}mm">${items.map((it) => `<div class="lc-i">${imagen(it, alto)}<div class="pie">${circulo(it.letra)}${T('Celda', it.pie.replace(/:.*$/, ''))}</div></div>`).join('')}</div></div>`;
+  });
+}
+
+/**
+ * Versión a página completa de una figura doble o ancha (25 de noviembre de 2026): la búsqueda la usa cuando la figura no
+ * cabe en la página de su mención. Va sola en la página siguiente y se compone para esa página: las fotografías, en fila a
+ * todo el ancho y del mismo alto; una figura de dos columnas, a la derecha del rótulo y la nota; una ancha, bajo el rótulo.
+ */
+function piezaPaginaCompleta(b) {
+  const id = `figura-${b.n}-pc`;
+  const rot = (T) => `<div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo, 'tp')}</div>`;
+  const nota = (T) => (b.nota ? T('Nota', b.nota) : '');
+  if (b.fotos && !b.v8) {
+    const prop = b.fotos.map(proporcion), ENTRE = 8;
+    const alto = Math.min(ALTO_COMPLETA - 46, (ANCHO - ENTRE * (b.fotos.length - 1)) / prop.reduce((t, p) => t + p, 0));
+    return pieza(id, ANCHO, (T) => `<div class="lc enfila" style="height:${ALTO_COMPLETA.toFixed(2)}mm">${rot(T)}<div class="lc-is" style="column-gap:${ENTRE}mm;justify-content:center">` +
+      b.fotos.map((f, i) => { const m = f.pie.match(/^([a-z0-9]+)\. (.*)$/); return `<div class="lc-i"><img src="${h(f.src.split(path.sep).join('/'))}" alt="" style="height:${alto.toFixed(2)}mm;width:${(alto * prop[i]).toFixed(2)}mm">` +
+        (f.pie ? `<div class="pie">${m ? circulo(m[1]) : ''}${T('Celda', m ? m[2] : f.pie)}</div>` : '') + '</div>'; }).join('') + `</div>${nota(T)}</div>`);
+  }
+  const cuerpo = (T, ancho) => (b.v8 ? figuraV8(b) : CON_FONDO.includes(b.tipo) ? `<div class="fb">${cuerpoFlotante(b, T, ancho)}</div>` : cuerpoFlotante(b, T, ancho));
+  if (b.columna) {
+    return pieza(id, ANCHO, (T) => `<div class="lc lado" style="height:${ALTO_COMPLETA.toFixed(2)}mm"><div class="lc-par">` +
+      `<div class="lc-sola">${rot(T)}${nota(T)}</div><div class="lc-fig">${cuerpo(T, DOBLE)}</div></div></div>`);
+  }
+  const anchoV8 = b.v8 ? `width:${((b.v8.ancho * 25.4) / 72 / ESCALA).toFixed(2)}mm` : 'width:100%';
+  return pieza(id, ANCHO, (T) => `<div class="lc arriba" style="height:${ALTO_COMPLETA.toFixed(2)}mm">${rot(T)}<div class="lc-cuerpo"><div style="${anchoV8}">${cuerpo(T, ANCHO)}</div></div>${nota(T)}</div>`);
 }
 
 /** Mapa de posicionamiento en dos ejes: «izquierda | derecha | abajo | arriba; Referente | x | y; …», con x e y de 0 a 10. */
@@ -695,7 +787,7 @@ function mapa(b, T) {
   const [[izq, der, abajo, arriba], ...pts] = partes(b);
   const punto = ([nom, x, y]) => {
     const yo = /^Relevo/.test(nom), l = +x >= 7.5 || (+x > 4 && +x < 5);   // la etiqueta no cruza el eje vertical
-    return `<div class="mp-p${yo ? ' yo' : ''}${l ? ' l' : ''}" style="left:${+x * 10}%;top:${100 - +y * 10}%"><i></i>${T(yo ? 'Celda primera' : 'Celda', nom)}</div>`;
+    return `<div class="mp-p${yo ? ' yo' : ''}${l ? ' l' : ''}" style="left:${+x * 10}%;top:${100 - +y * 10}%">${yo ? `<span class="mp-m">${marca()}</span>` : '<i></i>'}${T(yo ? 'Celda primera' : 'Celda', nom)}</div>`;
   };
   return `<div class="mp">${T('Celda suave', arriba, 'mp-arr')}<div class="mp-a"><span class="mp-x"></span><span class="mp-y"></span>` +
     `${T('Celda suave', izq, 'mp-izq')}${T('Celda suave', der, 'mp-der')}${pts.map(punto).join('')}</div>${T('Celda suave', abajo, 'mp-aba')}</div>`;
@@ -749,7 +841,7 @@ const partes = (b) => b.descripcion.replace(/^[^:]*: /, '').split('; ').map((g) 
 
 // Listas de un esquema: se separan por «, » solo antes de una mayúscula, «¿», «¡» o «««, para que una coma dentro de
 // una frase o de una cita no la parta en dos (21 de noviembre de 2026: una cita de la Figura 21 salía en tres líneas).
-const elementos = (s) => (s || '').split(/, (?=[A-ZÁÉÍÓÚÑ¿¡«])/).filter(Boolean);
+const elementos = (s) => (s || '').split(/, (?=[A-ZÁÉÍÓÚÑ¿¡«“])/).filter(Boolean);
 // Esquemas que cuentan una secuencia: llevan número y una flecha de un grupo al siguiente.
 const SECUENCIA = /^(esquema de (problema|recorrido|etapas|tensión)|pasos de atención)/;
 // Un color por grupo, con el degradado de los puntos de la app. El recorrido usa los colores de la identidad (primer
@@ -758,6 +850,7 @@ const coloresEsquema = (d) => (/^esquema de recorrido/.test(d) ? ['Cielo', 'Amar
   : /^esquema de situaciones/.test(d) ? ['Rubor', 'Lima']
   : /^pasos de atención/.test(d) ? ['Amarillo', 'Durazno', 'Rubor']
   : /^esquema de tensión/.test(d) ? ['Lila', 'Amarillo', 'Lima', 'Rubor']
+  : /^esquema de necesidades/.test(d) ? ['Cielo', 'Lima', 'Rubor']                // preparar, oír la señal y decidir
   : ['Lila', 'Cielo', 'Amarillo', 'Lima', 'Rubor', 'Durazno']);
 const puntoColor = (c) => `linear-gradient(135deg,${DEGRADE[c][0]},${INTENSO[c]})`;
 // Flechas como las de las figuras nuevas: trazo de 2,2 pt y punta abierta.
@@ -866,6 +959,7 @@ auras([['panel-3', 700, 1530, 3], ['panel-4', 700, 1530, 4]]);
 // Piezas fijas y piezas flotantes.
 const flot = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante));
 flot.forEach((b) => {
+  if (b.completa) { b.tipo = tipoFigura(b); b.sola = true; b.rotulo = `Figura ${b.n}`; b.pieza = piezaCompleta(b); return; }
   if (b.columna) { if (!b.fotos) b.tipo = tipoFigura(b); b.rotulo = `Figura ${b.n}`; b.pieza = piezaColumna(b); return; }
   b.tipo = b.flotante === 'tabla' ? 'tabla' : tipoFigura(b);
   b.ancha = b.tipo === 'fotos' && (/^Flujo/.test(b.titulo) || (b.fotos.some((f) => !/figura-4/.test(f.src)) && b.fotos.reduce((t, f) => t + proporcion(f), 0) >= 2.4));
@@ -931,15 +1025,41 @@ if (partidas.length) {
   partidas.forEach((b) => { b.pieza.alto = m[b.pieza.id]; b.pieza.donde = m[b.pieza.id + '#'] || {}; });
 }
 flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: la ${b.flotante} ${b.n} mide ${Math.round(b.pieza.alto)} mm y no cabe en la página.`); });
+// Versión a página completa de las figuras dobles o anchas y de las tablas, para la búsqueda (25 de noviembre de 2026).
+{
+  const conVersion = flot.filter((b) => !b.completa && !b.cola && !b.continua && !b.todas && (b.flotante === 'tabla' || !b.columna || b.doble));
+  conVersion.forEach((b) => {
+    if (b.flotante === 'tabla') { const x = { ...b, estirada: true }; b.pzCompleta = piezaFlotante(x); b.pzCompleta.id += '-pc'; }
+    else b.pzCompleta = piezaPaginaCompleta(b);
+  });
+  if (conVersion.length) {
+    const m = medir(conVersion.map((b) => b.pzCompleta));
+    conVersion.forEach((b) => { b.pzCompleta.alto = m[b.pzCompleta.id]; b.pzCompleta.donde = m[b.pzCompleta.id + '#'] || {}; if (b.pzCompleta.alto > ALTO_COMPLETA + 0.5) delete b.pzCompleta; });
+  }
+}
+// Una tabla que no deja siete líneas y media de texto en su página no puede ir con la mención: va sola, en la página
+// siguiente, y sus filas crecen hasta llenar la página (25 de noviembre de 2026). Lo mismo la primera parte de una tabla partida.
+{
+  const LIMITE = BOTTOM - TOP - AIRE_BANDA - MIN_TEXTO;
+  const estirar = flot.filter((b) => b.flotante === 'tabla' && !b.continua && (b.sola || b.pieza.alto > LIMITE) && b.pieza.alto <= ALTO_COMPLETA);
+  estirar.forEach((b) => { b.sola = true; b.estirada = true; b.pieza = piezaFlotante(b); });
+  if (estirar.length) {
+    const m = medir(estirar.map((b) => b.pieza));
+    estirar.forEach((b) => { b.pieza.alto = m[b.pieza.id]; b.pieza.donde = m[b.pieza.id + '#'] || {}; });
+  }
+}
 
 // ---------------------------------------------------------------- Reparto en páginas, línea por línea
 
 let paginas = [];                                      // páginas del cuerpo
-const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, der: 0, flot: [], flotDer: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
+const pag = (i) => { while (paginas.length <= i) paginas.push({ banda: 0, der: 0, flot: [], flotDer: [], pies: [], paneles: [], frases: [], marcos: [], rotulo: null, rotuloPieza: null }); return paginas[i]; };
 const colTop = () => TOP;                              // el texto empieza siempre arriba y sigue hacia el lado
 // Al pie de la página, una pieza ancha ocupa las tres columnas (banda); una de dos columnas puede ir al pie de las columnas
 // 2 y 3 (der), bajo su texto, y deja la primera entera: así una apertura conserva su panel completo (21 de noviembre de 2026).
-const colBot = (i, k = 0) => BOTTOM - Math.max(pag(i).banda ? pag(i).banda + AIRE_BANDA : 0, k >= 1 && pag(i).der ? pag(i).der + AIRE_BANDA : 0);
+// Una figura de una columna también puede ir al pie de una columna, bajo su texto (25 de noviembre de 2026): así queda en
+// la página de su mención aunque la mención caiga en la última columna.
+const pieDe = (i, k) => pag(i).pies.find((x) => x.k === k);
+const colBot = (i, k = 0) => BOTTOM - Math.max(pag(i).banda ? pag(i).banda + AIRE_BANDA : 0, k >= 1 && pag(i).der ? pag(i).der + AIRE_BANDA : 0, pieDe(i, k) ? pieDe(i, k).alto + AIRE_BANDA : 0);
 let topes = new Map();                                 // sección → página (desde su apertura) y alto máximo de sus columnas, para equilibrar su final
 const altoCol = (i, k = 0) => colBot(i, k) - TOP;
 const soloPiezas = (i) => pag(i).sola || (pag(i).banda > 0 && colBot(i) - TOP < MIN_TEXTO);
@@ -951,7 +1071,7 @@ const figCols = (p) => pag(p).figCols || [];
 const anchoFig = (f) => (f.doble ? 2 : 1);           // una figura doble ocupa dos columnas
 const ocupada = (p, k) => figCols(p).some((f) => k >= f.k && k < f.k + anchoFig(f));
 const altoFig = (p) => figCols(p).reduce((m, f) => Math.max(m, f.alto), 0);
-const libre = (q, k) => k >= 0 && k < 3 && !ocupada(q, k) && !pag(q).paneles.some((pn) => pn.k === k) && !pag(q).marcos.some((m) => m.k === k) && !pag(q).frases.some((f) => f.k === k);
+const libre = (q, k) => k >= 0 && k < 3 && !ocupada(q, k) && !pieDe(q, k) && !pag(q).paneles.some((pn) => pn.k === k) && !pag(q).marcos.some((m) => m.k === k) && !pag(q).frases.some((f) => f.k === k);
 /** La primera (izq) o la última (der) tira de w columnas libres de la página q, desde la columna dada. */
 const columnaLibre = (q, w, desde, lado) => {
   const ks = [0, 1, 2].filter((k) => k >= desde && k + w <= 3 && Array.from({ length: w }, (_, i) => libre(q, k + i)).every(Boolean));
@@ -979,10 +1099,16 @@ function programar(b, p, seccion) {
   if (b.reservada) { ultimaConPieza = Math.max(ultimaConPieza, b.pagina); return; }
   const a = b.pieza.alto; let q = Math.max(p + 1, ultimaConPieza);
   const pie = (x) => (pag(x).banda > 0 ? pag(x).banda + AIRE_PIEZAS : 0) + a;
-  while (pag(q).sola || pag(q).der || pie(q) > BOTTOM - TOP || (figCols(q).length && altoFig(q) + AIRE_BANDA + pie(q) > BOTTOM - TOP)) q++;
+  while (pag(q).sola || pag(q).der || pag(q).pies.length || pie(q) > BOTTOM - TOP || (figCols(q).length && altoFig(q) + AIRE_BANDA + pie(q) > BOTTOM - TOP)) q++;
   ubicar(b, q, seccion); ultimaConPieza = q;
 }
 
+const reMencion = (b) => new RegExp(`${b.flotante === 'tabla' ? 'Tabla' : 'Figura'}s?[ \\u00A0](\\d+[ \\u00A0]y[ \\u00A0])?${b.n}(?!\\d)`);
+/** La línea de un párrafo donde se nombra una pieza, estimada por la posición de la mención en su texto. */
+const lineaDeMencion = (x, re) => {
+  const t = textoDe(x.partes); const m = t.match(re); if (!m) return null;
+  return Math.min(x.lineas - 1, Math.floor(((m.index + m[0].length / 2) / Math.max(1, t.length)) * x.lineas));
+};
 function componer(c) {
   // Cada sección abre en una página nueva, sin tablas ni figuras de la anterior: el panel en la primera
   // columna y el texto desde la segunda.
@@ -1008,6 +1134,14 @@ function componer(c) {
       const pg = pag(q);
       if (!b.doble || pg.der || pg.banda || pg.sola || figCols(q).some((f) => f.k + anchoFig(f) > 1) || BOTTOM - TOP - a - AIRE_BANDA < MIN_TEXTO) return;
       pg.der = a; pg.flotDer = [b]; if (!pg.rotulo) pg.rotuloPieza = c;
+      b.pagina = q; b.reservada = true; return;
+    }
+    const mp = /^pie(\d)$/.exec(b.reserva.lado);
+    if (mp) {
+      const k = +mp[1], pg = pag(q);
+      if (b.doble || pg.sola || pg.banda || (k >= 1 && pg.der) || ocupada(q, k) || pieDe(q, k) || pg.paneles.some((pn) => pn.k === k)) return;
+      if (BOTTOM - TOP - a - AIRE_BANDA < MIN_TEXTO) return;
+      pg.pies.push({ k, alto: a, b }); if (!pg.rotulo) pg.rotuloPieza = c;
       b.pagina = q; b.reservada = true; return;
     }
     if (b.reserva.lado === 'bajo') {
@@ -1045,6 +1179,7 @@ function componer(c) {
       // menciona (pedido del autor del 21 de noviembre). En una página siguiente, a la derecha.
       const desde = q === cur.p ? cur.k + 1 : 0;
       const k = columnaLibre(q, anchoFig(b), desde, q === cur.p ? 'izq' : 'der');
+      if (k == null && q === cur.p && alPie(b, q)) return;
       if (k == null) continue;
       if (a > Math.min(colBot(q, k), colBot(q, k + anchoFig(b) - 1)) - TOP) continue;
       const pg = pag(q); pg.figCols = [...fc, { items: [b], alto: a, doble: !!b.doble, k, junto: q === cur.p }];
@@ -1052,7 +1187,54 @@ function componer(c) {
       b.pagina = q; return;
     }
   };
+  // Al pie de una columna de la página actual (25 de noviembre de 2026): de una columna vacía a la derecha, con texto
+  // encima, o de la columna actual, bajo el texto que ya tiene. Una figura doble, al pie de las columnas 2 y 3.
+  const alPie = (b, q) => {
+    const a = b.pieza.alto, pg = pag(q);
+    if (pg.sola || pg.banda) return false;
+    if (b.doble) {
+      if (pg.der || cur.k !== 0 || figCols(q).some((f) => f.k + anchoFig(f) > 1) || pieDe(q, 1) || pieDe(q, 2) || BOTTOM - TOP - a - AIRE_BANDA < MIN_TEXTO) return false;
+      pg.der = a; pg.flotDer = [b]; if (!pg.rotulo) pg.rotuloPieza = c; b.pagina = q; return true;
+    }
+    const ks = [cur.k + 1, cur.k + 2].filter((k) => k < 3 && libre(q, k) && !(k >= 1 && pg.der) && BOTTOM - TOP - a - AIRE_BANDA >= MIN_TEXTO);
+    const k = ks.length ? ks[0] : (!pieDe(q, cur.k) && !(cur.k >= 1 && pg.der) && y * PT + AIRE_BANDA + a <= altoCol(q, cur.k) ? cur.k : null);
+    if (k == null) return false;
+    pg.pies.push({ k, alto: a, b }); if (!pg.rotulo) pg.rotuloPieza = c; b.pagina = q; return true;
+  };
   const saltar = () => { marco = null; previo = null; siguiente(); y = 0; };
+  // Figura de columna en la página de su mención, después de la línea que la nombra (25 de noviembre de 2026): en una
+  // columna libre a su derecha, entera, o al pie de la columna de la mención. Una doble, en las columnas 2 y 3, enteras o al pie.
+  const enMencion = (f, p, k, yMen) => {
+    const a = f.pieza.alto, pg = pag(p), fc = figCols(p);
+    if (process.env.DIAG_TRIG) console.log(`EN f${f.n} p${p + PRIMERA} k${k} yMen ${Math.round(yMen)} sola ${!!pg.sola} banda ${Math.round(pg.banda)} der ${Math.round(pg.der)} figcols ${fc.map((x) => x.k + (x.doble ? 'd' : '')).join(',')} pies ${pg.pies.map((x) => x.k).join(',')} ocup1 ${ocupada(p, 1)} ocup2 ${ocupada(p, 2)} libre1 ${libre(p, 1)} libre2 ${libre(p, 2)}`);
+    if (pg.sola || pg.banda) return false;
+    const fijar = () => { if (!pg.rotulo) pg.rotuloPieza = c; f.pagina = p; return true; };
+    if (f.doble) {
+      if (k === 0 && libre(p, 1) && libre(p, 2) && !pg.der && !pieDe(p, 1) && !pieDe(p, 2) && a <= BOTTOM - TOP - (pg.banda ? pg.banda + AIRE_BANDA : 0)) {
+        pg.figCols = [...fc, { items: [f], alto: a, doble: true, k: 1, junto: true }]; return fijar();
+      }
+      if (k <= 1 && !pg.der && !ocupada(p, 1) && !ocupada(p, 2) && !pieDe(p, 1) && !pieDe(p, 2) && BOTTOM - TOP - a - AIRE_BANDA >= MIN_TEXTO && (k === 0 || yMen + AIRE_BANDA + a <= BOTTOM - TOP)) {
+        pg.der = a; pg.flotDer = [f]; return fijar();
+      }
+      return false;
+    }
+    // Primero al pie de la columna de la mención, bajo ella: deja libres las columnas siguientes para otras figuras.
+    if (!pieDe(p, k) && !(k >= 1 && pg.der) && !ocupada(p, k) && yMen + AIRE_BANDA + a <= altoCol(p, k)) { pg.pies.push({ k, alto: a, b: f }); return fijar(); }
+    for (let kk = k + 1; kk < 3; kk++) {
+      if (!libre(p, kk) || pg.der) continue;
+      if (a <= colBot(p, kk) - TOP) { pg.figCols = [...fc, { items: [f], alto: a, doble: false, k: kk, junto: true }]; return fijar(); }
+    }
+    return false;
+  };
+  const pendientes = new Map();
+  c.bloques.filter((f) => f.columna && !f.cola && !f.reservada && !f.reserva).forEach((f) => {
+    const re = reMencion(f);
+    for (const x of c.bloques) {
+      if (!x.partes || x.frase || !x.lineas) continue;
+      const linea = lineaDeMencion(x, re); if (linea == null) continue;
+      if (!pendientes.has(x)) pendientes.set(x, []); pendientes.get(x).push({ f, linea }); break;
+    }
+  });
   const textos = c.bloques.filter((b) => b.partes && !b.frase);
   for (const b of c.bloques) {
     if (b.flotante && !b.columna) { programar(b, cur.p, c); continue; }
@@ -1081,7 +1263,15 @@ function componer(c) {
       } else if (aire) { previo.extra = aire; y += aire; }
     } else if (anuncia(b) && y + anuncia(b) > cap() + 0.5 && y > 0) saltar();
     let resto = n, desde = 0;
+    const porColocar = pendientes.get(b) || [];
     while (resto > 0) {
+      for (const x of porColocar) {
+        if (x.f.reservada) continue;
+        const caben0 = Math.floor((cap() - y + 0.5) / L);
+        if (x.linea < desde || x.linea >= desde + Math.max(0, caben0)) continue;
+        if (enMencion(x.f, cur.p, cur.k, (y + (x.linea - desde + 1) * L) * PT)) x.f.reservada = true;
+        if (process.env.DIAG_TRIG) console.log(`TRIG f${x.f.n} p${cur.p + PRIMERA} k${cur.k} y${Math.round(y * PT)} linea ${x.linea} desde ${desde} caben ${caben0} alto ${Math.round(x.f.pieza.alto)} → ${x.f.reservada ? 'puesta' : 'no'}`);
+      }
       const caben = Math.floor((cap() - y + 0.5) / L);
       let toma;
       if (caben >= resto) toma = resto;
@@ -1173,15 +1363,31 @@ const colaDe = (c) => { const q = Math.max(...c.marcos.map((m) => m.p)); const m
   });
   if (cambio) pgAnexos = repartir();
 }
-// Cada tabla o figura debe quedar en la página de su primera mención o en la siguiente (pedido del autor, 11 de noviembre).
+// Cada tabla o figura va en la página donde se nombra por primera vez. Solo una pieza de página completa —una figura
+// diseñada para llenar su página, o la primera parte de una tabla partida— va en la página siguiente (pedidos del autor
+// del 11 de noviembre y del 25 de noviembre de 2026). La página de la mención es la de la línea que nombra la pieza: se
+// estima por la posición de la mención dentro de su párrafo.
+// Una página de figuras —sin texto y con figuras de columna que llenan sus tres columnas— también es una página completa:
+// sus figuras pueden ir en la página siguiente a su mención, alineadas arriba y abajo (25 de noviembre de 2026).
+const paginaDeFiguras = (q) => { const pg = paginas[q]; return !!pg && !pg.marcos.length && !pg.paneles.length && !pg.frases.length && !pg.banda && (pg.figCols || []).reduce((t, f) => t + anchoFig(f), 0) >= 3; };
+const completa = (b) => !!(b.completa || (b.sola && !b.continua) || (b.columna && !b.cola && b.pagina != null && paginaDeFiguras(b.pagina)));
 const menciones = () => {
-  const paginaDe = new Map();
-  cuerpo.forEach((c) => c.marcos.forEach((m) => m.cont.forEach((x) => { const r = paginaDe.get(x.b) || [m.p, m.p]; paginaDe.set(x.b, [Math.min(r[0], m.p), Math.max(r[1], m.p)]); })));
+  const trozos = new Map();
+  cuerpo.forEach((c) => c.marcos.forEach((m) => m.cont.forEach((x) => { if (!trozos.has(x.b)) trozos.set(x.b, []); trozos.get(x.b).push({ p: m.p, desde: x.desde, n: x.n }); })));
   return flot.filter((b) => !b.continua).map((b) => {
-    const re = new RegExp(`${b.flotante === 'tabla' ? 'Tabla' : 'Figura'}s?[ \\u00A0](\\d+[ \\u00A0]y[ \\u00A0])?${b.n}(?!\\d)`);
-    let men = null;
-    for (const c of cuerpo) { for (const x of c.bloques) if (x.partes && re.test(textoDe(x.partes))) { men = paginaDe.get(x); break; } if (men) break; }
-    return { b, men, lejos: !men || b.pagina > men[1] + 1 || b.pagina < men[0] };
+    const re = reMencion(b); let men = null;
+    for (const c of cuerpo) {
+      for (const x of c.bloques) {
+        if (!x.partes || x.frase || !trozos.has(x)) continue;
+        const t = textoDe(x.partes); const m = t.match(re); if (!m) continue;
+        const linea = Math.min(x.lineas - 1, Math.floor(((m.index + m[0].length / 2) / Math.max(1, t.length)) * x.lineas));
+        const ts = trozos.get(x); const tr = ts.find((s) => linea >= s.desde && linea < s.desde + s.n) || ts[ts.length - 1];
+        men = [tr.p, tr.p]; break;
+      }
+      if (men) break;
+    }
+    const d = men ? b.pagina - men[0] : 0;
+    return { b, men, lejos: !men || (completa(b) ? d !== 1 : d !== 0) };
   });
 };
 /** Lo que cuesta un reparto: piezas lejos de su mención, capítulos que terminan en una columna sola o con una
@@ -1197,18 +1403,20 @@ function costo(det, hasta) {
   const pTope = hasta ? hasta.pagina : Infinity;
   menciones().forEach(({ b, men }) => {
     if (!men || flot.indexOf(b) > iTope) return;
-    const d = b.pagina - men[1], nom = `${b.flotante[0]}${b.n}`;
-    if (d >= 1) suma(4, `${nom} en la página siguiente`);                 // se prefiere la de la mención (pedido del autor del 21 de noviembre)
-    if (d > 1) suma(30 * (d - 1), `${nom} lejos`);                        // nunca más lejos que la página siguiente
-    if (b.pagina < men[0]) suma(60 * (men[0] - b.pagina), `${nom} antes de su mención`);   // ni antes de su mención
+    const d = b.pagina - men[0], nom = `${b.flotante[0]}${b.n}`;
+    // Pesa más que cualquier otro defecto: los finales de capítulo que choquen con esta regla se resuelven con el contenido (D-152).
+    if (completa(b)) { if (d === 0) suma(200, `${nom} de página completa en la página de su mención`); if (d > 1) suma(200 + 30 * (d - 2), `${nom} lejos de su mención`); }
+    else if (d >= 1) suma(200 + 30 * (d - 1), `${nom} después de la página de su mención`);   // nunca en otra página (25 de noviembre)
+    if (d < 0) suma(200 * -d, `${nom} antes de su mención`);
   });
+  flot.forEach((b) => { if (b.modoPC && flot.indexOf(b) <= iTope) suma(25, `${b.flotante[0]}${b.n} a página completa`); });
   cuerpo.forEach((c, ci) => {
     if (!c.marcos.length || ci >= cTope) return;
     const q = Math.max(...c.marcos.map((m) => m.p)); const pg = pag(q);
     const cols = [0, 1, 2].map((x) => c.marcos.filter((m) => m.p === q && m.k === x).reduce((t, m) => t + m.usado, 0) * PT).filter((x) => x > 0);
     const otras = pg.paneles.length + figCols(q).length;
-    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda && !pg.der) suma(25, `${c.titulo}: termina en una columna sola`);
-    if (cols.length && cols[cols.length - 1] < 60) suma(12, `${c.titulo}: termina en una columna corta`);
+    if (q !== c.pagina && cols.length === 1 && !otras && !pg.banda && !pg.der) suma(+(process.env.COSTO_SOLA || 80), `${c.titulo}: termina en una columna sola`);   // no puede pasar (25 de noviembre)
+    if (cols.length && cols[cols.length - 1] < 60) suma(cols.length > 1 && cols[cols.length - 1] < 40 ? 80 : 12, `${c.titulo}: termina en una columna corta`);   // dos o tres líneas solas en una columna, no (25 de noviembre)
   });
   paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && !figCols(q).length && pg.banda && pg.banda < 0.75 * (BOTTOM - TOP)) suma(5, `página ${q + PRIMERA} solo con una pieza a medio llenar`); });
   paginas.forEach((pg, q) => { if (q <= pTope && !pg.marcos.length && !pg.paneles.length && figCols(q).length) suma(3, `página ${q + PRIMERA} solo con figuras`); });
@@ -1219,10 +1427,10 @@ function costo(det, hasta) {
     const ultima = Math.max(...c.marcos.map((m) => m.p));
     c.bloques.forEach((b) => { if (b.flotante && b.pagina > ultima) suma(15, `${b.flotante[0]}${b.n} después del texto de su capítulo`); });
   });
-  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina < fs[i - 1].pagina) suma(40, `${t} ${b.n} fuera de orden`); }); });   // nunca fuera de orden
+  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina < fs[i - 1].pagina) suma(200, `${t} ${b.n} fuera de orden`); }); });   // nunca fuera de orden
   // En la misma página, también en orden de lectura: una figura de columna se lee según su columna; una al pie, al final.
-  const lugarEn = (b) => { if (!b.columna || pag(b.pagina).flotDer.includes(b)) return 9; const f = figCols(b.pagina).find((x) => x.items.includes(b)); return f ? f.k + f.items.indexOf(b) * 0.1 : 0; };
-  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t && !b.continua); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina === fs[i - 1].pagina && lugarEn(b) < lugarEn(fs[i - 1])) suma(40, `${t} ${b.n} antes que la anterior en su página`); }); });
+  const lugarEn = (b) => { const pie = b.columna && pag(b.pagina).pies.find((x) => x.b === b); if (pie) return pie.k + 0.5; if (!b.columna || pag(b.pagina).flotDer.includes(b)) return 9; const f = figCols(b.pagina).find((x) => x.items.includes(b)); return f ? f.k + f.items.indexOf(b) * 0.1 : 0; };
+  ['tabla', 'figura'].forEach((t) => { const fs = flot.filter((b) => b.flotante === t && !b.continua); fs.forEach((b, i) => { if (i && flot.indexOf(b) <= iTope && b.pagina === fs[i - 1].pagina && lugarEn(b) < lugarEn(fs[i - 1])) suma(200, `${t} ${b.n} antes que la anterior en su página`); }); });
   return k + (hasta ? 0 : paginas.length);
 }
 // Reparto de tablas y figuras (pedidos del autor del 11 y del 21 de noviembre de 2026): cada pieza en la página de su
@@ -1234,8 +1442,16 @@ function costo(det, hasta) {
 //   3. Al azar, con semilla fija: cambia dos o tres piezas seguidas a la vez (BUSQUEDA_MS fija su duración).
 {
   const candidatas = flot.filter((b) => !b.continua);
-  const estado = (b) => (b.columna ? b.reserva || null : b.rel);
+  const estado = (b) => (b.modoPC ? { completa: true, rel: b.rel } : b.columna ? b.reserva || null : b.rel);
+  const modo = (b, pc) => {
+    if (pc === !!b.modoPC) return;
+    if (pc) { b.pzNormal = b.pieza; b.columnaNormal = b.columna; b.pieza = b.pzCompleta; b.columna = false; b.sola = true; b.completa = true; b.modoPC = true; b.reserva = null; }
+    else { b.pieza = b.pzNormal; b.columna = b.columnaNormal; b.sola = false; b.completa = false; b.modoPC = false; b.rel = undefined; }
+  };
   const poner = (b, v) => {
+    const pc = !!(v && typeof v === 'object' && v.completa);
+    modo(b, pc);
+    if (pc) { b.rel = v.rel; return; }
     if (b.columna) { b.reserva = v; return; }
     b.rel = v; const s = flot[flot.indexOf(b) + 1]; if (s && s.continua) s.rel = v == null ? undefined : v + 1;   // la continuación de una tabla va en la página siguiente
   };
@@ -1243,19 +1459,26 @@ function costo(det, hasta) {
   const opcionesDe = (b, men) => {
     const c = cuerpo.find((x) => x.bloques.includes(b));
     if (b.cola) return [null];
-    if (b.columna) {
+    const pc = b.pzCompleta && men[0] + 1 - c.pagina >= 1 ? [{ completa: true, rel: men[0] + 1 - c.pagina }] : [];
+    if (b.columna && !b.modoPC) {
       // Una figura de columna: su página (la de la mención, la última de la mención o la siguiente) y su lado.
-      const ps = [...new Set([men[0], men[1], men[1] + 1])].map((q) => q - c.pagina).filter((r) => r >= 0);
-      return [null, ...ps.flatMap((rel) => (b.doble ? ['der', 'izq', 'pie'] : ['der', 'izq', 'bajo']).map((lado) => ({ rel, lado })))];
+      const ps = [...new Set([men[0] - 1, men[0], men[1], men[1] + 1])].map((q) => q - c.pagina).filter((r) => r >= 0);
+      return [null, ...ps.flatMap((rel) => (b.doble ? ['der', 'izq', 'pie'] : ['der', 'izq', 'bajo', 'pie0', 'pie1', 'pie2']).map((lado) => ({ rel, lado }))), ...pc];
     }
     // Nunca al pie de la página que abre la sección: el panel de apertura conserva su columna entera (pedido del autor del
     // 21 de noviembre de 2026; los paneles acortados no funcionan).
-    return [...new Set([undefined, men[0] - 1 - c.pagina, men[0] - c.pagina, men[1] - c.pagina, men[1] + 1 - c.pagina])].filter((r) => r === undefined || r >= 1);
+    if (b.modoPC) return [...(b.columnaNormal ? [null] : [undefined, men[0] - c.pagina, men[0] + 1 - c.pagina].filter((r) => r === undefined || r >= 1)), ...pc];
+    return [...[...new Set([undefined, men[0] - 1 - c.pagina, men[0] - c.pagina, men[1] - c.pagina, men[1] + 1 - c.pagina])].filter((r) => r === undefined || r >= 1), ...pc];
   };
   const mencionDe = (b) => (menciones().find((m) => m.b === b) || {}).men;
+  const firma = () => flot.map((b) => {
+    const pg = b.pagina == null ? null : paginas[b.pagina]; if (!pg) return '?';
+    const f = (pg.figCols || []).find((x) => x.items.includes(b)), p = pg.pies.find((x) => x.b === b);
+    return `${b.pagina}${f ? 'c' + f.k + '.' + f.items.indexOf(b) : p ? 'p' + p.k : pg.flotDer.includes(b) ? 'd' : 'b'}`;
+  }).join(',');
   const inicial = candidatas.map(estado);
   // 1. En orden, con un haz.
-  {
+  if (!process.env.SIN_BUSQUEDA) {
     const HAZ = +(process.env.HAZ || 8);
     let haz = [{ asign: inicial.slice(), k: Infinity }];
     for (let i = 0; i < candidatas.length; i++) {
@@ -1268,18 +1491,19 @@ function costo(det, hasta) {
         if (!ops.some((o) => igual(o, inicial[i]))) ops.push(inicial[i]);
         for (const o of ops) {
           poner(candidatas[i], o); pgAnexos = repartir();
-          nuevos.push({ asign: [...hz.asign.slice(0, i), o, ...inicial.slice(i + 1)], k: costo(null, candidatas[i]) + costo() / 1000 });
+          nuevos.push({ asign: [...hz.asign.slice(0, i), o, ...inicial.slice(i + 1)], k: costo(null, candidatas[i]) + costo() / 1000, firma: firma() });
         }
       }
       const vistos = new Set();
-      haz = nuevos.sort((a, b) => a.k - b.k).filter((hz) => { const c = JSON.stringify(hz.asign.slice(0, i + 1)); if (vistos.has(c)) return false; vistos.add(c); return true; }).slice(0, HAZ);
+      haz = nuevos.sort((a, b) => a.k - b.k).filter((hz) => { if (vistos.has(hz.firma)) return false; vistos.add(hz.firma); return true; }).slice(0, HAZ);
+      if (process.env.DIAG_HAZ) console.log(`HAZ ${candidatas[i].flotante[0]}${candidatas[i].n}: ${haz.slice(0, 3).map((hz) => `${hz.k.toFixed(2)} ${JSON.stringify(hz.asign[i])}`).join(' | ')} (${nuevos.length} pruebas)`);
     }
     candidatas.forEach((b, j) => poner(b, haz[0].asign[j])); pgAnexos = repartir();
   }
   let mejor = costo();
   if (process.env.DIAG) console.log(`Costo después del haz: ${mejor}`);
   // 2. Ajuste local.
-  for (let ronda = 0; ronda < 3; ronda++) {
+  for (let ronda = 0; ronda < (process.env.SIN_BUSQUEDA ? 0 : 3); ronda++) {
     let cambio = false;
     for (const b of candidatas) {
       const men = mencionDe(b); if (!men) continue;
@@ -1298,7 +1522,9 @@ function costo(det, hasta) {
     const LIMITE = +(process.env.BUSQUEDA_MS || 15000);
     let semilla = 11; const azar = () => ((semilla = (semilla * 1664525 + 1013904223) % 4294967296) / 4294967296);
     const t0 = Date.now(); let pruebas = 0, mejoras = 0;
-    while (LIMITE > 0 && Date.now() - t0 < LIMITE) {
+    // Con BUSQUEDA_PRUEBAS, un número fijo de pruebas: el mismo resultado en cualquier computador (25 de noviembre de 2026).
+    const PRUEBAS = +(process.env.BUSQUEDA_PRUEBAS || 0);
+    while (PRUEBAS ? pruebas < PRUEBAS : LIMITE > 0 && Date.now() - t0 < LIMITE) {
       const ms = new Map(menciones().map((m) => [m.b, m.men]));
       const i = Math.floor(azar() * candidatas.length);
       const grupo = [candidatas[i]];
@@ -1316,7 +1542,9 @@ function costo(det, hasta) {
   // Para revisar a mano: PROBAR="f17=36izq f18=37" fija piezas en páginas impresas (y lado, para las de columna).
   if (process.env.PROBAR) {
     for (const t of process.env.PROBAR.split(/\s+/).filter(Boolean)) {
-      const m = t.match(/^([ft])(\d+)=(\d+)(izq|der|bajo|pie)?$/); if (!m) continue;
+      const auto = t.match(/^([ft])(\d+)=auto$/);
+      if (auto) { const b = flot.find((x) => x.flotante[0] === auto[1] && x.n === +auto[2] && !x.continua); if (b) poner(b, b.columna ? null : undefined); continue; }
+      const m = t.match(/^([ft])(\d+)=(\d+)(izq|der|bajo|pie\d?)?$/); if (!m) continue;
       const b = flot.find((x) => x.flotante[0] === m[1] && x.n === +m[2] && !x.continua); const c = cuerpo.find((x) => x.bloques.includes(b));
       const rel = +m[3] - PRIMERA - c.pagina;
       poner(b, b.columna ? { rel, lado: m[4] || 'der' } : rel);
@@ -1343,6 +1571,38 @@ cuerpo.forEach((c) => {
     console.log(`Atención: la figura ${b.n} mide ${Math.round(a)} mm y no cabe al final de ${c.titulo} (quedan ${Math.round(colBot(q, k) - y)} mm).`);
   });
 });
+// Figuras de columna lado a lado en una página: todas empiezan su cuerpo a la misma altura, aunque un título ocupe más
+// líneas que otro (pedido del autor del 25 de noviembre de 2026). El rótulo más bajo fija el alto de los demás.
+{
+  const rehacer = [];
+  paginas.forEach((pg, q) => {
+    const arriba = (pg.figCols || []).map((f) => f.items[0]).filter((b) => b.pieza.donde && b.pieza.donde['1']);
+    if (arriba.length < 2) return;
+    const fin = (b) => b.pieza.donde['1'][1] + b.pieza.donde['1'][3];
+    const max = Math.max(...arriba.map(fin));
+    // En una página de figuras, también el cuerpo de todas termina a la misma altura: el de la más alta.
+    const solas = paginaDeFiguras(q) && pg.figCols.every((f) => f.items.length === 1);
+    const notaDe = (b) => { const ks = Object.keys(b.pieza.donde).map(Number).sort((x, y) => x - y); const n = b.nota ? b.pieza.donde[String(ks[ks.length - 1])] : null; return n ? n[1] : b.pieza.alto; };
+    const cuerpo = (b) => notaDe(b) - fin(b);
+    const maxCuerpo = solas ? Math.max(...arriba.map(cuerpo)) : 0;
+    arriba.forEach((b) => {
+      const bajar = max - fin(b) > 0.5, estirar = solas && !b.v8 && !(b.fotos && !b.doble) && maxCuerpo - cuerpo(b) > 1;
+      if (!bajar && !estirar) return;
+      if (bajar) b.rotMin = max;
+      if (estirar) b.cuerpoMin = maxCuerpo - 6;
+      b.pieza = piezaColumna(b); rehacer.push(b);
+    });
+  });
+  if (rehacer.length) {
+    const m = medir(rehacer.map((b) => b.pieza));
+    rehacer.forEach((b) => { b.pieza.alto = m[b.pieza.id]; b.pieza.donde = m[b.pieza.id + '#'] || {}; });
+    paginas.forEach((pg, q) => (pg.figCols || []).forEach((f) => {
+      f.alto = f.items.reduce((t, b, i) => t + b.pieza.alto + (i ? AIRE_PIEZAS : 0), 0);
+      if (f.alto > colBot(q, f.k) - TOP + 0.5) console.log(`Atención: al alinear, la columna de figuras de la página ${q + PRIMERA} mide ${Math.round(f.alto)} mm.`);
+    }));
+    if (process.env.DIAG) console.log(`Alineadas: ${rehacer.map((b) => 'f' + b.n).join(', ')}`);
+  }
+}
 // Los finales de sección no se equilibran ni se reparten en columnas cortas: el texto llena cada columna de arriba
 // abajo y sigue hacia el lado, como en una página doble (pedido del autor del 29 de octubre de 2026). Que ningún
 // capítulo termine en una columna sola se resuelve con el contenido (D-152), y el generador avisa dónde pasa.
@@ -1400,7 +1660,23 @@ cuerpo.forEach((c) => {
   const corta = cols.filter((x) => x > 0).pop() < 60;
   if (sola || corta || process.env.DIAG) console.log(`${sola || corta ? 'Atención: final' : 'Final'} · ${c.n != null ? c.n + '. ' : ''}${c.titulo}: página ${numPag(q)}${q === c.pagina ? ' (la de apertura)' : ''}, columnas ${cols.join(' / ')} mm${pg.banda ? `, piezas al pie ${Math.round(pg.banda)} mm` : ''}${figCols(q).length ? ', figuras en columna' : ''}`);
 });
-if (process.env.SOLO_REPARTO && process.env.DIAG) { flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}${b.columna ? 'c' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto))); paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), pg.der ? `| pie 2-3: f${pg.flotDer[0].n}:${Math.round(pg.der)}` : '', '| figcol', figCols(q).map((f) => f.items.map((b) => 'f' + b.n).join('+')).join(','), '| marcos', pg.marcos.map((m) => `${m.k}:${Math.round(m.usado * PT)}`).join(' '))); }
+if (process.env.DIAG_MEN) {
+  const trozos = new Map();
+  cuerpo.forEach((c) => c.marcos.forEach((m) => m.cont.forEach((x) => { if (!trozos.has(x.b)) trozos.set(x.b, []); trozos.get(x.b).push({ p: m.p, k: m.k, desde: x.desde, n: x.n, y0: m.y0 }); })));
+  menciones().filter((x) => x.lejos).forEach(({ b }) => {
+    const re = reMencion(b);
+    for (const c of cuerpo) for (const x of c.bloques) {
+      if (!x.partes || x.frase || !trozos.has(x)) continue;
+      const t = textoDe(x.partes); const m = t.match(re); if (!m) continue;
+      const linea = Math.min(x.lineas - 1, Math.floor(((m.index + m[0].length / 2) / Math.max(1, t.length)) * x.lineas));
+      const ts = trozos.get(x); const tr = ts.find((s) => linea >= s.desde && linea < s.desde + s.n) || ts[ts.length - 1];
+      const yMen = (tr.y0 + (linea - tr.desde + 1) * 22) * PT;
+      console.log(`MEN ${b.flotante[0]}${b.n} (${b.columna ? (b.doble ? 'doble' : 'col') : b.completa ? 'completa' : 'ancha'} ${Math.round(b.pieza.alto)} mm) mención p${numPag(tr.p)} c${tr.k} a ${Math.round(yMen)} mm; pieza p${numPag(b.pagina)} · «${t.slice(Math.max(0, m.index - 70), m.index + 12)}»`);
+      return;
+    }
+  });
+}
+if (process.env.SOLO_REPARTO && process.env.DIAG) { flot.forEach((b) => console.log('PIEZA', `${b.flotante[0]}${b.n}${b.continua ? 'b' : ''}${b.columna ? 'c' : ''}`, 'página', numPag(b.pagina), 'rel', b.rel || '-', 'alto', Math.round(b.pieza.alto))); paginas.forEach((pg, q) => console.log('PAG', numPag(q), 'banda', Math.round(pg.banda), pg.flot.map((b) => `${b.flotante[0]}${b.n}:${Math.round(b.pieza.alto)}`).join(' '), pg.der ? `| pie 2-3: f${pg.flotDer[0].n}:${Math.round(pg.der)}` : '', pg.pies.length ? `| pies ${pg.pies.map((x) => `f${x.b.n}@${x.k}:${Math.round(x.alto)}`).join(' ')}` : '', '| figcol', figCols(q).map((f) => f.items.map((b) => 'f' + b.n).join('+')).join(','), '| marcos', pg.marcos.map((m) => `${m.k}:${Math.round(m.usado * PT)}`).join(' '))); }
 if (process.env.SOLO_REPARTO) { cuerpo.forEach((c) => console.log(`  ${String(numPag(c.pagina)).padStart(2)}  ${c.n != null ? c.n + '. ' : ''}${c.titulo}`)); console.log(`  ${numPag(pgAnexos)}  Anexos · ${numPag(pgAnexos) + 1} páginas`); process.exit(0); }
 
 // ---------------------------------------------------------------- Modelo de páginas: lo mismo para el IDML y para el PDF
@@ -1423,7 +1699,13 @@ paginas.forEach((pg, q) => {
   // Una página solo de tablas o figuras las centra en el alto, para que no quede un hueco abajo.
   const fc = pg.figCols || [];
   const sinTexto = !pg.marcos.length && !pg.paneles.length && !pg.frases.length;
-  const y0 = sinTexto && !fc.length ? TOP + Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : BOTTOM - pg.banda;
+  // En la última página de una sección, si el texto termina arriba, las piezas al pie suben y quedan bajo el texto: así no
+  // queda un hueco entre el final del texto y la tabla o figura (25 de noviembre de 2026).
+  const finDeSeccion = pg.marcos.length && pg.marcos.some((m) => m.ultimo) && !fc.length && !pg.der && !pg.pies.length;
+  const altoTexto = finDeSeccion ? Math.max(...pg.marcos.map((m) => (m.y0 + m.usado) * PT)) : 0;
+  const subir = finDeSeccion && pg.banda && TOP + altoTexto + AIRE_BANDA + pg.banda < BOTTOM - 30;
+  if (subir) pg.marcos.forEach((m) => { if (m.ultimo) { m.x = colX(m.k); m.y = colTop(m.p) + m.y0 * PT; m.ancho = COL; m.alto = m.usado * PT + HOLGURA; } });
+  const y0 = sinTexto && !fc.length ? TOP + Math.max(0, (BOTTOM - TOP - pg.banda) / 2) : subir ? TOP + altoTexto + AIRE_BANDA : BOTTOM - pg.banda;
   // Las columnas de figuras: arriba, una figura bajo otra; en una página sin texto, centradas en el ancho y en el alto.
   // Si el texto termina antes, las columnas de figuras se corren hasta quedar junto a él, sin una columna vacía entre ambos.
   const usadas = [...pg.marcos.map((m) => m.k), ...pg.paneles.map((pn) => pn.k)];
@@ -1438,6 +1720,7 @@ paginas.forEach((pg, q) => {
   });
   pg.flot.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: MX, y: y0 + b.yRel, nombre: `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}` }));
   pg.flotDer.forEach((b) => items.push({ tipo: 'pieza', pieza: b.pieza, x: colX(1), y: BOTTOM - pg.der, nombre: `Figura ${b.n}` }));
+  pg.pies.forEach((x) => items.push({ tipo: 'pieza', pieza: x.b.pieza, x: colX(x.k), y: BOTTOM - x.alto, nombre: `Figura ${x.b.n}` }));
   (pg.colas || []).forEach((t) => items.push({ tipo: 'pieza', pieza: t.b.pieza, x: colX(t.k), y: t.y, nombre: t.b.rotulo }));
   pg.paneles.forEach((pn) => items.push(panelDe(pn.c, colX(pn.k), pn.y, pn.alto)));
   pg.frases.forEach((f) => items.push({ tipo: 'pieza', pieza: f.b.pieza, x: colX(f.k), y: f.y, nombre: f.b.rotulo }));

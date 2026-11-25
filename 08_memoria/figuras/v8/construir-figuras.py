@@ -80,6 +80,22 @@ def flecha(largo=40, vertical=False, color=TINTA, grosor=2.4):
             f'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 
+
+# Los cuatro momentos del recorrido, con el color de la identidad que les corresponde (Figura 19 de la memoria):
+# preparar (primer paso), seguir en el teléfono (tiempo), oír la señal (lugar) y decidir (decisión).
+MOMENTOS = [('Preparar', 'Cielo'), ('Seguir en el teléfono', 'Amarillo'), ('Oír la señal', 'Lima'), ('Decidir', 'Rubor')]
+CSS_MOMENTO = f"""
+.mh{{display:flex;align-items:baseline;gap:10pt;padding-bottom:9pt;margin-bottom:16pt;position:relative}}
+.mh .n{{color:{GRIS}}} .mh .sb{{white-space:nowrap}}
+.mh::after{{content:'';position:absolute;left:0;right:0;bottom:0;height:6pt;border-radius:3pt;background:var(--barra)}}
+"""
+
+
+def cabeza_momento(k):
+    nombre, color = MOMENTOS[k]
+    return (f'<div class="mh" style="--barra:linear-gradient(90deg,{DEGRADE[color][0]},{INTENSO[color]})">'
+            f'<span class="n">{k + 1}</span><span class="sb">{nombre}</span></div>')
+
 CSS = f"""
 @font-face{{font-family:'IS';src:url('{LETRA}/InstrumentSans-Regular.ttf');font-weight:400}}
 @font-face{{font-family:'IS';src:url('{LETRA}/InstrumentSans-Medium.ttf');font-weight:500}}
@@ -176,61 +192,63 @@ def figura(clave):
     return reg
 
 
-# =============================================================== Figura 6 · Método Framework (dos columnas)
+# =============================================================== Figura 7 · Método Framework (dos columnas)
 @figura('framework')
 def framework():
-    """Arriba, los cinco momentos del método. Al centro, la matriz: una fila por persona y una columna por tema, como en
-    el Anexo A. Abajo, las dos maneras de leerla —una fila o una columna— y lo que salió de ellas: dos tipos ideales.
-    La matriz va sin datos ni destacados, para que ninguna persona parezca más importante que otra."""
+    """Arriba, los cinco momentos del método. Al centro, la matriz con los códigos de cada entrevista (Anexo A, Tabla A4):
+    una fila por persona y una columna por tema. El color marca los códigos que acercan un episodio a cada tipo ideal
+    —rosado, el usuario principal; verde, el usuario límite—, así la lectura por tema muestra de dónde salen los dos
+    tipos. Pedido del autor del 25 de noviembre de 2026: la matriz vacía no se entendía."""
     momentos = [('Familiarización', 'Leer las ocho transcripciones'),
                 ('Marco analítico', 'Temas previos y temas nuevos'),
                 ('Indexación', 'Asignar un tema a cada fragmento'),
-                ('Matriz', 'Resumir por persona y por tema'),
-                ('Interpretación', 'Leer la matriz de dos maneras')]
-    temas = ['Decidida o automática', 'Percepción del tiempo', 'Recuerdo', 'Alternativa valorada', 'Conflicto posterior',
-             'Contexto', 'Estrategias previas', 'Intervención física', 'Autonomía']
+                ('Matriz', 'Resumir cada caso por tema'),
+                ('Interpretación', 'Leerla por persona y por tema')]
+    temas = ['Uso del teléfono', 'Intención', 'Recuerdo', 'Cierre', 'Obligación pendiente', 'Otra actividad valorada']
+    casos = [('Dirigido', 'Clara', 'Débil', 'Positivo', '—', 'Sí'),
+             ('Continuidad', 'Desplazada', 'Claro', 'Ambivalente', 'Sí', 'Sí'),
+             ('Continuidad', 'Desplazada', 'Débil', 'Ambivalente', 'Sí', 'Sí'),
+             ('Dirigido y continuidad', 'Clara', 'Débil', 'Positivo', '—', '—'),
+             ('Continuidad', '—', 'Débil', 'Ambivalente', '—', 'Sí'),
+             ('Relacional y continuidad', 'Clara', 'Claro', 'Positivo', '—', 'Sí'),
+             ('Dirigido', 'Clara', 'Claro', 'Positivo', 'No', '—'),
+             ('Continuidad', '—', 'Débil', 'Positivo', 'No', 'Sí')]
+    # Columna, valor → tipo al que acerca el código.
+    tono = {(1, 'Desplazada'): 'Rubor', (3, 'Ambivalente'): 'Rubor', (4, 'Sí'): 'Rubor',
+            (1, 'Clara'): 'Lima', (3, 'Positivo'): 'Lima', (4, 'No'): 'Lima'}
     pasos = ''.join(f'<div class="paso"><div class="pc"><span class="n">{k + 1}</span><span class="sb">{t}</span></div><div class="gris">{d}</div></div>'
                     + (f'<div class="sep">{flecha(24)}</div>' if k < 4 else '') for k, (t, d) in enumerate(momentos))
     g = '<div></div>' + ''.join(f'<div class="th">{t}</div>' for t in temas)
-    for p in range(1, 9):
-        g += f'<div class="pr">P{p}</div>' + '<div class="c"></div>' * len(temas)
-
-    def mini(destaca):
-        celdas = ''
-        for f in range(4):
-            for c in range(6):
-                on = (destaca == 'fila' and f == 1) or (destaca == 'columna' and c == 2)
-                celdas += f'<i class="{"on " + destaca if on else ""}"></i>'
-        return f'<div class="mini">{celdas}</div>'
-    lecturas = ('<div class="lecturas">'
-                f'<div class="lec">{mini("fila")}<div><div class="sb">Por persona</div><div class="gris">Cada fila es un caso completo</div></div></div>'
-                f'<div class="lec">{mini("columna")}<div><div class="sb">Por tema</div><div class="gris">Cada columna muestra lo que se repite</div></div></div>'
-                '</div>')
-    resultado = (f'<div class="baja">{flecha(30, vertical=True)}<span class="sb">Dos tipos ideales</span><span class="gris">Situaciones que reúnen casos parecidos</span></div>'
-                 '<div class="tipos">'
-                 f'<div class="tipo">{punto("Rubor", 26)}<div><div class="sb">Usuario principal</div><div class="gris">La sesión sigue sin una nueva decisión y otra actividad deja de estar presente</div></div></div>'
-                 f'<div class="tipo">{punto("Lima", 26)}<div><div class="sb">Usuario límite</div><div class="gris">El ocio digital conserva sentido o no hay otra intención: no corresponde intervenir</div></div></div>'
-                 '</div>')
+    for p, fila in enumerate(casos, 1):
+        g += f'<div class="pr">Persona {p}</div>'
+        for k, v in enumerate(fila):
+            if v == '—':
+                g += '<div class="c"><span class="nada">—</span></div>'
+                continue
+            color = tono.get((k, v))
+            fondo = f'linear-gradient(100deg,{DEGRADE[color][0]},{DEGRADE[color][1]})' if color else PAPEL
+            g += f'<div class="c"><span class="cod" style="background:{fondo}">{v}</span></div>'
+    tipos = ('<div class="tipos">'
+             f'<div class="tipo">{punto("Rubor", 26)}<div><div class="sb">Usuario principal</div><div class="gris">La sesión sigue sin una nueva decisión y otra actividad deja de estar presente</div></div></div>'
+             f'<div class="tipo">{punto("Lima", 26)}<div><div class="sb">Usuario límite</div><div class="gris">El ocio digital conserva sentido o no hay otra intención: no corresponde intervenir</div></div></div>'
+             '</div>')
     css = f"""
-    .pasos{{display:flex;align-items:flex-start;margin-bottom:26pt}}
+    .pasos{{display:flex;align-items:flex-start;margin-bottom:28pt}}
     .paso{{flex:1;display:flex;flex-direction:column;gap:3pt}} .pc{{display:flex;gap:8pt;align-items:baseline;white-space:nowrap}} .pc .n{{color:{GRIS}}}
     .sep{{padding:0 8pt;margin-top:3pt}}
-    .mz{{display:grid;grid-template-columns:40pt repeat({len(temas)},1fr);column-gap:6pt;row-gap:5pt;align-items:end}}
-    .th{{font-size:19.9pt;line-height:24pt;font-weight:600;color:{GRIS};padding-bottom:6pt}}
-    .pr{{font-size:19.9pt;line-height:22pt;font-weight:600;color:{GRIS};align-self:center}}
-    .c{{height:21pt;border-radius:6pt;background:{PAPEL}}}
-    .lecturas{{display:grid;grid-template-columns:1fr 1fr;column-gap:36pt;margin-top:24pt;padding-top:20pt;border-top:1.4pt solid {LINEA}}}
-    .lec{{display:flex;gap:20pt;align-items:center}}
-    .mini{{display:grid;grid-template-columns:repeat(6,13pt);grid-auto-rows:10pt;gap:3pt;flex:none}}
-    .mini i{{display:block;border-radius:2.5pt;background:#EAE5DE}}
-    .mini i.on.fila{{background:{grad('Cielo', 90)}}} .mini i.on.columna{{background:{grad('Amarillo', 180)}}}
-    .baja{{display:flex;align-items:center;gap:12pt;margin:20pt 0 12pt}} .baja .gris{{margin-left:4pt}}
+    .mz{{display:grid;grid-template-columns:118pt 1.75fr repeat(5,1fr);column-gap:8pt;row-gap:7pt;align-items:center}}
+    .th{{font-size:19.9pt;line-height:24pt;font-weight:600;color:{GRIS};padding-bottom:8pt;align-self:end}}
+    .pr{{font-size:19.9pt;line-height:24pt;font-weight:600;color:{GRIS}}}
+    .c{{display:flex}}
+    .cod{{display:inline-block;font-size:19.9pt;line-height:24pt;padding:6pt 12pt;border-radius:9pt;white-space:nowrap}}
+    .nada{{font-size:19.9pt;line-height:36pt;color:#B9B2AA;padding-left:12pt}}
+    .baja{{display:flex;align-items:center;gap:12pt;margin:26pt 0 14pt;padding-top:20pt;border-top:1.4pt solid {LINEA}}} .baja .gris{{margin-left:4pt}}
     .tipos{{display:grid;grid-template-columns:1fr 1fr;column-gap:36pt}}
     .tipo{{display:flex;gap:14pt;align-items:flex-start}} .tipo .pto{{margin-top:1pt}}
     """
-    cuerpo = f'<div class="ficha"><div class="pasos">{pasos}</div><div class="mz">{g}</div>{lecturas}{resultado}</div>'
+    resultado = f'<div class="baja"><span class="sb">Dos tipos ideales</span><span class="gris">Situaciones que reúnen casos parecidos</span></div>{tipos}'
+    cuerpo = f'<div class="ficha"><div class="pasos">{pasos}</div><div class="mz">{g}</div>{resultado}</div>'
     return 'figura-v8-framework', cuerpo, css, DOBLE, ''
-
 
 # =============================================================== Figura 13 · Cadena de la formulación (dos columnas)
 @figura('formulacion')
@@ -242,8 +260,8 @@ def formulacion():
         ('Cielo', 'Pregunta', '¿Cuál es el efecto de un sistema <i>phygital</i> que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?'),
         ('Amarillo', 'Hipótesis', 'Si el sistema vincula la actividad con el lugar donde comienza, la persona la recordará a tiempo. Supuestos: asociación, decisión y soporte.'),
         ('Lima', 'Objetivos', 'Entender el problema. Diseñar el sistema. Compararlo con una notificación. Medir en hogares el recuerdo oportuno.'),
-        ('Durazno', 'Prueba', 'Tres hogares durante cinco semanas. Tras cada señal: ¿supo qué quería hacer antes de mirar la pantalla? ¿Recordó cómo empezar? ¿Qué decidió?'),
-        ('Rubor', 'Conclusiones', 'El ciclo funciona en tres hogares. Aún no se puede afirmar que el objeto supere a la notificación ni que el lugar sea lo que ayuda.'),
+        ('Durazno', 'Prueba', 'Tres personas durante cinco semanas. Tras cada señal: ¿supo qué quería hacer antes de mirar la pantalla? ¿Recordó cómo empezar? ¿Qué decidió?'),
+        ('Rubor', 'Conclusiones', 'El ciclo funciona con tres personas. Aún no se puede afirmar que el objeto supere a la notificación ni que el lugar sea lo que ayuda.'),
     ]
     g = ''.join(f'<div class="et"><span id="p{k}">{punto(color, 28)}</span><span class="tit">{nombre}</span></div><div class="tx">{texto}</div>'
                 for k, (color, nombre, texto) in enumerate(filas))
@@ -274,7 +292,7 @@ def metodo():
                ('datos', 'Encuesta de 53 respuestas'), ('buscar', 'Estado del arte')]
     etapas = [('Rubor', 'Criterios', 'Ocho criterios de diseño'),
               ('Durazno', 'Diseño', 'La aplicación y el objeto'),
-              ('Cielo', 'Prueba', 'Tres hogares durante cinco semanas'),
+              ('Cielo', 'Prueba', 'Tres personas, cinco semanas'),
               ('Amarillo', 'Hallazgos', 'Lo que hicieron las personas y no solo lo que dijeron'),
               ('Lima', 'Cambios', 'Nueve cambios en la aplicación')]
     fu = ''.join(f'<div class="fu">{icono(i, 30, GRIS)}<span>{t}</span></div>' for i, t in fuentes)
@@ -307,105 +325,87 @@ def metodo():
     return 'figura-v8-metodo', cuerpo, css, COL, js
 
 
-# =============================================================== Figura 18 · Estados de un relevo (ancho completo)
+# =============================================================== Figura 20 · Estados de un relevo (dos columnas)
 @figura('estados')
 def estados():
-    """El ciclo de un relevo de izquierda a derecha, en los seis estados del Anexo G. Sobre cada flecha, lo que la hace
-    avanzar. Tres caminos más, cada uno con su rótulo sobre su propia línea: editar devuelve un relevo en espera al
-    borrador y responder sin silenciar cierra uno que suena (arriba); desactivarlo o eliminarlo lo cierra mientras
-    espera (abajo)."""
-    orden = [('borrador', 'Borrador', 'Lila', 'editar'), ('listo', 'Listo', 'Cielo', 'listo'),
-             ('espera', 'En espera', 'Amarillo', 'esperando'), ('sonando', 'Sonando', 'Durazno', 'suena'),
-             ('silenciado', 'Silenciado', 'Neutro', 'silenciar'), ('cerrado', 'Cerrado', 'Rubor', 'decidir')]
-    pasos = ['Completa los datos', 'Activa el relevo', 'Se cumple el tiempo', 'Lo silencia', 'Responde']
-    nodos = ''.join(f'<div class="st" id="{k}" style="background:{grad(c, 100)}">{icono(ic, 28)}<span class="tit">{t}</span></div>' for k, t, c, ic in orden)
-    fila = f'<div class="fila" id="fila"><span class="ini" id="ini"></span><div class="sts">{nodos}</div><span class="fin" id="fin"></span></div>'
-    rots = ''.join(f'<div class="rt" id="r{k}">{t}</div>' for k, t in enumerate(pasos))
-    rots += ''.join(f'<div class="rt" id="{i}">{t}</div>' for i, t in (('ra', 'Lo edita'), ('rc', 'Responde sin silenciar'), ('rb', 'Lo desactiva o elimina')))
-    css = f"""
-    .lienzo{{position:relative;width:100%}}
-    .fila{{position:absolute;left:0;right:0;display:flex;align-items:center}}
-    .sts{{flex:1;display:flex;justify-content:space-between;margin:0 58pt}}
-    .st{{display:flex;align-items:center;gap:10pt;height:54pt;padding:0 20pt 0 18pt;border-radius:999pt}}
-    .st .tit{{font-size:21.5pt;white-space:nowrap}}
-    .ini{{width:18pt;height:18pt;border-radius:50%;background:{TINTA};flex:none}}
-    .fin{{width:24pt;height:24pt;border-radius:50%;border:2.2pt solid {TINTA};flex:none;position:relative}}
-    .fin::after{{content:'';position:absolute;left:4.8pt;top:4.8pt;width:10pt;height:10pt;border-radius:50%;background:{TINTA}}}
-    .rt{{position:absolute;color:{GRIS};white-space:nowrap;line-height:25pt}}
+    """Los seis estados de un relevo (Anexo G), bajo los cuatro momentos del recorrido. En cada momento, sus estados uno
+    bajo otro, con lo que pasa en cada uno; los momentos se leen de 1 a 4. Abajo, en palabras, los tres caminos que se
+    salen de ese orden. Pedido del autor del 25 de noviembre de 2026: la versión con arcos y rótulos sueltos era confusa
+    y «borrador» no era la palabra; ahora es «En preparación». Va en dos columnas, junto al texto que la nombra."""
+    estados = [(0, 'editar', 'En preparación', 'Responde las preguntas'),
+               (0, 'listo', 'Listo', 'Falta activarlo'),
+               (1, 'esperando', 'En espera', 'Cuenta el tiempo de uso'),
+               (2, 'suena', 'Sonando', 'Suena unos 30 segundos'),
+               (2, 'silenciar', 'Silenciado', 'Se apagó el sonido'),
+               (3, 'decidir', 'Cerrado', 'Respondió qué decidió')]
+    cols = ''
+    for k in range(4):
+        dentro = [e for e in estados if e[0] == k]
+        celdas = ''
+        for j, (_, ic, nombre, texto) in enumerate(dentro):
+            celdas += (f'<div class="st"><div class="cab2">{cuadro(ic, MOMENTOS[k][1], 44, 26)}<span class="sb nom">{nombre}</span></div>'
+                       f'<div class="gris">{texto}</div></div>')
+            if j < len(dentro) - 1:
+                celdas += f'<div class="baja">{flecha(22, vertical=True)}</div>'
+        cols += f'<div class="g">{cabeza_momento(k)}{celdas}</div>'
+    otros = [('En espera', 'En preparación', 'Si la persona lo edita; conserva el tiempo contado si las apps son las mismas'),
+             ('Sonando', 'Cerrado', 'Si la persona responde antes de silenciarlo'),
+             ('En espera', 'Cerrado', 'Si la persona lo desactiva o lo elimina')]
+    abajo = ''.join(f'<span class="sb">{a}</span>{flecha(30)}<span class="sb">{b}</span><span class="gris">{t}</span>' for a, b, t in otros)
+    css = CSS_MOMENTO + f"""
+    .gs{{display:grid;grid-template-columns:repeat(4,1fr);column-gap:26pt}}
+    .g{{display:flex;flex-direction:column}}
+    .st{{display:flex;flex-direction:column;gap:5pt}}
+    .cab2{{display:flex;align-items:center;gap:10pt}}
+    .nom{{font-size:21.5pt;line-height:26pt;white-space:nowrap}}
+    .baja{{padding:2pt 0 2pt 11pt}} .baja .fl{{height:22pt}}
+    .otros{{margin-top:14pt;padding-top:10pt;border-top:1.4pt solid {LINEA}}}
+    .otros .cab{{margin-bottom:2pt}}
+    .ls{{display:grid;grid-template-columns:max-content 30pt max-content 1fr;column-gap:12pt;row-gap:4pt;align-items:center}} .ls .gris{{margin-left:10pt}}
     """
-    js = """
-    const L=document.querySelector('.lienzo'),F=document.getElementById('fila');
-    const ids=['borrador','listo','espera','sonando','silenciado','cerrado'];
-    const g=x=>document.getElementById(x),tam=e=>{const b=e.getBoundingClientRect();return {w:b.width*PX,h:b.height*PX};};
-    // Todo se calcula en pt, relativo a la ficha; los rótulos se colocan relativos al lienzo.
-    const fb=document.querySelector('.ficha').getBoundingClientRect(),lb=L.getBoundingClientRect();
-    const ox=(lb.left-fb.left)*PX,oy=(lb.top-fb.top)*PX;
-    const pon=(e,x,y)=>{e.style.left=(x-ox)+'pt';e.style.top=(y-oy)+'pt';},centro=(e,x,y)=>pon(e,x-tam(e).w/2,y);
-    // De arriba abajo: rótulos de los caminos de arriba, sus líneas, rótulos de las flechas, la fila; abajo, un camino y su rótulo.
-    const hr=tam(g('r0')).h,h2=27,Y0=oy+hr+8+16+hr+10+h2;
-    F.style.top=(Y0-h2-oy)+'pt';
-    const p={};ids.forEach(k=>p[k]=r(k));
-    for(let k=0;k<5;k++){const a=p[ids[k]],b=p[ids[k+1]];centro(g('r'+k),(a.d+b.x)/2,Y0-h2-10-hr);}
-    const ya=Y0-h2-10-hr-16,yb=Y0+h2+30,R=14,ini=r('ini'),fin=r('fin');
-    let h=trazo(`M${ini.d+5} ${Y0}H${p.borrador.x-7}`,2.2)+punta(p.borrador.x-7,Y0,'d',2.2);
-    for(let k=0;k<5;k++){const a=p[ids[k]],b=p[ids[k+1]];h+=trazo(`M${a.d+7} ${Y0}H${b.x-7}`,2.2)+punta(b.x-7,Y0,'d',2.2);}
-    h+=trazo(`M${p.cerrado.d+7} ${Y0}H${fin.x-6}`,2.2)+punta(fin.x-6,Y0,'d',2.2);
-    const arco=(x1,x2,y,arriba)=>{const s=x2>x1?1:-1,v=arriba?1:-1,y0=arriba?Y0-h2-6:Y0+h2+6,y1=arriba?Y0-h2-7:Y0+h2+7;
-      return trazo(`M${x1} ${y0}V${y+R*v}Q${x1} ${y} ${x1+R*s} ${y}H${x2-R*s}Q${x2} ${y} ${x2} ${y+R*v}V${y1}`,2.2)+punta(x2,y1,arriba?'b':'a',2.2);};
-    h+=arco(p.espera.cx,p.borrador.cx,ya,true)+arco(p.sonando.cx,p.cerrado.cx,ya,true)+arco(p.espera.cx,p.cerrado.cx,yb,false);
-    centro(g('ra'),(p.espera.cx+p.borrador.cx)/2,ya-8-hr);
-    centro(g('rc'),(p.sonando.cx+p.cerrado.cx)/2,ya-8-hr);
-    centro(g('rb'),(p.espera.cx+p.cerrado.cx)/2,yb+8);
-    L.style.height=(yb+8+hr+2-oy)+'pt';
-    const s=capa();s.innerHTML=h;
-    """
-    cuerpo = f'<div class="ficha"><div class="lienzo">{fila}{rots}</div></div>'
-    return 'figura-v8-estados', cuerpo, css, ANCHO, js
+    cuerpo = (f'<div class="ficha"><div class="gs">{cols}</div>'
+              f'<div class="otros"><div class="cab">Otros caminos</div><div class="ls">{abajo}</div></div></div>')
+    return 'figura-v8-estados', cuerpo, css, DOBLE, ''
 
-
-# =============================================================== Figura 26 · Cómo funciona Relevo (dos columnas)
+# =============================================================== Figura 28 · Cómo funciona Relevo (dos columnas)
 @figura('sistema')
 def sistema():
-    """Tres carriles —la persona, la aplicación y el Tag— en los cuatro momentos del recorrido. Entre los carriles, las
-    órdenes que viajan de uno a otro. Cada carril es una franja del color de su actor, que se desvanece hacia la
-    derecha; el texto va sin cajas."""
-    momentos = ['Preparar', 'Seguir en el teléfono', 'Oír la señal', 'Decidir']
-    persona = ['Anota la actividad y ubica el Tag', 'Usa el teléfono como siempre',
-               'Oye la señal desde el lugar de la actividad', 'Responde qué decidió']
-    app = ['Guarda el relevo', 'Suma el tiempo de las apps elegidas', 'Suena el teléfono si el Tag no responde', 'Guarda la respuesta']
-    tag = ['Queda junto al primer paso', 'Espera. El teléfono lo busca antes de sonar', 'Suena unos 30 segundos', '']
-
-    def carril(ic, color, nombre, celdas):
-        luz = DEGRADE[color]
-        out = (f'<div class="franja" style="background:linear-gradient(90deg,{luz[1]},#FFFFFF)">'
-               f'<div class="lab">{icono(ic, 32)}<span class="sb">{nombre}</span></div>')
-        return out + ''.join(f'<div class="celda">{c}</div>' for c in celdas) + '</div>'
-
-    def enlace(textos):
-        return '<div class="enlaces"><div></div>' + ''.join(
-            f'<div class="enl">{flecha(26, vertical=True)}<span>{t}</span></div>' if t else '<div></div>' for t in textos) + '</div>'
-
-    cab = '<div class="cabs"><div></div>' + ''.join(f'<div class="mom"><span class="n gris">{k + 1}</span><span class="sb">{t}</span></div>' for k, t in enumerate(momentos)) + '</div>'
-    g = (cab + carril('usuario', 'Rubor', 'Persona', persona) + enlace(['prepara', '', '', 'responde'])
-         + carril('telefono', 'Cielo', 'Aplicación', app) + enlace(['prueba el sonido', '', 'ordena sonar', ''])
-         + carril('tag', 'Lima', 'Tag', tag))
-    css = f"""
-    .ficha{{padding:22pt 26.7pt}}
-    .cabs,.franja,.enlaces{{display:grid;grid-template-columns:118pt repeat(4,1fr);column-gap:16pt}}
-    .mom{{display:flex;align-items:baseline;gap:8pt;padding:0 0 7pt;border-bottom:2.4pt solid {TINTA};margin-bottom:10pt}}
-    .franja{{border-radius:16pt;padding:10pt 0 10pt 14pt;align-items:center}}
-    .lab{{display:flex;flex-direction:column;align-items:flex-start;gap:4pt}}
-    .celda{{padding-right:4pt}}
-    .enl{{display:flex;align-items:center;gap:8pt;height:34pt;font-size:19.9pt;line-height:24pt;font-weight:600}}
+    """Ocho pasos numerados, en los cuatro momentos del recorrido. Cada paso dice quién actúa —la persona, la aplicación
+    o el Tag—, con su ícono, y qué hace. Se lee de 1 a 8. Pedido del autor del 25 de noviembre de 2026: la versión en
+    carriles, con órdenes entre ellos, era difícil de entender. Los pasos de cada fila empiezan a la misma altura."""
+    actor = {'persona': ('usuario', 'La persona'), 'app': ('telefono', 'La aplicación'), 'tag': ('tag', 'El Tag')}
+    pasos = [(0, 'persona', 'Prepara el relevo: la actividad, su primer paso, el lugar y cuándo suena'),
+             (0, 'tag', 'Queda junto al primer paso y suena una vez, de prueba'),
+             (1, 'persona', 'Usa el teléfono como siempre'),
+             (1, 'app', 'Suma el tiempo en las apps elegidas'),
+             (2, 'app', 'Se cumple el tiempo: le ordena sonar al Tag'),
+             (2, 'tag', 'Suena unos 30 segundos desde el lugar de la actividad. Si no responde, suena el teléfono'),
+             (3, 'persona', 'Decide qué hacer y responde en la aplicación'),
+             (3, 'app', 'Guarda la respuesta en el teléfono')]
+    cols = ''
+    n = 0
+    for k in range(4):
+        items = ''
+        for _, quien, texto in [p for p in pasos if p[0] == k]:
+            n += 1
+            ic, nombre = actor[quien]
+            items += (f'<div class="ps"><div class="qn"><span class="num">{n}</span>{icono(ic, 30, GRIS)}<span class="gris sb2">{nombre}</span></div>'
+                      f'<div>{texto}</div></div>')
+        cols += f'{cabeza_momento(k)}{items}'
+    css = CSS_MOMENTO + f"""
+    .cols{{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:28pt}}
+    .ps{{display:flex;flex-direction:column;gap:6pt}} .ps+.ps{{margin-top:22pt;padding-top:18pt;border-top:1.4pt solid {LINEA}}}
+    .qn{{display:flex;align-items:center;gap:10pt}}
+    .num{{font-weight:600;font-size:23pt;min-width:18pt}} .sb2{{font-weight:600;font-size:19.9pt}}
     """
-    return 'figura-v8-sistema', f'<div class="ficha">{g}</div>', css, DOBLE, ''
+    return 'figura-v8-sistema', f'<div class="ficha"><div class="cols">{cols}</div></div>', css, DOBLE, ''
 
-
-# =============================================================== Figura 30 · Qué se registró en cada relevo (ancho completo)
+# =============================================================== Figura 32 · Qué se registró en cada relevo (dos columnas, a página completa)
 @figura('registro')
 def registro():
-    """Dos listas: lo que la aplicación registra sola, en el orden del ciclo, y lo que responde la persona, con sus
-    opciones. Lo primero muestra qué hizo la persona; lo segundo, por qué."""
+    """Dos listas, una sobre otra: lo que la aplicación registra sola, en el orden del ciclo, y lo que responde la
+    persona, con sus opciones. Lo primero muestra qué hizo la persona; lo segundo, por qué. Desde el 25 de noviembre de
+    2026 va en dos columnas, a página completa, con el rótulo y la nota en la primera."""
     tramos = [('editar', 'Lila', 'Preparar', 'Actividad, primer paso, lugar, apps y tiempo'),
               ('contando', 'Amarillo', 'Activar', 'Cuándo se activó y si fue a mano o solo'),
               ('suena', 'Durazno', 'Sonar', 'Dónde sonó y cómo se calló'),
@@ -420,7 +420,7 @@ def registro():
                  ('<b class="sb">¿Qué decidiste?</b>', ['Comencé la actividad', 'La dejé para después', 'Cambié de idea'])]
     der = ''.join(f'<div class="fq"><span>{q}</span><span class="op">{"<i>·</i>".join(o)}</span></div>' for q, o in preguntas)
     css = f"""
-    .dos{{display:grid;grid-template-columns:640pt 1fr;column-gap:56pt}}
+    .dos{{display:grid;grid-template-columns:1fr;row-gap:34pt}}
     .h{{display:flex;align-items:center;gap:12pt;padding-bottom:8pt;border-bottom:2.4pt solid {TINTA};margin-bottom:4pt}}
     .h .gris{{margin-left:6pt}}
     .fl2{{display:grid;grid-template-columns:44pt 122pt 1fr;column-gap:16pt;align-items:center;min-height:64pt;border-bottom:1.4pt solid {LINEA}}}
@@ -433,7 +433,7 @@ def registro():
               f'<div><div class="h">{icono("telefono", 34)}<span class="sb">Lo que registra la aplicación</span></div>{izq}</div>'
               f'<div><div class="h">{icono("usuario", 34)}<span class="sb">Lo que responde la persona</span><span class="gris">Puede omitir cualquier pregunta</span></div>{der}</div>'
               '</div></div>')
-    return 'figura-v8-registro', cuerpo, css, ANCHO, ''
+    return 'figura-v8-registro', cuerpo, css, DOBLE, ''
 
 
 # =============================================================== Figura 34 · Comparación propuesta (una columna)

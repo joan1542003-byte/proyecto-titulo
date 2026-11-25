@@ -13,7 +13,8 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta la entrega final:**
 
-1. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity, con 40 figuras y 4 tablas, cada una en la página de su mención o en la siguiente, en orden (D-186, D-190). Se contrastó con los 17 comentarios del PDF y las notas del 18. El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión.
+1. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity: 75 páginas, 39 figuras y 4 tablas. Desde el 25 de noviembre cada figura va en la página de su mención o, a página completa, en la siguiente (D-193), y la memoria no reproduce figuras de otras fuentes (D-194). Revisar con calma las figuras rehechas (Framework, estados, cómo funciona Relevo, flujo y color) y las dos síntesis nuevas de los capítulos 4 y 7.
+   - **En la presentación del examen:** la lámina 21 dice “118 íconos propios” y algunas láminas dicen “tres hogares”; los números de figura de la memoria cambiaron.
 2. **Los tres puntos de fondo de los profesores** (tarea 16, B): aplicados el 25 de noviembre (D-191). El fenómeno se llama *sentido de agencia*; la Formulación abre con la tensión en la decisión y la nueva Figura 16, y el planteamiento abre con el universo del proyecto. La memoria compuesta quedó en 73 páginas y 41 figuras. Falta que el autor lea esos textos.
 3. **Los íconos de la 4.8.2 en la memoria** (tarea 17): aplicados el 25 de noviembre (D-192) en el párrafo «Iconografía», la lámina de identidad, las figuras y el Anexo H. Las pantallas siguen en la 4.7.2, la versión de la prueba.
 4. **Lo que la v8 no resolvió:**
@@ -1001,6 +1002,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Segunda revisión de la memoria
+
+- **Qué cambió:** el punto 1 describe la memoria v8 de 75 páginas y 39 figuras, con D-193 y D-194, y suma lo que falta cambiar en la presentación.
+- **Cómo estaba antes:** decía 40 figuras, cada una en la página de su mención o en la siguiente.
+- **Por qué:** segunda revisión del autor del 25 de noviembre.
 
 ### 2026-11-25 — Puntos de fondo, íconos y primeros conceptos en la memoria
 

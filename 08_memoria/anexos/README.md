@@ -57,6 +57,12 @@ Queda en el repositorio como respaldo del proceso:
 
 ## Registro de cambios (disclaimer)
 
+### 2026-11-25 — Comillas y el primer estado de un relevo
+
+- **Qué cambió:** las comillas angulares pasan a “ ” en los anexos A, C, D, F, G, H e I; el Anexo G llama “En preparación” al primer estado de un relevo, y el Anexo H dice “Un solo estilo” para los íconos.
+- **Cómo estaba antes:** los anexos usaban comillas angulares, el primer estado se llamaba “Borrador” y el Anexo H hablaba de “una sola voz”.
+- **Por qué:** el autor pidió evitar esas comillas y decir “tono de comunicación” en vez de “voz”.
+
 ### 2026-11-25 — Primeros conceptos, íconos de Lucide y Chrome en el Mac
 
 - **Qué cambió:** el Anexo F suma los primeros conceptos y dos pantallas de la primera versión de la app; el Anexo H, los íconos de Lucide de la 4.8.2; el Anexo C nombra sus tres obras fundacionales, y el Anexo G, la versión 4.8. El constructor busca Chrome también en el Mac y en Linux. El Word y el PDF se regeneraron.

@@ -50,7 +50,7 @@ Las repreguntas cambiaron según cada respuesta: sirvieron para aclarar signific
 
 ## A.2 Síntesis de las entrevistas
 
-Lo que respondió cada persona va resumido en tercera persona, con el número de la pregunta; si hubo una repregunta, su respuesta sigue en el mismo párrafo. Las respuestas breves se dejan breves, y expresiones como «dopamina» o «uso adictivo» son de las personas, no categorías del análisis.
+Lo que respondió cada persona va resumido en tercera persona, con el número de la pregunta; si hubo una repregunta, su respuesta sigue en el mismo párrafo. Las respuestas breves se dejan breves, y expresiones como “dopamina” o “uso adictivo” son de las personas, no categorías del análisis.
 
 ### Persona 1 · 21 años · 12 de junio
 
@@ -511,6 +511,12 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 Stapley, E., O’Keeffe, S. y Midgley, N. (2022). Developing typologies in qualitative research: The use of ideal-type analysis. *International Journal of Qualitative Methods, 21*, Artículo 16094069221100633. https://doi.org/10.1177/16094069221100633
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

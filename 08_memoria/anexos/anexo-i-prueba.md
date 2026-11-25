@@ -4,7 +4,7 @@ La prueba en los hogares es la parte del proyecto que pone a Relevo en uso real.
 
 ## I.1 Prueba aplicada
 
-La memoria pregunta: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Su hipótesis es: «Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella» (capítulo 10). La prueba en los hogares se diseñó para contrastarla.
+La memoria pregunta: “¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?”. Su hipótesis es: “Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella” (capítulo 10). La prueba en los hogares se diseñó para contrastarla.
 
 Tres personas mayores de edad usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. La prueba cerró con el cuestionario y la entrevista de I.7; los resultados están en el capítulo 13 de la memoria y, por persona, en I.8.
 
@@ -60,9 +60,9 @@ El protocolo no responde si la actividad se realizó —solo se conoce lo que la
 
 | Condición | Lugar de la señal | Indicación de la app al comenzar la semana |
 | --- | --- | --- |
-| A. Situada | Junto al primer paso. | «Esta semana deja el parlante junto a lo que necesitas para empezar». |
-| B. Lugar neutro | En un lugar visible de la casa, a más de un metro del primer paso y fuera de su recorrido. | «Esta semana deja el parlante en un lugar que no tenga relación con la actividad». |
-| C. Teléfono | En el altavoz del teléfono, con una notificación genérica. | «Esta semana el aviso sonará en tu teléfono». |
+| A. Situada | Junto al primer paso. | “Esta semana deja el parlante junto a lo que necesitas para empezar”. |
+| B. Lugar neutro | En un lugar visible de la casa, a más de un metro del primer paso y fuera de su recorrido. | “Esta semana deja el parlante en un lugar que no tenga relación con la actividad”. |
+| C. Teléfono | En el altavoz del teléfono, con una notificación genérica. | “Esta semana el aviso sonará en tu teléfono”. |
 
 *Nota.* Elaboración propia. Con seis personas, se usan las seis secuencias posibles de A, B y C, una por persona.
 
@@ -71,7 +71,7 @@ La persona prepara relevos cuando tengan sentido para ella: se sugieren al menos
 **Reglas de decisión.** Con tres personas, la lectura es cualitativa: la propuesta se mantiene si la señal se relaciona con la intención y la persona entiende sus opciones, y se modifica si falla una parte específica. Para la etapa comparativa, con seis personas, el protocolo fija estos umbrales:
 
 - **Sesión inicial.** Continuar si al menos cinco de seis completan la asociación, sin fallos críticos; modificar y repetir si la completan tres o cuatro, o si se repite una confusión en la señal, la explicación, el lugar o el primer paso, y detener la configuración si la completan dos o menos después de una corrección.
-- **Tres semanas.** Mantener la configuración situada si A iguala o supera a C en señales con «Sí» a la primera pregunta, supera a B en más de la mitad de las personas y no aumenta la carga ni la molestia; modificar la relación física si los resultados son mixtos o si el lugar ayuda solo con algunas actividades, y detener la configuración física probada si C iguala o supera a A con menos esfuerzo, o si B da lo mismo que A. Eso obligaría a reformular la relación *phygital*, sin probar que todo soporte físico carece de valor.
+- **Tres semanas.** Mantener la configuración situada si A iguala o supera a C en señales con “Sí” a la primera pregunta, supera a B en más de la mitad de las personas y no aumenta la carga ni la molestia; modificar la relación física si los resultados son mixtos o si el lugar ayuda solo con algunas actividades, y detener la configuración física probada si C iguala o supera a A con menos esfuerzo, o si B da lo mismo que A. Eso obligaría a reformular la relación *phygital*, sin probar que todo soporte físico carece de valor.
 
 Cualquier cambio de umbral se registra antes de ver los resultados.
 
@@ -96,7 +96,7 @@ En la prueba, esa semana no se inició en la app: la pregunta sobre el aviso sí
 
 ## I.4 Consentimiento de la prueba
 
-Es el texto que la persona leyó en la app antes de empezar, vigente desde el 6 de octubre de 2026; para seguir, marcaba la casilla «Acepto participar durante 21 días».
+Es el texto que la persona leyó en la app antes de empezar, vigente desde el 6 de octubre de 2026; para seguir, marcaba la casilla “Acepto participar durante 21 días”.
 
 > Relevo es parte de un proyecto de título de Diseño. Por 21 días lo usas en tu día a día: cada semana te decimos dónde dejar lo que suena y, de vez en cuando, te hacemos preguntas cortas. Guardamos lo que haces en Relevo con un código; tu nombre se guarda aparte. Puedes salir y borrar tus datos cuando quieras.
 
@@ -122,23 +122,23 @@ Es el texto que la persona leyó en la app antes de empezar, vigente desde el 6 
 
 Todas se responden con un toque y se pueden saltar. Se transcriben como las mostraba la app durante la prueba.
 
-**Después de cada señal** («Cuatro preguntas de un toque»):
+**Después de cada señal** (“Cuatro preguntas de un toque”):
 
 1. ¿Notaste el aviso apenas sonó? — Enseguida · Un rato después · No lo noté. Desde el 20 de octubre.
 2. ¿Cómo te cayó el sonido? — Bien · Normal · Mal.
 3. Cuando sonó, ¿supiste qué querías hacer antes de leerlo en la pantalla? — Sí · A medias · No.
 4. ¿Recordaste cómo empezar? — Sí · No.
 
-Después: «¿Qué decidiste?» — Comencé la actividad · La dejé para después · Cambié de idea. Las tres respuestas tienen el mismo tamaño y el mismo color.
+Después: “¿Qué decidiste?” — Comencé la actividad · La dejé para después · Cambié de idea. Las tres respuestas tienen el mismo tamaño y el mismo color.
 
-**Al final de cada semana** («¿Cómo te fue esta semana?»), con una escala de 1 («Nada») a 5 («Mucho»):
+**Al final de cada semana** (“¿Cómo te fue esta semana?”), con una escala de 1 (“Nada”) a 5 (“Mucho”):
 
 1. ¿Te costó preparar Relevo?
 2. ¿Te molestó el sonido?
 3. ¿El sonido tenía que ver con el lugar donde sonó?
 4. ¿Algo más que quieras contarnos? Respuesta abierta.
 
-**Al cierre de los 21 días** («¡Terminaste los 21 días!»):
+**Al cierre de los 21 días** (“¡Terminaste los 21 días!”):
 
 1. ¿Seguirías usando Relevo? — Sí · Tal vez · No.
 2. ¿Qué semana te ayudó más? — Suena donde empiezas · Suena en otro lugar · Suena en el teléfono · Ninguna.
@@ -148,9 +148,9 @@ Después: «¿Qué decidiste?» — Comencé la actividad · La dejé para despu
 
 **En la semana para comparar** (desde el 20 de octubre):
 
-- Antes de empezar, «¿Cómo te fue hasta ahora?»: las tres escalas semanales sobre las semanas anteriores, con el objeto que ya usaba.
-- El día 7, la tarjeta semanal suma «Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…» — Más · Igual · Menos, y «¿Por qué?».
-- El cierre («¡Terminaste la prueba!») tiene siete preguntas:
+- Antes de empezar, “¿Cómo te fue hasta ahora?”: las tres escalas semanales sobre las semanas anteriores, con el objeto que ya usaba.
+- El día 7, la tarjeta semanal suma “Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…” — Más · Igual · Menos, y “¿Por qué?”.
+- El cierre (“¡Terminaste la prueba!”) tiene siete preguntas:
 
 1. ¿Seguirías usando Relevo? — Sí · Tal vez · No.
 
@@ -210,13 +210,13 @@ Las preguntas del cuestionario se nombran por su parte y su número, de A1 a C7,
 
 *Nota.* Elaboración propia. Los supuestos y los objetivos son los del capítulo 10 de la memoria.
 
-**Cuestionario.** Las escalas van de 1 («Nada») a 5 («Mucho»).
+**Cuestionario.** Las escalas van de 1 (“Nada”) a 5 (“Mucho”).
 
-- **A. Semanas con el Tag.** «¿Cómo te fue hasta ahora?» A1. ¿Te costó preparar Relevo? A2. ¿Te molestó el sonido? A3. ¿El sonido tenía que ver con el lugar donde sonó? A4. ¿Algo más que quieras contarnos?
-- **B. Semana con el teléfono.** «¿Cómo te fue esta semana?» B1 a B3, las mismas tres escalas. B4. Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…? Más · Igual · Menos. B5. ¿Por qué? ¿Algo más que quieras contarnos?
-- **C. Cierre de la prueba.** «¡Terminaste la prueba!» C1. ¿Seguirías usando Relevo? Sí · Tal vez · No. C2. ¿Qué te ayudó más a recordar lo que querías hacer? El objeto donde empiezo · El aviso en el teléfono · Los dos por igual · Ninguno. C3. ¿Por qué? C4. Si siguieras usando Relevo, ¿con qué te gustaría que sonara? Un objeto · El teléfono · Me da igual. C5. ¿Qué te molestó? C6. ¿Qué cambiarías? C7. ¿Dónde quedó el objeto la mayor parte del tiempo?
+- **A. Semanas con el Tag.** “¿Cómo te fue hasta ahora?” A1. ¿Te costó preparar Relevo? A2. ¿Te molestó el sonido? A3. ¿El sonido tenía que ver con el lugar donde sonó? A4. ¿Algo más que quieras contarnos?
+- **B. Semana con el teléfono.** “¿Cómo te fue esta semana?” B1 a B3, las mismas tres escalas. B4. Comparado con las semanas anteriores, ¿esta semana te ayudó a recordar lo que querías hacer…? Más · Igual · Menos. B5. ¿Por qué? ¿Algo más que quieras contarnos?
+- **C. Cierre de la prueba.** “¡Terminaste la prueba!” C1. ¿Seguirías usando Relevo? Sí · Tal vez · No. C2. ¿Qué te ayudó más a recordar lo que querías hacer? El objeto donde empiezo · El aviso en el teléfono · Los dos por igual · Ninguno. C3. ¿Por qué? C4. Si siguieras usando Relevo, ¿con qué te gustaría que sonara? Un objeto · El teléfono · Me da igual. C5. ¿Qué te molestó? C6. ¿Qué cambiarías? C7. ¿Dónde quedó el objeto la mayor parte del tiempo?
 
-**Entrevista.** Sigue la guía de los profesores para la entrevista semiestructurada: preguntas abiertas, nunca de sí o no, ordenadas de lo general a lo particular, y una pregunta final proyectiva. Antes de empezar se dice: «Gracias por estas semanas. No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. Puedes saltar cualquier pregunta». Cada pregunta lleva sus repreguntas, para cuando la respuesta queda corta.
+**Entrevista.** Sigue la guía de los profesores para la entrevista semiestructurada: preguntas abiertas, nunca de sí o no, ordenadas de lo general a lo particular, y una pregunta final proyectiva. Antes de empezar se dice: “Gracias por estas semanas. No hay respuestas buenas ni malas: sirve saber qué te pasó, también lo que no funcionó. Puedes saltar cualquier pregunta”. Cada pregunta lleva sus repreguntas, para cuando la respuesta queda corta.
 
 *Introducción*
 
@@ -279,13 +279,13 @@ Al final de la etapa con el teléfono, el 8 de noviembre, las tres personas resp
 | ¿Seguirías usando Relevo? | Sí | Sí | Sí |
 | ¿Dónde quedó el objeto? | En su escritorio | Junto a la guitarra | En el escritorio, junto a la croquera |
 
-*Nota.* Elaboración propia. Escalas de 1 («Nada») a 5 («Mucho»). La primera persona respondió 19 de las 26 preguntas; la segunda, 25, y la tercera, 20.
+*Nota.* Elaboración propia. Escalas de 1 (“Nada”) a 5 (“Mucho”). La primera persona respondió 19 de las 26 preguntas; la segunda, 25, y la tercera, 20.
 
 En la entrevista, las tres contaron que sabían qué querían hacer al sonar, y lo cuentan desde el lugar: el escritorio, la guitarra, la croquera. Con el objeto miraban hacia la actividad; con el teléfono les era más fácil seguir en lo que estaban. Lo que dijo cada una muestra cómo se vivió eso en cada hogar:
 
-- **Primera persona.** Usó Relevo para dibujar y estudiar, con el Tag en su escritorio, y dice que le ayudó a «revivir mi hobby de dibujar». Al sonar sabía qué hacer —«siempre que sonaba sabía que tenía que seguir con la actividad»— y casi siempre empezó. Es la única que dice haber recordado más con el teléfono: le fue «más fácil recordar» con el aviso en el celular, porque era justamente con lo que se distraía. Aun así, preferiría que sonara un objeto. Los días sin uso fueron por olvidar que tenía el recordatorio, y decidía qué hacer según si de verdad estaba distraída o si había pasado a otra cosa que necesitaba su atención.
-- **Segunda persona.** Usó Relevo para tocar guitarra y dejó el Tag junto a ella a propósito: «si lo dejaba en otro lado iba a apagarlo y volver al celu». Con el objeto miraba hacia la guitarra al sonar; con el teléfono, en cambio, «veia el aviso, decia ya voy y seguia viendo el video». Por eso dice que le ayudó más el objeto, pero el pitido terminó molestándole: le preocupaba despertar a quien vivía con ella, que preguntó qué sonaba. Bajó su límite porque el aviso llegaba cuando ya estaba «muy pegado», y después de que un relevo dejó de contar confió menos en dejarlo andando sin revisar. Preferiría que sonara el teléfono, y al objeto le cambiaría el sonido por uno más suave.
-- **Tercera persona.** Usó Relevo para dibujar en su croquera, con el Tag en el escritorio. Cuando ya estaba en el escritorio, la señal le sirvió y dibujó; cuando estaba en la cama, siguió en TikTok, con el Tag o con el teléfono: «si ya estaba en la cama le ponia despues y casi siempre quedaba ahi». Con el teléfono le era más fácil seguir en la aplicación, pero no notó mucha diferencia, porque al final dependía de las ganas de dibujar. Con el tiempo lo usó menos —«a veces ni me acordaba de la app»—, y una vez le sonó en la micro, lejos del Tag, donde no le servía. Preferiría que sonara el teléfono.
+- **Primera persona.** Usó Relevo para dibujar y estudiar, con el Tag en su escritorio, y dice que le ayudó a “revivir mi hobby de dibujar”. Al sonar sabía qué hacer —“siempre que sonaba sabía que tenía que seguir con la actividad”— y casi siempre empezó. Es la única que dice haber recordado más con el teléfono: le fue “más fácil recordar” con el aviso en el celular, porque era justamente con lo que se distraía. Aun así, preferiría que sonara un objeto. Los días sin uso fueron por olvidar que tenía el recordatorio, y decidía qué hacer según si de verdad estaba distraída o si había pasado a otra cosa que necesitaba su atención.
+- **Segunda persona.** Usó Relevo para tocar guitarra y dejó el Tag junto a ella a propósito: “si lo dejaba en otro lado iba a apagarlo y volver al celu”. Con el objeto miraba hacia la guitarra al sonar; con el teléfono, en cambio, “veia el aviso, decia ya voy y seguia viendo el video”. Por eso dice que le ayudó más el objeto, pero el pitido terminó molestándole: le preocupaba despertar a quien vivía con ella, que preguntó qué sonaba. Bajó su límite porque el aviso llegaba cuando ya estaba “muy pegado”, y después de que un relevo dejó de contar confió menos en dejarlo andando sin revisar. Preferiría que sonara el teléfono, y al objeto le cambiaría el sonido por uno más suave.
+- **Tercera persona.** Usó Relevo para dibujar en su croquera, con el Tag en el escritorio. Cuando ya estaba en el escritorio, la señal le sirvió y dibujó; cuando estaba en la cama, siguió en TikTok, con el Tag o con el teléfono: “si ya estaba en la cama le ponia despues y casi siempre quedaba ahi”. Con el teléfono le era más fácil seguir en la aplicación, pero no notó mucha diferencia, porque al final dependía de las ganas de dibujar. Con el tiempo lo usó menos —“a veces ni me acordaba de la app”—, y una vez le sonó en la micro, lejos del Tag, donde no le servía. Preferiría que sonara el teléfono.
 
 En las tres, empezar dependió de las ganas, la hora y el lugar donde estaban, y ninguna habló de obligación ni de culpa. De los seis fallos críticos del protocolo solo apareció uno, en grado leve: la incomodidad frente a otras personas por el sonido.
 
@@ -294,6 +294,12 @@ En las tres, empezar dependió de las ganas, la hora y el lugar donde estaban, y
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Comillas
+
+- **Qué cambió:** las comillas angulares pasan a “ ”.
+- **Cómo estaba antes:** el anexo usaba comillas angulares.
+- **Por qué:** el autor pidió evitarlas en la memoria y sus anexos.
 
 ### 2026-11-24 — Pregunta de investigación vigente
 
