@@ -14,7 +14,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 **Hasta la entrega final:**
 
 1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
-2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
+2. **Nombre del profesor Gallardo:** resuelto el 24 de noviembre. El autor confirmó el de la memoria, «Simón Gallardo» (tarea 8).
 3. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity, con 40 figuras y 4 tablas, cada una en la página de su mención o en la siguiente, en orden (D-186, D-187). Se contrastó con los 17 comentarios del PDF y las notas del 18: lo que quedó abierto espera la respuesta de los profesores (punto 1). El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Seis imágenes reales de las fuentes rellenan los finales cortos; el capítulo 4 termina en una columna casi llena y la continuación de la Tabla 4 ocupa una página.
 4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
 5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
@@ -242,7 +242,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
-- [ ] **Presentación del examen, en revisión del autor.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 33 láminas en 9 min 19 s y 15 de respaldo, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Falta confirmar la versión de la app de la lámina 22, el nombre del profesor Gallardo y la autorización de las fotos de la prueba.
+- [ ] **Presentación del examen, lista para ensayar.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 33 láminas y 15 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): 9 min 39 s, con frases para acortar y respuestas preparadas. Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -250,7 +250,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - la evidencia y sus límites.
 
   Son los puntos que la comisión de julio no entendió. La base es la [presentación del 12 de noviembre](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), en Figma Slides: 25 láminas para 7 a 10 minutos, hechas desde la memoria del 10 de noviembre. Hay que llevarla a 15 minutos y ponerla al día con la memoria final. Si cambia la pregunta, se cambia la lámina 11, que la muestra literal. La lámina 21 ya se corrigió el 18 de noviembre.
-- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase.
+- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase. El [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md) ya responde 21, entre ellas la de iOS; falta la de quiénes fueron las tres personas y cómo llegaron, que solo puede responder el autor.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
@@ -268,7 +268,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
   - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
   - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
   - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
-  - [ ] el nombre del segundo profesor guía. La portada de la memoria y el repositorio dicen «Simón Gallardo», pero sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)). Puede ser el nombre de su cuenta; conviene confirmarlo antes de la entrega;
+  - [x] el nombre del segundo profesor guía: el autor confirmó el 24 de noviembre el de la memoria, «Simón Gallardo». Sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)), quizá por el nombre de su cuenta;
 - [x] **Portada oficial:** ya está en la memoria, según confirmó el autor el 10 de noviembre. logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
@@ -967,6 +967,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Guion del examen y nombre del profesor
+
+- **Qué cambió:** la tarea 7 apunta al guion de la presentación del examen y deja como pendiente el ensayo. El nombre del profesor Gallardo queda resuelto en el punto 2 y en la tarea 8.
+- **Cómo estaba antes:** la tarea 7 pedía confirmar la versión de la app, el nombre del profesor y otro punto que el autor pidió no incluir. El punto 2 pedía confirmar el nombre.
+- **Por qué:** el autor confirmó que la versión de la app es la del repositorio y que el nombre es el de la memoria, y pidió el guion en un documento.
 
 ### 2026-11-24 — Presentación del examen de 10 minutos
 
