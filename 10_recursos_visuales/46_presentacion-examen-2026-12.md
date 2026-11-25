@@ -2,7 +2,7 @@
 
 **Archivo de trabajo:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides, en Borradores de la cuenta del autor.
 **Original sin cambios:** [Relevo — Examen de título (diciembre 2026)](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1). La versión de trabajo es una copia, así que el original queda como estaba.
-**Duración:** 9 min 55 s en 29 láminas, según el [guion](47_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió 10 minutos como máximo.
+**Duración:** 9 min 47 s en 29 láminas, según el [guion](47_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió 10 minutos como máximo.
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Cada cifra, cita y fecha de las láminas se comparó con la memoria y los anexos.
 **Estado:** lista para el ensayo con cronómetro. Lo que se dice está en el guion.
 
@@ -21,52 +21,55 @@ Cada ámbito del marco teórico tiene su lámina: la experiencia del ocio digita
 
 | N.º | Lámina | Inicio | Dura |
 | --- | --- | --- | --- |
-| 1 | Portada | 0:00 | 12 s |
-| 2 | Relevo, en una frase | 0:12 | 17 s |
-| 3 | El ocio digital | 0:29 | 22 s |
-| 4 | Una intención que vuelve tarde | 0:51 | 16 s |
-| 5 | El problema | 1:07 | 20 s |
-| 6 | La intención pierde fuerza durante la sesión | 1:27 | 28 s |
-| 7 | Tres causas | 1:55 | 21 s |
-| 8 | Desafío de diseño | 2:16 | 18 s |
-| 9 | Marco teórico 1: el motivo se pierde mientras se usa | 2:34 | 26 s |
-| 10 | Marco teórico 2: elegir fortalece la motivación | 3:00 | 20 s |
-| 11 | Marco teórico 3: una intención vuelve por dos caminos | 3:20 | 24 s |
-| 12 | Seguir más de lo que se quería es frecuente y pasa en casa | 3:44 | 22 s |
-| 13 | Dos situaciones de uso | 4:06 | 22 s |
-| 14 | Casi todas las herramientas limitan el uso o trabajan en la pantalla | 4:28 | 22 s |
-| 15 | Ocho criterios de diseño, en tres ideas | 4:50 | 19 s |
-| 16 | Pregunta de investigación | 5:09 | 24 s |
-| 17 | Hipótesis | 5:33 | 24 s |
-| 18 | Relevo: una aplicación, un objeto y un lugar | 5:57 | 21 s |
-| 19 | Cómo se usa: los cuatro momentos de un relevo | 6:18 | 22 s |
-| 20 | La aplicación | 6:40 | 21 s |
-| 21 | Identidad | 7:01 | 18 s |
-| 22 | El objeto | 7:19 | 23 s |
-| 23 | Factibilidad en tres etapas | 7:42 | 17 s |
-| 24 | Prueba en los hogares | 7:59 | 23 s |
-| 25 | Con el Tag, el ciclo funcionó en los tres hogares | 8:22 | 20 s |
-| 26 | Con el teléfono recordaron igual | 8:42 | 26 s |
-| 27 | Conclusiones | 9:08 | 23 s |
-| 28 | Aporte y lo que sigue | 9:31 | 20 s |
-| 29 | Gracias | 9:51 | 4 s |
+| 1 | Portada | 0:00 | 16 s |
+| 2 | Relevo, en una frase | 0:16 | 16 s |
+| 3 | De dónde nace el problema | 0:32 | 22 s |
+| 4 | Una intención que vuelve tarde | 0:54 | 18 s |
+| 5 | El problema | 1:12 | 19 s |
+| 6 | La intención pierde fuerza mientras se usa el teléfono | 1:31 | 24 s |
+| 7 | Tres causas | 1:55 | 24 s |
+| 8 | Desafío de diseño | 2:19 | 18 s |
+| 9 | Marco teórico 1: el motivo se pierde mientras se usa | 2:37 | 22 s |
+| 10 | Marco teórico 2: elegir fortalece la motivación | 2:59 | 18 s |
+| 11 | Marco teórico 3: una intención vuelve por dos caminos | 3:17 | 24 s |
+| 12 | Seguir más de lo que se quería es frecuente y pasa en casa | 3:41 | 22 s |
+| 13 | Dos situaciones de uso | 4:03 | 23 s |
+| 14 | Casi todas las herramientas limitan el uso o trabajan en la pantalla | 4:26 | 21 s |
+| 15 | Ocho criterios de diseño, en tres ideas | 4:47 | 18 s |
+| 16 | Pregunta de investigación | 5:05 | 24 s |
+| 17 | Hipótesis | 5:29 | 24 s |
+| 18 | Relevo: una aplicación, un objeto y un lugar | 5:53 | 19 s |
+| 19 | Cómo se usa: los cuatro momentos de un relevo | 6:12 | 23 s |
+| 20 | La aplicación | 6:35 | 18 s |
+| 21 | Identidad | 6:53 | 14 s |
+| 22 | El objeto | 7:07 | 23 s |
+| 23 | Factibilidad en tres etapas | 7:30 | 19 s |
+| 24 | Prueba en los hogares | 7:49 | 24 s |
+| 25 | Con el Tag, el ciclo funcionó en los tres hogares | 8:13 | 22 s |
+| 26 | Con el teléfono recordaron igual | 8:35 | 26 s |
+| 27 | Conclusiones | 9:01 | 22 s |
+| 28 | Aporte y lo que sigue | 9:23 | 19 s |
+| 29 | Gracias | 9:42 | 5 s |
 
 ## Respaldo
 
-Veintiuna láminas, de la 30 a la 50, quedan ocultas al final para las preguntas. El [guion](47_guion-presentacion-examen-2026-12.md) dice qué pregunta responde cada una.
+Veintidós láminas, de la 30 a la 51, quedan ocultas al final para las preguntas. El [guion](47_guion-presentacion-examen-2026-12.md) dice qué pregunta responde cada una.
 
-Qué se ha estudiado y qué se ha probado · Un buen recordatorio tiene señal y mensaje · Idea de diseño · La atención está ocupada · La interfaz sostiene la continuidad · Ocio juzgado con la vara de la productividad · Por qué es un problema de diseño · Objetivos · Método: investigar a través del diseño · De un objeto para dejar el teléfono a un sistema probado en tres hogares · La señal es un sonido · Por dentro: la persona, la aplicación y el Tag · Cambios a partir de la prueba · Reducir el uso no basta como criterio · Bloqueos, límites y pausas · Un lugar o un objeto pueden recordarnos qué hacer · Lo que falta · En Chile, el teléfono es la puerta a internet · Bocetos del objeto: tres formatos y dos variantes · Relevo frente a los referentes · Ética: cuidar a las personas y sus datos.
+El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordatorio tiene señal y mensaje · Idea de diseño · La atención está ocupada · La interfaz sostiene la continuidad · Ocio juzgado con la vara de la productividad · Por qué es un problema de diseño · Objetivos · Método: investigar a través del diseño · De un objeto para dejar el teléfono a un sistema probado en tres hogares · La señal es un sonido · Por dentro: la persona, la aplicación y el Tag · Cambios a partir de la prueba · Reducir el uso no basta como criterio · Bloqueos, límites y pausas · Un lugar o un objeto pueden recordarnos qué hacer · Lo que falta · En Chile, el teléfono es la puerta a internet · Bocetos del objeto: tres formatos y dos variantes · Relevo frente a los referentes · Ética: cuidar a las personas y sus datos.
 
 ## Cambios respecto del original
 
 - **Recorrido:** 29 láminas en cuatro partes: el problema, lo que investigué, la propuesta y la prueba.
-- **Láminas nuevas:** las tres causas en una sola lámina (7), con la cita de Denis Parra, y los antecedentes en otra (30, en el respaldo).
-- **Láminas que entran al recorrido:** el ocio digital, los dos primeros ámbitos del marco teórico y las dos situaciones de uso.
-- **Respaldo:** 21 láminas de detalle, entre ellas las tres causas por separado, los objetivos, el método, la señal, cómo funciona por dentro y los cambios después de la prueba.
-- **Cabeceras y folios:** arriba a la izquierda, la parte; arriba a la derecha, el tema, sin número de capítulo. Folios del 2 al 28 y del 30 al 50, alineados a la derecha.
+- **Un solo sistema de títulos:** en todas las láminas, también las de respaldo, el título va grande y en negro arriba, en el mismo lugar, con una bajada gris debajo cuando hace falta, y el contenido empieza a la misma distancia. Se quitaron los rótulos chicos con puntos de color, las cápsulas dentro del degradado y los indicadores «1 de 3». El ámbito del marco teórico va en la bajada («Primer ámbito: …») y en la cabecera («Marco teórico · 1 de 3»). Los enunciados de las láminas 2, 5, 8, 27 y 28 bajaron a un tamaño menor que el título.
+- **De dónde nace el problema (lámina 3):** la experiencia del autor, la de otras personas y el contexto, con la definición de ocio digital como bajada y la conclusión «Por eso es un problema». Responde a la nota del profesor del 18 de noviembre sobre el planteamiento como universo. «El ocio digital» pasó al respaldo (30).
+- **Datos en simple:** la lámina 6 dice «casi 2 de cada 3 veces» y «la mitad de las veces» junto a los porcentajes, y «21 de 43 personas»; la 12 dice «personas» en cada cifra y aclara que cada total es de quienes respondieron; la 25 explica que las cifras cuentan relevos y respuestas; la 26 dice «Segundos que tardaron en responder» en vez de «mediana».
+- **Láminas nuevas:** de dónde nace el problema (3), las tres causas en una sola lámina (7), con la cita de Denis Parra, y los antecedentes en otra (31, en el respaldo).
+- **Láminas que entran al recorrido:** los dos primeros ámbitos del marco teórico y las dos situaciones de uso.
+- **Respaldo:** 22 láminas de detalle, entre ellas el ocio digital, las tres causas por separado, los objetivos, el método, la señal, cómo funciona por dentro y los cambios después de la prueba. Las láminas 45 y 50 se redujeron un poco para caber con el título nuevo.
+- **Cabeceras y folios:** arriba a la izquierda, la parte; arriba a la derecha, el tema, sin número de capítulo. Folios del 2 al 28 y del 30 al 51, alineados a la derecha.
 - **Notas:** se borraron de todas las láminas a pedido del autor. Lo que se dice está en el [guion](47_guion-presentacion-examen-2026-12.md), con respuestas preparadas para las preguntas.
 - **Textos corregidos según la memoria v8:**
-  - lámina 3: «satisfacer la curiosidad» y «vincularse con otros», como la definición de ocio digital;
+  - respaldo 30: «satisfacer la curiosidad» y «vincularse con otros», como la definición de ocio digital;
   - lámina 5: la segunda frase del problema es la literal de la memoria;
   - lámina 7: las tres causas de la Figura 6 de la memoria, con sus fuentes;
   - lámina 10: la fricción se explica como un esfuerzo extra, como esperar o confirmar;
@@ -75,11 +78,11 @@ Qué se ha estudiado y qué se ha probado · Un buen recordatorio tiene señal y
   - lámina 17: el supuesto Soporte suma «sin más molestia»;
   - lámina 18: la aplicación anota también cómo empieza la actividad;
   - lámina 21: los íconos son 118 propios con las reglas de Lucide;
-  - lámina 22 y respaldo 42: el botón para silenciar es la cara del objeto, no la tapa;
+  - lámina 22 y respaldo 43: el botón para silenciar es la cara del objeto, no la tapa;
   - lámina 23: el título dice «Factibilidad en tres etapas»;
   - lámina 24: el Tag se usó primero y después solo el teléfono;
   - lámina 28: «localizadores de otras marcas» y el paso de repetir la prueba sin sus sesgos;
-  - respaldo: «La interfaz sostiene la continuidad» (34), la inteligencia artificial también ayudó con el modelo 3D (38) y «Cambios a partir de la prueba» (42), porque dos filas aún no están hechas.
+  - respaldo: «La interfaz sostiene la continuidad» (35), la inteligencia artificial también ayudó con el modelo 3D (39) y «Cambios a partir de la prueba» (43), porque dos filas aún no están hechas.
 - **Respaldo corregido:** la figura de los bocetos es la 28 de la memoria. «Relevo frente a los referentes» habla de las cinco piezas del capítulo 8. Cuatro frases de antecedentes ya no afirman más que la memoria.
 - **Diseño afinado:**
   - lámina 2: se repuso el rótulo «Relevo, en una frase», que había desaparecido;
@@ -91,7 +94,7 @@ Qué se ha estudiado y qué se ha probado · Un buen recordatorio tiene señal y
   - lámina 22: la bajada nombra a Relevo Home y Relevo Go como la carcasa propia;
   - lámina 24: las cuatro fechas van abreviadas igual;
   - lámina 26: el título dice «Con el teléfono recordaron igual, pero dos de tres personas respondieron más tarde»;
-  - títulos y textos con líneas equilibradas, sin palabras sueltas al final, y cortes de línea pensados en la lámina 27 y en el respaldo 39.
+  - títulos y textos con líneas equilibradas, sin palabras sueltas al final, y cortes de línea pensados en la lámina 27 y en el respaldo 40 y 41.
 
 ## Pendiente
 
@@ -101,6 +104,12 @@ La versión de la app (4.7.2) y el nombre del profesor (Simón Gallardo, como en
 - **Original:** si el autor aprueba la versión de trabajo, decidir si reemplaza al original o si se presenta desde la copia.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Un sistema de títulos, el origen del problema y datos en simple
+
+- **Qué cambió:** todas las láminas siguen el mismo sistema de títulos: grande y negro arriba, bajada gris debajo cuando hace falta y el contenido a la misma distancia. Se quitaron los rótulos chicos, las cápsulas y los indicadores. La lámina 3 explica de dónde nace el problema y «El ocio digital» pasó al respaldo. Las láminas de datos 6, 12, 25 y 26 se explican en palabras simples. El guion se reescribió en un tono hablado: 9 min 47 s a un ritmo rápido.
+- **Cómo estaba antes:** había títulos grandes en negro y otros chicos en gris, con puntos de color o dentro de una cápsula, a distintas alturas. Las cifras de la lámina 6 no decían qué medían en palabras simples. El guion sonaba escrito.
+- **Por qué:** el autor pidió consistencia en el diseño, no entendía la lámina 6 ni otros datos, quería un guion natural en español de Chile y recordó la nota del profesor sobre de dónde nace el problema.
 
 ### 2026-11-25 — Veintinueve láminas para contar el proyecto
 
