@@ -118,6 +118,20 @@ Es el texto que la persona leyó en la app antes de empezar, vigente desde el 6 
 
 *Nota.* Texto de la pantalla de consentimiento de la app durante la prueba. Donde la app da el correo del investigador, aquí se omite. Después de la prueba, ya sin los 21 días, la app usa un consentimiento actualizado que registra los mismos datos.
 
+Las tres personas aceptaron el consentimiento en la app antes de su primer relevo, y la app guardó cada aceptación con el código de la persona. Al pasar a la etapa con el teléfono, la app mostró el consentimiento actualizado y las tres lo aceptaron (Tabla I4).
+
+**Tabla I4**
+
+*Aceptación del consentimiento, por persona*
+
+| Persona | Consentimiento de la prueba | Consentimiento actualizado, en la etapa con el teléfono |
+| --- | --- | --- |
+| Primera | ✓ | ✓ |
+| Segunda | ✓ | ✓ |
+| Tercera | ✓ | ✓ |
+
+*Nota.* Elaboración propia a partir de los registros de la app. ✓ indica que la persona marcó la casilla de aceptación en la app. Las personas se numeran como en el capítulo 13 de la memoria.
+
 ## I.5 Preguntas de la app
 
 Todas se responden con un toque y se pueden saltar. Se transcriben como las mostraba la app durante la prueba.
@@ -168,9 +182,9 @@ Después: “¿Qué decidiste?” — Comencé la actividad · La dejé para des
 
 ## I.6 Ficha de la sesión inicial
 
-La sesión inicial del protocolo se registra en una plantilla, en uso desde el 25 de septiembre de 2026 y adaptada a una señal solo sonora (Tabla I4).
+La sesión inicial del protocolo se registra en una plantilla, en uso desde el 25 de septiembre de 2026 y adaptada a una señal solo sonora (Tabla I5).
 
-**Tabla I4**
+**Tabla I5**
 
 *Registro de la sesión inicial*
 
@@ -189,9 +203,9 @@ La sesión inicial del protocolo se registra en una plantilla, en uso desde el 2
 
 El cierre recoge lo que cada persona vivió en toda la prueba, y toma unos 25 minutos. Tiene dos partes: un cuestionario de 16 preguntas cortas, las mismas que la app tenía preparadas para la semana de comparación, con sus opciones, y una entrevista semiestructurada de diez preguntas abiertas. Reemplazó a la ficha en papel del 20 de octubre, pensada para tres semanas con el objeto, porque las preguntas de comparación con el teléfono no aparecieron en la app.
 
-Las preguntas del cuestionario se nombran por su parte y su número, de A1 a C7, y las de la entrevista, con una E, de E1 a E10. La Tabla I5 dice qué aspecto recoge cada una.
+Las preguntas del cuestionario se nombran por su parte y su número, de A1 a C7, y las de la entrevista, con una E, de E1 a E10. La Tabla I6 dice qué aspecto recoge cada una.
 
-**Tabla I5**
+**Tabla I6**
 
 *Aspectos que evalúa cada pregunta*
 
@@ -246,9 +260,9 @@ Las preguntas del cuestionario se nombran por su parte y su número, de A1 a C7,
 
 ## I.8 Resultados por persona
 
-Con tres personas, cada caso dice más que una cifra en conjunto. La Tabla I6 reúne, por persona y soporte, lo que respondieron después de cada señal; las semanas con el Tag fueron del 8 al 19 de octubre de 2026, y la etapa con el teléfono, del 21 de octubre al 8 de noviembre.
+Con tres personas, cada caso dice más que una cifra en conjunto. La Tabla I7 reúne, por persona y soporte, lo que respondieron después de cada señal; las semanas con el Tag fueron del 8 al 19 de octubre de 2026, y la etapa con el teléfono, del 21 de octubre al 8 de noviembre.
 
-**Tabla I6**
+**Tabla I7**
 
 *Respuestas después de cada señal, por persona y soporte*
 
@@ -263,9 +277,9 @@ Con tres personas, cada caso dice más que una cifra en conjunto. La Tabla I6 re
 
 *Nota.* Elaboración propia a partir de los registros de la aplicación. Las personas se numeran como en el capítulo 13 de la memoria; no son las de las entrevistas del Anexo A. No se cuentan los relevos eliminados antes de sonar: siete con el Tag y dos con el teléfono. La pregunta sobre el aviso se hizo solo con el teléfono. Una respuesta es la que la persona dio después de una señal; las que quedaron sin responder no se cuentan.
 
-Al final de la etapa con el teléfono, el 8 de noviembre, las tres personas respondieron una encuesta sobre el rediseño de la app. Las tres dijeron que la app nueva era mejor que la anterior, y en las dos preguntas del UMUX-Lite, de 1 a 7, sobre si la app tiene las funciones que necesitan y si es fácil de usar, respondieron 7 y 7, 5 y 6, y 4 y 5. El 10 de noviembre respondieron el cuestionario y la entrevista de cierre; la Tabla I7 reúne sus escalas y sus respuestas cerradas.
+Al final de la etapa con el teléfono, el 8 de noviembre, las tres personas respondieron una encuesta sobre el rediseño de la app. Las tres dijeron que la app nueva era mejor que la anterior, y en las dos preguntas del UMUX-Lite, de 1 a 7, sobre si la app tiene las funciones que necesitan y si es fácil de usar, respondieron 7 y 7, 5 y 6, y 4 y 5. El 10 de noviembre respondieron el cuestionario y la entrevista de cierre; la Tabla I8 reúne sus escalas y sus respuestas cerradas.
 
-**Tabla I7**
+**Tabla I8**
 
 *Cuestionario de cierre, por persona*
 
@@ -294,6 +308,12 @@ En las tres, empezar dependió de las ganas, la hora y el lugar donde estaban, y
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Aceptación del consentimiento
+
+- **Qué cambió:** I.4 suma la Tabla I4, con la aceptación del consentimiento de cada persona marcada con ✓, y un párrafo que la presenta. Las tablas siguientes pasan a ser I5 a I8.
+- **Cómo estaba antes:** I.4 tenía el texto del consentimiento, pero no mostraba que cada persona lo aceptó. La memoria lo decía en el capítulo 13.
+- **Por qué:** después del Pase, los profesores pidieron mostrar en el anexo que las tres personas aceptaron el consentimiento, y dejarlo fuera del cuerpo de la memoria.
 
 ### 2026-11-25 — Comillas
 

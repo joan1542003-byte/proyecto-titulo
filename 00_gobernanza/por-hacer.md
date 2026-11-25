@@ -6,10 +6,12 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Fechas:**
 
-- **Entrega final:** miércoles 2 de diciembre. Conviene entregar el martes 1, como margen.
+- **Entrega final:** martes 1 de diciembre, hasta las 23:59. Los profesores la entregan al coordinador el miércoles 2.
 - **Examen:** lunes 14 y martes 15 de diciembre.
 
 **Dónde se corrige:** la memoria vive en Affinity, en el documento del autor. El [borrador v7](../08_memoria/borrador-memoria-v7-2026-11-11.md) es la copia del PDF del Pase, y el [borrador v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), del 21 de noviembre, ya tiene los comentarios de los profesores y las erratas. Falta pasarlo a Affinity.
+
+**Después del Pase (25 de noviembre):** el autor pasó a examen. El feedback y sus notas están en [feedback del Pase](../01_contexto_y_fuentes/feedback-pase-2026-11-25/README.md), y lo que hay que hacer con cada punto, en la [tarea 18](#18-después-del-pase-memoria-final-presentación-montaje-comisión-y-estudio). La memoria va primero.
 
 **Hasta la entrega final:**
 
@@ -1001,7 +1003,56 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Un ícono adaptado o propio debe pasar `verificar_reglas.py`: las reglas obligatorias de Lucide no se rompen para ganar tamaño.
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
+## 18. Después del Pase: memoria final, presentación, montaje, comisión y estudio
+
+**Estado:** abierta. La memoria va primero, para entregarla el martes 1 de diciembre a las 23:59. **Anotada:** 25 de noviembre de 2026. **Origen:** el feedback del Pase y las notas del autor, reunidos en [feedback del Pase](../01_contexto_y_fuentes/feedback-pase-2026-11-25/README.md). La pauta escrita de los profesores es la [retroalimentación para la memoria](../01_contexto_y_fuentes/feedback-pase-2026-11-25/retroalimentacion-memoria-profesores.md).
+
+### A. Memoria
+
+- [x] **El indicador del objetivo 4** (pauta escrita, prioridad 3). Ahora mide la proporción de respuestas con recuerdo oportuno y la proporción en que la persona empezó la actividad. Los resultados y las conclusiones dan las dos cifras: 19 de 21 y 10 de 21. *Hecho el 25 de noviembre.*
+- [x] **Qué se puede afirmar y qué no** (prioridad 2 y sección 5). El resumen y el abstract lo dicen; las conclusiones ya lo separaban desde la v8. *Hecho el 25 de noviembre.*
+- [x] **Cómo se validará el objeto propio** (prioridad 4). “Alcances y proyecciones” dice qué probar de Relevo: la forma, el sonido y la ubicación. *Hecho el 25 de noviembre.*
+- [x] **El consentimiento, en el anexo** (nota del autor). La Tabla I4 marca con ✓ la aceptación de cada persona, y el cuerpo solo remite al Anexo I. *Hecho el 25 de noviembre.*
+- [x] **La extensión** (prioridad 1 y nota del autor). No cuentan las referencias, el glosario, los anexos, las figuras ni las tablas. Con ese criterio, los capítulos 1 a 14 suman unas 15 300 palabras. El resumen tiene 297 palabras y el abstract, 296, bajo las 300 de la pauta.
+- [ ] **Las fuentes** (prioridad de “Pulido” y nota del autor): contrastar las referencias con sus citas por autor, año, título y DOI. *En curso el 25 de noviembre.*
+- [ ] **El dato puro en el anexo** (nota del autor). El Anexo I tiene los resultados por persona (Tabla I7). Para sumar cada respuesta en una fila hace falta la exportación final de la prueba, del panel o de Supabase, que solo tiene el autor.
+- [ ] **El registro visual** (sección 3). Ya hay bocetos, flujo, arquitectura, capturas, modelos 3D, el proceso de marzo a noviembre (Figura 19) y los cambios de cada iteración (Tabla 4). Si el autor quiere, falta una planimetría acotada de Relevo Home y Go en el Anexo H.
+- [ ] **La hipótesis sugerida** (sección 4) es opcional. La pauta dice que la actual está bien planteada. Si se adopta “Si se diseña Relevo, un sistema phygital…”, cambian también las láminas 14 y 24.
+- [ ] **Componer, revisar página por página** y llevar los cambios al Affinity del autor.
+- [ ] **Entregar** el PDF de menos de 15 MB, con el nombre y la mención (tarea 8).
+
+### B. Presentación del examen
+
+- [ ] Variar la diagramación y animar en Figma. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial.
+- [ ] Presentar las tres definiciones de la portada con el gesto del deslizador.
+- [ ] Condensar la primera parte y dar más espacio a cómo funciona Relevo.
+- [ ] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión.
+- [ ] Sumar una línea de tiempo corta, del objeto del Seminario a Relevo (prioridad 4).
+- [x] Llevar al guion la lámina 24 nueva, con la pregunta y la hipótesis tal cual y lo que se cumplió y lo que no. *Hecho el 25 de noviembre: el guion dura unos 13 min 59 s.*
+- [ ] Ajustar al tiempo. En el Pase se pasó un minuto y medio.
+
+### C. Montaje y demostración
+
+- [ ] Decidir la segunda proyección. La propuesta es el panel en vivo, con un modo de demostración o una grabación como respaldo ([notas del autor](../01_contexto_y_fuentes/feedback-pase-2026-11-25/notas-del-autor.md#montaje-y-demostración)).
+- [ ] Armar una estación con el primer paso de una actividad, el Tag y un celular con Relevo, y preparar un relevo de un minuto para la comisión.
+- [ ] Resolver los riesgos: el Bluetooth, la pila, el tiempo mínimo de la app, internet en la sala y el ruido.
+- [ ] Ensayar el evento completo con un guion de tiempos.
+
+### D. Comisión
+
+- [ ] Armar un documento con el perfil profesional público de Aarón Montoya y Sofía Suazo y su feedback del Seminario, con las preguntas probables. *En curso el 25 de noviembre.* El tercer integrante está por confirmar.
+
+### E. Estudio
+
+- [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Lo pedido en el Pase
+
+- **Qué cambió:** se sumó la tarea 18 con el feedback del Pase, ordenado en memoria, presentación, montaje, comisión y estudio. Arriba, la entrega queda el martes 1 de diciembre a las 23:59, y un párrafo enlaza el feedback y la tarea nueva.
+- **Cómo estaba antes:** la entrega figuraba el miércoles 2, con el martes 1 como margen, y no había tarea para lo pedido en el Pase.
+- **Por qué:** el autor pasó a examen y pidió ordenar todo, subirlo al repositorio y empezar por la memoria.
 
 ### 2026-11-25 — Presentación de 26 láminas
 

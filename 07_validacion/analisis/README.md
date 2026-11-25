@@ -64,9 +64,15 @@ El autor entregó los datos finales de las tres personas, que se guardan solo en
 - **Con el teléfono, del 21 de octubre al 8 de noviembre:** 27 relevos, dos eliminados antes de sonar, 24 señales y 21 respuestas. Recordaron cómo empezar y supieron qué querían hacer en las 21; empezaron en 13, lo dejaron para después en 7 y cambiaron de idea en 1. Notaron el aviso enseguida en 11, tarde en 7 y no lo notaron en 3.
 - **Encuesta del rediseño, 8 de noviembre:** las tres respondieron que la app nueva era mejor.
 
-El detalle por persona está en la Tabla 4 de la memoria y en la Tabla I6 del Anexo I. El cierre de las tres personas se analiza en el [análisis del cierre de la prueba](analisis-cierre-de-la-prueba-2026-11-10.md). Las respuestas de la etapa con el teléfono se separan por la salida de cada relevo (`signal_route`: `tag` o `phone`).
+El detalle por persona está en la Tabla 3 de la memoria y en la Tabla I7 del Anexo I. El cierre de las tres personas se analiza en el [análisis del cierre de la prueba](analisis-cierre-de-la-prueba-2026-11-10.md). Las respuestas de la etapa con el teléfono se separan por la salida de cada relevo (`signal_route`: `tag` o `phone`).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Números de las tablas
+
+- **Qué cambió:** el detalle por persona remite a la Tabla 3 de la memoria y a la Tabla I7 del Anexo I.
+- **Cómo estaba antes:** remitía a la Tabla 4 de la memoria y a la Tabla I6, números de versiones anteriores.
+- **Por qué:** la Tabla I4 nueva, con la aceptación del consentimiento, corrió la numeración del Anexo I, y la Tabla 3 es la de resultados por persona desde la v8.
 
 ### 2026-11-10 — Análisis del cierre
 

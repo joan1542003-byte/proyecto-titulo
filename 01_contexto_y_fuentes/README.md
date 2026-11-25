@@ -18,6 +18,7 @@ Este directorio conserva la procedencia, el estado y las limitaciones de los mat
 - [Auditoría de integridad del corpus](auditoria-integridad-corpus-entrevistas.md): comprueba cobertura, discrepancias y regla de consolidación.
 - [Auditoría visual de DOCX](auditoria-visual-docx.md): registra la revisión visual de los documentos relevantes.
 - [Feedback E15](feedback-e15.md): sintetiza observaciones pertinentes sin convertirlas en decisiones automáticas.
+- [Feedback del Pase (25 de noviembre de 2026)](feedback-pase-2026-11-25/README.md): la pauta escrita de los profesores para la entrega final, el feedback oral, la transcripción de la presentación y las notas del autor ordenadas por tema.
 - [Criterios oficiales para la memoria de Proyecto de Título](criterios-oficiales-memoria-proyecto-titulo.md): consolida estructura, áreas de evaluación y límites documentales verificados en reglamento y pautas institucionales.
 - [Matriz de pase — Proyecto de Título](matriz-de-pase-proyecto-titulo.md): integra las ocho dimensiones de evaluación institucional, su correspondencia documental con Relevo y la autoevaluación de sus 24 subcriterios.
 - [Pauta de contenidos de proyectos](pauta-contenidos-proyectos.md): estructura y extensiones de la pauta de la Escuela, contrastadas con la memoria v5.
@@ -54,6 +55,12 @@ La duración individual de las entrevistas y el texto exacto utilizado para info
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Feedback del Pase
+
+- **Qué cambió:** se enlazó la carpeta con el feedback del Pase.
+- **Cómo estaba antes:** el feedback del Pase no estaba en el repositorio.
+- **Por qué:** el autor pidió ordenar todo el feedback del Pase y subirlo.
 
 ### 2026-11-02 — Fuentes de la memoria
 

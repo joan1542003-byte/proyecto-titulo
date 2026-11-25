@@ -2,7 +2,7 @@
 
 **Qué es:** el texto que el autor dice en cada lámina de la [presentación del examen](48_presentacion-examen-2026-12.md), en primera persona y tal como se dice.  
 **Láminas:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides.  
-**Duración:** Unos 13 min 51 s a 2,7 palabras por segundo, que es el ritmo rápido del autor, con un segundo por cambio de lámina. A 3 palabras por segundo son unos 12 min 28 s. El instructivo del examen da 15 minutos de exposición.  
+**Duración:** Unos 13 min 59 s a 2,7 palabras por segundo, que es el ritmo rápido del autor, con un segundo por cambio de lámina. A 3 palabras por segundo son unos 12 min 35 s. El instructivo del examen da 15 minutos de exposición.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Las cifras, las citas y las fechas salen de ella y de sus anexos.  
 **Para imprimir:** [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 
@@ -133,7 +133,7 @@ Con la notificación en el celular recordaron igual. Pero en 10 de 21 respuestas
 
 ### 24. Qué respondió el proyecto
 
-¿Qué respondió entonces el proyecto? Respondió la pregunta de investigación. La hipótesis era la respuesta que yo esperaba, y la prueba sirvió para ver si se sostiene. A la izquierda está la pregunta, dicha en simple. ¿Una señal desde el lugar de la actividad ayuda a recordarla a tiempo? La respuesta es en parte. Con el Tag casi siempre supieron qué querían hacer y siempre recordaron cómo empezar. Pero no se puede afirmar que el objeto ayude más que el celular, porque con el celular recordaron igual. Tampoco que el lugar sea lo que ayuda, porque el objeto nunca estuvo lejos de la actividad. A la derecha está la hipótesis. Los resultados son compatibles con ella, pero no bastan para probarla. Fueron tres personas, y la etapa con el celular vino siempre después de la del Tag. De sus supuestos, la asociación se cumplió casi siempre y la decisión se cumplió. El soporte se cumplió en parte, porque el sonido del Tag molestó más a quienes estaban cerca.
+¿Qué respondió entonces el proyecto? Respondió la pregunta de investigación. La hipótesis era la respuesta que yo esperaba. Arriba están las dos, tal como las planteé. A la izquierda está la pregunta, y debajo, la respuesta. Casi siempre recordaron a tiempo. Pero no puedo afirmar que eso se deba al Tag, porque con el celular recordaron igual. Tampoco que se deba al lugar, porque el Tag nunca estuvo lejos de la actividad. A la derecha está la hipótesis. Los resultados son compatibles con ella, pero no la prueban. Fueron tres personas, y la etapa con el celular vino siempre después de la del Tag. Abajo están sus tres supuestos y lo que pasó con cada uno. La asociación se cumplió casi siempre. 19 de 21 veces supieron qué hacer antes de mirar la pantalla, y las 21 veces recordaron cómo empezar. La decisión se cumplió. Empezaron, lo dejaron para después o cambiaron de idea, y ninguna persona se sintió obligada. El tercer supuesto es el soporte, o sea, el Tag. Se cumplió en parte. Ayudó a recordar tanto como el celular, pero su sonido molestó más a quienes estaban cerca.
 
 ### 25. Aporte y lo que sigue
 
@@ -242,7 +242,7 @@ En Supabase, una base de datos en internet. Cuando la persona acepta participar,
 ### La prueba
 
 **¿El proyecto respondió la pregunta o la hipótesis?**  
-La pregunta. La hipótesis es la respuesta que yo esperaba, y la prueba sirvió para ver si se sostiene. La respuesta a la pregunta es en parte. Con el Tag casi siempre supieron qué querían hacer y siempre recordaron cómo empezar. Pero no se puede afirmar que el objeto ayude más que el celular, ni que el lugar sea lo que ayuda. La hipótesis queda compatible con los resultados, pero no probada. *(Lámina 24; memoria, capítulo 14.)*
+La pregunta. La hipótesis es la respuesta que yo esperaba, y la prueba sirvió para ver si se sostiene. La respuesta a la pregunta es que casi siempre recordaron a tiempo. Con el Tag, 19 de 21 veces supieron qué querían hacer antes de mirar la pantalla y las 21 veces recordaron cómo empezar. Pero no puedo afirmar que se deba al Tag ni al lugar. La hipótesis queda compatible con los resultados, pero no probada. De sus supuestos, la asociación y la decisión se cumplieron, y el soporte, que es el Tag, se cumplió en parte. *(Lámina 24; memoria, capítulo 14.)*
 
 **¿Qué valor tiene una prueba con tres personas?**  
 La evaluación es formativa: busca encontrar problemas y mejorar el diseño en cada vuelta. Con tres personas los resultados describen casos y no permiten generalizar. Por eso digo que son compatibles con la hipótesis y no que la prueban. *(Memoria, capítulos 10 y 13.)*
@@ -276,6 +276,12 @@ Investigación a través del diseño: diseñar la aplicación y el objeto fue ta
 Durante la prueba agregué editar un relevo activo y callar el Tag con confirmación. Después, el rediseño de la aplicación incorporó nueve cambios que salieron de la prueba, como pasar de once pantallas iniciales a tres, con un primer relevo guiado. *(Respaldo: lámina 40.)*
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — La lámina 24 con la pregunta y la hipótesis tal cual
+
+- **Qué cambió:** la lámina 24 muestra la pregunta y la hipótesis tal cual, la respuesta, el resultado de la hipótesis y los tres supuestos con lo que se cumplió y lo que no. El guion la sigue: dice dónde mirar, por qué no se puede atribuir el recuerdo al Tag ni al lugar, y que el soporte es el Tag. La respuesta preparada sobre la pregunta y la hipótesis dice lo mismo. Dura unos 13 min 59 s a 2,7 palabras por segundo.
+- **Cómo estaba antes:** la lámina 24 decía la pregunta en simple y respondía “en parte”, y los supuestos iban en tres etiquetas cortas.
+- **Por qué:** el autor pidió poner la pregunta y la hipótesis tal cual, dejar claro qué se cumplió y qué no, y recordar que el soporte es el Tag.
 
 ### 2026-11-25 — Veintiséis láminas, el sistema completo y un cierre que dice qué se respondió
 

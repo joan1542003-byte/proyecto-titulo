@@ -8,7 +8,7 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 
 - **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
-- **Estado:** el Word y el PDF se regeneraron el 25 de noviembre de 2026 con los Markdown de esta carpeta, en 135 páginas: el texto del Pase, los primeros conceptos de Relevo (Anexo F), las pantallas de la 4.7.2, los íconos de Lucide de la 4.8.2 y las variantes del logo (Anexo H) y la pregunta de investigación vigente (Anexo I).
+- **Estado:** el Word y el PDF se regeneraron el 25 de noviembre de 2026 con los Markdown de esta carpeta, en 135 páginas: el texto del Pase, los primeros conceptos de Relevo (Anexo F), las pantallas de la 4.7.2, los íconos de Lucide de la 4.8.2 y las variantes del logo (Anexo H) y la pregunta de investigación vigente y la aceptación del consentimiento de cada persona, en la Tabla I4 (Anexo I).
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
@@ -56,6 +56,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Aceptación del consentimiento
+
+- **Qué cambió:** el Anexo I suma la Tabla I4, con la aceptación del consentimiento de cada persona marcada con ✓, y las tablas siguientes pasan a ser I5 a I8. El Word y el PDF se regeneraron, con 135 páginas.
+- **Cómo estaba antes:** el Anexo I tenía el texto del consentimiento, pero no mostraba la aceptación de cada persona.
+- **Por qué:** después del Pase, los profesores pidieron mostrar el consentimiento en el anexo y dejarlo fuera del cuerpo de la memoria.
 
 ### 2026-11-25 — Comillas y el primer estado de un relevo
 

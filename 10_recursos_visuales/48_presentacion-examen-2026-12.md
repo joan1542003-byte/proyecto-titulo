@@ -2,7 +2,7 @@
 
 **Archivo de trabajo:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides, en Borradores de la cuenta del autor.
 **Original sin cambios:** [Relevo — Examen de título (diciembre 2026)](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1). La versión de trabajo es una copia, así que el original queda como estaba.
-**Duración:** unos 13 min 51 s en 26 láminas, según el [guion](49_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 12 min 30 s a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo, después que el guion explicara más y, el 25 de noviembre, menos texto innecesario.  
+**Duración:** unos 13 min 59 s en 26 láminas, según el [guion](49_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 12 min 35 s a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo, después que el guion explicara más y, el 25 de noviembre, menos texto innecesario.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Cada cifra, cita y fecha de las láminas se comparó con la memoria y los anexos.
 **Estado:** lista para el ensayo con cronómetro. Lo que se dice está en el guion.
 
@@ -63,7 +63,7 @@ El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordat
 - **De dónde nace el problema (lámina 2):** la experiencia del autor, la de otras personas y el contexto, en tarjetas cortas. Responde a la nota del profesor del 18 de noviembre sobre el planteamiento como universo. “El ocio digital” pasó al respaldo (27).
 - **Láminas unidas:** el ejemplo en tres momentos y el enunciado del problema van en la lámina 3; la pregunta y la hipótesis, en dos tarjetas de la lámina 14, con los tres supuestos y la definición de recuerdo oportuno; qué es Relevo y sus cuatro pasos (preparar, seguir en el teléfono, oír la señal y decidir), en la lámina 15. El autor quitó “Relevo, en una frase”.
 - **El sistema completo (lámina 16):** seis tarjetas con lo que hace cada parte. Arriba, lo que usa la persona: la persona, la aplicación y el Tag. Abajo, lo que no se ve: la privacidad, Supabase y el panel de la prueba. Las flechas dicen cómo se conectan: “usa”, “Bluetooth”, “internet” y “consulta”. Los textos salen del Anexo G y los íconos son los de la app 4.8.2.
-- **Qué respondió el proyecto (lámina 24):** dos tarjetas como las de la lámina 14. A la izquierda, la pregunta y su respuesta, “En parte”, con lo que se puede afirmar y lo que no. A la derecha, la hipótesis: los resultados son compatibles con ella, pero no bastan para probarla, y sus supuestos quedan así: asociación, casi siempre; decisión, se cumplió; soporte, en parte. La bajada aclara que el proyecto responde la pregunta y que la hipótesis era la respuesta que se esperaba.
+- **Qué respondió el proyecto (lámina 24):** arriba, la pregunta y la hipótesis tal cual, copiadas de la lámina 14. Bajo la pregunta va la respuesta: casi siempre recordaron a tiempo, pero no se puede afirmar que se deba al Tag ni al lugar. Bajo la hipótesis va el resultado: compatible con los resultados, pero no probada, porque fueron tres personas y la etapa con el celular vino siempre después. Abajo, los tres supuestos con su veredicto y un signo. La asociación se cumplió casi siempre (19 de 21 y 21 de 21). La decisión se cumplió. El soporte, que es el Tag, se cumplió en parte: ayudó a recordar tanto como el celular, pero su sonido molestó más a quienes estaban cerca.
 - **Datos en simple:** la lámina 4 dice “sí, 2 de cada 3 veces” y “sí, 1 de cada 2 veces” junto a los porcentajes, y “21 de 43 personas”; la 10 dice “personas” en cada cifra y aclara que cada total es de quienes respondieron; la 22 explica que las cifras cuentan relevos y respuestas; la 23 dice “Segundos que tardaron en responder” en vez de “mediana”.
 - **Láminas nuevas:** de dónde nace el problema (2), las tres causas en una sola lámina (5), con la cita de Denis Parra, el sistema completo (16) y los antecedentes (28, en el respaldo).
 - **Láminas que entran al recorrido:** los dos primeros ámbitos del marco teórico y las dos situaciones de uso.
@@ -107,6 +107,12 @@ La versión de la app (4.7.2 en las capturas de la prueba) y el nombre del profe
 - **Original:** si el autor aprueba la versión de trabajo, decidir si reemplaza al original o si se presenta desde la copia.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — La lámina 24 con la pregunta y la hipótesis tal cual
+
+- **Qué cambió:** la lámina 24 muestra la pregunta y la hipótesis tal cual, la respuesta, el resultado de la hipótesis y los tres supuestos con lo que se cumplió y lo que no. El soporte se nombra como el Tag. El guion la sigue y dura unos 13 min 59 s.
+- **Cómo estaba antes:** la pregunta iba dicha en simple, con la respuesta “En parte”, y los supuestos en tres etiquetas cortas. El guion duraba unos 13 min 51 s.
+- **Por qué:** el autor pidió poner la pregunta y la hipótesis tal cual, dejar claro qué se cumplió y qué no, y recordar que el soporte es el Tag.
 
 ### 2026-11-25 — Veintiséis láminas, el sistema completo y un cierre claro
 
