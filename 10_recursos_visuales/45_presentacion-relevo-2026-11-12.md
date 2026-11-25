@@ -51,11 +51,17 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 ## Pendiente
 
 - Revisión del autor: texto, orden y tiempos.
-- La presentación del examen tiene su registro en el [documento 47](47_presentacion-examen-2026-11-23.md), y su versión de trabajo, una copia de 29 láminas, en el [documento 48](48_presentacion-examen-2026-12.md).
+- La presentación del examen tiene su registro en el [documento 47](47_presentacion-examen-2026-11-23.md), y su versión de trabajo, una copia de 26 láminas, en el [documento 48](48_presentacion-examen-2026-12.md).
 - La presentación del examen, del 14 o 15 de diciembre, es de 15 minutos ([Por hacer, tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)). Esta versión puede ser su base, con una demostración y más detalle del flujo técnico.
 - Las láminas 13 y 17 usan dos fotos de la prueba. Antes de mostrar la presentación hay que confirmar por escrito que las personas autorizan publicarlas (D-140 sigue abierta).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Presentación del examen de 26 láminas
+
+- **Qué cambió:** la referencia a la versión de trabajo del examen dice 26 láminas.
+- **Cómo estaba antes:** decía 29 láminas.
+- **Por qué:** la presentación del examen se redujo el 25 de noviembre.
 
 ### 2026-11-24 — Enlace a la presentación del examen
 

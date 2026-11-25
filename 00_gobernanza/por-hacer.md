@@ -14,7 +14,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 **Hasta la entrega final:**
 
 1. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity: 75 páginas, 39 figuras y 4 tablas. Desde el 25 de noviembre cada figura va en la página de su mención o, a página completa, en la siguiente (D-193), y la memoria no reproduce figuras de otras fuentes (D-194). Revisar con calma las figuras rehechas (Framework, estados, cómo funciona Relevo, flujo y color) y las dos síntesis nuevas de los capítulos 4 y 7.
-   - **En la presentación del examen:** la lámina 21 dice “118 íconos propios” y algunas láminas dicen “tres hogares”; los números de figura de la memoria cambiaron.
+   - **En la presentación del examen:** resuelto el 25 de noviembre. La lámina de identidad dice “Íconos de Lucide, con algunos adaptados y tres propios”, las láminas dicen “tres personas” y las que citan la memoria remiten a las Tablas 3 y 4 y a la Figura 28, que mantienen su número.
 2. **Los tres puntos de fondo de los profesores** (tarea 16, B): aplicados el 25 de noviembre (D-191). El fenómeno se llama *sentido de agencia*; la Formulación abre con la tensión en la decisión y la nueva Figura 16, y el planteamiento abre con el universo del proyecto. La memoria compuesta quedó en 73 páginas y 41 figuras. Falta que el autor lea esos textos.
 3. **Los íconos de la 4.8.2 en la memoria** (tarea 17): aplicados el 25 de noviembre (D-192) en el párrafo «Iconografía», la lámina de identidad, las figuras y el Anexo H. Las pantallas siguen en la 4.7.2, la versión de la prueba.
 4. **Lo que la v8 no resolvió:**
@@ -29,7 +29,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta el examen:**
 
-7. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Desde la noche del 24 de noviembre se trabaja en una copia de 29 láminas del archivo de Figma del 23 de noviembre, con un guion de unos 14 minutos ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)). La versión de 46 láminas en PDF ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)) queda en el archivo original.
+7. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Desde la noche del 24 de noviembre se trabaja en una copia del archivo de Figma del 23 de noviembre. Desde el 25 de noviembre tiene 26 láminas, con el sistema completo y un cierre que dice qué respondió el proyecto, y un guion de unos 14 minutos ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)). La versión de 46 láminas en PDF ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)) queda en el archivo original.
 8. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 9. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
@@ -147,7 +147,7 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
 | 5. Costos y presupuesto | Hecha | — |
 | 6. Semana solo con notificaciones | Cerrada | — |
-| 7. Presentación del examen | En curso: 46 láminas y unos 9 minutos y medio, en Figma y en PDF, sin animaciones; por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 7. Presentación del examen | En curso: 26 láminas y 22 de respaldo en Figma, con un guion de unos 14 minutos; por ensayar (25 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Por hacer | Sin fecha |
 | 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
@@ -243,7 +243,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
-- [ ] **Presentación del examen, lista para ensayar.** El autor pidió primero 10 minutos como máximo y después un guion que explique más; el instructivo da hasta 15 de exposición. La versión de trabajo tiene 29 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md): unos 14 minutos a un ritmo rápido, en un tono hablado y con cada término definido, con frases para acortar y respuestas preparadas. La lámina 3 ya cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
+- [ ] **Presentación del examen, lista para ensayar.** El autor pidió primero 10 minutos como máximo y después un guion que explique más; el instructivo da hasta 15 de exposición. La versión de trabajo tiene 26 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)). Desde el 25 de noviembre explica Relevo en cuatro pasos, muestra el sistema completo con Supabase (lámina 16) y cierra con lo que respondió el proyecto (lámina 24). Lo que se dice está en el [guion](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md): unos 13 min 51 s a un ritmo rápido, en un tono hablado y directo, con cada término definido, frases para acortar y respuestas preparadas. La lámina 2 cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -917,7 +917,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 - [ ] **Marco teórico antes del planteamiento.** Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16). Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
-- [x] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así. La presentación del examen ya lo muestra en su lámina 3 ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)); en la memoria sigue pendiente. *Hecho el 25 de noviembre (D-191): el capítulo 5 abre con la experiencia, las otras personas y el contexto, en párrafos corridos, y después del ejemplo dice por qué es un problema y por qué se formula así.*
+- [x] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así. La presentación del examen ya lo muestra en su lámina 2 ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)); en la memoria sigue pendiente. *Hecho el 25 de noviembre (D-191): el capítulo 5 abre con la experiencia, las otras personas y el contexto, en párrafos corridos, y después del ejemplo dice por qué es un problema y por qué se formula así.*
 - [x] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina. *Hecho el 25 de noviembre (D-191): una pérdida del sentido de agencia, en los capítulos 2, 5 y 10 y en el glosario.*
 - [x] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella. *Hecho el 25 de noviembre (D-191): el capítulo 10 abre con «La tensión en la decisión» y la Figura 16.*
 - [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad. El recuerdo se mide y el comienzo se registra, porque las tres respuestas valen lo mismo (criterio 4); la base son las respuestas, como en la Tabla 3 (respuesta, sección 5.2). Los otros tres objetivos no cambian.
@@ -1002,6 +1002,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Presentación de 26 láminas
+
+- **Qué cambió:** el punto 7 y la tarea 7 describen la presentación de 26 láminas, con el sistema completo y el cierre, y el guion de unos 13 min 51 s. El punto 1 da por resuelto lo que faltaba cambiar en la presentación. La tarea del planteamiento apunta a la lámina 2.
+- **Cómo estaba antes:** decían 29 láminas y unos 14 minutos, la tabla de estado hablaba de 46 láminas, y el punto 1 pedía corregir los íconos y “tres hogares” en la presentación.
+- **Por qué:** revisión de la presentación pedida por el autor el 25 de noviembre.
 
 ### 2026-11-25 — Segunda revisión de la memoria
 

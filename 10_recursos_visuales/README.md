@@ -84,8 +84,8 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
 48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, seis adaptados y tres propios con sus reglas, porque Lucide no los tiene; cómo funcionan los íconos de Lucide, cómo se eligió cada uno, su tamaño óptico medido con la prueba del desenfoque, propuestas de más íconos, con cosas cotidianas de Chile, y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
 49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): cuarenta y seis láminas en Figma Slides para unos 9 minutos y medio, en el orden de la memoria v8 y con su diseño, pensadas para mostrarse y entregarse en PDF, sin animaciones (D-189). Cada lámina dice una sola cosa, con texto legible al proyectar —títulos de 64 px y nada bajo 26 px—, el color como en la memoria y láminas propias para los antecedentes, el marco teórico, las causas, el método, el proceso, la señal, el flujo técnico y la ética. Con su estructura, cómo debe ser una presentación de este tipo y sus fuentes, las anotaciones del autor, sus decisiones, lo pendiente, el [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf), el [guion](presentacion-examen/guion-examen-2026-11-24.md) con el minuto de cada lámina, una [hoja de revisión](presentacion-examen/laminas-2026-11-24-v7.jpg) y el logo fijo. Los [GIF](presentacion-examen/gif/README.md) y el [armador del PDF animado](presentacion-examen/pdf-animado/README.md) quedan como registro. Para el examen reemplaza a la del 12 de noviembre.
-50. [Presentación del examen, versión de trabajo](48_presentacion-examen-2026-12.md): la versión de trabajo del examen desde la noche del 24 de noviembre, en una copia del archivo de Figma de la entrada 49. Tiene 29 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos y una lámina para cada ámbito del marco teórico, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
-51. [Guion de la presentación del examen](49_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 14 minutos a su ritmo rápido, en un tono hablado y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 24 respuestas preparadas. Tiene versiones en [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
+50. [Presentación del examen, versión de trabajo](48_presentacion-examen-2026-12.md): la versión de trabajo del examen desde la noche del 24 de noviembre, en una copia del archivo de Figma de la entrada 49. Tiene 26 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos, una lámina para cada ámbito del marco teórico, el sistema completo y un cierre que dice qué respondió el proyecto, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
+51. [Guion de la presentación del examen](49_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 13 min 51 s a su ritmo rápido, en un tono hablado y directo y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 26 respuestas preparadas. Tiene versiones en [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -115,6 +115,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Presentación de 26 láminas
+
+- **Qué cambió:** las entradas 50 y 51 describen la presentación de 26 láminas, con el sistema completo y el cierre, y el guion más directo, de unos 13 min 51 s.
+- **Cómo estaba antes:** describían 29 láminas y un guion de unos 14 minutos con 24 respuestas preparadas.
+- **Por qué:** revisión de la presentación pedida por el autor el 25 de noviembre.
 
 ### 2026-11-25 — Unión con la rama de los íconos
 
