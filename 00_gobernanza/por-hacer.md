@@ -242,7 +242,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
-- [ ] **Presentación del examen, lista para ensayar.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 33 láminas y 15 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): 9 min 39 s, con frases para acortar y respuestas preparadas. Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
+- [ ] **Presentación del examen, lista para ensayar.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 40 láminas en el orden de la memoria y 9 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): 9 min 50 s a un ritmo rápido, con frases para acortar y respuestas preparadas. Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -967,6 +967,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación en el orden de la memoria
+
+- **Qué cambió:** la tarea 7 describe la presentación de 40 láminas en el orden de la memoria y su guion de 9 min 50 s.
+- **Cómo estaba antes:** decía 33 láminas con 15 de respaldo y 9 min 39 s.
+- **Por qué:** el autor pidió una lámina para cada ámbito del marco teórico y un hilo fiel a la memoria.
 
 ### 2026-11-24 — Guion del examen y nombre del profesor
 

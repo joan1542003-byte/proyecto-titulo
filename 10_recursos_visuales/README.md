@@ -82,8 +82,8 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
-48. [Presentación del examen](46_presentacion-examen-2026-12.md): la versión de 10 minutos del examen de diciembre, en una copia del archivo de Figma. Tiene 33 láminas y 15 de respaldo para las preguntas, sin notas, con los textos verificados contra la memoria v8.
-49. [Guion de la presentación del examen](47_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, literal y con su tiempo, 9 min 39 s en total; frases para acortar, las láminas de respaldo y 21 respuestas preparadas. Tiene versiones en [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
+48. [Presentación del examen](46_presentacion-examen-2026-12.md): la versión de 10 minutos del examen de diciembre, en una copia del archivo de Figma. Tiene 40 láminas en el orden de la memoria, en cuatro partes y con una lámina para cada ámbito del marco teórico, y 9 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
+49. [Guion de la presentación del examen](47_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, literal y con su tiempo, 9 min 50 s en total a su ritmo rápido; frases para acortar, las láminas de respaldo y 21 respuestas preparadas. Tiene versiones en [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -113,6 +113,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación del examen en el orden de la memoria
+
+- **Qué cambió:** las entradas 48 y 49 describen la presentación de 40 láminas en el orden de la memoria y su guion nuevo.
+- **Cómo estaba antes:** decían 33 láminas con 15 de respaldo y un guion de 9 min 39 s.
+- **Por qué:** el autor pidió una lámina para cada ámbito del marco teórico y un hilo fiel a la memoria.
 
 ### 2026-11-24 — Guion de la presentación del examen
 
