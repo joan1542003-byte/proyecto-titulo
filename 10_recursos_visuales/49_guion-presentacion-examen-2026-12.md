@@ -1,10 +1,10 @@
 # Guion de la presentación del examen (diciembre de 2026)
 
-**Qué es:** el texto que el autor dice en cada lámina de la [presentación del examen](46_presentacion-examen-2026-12.md), en primera persona y tal como se dice.  
+**Qué es:** el texto que el autor dice en cada lámina de la [presentación del examen](48_presentacion-examen-2026-12.md), en primera persona y tal como se dice.  
 **Láminas:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides.  
 **Duración:** Unos 14 min 20 s a 2,7 palabras por segundo, que es el ritmo rápido del autor, con un segundo por cambio de lámina. A 3 palabras por segundo son unos 12 min 55 s. El instructivo del examen da 15 minutos de exposición.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Las cifras, las citas y las fechas salen de ella y de sus anexos.  
-**Para imprimir:** [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
+**Para imprimir:** [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 
 ## Cómo usarlo
 

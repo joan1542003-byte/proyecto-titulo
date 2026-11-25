@@ -2,6 +2,8 @@
 
 **Fecha:** 6 de noviembre de 2026. **Decisión:** [D-162](../09_decisiones/registro-de-decisiones.md). **Rama:** `iconos-propios`, sobre la 4.4. **Imagen:** [antes y después](iconos-2026-11-06/antes-y-despues.png). **Datos:** [los 11 íconos en JSON](iconos-2026-11-06/iconos-d162.json), con su porqué. **Fundamento general:** [documento 43](43_por-que-iconos-propios-2026-11-06.md).
 
+**Actualización del 22 de noviembre de 2026 (D-187):** desde la app 4.8, los dibujos de este documento se reemplazaron por los de Lucide o por los adaptados con sus reglas ([documento 46](46_iconos-desde-lucide-2026-11-22.md)). Las cinco reglas de abajo siguieron sirviendo para elegir entre los íconos de Lucide.
+
 ## Qué pide la app
 
 Antes de dibujar se contó qué íconos usa la app 4.4, dónde y a qué tamaño, leyendo el código:
@@ -84,6 +86,12 @@ Hou, G. y Pan, Y. (2025). What's behind the graphic? The impact of pictogram-sem
 Shen, Z., Xue, C. y Wang, H. (2018). Effects of users' familiarity with the objects depicted in icons on the cognitive performance of icon identification. *i-Perception, 9*(3), Artículo 2041669518780807. https://doi.org/10.1177/2041669518780807
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-22 — Los íconos pasan a Lucide
+
+- **Qué cambió:** una nota al comienzo dice que los dibujos se reemplazaron por los de Lucide (D-187) y que las cinco reglas siguen vigentes.
+- **Cómo estaba antes:** los once íconos de este documento eran los de la app.
+- **Por qué:** el autor propuso usar los íconos de Lucide y dibujar solo lo que Lucide no tiene.
 
 ### 2026-11-06 — Lucide
 

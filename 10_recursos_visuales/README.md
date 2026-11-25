@@ -1,6 +1,6 @@
 # Investigación visual de Relevo
 
-**La marca, en un solo documento:** [La marca Relevo](42_marca-relevo-2026-10-25.md) reúne la identidad vigente con su fundamento y la voz. **Las decisiones de diseño, explicadas y verificadas contra el código y las fuentes:** [documento 43](43_decisiones-de-diseno-2026-11-02.md). **Estado al 24 de octubre de 2026:** la identidad vigente es la aprobada en octubre: «Relevo con aura» (D-121 y D-122), los 72 íconos propios y la paleta 2 (D-124), el logo de cuatro luces (D-125 y D-127) y los cielos de las actividades (D-126). La app la aplica desde la 3.0 (D-128 a D-131), y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) la documenta con su fundamento. Del 16 de septiembre se mantienen el nombre, el descriptor y la frase.
+**La marca, en un solo documento:** [La marca Relevo](42_marca-relevo-2026-10-25.md) reúne la identidad vigente con su fundamento y la voz. **Las decisiones de diseño, explicadas y verificadas contra el código y las fuentes:** [documento 43](43_decisiones-de-diseno-2026-11-02.md). **Estado al 24 de octubre de 2026:** la identidad vigente es la aprobada en octubre: «Relevo con aura» (D-121 y D-122), los íconos —propios desde D-124 y de Lucide desde la app 4.8 (D-187)— y la paleta 2 (D-124), el logo de cuatro luces (D-125 y D-127) y los cielos de las actividades (D-126). La app la aplica desde la 3.0 (D-128 a D-131), y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) la documenta con su fundamento. Del 16 de septiembre se mantienen el nombre, el descriptor y la frase.
 
 **Historia hasta el 1 de octubre:** sistema de marca del 16 de septiembre, con la propuesta [«Vuelve a lo que querías hacer»](21_marca-relevo-a-tiempo-2026-09-25.md) del 25 de septiembre pendiente de la decisión del autor ([D-073](../09_decisiones/registro-de-decisiones.md)). Su [manual](marca-a-tiempo/lamina-relevo-a-tiempo-2026-09-25.html) reúne una estrategia en palabras simples, el renglón con dos voces (tinta para Relevo, azul pasta para lo que escribe la persona), el logotipo «relevo» en Schibsted Grotesk, una paleta sin luz (D-070), fotografía, voz y aplicaciones. D-067 a D-072 se conservan como antecedentes. A pedido del autor, la app lo aplica desde Android 2.8, con fotografías tratadas con su receta; desde 2.9 suma vidrio, cápsulas y emoji, que reemplazan en la app algunas reglas del manual (D-083), y desde 2.10 escribe los rótulos sin mayúsculas (D-084) ([detalle](../06_desarrollo_y_factibilidad/app-android/version-2.8-rediseno-perfil-y-ruta-2026-09-26.md)). El 27 de septiembre se propuso un [sistema de marca 2.0 en Figma](22_sistema-de-marca-2.0-figma-2026-09-27.md) que reúne D-073 con esos cambios, pendiente de aprobación del autor (D-085). El 30 de septiembre, después de la corrección cruzada, se propuso [una sola identidad alrededor del subrayado azul](25_identidad-el-subrayado-2026-09-30.md) para la presentación, la app y el objeto, con íconos nuevos (D-098, decidida en parte). El 1 de octubre se desarrolló como [sistema de diseño 3.0](26_sistema-de-diseno-3.0-2026-10-01.md), publicado en el tipo Design System de claude.ai, con tokens, 43 componentes, 124 recursos y libro de marca.
 
@@ -82,8 +82,10 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
-48. [Presentación del examen](46_presentacion-examen-2026-12.md): la versión de 10 minutos del examen de diciembre, en una copia del archivo de Figma. Tiene 29 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos y una lámina para cada ámbito del marco teórico, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
-49. [Guion de la presentación del examen](47_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 14 minutos a su ritmo rápido, en un tono hablado y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 24 respuestas preparadas. Tiene versiones en [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
+48. [Íconos desde Lucide](46_iconos-desde-lucide-2026-11-22.md): desde la app 4.8, los íconos salen de Lucide. Son 109 tal cual, seis adaptados y tres propios con sus reglas, porque Lucide no los tiene; cómo funcionan los íconos de Lucide, cómo se eligió cada uno, su tamaño óptico medido con la prueba del desenfoque, propuestas de más íconos, con cosas cotidianas de Chile, y lo que arrastra el cambio (D-187). La fuente está en la [carpeta iconos-lucide](iconos-lucide/README.md).
+49. [Presentación del examen](47_presentacion-examen-2026-11-23.md): cuarenta y seis láminas en Figma Slides para unos 9 minutos y medio, en el orden de la memoria v8 y con su diseño, pensadas para mostrarse y entregarse en PDF, sin animaciones (D-189). Cada lámina dice una sola cosa, con texto legible al proyectar —títulos de 64 px y nada bajo 26 px—, el color como en la memoria y láminas propias para los antecedentes, el marco teórico, las causas, el método, el proceso, la señal, el flujo técnico y la ética. Con su estructura, cómo debe ser una presentación de este tipo y sus fuentes, las anotaciones del autor, sus decisiones, lo pendiente, el [PDF de revisión](presentacion-examen/relevo-presentacion-examen-2026-11-24.pdf), el [guion](presentacion-examen/guion-examen-2026-11-24.md) con el minuto de cada lámina, una [hoja de revisión](presentacion-examen/laminas-2026-11-24-v7.jpg) y el logo fijo. Los [GIF](presentacion-examen/gif/README.md) y el [armador del PDF animado](presentacion-examen/pdf-animado/README.md) quedan como registro. Para el examen reemplaza a la del 12 de noviembre.
+50. [Presentación del examen, versión de trabajo](48_presentacion-examen-2026-12.md): la versión de trabajo del examen desde la noche del 24 de noviembre, en una copia del archivo de Figma de la entrada 49. Tiene 29 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos y una lámina para cada ámbito del marco teórico, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
+51. [Guion de la presentación del examen](49_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 14 minutos a su ritmo rápido, en un tono hablado y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 24 respuestas preparadas. Tiene versiones en [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -113,6 +115,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Unión con la rama de los íconos
+
+- **Qué cambió:** el índice reúne lo de `main` y lo de la rama `iconos-lucide`. Las entradas 48 y 49 son los íconos desde Lucide y la presentación del 23 de noviembre. La versión de trabajo de la presentación y su guion pasan a los documentos 48 y 49, en las entradas 50 y 51.
+- **Cómo estaba antes:** las dos ramas usaban los números 46 y 47, y las entradas 48 y 49, para documentos distintos.
+- **Por qué:** el autor pidió traer a `main` lo de esa rama. Se renumeraron los documentos más nuevos.
 
 ### 2026-11-25 — Guion más explicado
 
@@ -149,6 +157,96 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 - **Qué cambió:** se sumó el documento 46, con la versión de 10 minutos de la presentación del examen.
 - **Cómo estaba antes:** el índice terminaba en la presentación del 12 de noviembre.
 - **Por qué:** el autor pidió dejar perfecta la presentación del examen, de 10 minutos como máximo.
+
+### 2026-11-24 — Presentación perfeccionada
+
+- **Qué cambió:** la entrada 49 describe la novena versión de la presentación: 46 láminas, legible, sin animaciones, con su PDF de revisión y su guion.
+- **Cómo estaba antes:** describía 41 láminas con GIF y el armador del PDF animado.
+- **Por qué:** el autor canceló los GIF y pidió perfeccionar la presentación en PDF.
+
+### 2026-11-24 — PDF animado
+
+- **Qué cambió:** la entrada 49 enlaza el armador del PDF con los GIF animados y la nueva hoja de revisión.
+- **Cómo estaba antes:** enlazaba la hoja de la séptima versión y no había forma de animar el PDF.
+- **Por qué:** el autor preguntó si había forma de poner los GIF en el PDF.
+
+### 2026-11-24 — Seis GIF en la presentación
+
+- **Qué cambió:** la entrada 49 enlaza los seis GIF que quedan en la presentación, con sus cuadros fijos.
+- **Cómo estaba antes:** enlazaba nueve GIF.
+- **Por qué:** el autor pidió quitar los GIF del libro y del libro en la cómoda.
+
+### 2026-11-24 — Los GIF de la presentación
+
+- **Qué cambió:** la entrada 49 enlaza la carpeta con los nueve GIF de la presentación.
+- **Cómo estaba antes:** los GIF estaban solo en Figma.
+- **Por qué:** el autor pidió tenerlos aparte, con su enlace de descarga y su lámina.
+
+### 2026-11-24 — Presentación con el color de la memoria
+
+- **Qué cambió:** la entrada 49 describe el color de la presentación, que ahora sigue a la memoria, y enlaza la nueva hoja de revisión.
+- **Cómo estaba antes:** hablaba de una luz suave y de fichas con un degradado leve, con la hoja de la sexta versión.
+- **Por qué:** el autor pidió no abusar de los fondos de color y seguir la app y el diseño de la memoria.
+
+### 2026-11-24 — Presentación con acentos de color
+
+- **Qué cambió:** la entrada 49 describe los acentos de color de la presentación y enlaza la nueva hoja de revisión.
+- **Cómo estaba antes:** decía que el color estaba solo en detalles, con la hoja de la quinta versión.
+- **Por qué:** el autor pidió acentos de color y degradados sutiles, cada uno con su significado.
+
+### 2026-11-24 — Presentación con el color en detalles
+
+- **Qué cambió:** la entrada 49 dice que el color de la presentación está solo en detalles y enlaza la nueva hoja de revisión.
+- **Cómo estaba antes:** hablaba de fondos y paneles en el color de lo que muestran, con la hoja de la cuarta versión.
+- **Por qué:** el autor pidió no abusar del color y usarlo en toques.
+
+### 2026-11-24 — Presentación rediseñada
+
+- **Qué cambió:** la entrada 49 describe la presentación rediseñada, de 41 láminas, y enlaza el generador de fondos y la nueva hoja de revisión.
+- **Cómo estaba antes:** describía la versión de 37 láminas para unos 10 minutos, con la hoja de revisión anterior.
+- **Por qué:** el autor pidió menos texto, más imágenes y color, y láminas propias para algunas ideas.
+
+### 2026-11-24 — Presentación de 37 láminas
+
+- **Qué cambió:** la entrada 49 describe la presentación del 24 de noviembre y enlaza su nueva hoja de revisión.
+- **Cómo estaba antes:** describía la versión de 26 láminas para 8 minutos.
+- **Por qué:** el autor pidió resolver sus anotaciones, usar el logo y las animaciones nuevas y completar los fundamentos.
+
+### 2026-11-23 — Presentación con la app 4.8.2
+
+- **Qué cambió:** la entrada 49 menciona las capturas y el GIF de la app 4.8.2.
+- **Cómo estaba antes:** no las mencionaba, porque la presentación usaba capturas de la 4.7.2.
+- **Por qué:** el autor subió capturas y GIF de la 4.8.2 y pidió menos texto en las láminas.
+
+### 2026-11-23 — Presentación del examen
+
+- **Qué cambió:** se suma la entrada 49, con la presentación del examen y su hoja de revisión.
+- **Cómo estaba antes:** la última presentación del índice era la del 12 de noviembre (entrada 47).
+- **Por qué:** el autor pidió la presentación del examen desde la memoria y después la corrigió: títulos directos, íconos nuevos, degradados de la memoria y su orden.
+
+### 2026-11-22 — Propuestas de más íconos
+
+- **Qué cambió:** la entrada del documento 46 menciona las propuestas de más íconos.
+- **Cómo estaba antes:** terminaba en el tamaño óptico y lo que arrastra el cambio.
+- **Por qué:** el autor preguntó si quedaban íconos por hacer y propuso sumar cosas cotidianas de Chile.
+
+### 2026-11-22 — Reglas de Lucide
+
+- **Qué cambió:** la entrada del documento 46 menciona su sección sobre cómo funcionan los íconos de Lucide.
+- **Cómo estaba antes:** mencionaba la elección de cada ícono, el tamaño óptico y lo que arrastra el cambio.
+- **Por qué:** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
+
+### 2026-11-22 — Tamaño óptico
+
+- **Qué cambió:** la entrada del documento 46 cuenta seis adaptados y tres propios, y menciona el tamaño óptico.
+- **Cómo estaba antes:** contaba cinco adaptados y cuatro propios.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
+
+### 2026-11-22 — Íconos desde Lucide
+
+- **Qué cambió:** se suma el documento 46 y la carpeta `iconos-lucide`; el estado dice que los íconos son de Lucide desde la app 4.8.
+- **Cómo estaba antes:** el índice terminaba en la presentación y decía «los 72 íconos propios».
+- **Por qué:** el autor propuso usar los íconos de Lucide y dibujar solo lo que Lucide no tiene (D-187).
 
 ### 2026-11-12 — Presentación rehecha con la marca
 

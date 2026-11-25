@@ -51,7 +51,7 @@ Con una clave, solo esa figura, por ejemplo `python3 construir-figuras.py sistem
 
 - **Qué cambió:** la memoria suma seis figuras con imágenes de las fuentes y del objeto, y las figuras se renumeraron por su primera mención. Las siete de esta carpeta son ahora las Figuras 8, 16, 17, 22, 30, 34 y 40.
 - **Cómo estaba antes:** eran las Figuras 6, 13, 14, 18, 26, 30 y 34.
-- **Por qué:** el autor pidió rellenar con imágenes reales los capítulos que terminaban en una columna corta (D-187).
+- **Por qué:** el autor pidió rellenar con imágenes reales los capítulos que terminaban en una columna corta (D-190).
 
 ### 2026-11-21 — Más claras y con un orden de lectura evidente
 

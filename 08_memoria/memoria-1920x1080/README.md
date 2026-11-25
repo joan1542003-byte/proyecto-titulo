@@ -38,9 +38,9 @@ El 28 de octubre de 2026, tras la revisión con los profesores, el autor pidió 
 | Orden de lectura | Como en una página doble: el texto llena cada columna y sigue hacia el lado. Sobre una pieza, el texto ocupa al menos siete líneas y media por columna; si no caben, la página queda para la pieza. Un subtítulo no queda solo al pie de una columna. |
 | Figuras de dos columnas | El mapa de la Figura 10 y las fotos, capturas y bocetos de las Figuras 14, 16, 19, 20, 21 y 23 ocupan dos columnas a la derecha, junto a la columna de texto que las menciona (marca `(doble)` o `<!-- doble -->` en la v6). En la v8: las Figuras 8, 11, 13, 16, 20, 21, 24, 27, 28, 29, 30 y 32. Una figura doble puede ir al pie de las otras dos columnas, también en la página que abre un capítulo: el panel conserva su columna entera. |
 | Figuras de una columna (v8) | Las Figuras 2 a 6, 9, 10, 12, 15, 17, 18, 36, 37, 38 y 40, junto a la columna que las menciona (marca `(columna)` o `<!-- columna -->`). La cronología (Figura 15) se dibuja de arriba abajo, con un punto por hito; las cifras de la Figura 8, en lista. Dos figuras chicas pueden compartir una columna si caben. |
-| Imágenes de las fuentes (v8, desde D-187) | Seis figuras con imágenes reales de las fuentes citadas y del objeto (Figuras 1, 7, 14, 19, 37 y 39), en `../figuras/fuentes/`. Las que llevan `<!-- cola -->` van bajo la última columna de texto de su capítulo, cuando esa columna quedó corta, sin mover el texto; `<!-- cola 60 -->` limita el alto de la imagen a 60 mm de composición. |
-| Índices (desde D-187) | El índice general tiene más margen dentro de sus cajas, a ambos lados. El índice de tablas y figuras va solo con texto, sin cajas, con el espaciado de una lista (pedido de Majluf). |
-| Esquemas (v8, desde D-187) | Sin fichas ni reglas de tabla: cada grupo lleva un punto de color, su título, una bajada y sus elementos. Las secuencias (problema, recorrido, etapas y atención) llevan número y flechas. La matriz de dos por dos tiene ejes con nombre y extremos. Una coma dentro de una frase o de una cita ya no parte un elemento en dos. |
+| Imágenes de las fuentes (v8, desde D-190) | Seis figuras con imágenes reales de las fuentes citadas y del objeto (Figuras 1, 7, 14, 19, 37 y 39), en `../figuras/fuentes/`. Las que llevan `<!-- cola -->` van bajo la última columna de texto de su capítulo, cuando esa columna quedó corta, sin mover el texto; `<!-- cola 60 -->` limita el alto de la imagen a 60 mm de composición. |
+| Índices (desde D-190) | El índice general tiene más margen dentro de sus cajas, a ambos lados. El índice de tablas y figuras va solo con texto, sin cajas, con el espaciado de una lista (pedido de Majluf). |
+| Esquemas (v8, desde D-190) | Sin fichas ni reglas de tabla: cada grupo lleva un punto de color, su título, una bajada y sus elementos. Las secuencias (problema, recorrido, etapas y atención) llevan número y flechas. La matriz de dos por dos tiene ejes con nombre y extremos. Una coma dentro de una frase o de una cita ya no parte un elemento en dos. |
 | Figuras dibujadas aparte (v8) | Las siete de [`../figuras/v8/`](../figuras/v8/README.md) se colocan en SVG, al ancho con que se diseñaron, que es su ancho en la página: su letra queda como la de las demás figuras (20,6 pt). |
 | Degradados (v8) | Sutiles, como los de la app: tres tonos vecinos de cada papel en las superficies de color, y del papel al tono intenso en las barras de las cifras, el gráfico de barras y los puntos de resultados. Cada grupo del gráfico de barras lleva el color de lo que mide: lugar, sonido o personas. Se imprimen como vectores. |
 | Figuras de una columna | Los esquemas breves (Figuras 1 a 5, 8 y 10) van en su propia columna, a la derecha y desde arriba, junto al texto que los menciona: el texto nunca sigue debajo de una figura en la misma columna. |
@@ -105,13 +105,19 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 - **Qué cambió:** el generador pone una figura bajo la última columna de texto de su capítulo (`<!-- cola -->`) y cuenta como casi vacía una página sin texto con una sola figura chica; seis imágenes reales rellenan los finales cortos; el índice general tiene más margen en sus cajas y el de tablas y figuras va sin cajas.
 - **Cómo estaba antes:** cinco capítulos y el glosario terminaban en una columna corta; las cajas del índice general tenían poco margen a la izquierda y el índice de tablas y figuras apretaba sus filas en cajas blancas.
-- **Por qué:** el autor pidió que ninguna página quede con una columna diminuta de texto y rellenar con imágenes reales; Majluf pidió más margen y un índice de tablas y figuras sin cajas (D-187).
+- **Por qué:** el autor pidió que ninguna página quede con una columna diminuta de texto y rellenar con imágenes reales; Majluf pidió más margen y un índice de tablas y figuras sin cajas (D-190).
+
+### 2026-11-24 — D-190
+
+- **Qué cambió:** la decisión de las figuras claras y en orden, esquemas sin fichas y menos comas se cita como D-190.
+- **Cómo estaba antes:** se citaba como D-187, el mismo número que la rama `iconos-lucide` usa para los íconos de Lucide.
+- **Por qué:** al unir `main` con la rama, los dos D-187 chocaban; se renumeró el que tenía menos referencias y ninguna en el código de la app.
 
 ### 2026-11-24 — Esquemas sin fichas, figuras en orden y paneles completos
 
 - **Qué cambió:** los esquemas dejan las fichas con reglas de tabla y usan puntos de color, números y flechas en las secuencias; la matriz de dos por dos lleva ejes con nombre; una coma dentro de una cita ya no parte un elemento (Figuras 10 y 21). Las aperturas conservan su panel completo: una figura doble puede ir al pie de las otras dos columnas. Las Figuras 8 (en lista), 9 y 16 cambian de ancho para quedar junto a su mención y en orden. Dos figuras chicas pueden compartir una columna, y una página sin texto con una sola figura chica cuenta como casi vacía. En dos columnas, el gráfico de barras lleva los dos primeros grupos a la izquierda.
 - **Cómo estaba antes:** los esquemas eran fichas blancas con filas separadas por líneas, algunas aperturas tenían el panel acortado y, con el texto nuevo, dos figuras quedaban dos páginas después de su mención.
-- **Por qué:** el autor pidió figuras claras, ordenadas y con un orden de lectura evidente, y paneles completos como el de Introducción (D-187).
+- **Por qué:** el autor pidió figuras claras, ordenadas y con un orden de lectura evidente, y paneles completos como el de Introducción (D-190).
 
 ### 2026-11-21 — La v8, con las figuras junto a su mención
 

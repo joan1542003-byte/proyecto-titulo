@@ -1,924 +1,1100 @@
 package com.example.relevo.ui.components
 
-// Generado a partir de 10_recursos_visuales/marca-a-tiempo/iconos (kit D-073): 97 iconos
-// en retícula de 24, trazo redondeado. Desde la 4.0 se agregan a mano los que faltan, con su SVG en el kit.
+// Generado por 10_recursos_visuales/iconos-lucide/generar_kiticons.py desde mapeo.json (D-187).
+// Los íconos salen de Lucide 1.70.0 (https://lucide.dev), tal cual, adaptados o dibujados
+// con sus reglas cuando Lucide no tiene lo que la persona hace. Retícula de 24, trazo redondeado; el grosor
+// lo pone la app según el tamaño (D-124). No se edita a mano: se cambia mapeo.json o un SVG y se vuelve a generar.
+//
+// Lucide: ISC License, Copyright (c) 2026 Lucide Icons and Contributors. Los íconos que vienen de Feather
+// tienen además la MIT License, Copyright (c) 2013-present Cole Bemis. El texto completo de ambas está en
+// app/licenses/LUCIDE_LICENSE.md y en app/src/main/assets/licencias/LUCIDE_LICENSE.txt.
 
 internal enum class KitFill { NONE, INK, PAPER }
 
 internal class KitShape(val pathData: String, val stroke: Boolean, val fill: KitFill)
 
-/** Iconos propios de Relevo. [label] es su nombre accesible; en pantalla siempre van con una palabra. */
+/** Íconos de Relevo (D-187): de Lucide, adaptados o propios. [label] es su nombre accesible; en pantalla siempre van con una palabra. */
 enum class KitIcon(val label: String, internal val shapes: List<KitShape>) {
+  /** Lucide «accessibility». */
   ACCESIBILIDAD(
     "Accesibilidad",
     listOf(
-      KitShape("M3.25 12A8.75 8.75 0 1 0 20.75 12A8.75 8.75 0 1 0 3.25 12Z", true, KitFill.NONE),
-      KitShape("M10.9 7.75A1.1 1.1 0 1 0 13.1 7.75A1.1 1.1 0 1 0 10.9 7.75Z", false, KitFill.INK),
-      KitShape("M7.75 10.25H16.25", true, KitFill.NONE),
-      KitShape("M12 10.25V13.25L9.75 17.25M12 13.25L14.25 17.25", true, KitFill.NONE),
+      KitShape("M15 4A1 1 0 1 0 17 4A1 1 0 1 0 15 4Z", true, KitFill.NONE),
+      KitShape("m18 19 1 -7 -6 1", true, KitFill.NONE),
+      KitShape("m5 8 3 -3 5.5 3 -2.36 3.5", true, KitFill.NONE),
+      KitShape("M4.24 14.5a5 5 0 0 0 6.88 6", true, KitFill.NONE),
+      KitShape("M13.76 17.5a5 5 0 0 0 -6.88 -6", true, KitFill.NONE),
     ),
   ),
-  /** D-162: formas de base: una actividad cualquiera, sin el lápiz de Editar. */
+  /** Lucide «shapes». Las formas de base: una actividad cualquiera (D-162). */
   ACTIVIDAD(
     "Actividad",
     listOf(
-      KitShape("M12 3.5L16 10.5H8Z", true, KitFill.NONE),
-      KitShape("M5 13.5H9A1.5 1.5 0 0 1 10.5 15V19A1.5 1.5 0 0 1 9 20.5H5A1.5 1.5 0 0 1 3.5 19V15A1.5 1.5 0 0 1 5 13.5Z", true, KitFill.NONE),
-      KitShape("M13.5 17A3.5 3.5 0 1 0 20.5 17A3.5 3.5 0 1 0 13.5 17Z", true, KitFill.NONE),
+      KitShape("M8.3 10a0.7 0.7 0 0 1 -0.626 -1.079L11.4 3a0.7 0.7 0 0 1 1.198 -0.043L16.3 8.9a0.7 0.7 0 0 1 -0.572 1.1Z", true, KitFill.NONE),
+      KitShape("M4 14H9A1 1 0 0 1 10 15V20A1 1 0 0 1 9 21H4A1 1 0 0 1 3 20V15A1 1 0 0 1 4 14Z", true, KitFill.NONE),
+      KitShape("M14 17.5A3.5 3.5 0 1 0 21 17.5A3.5 3.5 0 1 0 14 17.5Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «triangle-alert». */
   ADVERTENCIA(
     "Advertencia",
     listOf(
-      KitShape("M10.3 4.6a2 2 0 0 1 3.4 0l7.5 12.9a2 2 0 0 1-1.7 3H4.5a2 2 0 0 1-1.7-3z", true, KitFill.NONE),
-      KitShape("M12 9.6v4", true, KitFill.NONE),
-      KitShape("M11 16.7A1 1 0 1 0 13 16.7A1 1 0 1 0 11 16.7Z", false, KitFill.INK),
+      KitShape("m21.73 18 -8 -14a2 2 0 0 0 -3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73 -3", true, KitFill.NONE),
+      KitShape("M12 9v4", true, KitFill.NONE),
+      KitShape("M12 17h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «plus». */
   AGREGAR(
     "Agregar",
     listOf(
-      KitShape("M12 5v14M5 12h14", true, KitFill.NONE),
+      KitShape("M5 12h14", true, KitFill.NONE),
+      KitShape("M12 5v14", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «sliders-horizontal». */
   AJUSTES(
     "Ajustes",
     listOf(
-      KitShape("M4 7.5h9M17 7.5h3M4 16.5h3M11 16.5h9", true, KitFill.NONE),
-      KitShape("M13 7.5A2 2 0 1 0 17 7.5A2 2 0 1 0 13 7.5Z", true, KitFill.NONE),
-      KitShape("M7 16.5A2 2 0 1 0 11 16.5A2 2 0 1 0 7 16.5Z", true, KitFill.NONE),
+      KitShape("M10 5H3", true, KitFill.NONE),
+      KitShape("M12 19H3", true, KitFill.NONE),
+      KitShape("M14 3v4", true, KitFill.NONE),
+      KitShape("M16 17v4", true, KitFill.NONE),
+      KitShape("M21 12h-9", true, KitFill.NONE),
+      KitShape("M21 19h-5", true, KitFill.NONE),
+      KitShape("M21 5h-7", true, KitFill.NONE),
+      KitShape("M8 10v4", true, KitFill.NONE),
+      KitShape("M8 12H3", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «layout-grid». */
   APPS(
     "Apps elegidas",
     listOf(
-      KitShape("M6.2 4H8.8A2.2 2.2 0 0 1 11 6.2V8.8A2.2 2.2 0 0 1 8.8 11H6.2A2.2 2.2 0 0 1 4 8.8V6.2A2.2 2.2 0 0 1 6.2 4Z", true, KitFill.NONE),
-      KitShape("M15.2 4H17.8A2.2 2.2 0 0 1 20 6.2V8.8A2.2 2.2 0 0 1 17.8 11H15.2A2.2 2.2 0 0 1 13 8.8V6.2A2.2 2.2 0 0 1 15.2 4Z", true, KitFill.NONE),
-      KitShape("M6.2 13H8.8A2.2 2.2 0 0 1 11 15.2V17.8A2.2 2.2 0 0 1 8.8 20H6.2A2.2 2.2 0 0 1 4 17.8V15.2A2.2 2.2 0 0 1 6.2 13Z", true, KitFill.NONE),
-      KitShape("M15.2 13H17.8A2.2 2.2 0 0 1 20 15.2V17.8A2.2 2.2 0 0 1 17.8 20H15.2A2.2 2.2 0 0 1 13 17.8V15.2A2.2 2.2 0 0 1 15.2 13Z", true, KitFill.NONE),
+      KitShape("M4 3H9A1 1 0 0 1 10 4V9A1 1 0 0 1 9 10H4A1 1 0 0 1 3 9V4A1 1 0 0 1 4 3Z", true, KitFill.NONE),
+      KitShape("M15 3H20A1 1 0 0 1 21 4V9A1 1 0 0 1 20 10H15A1 1 0 0 1 14 9V4A1 1 0 0 1 15 3Z", true, KitFill.NONE),
+      KitShape("M15 14H20A1 1 0 0 1 21 15V20A1 1 0 0 1 20 21H15A1 1 0 0 1 14 20V15A1 1 0 0 1 15 14Z", true, KitFill.NONE),
+      KitShape("M4 14H9A1 1 0 0 1 10 15V20A1 1 0 0 1 9 21H4A1 1 0 0 1 3 20V15A1 1 0 0 1 4 14Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «bell». */
   AVISOS(
     "Avisos del teléfono",
     listOf(
-      KitShape("M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 2H5z", true, KitFill.NONE),
-      KitShape("M10 20.5a2.2 2.2 0 0 0 4 0", true, KitFill.NONE),
+      KitShape("M10.268 21a2 2 0 0 0 3.464 0", true, KitFill.NONE),
+      KitShape("M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 0.74 -1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499 -1.411 5.956 -2.738 7.326", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «circle-question-mark». */
   AYUDA(
     "Ayuda",
     listOf(
-      KitShape("M3 12A9 9 0 1 0 21 12A9 9 0 1 0 3 12Z", true, KitFill.NONE),
-      KitShape("M9.6 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.5 2.1-2.5 3.8", true, KitFill.NONE),
-      KitShape("M11 16.9A1 1 0 1 0 13 16.9A1 1 0 1 0 11 16.9Z", false, KitFill.INK),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M9.09 9a3 3 0 0 1 5.83 1c0 2 -3 3 -3 3", true, KitFill.NONE),
+      KitShape("M12 17h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «battery-medium». */
   BATERIA(
     "Batería del objeto",
     listOf(
-      KitShape("M5.4 7.5H16.2A2.6 2.6 0 0 1 18.8 10.1V13.9A2.6 2.6 0 0 1 16.2 16.5H5.4A2.6 2.6 0 0 1 2.8 13.9V10.1A2.6 2.6 0 0 1 5.4 7.5Z", true, KitFill.NONE),
-      KitShape("M21.3 10.8v2.4", true, KitFill.NONE),
-      KitShape("M6.5 10.5v3M9.7 10.5v3", true, KitFill.NONE),
+      KitShape("M10 14v-4", true, KitFill.NONE),
+      KitShape("M22 14v-4", true, KitFill.NONE),
+      KitShape("M6 14v-4", true, KitFill.NONE),
+      KitShape("M4 6H16A2 2 0 0 1 18 8V16A2 2 0 0 1 16 18H4A2 2 0 0 1 2 16V8A2 2 0 0 1 4 6Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «bike». */
   BICICLETA(
     "Andar en bicicleta",
     listOf(
-      KitShape("M2.2 15.5A3.8 3.8 0 1 0 9.8 15.5A3.8 3.8 0 1 0 2.2 15.5Z", true, KitFill.NONE),
-      KitShape("M14.2 15.5A3.8 3.8 0 1 0 21.8 15.5A3.8 3.8 0 1 0 14.2 15.5Z", true, KitFill.NONE),
-      KitShape("M6 15.5h5.5l3.6-6.3M11.5 15.5L9.6 9.2h5.5M15.1 9.2L18 15.5", true, KitFill.NONE),
-      KitShape("M8.2 9.2h2.9M14.2 7h2.4", true, KitFill.NONE),
+      KitShape("M15 17.5A3.5 3.5 0 1 0 22 17.5A3.5 3.5 0 1 0 15 17.5Z", true, KitFill.NONE),
+      KitShape("M2 17.5A3.5 3.5 0 1 0 9 17.5A3.5 3.5 0 1 0 2 17.5Z", true, KitFill.NONE),
+      KitShape("M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5Z", true, KitFill.NONE),
+      KitShape("M12 17.5V14l-3 -3 4 -3 2 3h2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «trash-2». */
   BORRAR(
     "Borrar",
     listOf(
-      KitShape("M4.5 6.5h15", true, KitFill.NONE),
-      KitShape("M9.5 6.5V4.8c0-.7.6-1.3 1.3-1.3h2.4c.7 0 1.3.6 1.3 1.3v1.7", true, KitFill.NONE),
-      KitShape("M6.5 6.5l.9 12c.1 1.1 1 1.9 2 1.9h5.2c1 0 1.9-.8 2-1.9l.9-12", true, KitFill.NONE),
-      KitShape("M10.3 10.5v6M13.7 10.5v6", true, KitFill.NONE),
+      KitShape("M10 11v6", true, KitFill.NONE),
+      KitShape("M14 11v6", true, KitFill.NONE),
+      KitShape("M19 6v14a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V6", true, KitFill.NONE),
+      KitShape("M3 6h18", true, KitFill.NONE),
+      KitShape("M8 6V4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «search». */
   BUSCAR(
     "Buscar",
     listOf(
-      KitShape("M4 10.5A6.5 6.5 0 1 0 17 10.5A6.5 6.5 0 1 0 4 10.5Z", true, KitFill.NONE),
-      KitShape("M15.4 15.4l5.1 5.1", true, KitFill.NONE),
+      KitShape("m21 21 -4.34 -4.34", true, KitFill.NONE),
+      KitShape("M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «calendar». */
   CALENDARIO(
     "Calendario",
     listOf(
-      KitShape("M6.5 5H17.5A3 3 0 0 1 20.5 8V17.5A3 3 0 0 1 17.5 20.5H6.5A3 3 0 0 1 3.5 17.5V8A3 3 0 0 1 6.5 5Z", true, KitFill.NONE),
-      KitShape("M3.5 10h17M8 3v4M16 3v4", true, KitFill.NONE),
-      KitShape("M7.3 14.4A1.1 1.1 0 1 0 9.5 14.4A1.1 1.1 0 1 0 7.3 14.4Z", false, KitFill.INK),
+      KitShape("M8 2v3", true, KitFill.NONE),
+      KitShape("M16 2v3", true, KitFill.NONE),
+      KitShape("M5 3H19A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3Z", true, KitFill.NONE),
+      KitShape("M3 9h18", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «arrow-right-left». Las mismas flechas opuestas de antes. */
   CAMBIE(
     "Cambié de idea",
     listOf(
-      KitShape("M4 8.2h13.5M14 4.7l3.5 3.5-3.5 3.5", true, KitFill.NONE),
-      KitShape("M20 15.8H6.5M10 12.3l-3.5 3.5 3.5 3.5", true, KitFill.NONE),
+      KitShape("m16 3 4 4 -4 4", true, KitFill.NONE),
+      KitShape("M20 7H4", true, KitFill.NONE),
+      KitShape("m8 21 -4 -4 4 -4", true, KitFill.NONE),
+      KitShape("M4 17h16", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «footprints». */
   CAMINAR(
     "Caminar",
     listOf(
-      KitShape("M4.9 11.4c0-2.8 1.1-4.6 2.4-4.6s2.4 1.8 2.4 4.6c0 1.7-.6 2.9-1.1 4.1h-2.6c-.5-1.2-1.1-2.4-1.1-4.1z", true, KitFill.NONE),
-      KitShape("M5.8 16.8h3c.3 0 .5.2.5.5v.7c0 1-.9 1.8-2 1.8s-2-.8-2-1.8v-.7c0-.3.2-.5.5-.5z", true, KitFill.NONE),
-      KitShape("M14.3 7.4c0-2.8 1.1-4.6 2.4-4.6s2.4 1.8 2.4 4.6c0 1.7-.6 2.9-1.1 4.1h-2.6c-.5-1.2-1.1-2.4-1.1-4.1z", true, KitFill.NONE),
-      KitShape("M15.2 12.8h3c.3 0 .5.2.5.5v.7c0 1-.9 1.8-2 1.8s-2-.8-2-1.8v-.7c0-.3.2-.5.5-.5z", true, KitFill.NONE),
+      KitShape("M4 16v-2.38C4 11.5 2.97 10.5 3 8c0.03 -2.72 1.49 -6 4.5 -6C9.37 2 10 3.8 10 5.5c0 3.11 -2 5.66 -2 8.68V16a2 2 0 1 1 -4 0Z", true, KitFill.NONE),
+      KitShape("M20 20v-2.38c0 -2.12 1.03 -3.12 1 -5.62 -0.03 -2.72 -1.49 -6 -4.5 -6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z", true, KitFill.NONE),
+      KitShape("M16 17h4", true, KitFill.NONE),
+      KitShape("M4 13h4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «mail». */
   CARTA(
     "Escribirle a alguien",
     listOf(
-      KitShape("M5.5 5.5H18.5A2.5 2.5 0 0 1 21 8V16A2.5 2.5 0 0 1 18.5 18.5H5.5A2.5 2.5 0 0 1 3 16V8A2.5 2.5 0 0 1 5.5 5.5Z", true, KitFill.NONE),
-      KitShape("M3.75 7L12 13L20.25 7", true, KitFill.NONE),
+      KitShape("m22 7 -8.991 5.727a2 2 0 0 1 -2.009 0L2 7", true, KitFill.NONE),
+      KitShape("M4 4H20A2 2 0 0 1 22 6V18A2 2 0 0 1 20 20H4A2 2 0 0 1 2 18V6A2 2 0 0 1 4 4Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «log-out». */
   CERRAR_SESION(
     "Cerrar sesión",
     listOf(
-      KitShape("M14 20.5H6.5A2 2 0 0 1 4.5 18.5V5.5A2 2 0 0 1 6.5 3.5H14", true, KitFill.NONE),
-      KitShape("M10 12H20.5", true, KitFill.NONE),
-      KitShape("M16.5 8L20.5 12L16.5 16", true, KitFill.NONE),
+      KitShape("m16 17 5 -5 -5 -5", true, KitFill.NONE),
+      KitShape("M21 12H9", true, KitFill.NONE),
+      KitShape("M9 21H5a2 2 0 0 1 -2 -2V5a2 2 0 0 1 2 -2h4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «x». */
   CERRAR(
     "Cerrar",
     listOf(
-      KitShape("M6.5 6.5l11 11M17.5 6.5l-11 11", true, KitFill.NONE),
+      KitShape("M18 6 6 18", true, KitFill.NONE),
+      KitShape("m6 6 12 12", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «cooking-pot». */
   COCINAR(
     "Cocinar",
     listOf(
-      KitShape("M4.5 10.5h15v6.5a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3z", true, KitFill.NONE),
-      KitShape("M4.5 12.8H2.8M19.5 12.8h1.7", true, KitFill.NONE),
-      KitShape("M5.5 8c4.3-1.5 8.7-1.5 13 0", true, KitFill.NONE),
-      KitShape("M12 5.2v1.6", true, KitFill.NONE),
+      KitShape("M2 12h20", true, KitFill.NONE),
+      KitShape("M20 12v8a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2v-8", true, KitFill.NONE),
+      KitShape("m4 8 16 -4", true, KitFill.NONE),
+      KitShape("m8.86 6.78 -0.45 -1.81a2 2 0 0 1 1.45 -2.43l1.94 -0.48a2 2 0 0 1 2.43 1.46l0.45 1.8", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «hash». */
   CODIGO(
     "Código de participante",
     listOf(
-      KitShape("M9.75 3.5L7.75 20.5M16.25 3.5L14.25 20.5M4.5 9H20M4 15H19.5", true, KitFill.NONE),
+      KitShape("M4 9L20 9", true, KitFill.NONE),
+      KitShape("M4 15L20 15", true, KitFill.NONE),
+      KitShape("M10 3L8 21", true, KitFill.NONE),
+      KitShape("M16 3L14 21", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «circle-play». */
   COMENCE(
     "Comencé",
     listOf(
-      KitShape("M3 12A9 9 0 1 0 21 12A9 9 0 1 0 3 12Z", true, KitFill.NONE),
-      KitShape("M10.3 8.7c0-.6.7-1 1.2-.7l4.6 3.3c.5.3.5 1 0 1.4l-4.6 3.3c-.5.3-1.2 0-1.2-.7z", true, KitFill.NONE),
+      KitShape("M9 9.003a1 1 0 0 1 1.517 -0.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z", true, KitFill.NONE),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «message-square». */
   COMENTARIO(
     "Comentario",
     listOf(
-      KitShape("M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-7l-4.6 3.4V17.5H5A1.5 1.5 0 0 1 3.5 16V7A1.5 1.5 0 0 1 5 5.5z", true, KitFill.NONE),
+      KitShape("M22 17a2 2 0 0 1 -2 2H6.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.71 0.71 0 0 1 2 21.286V5a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «bluetooth». */
   CONEXION(
     "Conexión",
     listOf(
-      KitShape("M6.5 7.5l10 9-4.5 4V3.5l4.5 4-10 9", true, KitFill.NONE),
+      KitShape("m7 7 10 10 -5 5V2l5 5L7 17", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «file-check». */
   CONSENTIMIENTO(
     "Consentimiento",
     listOf(
-      KitShape("M6 4.5A1.5 1.5 0 0 1 7.5 3H14L18.5 7.5V19.5A1.5 1.5 0 0 1 17 21H7.5A1.5 1.5 0 0 1 6 19.5Z", true, KitFill.NONE),
-      KitShape("M14 3V7.5H18.5", true, KitFill.NONE),
-      KitShape("M9.25 14.25L11.25 16.25L15 12", true, KitFill.NONE),
+      KitShape("M6 22a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.704 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2z", true, KitFill.NONE),
+      KitShape("M14 2v5a1 1 0 0 0 1 1h5", true, KitFill.NONE),
+      KitShape("m9 15 2 2 4 -4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «chevron-up». */
   CONTRAER(
     "Contraer",
     listOf(
-      KitShape("M5.5 14.5L12 8l6.5 6.5", true, KitFill.NONE),
+      KitShape("m18 15 -6 -6 -6 6", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «copy». */
   COPIAR(
     "Copiar",
     listOf(
-      KitShape("M11 8.5H18A2.5 2.5 0 0 1 20.5 11V18A2.5 2.5 0 0 1 18 20.5H11A2.5 2.5 0 0 1 8.5 18V11A2.5 2.5 0 0 1 11 8.5Z", true, KitFill.NONE),
-      KitShape("M15.5 8.5V5.5A2 2 0 0 0 13.5 3.5H5.5A2 2 0 0 0 3.5 5.5V13.5A2 2 0 0 0 5.5 15.5H8.5", true, KitFill.NONE),
+      KitShape("M10 8H20A2 2 0 0 1 22 10V20A2 2 0 0 1 20 22H10A2 2 0 0 1 8 20V10A2 2 0 0 1 10 8Z", true, KitFill.NONE),
+      KitShape("M4 16c-1.1 0 -2 -0.9 -2 -2V4c0 -1.1 0.9 -2 2 -2h10c1.1 0 2 0.9 2 2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «clipboard-list». */
   DATOS(
     "Datos del estudio",
     listOf(
-      KitShape("M7.5 4.5H16.5A2.5 2.5 0 0 1 19 7V18.5A2.5 2.5 0 0 1 16.5 21H7.5A2.5 2.5 0 0 1 5 18.5V7A2.5 2.5 0 0 1 7.5 4.5Z", true, KitFill.NONE),
-      KitShape("M10.25 2.75H13.75A1.25 1.25 0 0 1 15 4V5A1.25 1.25 0 0 1 13.75 6.25H10.25A1.25 1.25 0 0 1 9 5V4A1.25 1.25 0 0 1 10.25 2.75Z", true, KitFill.PAPER),
-      KitShape("M8.5 11H15.5M8.5 15H13", true, KitFill.NONE),
+      KitShape("M9 2H15A1 1 0 0 1 16 3V5A1 1 0 0 1 15 6H9A1 1 0 0 1 8 5V3A1 1 0 0 1 9 2Z", true, KitFill.NONE),
+      KitShape("M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2h2", true, KitFill.NONE),
+      KitShape("M12 11h4", true, KitFill.NONE),
+      KitShape("M12 16h4", true, KitFill.NONE),
+      KitShape("M8 11h0.01", true, KitFill.NONE),
+      KitShape("M8 16h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «flag». */
   DECISION(
     "Decisión",
     listOf(
-      KitShape("M6 20.5V3.8", true, KitFill.NONE),
-      KitShape("M6 4.5h11.2l-2.4 3.9 2.4 3.9H6", true, KitFill.NONE),
+      KitShape("M4 22V4a1 1 0 0 1 0.4 -0.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067 -0.8A1 1 0 0 1 20 4v10a1 1 0 0 1 -0.4 0.8A6 6 0 0 1 16 16c-3 0 -5 -2 -8 -2a6 6 0 0 0 -4 1.528", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «lock-open». */
   DESBLOQUEADO(
     "Acceso abierto",
     listOf(
-      KitShape("M7.25 10.25H16.75A2.5 2.5 0 0 1 19.25 12.75V18.25A2.5 2.5 0 0 1 16.75 20.75H7.25A2.5 2.5 0 0 1 4.75 18.25V12.75A2.5 2.5 0 0 1 7.25 10.25Z", true, KitFill.NONE),
-      KitShape("M8.25 10.25V7.75A3.75 3.75 0 0 1 15.4 6.2", true, KitFill.NONE),
+      KitShape("M5 11H19A2 2 0 0 1 21 13V20A2 2 0 0 1 19 22H5A2 2 0 0 1 3 20V13A2 2 0 0 1 5 11Z", true, KitFill.NONE),
+      KitShape("M7 11V7a5 5 0 0 1 9.9 -1", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «download». */
   DESCARGAR(
     "Descargar",
     listOf(
-      KitShape("M12 4v11M7.5 10.5L12 15l4.5-4.5", true, KitFill.NONE),
-      KitShape("M5 19.5h14", true, KitFill.NONE),
+      KitShape("M12 15V3", true, KitFill.NONE),
+      KitShape("M21 15v4a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-4", true, KitFill.NONE),
+      KitShape("m7 10 5 5 5 -5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «rotate-cw-clock». El mismo dibujo de antes: un reloj con la flecha hacia adelante. */
   DESPUES(
     "La dejé para después",
     listOf(
-      KitShape("M20.5 12a8.5 8.5 0 1 1-2.5-6", true, KitFill.NONE),
-      KitShape("M18.4 3.2l-.2 3.1-3.1-.3", true, KitFill.NONE),
-      KitShape("M12 7.8v4.4l2.8 1.7", true, KitFill.NONE),
+      KitShape("M12 7v5l4 2", true, KitFill.NONE),
+      KitShape("M16 8h5V3", true, KitFill.NONE),
+      KitShape("m21 8 -2.3 -2.3A9.7 9.7 0 0 0 12 3a9 9 0 1 0 9 9", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «square». */
   DETENER(
     "Detener",
     listOf(
-      KitShape("M8.5 6H15.5A2.5 2.5 0 0 1 18 8.5V15.5A2.5 2.5 0 0 1 15.5 18H8.5A2.5 2.5 0 0 1 6 15.5V8.5A2.5 2.5 0 0 1 8.5 6Z", true, KitFill.NONE),
+      KitShape("M5 3H19A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3Z", true, KitFill.NONE),
     ),
   ),
-  /** D-162: el lápiz con su trazo, distinto de Editar. */
+  /** Lucide «pencil-line». El lápiz con el trazo que deja; Editar es el lápiz solo (D-162). */
   DIBUJAR(
     "Dibujar",
     listOf(
-      KitShape("M6.3 15.7L7.2 12.4L16.4 3.2A1.7 1.7 0 0 1 18.8 5.6L9.6 14.8Z", true, KitFill.NONE),
-      KitShape("M14.6 5L17 7.4", true, KitFill.NONE),
-      KitShape("M3.5 20c2.2-1.6 4-1.8 5.5-.6 1.6 1.3 3.3 1.3 5.1 0 1.6-1.1 3.6-1.3 6.4-.2", true, KitFill.NONE),
+      KitShape("M13 21h8", true, KitFill.NONE),
+      KitShape("m15 5 4 4", true, KitFill.NONE),
+      KitShape("M21.174 6.812a1 1 0 0 0 -3.986 -3.987L3.842 16.174a2 2 0 0 0 -0.5 0.83l-1.321 4.352a0.5 0.5 0 0 0 0.623 0.622l4.353 -1.32a2 2 0 0 0 0.83 -0.497z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «bed». La cama, el objeto de la actividad. Deja la luna con destello: D-162 evitó los destellos, que se leen como inteligencia artificial. */
   DORMIR(
     "Dormir",
     listOf(
-      KitShape("M19.5 14.8A8 8 0 0 1 9.2 4.5a8 8 0 1 0 10.3 10.3z", true, KitFill.NONE),
-      KitShape("M16.6 3.2c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4z", true, KitFill.NONE),
+      KitShape("M2 4v16", true, KitFill.NONE),
+      KitShape("M2 8h18a2 2 0 0 1 2 2v10", true, KitFill.NONE),
+      KitShape("M2 17h20", true, KitFill.NONE),
+      KitShape("M6 8v9", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «pencil». */
   EDITAR(
     "Editar",
     listOf(
-      KitShape("M14.6 5.4a2.1 2.1 0 0 1 3 0l1 1a2.1 2.1 0 0 1 0 3L9 19H5v-4z", true, KitFill.NONE),
-      KitShape("M12.8 7.2l4 4", true, KitFill.NONE),
-      KitShape("M13.5 20h6", true, KitFill.NONE),
+      KitShape("M21.174 6.812a1 1 0 0 0 -3.986 -3.987L3.842 16.174a2 2 0 0 0 -0.5 0.83l-1.321 4.352a0.5 0.5 0 0 0 0.623 0.622l4.353 -1.32a2 2 0 0 0 0.83 -0.497z", true, KitFill.NONE),
+      KitShape("m15 5 4 4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «dumbbell». */
   EJERCICIO(
     "Hacer ejercicio",
     listOf(
-      KitShape("M8 12h8", true, KitFill.NONE),
-      KitShape("M5.8 7.2H6.7A1.3 1.3 0 0 1 8 8.5V15.5A1.3 1.3 0 0 1 6.7 16.8H5.8A1.3 1.3 0 0 1 4.5 15.5V8.5A1.3 1.3 0 0 1 5.8 7.2Z", true, KitFill.NONE),
-      KitShape("M17.3 7.2H18.2A1.3 1.3 0 0 1 19.5 8.5V15.5A1.3 1.3 0 0 1 18.2 16.8H17.3A1.3 1.3 0 0 1 16 15.5V8.5A1.3 1.3 0 0 1 17.3 7.2Z", true, KitFill.NONE),
-      KitShape("M2.6 10v4M21.4 10v4", true, KitFill.NONE),
+      KitShape("M17.596 12.768a2 2 0 1 0 2.829 -2.829l-1.768 -1.767a2 2 0 0 0 2.828 -2.829l-2.828 -2.828a2 2 0 0 0 -2.829 2.828l-1.767 -1.768a2 2 0 1 0 -2.829 2.829z", true, KitFill.NONE),
+      KitShape("m2.5 21.5 1.4 -1.4", true, KitFill.NONE),
+      KitShape("m20.1 3.9 1.4 -1.4", true, KitFill.NONE),
+      KitShape("M5.343 21.485a2 2 0 1 0 2.829 -2.828l1.767 1.768a2 2 0 1 0 2.829 -2.829l-6.364 -6.364a2 2 0 1 0 -2.829 2.829l1.768 1.767a2 2 0 0 0 -2.828 2.829z", true, KitFill.NONE),
+      KitShape("m9.6 14.4 4.8 -4.8", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «external-link». */
   ENLACE_EXTERNO(
     "Abrir fuera de la app",
     listOf(
-      KitShape("M13.5 3.5H20.5V10.5", true, KitFill.NONE),
-      KitShape("M20.5 3.5L11 13", true, KitFill.NONE),
-      KitShape("M18 14V18.5A2 2 0 0 1 16 20.5H5.5A2 2 0 0 1 3.5 18.5V8A2 2 0 0 1 5.5 6H10", true, KitFill.NONE),
+      KitShape("M15 3h6v6", true, KitFill.NONE),
+      KitShape("M10 14 21 3", true, KitFill.NONE),
+      KitShape("M18 13v6a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2V8a2 2 0 0 1 2 -2h6", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «messages-square». */
   ENTREVISTAS(
     "Entrevistas",
     listOf(
-      KitShape("M3.5 4.75H14V12.25H8.5L5.5 14.75V12.25H3.5Z", true, KitFill.NONE),
-      KitShape("M17 9H20.5V16.5H18.75V19L15.75 16.5H10V15", true, KitFill.NONE),
+      KitShape("M16 10a2 2 0 0 1 -2 2H6.828a2 2 0 0 0 -1.414 0.586l-2.202 2.202A0.71 0.71 0 0 1 2 14.286V4a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z", true, KitFill.NONE),
+      KitShape("M20 9a2 2 0 0 1 2 2v10.286a0.71 0.71 0 0 1 -1.212 0.502l-2.202 -2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1 -2 -2v-1", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «send». */
   ENVIAR(
     "Enviar",
     listOf(
-      KitShape("M20.5 3.5L3.6 10.4c-.6.2-.6 1.1 0 1.3l6.9 2.8 2.8 6.9c.2.6 1.1.6 1.3 0z", true, KitFill.NONE),
-      KitShape("M10.5 13.5l4.2-4.2", true, KitFill.NONE),
+      KitShape("M14.536 21.686a0.5 0.5 0 0 0 0.937 -0.024l6.5 -19a0.496 0.496 0 0 0 -0.635 -0.635l-19 6.5a0.5 0.5 0 0 0 -0.024 0.937l7.93 3.18a2 2 0 0 1 1.112 1.11z", true, KitFill.NONE),
+      KitShape("m21.854 2.147 -10.94 10.939", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «circle-x». */
   ERROR(
     "Error",
     listOf(
-      KitShape("M3 12A9 9 0 1 0 21 12A9 9 0 1 0 3 12Z", true, KitFill.NONE),
-      KitShape("M9.2 9.2l5.6 5.6M14.8 9.2l-5.6 5.6", true, KitFill.NONE),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("m15 9 -6 6", true, KitFill.NONE),
+      KitShape("m9 9 6 6", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «notebook-pen». «Dejar un lápiz sobre el cuaderno», como sugiere la app. */
   ESCRIBIR(
     "Escribir",
     listOf(
-      KitShape("M12 3.5l4.8 6.3L15 18.5H9L7.2 9.8z", true, KitFill.NONE),
-      KitShape("M12 3.5v7.2", true, KitFill.NONE),
-      KitShape("M10.6 12.2A1.4 1.4 0 1 0 13.4 12.2A1.4 1.4 0 1 0 10.6 12.2Z", true, KitFill.NONE),
-      KitShape("M8 21h8", true, KitFill.NONE),
+      KitShape("M13.4 2H6a2 2 0 0 0 -2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-7.4", true, KitFill.NONE),
+      KitShape("M2 6h4", true, KitFill.NONE),
+      KitShape("M2 10h4", true, KitFill.NONE),
+      KitShape("M2 14h4", true, KitFill.NONE),
+      KitShape("M2 18h4", true, KitFill.NONE),
+      KitShape("M21.378 5.626a1 1 0 1 0 -3.004 -3.004l-5.01 5.012a2 2 0 0 0 -0.506 0.854l-0.837 2.87a0.5 0.5 0 0 0 0.62 0.62l2.87 -0.837a2 2 0 0 0 0.854 -0.506z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «hourglass». */
   ESPERANDO(
     "Esperando",
     listOf(
-      KitShape("M6.5 3.5h11M6.5 20.5h11", true, KitFill.NONE),
-      KitShape("M8 3.5c0 4.6 4 5.2 4 8.5s-4 3.9-4 8.5M16 3.5c0 4.6-4 5.2-4 8.5s4 3.9 4 8.5", true, KitFill.NONE),
-      KitShape("M10.2 18.2c.6-.9 1.2-1.4 1.8-1.4s1.2.5 1.8 1.4z", true, KitFill.NONE),
+      KitShape("M5 22h14", true, KitFill.NONE),
+      KitShape("M5 2h14", true, KitFill.NONE),
+      KitShape("M17 22v-4.172a2 2 0 0 0 -0.586 -1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22", true, KitFill.NONE),
+      KitShape("M7 2v4.172a2 2 0 0 0 0.586 1.414L12 12l4.414 -4.414A2 2 0 0 0 17 6.172V2", true, KitFill.NONE),
     ),
   ),
-  /** D-162: la colchoneta a medio desenrollar, como sugiere la app; era igual a Meditar. */
+  /** Propio, con las reglas de construcción de Lucide (D-187). La colchoneta a medio desenrollar (D-162). Lucide no tiene colchoneta. */
   ESTIRAR(
     "Estirar",
     listOf(
-      KitShape("M2 13.5A6 6 0 1 0 14 13.5A6 6 0 1 0 2 13.5Z", true, KitFill.NONE),
-      KitShape("M11 13.5A3 3 0 1 1 8 10.5", true, KitFill.NONE),
-      KitShape("M8 19.5H19.8A1.25 1.25 0 0 0 19.8 17H12.9", true, KitFill.NONE),
+      KitShape("M2 12A6.5 6.5 0 1 0 15 12A6.5 6.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M11 12a2.5 2.5 0 1 1 -2.5 -2.5", true, KitFill.NONE),
+      KitShape("M8.5 18.5H20a2 2 0 0 0 0 -4h-1.5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «star». La estrella de Lucide, rellena. */
   ESTRELLA_LLENA(
     "Estrella llena",
     listOf(
-      KitShape("M12 3.5L14.56 9.08L20.65 9.79L16.14 13.94L17.35 19.96L12 16.95L6.65 19.96L7.86 13.94L3.35 9.79L9.44 9.08Z", true, KitFill.INK),
+      KitShape("M11.525 2.295a0.53 0.53 0 0 1 0.95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166 0.756a0.53 0.53 0 0 1 0.294 0.904l-3.736 3.638a2.123 2.123 0 0 0 -0.611 1.878l0.882 5.14a0.53 0.53 0 0 1 -0.771 0.56l-4.618 -2.428a2.122 2.122 0 0 0 -1.973 0L6.396 21.01a0.53 0.53 0 0 1 -0.77 -0.56l0.881 -5.139a2.122 2.122 0 0 0 -0.611 -1.879L2.16 9.795a0.53 0.53 0 0 1 0.294 -0.906l5.165 -0.755a2.122 2.122 0 0 0 1.597 -1.16z", true, KitFill.INK),
     ),
   ),
+  /** Lucide «star-half». */
   ESTRELLA_MEDIA(
     "Media estrella",
     listOf(
-      KitShape("M12 3.5L9.44 9.08L3.35 9.79L7.86 13.94L6.65 19.96L12 16.95Z", false, KitFill.INK),
-      KitShape("M12 3.5L14.56 9.08L20.65 9.79L16.14 13.94L17.35 19.96L12 16.95L6.65 19.96L7.86 13.94L3.35 9.79L9.44 9.08Z", true, KitFill.NONE),
+      KitShape("M12 18.338a2.1 2.1 0 0 0 -0.987 0.244L6.396 21.01a0.53 0.53 0 0 1 -0.77 -0.56l0.881 -5.139a2.12 2.12 0 0 0 -0.611 -1.879L2.16 9.795a0.53 0.53 0 0 1 0.294 -0.906l5.165 -0.755a2.12 2.12 0 0 0 1.597 -1.16l2.309 -4.679A0.53 0.53 0 0 1 12 2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «star». */
   ESTRELLA(
     "Estrella vacía",
     listOf(
-      KitShape("M12 3.9l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8z", true, KitFill.NONE),
+      KitShape("M11.525 2.295a0.53 0.53 0 0 1 0.95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166 0.756a0.53 0.53 0 0 1 0.294 0.904l-3.736 3.638a2.123 2.123 0 0 0 -0.611 1.878l0.882 5.14a0.53 0.53 0 0 1 -0.771 0.56l-4.618 -2.428a2.122 2.122 0 0 0 -1.973 0L6.396 21.01a0.53 0.53 0 0 1 -0.77 -0.56l0.881 -5.139a2.122 2.122 0 0 0 -0.611 -1.879L2.16 9.795a0.53 0.53 0 0 1 0.294 -0.906l5.165 -0.755a2.122 2.122 0 0 0 1.597 -1.16z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «notebook-text». «Abrir los apuntes», como sugiere la app. */
   ESTUDIAR(
     "Estudiar",
     listOf(
-      KitShape("M8.5 3.5H16.5A2.5 2.5 0 0 1 19 6V18A2.5 2.5 0 0 1 16.5 20.5H8.5A2.5 2.5 0 0 1 6 18V6A2.5 2.5 0 0 1 8.5 3.5Z", true, KitFill.NONE),
-      KitShape("M6 7.5H4M6 12H4M6 16.5H4", true, KitFill.NONE),
-      KitShape("M10 8.5h5M10 12h5", true, KitFill.NONE),
+      KitShape("M2 6h4", true, KitFill.NONE),
+      KitShape("M2 10h4", true, KitFill.NONE),
+      KitShape("M2 14h4", true, KitFill.NONE),
+      KitShape("M2 18h4", true, KitFill.NONE),
+      KitShape("M6 2H18A2 2 0 0 1 20 4V20A2 2 0 0 1 18 22H6A2 2 0 0 1 4 20V4A2 2 0 0 1 6 2Z", true, KitFill.NONE),
+      KitShape("M9.5 8h5", true, KitFill.NONE),
+      KitShape("M9.5 12H16", true, KitFill.NONE),
+      KitShape("M9.5 16H14", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «chevron-down». */
   EXPANDIR(
     "Expandir",
     listOf(
-      KitShape("M5.5 9.5l6.5 6.5 6.5-6.5", true, KitFill.NONE),
+      KitShape("m6 9 6 6 6 -6", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «share». */
   EXPORTAR(
     "Exportar o compartir",
     listOf(
-      KitShape("M12 14.5V3.5", true, KitFill.NONE),
-      KitShape("M8 7.5L12 3.5L16 7.5", true, KitFill.NONE),
-      KitShape("M4.5 13V18.5A2 2 0 0 0 6.5 20.5H17.5A2 2 0 0 0 19.5 18.5V13", true, KitFill.NONE),
+      KitShape("M12 2v13", true, KitFill.NONE),
+      KitShape("m16 6 -4 -4 -4 4", true, KitFill.NONE),
+      KitShape("M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-8", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «funnel». */
   FILTRAR(
     "Filtrar",
     listOf(
-      KitShape("M3.5 4.75H20.5L14 12.5V18.75L10 20.75V12.5Z", true, KitFill.NONE),
+      KitShape("M10 20a1 1 0 0 0 0.553 0.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 0.517 -1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0 -0.742 1.67l7.225 7.989A2 2 0 0 1 10 14z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «camera». */
   FOTOGRAFIA(
     "Fotografiar",
     listOf(
-      KitShape("M6 7H18A3 3 0 0 1 21 10V17A3 3 0 0 1 18 20H6A3 3 0 0 1 3 17V10A3 3 0 0 1 6 7Z", true, KitFill.NONE),
-      KitShape("M8.6 7l1.2-2.1c.2-.4.6-.6 1.1-.6h2.2c.5 0 .9.2 1.1.6L15.4 7", true, KitFill.NONE),
-      KitShape("M8.6 13.5A3.4 3.4 0 1 0 15.4 13.5A3.4 3.4 0 1 0 8.6 13.5Z", true, KitFill.NONE),
-      KitShape("M16.55 10.2A0.85 0.85 0 1 0 18.25 10.2A0.85 0.85 0 1 0 16.55 10.2Z", false, KitFill.INK),
+      KitShape("M13.997 4a2 2 0 0 1 1.76 1.05l0.486 0.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2H4a2 2 0 0 1 -2 -2V9a2 2 0 0 1 2 -2h1.997a2 2 0 0 0 1.759 -1.048l0.489 -0.904A2 2 0 0 1 10.004 4z", true, KitFill.NONE),
+      KitShape("M9 13A3 3 0 1 0 15 13A3 3 0 1 0 9 13Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «guitar». */
   GUITARRA(
     "Tocar un instrumento",
     listOf(
-      KitShape("M9.02 11.04A3.2 3.2 0 1 1 12.96 14.98A4.6 4.6 0 1 1 9.02 11.04Z", true, KitFill.NONE),
-      KitShape("M13.9 10.1l5.4-5.4", true, KitFill.NONE),
-      KitShape("M18.2 3.6l2.2 2.2", true, KitFill.NONE),
-      KitShape("M8.3 14.4A1.3 1.3 0 1 0 10.9 14.4A1.3 1.3 0 1 0 8.3 14.4Z", true, KitFill.NONE),
-      KitShape("M6.2 18.6l1.7-1.7", true, KitFill.NONE),
+      KitShape("m11.9 12.1 4.514 -4.514", true, KitFill.NONE),
+      KitShape("M20.1 2.3a1 1 0 0 0 -1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1 -0.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414 -0.586L21.7 5.3a1 1 0 0 0 0 -1.4z", true, KitFill.NONE),
+      KitShape("m6 16 2 2", true, KitFill.NONE),
+      KitShape("M8.23 9.85A3 3 0 0 1 11 8a5 5 0 0 1 5 5 3 3 0 0 1 -1.85 2.77l-0.92 0.38A2 2 0 0 0 12 18a4 4 0 0 1 -4 4 6 6 0 0 1 -6 -6 4 4 0 0 1 4 -4 2 2 0 0 0 1.85 -1.23z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «flask-conical». */
   HIPOTESIS(
     "Hipótesis y prueba",
     listOf(
-      KitShape("M9.5 3.25H14.5", true, KitFill.NONE),
-      KitShape("M10.5 3.25V9.25L5.4 18.2A1.75 1.75 0 0 0 6.9 20.75H17.1A1.75 1.75 0 0 0 18.6 18.2L13.5 9.25V3.25", true, KitFill.NONE),
-      KitShape("M7.75 15H16.25", true, KitFill.NONE),
+      KitShape("M14 2v6a2 2 0 0 0 0.245 0.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1 -1.755 -2.96l5.51 -10.08A2 2 0 0 0 10 8V2", true, KitFill.NONE),
+      KitShape("M6.453 15h11.094", true, KitFill.NONE),
+      KitShape("M8.5 2h7", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «history». Sin uso en la app. */
   HISTORIAL(
     "Historial",
     listOf(
-      KitShape("M5 20v-6M10 20V9M15 20v-4M20 20V5", true, KitFill.NONE),
+      KitShape("M3 12a9 9 0 1 0 9 -9 9.75 9.75 0 0 0 -6.74 2.74L3 8", true, KitFill.NONE),
+      KitShape("M3 3v5h5", true, KitFill.NONE),
+      KitShape("M12 7v5l4 2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «info». */
   INFO(
     "Información",
     listOf(
-      KitShape("M3 12A9 9 0 1 0 21 12A9 9 0 1 0 3 12Z", true, KitFill.NONE),
-      KitShape("M12 11v5.6", true, KitFill.NONE),
-      KitShape("M11 7.9A1 1 0 1 0 13 7.9A1 1 0 1 0 11 7.9Z", false, KitFill.INK),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M12 16v-4", true, KitFill.NONE),
+      KitShape("M12 8h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «house». */
   INICIO(
     "Inicio",
     listOf(
-      KitShape("M4 10.3L12 4l8 6.3V19a1.5 1.5 0 0 1-1.5 1.5H15v-5.2a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5.2H5.5A1.5 1.5 0 0 1 4 19z", true, KitFill.NONE),
+      KitShape("M15 21v-8a1 1 0 0 0 -1 -1h-4a1 1 0 0 0 -1 1v8", true, KitFill.NONE),
+      KitShape("M3 10a2 2 0 0 1 0.709 -1.528l7 -6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «file-search». */
   INVESTIGACION(
     "Investigación",
     listOf(
-      KitShape("M16.5 10V5A1.5 1.5 0 0 0 15 3.5H5.5A1.5 1.5 0 0 0 4 5V19A1.5 1.5 0 0 0 5.5 20.5H10", true, KitFill.NONE),
-      KitShape("M7.5 7.5H13M7.5 11H10.5", true, KitFill.NONE),
-      KitShape("M11.75 15.25A3.5 3.5 0 1 0 18.75 15.25A3.5 3.5 0 1 0 11.75 15.25Z", true, KitFill.NONE),
-      KitShape("M17.75 17.75L20.5 20.5", true, KitFill.NONE),
+      KitShape("M6 22a2 2 0 0 1 -2 -2V4a2 2 0 0 1 2 -2h8a2.4 2.4 0 0 1 1.704 0.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1 -2 2z", true, KitFill.NONE),
+      KitShape("M14 2v5a1 1 0 0 0 1 1h5", true, KitFill.NONE),
+      KitShape("M9 14.5A2.5 2.5 0 1 0 14 14.5A2.5 2.5 0 1 0 9 14.5Z", true, KitFill.NONE),
+      KitShape("M13.3 16.3 15 18", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «dice-3». */
   JUEGO_DE_MESA(
     "Jugar un juego de mesa",
     listOf(
-      KitShape("M7.6 4H16.4A3.6 3.6 0 0 1 20 7.6V16.4A3.6 3.6 0 0 1 16.4 20H7.6A3.6 3.6 0 0 1 4 16.4V7.6A3.6 3.6 0 0 1 7.6 4Z", true, KitFill.NONE),
-      KitShape("M7.35 8.6A1.25 1.25 0 1 0 9.85 8.6A1.25 1.25 0 1 0 7.35 8.6Z", false, KitFill.INK),
-      KitShape("M10.75 12A1.25 1.25 0 1 0 13.25 12A1.25 1.25 0 1 0 10.75 12Z", false, KitFill.INK),
-      KitShape("M14.15 15.4A1.25 1.25 0 1 0 16.65 15.4A1.25 1.25 0 1 0 14.15 15.4Z", false, KitFill.INK),
+      KitShape("M5 3H19A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3Z", true, KitFill.NONE),
+      KitShape("M16 8h0.01", true, KitFill.NONE),
+      KitShape("M12 12h0.01", true, KitFill.NONE),
+      KitShape("M8 16h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «book-open». */
   LEER(
     "Leer",
     listOf(
-      KitShape("M3.5 6.3c2.8-1 5.6-.8 8.5 1v12.2c-2.9-1.8-5.7-2-8.5-1z", true, KitFill.NONE),
-      KitShape("M20.5 6.3c-2.8-1-5.6-.8-8.5 1v12.2c2.9-1.8 5.7-2 8.5-1z", true, KitFill.NONE),
+      KitShape("M12 5v16", true, KitFill.NONE),
+      KitShape("M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0 -1.999 -2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0 -4 -2H4a2 2 0 0 0 -2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4 -2z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «check». */
   LISTO(
     "Listo",
     listOf(
-      KitShape("M5 12.5l4.4 4.4L19 7.5", true, KitFill.NONE),
+      KitShape("M20 6 9 17l-5 -5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «gamepad-2». */
   VIDEOJUEGOS(
     "Jugar videojuegos",
     listOf(
-      KitShape("M7.6 7.5h8.8a4.5 4.5 0 0 1 4.4 3.6l.9 4.6a2.6 2.6 0 0 1-4.4 2.3L15.6 16H8.4l-1.7 2a2.6 2.6 0 0 1-4.4-2.3l.9-4.6a4.5 4.5 0 0 1 4.4-3.6z", true, KitFill.NONE),
-      KitShape("M8 10.5v3M6.5 12h3", true, KitFill.NONE),
-      KitShape("M14.65 11A0.95 0.95 0 1 0 16.55 11A0.95 0.95 0 1 0 14.65 11Z", false, KitFill.INK),
-      KitShape("M16.45 12.9A0.95 0.95 0 1 0 18.35 12.9A0.95 0.95 0 1 0 16.45 12.9Z", false, KitFill.INK),
+      KitShape("M6 11L10 11", true, KitFill.NONE),
+      KitShape("M8 9L8 13", true, KitFill.NONE),
+      KitShape("M15 12L15.01 12", true, KitFill.NONE),
+      KitShape("M18 10L18.01 10", true, KitFill.NONE),
+      KitShape("M17.32 5H6.68a4 4 0 0 0 -3.978 3.59c-0.006 0.052 -0.01 0.101 -0.017 0.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5 -0.5 2 -1l1.414 -1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414 0.586L17 18c0.5 0.5 1 1 2 1a3 3 0 0 0 3 -3c0 -1.545 -0.604 -6.584 -0.685 -7.258 -0.007 -0.05 -0.011 -0.1 -0.017 -0.151A4 4 0 0 0 17.32 5z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «phone». */
   LLAMAR(
     "Llamar a alguien",
     listOf(
-      KitShape("M8.3 3.8H6.1c-1.2 0-2.1 1-2 2.2.9 7.7 6.1 12.9 13.8 13.8 1.2.1 2.2-.8 2.2-2v-2.2c0-.5-.3-.9-.8-1.1l-3-.9c-.4-.1-.8 0-1.1.3l-1.3 1.4c-2.5-1.1-4.5-3.1-5.6-5.6l1.4-1.3c.3-.3.4-.7.3-1.1l-.9-3c-.2-.5-.6-.8-1.1-.8z", true, KitFill.NONE),
+      KitShape("M13.832 16.568a1 1 0 0 0 1.213 -0.303l0.355 -0.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2A18 18 0 0 1 2 4a2 2 0 0 1 2 -2h3a2 2 0 0 1 2 2v3a2 2 0 0 1 -0.8 1.6l-0.468 0.351a1 1 0 0 0 -0.292 1.233 14 14 0 0 0 6.392 6.384", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «map-pin». */
   LUGAR(
     "Lugar",
     listOf(
-      KitShape("M12 21s-6.5-5.8-6.5-10.8a6.5 6.5 0 0 1 13 0C18.5 15.2 12 21 12 21z", true, KitFill.NONE),
-      KitShape("M9.7 10.2A2.3 2.3 0 1 0 14.3 10.2A2.3 2.3 0 1 0 9.7 10.2Z", true, KitFill.NONE),
+      KitShape("M20 10c0 4.993 -5.539 10.193 -7.399 11.799a1 1 0 0 1 -1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0", true, KitFill.NONE),
+      KitShape("M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «scissors». */
   MANUALIDADES(
     "Hacer manualidades",
     listOf(
-      KitShape("M3.8 17.4A2.8 2.8 0 1 0 9.4 17.4A2.8 2.8 0 1 0 3.8 17.4Z", true, KitFill.NONE),
-      KitShape("M14.6 17.4A2.8 2.8 0 1 0 20.2 17.4A2.8 2.8 0 1 0 14.6 17.4Z", true, KitFill.NONE),
-      KitShape("M8.6 15.4L18.4 4.4M15.4 15.4L5.6 4.4", true, KitFill.NONE),
+      KitShape("M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6Z", true, KitFill.NONE),
+      KitShape("M8.12 8.12 12 12", true, KitFill.NONE),
+      KitShape("M20 4 8.12 15.88", true, KitFill.NONE),
+      KitShape("M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18Z", true, KitFill.NONE),
+      KitShape("M14.8 14.8 20 20", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «ellipsis». */
   MAS(
     "Más opciones",
     listOf(
-      KitShape("M4.6 12A1.4 1.4 0 1 0 7.4 12A1.4 1.4 0 1 0 4.6 12Z", false, KitFill.INK),
-      KitShape("M10.6 12A1.4 1.4 0 1 0 13.4 12A1.4 1.4 0 1 0 10.6 12Z", false, KitFill.INK),
-      KitShape("M16.6 12A1.4 1.4 0 1 0 19.4 12A1.4 1.4 0 1 0 16.6 12Z", false, KitFill.INK),
+      KitShape("M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12Z", true, KitFill.NONE),
+      KitShape("M18 12A1 1 0 1 0 20 12A1 1 0 1 0 18 12Z", true, KitFill.NONE),
+      KitShape("M4 12A1 1 0 1 0 6 12A1 1 0 1 0 4 12Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «menu». */
   MENU(
     "Menú",
     listOf(
-      KitShape("M4 7H20M4 12H20M4 17H20", true, KitFill.NONE),
+      KitShape("M4 5h16", true, KitFill.NONE),
+      KitShape("M4 12h16", true, KitFill.NONE),
+      KitShape("M4 19h16", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «eye». */
   MOSTRAR(
     "Mostrar",
     listOf(
-      KitShape("M2.75 12C5 7.5 8.3 5.5 12 5.5S19 7.5 21.25 12C19 16.5 15.7 18.5 12 18.5S5 16.5 2.75 12Z", true, KitFill.NONE),
+      KitShape("M2.062 12.348a1 1 0 0 1 0 -0.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 0.696 10.75 10.75 0 0 1 -19.876 0", true, KitFill.NONE),
       KitShape("M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «headphones». */
   MUSICA(
     "Escuchar música",
     listOf(
-      KitShape("M4.5 14.5V12a7.5 7.5 0 0 1 15 0v2.5", true, KitFill.NONE),
-      KitShape("M4.5 14.5h1.6c.8 0 1.4.6 1.4 1.4v3.2c0 .8-.6 1.4-1.4 1.4h-.2c-.8 0-1.4-.6-1.4-1.4z", true, KitFill.NONE),
-      KitShape("M19.5 14.5h-1.6c-.8 0-1.4.6-1.4 1.4v3.2c0 .8.6 1.4 1.4 1.4h.2c.8 0 1.4-.6 1.4-1.4z", true, KitFill.NONE),
+      KitShape("M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3a2 2 0 0 1 2 -2h3", true, KitFill.NONE),
     ),
   ),
+  /** Propio, con las reglas de construcción de Lucide (D-187). El Tag visto desde arriba: cuerpo, botón y argolla. Lucide no tiene el Tag. */
   OBJETO(
     "Objeto",
     listOf(
-      KitShape("M3.5 12.5A8.5 8.5 0 1 0 20.5 12.5A8.5 8.5 0 1 0 3.5 12.5Z", true, KitFill.NONE),
-      KitShape("M9 13.4A3 3 0 1 0 15 13.4A3 3 0 1 0 9 13.4Z", true, KitFill.NONE),
-      KitShape("M10.9 6.9A1.1 1.1 0 1 0 13.1 6.9A1.1 1.1 0 1 0 10.9 6.9Z", false, KitFill.INK),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M9 13A3 3 0 1 0 15 13A3 3 0 1 0 9 13Z", true, KitFill.NONE),
+      KitShape("M12 6h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «eye-off». */
   OCULTAR(
     "Ocultar",
     listOf(
-      KitShape("M2.75 12C5 7.5 8.3 5.5 12 5.5S19 7.5 21.25 12C19 16.5 15.7 18.5 12 18.5S5 16.5 2.75 12Z", true, KitFill.NONE),
-      KitShape("M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z", true, KitFill.NONE),
-      KitShape("M4.5 4.5L19.5 19.5", true, KitFill.NONE),
+      KitShape("M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 0.696 10.747 10.747 0 0 1 -1.444 2.49", true, KitFill.NONE),
+      KitShape("M14.084 14.158a3 3 0 0 1 -4.242 -4.242", true, KitFill.NONE),
+      KitShape("M17.479 17.499a10.75 10.75 0 0 1 -15.417 -5.151 1 1 0 0 1 0 -0.696 10.75 10.75 0 0 1 4.446 -5.143", true, KitFill.NONE),
+      KitShape("m2 2 20 20", true, KitFill.NONE),
     ),
   ),
-  /** D-162: el colgador: las sugerencias son de ropa; la caja se leía «archivar». */
+  /** Lucide «shirt». Lucide no tiene un colgador: la polera dice «juntar la ropa», la primera sugerencia de la app. Revisar. */
   ORDENAR(
     "Ordenar",
     listOf(
-      KitShape("M10.2 6.2A1.8 1.8 0 1 1 12 8V9.3", true, KitFill.NONE),
-      KitShape("M12 9.3L3.7 15.5C2.9 16.1 3.3 17.5 4.4 17.5H19.6C20.7 17.5 21.1 16.1 20.3 15.5Z", true, KitFill.NONE),
+      KitShape("M20.38 3.46 16 2a4 4 0 0 1 -8 0L3.62 3.46a2 2 0 0 0 -1.34 2.23l0.58 3.47a1 1 0 0 0 0.99 0.84H6v10c0 1.1 0.9 2 2 2h8a2 2 0 0 0 2 -2V10h2.15a1 1 0 0 0 0.99 -0.84l0.58 -3.47a2 2 0 0 0 -1.34 -2.23z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «speaker». */
   PARLANTE(
     "Parlante",
     listOf(
-      KitShape("M9 3H15A3 3 0 0 1 18 6V18A3 3 0 0 1 15 21H9A3 3 0 0 1 6 18V6A3 3 0 0 1 9 3Z", true, KitFill.NONE),
-      KitShape("M8.9 14.4A3.1 3.1 0 1 0 15.1 14.4A3.1 3.1 0 1 0 8.9 14.4Z", true, KitFill.NONE),
-      KitShape("M11 7.5A1 1 0 1 0 13 7.5A1 1 0 1 0 11 7.5Z", false, KitFill.INK),
+      KitShape("M6 2H18A2 2 0 0 1 20 4V20A2 2 0 0 1 18 22H6A2 2 0 0 1 4 20V4A2 2 0 0 1 6 2Z", true, KitFill.NONE),
+      KitShape("M12 6h0.01", true, KitFill.NONE),
+      KitShape("M8 14A4 4 0 1 0 16 14A4 4 0 1 0 8 14Z", true, KitFill.NONE),
+      KitShape("M12 14h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «pause». */
   PAUSAR(
     "Pausar",
     listOf(
-      KitShape("M9 6.2v11.6M15 6.2v11.6", true, KitFill.NONE),
+      KitShape("M15 3H18A1 1 0 0 1 19 4V20A1 1 0 0 1 18 21H15A1 1 0 0 1 14 20V4A1 1 0 0 1 15 3Z", true, KitFill.NONE),
+      KitShape("M6 3H9A1 1 0 0 1 10 4V20A1 1 0 0 1 9 21H6A1 1 0 0 1 5 20V4A1 1 0 0 1 6 3Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «user». */
   PERFIL(
     "Perfil",
     listOf(
-      KitShape("M8.1 8.4A3.9 3.9 0 1 0 15.9 8.4A3.9 3.9 0 1 0 8.1 8.4Z", true, KitFill.NONE),
-      KitShape("M4.5 20.5c.8-3.8 3.8-6 7.5-6s6.7 2.2 7.5 6", true, KitFill.NONE),
+      KitShape("M19 21v-2a4 4 0 0 0 -4 -4H9a4 4 0 0 0 -4 4v2", true, KitFill.NONE),
+      KitShape("M8 7A4 4 0 1 0 16 7A4 4 0 1 0 8 7Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «shield-check». */
   PERMISO(
     "Permiso",
     listOf(
-      KitShape("M12 3.5l7 2.7v5.1c0 4.4-2.9 8-7 9.2-4.1-1.2-7-4.8-7-9.2V6.2z", true, KitFill.NONE),
-      KitShape("M9 12l2.2 2.2 3.8-4", true, KitFill.NONE),
+      KitShape("M20 13c0 5 -3.5 7.5 -7.66 8.95a1 1 0 0 1 -0.67 -0.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1 -1c2 0 4.5 -1.2 6.24 -2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z", true, KitFill.NONE),
+      KitShape("m9 12 2 2 4 -4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «palette». «Preparar las acuarelas», como sugiere la app, y se distingue mejor del lápiz de Dibujar. */
   PINTAR(
     "Pintar",
     listOf(
-      KitShape("M20 4c-.9-.9-2.3-.9-3.2 0L10 10.8l3.2 3.2L20 7.2c.9-.9.9-2.3 0-3.2z", true, KitFill.NONE),
-      KitShape("M10 10.8c-2.3-.4-4.1 1.2-4.3 3.5-.1 1.6-.8 2.8-2.2 3.5 3.3 1.3 7.3.8 8.8-2.3.6-1.4.4-1.9.9-1.5", true, KitFill.NONE),
+      KitShape("M12 22a1 1 0 0 1 0 -20 10 9 0 0 1 10 9 5 5 0 0 1 -5 5h-2.25a1.75 1.75 0 0 0 -1.4 2.8l0.3 0.4a1.75 1.75 0 0 1 -1.4 2.8z", true, KitFill.NONE),
+      KitShape("M13 6.5A0.5 0.5 0 1 0 14 6.5A0.5 0.5 0 1 0 13 6.5Z", true, KitFill.INK),
+      KitShape("M17 10.5A0.5 0.5 0 1 0 18 10.5A0.5 0.5 0 1 0 17 10.5Z", true, KitFill.INK),
+      KitShape("M6 12.5A0.5 0.5 0 1 0 7 12.5A0.5 0.5 0 1 0 6 12.5Z", true, KitFill.INK),
+      KitShape("M8 7.5A0.5 0.5 0 1 0 9 7.5A0.5 0.5 0 1 0 8 7.5Z", true, KitFill.INK),
     ),
   ),
+  /** Lucide «plant-pot». */
   PLANTAS(
     "Cuidar las plantas",
     listOf(
-      KitShape("M6.8 14h10.4l-1.3 5.3a1.5 1.5 0 0 1-1.5 1.2H9.6a1.5 1.5 0 0 1-1.5-1.2z", true, KitFill.NONE),
-      KitShape("M12 14V9.3", true, KitFill.NONE),
-      KitShape("M12 10.2C12 7.4 10.1 5.7 7 5.7c0 2.8 1.9 4.5 5 4.5z", true, KitFill.NONE),
-      KitShape("M12 9.3c0-2.5 1.7-4 4.6-4 0 2.5-1.7 4-4.6 4z", true, KitFill.NONE),
+      KitShape("M14 8.536V6a4 4 0 0 1 4 -4h1.5a0.5 0.5 0 0 1 0.5 0.5V4a4 4 0 0 1 -4 4 4 4 0 0 0 -4 4 5 5 0 0 1 -8 -4 5 5 0 0 1 8 4c0 2 1 3 1 5", true, KitFill.NONE),
+      KitShape("m18 17 -1.085 3.58A2 2 0 0 1 15 22H9.002a2 2 0 0 1 -1.913 -1.418L6 17", true, KitFill.NONE),
+      KitShape("M5 17h14", true, KitFill.NONE),
     ),
   ),
+  /** Adaptado de Lucide (D-187). De «footprints»: una sola huella, sin girar y más grande, el primer paso. Sin uso en la app. */
   PRIMER_PASO(
     "Cómo empieza",
     listOf(
-      KitShape("M3.5 20H8v-4.5h4.5V11H17V6.5h3.5", true, KitFill.NONE),
-      KitShape("M4.25 17.1A1.35 1.35 0 1 0 6.95 17.1A1.35 1.35 0 1 0 4.25 17.1Z", false, KitFill.INK),
+      KitShape("M9 19.5v-2.975C9 13.875 7.713 12.625 7.75 9.5c0.038 -3.4 1.863 -7.5 5.625 -7.5C15.713 2 16.5 4.25 16.5 6.375c0 3.888 -2.5 7.075 -2.5 10.85V19.5a2.5 2.5 0 1 1 -5 0Z", true, KitFill.NONE),
+      KitShape("M9 16h5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «lock». */
   PRIVACIDAD(
     "Privacidad",
     listOf(
-      KitShape("M7.6 10.5H16.4A2.6 2.6 0 0 1 19 13.1V17.9A2.6 2.6 0 0 1 16.4 20.5H7.6A2.6 2.6 0 0 1 5 17.9V13.1A2.6 2.6 0 0 1 7.6 10.5Z", true, KitFill.NONE),
-      KitShape("M8 10.5V8a4 4 0 0 1 8 0v2.5", true, KitFill.NONE),
-      KitShape("M12 14.4v2.2", true, KitFill.NONE),
+      KitShape("M5 11H19A2 2 0 0 1 21 13V20A2 2 0 0 1 19 22H5A2 2 0 0 1 3 20V13A2 2 0 0 1 5 11Z", true, KitFill.NONE),
+      KitShape("M7 11V7a5 5 0 0 1 10 0v4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «volume-2». */
   PROBAR(
     "Probar sonido",
     listOf(
-      KitShape("M3.5 9.5H6.75L11.5 5.5V18.5L6.75 14.5H3.5Z", true, KitFill.NONE),
-      KitShape("M15 9.25A4 4 0 0 1 15 14.75", true, KitFill.NONE),
-      KitShape("M17.75 6.5A8 8 0 0 1 17.75 17.5", true, KitFill.NONE),
+      KitShape("M11 4.702a0.705 0.705 0 0 0 -1.203 -0.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 0.997 0.413l3.383 3.384A0.705 0.705 0 0 0 11 19.298z", true, KitFill.NONE),
+      KitShape("M16 9a5 5 0 0 1 0 6", true, KitFill.NONE),
+      KitShape("M19.364 18.364a9 9 0 0 0 0 -12.728", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «bug». */
   PROBLEMA(
     "Reportar un problema",
     listOf(
-      KitShape("M9.4 8.9A2.6 2.6 0 0 1 14.6 8.9", true, KitFill.NONE),
-      KitShape("M12 8.25C15 8.25 16.75 10.6 16.75 14C16.75 17.4 14.6 19.75 12 19.75S7.25 17.4 7.25 14C7.25 10.6 9 8.25 12 8.25Z", true, KitFill.NONE),
-      KitShape("M12 11V19.5", true, KitFill.NONE),
-      KitShape("M7.25 13H4M7.3 16.5L4.75 18.25M16.75 13H20M16.7 16.5L19.25 18.25M8.4 10L6 7.75M15.6 10L18 7.75", true, KitFill.NONE),
+      KitShape("M12 20v-9", true, KitFill.NONE),
+      KitShape("M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1 -12 0v-3a4 4 0 0 1 4 -4z", true, KitFill.NONE),
+      KitShape("M14.12 3.88 16 2", true, KitFill.NONE),
+      KitShape("M21 21a4 4 0 0 0 -3.81 -4", true, KitFill.NONE),
+      KitShape("M21 5a4 4 0 0 1 -3.55 3.97", true, KitFill.NONE),
+      KitShape("M22 13h-4", true, KitFill.NONE),
+      KitShape("M3 21a4 4 0 0 1 3.81 -4", true, KitFill.NONE),
+      KitShape("M3 5a4 4 0 0 0 3.55 3.97", true, KitFill.NONE),
+      KitShape("M6 13H2", true, KitFill.NONE),
+      KitShape("m8 2 1.88 1.88", true, KitFill.NONE),
+      KitShape("M9 7.13V6a3 3 0 1 1 6 0v1.13", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «rotate-cw». */
   REINTENTAR(
     "Reintentar",
     listOf(
-      KitShape("M19.5 12a7.5 7.5 0 1 1-2.2-5.3", true, KitFill.NONE),
-      KitShape("M19.6 4.2v3.6H16", true, KitFill.NONE),
+      KitShape("M21 12a9 9 0 1 1 -9 -9c2.52 0 4.93 1 6.74 2.74L21 8", true, KitFill.NONE),
+      KitShape("M21 3v5h-5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «list». */
   RELEVOS(
     "Relevos",
     listOf(
-      KitShape("M9 6.5H20.5M9 12H20.5M9 17.5H20.5", true, KitFill.NONE),
-      KitShape("M3.5 6.5A1.25 1.25 0 1 0 6 6.5A1.25 1.25 0 1 0 3.5 6.5Z", false, KitFill.INK),
-      KitShape("M3.5 12A1.25 1.25 0 1 0 6 12A1.25 1.25 0 1 0 3.5 12Z", false, KitFill.INK),
-      KitShape("M3.5 17.5A1.25 1.25 0 1 0 6 17.5A1.25 1.25 0 1 0 3.5 17.5Z", false, KitFill.INK),
+      KitShape("M3 5h0.01", true, KitFill.NONE),
+      KitShape("M3 12h0.01", true, KitFill.NONE),
+      KitShape("M3 19h0.01", true, KitFill.NONE),
+      KitShape("M8 5h13", true, KitFill.NONE),
+      KitShape("M8 12h13", true, KitFill.NONE),
+      KitShape("M8 19h13", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «play». */
   REPRODUCIR(
     "Reproducir",
     listOf(
-      KitShape("M8 6.3c0-.9 1-1.4 1.7-.9l8.4 5.7c.6.4.6 1.4 0 1.8l-8.4 5.7c-.7.5-1.7 0-1.7-.9z", true, KitFill.NONE),
+      KitShape("M5 5a2 2 0 0 1 3.008 -1.728l11.997 6.998a2 2 0 0 1 0.003 3.458l-12 7A2 2 0 0 1 5 19z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «door-open». Salir de la casa; la huella de mascota decía otra cosa (D-162). */
   SALIR(
     "Salir",
     listOf(
-      KitShape("M8.3 16.4c.6-2.6 2-3.9 3.7-3.9s3.1 1.3 3.7 3.9c.4 1.9-.8 3.6-2.6 3.6h-2.2c-1.8 0-3-1.7-2.6-3.6z", true, KitFill.NONE),
-      KitShape("M4.2 10.9A1.7 1.7 0 1 0 7.6 10.9A1.7 1.7 0 1 0 4.2 10.9Z", true, KitFill.NONE),
-      KitShape("M7.7 6.9A1.8 1.8 0 1 0 11.3 6.9A1.8 1.8 0 1 0 7.7 6.9Z", true, KitFill.NONE),
-      KitShape("M12.7 6.9A1.8 1.8 0 1 0 16.3 6.9A1.8 1.8 0 1 0 12.7 6.9Z", true, KitFill.NONE),
-      KitShape("M16.4 10.9A1.7 1.7 0 1 0 19.8 10.9A1.7 1.7 0 1 0 16.4 10.9Z", true, KitFill.NONE),
+      KitShape("M10 21H2", true, KitFill.NONE),
+      KitShape("M10 3H7a2 2 0 0 0 -2 2v16", true, KitFill.NONE),
+      KitShape("M14 12h0.01", true, KitFill.NONE),
+      KitShape("M19 21V5a2 2 0 0 0 -1.675 -1.974l-6.163 -1.013A1 1 0 0 0 10 3v18a1 1 0 0 0 1.124 0.992z", true, KitFill.NONE),
+      KitShape("M22 21h-3", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «arrow-right». */
   SIGUIENTE(
     "Siguiente",
     listOf(
-      KitShape("M4.5 12h15M14 6.5l5.5 5.5-5.5 5.5", true, KitFill.NONE),
+      KitShape("M5 12h14", true, KitFill.NONE),
+      KitShape("m12 5 7 7 -7 7", true, KitFill.NONE),
     ),
   ),
+  /** Adaptado de Lucide (D-187). De «volume-x»: el mismo Tag de Suena, con la cruz de «volume-x». */
   SILENCIAR(
     "Silenciar",
     listOf(
-      KitShape("M3 12.5A6 6 0 1 0 15 12.5A6 6 0 1 0 3 12.5Z", true, KitFill.NONE),
-      KitShape("M6.9 13.2A2.1 2.1 0 1 0 11.1 13.2A2.1 2.1 0 1 0 6.9 13.2Z", true, KitFill.NONE),
-      KitShape("M8.1 8.4A0.9 0.9 0 1 0 9.9 8.4A0.9 0.9 0 1 0 8.1 8.4Z", false, KitFill.INK),
-      KitShape("M16.5 10l4.5 4.5M21 10l-4.5 4.5", true, KitFill.NONE),
+      KitShape("M2 12A5.5 5.5 0 1 0 13 12A5.5 5.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M7.5 12h0.01", true, KitFill.NONE),
+      KitShape("m17 9.5 5 5", true, KitFill.NONE),
+      KitShape("m22 9.5 -5 5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «cloud-off». */
   SIN_CONEXION(
     "Sin conexión",
     listOf(
-      KitShape("M7 18.5A4.25 4.25 0 0 1 6.35 10.05A5.75 5.75 0 0 1 17.45 9.4A4.55 4.55 0 0 1 17.25 18.5Z", true, KitFill.NONE),
-      KitShape("M4 4L20 20", true, KitFill.NONE),
+      KitShape("M10.94 5.274A7 7 0 0 1 15.71 10h1.79a4.5 4.5 0 0 1 4.222 6.057", true, KitFill.NONE),
+      KitShape("M18.796 18.81A4.5 4.5 0 0 1 17.5 19H9A7 7 0 0 1 5.79 5.78", true, KitFill.NONE),
+      KitShape("m2 2 20 20", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «cloud-upload». */
   SINCRONIZAR(
     "Sincronizar datos",
     listOf(
-      KitShape("M7 18.5A4.25 4.25 0 0 1 6.35 10.05A5.75 5.75 0 0 1 17.45 9.4A4.55 4.55 0 0 1 17.25 18.5Z", true, KitFill.NONE),
-      KitShape("M12 16V11.25M9.9 13.25L12 11.15L14.1 13.25", true, KitFill.NONE),
+      KitShape("M12 13v8", true, KitFill.NONE),
+      KitShape("M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", true, KitFill.NONE),
+      KitShape("m8 17 4 -4 4 4", true, KitFill.NONE),
     ),
   ),
+  /** Adaptado de Lucide (D-187). De «smartphone»: el teléfono junto al Tag. Sin uso en la app. */
   SISTEMA(
     "Sistema phygital",
     listOf(
-      KitShape("M5.25 3.75H8.75A2.25 2.25 0 0 1 11 6V18A2.25 2.25 0 0 1 8.75 20.25H5.25A2.25 2.25 0 0 1 3 18V6A2.25 2.25 0 0 1 5.25 3.75Z", true, KitFill.NONE),
-      KitShape("M17 10.5H19A2 2 0 0 1 21 12.5V18.25A2 2 0 0 1 19 20.25H17A2 2 0 0 1 15 18.25V12.5A2 2 0 0 1 17 10.5Z", true, KitFill.NONE),
-      KitShape("M12.5 15.25H13.5", true, KitFill.NONE),
+      KitShape("M4 2H8A2 2 0 0 1 10 4V20A2 2 0 0 1 8 22H4A2 2 0 0 1 2 20V4A2 2 0 0 1 4 2Z", true, KitFill.NONE),
+      KitShape("M6 18h0.01", true, KitFill.NONE),
+      KitShape("M14 17A4 4 0 1 0 22 17A4 4 0 1 0 14 17Z", true, KitFill.NONE),
+      KitShape("M18 17h0.01", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «smartphone». */
   TELEFONO(
     "Este teléfono",
     listOf(
-      KitShape("M9.3 3H14.7A2.8 2.8 0 0 1 17.5 5.8V18.2A2.8 2.8 0 0 1 14.7 21H9.3A2.8 2.8 0 0 1 6.5 18.2V5.8A2.8 2.8 0 0 1 9.3 3Z", true, KitFill.NONE),
-      KitShape("M10.5 18h3", true, KitFill.NONE),
+      KitShape("M7 2H17A2 2 0 0 1 19 4V20A2 2 0 0 1 17 22H7A2 2 0 0 1 5 20V4A2 2 0 0 1 7 2Z", true, KitFill.NONE),
+      KitShape("M12 18h0.01", true, KitFill.NONE),
     ),
   ),
-  /** D-162: el signo de contraste; los destellos se leían como inteligencia artificial. */
+  /** Lucide «contrast». El signo de contraste (D-162). */
   TEMA(
     "Tema claro u oscuro",
     listOf(
-      KitShape("M3.5 12A8.5 8.5 0 1 0 20.5 12A8.5 8.5 0 1 0 3.5 12Z", true, KitFill.NONE),
-      KitShape("M12 3.5A8.5 8.5 0 0 1 12 20.5Z", false, KitFill.INK),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M12 18a6 6 0 0 0 0 -12v12z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «a-large-small». */
   TEXTO(
     "Tamaño del texto",
     listOf(
-      KitShape("M3.5 18L8 6L12.5 18M5.3 13.5H10.7", true, KitFill.NONE),
-      KitShape("M15.25 11.4C16.2 10.4 20.25 10 20.25 13V18M20.25 14.4C19.1 13.8 15 13.6 15 16.1C15 18.6 19.1 18.5 20.25 16.4", true, KitFill.NONE),
+      KitShape("m15 16 2.536 -7.328a1.02 1.02 1 0 1 1.928 0L22 16", true, KitFill.NONE),
+      KitShape("M15.697 14h5.606", true, KitFill.NONE),
+      KitShape("m2 16 4.039 -9.69a0.5 0.5 0 0 1 0.923 0L11 16", true, KitFill.NONE),
+      KitShape("M3.304 13h6.392", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «timer». */
   TIEMPO(
     "Tiempo",
     listOf(
-      KitShape("M4.5 13.5A7.5 7.5 0 1 0 19.5 13.5A7.5 7.5 0 1 0 4.5 13.5Z", true, KitFill.NONE),
-      KitShape("M10 3.5h4M12 3.5V6", true, KitFill.NONE),
-      KitShape("M12 9.6v3.9l2.6 1.7", true, KitFill.NONE),
-      KitShape("M18.3 7.2l1.2-1.2", true, KitFill.NONE),
+      KitShape("M10 2L14 2", true, KitFill.NONE),
+      KitShape("M12 14L15 11", true, KitFill.NONE),
+      KitShape("M4 14A8 8 0 1 0 20 14A8 8 0 1 0 4 14Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «clock». */
   USO(
     "Después de cuánto uso",
     listOf(
-      KitShape("M4.25 13.25A7.75 7.75 0 1 0 19.75 13.25A7.75 7.75 0 1 0 4.25 13.25Z", true, KitFill.NONE),
-      KitShape("M12 13.25V9.25", true, KitFill.NONE),
-      KitShape("M9.75 2.75H14.25", true, KitFill.NONE),
-      KitShape("M12 2.75V5.5", true, KitFill.NONE),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M12 6v6l4 2", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «user-round». */
   USUARIO(
     "Persona",
     listOf(
-      KitShape("M8 8A4 4 0 1 0 16 8A4 4 0 1 0 8 8Z", true, KitFill.NONE),
-      KitShape("M4.5 20.5C4.5 16.4 7.9 13.5 12 13.5S19.5 16.4 19.5 20.5", true, KitFill.NONE),
+      KitShape("M7 8A5 5 0 1 0 17 8A5 5 0 1 0 7 8Z", true, KitFill.NONE),
+      KitShape("M20 21a8 8 0 0 0 -16 0", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «clipboard-check». */
   VALIDACION(
     "Validación",
     listOf(
-      KitShape("M6.75 3.25H17.25A2.5 2.5 0 0 1 19.75 5.75V18.25A2.5 2.5 0 0 1 17.25 20.75H6.75A2.5 2.5 0 0 1 4.25 18.25V5.75A2.5 2.5 0 0 1 6.75 3.25Z", true, KitFill.NONE),
-      KitShape("M7.75 8.75L9.1 10L11.25 7.5M13.25 8.75H16.5M7.75 14.75L9.1 16L11.25 13.5M13.25 14.75H16.5", true, KitFill.NONE),
+      KitShape("M9 2H15A1 1 0 0 1 16 3V5A1 1 0 0 1 15 6H9A1 1 0 0 1 8 5V3A1 1 0 0 1 9 2Z", true, KitFill.NONE),
+      KitShape("M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V6a2 2 0 0 1 2 -2h2", true, KitFill.NONE),
+      KitShape("m9 14 2 2 4 -4", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «arrow-left». */
   VOLVER(
     "Volver",
     listOf(
-      KitShape("M19.5 12h-15M10 6.5L4.5 12l5.5 5.5", true, KitFill.NONE),
+      KitShape("m12 19 -7 -7 7 -7", true, KitFill.NONE),
+      KitShape("M19 12H5", true, KitFill.NONE),
     ),
   ),
+  /** Adaptado de Lucide (D-187). De «radio» y «volume-2»: el Tag en lugar del parlante, con los anillos concéntricos de «radio». */
   SUENA(
     "Suena",
     listOf(
-      KitShape("M3 12.5A6 6 0 1 0 15 12.5A6 6 0 1 0 3 12.5Z", true, KitFill.NONE),
-      KitShape("M6.9 13.2A2.1 2.1 0 1 0 11.1 13.2A2.1 2.1 0 1 0 6.9 13.2Z", true, KitFill.NONE),
-      KitShape("M8.1 8.4A0.9 0.9 0 1 0 9.9 8.4A0.9 0.9 0 1 0 8.1 8.4Z", false, KitFill.INK),
-      KitShape("M16.4 9.3a4.6 4.6 0 0 1 0 6.4", true, KitFill.NONE),
-      KitShape("M19 6.5a9 9 0 0 1 0 12", true, KitFill.NONE),
+      KitShape("M2 12A5.5 5.5 0 1 0 13 12A5.5 5.5 0 1 0 2 12Z", true, KitFill.NONE),
+      KitShape("M7.5 12h0.01", true, KitFill.NONE),
+      KitShape("M14.218 5.282a9.5 9.5 0 0 1 0 13.435", true, KitFill.NONE),
+      KitShape("M17.046 2.454a13.5 13.5 0 0 1 0 19.092", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «route». */
   RUTA(
     "Ruta",
     listOf(
-      KitShape("M3.5 20H8v-4.5h4.5V11H17V6.5h3.5", true, KitFill.NONE),
-      KitShape("M4.25 17.1A1.35 1.35 0 1 0 6.95 17.1A1.35 1.35 0 1 0 4.25 17.1Z", false, KitFill.INK),
+      KitShape("M3 19A3 3 0 1 0 9 19A3 3 0 1 0 3 19Z", true, KitFill.NONE),
+      KitShape("M9 19h8.5a3.5 3.5 0 0 0 0 -7h-11a3.5 3.5 0 0 1 0 -7H15", true, KitFill.NONE),
+      KitShape("M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5Z", true, KitFill.NONE),
     ),
   ),
-  /** 3.2: tu semana, en barras. */
+  /** Lucide «chart-no-axes-column». */
   AVANCE(
     "Avance",
-    listOf(KitShape("M5 20v-6M10 20V9M15 20v-4M20 20V5", true, KitFill.NONE)),
+    listOf(
+      KitShape("M5 21v-6", true, KitFill.NONE),
+      KitShape("M12 21V3", true, KitFill.NONE),
+      KitShape("M19 21V9", true, KitFill.NONE),
+    ),
   ),
-  /** 3.2: abrir una fila, el galón de las listas. */
+  /** Lucide «chevron-right». */
   ABRIR(
     "Abrir",
-    listOf(KitShape("M9.5 5.5l6.5 6.5-6.5 6.5", true, KitFill.NONE)),
+    listOf(
+      KitShape("m9 18 6 -6 -6 -6", true, KitFill.NONE),
+    ),
   ),
-  /** 4.0 (D-155): la tuerca de los ajustes, en Perfil. Ocho dientes y el centro abierto. */
+  /** Lucide «settings». */
   TUERCA(
     "Ajustes",
     listOf(
-      KitShape("M10.28 5.37L10.75 3.09A9 9 0 0 1 13.25 3.09L13.72 5.37A6.85 6.85 0 0 1 15.48 6.1L17.42 4.81A9 9 0 0 1 19.19 6.58L17.9 8.52A6.85 6.85 0 0 1 18.63 10.28L20.91 10.75A9 9 0 0 1 20.91 13.25L18.63 13.72A6.85 6.85 0 0 1 17.9 15.48L19.19 17.42A9 9 0 0 1 17.42 19.19L15.48 17.9A6.85 6.85 0 0 1 13.72 18.63L13.25 20.91A9 9 0 0 1 10.75 20.91L10.28 18.63A6.85 6.85 0 0 1 8.52 17.9L6.58 19.19A9 9 0 0 1 4.81 17.42L6.1 15.48A6.85 6.85 0 0 1 5.37 13.72L3.09 13.25A9 9 0 0 1 3.09 10.75L5.37 10.28A6.85 6.85 0 0 1 6.1 8.52L4.81 6.58A9 9 0 0 1 6.58 4.81L8.52 6.1A6.85 6.85 0 0 1 10.28 5.37Z", true, KitFill.NONE),
-      KitShape("M9.1 12A2.9 2.9 0 1 0 14.9 12A2.9 2.9 0 1 0 9.1 12Z", true, KitFill.NONE),
+      KitShape("M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1 -2.33 4.033 2.34 2.34 0 0 0 -3.319 1.915 2.34 2.34 0 0 1 -4.659 0 2.34 2.34 0 0 0 -3.32 -1.915 2.34 2.34 0 0 1 -2.33 -4.033 2.34 2.34 0 0 0 0 -3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319 -1.915", true, KitFill.NONE),
+      KitShape("M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12Z", true, KitFill.NONE),
     ),
   ),
-  /** 4.0 (D-155): la pestaña Actividades, cuatro anillos como su cuadrícula. */
+  /** Adaptado de Lucide (D-187). De «layout-grid»: cuatro círculos, como los del logo (D-155). */
   ACTIVIDADES(
     "Actividades",
     listOf(
-      KitShape("M4.1 7.6A3.5 3.5 0 1 0 11.1 7.6A3.5 3.5 0 1 0 4.1 7.6Z", true, KitFill.NONE),
-      KitShape("M12.9 7.6A3.5 3.5 0 1 0 19.9 7.6A3.5 3.5 0 1 0 12.9 7.6Z", true, KitFill.NONE),
-      KitShape("M4.1 16.4A3.5 3.5 0 1 0 11.1 16.4A3.5 3.5 0 1 0 4.1 16.4Z", true, KitFill.NONE),
-      KitShape("M12.9 16.4A3.5 3.5 0 1 0 19.9 16.4A3.5 3.5 0 1 0 12.9 16.4Z", true, KitFill.NONE),
+      KitShape("M3 6.5A3.5 3.5 0 1 0 10 6.5A3.5 3.5 0 1 0 3 6.5Z", true, KitFill.NONE),
+      KitShape("M14 6.5A3.5 3.5 0 1 0 21 6.5A3.5 3.5 0 1 0 14 6.5Z", true, KitFill.NONE),
+      KitShape("M3 17.5A3.5 3.5 0 1 0 10 17.5A3.5 3.5 0 1 0 3 17.5Z", true, KitFill.NONE),
+      KitShape("M14 17.5A3.5 3.5 0 1 0 21 17.5A3.5 3.5 0 1 0 14 17.5Z", true, KitFill.NONE),
     ),
   ),
-  // 4.3 (D-158): trece íconos nuevos para las actividades, dibujados con la misma retícula de 24 y trazo
-  // redondeado; sus SVG están en 10_recursos_visuales/marca-a-tiempo/iconos.
-  /** D-162: orejas separadas y sin boca, legible a 17 px. */
+  /** Lucide «dog». */
   PERRO(
     "Perro",
     listOf(
-      KitShape("M8.5 9.6C8.5 7.4 10 5.7 12 5.7S15.5 7.4 15.5 9.6V14.4C15.5 16.8 14 18.6 12 18.6S8.5 16.8 8.5 14.4Z", true, KitFill.NONE),
-      KitShape("M8.1 6.4C6 5.9 4.2 7.1 3.8 9.4C3.5 11.3 3.9 13 4.9 13.7C5.6 14.2 6.4 13.9 6.6 13.1L7 11.5", true, KitFill.NONE),
-      KitShape("M15.9 6.4C18 5.9 19.8 7.1 20.2 9.4C20.5 11.3 20.1 13 19.1 13.7C18.4 14.2 17.6 13.9 17.4 13.1L17 11.5", true, KitFill.NONE),
-      KitShape("M10.6 15.1A1.4 1.1 0 1 0 13.4 15.1A1.4 1.1 0 1 0 10.6 15.1Z", false, KitFill.INK),
-      KitShape("M9.8 10.8A.8 .8 0 1 0 11.4 10.8A.8 .8 0 1 0 9.8 10.8Z", false, KitFill.INK),
-      KitShape("M12.6 10.8A.8 .8 0 1 0 14.2 10.8A.8 .8 0 1 0 12.6 10.8Z", false, KitFill.INK),
+      KitShape("M11.25 16.25h1.5L12 17z", true, KitFill.NONE),
+      KitShape("M16 14v0.5", true, KitFill.NONE),
+      KitShape("M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8 -2.272 8 -6.444a11.702 11.702 0 0 0 -0.493 -3.309", true, KitFill.NONE),
+      KitShape("M8 14v0.5", true, KitFill.NONE),
+      KitShape("M8.5 8.5c-0.384 1.05 -1.083 2.028 -2.344 2.5 -1.931 0.722 -3.576 -0.297 -3.656 -1 -0.113 -0.994 1.177 -6.53 4 -7 1.923 -0.321 3.651 0.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0 -1.39 1.844 -2.598 3.767 -2.277 2.823 0.47 4.113 6.006 4 7 -0.08 0.703 -1.725 1.722 -3.656 1 -1.261 -0.472 -1.855 -1.45 -2.239 -2.5", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «sport-shoe». La zapatilla: «Ponerte las zapatillas», como sugiere la app. */
   CORRER(
     "Correr",
     listOf(
-      KitShape("M3.5 18.2v-7.8c0-.6.6-1.1 1.2-.9l2.7.9c.5.2 1.1 0 1.4-.4l1.3-1.9c.3-.4.9-.5 1.3-.2l2 1.3c2.2 1.5 4.8 2.5 7.3 2.9.7.1 1.3.7 1.3 1.4v4.7z", true, KitFill.NONE),
-      KitShape("M3.5 14.9h17", true, KitFill.NONE),
-      KitShape("M11.4 10.6l1 1", true, KitFill.NONE),
-      KitShape("M13.6 11.9l.9 1", true, KitFill.NONE),
+      KitShape("m15 10.42 4.8 -5.07", true, KitFill.NONE),
+      KitShape("M19 18h3", true, KitFill.NONE),
+      KitShape("M9.5 22 21.414 9.415A2 2 0 0 0 21.2 6.4l-5.61 -4.208A1 1 0 0 0 14 3v2a2 2 0 0 1 -1.394 1.906L8.677 8.053A1 1 0 0 0 8 9c-0.155 6.393 -2.082 9 -4 9a2 2 0 0 0 0 4h14", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «waves-ladder». La escalera de la piscina. */
   NADAR(
     "Nadar",
     listOf(
-      KitShape("M3 15.8c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1", true, KitFill.NONE),
-      KitShape("M3 19.3c1.5 0 1.5 1 3 1s1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1", true, KitFill.NONE),
-      KitShape("M14.2 7.6a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0z", true, KitFill.NONE),
-      KitShape("M5.5 12.6l4.4-3.4c.5-.4 1.2-.4 1.7 0l3.7 3.4", true, KitFill.NONE),
+      KitShape("M19 5a2 2 0 0 0 -2 2v11", true, KitFill.NONE),
+      KitShape("M2 18c0.6 0.5 1.2 1 2.5 1 2.5 0 2.5 -2 5 -2 2.6 0 2.4 2 5 2 2.5 0 2.5 -2 5 -2 1.3 0 1.9 0.5 2.5 1", true, KitFill.NONE),
+      KitShape("M7 13h10", true, KitFill.NONE),
+      KitShape("M7 9h10", true, KitFill.NONE),
+      KitShape("M9 5a2 2 0 0 0 -2 2v11", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «volleyball». Una pelota genérica: el concepto reúne fútbol, básquetbol, vóleibol y otros deportes. Revisar. */
   PELOTA(
     "Pelota",
     listOf(
-      KitShape("M3.5 12a8.5 8.5 0 1 0 17 0a8.5 8.5 0 1 0 -17 0z", true, KitFill.NONE),
-      KitShape("M12 8.7l3 2.2-1.1 3.5h-3.8L9 10.9z", true, KitFill.NONE),
-      KitShape("M12 8.7V3.6M15 10.9l4.6-1.6M13.9 14.4l2.8 3.9M10.1 14.4l-2.8 3.9M9 10.9L4.4 9.3", true, KitFill.NONE),
+      KitShape("M11 7a16 16 20 0 1 10.98 4.362", true, KitFill.NONE),
+      KitShape("M12 12a13 13 0 0 1 -8.66 5", true, KitFill.NONE),
+      KitShape("M16.83 13.634a16 16 0 0 1 -9.267 7.328", true, KitFill.NONE),
+      KitShape("M20.66 17A13 13 0 0 0 12 12a13 13 0 0 1 0 -10", true, KitFill.NONE),
+      KitShape("M8.17 15.366a16 16 0 0 1 -1.713 -11.69", true, KitFill.NONE),
+      KitShape("M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «clapperboard». */
   PELICULA(
     "Ver una película",
     listOf(
-      KitShape("M3.5 10h17v8.5c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5z", true, KitFill.NONE),
-      KitShape("M3.5 10V6.5C3.5 5.7 4.2 5 5 5h14c.8 0 1.5.7 1.5 1.5V10", true, KitFill.NONE),
-      KitShape("M8.5 5L7 10M13 5l-1.5 5M17.5 5L16 10", true, KitFill.NONE),
+      KitShape("m12.296 3.464 3.02 3.956", true, KitFill.NONE),
+      KitShape("M20.2 6 3 11l-0.9 -2.4c-0.3 -1.1 0.3 -2.2 1.3 -2.5l13.5 -4c1.1 -0.3 2.2 0.3 2.5 1.3z", true, KitFill.NONE),
+      KitShape("M3 11h18v8a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2z", true, KitFill.NONE),
+      KitShape("m6.18 5.276 3.1 3.899", true, KitFill.NONE),
     ),
   ),
-  /** D-162: un tomo con un globo de diálogo, legible a 17 px. */
+  /** Adaptado de Lucide (D-187). De «book»: el tomo con un globo de diálogo (D-162). */
   MANGA(
     "Leer manga",
     listOf(
-      KitShape("M7 3.5H17.5A1.5 1.5 0 0 1 19 5V19A1.5 1.5 0 0 1 17.5 20.5H7A2 2 0 0 1 5 18.5V5.5A2 2 0 0 1 7 3.5Z", true, KitFill.NONE),
-      KitShape("M8.5 3.5V20.5", true, KitFill.NONE),
-      KitShape("M12 7.5H15.5A1.5 1.5 0 0 1 17 9V10.5A1.5 1.5 0 0 1 15.5 12H13.6L12 13.6V12A1.5 1.5 0 0 1 10.5 10.5V9A1.5 1.5 0 0 1 12 7.5Z", true, KitFill.NONE),
+      KitShape("M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1 -1 1H6.5a1 1 0 0 1 0 -5H20", true, KitFill.NONE),
+      KitShape("M10 6h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-2l-2 2v-2h-1a1 1 0 0 1 -1 -1V7a1 1 0 0 1 1 -1z", true, KitFill.NONE),
     ),
   ),
-  /** D-162: una pieza para armar; el cubo se leía «paquete». */
+  /** Lucide «toy-brick». */
   MAQUETA(
     "Armar una maqueta",
     listOf(
-      KitShape("M5.5 10.5H18.5A2 2 0 0 1 20.5 12.5V17.5A2 2 0 0 1 18.5 19.5H5.5A2 2 0 0 1 3.5 17.5V12.5A2 2 0 0 1 5.5 10.5Z", true, KitFill.NONE),
-      KitShape("M6.5 10.5V8.5A1 1 0 0 1 7.5 7.5H10.5A1 1 0 0 1 11.5 8.5V10.5", true, KitFill.NONE),
-      KitShape("M12.5 10.5V8.5A1 1 0 0 1 13.5 7.5H16.5A1 1 0 0 1 17.5 8.5V10.5", true, KitFill.NONE),
+      KitShape("M4 8H20A1 1 0 0 1 21 9V19A1 1 0 0 1 20 20H4A1 1 0 0 1 3 19V9A1 1 0 0 1 4 8Z", true, KitFill.NONE),
+      KitShape("M10 8V5c0 -0.6 -0.4 -1 -1 -1H6a1 1 0 0 0 -1 1v3", true, KitFill.NONE),
+      KitShape("M19 8V5c0 -0.6 -0.4 -1 -1 -1h-3a1 1 0 0 0 -1 1v3", true, KitFill.NONE),
     ),
   ),
-  /** D-162: dos hebras en vez de tres, legible a 17 px. */
+  /** Lucide «spool». El carrete de hilo: «Enhebrar la aguja», como sugiere la app. Lucide no tiene un ovillo. Revisar. */
   TEJER(
     "Tejer o coser",
     listOf(
-      KitShape("M4 14A6.2 6.2 0 1 0 16.4 14A6.2 6.2 0 1 0 4 14Z", true, KitFill.NONE),
-      KitShape("M5.2 11.3C7.8 10.9 11.6 12.1 14.8 15.5", true, KitFill.NONE),
-      KitShape("M7.6 8.6C10.3 9.5 13 11.8 15 15", true, KitFill.NONE),
-      KitShape("M14.6 9.4L20.5 3.5", true, KitFill.NONE),
+      KitShape("M17 13.44 4.442 17.082A2 2 0 0 0 4.982 21H19a2 2 0 0 0 0.558 -3.921l-1.115 -0.32A2 2 0 0 1 17 14.837V7.66", true, KitFill.NONE),
+      KitShape("m7 10.56 12.558 -3.642A2 2 0 0 0 19.018 3H5a2 2 0 0 0 -0.558 3.921l1.115 0.32A2 2 0 0 1 7 9.163v7.178", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «piano». */
   PIANO(
     "Tocar el piano",
     listOf(
-      KitShape("M3.5 6.5h17v11c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5z", true, KitFill.NONE),
-      KitShape("M8.2 13.2V19M12 13.2V19M15.8 13.2V19", true, KitFill.NONE),
-      KitShape("M7 6.5h2.4v6.7H7zM10.8 6.5h2.4v6.7h-2.4zM14.6 6.5H17v6.7h-2.4z", false, KitFill.INK),
+      KitShape("M10 13v4", true, KitFill.NONE),
+      KitShape("M14 13v4", true, KitFill.NONE),
+      KitShape("M18 13v4", true, KitFill.NONE),
+      KitShape("M2 13h20", true, KitFill.NONE),
+      KitShape("M22 11.5A3.5 3.5 0 0 0 18.5 8a3.52 3.52 0 0 1 -3.173 -2A7 7 0 0 0 2 9v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2 -2z", true, KitFill.NONE),
+      KitShape("M6 13v4", true, KitFill.NONE),
     ),
   ),
+  /** Propio, con las reglas de construcción de Lucide (D-187). La flor de loto, con pétalos como las hojas de «flower-2». Lucide no tiene un ícono de meditar. */
   MEDITAR(
     "Meditar",
     listOf(
-      KitShape("M12 6.3c1.8 1.6 2.7 3.6 2.7 5.8S13.8 16.3 12 17.9c-1.8-1.6-2.7-3.6-2.7-5.8S10.2 7.9 12 6.3z", true, KitFill.NONE),
-      KitShape("M12 17.9c-3.3-.1-6.2-2.3-7.5-5.5 1.9-.3 3.6.1 5 .8", true, KitFill.NONE),
-      KitShape("M12 17.9c3.3-.1 6.2-2.3 7.5-5.5-1.9-.3-3.6.1-5 .8", true, KitFill.NONE),
-      KitShape("M7.5 20.5h9", true, KitFill.NONE),
+      KitShape("M12 2A9 9 0 0 1 12 16A9 9 0 0 1 12 2Z", true, KitFill.NONE),
+      KitShape("M12 16A7 7 0 0 1 3 10A7 7 0 0 1 12 16Z", true, KitFill.NONE),
+      KitShape("M21 10A7 7 0 0 1 12 16A7 7 0 0 1 21 10Z", true, KitFill.NONE),
+      KitShape("M5 21h14", true, KitFill.NONE),
     ),
   ),
-  /** D-162: dos globos sin línea interior, legible a 17 px. */
+  /** Lucide «languages». */
   IDIOMAS(
     "Aprender un idioma",
     listOf(
-      KitShape("M4.5 3.5H12A1.5 1.5 0 0 1 13.5 5V11A1.5 1.5 0 0 1 12 12.5H8.2L5.5 14.8V12.5H4.5A1.5 1.5 0 0 1 3 11V5A1.5 1.5 0 0 1 4.5 3.5Z", true, KitFill.NONE),
-      KitShape("M6.3 10.3L8.25 5.7L10.2 10.3M7 8.8H9.5", true, KitFill.NONE),
-      KitShape("M15.5 9H19.5A1.5 1.5 0 0 1 21 10.5V16.5A1.5 1.5 0 0 1 19.5 18H18.5V20.3L15.8 18H12A1.5 1.5 0 0 1 10.5 16.5V14.5", true, KitFill.NONE),
+      KitShape("m5 8 6 6", true, KitFill.NONE),
+      KitShape("m4 14 6 -6 2 -3", true, KitFill.NONE),
+      KitShape("M2 5h12", true, KitFill.NONE),
+      KitShape("M7 2h1", true, KitFill.NONE),
+      KitShape("m22 22 -5 -10 -5 10", true, KitFill.NONE),
+      KitShape("M14 18h6", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «playing-cards». */
   CARTAS(
     "Jugar a las cartas",
     listOf(
-      KitShape("M9.5 6.5h8c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-8c-.8 0-1.5-.7-1.5-1.5V8c0-.8.7-1.5 1.5-1.5z", true, KitFill.NONE),
-      KitShape("M8 16.5H6.5c-.8 0-1.5-.7-1.5-1.5V5c0-.8.7-1.5 1.5-1.5h8c.8 0 1.5.7 1.5 1.5v1.5", true, KitFill.NONE),
-      KitShape("M13.5 10.6l2 2.5-2 2.5-2-2.5z", true, KitFill.NONE),
+      KitShape("M14.832 8.445a1 1 0 0 0 -1.589 -0.098l-2.075 3.098a1 1 0 0 0 0 1.11l2 3a1 1 0 0 0 1.664 0l2 -3a1 1 0 0 0 0 -1.11z", true, KitFill.NONE),
+      KitShape("m7.18 20.827 -5 -11a2 2 0 0 1 0.993 -2.647L7 5.44", true, KitFill.NONE),
+      KitShape("M9 2H19A2 2 0 0 1 21 4V20A2 2 0 0 1 19 22H9A2 2 0 0 1 7 20V4A2 2 0 0 1 9 2Z", true, KitFill.NONE),
     ),
   ),
+  /** Lucide «users». */
   COMPARTIR(
     "Con otras personas",
     listOf(
-      KitShape("M6.3 8.2a2.6 2.6 0 1 0 5.2 0a2.6 2.6 0 1 0 -5.2 0z", true, KitFill.NONE),
-      KitShape("M3.8 19.5c0-3.1 2.3-5.6 5.1-5.6s5.1 2.5 5.1 5.6", true, KitFill.NONE),
-      KitShape("M14.6 7.6a2.3 2.3 0 1 0 4.6 0a2.3 2.3 0 1 0 -4.6 0z", true, KitFill.NONE),
-      KitShape("M15.6 13.7c.4-.1.9-.2 1.3-.2 2.6 0 4.6 2.4 4.6 5.4", true, KitFill.NONE),
+      KitShape("M16 21v-2a4 4 0 0 0 -4 -4H6a4 4 0 0 0 -4 4v2", true, KitFill.NONE),
+      KitShape("M16 3.128a4 4 0 0 1 0 7.744", true, KitFill.NONE),
+      KitShape("M22 21v-2a4 4 0 0 0 -3 -3.87", true, KitFill.NONE),
+      KitShape("M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7Z", true, KitFill.NONE),
     ),
   ),
-  /** D-162: un relevo sin respuesta: círculo punteado, sin juicio; usaba el gráfico de Historial. */
+  /** Lucide «circle-dashed». Círculo punteado, sin juicio (D-162). */
   SIN_RESPUESTA(
     "Sin respuesta",
     listOf(
-      KitShape("M20.89 13.41A9 9 0 0 1 19.28 17.29M17.29 19.28A9 9 0 0 1 13.41 20.89M10.59 20.89A9 9 0 0 1 6.71 19.28M4.72 17.29A9 9 0 0 1 3.11 13.41M3.11 10.59A9 9 0 0 1 4.72 6.71M6.71 4.72A9 9 0 0 1 10.59 3.11M13.41 3.11A9 9 0 0 1 17.29 4.72M19.28 6.71A9 9 0 0 1 20.89 10.59", true, KitFill.NONE),
+      KitShape("M10.1 2.182a10 10 0 0 1 3.8 0", true, KitFill.NONE),
+      KitShape("M13.9 21.818a10 10 0 0 1 -3.8 0", true, KitFill.NONE),
+      KitShape("M17.609 3.721a10 10 0 0 1 2.69 2.7", true, KitFill.NONE),
+      KitShape("M2.182 13.9a10 10 0 0 1 0 -3.8", true, KitFill.NONE),
+      KitShape("M20.279 17.609a10 10 0 0 1 -2.7 2.69", true, KitFill.NONE),
+      KitShape("M21.818 10.1a10 10 0 0 1 0 3.8", true, KitFill.NONE),
+      KitShape("M3.721 6.391a10 10 0 0 1 2.7 -2.69", true, KitFill.NONE),
+      KitShape("M6.391 20.279a10 10 0 0 1 -2.69 -2.7", true, KitFill.NONE),
     ),
   ),
 }

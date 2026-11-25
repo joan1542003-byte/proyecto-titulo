@@ -3,7 +3,7 @@
 **Archivo:** [Relevo — presentación (noviembre 2026)](https://www.figma.com/slides/oaMrbyVIg2TI3k6CN2uJQO), en Figma Slides, en la cuenta del autor.
 **Duración:** 7 a 10 minutos. Las notas del orador suman unos 9 minutos y 30 segundos, en 25 láminas.
 **Fuente:** el [borrador v6 de la memoria](../08_memoria/borrador-memoria-v6-2026-10-28.md), en su versión del 10 de noviembre de 2026 (commit `9a26da1`). Todas las cifras salen de ahí.
-**Estado:** segunda versión, rehecha con la marca Relevo y pendiente de la revisión del autor.
+**Estado:** segunda versión, rehecha con la marca Relevo. Para el examen la reemplaza la [presentación del 23 de noviembre](47_presentacion-examen-2026-11-23.md), hecha desde la memoria v8; esta queda como registro.
 
 ## Estructura
 
@@ -51,7 +51,7 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 ## Pendiente
 
 - Revisión del autor: texto, orden y tiempos.
-- La presentación del examen ya tiene su archivo y su registro: el [documento 46](46_presentacion-examen-2026-12.md), de 10 minutos.
+- La presentación del examen tiene su registro en el [documento 47](47_presentacion-examen-2026-11-23.md), y su versión de trabajo, una copia de 29 láminas, en el [documento 48](48_presentacion-examen-2026-12.md).
 - La presentación del examen, del 14 o 15 de diciembre, es de 15 minutos ([Por hacer, tarea 7](../00_gobernanza/por-hacer.md#7-presentación-del-pase-y-del-examen)). Esta versión puede ser su base, con una demostración y más detalle del flujo técnico.
 - Las láminas 13 y 17 usan dos fotos de la prueba. Antes de mostrar la presentación hay que confirmar por escrito que las personas autorizan publicarlas (D-140 sigue abierta).
 
@@ -59,9 +59,15 @@ Cada lámina tiene una idea: una frase en dos tonos que la resume, una figura o 
 
 ### 2026-11-24 — Enlace a la presentación del examen
 
-- **Qué cambió:** se anota que la presentación del examen está en el [documento 46](46_presentacion-examen-2026-12.md), en su versión de 10 minutos.
+- **Qué cambió:** se anota que la presentación del examen está en el [documento 48](48_presentacion-examen-2026-12.md), en su versión de 10 minutos.
 - **Cómo estaba antes:** lo pendiente decía que esta presentación podía ser la base del examen.
 - **Por qué:** el autor pidió preparar la presentación del examen en un archivo propio.
+
+### 2026-11-23 — Reemplazada para el examen
+
+- **Qué cambió:** el estado dice que, para el examen, la reemplaza la presentación del 23 de noviembre.
+- **Cómo estaba antes:** decía que estaba pendiente de la revisión del autor.
+- **Por qué:** el autor pidió una presentación nueva desde la memoria v8, con su diseño y su orden.
 
 ### 2026-11-18 — Lámina 21 sin comparar lo que no se midió
 

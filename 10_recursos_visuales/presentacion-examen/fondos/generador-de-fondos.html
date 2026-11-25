@@ -1,0 +1,129 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body><script>
+  const AURA6 = ['#FFD54A', '#F6A3CB', '#C5B2F6', '#9DD6F4', '#FFF3D6', '#FFAE7A'];
+  const B = (x, y, r) => [x, y, r];
+  const base = { bg: '#F7F4F0', colors: AURA6, blobs: [B(.44, .6, .25), B(.56, .38, .23), B(.66, .56, .24), B(.34, .42, .25), B(.5, .5, .09), B(.42, .74, .16)], k: .95, scale: 1, warp: .12, grain: .045, depth: 0, transparent: false, shape: 'rect', format: '1920x1080', text: null };
+  const P = (o) => JSON.parse(JSON.stringify({ ...base, ...o }));
+  const TXT = (layout, eyebrow, title, sub, color = 'ink', align = 'left') => ({ layout, eyebrow, title, sub, color, align });
+  const PRESETS = [
+    P({ id: 'portada', group: 'slide', name: 'Portada', blobs: [B(.72, .6, .27), B(.82, .36, .24), B(.92, .62, .25), B(.64, .4, .25), B(.78, .5, .1), B(.72, .82, .18)], text: TXT('portada', 'Proyecto de título · Diseño UDP', 'relevo', 'De la pantalla | a lo que querías hacer.') }),
+    P({ id: 'seccion', group: 'slide', name: 'Sección', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.2, .78, .32), B(.78, .22, .3), B(.85, .85, .28), B(.45, .3, .2), B(.1, .1, .25), B(.6, .65, .22)], k: 1, warp: .38, grain: .06, depth: .45, text: TXT('seccion', '02', 'Lo que dicen | las personas', '', 'white') }),
+    P({ id: 'cita', group: 'slide', name: 'Frase', colors: ['#FFAE7A', '#F6A3CB', '#C5B2F6', '#FFD54A', '#FFF3D6', '#9DD6F4'], blobs: [B(.36, .64, .3), B(.62, .36, .3), B(.7, .66, .28), B(.3, .36, .28), B(.5, .5, .12), B(.5, .82, .2)], k: .72, text: TXT('cita', 'La idea', 'Vuelve a lo que | querías hacer.', '', 'ink', 'center') }),
+    P({ id: 'dato', group: 'slide', name: 'Dato', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.18, .85, .35), B(.6, .35, .26), B(.88, .7, .26), B(.35, .2, .2), B(.92, .08, .2), B(.5, .7, .2)], k: 1, warp: .42, grain: .06, depth: .5, text: TXT('dato', 'Encuesta', '53', 'respuestas sobre el tiempo | que se va en el teléfono', 'white') }),
+    P({ id: 'cierre', group: 'slide', name: 'Cierre', blobs: [B(.42, .62, .28), B(.58, .36, .26), B(.7, .58, .27), B(.3, .42, .27), B(.5, .5, .1), B(.46, .8, .18)], text: TXT('cierre', '', 'Gracias', 'relevo', 'ink', 'center') }),
+    P({ id: 'fondo-limpio', group: 'slide', name: 'Fondo limpio', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)], text: TXT('portada', 'Título de la sección', 'Escribe aquí | lo que quieres decir.', '') }),
+    P({ id: 'aura', group: 'aura', name: 'Aura' }),
+    P({ id: 'amanecer', group: 'aura', name: 'Amanecer', colors: ['#FFD54A', '#FFAE7A', '#F6A3CB', '#FFE7A6', '#FFF3D6', '#FFC98A'], blobs: [B(.4, .7, .24), B(.6, .5, .2), B(.66, .72, .18), B(.36, .5, .18), B(.5, .64, .08), B(.5, .85, .15)] }),
+    P({ id: 'brisa', group: 'aura', name: 'Brisa', colors: ['#9DD6F4', '#C5B2F6', '#A8E8CF', '#DCEFFB', '#FFFFFF', '#B7C6F7'], blobs: [B(.38, .55, .22), B(.6, .42, .2), B(.66, .62, .2), B(.3, .38, .18), B(.5, .5, .08), B(.48, .72, .14)] }),
+    P({ id: 'rubor', group: 'aura', name: 'Rubor', colors: ['#F6A3CB', '#FFAE7A', '#C5B2F6', '#FBD3E3', '#FFF3D6', '#F79FB5'], blobs: [B(.42, .58, .22), B(.58, .4, .2), B(.66, .6, .19), B(.34, .42, .18), B(.5, .5, .08), B(.52, .76, .14)] }),
+    P({ id: 'esquina', group: 'aura', name: 'Esquina', blobs: [B(.86, .82, .22), B(.94, .6, .18), B(.76, .94, .2), B(.98, .9, .2), B(.88, .78, .07), B(.7, .8, .12)] }),
+    P({ id: 'horizonte', group: 'aura', name: 'Horizonte', blobs: [B(.2, .95, .2), B(.42, 1, .2), B(.62, .96, .2), B(.84, 1, .2), B(.5, .98, .1), B(.05, .98, .16)] }),
+    P({ id: 'rosa', group: 'cielo', name: 'Rosa', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'ambar', group: 'cielo', name: 'Ámbar', bg: '#E9B85C', colors: ['#F2A20C', '#B78BEF', '#F7D27A', '#9C7BE8', '#FFE7B0', '#E88F1A'], blobs: [B(.2, .3, .32), B(.85, .2, .3), B(.5, .7, .24), B(.9, .85, .24), B(.4, .1, .18), B(.15, .9, .22)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'brasa', group: 'cielo', name: 'Brasa', bg: '#F28A4A', colors: ['#E8501E', '#F9B36B', '#FFE0B8', '#E2471C', '#FFC58E', '#C9370F'], blobs: [B(.2, .75, .32), B(.75, .3, .28), B(.55, .1, .22), B(.9, .9, .2), B(.4, .45, .18), B(.05, .3, .2)], k: 1, warp: .4, grain: .06, depth: .5 }),
+    P({ id: 'cielo-azul', group: 'cielo', name: 'Cielo', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.2, .85, .32), B(.6, .35, .24), B(.85, .7, .24), B(.35, .2, .2), B(.9, .1, .2), B(.5, .65, .18)], k: 1, warp: .45, grain: .06, depth: .5 }),
+    P({ id: 'musgo', group: 'cielo', name: 'Musgo', bg: '#7FAE6B', colors: ['#2F6E3B', '#B9DB8E', '#3E8F4E', '#E7F2C8', '#5FA05A', '#1F5530'], blobs: [B(.2, .3, .32), B(.8, .25, .28), B(.7, .85, .3), B(.4, .65, .18), B(.55, .45, .16), B(.1, .9, .22)], k: 1, warp: .4, grain: .06, depth: .5 }),
+    P({ id: 'lila', group: 'cielo', name: 'Lila', bg: '#C9B8F2', colors: ['#8E6FE6', '#F3D3F0', '#A7CFF5', '#FFFFFF', '#6D55D6', '#F7C9DE'], blobs: [B(.25, .7, .3), B(.75, .25, .28), B(.8, .85, .26), B(.4, .3, .18), B(.1, .15, .22), B(.6, .6, .2)], k: 1, warp: .4, grain: .06, depth: .4 }),
+    P({ id: 'menta', group: 'cielo', name: 'Menta', bg: '#BFE7D3', colors: ['#5FC79A', '#E6F7FF', '#9ED6F4', '#FFFFFF', '#3FB487', '#CBEFE0'], blobs: [B(.2, .8, .3), B(.7, .25, .28), B(.85, .75, .26), B(.4, .4, .16), B(.1, .2, .2), B(.6, .6, .2)], k: 1, warp: .4, grain: .055, depth: .35 }),
+    P({ id: 'noche', group: 'cielo', name: 'Noche', bg: '#2B3A66', colors: ['#0F1A3D', '#5E7BD8', '#A9B8F5', '#121B3A', '#3B4F99', '#7E8FE0'], blobs: [B(.2, .3, .32), B(.8, .7, .28), B(.6, .2, .18), B(.9, .9, .24), B(.4, .8, .22), B(.5, .5, .16)], k: 1, warp: .45, grain: .07, depth: .4 }),
+    P({ id: 'atardecer', group: 'cielo', name: 'Atardecer', bg: '#F3B38E', colors: ['#F06A3B', '#F7C6DD', '#B9A4F2', '#FFE6A6', '#E9558F', '#FFD3A8'], blobs: [B(.25, .3, .28), B(.8, .3, .28), B(.75, .85, .28), B(.3, .8, .24), B(.55, .55, .16), B(.05, .05, .2)], k: 1, warp: .4, grain: .06, depth: .4 }),
+    P({ id: 'orbe', group: 'elemento', name: 'Orbe', format: '1024x1024', transparent: true, blobs: [B(.44, .58, .2), B(.56, .4, .18), B(.64, .56, .19), B(.36, .44, .19), B(.5, .5, .08), B(.46, .66, .1)] }),
+    P({ id: 'ficha-color', group: 'elemento', name: 'Ficha', format: '1024x1024', shape: 'squircle', bg: '#F4C9D2', colors: ['#C8325A', '#F7A9BE', '#FFFFFF', '#E0617F', '#FBE4EA', '#F28BA7'], blobs: [B(.25, .35, .3), B(.75, .25, .28), B(.55, .6, .2), B(.3, .85, .26), B(.85, .8, .22), B(.6, .1, .2)], k: 1, warp: .4, grain: .06, depth: .45 }),
+    P({ id: 'circulo', group: 'elemento', name: 'Círculo', format: '1024x1024', shape: 'circle', bg: '#8DB9EA', colors: ['#2559C9', '#E9F3FF', '#7EA9E8', '#F7FBFF', '#3B6BD2', '#B9D7F7'], blobs: [B(.2, .85, .32), B(.6, .35, .24), B(.85, .7, .24), B(.35, .2, .2), B(.9, .1, .2), B(.5, .65, .18)], k: 1, warp: .45, grain: .06, depth: .5 }),
+    P({ id: 'banda', group: 'elemento', name: 'Banda', format: '2400x800', blobs: [B(.15, .5, .3), B(.35, .5, .28), B(.55, .5, .3), B(.75, .5, .28), B(.9, .5, .3), B(.45, .5, .12)] }),
+  ];
+
+  // WebGL: luces gaussianas con volumen (fbm) y grano sin patrón (hash sin seno).
+  const glc = document.createElement('canvas');
+  const gl = glc.getContext('webgl', { preserveDrawingBuffer: true, premultipliedAlpha: true, alpha: true, antialias: false });
+  const VS = 'attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }';
+  const FS = `precision highp float;
+  uniform vec2 res; uniform float t; uniform float k; uniform float sc; uniform float warp; uniform float grain; uniform float depth; uniform float tr; uniform float seed;
+  uniform vec3 bg; uniform vec3 col[6]; uniform vec3 pr[6];
+  float hash(vec2 p){ vec3 p3 = fract(vec3(p.xyx) * 0.1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }
+  float noise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }
+  float fbm(vec2 p){ float v = 0.0; float a = 0.5; for (int i = 0; i < 5; i++){ v += a * noise(p); p *= 2.03; a *= 0.5; } return v; }
+  void main(){
+    vec2 uv = gl_FragCoord.xy / res; vec2 p = vec2(uv.x, 1.0 - uv.y);
+    float asp = res.x / res.y;
+    vec2 q = vec2((p.x - 0.5) * asp, p.y - 0.5);
+    vec2 w = vec2(fbm(q * 1.7 + vec2(seed, t * 0.04)), fbm(q * 1.7 + vec2(seed + 5.2, -t * 0.04))) - 0.5;
+    vec2 qw = q + warp * w;
+    vec3 c = bg; float a = 0.0; vec3 acc = vec3(0.0); float sw = 0.0;
+    for (int i = 0; i < 6; i++){
+      vec3 b = pr[i];
+      if (b.z <= 0.0) continue;
+      vec2 ctr = vec2((b.x - 0.5) * asp, b.y - 0.5) + 0.035 * vec2(sin(t * 0.31 + float(i) * 1.7), cos(t * 0.27 + float(i) * 2.3));
+      float r = b.z * sc; vec2 d = qw - ctr;
+      float wg = clamp(exp(-dot(d, d) / (r * r)) * k, 0.0, 1.0);
+      c = mix(c, col[i], wg); a = a + wg * (1.0 - a); acc += col[i] * wg; sw += wg;
+    }
+    float sh = depth * (0.55 * smoothstep(0.15, 1.15, p.y) + 0.35 * smoothstep(0.2, 0.9, length(q)));
+    c *= 1.0 - sh * 0.45;
+    float g = hash(gl_FragCoord.xy + fract(t * 7.0) * 61.0) - 0.5;
+    if (tr > 0.5) {
+      vec3 m = sw > 0.0 ? acc / sw : bg; m += g * grain; float al = clamp(a * 1.05, 0.0, 1.0);
+      gl_FragColor = vec4(m * al, al);
+    } else { c += g * grain; gl_FragColor = vec4(c, 1.0); }
+  }`;
+  let U = null;
+  if (gl) {
+    const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(o)); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(pr); gl.useProgram(pr);
+    const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    U = {}; ['res', 't', 'k', 'sc', 'warp', 'grain', 'depth', 'tr', 'seed', 'bg', 'col', 'pr'].forEach((n) => U[n] = gl.getUniformLocation(pr, n));
+  }
+  const rgb = (hex) => { const n = parseInt(hex.slice(1), 16); return [(n >> 16) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255]; };
+  function renderGL(s, w, h) {
+    glc.width = w; glc.height = h; gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform2f(U.res, w, h); gl.uniform1f(U.t, s.t || 0); gl.uniform1f(U.k, s.k); gl.uniform1f(U.sc, s.scale); gl.uniform1f(U.warp, s.warp);
+    gl.uniform1f(U.grain, s.grain); gl.uniform1f(U.depth, s.depth); gl.uniform1f(U.tr, s.transparent ? 1 : 0); gl.uniform1f(U.seed, s.seed || 0);
+    gl.uniform3fv(U.bg, rgb(s.bg)); gl.uniform3fv(U.col, new Float32Array(s.colors.flatMap(rgb))); gl.uniform3fv(U.pr, new Float32Array(s.blobs.flat()));
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); return glc;
+  }
+
+// Presets propios para la presentación (mismo motor, mismas paletas de la marca)
+const MIOS = [
+  P({ id: 'der-marca', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.86,.55,.26),B(.96,.32,.22),B(1.0,.75,.24),B(.8,.3,.22),B(.9,.5,.09),B(.84,.86,.18)] }),
+  P({ id: 'ardr-marca', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.86,.18,.22),B(.94,.4,.18),B(.76,.06,.2),B(.98,.1,.2),B(.88,.22,.07),B(.7,.2,.12)] }),
+  P({ id: 'abdr-marca', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.86,.82,.22),B(.94,.6,.18),B(.76,.94,.2),B(.98,.9,.2),B(.88,.78,.07),B(.7,.8,.12)] }),
+  P({ id: 'hor-marca', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.2,.95,.2),B(.42,1,.2),B(.62,.96,.2),B(.84,1,.2),B(.5,.98,.1),B(.05,.98,.16)] }),
+  P({ id: 'izq-marca', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.14,.55,.26),B(.04,.32,.22),B(.0,.75,.24),B(.2,.3,.22),B(.1,.5,.09),B(.16,.86,.18)] }),
+  P({ id: 'der-amarillo', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.86,.55,.26),B(.96,.32,.22),B(1.0,.75,.24),B(.8,.3,.22),B(.9,.5,.09),B(.84,.86,.18)] }),
+  P({ id: 'ardr-amarillo', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.86,.18,.22),B(.94,.4,.18),B(.76,.06,.2),B(.98,.1,.2),B(.88,.22,.07),B(.7,.2,.12)] }),
+  P({ id: 'abdr-amarillo', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.86,.82,.22),B(.94,.6,.18),B(.76,.94,.2),B(.98,.9,.2),B(.88,.78,.07),B(.7,.8,.12)] }),
+  P({ id: 'hor-amarillo', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.2,.95,.2),B(.42,1,.2),B(.62,.96,.2),B(.84,1,.2),B(.5,.98,.1),B(.05,.98,.16)] }),
+  P({ id: 'izq-amarillo', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.14,.55,.26),B(.04,.32,.22),B(.0,.75,.24),B(.2,.3,.22),B(.1,.5,.09),B(.16,.86,.18)] }),
+  P({ id: 'der-lima', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.86,.55,.26),B(.96,.32,.22),B(1.0,.75,.24),B(.8,.3,.22),B(.9,.5,.09),B(.84,.86,.18)] }),
+  P({ id: 'ardr-lima', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.86,.18,.22),B(.94,.4,.18),B(.76,.06,.2),B(.98,.1,.2),B(.88,.22,.07),B(.7,.2,.12)] }),
+  P({ id: 'abdr-lima', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.86,.82,.22),B(.94,.6,.18),B(.76,.94,.2),B(.98,.9,.2),B(.88,.78,.07),B(.7,.8,.12)] }),
+  P({ id: 'hor-lima', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.2,.95,.2),B(.42,1,.2),B(.62,.96,.2),B(.84,1,.2),B(.5,.98,.1),B(.05,.98,.16)] }),
+  P({ id: 'izq-lima', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.14,.55,.26),B(.04,.32,.22),B(.0,.75,.24),B(.2,.3,.22),B(.1,.5,.09),B(.16,.86,.18)] }),
+  P({ id: 'der-cielo', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.86,.55,.26),B(.96,.32,.22),B(1.0,.75,.24),B(.8,.3,.22),B(.9,.5,.09),B(.84,.86,.18)] }),
+  P({ id: 'ardr-cielo', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.86,.18,.22),B(.94,.4,.18),B(.76,.06,.2),B(.98,.1,.2),B(.88,.22,.07),B(.7,.2,.12)] }),
+  P({ id: 'abdr-cielo', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.86,.82,.22),B(.94,.6,.18),B(.76,.94,.2),B(.98,.9,.2),B(.88,.78,.07),B(.7,.8,.12)] }),
+  P({ id: 'hor-cielo', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.2,.95,.2),B(.42,1,.2),B(.62,.96,.2),B(.84,1,.2),B(.5,.98,.1),B(.05,.98,.16)] }),
+  P({ id: 'izq-cielo', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.14,.55,.26),B(.04,.32,.22),B(.0,.75,.24),B(.2,.3,.22),B(.1,.5,.09),B(.16,.86,.18)] }),
+  P({ id: 'der-rubor', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.86,.55,.26),B(.96,.32,.22),B(1.0,.75,.24),B(.8,.3,.22),B(.9,.5,.09),B(.84,.86,.18)] }),
+  P({ id: 'ardr-rubor', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.86,.18,.22),B(.94,.4,.18),B(.76,.06,.2),B(.98,.1,.2),B(.88,.22,.07),B(.7,.2,.12)] }),
+  P({ id: 'abdr-rubor', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.86,.82,.22),B(.94,.6,.18),B(.76,.94,.2),B(.98,.9,.2),B(.88,.78,.07),B(.7,.8,.12)] }),
+  P({ id: 'hor-rubor', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.2,.95,.2),B(.42,1,.2),B(.62,.96,.2),B(.84,1,.2),B(.5,.98,.1),B(.05,.98,.16)] }),
+  P({ id: 'izq-rubor', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.14,.55,.26),B(.04,.32,.22),B(.0,.75,.24),B(.2,.3,.22),B(.1,.5,.09),B(.16,.86,.18)] }),
+  P({ id: 'panel-amarillo', format:'1200x800', bg:'#FCEFC4', colors: ['#FFD54A','#FFE57E','#FFF3D6','#FFC98A','#FFFFFF','#FBE7A6'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 }),
+  P({ id: 'panel-lima', format:'1200x800', bg:'#E6F5D6', colors: ['#B3E788','#C8F3A6','#E3F6D6','#A8E8CF','#FFFFFF','#D6F2B8'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 }),
+  P({ id: 'panel-cielo', format:'1200x800', bg:'#DCF0FB', colors: ['#9DD6F4','#B5E3FC','#DCEFFB','#C5D9F7','#FFFFFF','#BFE4F8'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 }),
+  P({ id: 'panel-rubor', format:'1200x800', bg:'#FBE1EC', colors: ['#F6A3CB','#FDB7D8','#FBD3E3','#C5B2F6','#FFF3D6','#F79FB5'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 }),
+  P({ id: 'panel-marca', format:'1200x800', bg:'#F7F1EA', colors: ['#FFD54A','#9DD6F4','#B3E788','#F6A3CB','#FFF3D6','#C5B2F6'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 }),
+  P({ id: 'panel-neutro', format:'1200x800', bg:'#F1ECE5', colors: ['#E8E1D8','#F7F4F0','#DDD5CA','#FFFFFF','#EDE6DD','#E2DBD1'], blobs: [B(.15,.2,.45),B(.85,.25,.4),B(.7,.85,.45),B(.25,.85,.4),B(.5,.5,.2),B(.95,.95,.3)], k:.85, warp:.3, grain:.05, depth:.12 })
+];
+const SLIDES = ['portada','seccion','cita','dato','cierre','aura','brisa','rubor','amanecer'];
+const CIELOS = ['cielo-azul','atardecer','menta','ambar','rosa','lila','noche','brasa'];
+window.render = (id, w, h, t) => {
+  const p = [...PRESETS, ...MIOS].find(x => x.id === id);
+  const s = { ...p, t: t ?? 3 };
+  const c = renderGL(s, w, h);
+  return c.toDataURL('image/png');
+};
+window.ok = !!gl;
+</script></body></html>

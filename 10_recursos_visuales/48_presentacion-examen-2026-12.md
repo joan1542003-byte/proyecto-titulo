@@ -2,7 +2,7 @@
 
 **Archivo de trabajo:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides, en Borradores de la cuenta del autor.
 **Original sin cambios:** [Relevo — Examen de título (diciembre 2026)](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1). La versión de trabajo es una copia, así que el original queda como estaba.
-**Duración:** unos 14 min 20 s en 29 láminas, según el [guion](47_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 13 minutos a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo y después que el guion explicara más, sin centrarse en los segundos.  
+**Duración:** unos 14 min 20 s en 29 láminas, según el [guion](49_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 13 minutos a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo y después que el guion explicara más, sin centrarse en los segundos.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Cada cifra, cita y fecha de las láminas se comparó con la memoria y los anexos.
 **Estado:** lista para el ensayo con cronómetro. Lo que se dice está en el guion.
 
@@ -55,7 +55,7 @@ El guion ya no da el tiempo de cada lámina: dice en qué minuto empieza cada pa
 
 ## Respaldo
 
-Veintidós láminas, de la 30 a la 51, quedan ocultas al final para las preguntas. El [guion](47_guion-presentacion-examen-2026-12.md) dice qué pregunta responde cada una.
+Veintidós láminas, de la 30 a la 51, quedan ocultas al final para las preguntas. El [guion](49_guion-presentacion-examen-2026-12.md) dice qué pregunta responde cada una.
 
 El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordatorio tiene señal y mensaje · Idea de diseño · La atención está ocupada · La interfaz sostiene la continuidad · Ocio juzgado con la vara de la productividad · Por qué es un problema de diseño · Objetivos · Método: investigar a través del diseño · De un objeto para dejar el teléfono a un sistema probado en tres hogares · La señal es un sonido · Por dentro: la persona, la aplicación y el Tag · Cambios a partir de la prueba · Reducir el uso no basta como criterio · Bloqueos, límites y pausas · Un lugar o un objeto pueden recordarnos qué hacer · Lo que falta · En Chile, el teléfono es la puerta a internet · Bocetos del objeto: tres formatos y dos variantes · Relevo frente a los referentes · Ética: cuidar a las personas y sus datos.
 
@@ -69,7 +69,7 @@ El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordat
 - **Láminas que entran al recorrido:** los dos primeros ámbitos del marco teórico y las dos situaciones de uso.
 - **Respaldo:** 22 láminas de detalle, entre ellas el ocio digital, las tres causas por separado, los objetivos, el método, la señal, cómo funciona por dentro y los cambios después de la prueba. Las láminas 45 y 50 se redujeron un poco para caber con el título nuevo.
 - **Cabeceras y folios:** arriba a la izquierda, la parte; arriba a la derecha, el tema, sin número de capítulo. Folios del 2 al 28 y del 30 al 51, alineados a la derecha.
-- **Notas:** se borraron de todas las láminas a pedido del autor. Lo que se dice está en el [guion](47_guion-presentacion-examen-2026-12.md), con respuestas preparadas para las preguntas.
+- **Notas:** se borraron de todas las láminas a pedido del autor. Lo que se dice está en el [guion](49_guion-presentacion-examen-2026-12.md), con respuestas preparadas para las preguntas.
 - **Textos corregidos según la memoria v8:**
   - respaldo 30: «satisfacer la curiosidad» y «vincularse con otros», como la definición de ocio digital;
   - lámina 5: la segunda frase del problema es la literal de la memoria;
@@ -102,7 +102,7 @@ El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordat
 
 La versión de la app (4.7.2) y el nombre del profesor (Simón Gallardo, como en la memoria) quedaron resueltos el 24 de noviembre.
 
-- **Ensayo:** leer el [guion](47_guion-presentacion-examen-2026-12.md) en voz alta con cronómetro. Si pasa de 14 minutos, se omiten las frases que el guion marca para acortar.
+- **Ensayo:** leer el [guion](49_guion-presentacion-examen-2026-12.md) en voz alta con cronómetro. Si pasa de 14 minutos, se omiten las frases que el guion marca para acortar.
 - **Original:** si el autor aprueba la versión de trabajo, decidir si reemplaza al original o si se presenta desde la copia.
 
 ## Registro de cambios (disclaimer)
@@ -133,7 +133,7 @@ La versión de la app (4.7.2) y el nombre del profesor (Simón Gallardo, como en
 
 ### 2026-11-24 — Diseño afinado, notas borradas y guion
 
-- **Qué cambió:** se afinó el diseño de las láminas, se borraron las notas del presentador de las 48 y lo que se dice pasó al [guion](47_guion-presentacion-examen-2026-12.md), de 9 min 39 s. Los tiempos de la estructura son los del guion. Lo pendiente quedó en el ensayo y en la decisión sobre el original.
+- **Qué cambió:** se afinó el diseño de las láminas, se borraron las notas del presentador de las 48 y lo que se dice pasó al [guion](49_guion-presentacion-examen-2026-12.md), de 9 min 39 s. Los tiempos de la estructura son los del guion. Lo pendiente quedó en el ensayo y en la decisión sobre el original.
 - **Cómo estaba antes:** las notas tenían el texto y las líneas «Si preguntan», con 9 min 19 s sin contar los cambios de lámina. Lo pendiente incluía la versión de la app, el nombre del profesor y un punto que el autor pidió no incluir.
 - **Por qué:** el autor pidió borrar las notas, tener el guion en un documento, perfeccionar el diseño y trabajar siempre desde la memoria. Confirmó que la versión de la app es la del repositorio y que el nombre del profesor es el de la memoria.
 

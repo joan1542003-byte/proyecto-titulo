@@ -1,0 +1,10 @@
+<!-- Relevo · Propuesta, sin aplicar en la app. Propio: la pelota de fútbol. El círculo de 10 de «volleyball», un pentágono de radio 5 al centro y cinco costuras hasta el borde. Para Pelota: P7 juega fútbol, y en Chile «jugar a la pelota» es fútbol. Con la guía, la especificación y las convenciones de Lucide (ISC). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="10"/>
+  <path d="M12 7 16.755 10.455 14.939 16.045 9.061 16.045 7.245 10.455Z"/>
+  <path d="M12 7V2"/>
+  <path d="M16.755 10.455 21.511 8.91"/>
+  <path d="M14.939 16.045 17.878 20.09"/>
+  <path d="M9.061 16.045 6.122 20.09"/>
+  <path d="M7.245 10.455 2.489 8.91"/>
+</svg>

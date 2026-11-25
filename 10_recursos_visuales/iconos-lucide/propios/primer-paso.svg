@@ -1,0 +1,5 @@
+<!-- Relevo · Adaptado de Lucide «footprints»: una sola huella, sin girar, escalada 1,25, con los lados del talón en x = 9 y x = 14 y la línea en y = 16. Con la guía, la especificación y las convenciones de Lucide (ISC). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 19.5v-2.975C9 13.875 7.713 12.625 7.75 9.5c.038-3.4 1.863-7.5 5.625-7.5C15.713 2 16.5 4.25 16.5 6.375c0 3.888-2.5 7.075-2.5 10.85V19.5a2.5 2.5 0 1 1-5 0Z"/>
+  <path d="M9 16h5"/>
+</svg>

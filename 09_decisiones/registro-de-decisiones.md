@@ -1787,7 +1787,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-140 — La Figura 4 muestra fotos reales de la prueba, sin datos que identifiquen
 
 - **Fecha:** 2026-10-20.
-- **Estado:** hecha; falta que el autor confirme quién tomó las fotos, que las personas autorizan publicarlas y de quién es el lugar de la foto c.
+- **Estado:** hecha. El 23 de noviembre de 2026 el autor confirmó que las personas autorizaron las fotos; la memoria no menciona la autorización, por decisión del autor.
 - **Contexto:** el autor entregó tres fotos del Tag y de una persona tras configurar un relevo. La Figura 4 era un marcador («Fotografía pendiente»).
 - **Decisión:**
   - **Contenido:** a) un relevo preparado y el Tag en la mano (7 de octubre); b) el Tag sobre un mueble del mismo hogar (7 de octubre); c) el Tag sobre un escritorio (17 de octubre).
@@ -2532,9 +2532,59 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Pendiente:** los capítulos 4, 10 y 14 y el glosario terminan en una columna corta, y la continuación de la Tabla 4 ocupa sola una página; se resuelve con el contenido, como pide el autor desde el 10 de noviembre (D-152, D-183).
 - **Documentos:** [figuras de la v8](../08_memoria/figuras/v8/README.md) y [memoria en 1920 × 1080](../08_memoria/memoria-1920x1080/README.md).
 
-## D-187 — Figuras con un orden de lectura claro, esquemas sin fichas y menos comas
+## D-187 — Los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene
+
+- **Fecha:** 2026-11-21, aplicada el 22.
+- **Estado:** aplicada en la app 4.8 y ajustada en la 4.8.1 y la 4.8.2, en la rama `iconos-lucide`. Pendiente de la revisión del autor en un teléfono, de llevarla a la memoria y al Anexo H, y de una prueba de comprensión con personas.
+- **Contexto:** desde D-124, Relevo dibujaba sus propios íconos con las reglas de construcción de Lucide, un conjunto de íconos de línea de código abierto; en noviembre eran 118 ([documento 43](../10_recursos_visuales/43_por-que-iconos-propios-2026-11-06.md)). El autor propuso usar los de Lucide, adaptar los que lo requieran y crear nuevos con sus reglas solo cuando Lucide no tenga algo que el usuario hace.
+- **Decisión:**
+  - **Lucide primero:** cada ícono de la app es el de Lucide 1.70.0 que dice lo mismo, tal cual: 109 de 118.
+  - **Adaptar cuando hace falta:** seis parten de un ícono de Lucide y cambian una pieza. Suena y Silenciar llevan el Tag en vez del parlante; Sistema phygital, el Tag junto al teléfono; Actividades, cuatro círculos como los del logo; Leer manga, un globo de diálogo en el libro, y Cómo empieza, una sola huella, el primer paso.
+  - **Dibujar solo lo que falta:** tres son propios, porque Lucide no los tiene: el Tag, la colchoneta de Estirar y la flor de loto de Meditar.
+  - **Con las reglas de Lucide:** los adaptados y los propios cumplen las reglas obligatorias de su guía —lienzo de 24, 1 de margen, trazo de 2 con puntas y uniones redondas y 2 de aire entre elementos distintos— y siguen las recomendables donde el dibujo lo permite. Lo que ya existe en Lucide se toma igual, sin cambiar su forma ni su orientación: los anillos de `radio`, la cruz de `volume-x`, la huella de `footprints`. `verificar_reglas.py` comprueba el margen y el aire.
+  - **Tamaño óptico, no matemático:** un ícono adaptado o propio debe pesar como sus vecinos de Lucide, aunque sus medidas no coincidan. Se comprueba con la prueba del desenfoque, que pide Lucide: el ícono se desenfoca y su mancha se compara con la de los íconos de Lucide de la app y con la de su equivalente (`medir_tamano_optico.js`). Si un ícono se ve chico, se redibuja para que gane peso, sin romper una regla obligatoria.
+  - **Siguen vigentes:** las reglas de D-162 para elegir entre los íconos de Lucide: cada actividad con el objeto con que empieza, un significado por dibujo, legible a 17 px y neutro donde la app no juzga. También el trazo según el tamaño (D-124) y el centro óptico (D-156).
+  - **Licencia:** Lucide usa la licencia ISC, y los íconos que vienen de Feather, la MIT. Su aviso va en el repositorio y dentro del APK.
+- **Fundamento:** usar un conjunto abierto y probado deja el dibujo propio para lo que es de Relevo: el Tag y las actividades que Lucide no tiene. Mantiene además una sola voz, porque los íconos propios siguen las mismas reglas, y evita mantener 118 dibujos a mano. La familiaridad con lo dibujado y con el estilo ayuda a reconocer un ícono y a que guste (Shen et al., 2018; Zheng et al., 2026; ver el documento 43).
+- **Alternativas descartadas:** seguir con los 118 dibujos propios (D-124 y D-162); usar Material Symbols, con otra geometría; mezclar Lucide con los dibujos anteriores, que daría dos estilos.
+- **Por revisar con el autor:** Ordenar es una polera, porque Lucide no tiene un colgador; Tejer, un carrete de hilo; Pelota, una de vóleibol; Dormir, la cama, y Escribir y Estudiar, dos cuadernos.
+- **Ajuste del 22 de noviembre (4.8.1):** el autor pidió que el primer paso no fuera una escalera y que el tamaño de los íconos propios fuera óptico, no matemático. El primer paso pasó a ser una huella. Suena, Silenciar, Estirar y Meditar, que quedaban entre el 11 % y el 22 % más chico de los íconos de Lucide de la app, crecieron: Suena llegó a la mitad, Estirar y Meditar al 38 %, y Silenciar quedó a la par de `volume-x`.
+- **Ajuste del 22 de noviembre (4.8.2):** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide. Se estudiaron su guía y sus 2.029 íconos, y cinco de los nueve no cumplían alguna regla: la cruz de Silenciar quedaba a 1,35 del Tag y la base de Meditar a 1,6 de los pétalos, cuando lo obligatorio es 2; la colchoneta de Estirar terminaba en un corte brusco; la huella estaba girada, y los anillos de Suena no venían de Lucide. Se corrigieron con formas que Lucide ya tiene. La regla de 4.8.1 de que la vista prime sobre los 2 de aire se reemplaza por la de redibujar sin romperlos.
+- **Verificación:** los 118 trazados generados dibujan lo mismo que sus SVG, píxel a píxel, y los nueve adaptados o propios pasan `verificar_reglas.py`. Pasan las 110 pruebas unitarias, 4 de ellas nuevas, que comprueban que Android lee cada trazado completo y que ningún ícono repite el dibujo de otro. Los APK 4.8, 4.8.1 y 4.8.2 se firman con la clave de siempre. No se vio en un teléfono.
+- **Documentos:** [Íconos desde Lucide](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md), [carpeta con el mapeo, los SVG y el generador](../10_recursos_visuales/iconos-lucide/README.md) y app [4.8](../06_desarrollo_y_factibilidad/app-android/version-4.8-iconos-de-lucide-2026-11-22.md), [4.8.1](../06_desarrollo_y_factibilidad/app-android/version-4.8.1-tamano-optico-y-primer-paso-2026-11-22.md) y [4.8.2](../06_desarrollo_y_factibilidad/app-android/version-4.8.2-iconos-con-las-reglas-de-lucide-2026-11-22.md).
+
+## D-188 — La entrega y el examen usan la última versión de la app
+
+- **Fecha:** 2026-11-23.
+- **Estado:** decidida. Hoy la última es la 4.8.2, con los íconos de Lucide (D-187), en la rama `iconos-lucide`.
+- **Contexto:** la tarea 17 pedía elegir, de preferencia el 25 de noviembre, si la entrega y el examen mostraban la 4.7.2, la versión de la prueba, o la 4.8.2. El autor grabó la 4.8.2 en un emulador el 23 de noviembre, y la presentación del examen ya la muestra.
+- **Decisión:** se usa siempre la última versión de la app. Las capturas de la memoria que son de la prueba pueden quedar en la 4.7.2, porque muestran lo que usaron las personas.
+- **Consecuencias:**
+  - corregir «Editar» un relevo activo, que en la 4.8.2 vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar));
+  - llevar los íconos de Lucide a la memoria —el párrafo «Iconografía», el Anexo H y los íconos de las figuras—, cuando el autor lo decida;
+  - unir la rama `iconos-lucide` a `main`.
+- **Fundamento:** el autor prefiere mostrar siempre la versión más reciente. Así, la comisión ve la app tal como es al entregar y al presentar.
+- **Alternativa descartada:** seguir con la 4.7.2 hasta el examen y dejar los íconos de Lucide para después.
+- **Documentos:** [tarea 17 de Por hacer](../00_gobernanza/por-hacer.md#17-íconos-desde-lucide-revisar-y-llevar-a-la-memoria) y [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md).
+
+## D-189 — La presentación del examen es un PDF sin animaciones, de 9 a 10 minutos
+
+- **Fecha:** 2026-11-24.
+- **Estado:** decidida.
+- **Contexto:** la presentación tenía seis GIF. En el editor de Figma y en el PDF se ven quietos; se probó un PDF animado con el paquete `animate` de LaTeX, que pesaba 36,5 MB y se movía solo en Adobe Acrobat Reader. El autor pidió que pesara 15 MB como máximo, sin perder calidad, y después canceló todo lo de los GIF.
+- **Decisión:** la presentación se muestra y se entrega en PDF, sin animaciones, y dura de 9 a 10 minutos. El logo va fijo, y lo que mostraban los GIF va en fotos, íconos y capturas fijas.
+- **Consecuencias:**
+  - el [armador del PDF animado](../10_recursos_visuales/presentacion-examen/pdf-animado/README.md) queda descontinuado, y los [GIF](../10_recursos_visuales/presentacion-examen/gif/README.md) quedan como registro;
+  - la presentación se rehízo para leerse al proyectar, con cinco láminas nuevas y un guion de 1213 palabras;
+  - el PDF final se exporta desde Figma y debe pesar 15 MB o menos.
+- **Fundamento:** un PDF se ve igual en cualquier computador y se puede entregar; los GIF se mueven solo en el modo presentación de Figma o en Acrobat Reader.
+- **Alternativa descartada:** el PDF animado para Acrobat Reader y los GIF en Figma.
+- **Documentos:** [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md) y [guion](../10_recursos_visuales/presentacion-examen/guion-examen-2026-11-24.md).
+
+## D-190 — Figuras con un orden de lectura claro, esquemas sin fichas y menos comas
 
 - **Fecha:** 2026-11-21.
+- **Número:** se registró en `main` como D-187. Al unir `main` con la rama `iconos-lucide`, que ya usaba ese número para los íconos de Lucide, pasó a D-190. El registro de cambios del borrador v8 de la memoria la sigue llamando D-187, porque la memoria no se edita sin el autor.
 - **Estado:** aplicada en la [memoria v8 compuesta](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en las [figuras de la v8](../08_memoria/figuras/v8/README.md).
 - **Contexto:** el autor no entendía la Figura 6: la fila de la persona 3 resaltada hacía creer que ella había activado todo. Le costaba entender otras figuras, desordenadas o sin un punto claro. Pidió conservar los paneles de apertura a toda la altura, como el de Introducción, porque los paneles acortados no funcionan. Señaló que se abusa de las comas, que «la aplicación registra, en cada tramo» suena poético y que «un toque» suena informal. Pidió perfección óptica y revisar todo contra las pruebas, las entrevistas y la encuesta.
 - **Decisión:**
@@ -2549,9 +2599,45 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 
 ## Registro de cambios (disclaimer)
 
-### 2026-11-21 — D-187
+### 2026-11-24 — D-190
 
-- **Qué cambió:** se registró D-187, figuras con un orden de lectura claro, esquemas sin fichas y menos comas.
+- **Qué cambió:** la decisión de las figuras claras y en orden, esquemas sin fichas y menos comas se cita como D-190.
+- **Cómo estaba antes:** se citaba como D-187, el mismo número que la rama `iconos-lucide` usa para los íconos de Lucide.
+- **Por qué:** al unir `main` con la rama, los dos D-187 chocaban; se renumeró el que tenía menos referencias y ninguna en el código de la app.
+
+### 2026-11-24 — D-189
+
+- **Qué cambió:** se suma D-189: la presentación del examen es un PDF sin animaciones, de 9 a 10 minutos.
+- **Cómo estaba antes:** la presentación tenía seis GIF y se estaba armando un PDF animado para Acrobat Reader.
+- **Por qué:** el autor canceló todo lo de los GIF y pidió perfeccionar la presentación en PDF, de 9 a 10 minutos.
+
+### 2026-11-23 — D-140 y D-188
+
+- **Qué cambió:** D-140 queda hecha, con las fotos autorizadas según el autor, y se suma D-188: la entrega y el examen usan la última versión de la app.
+- **Cómo estaba antes:** D-140 esperaba que el autor confirmara la autorización, quién tomó las fotos y de quién es el lugar de la foto c, y la versión de la app estaba por decidir en la tarea 17.
+- **Por qué:** el autor confirmó que la autorización está y que no hace falta mencionarla, y decidió que siempre se usa la última versión de la app.
+
+### 2026-11-22 — D-187, reglas de Lucide
+
+- **Qué cambió:** D-187 suma la regla de cumplir las reglas obligatorias de Lucide, el script que las comprueba y el ajuste de la 4.8.2, que corrige cinco de los nueve íconos adaptados o propios.
+- **Cómo estaba antes:** en la 4.8.1, cuando la regla de los 2 de aire achicaba un ícono, primaba la vista; Silenciar y Meditar quedaban con menos de 2, y la huella del primer paso estaba inclinada.
+- **Por qué:** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
+
+### 2026-11-22 — D-187, tamaño óptico
+
+- **Qué cambió:** D-187 suma la regla del tamaño óptico, comprobado con la prueba del desenfoque, y el ajuste de la 4.8.1: el primer paso es una huella adaptada de Lucide, y Suena, Silenciar, Estirar y Meditar crecieron. Quedan seis adaptados y tres propios.
+- **Cómo estaba antes:** el primer paso era una escalera propia; había cinco adaptados y cuatro propios, y el tamaño se cuidaba solo con las medidas de la especificación.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
+
+### 2026-11-22 — D-187
+
+- **Qué cambió:** se registró D-187: los íconos salen de Lucide, y solo se dibuja lo que Lucide no tiene.
+- **Cómo estaba antes:** la última decisión era D-186; los íconos eran dibujos propios con las reglas de Lucide (D-124 y D-162).
+- **Por qué:** pedido del autor del 21 de noviembre de 2026.
+
+### 2026-11-21 — D-190 (registrada como D-187)
+
+- **Qué cambió:** se registró D-190 (entonces D-187), figuras con un orden de lectura claro, esquemas sin fichas y menos comas.
 - **Cómo estaba antes:** la última decisión era D-186.
 - **Por qué:** pedido del autor del 21 de noviembre de 2026.
 

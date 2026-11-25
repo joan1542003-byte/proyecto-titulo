@@ -2,7 +2,7 @@
 
 Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entrega final y el examen; abajo, el detalle de cada tarea, de la 1 a la 16. Al cerrar una tarea, se marca, se enlaza el commit y se registra en el [registro de pedidos](registro-de-pedidos-a-la-ia.md).
 
-## Lo que queda, en orden (al 21 de noviembre de 2026)
+## Lo que queda, en orden (al 25 de noviembre de 2026)
 
 **Fechas:**
 
@@ -13,30 +13,30 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta la entrega final:**
 
-1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
-2. **Nombre del profesor Gallardo:** resuelto el 24 de noviembre. El autor confirmó el de la memoria, «Simón Gallardo» (tarea 8).
-3. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity, con 40 figuras y 4 tablas, cada una en la página de su mención o en la siguiente, en orden (D-186, D-187). Se contrastó con los 17 comentarios del PDF y las notas del 18: lo que quedó abierto espera la respuesta de los profesores (punto 1). El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Seis imágenes reales de las fuentes rellenan los finales cortos; el capítulo 4 termina en una columna casi llena y la continuación de la Tabla 4 ocupa una página.
-4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
-5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
-   - cómo se eligió a las tres personas;
-   - el consentimiento de la etapa con el teléfono;
-   - la pauta de las entrevistas;
-   - una fuente reciente para Fogg (tarea 15, E);
-   - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
-   - la extensión de la Introducción y la Justificación (tarea 15, C).
-6. **Los anexos**: ya tienen la pregunta nueva en el Anexo I, I.1, las 18 pantallas de la app 4.7.2 en el Anexo F y las variantes del logo en el Anexo H (D-187). Quedan las correcciones de la tarea 15, F. El Word y el PDF se regeneran al final.
-7. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
+1. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity, con 40 figuras y 4 tablas, cada una en la página de su mención o en la siguiente, en orden (D-186, D-190). Se contrastó con los 17 comentarios del PDF y las notas del 18. El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión.
+2. **Los tres puntos de fondo de los profesores** (tarea 16, B). El autor los decidió el 25 de noviembre: el fenómeno se llama *sentido de agencia*, la Formulación explica la tensión en la decisión con un párrafo y un esquema, y el planteamiento abre con el universo del proyecto en cinco párrafos corridos. Los borradores con sus fuentes están en los [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md).
+3. **Los íconos de la 4.8.2 en la memoria** (D-188, tarea 17). Decidido el 25 de noviembre: el párrafo «Iconografía», la lámina de identidad, el Anexo H y los íconos de las figuras pasan a la 4.8.2. Las pantallas siguen en la 4.7.2, la versión de la prueba.
+4. **Lo que la v8 no resolvió:**
+   - **cómo se eligió a las tres personas:** por conveniencia, en la red de contactos del autor. La memoria no lo menciona; la respuesta para la comisión está en los puntos de fondo, sección 5;
+   - **el consentimiento de la etapa con el teléfono:** las personas lo aceptaron desde la app;
+   - **la pauta de las entrevistas:** está en el Anexo A, A.1, que ya dice que se escribió para la idea anterior; falta decirlo en el capítulo 7, si el autor quiere (tarea 15, E);
+   - **una fuente para acompañar a Fogg** (tarea 15, E): Agha et al. (2019), en los puntos de fondo, sección 4;
+   - **la extensión de la Introducción y la Justificación** (tarea 15, C): el autor pidió no proponer texto todavía;
+   - **lo que se informa de las entrevistas** (tarea 2): el consentimiento oral, la saturación y si los textos se anonimizaron antes de usar herramientas de IA.
+5. **Los anexos:** ya tienen la pregunta nueva en el Anexo I, I.1, las 18 pantallas de la app 4.7.2 en el Anexo F y las variantes del logo en el Anexo H (D-190). El 25 de noviembre el autor pidió sumar los primeros conceptos de Relevo, de cuando se llamaba In(Visible), y un par de pantallas viejas. Quedan las correcciones de la tarea 15, F. El Word y el PDF se regeneran al final.
+6. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
 
-8. **La presentación de 15 minutos** y las respuestas a las preguntas probables de la comisión (tarea 7).
+7. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Desde la noche del 24 de noviembre se trabaja en una copia de 29 láminas del archivo de Figma del 23 de noviembre, con un guion de unos 14 minutos ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)). La versión de 46 láminas en PDF ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)) queda en el archivo original.
+8. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 9. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
 **Después del examen:**
 
 10. **El depósito en la Biblioteca** (tarea 8) y las proyecciones: la prueba externa con Martin Bravo, *taskscape* y la publicación de la aplicación (tarea 16, E).
 
-**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9 y las dos decisiones que quedan de la tarea 2.
+**Sin fecha, cuando el autor decida:** los pendientes menores de la tarea 9: la revisión ética de la Escuela, los correos de validación por expertos y las mejoras opcionales. En GitHub: cerrar el Issue #14 (tarea 1) y decidir los PR #12 y #13 (tarea 9). La rama `iconos-lucide` (PR #22) se unió a `main` el 25 de noviembre (tarea 17).
 
 ## 1. Memoria: contar los logros con seguridad y dejar los límites una sola vez
 
@@ -146,7 +146,7 @@ Estado de cada tarea al 21 de noviembre de 2026:
 | 4. Objeto propio | Cerrada: queda como propuesta (D-178) | — |
 | 5. Costos y presupuesto | Hecha | — |
 | 6. Semana solo con notificaciones | Cerrada | — |
-| 7. Presentación del examen | Por hacer | Borrador a fines de noviembre; ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
+| 7. Presentación del examen | En curso: 46 láminas y unos 9 minutos y medio, en Figma y en PDF, sin animaciones; por revisar (24 de noviembre) | Ensayo la semana del 7 de diciembre; examen el 14 y el 15 de diciembre |
 | 8. Datos, portada y entrega | En curso | Entrega final el 2 de diciembre (entregar el 1) |
 | 9. Pendientes menores | Por hacer | Sin fecha |
 | 10. Revisión del 28 de octubre | Cerrada, salvo un punto que pasa a la tarea 9 | — |
@@ -242,16 +242,17 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
-- [ ] **Presentación del examen, lista para ensayar.** El autor pidió primero 10 minutos como máximo y después un guion que explique más; el instructivo da hasta 15 de exposición. La versión de trabajo tiene 29 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): unos 14 minutos a un ritmo rápido, en un tono hablado y con cada término definido, con frases para acortar y respuestas preparadas. La lámina 3 ya cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
+- [ ] **Presentación del examen, lista para ensayar.** El autor pidió primero 10 minutos como máximo y después un guion que explique más; el instructivo da hasta 15 de exposición. La versión de trabajo tiene 29 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md): unos 14 minutos a un ritmo rápido, en un tono hablado y con cada término definido, con frases para acortar y respuestas preparadas. La lámina 3 ya cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
   - el flujo de la persona y el técnico, por separado;
   - la evidencia y sus límites.
 
-  Son los puntos que la comisión de julio no entendió. La base es la [presentación del 12 de noviembre](../10_recursos_visuales/45_presentacion-relevo-2026-11-12.md), en Figma Slides: 25 láminas para 7 a 10 minutos, hechas desde la memoria del 10 de noviembre. Hay que llevarla a 15 minutos y ponerla al día con la memoria final. Si cambia la pregunta, se cambia la lámina 11, que la muestra literal. La lámina 21 ya se corrigió el 18 de noviembre.
-- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase. El [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md) ya responde 24, entre ellas la de iOS; falta la de quiénes fueron las tres personas y cómo llegaron, que solo puede responder el autor.
+  Son los puntos que la comisión de julio no entendió. El 22 de noviembre el autor pidió una presentación de 10 minutos como máximo, idealmente 8, desde la memoria: la [presentación del examen](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md), en Figma Slides, tiene desde el 24 de noviembre 46 láminas en el orden de la memoria v8, una idea por lámina, texto legible al proyectar y un [guion](../10_recursos_visuales/presentacion-examen/guion-examen-2026-11-24.md) de 1213 palabras, para unos 9 minutos y medio. Muestra el objeto, el hogar, el recorrido de la persona, el flujo técnico (lámina 36), el método y el proceso, la ética y la evidencia; el alcance de la prueba va en las respuestas «Si preguntan» de las notas. Se muestra y se entrega en PDF, sin animaciones (D-189); falta exportar el PDF final desde Figma, la revisión del autor y confirmar con los profesores la duración. Si cambia la pregunta, se cambia la lámina 25, que la muestra literal. La del 12 de noviembre queda como registro. Desde la noche del 24 de noviembre se trabaja en una copia de ese archivo, de 29 láminas, con su guion ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)); el original queda sin cambios.
+- [ ] Preparar respuestas para unos 30 minutos de preguntas: por qué un objeto y no una notificación, qué se probó y qué no, quiénes fueron las tres personas de la prueba y cómo llegaron, por qué el objeto queda como propuesta, el uso de IA y la factibilidad. Sumar las nueve preguntas del simulacro de comisión (tarea 12, H) y una sobre iOS, que el profesor Gallardo marcó en el PDF del Pase. El [guion](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md) ya responde 24, entre ellas la de iOS; la de quiénes fueron las tres personas y cómo llegaron está en los [puntos de fondo](../08_memoria/puntos-de-fondo-2026-11-23.md#5-la-selección-de-las-tres-personas-para-la-comisión), sección 5.
 - [ ] Un video de respaldo del ciclo completo, por si falla la demostración.
+- [ ] Si en el examen se muestra la 4.8.2, corregir antes «Editar» un relevo activo, que vuelve a Inicio en vez de abrir la edición ([capturas de la 4.8.2](../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.8.2/README.md#un-error-encontrado-al-grabar)). La lámina 37 de la presentación nombra ese cambio.
 - [ ] Ensayar con cronómetro: ajustarse al tiempo es parte de la nota.
 
 ## 8. Memoria: datos por confirmar, portada y entrega
@@ -262,13 +263,13 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 
 - [x] **Fechas por escrito:** confirmadas por los profesores el 10 de noviembre: entrega interna el 11 de noviembre, Pase el 18, entrega final el 2 de diciembre y examen el 14 y el 15 de diciembre.
 - [x] **Describir a las tres personas de la prueba:** el autor decidió no hacerlo en la memoria (10 de noviembre); la respuesta se prepara para el examen (tarea 7).
-- [ ] **Datos por confirmar**, que solo sabe el autor:
+- [x] **Datos por confirmar**, que solo sabe el autor:
   - [x] nombre legal, título y mención: confirmados el 10 de noviembre; coinciden con la portada de la memoria;
   - [x] frase de marca: «Hazle lugar a lo que quieres hacer», confirmada el 10 de noviembre (Anexo H);
   - [x] grabación y transcripción de las entrevistas: presenciales, grabadas en audio y pasadas a texto (10 de noviembre; capítulo 7 y Anexo A);
   - [x] la encuesta: según el autor, sus datos ya están en el repositorio desde hace tiempo (53 respuestas; Anexo B);
   - [x] que las tres personas de la prueba son mayores de edad (10 de noviembre; capítulo 13 y Anexo I);
-  - [x] el nombre del segundo profesor guía: el autor confirmó el 24 de noviembre el de la memoria, «Simón Gallardo». Sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)), quizá por el nombre de su cuenta;
+  - [x] el nombre del segundo profesor guía: «Simón Gallardo», como dicen la portada de la memoria y el repositorio, confirmado por el autor el 23 y el 24 de noviembre. Sus notas en el PDF del Pase van firmadas «MANUEL GALLARDO» ([comentarios de los profesores](../08_memoria/comentarios-de-los-profesores-2026-11-18.md)), quizá por el nombre de su cuenta; eso no cambia la portada;
 - [x] **Portada oficial:** ya está en la memoria, según confirmó el autor el 10 de noviembre. logos de la Universidad, la Facultad y la Escuela (en [`logotipos-udp-faad`](../01_contexto_y_fuentes/documentos_institucionales/logotipos-udp-faad/); la firma «Escuela de Diseño» reúne los tres), nombre del proyecto, estudiante, profesores guía, modalidad y fecha de entrega.
 - [x] **Palabras clave:** se mantienen 3, como pide la [pauta de la Biblioteca](../01_contexto_y_fuentes/pauta-biblioteca-tesis.md) (2 a 3). La cuarta que pedía la pauta de Seminario no aplica.
 - [ ] **Versión que se presenta:** elegirla y decirla igual en todas partes.
@@ -281,12 +282,12 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 **Estado:** por hacer. **Anotada:** 25 de octubre de 2026.
 
 - [x] **Tesis local de diseño** en el capítulo 8, condición del Pase de junio: el 25 de octubre se incluyeron dos memorias de diseño de la Universidad de Chile y una de sociología ([propuesta](../08_memoria/propuesta-tesis-locales-capitulo-8-2026-10-25.md)). El autor descargó los PDF de las dos de diseño, y su lectura completa corrigió el párrafo.
-- [ ] **Ética:** preguntar si la Escuela exige una revisión ética y guardar las autorizaciones de las fotos de la prueba (Figura 23 de la memoria del Pase; Figura 17 de la v6). La memoria no las menciona, por decisión del autor (D-182).
-- [ ] **El relevo que no sonó:** confirmar con la tercera persona que fue fuera de casa, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
-- [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). Viene de la tarea 10.
-- [ ] **Aviso de licencia de Lucide** (anotado el 11 de noviembre): si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
+- [ ] **Ética:** preguntar si la Escuela exige una revisión ética. Las fotos de la prueba están autorizadas, según confirmó el autor el 23 de noviembre (D-140); la memoria no menciona la autorización, por decisión del autor (D-182).
+- [x] **El relevo que no sonó:** confirmado por el autor el 23 de noviembre: no sonó porque la tercera persona no estaba en casa y tenía configurado el Tag, como dicen el capítulo 13 y la Tabla 4. Viene de la tarea 12, G.
+- [ ] **Validación por expertos:** enviar los correos a los tres perfiles que se sumaron para evaluar la propuesta, si el autor quiere hacerlo antes del examen ([correos](../02_investigacion/entrevistas-expertos/correos-de-validacion.md)). El texto de cada correo está listo; se envían desde el correo de la UDP del autor. Viene de la tarea 10.
+- [x] **Aviso de licencia de Lucide:** desde la app 4.8 los íconos salen de Lucide, y su aviso va en el repositorio y dentro del APK (D-187). Está en la rama `iconos-lucide`; llega a `main` si se une. Lo anotado el 11 de noviembre: si algún ícono de la app parte de un trazo de Lucide, sumar su aviso de licencia ISC («Copyright (c) Lucide Icons and Contributors» y el permiso) en Ayuda o en una sección de licencias. La licencia permite usar, modificar y redistribuir los íconos, con o sin pago, siempre que el aviso vaya en las copias. Si todos son dibujos propios inspirados en Lucide (D-162), basta con nombrarlo como referente, como hace la memoria.
 - [ ] **GitHub:** el 25 de octubre se cerró el #11, cumplido con el Tag, y se pusieron al día el #8 y el #10. Quedan por decidir los PR #12 y #13.
-- [ ] **Notificación de la señal:** decidir si se deja como está y se declara como límite, porque dice «Empieza por…». No se cambia durante la prueba.
+- [x] **Notificación de la señal:** en la etapa con el teléfono, el aviso traía escrita la actividad y su primer paso («Empieza por…»), así que recordar con el teléfono pudo deberse a leerlo. Queda declarado en el capítulo 13 de la v8: «aunque el aviso ya trae escrita la actividad». Cerrada el 23 de noviembre.
 - [ ] **Mejoras opcionales** del [registro de riesgos](registro-de-riesgos.md#lo-que-se-puede-mejorar): impacto cuantificado, vínculo con el medio, alianzas posibles, TalkBack y búsqueda en INAPI.
 
 ## 10. Correcciones de la revisión con los profesores (28 de octubre)
@@ -909,12 +910,12 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### B. Formulación y argumento
 
-- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que antes se había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita en el PDF dice «recuerdo oportuno»; vale la versión escrita. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 11 de la presentación, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
+- [ ] **Pregunta de investigación.** Gallardo propone, en una nota sobre la pregunta (p. 30): «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Es la hipótesis convertida en pregunta, y es también la nota del miércoles «Actividad pendiente con su lugar de inicio sobre el lugar oportuno de su actividad», que antes se había leído como una proyección. La nota dice «lugar oportuno» donde la pregunta escrita en el PDF dice «recuerdo oportuno»; vale la versión escrita. Si se adopta, reemplaza la solución de la tarea 11, cambia un párrafo del capítulo 10, otro del 14, la cita del Anexo I, I.1, y la lámina 25 de la presentación del examen, y suma «Recuerdo oportuno» al glosario. La hipótesis no cambia ([respuesta, sección 5](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#5-la-pregunta-y-el-objetivo-4-comentarios-7-8-y-9)).
 - [ ] **El indicador del objetivo 4.** Majluf, sobre «si el sistema funciona» (p. 31), sugiere la «proporción de señales que llevan a retomar la actividad». La respuesta mantiene la hipótesis como está, porque ya nombra las mismas variables que la pregunta nueva, y pone el indicador en el objetivo 4. Con el Tag empezaron 10 de 21 veces, y con el teléfono, 13 de 21; por eso «empezar» queda como resultado de la decisión y el recuerdo como indicador principal. Preguntar a Majluf qué quiso decir con «retomar» (respuesta, sección 5.3).
 - [ ] **Marco teórico antes del planteamiento.** Gallardo escribió «Lo pondría antes» sobre el título del capítulo 6 (p. 16). Orden propuesto, según la pauta de la Escuela: antecedentes, marco teórico, planteamiento del problema y justificación. Obliga a cambiar una frase del marco teórico, la primera del capítulo 7, tres remisiones a capítulos y el número de las Figuras 1 a 5; conviene hacerlo al final ([respuesta, sección 3](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#3-el-marco-teórico-antes-del-planteamiento-comentario-5)).
 - [ ] **Leer la memoria al revés.** Desarmarla desde las conclusiones hacia atrás para comprobar que cada parte sostiene la siguiente: proyecto ← objetivos ← hipótesis ← pregunta ← problema.
 - [ ] **Reformular en cadena.** Partir de la hipótesis, derivar de ella los objetivos y presentar el proyecto como consecuencia de los objetivos: qué busca y por qué.
-- [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así. La presentación del examen ya lo muestra en su lámina 3 ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)); en la memoria sigue pendiente.
+- [ ] **Planteamiento del problema como el universo del proyecto.** Escribirlo desde la experiencia propia, la de otros usuarios y el contexto, y cerrarlo diciendo por qué eso es un problema y por qué se formula así. La presentación del examen ya lo muestra en su lámina 3 ([documento 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md)); en la memoria sigue pendiente.
 - [ ] **Definir el fenómeno con precisión.** Lo pertinente a la pregunta es lo que las personas cuentan de su último rato con el teléfono; según los profesores, el problema es que en ese rato no se ejerce agencia. Verificar cuál es la palabra correcta —agencia, autonomía, intención u otra— y usarla igual en toda la memoria y el glosario, con una fuente que la defina.
 - [ ] **La tensión en la decisión.** En la Formulación, explicar cómo funciona la tensión entre seguir en el teléfono y la actividad que la persona quería hacer, y dónde actúa Relevo en ella.
 - [ ] **Objetivo específico 4.** «Probar en hogares si las personas entienden la señal, si les resulta cómoda y si el sistema funciona» es demasiado general. La propuesta conserva las dos primeras partes, que usa la Tabla I5 del Anexo I, y cambia «si el sistema funciona» por el indicador: medir el recuerdo oportuno —en cuántas respuestas a la señal supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar— y registrar en cuántas empezaron la actividad. El recuerdo se mide y el comienzo se registra, porque las tres respuestas valen lo mismo (criterio 4); la base son las respuestas, como en la Tabla 3 (respuesta, sección 5.2). Los otros tres objetivos no cambian.
@@ -934,7 +935,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### D. Anexos
 
-- [x] Un anexo con todas las pantallas de la APK. Las 18 pantallas de la versión 4.7.2 están en el Anexo F, F.4 (D-187).
+- [x] Un anexo con todas las pantallas de la APK. Las 18 pantallas de la versión 4.7.2 están en el Anexo F, F.4 (D-190).
 
 ### E. Proyecciones
 
@@ -955,7 +956,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### Confirmar con los profesores
 
-- [ ] Mandar en un solo correo las seis preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores):
+- [x] Mandar en un solo correo las seis preguntas de la [respuesta, sección 10](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores). El autor lo dio por resuelto el 23 de noviembre: «es un tema muy atrasado». La v8 queda como está en esos puntos. Las preguntas eran:
   - a Gallardo: dónde va el marco teórico; si «lo sacaría» incluye cuándo suena; si los relatos van en los hallazgos o al Anexo I, y si el punto sobre *phygital* pide definirlo;
   - a Majluf: qué quiso decir con «retomar la actividad» y a qué sesgo de preparación previa se refiere.
 
@@ -966,7 +967,45 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - La propuesta de redacción para la cadena hipótesis, objetivos y proyecto está en la [propuesta de formulación](../08_memoria/propuesta-formulacion-2026-11-19.md); la [respuesta a los profesores](../08_memoria/respuesta-a-los-profesores-2026-11-21.md) la actualiza con la pregunta y el indicador que ellos pidieron.
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
+## 17. Íconos desde Lucide: revisar y llevar a la memoria
+
+**Estado:** decidida la versión: la entrega y el examen usan la última, hoy la 4.8.2 (D-188, 23 de noviembre); queda llevar los íconos a la memoria cuando el autor lo decida. **Anotada:** 22 de noviembre de 2026. **Origen:** el autor propuso usar los íconos de Lucide, adaptar los que lo requieran y dibujar con sus reglas solo lo que Lucide no tiene (D-187). La app 4.8.2 ya los usa, en la rama `iconos-lucide`. El detalle está en el [documento 46](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md). **Riesgo:** bajo en la app; medio en la memoria, porque el texto, el Anexo H y las figuras hablan de íconos propios.
+
+### A. Revisar la app
+
+- [ ] Instalar el [APK 4.8.2](../06_desarrollo_y_factibilidad/app-android/releases/relevo-android-4.8.2-2026-11-22.apk) y mirar los íconos a 17 px dentro de los anillos, en tema claro y oscuro y con letra grande. No se vio en un teléfono ni en un emulador.
+- [ ] Revisar los cinco que se corrigieron en la 4.8.2 con las reglas de Lucide: Suena, Silenciar, Estirar, Meditar y la huella del primer paso, ahora recta ([tamaño óptico](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#tamaño-óptico)).
+- [ ] Confirmar los dos dibujos del Tag: con botón y argolla en Objeto, y como un círculo con un punto en Suena, Silenciar y Sistema phygital.
+- [ ] Elegir entre las [propuestas de más íconos](../10_recursos_visuales/46_iconos-desde-lucide-2026-11-22.md#más-íconos-propuestas): la pelota de fútbol para Pelota y el ovillo para Tejer, que se recomiendan, y, de las cosas cotidianas de Chile, la once, el cerro, el asado y el volantín. Lo elegido se aplica en una versión nueva de la app, con sus conceptos en el catastro de palabras.
+- [ ] Decidir cinco elecciones: Ordenar (una polera, porque Lucide no tiene un colgador), Tejer (un carrete de hilo), Pelota (una de vóleibol), Dormir (la cama) y Escribir y Estudiar (dos cuadernos).
+- [ ] Si se aprueba, unir la rama `iconos-lucide` a `main`.
+
+### B. Llevarlo a la memoria y los anexos
+
+- [ ] **Memoria v8, «Iconografía»:** reemplazar «Los íconos de la aplicación son propios: 118 dibujos de línea…» por el texto propuesto en el documento 46. Usa las mismas referencias de Lucide.
+- [ ] **Memoria v8, lámina de identidad:** «Íconos propios: retícula de 24, trazo de 1,6» → «Íconos de Lucide y propios con sus reglas: retícula de 24, trazo de 1,6».
+- [ ] **Anexo H, H.3:** el texto (propuesta en el documento 46); en la Tabla H2, las filas de retícula, formas base, esquinas, y color y relleno, y recontar cuántos íconos corre el centro óptico; poner la nueva Figura H7, [la construcción con Suena y Meditar](../10_recursos_visuales/iconos-lucide/construccion/construccion-suena-y-meditar.png), con su texto propuesto, y rehacer las Figuras H6 (el conjunto) y H8 (Lucide y Relevo). Después, regenerar el Word y el PDF de los anexos.
+- [ ] **Figuras de la memoria:** pasar [`marca-e-iconos.json`](../08_memoria/memoria-1920x1080/marca-e-iconos.json) a los íconos de la 4.8 y volver a componer. Ese archivo tiene además seis íconos que no son de la app (`tag`, `decidir`, `empece`, `contando`, `pasear-perro` y `aura`); no hace falta dibujarlos, porque ya tienen par: Objeto, `flag`, `circle-play`, `hourglass`, `dog` y `contrast`.
+- [ ] **Capturas:** las de la 4.7.2 y las figuras que las usan muestran los íconos anteriores; tomar las de la 4.8 si se quiere que coincidan.
+
+### C. Lo que seguía pendiente
+
+- [ ] **Comprensión:** mostrar cada ícono sin su palabra y pedir que digan qué significa (ISO 9186-1), como proponía el documento 43.
+- [ ] **El trazo de 2 de Lucide:** probarlo junto al texto de la app; hoy se dibujan con el trazo de la app, de 1,6 a 24 px.
+
+### Reglas
+
+- Los íconos se cambian en el [mapeo](../10_recursos_visuales/iconos-lucide/mapeo.json) o en sus SVG, y se generan de nuevo con `generar_kiticons.py`; `KitIcons.kt` no se edita a mano.
+- Un ícono adaptado o propio debe pasar `verificar_reglas.py`: las reglas obligatorias de Lucide no se rompen para ganar tamaño.
+- Conservar el aviso de licencia de Lucide con los SVG y dentro del APK.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Unión con la rama de los íconos
+
+- **Qué cambió:** Por hacer reúne lo de `main` y lo de la rama `iconos-lucide`. La lista de arriba queda al 25 de noviembre: suma los tres puntos de fondo y los íconos de la 4.8.2, ya decididos, y los primeros conceptos para los anexos. Salen el correo a los profesores, resuelto según el autor el 23 de noviembre, y el ajuste si respondían distinto. La tarea 7 nombra las dos versiones de la presentación, y la versión de trabajo y su guion pasan a los documentos 48 y 49.
+- **Cómo estaba antes:** cada rama tenía su propia lista de lo que queda, y las dos usaban los números 46 y 47 para documentos distintos.
+- **Por qué:** el autor pidió traer a `main` lo de esa rama y tomó las decisiones de los puntos de fondo y de los íconos.
 
 ### 2026-11-25 — Guion más explicado
 
@@ -1008,13 +1047,115 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 - **Qué cambió:** el punto 3 dice que la v8 tiene 40 figuras y que se contrastó con los comentarios de los profesores; el punto 6 y la tarea 16, D, dan por hechas las pantallas de la app, las variantes del logo y la pregunta del Anexo I.
 - **Cómo estaba antes:** los anexos estaban pendientes y la v8 tenía 34 figuras.
-- **Por qué:** pedido del autor del 24 de noviembre de 2026 (D-187).
+- **Por qué:** pedido del autor del 24 de noviembre de 2026 (D-190).
+
+### 2026-11-24 — D-190
+
+- **Qué cambió:** la decisión de las figuras claras y en orden, esquemas sin fichas y menos comas se cita como D-190.
+- **Cómo estaba antes:** se citaba como D-187, el mismo número que la rama `iconos-lucide` usa para los íconos de Lucide.
+- **Por qué:** al unir `main` con la rama, los dos D-187 chocaban; se renumeró el que tenía menos referencias y ninguna en el código de la app.
+
+### 2026-11-24 — Tarea 7: presentación perfeccionada
+
+- **Qué cambió:** la tarea 7 describe la presentación de 46 láminas, legible, sin animaciones y de unos 9 minutos y medio, con el flujo técnico en su lámina y el guion.
+- **Cómo estaba antes:** describía 41 láminas y decía que el flujo técnico no tenía lámina propia.
+- **Por qué:** el autor canceló los GIF y pidió perfeccionar la presentación en PDF, de 9 a 10 minutos.
 
 ### 2026-11-24 — Memoria v8 más clara
 
 - **Qué cambió:** el punto 3 dice que la v8 tiene 72 páginas, figuras claras y en orden, menos comas, y qué finales quedan por resolver con el contenido.
 - **Cómo estaba antes:** decía 73 páginas y no mencionaba la revisión del texto.
-- **Por qué:** pedido del autor del 21 de noviembre de 2026 (D-187).
+- **Por qué:** pedido del autor del 21 de noviembre de 2026 (D-190).
+
+### 2026-11-24 — El color de la presentación, como en la memoria
+
+- **Qué cambió:** el punto 6 de lo que queda dice que la presentación usa el color como la memoria.
+- **Cómo estaba antes:** decía que llevaba acentos de color con su significado.
+- **Por qué:** el autor pidió no abusar de los fondos de color y seguir la app y el diseño de la memoria.
+
+### 2026-11-24 — Acentos de color en la presentación
+
+- **Qué cambió:** el punto 6 de lo que queda dice que la presentación lleva acentos de color con su significado.
+- **Cómo estaba antes:** decía que llevaba el color en detalles.
+- **Por qué:** el autor pidió acentos de color y degradados sutiles, sin llenar la pantalla.
+
+### 2026-11-24 — El color de la presentación, en detalles
+
+- **Qué cambió:** el punto 6 de lo que queda dice que la presentación lleva el color en detalles.
+- **Cómo estaba antes:** decía «con poco texto, color e imágenes».
+- **Por qué:** el autor pidió no inundar las láminas de color, sino usarlo en toques.
+
+### 2026-11-24 — Presentación rediseñada
+
+- **Qué cambió:** el punto 6 de lo que queda y la tarea 7 describen la presentación rediseñada, de 41 láminas y unos 9 minutos; la pregunta pasa a la lámina 25, también en la tarea 16, y el cambio de «Editar», a la 37.
+- **Cómo estaba antes:** describían la versión de 37 láminas y unos 10 minutos, con la pregunta en la lámina 22 y «Editar» en la 33; la tarea 16 aún nombraba la lámina 11 de la presentación del 12 de noviembre.
+- **Por qué:** el autor pidió menos texto, más imágenes y color, y láminas propias para algunas ideas.
+
+### 2026-11-24 — Presentación de 37 láminas
+
+- **Qué cambió:** el punto 6 de lo que queda y la tarea 7 describen la presentación del 24 de noviembre, de 37 láminas y unos 10 minutos, con los fundamentos completos y las anotaciones del autor resueltas; la pregunta pasa a la lámina 22 y el cambio de «Editar», a la 33.
+- **Cómo estaba antes:** describían la versión de 26 láminas y 8 minutos, con la pregunta en la lámina 12 y «Editar» en la 23.
+- **Por qué:** el autor pidió resolver sus anotaciones, usar el logo y las animaciones nuevas y presentar mejor el planteamiento del problema y el marco teórico.
+
+### 2026-11-23 — Respuestas del autor a lo que queda
+
+- **Qué cambió:** salen de la lista la autorización de las fotos (D-140) y el correo a los profesores, que el autor dio por resuelto. La versión de la app queda decidida: siempre la última (D-188). Lo que la v8 no resolvió dice el estado de cada punto, con los borradores de los puntos de fondo. En la tarea 9 se cierran el relevo que no sonó y la notificación de la señal, y la lista se renumera del 1 al 9.
+- **Cómo estaba antes:** la lista pedía el correo, la autorización escrita de las fotos, decidir la versión y seis datos o textos del autor, y la tarea 9 tenía abiertos el relevo que no sonó y la notificación.
+- **Por qué:** el autor respondió punto por punto, pidió buscar fuentes y redactar los puntos de fondo para tenerlos, y pidió no editar la memoria ni los anexos.
+
+### 2026-11-23 — Lo que queda, al 23 de noviembre
+
+- **Qué cambió:** el nombre del profesor Gallardo queda confirmado y sale de la lista; entra la autorización de las fotos, que estaba sin fecha en la tarea 9. La decisión de los íconos pasa a ser la de la versión de la app, con las capturas de la 4.8.2 y el error de «Editar»; la presentación y el video de respaldo dicen su estado, y se suman los pendientes de GitHub.
+- **Cómo estaba antes:** la lista era del 22 de noviembre y pedía confirmar el nombre, y la autorización de las fotos no tenía fecha.
+- **Por qué:** el autor preguntó qué queda para ir cerrándolo y confirmó que los nombres de la portada están correctos.
+
+### 2026-11-23 — «Editar» antes del examen
+
+- **Qué cambió:** la tarea 7 suma corregir «Editar» un relevo activo en la 4.8.2 antes de mostrarla.
+- **Cómo estaba antes:** el error estaba descrito en las capturas de la 4.8.2, pero no en Por hacer.
+- **Por qué:** la presentación ahora muestra la 4.8.2 y nombra ese cambio en la lámina 23.
+
+### 2026-11-23 — Presentación del examen
+
+- **Qué cambió:** la tarea 7 y el punto 9 de lo que queda enlazan la presentación del 23 de noviembre, de 8 minutos, y dicen qué cubre y qué falta: la revisión del autor y confirmar la duración con los profesores.
+- **Cómo estaba antes:** la tarea estaba por hacer y tomaba como base la presentación del 12 de noviembre, que había que llevar a 15 minutos.
+- **Por qué:** el autor pidió una presentación de 8 a 10 minutos desde la memoria y la corrigió el mismo día.
+
+### 2026-11-22 — Lo que queda, al 22 de noviembre
+
+- **Qué cambió:** el orden de lo que queda suma la decisión de los íconos y el video de respaldo con un segundo Tag, y en la tarea 9 queda hecho el aviso de licencia de Lucide.
+- **Cómo estaba antes:** el orden era del 21 de noviembre, antes del trabajo de los íconos, y el aviso de licencia seguía pendiente.
+- **Por qué:** el autor preguntó qué falta, a tres semanas del examen.
+
+### 2026-11-22 — Tarea 17, la nueva Figura H7
+
+- **Qué cambió:** la tarea 17 dice que la Figura H7, la construcción, ya está rehecha con Suena y Meditar, y suma la fila de las formas base a las de la Tabla H2.
+- **Cómo estaba antes:** pedía rehacer la Figura H7 con Suena y Leer.
+- **Por qué:** el autor pidió hacer la construcción como se había hecho antes.
+
+### 2026-11-22 — Tarea 17, propuestas de más íconos
+
+- **Qué cambió:** la tarea 17 suma elegir entre las propuestas de más íconos, y dice que los seis íconos de la memoria ya tienen par en Lucide o en Objeto.
+- **Cómo estaba antes:** no había propuestas, y pedía dibujar esos seis íconos con las reglas de Lucide.
+- **Por qué:** el autor preguntó si quedaban íconos por hacer y propuso sumar cosas cotidianas de Chile.
+
+### 2026-11-22 — Tarea 17, la 4.8.2
+
+- **Qué cambió:** la tarea 17 apunta al APK 4.8.2; suma revisar los cinco íconos corregidos con las reglas de Lucide, confirmar los dos dibujos del Tag y la regla de pasar `verificar_reglas.py`.
+- **Cómo estaba antes:** apuntaba al APK 4.8.1 y pedía revisar la huella y los cuatro íconos que crecieron.
+- **Por qué:** el autor pidió perfeccionar los íconos y estudiar cómo funcionan los de Lucide.
+
+### 2026-11-22 — Tarea 17, la 4.8.1
+
+- **Qué cambió:** la tarea 17 apunta al APK 4.8.1 y suma revisar la huella del primer paso y los cuatro íconos que crecieron.
+- **Cómo estaba antes:** apuntaba al APK 4.8.
+- **Por qué:** el autor pidió que el primer paso no fuera una escalera y que el tamaño fuera óptico, no matemático.
+
+### 2026-11-22 — Tarea 17
+
+- **Qué cambió:** se añadió la tarea 17: revisar los íconos de Lucide en la app 4.8 y llevarlos a la memoria, el Anexo H y las figuras.
+- **Cómo estaba antes:** la última tarea era la 16.
+- **Por qué:** el autor propuso usar los íconos de Lucide y dibujar solo lo que Lucide no tiene (D-187).
 
 ### 2026-11-21 — Memoria v8 compuesta
 
