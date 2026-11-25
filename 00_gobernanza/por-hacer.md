@@ -242,7 +242,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
-- [ ] **Presentación del examen, lista para ensayar.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 29 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): 9 min 47 s a un ritmo rápido y en un tono hablado, con frases para acortar y respuestas preparadas. La lámina 3 ya cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
+- [ ] **Presentación del examen, lista para ensayar.** El autor pidió primero 10 minutos como máximo y después un guion que explique más; el instructivo da hasta 15 de exposición. La versión de trabajo tiene 29 láminas en cuatro partes y 22 de respaldo, sin notas, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Lo que se dice está en el [guion](../10_recursos_visuales/47_guion-presentacion-examen-2026-12.md): unos 14 minutos a un ritmo rápido, en un tono hablado y con cada término definido, con frases para acortar y respuestas preparadas. La lámina 3 ya cuenta de dónde nace el problema (tarea 16, B). Falta ensayarlo con cronómetro y decidir si se presenta desde la copia.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -967,6 +967,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Guion más explicado
+
+- **Qué cambió:** la tarea 7 dice que el guion dura unos 14 minutos, bajo los 15 del instructivo, y que define cada término.
+- **Cómo estaba antes:** decía un guion de 9 min 47 s.
+- **Por qué:** el autor pidió explicar más en el guion, sin centrarse en los segundos.
 
 ### 2026-11-25 — Origen del problema en la presentación
 

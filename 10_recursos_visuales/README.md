@@ -83,7 +83,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
 48. [Presentación del examen](46_presentacion-examen-2026-12.md): la versión de 10 minutos del examen de diciembre, en una copia del archivo de Figma. Tiene 29 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos y una lámina para cada ámbito del marco teórico, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
-49. [Guion de la presentación del examen](47_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, 9 min 47 s en total a su ritmo rápido, en un tono hablado; frases para acortar, las láminas de respaldo y 24 respuestas preparadas. Tiene versiones en [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
+49. [Guion de la presentación del examen](47_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 14 minutos a su ritmo rápido, en un tono hablado y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 24 respuestas preparadas. Tiene versiones en [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -113,6 +113,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Guion más explicado
+
+- **Qué cambió:** la entrada 49 dice que el guion dura unos 14 minutos y define cada término antes de usarlo.
+- **Cómo estaba antes:** decía un guion de 9 min 47 s.
+- **Por qué:** el autor pidió que el guion explique más y mejor.
 
 ### 2026-11-25 — Títulos consistentes y guion hablado
 

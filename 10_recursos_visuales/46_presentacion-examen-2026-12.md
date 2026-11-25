@@ -2,7 +2,7 @@
 
 **Archivo de trabajo:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides, en Borradores de la cuenta del autor.
 **Original sin cambios:** [Relevo — Examen de título (diciembre 2026)](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1). La versión de trabajo es una copia, así que el original queda como estaba.
-**Duración:** 9 min 47 s en 29 láminas, según el [guion](47_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió 10 minutos como máximo.
+**Duración:** unos 14 min 20 s en 29 láminas, según el [guion](47_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 13 minutos a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo y después que el guion explicara más, sin centrarse en los segundos.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Cada cifra, cita y fecha de las láminas se comparó con la memoria y los anexos.
 **Estado:** lista para el ensayo con cronómetro. Lo que se dice está en el guion.
 
@@ -19,37 +19,39 @@ La presentación reúne el proyecto para la comisión. No repite la memoria cap�
 
 Cada ámbito del marco teórico tiene su lámina: la experiencia del ocio digital (9), el diseño de la atención (10) y recordar con objetos y lugares (11). Las tres causas del problema van juntas en la lámina 7. Los tiempos salen del guion, con un segundo por cambio de lámina.
 
-| N.º | Lámina | Inicio | Dura |
-| --- | --- | --- | --- |
-| 1 | Portada | 0:00 | 16 s |
-| 2 | Relevo, en una frase | 0:16 | 16 s |
-| 3 | De dónde nace el problema | 0:32 | 22 s |
-| 4 | Una intención que vuelve tarde | 0:54 | 18 s |
-| 5 | El problema | 1:12 | 19 s |
-| 6 | La intención pierde fuerza mientras se usa el teléfono | 1:31 | 24 s |
-| 7 | Tres causas | 1:55 | 24 s |
-| 8 | Desafío de diseño | 2:19 | 18 s |
-| 9 | Marco teórico 1: el motivo se pierde mientras se usa | 2:37 | 22 s |
-| 10 | Marco teórico 2: elegir fortalece la motivación | 2:59 | 18 s |
-| 11 | Marco teórico 3: una intención vuelve por dos caminos | 3:17 | 24 s |
-| 12 | Seguir más de lo que se quería es frecuente y pasa en casa | 3:41 | 22 s |
-| 13 | Dos situaciones de uso | 4:03 | 23 s |
-| 14 | Casi todas las herramientas limitan el uso o trabajan en la pantalla | 4:26 | 21 s |
-| 15 | Ocho criterios de diseño, en tres ideas | 4:47 | 18 s |
-| 16 | Pregunta de investigación | 5:05 | 24 s |
-| 17 | Hipótesis | 5:29 | 24 s |
-| 18 | Relevo: una aplicación, un objeto y un lugar | 5:53 | 19 s |
-| 19 | Cómo se usa: los cuatro momentos de un relevo | 6:12 | 23 s |
-| 20 | La aplicación | 6:35 | 18 s |
-| 21 | Identidad | 6:53 | 14 s |
-| 22 | El objeto | 7:07 | 23 s |
-| 23 | Factibilidad en tres etapas | 7:30 | 19 s |
-| 24 | Prueba en los hogares | 7:49 | 24 s |
-| 25 | Con el Tag, el ciclo funcionó en los tres hogares | 8:13 | 22 s |
-| 26 | Con el teléfono recordaron igual | 8:35 | 26 s |
-| 27 | Conclusiones | 9:01 | 22 s |
-| 28 | Aporte y lo que sigue | 9:23 | 19 s |
-| 29 | Gracias | 9:42 | 5 s |
+| N.º | Lámina |
+| --- | --- |
+| 1 | Portada |
+| 2 | Relevo, en una frase |
+| 3 | De dónde nace el problema |
+| 4 | Una intención que vuelve tarde |
+| 5 | El problema |
+| 6 | La intención pierde fuerza mientras se usa el teléfono |
+| 7 | Tres causas |
+| 8 | Desafío de diseño |
+| 9 | Marco teórico 1: el motivo se pierde mientras se usa |
+| 10 | Marco teórico 2: elegir fortalece la motivación |
+| 11 | Marco teórico 3: una intención vuelve por dos caminos |
+| 12 | Seguir más de lo que se quería es frecuente y pasa en casa |
+| 13 | Dos situaciones de uso |
+| 14 | Casi todas las herramientas limitan el uso o trabajan en la pantalla |
+| 15 | Ocho criterios de diseño, en tres ideas |
+| 16 | Pregunta de investigación |
+| 17 | Hipótesis |
+| 18 | Relevo: una aplicación, un objeto y un lugar |
+| 19 | Cómo se usa: los cuatro momentos de un relevo |
+| 20 | La aplicación |
+| 21 | Identidad |
+| 22 | El objeto |
+| 23 | Factibilidad en tres etapas |
+| 24 | Prueba en los hogares |
+| 25 | Con el Tag, el ciclo funcionó en los tres hogares |
+| 26 | Con el teléfono recordaron igual |
+| 27 | Conclusiones |
+| 28 | Aporte y lo que sigue |
+| 29 | Gracias |
+
+El guion ya no da el tiempo de cada lámina: dice en qué minuto empieza cada parte, para ensayar sin mirar los segundos.
 
 ## Respaldo
 
@@ -100,10 +102,16 @@ El ocio digital · Qué se ha estudiado y qué se ha probado · Un buen recordat
 
 La versión de la app (4.7.2) y el nombre del profesor (Simón Gallardo, como en la memoria) quedaron resueltos el 24 de noviembre.
 
-- **Ensayo:** leer el [guion](47_guion-presentacion-examen-2026-12.md) en voz alta con cronómetro. Si pasa de 10 minutos, se omiten las frases que el guion marca para acortar.
+- **Ensayo:** leer el [guion](47_guion-presentacion-examen-2026-12.md) en voz alta con cronómetro. Si pasa de 14 minutos, se omiten las frases que el guion marca para acortar.
 - **Original:** si el autor aprueba la versión de trabajo, decidir si reemplaza al original o si se presenta desde la copia.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Guion más explicado
+
+- **Qué cambió:** el guion explica más cada lámina, define cada término antes de usarlo y da el contexto de cada dato. Dura unos 14 min 20 s a ritmo rápido, bajo los 15 minutos de exposición del instructivo. La tabla de láminas ya no da el tiempo de cada una. Las láminas no cambiaron.
+- **Cómo estaba antes:** el guion duraba 9 min 47 s y se saltaba explicaciones. La tabla daba el inicio y la duración de cada lámina.
+- **Por qué:** el autor pidió explicar más y mejor, ser específico y no centrarse en los segundos.
 
 ### 2026-11-25 — Un sistema de títulos, el origen del problema y datos en simple
 

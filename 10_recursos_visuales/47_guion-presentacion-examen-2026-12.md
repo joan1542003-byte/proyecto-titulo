@@ -2,188 +2,168 @@
 
 **Qué es:** el texto que el autor dice en cada lámina de la [presentación del examen](46_presentacion-examen-2026-12.md), en primera persona y tal como se dice.  
 **Láminas:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides.  
-**Duración:** 9 min 47 s en 29 láminas, a unas 2,7 palabras por segundo, que es el ritmo rápido del autor, y con un segundo por cambio de lámina. El máximo es 10 minutos.  
+**Duración:** Unos 14 min 20 s a 2,7 palabras por segundo, que es el ritmo rápido del autor, con un segundo por cambio de lámina. A 3 palabras por segundo son unos 12 min 55 s. El instructivo del examen da 15 minutos de exposición.  
 **Fuente:** la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md). Las cifras, las citas y las fechas salen de ella y de sus anexos.  
 **Para imprimir:** [Word](47_guion-presentacion-examen-2026-12.docx) y [PDF](47_guion-presentacion-examen-2026-12.pdf).
 
 ## Cómo usarlo
 
-- Cada bloque indica la lámina, el minuto en que empieza y cuánto dura.
+- Cada bloque es una lámina, con su número y su título, y debajo el texto que se dice.
 - El texto está escrito para decirse tal cual. Las cifras se leen completas.
-- Conviene ensayar con cronómetro. Si el ensayo pasa de 10 minutos, se omiten las frases de [Si hay que acortar](#si-hay-que-acortar).
+- Cada término se explica la primera vez que aparece: ocio digital, intenciones personales y phygital en la portada, sesión en la lámina 5, fricción en la 10, memoria prospectiva en la 11 y primer paso en la 12.
+- Conviene ensayar una vez con cronómetro. Si el ensayo pasa de 14 minutos, se omiten las frases de [Si hay que acortar](#si-hay-que-acortar).
 - La presentación cuenta el proyecto en cuatro partes. Arriba de cada lámina se lee la parte, a la izquierda, y el tema, a la derecha. El guion acompaña lo que se ve: dice dónde mirar y explica cada idea con palabras simples. Está escrito como se habla en Chile, así que dice «celular» aunque las láminas digan «teléfono».
-- Las notas del presentador se borraron del archivo de Figma. Este guion las reemplaza.
 - Las láminas 30 a 51 son de respaldo: están ocultas al presentar y sirven para las preguntas.
+- Las notas del presentador se borraron del archivo de Figma. Este guion las reemplaza.
 
-## Tiempos
+## Ensayo
 
-| Lámina | Nombre | Empieza | Dura |
-| --- | --- | --- | --- |
-| 1 | Portada | 0:00 | 16 s |
-| 2 | Relevo, en una frase | 0:16 | 16 s |
-| 3 | De dónde nace el problema | 0:32 | 22 s |
-| 4 | Una intención que vuelve tarde | 0:54 | 18 s |
-| 5 | El problema | 1:12 | 19 s |
-| 6 | La intención pierde fuerza mientras se usa el teléfono | 1:31 | 24 s |
-| 7 | Tres causas | 1:55 | 24 s |
-| 8 | Desafío de diseño | 2:19 | 18 s |
-| 9 | Marco teórico 1: el motivo se pierde mientras se usa | 2:37 | 22 s |
-| 10 | Marco teórico 2: elegir fortalece la motivación | 2:59 | 18 s |
-| 11 | Marco teórico 3: una intención vuelve por dos caminos | 3:17 | 24 s |
-| 12 | Seguir más de lo que se quería es frecuente y pasa en casa | 3:41 | 22 s |
-| 13 | Dos situaciones de uso | 4:03 | 23 s |
-| 14 | Casi todas las herramientas limitan el uso o trabajan en la pantalla | 4:26 | 21 s |
-| 15 | Ocho criterios de diseño, en tres ideas | 4:47 | 18 s |
-| 16 | Pregunta de investigación | 5:05 | 24 s |
-| 17 | Hipótesis | 5:29 | 24 s |
-| 18 | Relevo: una aplicación, un objeto y un lugar | 5:53 | 19 s |
-| 19 | Cómo se usa: los cuatro momentos de un relevo | 6:12 | 23 s |
-| 20 | La aplicación | 6:35 | 18 s |
-| 21 | Identidad | 6:53 | 14 s |
-| 22 | El objeto | 7:07 | 23 s |
-| 23 | Factibilidad en tres etapas | 7:30 | 19 s |
-| 24 | Prueba en los hogares | 7:49 | 24 s |
-| 25 | Con el Tag, el ciclo funcionó en los tres hogares | 8:13 | 22 s |
-| 26 | Con el teléfono recordaron igual | 8:35 | 26 s |
-| 27 | Conclusiones | 9:01 | 22 s |
-| 28 | Aporte y lo que sigue | 9:23 | 19 s |
-| 29 | Gracias | 9:42 | 5 s |
-| | **Total** | | **9:47** |
+Para saber si se va a buen ritmo, sin mirar los segundos: cada parte empieza cerca de este minuto.
+
+| Parte | Desde la lámina | Empieza cerca del minuto |
+| --- | --- | --- |
+| Introducción | 1 | 0 |
+| Parte 1 · El problema | 3 | 1 |
+| Parte 2 · Lo que investigué | 9 | 4 y medio |
+| Parte 3 · La propuesta | 16 | 8 y medio |
+| Parte 4 · La prueba | 24 | 12 |
+| Fin | 29 | 14 y medio |
 
 ## Guion
 
-### 1. Portada · 0:00 · 16 s
+### 1. Portada
 
-Buenos días. Soy Johan Yantén y les voy a presentar Relevo, mi proyecto de título: un sistema phygital, o sea, que mezcla algo físico con algo digital, para que no se nos pierda lo que queremos hacer mientras usamos el celular.
+Buenos días. Soy Johan Yantén y les voy a presentar Relevo, mi proyecto de título. Antes de partir, les explico tres palabras del título. El ocio digital es lo que hacemos con el celular en nuestro tiempo libre, para descansar, entretenernos o conversar con otros. Las intenciones personales son cosas que uno quiere hacer por iniciativa propia, como leer o dibujar. Y phygital es una palabra en inglés que junta físico y digital, porque el sistema une un objeto con una aplicación.
 
-### 2. Relevo, en una frase · 0:16 · 16 s
+### 2. Relevo, en una frase
 
-La idea en una frase: Relevo te ayuda a acordarte de algo que querías hacer mientras descansas con el celular. Cuando se cumple el tiempo que elegiste, suena un objeto desde el lugar donde empieza esa actividad. Abajo, las cuatro partes.
+Relevo es un sistema que, mientras descansas con el celular, te ayuda a acordarte de algo que querías hacer. Cuando se cumple el tiempo que elegiste, suena un objeto que dejaste donde empieza esa actividad, por ejemplo junto a la guitarra. La presentación tiene cuatro partes, que ven abajo: el problema, lo que investigué, la propuesta y la prueba.
 
 #### Parte 1 · El problema
 
-### 3. De dónde nace el problema · 0:32 · 22 s
+### 3. De dónde nace el problema
 
-Este proyecto nace de algo que me pasa harto: abro una aplicación para descansar, me quedo más de lo que pensaba y, cuando la cierro, lo que quería hacer ya se me pasó. Después vi que a muchas personas les pasa lo mismo, y que el contexto lo favorece, porque muchas aplicaciones están hechas para no terminar.
+Parto por cómo llegué al problema, que fue por tres lados. El primero es mi experiencia, porque muchas veces me quedo en el celular más de lo que quería y se me pasa lo que tenía pensado hacer. El segundo son otras personas, porque en entrevistas y en una encuesta vi que a muchos les pasa lo mismo. Y el tercero es el contexto. En Chile, casi todos los hogares con internet tienen celular, y muchas aplicaciones están hechas para no terminar nunca.
 
-### 4. Una intención que vuelve tarde · 0:54 · 18 s
+### 4. Una intención que vuelve tarde
 
-Les doy un ejemplo. Una persona quiere dibujar en la tarde, abre una aplicación para descansar y, cuando se da cuenta, pasó una hora y ya es tarde para empezar. Fíjense que nunca decidió no dibujar. Simplemente, el dibujo no le volvió a la cabeza a tiempo.
+Les doy un ejemplo en tres momentos. Una persona quiere dibujar en la tarde. Antes de empezar, abre una aplicación para descansar un rato, y cuando la cierra, una hora después, ya es tarde para dibujar. Fíjense que ella nunca decidió no dibujar. Simplemente, mientras estaba en el celular, el dibujo no se le vino a la cabeza a tiempo.
 
-### 5. El problema · 1:12 · 19 s
+### 5. El problema
 
-Entonces, el problema es este: durante algunas sesiones de ocio digital, una actividad que la persona también quería hacer deja de estar presente y vuelve cuando la oportunidad ya pasó. O sea, el problema no es cuánto usamos el celular, sino lo que dejamos de hacer sin haberlo decidido.
+Con ese ejemplo, el problema queda así. Durante algunas sesiones de ocio digital, una actividad que la persona también quería realizar deja de estar presente y vuelve cuando la oportunidad ya pasó. Una sesión es el rato entre que abrimos una aplicación y la cerramos, y digo algunas porque muchas veces el celular es justo lo que queremos. O sea, el problema no es cuánto usamos el celular, sino lo que dejamos de hacer.
 
-### 6. La intención pierde fuerza mientras se usa el teléfono · 1:31 · 24 s
+### 6. La intención pierde fuerza mientras se usa el teléfono
 
-Y esto también se ve en los datos. A la izquierda, un estudio con 45 personas: al abrir una aplicación, casi dos de cada tres veces tenían un propósito claro, pero mientras la usaban, eso bajaba a la mitad. Y a la derecha, mi encuesta: de 43 personas que querían hacer otra cosa, 21 no la empezaron.
+¿Y esto le pasa a más gente o solo a mí? A la izquierda está un estudio de Lukoff y su equipo con 45 personas. Cada vez que usaban el celular, les preguntaba si era por algo concreto o solo para pasar el rato. Al abrir una aplicación, casi dos de cada tres veces era por algo concreto, pero mientras la usaban, solo la mitad de las veces. O sea, el motivo con que entramos se va perdiendo. Ese estudio no mira lo que queríamos hacer fuera del celular, y para eso está mi encuesta, a la derecha. Les pregunté a 53 personas por la última vez que se quedaron en una aplicación más de lo que querían. 43 tenían otra cosa que querían hacer en ese rato, y 21 no la empezaron. Casi la mitad.
 
-### 7. Tres causas · 1:55 · 24 s
+### 7. Tres causas
 
-Pero, ¿por qué pasa esto? ¿Por qué se pierde el propósito? Hay tres causas. Primero, la atención está ocupada: si algo nos absorbe, no nos damos cuenta de que llegó el momento. Segundo, el contenido no se acaba y un sistema decide qué viene después, porque a la plataforma le conviene. Y tercero, si vemos el descanso como tiempo perdido, lo disfrutamos menos.
+Pero, ¿por qué se nos pasa lo que queríamos hacer? Encontré tres causas, una en cada tarjeta. La primera es que la atención está ocupada. Cuando un video nos absorbe, no nos damos cuenta de que ya es hora de hacer lo que teníamos pensado, y por eso hace falta una señal. La segunda es que el contenido no tiene final. Siempre aparece algo más, y el sistema de recomendaciones de la aplicación elige qué video viene después. Como explica abajo Denis Parra, especialista en estos sistemas, a la plataforma le conviene que veamos muchos videos para poner publicidad. Y la tercera es que, si vemos el descanso como tiempo perdido, lo disfrutamos menos, así que una ayuda no puede hacernos sentir culpables.
 
-### 8. Desafío de diseño · 2:19 · 18 s
+### 8. Desafío de diseño
 
-De ahí sale el desafío de diseño: ayudar a que la persona se acuerde a tiempo de lo que quería hacer, sin bloquearle el celular, sin decidir por ella y sin molestarla cuando descansa porque quiere. La idea es devolverle la decisión, no imponerle una obligación.
+De ahí sale el desafío de diseño. Hay que ayudar a que la persona se acuerde a tiempo de lo que quería hacer, sin bloquearle el celular, sin decidir por ella y sin interrumpirla cuando el celular sí tiene sentido para ella. Recordarle algo es devolverle la oportunidad de decidir, no imponerle una obligación.
 
 #### Parte 2 · Lo que investigué
 
-### 9. Marco teórico 1: el motivo se pierde mientras se usa · 2:37 · 22 s
+### 9. Marco teórico 1: el motivo se pierde mientras se usa
 
-Ahora, lo que investigué. Bloquear o poner pausas frena el uso, pero no te devuelve lo que querías hacer. Para entender por qué, revisé tres ámbitos de teoría. El primero es cómo vivimos el ocio digital: uno abre una aplicación con un motivo, después sigue por costumbre, y para volver a decidir necesita un momento que lo invite.
+Con el problema claro, pasé a investigar, partiendo por tres ámbitos de teoría, uno por lámina. El primero es cómo vivimos el ocio digital. Como ven en estos pasos, uno abre una aplicación a propósito, después sigue por costumbre, y para volver a decidir necesita algo que lo haga preguntarse si seguir o parar, como el final de un video. Por eso hay que mirar cada sesión por su sentido, y no solo contar horas.
 
-### 10. Marco teórico 2: elegir fortalece la motivación · 2:59 · 18 s
+### 10. Marco teórico 2: elegir fortalece la motivación
 
-El segundo ámbito es el diseño de la atención. Poner una pequeña traba, como esperar o confirmar, puede hacernos pensarlo dos veces, pero también molesta. Y cuando elegimos, la motivación crece, y cuando nos dan órdenes, baja. Por eso la ayuda tiene que poder rechazarse.
+El segundo ámbito es el diseño de la atención, o sea, cómo las aplicaciones guían lo que hacemos. Una fricción, como tener que esperar antes de abrir una aplicación, puede hacernos pensarlo dos veces, pero también estorba cuando uno solo quería responder un mensaje. Según la teoría de la autodeterminación, cuando elegimos, la motivación crece, y cuando nos dan órdenes, baja. Por eso la ayuda tiene que poder aceptarse, ajustarse o rechazarse. También sirve tener un plan, como decidir antes cómo empezar, pero solo si uno se acuerda de él a tiempo.
 
-### 11. Marco teórico 3: una intención vuelve por dos caminos · 3:17 · 24 s
+### 11. Marco teórico 3: una intención vuelve por dos caminos
 
-El tercero es cómo recordamos con objetos y lugares. Acordarse de hacer algo en el momento justo se llama memoria prospectiva, y pasa de dos formas: vigilando todo el rato, que cuesta si algo nos absorbe, o porque algo del entorno nos lo recuerda, como dejar algo junto a la puerta para no olvidarlo. Esa segunda forma es la base de Relevo.
+El tercer ámbito es justamente cómo nos acordamos a tiempo, con ayuda de objetos y lugares. Acordarse de hacer algo cuando llega el momento de hacerlo, como tomar un remedio a cierta hora, se llama memoria prospectiva. Y eso puede pasar por dos caminos, uno en cada tarjeta. Uno es vigilar, o sea, estar pendiente todo el rato, y eso cuesta cuando un video nos absorbe. El otro es que una señal del entorno nos lo recuerde, como algo que dejamos junto a la puerta para no olvidarlo. Ese camino funciona aunque estemos en otra cosa, y es la base de Relevo. Además, como dice abajo, ayudan más los recordatorios que dicen qué hay que hacer, y no solo que llegó la hora.
 
-### 12. Seguir más de lo que se quería es frecuente y pasa en casa · 3:41 · 22 s
+### 12. Seguir más de lo que se quería es frecuente y pasa en casa
 
-Después quise escuchar a las personas. Hice ocho entrevistas y una encuesta a 53 personas. Estas cifras muestran que a la gran mayoría le pasa, casi siempre en su casa, y que casi todos sabían cuál habría sido su primer paso, o sea, la acción corta con que parte algo, como abrir un libro.
+También quise escuchar a las personas, con ocho entrevistas y la encuesta de 53 personas que les mencioné. Sus cifras muestran que la gran mayoría se quedó en una aplicación más de lo que quería al menos un día de la última semana, quería hacer otra cosa en ese rato y estaba en su casa. Y lo más importante para el diseño es que 42 de 43 sabían cuál habría sido su primer paso, o sea, la acción corta con que empieza una actividad, como abrir un libro. Eso es justo lo que Relevo recuerda.
 
-### 13. Dos situaciones de uso · 4:03 · 23 s
+### 13. Dos situaciones de uso
 
-Las entrevistas también mostraron que no siempre hay que intervenir. En el caso principal, la persona quiere hacer otra cosa, se le pasa, y le sirve que se lo recuerden. En el caso límite, el celular sí tiene sentido, como una videollamada con una amiga, y ahí necesita poder ignorar la ayuda. Y una misma persona puede vivir los dos.
+Las entrevistas mostraron además que no siempre hay que intervenir. A la izquierda está el usuario principal, que quiere hacer otra cosa, la pierde de vista en el celular y necesita que se la recuerden. A la derecha está el usuario límite, para quien el celular sí tiene sentido, como en una videollamada o con un pódcast mientras come, y necesita poder ignorar la señal.
 
-### 14. Casi todas las herramientas limitan el uso o trabajan en la pantalla · 4:26 · 21 s
+### 14. Casi todas las herramientas limitan el uso o trabajan en la pantalla
 
-Después revisé lo que ya existe. En este mapa, a la izquierda está lo que limita el uso y abajo lo que funciona en la pantalla, y casi todo está ahí. Recordar lo que uno quería hacer desde fuera de la pantalla, arriba a la derecha, está casi vacío, y ahí se ubica Relevo.
+También revisé productos que ya existen y los ordené en este mapa. De izquierda a derecha va de limitar el uso del celular a recordar lo que uno quería hacer, y de abajo hacia arriba, de la pantalla a fuera de ella. Casi todo está a la izquierda o abajo, como Screen Time, que pone límites de tiempo. Arriba a la derecha solo hay un prototipo de investigación, y ese espacio casi vacío es el que ocupa Relevo.
 
-### 15. Ocho criterios de diseño, en tres ideas · 4:47 · 18 s
+### 15. Ocho criterios de diseño, en tres ideas
 
-Con todo eso armé ocho criterios de diseño, que son como las reglas del proyecto: guían cada decisión y después sirven para evaluar. Se agrupan en tres ideas: partir de lo que la persona quiere, dejarle siempre la decisión y que el esfuerzo valga la pena.
+Con todo esto armé ocho criterios de diseño, que guían cada decisión y se agrupan en tres ideas. La primera es partir de la persona: ella elige qué quiere hacer, y cada actividad empieza con un paso concreto. La segunda es dejarle las decisiones: ella decide cuándo suena y qué hacer, y el sistema interviene solo cuando hace falta. Y la tercera es que el esfuerzo valga la pena: prepararlo toma poco, lo que escribe es privado y el objeto aporta algo que el celular no da.
 
 #### Parte 3 · La propuesta
 
-### 16. Pregunta de investigación · 5:05 · 24 s
+### 16. Pregunta de investigación
 
-Ahora, la propuesta. Mi pregunta de investigación es: ¿cuál es el efecto de un sistema phygital que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital? En simple: si la señal viene del lugar donde empieza la actividad, ¿la persona se acuerda a tiempo de qué quería hacer y cómo empezar?
+Paso a la propuesta. La pregunta de investigación es: ¿cuál es el efecto de un sistema phygital que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital? Dicho simple, quiero saber si una señal desde el lugar de la actividad ayuda a acordarse a tiempo de qué hacer y cómo empezar, antes de leerlo en el celular. A eso le llamo recuerdo oportuno.
 
-### 17. Hipótesis · 5:29 · 24 s
+### 17. Hipótesis
 
-Mi hipótesis es que sí: si el sistema une la actividad con el lugar donde parte, la persona se va a acordar a tiempo, porque una intención vuelve cuando aparece una señal asociada a ella. Abajo están sus tres supuestos: que se acuerde, que decida con libertad y que el objeto ayude por lo menos igual que una notificación, sin molestar más.
+Mi hipótesis es que sí: si el sistema une la actividad con el lugar donde empieza, la persona la va a recordar a tiempo, porque una intención vuelve cuando aparece una señal asociada a ella. Para eso tienen que cumplirse las tres condiciones de abajo: que al oír la señal sepa qué hacer y cómo empezar, que decida con libertad y que el objeto ayude al menos igual que una notificación en el celular, sin molestar más.
 
-### 18. Relevo: una aplicación, un objeto y un lugar · 5:53 · 19 s
+### 18. Relevo: una aplicación, un objeto y un lugar
 
-¿Y cómo funciona? En la aplicación, la persona anota qué quiere hacer, cómo va a empezar y cuánto tiempo quiere darse en ciertas aplicaciones. Después deja el objeto donde empieza esa actividad. Y cuando se cumple el tiempo, el objeto suena desde ahí y ella decide qué hacer.
+¿Y cómo es Relevo? Tiene una aplicación para Android y un objeto, que ven en la foto. En la aplicación, la persona anota qué quiere hacer, cómo va a empezar y cuánto tiempo darse en ciertas aplicaciones, por ejemplo quince minutos en Instagram. Después deja el objeto donde empieza esa actividad, y cuando se cumple el tiempo, el objeto suena desde ahí y ella decide qué hacer.
 
-### 19. Cómo se usa: los cuatro momentos de un relevo · 6:12 · 23 s
+### 19. Cómo se usa: los cuatro momentos de un relevo
 
-A cada actividad preparada le llamamos un relevo, y tiene cuatro momentos: se prepara con una pregunta por pantalla, la persona sigue en el celular mientras Relevo cuenta el tiempo, suena la señal por unos 30 segundos y, al final, decide entre tres opciones que valen lo mismo: comencé la actividad, la dejé para después o cambié de idea.
+En la aplicación, cada actividad preparada se llama un relevo, y pasa por cuatro momentos. Se prepara con una pregunta por pantalla. Después la persona sigue en el celular mientras Relevo cuenta el tiempo. Cuando se cumple, el objeto suena unos 30 segundos. Y al final ella elige entre comencé la actividad, la dejé para después o cambié de idea, tres opciones que se ven iguales porque ninguna es la correcta.
 
-### 20. La aplicación · 6:35 · 18 s
+### 20. La aplicación
 
-Esta es la aplicación, en su versión 4.7.2. A la izquierda, preparar un relevo: una pregunta por pantalla, con opciones, para que sea rápido. Y a la derecha, lo que aparece cuando suena: la actividad y su primer paso, en grande.
+Esta es la aplicación, en su versión 4.7.2. A la izquierda se prepara un relevo, al centro está el inicio, con el relevo que va a sonar más pronto, y a la derecha se ve lo que aparece cuando suena, con la actividad y su primer paso en grande.
 
-### 21. Identidad · 6:53 · 14 s
+### 21. Identidad
 
-La identidad parte del nombre. Un relevo es cuando algo pasa de una mano a otra, acá de la pantalla a la actividad, y por eso el logo son cuatro círculos que se pasan el turno.
+La identidad parte del nombre. Un relevo es cuando algo pasa de una mano a otra, como en una carrera de relevos, y acá pasa de la pantalla a la actividad. Por eso el logo son cuatro círculos que se pasan el turno: el tiempo, el primer paso, el lugar y la decisión.
 
-### 22. El objeto · 7:07 · 23 s
+### 22. El objeto
 
-En la prueba usé un Tag comercial, que es un llavero Bluetooth que suena cuando la aplicación se lo pide. Así probé la señal y el lugar antes de fabricar. Al lado están Relevo Home y Relevo Go, la carcasa que diseñé para esa pieza. Y la señal es un sonido porque se escucha aunque uno esté mirando la pantalla.
+En la prueba usé un Tag, que ven a la izquierda. Es un llavero Bluetooth, de esos para encontrar las llaves, que suena cuando la aplicación se lo pide. Al lado está mi propuesta, una carcasa para la parte electrónica del Tag, en dos versiones: Relevo Home, para dejarlo fijo junto al primer paso, y Relevo Go, para quienes cambian de lugar sus actividades. Y la señal es un sonido porque se escucha aunque uno esté mirando el celular.
 
-### 23. Factibilidad en tres etapas · 7:30 · 19 s
+### 23. Factibilidad en tres etapas
 
-¿Se puede hacer de verdad? Sí, por etapas. El prototipo ya existe y costó unos 111 000 pesos, más mi trabajo. Si la prueba lo justifica, sigue un piloto en seis hogares con Relevo impreso, y después el producto, siempre que la etapa anterior demuestre que funciona.
+¿Y se puede hacer de verdad? Sí, por etapas. El prototipo académico ya existe y costó unos 111 000 pesos, más mi trabajo. Si la prueba lo justifica, sigue un piloto en seis hogares con la carcasa impresa en 3D. Costaría entre 10 100 y 12 150 pesos por hogar y podría postular al Fondart. Y si el piloto cumple sus metas, viene el producto.
 
 #### Parte 4 · La prueba
 
-### 24. Prueba en los hogares · 7:49 · 24 s
+### 24. Prueba en los hogares
 
-Y llegamos a la prueba. Tres personas usaron Relevo en su casa durante cinco semanas: primero con el Tag junto a su actividad y después solo con avisos en el celular, para comparar. Cada vez que sonaba, respondían las tres preguntas que ven abajo: si sabían qué querían hacer antes de leerlo, si se acordaban de cómo empezar y qué decidieron.
+Llegamos a la última parte, la prueba. Tres personas usaron Relevo en su casa durante cinco semanas. Primero lo usaron casi dos semanas con el Tag junto a su actividad, y después casi tres semanas solo con notificaciones en el celular, para comparar. Cada vez que sonaba, la aplicación les hacía las tres preguntas de abajo: si sabían qué querían hacer antes de leerlo, si se acordaban de cómo empezar y qué decidieron.
 
-### 25. Con el Tag, el ciclo funcionó en los tres hogares · 8:13 · 22 s
+### 25. Con el Tag, el ciclo funcionó en los tres hogares
 
-Con el Tag, el sistema funcionó en las tres casas. Sonó en 23 de los 24 relevos. De 21 respuestas, en 19 sabían qué querían hacer antes de mirar la pantalla, y en las 21 se acordaron de cómo empezar. Empezaron la actividad 10 veces, y eso también es un resultado: acordarse no obliga a empezar.
+Con el Tag, el sistema funcionó en las tres casas. Sonó en 23 de los 24 relevos, y el que faltó se cumplió fuera de la casa. Después de la señal, en 19 de 21 respuestas sabían qué querían hacer antes de mirar la pantalla, y en las 21 se acordaron de cómo empezar. Empezaron la actividad 10 veces. Puede parecer poco, pero acordarse no obliga a empezar, y las otras veces la dejaron para después o cambiaron de idea.
 
-### 26. Con el teléfono recordaron igual · 8:35 · 26 s
+### 26. Con el teléfono recordaron igual
 
-Con el celular se acordaron igual de bien, pero en 10 de 21 respuestas notaron el aviso tarde o no lo notaron, y dos de las tres personas se demoraron más en responder. Una lo dijo así: «con el celu veia el aviso, decia ya voy y seguia viendo el video». Eso sí, esta etapa fue siempre después, así que no alcanza para decir cuál ayuda más.
+Con notificaciones en el celular se acordaron igual de bien, pero les costó más darse cuenta del aviso: en 10 de 21 respuestas lo notaron tarde o no lo notaron. En el gráfico se ve que dos de las tres personas tardaron más de un minuto en responder con el celular, en gris, y mucho menos con el Tag, en verde. Una lo explicó así: «con el celu veia el aviso, decia ya voy y seguia viendo el video». Como esta etapa fue siempre después de la del Tag, no alcanza para decir cuál ayuda más.
 
-### 27. Conclusiones · 9:01 · 22 s
+### 27. Conclusiones
 
-En conclusión, el sistema funciona en el uso real de tres hogares. Al oír la señal, casi siempre supieron qué querían hacer, siempre se acordaron de cómo empezar y decidieron con libertad. Se cumplieron tres objetivos, y el de comparar con el celular, en parte. Es compatible con la hipótesis, pero con tres personas no alcanza para probarla.
+En conclusión, el sistema funciona en el uso real de tres hogares. Al oír la señal, casi siempre supieron qué querían hacer, siempre se acordaron de cómo empezar y decidieron con libertad. Abajo están los objetivos: entender, diseñar y probar en hogares se cumplieron, y comparar con el celular, en parte. Los resultados son compatibles con la hipótesis, pero con tres personas no alcanzan para probarla.
 
-### 28. Aporte y lo que sigue · 9:23 · 19 s
+### 28. Aporte y lo que sigue
 
-El aporte del proyecto es tomar algo cotidiano, quedarse en el celular más de lo que uno quería, y convertirlo en decisiones de diseño concretas: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones. Lo que sigue es imprimir Relevo y probarlo en seis hogares.
+Para cerrar, el aporte del proyecto es convertir algo muy cotidiano, quedarse en el celular más de lo que uno quería, en decisiones de diseño concretas: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones. Lo que sigue es mejorar Relevo con lo que mostró la prueba, imprimirlo y probarlo en seis hogares, y repetir la prueba con más personas y sin los sesgos de esta.
 
-### 29. Gracias · 9:42 · 5 s
+### 29. Gracias
 
-Eso sería. Muchas gracias, y quedo atento a sus preguntas.
+Eso es Relevo. Muchas gracias por su atención, y quedo atento a sus preguntas.
 
 ## Si hay que acortar
 
-Estas frases se pueden omitir sin perder el hilo. Juntas ahorran unos 19 segundos.
+Estas frases se pueden omitir sin perder el hilo. Juntas ahorran unos 36 segundos.
 
-- Lámina 11: «Esa segunda forma es la base de Relevo.»
-- Lámina 13: «Y una misma persona puede vivir los dos.»
-- Lámina 22: «Y la señal es un sonido porque se escucha aunque uno esté mirando la pantalla.»
-- Lámina 26: «Una lo dijo así: «con el celu veia el aviso, decia ya voy y seguia viendo el video».»
+- Lámina 7: «Como explica abajo Denis Parra, especialista en estos sistemas, a la plataforma le conviene que veamos muchos videos para poner publicidad.»
+- Lámina 9: «Por eso hay que mirar cada sesión por su sentido, y no solo contar horas.»
+- Lámina 10: «También sirve tener un plan, como decidir antes cómo empezar, pero solo si uno se acuerda de él a tiempo.»
+- Lámina 11: «Además, como dice abajo, ayudan más los recordatorios que dicen qué hay que hacer, y no solo que llegó la hora.»
+- Lámina 26: «Una lo explicó así: «con el celu veia el aviso, decia ya voy y seguia viendo el video».»
 
 ## Láminas de respaldo
 
@@ -303,6 +283,12 @@ Investigación a través del diseño: diseñar la aplicación y el objeto fue ta
 Durante la prueba agregué editar un relevo activo y callar el Tag con confirmación. Después, el rediseño de la aplicación incorporó nueve cambios que salieron de la prueba, como pasar de once pantallas iniciales a tres, con un primer relevo guiado. *(Respaldo: lámina 43.)*
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Guion más explicado, con cada término definido y sin frases vagas
+
+- **Qué cambió:** el guion explica más cada lámina y nombra todo lo que muestra. La portada define ocio digital, intenciones personales y phygital antes de usarlos. La lámina 6 dice qué se preguntó en cada fuente y cómo la encuesta sigue al estudio. Las frases vagas dicen de qué hablan, como «ya es hora de hacer lo que teníamos pensado» o «el sistema de recomendaciones de la aplicación», y la de «frena el uso» se quitó. Se suman elementos que se saltaba: el plan de la lámina 10, los ocho criterios y las etapas de la prueba. El documento ya no da el tiempo de cada lámina, solo el minuto en que empieza cada parte. Dura unos 14 min 20 s a 2,7 palabras por segundo y unos 12 min 55 s a 3, bajo los 15 minutos de exposición del instructivo.
+- **Cómo estaba antes:** duraba 9 min 47 s y iba muy al grano. Usaba términos sin definirlos, daba cifras sin decir qué se preguntó y tenía frases sueltas o vagas como «La idea en una frase:», «Abajo, las cuatro partes.», «llegó el momento», «un sistema» o «frena el uso».
+- **Por qué:** el autor pidió definir cada concepto antes de usarlo, dar contexto a los datos, ser específico y explicar más, sin centrarse en los segundos.
 
 ### 2026-11-25 — Guion hablado y el origen del problema
 
