@@ -1017,6 +1017,7 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] **Las fuentes** (prioridad de “Pulido” y nota del autor): contrastar las referencias con sus citas por autor, año, título y DOI. *En curso el 25 de noviembre.*
 - [ ] **El dato puro en el anexo** (nota del autor). El Anexo I tiene los resultados por persona (Tabla I7). Para sumar cada respuesta en una fila hace falta la exportación final de la prueba, del panel o de Supabase, que solo tiene el autor.
 - [ ] **El registro visual** (sección 3). Ya hay bocetos, flujo, arquitectura, capturas, modelos 3D, el proceso de marzo a noviembre (Figura 19) y los cambios de cada iteración (Tabla 4). Si el autor quiere, falta una planimetría acotada de Relevo Home y Go en el Anexo H.
+- [x] **Coherencia** (documento de la comisión, vacíos 3, 4 y 8). El plan del objeto propio ya no promete un sonido que la placa del Tag no permite. Relevo Go se describe igual en los capítulos 11 y 12, y los íconos ya no se llaman propios. El capítulo 10 dice qué hizo el autor, como el Anexo E. *Hecho el 25 de noviembre.*
 - [ ] **La hipótesis sugerida** (sección 4) es opcional. La pauta dice que la actual está bien planteada. Si se adopta “Si se diseña Relevo, un sistema phygital…”, cambian también las láminas 14 y 24.
 - [ ] **Componer, revisar página por página** y llevar los cambios al Affinity del autor.
 - [ ] **Entregar** el PDF de menos de 15 MB, con el nombre y la mención (tarea 8).
@@ -1025,7 +1026,8 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 - [ ] Variar la diagramación y animar en Figma. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial.
 - [ ] Presentar las tres definiciones de la portada con el gesto del deslizador.
-- [ ] Condensar la primera parte y dar más espacio a cómo funciona Relevo.
+- [ ] Condensar la primera parte y dar más espacio a cómo funciona Relevo. Mostrar Relevo desde el comienzo: hoy aparece en la lámina 15, cerca del minuto 7, y en el Seminario se pidió mostrarlo primero (documento de la comisión, vacío 1).
+- [ ] Una lámina de respaldo “Del Seminario a hoy”, con cada observación de la comisión y dónde se responde (vacío 2).
 - [ ] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión.
 - [ ] Sumar una línea de tiempo corta, del objeto del Seminario a Relevo (prioridad 4).
 - [x] Llevar al guion la lámina 24 nueva, con la pregunta y la hipótesis tal cual y lo que se cumplió y lo que no. *Hecho el 25 de noviembre: el guion dura unos 13 min 59 s.*
@@ -1040,7 +1042,9 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### D. Comisión
 
-- [ ] Armar un documento con el perfil profesional público de Aarón Montoya y Sofía Suazo y su feedback del Seminario, con las preguntas probables. *En curso el 25 de noviembre.* El tercer integrante está por confirmar.
+- [x] Armar un documento con el perfil profesional público de Aarón Montoya-Moraga y Sofía Suazo y su feedback del Seminario, con las preguntas probables. *Hecho el 25 de noviembre: [comisión del examen](../10_recursos_visuales/51_comision-del-examen-2026-12.md), con quince preguntas y nueve vacíos. “Critic” no se pudo verificar; puede ser CRTIC.*
+- [ ] Sumar al tercer integrante cuando se confirme, con el mismo método.
+- [ ] Preparar las respuestas que faltan en el guion (vacíos 2 y 5 a 7 del documento): qué cambió desde el Seminario, cómo llegaron las tres personas de la prueba, el sueño, el juego frente a la evaluación, la vibración, el precio y una medida de éxito sin rachas.
 
 ### E. Estudio
 

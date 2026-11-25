@@ -87,6 +87,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 50. [Presentación del examen, versión de trabajo](48_presentacion-examen-2026-12.md): la versión de trabajo del examen desde la noche del 24 de noviembre, en una copia del archivo de Figma de la entrada 49. Tiene 26 láminas que cuentan el proyecto en cuatro partes, con un solo sistema de títulos, una lámina para cada ámbito del marco teórico, el sistema completo y un cierre que dice qué respondió el proyecto, y 22 de respaldo para las preguntas. Los textos están verificados contra la memoria v8.
 51. [Guion de la presentación del examen](49_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 13 min 59 s a su ritmo rápido, en un tono hablado y directo y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 26 respuestas preparadas. Tiene versiones en [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 52. [Ficha de estudio para el examen](50_ficha-de-estudio-examen-2026-12.md): lo que el autor debe saber de memoria, tal como está en la memoria: los términos, el problema, la pregunta, la hipótesis con sus supuestos, los objetivos, los ocho criterios, la prueba con sus cifras y lo que respondió el proyecto.
+53. [Comisión del examen](51_comision-del-examen-2026-12.md): el perfil profesional público de Aarón Montoya-Moraga y Sofía Suazo, con sus fuentes y su nivel de confianza, su feedback del Seminario y dónde se responde hoy, quince preguntas probables y los vacíos que conviene cerrar antes del examen.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -119,7 +120,7 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 
 ### 2026-11-25 — Ficha de estudio y guion de la lámina 24
 
-- **Qué cambió:** se sumó la ficha de estudio para el examen (52). El guion (51) dura unos 13 min 59 s, con la lámina 24 nueva.
+- **Qué cambió:** se sumaron la ficha de estudio para el examen (52) y el documento de la comisión (53). El guion (51) dura unos 13 min 59 s, con la lámina 24 nueva.
 - **Cómo estaba antes:** no había ficha de estudio y el guion duraba unos 13 min 51 s.
 - **Por qué:** después del Pase, el autor anotó que debe aprenderse el problema, la hipótesis y los objetivos, y pidió rehacer la lámina 24.
 
