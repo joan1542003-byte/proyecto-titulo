@@ -197,8 +197,10 @@ El prototipo cambió casi a diario entre el 21 de septiembre y el 9 de noviembre
 | Bienvenida | Actividad | Relevo listo | Inicio |
 | --- | --- | --- | --- |
 | ![Bienvenida](imagenes/app-4.7.2-1-bienvenida.jpg) | ![Actividad](imagenes/app-4.7.2-2-actividad.jpg) | ![Relevo listo](imagenes/app-4.7.2-3-todo-listo.jpg) | ![Inicio](imagenes/app-4.7.2-4-inicio.jpg) |
-| **Señal** | **Cuatro preguntas** | **Decisión** | |
-| ![Señal](imagenes/app-4.7.2-5-senal.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-6-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-7-decidir.jpg) | |
+
+| Señal | Cuatro preguntas | Decisión | |
+| --- | --- | --- | --- |
+| ![Señal](imagenes/app-4.7.2-5-senal.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-6-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-7-decidir.jpg) |
 
 *Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un relevo de ejemplo que suena en el teléfono: la bienvenida, la actividad, el relevo listo, Inicio mientras cuenta, la señal, las preguntas de un toque y la decisión.
 
@@ -266,6 +268,12 @@ Las frases resuelven los casos dudosos: «maratón de series» es de películas 
 *Nota.* Elaboración propia a partir del código de la app de noviembre de 2026. Las sugerencias se transcriben tal como las muestra la app. En «Otro instrumento», la app nombra el que escribió la persona: con «guitarra», sugiere «Sacar la guitarra del estuche» y «Junto a la guitarra».
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Figura G4 con sus capturas
+
+- **Qué cambió:** la Figura G4 se divide en dos tablas de imágenes, una por fila, con las mismas siete capturas y los mismos nombres. El texto no cambia.
+- **Cómo estaba antes:** era una sola tabla con una fila de nombres en negrita y una celda vacía. El constructor no la reconocía como galería, así que el Word y el PDF mostraban los nombres sin las capturas.
+- **Por qué:** al regenerar los anexos el 24 de noviembre, para sumar las pantallas de la 4.7.2 al Anexo F, la figura salía vacía.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

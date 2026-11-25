@@ -1,6 +1,6 @@
 # Anexo F. Estados del ciclo y *wireframes*
 
-El recorrido de Relevo se diseñó dos veces. En agosto de 2026 fue un ciclo de estados que debía funcionar de principio a fin, también cuando algo falla; en octubre, las pantallas de la app que se usó en la prueba. Este anexo muestra los dos momentos: los 35 estados del ciclo con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, ordenados por recorrido.
+El recorrido de Relevo se diseñó dos veces. En agosto de 2026 fue un ciclo de estados que debía funcionar de principio a fin, también cuando algo falla; en octubre, las pantallas de la app que se usó en la prueba. Este anexo muestra los dos momentos: los 35 estados del ciclo con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, ordenados por recorrido. Al final muestra cómo quedó la app después de la prueba, con 18 capturas de su versión más reciente, la 4.7.2.
 
 ## F.1 Estados del ciclo
 
@@ -150,7 +150,55 @@ En los *wireframes*, los términos pasaron a ser el consentimiento de la prueba,
 
 *Nota.* Elaboración propia, a partir de las pantallas de la app que se usó en la prueba, en octubre de 2026.
 
+## F.4 Pantallas de la aplicación 4.7.2
+
+Después de la prueba, la app siguió cambiando: el 5 de noviembre de 2026 llegó el rediseño, y el 9, la versión 4.7.2, la más reciente (Anexo G). Dieciocho capturas la recorren en el orden de su uso: el primer uso y los seis pasos con que se prepara un relevo (Figura F8); el conteo del tiempo, la señal, las preguntas, la decisión y el cierre de la prueba, hasta volver a Inicio (Figura F9), y el perfil y los ajustes (Figura F10).
+
+**Figura F8**
+
+*Primer uso y preparación de un relevo*
+
+| Bienvenida | Consentimiento | Actividad (1 de 6) | Primer paso (2 de 6) |
+| --- | --- | --- | --- |
+| ![Bienvenida](imagenes/app-4.7.2-pantalla-01-bienvenida.jpg) | ![Consentimiento](imagenes/app-4.7.2-pantalla-02-consentimiento.jpg) | ![Actividad (1 de 6)](imagenes/app-4.7.2-pantalla-03-que-quieres-hacer.jpg) | ![Primer paso (2 de 6)](imagenes/app-4.7.2-pantalla-04-como-empiezas.jpg) |
+
+| Lugar (3 de 6) | Cuándo suena (4 de 6) | Dónde suena (5 de 6) | Todo listo (6 de 6) |
+| --- | --- | --- | --- |
+| ![Lugar (3 de 6)](imagenes/app-4.7.2-pantalla-05-en-que-lugar.jpg) | ![Cuándo suena (4 de 6)](imagenes/app-4.7.2-pantalla-06-cuando-suena.jpg) | ![Dónde suena (5 de 6)](imagenes/app-4.7.2-pantalla-07-donde-suena.jpg) | ![Todo listo (6 de 6)](imagenes/app-4.7.2-pantalla-08-todo-listo.jpg) |
+
+*Nota.* Capturas de la versión 4.7.2, tomadas el 10 de noviembre de 2026 en un teléfono Android emulado, con un perfil de prueba y datos inventados. El relevo de ejemplo, «Leer», suena en el teléfono tras 15 minutos en Chrome.
+
+**Figura F9**
+
+*Conteo, señal, decisión y cierre*
+
+| Inicio mientras cuenta | Señal | Cuatro preguntas | Decisión |
+| --- | --- | --- | --- |
+| ![Inicio mientras cuenta](imagenes/app-4.7.2-pantalla-09-inicio-contando.jpg) | ![Señal](imagenes/app-4.7.2-pantalla-10-volver-a-elegir.jpg) | ![Cuatro preguntas](imagenes/app-4.7.2-pantalla-11-cuatro-preguntas.jpg) | ![Decisión](imagenes/app-4.7.2-pantalla-12-que-decidiste.jpg) |
+
+| Cierre de la prueba | Semanas con el Tag | Entrevista final | Inicio después del relevo |
+| --- | --- | --- | --- |
+| ![Cierre de la prueba](imagenes/app-4.7.2-pantalla-13-cierre-de-la-prueba.jpg) | ![Semanas con el Tag](imagenes/app-4.7.2-pantalla-14-cierre-semanas-con-el-tag.jpg) | ![Entrevista final](imagenes/app-4.7.2-pantalla-15-entrevista-final.jpg) | ![Inicio después del relevo](imagenes/app-4.7.2-pantalla-16-inicio-preparar-de-nuevo.jpg) |
+
+*Nota.* Capturas de la versión 4.7.2, con el mismo perfil de prueba. Para mostrar el cierre de la prueba se usó una copia de la app marcada como la de alguien que ya usaba Relevo; de las cinco partes del cierre se ven la primera y la cuarta.
+
+**Figura F10**
+
+*Perfil y ajustes*
+
+| Perfil | Ajustes |
+| --- | --- |
+| ![Perfil](imagenes/app-4.7.2-pantalla-17-perfil.jpg) | ![Ajustes](imagenes/app-4.7.2-pantalla-18-ajustes.jpg) |
+
+*Nota.* Capturas de la versión 4.7.2, con el mismo perfil de prueba. Ajustes muestra cuántas partes del cierre de la prueba faltan.
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Pantallas de la versión 4.7.2
+
+- **Qué cambió:** se suma «F.4 Pantallas de la aplicación 4.7.2», con las 18 [capturas de la versión 4.7.2](../../06_desarrollo_y_factibilidad/app-android/capturas/interfaz-4.7.2/README.md) en el orden del recorrido, cada una con su pie, en tres figuras: F8, primer uso y preparación de un relevo; F9, conteo, señal, decisión y cierre, y F10, perfil y ajustes. La introducción del anexo y la de F.4 las anuncian. Las capturas se copiaron a `imagenes/` (`app-4.7.2-pantalla-01-bienvenida.jpg` a `app-4.7.2-pantalla-18-ajustes.jpg`) como JPG de 540 × 1200, igual que las demás capturas de la app; los PNG originales siguen en su carpeta. Van cuatro por fila, para que cada figura de ocho pantallas quepa en una página, y perfil y ajustes, dos.
+- **Cómo estaba antes:** el anexo terminaba en los *wireframes* de octubre (Figura F7) y no mostraba la app actual; solo el Anexo G tenía siete de sus pantallas.
+- **Por qué:** el autor pidió agregar todas las pantallas de la app, y la versión vigente es la 4.7.2.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

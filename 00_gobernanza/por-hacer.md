@@ -15,7 +15,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 1. **Preguntar a los profesores** las seis dudas de la [respuesta](../08_memoria/respuesta-a-los-profesores-2026-11-21.md#10-qué-confirmar-con-los-profesores), en un solo correo. Cada una dice si va a Majluf o a Gallardo. Mientras no respondan, la pregunta, el objetivo 4 y las Conclusiones quedan en espera (tarea 16).
 2. **Confirmar el nombre del profesor Gallardo.** La portada dice «Simón Gallardo», y sus notas en el PDF van firmadas «MANUEL GALLARDO» (tarea 8).
-3. **Revisar la memoria v8 compuesta.** Ya está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf), de 72 páginas, y en IDML para Affinity. Las [siete figuras nuevas](../08_memoria/figuras/v8/README.md) y los esquemas son diagramas claros, y cada figura está en la página de su mención o en la siguiente, en orden (D-186, D-187). El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Si hiciste ajustes de diseño a mano en tu Affinity del Pase, hay que repetirlos en esta versión; si prefieres seguir en tu documento, los [cambios de la v8](../08_memoria/cambios-v8-2026-11-21.md) dicen qué cambiar. Quedan, para resolver con el contenido, los finales de los capítulos 4 (una columna sola en la página 14), 10, 13 (la continuación de la Tabla 4) y 14, y del glosario.
+3. **Revisar la memoria v8 compuesta.** Está en [PDF](../08_memoria/memoria-1920x1080/memoria-relevo-v8-1920x1080.pdf) y en IDML para Affinity, con 40 figuras y 4 tablas, cada una en la página de su mención o en la siguiente, en orden (D-186, D-187). Se contrastó con los 17 comentarios del PDF y las notas del 18: lo que quedó abierto espera la respuesta de los profesores (punto 1). El texto tiene menos comas e incisos: conviene leerlo para confirmar que conserva tu voz. Seis imágenes reales de las fuentes rellenan los finales cortos; el capítulo 4 termina en una columna casi llena y la continuación de la Tabla 4 ocupa una página.
 4. **Ajustar la v8 si los profesores responden distinto**: el lugar del marco teórico, «lo sacaría», los hallazgos o el punto sobre *phygital* (tarea 16).
 5. **Lo que la v8 no resolvió, porque necesita datos o decisiones del autor:**
    - cómo se eligió a las tres personas;
@@ -24,7 +24,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
    - una fuente reciente para Fogg (tarea 15, E);
    - el fenómeno, la tensión en la decisión y el planteamiento como universo (tarea 16, B);
    - la extensión de la Introducción y la Justificación (tarea 15, C).
-6. **Los anexos**: la pregunta nueva en el Anexo I, I.1, las correcciones de la tarea 15, F, y el anexo con todas las pantallas de la aplicación (tarea 16, D). El Word y el PDF se regeneran al final.
+6. **Los anexos**: ya tienen la pregunta nueva en el Anexo I, I.1, las 18 pantallas de la app 4.7.2 en el Anexo F y las variantes del logo en el Anexo H (D-187). Quedan las correcciones de la tarea 15, F. El Word y el PDF se regeneran al final.
 7. **Entregar** un PDF de menos de 15 MB, nombrado con el nombre y la mención, el 1 de diciembre (tarea 8).
 
 **Hasta el examen:**
@@ -933,7 +933,7 @@ De las 78 referencias, 23 no se pudieron leer completas en la nube: 9 solo tiene
 
 ### D. Anexos
 
-- [ ] Un anexo con todas las pantallas de la APK.
+- [x] Un anexo con todas las pantallas de la APK. Las 18 pantallas de la versión 4.7.2 están en el Anexo F, F.4 (D-187).
 
 ### E. Proyecciones
 
@@ -966,6 +966,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Imágenes, anexos y comentarios contrastados
+
+- **Qué cambió:** el punto 3 dice que la v8 tiene 40 figuras y que se contrastó con los comentarios de los profesores; el punto 6 y la tarea 16, D, dan por hechas las pantallas de la app, las variantes del logo y la pregunta del Anexo I.
+- **Cómo estaba antes:** los anexos estaban pendientes y la v8 tenía 34 figuras.
+- **Por qué:** pedido del autor del 24 de noviembre de 2026 (D-187).
 
 ### 2026-11-24 — Memoria v8 más clara
 

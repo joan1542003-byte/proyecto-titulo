@@ -4,7 +4,7 @@ La prueba en los hogares es la parte del proyecto que pone a Relevo en uso real.
 
 ## I.1 Prueba aplicada
 
-La memoria pregunta: «¿Bajo qué condiciones lo que una persona quería hacer vuelve a estar presente a tiempo, y la decisión sigue siendo suya, mientras una sesión de ocio digital continúa?». Su hipótesis es: «Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella» (capítulo 10). La prueba en los hogares se diseñó para contrastarla.
+La memoria pregunta: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Su hipótesis es: «Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella» (capítulo 10). La prueba en los hogares se diseñó para contrastarla.
 
 Tres personas mayores de edad usaron Relevo en sus hogares desde el 7 de octubre de 2026. Cada una aceptó el consentimiento en la app, preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer. Durante dos semanas lo usaron a su gusto, cuando quisieron, y cada una fijó su propio límite. Tras cada señal, la app preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono, para comparar ambos soportes. La prueba cerró con el cuestionario y la entrevista de I.7; los resultados están en el capítulo 13 de la memoria y, por persona, en I.8.
 
@@ -294,6 +294,12 @@ En las tres, empezar dependió de las ganas, la hora y el lugar donde estaban, y
 Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W. y Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. *European Journal of Social Psychology, 40*(6), 998–1009. https://doi.org/10.1002/ejsp.674
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Pregunta de investigación vigente
+
+- **Qué cambió:** I.1 cita la pregunta de la memoria v8: «¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?». Se comprobó en la v8 que la hipótesis, sus tres supuestos (Tabla I1) y los capítulos citados, el 10 y el 13, siguen iguales, así que el resto de I.1 no cambia.
+- **Cómo estaba antes:** citaba la pregunta anterior: «¿Bajo qué condiciones lo que una persona quería hacer vuelve a estar presente a tiempo, y la decisión sigue siendo suya, mientras una sesión de ocio digital continúa?».
+- **Por qué:** la memoria vigente cambió su pregunta de investigación, y el anexo debe citarla igual.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

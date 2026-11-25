@@ -1,14 +1,14 @@
 # Anexos de la memoria
 
-**Fecha:** 18 de noviembre de 2026
+**Fecha:** 24 de noviembre de 2026
 **Documento principal:** [borrador v7 de la memoria](../borrador-memoria-v7-2026-11-11.md), sección «Anexos»
-**Versión:** los Markdown copian el texto del PDF de anexos que el autor entregó para el Pase (127 páginas), con sus errores; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase).
+**Versión:** los Markdown copian el texto del PDF de anexos que el autor entregó para el Pase (127 páginas), con sus errores; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). Desde el 24 de noviembre suman las pantallas de la versión 4.7.2 (Anexo F), las variantes del logo (Anexo H) y la pregunta de investigación de la memoria v8 (Anexo I).
 
 Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
 - **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
-- **Pendiente:** el Word y el PDF de esta carpeta son del 9 y el 10 de noviembre y todavía no coinciden con el PDF del Pase. Se regeneran con `node construir-anexos.js` en el computador del autor; con los Markdown actuales, el texto sale igual al del PDF del Pase.
+- **Estado:** el Word y el PDF se regeneraron el 24 de noviembre de 2026 con los Markdown de esta carpeta: el texto del Pase, las pantallas de la 4.7.2, las variantes del logo y la pregunta de investigación vigente, en 132 páginas.
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
@@ -20,9 +20,9 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [C. Estado del arte y referentes](anexo-c-referentes.md) | La búsqueda, una ficha por referente del mapa del capítulo 8 y los prototipos y patentes con piezas parecidas. |
 | [D. Trazabilidad de los criterios de diseño](anexo-d-criterios.md) | Cada criterio con su evidencia, cómo lo aplica Relevo, lo que mostró la prueba y lo que la app ya cambió. |
 | [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las tres herramientas, las cinco tareas en que ayudaron y el trabajo propio. |
-| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*, y los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app. |
+| [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*; los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, y 18 capturas de la versión 4.7.2, la más reciente. |
 | [G. Prototipo Android y registro de versiones](anexo-g-android.md) | Cómo funciona la app que se usó en la prueba, qué datos guarda y cómo los cuida, cómo cambió entre septiembre y noviembre de 2026 y con qué palabras reconoce cada actividad. |
-| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, con sus bocetos y su construcción, las dos tipografías, los 118 íconos, comparados con Lucide, y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
+| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, con sus bocetos, su construcción y sus variantes del 23 de noviembre, las dos tipografías, los 118 íconos, comparados con Lucide, y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
 ## Cómo se arman
@@ -31,7 +31,7 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 node construir-anexos.js
 ```
 
-Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de un minuto. Con `--sin-pdf` escribe solo el Word. Necesita Node 18 o posterior y Google Chrome y, para el PDF, LibreOffice y `pdftotext` (Poppler); no usa paquetes de npm.
+Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de un minuto. Con `--sin-pdf` escribe solo el Word. Necesita Node 18 o posterior y Google Chrome y, para el PDF, LibreOffice y `pdftotext` (Poppler); no usa paquetes de npm. La ruta de Chrome del constructor es la de Windows: en otro sistema, Chrome solo hace falta cuando cambia un diagrama o una figura de la identidad.
 
 - **Cómo se escriben:** sin códigos internos —las personas son Persona 1 a Persona 8; las preguntas y las respuestas, su número— y sin mencionar el repositorio, sus carpetas ni sus archivos (D-170).
 - **Para corregir un anexo** se edita su Markdown y se vuelve a correr el constructor. El orden y el título de los anexos están en [`contenido-anexos.js`](contenido-anexos.js), que explica también las convenciones del Markdown: tablas y figuras en APA 7, galerías, filas de grupo, diagramas y figuras de la identidad.
@@ -43,7 +43,7 @@ Lee los nueve Markdown y escribe el Word y el PDF en esta carpeta, en menos de u
 
 ## Criterio de selección
 
-Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Los datos, las citas y los participantes son los del proyecto: el corpus de las ocho entrevistas, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales. Las imágenes de agosto son copias livianas de los wireframes 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3 en un teléfono Android.
+Los anexos permiten comprobar cómo se obtuvo, organizó y tradujo cada antecedente de la memoria, y repetir la prueba. No repiten capítulos ni agregan resultados que la memoria no informa. Los datos, las citas y los participantes son los del proyecto: el corpus de las ocho entrevistas, la codificación de la encuesta, el consentimiento y las preguntas de la app se copian textuales. Las imágenes de agosto son copias livianas de los wireframes 4K de [`05_propuesta_phygital/wireframes-referencia-4k`](../../05_propuesta_phygital/wireframes-referencia-4k), y las capturas de la app vienen de la versión 3.3, en un teléfono Android, y de la 4.7.2, en un teléfono Android emulado y con un perfil de prueba.
 
 ## Lo que no entra
 
@@ -56,6 +56,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Pantallas de la 4.7.2, variantes del logo y Word y PDF al día
+
+- **Qué cambió:** el Anexo F suma «F.4 Pantallas de la aplicación 4.7.2», con las 18 capturas de la versión 4.7.2 (Figuras F8 a F10); el Anexo H suma las variantes del logo del 23 de noviembre (Figura H6), y sus figuras siguientes pasan a H7–H11; la Figura G4 vuelve a mostrar sus capturas, y el Anexo I cita la pregunta de investigación de la memoria v8. Las imágenes nuevas están en `imagenes/`: `app-4.7.2-pantalla-*.jpg` y `logo-variantes-2026-11-23-parte-*.png`. El Word y el PDF se regeneraron con todos los Markdown: el PDF pasa a 132 páginas. Se armaron en un Mac, con una copia parcial del repositorio que no tiene el código de la app ni los archivos del logo; como ninguna figura de la identidad cambió, se usaron las imágenes guardadas en `imagenes/word`, también la de los degradados, que el constructor arma leyendo el código de la app. Al terminar, el constructor borró, como siempre, cinco imágenes que ningún anexo usa desde el Pase: las láminas de la construcción del logo, los íconos y la paleta y un diagrama, en `imagenes/word` y `imagenes/diagramas`. El índice de anexos describe lo nuevo, las capturas nombran sus dos versiones y se anota que la ruta de Chrome del constructor es la de Windows.
+- **Cómo estaba antes:** el Word y el PDF eran del 9 y el 10 de noviembre y no tenían el texto del Pase; el Anexo F no mostraba la app actual, y el Anexo H no tenía las variantes del logo.
+- **Por qué:** el autor pidió agregar todas las pantallas de la app y avisó que se agregaron variantes al logo de Relevo.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

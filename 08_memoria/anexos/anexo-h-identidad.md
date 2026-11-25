@@ -1,6 +1,6 @@
 # Anexo H. Identidad visual y sistema de marca
 
-La identidad de Relevo quedó definida el 11 de octubre de 2026, después de más de veinte propuestas. Este anexo muestra cómo se construye cada pieza y en qué se funda —el logo, la tipografía, los íconos y la paleta cromática—, qué se mantiene de la marca del 16 de septiembre y qué dejó cada propuesta anterior.
+La identidad de Relevo quedó definida el 11 de octubre de 2026, después de más de veinte propuestas. Este anexo muestra cómo se construye cada pieza y en qué se funda —el logo, con las variantes que se probaron el 23 de noviembre, la tipografía, los íconos y la paleta cromática—, qué se mantiene de la marca del 16 de septiembre y qué dejó cada propuesta anterior.
 
 ## H.1 Logo
 
@@ -102,6 +102,20 @@ En la tercera aparece el concepto: los cuatro pasos de un relevo se vuelven cuat
 - **Logo descriptivo.** Los logotipos que muestran lo que hace la marca se evalúan mejor, sobre todo en marcas nuevas (Luffarelli et al., 2019). Por eso la marca dibuja cómo funciona el sistema, y donde Relevo todavía no se conoce va con su descriptor.
 - **Formas planas.** Slack rehízo su logo en 2019 con su equipo de diseño y con Michael Bierut, de Pentagram: el anterior tenía once colores, solo podía ir sobre blanco y con una inclinación exacta de 18°, y era muy fácil de hacer mal; el nuevo usa una paleta más simple y escala con facilidad (Slack, 2019). Relevo toma esa lección: cortes y colores planos, sin transparencias, para que la marca se reproduzca igual en pantalla, en papel y en una sola tinta. Por eso reemplazó a una marca anterior cuyos círculos se mezclaban y daban un centro turbio.
 
+**Variantes.** El 23 de noviembre de 2026, el logo se revisó para probar degradados sutiles en los colores de la marca y color en el logotipo, que hasta entonces iba en negro o en blanco. Los trazados son los mismos; cambian los rellenos y el fondo, y cada degradado va del tono claro de un color de la marca a su color original, sin oscurecerlo. Son 18 variantes: el logo vigente, para comparar; cuatro con otros degradados en la marca; cinco con el logotipo de color sobre fondo claro; seis sobre fondo negro, con el logotipo en blanco o de color, y dos con la marca en blanco sobre un fondo de color (Figura H6). Sobre fondo claro, el logotipo de color se lee menos que en negro, con un contraste de 1,3:1 a 1,7:1: sirve en tamaño grande, como en una portada, y en tamaño chico conviene el negro o un fondo oscuro, sobre el que los cuatro colores se leen muy bien. Son variantes para elegir: el logo vigente, el de la Figura H1, no cambia hasta que el autor escoja una.
+
+**Animaciones.** El logo también tiene versiones animadas, en GIF y en video, que cuentan que el turno pasa de un círculo al siguiente: la marca se despliega y el logotipo aparece letra por letra, o la marca gira y el círculo que sigue sube a tomar el turno. Un documento impreso no puede mostrarlas.
+
+**Figura H6**
+
+*Variantes del logo con degradados sutiles y color en el logotipo*
+
+![Variantes del logo, de la 1 a la 8](imagenes/logo-variantes-2026-11-23-parte-1.png)
+
+![Variantes del logo, de la 9 a la 18](imagenes/logo-variantes-2026-11-23-parte-2.png)
+
+*Nota.* Elaboración propia, 23 de noviembre de 2026. En la lámina, «papel» es el fondo claro; «tinta», el negro, y cielo, lima y rubor, el celeste, el verde y el rosa.
+
 ## H.2 Tipografía
 
 La identidad usa dos tipografías sin serifa: una para el nombre y otra para todo lo demás (Tabla H1).
@@ -121,9 +135,9 @@ La identidad usa dos tipografías sin serifa: una para el nombre y otra para tod
 
 ## H.3 Iconografía
 
-Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24, de un solo color y siempre acompañados de su palabra. Siguen las reglas de construcción de Lucide, un conjunto abierto de íconos de línea, pero los dibujos son de Relevo, porque lo que la app tiene que mostrar —el Tag, la señal y las actividades que nombraron las personas entrevistadas— no está en ningún conjunto o está solo en una forma genérica (Figura H6).
+Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24, de un solo color y siempre acompañados de su palabra. Siguen las reglas de construcción de Lucide, un conjunto abierto de íconos de línea, pero los dibujos son de Relevo, porque lo que la app tiene que mostrar —el Tag, la señal y las actividades que nombraron las personas entrevistadas— no está en ningún conjunto o está solo en una forma genérica (Figura H7).
 
-**Figura H6**
+**Figura H7**
 
 *Conjunto de 118 íconos de la app*
 
@@ -154,7 +168,7 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 
 *Nota.* Elaboración propia. Las medidas de Relevo son las de la app; las de Lucide, las de su especificación (Lucide Contributors, s. f.-a, s. f.-b).
 
-**Construcción.** Cada ícono parte de la geometría y termina en un ajuste a ojo. La Figura H7 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Leer, una actividad, abajo:
+**Construcción.** Cada ícono parte de la geometría y termina en un ajuste a ojo. La Figura H8 sigue cinco pasos con Suena, un concepto propio de Relevo, arriba, y Leer, una actividad, abajo:
 
 1. **Retícula.** 24 × 24, con un área viva de 20 y cuatro formas base —un círculo, un cuadrado y dos rectángulos— que igualan el peso de un ícono redondo y el de uno con esquinas.
 2. **Geometría.** Suena dibuja el Tag como es, con su botón y su argolla, y dos arcos de sonido que nacen de su eje; Leer, dos páginas reflejadas en el lomo, con los bordes en curva.
@@ -162,7 +176,7 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 4. **Centro óptico.** El dibujo se corre hacia donde pesa su tinta: los dos suben menos de media unidad, lo justo para no verse caídos.
 5. **Tamaños ópticos.** El trazo se afina a medida que el ícono crece —de 2,0 en 16 px a 1,3 en 48 px— para que pese lo mismo en una fila que en un anillo grande.
 
-**Figura H7**
+**Figura H8**
 
 *Construcción de dos íconos: Suena y Leer*
 
@@ -170,13 +184,13 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 
 *Nota.* Elaboración propia, con las medidas de la app. Las cotas están en unidades de la retícula; en el paso 5, cada par indica el tamaño del ícono y su trazo.
 
-**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Design se tomaron la retícula, el área viva y las formas base (Google, s. f.-b); de Material Symbols, los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). La inspiración del dibujo es Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) y dibuja sus propios íconos (Figura H8). La razón no fue que faltaran: al revisar su lista, el 5 de noviembre de 2026, Material Symbols ya tenía equivalentes genéricos de casi todas las actividades. Fueron otras:
+**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Design se tomaron la retícula, el área viva y las formas base (Google, s. f.-b); de Material Symbols, los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). La inspiración del dibujo es Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) y dibuja sus propios íconos (Figura H9). La razón no fue que faltaran: al revisar su lista, el 5 de noviembre de 2026, Material Symbols ya tenía equivalentes genéricos de casi todas las actividades. Fueron otras:
 
 - **Lo propio de Relevo no está en ningún conjunto.** El Tag se dibuja como el objeto que la persona tiene en la mano, y un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
 - **Cerca de lo que la persona nombró.** Un conjunto general nombra categorías; Relevo dibuja cada actividad con el objeto con que empieza, como lo sugiere la app: el tomo para leer manga, el colgador para ordenar, una pieza para armar una maqueta.
 - **Una sola voz.** Mezclar conjuntos daría dos trazos y dos geometrías en la misma pantalla.
 
-**Figura H8**
+**Figura H9**
 
 *Mismo concepto en Lucide y en Relevo*
 
@@ -184,7 +198,7 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 
 *Nota.* Elaboración propia. Los íconos de Lucide se reproducen sin cambios, con licencia ISC (Lucide Contributors, 2026); son, en orden, book-open, dog, timer, map-pin, circle-dashed, settings, house y volume-2. Los de Relevo son los de la app. Cada ícono va en su lienzo de 24; el lienzo vacío corresponde a Suena.
 
-**Reglas tomadas y dibujos propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H8):
+**Reglas tomadas y dibujos propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H9):
 
 - **Las reglas, no los dibujos.** De Lucide se tomaron la retícula de 24, las puntas y uniones redondas, el trazo centrado, el poco detalle, el peso parejo y un solo color. El trazo, en cambio, es más fino y ligado a Instrument Sans, así que junto a Lucide Relevo se ve más liviano; probar el trazo de 2 junto a la tipografía de la app queda pendiente.
 - **Signos que la gente ya conoce.** En Sin respuesta, Lugar, Tiempo, Ajustes, Inicio y Probar sonido, Relevo usa el mismo signo que Lucide —un círculo punteado, un marcador, un cronómetro, una tuerca, una casa y un parlante—, con su propia geometría: el círculo punteado es algo más chico, el marcador es más angosto, el cronómetro suma la perilla lateral y dos manecillas, la tuerca tiene dientes rectos y la casa lleva la puerta en el mismo trazo.
@@ -198,7 +212,7 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 
 ## H.4 Paleta cromática
 
-**Figura H9**
+**Figura H10**
 
 *Paleta cromática: colores de las partes y colores de base*
 
@@ -239,11 +253,11 @@ Los íconos de Relevo son propios: 118 dibujos de línea en una retícula de 24,
 | Personalización | Lila | Sin una asociación emocional compartida; claro, para alejarse del morado del luto. |
 | Después de la señal | Durazno | El naranja se asocia con la alegría y la diversión. |
 
-*Nota.* Elaboración propia. Los códigos de cada color están en la Figura H9. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de al menos 12,7:1, muy por sobre el 4,5:1 que piden las WCAG.
+*Nota.* Elaboración propia. Los códigos de cada color están en la Figura H10. La tipografía negra sobre cualquiera de los seis colores alcanza un contraste de al menos 12,7:1, muy por sobre el 4,5:1 que piden las WCAG.
 
-**Degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos (Figura H10 y Tabla H4).
+**Degradados de las actividades.** Cada actividad se representa con un degradado con grano y volumen, en siete familias. Son un material distinto de los colores planos de las partes, para que el color de una actividad no se confunda con el de una función. La asignación privilegia la raíz sensorial de cada actividad, que produce asociaciones más consistentes (Sánchez-Borrero et al., 2026); crear, un concepto abstracto, recibe un degradado de varios tonos (Figura H11 y Tabla H4).
 
-**Figura H10**
+**Figura H11**
 
 *Degradados de las siete familias de actividades*
 
@@ -392,6 +406,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Variantes del logo
+
+- **Qué cambió:** H.1 suma las [variantes del logo del 23 de noviembre](../../10_recursos_visuales/logo-relevo-variantes-2026-11-23/README.md): un párrafo sobre qué son, por qué se hicieron y cuándo sirven, otro sobre sus animaciones, que un PDF no puede mostrar, y la Figura H6, con la lámina de las 18 variantes. La lámina se copió a `imagenes/` en dos partes (`logo-variantes-2026-11-23-parte-1.png` y `-parte-2.png`), sin su título ni su bajada, que repiten el título de la figura y el párrafo: entera, al alto de una página, sus notas no se leerían. Las dos partes llevan un margen blanco a los lados y ocupan el 88 % del ancho del texto, para que «H.2 Tipografía» empiece bajo la segunda y la figura de los íconos no deje una página casi vacía. Las figuras siguientes pasan de H6–H10 a H7–H11, con sus menciones en el texto, y la introducción nombra las variantes. Las animaciones se mencionan sin nombrar el repositorio ni sus carpetas, como pide D-170.
+- **Cómo estaba antes:** H.1 terminaba en los fundamentos del logo, y los íconos, su construcción, la comparación con Lucide, la paleta cromática y los degradados eran las Figuras H6 a H10.
+- **Por qué:** el autor avisó que se agregaron variantes al logo de Relevo; el logo vigente no cambia hasta que elija una.
 
 ### 2026-11-18 — Texto del PDF de anexos del Pase
 

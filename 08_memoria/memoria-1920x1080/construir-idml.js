@@ -406,9 +406,9 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .frase .n{margin-top:4.5mm}
 .idx{display:grid;grid-template-columns:${COL}mm ${COL}mm;column-gap:${MED}mm;align-items:start}
 .idx .ih{margin-bottom:5.5mm}.idx .ih.dos{margin-top:8mm}.idx.ancho{grid-template-columns:1fr 1fr}
-.ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 4.5mm 1.5mm 1.8mm;margin-bottom:1.7mm;min-height:11.5mm}
+.ir{display:grid;grid-template-columns:auto 1fr 12mm;align-items:center;column-gap:3.5mm;background:#fff;border-radius:4.4mm;padding:1.5mm 6.5mm 1.5mm 5mm;margin-bottom:1.7mm;min-height:11.5mm}
 .ir.m{padding:1.9mm 4.5mm 1.9mm 3.2mm;min-height:10.2mm}.ir .irl{min-width:19mm}
-.ir.m.c{padding:.75mm 4.5mm .75mm 3.2mm;min-height:7.1mm;margin-bottom:.65mm}
+.ir.m.c{background:none;border-radius:0;padding:1.1mm 0;min-height:0;margin-bottom:0}
 .fic.vacia{background:#fff;border:.3mm solid #E4DED6}
 .anx{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm ${MED}mm;align-items:start}
 .anexo{display:grid;grid-template-columns:12mm 1fr;gap:4mm;background:#fff;border-radius:5.5mm;padding:4.5mm 5mm 5mm 4.5mm}
@@ -1360,14 +1360,15 @@ const pIndice = pieza('indice', DOBLE, (T) => {
     const mitad = Math.ceil(filas.length / 2);
     return `<div class="idx"><div>${filas.slice(0, mitad).join('')}</div><div>${filas.slice(mitad).join('')}</div></div>`;
   }
-  const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo && !b.continua).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
+  const piezas = (tipo, nombre) => flot.filter((b) => b.flotante === tipo && !b.continua).sort((x, y) => x.n - y.n).map((b) => menor(`${nombre} ${b.n}`, b.titulo, numPag(b.pagina))).join('');
   return `<div class="idx"><div><div class="ih">${T('Subtítulo', 'Capítulos')}</div>${filas.join('')}</div><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${piezas('tabla', 'Tabla')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${piezas('figura', 'Figura')}</div></div>`;
 });
 // Tablas y figuras en dos columnas: las figuras se reparten donde las dos columnas quedan más parejas, medidas.
 const indicePiezas = (k, id) => pieza(id, INDICE_AL_FINAL ? ANCHO : DOBLE, (T) => {
   const fila = (b, nombre) => `<div class="ir m c"><span class="irl">${T('Índice rótulo', `${nombre} ${b.n}`)}</span>${T('Índice menor', b.titulo)}${T('Índice menor página', String(numPag(b.pagina)))}</div>`;
-  const tablas = flot.filter((b) => b.flotante === 'tabla' && !b.continua).map((b) => fila(b, 'Tabla'));
-  const figuras = flot.filter((b) => b.flotante === 'figura').map((b) => fila(b, 'Figura'));
+  const porNumero = (x, y) => x.n - y.n;   // en orden de número, aunque una figura de cierre vaya más abajo en el borrador
+  const tablas = flot.filter((b) => b.flotante === 'tabla' && !b.continua).sort(porNumero).map((b) => fila(b, 'Tabla'));
+  const figuras = flot.filter((b) => b.flotante === 'figura').sort(porNumero).map((b) => fila(b, 'Figura'));
   return `<div class="idx${INDICE_AL_FINAL ? ' ancho' : ''}"><div><div class="ih">${T('Subtítulo', 'Tablas')}</div>${tablas.join('')}<div class="ih dos">${T('Subtítulo', 'Figuras')}</div>${figuras.slice(0, k).join('')}</div><div><div class="ih">${T('Subtítulo', ' ')}</div>${figuras.slice(k).join('')}</div></div>`;
 });
 const candidatas = flot.filter((b) => b.flotante === 'figura').map((_, k) => indicePiezas(k, `indice-piezas-${k}`));

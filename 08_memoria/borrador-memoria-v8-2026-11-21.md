@@ -107,7 +107,7 @@ Este proyecto aborda ese desafío desde el diseño. Busca que una persona vuelva
 
 *Funciones de 367 herramientas de autocontrol digital*
 
-<!-- cola 85 -->
+<!-- cola -->
 
 ![](figuras/fuentes/lyngs-2019-funciones-de-las-herramientas.png)
 
@@ -966,6 +966,16 @@ La investigación sí precisó las condiciones que debe cumplir una ayuda así: 
 
 El trabajo puede seguir en cuatro pasos: seguir aplicando lo que mostró la prueba, sumando opciones de control a medida que la persona gana experiencia, como sugirió D. Parra (comunicación personal, 4 de noviembre de 2026); imprimir y probar Relevo; repetir la prueba con más personas y una comparación sin los sesgos de esta, con un fondo concursable, y explorar Relevo Home y Relevo Go con localizadores de otras marcas (Figura 39).
 
+**Figura 39**
+
+*El Tag, Relevo Home y Relevo Go, a la misma escala*
+
+<!-- cola -->
+
+![](figuras/fuentes/relevo-tag-home-y-go-a-escala.jpg)
+
+*Nota.* Elaboración propia. Vistas desde arriba y de costado del modelo 3D.
+
 Esa comparación debe evitar dos sesgos de esta prueba. El primero es que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal. El segundo es que pudieran recordar por haber preparado el relevo poco antes y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero. Seis personas pasan por tres semanas en un orden distinto cada una: el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono (Figura 40). Para el segundo se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar.
 
 **Figura 40**
@@ -977,16 +987,6 @@ Esa comparación debe evitar dos sesgos de esta prueba. El primero es que la eta
 *Nota.* Elaboración propia a partir del protocolo de 21 días (Anexo I).
 
 Más adelante un hardware propio permitiría diseñar también el sonido y el control.
-
-**Figura 39**
-
-*El Tag, Relevo Home y Relevo Go, a la misma escala*
-
-<!-- cola -->
-
-![](figuras/fuentes/relevo-tag-home-y-go-a-escala.jpg)
-
-*Nota.* Elaboración propia. Vistas desde arriba y de costado del modelo 3D.
 
 # Referencias
 
@@ -1323,7 +1323,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
 - **E** Uso de inteligencia artificial: las herramientas, lo que apoyaron y el trabajo del autor.
 - **F** Estados y *wireframes*: los estados del ciclo, los bocetos y las pantallas de la aplicación.
 - **G** Prototipo y registro de cambios: la aplicación, el Tag, los datos y cómo cambió el prototipo.
-- **H** Identidad visual: el logo, la tipografía, los íconos y la paleta cromática, con sus bocetos y su construcción.
+- **H** Identidad visual: el logo y sus variantes, la tipografía, los íconos y la paleta cromática, con sus bocetos y su construcción.
 - **I** Prueba en los hogares: el protocolo, el consentimiento, los instrumentos y los resultados por persona.
 
 ## Registro de cambios (disclaimer)
@@ -1337,6 +1337,7 @@ Zimmerman, J., Forlizzi, J. y Evenson, S. (2007). Research through design as a m
   - los esquemas dicen con claridad lo que muestran: la Figura 3 nombra la señal y el mensaje en Relevo; la 20 dice que las tres respuestas tienen el mismo peso; la 23 usa las bajadas del texto y deja «Ideas» sin barra; la 31 deja «y/o»;
   - la nota de la Figura 22 suma que un relevo en espera que se edita conserva el tiempo contado si las aplicaciones son las mismas;
   - la Figura 22 se cita en «Oír la señal», donde el texto habla de silenciarla, y no en «Preparar»: así las Figuras 21 y 22 quedan en orden, cada una en su página o en la siguiente;
+  - la lista de anexos dice que el Anexo H trae las variantes del logo;
   - el glosario deja «NFC», que el capítulo 8 ya explica en su primera mención, para no terminar en una columna diminuta;
   - marcas de diagramación: la Figura 10 va en una columna, en lista, y la 20 en dos columnas; las imágenes de cierre llevan `<!-- cola -->`, que las pone bajo la última columna de su capítulo.
 - **Cómo estaba antes:** muchas oraciones encadenaban ideas con comas e incisos; la paleta nombraba los colores sin explicar cada uno; cinco capítulos y el glosario terminaban en una columna corta; algunos esquemas tenían elementos sin explicar, como «Objeto» en la Figura 3; eran 34 figuras.

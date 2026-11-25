@@ -7,13 +7,13 @@
 
 | N.º en la v8 | Figura | Ancho en la página | Dónde va | Archivos |
 | --- | --- | --- | --- | --- |
-| 6 | Análisis de las entrevistas con el método Framework | Dos columnas (1146 pt) | Capítulo 7, «Fuentes de información» | [PDF](figura-v8-framework.pdf) · [SVG](figura-v8-framework.svg) · [PNG](figura-v8-framework.png) |
-| 13 | Cadena de la formulación, del problema a las conclusiones | Dos columnas | Capítulo 10, después de los objetivos | [PDF](figura-v8-formulacion.pdf) · [SVG](figura-v8-formulacion.svg) · [PNG](figura-v8-formulacion.png) |
-| 14 | Método del proyecto, de la investigación a la iteración | Una columna (551 pt) | Capítulo 10, «Enfoque metodológico» | [PDF](figura-v8-metodo.pdf) · [SVG](figura-v8-metodo.svg) · [PNG](figura-v8-metodo.png) |
-| 18 | Estados de un relevo | Ancho del texto (1742 pt) | Capítulo 11, «Recorrido del usuario» | [PDF](figura-v8-estados.pdf) · [SVG](figura-v8-estados.svg) · [PNG](figura-v8-estados.png) |
-| 26 | Cómo funciona Relevo: la persona, la aplicación y el objeto | Dos columnas | Capítulo 12, «Tecnología» | [PDF](figura-v8-sistema.pdf) · [SVG](figura-v8-sistema.svg) · [PNG](figura-v8-sistema.png) |
-| 30 | Qué se registró en cada relevo | Ancho del texto | Capítulo 13, «Registro y cuidado de los datos» | [PDF](figura-v8-registro.pdf) · [SVG](figura-v8-registro.svg) · [PNG](figura-v8-registro.png) |
-| 34 | Comparación propuesta para la etapa siguiente | Una columna | Capítulo 14, «Alcances y proyecciones» | [PDF](figura-v8-comparacion.pdf) · [SVG](figura-v8-comparacion.svg) · [PNG](figura-v8-comparacion.png) |
+| 8 | Análisis de las entrevistas con el método Framework | Dos columnas (1146 pt) | Capítulo 7, «Fuentes de información» | [PDF](figura-v8-framework.pdf) · [SVG](figura-v8-framework.svg) · [PNG](figura-v8-framework.png) |
+| 16 | Cadena de la formulación, del problema a las conclusiones | Dos columnas | Capítulo 10, después de los objetivos | [PDF](figura-v8-formulacion.pdf) · [SVG](figura-v8-formulacion.svg) · [PNG](figura-v8-formulacion.png) |
+| 17 | Método del proyecto, de la investigación a la iteración | Una columna (551 pt) | Capítulo 10, «Enfoque metodológico» | [PDF](figura-v8-metodo.pdf) · [SVG](figura-v8-metodo.svg) · [PNG](figura-v8-metodo.png) |
+| 22 | Estados de un relevo | Ancho del texto (1742 pt) | Capítulo 11, «Recorrido del usuario» | [PDF](figura-v8-estados.pdf) · [SVG](figura-v8-estados.svg) · [PNG](figura-v8-estados.png) |
+| 30 | Cómo funciona Relevo: la persona, la aplicación y el objeto | Dos columnas | Capítulo 12, «Tecnología» | [PDF](figura-v8-sistema.pdf) · [SVG](figura-v8-sistema.svg) · [PNG](figura-v8-sistema.png) |
+| 34 | Qué se registró en cada relevo | Ancho del texto | Capítulo 13, «Registro y cuidado de los datos» | [PDF](figura-v8-registro.pdf) · [SVG](figura-v8-registro.svg) · [PNG](figura-v8-registro.png) |
+| 40 | Comparación propuesta para la etapa siguiente | Una columna | Capítulo 14, «Alcances y proyecciones» | [PDF](figura-v8-comparacion.pdf) · [SVG](figura-v8-comparacion.svg) · [PNG](figura-v8-comparacion.png) |
 
 ![Cómo funciona Relevo](figura-v8-sistema.png)
 
@@ -46,6 +46,12 @@ python3 construir-figuras.py
 Con una clave, solo esa figura, por ejemplo `python3 construir-figuras.py sistema`. Las claves son framework, formulacion, metodo, estados, sistema, registro y comparacion. Después, para verlas en la memoria, se vuelve a componer con `node construir-idml.js` en `../../memoria-1920x1080/`.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Números nuevos
+
+- **Qué cambió:** la memoria suma seis figuras con imágenes de las fuentes y del objeto, y las figuras se renumeraron por su primera mención. Las siete de esta carpeta son ahora las Figuras 8, 16, 17, 22, 30, 34 y 40.
+- **Cómo estaba antes:** eran las Figuras 6, 13, 14, 18, 26, 30 y 34.
+- **Por qué:** el autor pidió rellenar con imágenes reales los capítulos que terminaban en una columna corta (D-187).
 
 ### 2026-11-21 — Más claras y con un orden de lectura evidente
 
