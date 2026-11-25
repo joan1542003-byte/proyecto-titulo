@@ -165,7 +165,7 @@ Preparar el comienzo también ayuda. Las *intenciones de implementación* son pl
 
 La memoria prospectiva se distingue del recuerdo de acontecimientos pasados porque nadie pide explícitamente recordar: la intención debe volver por sí misma cuando todavía es posible actuar (McDaniel y Einstein, 2000).
 
-El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (McDaniel y Einstein, 2000; Figura 2). Que ocurra lo segundo depende de la señal, de la actividad en curso y de la persona. Los recordatorios que más ayudaron fueron los que nombraban a la vez el momento de actuar y la acción que había que hacer; los que solo nombraban el momento no mejoraron el recuerdo (Guynn et al., 1998, p. 296). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio (O’Rear y Radvansky, 2019). Una señal que proviene del lugar donde comienza la actividad podría indicar qué hacer y con qué empezar.
+El *marco multiproceso* explica cómo vuelve una intención: la persona puede vigilar el entorno esperando el momento indicado, o un evento puede traerla de vuelta de forma espontánea (McDaniel y Einstein, 2000; Figura 2). Que ocurra lo segundo depende de la señal, de la actividad en curso y de la persona. Los recordatorios que más ayudaron fueron los que nombraban a la vez la ocasión de actuar y la acción que había que hacer; los que solo nombraban la ocasión no mejoraron el recuerdo (Guynn et al., 1998, p. 296). Los estudios sobre el lugar evalúan intenciones que se recuperan al estar en el sitio (O’Rear y Radvansky, 2019). Una señal que proviene del lugar donde comienza la actividad podría indicar qué hacer y con qué empezar.
 
 **Figura 2**
 
@@ -175,7 +175,7 @@ El *marco multiproceso* explica cómo vuelve una intención: la persona puede vi
 
 *Nota.* Elaboración propia a partir de McDaniel y Einstein (2000).
 
-Una nota, un libro sobre la mesa o una alarma son formas de *descarga cognitiva*: la acción física que reduce la demanda cognitiva de una tarea. Cuando se usa el entorno para dejar un aviso de una intención que se cumplirá después, se habla de *descarga de intenciones* (Risko y Gilbert, 2016). Todo recordatorio reúne una señal que avisa que hay algo que recordar y un mensaje que dice qué es (Figura 3). El ideal tiene los dos (Norman, 1988/2002, p. 73).
+Una nota, un libro sobre la mesa o una alarma son formas de *descarga cognitiva*: la acción física que reduce la demanda cognitiva de una tarea. Cuando se usa el entorno para dejar un aviso de una intención que se cumplirá después, se habla de *descarga de intenciones* (Risko y Gilbert, 2016). Un recordatorio tiene dos aspectos: una señal que avisa que hay algo que recordar y un mensaje que dice qué es (Figura 3). Muchos dan solo uno. El ideal tiene los dos (Norman, 1988/2002, p. 73).
 
 **Figura 3**
 
@@ -375,7 +375,7 @@ Con esas necesidades a la vista se compararon productos, servicios y proyectos q
 
 ## Herramientas digitales de medición y pausa
 
-Apple Screen Time y Google Digital Wellbeing miden el uso y fijan límites de tiempo en el teléfono (Apple, s. f.-b; Google, s. f.-a). Las aplicaciones de pausa llevan a una reconsideración al momento de la apertura: one sec la interrumpe con un ejercicio breve (one sec, s. f.). Su evidencia no informa qué hace la persona después de negarse (Grüning et al., 2023; Haliburton et al., 2024). Pause Point impone una espera de 10 segundos al abrir una aplicación que sea considerada distractora (S. Sanders, 2026). Estas herramientas y MindPhone (Terzimehić et al., 2022) intervienen en la pantalla, no en el lugar donde otra actividad puede comenzar.
+Apple Screen Time y Google Digital Wellbeing miden el uso y fijan límites de tiempo en el teléfono (Apple, s. f.-b; Google, s. f.). Las aplicaciones de pausa llevan a una reconsideración al momento de la apertura: one sec la interrumpe con un ejercicio breve (one sec, s. f.). Su evidencia no informa qué hace la persona después de negarse (Grüning et al., 2023; Haliburton et al., 2024). Pause Point impone una espera de 10 segundos al abrir una aplicación que sea considerada distractora (S. Sanders, 2026). Estas herramientas y MindPhone (Terzimehić et al., 2022) intervienen en la pantalla, no en el lugar donde otra actividad puede comenzar.
 
 ## Proyectos de diseño en Chile
 
@@ -622,7 +622,7 @@ La jerarquía también se construye con lo que pasa: el color aparece relacionad
 
 *Nota.* Capturas de la aplicación, con un perfil de prueba.
 
-**Apple frente a Material Design.** La aplicación funciona en Android. Allí lo conocido es Material Design, el sistema de Google. De Apple se tomaron principios y una escala tipográfica, no una apariencia. La tipografía se lee en el cuerpo que usa iOS, un poco mayor que el de Material y con más interlineado, y los títulos en seminegrita marcan la jerarquía sin recurrir a cajas ni líneas (Android Open Source Project, s. f.; Apple, s. f.-c). Lo que pertenece al sistema —los permisos, las notificaciones y el gesto para volver atrás— se ve como en cualquier Android. Material Design completo se descartó porque su escala tipográfica más pequeña y sus títulos en regular no daban esa jerarquía clara en una aplicación que se abre pocas veces al día.
+**Apple frente a Material Design.** La aplicación funciona en Android. Allí lo conocido es Material Design, el sistema de Google. De Apple se tomaron principios y una escala tipográfica, no una apariencia. La tipografía se lee en el cuerpo que usa iOS, un poco mayor que el de Material y con más interlineado, y los títulos en seminegrita marcan la jerarquía sin recurrir a cajas ni líneas (Android Open Source Project, s. f.; Apple, 2025b). Lo que pertenece al sistema —los permisos, las notificaciones y el gesto para volver atrás— se ve como en cualquier Android. Material Design completo se descartó porque su escala tipográfica más pequeña y sus títulos en regular no daban esa jerarquía clara en una aplicación que se abre pocas veces al día.
 
 **Color e imagen.** Cada actividad tiene su ícono, un anillo con el color de su familia y un degradado con grano y volumen. El perfil tiene un emoji que la persona elige para identificarse. Las funciones de la interfaz van en blanco y negro para que el color de una actividad nunca se confunda con el de una función. La tipografía sobre cada color cambia a blanco o negro según qué tan claro u oscuro sea el fondo para mantener el contraste mínimo que piden las pautas de accesibilidad web (World Wide Web Consortium, 2024).
 
@@ -630,7 +630,7 @@ La jerarquía también se construye con lo que pasa: el color aparece relacionad
 
 ## Tono de comunicación
 
-Las palabras también son parte de la interfaz. Los textos de Relevo partieron de un estudio de las guías de escritura de interfaces de Apple (2024, 2025b), Google (s. f.-b) y Microsoft (2021), y de la investigación sobre el lenguaje que presiona y el que deja elegir (Miller et al., 2007; Smit et al., 2019). De ese estudio surgió un tono de comunicación con cuatro rasgos (Figura 25).
+Las palabras también son parte de la interfaz. Los textos de Relevo partieron de un estudio de las guías de escritura de interfaces de Apple (2024, 2025c), Google (Hays, 2026) y Microsoft (2021), y de la investigación sobre el lenguaje que presiona y el que deja elegir (Miller et al., 2007; Smit et al., 2019). De ese estudio surgió un tono de comunicación con cuatro rasgos (Figura 25).
 
 **Figura 25**
 
@@ -638,9 +638,9 @@ Las palabras también son parte de la interfaz. Los textos de Relevo partieron d
 
 [FIGURA POR INSERTAR: (columna) esquema de tono: Cercano y tranquilo | Busca acompañar al usuario | “Queda anotado. Gracias por decirlo.”; Claro y concreto | Dice qué pasa y qué hacer | “No sonó en el dispositivo de audio. Revisa que esté encendido y conectado.”; Respetuoso de la decisión | Ofrece y no ordena | “Ninguna respuesta es mejor que otra.”; Honesto | Dice qué guarda y qué no ve | “Relevo no lee mensajes, fotos, búsquedas ni lo que hay en la pantalla.”]
 
-*Nota.* Elaboración propia a partir de Apple (2024, 2025b), Google (s. f.-b) y Microsoft (2021). Los ejemplos son textos de la aplicación.
+*Nota.* Elaboración propia a partir de Apple (2024, 2025c), Hays (2026) y Microsoft (2021). Los ejemplos son textos de la aplicación.
 
-El tono es el mismo en toda la aplicación, pero se ajusta al momento: acogedor la primera vez, práctico al preparar, sereno mientras cuenta, neutro cuando suena y sobrio al hablar de datos. Relevo habla de tú en frases cortas y con palabras cotidianas —“querer” antes que “desear”, “usar” antes que “utilizar”—, como recomienda la guía de estilo en español de Microsoft (2021). Sigue además la regla del equipo de escritura de Apple que dice tan largo como haga falta y tan corto como se pueda (Apple, 2024). También pregunta en vez de rotular (“¿Cómo empiezas?”). Sus botones empiezan con un verbo que dice qué va a pasar, como “Activar el relevo” (Apple, 2025b).
+El tono es el mismo en toda la aplicación, pero se ajusta al momento: acogedor la primera vez, práctico al preparar, sereno mientras cuenta, neutro cuando suena y sobrio al hablar de datos. Relevo habla de tú en frases cortas y con palabras cotidianas —“querer” antes que “desear”, “usar” antes que “utilizar”—, como recomienda la guía de estilo en español de Microsoft (2021). Sigue además la regla del equipo de escritura de Apple que dice tan largo como haga falta y tan corto como se pueda (Apple, 2024). También pregunta en vez de rotular (“¿Cómo empiezas?”). Sus botones empiezan con un verbo que dice qué va a pasar, como “Activar el relevo” (Apple, 2025c).
 
 El vocabulario también es una decisión. La aplicación habla de “actividad” y de “sonar”, palabras que dejan la intención en manos de la persona; *meta*, *tarea* o *alarma* la convertirían en un deber y por eso se evitan a toda costa. Por la misma razón evita el lenguaje de la obligación, como “debes” o “tienes que”, que despierta rechazo (Miller et al., 2007). Cuando hay opciones las nombra con el mismo peso porque un texto amable no reemplaza la posibilidad real de que la persona decida (Smit et al., 2019).
 
@@ -799,7 +799,7 @@ El costo del piloto es la cifra que decide el paso siguiente. Cada hogar necesit
 Hasta ahora el proyecto se financió con recursos propios: unos 111 000 pesos entre el Tag y las herramientas de inteligencia artificial para el desarrollo de la aplicación, además del trabajo del autor. Las etapas siguientes pueden postular a fondos públicos concursables, que abren una convocatoria al año:
 
 - **Fondart:** la línea de Investigación de Fondart Nacional, del Ministerio de las Culturas, las Artes y el Patrimonio, financia proyectos que aporten al conocimiento en diseño, entre otras disciplinas. Entrega hasta 15 millones de pesos por proyecto. Su convocatoria 2027 cerró en septiembre de 2026, así que el piloto de Relevo podría postular a la siguiente (Ministerio de las Culturas, las Artes y el Patrimonio, s. f.). Probar Relevo impreso con más personas y en más hogares es investigación en diseño.
-- **Semilla Inicia:** Semilla Inicia de Corfo cofinancia hasta el 75 % de proyectos de negocio innovadores para validarlos técnica y comercialmente, con un tope de 15 millones de pesos. Pueden postular personas mayores de 18 años que residan en Chile (Corporación de Fomento de la Producción, s. f.). Para formalizar un primer negocio el Capital Semilla Emprende de Sercotec entrega 3,5 millones de pesos a personas sin inicio de actividades, con un aporte propio del 3 % (Servicio de Cooperación Técnica, s. f.).
+- **Semilla Inicia:** Semilla Inicia de Corfo cofinancia hasta el 75 % de proyectos de negocio innovadores para validarlos técnica y comercialmente, con un tope de 15 millones de pesos. Su convocatoria de 2024 fue para personas mayores de 18 años de cuatro regiones y ya cerró (Corporación de Fomento de la Producción, s. f.). Para formalizar un primer negocio el Capital Semilla Emprende de Sercotec entrega 3,5 millones de pesos a personas sin inicio de actividades, con un aporte propio del 3 % (Servicio de Cooperación Técnica, s. f.).
 
 ## Actores del proyecto
 
@@ -990,17 +990,17 @@ Albers, J. (2013). *Interaction of color* (4.ª ed.). Yale University Press.
 
 Android Open Source Project. (s. f.). *TypeScaleTokens.kt* [Código fuente]. AndroidX, Compose Material 3. Recuperado el 2 de noviembre de 2026, de https://github.com/androidx/androidx/blob/androidx-main/compose/material3/material3/src/commonMain/kotlin/androidx/compose/material3/tokens/TypeScaleTokens.kt
 
-Apple. (2024, 8 de febrero). *Q&A with the Apple UX writing team*. Apple Developer. https://developer.apple.com/news/?id=5mcfho5g
-
-Apple. (2025a). *Get to know the new design system* [Video]. WWDC25. https://developer.apple.com/videos/play/wwdc2025/356/
-
-Apple. (2025b, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
-
 Apple. (s. f.-a). *Family Controls App and Website Usage*. Apple Developer Documentation. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
 
 Apple. (s. f.-b). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
-Apple. (s. f.-c). *Typography*. Human Interface Guidelines. Recuperado el 2 de noviembre de 2026, de https://developer.apple.com/design/human-interface-guidelines/typography
+Apple. (2024, 8 de febrero). *Q&A with the Apple UX writing team*. Apple Developer. https://developer.apple.com/news/?id=5mcfho5g
+
+Apple. (2025a). *Get to know the new design system* [Video]. WWDC25. https://developer.apple.com/videos/play/wwdc2025/356/
+
+Apple. (2025b, 16 de diciembre). *Typography*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/typography
+
+Apple. (2025c, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
 
 Ball, B. H., Peper, P. y Robison, M. K. (2025). Reminders eliminate age-related declines in prospective memory. *Psychology and Aging, 40*(1), 54–65. https://doi.org/10.1037/pag0000844
 
@@ -1034,19 +1034,19 @@ Goldsmith, L. J. (2021). Using framework analysis in applied qualitative researc
 
 Gollwitzer, P. M. y Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology, 38*, 69–119. https://doi.org/10.1016/S0065-2601(06)38002-1
 
+Google. (s. f.). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Pixel Phone Help. Recuperado el 11 de octubre de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
+
 Google. (2026a, 26 de febrero). *Communicate in the background*. Android Developers. https://developer.android.com/develop/connectivity/bluetooth/ble/background
 
 Google. (2026b, 28 de agosto). *UsageStatsManager*. Android Developers. https://developer.android.com/reference/android/app/usage/UsageStatsManager
-
-Google. (s. f.-a). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Pixel Phone Help. Recuperado el 11 de octubre de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
-
-Google. (s. f.-b). *Material's communication principles: Intro to UX writing* [Codelab]. Google Codelabs. Recuperado el 10 de noviembre de 2026, de https://codelabs.developers.google.com/codelabs/material-communication-guidance
 
 Grüning, D. J., Riedel, F. y Lorenz-Spreen, P. (2023). Directing smartphone use through the self-nudge app one sec. *Proceedings of the National Academy of Sciences, 120*(8), Artículo e2213114120. https://doi.org/10.1073/pnas.2213114120
 
 Guynn, M. J., McDaniel, M. A. y Einstein, G. O. (1998). Prospective memory: When reminders fail. *Memory & Cognition, 26*(2), 287–298. https://doi.org/10.3758/BF03201140
 
 Haliburton, L., Grüning, D. J., Riedel, F., Schmidt, A. y Terzimehić, N. (2024). A longitudinal in-the-wild investigation of design frictions to prevent smartphone overuse. En *Proceedings of the CHI Conference on Human Factors in Computing Systems* (Artículo 243). Association for Computing Machinery. https://doi.org/10.1145/3613904.3642370
+
+Hays, A. (2026, 27 de marzo). *Material’s communication principles: Intro to UX writing* [Codelab]. Google Codelabs. https://codelabs.developers.google.com/codelabs/material-communication-guidance
 
 Hellier, E. J., Edworthy, J. y Dennis, I. (1993). Improving auditory warning design: Quantifying and predicting the effects of different warning parameters on perceived urgency. *Human Factors, 35*(4), 693–706. https://doi.org/10.1177/001872089303500408
 
@@ -1084,7 +1084,7 @@ Lucide Contributors. (s. f.-a). *Lucide design language*. Lucide. Recuperado el 
 
 Lucide Contributors. (s. f.-b). *Lucide license*. Lucide. Recuperado el 10 de noviembre de 2026, de https://lucide.dev/license
 
-Lukoff, K., Lyngs, U., Zade, H., Liao, J. V., Choi, J., Fan, K., Munson, S. A. y Hiniker, A. (2021). How the design of YouTube influences user sense of agency. En *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (pp. 1–17). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445467
+Lukoff, K., Lyngs, U., Zade, H., Liao, J. V., Choi, J., Fan, K., Munson, S. A. y Hiniker, A. (2021). How the design of YouTube influences user sense of agency. En *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (Artículo 368). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445467
 
 Lukoff, K., Yu, C., Kientz, J. y Hiniker, A. (2018). What makes smartphone use meaningful or meaningless? *Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, 2*(1), Artículo 22. https://doi.org/10.1145/3191754
 
@@ -1334,6 +1334,17 @@ Este glosario explica el sentido que tiene cada término en esta memoria. Cuando
 - **I** Prueba en los hogares: el protocolo, el consentimiento, los instrumentos y los resultados por persona.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Referencias verificadas
+
+- **Qué cambió:** se aplicó la [verificación de referencias del 25 de noviembre](verificacion-de-referencias-2026-11-25.md):
+  - las obras sin fecha de Apple y Google van antes que las fechadas, como pide APA 7;
+  - el codelab de escritura de Material se cita por su autor y su fecha, Hays (2026), y *Typography* de Apple lleva su fecha, 2025b, con lo que *Writing* pasa a 2025c;
+  - la ponencia de Lukoff et al. (2021) lleva su número de artículo;
+  - la paráfrasis de Norman dice que un recordatorio tiene dos aspectos y que muchos dan solo uno, y la de Guynn et al. habla de la ocasión de actuar, como las fuentes;
+  - Semilla Inicia de Corfo dice que su convocatoria de 2024 fue regional y ya cerró.
+- **Cómo estaba antes:** las obras sin fecha iban después de las fechadas, el codelab y *Typography* iban sin fecha y Lukoff et al. (2021) citaba páginas. Norman aparecía diciendo que todo recordatorio reúne señal y mensaje, y Guynn et al. hablaban del momento. Semilla Inicia parecía abierta a cualquier persona en Chile.
+- **Por qué:** los profesores pidieron contrastar una muestra de referencias con sus citas, y el autor pidió revisar las fuentes como prioridad. Se revisaron todas las citas y 42 obras contra su fuente.
 
 ### 2026-11-25 — Lo pedido en el Pase
 

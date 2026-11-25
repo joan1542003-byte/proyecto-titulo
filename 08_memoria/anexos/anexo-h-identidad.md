@@ -143,7 +143,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 
 ![Conjunto de 118 íconos de la app](imagenes/iconos-4.8.2-conjunto.png)
 
-*Nota.* Elaboración propia, con los íconos de la app 4.8.2, de noviembre de 2026, a 28 px y en orden alfabético por su palabra. Los de Lucide se reproducen sin cambios, con licencia ISC (Lucide Contributors, 2026).
+*Nota.* Elaboración propia, con los íconos de la app 4.8.2, de noviembre de 2026, a 28 px y en orden alfabético por su palabra. Los de Lucide se reproducen sin cambios, con su licencia (Lucide Contributors, 2026).
 
 **Conjunto.** El conjunto creció con la app. Empezó con los íconos de la identidad del 11 de octubre; el rediseño del 5 de noviembre sumó los de la navegación, como la tuerca de los ajustes y los cuatro anillos de Actividades, y trece actividades, como nadar, tejer o tocar el piano, y el 6 de noviembre se rehicieron once, después de revisar qué pide la app de cada uno. Hasta la versión 4.7.2 los 118 eran dibujos propios, con las reglas de Lucide como referencia. Desde la 4.8, del 22 de noviembre, cada ícono sale de Lucide: primero se buscó el que dice lo mismo, por su nombre y sus etiquetas; si había varios, se compararon a los tamaños de la app; si tenía una pieza, se adaptó, y si no tenía el objeto, se dibujó con sus reglas. Hoy se reúnen en tres grupos: 19 de conceptos de Relevo —el objeto, la señal, el ciclo de un relevo y la decisión—; 34 actividades, en siete familias de color, que reúnen las ideas que salen de las entrevistas y las que la app reconoce en lo que escribe cada persona, y 65 de la interfaz y la prueba. La app usa 97; los otros 21 se conservan, aunque ninguna pantalla los muestra.
 
@@ -155,10 +155,10 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 
 | Regla | Relevo | Lucide | Origen y fundamento |
 | --- | --- | --- | --- |
-| Retícula y margen | La de Lucide: lienzo de 24, con el trazo a 1 o más del borde. | Igual. | Hasta la 4.7.2, la retícula tenía un área viva de 20, como en Material Design (Google, s. f.-b). |
+| Retícula y margen | La de Lucide: lienzo de 24, con el trazo a 1 o más del borde. | Igual. | Hasta la 4.7.2, la retícula tenía un área viva de 20, como en Material Design (Google, s. f.). |
 | Formas base | El círculo de radio 10 y el cuadrado de 18 de Lucide, con los que se compara el peso de cada ícono al desenfocarlo. | Un peso visual parecido al de su círculo y su cuadrado, que se compara desenfocándolos. | La prueba del desenfoque: cada ícono adaptado o propio debe pesar como sus vecinos de Lucide. |
 | Trazo | 1,6 en el tamaño base de 24. | 2, en todos los tamaños. | En Instrument Sans Medium, el asta mide una décima del cuerpo, según una medición propia: 1,56 en un cuerpo de 15, casi el trazo de un ícono de 24. Así, el ícono pesa lo mismo que su palabra. SF Symbols también alinea sus símbolos con la tipografía (Apple, s. f.). |
-| Tamaños ópticos | El trazo se afina a medida que el ícono crece: 2,0 en los más chicos y 1,3 en los más grandes. | Un solo trazo. | El eje de tamaño óptico de Material Symbols ajusta el trazo al tamaño (Google, s. f.-a): el ícono se ve igual de firme en una fila que en un anillo grande. |
+| Tamaños ópticos | El trazo se afina a medida que el ícono crece: 2,0 en los más chicos y 1,3 en los más grandes. | Un solo trazo. | El eje de tamaño óptico de Material Symbols ajusta el trazo al tamaño (Google, 2024): el ícono se ve igual de firme en una fila que en un anillo grande. |
 | Puntas y uniones | Redondas, con el trazo centrado en la línea. | Igual. | A tamaño chico no dejan picos, y conversan con los círculos del logo y los anillos de las actividades. |
 | Esquinas | 2 en las formas de 8 o más y 1 en las menores. | Igual. | Desde la 4.8, como en Lucide. |
 | Equilibrio | Centro óptico: la app corre cada dibujo un poco hacia donde pesa su tinta, también los que salen de Lucide. | Centrados a la vista; los asimétricos se corren un poco. | Un dibujo más pesado abajo no se ve caído, y uno simétrico no se mueve. |
@@ -184,7 +184,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 
 *Nota.* Elaboración propia, con las reglas de Lucide (Lucide Contributors, s. f.-a) y las medidas de la app. Las cotas están en unidades de la retícula; en el paso 4, cada número es la mancha del ícono al desenfocarlo, y en el paso 5, cada par indica el tamaño del ícono y su trazo.
 
-**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Symbols se tomaron los tamaños ópticos (Google, s. f.-a); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). Desde la 4.8 el dibujo sale de Lucide, un conjunto abierto de íconos de línea que continúa Feather, con licencia ISC, que permite usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) también en los nueve íconos que adapta o dibuja (Figura H9). Usar un solo conjunto tiene tres razones:
+**Referentes.** Antes de dibujar se revisaron los sistemas de íconos más usados. De Material Symbols se tomaron los tamaños ópticos (Google, 2024); de SF Symbols, un peso ligado a la tipografía (Apple, s. f.), y de Nielsen Norman Group, acompañar cada ícono con su palabra (Harley, 2014). Desde la 4.8 el dibujo sale de Lucide, un conjunto abierto de íconos de línea que continúa Feather. Su licencia es ISC, y MIT en los íconos que vienen de Feather; las dos permiten usarlos y modificarlos con su aviso de autoría (Lucide Contributors, 2026). Relevo sigue sus reglas publicadas (Lucide Contributors, s. f.-a, s. f.-b) también en los nueve íconos que adapta o dibuja (Figura H9). Usar un solo conjunto tiene tres razones:
 
 - **Lo propio de Relevo se dibuja con sus reglas.** El Tag no está en ningún conjunto: se dibuja como el objeto que la persona tiene en la mano, porque un dibujo directo de un objeto conocido se entiende más rápido (Hou y Pan, 2025; Shen et al., 2018).
 - **Cerca de lo que la persona nombró.** Entre las opciones de Lucide, cada actividad se dibuja con el objeto con que empieza, como lo sugiere la app: el libro abierto para leer, la polera para ordenar, el carrete para tejer.
@@ -196,7 +196,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 
 ![Los nueve íconos adaptados o propios, junto a su referente de Lucide](imagenes/iconos-4.8.2-propios-junto-a-lucide.png)
 
-*Nota.* Elaboración propia, con la app 4.8.2. Cada ícono se muestra a 48, 24 y 17 px y dentro de un anillo de 40 px; a la derecha, los íconos de Lucide de los que salen sus piezas, sin cambios, con licencia ISC (Lucide Contributors, 2026).
+*Nota.* Elaboración propia, con la app 4.8.2. Cada ícono se muestra a 48, 24 y 17 px y dentro de un anillo de 40 px; a la derecha, los íconos de Lucide de los que salen sus piezas, sin cambios, con su licencia (Lucide Contributors, 2026).
 
 **Adaptados y propios.** La comparación muestra qué se tomó de Lucide y qué es de Relevo (Figura H9):
 
@@ -236,7 +236,7 @@ Los íconos de Relevo salen de Lucide, un conjunto abierto de íconos de línea:
 2. **Colores claros y poco saturados,** para no elevar la activación, como propone la *calm technology* (Weiser y Brown, 1997): informar desde la periferia de la atención.
 3. **Sin negro, gris ni rojo en los estados de la persona.** El rojo queda para los errores.
 4. **Redundancia.** Ningún dato se comunica solo con color, siempre también con ícono y palabra (World Wide Web Consortium, 2024, criterio 1.4.1). La simulación de las deficiencias de visión del color (Machado et al., 2009) mostró dos pares que se confunden: el celeste y el lila con deuteranopia, y el rosa y el durazno con tritanopia.
-5. **Contraste medido:** 4,5:1 para la tipografía (criterio 1.4.3) y 3:1 para los gráficos que informan (criterio 1.4.11; World Wide Web Consortium, 2024).
+5. **Contraste medido:** 4,5:1 para la tipografía y 3:1 para los gráficos que informan (World Wide Web Consortium, 2024, criterios 1.4.3 y 1.4.11).
 6. **Un color, un significado.** Cada color significa siempre lo mismo. El color es difícil de apropiar como rasgo de una marca (Ward et al., 2020), así que su aporte está en la coherencia del sistema.
 
 **Colores de las partes.** Seis colores claros, de luminosidad percibida equivalente, medida en el espacio de color OKLCH (Ottosson, 2020), distinguen las partes de un relevo (Tabla H3). Donde existe, la asignación sigue la convención de la señalética de seguridad: la norma ISO 3864-1 asigna el rojo a la prohibición, el amarillo a la precaución, el azul a la acción obligatoria y el verde a la condición segura, como una salida o un botiquín (International Organization for Standardization [ISO], 2011).
@@ -356,9 +356,9 @@ Apple. (s. f.). *SF Symbols*. Apple Developer. Recuperado el 10 de noviembre de 
 
 Elliot, A. J. y Maier, M. A. (2014). Color psychology: Effects of perceiving color on psychological functioning in humans. *Annual Review of Psychology, 65*, 95–120. https://doi.org/10.1146/annurev-psych-010213-115035
 
-Google. (s. f.-a). *Material Symbols guide*. Google for Developers. Recuperado el 10 de noviembre de 2026, de https://developers.google.com/fonts/docs/material_symbols
+Google. (s. f.). *System icons*. Material Design. Recuperado el 10 de noviembre de 2026, de https://m2.material.io/design/iconography/system-icons.html
 
-Google. (s. f.-b). *System icons*. Material Design. Recuperado el 10 de noviembre de 2026, de https://m2.material.io/design/iconography/system-icons.html
+Google. (2024, 26 de septiembre). *Material Symbols guide*. Google for Developers. https://developers.google.com/fonts/docs/material_symbols
 
 Guynn, M. J., McDaniel, M. A. y Einstein, G. O. (1998). Prospective memory: When reminders fail. *Memory & Cognition, 26*(2), 287–298. https://doi.org/10.3758/BF03201140
 
@@ -407,6 +407,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Referencias verificadas
+
+- **Qué cambió:** la guía de Material Symbols lleva su fecha, 2024, y la página de íconos de sistema queda como Google (s. f.). La cita de WCAG pone los criterios después del año. La licencia de Lucide se nombra completa: ISC, y MIT en los íconos que vienen de Feather.
+- **Cómo estaba antes:** las dos páginas de Google iban sin fecha, como s. f.-a y s. f.-b. Los criterios de WCAG iban antes del autor, y la licencia se nombraba solo como ISC.
+- **Por qué:** la verificación de referencias del 25 de noviembre, pedida por el autor después del Pase. La guía de Material Symbols muestra su fecha de actualización, APA 7 pone la parte citada después del año y la licencia de Lucide trae las dos.
 
 ### 2026-11-25 — Comillas
 
