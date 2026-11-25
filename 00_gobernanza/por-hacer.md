@@ -242,6 +242,7 @@ Según el autor, la semana solo con notificaciones ya empezó. En Supabase se ve
 - [x] Formato del Pase: es la revisión de la memoria, con feedback, sin presentación (el autor, 10 de noviembre).
 - [x] **Peso del examen:** resuelto en el Reglamento de Titulación (arts. 16, 20 y 21): la nota de Proyecto de Título la ponen solo los tres miembros con voto de la comisión, y el profesor del curso tiene voz pero no voto. El párrafo del instructivo que suma la nota del profesor parece copiado del de Seminario; prevalece el reglamento.
 - [x] **Fecha del examen:** lunes 14 y martes 15 de diciembre, confirmada por los profesores el 10 de noviembre. El Pase, con feedback, es el miércoles 18 de noviembre.
+- [ ] **Presentación del examen, en revisión del autor.** El autor pidió 10 minutos como máximo; el instructivo da hasta 15. La versión de trabajo tiene 33 láminas en 9 min 19 s y 15 de respaldo, en una copia del archivo de Figma ([documento 46](../10_recursos_visuales/46_presentacion-examen-2026-12.md)). Falta confirmar la versión de la app de la lámina 22, el nombre del profesor Gallardo y la autorización de las fotos de la prueba.
 - [ ] Una presentación de 15 minutos que muestre:
   - qué es el objeto, dónde vive y cómo funciona;
   - quién lo usa y por qué en la casa;
@@ -966,6 +967,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - Si el autor adopta la pregunta nueva, la tarea 11 queda reemplazada.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación del examen de 10 minutos
+
+- **Qué cambió:** la tarea 7 suma la versión de 10 minutos de la presentación del examen y lo que falta confirmar.
+- **Cómo estaba antes:** la tarea pedía llevar a 15 minutos la presentación del 12 de noviembre.
+- **Por qué:** el autor pidió una presentación del examen de 10 minutos como máximo, con todo el proyecto.
 
 ### 2026-11-24 — Imágenes, anexos y comentarios contrastados
 

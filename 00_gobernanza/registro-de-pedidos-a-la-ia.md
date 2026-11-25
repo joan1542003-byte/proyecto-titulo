@@ -377,6 +377,7 @@
 | 23 nov. | Corrección y encargo | Recordó que cada color tiene un significado y no se usa a la ligera. Pidió mejorar la animación, porque con esto se puede crear una narrativa interesante. | [Cómo funciona](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): el teléfono se transforma en el círculo amarillo (tu tiempo). El turno pasa por el cielo (tu primer paso: el libro se abre), el lima (el lugar: suena el Tag) y el rubor (lo que decides: la bandera), con los íconos de la app. Vuelve a tu tiempo y los cuatro forman el logo. Se borró la versión que asignaba los colores a actividades. |
 | 23 nov. | Corrección | Le gustó «Cómo funciona». Pidió que pareciera menos hecha por IA, quitar algunos detalles, minimalista pero efectiva, como hecha en un editor básico, con la misma calidad y menos efectos. | [Cómo funciona, versión simple](../10_recursos_visuales/animaciones-de-relevo-2026-11-23/README.md#cómo-funciona-la-marca-cuenta-la-app): la misma historia con colores planos, sin sombras, degradados ni rebotes, íconos con fundido, un punto sin estela y un teléfono más simple. La anterior quedó como «detallada». |
 | 24 nov. | Consulta, corrección y encargo | Preguntó si se contrastó la memoria con todos los comentarios recientes de los profesores y si se revisó todo. Pidió actualizar los anexos con todas las pantallas de la app y las variantes del logo, explicar mejor la cromática (la decisión y cada color), revisar que no queden viudas ni páginas con una columna diminuta de texto —una columna puede quedar solo si está casi llena; si no, rellenar con imágenes reales de libros, autores, objetos o referentes— y hacer múltiples revisiones, porque es la memoria definitiva. | Un contraste de los 17 comentarios del PDF y las notas del 18 encontró tres puntos, ya corregidos: la repetición de la página 19, el Resumen sobre 300 palabras y los índices (más margen y sin cajas). La paleta explica cada color. Seis imágenes reales de las fuentes y del objeto rellenan los finales cortos; las figuras son 40. Los anexos F, H e I suman las 18 pantallas de la app 4.7.2, las variantes del logo y la pregunta vigente. | D-187 |
+| 24 nov. | Consulta y encargo | Preguntó si hay acceso a Figma y a la presentación más reciente, la del examen. Pidió un fork en su computador para trabajar en ella: perfecta, de 10 minutos como máximo y con todo el proyecto. Después dijo que no puede iniciar sesión en Claude desde Safari para el conector. | Sin el conector se trabajó en el navegador de la app con la sesión de Figma del autor. Se duplicó «Relevo — Examen de título (diciembre 2026)» y la copia quedó como [versión de 10 minutos](../10_recursos_visuales/46_presentacion-examen-2026-12.md): 33 láminas en 9 min 19 s, con el problema primero, y 15 láminas de respaldo que se saltan al presentar. Se renumeraron los folios y se corrigieron 24 textos contra la memoria v8. También se reescribieron todas las notas del presentador. El original no se tocó. Falta confirmar la versión de la app de la lámina 22, el nombre del profesor Gallardo y la autorización de las fotos (D-140). | — |
 
 ## Lo que muestra el registro
 
@@ -387,6 +388,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación del examen
+
+- **Qué cambió:** se registró el pedido de la presentación del examen de 10 minutos, hecha en una copia del archivo de Figma.
+- **Cómo estaba antes:** el registro terminaba en los comentarios de los profesores, los anexos y la cromática.
+- **Por qué:** `CLAUDE.md` pide registrar cada pedido el mismo día.
 
 ### 2026-11-24 — Figuras más claras y menos comas
 

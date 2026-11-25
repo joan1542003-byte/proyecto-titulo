@@ -82,6 +82,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 45. [Por qué Relevo tiene íconos propios](43_por-que-iconos-propios-2026-11-06.md): primero se investigó y después se dibujó; las actividades salen de P1–P8; por qué no se usó Material Symbols ni SF Symbols, y la comparación con los íconos de ChatGPT.
 46. [Íconos que responden a lo que pide la app](44_iconos-desde-lo-que-pide-la-app-2026-11-06.md): inventario de los íconos que usa la app, cinco reglas y once íconos rehechos con su porqué (D-162), con su [imagen antes y después](iconos-2026-11-06/antes-y-despues.png).
 47. [Presentación de Relevo](45_presentacion-relevo-2026-11-12.md): veinticinco láminas en Figma Slides para 7 a 10 minutos, hechas con la marca desde la memoria del 10 de noviembre, con su estructura, sus decisiones y lo pendiente.
+48. [Presentación del examen](46_presentacion-examen-2026-12.md): la versión de 10 minutos del examen de diciembre, en una copia del archivo de Figma. Tiene 33 láminas en 9 min 19 s y 15 de respaldo para las preguntas, con los textos verificados contra la memoria v8.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -111,6 +112,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-24 — Presentación del examen
+
+- **Qué cambió:** se sumó el documento 46, con la versión de 10 minutos de la presentación del examen.
+- **Cómo estaba antes:** el índice terminaba en la presentación del 12 de noviembre.
+- **Por qué:** el autor pidió dejar perfecta la presentación del examen, de 10 minutos como máximo.
 
 ### 2026-11-12 — Presentación rehecha con la marca
 
