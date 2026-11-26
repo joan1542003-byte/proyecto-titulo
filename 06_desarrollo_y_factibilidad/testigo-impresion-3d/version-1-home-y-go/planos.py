@@ -58,7 +58,7 @@ K = 11.0                     # píxeles por milímetro
 TINTA, COTA = '#141312', '#55504B'
 F = 'font-family="Instrument Sans, Helvetica, Arial, sans-serif"'
 from decimal import Decimal, ROUND_HALF_UP
-# Un decimal, redondeando la mitad hacia arriba, como el texto de la memoria (13,35 → 13,4); sin «,0».
+# Un decimal, redondeando la mitad hacia arriba, como el texto de la memoria (13,35 → 13,4); sin “,0”.
 mm = lambda x: str(Decimal(str(round(x, 6))).quantize(Decimal('0.1'), ROUND_HALF_UP)).rstrip('0').rstrip('.').replace('.', ',')
 
 

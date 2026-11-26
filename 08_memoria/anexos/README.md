@@ -59,7 +59,7 @@ Queda en el repositorio como respaldo del proceso:
 
 ### 2026-11-26 — Planos, corte y piezas del objeto
 
-- **Qué cambió:** el Anexo H suma «H.8 El objeto: planos, corte y piezas», con los planos acotados de Relevo Home y Go (Figura H12), el corte de Go (Figura H13), las piezas de Home (Figura H14) y la Tabla H7, de piezas, material y fabricación. Las imágenes nuevas están en `imagenes/`: `planos-relevo-home-y-go.png`, `corte-relevo-go.png` y `piezas-relevo-home.png`. La de las piezas lleva márgenes blancos a los lados para que la figura y su nota queden en la misma página. El Word y el PDF se regeneraron, con 138 páginas.
+- **Qué cambió:** el Anexo H suma “H.8 El objeto: planos, corte y piezas”, con los planos acotados de Relevo Home y Go (Figura H12), el corte de Go (Figura H13), las piezas de Home (Figura H14) y la Tabla H7, de piezas, material y fabricación. Las imágenes nuevas están en `imagenes/`: `planos-relevo-home-y-go.png`, `corte-relevo-go.png` y `piezas-relevo-home.png`. La de las piezas lleva márgenes blancos a los lados para que la figura y su nota queden en la misma página. El Word y el PDF se regeneraron, con 138 páginas.
 - **Cómo estaba antes:** los anexos no tenían planos del objeto; las vistas y las piezas estaban solo en la memoria, sin medidas.
 - **Por qué:** el autor pidió la planimetría de Relevo Home y Go, que faltaba en el registro visual (tarea 18 de Por hacer).
 
