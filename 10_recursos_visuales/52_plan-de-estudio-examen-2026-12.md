@@ -3,7 +3,7 @@
 **Qué es:** un plan diario para aprender todo Relevo y responder a la comisión del examen, pensado para estudiar un poco cada día sin agobio.
 **Examen:** lunes 14 y martes 15 de diciembre de 2026.
 **Fecha:** 25 de noviembre de 2026.
-**Herramienta:** [Repaso Relevo](52_repaso-relevo.html), una página para usar cada día. Abierta desde el repositorio, guarda el avance en el navegador.
+**Herramienta:** [Repaso Relevo](52_repaso-relevo.html), una página local para usar cada día. Se abre con doble clic (hay una copia en Documentos, “Repaso Relevo.html”) y guarda el avance solo en ese computador, en el navegador. No carga nada de internet ni guarda nada en la nube.
 
 Todo el contenido sale de la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), el [guion](49_guion-presentacion-examen-2026-12.md), la [ficha de estudio](50_ficha-de-estudio-examen-2026-12.md) y el [documento de la comisión](51_comision-del-examen-2026-12.md), al 25 de noviembre de 2026.
 
@@ -57,6 +57,12 @@ La herramienta trae 36 preguntas con su respuesta en R-D-L: las quince del docum
 Cada día la herramienta muestra la misión, los pasos, las tarjetas pendientes y las preguntas del día.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Solo local
+
+- **Qué cambió:** la herramienta quedó como página local: se abre con doble clic, guarda solo en el computador y usa la letra instalada.
+- **Cómo estaba antes:** traía código para guardar el avance en la cuenta del autor y cargaba la letra desde internet.
+- **Por qué:** el autor prohibió los artefactos y todo lo que se guarde en la nube o se comparta con otras cuentas de Claude.
 
 ### 2026-11-25 — Sin la versión publicada
 

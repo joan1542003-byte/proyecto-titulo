@@ -1,7 +1,11 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Repaso Relevo</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+<!-- Página local: se abre con doble clic y guarda el avance solo en este computador (en el navegador). Usa la
+     Instrument Sans instalada en el computador; no carga nada de internet ni guarda nada en la nube. -->
 <style>
 /* Diseño: la línea de Relevo. Papel cálido, tinta casi negra y los cuatro colores del logo, uno por parte de la
    presentación (1 amarillo, 2 celeste, 3 verde, 4 rosa). Una columna que se lee como un recorrido por la casa. */
@@ -11,7 +15,7 @@
   --p1: #FFD54A; --p2: #9DD6F4; --p3: #B3E788; --p4: #F6A3CB; --lila: #C5B2F6;
   --ok: #2E8B57; --mid: #C98A00; --bad: #C2413A;
   --font: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --radius: 18px; --radius-s: 12px;
+  --radius: 18px; --radius-s: 12px; color-scheme: light;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #141312; --surface: #1E1C1A; --surface-2: #282522; --ink: #F3EFEA; --muted: #ABA49C; --line: #36322E;
@@ -21,7 +25,8 @@
   --focus: #8EB6FF; --ok: #6CCB94; --mid: #E7B84A; --bad: #F08A84; color-scheme: dark }
 
 * { box-sizing: border-box }
-body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5;
+[hidden] { display: none !important }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
 .wrap { max-width: 820px; margin: 0 auto; display: grid; gap: 20px }
 h1, h2, h3 { line-height: 1.15; text-wrap: balance; margin: 0 }
@@ -42,8 +47,7 @@ header.top { padding-top: 22px; display: grid; gap: 14px }
 .logo svg { width: 34px; height: 34px; flex: none }
 .estado { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: 6px }
 .estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted) }
-.estado[data-e="ok"]::before { background: var(--ok) }
-.estado[data-e="guardando"]::before { background: var(--mid) }
+.estado[data-e="local"]::before { background: var(--ok) }
 .estado[data-e="error"]::before { background: var(--bad) }
 nav.tabs { display: flex; flex-wrap: wrap; gap: 6px }
 nav.tabs a { text-decoration: none; color: var(--ink); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
@@ -147,7 +151,8 @@ details.preg[open] > summary { border-bottom: 1px solid var(--line) }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important } }
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <header class="top">
     <div class="brand">
@@ -155,7 +160,7 @@ details.preg[open] > summary { border-bottom: 1px solid var(--line) }
         <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="var(--p1)"/><circle cx="26" cy="14" r="9" fill="var(--p2)" opacity=".9"/><circle cx="26" cy="26" r="9" fill="var(--p3)" opacity=".9"/><circle cx="14" cy="26" r="9" fill="var(--p4)" opacity=".9"/></svg>
         <span>Repaso Relevo</span>
       </div>
-      <span class="estado" id="estado" data-e="local" role="status" aria-live="polite">Guardado en este navegador</span>
+      <span class="estado" id="estado" data-e="local" role="status" aria-live="polite">Se guarda en este computador</span>
     </div>
     <nav class="tabs" aria-label="Secciones">
       <a href="#hoy" data-v="hoy">Hoy</a>
@@ -583,42 +588,14 @@ const INTERVALO = [0, 1, 2, 4, 7, 12];   // días hasta volver a ver una tarjeta
 const LS = "repaso-relevo-v1";
 const base = () => ({ v: 1, t: 0, lugares: {}, cards: {}, preg: {}, dias: {}, pasos: {} });
 let S = base();
-let ref = null, guardando = false, otraVez = false, temporizador = null;
-
 function mezclar(obj) { const b = base(); for (const k of Object.keys(b)) if (obj && obj[k] !== undefined) b[k] = obj[k]; return b; }
 function leerLocal() { try { const t = localStorage.getItem(LS); if (t) S = mezclar(JSON.parse(t)); } catch (e) {} }
-function guardarLocal() { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} }
 function estado(e) {
   const el = document.getElementById("estado"); el.dataset.e = e;
-  el.textContent = { ok: "Guardado en tu cuenta", guardando: "Guardando…", local: "Guardado en este navegador", error: "No se pudo guardar en tu cuenta; quedó en este navegador" }[e];
+  el.textContent = { local: "Se guarda en este computador", error: "Este navegador no deja guardar el avance" }[e];
 }
-function cambio() { S.t = Date.now(); guardarLocal(); clearTimeout(temporizador); temporizador = setTimeout(escribir, 900); }
-async function escribir() {
-  if (!ref) return;
-  if (guardando) { otraVez = true; return; }
-  guardando = true; estado("guardando");
-  try { await ref.set(JSON.parse(JSON.stringify(S))); estado("ok"); } catch (e) { estado("error"); }
-  guardando = false;
-  if (otraVez) { otraVez = false; escribir(); }
-}
-async function conectar() {
-  try {
-    if (!window.claude || !window.claude.use) return;
-    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
-    if (!db || !user) return;
-    const id = await user.id();
-    if (!id) return;
-    const r = db.doc("data/users/" + id + "/progreso");
-    const snap = await Promise.race([r.get(), new Promise((_, no) => setTimeout(() => no(new Error("tiempo")), 10000))]);
-    ref = r;
-    if (snap.exists) {
-      const remoto = snap.data() || {};
-      if ((remoto.t || 0) >= (S.t || 0)) { S = mezclar(JSON.parse(JSON.stringify(remoto))); guardarLocal(); render(); estado("ok"); }
-      else escribir();
-    } else if (S.t) escribir();
-    else estado("ok");
-  } catch (e) { ref = null; estado("local"); }
-}
+function guardarLocal() { try { localStorage.setItem(LS, JSON.stringify(S)); estado("local"); } catch (e) { estado("error"); } }
+function cambio() { S.t = Date.now(); guardarLocal(); }
 
 /* ------------------------------------------------------------------ Fechas */
 const iso = (d) => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
@@ -978,5 +955,6 @@ document.addEventListener("input", (ev) => {
 
 leerLocal();
 mostrarVista(false);
-conectar();
 </script>
+</body>
+</html>
