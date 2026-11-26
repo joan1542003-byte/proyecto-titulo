@@ -1,5 +1,7 @@
 # Guion de la presentación del examen (diciembre de 2026)
 
+> **El guion vigente está, desde el 26 de noviembre de 2026, en la [presentación oficial del examen](53_presentacion-oficial-examen-2026-12.md#guion)** y en su vista del presentador. Las respuestas preparadas para la comisión de este documento siguen vigentes.
+
 **Qué es:** el texto que el autor dice en cada lámina de la [presentación del examen](48_presentacion-examen-2026-12.md), en primera persona y tal como se dice.  
 **Láminas:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides.  
 **Duración:** Unos 13 min 59 s a 2,7 palabras por segundo, que es el ritmo rápido del autor, con un segundo por cambio de lámina. A 3 palabras por segundo son unos 12 min 35 s. El instructivo del examen da 15 minutos de exposición.  
@@ -276,6 +278,12 @@ Investigación a través del diseño: diseñar la aplicación y el objeto fue ta
 Durante la prueba agregué editar un relevo activo y callar el Tag con confirmación. Después, el rediseño de la aplicación incorporó nueve cambios que salieron de la prueba, como pasar de once pantallas iniciales a tres, con un primer relevo guiado. *(Respaldo: lámina 40.)*
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — El guion vigente pasa al documento 53
+
+- **Qué cambió:** un aviso al comienzo dice que el guion vigente está en la presentación oficial y que las respuestas preparadas siguen aquí.
+- **Cómo estaba antes:** este documento era el guion vigente.
+- **Por qué:** la presentación oficial tiene otras láminas y su guion va dentro de la página (D-195).
 
 ### 2026-11-25 — La lámina 24 con la pregunta y la hipótesis tal cual
 

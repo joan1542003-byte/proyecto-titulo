@@ -26,8 +26,9 @@ La entrada visual es [herramientas.html](herramientas.html): una página con los
 | Memoria en A3 | [08_memoria/memoria-a3/](08_memoria/memoria-a3/) | La memoria v5 compuesta en A3 horizontal, con un IDML editable | `node construir-idml.js` |
 | Anexos de la memoria | [08_memoria/anexos/](08_memoria/anexos/) | Los nueve anexos, de la A a la I: un Markdown por anexo, el Word formal y su PDF | `node construir-anexos.js` |
 | Repaso Relevo | [10_recursos_visuales/52_repaso-relevo.html](10_recursos_visuales/52_repaso-relevo.html) | Estudiar para el examen: sesión guiada, tarjetas, cifras, preguntas y voz, con el avance en un servidor de Supabase | En https://joan1542003-byte.github.io/proyecto-titulo/ o con doble clic; se publica con [`publicar.sh`](10_recursos_visuales/52_repaso-relevo-sitio/README.md) |
+| Presentación del examen | [10_recursos_visuales/53_presentacion-oficial-examen/](10_recursos_visuales/53_presentacion-oficial-examen/README.md) | Proyectar la presentación del examen, con vista del presentador, guion y cronómetro; el PDF de respaldo sale de la misma página | Doble clic en `index.html`, en Chrome |
 
-Las páginas usan Instrument Sans desde Google Fonts. Sin internet se ven con otra letra, pero funcionan. El Excel del panel también necesita internet: carga SheetJS desde cdnjs.
+Las páginas usan Instrument Sans desde Google Fonts. Sin internet se ven con otra letra, pero funcionan. La presentación del examen trae sus letras, imágenes y grabaciones, y se ve igual sin internet. El Excel del panel también necesita internet: carga SheetJS desde cdnjs.
 
 ## Panel del testeo
 
@@ -257,6 +258,12 @@ El logotipo usa Chillax convertido a trazos, por eso no hace falta la letra. Ant
 - **Contexto:** el [documento del sistema](06_desarrollo_y_factibilidad/relevo-como-sistema-2026-10-18/relevo-frontend-y-backend.md) explica la app, el Tag, Supabase y el panel.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Presentación del examen
+
+- **Qué cambió:** el resumen suma la presentación oficial del examen, una página que se proyecta desde Chrome con vista del presentador.
+- **Cómo estaba antes:** el inventario no la nombraba; la presentación estaba en Figma.
+- **Por qué:** la presentación oficial es ahora una página local (D-195), y otro Claude debe saber dónde está y cómo se rehace el PDF.
 
 ### 2026-11-26 — Repaso Relevo
 

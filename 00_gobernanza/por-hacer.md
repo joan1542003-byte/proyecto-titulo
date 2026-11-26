@@ -31,7 +31,7 @@ Tareas acordadas con el autor. Arriba va lo que queda, en orden, hasta la entreg
 
 **Hasta el examen:**
 
-7. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Desde la noche del 24 de noviembre se trabaja en una copia del archivo de Figma del 23 de noviembre. Desde el 25 de noviembre tiene 26 láminas, con el sistema completo y un cierre que dice qué respondió el proyecto, y un guion de unos 14 minutos ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)). La versión de 46 láminas en PDF ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)) queda en el archivo original.
+7. **La presentación** y las respuestas a las preguntas probables de la comisión (tarea 7). Desde la noche del 24 de noviembre se trabaja en una copia del archivo de Figma del 23 de noviembre. Desde el 25 de noviembre tiene 26 láminas, con el sistema completo y un cierre que dice qué respondió el proyecto, y un guion de unos 14 minutos ([documentos 48](../10_recursos_visuales/48_presentacion-examen-2026-12.md) y [49](../10_recursos_visuales/49_guion-presentacion-examen-2026-12.md)). La versión de 46 láminas en PDF ([documento 47](../10_recursos_visuales/47_presentacion-examen-2026-11-23.md)) queda en el archivo original. Desde el 26 de noviembre la presentación oficial es una página animada con un PDF de respaldo ([documento 53](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md), D-195).
 8. **El video de respaldo** del ciclo completo con el Tag, una pila nueva y un segundo Tag para la demostración (tarea 7). Los videos de la 4.8.2 son del emulador, que no tiene Bluetooth: muestran la app, pero no el Tag sonando.
 9. **El ensayo con cronómetro**, la semana del 7 de diciembre (tarea 7).
 
@@ -1024,14 +1024,15 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### B. Presentación del examen
 
-- [ ] Variar la diagramación y animar en Figma. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial.
-- [ ] Presentar las tres definiciones de la portada con el gesto del deslizador.
-- [ ] Condensar la primera parte y dar más espacio a cómo funciona Relevo. Mostrar Relevo desde el comienzo: hoy aparece en la lámina 15, cerca del minuto 7, y en el Seminario se pidió mostrarlo primero (documento de la comisión, vacío 1).
-- [ ] Una lámina de respaldo “Del Seminario a hoy”, con cada observación de la comisión y dónde se responde (vacío 2).
-- [ ] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión.
-- [ ] Sumar una línea de tiempo corta, del objeto del Seminario a Relevo (prioridad 4).
+- [x] Variar la diagramación y animar. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial. *Hecho el 26 de noviembre en una página animada, no en Figma (D-195): la [presentación oficial](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md) tiene una figura distinta en cada lámina y un PDF de 42 páginas y unos 4 MB.*
+- [x] Presentar las tres definiciones de la portada con el gesto del deslizador. *Hecho: lámina 2, una rueda que se desliza.*
+- [x] Condensar la primera parte y dar más espacio a cómo funciona Relevo. Mostrar Relevo desde el comienzo: hoy aparece en la lámina 15, cerca del minuto 7, y en el Seminario se pidió mostrarlo primero (documento de la comisión, vacío 1). *Hecho: la parte 1 dura un minuto y medio, y cómo funciona Relevo (lámina 14) tiene cinco estados con la app funcionando. Relevo aparece en la portada y en la definición de phygital, antes del minuto 1.*
+- [x] Una lámina de respaldo “Del Seminario a hoy”, con cada observación de la comisión y dónde se responde (vacío 2). *Hecho: R1.*
+- [x] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión. *Hecho: láminas 16 y 17.*
+- [x] Sumar una línea de tiempo corta, del objeto del Seminario a Relevo (prioridad 4). *Hecho: lámina 13.*
+- [x] Sumar los GIF de la app a 1,2 veces su velocidad (pedido del 26 de noviembre). *Hecho: tres grabaciones de la app 4.8.2 en la lámina 14, en Preparar, Seguir en el teléfono y Decidir.*
 - [x] Llevar al guion la lámina 24 nueva, con la pregunta y la hipótesis tal cual y lo que se cumplió y lo que no. *Hecho el 25 de noviembre: el guion dura unos 13 min 59 s.*
-- [ ] Ajustar al tiempo. En el Pase se pasó un minuto y medio.
+- [ ] Ajustar al tiempo. En el Pase se pasó un minuto y medio. *El guion de la presentación oficial dura unos 14 min 8 s, y el cronómetro del presentador se pone rosado a los 14 minutos. Falta ensayarla completa en voz alta.*
 
 ### C. Montaje y demostración
 
@@ -1052,6 +1053,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] Decidir y escribir con palabras propias las cuatro respuestas que dependen del autor: el precio, el sueño, Relevo Go y el producto (en Repaso Relevo, “Revísala y hazla tuya”).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Presentación oficial del examen
+
+- **Qué cambió:** la tarea 18, B, marca hechos seis puntos y suma los GIF de la app; el tiempo queda abierto hasta ensayar. El resumen de la presentación nombra la presentación oficial.
+- **Cómo estaba antes:** los puntos de la presentación estaban abiertos y la versión vigente era la de Figma.
+- **Por qué:** se hizo la presentación oficial a partir del feedback del Pase (D-195).
 
 ### 2026-11-26 — El avance en un servidor
 

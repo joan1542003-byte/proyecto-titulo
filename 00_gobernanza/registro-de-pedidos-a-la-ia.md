@@ -426,6 +426,9 @@
 | 26 nov. | Encargo | Pidió mejorar y perfeccionar cómo estudiar Relevo, y subirlo a GitHub Pages si se podía, con su avance guardado. | [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html) arma una sesión guiada para cada día según el tiempo que haya, con cifras de cuatro opciones, pistas de tres claves, voz, grabación, lo que más cuesta, copias y códigos del avance y recordatorios. Suma el objeto, las tres personas y cómo decirlo: 100 tarjetas, 39 cifras y 39 preguntas. Quedó en GitHub Pages (https://joan1542003-byte.github.io/proyecto-titulo/), instalable y usable sin internet. El avance se guarda en el navegador de cada dispositivo, sin cuentas ni servidor. El [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) lo explica. | — |
 | 26 nov. | Corrección | Dijo que el avance debía guardarse en un servidor. Entre Supabase y un repositorio privado de GitHub, eligió Supabase. | El avance se guarda en un servidor de Supabase que solo acepta su clave de sincronización, y también en el navegador de cada dispositivo. Cada dispositivo se conecta una vez en Mi avance; al abrir la página se une lo del servidor con lo del dispositivo. La clave quedó solo en Documentos, fuera del repositorio y de la página. | — |
 | 26 nov. | Encargo | Inició sesión en Supabase y, como su cuenta no tiene el proyecto de la app, pidió crear uno. | Se creó el proyecto `repaso-relevo`, gratuito, con dos tablas y dos funciones que solo responden a su clave ([SQL](../10_recursos_visuales/52_repaso-relevo-sitio/servidor-supabase.sql)). Se comprobó que una clave falsa se rechaza, que las tablas no se leen directo y que el avance de dos navegadores se une en el servidor. | — |
+| 26 nov. | Encargo | Pidió armar la presentación oficial del examen a partir del feedback del Pase, con figuras y esquemas que ayuden a entender lo complejo. | [Presentación oficial del examen](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md): 27 láminas con una figura distinta en cada una, las definiciones en una rueda, cómo funciona Relevo en cinco estados, los criterios sobre la interfaz y en una tabla, la línea de tiempo y el respaldo “Del Seminario a hoy”. | D-195 |
+| 26 nov. | Corrección | Aclaró que no tenía que ser en Figma: debía verse bien, con un PDF de 15 MB como máximo, y el otro formato podía ser más animado. | La presentación es una [página HTML animada](../10_recursos_visuales/53_presentacion-oficial-examen/README.md) que funciona sin internet, con vista del presentador, guion y cronómetro, y un PDF de respaldo de 42 páginas y unos 4 MB generado desde la misma página. | D-195 |
+| 26 nov. | Corrección | Pidió seguir y perfeccionarla, y sumar los GIF de la app a 1,2 veces su velocidad. | Tres grabaciones de la app 4.8.2, aceleradas a 1,2 veces, en Preparar, Seguir en el teléfono y Decidir. En Preparar, la lista de preguntas sigue a la grabación. Se corrigió el orden de Decidir según la memoria, se quitaron indicadores y cápsulas, y el guion quedó en unos 14 min 8 s. | D-195 |
 
 ## Lo que muestra el registro
 
@@ -436,6 +439,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Presentación oficial del examen
+
+- **Qué cambió:** se suman los tres pedidos de la presentación oficial del examen.
+- **Cómo estaba antes:** el registro llegaba hasta el servidor de Repaso Relevo.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-26 — El avance en un servidor
 

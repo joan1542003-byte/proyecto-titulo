@@ -2570,7 +2570,7 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 ## D-189 — La presentación del examen es un PDF sin animaciones, de 9 a 10 minutos
 
 - **Fecha:** 2026-11-24.
-- **Estado:** decidida.
+- **Estado:** reemplazada por D-195 el 26 de noviembre de 2026.
 - **Contexto:** la presentación tenía seis GIF. En el editor de Figma y en el PDF se ven quietos; se probó un PDF animado con el paquete `animate` de LaTeX, que pesaba 36,5 MB y se movía solo en Adobe Acrobat Reader. El autor pidió que pesara 15 MB como máximo, sin perder calidad, y después canceló todo lo de los GIF.
 - **Decisión:** la presentación se muestra y se entrega en PDF, sin animaciones, y dura de 9 a 10 minutos. El logo va fijo, y lo que mostraban los GIF va en fotos, íconos y capturas fijas.
 - **Consecuencias:**
@@ -2642,7 +2642,27 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Alternativas descartadas:** pedir permiso a cada editorial; mantener “Tomado de” con una nota de derechos completa.
 - **Documentos:** [Ley 17.336 en la BCN](https://www.bcn.cl/leychile/navegar?idNorma=28933) y la guía de APA sobre [figuras](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/sample-figures).
 
+## D-195 — La presentación oficial del examen es una página animada, con un PDF de respaldo de 15 MB o menos
+
+- **Fecha:** 2026-11-26.
+- **Estado:** decidida.
+- **Contexto:** el feedback del Pase pidió variar la diagramación y animar, presentar las definiciones con el gesto del deslizador y dar más espacio a cómo funciona Relevo. En Figma Slides los GIF se ven quietos en el editor y en el PDF (D-189). El autor aclaró que la presentación no tenía que ser en Figma: lo importante es que se vea bien, con un PDF de 15 MB como máximo, y el otro formato podía ser Figma, HTML u otro, más animado. Después pidió sumar los GIF de la app a 1,2 veces su velocidad.
+- **Decisión:** la presentación se proyecta desde una página HTML que funciona sin internet, con apariciones por pasos, figuras animadas, una vista del presentador y tres grabaciones de la app 4.8.2 aceleradas a 1,2 veces. El respaldo oficial es un PDF generado desde la misma página, con una página por lámina y por estado.
+- **Consecuencias:**
+  - reemplaza a D-189; la versión de trabajo en Figma y su guion (documentos 48 y 49) quedan como registro;
+  - la página y el PDF salen del mismo archivo, así que dicen lo mismo;
+  - las grabaciones son de la app 4.8.2 (D-188); la pantalla “Todo listo” de los criterios sigue siendo de la 4.7.2, la versión de la prueba (D-192).
+- **Fundamento:** una página HTML se ve igual en cualquier computador con Chrome, sin cuenta ni internet, y permite animar y mostrar la app funcionando. El PDF cubre el caso de que en la sala no se pueda abrir.
+- **Alternativas descartadas:** seguir en Figma Slides, donde los GIF solo se mueven en el modo presentación y no en el PDF, y el PDF animado para Acrobat Reader (D-189).
+- **Documentos:** [presentación oficial del examen](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md) y su [carpeta](../10_recursos_visuales/53_presentacion-oficial-examen/README.md).
+
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — D-195
+
+- **Qué cambió:** se suma D-195: la presentación oficial del examen es una página animada, con un PDF de respaldo de 15 MB o menos. D-189 queda reemplazada.
+- **Cómo estaba antes:** D-189 decía que la presentación se mostraba y entregaba en PDF, sin animaciones.
+- **Por qué:** el autor pidió la presentación oficial a partir del feedback del Pase, aclaró que no tenía que ser en Figma y pidió sumar los GIF de la app a 1,2 veces.
 
 ### 2026-11-25 — D-193 y D-194
 

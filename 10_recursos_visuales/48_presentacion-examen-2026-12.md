@@ -1,5 +1,7 @@
 # Presentación del examen de título (diciembre de 2026)
 
+> **Reemplazada el 26 de noviembre de 2026** por la [presentación oficial del examen](53_presentacion-oficial-examen-2026-12.md), una página animada con un PDF de respaldo (D-195). Este documento queda como registro de la versión en Figma.
+
 **Archivo de trabajo:** [Relevo — Examen de título (diciembre 2026) · 10 minutos](https://www.figma.com/slides/qENeMXYssn76rD5habqdIC), en Figma Slides, en Borradores de la cuenta del autor.
 **Original sin cambios:** [Relevo — Examen de título (diciembre 2026)](https://www.figma.com/slides/IJm9Esfx6hYO8zbC2poxv1). La versión de trabajo es una copia, así que el original queda como estaba.
 **Duración:** unos 13 min 59 s en 26 láminas, según el [guion](49_guion-presentacion-examen-2026-12.md), a un ritmo rápido, de unas 2,7 palabras por segundo, y unos 12 min 35 s a 3 palabras por segundo. El instructivo da 15 minutos de exposición y 30 de preguntas. El autor pidió primero 10 minutos como máximo, después que el guion explicara más y, el 25 de noviembre, menos texto innecesario.  
@@ -107,6 +109,12 @@ La versión de la app (4.7.2 en las capturas de la prueba) y el nombre del profe
 - **Original:** si el autor aprueba la versión de trabajo, decidir si reemplaza al original o si se presenta desde la copia.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Reemplazada por la presentación oficial
+
+- **Qué cambió:** un aviso al comienzo dice que la presentación oficial es la del documento 53.
+- **Cómo estaba antes:** este documento describía la versión vigente.
+- **Por qué:** el autor pidió la presentación oficial a partir del feedback del Pase, en un formato más animado y con un PDF de respaldo (D-195).
 
 ### 2026-11-25 — La cita de Guynn en la lámina 9
 
