@@ -1,0 +1,16 @@
+{
+  "name": "Repaso Relevo",
+  "short_name": "Repaso Relevo",
+  "description": "Plan diario para estudiar Relevo hasta el examen de título.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F4F0",
+  "theme_color": "#F7F4F0",
+  "icons": [
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
