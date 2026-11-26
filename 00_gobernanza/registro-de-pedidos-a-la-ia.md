@@ -418,6 +418,7 @@
 | 25 nov. | Encargo | Pidió que en el IDML también se puedan editar los textos de las figuras, sin romper su diseño. | Todo el texto del [IDML](../08_memoria/memoria-1920x1080/README.md) es editable: los textos de las siete figuras dibujadas aparte, los números, letras y leyendas de las piezas y los títulos de los paneles. Exportado desde Affinity, el IDML da el mismo PDF: las 25 145 palabras quedan en su lugar. Para eso, 43 textos de figuras y tablas y las direcciones de 96 referencias repiten con saltos forzados los cortes del PDF. De paso, el PDF ya no empieza una línea con la raya de cierre de un inciso y corta las direcciones después de una barra. | — |
 | 25 nov. | Encargo y corrección | Pidió adjuntar la memoria en PDF y el IDML y subirlos al repositorio. Preguntó qué falta por afinar. Señaló que en la foto c de la Figura 32 el Tag está más abajo que como se ve en la memoria, y que la pantalla de “Oír la señal” del flujo de la aplicación no es de la app y debe serlo. | Se adjuntaron el PDF y el IDML, que ya estaban en `main`. La Figura 21 muestra en “Oír la señal” la pantalla de la señal de la aplicación, de la serie 4.7.2 de las demás capturas, y su nota lo explica. La foto c de la Figura 32 se encuadra más abajo y el Tag se ve entero. Los [cambios tras el Pase](../08_memoria/cambios-tras-el-pase-2026-11-25.md) suman los dos. | — |
 | 25 nov. | Encargo | Pidió un plan para aprenderse todo Relevo y saber responder a las posibles preguntas de la comisión. Lo estudiará a diario y le cuesta un poco aprenderse las cosas, así que pidió una forma de aprenderlas fácilmente. | El [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) y su herramienta diaria, [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html), publicada en claude.ai solo para el autor. El método usa las ideas de Relevo: un primer paso pequeño, la historia en siete lugares de la casa, recordar antes de mirar, repaso espaciado y nada de rachas. Trae 74 tarjetas, 36 preguntas con respuesta en tres pasos (respuesta, dato y límite), frases puente, simulacros y un calendario del 26 de noviembre al examen. Cuatro respuestas quedan para que el autor las decida. | — |
+| 25 nov. | Encargo | Pidió eliminar ahora la página publicada de Repaso Relevo. | No se pudo desde la sesión: borrarla necesita la confirmación del autor. Queda indicado cómo hacerlo desde claude.ai. El plan ya no enlaza la página publicada; la herramienta sigue en el repositorio y guarda el avance en el navegador. | — |
 
 ## Lo que muestra el registro
 
@@ -428,6 +429,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Eliminar la página publicada
+
+- **Qué cambió:** se registró el pedido de eliminar la página publicada de Repaso Relevo.
+- **Cómo estaba antes:** el último registro era el plan de estudio.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-25 — Plan de estudio
 
