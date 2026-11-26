@@ -1048,9 +1048,16 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### E. Estudio
 
-- [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria.
+- [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria. Desde el 25 de noviembre hay un [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) diario hasta el examen, con su herramienta, [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html): la historia en siete lugares de la casa, tarjetas de repaso espaciado, las 36 preguntas con respuesta y simulacros.
+- [ ] Decidir y escribir con palabras propias las cuatro respuestas que dependen del autor: el precio, el sueño, Relevo Go y el producto (en Repaso Relevo, “Revísala y hazla tuya”).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Plan de estudio
+
+- **Qué cambió:** la tarea 18, E, enlaza el plan de estudio y su herramienta diaria, y suma decidir las cuatro respuestas que dependen del autor.
+- **Cómo estaba antes:** solo enlazaba la ficha de estudio.
+- **Por qué:** el autor pidió un plan para aprender todo Relevo y responder a la comisión.
 
 ### 2026-11-25 — La memoria, editable en IDML
 

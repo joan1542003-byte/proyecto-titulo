@@ -1,0 +1,982 @@
+<title>Repaso Relevo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+<style>
+/* Diseño: la línea de Relevo. Papel cálido, tinta casi negra y los cuatro colores del logo, uno por parte de la
+   presentación (1 amarillo, 2 celeste, 3 verde, 4 rosa). Una columna que se lee como un recorrido por la casa. */
+:root {
+  --bg: #F7F4F0; --surface: #FFFFFF; --surface-2: #EFEAE3; --ink: #141312; --muted: #6E6964; --line: #E4DED6;
+  --on-color: #141312; --focus: #2F6FDF;
+  --p1: #FFD54A; --p2: #9DD6F4; --p3: #B3E788; --p4: #F6A3CB; --lila: #C5B2F6;
+  --ok: #2E8B57; --mid: #C98A00; --bad: #C2413A;
+  --font: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius: 18px; --radius-s: 12px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141312; --surface: #1E1C1A; --surface-2: #282522; --ink: #F3EFEA; --muted: #ABA49C; --line: #36322E;
+  --focus: #8EB6FF; --ok: #6CCB94; --mid: #E7B84A; --bad: #F08A84; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #141312; --surface: #1E1C1A; --surface-2: #282522; --ink: #F3EFEA; --muted: #ABA49C; --line: #36322E;
+  --focus: #8EB6FF; --ok: #6CCB94; --mid: #E7B84A; --bad: #F08A84; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px }
+.wrap { max-width: 820px; margin: 0 auto; display: grid; gap: 20px }
+h1, h2, h3 { line-height: 1.15; text-wrap: balance; margin: 0 }
+h2 { font-size: 1.45rem; font-weight: 650; letter-spacing: -0.01em }
+h3 { font-size: 1.1rem; font-weight: 650 }
+p { margin: 0 }
+button { font: inherit; color: inherit; cursor: pointer }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 8px }
+.muted { color: var(--muted) }
+.small { font-size: .88rem }
+.eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.num { font-variant-numeric: tabular-nums }
+
+/* Cabecera */
+header.top { padding-top: 22px; display: grid; gap: 14px }
+.brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em }
+.logo svg { width: 34px; height: 34px; flex: none }
+.estado { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: 6px }
+.estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted) }
+.estado[data-e="ok"]::before { background: var(--ok) }
+.estado[data-e="guardando"]::before { background: var(--mid) }
+.estado[data-e="error"]::before { background: var(--bad) }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 6px }
+nav.tabs a { text-decoration: none; color: var(--ink); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); font-weight: 550; font-size: .95rem }
+nav.tabs a[aria-current="page"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+
+/* Piezas comunes */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 12px; min-width: 0 }
+.stack { display: grid; gap: 12px }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 10px 16px; font-weight: 600; min-height: 44px;
+  display: inline-flex; align-items: center; gap: 8px }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.btn.ghost { background: transparent }
+.btn[disabled] { opacity: .45; cursor: default }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+  font-size: .88rem; font-weight: 550 }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; display: inline-block }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  background: var(--surface-2); color: var(--ink) }
+.tag.tuya { background: color-mix(in srgb, var(--p1) 45%, var(--surface)); color: var(--on-color) }
+.tal { background: color-mix(in srgb, var(--lila) 40%, var(--surface)); color: var(--on-color) }
+.quote { font-size: 1.12rem; font-weight: 550; line-height: 1.45 }
+ul.lista { margin: 0; padding-left: 1.1em; display: grid; gap: 6px }
+.hint { border-radius: var(--radius-s); padding: 12px 14px; background: var(--surface-2) }
+.mnemo { border-radius: var(--radius-s); padding: 12px 14px; background: color-mix(in srgb, var(--c, var(--p2)) 28%, var(--surface)); color: var(--ink) }
+.oculto { filter: blur(7px); user-select: none; cursor: pointer }
+.oculto:focus-visible { filter: blur(5px) }
+
+/* Hoy */
+.hero { position: relative; overflow: hidden; border-radius: 24px; padding: 24px 22px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 10px }
+.hero::before { content: ""; position: absolute; inset: -40% -20% auto auto; width: 70%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, color-mix(in srgb, var(--p1) 70%, transparent), transparent 62%),
+              radial-gradient(circle at 70% 60%, color-mix(in srgb, var(--p4) 60%, transparent), transparent 60%);
+  opacity: var(--aura, .55); pointer-events: none }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --aura: .28 } }
+:root[data-theme="dark"] { --aura: .28 }
+.hero > * { position: relative }
+.cuenta { font-size: clamp(2.4rem, 8vw, 3.6rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1 }
+.pasos { display: grid; gap: 10px }
+.paso { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px }
+.paso .check { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--line); background: var(--surface); display: grid; place-items: center; padding: 0 }
+.paso .check[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: #fff }
+.paso .check svg { width: 16px; height: 16px }
+.paso .body { display: grid; gap: 8px; min-width: 0 }
+
+/* La casa */
+.estacion { --c: var(--p1); display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; scroll-margin-top: 16px }
+.estacion header { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center }
+.circ { width: 46px; height: 46px; border-radius: 50%; background: var(--c); color: var(--on-color); display: grid; place-items: center; font-weight: 700; font-size: 1.2rem }
+.lugar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px }
+.lugar label { font-size: .85rem; color: var(--muted) }
+.lugar input { font: inherit; font-size: .95rem; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); min-width: 0; width: 14em; max-width: 100% }
+.imagen { font-style: italic; color: var(--muted) }
+.camino { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
+.camino span { font-size: .85rem; padding: 4px 10px; border-radius: 999px; background: var(--surface-2) }
+
+/* Tarjetas */
+.mazo { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px }
+.mazo button { text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius-s); padding: 12px 14px; display: grid; gap: 4px }
+.flash { min-height: 260px; align-content: start }
+.flash .q { font-size: 1.3rem; font-weight: 600; line-height: 1.35 }
+.flash .a { font-size: 1.05rem; line-height: 1.55; white-space: pre-line; border-top: 1px dashed var(--line); padding-top: 12px }
+.notas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px }
+.notas .btn { justify-content: center; text-align: center; border-radius: var(--radius-s); flex-direction: column; gap: 2px; padding: 10px 8px }
+.notas .si { border-color: var(--ok) } .notas .me { border-color: var(--mid) } .notas .no { border-color: var(--bad) }
+.barra { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden }
+.barra > i { display: block; height: 100%; background: var(--ink) }
+
+/* Preguntas */
+details.preg { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 }
+details.preg > summary { list-style: none; cursor: pointer; padding: 16px 18px; display: grid; gap: 6px }
+details.preg > summary::-webkit-details-marker { display: none }
+details.preg[open] > summary { border-bottom: 1px solid var(--line) }
+.preg .q { font-weight: 600; font-size: 1.05rem }
+.preg .cuerpo { padding: 16px 18px; display: grid; gap: 12px }
+.rdl { display: grid; gap: 8px }
+.rdl div { display: grid; grid-template-columns: 2.2em 1fr; gap: 8px; align-items: start }
+.rdl b { display: grid; place-items: center; width: 2em; height: 2em; border-radius: 50%; background: var(--surface-2); font-size: .85rem }
+.reloj { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em }
+.anillo { height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden }
+.anillo > i { display: block; height: 100%; width: 100%; background: var(--p3); transform-origin: left; transition: transform .25s linear }
+
+/* Plan */
+.dia { display: grid; grid-template-columns: 5.6em 1fr auto; gap: 12px; align-items: start; padding: 14px 16px; border-bottom: 1px solid var(--line) }
+.dia:last-child { border-bottom: 0 }
+.dia.hoy { background: color-mix(in srgb, var(--p1) 22%, var(--surface)) }
+.dia .fecha { font-weight: 650; line-height: 1.2 }
+.dia .fecha small { display: block; font-weight: 500; color: var(--muted) }
+.dia .check { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--line); background: var(--surface); display: grid; place-items: center; padding: 0 }
+.dia .check[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: #fff }
+.dia .check svg { width: 16px; height: 16px }
+.semana { padding: 12px 16px; background: var(--surface-2); font-weight: 650 }
+.planbox { padding: 0; overflow: hidden }
+
+@media (max-width: 520px) {
+  .card, .estacion { padding: 16px }
+  .notas { grid-template-columns: 1fr }
+  .dia { grid-template-columns: 4.6em 1fr auto }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="var(--p1)"/><circle cx="26" cy="14" r="9" fill="var(--p2)" opacity=".9"/><circle cx="26" cy="26" r="9" fill="var(--p3)" opacity=".9"/><circle cx="14" cy="26" r="9" fill="var(--p4)" opacity=".9"/></svg>
+        <span>Repaso Relevo</span>
+      </div>
+      <span class="estado" id="estado" data-e="local" role="status" aria-live="polite">Guardado en este navegador</span>
+    </div>
+    <nav class="tabs" aria-label="Secciones">
+      <a href="#hoy" data-v="hoy">Hoy</a>
+      <a href="#casa" data-v="casa">La casa</a>
+      <a href="#tarjetas" data-v="tarjetas">Tarjetas</a>
+      <a href="#preguntas" data-v="preguntas">Preguntas</a>
+      <a href="#plan" data-v="plan">Plan</a>
+      <a href="#metodo" data-v="metodo">Cómo estudiar</a>
+    </nav>
+  </header>
+  <main id="vista" class="stack"></main>
+</div>
+
+<script>
+/* ------------------------------------------------------------------ Contenido
+   Todo sale de la memoria v8, el guion del examen (documento 49), la ficha de estudio (50) y el documento de la
+   comisión (51), al 25 de noviembre de 2026. */
+
+const EXAMEN = "2026-12-14";
+const PARTES = {
+  1: { nombre: "El problema", color: "var(--p1)" },
+  2: { nombre: "Lo que investigué", color: "var(--p2)" },
+  3: { nombre: "La propuesta", color: "var(--p3)" },
+  4: { nombre: "La prueba", color: "var(--p4)" },
+};
+
+const FRASES = {
+  una: "Relevo es una aplicación para Android y un objeto que suena junto al primer paso de una actividad, para que la persona recuerde a tiempo lo que quería hacer mientras descansa con el teléfono, con la decisión en sus manos.",
+  tres: "A veces, mientras descansamos con el celular, una actividad que también queríamos hacer se nos pasa y vuelve cuando ya es tarde. Relevo deja una señal en el lugar donde empieza esa actividad: cuando se cumple el tiempo que la persona se dio, el objeto suena ahí y le recuerda qué quería hacer y cómo empezar. Tres personas lo probaron cinco semanas: casi siempre recordaron a tiempo, pero la prueba no permite decir si fue por el objeto o por el lugar, y eso es lo que sigue.",
+};
+
+const ESTACIONES = [
+  { n: 1, parte: 1, lugar: "La puerta", titulo: "El problema",
+    imagen: "Llegas a casa con ganas de dibujar. Antes, abres el celular un rato. Cuando lo cierras, ya es tarde. Nunca decidiste no dibujar: no te acordaste a tiempo.",
+    frase: "“Durante algunas sesiones de ocio digital, una actividad que la persona también quería realizar deja de estar presente y vuelve cuando la oportunidad ya pasó.”", tal: true,
+    puntos: [
+      "Lo que se pierde no son horas, sino una decisión: el sentido de agencia.",
+      "Nace de tres lados: mi experiencia, las entrevistas y la encuesta, y el contexto. En Chile, el 99,1 % de los hogares conectados tiene teléfono inteligente, y las apps están hechas para continuar.",
+      "Tres causas: atención ocupada, continuidad sin final y ocio juzgado.",
+      "Desafío: que la persona recuerde a tiempo, sin bloquear lo que hace, sin decidir por ella y sin interrumpir cuando el teléfono sí tiene sentido.",
+    ],
+    mnemo: "Te ACOmodas en el sofá y se te pasa: Atención ocupada, Continuidad sin final, Ocio juzgado.",
+    veinte: "El problema no es cuánto se usa el celular. Es que, mientras descansamos con él, una actividad que también queríamos hacer se nos pasa y vuelve cuando ya es tarde. Se pierde una decisión, no horas." },
+  { n: 2, parte: 2, lugar: "El sillón", titulo: "Lo que investigué",
+    imagen: "Te sientas en el sillón con el celular. Ahí pasa todo lo que estudié: cómo vivimos el ocio, cómo nos guían las apps y cómo recordamos.",
+    frase: "Una intención vuelve por dos caminos: vigilarla todo el rato o que una señal del entorno la traiga. Relevo usa el segundo.",
+    puntos: [
+      "Tres ámbitos de teoría: la experiencia del ocio digital, el diseño de la atención y la memoria prospectiva.",
+      "Ocho entrevistas, de 19 a 27 años, en junio de 2026, ordenadas con el método Framework.",
+      "Encuesta a 53 personas de 19 a 30 años: 39 de 45 siguieron más de lo que querían, 43 de 47 querían hacer otra cosa, 42 de 43 sabían su primer paso y 44 de 47 estaban en casa.",
+      "De 367 herramientas que analizaron otros autores, 3 de cada 4 bloquean o quitan distracciones. Casi todas limitan el uso o trabajan en la pantalla.",
+    ],
+    mnemo: "Sofá, imán y nudo en el dedo: el ocio (sofá), la atención que las apps atraen (imán) y la memoria que recuerda (nudo).",
+    veinte: "Revisé tres ámbitos de teoría, hice ocho entrevistas y una encuesta a 53 personas, y comparé herramientas. Lo más importante para el diseño: 42 de 43 sabían cuál habría sido su primer paso. Eso es lo que Relevo recuerda." },
+  { n: 3, parte: 2, lugar: "La mesa", titulo: "Los criterios",
+    imagen: "En la mesa anotas las reglas del diseño: ocho criterios, en tres montones.",
+    frase: "Ocho criterios en tres ideas: partir de la persona, dejarle las decisiones y justificar el esfuerzo.",
+    puntos: [
+      "Partir de la persona: 1. La persona elige qué quiere hacer. 2. Cada actividad empieza con un paso concreto.",
+      "Dejarle las decisiones: 3. Decide cuándo suena. 4. Decide qué hacer cuando suena. 5. El sistema interviene solo cuando hace falta.",
+      "Justificar el esfuerzo: 6. Prepararlo toma poco esfuerzo. 7. Lo que escribe es privado. 8. El objeto suma algo que el teléfono no da.",
+      "Dos situaciones: el usuario principal necesita recordar a tiempo; el usuario límite, como en una videollamada, necesita poder ignorar la señal.",
+    ],
+    mnemo: "2 · 3 · 3, como un número de teléfono: dos de la persona, tres de las decisiones y tres del esfuerzo.",
+    veinte: "Con todo eso armé ocho criterios en tres ideas. Partir de la persona: ella elige y cada actividad empieza con un paso concreto. Dejarle las decisiones: cuándo suena y qué hacer. Y justificar el esfuerzo: poco trabajo, privacidad y un objeto que aporte algo que el celular no da." },
+  { n: 4, parte: 3, lugar: "El espejo", titulo: "Pregunta, hipótesis y objetivos",
+    imagen: "Frente al espejo te haces la pregunta del proyecto. El espejo te devuelve la hipótesis.",
+    frase: "“¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?”", tal: true,
+    puntos: [
+      "Hipótesis: “Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella.”",
+      "Si X (el sistema que vincula la actividad con su lugar), entonces Y (la recordará a tiempo), porque Z (una señal asociada devuelve la intención).",
+      "Tres supuestos: asociación, decisión y soporte (el Tag).",
+      "Objetivos específicos: entender, diseñar, comparar y probar. Se cumplieron el 1, el 2 y el 4; el 3, en parte.",
+    ],
+    mnemo: "A-D-S: ADióS al olvido. Asociación, Decisión, Soporte. Los objetivos van en el orden de cualquier proyecto: entender, diseñar, comparar, probar.",
+    veinte: "Quiero saber si una señal desde el lugar donde empieza una actividad ayuda a recordarla a tiempo. Espero que sí, porque una intención vuelve cuando aparece una señal asociada. Eso supone tres cosas: que reconozca la señal, que decida libre y que el objeto ayude tanto como una notificación, sin molestar más." },
+  { n: 5, parte: 3, lugar: "El escritorio", titulo: "Relevo por dentro",
+    imagen: "Sobre el escritorio, junto al cuaderno, está el Tag. El celular está en tu mano.",
+    frase: "Relevo es una aplicación para Android y un objeto que suena junto al primer paso de una actividad.",
+    puntos: [
+      "Cuatro momentos: preparar, seguir en el teléfono, oír la señal y decidir.",
+      "La app cuenta el tiempo con un permiso de Android y hace sonar el Tag por Bluetooth, con solo dos órdenes: sonar y callar.",
+      "Supabase guarda los relevos y las respuestas con un código en lugar del nombre. El panel de la prueba es una página en mi computador.",
+      "El objeto: en la prueba, el Tag comercial. La propuesta es Relevo, en dos variantes: Home, fijo junto al primer paso, y Go, más portátil. Toda la cara es el botón.",
+      "Identidad: cuatro círculos que se pasan el turno. Amarillo el tiempo, celeste el primer paso, verde el lugar y rosa la decisión.",
+    ],
+    mnemo: "Pon Su Oído y Decide: Preparar, Seguir, Oír, Decidir. Y los colores: sol (tiempo), cielo (primer paso), pasto (lugar) y corazón (decisión).",
+    veinte: "Relevo es una app para Android y un objeto. Preparas qué quieres hacer, tu primer paso y cuánto tiempo te das en ciertas apps. Sigues en el celular. Cuando se cumple el tiempo, el objeto suena unos 30 segundos desde ese lugar. Y decides: empezar, dejarlo para después o cambiar de idea. Las tres valen lo mismo." },
+  { n: 6, parte: 4, lugar: "El dormitorio", titulo: "La prueba",
+    imagen: "En el dormitorio imaginas a las tres personas de la prueba. Una de ellas oía la señal desde la cama.",
+    frase: "Tres personas, cinco semanas, en sus casas: primero con el Tag y después con una notificación en el teléfono.",
+    puntos: [
+      "Del 7 de octubre al 10 de noviembre de 2026. Tag: del 8 al 19 de octubre. Teléfono: del 21 de octubre al 8 de noviembre. Cierre con cuestionario y entrevista.",
+      "El Tag sonó en 23 de 24 relevos. El que faltó se cumplió fuera de casa.",
+      "De 21 respuestas: en 19 supieron qué querían hacer antes de mirar, en las 21 recordaron cómo empezar y en 10 empezaron (9 lo dejaron para después y 2 cambiaron de idea).",
+      "Con el teléfono recordaron igual, pero cerca de la mitad de las veces (10 de 21) notaron el aviso tarde o no lo notaron.",
+      "El pitido del Tag molestó a otros en 2 de 21 respuestas.",
+    ],
+    mnemo: "21 es la base. 19, 21 y 10: casi todas, todas y la mitad.",
+    veinte: "Tres personas usaron Relevo cinco semanas en sus casas. Con el Tag, 19 de 21 veces supieron qué querían hacer antes de mirar la pantalla, las 21 recordaron cómo empezar y 10 empezaron la actividad. Con el celular recordaron igual, pero muchas veces notaron el aviso tarde." },
+  { n: 7, parte: 4, lugar: "La ventana", titulo: "Qué respondió y qué sigue",
+    imagen: "Abres la ventana y miras hacia afuera: lo que el proyecto respondió y lo que viene.",
+    frase: "Casi siempre recordaron a tiempo, pero no puedo afirmar que se deba al Tag ni al lugar. La hipótesis queda compatible, no probada.",
+    puntos: [
+      "No se atribuye al Tag, porque con el celular recordaron igual. Ni al lugar, porque el Tag nunca estuvo lejos de la actividad.",
+      "Supuestos: la asociación se cumplió casi siempre; la decisión, sí; el soporte, el Tag, en parte, porque su sonido molestó más a quienes estaban cerca.",
+      "Dos hallazgos: la señal depende del objeto, y recordar no obliga a empezar.",
+      "Lo que sigue: seis personas, tres semanas en distinto orden (objeto junto al primer paso, el mismo objeto en otro lugar y una notificación genérica), algunos relevos sin señal, e imprimir Relevo para probar su forma, su sonido y su ubicación.",
+      "Factibilidad en tres etapas: el prototipo (unos 111 000 pesos más mi trabajo), un piloto en seis hogares (de 10 100 a 12 150 pesos por hogar) y el producto (costos por cotizar).",
+    ],
+    mnemo: "Respondí la pregunta; la hipótesis era mi apuesta. Lo que sigue es lo mismo, con más personas y en distinto orden.",
+    veinte: "El proyecto respondió la pregunta: casi siempre recordaron a tiempo. Pero con tres personas y el celular siempre después, la hipótesis queda compatible, no probada. Lo que sigue es imprimir Relevo y comparar con seis personas, en distinto orden." },
+];
+
+const TEMAS = {
+  terminos: { nombre: "Términos", parte: 1 },
+  problema: { nombre: "El problema", parte: 1 },
+  investigacion: { nombre: "Lo que investigué", parte: 2 },
+  criterios: { nombre: "Los criterios", parte: 2 },
+  formulacion: { nombre: "Pregunta, hipótesis y objetivos", parte: 3 },
+  relevo: { nombre: "Relevo por dentro", parte: 3 },
+  prueba: { nombre: "La prueba y sus cifras", parte: 4 },
+  respuesta: { nombre: "Qué respondió y qué sigue", parte: 4 },
+};
+
+const TARJETAS = [
+  // Términos
+  { id: "t-ocio", tema: "terminos", p: "¿Qué es el ocio digital?", r: "Las actividades que una persona realiza con dispositivos digitales en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros." },
+  { id: "t-intencion", tema: "terminos", p: "¿Qué es una intención personal?", r: "Lo que la persona se propone hacer por iniciativa propia, como leer o dibujar." },
+  { id: "t-phygital", tema: "terminos", p: "¿Qué significa *phygital*?", r: "Físico y digital a la vez. En Relevo, una aplicación para Android y un objeto." },
+  { id: "t-paso", tema: "terminos", p: "¿Qué es el primer paso?", r: "La acción breve y concreta con que empieza una actividad, como abrir el libro o sacar la guitarra." },
+  { id: "t-prospectiva", tema: "terminos", p: "¿Qué es la memoria prospectiva?", r: "La capacidad de recordar una acción futura cuando aparece la ocasión (McDaniel y Einstein, 2000)." },
+  { id: "t-oportuno", tema: "terminos", p: "¿Qué es el recuerdo oportuno?", r: "Que al sonar la señal la persona sepa qué quería hacer y cómo empezar antes de leerlo en la pantalla." },
+  { id: "t-agencia", tema: "terminos", p: "¿Qué es el sentido de agencia?", r: "La experiencia de ser quien inicia las propias acciones y controla lo que sigue de ellas (Lukoff et al., 2021; Moore, 2016)." },
+  { id: "t-relevo", tema: "terminos", p: "En la app, ¿qué es un relevo?", r: "Cada actividad preparada con su condición: qué quiere hacer, cómo empieza, dónde y cuánto tiempo se da en ciertas apps." },
+  { id: "t-sesion", tema: "terminos", p: "¿Qué es una sesión?", r: "El rato entre que abrimos y cerramos una aplicación." },
+  // El problema
+  { id: "p-enunciado", tema: "problema", tal: true, p: "Di el problema tal cual está en la memoria.", r: "“Durante algunas sesiones de ocio digital, una actividad que la persona también quería realizar deja de estar presente y vuelve cuando la oportunidad ya pasó.”" },
+  { id: "p-pierde", tema: "problema", p: "¿Qué se pierde: tiempo o qué?", r: "No se pierden horas, sino una decisión. Es una pérdida del sentido de agencia." },
+  { id: "p-porque", tema: "problema", p: "¿Por qué plantearlo como un recuerdo y no como tiempo de uso?", r: "Plantearlo como tiempo lleva a medir y a bloquear. Plantearlo como un recuerdo que no llega a tiempo lo vuelve abordable desde el diseño." },
+  { id: "p-nace", tema: "problema", p: "¿De dónde nace el problema? (tres lados)", r: "Mi experiencia, las entrevistas y la encuesta, y un contexto que lo facilita: en Chile, el 99,1 % de los hogares conectados tiene teléfono inteligente, y las apps están hechas para continuar." },
+  { id: "p-causas", tema: "problema", p: "¿Cuáles son las tres causas de que una intención vuelva tarde?", r: "Atención ocupada, continuidad sin final y ocio juzgado.\nTe ACOmodas: Atención, Continuidad, Ocio." },
+  { id: "p-desafio", tema: "problema", p: "¿Cuál es el desafío de diseño?", r: "Ayudar a que la persona recuerde a tiempo lo que quería hacer, sin bloquear lo que está haciendo, sin decidir por ella y sin interrumpir cuando el celular sí tiene sentido." },
+  { id: "p-lukoff", tema: "problema", p: "¿Qué mostró el estudio de Lukoff et al. (2018)?", r: "Preguntaron a 45 personas si usaban la app para algo concreto. Al abrirla, sí en el 65,6 % de las veces; durante el uso, en el 51,4 %. El motivo con que se entra se va perdiendo." },
+  // Lo que investigué
+  { id: "i-ambitos", tema: "investigacion", p: "¿Cuáles son los tres ámbitos del marco teórico?", r: "La experiencia del ocio digital, el diseño de la atención y la memoria prospectiva (recordar con objetos y lugares)." },
+  { id: "i-caminos", tema: "investigacion", p: "¿Por qué dos caminos vuelve una intención?", r: "Vigilarla todo el rato, que cuesta cuando algo nos absorbe, o que una señal del entorno la traiga, que funciona aunque la atención esté en otra parte. Relevo se basa en el segundo." },
+  { id: "i-entrevistas", tema: "investigacion", p: "¿Cuántas entrevistas, a quiénes y cuándo?", r: "Ocho personas de 19 a 27 años, en junio de 2026." },
+  { id: "i-framework", tema: "investigacion", p: "¿Qué es el método Framework?", r: "Cruza personas y temas en una matriz para ver qué se repite y qué cambia de un caso a otro. De ahí salieron dos tipos ideales: el usuario principal y el usuario límite." },
+  { id: "i-encuesta", tema: "investigacion", p: "¿A cuántas personas llegó la encuesta y de qué edades?", r: "53 personas de 19 a 30 años." },
+  { id: "i-cifras", tema: "investigacion", p: "Las cuatro cifras de la encuesta.", r: "39 de 45 siguieron más de lo que querían al menos un día de la semana.\n43 de 47 querían hacer otra cosa.\n42 de 43 sabían su primer paso.\n44 de 47 estaban en casa." },
+  { id: "i-herramientas", tema: "investigacion", p: "¿Qué hacen casi todas las herramientas existentes?", r: "De 367 apps y extensiones analizadas por otros autores, 3 de cada 4 bloquean o quitan distracciones. Casi todas actúan sobre el uso del teléfono o en la pantalla, no sobre lo que se deja de hacer." },
+  { id: "i-parra", tema: "investigacion", p: "¿Quién es Denis Parra y qué aportó?", r: "Especialista en sistemas de recomendación de la Pontificia Universidad Católica de Chile. Respondió por escrito el 4 de noviembre de 2026: a la plataforma le conviene que veamos más videos para poner publicidad. Es opinión experta." },
+  { id: "i-situaciones", tema: "investigacion", p: "¿Cuáles son las dos situaciones de uso?", r: "Usuario principal: quiere hacer otra cosa y la pierde de vista; necesita recordarla a tiempo.\nUsuario límite: el celular sí tiene sentido, como una videollamada; necesita poder ignorar la señal." },
+  // Los criterios
+  { id: "c-tres", tema: "criterios", p: "Los ocho criterios, ¿en qué tres ideas se agrupan?", r: "Partir de la persona (1 y 2), dejarle las decisiones (3 a 5) y justificar el esfuerzo (6 a 8).\n2 · 3 · 3, como un número de teléfono." },
+  { id: "c-persona", tema: "criterios", p: "Partir de la persona: ¿qué dos criterios?", r: "1. La persona elige qué quiere hacer.\n2. Cada actividad empieza con un paso concreto." },
+  { id: "c-decisiones", tema: "criterios", p: "Dejarle las decisiones: ¿qué tres criterios?", r: "3. La persona decide cuándo suena.\n4. La persona decide qué hacer cuando suena.\n5. El sistema interviene solo cuando hace falta." },
+  { id: "c-esfuerzo", tema: "criterios", p: "Justificar el esfuerzo: ¿qué tres criterios?", r: "6. Prepararlo toma poco esfuerzo.\n7. Lo que la persona escribe es privado.\n8. El objeto suma algo que el teléfono no da." },
+  // Pregunta, hipótesis y objetivos
+  { id: "f-pregunta", tema: "formulacion", tal: true, p: "Di la pregunta de investigación tal cual.", r: "“¿Cuál es el efecto de un sistema *phygital* que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital?”" },
+  { id: "f-hipotesis", tema: "formulacion", tal: true, p: "Di la hipótesis tal cual.", r: "“Si se diseña un sistema *phygital* que vincula una actividad que la persona quiere hacer con el lugar donde comienza, entonces la persona la recordará a tiempo durante el ocio digital, porque una intención se recupera cuando aparece una señal asociada a ella.”" },
+  { id: "f-xyz", tema: "formulacion", p: "La hipótesis en la fórmula Si X, entonces Y, porque Z.", r: "X: el sistema que vincula la actividad con su lugar.\nY: la persona la recordará a tiempo.\nZ: una señal asociada devuelve la intención (memoria prospectiva)." },
+  { id: "f-supuestos", tema: "formulacion", p: "¿Cuáles son los tres supuestos de la hipótesis?", r: "1. Asociación: al oír la señal sabe que es Relevo y recuerda su actividad y cómo empezar, sin mirar el teléfono.\n2. Decisión: la señal devuelve la intención sin presionar; elige con libertad.\n3. Soporte: el objeto, que en la prueba fue el Tag, ayuda al menos tanto como una notificación, sin más molestia.\nADióS al olvido: A-D-S." },
+  { id: "f-general", tema: "formulacion", tal: true, p: "Di el objetivo general tal cual.", r: "“Diseñar y evaluar Relevo: un sistema que ayude a recordar a tiempo algo que la persona quería hacer mientras descansa con el teléfono, con una señal junto al primer paso de esa actividad y la decisión en sus manos.”" },
+  { id: "f-especificos", tema: "formulacion", p: "¿Cuáles son los cuatro objetivos específicos?", r: "1. Entender cuándo el uso del teléfono desplaza algo que la persona quería hacer.\n2. Diseñar una aplicación y un objeto que lleven esa intención al lugar donde la actividad empieza.\n3. Comparar el sonido del objeto junto al primer paso con una notificación en el teléfono.\n4. Probar en hogares si las personas reconocen la señal y si les resulta cómoda." },
+  { id: "f-indicador", tema: "formulacion", p: "¿Con qué indicador se mide el objetivo 4?", r: "La proporción de respuestas a la señal en que supieron qué querían hacer antes de mirar la pantalla y recordaron cómo empezar. También, en qué proporción empezaron la actividad: 19 de 21 y 10 de 21." },
+  { id: "f-cumplidos", tema: "formulacion", p: "¿Se cumplieron los objetivos?", r: "El 1 y el 2, sí. El 4, sí, con tres personas durante cinco semanas. El 3, en parte: con la notificación recordaron igual, pero esa comparación no permite decir cuál ayuda más." },
+  { id: "f-metodo", tema: "formulacion", p: "¿Qué método siguió el proyecto?", r: "Investigación a través del diseño: diseñar la app y el objeto fue también una forma de investigar. La evaluación fue formativa: buscar problemas y mejorar el diseño en cada vuelta." },
+  // Relevo por dentro
+  { id: "r-frase", tema: "relevo", p: "Relevo en una frase.", r: FRASES.una },
+  { id: "r-momentos", tema: "relevo", p: "¿Cuáles son los cuatro momentos de un relevo?", r: "Preparar, seguir en el teléfono, oír la señal y decidir.\nPon Su Oído y Decide." },
+  { id: "r-preparar", tema: "relevo", p: "¿Qué anota la persona al preparar un relevo?", r: "Qué quiere hacer, cómo empieza, dónde suena y cuánto tiempo se da en ciertas apps, de 1 minuto a 6 horas." },
+  { id: "r-senal", tema: "relevo", p: "¿Cómo es la señal?", r: "El objeto suena unos 30 segundos desde el lugar de la actividad y termina solo. Se puede silenciar antes desde la app o con el botón del Tag." },
+  { id: "r-decidir", tema: "relevo", p: "¿Qué opciones tiene la persona al decidir?", r: "Empezar, dejarlo para después o cambiar de idea. Las tres valen lo mismo." },
+  { id: "r-conteo", tema: "relevo", p: "¿Cómo cuenta el tiempo la app? (cinco pasos)", r: "1. Un servicio en primer plano que Android no cierra.\n2. Cada segundo lee el registro de uso de Android.\n3. Suma el tiempo solo si la app en primer plano es una de las elegidas.\n4. Guarda el avance: si se quita el permiso, el conteo se pausa y avisa.\n5. Al llegar al límite, entrega la señal.\nNunca ve lo que pasa dentro de las apps." },
+  { id: "r-tag", tema: "relevo", p: "¿Cómo hace sonar el Tag?", r: "Por Bluetooth de baja energía, con dos órdenes: sonar y callar. Repite la orden cada segundo durante 30 segundos, o hasta que se aprieta el botón. Si no responde, el teléfono vibra, avisa y la señal queda como fallida." },
+  { id: "r-datos", tema: "relevo", p: "¿Dónde se guardan los datos y cómo se cuidan?", r: "En Supabase, con un código en lugar del nombre. Sesión anónima, sin correo ni contraseña. Cada celular lee y cambia solo sus datos, y la persona puede borrarlos. Se eliminan a más tardar el 30 de diciembre de 2026 (leyes 19.628 y 21.719)." },
+  { id: "r-android", tema: "relevo", p: "¿Por qué Android y no iPhone?", r: "En el iPhone, consultar el uso de otras apps exige una autorización especial de Apple. Y hacer los dos sistemas habría duplicado el desarrollo." },
+  { id: "r-sonido", tema: "relevo", p: "¿Por qué la señal es un sonido?", r: "Porque alcanza a quien está mirando una pantalla, incluso desde otra habitación. Una luz pide mirar, y la persona está mirando otra cosa." },
+  { id: "r-objeto", tema: "relevo", p: "¿Qué es el objeto?", r: "En la prueba, el Tag: un llavero Bluetooth comercial. La propuesta es Relevo, una carcasa propia para la placa del Tag, en dos variantes: Home, fijo junto al primer paso, y Go, más portátil. Toda la cara es el botón. Está modelado en 3D, no impreso." },
+  { id: "r-identidad", tema: "relevo", p: "¿De dónde sale la identidad de Relevo?", r: "Del nombre: un relevo pasa algo de una mano a otra, de la pantalla a la actividad. El logo son cuatro círculos que se pasan el turno: amarillo el tiempo, celeste el primer paso, verde el lugar y rosa la decisión." },
+  { id: "r-panel", tema: "relevo", p: "¿Qué era el panel de la prueba?", r: "Una página web en mi computador para seguir los resultados y enviar mensajes, con una clave de administración que está solo ahí." },
+  // La prueba y sus cifras
+  { id: "u-quienes", tema: "prueba", p: "¿Quiénes hicieron la prueba y cuánto duró?", r: "Tres personas mayores de edad, voluntarias y sin pago, en sus hogares, durante cinco semanas: del 7 de octubre al 10 de noviembre de 2026." },
+  { id: "u-etapas", tema: "prueba", p: "¿Cuáles fueron las etapas de la prueba?", r: "Con el Tag, del 8 al 19 de octubre. Con una notificación en el teléfono, del 21 de octubre al 8 de noviembre. Cierre el 10 de noviembre, con cuestionario y entrevista." },
+  { id: "u-preguntas", tema: "prueba", p: "¿Qué preguntaba la app después de cada señal?", r: "Si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Con el teléfono, además, si notaron el aviso." },
+  { id: "u-sono", tema: "prueba", p: "¿En cuántos relevos sonó el Tag?", r: "En 23 de 24. El que faltó se cumplió fuera de casa, lejos del Tag." },
+  { id: "u-oportuno", tema: "prueba", p: "Con el Tag, ¿cuántas veces recordaron a tiempo?", r: "En 19 de 21 respuestas supieron qué querían hacer antes de mirar la pantalla, y en las 21 recordaron cómo empezar." },
+  { id: "u-empezaron", tema: "prueba", p: "¿Cuántas veces empezaron la actividad?", r: "10 de 21. Las otras 11, la dejaron para después (9) o cambiaron de idea (2)." },
+  { id: "u-telefono", tema: "prueba", p: "¿Qué pasó con la notificación en el teléfono?", r: "Recordaron igual, pero en 10 de 21 respuestas notaron el aviso tarde o no lo notaron. La segunda y la tercera persona tardaron tres o cuatro veces más en responder que con el Tag." },
+  { id: "u-molestia", tema: "prueba", p: "¿Molestó el sonido del Tag?", r: "Sonó como una alarma y molestó a otros en 2 de 21 respuestas. La mayoría de las veces lo callaron antes de que terminara." },
+  { id: "u-cita", tema: "prueba", p: "¿Qué dijo una persona sobre el aviso en el celular?", r: "“con el celu veia el aviso, decia ya voy y seguia viendo el video”." },
+  { id: "u-sesgos", tema: "prueba", p: "¿Qué dos sesgos tiene la prueba?", r: "1. La etapa con el teléfono vino siempre después de la del Tag: ya conocían la señal.\n2. Pudieron recordar por haber preparado el relevo poco antes, no por la señal." },
+  { id: "u-cambios", tema: "prueba", p: "¿Qué cambió en la app gracias a la prueba?", r: "Durante: editar un relevo activo y callar el Tag con confirmación. Después: el rediseño sumó nueve cambios, como pasar de once pantallas iniciales a tres, con un primer relevo guiado." },
+  // Qué respondió y qué sigue
+  { id: "s-pregunta", tema: "respuesta", p: "¿Qué respondió el proyecto a la pregunta?", r: "Casi siempre recordaron a tiempo. Pero no se puede atribuir al Tag, porque con el celular recordaron igual, ni al lugar, porque el Tag nunca estuvo lejos de la actividad." },
+  { id: "s-hipotesis", tema: "respuesta", p: "¿Qué pasó con la hipótesis?", r: "Es compatible con los resultados, pero no está probada: fueron tres personas y la etapa con el celular vino siempre después." },
+  { id: "s-supuestos", tema: "respuesta", p: "¿Qué pasó con cada supuesto?", r: "Asociación: se cumplió casi siempre.\nDecisión: se cumplió; ninguna persona se sintió obligada.\nSoporte, el Tag: en parte. Ayudó tanto como el celular, pero su sonido molestó más a quienes estaban cerca." },
+  { id: "s-hallazgos", tema: "respuesta", p: "¿Cuáles son los dos hallazgos?", r: "La señal depende del objeto, y recordar no obliga a empezar." },
+  { id: "s-aporte", tema: "respuesta", p: "¿Cuál es el aporte del proyecto?", r: "Convertir algo cotidiano, quedarse en el celular más de lo que uno quería, en decisiones de diseño que se pueden comprobar: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones." },
+  { id: "s-sigue", tema: "respuesta", p: "¿Cómo sería la siguiente prueba?", r: "Seis personas, tres semanas en distinto orden: el objeto junto al primer paso, el mismo objeto en otro lugar y una notificación genérica (protocolo de 21 días, Anexo I). Algunos relevos se cumplirían sin señal, para medir cuánto se debe solo a haberlo preparado." },
+  { id: "s-objeto", tema: "respuesta", p: "¿Cómo se validaría Relevo, el objeto propio?", r: "Imprimiéndolo y probando su forma, su sonido y su ubicación. Con la placa del Tag el pitido es el mismo: un volumen regulable y un tono más suave exigen un hardware propio." },
+  { id: "s-etapas", tema: "respuesta", p: "¿Cuáles son las tres etapas de factibilidad?", r: "Prototipo académico (ya existe), piloto en seis hogares con Relevo impreso y producto. Cada etapa empieza solo si la anterior entrega evidencia." },
+  { id: "s-costos", tema: "respuesta", p: "¿Cuánto costó el prototipo y cuánto costaría el piloto?", r: "Prototipo: unos 111 000 pesos (el Tag, unos 11 000, y las herramientas de IA, unos 100 000), más mi trabajo: unas 186 horas.\nPiloto: de 10 100 a 12 150 pesos por hogar; los seis, de 60 500 a 72 900." },
+  { id: "s-fondos", tema: "respuesta", p: "¿Cómo se financia lo que sigue?", r: "El piloto puede postular a la línea de Investigación de Fondart Nacional. Para el producto están Semilla Inicia de Corfo y el Capital Semilla de Sercotec." },
+  { id: "s-ia", tema: "respuesta", p: "¿Qué hizo la inteligencia artificial?", r: "Cursor y Codex hicieron los primeros prototipos. Claude Code desarrolló la app desde mis prototipos, bocetos y wireframes. Claude ayudó a modelar el objeto en 3D desde mis bocetos. Las tres apoyaron la redacción y la verificación de citas (Anexo E)." },
+  { id: "s-seminario", tema: "respuesta", p: "¿Qué pasó en el Seminario?", r: "Fue el 20 de julio de 2026, con nota 5,0. Se criticó presentar un prototipo HTML como si fuera el producto, sin wireframes ni flujos. El desafío fue planificar, separar flujos y hacer representaciones intermedias." },
+];
+
+/* Preguntas probables. quien: aaron, sofia, ambos, cualquiera o guion. tuya: la respuesta depende de una decisión tuya. */
+const PREGUNTAS = [
+  { id: "c1", quien: "ambos", q: "¿Qué cambió desde el Seminario y qué hiciste con nuestras observaciones?",
+    porque: "Fueron tu comisión del Seminario. Es la pregunta de apertura más probable.",
+    r: "Pasé de presentar un prototipo en HTML como si fuera el producto a diseñar y probar un sistema con tres personas en sus casas.",
+    d: "Acoté el problema a recordar a tiempo en el hogar, con la encuesta como evidencia: 44 de 47 estaban en casa. Dibujé el recorrido, el flujo, los estados y el sistema antes de implementar. Justifiqué Android y el sonido, y la prueba duró cinco semanas.",
+    l: "Quedan en parte el precio de venta y la lista de materiales del objeto propio, que está modelado pero no impreso.",
+    fuente: "Figura 19 y documento de la comisión" },
+  { id: "c2", quien: "aaron", q: "¿Por qué la prueba usó un Tag comercial y no Relevo? ¿Qué falta para fabricarlo?",
+    porque: "En el Seminario pidió explicar físicamente el objeto. Sus talleres terminan en objetos con placa, carcasa y montaje.",
+    r: "Para probar primero lo esencial, la señal y el lugar, antes de fabricar.",
+    d: "Un prototipo puede usar medios simples si conserva lo esencial. Relevo Home y Relevo Go están modelados en 3D para alojar la placa del Tag, y toda la cara funciona como botón.",
+    l: "Falta medir la placa, imprimir la carcasa, comprobar que el botón calce y probar su forma, su sonido y su ubicación con personas.",
+    fuente: "Capítulos 11 y 14" },
+  { id: "c3", quien: "aaron", q: "Si Relevo lleva la placa del Tag, el pitido es el mismo. ¿Cómo lograrás un volumen regulable y un tono más suave? ¿Qué le hace la carcasa al sonido?",
+    porque: "Investiga el sonido de piezas impresas en 3D y enseña a diseñar máquinas sonoras.",
+    r: "Con la placa del Tag no se puede: su pitido es de fábrica, continuo y de volumen fijo.",
+    d: "Un volumen regulable y un tono más suave exigen un hardware propio, como dice el plan de validación del capítulo 14. En el teléfono, Relevo ya tiene volumen regulable y un sonido más suave.",
+    l: "La carcasa puede cambiar cuánto se oye, pero no lo he medido. Es lo primero que mediría al imprimirla.",
+    fuente: "Capítulos 11 y 14, Tabla 4" },
+  { id: "c4", quien: "aaron", q: "¿Cómo le habla la app al Tag y qué pasa cuando falla la conexión o la pila?",
+    porque: "Enseña Interacciones inalámbricas.",
+    r: "Por Bluetooth de baja energía, con solo dos órdenes: sonar y callar.",
+    d: "La app envía la orden de alerta y la repite cada segundo durante 30 segundos, o hasta que se aprieta el botón del Tag. Si el Tag no responde, el teléfono vibra, avisa y la señal queda registrada como fallida. La app ofrece probar otra vez o hacerla sonar en el teléfono.",
+    l: "El Tag real tuvo límites: su nivel de alerta alto no sonaba, siguió pitando después de una prueba de sonido y respondía lento tras horas sin uso. Por eso el piloto suma una pila de repuesto por hogar.",
+    fuente: "Capítulo 12 y Anexo G" },
+  { id: "c5", quien: "aaron", q: "La app la programaron herramientas de IA. ¿Qué diseñaste tú y qué parte del sistema puedes explicar?",
+    porque: "En el Seminario preguntó por el rol del diseñador. Enseña pensamiento computacional y trabaja con IA.",
+    r: "Diseñé el problema, los criterios, el recorrido, las pantallas, la identidad, el objeto y la prueba. Las herramientas de IA programaron a partir de eso.",
+    d: "Cursor y Codex hicieron los primeros prototipos. Claude Code desarrolló la app desde mis prototipos, bocetos y wireframes, y Claude ayudó a modelar el objeto en 3D. Puedo explicar el conteo del tiempo: un servicio que Android no cierra lee cada segundo el registro de uso, suma solo las apps elegidas, guarda el avance y al llegar al límite entrega la señal.",
+    l: "No programo en Kotlin. Lo declaro en el capítulo 10 y en el Anexo E.",
+    fuente: "Capítulo 10, Anexos E y G" },
+  { id: "c6", quien: "aaron", tuya: true, q: "¿Cuánto costaría Relevo para una persona y cómo lo instala?",
+    porque: "Lo preguntó en el Seminario: precio, instalación y costos.",
+    r: "Todavía no puedo fijar un precio de venta: falta cotizar molde, ensamblaje y ensayos, que solo se justifican con volumen.",
+    d: "El prototipo costó unos 111 000 pesos, más mi trabajo. Cada hogar del piloto costaría entre 10 100 y 12 150 pesos: el localizador, una pila de repuesto y la carcasa impresa. Hoy la app se instala como un archivo APK, sin tienda.",
+    l: "El precio se definiría después del piloto, si da evidencia para seguir.",
+    fuente: "Capítulo 12: Tabla 2 y Figura 31" },
+  { id: "c7", quien: "aaron", q: "Advertí que una app funcional no basta si el objeto solo molesta. ¿Qué pasó con la molestia? ¿Por qué 30 segundos si casi todos preferían 15 o menos?",
+    porque: "Lo advirtió en el Seminario y trabaja con sonido.",
+    r: "El riesgo apareció: el pitido del Tag sonó como una alarma y molestó a otros en 2 de 21 respuestas.",
+    d: "En la encuesta, 41 de 53 personas preferían 15 segundos o menos. En la prueba, el sonido de unos 30 segundos les pareció bueno o neutro casi siempre, pero la mayoría de las veces lo callaron antes de que terminara.",
+    l: "Una señal más breve podría bastar, y queda por probar. El volumen y el tono exigen hardware propio.",
+    fuente: "Capítulos 7 y 13, Tabla 4" },
+  { id: "c8", quien: "sofia", q: "¿Quiénes fueron las tres personas de la prueba y cómo llegaron? ¿Cómo incidieron las entrevistas en el diseño?",
+    porque: "En el Seminario pidió mostrar quiénes fueron consultados y cómo incidieron.",
+    r: "Tres personas mayores de edad, invitadas por conveniencia a través de conocidos, que participaron de forma voluntaria y sin pago.",
+    d: "La prueba era formativa: buscaba encontrar problemas y mejorar el diseño, no generalizar. Las entrevistas y la encuesta dieron los criterios: por ejemplo, 42 de 43 sabían su primer paso, y de ahí sale el primer paso en Relevo.",
+    l: "La cercanía con quien diseña puede inflar las respuestas. Lo compensa en parte el registro automático de la app, y lo que sigue propone más personas.",
+    fuente: "Capítulos 7, 9 y 13; puntos de fondo, sección 5" },
+  { id: "c9", quien: "sofia", tuya: true, q: "En el Seminario pregunté por la higiene del sueño. ¿Qué pasa de noche?",
+    porque: "Lo preguntó en el Seminario, y en la prueba una persona oía la señal desde la cama.",
+    r: "Propuesta para que decidas: el sueño queda fuera del alcance. Relevo no es una herramienta de higiene del sueño.",
+    d: "Pero el diseño lo cuida: la persona decide cuándo suena y puede silenciarlo. En la prueba, una persona oía la señal desde la cama, y por eso una mejora es excluir horas del día (Tabla 4).",
+    l: "No lo medí. Si se incluyera, habría que estudiarlo aparte.",
+    fuente: "Capítulos 7 y 13, Tabla 4" },
+  { id: "c10", quien: "sofia", q: "¿Por qué sonido y no vibración o luz? ¿Qué pasa con alguien que no oye?",
+    porque: "Lo preguntó en el Seminario. Su obra trabaja con estímulos visuales.",
+    r: "Porque el sonido alcanza a quien mira una pantalla, incluso desde otra habitación. Una luz pide mirar, y la persona está mirando otra cosa.",
+    d: "La vibración, sobre una mesa, se percibe sobre todo como ruido, y llevarla al cuerpo separa la señal del lugar. Para quien no oye, la salida en el teléfono avisa en la pantalla.",
+    l: "No comparé modalidades con personas, y la luz también se dejó por tiempo. Sumar luz o vibración a Relevo exige electrónica propia.",
+    fuente: "Capítulo 11 (Señal y Accesibilidad), Tabla 1" },
+  { id: "c11", quien: "sofia", q: "¿Descartaste toda mecánica lúdica? Un juego no es necesariamente punitivo.",
+    porque: "Es su observación del Seminario.",
+    r: "No descarté el juego. Descarté evaluar el cumplimiento.",
+    d: "Relevo no usa puntajes, rachas ni comparaciones, porque vuelven la intención una deuda con el sistema. Una racha puede volverse una meta en sí misma y desanimar cuando se rompe (Silverman y Barasch, 2023). En Betterfly, una función con rachas subió los usuarios activos un 6,4 % frente a una meta del 20 %.",
+    l: "Una mecánica lúdica que no mida el cumplimiento se podría estudiar.",
+    fuente: "Criterio 4 (capítulo 9) y capítulo 8" },
+  { id: "c12", quien: "sofia", q: "Muéstrame por separado el flujo técnico y el del usuario. ¿Qué pasa si la persona ignora la señal, quita el permiso o el Tag no responde?",
+    porque: "Lo pidió en el Seminario. Enseña lógica y estados.",
+    r: "Están separados: el recorrido del usuario (Figura 20), el flujo de la app (21), sus estados (22) y el sistema (30).",
+    d: "Si ignora la señal, suena unos 30 segundos y termina sola; después la app pregunta qué pasó. Si quita el permiso, el conteo se pausa y aparece un aviso para reactivarlo. Si el Tag no responde, el teléfono vibra, avisa y la señal queda como fallida.",
+    l: "Lo mejor es contarlo con el diagrama de estados a la vista.",
+    fuente: "Figuras 20, 21, 22 y 30; Anexos F y G" },
+  { id: "c13", quien: "sofia", tuya: true, q: "¿Por qué un objeto y no la ubicación del teléfono, o una notificación que nombre el lugar?",
+    porque: "Su obra incluye una experiencia de realidad aumentada geolocalizada (especulación).",
+    r: "Porque el objeto suena fuera de la pantalla y desde el lugar donde empieza la actividad. La notificación llega a la misma pantalla que concentra la atención.",
+    d: "Con Place-Its, notas ligadas a lugares, hubo que volver a colgar cerca de uno de cada cinco recordatorios, porque aparecían en el lugar o el momento equivocado. En la prueba, con el teléfono, el aviso se notó tarde o no se notó cerca de la mitad de las veces.",
+    l: "El lugar no se probó por separado; el protocolo de 21 días lo compara. Sobre Relevo Go: sigue siendo una señal desde el lugar si se deja junto al primer paso; si se lleva encima, ya no.",
+    fuente: "Capítulos 3, 8, 11, 13 y 14" },
+  { id: "c14", quien: "sofia", tuya: true, q: "Si Relevo fuera un producto, ¿quién lo usaría, cómo le llegaría y cómo sabrías que funciona?",
+    porque: "Pidió contexto de producto y de mercado.",
+    r: "Lo usaría quien descansa con el teléfono y quiere recuperar actividades propias. El éxito no es usar menos el teléfono, sino recordar a tiempo y decidir.",
+    d: "Mediría la proporción de señales con recuerdo oportuno y si la persona sigue preparando relevos por su cuenta, sin rachas. En la encuesta, la disposición a probarlo quedó repartida, y los temores fueron que sonara en mal momento, el esfuerzo de prepararlo y el ruido.",
+    l: "Llegaría después del piloto. Hoy se instala como un archivo APK.",
+    fuente: "Capítulos 7, 12 y 14" },
+  { id: "c15", quien: "cualquiera", q: "Si el fenómeno es una pérdida del sentido de agencia, ¿por qué la prueba mide el recuerdo?",
+    porque: "La formulación pesa un 20 % de la rúbrica, y el sentido de agencia entró hace poco a la memoria.",
+    r: "Porque la agencia se pierde cuando la intención no vuelve a tiempo. Recordar es la condición para volver a decidir.",
+    d: "Por eso la prueba midió el recuerdo oportuno, 19 de 21, y también la decisión: empezaron, lo dejaron para después o cambiaron de idea, y ninguna persona se sintió obligada.",
+    l: "No medí la agencia directamente. La evaluación fue formativa.",
+    fuente: "Capítulos 2, 5, 10, 13 y 14; glosario" },
+  { id: "g1", quien: "guion", q: "¿Qué entiendes por ocio digital?", porque: "Está en el título.",
+    r: "Las actividades que una persona hace con dispositivos digitales en su tiempo disponible para descansar, entretenerse, satisfacer su curiosidad o vincularse con otros.",
+    d: "Su valor no depende solo de cuánto dura: una videollamada larga puede ser justo lo que la persona quiere.",
+    l: "Por eso el proyecto no busca reducir el uso.", fuente: "Glosario; lámina 1" },
+  { id: "g2", quien: "guion", q: "¿Por qué no basta con limitar el uso del teléfono?", porque: "Es lo primero que se le ocurre a cualquiera.",
+    r: "Porque detener el uso no devuelve lo que se quería hacer.",
+    d: "Tres de cada cuatro herramientas bloquean o quitan distracciones, y la evidencia no informa qué hace la persona después de negarse.",
+    l: "Además, el tiempo de pantalla es una medida demasiado gruesa para la variedad de metas y usos.", fuente: "Capítulos 3 y 8" },
+  { id: "g3", quien: "guion", q: "¿Es un problema de adicción?", porque: "Es fácil confundir el tema.",
+    r: "No.",
+    d: "El proyecto trata el ocio digital cotidiano de personas adultas que quieren recordar algo que eligieron hacer.",
+    l: "La adicción, el tratamiento clínico y el control parental son otros campos, que Relevo no aborda.", fuente: "Capítulo 12" },
+  { id: "g4", quien: "guion", q: "¿Por qué personas de 19 a 30 años?", porque: "El rango de edad salta a la vista.",
+    r: "El problema no es propio de una edad, pero acotar el rango permite empezar con experiencias comparables.",
+    d: "Así no se mezclan etapas de la vida muy distintas. Las entrevistas fueron de 19 a 27 años y la encuesta, de 19 a 30.",
+    l: "Queda abierta la ampliación a otras edades.", fuente: "Capítulo 7" },
+  { id: "g5", quien: "guion", q: "¿La encuesta es representativa?", porque: "Es una pregunta clásica de método.",
+    r: "No. Es una muestra pequeña.",
+    d: "Sugiere que la situación no es solo una experiencia personal: 39 de 45 siguieron más de lo que querían y 44 de 47 estaban en casa.",
+    l: "Sus cifras describen a quienes respondieron, no a una población.", fuente: "Capítulos 5 y 7, Anexo B" },
+  { id: "g6", quien: "guion", q: "¿Cuándo no debería sonar Relevo?", porque: "Muestra que pensaste en el usuario límite.",
+    r: "Cuando el teléfono es justo lo que la persona quiere, como una videollamada larga o un pódcast a la hora de comer.",
+    d: "Por eso Relevo suena solo cuando la persona preparó un relevo (criterio 5).",
+    l: "Y al sonar puede silenciarlo o dejar la actividad para después.", fuente: "Capítulo 9; lámina 11" },
+  { id: "g7", quien: "guion", q: "¿Qué existe parecido a Relevo?", porque: "Mide si conoces el estado del arte.",
+    r: "Cada pieza de Relevo existe por separado, pero no encontré nada que las reúna.",
+    d: "The Tangible Reminder asociaba compromisos a objetos en una bandeja, pero para citas o medicamentos. Wobble investigó recordatorios en el hogar que no reclaman la atención. Place-Its colgaba notas de lugares, en la pantalla.",
+    l: "Tampoco encontré un estudio que compare esa señal con una notificación.", fuente: "Capítulos 3 y 8, Anexo C" },
+  { id: "g8", quien: "guion", q: "¿Por qué citas a Denis Parra si es una comunicación personal?", porque: "Una fuente no publicada llama la atención.",
+    r: "Le consulté por escrito para entender el sistema que decide qué contenido viene después.",
+    d: "Es especialista en sistemas de recomendación de la Pontificia Universidad Católica de Chile y respondió el 4 de noviembre de 2026. Lo uso junto a lo publicado: en YouTube, el modelo se entrenó para predecir cuánto tiempo se verá cada video.",
+    l: "Lo presento como opinión experta, no como un estudio.", fuente: "Capítulos 5 y 10" },
+  { id: "g9", quien: "guion", q: "¿Cómo analizaste las entrevistas?", porque: "Es una pregunta de método.",
+    r: "Con el método Framework.",
+    d: "Cruza personas y temas en una matriz para ver qué se repite y qué cambia de un caso a otro. De ahí salieron dos tipos ideales: el usuario principal y el usuario límite.",
+    l: "Son ocho entrevistas: describen casos, no una población.", fuente: "Capítulo 7, Anexo A" },
+  { id: "g10", quien: "guion", q: "¿Por qué Android y no iPhone?", porque: "La comisión lo pidió en el Seminario.",
+    r: "Porque en el iPhone consultar el uso de otras aplicaciones exige una autorización especial de Apple.",
+    d: "Además, trabajar en los dos sistemas habría duplicado el desarrollo.",
+    l: "Por eso la app es solo para Android y se instala como un archivo APK.", fuente: "Capítulo 12" },
+  { id: "g11", quien: "guion", q: "¿Funciona con otros localizadores?", porque: "Abre la puerta al producto.",
+    r: "Podría funcionar con localizadores de otras marcas.",
+    d: "Relevo usa la orden estándar de alerta de Bluetooth, que entienden muchos localizadores. Así la persona podría usar el que ya tiene.",
+    l: "Solo lo probé con el Tag de la prueba.", fuente: "Capítulo 12" },
+  { id: "g12", quien: "guion", q: "¿Dónde se guardan los datos y quién los ve?", porque: "Privacidad y ética.",
+    r: "En Supabase, una base de datos en internet, con un código en lugar del nombre.",
+    d: "Al aceptar participar, la app abre una sesión anónima, sin correo ni contraseña. Una regla de la base hace que cada celular solo pueda leer y cambiar sus propios datos. Yo los veía desde el panel de la prueba, con una clave que está solo en mi computador.",
+    l: "La persona puede borrar todo desde la app.", fuente: "Capítulo 12, Anexo G" },
+  { id: "g13", quien: "guion", q: "¿El proyecto respondió la pregunta o la hipótesis?", porque: "Es la pregunta central de la formulación.",
+    r: "La pregunta. La hipótesis era la respuesta que yo esperaba.",
+    d: "Casi siempre recordaron a tiempo: con el Tag, 19 de 21 veces supieron qué querían hacer antes de mirar la pantalla y las 21 recordaron cómo empezar.",
+    l: "No puedo afirmar que se deba al Tag ni al lugar. La hipótesis queda compatible, no probada. La asociación y la decisión se cumplieron; el soporte, el Tag, en parte.", fuente: "Capítulo 14; lámina 24" },
+  { id: "g14", quien: "guion", q: "¿Qué valor tiene una prueba con tres personas?", porque: "Es la debilidad más visible.",
+    r: "La evaluación es formativa: busca encontrar problemas y mejorar el diseño en cada vuelta.",
+    d: "Con tres personas, cinco semanas y 21 respuestas con el Tag, los resultados describen casos reales de uso, y mostraron problemas que cambiaron la app.",
+    l: "No permiten generalizar. Por eso digo que son compatibles con la hipótesis, no que la prueban.", fuente: "Capítulos 10 y 13" },
+  { id: "g15", quien: "guion", q: "¿Qué sesgos tiene la prueba?", porque: "Muestra rigor si los dices tú.",
+    r: "Dos.",
+    d: "La etapa con el teléfono vino siempre después de la del Tag, así que ya conocían la señal. Y pudieron recordar por haber preparado el relevo poco antes, no por la señal.",
+    l: "El protocolo de 21 días resuelve el primero: seis personas pasan por tres semanas en distinto orden. Para el segundo, algunos relevos se cumplirían sin señal.", fuente: "Capítulo 14, Anexo I" },
+  { id: "g16", quien: "guion", q: "¿Por qué empezaron la actividad solo 10 de 21 veces?", porque: "La cifra puede parecer baja.",
+    r: "Porque recordar no obliga a empezar.",
+    d: "Las otras 11 veces la dejaron para después (9) o cambiaron de idea (2).",
+    l: "Relevo busca devolver la oportunidad de decidir, y las tres respuestas valen lo mismo.", fuente: "Capítulo 13; lámina 22" },
+  { id: "g17", quien: "guion", q: "¿Cómo cuidaste a las personas y sus datos?", porque: "Ética de la prueba.",
+    r: "Fueron tres personas mayores de edad, voluntarias y sin pago, que aceptaron un consentimiento en la app.",
+    d: "Podían omitir preguntas, silenciar la señal o dejar la prueba sin dar razones. Los datos se guardan con un código en lugar del nombre, según las leyes 19.628 y 21.719.",
+    l: "Se eliminan a más tardar el 30 de diciembre de 2026. El consentimiento está en el Anexo I.", fuente: "Capítulo 13, Anexo I" },
+  { id: "g18", quien: "guion", q: "¿Cuánto costó y cómo se financia lo que sigue?", porque: "Factibilidad.",
+    r: "El prototipo costó unos 111 000 pesos, más mi trabajo.",
+    d: "El Tag, unos 11 000, y las herramientas de inteligencia artificial, unos 100 000. Mi trabajo, unas 186 horas, equivale a entre 1 070 000 y 1 577 000 pesos. El piloto costaría entre 10 100 y 12 150 pesos por hogar.",
+    l: "El piloto podría postular a la línea de Investigación de Fondart Nacional; para el producto están Semilla Inicia de Corfo y el Capital Semilla de Sercotec.", fuente: "Capítulo 12" },
+  { id: "g19", quien: "guion", q: "¿Cuáles eran los objetivos y se cumplieron?", porque: "Formulación.",
+    r: "El general era diseñar y evaluar Relevo.",
+    d: "Los específicos: entender cuándo el uso del teléfono desplaza algo que la persona quería hacer; diseñar la app y el objeto; comparar el sonido del objeto con una notificación; y probarlo en hogares.",
+    l: "Se cumplieron tres. La comparación, en parte: con la notificación recordaron igual, pero el orden de las etapas no permite decir cuál ayuda más.", fuente: "Capítulos 10 y 14" },
+  { id: "g20", quien: "guion", q: "¿Qué método usaste?", porque: "Método.",
+    r: "Investigación a través del diseño: diseñar la app y el objeto fue también una forma de investigar.",
+    d: "Primero revisé estudios, hice entrevistas y una encuesta y comparé herramientas; de ahí salieron los criterios. Después trabajé en ciclos de diseñar, probar y cambiar.",
+    l: "La evaluación fue formativa, para mejorar el diseño, no para generalizar.", fuente: "Capítulo 10, Figura 18" },
+  { id: "g21", quien: "guion", q: "¿Qué cambió después de la prueba?", porque: "Muestra que la prueba sirvió.",
+    r: "La prueba cambió la app durante y después.",
+    d: "Durante, agregué editar un relevo activo y callar el Tag con confirmación. Después, el rediseño incorporó nueve cambios, como pasar de once pantallas iniciales a tres, con un primer relevo guiado.",
+    l: "Están en la Tabla 4 y en los Anexos D y G.", fuente: "Capítulo 13" },
+];
+const QUIEN = { aaron: "Aarón Montoya-Moraga", sofia: "Sofía Suazo", ambos: "Ambos", cualquiera: "Cualquiera", guion: "Del guion" };
+
+const PUENTES = [
+  "Eso no lo medí en esta prueba. Lo que sí vi fue… Para saberlo, haría…",
+  "Lo que puedo afirmar con seguridad es… Lo que no puedo afirmar es…",
+  "Eso está en el capítulo… Te lo resumo: …",
+  "Es un buen punto y lo tomo como algo a mejorar. Lo haría así: …",
+  "¿Me repites la pregunta? Quiero responder justo lo que preguntas.",
+];
+
+/* Plan diario: del jueves 26 de noviembre al examen. */
+const PLAN = [
+  { f: "2026-11-26", sem: 1, titulo: "La puerta: el problema", estacion: 1, temas: ["terminos", "problema"], preg: ["g1", "g3"], min: 15, nota: "Semana de entrega de la memoria: sesiones cortas." },
+  { f: "2026-11-27", sem: 1, titulo: "El sillón: lo que investigué", estacion: 2, temas: ["investigacion"], preg: ["g2", "g5"], min: 15 },
+  { f: "2026-11-28", sem: 1, titulo: "La mesa: los criterios", estacion: 3, temas: ["criterios"], preg: ["g6", "g7"], min: 20 },
+  { f: "2026-11-29", sem: 1, titulo: "El espejo: pregunta, hipótesis y objetivos", estacion: 4, temas: ["formulacion"], preg: ["g19", "g20"], min: 20 },
+  { f: "2026-11-30", sem: 1, titulo: "El escritorio: Relevo por dentro", estacion: 5, temas: ["relevo"], preg: ["g10", "g12"], min: 20 },
+  { f: "2026-12-01", sem: 1, titulo: "Entrega de la memoria", estacion: null, temas: [], preg: [], min: 10, nota: "Hoy entregas la memoria (23:59). Solo las tarjetas pendientes." },
+  { f: "2026-12-02", sem: 2, titulo: "El dormitorio: la prueba", estacion: 6, temas: ["prueba"], preg: ["g14", "g16"], min: 25 },
+  { f: "2026-12-03", sem: 2, titulo: "La ventana: qué respondió y qué sigue", estacion: 7, temas: ["respuesta"], preg: ["g13", "g15"], min: 25, nota: "Al final, recorre la casa completa por primera vez sin mirar." },
+  { f: "2026-12-04", sem: 2, titulo: "Preguntas de Aarón Montoya-Moraga (1)", estacion: null, temas: [], preg: ["c1", "c2", "c3"], min: 30 },
+  { f: "2026-12-05", sem: 2, titulo: "Preguntas de Aarón Montoya-Moraga (2)", estacion: null, temas: [], preg: ["c4", "c5", "c6", "c7"], min: 30 },
+  { f: "2026-12-06", sem: 2, titulo: "Simulacro 1, suave", estacion: null, temas: [], preg: [], simulacro: 5, min: 20, nota: "La casa en tres minutos y cinco preguntas al azar." },
+  { f: "2026-12-07", sem: 2, titulo: "Preguntas de Sofía Suazo (1)", estacion: null, temas: [], preg: ["c8", "c9", "c10", "c11"], min: 30 },
+  { f: "2026-12-08", sem: 2, titulo: "Preguntas de Sofía Suazo (2)", estacion: null, temas: [], preg: ["c12", "c13", "c14", "c15"], min: 30 },
+  { f: "2026-12-09", sem: 2, titulo: "Las preguntas del guion que faltan", estacion: null, temas: [], preg: ["g4", "g8", "g9", "g11", "g17", "g18", "g21"], min: 30 },
+  { f: "2026-12-10", sem: 3, titulo: "Simulacro 2, completo y con alguien", estacion: null, temas: [], preg: [], simulacro: 10, min: 45, nota: "Presenta con cronómetro frente a una persona y responde diez preguntas al azar." },
+  { f: "2026-12-11", sem: 3, titulo: "Lo que más cuesta", estacion: null, temas: [], preg: [], debiles: true, min: 30, nota: "Repasa las tarjetas en No o A medias y las preguntas en que te trabaste." },
+  { f: "2026-12-12", sem: 3, titulo: "Simulacro 3 y ensayo del montaje", estacion: null, temas: [], preg: [], simulacro: 10, min: 45, nota: "Ensaya también la demostración con el Tag." },
+  { f: "2026-12-13", sem: 3, titulo: "Día liviano", estacion: null, temas: [], preg: [], min: 15, nota: "Nada nuevo. Recorre la casa dos veces, di la frase de Relevo y duerme temprano." },
+  { f: "2026-12-14", sem: 4, titulo: "Examen", estacion: null, temas: [], preg: [], min: 5, examen: true },
+  { f: "2026-12-15", sem: 4, titulo: "Examen (segundo día)", estacion: null, temas: [], preg: [], min: 5, examen: true },
+];
+const SEMANAS = { 1: "Semana 1 · Entender la historia", 2: "Semana 2 · Recordar sin mirar", 3: "Semana 3 · Ensayar como en el examen", 4: "El examen" };
+
+/* ------------------------------------------------------------------ Estado y guardado */
+const INTERVALO = [0, 1, 2, 4, 7, 12];   // días hasta volver a ver una tarjeta, según su caja
+const LS = "repaso-relevo-v1";
+const base = () => ({ v: 1, t: 0, lugares: {}, cards: {}, preg: {}, dias: {}, pasos: {} });
+let S = base();
+let ref = null, guardando = false, otraVez = false, temporizador = null;
+
+function mezclar(obj) { const b = base(); for (const k of Object.keys(b)) if (obj && obj[k] !== undefined) b[k] = obj[k]; return b; }
+function leerLocal() { try { const t = localStorage.getItem(LS); if (t) S = mezclar(JSON.parse(t)); } catch (e) {} }
+function guardarLocal() { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} }
+function estado(e) {
+  const el = document.getElementById("estado"); el.dataset.e = e;
+  el.textContent = { ok: "Guardado en tu cuenta", guardando: "Guardando…", local: "Guardado en este navegador", error: "No se pudo guardar en tu cuenta; quedó en este navegador" }[e];
+}
+function cambio() { S.t = Date.now(); guardarLocal(); clearTimeout(temporizador); temporizador = setTimeout(escribir, 900); }
+async function escribir() {
+  if (!ref) return;
+  if (guardando) { otraVez = true; return; }
+  guardando = true; estado("guardando");
+  try { await ref.set(JSON.parse(JSON.stringify(S))); estado("ok"); } catch (e) { estado("error"); }
+  guardando = false;
+  if (otraVez) { otraVez = false; escribir(); }
+}
+async function conectar() {
+  try {
+    if (!window.claude || !window.claude.use) return;
+    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!db || !user) return;
+    const id = await user.id();
+    if (!id) return;
+    const r = db.doc("data/users/" + id + "/progreso");
+    const snap = await Promise.race([r.get(), new Promise((_, no) => setTimeout(() => no(new Error("tiempo")), 10000))]);
+    ref = r;
+    if (snap.exists) {
+      const remoto = snap.data() || {};
+      if ((remoto.t || 0) >= (S.t || 0)) { S = mezclar(JSON.parse(JSON.stringify(remoto))); guardarLocal(); render(); estado("ok"); }
+      else escribir();
+    } else if (S.t) escribir();
+    else estado("ok");
+  } catch (e) { ref = null; estado("local"); }
+}
+
+/* ------------------------------------------------------------------ Fechas */
+const iso = (d) => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+const hoy = () => iso(new Date());
+const aFecha = (s) => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const sumar = (s, n) => { const d = aFecha(s); d.setDate(d.getDate() + n); return iso(d); };
+const entre = (a, b) => Math.round((aFecha(b) - aFecha(a)) / 86400000);
+const fmtLargo = (s) => new Intl.DateTimeFormat("es-CL", { weekday: "long", day: "numeric", month: "long" }).format(aFecha(s));
+const fmtCorto = (s) => { const d = aFecha(s); return { dia: new Intl.DateTimeFormat("es-CL", { weekday: "short" }).format(d).replace(".", ""), num: d.getDate() + " " + new Intl.DateTimeFormat("es-CL", { month: "short" }).format(d).replace(".", "") }; };
+
+function diaDePlan() {
+  const h = hoy();
+  const exacto = PLAN.find((p) => p.f === h);
+  if (exacto) return { p: exacto, cuando: "hoy" };
+  if (h < PLAN[0].f) return { p: PLAN[0], cuando: "antes" };
+  return { p: PLAN[PLAN.length - 1], cuando: "despues" };
+}
+function temasAbiertos() {
+  const tope = hoy() < PLAN[0].f ? PLAN[0].f : hoy();
+  const s = new Set(); PLAN.forEach((p) => { if (p.f <= tope) p.temas.forEach((t) => s.add(t)); });
+  return s;
+}
+
+/* ------------------------------------------------------------------ Utilidades de texto */
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (s) => esc(s).replace(/\*([^*]+)\*/g, "<em>$1</em>");
+const ICON = {
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  reloj: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>',
+  ojo: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+};
+const colorParte = (n) => PARTES[n].color;
+
+/* ------------------------------------------------------------------ Tarjetas: repetición espaciada */
+function pendientes() {
+  const h = hoy(), abiertos = temasAbiertos(), vencidas = [], nuevas = [];
+  for (const c of TARJETAS) {
+    if (!abiertos.has(c.tema)) continue;
+    const st = S.cards[c.id];
+    if (!st) nuevas.push(c); else if (st.d <= h) vencidas.push(c);
+  }
+  vencidas.sort((a, b) => S.cards[a.id].b - S.cards[b.id].b);
+  return { vencidas, nuevas };
+}
+let sesion = null;
+function empezarSesion(tema, debiles) {
+  let lista;
+  if (tema) lista = TARJETAS.filter((c) => c.tema === tema);
+  else if (debiles) lista = TARJETAS.filter((c) => S.cards[c.id] && S.cards[c.id].l && S.cards[c.id].l !== "si");
+  else { const p = pendientes(); lista = [...p.vencidas, ...p.nuevas]; }
+  sesion = { cola: lista.map((c) => c.id), i: 0, vista: false, repes: {}, hechas: 0, total: lista.length, libre: !!(tema || debiles) };
+}
+function calificar(nota) {
+  const id = sesion.cola[sesion.i], h = hoy();
+  const st = Object.assign({ b: 0, n: 0 }, S.cards[id]);
+  st.n += 1; st.l = nota;
+  if (nota === "si") { st.b = Math.min(5, st.b + 1); st.d = sumar(h, INTERVALO[st.b]); }
+  else if (nota === "medias") { st.b = Math.max(1, st.b); st.d = sumar(h, 1); }
+  else { st.b = 1; st.d = h; if ((sesion.repes[id] || 0) < 2) { sesion.repes[id] = (sesion.repes[id] || 0) + 1; sesion.cola.push(id); } }
+  S.cards[id] = st; sesion.i += 1; sesion.vista = false; sesion.hechas += 1;
+  cambio(); render();
+}
+
+/* ------------------------------------------------------------------ Temporizador compartido */
+let reloj = null;
+function iniciarReloj(clave, segundos) {
+  pararReloj();
+  const fin = Date.now() + segundos * 1000;
+  reloj = { clave, fin, segundos, id: setInterval(() => pintarReloj(), 200) };
+  pintarReloj();
+}
+function pararReloj() { if (reloj) { clearInterval(reloj.id); reloj = null; } }
+function pintarReloj() {
+  if (!reloj) return;
+  const resto = Math.max(0, reloj.fin - Date.now());
+  document.querySelectorAll('[data-reloj="' + reloj.clave + '"]').forEach((el) => {
+    const n = el.querySelector(".reloj"), barra = el.querySelector(".anillo > i");
+    if (n) n.textContent = resto > 0 ? Math.ceil(resto / 1000) + " s" : "Tiempo";
+    if (barra) barra.style.transform = "scaleX(" + (resto / (reloj.segundos * 1000)) + ")";
+  });
+  if (resto <= 0) {
+    const clave = reloj.clave; pararReloj();
+    const det = document.querySelector('[data-mostrar="' + clave + '"]'); if (det) det.hidden = false;
+  }
+}
+
+/* ------------------------------------------------------------------ Vistas */
+let vista = "hoy";
+let filtroQuien = "todas", soloTuyas = false, tarjetaTema = null, practica = false, simul = null;
+const verFrase = { una: false, tres: false };
+
+function render() {
+  const main = document.getElementById("vista");
+  document.querySelectorAll("nav.tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.v === vista ? "page" : "false"));
+  main.innerHTML = ({ hoy: vHoy, casa: vCasa, tarjetas: vTarjetas, preguntas: vPreguntas, plan: vPlan, metodo: vMetodo }[vista] || vHoy)();
+}
+
+function bloqueFrase(clave, titulo) {
+  return `<div class="stack"><div class="row"><b>${titulo}</b><button class="btn ghost" type="button" data-act="frase" data-k="${clave}">${ICON.ojo}${verFrase[clave] ? "Tapar" : "Ver"}</button></div>
+    <p class="quote ${verFrase[clave] ? "" : "oculto"}" data-act="frase" data-k="${clave}" tabindex="0">${fmt(FRASES[clave])}</p></div>`;
+}
+
+function vHoy() {
+  const { p, cuando } = diaDePlan(), h = hoy();
+  const faltan = entre(h, EXAMEN);
+  const n = PLAN.findIndex((x) => x.f === p.f) + 1;
+  const pend = pendientes(), totalPend = pend.vencidas.length + pend.nuevas.length;
+  const hecho = (k) => !!(S.pasos[p.f] && S.pasos[p.f][k]);
+  const paso = (k, titulo, cuerpo) => `<div class="paso"><button class="check" type="button" aria-pressed="${hecho(k)}" aria-label="Marcar paso: ${esc(titulo)}" data-act="paso" data-k="${k}">${hecho(k) ? ICON.check : ""}</button><div class="body"><h3>${titulo}</h3>${cuerpo}</div></div>`;
+  let pasos = "";
+  if (p.examen) {
+    pasos = paso("e1", "Antes de entrar", `<p>Respira lento tres veces. Di la frase de Relevo. Recorre la casa en un minuto, de la puerta a la ventana.</p>`) +
+      paso("e2", "Si te quedas en blanco", `<p>Usa una frase puente (está en Preguntas) y vuelve a la puerta de tu casa: el problema. Desde ahí, la historia sigue sola.</p>`);
+  } else {
+    pasos += paso("p1", "Primer paso · 2 min", `<p>Di en voz alta la frase de Relevo, antes de mirarla.</p>${bloqueFrase("una", "Relevo en una frase")}`);
+    if (p.estacion) { const e = ESTACIONES[p.estacion - 1];
+      pasos += paso("p2", `Estación ${e.n} · ${esc(e.titulo)}`, `<p>Lee la estación, cierra los ojos y cuéntala en 20 segundos.</p><div class="row"><a class="btn primary" href="#casa-${e.n}">Ir a ${esc(nombreLugar(e))}</a></div>`); }
+    pasos += paso("p3", "Tarjetas", `<p class="num">${totalPend ? `${totalPend} para hoy: ${pend.vencidas.length} de repaso y ${pend.nuevas.length} nuevas.` : "No te quedan tarjetas para hoy."}</p><div class="row"><button class="btn ${totalPend ? "primary" : ""}" type="button" data-act="ir-tarjetas"${totalPend ? "" : " disabled"}>Empezar tarjetas</button></div>`);
+    if (p.preg.length) pasos += paso("p4", p.preg.length > 2 ? "Preguntas de la comisión" : "Preguntas del día",
+      `<p>Respóndelas en voz alta con el cronómetro, antes de leer la respuesta.</p><ul class="lista">${p.preg.map((id) => { const q = PREGUNTAS.find((x) => x.id === id); return `<li><a href="#pregunta-${id}">${esc(q.q)}</a></li>`; }).join("")}</ul>`);
+    if (p.simulacro) pasos += paso("p5", `Simulacro de ${p.simulacro} preguntas`, `<p>Preguntas al azar, una tras otra, con 90 segundos cada una. Primero las que menos has practicado.</p><div class="row"><button class="btn primary" type="button" data-act="simulacro" data-k="${p.simulacro}">Empezar simulacro</button></div>`);
+    if (p.debiles) pasos += paso("p6", "Lo que más cuesta", `<p>Las tarjetas que marcaste No o A medias, y las preguntas en que te trabaste.</p><div class="row"><button class="btn primary" type="button" data-act="debiles">Repasar tarjetas débiles</button><a class="btn" href="#preguntas">Ver preguntas</a></div>`);
+    pasos += paso("p9", "Antes de dormir · 2 min", `<p>Recorre la casa en tu mente, de la puerta a la ventana, y di una frase en cada lugar. Lo que repasas antes de dormir se fija mejor.</p>`);
+  }
+  const cabeza = cuando === "antes" ? `Empiezas el ${fmtLargo(p.f)}. Puedes adelantar hoy el primer día.` : cuando === "despues" ? "El examen ya pasó. Puedes seguir repasando cuando quieras." : p.examen ? `Hoy, ${fmtLargo(h)}` : `Hoy, ${fmtLargo(h)} · día ${n} de ${PLAN.length - 2}`;
+  const grande = p.examen && cuando === "hoy" ? "Hoy es el examen" : cuando === "despues" ? "Examen terminado" : faltan === 1 ? "Falta 1 día" : `Faltan ${faltan} días`;
+  return `<section class="hero">
+      <span class="eyebrow">Examen de título · lunes 14 y martes 15 de diciembre</span>
+      <div class="cuenta num">${grande}</div>
+      <p>${cabeza}</p>
+      <h2>${esc(p.titulo)}</h2>
+      <p class="muted">${p.min} minutos${p.nota ? " · " + esc(p.nota) : ""}</p>
+    </section>
+    <section class="pasos" aria-label="Pasos de hoy">${pasos}</section>
+    <div class="row"><button class="btn ${S.dias[p.f] ? "" : "primary"}" type="button" data-act="dia" data-k="${p.f}">${S.dias[p.f] ? ICON.check + " Día hecho" : "Marcar el día como hecho"}</button>
+    <span class="muted small">Si un día no puedes, sigue al siguiente. Aquí no hay rachas.</span></div>`;
+}
+
+function nombreLugar(e) { return (S.lugares[e.n] || "").trim() || e.lugar.toLowerCase(); }
+
+function vCasa() {
+  const camino = ESTACIONES.map((e) => `<span>${e.n}. ${esc(nombreLugar(e))}</span>`).join("");
+  const cards = ESTACIONES.map((e) => {
+    const t = practica ? " oculto" : "", tab = practica ? ' tabindex="0" data-act="destapar"' : "";
+    return `<article class="estacion" id="casa-${e.n}" style="--c:${colorParte(e.parte)}">
+      <header><div class="circ" aria-hidden="true">${e.n}</div><div class="stack" style="gap:4px">
+        <span class="eyebrow">Parte ${e.parte} · ${esc(PARTES[e.parte].nombre)}</span><h2>${esc(e.lugar)}: ${esc(e.titulo)}</h2></div></header>
+      <div class="lugar"><label for="lugar-${e.n}">En tu casa, este lugar es:</label><input id="lugar-${e.n}" type="text" maxlength="40" placeholder="${esc(e.lugar.toLowerCase())}" value="${esc(S.lugares[e.n] || "")}" data-act="lugar" data-k="${e.n}"></div>
+      <p class="imagen">${esc(e.imagen)}</p>
+      <div class="stack" style="gap:6px">${e.tal ? '<span class="tag tal">Tal cual en la memoria</span>' : ""}<p class="quote${t}"${tab}>${fmt(e.frase)}</p></div>
+      <div class="stack" style="gap:6px"><b>Lo que tienes que poder decir</b><ul class="lista${t}"${tab}>${e.puntos.map((x) => `<li>${fmt(x)}</li>`).join("")}</ul></div>
+      <div class="mnemo"><b>Para recordarlo.</b> ${fmt(e.mnemo)}</div>
+      <div class="stack" data-reloj="casa${e.n}" style="gap:8px"><div class="row"><b>Dilo en 20 segundos</b><button class="btn" type="button" data-act="reloj" data-k="casa${e.n}" data-s="20">${ICON.reloj}Cronómetro</button><span class="reloj num" aria-live="off"></span></div>
+        <div class="anillo" aria-hidden="true"><i></i></div><p class="hint${t}"${tab}>${fmt(e.veinte)}</p></div>
+    </article>`;
+  }).join("");
+  return `<section class="card"><h2>La casa de Relevo</h2>
+      <p>Relevo funciona con una señal en un lugar. Tú vas a estudiar igual: cada parte del proyecto vive en un lugar de tu casa. Para contar Relevo, recorre la casa en tu mente, de la puerta a la ventana. Cambia cada lugar por uno de tu casa real; así lo recuerdas mejor.</p>
+      <div class="camino" aria-label="Recorrido">${camino}</div>
+      <div class="row"><button class="btn ${practica ? "primary" : ""}" type="button" data-act="practica" aria-pressed="${practica}">${practica ? "Modo práctica activado: toca un texto para verlo" : "Modo práctica: tapar los textos"}</button></div>
+    </section>${cards}`;
+}
+
+function vTarjetas() {
+  if (sesion && sesion.i < sesion.cola.length) {
+    const c = TARJETAS.find((x) => x.id === sesion.cola[sesion.i]), tema = TEMAS[c.tema];
+    const avance = Math.round((sesion.hechas / Math.max(1, sesion.total)) * 100);
+    return `<section class="card flash" style="--c:${colorParte(tema.parte)}">
+        <div class="row" style="justify-content:space-between"><span class="tag"><span class="dot" style="background:${colorParte(tema.parte)}"></span>${esc(tema.nombre)}</span><span class="muted small num">${sesion.hechas} hechas · ${sesion.cola.length - sesion.i} por delante</span></div>
+        <div class="barra" aria-hidden="true"><i style="width:${avance}%"></i></div>
+        ${c.tal ? '<span class="tag tal">Tal cual en la memoria</span>' : ""}
+        <p class="q">${fmt(c.p)}</p>
+        ${sesion.vista ? `<p class="a">${fmt(c.r)}</p>
+          <p class="muted small">¿Lo supiste antes de mirar? Son las mismas opciones que respondían las tres personas en Relevo.</p>
+          <div class="notas"><button class="btn si" type="button" data-act="nota" data-k="si">Sí<span class="small muted">vuelve en unos días</span></button>
+          <button class="btn me" type="button" data-act="nota" data-k="medias">A medias<span class="small muted">vuelve mañana</span></button>
+          <button class="btn no" type="button" data-act="nota" data-k="no">No<span class="small muted">vuelve hoy</span></button></div>`
+        : `<p class="hint">Dilo en voz alta antes de mirar. Si no sale, di lo que recuerdes: también cuenta.</p>
+          <div class="row"><button class="btn primary" type="button" data-act="mostrar">Mostrar la respuesta</button><button class="btn ghost" type="button" data-act="salir">Salir</button></div>`}
+      </section>`;
+  }
+  const fin = sesion ? `<section class="card"><h2>Listo por ahora</h2><p class="num">Repasaste ${sesion.hechas} tarjetas. Lo que marcaste No vuelve hoy; lo demás, cuando le toque.</p></section>` : "";
+  sesion = null;
+  const p = pendientes(), abiertos = temasAbiertos(), total = p.vencidas.length + p.nuevas.length;
+  const sabidas = TARJETAS.filter((c) => S.cards[c.id] && S.cards[c.id].b >= 3).length;
+  const vistas = TARJETAS.filter((c) => S.cards[c.id]).length;
+  const mazos = Object.entries(TEMAS).map(([k, t]) => {
+    const cs = TARJETAS.filter((c) => c.tema === k), abierto = abiertos.has(k);
+    const bien = cs.filter((c) => S.cards[c.id] && S.cards[c.id].b >= 3).length;
+    const dia = PLAN.find((d) => d.temas.includes(k));
+    return `<button type="button" data-act="mazo" data-k="${k}"${abierto ? "" : ' aria-describedby="nota-cerrado"'}>
+      <span class="row"><span class="dot" style="background:${colorParte(t.parte)}"></span><b>${esc(t.nombre)}</b></span>
+      <span class="small muted num">${cs.length} tarjetas · ${bien} sabidas${abierto ? "" : " · se abre el " + fmtCorto(dia.f).num}</span></button>`;
+  }).join("");
+  return `${fin}<section class="card">
+      <h2>Tarjetas</h2>
+      <p>Cada tarjeta es una pregunta. Respóndela en voz alta antes de mirar. Lo que sabes vuelve en unos días; lo que no, vuelve pronto. Los temas se abren día a día, según el plan.</p>
+      <p class="num"><b>${total}</b> para hoy · ${vistas} de ${TARJETAS.length} vistas · ${sabidas} sabidas</p>
+      <div class="row"><button class="btn primary" type="button" data-act="empezar"${total ? "" : " disabled"}>${total ? "Empezar las de hoy" : "No quedan tarjetas para hoy"}</button>
+      <button class="btn" type="button" data-act="debiles">Repasar las débiles</button></div>
+    </section>
+    <section class="card"><h3>Repasar un tema completo</h3><p class="muted small" id="nota-cerrado">Puedes repasar cualquier tema cuando quieras, aunque no se haya abierto.</p><div class="mazo">${mazos}</div></section>`;
+}
+
+function rdl(q) {
+  return `<div class="rdl"><div><b>R</b><p><strong>Respuesta.</strong> ${fmt(q.r)}</p></div><div><b>D</b><p><strong>Dato.</strong> ${fmt(q.d)}</p></div><div><b>L</b><p><strong>Límite o lo que sigue.</strong> ${fmt(q.l)}</p></div></div>`;
+}
+function bloquePregunta(q, abierta) {
+  const st = S.preg[q.id] || {};
+  const nota = st.nota ? { bien: "Me salió bien", medias: "Más o menos", trabe: "Me trabé" }[st.nota] : "";
+  return `<details class="preg" id="pregunta-${q.id}"${abierta ? " open" : ""}>
+    <summary><span class="row"><span class="tag">${esc(QUIEN[q.quien])}</span>${q.tuya ? '<span class="tag tuya">Revísala y hazla tuya</span>' : ""}${st.n ? `<span class="small muted num">Practicada ${st.n} ${st.n === 1 ? "vez" : "veces"}${nota ? " · " + nota : ""}</span>` : ""}</span>
+      <span class="q">${fmt(q.q)}</span><span class="small muted">Por qué puede salir: ${fmt(q.porque)}</span></summary>
+    <div class="cuerpo" data-reloj="q-${q.id}">
+      <p>Respóndela en voz alta antes de mirar. Usa la fórmula: respuesta, dato y límite.</p>
+      <div class="row"><button class="btn primary" type="button" data-act="reloj" data-k="q-${q.id}" data-s="60">${ICON.reloj}Responder en 60 segundos</button>
+        <button class="btn" type="button" data-act="ver-resp" data-k="q-${q.id}">${ICON.ojo}Ver la respuesta</button><span class="reloj num"></span></div>
+      <div class="anillo" aria-hidden="true"><i></i></div>
+      <div class="stack" data-mostrar="q-${q.id}" hidden>
+        ${rdl(q)}
+        <p class="small muted">Dónde está: ${fmt(q.fuente)}.</p>
+        <div class="row"><span class="small">¿Cómo te salió?</span>
+          <button class="chip" type="button" data-act="calif" data-id="${q.id}" data-k="bien">Bien</button>
+          <button class="chip" type="button" data-act="calif" data-id="${q.id}" data-k="medias">Más o menos</button>
+          <button class="chip" type="button" data-act="calif" data-id="${q.id}" data-k="trabe">Me trabé</button></div>
+      </div>
+    </div></details>`;
+}
+function vPreguntas() {
+  if (simul && simul.i < simul.ids.length) {
+    const q = PREGUNTAS.find((x) => x.id === simul.ids[simul.i]);
+    return `<section class="card"><div class="row" style="justify-content:space-between"><h2>Simulacro</h2><span class="muted num">${simul.i + 1} de ${simul.ids.length}</span></div>
+      <p class="small muted">Imagina a la comisión frente a ti. Responde en voz alta, con calma. Si te trabas, usa una frase puente.</p></section>
+      ${bloquePregunta(q, true)}
+      <div class="row"><button class="btn primary" type="button" data-act="sim-sig">${simul.i + 1 < simul.ids.length ? "Siguiente pregunta" : "Terminar"}</button><button class="btn ghost" type="button" data-act="sim-fin">Salir del simulacro</button></div>`;
+  }
+  if (simul) simul = null;
+  const chips = ["todas", "aaron", "sofia", "ambos", "cualquiera", "guion"].map((k) => `<button class="chip" type="button" aria-pressed="${filtroQuien === k}" data-act="filtro" data-k="${k}">${k === "todas" ? "Todas" : esc(QUIEN[k])}</button>`).join("");
+  const lista = PREGUNTAS.filter((q) => (filtroQuien === "todas" || q.quien === filtroQuien || (q.quien === "ambos" && (filtroQuien === "aaron" || filtroQuien === "sofia"))) && (!soloTuyas || q.tuya));
+  const practicadas = PREGUNTAS.filter((q) => S.preg[q.id] && S.preg[q.id].n).length;
+  return `<section class="card">
+      <h2>Preguntas de la comisión</h2>
+      <p>Quince salen del documento de la comisión: lo que Aarón Montoya-Moraga y Sofía Suazo preguntaron en el Seminario y lo que pueden mirar ahora. Las demás son las del guion. Cada respuesta sigue la misma fórmula.</p>
+      <div class="rdl"><div><b>R</b><p><strong>Respuesta:</strong> una frase directa. Sí, no, o la idea central.</p></div><div><b>D</b><p><strong>Dato:</strong> una cifra, un caso o el capítulo de la memoria.</p></div><div><b>L</b><p><strong>Límite o lo que sigue:</strong> qué no puedes afirmar y cómo lo probarías.</p></div></div>
+      <p class="num"><b>${practicadas}</b> de ${PREGUNTAS.length} practicadas.</p>
+      <div class="row"><button class="btn primary" type="button" data-act="simulacro" data-k="5">Simulacro de 5</button><button class="btn" type="button" data-act="simulacro" data-k="10">Simulacro de 10</button></div>
+    </section>
+    <section class="card"><h3>Si no sabes qué decir</h3><p class="small muted">Frases puente: te dan tiempo y te llevan a lo que sí sabes.</p><ul class="lista">${PUENTES.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></section>
+    <div class="row">${chips}<button class="chip" type="button" aria-pressed="${soloTuyas}" data-act="tuyas">Solo las que debes decidir</button></div>
+    <section class="stack">${lista.map((q) => bloquePregunta(q, false)).join("")}</section>`;
+}
+
+function vPlan() {
+  let html = "", sem = 0;
+  const h = hoy();
+  for (const p of PLAN) {
+    if (p.sem !== sem) { sem = p.sem; html += `<div class="semana">${esc(SEMANAS[sem])}</div>`; }
+    const f = fmtCorto(p.f), tareas = [];
+    if (p.estacion) tareas.push(`Estación ${p.estacion}`);
+    if (p.temas.length) tareas.push("tarjetas: " + p.temas.map((t) => TEMAS[t].nombre.toLowerCase()).join(" y "));
+    if (p.preg.length) tareas.push(`${p.preg.length} ${p.preg.length === 1 ? "pregunta" : "preguntas"}`);
+    if (p.simulacro) tareas.push(`simulacro de ${p.simulacro}`);
+    html += `<div class="dia${p.f === h ? " hoy" : ""}"><div class="fecha">${esc(f.dia)}<small class="num">${esc(f.num)}</small></div>
+      <div class="stack" style="gap:2px"><b>${esc(p.titulo)}</b><span class="small muted">${p.min} min${tareas.length ? " · " + esc(tareas.join(" · ")) : ""}</span>${p.nota ? `<span class="small">${esc(p.nota)}</span>` : ""}</div>
+      ${p.examen ? "<span></span>" : `<button class="check" type="button" aria-pressed="${!!S.dias[p.f]}" aria-label="Marcar ${esc(f.dia + " " + f.num)} como hecho" data-act="dia" data-k="${p.f}">${S.dias[p.f] ? ICON.check : ""}</button>`}</div>`;
+  }
+  const hechos = PLAN.filter((p) => S.dias[p.f]).length;
+  return `<section class="card"><h2>El plan</h2><p>Dieciocho días de estudio, de 10 a 45 minutos. La primera semana es corta porque entregas la memoria el 1 de diciembre. La segunda es para recordar sin mirar. La tercera, para ensayar como en el examen.</p><p class="num muted">${hechos} días hechos.</p></section>
+    <section class="card planbox">${html}</section>`;
+}
+
+function vMetodo() {
+  const reglas = [
+    ["Un primer paso pequeño", "Empieza siempre igual: di la frase de Relevo en voz alta. Empezar es lo que más cuesta, y un paso concreto lo vuelve fácil. Es el criterio 2 de tu propio proyecto."],
+    ["Una señal en un lugar", "Cada parte del proyecto vive en un lugar de tu casa. Al recorrerla en la mente, la historia sale en orden. Es la memoria prospectiva: un lugar trae de vuelta lo que dejaste ahí."],
+    ["Recordar antes de mirar", "Cada tarjeta y cada pregunta se responden en voz alta antes de ver la respuesta. Es lo que medía Relevo. El esfuerzo de recordar es lo que fija el recuerdo, aunque te equivoques."],
+    ["Volver a lo que cuesta", "Lo que no supiste vuelve hoy o mañana; lo que supiste, en unos días. Así repasas menos y recuerdas más."],
+    ["Decirlo como en el examen", "En voz alta, con cronómetro y con la fórmula: respuesta, dato y límite. Si puedes, explícaselo a alguien que no sepa nada del tema."],
+    ["Sin culpa", "No hay rachas. Si un día no puedes, sigue al siguiente: el plan se acomoda. Es el criterio 4 de Relevo: nada de evaluar el cumplimiento."],
+    ["Dormir", "Lo que repasas antes de dormir se fija mejor. Termina cada día recorriendo la casa."],
+  ];
+  const mnemos = [
+    ["Tres causas", "Te ACOmodas en el sofá: Atención ocupada, Continuidad sin final, Ocio juzgado."],
+    ["Tres ámbitos", "Sofá, imán y nudo en el dedo: el ocio, la atención y la memoria."],
+    ["Ocho criterios", "2 · 3 · 3: dos de la persona, tres de las decisiones y tres del esfuerzo."],
+    ["Tres supuestos", "A-D-S, ADióS al olvido: Asociación, Decisión, Soporte."],
+    ["Cuatro momentos", "Pon Su Oído y Decide: Preparar, Seguir, Oír, Decidir."],
+    ["Cuatro colores", "Sol el tiempo, cielo el primer paso, pasto el lugar y corazón la decisión."],
+    ["Las cifras de la prueba", "21 es la base. 19, 21 y 10: casi todas, todas y la mitad. 23 de 24: todas menos una, fuera de casa."],
+  ];
+  return `<section class="card"><h2>Cómo estudiar</h2>
+      <p>Este método usa las mismas ideas que Relevo. Si en el examen te preguntan cómo te preparaste, también es una buena respuesta.</p>
+      <ul class="lista">${reglas.map(([t, x]) => `<li><b>${esc(t)}.</b> ${esc(x)}</li>`).join("")}</ul></section>
+    <section class="card"><h3>Relevo en tres tamaños</h3><p class="muted small">Aprende primero la frase corta. Cuando salga sola, pasa a la de tres frases. Al final, la casa completa.</p>
+      ${bloqueFrase("una", "Una frase")}${bloqueFrase("tres", "Tres frases")}
+      <p><b>La casa completa, unos 3 minutos:</b> la frase de 20 segundos de cada lugar, de la puerta a la ventana. <a href="#casa">Ir a la casa</a>.</p></section>
+    <section class="card"><h3>Para recordar las listas</h3><ul class="lista">${mnemos.map(([t, x]) => `<li><b>${esc(t)}.</b> ${esc(x)}</li>`).join("")}</ul></section>
+    <section class="card"><h3>Cómo responder a la comisión</h3>
+      <div class="rdl"><div><b>R</b><p><strong>Respuesta:</strong> una frase directa.</p></div><div><b>D</b><p><strong>Dato:</strong> una cifra, un caso o el capítulo.</p></div><div><b>L</b><p><strong>Límite o lo que sigue:</strong> qué no puedes afirmar y cómo lo probarías.</p></div></div>
+      <p class="hint"><b>Ejemplo.</b> ¿Por qué un objeto y no una notificación? R: Porque la notificación llega a la misma pantalla que tiene tu atención, y el objeto suena fuera de ella, donde empieza la actividad. D: Con el teléfono, el aviso se notó tarde o no se notó en 10 de 21 respuestas. L: Pero el orden de las etapas no permite decir cuál ayuda más; eso lo compararía el protocolo de 21 días.</p>
+      <p>Si una respuesta depende de una decisión tuya, como el sueño o el precio, la pregunta lo dice. Revísala y escríbela con tus palabras.</p></section>
+    <section class="card"><h3>El día del examen</h3><ul class="lista"><li>Antes de entrar: respira lento tres veces, di la frase de Relevo y recorre la casa en un minuto.</li><li>Escucha la pregunta entera. Si no la entendiste, pide que la repitan.</li><li>Responde corto: respuesta, dato y límite. Callar después de responder está bien.</li><li>Si te quedas en blanco, usa una frase puente y vuelve a la puerta de tu casa.</li></ul></section>`;
+}
+
+/* ------------------------------------------------------------------ Eventos */
+function mostrarVista(desdeHash) {
+  const h = (location.hash || "#hoy").slice(1);
+  let v = h, ancla = null;
+  if (h.startsWith("casa-")) { v = "casa"; ancla = h; }
+  else if (h.startsWith("pregunta-")) { v = "preguntas"; ancla = h; }
+  if (!["hoy", "casa", "tarjetas", "preguntas", "plan", "metodo"].includes(v)) v = "hoy";
+  if (v !== "preguntas") simul = null;
+  if (v === "preguntas" && ancla) { filtroQuien = "todas"; soloTuyas = false; }
+  vista = v; pararReloj(); render();
+  if (ancla) { const el = document.getElementById(ancla); if (el) { if (el.tagName === "DETAILS") el.open = true; el.scrollIntoView({ block: "start" }); } }
+  else if (desdeHash) window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", () => mostrarVista(true));
+
+document.addEventListener("click", (ev) => {
+  const el = ev.target.closest("[data-act]"); if (!el) return;
+  const act = el.dataset.act, k = el.dataset.k;
+  if (act === "frase") { verFrase[k] = !verFrase[k]; render(); }
+  else if (act === "paso") { const p = diaDePlan().p; S.pasos[p.f] = Object.assign({}, S.pasos[p.f]); S.pasos[p.f][k] = !S.pasos[p.f][k]; cambio(); render(); }
+  else if (act === "dia") { S.dias[k] = !S.dias[k]; cambio(); render(); }
+  else if (act === "ir-tarjetas") { empezarSesion(); location.hash = "#tarjetas"; if (vista === "tarjetas") render(); }
+  else if (act === "empezar") { empezarSesion(); render(); window.scrollTo(0, 0); }
+  else if (act === "debiles") { empezarSesion(null, true); if (!sesion.cola.length) { sesion = null; } location.hash = "#tarjetas"; render(); window.scrollTo(0, 0); }
+  else if (act === "mazo") { tarjetaTema = k; empezarSesion(k); render(); window.scrollTo(0, 0); }
+  else if (act === "mostrar") { sesion.vista = true; render(); }
+  else if (act === "nota") calificar(k);
+  else if (act === "salir") { sesion = null; render(); }
+  else if (act === "practica") { practica = !practica; render(); }
+  else if (act === "destapar") el.classList.remove("oculto");
+  else if (act === "reloj") iniciarReloj(k, Number(el.dataset.s));
+  else if (act === "ver-resp") { const d = document.querySelector('[data-mostrar="' + k + '"]'); if (d) d.hidden = false; pararReloj(); }
+  else if (act === "calif") { const id = el.dataset.id, st = Object.assign({ n: 0 }, S.preg[id]); st.n += 1; st.nota = k; st.f = hoy(); S.preg[id] = st; cambio(); render(); const d = document.getElementById("pregunta-" + id); if (d) d.open = true; const m = document.querySelector('[data-mostrar="q-' + id + '"]'); if (m) m.hidden = false; }
+  else if (act === "filtro") { filtroQuien = k; render(); }
+  else if (act === "tuyas") { soloTuyas = !soloTuyas; render(); }
+  else if (act === "simulacro") {
+    const n = Number(k), peso = (q) => { const st = S.preg[q.id]; if (!st || !st.n) return 0; return { trabe: 1, medias: 2, bien: 3 }[st.nota] || 2; };
+    const orden = PREGUNTAS.map((q) => ({ q, w: peso(q) + Math.random() })).sort((a, b) => a.w - b.w).slice(0, n).map((x) => x.q.id);
+    simul = { ids: orden, i: 0 }; location.hash = "#preguntas"; render(); window.scrollTo(0, 0);
+  }
+  else if (act === "sim-sig") { simul.i += 1; pararReloj(); render(); window.scrollTo(0, 0); }
+  else if (act === "sim-fin") { simul = null; pararReloj(); render(); }
+});
+document.addEventListener("keydown", (ev) => {
+  if ((ev.key === "Enter" || ev.key === " ") && ev.target.matches('[data-act="destapar"], p[data-act="frase"]')) { ev.preventDefault(); ev.target.click(); }
+});
+let tLugar = null;
+document.addEventListener("input", (ev) => {
+  const el = ev.target; if (el.dataset.act !== "lugar") return;
+  S.lugares[el.dataset.k] = el.value.slice(0, 40);
+  clearTimeout(tLugar); tLugar = setTimeout(() => { cambio(); const c = document.querySelector(".camino"); if (c) c.innerHTML = ESTACIONES.map((e) => `<span>${e.n}. ${esc(nombreLugar(e))}</span>`).join(""); }, 500);
+});
+
+leerLocal();
+mostrarVista(false);
+conectar();
+</script>

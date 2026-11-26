@@ -88,6 +88,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 51. [Guion de la presentación del examen](49_guion-presentacion-examen-2026-12.md): lo que el autor dice en cada lámina, de la mano con lo que se ve y con palabras simples, unos 13 min 59 s a su ritmo rápido, en un tono hablado y directo y con cada término definido antes de usarlo; frases para acortar, las láminas de respaldo y 26 respuestas preparadas. Tiene versiones en [Word](49_guion-presentacion-examen-2026-12.docx) y [PDF](49_guion-presentacion-examen-2026-12.pdf).
 52. [Ficha de estudio para el examen](50_ficha-de-estudio-examen-2026-12.md): lo que el autor debe saber de memoria, tal como está en la memoria: los términos, el problema, la pregunta, la hipótesis con sus supuestos, los objetivos, los ocho criterios, la prueba con sus cifras y lo que respondió el proyecto.
 53. [Comisión del examen](51_comision-del-examen-2026-12.md): el perfil profesional público de Aarón Montoya-Moraga y Sofía Suazo, con sus fuentes y su nivel de confianza, su feedback del Seminario y dónde se responde hoy, quince preguntas probables y los vacíos que conviene cerrar antes del examen.
+54. [Plan de estudio para el examen](52_plan-de-estudio-examen-2026-12.md): cómo aprender todo Relevo día a día hasta el 14 de diciembre, con la historia en siete lugares de la casa, la fórmula para responder a la comisión y el calendario. Su herramienta diaria es [Repaso Relevo](52_repaso-relevo.html): 74 tarjetas con repaso espaciado, 36 preguntas con respuesta y simulacros, con el avance guardado en la cuenta del autor.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -117,6 +118,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Plan de estudio y Repaso Relevo
+
+- **Qué cambió:** se sumó el documento 52, el plan de estudio para el examen, con su herramienta diaria, Repaso Relevo.
+- **Cómo estaba antes:** el índice terminaba en el documento de la comisión.
+- **Por qué:** el autor pidió un plan para aprender todo Relevo y responder a la comisión, estudiando a diario.
 
 ### 2026-11-25 — Ficha de estudio y guion de la lámina 24
 
