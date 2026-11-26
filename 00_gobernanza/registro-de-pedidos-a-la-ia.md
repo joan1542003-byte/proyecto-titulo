@@ -420,6 +420,8 @@
 | 25 nov. | Encargo | Pidió un plan para aprenderse todo Relevo y saber responder a las posibles preguntas de la comisión. Lo estudiará a diario y le cuesta un poco aprenderse las cosas, así que pidió una forma de aprenderlas fácilmente. | El [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) y su herramienta diaria, [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html), publicada en claude.ai solo para el autor. El método usa las ideas de Relevo: un primer paso pequeño, la historia en siete lugares de la casa, recordar antes de mirar, repaso espaciado y nada de rachas. Trae 74 tarjetas, 36 preguntas con respuesta en tres pasos (respuesta, dato y límite), frases puente, simulacros y un calendario del 26 de noviembre al examen. Cuatro respuestas quedan para que el autor las decida. | — |
 | 25 nov. | Encargo | Pidió eliminar ahora la página publicada de Repaso Relevo. | No se pudo desde la sesión: borrarla necesita la confirmación del autor. Queda indicado cómo hacerlo desde claude.ai. El plan ya no enlaza la página publicada; la herramienta sigue en el repositorio y guarda el avance en el navegador. | — |
 | 25 nov. | Corrección | Prohibió hacer artefactos y todo lo que se guarde en la nube o se comparta con otras cuentas de Claude: todo debe estar solo en su computador o en el repositorio. | La página publicada ya no existe. Repaso Relevo quedó como página local: guarda solo en el computador, no carga nada de internet y hay una copia en Documentos. La regla quedó en `CLAUDE.md`. | Regla permanente en `CLAUDE.md` |
+| 26 nov. | Consulta | Preguntó si falta algo en la memoria o si solo queda su revisión manual para la entrega. | No falta contenido: la memoria compuesta no tiene marcas pendientes, sus 43 figuras y tablas llevan nota, están los anexos A a I y los capítulos suman unas 15 300 palabras, en un PDF de 13,6 MB. Quedan la lectura del autor, la página de Kirsh (p. 38), el nombre del archivo y la entrega del 1 de diciembre. Como opción, la planimetría del objeto en el Anexo H. | — |
+| 26 nov. | Encargo | Pidió hacer “lo de los 3D”, simple y fácil: la planimetría de Relevo Home y Go. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) suma «H.8 El objeto: planos, corte y piezas»: los planos acotados de Home y Go en planta y alzado (Figura H12), el corte de Go (Figura H13), las piezas de Home (Figura H14) y la Tabla H7, con lo que hace cada pieza, su variante y los gramos de PLA. Las medidas salen del modelo 3D y coinciden con la memoria: 52 × 13,4 mm y 44 × 54,5 × 11,4 mm. Los anexos en Word y PDF se regeneraron, con 138 páginas. La memoria no cambió. | — |
 
 ## Lo que muestra el registro
 
@@ -430,6 +432,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Lo que falta y los planos del objeto
+
+- **Qué cambió:** se registraron la consulta sobre lo que falta en la memoria y el pedido de los planos del objeto.
+- **Cómo estaba antes:** el último registro era la regla de no usar la nube de Claude.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-25 — Nada en la nube
 

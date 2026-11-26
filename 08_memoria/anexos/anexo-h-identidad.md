@@ -1,6 +1,6 @@
 # Anexo H. Identidad visual y sistema de marca
 
-La identidad de Relevo quedó definida el 11 de octubre de 2026, después de más de veinte propuestas. Este anexo muestra cómo se construye cada pieza y en qué se funda —el logo, con las variantes que se probaron el 23 de noviembre, la tipografía, los íconos y la paleta cromática—, qué se mantiene de la marca del 16 de septiembre y qué dejó cada propuesta anterior.
+La identidad de Relevo quedó definida el 11 de octubre de 2026, después de más de veinte propuestas. Este anexo muestra cómo se construye cada pieza y en qué se funda —el logo, con las variantes que se probaron el 23 de noviembre, la tipografía, los íconos y la paleta cromática—, qué se mantiene de la marca del 16 de septiembre y qué dejó cada propuesta anterior. Al final muestra el objeto: sus planos, su corte y sus piezas.
 
 ## H.1 Logo
 
@@ -350,6 +350,48 @@ Tres referentes visuales dejaron algo en la identidad, y también algo que se de
 
 *Nota.* Elaboración propia.
 
+## H.8 El objeto: planos, corte y piezas
+
+Relevo, el objeto propio, es una carcasa que lleva adentro la placa y la pila del Tag. Tiene dos variantes con las mismas piezas interiores: Relevo Home, para dejarlo junto al primer paso, y Relevo Go, más portátil, con un agujero para la argolla (capítulo 11). Los planos, el corte y las piezas salen del modelo 3D paramétrico del proyecto. Las medidas de la placa del Tag son supuestas, porque no se midieron. Si cambian, el modelo recalcula todas las piezas, y con ellas estas medidas.
+
+**Figura H12**
+
+*Planos de Relevo Home y Relevo Go*
+
+![Planta y alzado de Relevo Home y Relevo Go, con sus medidas](imagenes/planos-relevo-home-y-go.png)
+
+*Nota.* Elaboración propia a partir del modelo 3D. Medidas exteriores en milímetros. En la planta, la línea fina marca la junta entre la base y la cúpula, y la línea de trazos, el logo.
+
+**Figura H13**
+
+*Corte de Relevo Go*
+
+![Corte de Relevo Go por el eje de la punta](imagenes/corte-relevo-go.png)
+
+*Nota.* Elaboración propia a partir del modelo 3D, cortado por el eje de la punta. De arriba abajo: la cúpula con el logo, el pulsador, la placa del Tag (verde) con su pila (gris), el chasis y la tapa roscada. A la derecha, el agujero de la argolla.
+
+**Figura H14**
+
+*Piezas de Relevo*
+
+![Piezas de Relevo Home, separadas](imagenes/piezas-relevo-home.png)
+
+*Nota.* Elaboración propia a partir del modelo 3D de Relevo Home. De arriba abajo: la cúpula con el logo, el pulsador, la base, el chasis, la placa y la pila del Tag, y la tapa. El pulsador, el chasis y la tapa son los mismos en Relevo Go.
+
+**Tabla H7**
+
+*Piezas, material y fabricación*
+
+| Pieza | Variante | Qué hace | PLA estimado |
+| --- | --- | --- | --- |
+| Cúpula | Home y Go | Toda la cara es el botón para silenciar. Lleva el logo, incrustado en cuatro colores o en relieve en uno. | 9,0 g en Home y 4,4 g en Go |
+| Pulsador | Las dos | Estrella de tres rayos pegada bajo la cúpula. Su émbolo aprieta el botón del Tag. | 0,2 g |
+| Base | Home y Go | Da la forma exterior. En Home, un rebaje recibe una goma antideslizante de 1 mm; en Go, la punta lleva el agujero de la argolla. | 7,8 g en Home y 5,1 g en Go |
+| Chasis | Las dos | Sujeta la placa del Tag. Es la única pieza que depende de la placa. | 0,6 g |
+| Tapa | Las dos | Se enrosca desde abajo, se abre con una moneda y sostiene la pila CR2032. | 2,6 g |
+
+*Nota.* Elaboración propia a partir del modelo 3D. Se imprime en 3D en PLA mate, con boquilla de 0,4 mm, capas de 0,12 mm, tres paredes, relleno de 15 % y sin soportes. Pesa unos 20 g de PLA en Home y 13 g en Go, calculados como si cada pieza fuera maciza. Adentro van la placa del Tag y su pila. No se imprimió para esta entrega (capítulo 11).
+
 ## Referencias
 
 Apple. (s. f.). *SF Symbols*. Apple Developer. Recuperado el 10 de noviembre de 2026, de https://developer.apple.com/sf-symbols/
@@ -407,6 +449,12 @@ Wilms, L. y Oberfeld, D. (2018). Color and emotion: Effects of hue, saturation, 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web content accessibility guidelines (WCAG) 2.2*. https://www.w3.org/TR/2024/REC-WCAG22-20241212/
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Planos, corte y piezas del objeto
+
+- **Qué cambió:** se sumó la sección H.8, con los planos acotados de Relevo Home y Relevo Go (Figura H12), un corte de Go (Figura H13), sus piezas (Figura H14) y una tabla de piezas, material y fabricación (Tabla H7). La introducción del anexo lo anuncia.
+- **Cómo estaba antes:** el objeto propio solo se describía con palabras y medidas en el capítulo 11, y una figura a escala.
+- **Por qué:** la pauta de los profesores marcó escaso el registro visual y, para un objeto, pide planos acotados, vistas, cortes y la especificación de materiales y fabricación. El autor pidió hacerlo simple.
 
 ### 2026-11-25 — Referencias verificadas
 

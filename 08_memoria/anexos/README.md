@@ -1,14 +1,14 @@
 # Anexos de la memoria
 
-**Fecha:** 24 de noviembre de 2026
+**Fecha:** 26 de noviembre de 2026
 **Documento principal:** [borrador v7 de la memoria](../borrador-memoria-v7-2026-11-11.md), sección «Anexos»
-**Versión:** los Markdown copian el texto del PDF de anexos que el autor entregó para el Pase (127 páginas), con sus errores; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). Desde el 24 de noviembre suman las pantallas de la versión 4.7.2 (Anexo F), las variantes del logo (Anexo H) y la pregunta de investigación de la memoria v8 (Anexo I).
+**Versión:** los Markdown copian el texto del PDF de anexos que el autor entregó para el Pase (127 páginas), con sus errores; los errores y las mejoras están en la [tarea 15 de Por hacer](../../00_gobernanza/por-hacer.md#15-errores-y-mejoras-de-la-memoria-y-los-anexos-del-pase). Desde el 24 de noviembre suman las pantallas de la versión 4.7.2 (Anexo F), las variantes del logo (Anexo H) y la pregunta de investigación de la memoria v8 (Anexo I); desde el 26, los planos, el corte y las piezas del objeto (Anexo H).
 
 Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de los documentos del proyecto: decisiones y logros primero, los límites una sola vez. Son un documento formal, sin diseño propio, con el formato de la [pauta de tesis de la Biblioteca UDP](../../01_contexto_y_fuentes/pauta-biblioteca-tesis.md):
 
 - **[`anexos-relevo.docx`](anexos-relevo.docx):** el Word. Carta, márgenes de 3,5 cm a la izquierda y 2,5 cm en los demás, Arial 12, interlineado 1,5, texto negro y el número de página centrado abajo. La portada sigue la pauta de la Biblioteca UDP, con el logo de la Universidad arriba y los datos en tres grupos: el título, en negrita, con su subtítulo y «Anexos»; el autor en mayúsculas, el título al que se opta y los profesores guía con la modalidad, y, al pie, la facultad y la escuela en mayúsculas, con la ciudad y el año en Arial 11. Después del índice vienen el índice de tablas y el de figuras, que la pauta pide. Usa los estilos de título, índice y tabla de Word, así que al pegarlo en otro documento toma los de ese documento. Al abrirlo, Word pregunta si actualiza los campos: con un sí, el índice queda con las páginas que calcula Word.
 - **[`anexos-relevo.pdf`](anexos-relevo.pdf):** el mismo Word, exportado a PDF, con las páginas en el índice.
-- **Estado:** el Word y el PDF se regeneraron el 25 de noviembre de 2026 con los Markdown de esta carpeta, en 135 páginas: el texto del Pase, los primeros conceptos de Relevo (Anexo F), las pantallas de la 4.7.2, los íconos de Lucide de la 4.8.2 y las variantes del logo (Anexo H) y la pregunta de investigación vigente y la aceptación del consentimiento de cada persona, en la Tabla I4 (Anexo I).
+- **Estado:** el Word y el PDF se regeneraron el 26 de noviembre de 2026 con los Markdown de esta carpeta, en 138 páginas: el texto del Pase, los primeros conceptos de Relevo (Anexo F), las pantallas de la 4.7.2, los íconos de Lucide de la 4.8.2, las variantes del logo y los planos del objeto (Anexo H) y la pregunta de investigación vigente y la aceptación del consentimiento de cada persona, en la Tabla I4 (Anexo I).
 - **Un Markdown por anexo:** para leer en GitHub. Es también la fuente de los otros dos.
 
 ## Los nueve anexos
@@ -22,7 +22,7 @@ Los nueve anexos que nombra la memoria. Cada uno recopila lo más relevante de l
 | [E. Uso de inteligencia artificial](anexo-e-ia.md) | Las tres herramientas, las cinco tareas en que ayudaron y el trabajo propio. |
 | [F. Estados del ciclo y *wireframes*](anexo-f-estados.md) | Los 35 estados del ciclo de agosto, con sus *wireframes*; los bocetos del primer uso con los *wireframes* de las 39 pantallas de la app, y 18 capturas de la versión 4.7.2, la más reciente. |
 | [G. Prototipo Android y registro de versiones](anexo-g-android.md) | Cómo funciona la app que se usó en la prueba, qué datos guarda y cómo los cuida, cómo cambió entre septiembre y noviembre de 2026 y con qué palabras reconoce cada actividad. |
-| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, con sus bocetos, su construcción y sus variantes del 23 de noviembre, las dos tipografías, los 118 íconos, comparados con Lucide, y la paleta cromática, cada uno con su fundamento, y las propuestas anteriores. |
+| [H. Identidad visual y sistema de marca](anexo-h-identidad.md) | El logo, con sus bocetos, su construcción y sus variantes del 23 de noviembre, las dos tipografías, los 118 íconos, comparados con Lucide, y la paleta cromática, cada uno con su fundamento, las propuestas anteriores y, al final, los planos, el corte y las piezas del objeto, con su material. |
 | [I. Protocolo de la prueba, consentimiento e instrumentos](anexo-i-prueba.md) | La prueba aplicada, el protocolo de 21 días, la semana para comparar, el consentimiento, las preguntas de la app, la ficha de la sesión inicial y el instrumento de cierre. |
 
 ## Cómo se arman
@@ -56,6 +56,12 @@ Queda en el repositorio como respaldo del proceso:
 - el registro de decisiones completo, el registro de pedidos a la IA y las exploraciones visuales descartadas, salvo su resumen en los anexos E y H.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Planos, corte y piezas del objeto
+
+- **Qué cambió:** el Anexo H suma «H.8 El objeto: planos, corte y piezas», con los planos acotados de Relevo Home y Go (Figura H12), el corte de Go (Figura H13), las piezas de Home (Figura H14) y la Tabla H7, de piezas, material y fabricación. Las imágenes nuevas están en `imagenes/`: `planos-relevo-home-y-go.png`, `corte-relevo-go.png` y `piezas-relevo-home.png`. La de las piezas lleva márgenes blancos a los lados para que la figura y su nota queden en la misma página. El Word y el PDF se regeneraron, con 138 páginas.
+- **Cómo estaba antes:** los anexos no tenían planos del objeto; las vistas y las piezas estaban solo en la memoria, sin medidas.
+- **Por qué:** el autor pidió la planimetría de Relevo Home y Go, que faltaba en el registro visual (tarea 18 de Por hacer).
 
 ### 2026-11-25 — Aceptación del consentimiento
 

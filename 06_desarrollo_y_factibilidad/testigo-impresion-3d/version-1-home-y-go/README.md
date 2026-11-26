@@ -183,6 +183,7 @@ Para imprimir en una Bambu Lab X1 Carbon:
 | [`imprimir/`](imprimir/) | Piezas en STL, orientadas para imprimir: `nucleo/` (las mismas en las dos variantes), `home/` y `go/`. |
 | [`montaje/`](montaje/) | Cada variante armada, en 3MF, con la placa y la pila como volúmenes de referencia, para mirarla en cualquier visor 3D. |
 | [`vistas.py`](vistas.py) y [`vistas/`](vistas/) | Las vistas para la memoria, hechas con three.js en Chrome, como en la versión 0, pero sin texto, sobre blanco y recortadas: `relevo-home-vista-principal.png`, `relevo-go-vista-principal.png`, `relevo-home-explosion-nucleo-comun.png`, `relevo-go-corte.png` y `relevo-comparacion-tag-home-go.png`. |
+| [`planos.py`](planos.py) | Los planos acotados de Home y Go, en planta y alzado, con sus medidas exteriores en milímetros: `vistas/relevo-planos-home-y-go.svg` y `.png`. Son la Figura H12 de los anexos. Usa los perfiles de `modelo.py` y las medidas de `medidas.json`, así que cambian solos si cambian las medidas. |
 
 El logotipo grabado bajo la tapa se toma de [`../relevo-logotipo.svg`](../relevo-logotipo.svg), copia del logotipo oficial.
 
@@ -202,6 +203,12 @@ venv/bin/python vistas.py
 
 Las vistas necesitan Google Chrome y conexión a internet, para cargar three.js.
 
+Los planos no necesitan el entorno virtual ni internet, solo Python 3 y Google Chrome, para la imagen:
+
+```bash
+python3 planos.py
+```
+
 ## Fuentes
 
 - AIO.lv. (s. f.). *Finder 4smarts SkyTag Duos set of 4, white* [Ficha de producto]. Recuperado el 10 de noviembre de 2026, de https://aio.lv/en/product--4smarts-541717--11665529.md
@@ -210,6 +217,12 @@ Las vistas necesitan Google Chrome y conexión a internet, para cargar three.js.
 - TodoToner. (s. f.). Citado en el [presupuesto del 27 de octubre](../../presupuesto-2026-10-27.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Planos acotados
+
+- **Qué cambió:** se sumó `planos.py`, que dibuja la planta y el alzado de Home y Go con sus medidas exteriores (`vistas/relevo-planos-home-y-go.svg` y `.png`). Las alturas se redondean a una décima, como en la memoria: 13,4 mm en Home y 11,4 mm en Go. Los planos, el corte de Go y las piezas de Home pasaron al Anexo H de la memoria (H.8).
+- **Cómo estaba antes:** las vistas no tenían medidas, y las medidas estaban solo en esta guía y en `medidas.json`.
+- **Por qué:** el autor pidió una planimetría acotada de Relevo Home y Go para el registro visual, simple y fácil.
 
 ### 2026-11-10, noche — Vistas sin texto, logo derecho y Go como llavero
 
