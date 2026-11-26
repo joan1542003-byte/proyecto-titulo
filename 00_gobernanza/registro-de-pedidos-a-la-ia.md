@@ -422,6 +422,8 @@
 | 25 nov. | Corrección | Prohibió hacer artefactos y todo lo que se guarde en la nube o se comparta con otras cuentas de Claude: todo debe estar solo en su computador o en el repositorio. | La página publicada ya no existe. Repaso Relevo quedó como página local: guarda solo en el computador, no carga nada de internet y hay una copia en Documentos. La regla quedó en `CLAUDE.md`. | Regla permanente en `CLAUDE.md` |
 | 26 nov. | Consulta | Preguntó si falta algo en la memoria o si solo queda su revisión manual para la entrega. | No falta contenido: la memoria compuesta no tiene marcas pendientes, sus 43 figuras y tablas llevan nota, están los anexos A a I y los capítulos suman unas 15 300 palabras, en un PDF de 13,6 MB. Quedan la lectura del autor, la página de Kirsh (p. 38), el nombre del archivo y la entrega del 1 de diciembre. Como opción, la planimetría del objeto en el Anexo H. | — |
 | 26 nov. | Encargo | Pidió hacer “lo de los 3D”, simple y fácil: la planimetría de Relevo Home y Go. | El [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) suma “H.8 El objeto: planos, corte y piezas”: los planos acotados de Home y Go en planta y alzado (Figura H12), el corte de Go (Figura H13), las piezas de Home (Figura H14) y la Tabla H7, con lo que hace cada pieza, su variante y los gramos de PLA. Las medidas salen del modelo 3D y coinciden con la memoria: 52 × 13,4 mm y 44 × 54,5 × 11,4 mm. Los anexos en Word y PDF se regeneraron, con 138 páginas. La memoria no cambió. | — |
+| 26 nov. | Encargo | Pidió adjuntar en el chat la última versión de los anexos, el IDML, el PDF de la memoria y lo que usará para estudiar. | Se adjuntaron la memoria en PDF y en IDML, los anexos en PDF y en Word, Repaso Relevo y el plan de estudio, desde el paquete de Documentos, que coincide con el repositorio. | — |
+| 26 nov. | Encargo | Pidió mejorar y perfeccionar cómo estudiar Relevo, y subirlo a GitHub Pages si se podía, con su avance guardado. | [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html) arma una sesión guiada para cada día según el tiempo que haya, con cifras de cuatro opciones, pistas de tres claves, voz, grabación, lo que más cuesta, copias y códigos del avance y recordatorios. Suma el objeto, las tres personas y cómo decirlo: 100 tarjetas, 39 cifras y 39 preguntas. Quedó en GitHub Pages (https://joan1542003-byte.github.io/proyecto-titulo/), instalable y usable sin internet. El avance se guarda en el navegador de cada dispositivo, sin cuentas ni servidor. El [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) lo explica. | — |
 
 ## Lo que muestra el registro
 
@@ -432,6 +434,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Archivos adjuntos y Repaso Relevo en GitHub Pages
+
+- **Qué cambió:** se registraron el pedido de adjuntar los archivos en el chat y el de mejorar Repaso Relevo y publicarlo en GitHub Pages.
+- **Cómo estaba antes:** el último registro era el pedido de los planos del objeto.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-26 — Lo que falta y los planos del objeto
 
