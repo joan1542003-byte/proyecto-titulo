@@ -99,7 +99,7 @@ class Idml {
       conSiguiente: 'KeepWithNext', primeras: 'KeepFirstLines', ultimas: 'KeepLastLines', juntas: 'KeepLinesTogether', todas: 'KeepAllLinesTogether',
       empieza: 'StartParagraph', cifras: 'OTFFigureStyle', subrayado: 'Underline', subColor: 'UnderlineColor', subGrosor: 'UnderlineWeight', subDesplaz: 'UnderlineOffset',
       reglaArriba: 'RuleAbove', reglaArribaGrosor: 'RuleAboveLineWeight', reglaArribaColor: 'RuleAboveColor', reglaArribaDesplaz: 'RuleAboveOffset', reglaArribaAncho: 'RuleAboveWidth',
-      reglaArribaFin: 'RuleAboveRightIndent', guiones: 'Hyphenation', idioma: 'AppliedLanguage', ligaduras: 'Ligatures',
+      reglaArribaFin: 'RuleAboveRightIndent', guiones: 'Hyphenation', idioma: 'AppliedLanguage', ligaduras: 'Ligatures', sinCorte: 'NoBreak',
     };
     for (const [k, v] of Object.entries(p)) {
       if (k === 'interlineado') props.push(`<Leading type="unit">${ept(v)}</Leading>`);
@@ -153,7 +153,7 @@ ${cs}
   runs(partes) {
     return partes.map((r) => {
       const cs = r.estilo ? `CharacterStyle/${x(r.estilo)}` : 'CharacterStyle/$ID/[No character style]';
-      const contenido = r.folio ? '<Content><?ACE 18?></Content>' : `<Content>${x(r.texto)}</Content>`;
+      const contenido = r.folio ? '<Content><?ACE 18?></Content>' : `<Content>${x(r.texto.replace(/\u200B/g, ''))}</Content>`;   // U+200B: corte posible en el HTML; Affinity corta solo tras la barra
       return `<CharacterStyleRange AppliedCharacterStyle="${cs}">${contenido}`;
     });
   }
@@ -182,7 +182,9 @@ ${cs}
       const fin = i < parrafos.length - 1 ? '<Br/>' : '';
       if (p.tabla) return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"><CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">${this.tablaXml(p.tabla)}${fin}</CharacterStyleRange></ParagraphStyleRange>`;
       const rs = this.runs(p.partes.length ? p.partes : [{ texto: '' }]);
-      const propio = p.despues != null ? ` SpaceAfter="${ept(p.despues)}"` : '';   // aire propio de este párrafo, sobre el de su estilo
+      let propio = p.despues != null ? ` SpaceAfter="${ept(p.despues)}"` : '';   // aire propio de este párrafo, sobre el de su estilo
+      // Ajustes propios de este párrafo (atributos del IDML), como KeepWithNext="0" o Justification="CenterAlign".
+      if (p.local) propio += Object.entries(p.local).map(([k, v]) => ` ${k}="${x(String(v))}"`).join('');
       return `<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/${x(p.estilo)}"${propio}>${rs.map((s, k) => s + (k === rs.length - 1 ? fin : '') + '</CharacterStyleRange>').join('')}</ParagraphStyleRange>`;
     }).join('\n');
     return XMLHEAD + `<idPkg:Story ${NS}><Story Self="${id}" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">` +

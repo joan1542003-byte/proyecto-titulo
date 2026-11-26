@@ -936,9 +936,7 @@ Lo que mostró la prueba se convierte en cambios. Conviene separar los problemas
 | El botón del Tag no se encontraba ni se sentía. | No frecuente (1 de 3 personas) | La cara de Relevo como botón. | Diseñado en Relevo |
 | Con el teléfono, el aviso se notó tarde o no se notó. | Frecuente (10 de 21 respuestas con el teléfono) | Mantener el objeto como señal principal. | Propuesta |
 
-*Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se cuenta sobre la base que indica cada fila, de preferencia las 21 respuestas a la señal de cada etapa: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026; todos los cambios están en el Anexo D.
-
-Después de la prueba, el rediseño de la aplicación incorporó nueve cambios que surgieron de ella (Anexos D y G). Se hizo entre el 5 y el 9 de noviembre.
+*Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se cuenta sobre la base que indica cada fila, de preferencia las 21 respuestas a la señal de cada etapa: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026. El rediseño de la aplicación, entre el 5 y el 9 de noviembre, incorporó nueve cambios que surgieron de la prueba; todos están en los Anexos D y G.
 
 # 14. Conclusiones
 
@@ -1334,6 +1332,12 @@ Este glosario explica el sentido que tiene cada término en esta memoria. Cuando
 - **I** Prueba en los hogares: el protocolo, el consentimiento, los instrumentos y los resultados por persona.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Revisión página por página de la memoria compuesta
+
+- **Qué cambió:** se revisaron las 75 páginas de la memoria compuesta. En el texto, la frase sobre los nueve cambios del rediseño pasó de un párrafo propio, después de la Tabla 4, a la nota de esa tabla, con la misma información. En la composición: el título “Agradecimientos” ya no toca el borde de su panel; las cifras no se separan de su “%”, ni “p.” de su página, ni “s. f.”, ni las iniciales de su apellido; y la Tabla 4 se parte en dos mitades parejas, cada una a página completa.
+- **Cómo estaba antes:** el párrafo de los nueve cambios quedaba solo, con dos filas de la Tabla 4, en una página casi vacía. “Agradecimientos” casi tocaba el borde derecho del panel. “51,4” quedaba al final de una línea y “%” al comienzo de la siguiente, y lo mismo pasaba con “p. S138”, “s. f.” y “E. B.-N. Sanders”.
+- **Por qué:** el autor pidió dejar la memoria totalmente lista, con un nivel de detalle enorme, y señaló el título de Agradecimientos.
 
 ### 2026-11-25 — Referencias verificadas
 

@@ -1014,12 +1014,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [x] **Cómo se validará el objeto propio** (prioridad 4). “Alcances y proyecciones” dice qué probar de Relevo: la forma, el sonido y la ubicación. *Hecho el 25 de noviembre.*
 - [x] **El consentimiento, en el anexo** (nota del autor). La Tabla I4 marca con ✓ la aceptación de cada persona, y el cuerpo solo remite al Anexo I. *Hecho el 25 de noviembre.*
 - [x] **La extensión** (prioridad 1 y nota del autor). No cuentan las referencias, el glosario, los anexos, las figuras ni las tablas. Con ese criterio, los capítulos 1 a 14 suman unas 15 300 palabras. El resumen tiene 297 palabras y el abstract, 296, bajo las 300 de la pauta.
-- [x] **Las fuentes** (prioridad de “Pulido” y nota del autor): contrastar las referencias con sus citas por autor, año, título y DOI. *Hecho el 25 de noviembre: todas las citas cruzadas, 42 obras contrastadas con su fuente y nueve correcciones aplicadas ([verificación](../08_memoria/verificacion-de-referencias-2026-11-25.md)). McDaniel y Einstein (p. S138) se comprobó con la biblioteca de la UDP. Quedan Guynn et al. (p. 296) y Middlebrooks y Green (p. 138), que solo se leen descargando su PDF, y Kirsh (p. 38), porque ScienceDirect bloquea el navegador de Claude.*
+- [x] **Las fuentes** (prioridad de “Pulido” y nota del autor): contrastar las referencias con sus citas por autor, año, título y DOI. *Hecho el 25 de noviembre: todas las citas cruzadas, 42 obras contrastadas con su fuente y nueve correcciones aplicadas ([verificación](../08_memoria/verificacion-de-referencias-2026-11-25.md)). Con la biblioteca de la UDP se comprobaron McDaniel y Einstein (p. S138), Guynn et al. (p. 296) y Middlebrooks y Green (p. 138). Queda Kirsh (p. 38), porque ScienceDirect bloquea el navegador de Claude; su contenido coincide con la copia del autor.*
 - [ ] **El dato puro en el anexo** (nota del autor). El Anexo I tiene los resultados por persona (Tabla I7). Para sumar cada respuesta en una fila hace falta la exportación final de la prueba, del panel o de Supabase, que solo tiene el autor.
 - [ ] **El registro visual** (sección 3). Ya hay bocetos, flujo, arquitectura, capturas, modelos 3D, el proceso de marzo a noviembre (Figura 19) y los cambios de cada iteración (Tabla 4). Si el autor quiere, falta una planimetría acotada de Relevo Home y Go en el Anexo H.
 - [x] **Coherencia** (documento de la comisión, vacíos 3, 4 y 8). El plan del objeto propio ya no promete un sonido que la placa del Tag no permite. Relevo Go se describe igual en los capítulos 11 y 12, y los íconos ya no se llaman propios. El capítulo 10 dice qué hizo el autor, como el Anexo E. *Hecho el 25 de noviembre.*
 - [ ] **La hipótesis sugerida** (sección 4) es opcional. La pauta dice que la actual está bien planteada. Si se adopta “Si se diseña Relevo, un sistema phygital…”, cambian también las láminas 14 y 24.
-- [ ] **Componer, revisar página por página** y llevar los cambios al Affinity del autor.
+- [x] **Componer, revisar página por página** y llevar los cambios al Affinity del autor. *Hecho el 25 de noviembre: la v8 compuesta, de 75 páginas, se revisó página por página. El [IDML](../08_memoria/memoria-1920x1080/README.md) tiene todo el texto editable, también el de las tablas, las figuras y los paneles, y exportado desde Affinity da el mismo PDF, con las 25 145 palabras en su lugar. El paquete para abrirlo, con sus vínculos y tipografías, quedó en la carpeta “Relevo memoria final” de Documentos del autor. Si el autor ajustó algo a mano en su propio Affinity, hay que repetirlo sobre este IDML.*
 - [ ] **Entregar** el PDF de menos de 15 MB, con el nombre y la mención (tarea 8).
 
 ### B. Presentación del examen
@@ -1051,6 +1051,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — La memoria, editable en IDML
+
+- **Qué cambió:** la tarea 18, A, da por hecha la composición, la revisión página por página y el IDML editable, verificado contra el PDF.
+- **Cómo estaba antes:** la tarea seguía abierta, con los cambios por llevar al Affinity del autor.
+- **Por qué:** el autor pidió dejar la memoria lista hoy y en IDML para editarla, con los textos de las figuras editables sin romper su diseño.
 
 ### 2026-11-25 — Lo pedido en el Pase
 

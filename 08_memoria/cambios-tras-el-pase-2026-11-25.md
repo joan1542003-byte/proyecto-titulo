@@ -16,7 +16,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 **Qué no cambió.** La hipótesis sigue igual: la pauta dice que está bien planteada, y su versión sugerida es opcional. Si se adopta, cambian también las láminas 14 y 24 de la presentación. Lo demás que la pauta pide mantener sigue igual: la formulación, la prueba, la honestidad metodológica y el rigor documental.
 
-**Composición.** La memoria compuesta tiene 75 páginas. La Tabla 3 pasó a página completa, en la página siguiente a su mención, como permite la regla de la diagramación (D-193).
+**Composición.** La memoria compuesta tiene 75 páginas y se revisó página por página. La Tabla 3 va a página completa, en la página siguiente a su mención, como permite la regla de la diagramación (D-193). La Tabla 4 se parte en dos mitades parejas, cada una a página completa, y la frase de los nueve cambios del rediseño va en su nota. El título “Agradecimientos” ya no toca el borde de su panel, y las cifras, las páginas, “s. f.” y las iniciales ya no se separan de lo que acompañan al final de una línea. En Affinity conviene revisar esos mismos cortes, porque Affinity compone sus propias líneas.
 
 ## Cada cambio
 
@@ -220,7 +220,18 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Durante las semanas con el Tag el ciclo completo funcionó con las tres personas. El Tag sonó en todos los relevos que llegaron a su límite, salvo uno que se cumplió fuera de casa y lejos del objeto. Al oír la señal, la persona supo qué quería hacer antes de mirar la pantalla en 19 de 21 respuestas y recordó cómo empezar en las 21. Empezó la actividad en 10 de esas 21 respuestas. Las tres condiciones para dar el ciclo por logrado se cumplieron. Los fallos técnicos del objeto comprado se corrigieron durante la prueba.
 
-### 21. 14. Conclusiones
+### 21. 13. Plan de desarrollo y validación › Iterar con los resultados
+
+**Antes:**
+
+> *Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se cuenta sobre la base que indica cada fila, de preferencia las 21 respuestas a la señal de cada etapa: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026; todos los cambios están en el Anexo D.
+> Después de la prueba, el rediseño de la aplicación incorporó nueve cambios que surgieron de ella (Anexos D y G). Se hizo entre el 5 y el 9 de noviembre.
+
+**Después:**
+
+> *Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se cuenta sobre la base que indica cada fila, de preferencia las 21 respuestas a la señal de cada etapa: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026. El rediseño de la aplicación, entre el 5 y el 9 de noviembre, incorporó nueve cambios que surgieron de la prueba; todos están en los Anexos D y G.
+
+### 22. 14. Conclusiones
 
 **Antes:**
 
@@ -230,7 +241,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El prototipo funciona en uso real. Con las tres personas el Tag sonó cuando correspondía, y al oírlo las personas recordaron siempre cómo empezar y casi siempre qué querían hacer antes de mirar la pantalla. Los fallos que reportaron se corrigieron durante la prueba. Lo que la prueba mostró sobre el uso ya cambió la aplicación. Así se cumplieron los dos primeros objetivos: entender el problema y diseñar el sistema. El cuarto era medir en hogares el recuerdo oportuno y se cumplió con tres personas durante cinco semanas. Con el Tag, la persona recordó a tiempo en 19 de 21 respuestas y empezó la actividad en 10. El tercero era la comparación con el teléfono y se cumplió en parte: con la notificación recordaron igual y cerca de la mitad de las veces la notaron tarde o no la notaron, pero esa comparación no permite decir cuál de los dos ayuda más.
 
-### 22. 14. Conclusiones
+### 23. 14. Conclusiones
 
 **Antes:**
 
@@ -240,7 +251,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El avance se ve en el propio prototipo. Entre septiembre y noviembre la propuesta pasó de un objeto donde dejar el teléfono a un sistema probado por tres personas: un prototipo que cambió con lo que se iba aprendiendo, varias veces a partir de lo que contaron las personas durante la prueba (Anexo G); una identidad completa con logo, paleta cromática, tipografía e íconos; una aplicación rediseñada con lo aprendido, y un objeto propio modelado en dos variantes que responden al usuario.
 
-### 23. 14. Conclusiones › Alcances y proyecciones
+### 24. 14. Conclusiones › Alcances y proyecciones
 
 **Antes:**
 
@@ -251,7 +262,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 > Para validar Relevo, el objeto propio, la etapa siguiente debe probar tres aspectos que el Tag no permitió decidir. El primero es la forma: si la persona lo encuentra, lo silencia y halla su botón sin ayuda. El segundo es el sonido: si se oye bien a través de la carcasa sin molestar a quienes están cerca. Con la placa del Tag el pitido es el mismo, así que un volumen regulable y un tono más suave exigen un hardware propio. El tercero es la ubicación: si sonar junto al primer paso ayuda más que sonar en otro lugar de la casa. Los tres se miden con las mismas preguntas de la aplicación.
 > La comparación con más personas debe evitar dos sesgos de esta prueba. El primero es que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal. El segundo es que pudieran recordar por haber preparado el relevo poco antes y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero. Seis personas pasan por tres semanas en un orden distinto cada una: el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono (Figura 39). Para el segundo se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar. Más adelante, un hardware propio permitiría diseñar también el sonido y el control.
 
-### 24. Referencias
+### 25. Referencias
 
 **Antes:**
 
@@ -262,7 +273,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 > Apple. (s. f.-a). *Family Controls App and Website Usage*. Apple Developer Documentation. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
 > Apple. (s. f.-b). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
-### 25. Referencias
+### 26. Referencias
 
 **Antes:**
 
@@ -272,7 +283,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Apple. (2025b, 16 de diciembre). *Typography*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/typography
 
-### 26. Referencias
+### 27. Referencias
 
 **Antes:**
 
@@ -284,7 +295,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Apple. (2025c, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
 
-### 27. Referencias
+### 28. Referencias
 
 **Antes:**
 
@@ -294,7 +305,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Google. (s. f.). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Pixel Phone Help. Recuperado el 11 de octubre de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
 
-### 28. Referencias
+### 29. Referencias
 
 **Antes:**
 
@@ -305,7 +316,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > (se quita)
 
-### 29. Referencias
+### 30. Referencias
 
 **Antes:**
 
@@ -315,7 +326,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Hays, A. (2026, 27 de marzo). *Material’s communication principles: Intro to UX writing* [Codelab]. Google Codelabs. https://codelabs.developers.google.com/codelabs/material-communication-guidance
 
-### 30. Referencias
+### 31. Referencias
 
 **Antes:**
 

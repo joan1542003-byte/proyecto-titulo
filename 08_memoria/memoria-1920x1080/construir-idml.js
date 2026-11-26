@@ -130,8 +130,23 @@ const baja = (estilo) => { const e = E[estilo]; return ((e.interlineado - 1.22 *
 /** Marcas en línea → tramos { texto, estilo }. */
 function tramos(s) {
   s = s.replace(/(\d) (?=\d{3}(?!\d))/g, '$1\u00A0');          // las cifras no se cortan: «1 577 000» va en una línea
+  // Desde el 25 de noviembre de 2026, tampoco se separan de lo que acompañan (la revisión página por página encontró
+  // «51,4» al final de una línea y «%» al comienzo de la siguiente, «p.» lejos de «S138» y «s.» lejos de «f.»):
+  s = s.replace(/(\d) %/g, '$1\u00A0%');                                 // «51,4 %»
+  s = s.replace(/\b(pp?\.) (?=S?\d)/g, '$1\u00A0');                     // «p. 296», «pp. 7–8», «p. S138»
+  s = s.replace(/\bs\. f\./g, 's.\u00A0f.');                             // «s. f.»
+  s = s.replace(/\b(?:[A-ZÁÉÍÓÚÑ]\.[ -]?){1,3} ?(?=[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+)/g, (m) => m.replace(/ /g, '\u00A0'));   // «E. B.-N. Sanders», «D. Parra»
+  // Una dirección se puede cortar después de cada barra, salvo en «https://». Chrome no corta ahí por sí solo y Affinity sí:
+  // con esta marca (U+200B; <wbr> en el HTML, nada en el IDML) los dos cortan en los mismos lugares, no a mitad de palabra.
+  s = s.replace(/https?:\/\/\S+/g, (u) => u.replace(/(?<!:)(?<!:\/)\/(?=.)/g, '/\u200B'));
   const out = [];
-  const pon = (texto, estilo) => { if (texto) out.push(estilo ? { texto, estilo } : { texto }); };
+  // Van en un tramo «Sin corte»: unas iniciales con guion, como «B.-N.» (la línea no se corta en su guion), y la raya de un
+  // inciso con su palabra, «—quedarse» y «quería—» (25 de noviembre de 2026: una línea empezaba con la raya de cierre).
+  const pon = (texto, estilo) => {
+    if (!texto) return;
+    if (estilo) { out.push({ texto, estilo }); return; }
+    texto.split(/([A-ZÁÉÍÓÚÑ]\.-[A-ZÁÉÍÓÚÑ]\.|(?<=^|\s)—[^\s—]+|[^\s—]+—(?=[\s,.;:)\]]|$))/).forEach((q, k) => { if (q) out.push(k % 2 ? { texto: q, estilo: 'Sin corte' } : { texto: q }); });
+  };
   const cursivas = (t, base) => t.split(/(_[^_]+_|\*[^*]+\*)/).forEach((p) => {
     if (/^_[^_]+_$/.test(p) || /^\*[^*]+\*$/.test(p)) pon(p.slice(1, -1), base ? 'Negrita cursiva' : 'Cursiva');
     else pon(p, base);
@@ -145,7 +160,7 @@ function tramos(s) {
   });
   return out;
 }
-const plano = (s) => tramos(s).map((r) => r.texto).join('');
+const plano = (s) => tramos(s).map((r) => r.texto).join('').replace(/\u200B/g, '');
 const textoDe = (partes) => partes.map((r) => r.texto).join('');
 
 /**
@@ -254,7 +269,7 @@ ${tieneCursiva ? `@font-face{font-family:"Instrument Sans";src:url("${CURSIVA}")
 *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;background-repeat:no-repeat !important;background-size:100% 100% !important}
 html,body{background:transparent}
 body{font-family:"Instrument Sans",sans-serif;color:#141312;font-kerning:normal;-webkit-font-smoothing:antialiased}
-b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.pd{color:#6E6964}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}
+b{font-weight:600}i{font-style:italic}.cf{background:#F4E496;border-radius:1.2mm;-webkit-box-decoration-break:clone;box-decoration-break:clone}.pd{color:#6E6964}.dr{font-size:18pt;font-weight:500;color:#6E6964;letter-spacing:0}.nc{white-space:nowrap}
 svg.ic{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;display:block}
 `);
 // Una clase por estilo de párrafo, con los números del IDML.
@@ -277,6 +292,7 @@ const CSS_PIEZAS = masUno(`.n{padding-right:3%}
 .cab{padding-bottom:1mm;align-items:end}
 .fila{background:#fff;border-radius:5mm;padding-top:2.3mm;padding-bottom:2.5mm;align-items:start}
 .fila.total{box-shadow:inset 0 0 0 .35mm #141312}
+.tb.compacta{gap:.8mm}.tb.compacta>.fila{padding-top:1.1mm;padding-bottom:1.2mm}
 .pri{display:flex;gap:4mm;align-items:flex-start;min-width:0}
 .pri .tx{display:flex;flex-direction:column;gap:.5mm;min-width:0;flex:1}
 .c{min-width:0}
@@ -450,21 +466,48 @@ function pdf(nombre, anchoMm, altoMm, cuerpo, css = '') {
   return salida;
 }
 
-/** Mide piezas { id, ancho (mm), html }: su alto y dónde cae cada texto vivo (mm). */
+// Cómo corta Chrome cada texto vivo de una pieza (25 de noviembre de 2026). Los textos vivos llevan un margen derecho de
+// seguridad (.n, 3 %); en el IDML, el marco mide el ancho real del texto más una holgura mínima (HOLGURA_VIVA), así que
+// Affinity corta donde Chrome. Si una línea quedó a menos de esa holgura de admitir otra palabra, el texto está «en riesgo»:
+// ahí el IDML repite los cortes de Chrome con saltos de línea forzados. Desplazamientos en píxeles; «cortes», en caracteres.
+const HOLGURA_VIVA = (anchoPx) => 0.001 * anchoPx + 0.05;
+const LINEAS_VIVAS = `const espacios=new Map();
+const anchoEsp=(el)=>{const cs=getComputedStyle(el);const k=cs.font+'|'+cs.letterSpacing;if(!espacios.has(k)){const s=document.createElement('span');s.style.cssText='position:absolute;white-space:pre;font:'+cs.font+';letter-spacing:'+cs.letterSpacing;s.textContent=' ';document.body.appendChild(s);espacios.set(k,s.getBoundingClientRect().width);s.remove()}return espacios.get(k)};
+const lineasDe=(n)=>{const r0=n.getBoundingClientRect();const cs=getComputedStyle(n);const pr=parseFloat(cs.paddingRight)||0;const der=r0.right-pr;const holgura=0.001*(der-r0.left)+0.05;
+const cc=parseInt(cs.columnCount)||1,gap=cc>1?(parseFloat(cs.columnGap)||0):0,colW=(der-r0.left-(cc-1)*gap)/cc;const derDe=(x)=>{if(cc<2)return der;const k=Math.min(cc-1,Math.max(0,Math.floor((x-r0.left+1)/(colW+gap))));return r0.left+k*(colW+gap)+colW};
+const toks=[];let base=0;const tw=document.createTreeWalker(n,NodeFilter.SHOW_TEXT);let nd;
+while((nd=tw.nextNode())){const t=nd.textContent;const re=/\\S+/g;let m;while((m=re.exec(t))){const rg=document.createRange();rg.setStart(nd,m.index);rg.setEnd(nd,m.index+m[0].length);const rs=[...rg.getClientRects()].filter(q=>q.width>0);if(rs.length)toks.push({i:base+m.index,len:m[0].length,rs,nd,j:m.index,el:nd.parentElement})}base+=t.length}
+const cortes=[];let riesgo=false,maxR=0,prev=null;
+for(const tk of toks){for(const q of tk.rs)maxR=Math.max(maxR,q.right);
+if(prev){const pq=prev.rs[prev.rs.length-1];if(Math.abs(tk.rs[0].top-pq.top)>pq.height*0.5){cortes.push(tk.i);if(derDe(pq.left)-(pq.right+anchoEsp(tk.el)+tk.rs[0].width)>=-holgura)riesgo=true}}
+if(tk.rs.length>1){riesgo=true;let top=tk.rs[0].top;const h=tk.rs[0].height;for(let c=1;c<tk.len;c++){const rg=document.createRange();rg.setStart(tk.nd,tk.j+c);rg.setEnd(tk.nd,tk.j+c+1);const q=rg.getClientRects()[0];if(q&&Math.abs(q.top-top)>h*0.5){cortes.push(tk.i+c);top=q.top}}}
+prev=tk}
+return {pr,cortes,riesgo,largo:base,maxR:maxR-r0.left,alin:cs.textAlign}};`;
+
+/** Mide piezas { id, ancho (mm), html }: su alto y dónde cae cada texto vivo (mm), y cómo corta sus líneas («L» + número). */
 function medir(piezas) {
   const f = tmp('medir');
   fs.writeFileSync(f, `<!doctype html><meta charset="utf-8"><style>${CSS_BASE}${CSS_E}${CSS_PIEZAS}
 .medida{position:absolute;left:0;top:0;visibility:hidden}</style>
 ${piezas.map((p) => `<div class="medida" data-id="${p.id}" style="width:${p.ancho}mm">${p.html}</div>`).join('\n')}
-<pre id="out"></pre><script>document.fonts.ready.then(()=>{const o={};document.querySelectorAll('.medida').forEach(e=>{const a=e.getBoundingClientRect();o[e.dataset.id]=a.height;const t=e.querySelectorAll('[data-t]');if(t.length){const R={};t.forEach(n=>{const r=n.getBoundingClientRect();R[n.dataset.t]=[r.left-a.left,r.top-a.top,r.width,r.height]});o[e.dataset.id+'#']=R}});document.getElementById('out').textContent='@@'+btoa(JSON.stringify(o))+'@@'})</script>`);
+<pre id="out"></pre><script>${LINEAS_VIVAS}
+document.fonts.ready.then(()=>{const o={};document.querySelectorAll('.medida').forEach(e=>{const a=e.getBoundingClientRect();o[e.dataset.id]=a.height;const t=e.querySelectorAll('[data-t]');const v=e.querySelector('[data-v8]');if(t.length||v){const R={};t.forEach(n=>{const r=n.getBoundingClientRect();R[n.dataset.t]=[r.left-a.left,r.top-a.top,r.width,r.height];R['L'+n.dataset.t]=lineasDe(n)});if(v){const r=v.getBoundingClientRect();R.v8=[r.left-a.left,r.top-a.top,r.width,r.height]}o[e.dataset.id+'#']=R}});document.getElementById('out').textContent='@@'+btoa(JSON.stringify(o))+'@@'})</script>`);
   const dom = chrome(['--virtual-time-budget=30000', '--dump-dom', url(f)]).toString('utf8');
   const m = dom.match(/@@([A-Za-z0-9+/=]+)@@/);
   if (!m) throw new Error('Chrome no devolvió las medidas.');
   const px = JSON.parse(Buffer.from(m[1], 'base64').toString('utf8')); const MM = 25.4 / 96;
-  return Object.fromEntries(Object.entries(px).map(([k, v]) => [k, typeof v === 'number' ? v * MM : Object.fromEntries(Object.entries(v).map(([t, r]) => [t, r.map((n) => n * MM)]))]));
+  // Los cortes de línea van aparte, en una propiedad que no se enumera: el resto del código recorre las claves numéricas.
+  return Object.fromEntries(Object.entries(px).map(([k, v]) => {
+    if (typeof v === 'number') return [k, v * MM];
+    const d = {}, lineas = {};
+    for (const [t, r] of Object.entries(v)) { if (Array.isArray(r)) d[t] = r.map((n) => n * MM); else lineas[t.slice(1)] = r; }
+    Object.defineProperty(d, 'lineas', { value: lineas, enumerable: false });
+    return [k, d];
+  }));
 }
 
-const htmlTramos = (partes) => partes.map((r) => { const t = h(r.texto); return r.estilo === 'Negrita' ? `<b>${t}</b>` : r.estilo === 'Cursiva' ? `<i>${t}</i>` : r.estilo === 'Negrita cursiva' ? `<b><i>${t}</i></b>` : r.estilo === 'Dato resto' ? `<span class="dr">${t}</span>` : r.estilo === 'Confirmar' ? `<span class="cf">${t}</span>` : r.estilo === 'Pendiente' ? `<span class="pd">${t}</span>` : t; }).join('');
+const htmlTramos = (partes) => partes.map((r) => { const t = h(r.texto).replace(/\u200B/g, '<wbr>'); return r.estilo === 'Negrita' ? `<b>${t}</b>` : r.estilo === 'Cursiva' ? `<i>${t}</i>` : r.estilo === 'Negrita cursiva' ? `<b><i>${t}</i></b>` : r.estilo === 'Dato resto' ? `<span class="dr">${t}</span>` : r.estilo === 'Confirmar' ? `<span class="cf">${t}</span>` : r.estilo === 'Pendiente' ? `<span class="pd">${t}</span>` : r.estilo === 'Sin corte' ? `<span class="nc">${t}</span>` : t; }).join('');
+const conUrl = (b) => b.partes && b.partes.some((p) => /https?:\/\//.test(p.texto));
 const htmlParrafo = (b) => `<div class="${clase(b.estilo)}">${htmlTramos(b.partes)}</div>`;
 
 /** Aura con grano, como en la app (D-121): la misma semilla da siempre la misma imagen. Solo dibuja las que faltan. */
@@ -507,6 +550,43 @@ const ICONOS = [
 // Cifras: el icono y el color del papel que cumple cada dato en el sistema («un color, un papel»).
 const ROL_DATO = [[/^personas|personas que/i, 'perfil', 'Lila'], [/primer paso/i, 'primer-paso', 'Cielo'], [/sonido|sonó|suena/i, 'suena', 'Durazno'], [/en casa|lugar/i, 'lugar', 'Lima'], [/empezado|empezó/i, 'empece', 'Rubor'], [/tiempo/i, 'tiempo', 'Amarillo'], [/./, 'estrella', 'Lila']];
 
+// Textos vivos de las figuras v8 (25 de noviembre de 2026). En el PDF, cada figura de ../figuras/v8 va como SVG, con el
+// texto en trazos. En el IDML va la misma figura sin su texto, como fondo vectorial, y cada texto encima como texto vivo,
+// en el lugar, el cuerpo, el peso, el color y la alineación con que Chrome lo dibujó, línea por línea. Así se puede
+// editar en Affinity sin cambiar el diseño.
+const TEXTOS_V8 = new Map();
+function textosV8(nombre) {
+  if (TEXTOS_V8.has(nombre)) return TEXTOS_V8.get(nombre);
+  const fuente = path.join(FIGURAS_V8, nombre + '.html');
+  if (!fs.existsSync(fuente)) { TEXTOS_V8.set(nombre, null); return null; }
+  const html = fs.readFileSync(fuente, 'utf8');
+  const leer = `<script>document.fonts.ready.then(()=>{
+const bloque=(el)=>{while(el&&el!==document.body){const d=getComputedStyle(el).display;if(d!=='inline'&&d!=='contents')return el;el=el.parentElement}return document.body};
+const grupos=new Map();const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let nd;
+while((nd=tw.nextNode())){if(!nd.textContent.trim())continue;const pe=nd.parentElement;if(pe.closest('svg,script,style,pre'))continue;
+const b=bloque(pe);if(!grupos.has(b))grupos.set(b,[]);const cs=getComputedStyle(pe);const re=/\\S+/g;let m;
+while((m=re.exec(nd.textContent))){const r=document.createRange();r.setStart(nd,m.index);r.setEnd(nd,m.index+m[0].length);const q=r.getClientRects()[0];if(!q)continue;
+grupos.get(b).push({t:m[0],x:q.left,y:q.top,r:q.right,h:q.height,lh:parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.2,s:{size:parseFloat(cs.fontSize),w:+cs.fontWeight,i:cs.fontStyle==='italic',c:cs.color,ls:cs.letterSpacing==='normal'?0:parseFloat(cs.letterSpacing)}})}}
+const out=[];for(const[b,ws]of grupos){if(!ws.length)continue;const lineas=[];for(const w of ws){let L=lineas.find(l=>Math.abs(l.y-w.y)<w.h*0.5);if(!L){L={y:w.y,h:w.h,ws:[]};lineas.push(L)}L.ws.push(w)}
+lineas.sort((p,q)=>p.y-q.y);lineas.forEach(l=>l.ws.sort((p,q)=>p.x-q.x));out.push({align:getComputedStyle(b).textAlign,lineas})}
+const c=document.body.getBoundingClientRect();document.getElementById('out').textContent='@@'+btoa(unescape(encodeURIComponent(JSON.stringify({ancho:c.width,alto:c.height,bloques:out}))))+'@@'})</script><pre id="out"></pre>`;
+  const fMedir = path.join(FIGURAS_V8, `_${nombre}-textos.html`); temporales.add(fMedir);
+  fs.writeFileSync(fMedir, html.replace('</body>', leer + '</body>'));
+  const dom = chrome(['--virtual-time-budget=20000', '--dump-dom', url(fMedir)]).toString('utf8');
+  const m = dom.match(/@@([A-Za-z0-9+/=]+)@@/);
+  if (!m) throw new Error(`Chrome no devolvió los textos de ${nombre}.`);
+  const datos = JSON.parse(Buffer.from(m[1], 'base64').toString('utf8'));
+  const fSin = path.join(FIGURAS_V8, `_${nombre}-sin-texto.html`); temporales.add(fSin);
+  // Sin texto: cada texto queda en un tramo oculto, que conserva su lugar pero no se dibuja (ni invisible en el PDF).
+  const ocultar = `<script>document.addEventListener('DOMContentLoaded',()=>{const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const ns=[];let n;while((n=tw.nextNode())){if(n.textContent.trim()&&!n.parentElement.closest('svg,script,style'))ns.push(n)}ns.forEach((n)=>{const s=document.createElement('span');s.style.visibility='hidden';n.parentNode.insertBefore(s,n);s.appendChild(n)})})</script>`;
+  fs.writeFileSync(fSin, html.replace('</body>', ocultar + '</body>'));
+  const fondo = path.join(GEN, `${nombre}-sin-texto.pdf`);
+  chrome(['--no-pdf-header-footer', '--virtual-time-budget=5000', `--print-to-pdf=${fondo}`, url(fSin)]);
+  const r = { ...datos, fondo };
+  TEXTOS_V8.set(nombre, r);
+  return r;
+}
+
 /** Una pieza es un trozo de página compuesto en Chrome: su fondo va al IDML como PDF y sus textos, vivos encima. */
 function pieza(id, ancho, armar) {
   const textos = [];
@@ -516,7 +596,11 @@ function pieza(id, ancho, armar) {
     textos.push({ estilo, partes, columnas: /\bdos\b/.test(cls) ? 2 : 1 });
     return `<div class="${clase(estilo)} n ${cls}" data-t="${textos.length - 1}">${htmlTramos(partes)}</div>`;
   };
-  return { id, ancho, html: armar(T), textos };
+  const html = armar(T);
+  const pz = { id, ancho, html, textos };
+  const mv = html.match(/data-v8="1" src="([^"]+)"/);   // una figura de ../figuras/v8: en el IDML, sus textos van vivos
+  if (mv) pz.v8 = { src: mv[1] };
+  return pz;
 }
 
 function tipoFigura(b) {
@@ -534,8 +618,11 @@ const CON_FONDO = ['esquema', 'barras', 'mapa', 'matriz2', 'atencion', 'diagrama
 
 /** Tabla o figura completa: rótulo y título arriba, cuerpo y nota. */
 function piezaFlotante(b) {
+  const pz = piezaFlotanteSola(b); if (b.v8) pz.v8 = b.v8; return pz;
+}
+function piezaFlotanteSola(b) {
   const nombre = `${b.flotante === 'tabla' ? 'Tabla' : 'Figura'} ${b.n}${b.continua ? ' (continuación)' : ''}`;
-  return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}${b.prueba ? '-k' + b.prueba : ''}`, ANCHO, (T) => {
+  return pieza(`${b.flotante}-${b.n}${b.continua ? '-2' : ''}${b.prueba ? '-k' + b.prueba : ''}${b.compacta ? '-c' : ''}`, ANCHO, (T) => {
     const rot = `<div class="rot">${T('Rótulo', nombre)}${T('Título de pieza', b.titulo, 'tp')}</div>`;
     // La nota va en una columna de 118 mm, como el texto; si es larga, en dos.
     const larga = b.nota && !b.angosta && plano(b.nota).length > 240;
@@ -548,7 +635,7 @@ function piezaFlotante(b) {
 }
 /** Figura dibujada aparte: su SVG, al ancho de la pieza, que es el ancho con que se diseñó. */
 // El alto sale de la proporción de diseño, no de la imagen cargada: así se mide bien aunque el SVG aún no se haya leído.
-const figuraV8 = (b) => `<img class="v8" src="${h(b.v8.src.split(path.sep).join('/'))}" alt="" style="display:block;width:100%;height:auto;max-width:none;max-height:none;border:0;aspect-ratio:${b.v8.ancho}/${b.v8.alto}">`;
+const figuraV8 = (b) => `<img class="v8" data-v8="1" src="${h(b.v8.src.split(path.sep).join('/'))}" alt="" style="display:block;width:100%;height:auto;max-width:none;max-height:none;border:0;aspect-ratio:${b.v8.ancho}/${b.v8.alto}">`;
 function cuerpoFlotante(b, T, ancho) {
   if (b.tipo === 'v8') return figuraV8(b);
   if (b.tipo === 'datos') return fichasDatos(b, T);
@@ -614,7 +701,7 @@ function tablaFichas(b, T, ancho) {
     }).join('');
     return `<div class="fila${/^Total/.test(primera) ? ' total' : ''}" ${rejilla}>${pri}${resto}</div>`;
   }).join('');
-  return `<div class="tb">${cabecera}${cuerpo}</div>`;
+  return `<div class="tb${b.compacta ? ' compacta' : ''}">${cabecera}${cuerpo}</div>`;
 }
 
 /** Participantes: una ficha por persona, con su código en el círculo. */
@@ -721,9 +808,11 @@ const PANTALLA = 1080 / 2400;                         // proporción de las capt
 const COLOR_MOMENTO = ['Cielo', 'Amarillo', 'Lima', 'Rubor'];   // preparar, seguir en el teléfono, oír la señal y decidir
 function piezaCompleta(b) {
   if (b.v8 || !b.fotos) {
-    return pieza(`figura-${b.n}`, ANCHO, (T) => `<div class="lc lado" style="height:${ALTO_COMPLETA.toFixed(2)}mm"><div class="lc-par">` +
+    const pzc = pieza(`figura-${b.n}`, ANCHO, (T) => `<div class="lc lado" style="height:${ALTO_COMPLETA.toFixed(2)}mm"><div class="lc-par">` +
       `<div class="lc-sola"><div class="rot">${T('Rótulo', `Figura ${b.n}`)}${T('Título de pieza', b.titulo, 'tp')}</div>${b.nota ? T('Nota', b.nota) : ''}</div>` +
       `<div class="lc-fig">${b.v8 ? figuraV8(b) : `<div class="fb">${cuerpoFlotante(b, T, DOBLE)}</div>`}</div></div></div>`);
+    if (b.v8) pzc.v8 = b.v8;
+    return pzc;
   }
   const items = b.fotos.map((f) => {
     const m = f.pie.match(/^(?:(.+?) \| )?(?:([a-z0-9]+)\. )?(.*)$/);
@@ -909,11 +998,16 @@ function personas(b, T) {
     `<div class="prs-ley"><span><i class="s"></i>Empezó la actividad</span><span><i></i>La dejó para después o cambió de idea</span></div></div>`;
 }
 
+// Un título de panel no se sale de su margen (25 de noviembre de 2026: «Agradecimientos» casi tocaba el borde del
+// panel). Si una palabra no cabe en el ancho interior, el título se achica en pasos de medio punto, con su interlineado,
+// hasta dejar a la derecha el mismo margen que a la izquierda. Corre en Chrome, en la memoria y en cada pieza del IDML.
+const AJUSTA_TITULO = `<script>(()=>{const e=document.currentScript.previousElementSibling;const f=()=>{const cs=getComputedStyle(e);let s=parseFloat(cs.fontSize);const r=parseFloat(cs.lineHeight)/s;while(e.scrollWidth>e.clientWidth+0.5&&s>8){s-=0.5;e.style.fontSize=s+'px';e.style.lineHeight=(s*r)+'px';}};document.fonts.ready.then(f);})();</script>`;
+
 /** Panel de apertura: el aura, el número, el título y las secciones. */
 function panelHtml({ n, titulo, secciones = [], aura, alto }) {
   const lista = secciones.length && alto >= 128 + secciones.length * 13.6 ? `<ol>${secciones.map((s, k) => `<li><span class="fic">${k + 1}</span><span>${h(s)}</span></li>`).join('')}</ol>` : '';
   return `<div class="panel${alto < 150 ? ' corto' : ''}${alto < 100 ? ' mini' : ''}" style="height:${alto}mm"><img class="fondo" src="figuras/aura/${aura}.jpg" alt=""><div class="pm">${marca()}</div>` +
-    (n != null ? `<div class="pn">${String(n).padStart(2, '0')}</div><div class="pt">${h(titulo)}</div>${lista}` : `<div class="ph"></div><div class="pt">${h(titulo)}</div>`) + '</div>';
+    (n != null ? `<div class="pn">${String(n).padStart(2, '0')}</div><div class="pt">${h(titulo)}</div>${AJUSTA_TITULO}${lista}` : `<div class="ph"></div><div class="pt">${h(titulo)}</div>${AJUSTA_TITULO}`) + '</div>';
 }
 
 // ---------------------------------------------------------------- Documento
@@ -985,7 +1079,7 @@ const pAnexos = pieza('anexos', DOBLE, (T) => `<div class="anx">${anexos.map((m)
 // Primera medida: cada párrafo en su columna y cada pieza.
 const medibles = [];
 cuerpo.forEach((c, ci) => c.bloques.forEach((b, bi) => {
-  if (b.partes && !b.frase) { b.id = `c${ci}b${bi}`; medibles.push({ id: b.id, ancho: COL, html: htmlParrafo(b) }); }
+  if (b.partes && !b.frase) { b.id = `c${ci}b${bi}`; medibles.push({ id: b.id, ancho: COL, html: conUrl(b) ? htmlParrafo(b).replace('<div class="', '<div data-t="0" class="') : htmlParrafo(b) }); }
 }));
 entradas.forEach((e, ei) => e.bloques.forEach((b, bi) => { b.id = `e${ei}b${bi}`; medibles.push({ id: b.id, ancho: COL, html: htmlParrafo(b) }); }));
 [...flot, ...frases].forEach((b) => medibles.push(b.pieza));
@@ -994,10 +1088,26 @@ console.log(`Midiendo ${medibles.length} párrafos y piezas en Chrome…`);
 const alto = medir(medibles);
 const lineasDe = (b) => Math.max(1, Math.round(alto[b.id] / PT / E[b.estilo].interlineado));
 [...cuerpo, ...entradas].forEach((c) => c.bloques.forEach((b) => { if (b.id) b.lineas = lineasDe(b); }));
+// Las referencias con dirección guardan cómo las cortó Chrome: el IDML repite esos cortes dentro de la dirección.
+cuerpo.forEach((c) => c.bloques.forEach((b) => { if (b.id && conUrl(b)) { const d = alto[b.id + '#']; b.cortesUrl = d && d.lineas && d.lineas[0]; } }));
 [...flot, ...frases, { pieza: pPortada }, { pieza: pAnexos }].forEach((b) => { b.pieza.alto = alto[b.pieza.id]; b.pieza.donde = alto[b.pieza.id + '#'] || {}; });
 // Una tabla que no cabe en la página se parte en dos. La primera parte lleva todas las filas que caben y ocupa
 // su página sola, para que el texto no quede entre las dos partes; la segunda repite la cabecera, lleva al menos
 // dos filas y la nota, y deja sitio al texto debajo.
+// Antes de partir una tabla se prueba compacta (25 de noviembre de 2026): con menos aire entre filas, si cabe en una
+// página va entera, a página completa y con sus filas estiradas, en vez de dejar dos filas solas en una página casi vacía.
+{
+  const altas = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante === 'tabla' && !b.continua && b.pieza.alto > BOTTOM - TOP));
+  const comp = altas.map((b) => { const x = { ...b, compacta: true }; x.pieza = piezaFlotante(x); return x; });
+  if (comp.length) {
+    const m = medir(comp.map((x) => x.pieza));
+    altas.forEach((b, i) => {
+      const x = comp[i];
+      if (m[x.pieza.id] <= ALTO_COMPLETA) { b.compacta = true; b.pieza = x.pieza; b.pieza.alto = m[x.pieza.id]; b.pieza.donde = m[x.pieza.id + '#'] || {}; console.log(`La tabla ${b.n} cabe entera con filas compactas (${Math.round(m[x.pieza.id])} mm).`); }
+      else console.log(`La tabla ${b.n} no cabe ni compacta (${Math.round(m[x.pieza.id])} de ${Math.round(ALTO_COMPLETA)} mm): se parte.`);
+    });
+  }
+}
 const partidas = [];
 const largas = cuerpo.flatMap((c) => c.bloques.filter((b) => b.flotante === 'tabla' && !b.continua && b.pieza.alto > BOTTOM - TOP));
 const pruebas = largas.flatMap((b) => {
@@ -1012,8 +1122,11 @@ cuerpo.forEach((c) => {
     if (!largas.includes(b)) continue;
     const [cab, ...filas] = b.filas;
     const cabe = pruebas.find((x) => x.origen === b && altoPrueba[x.pieza.id] <= BOTTOM - TOP);
-    const mitad = cabe ? cabe.prueba : Math.ceil(filas.length / 2);
-    const sigue = { ...b, filas: [cab, ...filas.slice(mitad)], todas: b.filas, desde: mitad, continua: true };
+    // Si la continuación quedaría con dos filas sueltas, la tabla se parte en mitades parejas y cada parte va a
+    // página completa, con sus filas estiradas, como la Tabla 3 (25 de noviembre de 2026).
+    const pareja = !cabe || filas.length - cabe.prueba < 3;
+    const mitad = pareja ? Math.ceil(filas.length / 2) : cabe.prueba;
+    const sigue = { ...b, filas: [cab, ...filas.slice(mitad)], todas: b.filas, desde: mitad, continua: true, sola: pareja };
     b.todas = b.filas; b.filas = [cab, ...filas.slice(0, mitad)]; delete b.nota; b.sola = true;
     b.pieza = piezaFlotante(b); sigue.pieza = piezaFlotante(sigue);
     c.bloques.splice(i + 1, 0, sigue); flot.splice(flot.indexOf(b) + 1, 0, sigue); partidas.push(b, sigue);
@@ -1041,7 +1154,7 @@ flot.forEach((b) => { if (b.pieza.alto > BOTTOM - TOP) console.log(`Atención: l
 // siguiente, y sus filas crecen hasta llenar la página (25 de noviembre de 2026). Lo mismo la primera parte de una tabla partida.
 {
   const LIMITE = BOTTOM - TOP - AIRE_BANDA - MIN_TEXTO;
-  const estirar = flot.filter((b) => b.flotante === 'tabla' && !b.continua && (b.sola || b.pieza.alto > LIMITE) && b.pieza.alto <= ALTO_COMPLETA);
+  const estirar = flot.filter((b) => b.flotante === 'tabla' && (!b.continua || b.sola) && (b.sola || b.pieza.alto > LIMITE) && b.pieza.alto <= ALTO_COMPLETA);
   estirar.forEach((b) => { b.sola = true; b.estirada = true; b.pieza = piezaFlotante(b); });
   if (estirar.length) {
     const m = medir(estirar.map((b) => b.pieza));
@@ -1733,11 +1846,52 @@ paginas.forEach((pg, q) => {
 });
 hojas.push({ sinMaestra: true, contra: true, items: [{ tipo: 'imagen', archivo: 'figuras/aura/contraportada.jpg', rect: [-3, -3, W + 6, H + 6], nombre: 'Aura de la contraportada' }] });
 
+// Textos que el fondo todavía dibujaba (25 de noviembre de 2026): números, letras, leyendas y los títulos de los paneles.
+// Se miden en Chrome, se ocultan en el fondo y van vivos encima, para que en Affinity se pueda editar todo el texto.
+// Se miden con el mismo zoom del PDF (ESCALA): con otro tamaño de letra, una línea al límite puede cortar en otra palabra.
+// Chrome devuelve las posiciones con el zoom aplicado y los estilos sin él; por eso las posiciones se dividen por z.
+const LEER_RESTO = `<script>document.fonts.ready.then(()=>{const o={};
+const bloque=(el,tope)=>{while(el&&el!==tope){const d=getComputedStyle(el).display;if(d!=='inline'&&d!=='contents')return el;el=el.parentElement}return tope};
+document.querySelectorAll('.medida').forEach(cont=>{const z=+cont.dataset.z||1;const a=cont.getBoundingClientRect();const grupos=new Map();const tw=document.createTreeWalker(cont,NodeFilter.SHOW_TEXT);let nd;
+while((nd=tw.nextNode())){if(!nd.textContent.trim())continue;const pe=nd.parentElement;if(pe.closest('[data-t],svg,script,style'))continue;const b=bloque(pe,cont);if(!grupos.has(b))grupos.set(b,[]);const cs=getComputedStyle(pe);const re=/\\S+/g;let m;
+while((m=re.exec(nd.textContent))){const r=document.createRange();r.setStart(nd,m.index);r.setEnd(nd,m.index+m[0].length);const q=r.getClientRects()[0];if(!q)continue;
+grupos.get(b).push({t:m[0],x:(q.left-a.left)/z,y:(q.top-a.top)/z,r:(q.right-a.left)/z,h:q.height/z,lh:parseFloat(cs.lineHeight)||parseFloat(cs.fontSize)*1.2,s:{size:parseFloat(cs.fontSize),w:+cs.fontWeight,i:cs.fontStyle==='italic',c:cs.color,ls:cs.letterSpacing==='normal'?0:parseFloat(cs.letterSpacing)}})}}
+const out=[];for(const[b,ws]of grupos){if(!ws.length)continue;const lineas=[];for(const w of ws){let L=lineas.find(l=>Math.abs(l.y-w.y)<w.h*0.5);if(!L){L={y:w.y,h:w.h,ws:[]};lineas.push(L)}L.ws.push(w)}
+lineas.sort((p,q)=>p.y-q.y);lineas.forEach(l=>l.ws.sort((p,q)=>p.x-q.x));out.push({align:getComputedStyle(b).textAlign,lineas})}
+if(out.length)o[cont.dataset.id]=out});document.getElementById('out').textContent='@@'+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+'@@'})</script>`;
+const OCULTAR_RESTO = `<script>document.addEventListener('DOMContentLoaded',()=>{const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const ns=[];let n;while((n=tw.nextNode())){if(n.textContent.trim()&&!n.parentElement.closest('[data-t],svg,script,style'))ns.push(n)}ns.forEach((n)=>{const s=document.createElement('span');s.style.visibility='hidden';n.parentNode.insertBefore(s,n);s.appendChild(n)})})</script>`;
+function medirResto(cosas, z = ESCALA) {
+  const f = tmp('resto');
+  fs.writeFileSync(f, `<!doctype html><meta charset="utf-8"><style>${CSS_BASE}${CSS_E}${CSS_PIEZAS}.medida{position:absolute;left:0;top:0}</style>\n` +
+    cosas.map((p) => `<div class="medida" data-id="${p.id}" data-z="${z}" style="zoom:${z};width:${p.ancho}mm${p.alto ? `;height:${p.alto}mm` : ''}">${p.html}</div>`).join('\n') + `<pre id="out"></pre>${LEER_RESTO}`);
+  const dom = chrome(['--virtual-time-budget=30000', '--dump-dom', url(f)]).toString('utf8');
+  const m = dom.match(/@@([A-Za-z0-9+/=]+)@@/);
+  if (!m) throw new Error('Chrome no devolvió los textos del fondo.');
+  return JSON.parse(Buffer.from(m[1], 'base64').toString('utf8'));
+}
 // Fondos en PDF: cada pieza sin su texto vivo, y cada panel.
 const piezasUnicas = [...new Set(hojas.flatMap((hj) => hj.items.filter((it) => it.tipo === 'pieza').map((it) => it.pieza)))];
 console.log(`Dibujando ${piezasUnicas.length} piezas y ${hojas.flatMap((hj) => hj.items).filter((it) => it.tipo === 'panel').length} paneles…`);
-piezasUnicas.forEach((pz) => { pz.fondo = pdf(pz.id, pz.ancho, pz.alto, `<div style="width:${pz.ancho}mm">${pz.html}</div>`, '[data-t]{visibility:hidden}'); });
-hojas.forEach((hj) => hj.items.forEach((it) => { if (it.tipo === 'panel') it.fondo = pdf(it.nombre, COL, it.alto, it.html); }));
+const panelesTodos = hojas.flatMap((hj) => hj.items.filter((it) => it.tipo === 'panel'));
+{
+  const cosas = [...piezasUnicas.map((pz) => ({ id: 'pz:' + pz.id, ancho: pz.ancho, html: pz.html })), ...panelesTodos.map((it, i) => ({ id: 'pn:' + i, ancho: COL, alto: it.alto, html: it.html }))];
+  const restos = medirResto(cosas);
+  if (process.env.DIAG) {   // qué líneas cortarían distinto si se midieran sin el zoom del PDF
+    const sinZoom = medirResto(cosas, 1);
+    const lineas = (bs) => (bs || []).map((b) => b.lineas.map((l) => l.ws.map((w) => w.t).join(' ')).join(' / '));
+    let n = 0;
+    for (const id of Object.keys(restos)) { const a = lineas(restos[id]), b = lineas(sinZoom[id]); a.forEach((s, i) => { if (s !== b[i]) { n++; console.log(`Corte según el zoom · ${id} · con zoom: ${s} · sin zoom: ${b[i]}`); } }); }
+    console.log(`Bloques que cortan distinto sin el zoom del PDF: ${n}`);
+  }
+  piezasUnicas.forEach((pz) => { pz.resto = restos['pz:' + pz.id]; });
+  panelesTodos.forEach((it, i) => { it.resto = restos['pn:' + i]; });
+  console.log(`Textos vivos sacados del fondo: ${piezasUnicas.filter((pz) => pz.resto).length} piezas y ${panelesTodos.filter((it) => it.resto).length} paneles.`);
+}
+piezasUnicas.forEach((pz) => { pz.fondo = pdf(pz.id, pz.ancho, pz.alto, `<div style="width:${pz.ancho}mm">${pz.html}</div>` + (pz.resto ? OCULTAR_RESTO : ''), '[data-t]{visibility:hidden}' + (pz.v8 ? 'img.v8{visibility:hidden}' : '')); });
+const conV8 = piezasUnicas.filter((pz) => pz.v8 && pz.donde && pz.donde.v8);
+if (conV8.length) console.log(`Textos vivos de ${conV8.length} figuras v8…`);
+conV8.forEach((pz) => { pz.v8textos = textosV8(path.basename(pz.v8.src, '.svg')); });
+hojas.forEach((hj) => hj.items.forEach((it) => { if (it.tipo === 'panel') it.fondo = pdf(it.nombre, COL, it.alto, it.html + (it.resto ? OCULTAR_RESTO : '')); }));
 const logo = pdf('logo', 150, 31.5, lockup().replace('<svg ', '<svg style="width:150mm;height:31.5mm;display:block" '));
 const DESCRIPTOR = 'Hazle lugar a lo que quieres hacer';
 
@@ -1763,6 +1917,7 @@ doc.caracter('Negrita cursiva', { estilo: 'SemiBold Italic' });
 doc.caracter('Dato resto', { tamano: +(18 + MAS).toFixed(2), estilo: 'Medium', color: 'Color/Gris', seguimiento: 0 });
 doc.caracter('Confirmar', { subrayado: 'true', subColor: MARCADOR, subGrosor: 15, subDesplaz: -4 });
 doc.caracter('Pendiente', { color: 'Color/Gris' });
+doc.caracter('Sin corte', { sinCorte: 'true' });
 
 const conPeso = (estilo, partes) => (E[estilo] && E[estilo].estilo === 'SemiBold' ? partes.map((r) => (r.estilo === 'Cursiva' ? { ...r, estilo: 'Negrita cursiva' } : r)) : partes);
 const P = (estilo, texto) => ({ estilo, partes: typeof texto === 'string' ? [{ texto }] : conPeso(estilo, texto) });
@@ -1774,24 +1929,160 @@ doc.maestra.push(marcoTexto([MX, Y_ENCABEZADO, 150, 6], [P('Encabezado', 'Relevo
 doc.maestra.push(marcoTexto([W - MX - 30, Y_FOLIO, 30, 7], [{ estilo: 'Folio', partes: [{ folio: true }] }], { capa: 'Folios', nombre: 'Folio' }));
 
 // Una historia por sección: todos sus párrafos, enlazados de marco en marco.
+// Donde el reparto corta contra las reglas de los estilos del IDML, el párrafo lleva su propio ajuste (25 de noviembre de
+// 2026). Sin esto, Affinity rehace el corte y todo lo que sigue se corre: un subtítulo que cierra un marco antes de su
+// frase destacada («Hipótesis y objetivos») saltaba al marco siguiente por «conservar con el siguiente».
+[...entradas, ...cuerpo].forEach((c) => {
+  const partes = new Map();
+  (c.marcos || []).forEach((m) => {
+    m.cont.forEach(({ b, n }) => { if (!partes.has(b)) partes.set(b, []); partes.get(b).push(n); });
+    const u = m.cont[m.cont.length - 1];
+    if (!m.ultimo && u && u.fin && E[u.b.estilo].conSiguiente) (u.b.local = u.b.local || {}).KeepWithNext = 0;
+  });
+  for (const [b, ns] of partes) {
+    if (ns.length < 2) continue;
+    if (ns[0] < 2) (b.local = b.local || {}).KeepFirstLines = ns[0];
+    if (ns[ns.length - 1] < 2) (b.local = b.local || {}).KeepLastLines = ns[ns.length - 1];
+  }
+});
+// Una dirección corta en el IDML donde Chrome la cortó: Affinity la cortaría también tras «https://» o tras un punto.
+let URL_FORZADAS = 0;
+function partesIdml(b) {
+  const partes = conPeso(b.estilo, b.partes);
+  if (!b.cortesUrl || !b.cortesUrl.cortes.length) return partes;
+  const enUrl = (c, texto) => [...texto.matchAll(/https?:\/\/\S+/g)].some((m) => c >= m.index && c <= m.index + m[0].length);
+  const forzadas = conCortes(partes, b.cortesUrl.cortes, b.cortesUrl.largo, enUrl);
+  if (!forzadas) { console.log(`Atención: no se pudieron repetir los cortes de una dirección: «${textoDe(b.partes).slice(0, 50)}».`); return partes; }
+  URL_FORZADAS++;
+  return forzadas;
+}
 const historiaDe = new Map();
-[...entradas, ...cuerpo].filter((c) => c.bloques.some((b) => b.partes && !b.frase)).forEach((c) => historiaDe.set(c, doc.historia(c.bloques.filter((b) => b.partes && !b.frase).map((b) => ({ estilo: b.estilo, partes: conPeso(b.estilo, b.partes), despues: b.extra ? (E[b.estilo].despues || 0) + b.extra : undefined })))));
+[...entradas, ...cuerpo].filter((c) => c.bloques.some((b) => b.partes && !b.frase)).forEach((c) => historiaDe.set(c, doc.historia(c.bloques.filter((b) => b.partes && !b.frase).map((b) => ({ estilo: b.estilo, partes: partesIdml(b), despues: b.extra ? (E[b.estilo].despues || 0) + b.extra : undefined, local: b.local })))));
+if (process.env.DIAG) console.log(`Párrafos con ajuste propio en el IDML: ${[...entradas, ...cuerpo].flatMap((c) => c.bloques.filter((b) => b.local).map((b) => `${c.titulo.slice(0, 20)} · ${textoDe(b.partes || []).slice(0, 30) || b.estilo} ${JSON.stringify(b.local)}`)).join(' | ') || 'ninguno'}`);
 
+// Colores de los textos de las figuras v8, como muestras del documento.
+const COLORES_V8 = [['Tinta', [20, 19, 18]], ['Gris', [110, 105, 100]], ['Gris claro', [185, 178, 170]], ['Blanco', [255, 255, 255]]];
+doc.color('Gris claro', [185, 178, 170]);
+const colorV8 = (css) => {
+  const v = (css.match(/[\d.]+/g) || ['20', '19', '18']).slice(0, 3).map(Number);
+  let mejor = COLORES_V8[0], d0 = Infinity;
+  for (const c of COLORES_V8) { const d = c[1].reduce((s, x, k) => s + (x - v[k]) ** 2, 0); if (d < d0) { d0 = d; mejor = c; } }
+  if (d0 > 300) { const n = `Figura ${v.join(' ')}`; doc.color(n, v); COLORES_V8.push([n, v]); return n; }
+  return mejor[0];
+};
+const ESTILOS_V8 = new Set();
+const pesoV8 = (s) => { const p = { 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold' }[s.w] || 'Regular'; return s.i ? (p === 'Regular' ? 'Italic' : `${p} Italic`) : p; };
+const claveV8 = (s) => `${s.size}|${s.w}|${s.i}|${s.c}|${s.ls}`;
+function estiloV8(s, lh, align, fr = 0.75) {   // fr: puntos reales por píxel medido
+  const tam = +(s.size * fr).toFixed(2), inter = +(lh * fr).toFixed(2), est = pesoV8(s), col = colorV8(s.c);
+  const al = align === 'center' ? 'CenterAlign' : align === 'right' || align === 'end' ? 'RightAlign' : 'LeftAlign';
+  const nombre = `Figura ${String(tam).replace('.', ',')} ${est}${col !== 'Tinta' ? ' ' + col : ''}${al === 'CenterAlign' ? ' centrada' : al === 'RightAlign' ? ' a la derecha' : ''}`;
+  if (!ESTILOS_V8.has(nombre)) {
+    const props = { letra: 'Instrument Sans', idioma: '$ID/Spanish: Castilian', guiones: 'false', alineacion: al, estilo: est, tamano: +(tam / ESCALA).toFixed(3), interlineado: +(inter / ESCALA).toFixed(3), color: `Color/${col}` };
+    if (s.ls) props.seguimiento = Math.round((s.ls / s.size) * 1000);
+    doc.parrafo(nombre, props); ESTILOS_V8.add(nombre);
+  }
+  return { nombre, tam, inter };
+}
+function caracterV8(s) {
+  const nombre = `Figura ${pesoV8(s)} ${colorV8(s.c)}`;
+  if (!ESTILOS_V8.has(nombre)) { doc.caracter(nombre, { estilo: pesoV8(s), color: `Color/${colorV8(s.c)}` }); ESTILOS_V8.add(nombre); }
+  return nombre;
+}
+function itemsV8(it, pz) {
+  const v = pz.v8textos, [rx, ry, rw, rh] = pz.donde.v8, k = rw / v.ancho;   // mm por píxel de la figura
+  const out = [{ tipo: 'imagen', archivo: v.fondo, rect: [it.x + rx, it.y + ry, rw, rh], ajuste: 'contener', nombre: `${it.nombre}: figura sin texto` }];
+  return out.concat(marcosDeBloques(it.x + rx, it.y + ry, k, 0.75, v.bloques, it.nombre, true));
+}
+// Cada palabra viva con su página y su lugar (mm), para comprobar que coincide con el PDF (variable VIVOS).
+let HOJA_VIVA = 0; const VIVOS = [];
+/** Marcos de texto vivo para bloques medidos en Chrome: origen (mm), mm por píxel y puntos reales por píxel. */
+function marcosDeBloques(x0, y0, k, fr, bloques, nombreBase, v8 = false) {
+  const out = [];
+  for (const b of bloques) {
+    const w0 = b.lineas[0].ws[0], base = w0.s, lh = w0.lh;
+    const est = estiloV8(base, lh, b.align, fr);
+    const partes = [];
+    b.lineas.forEach((l, li) => {
+      l.ws.forEach((w, wi) => {
+        VIVOS.push({ p: HOJA_VIVA, t: w.t, x: x0 + w.x * k, y: y0 + w.y * k, r: x0 + w.r * k, h: w.h * k, v8, linea: li, bloque: nombreBase });
+        const prev = wi ? l.ws[wi - 1] : null;
+        const sep = li && !wi ? '\u2028' : prev && w.x - prev.r > w.s.size * 0.12 ? ' ' : '';
+        const texto = sep + w.t;
+        const estilo = claveV8(w.s) === claveV8(base) ? null : caracterV8(w.s);
+        const ult = partes[partes.length - 1];
+        if (ult && (ult.estilo || null) === estilo) ult.texto += texto; else partes.push(estilo ? { texto, estilo } : { texto });
+      });
+    });
+    const izq = Math.min(...b.lineas.map((l) => l.ws[0].x)), der = Math.max(...b.lineas.map((l) => l.ws[l.ws.length - 1].r));
+    const arriba = b.lineas[0].y - (lh - b.lineas[0].h) / 2;
+    const holgura = (der - izq) * 0.06 + base.size * 0.6;
+    let x = izq, ancho = der - izq + holgura;
+    if (b.align === 'center') x = (izq + der) / 2 - ancho / 2; else if (b.align === 'right' || b.align === 'end') x = der - ancho;
+    const bajaV8 = ((est.inter - 1.22 * est.tam) / 2 + 0.25 * est.tam) / ESCALA * PT;
+    const alto = b.lineas.length * lh * k + 1.6;
+    out.push(marcoTexto([x0 + x * k, y0 + arriba * k + bajaV8, ancho * k, alto], [{ estilo: est.nombre, partes }], { nombre: `${nombreBase}: ${partes.map((p) => p.texto).join('').replace(/\u2028/g, ' ').slice(0, 32)}` }));
+  }
+  return out;
+}
 function itemsPieza(it) {
   const pz = it.pieza; const out = [{ tipo: 'imagen', archivo: pz.fondo, rect: [it.x, it.y, pz.ancho, pz.alto], ajuste: 'contener', nombre: `${it.nombre}: fondo` }];
+  if (pz.v8textos) out.push(...itemsV8(it, pz));
+  if (pz.resto) out.push(...marcosDeBloques(it.x, it.y, 25.4 / 96, 0.75 * ESCALA, pz.resto, it.nombre));
   pz.textos.forEach((t, k) => {
     const [rx, ry, rw, rh] = pz.donde[k];
     const cols = t.columnas > 1 ? { columnas: t.columnas, medianil: MED, equilibrar: true } : {};
-    out.push(marcoTexto([it.x + rx, it.y + ry + baja(t.estilo), rw, rh + 1.6], [P(t.estilo, t.partes)], { nombre: `${it.nombre}: ${textoDe(t.partes).slice(0, 32)}`, ...cols }));
+    const { x, ancho, partes, local } = marcoVivo(t, rx, rw, pz.donde.lineas && pz.donde.lineas[k], it.nombre);
+    const p = P(t.estilo, partes); if (local) p.local = local;
+    // Una línea de alto extra: si Affinity llegara a cortar antes, el texto se ve entero en vez de quedar oculto.
+    out.push(marcoTexto([it.x + x, it.y + ry + baja(t.estilo), ancho, rh + 1.6 + E[t.estilo].interlineado * PT], [p], { nombre: `${it.nombre}: ${textoDe(t.partes).slice(0, 32)}`, ...cols }));
   });
   return out;
 }
-hojas.forEach((hj) => {
+let VIVOS_FORZADOS = 0, VIVOS_SIN_CORTES = 0;
+/** Ancho y lugar del marco de un texto vivo de pieza, según cómo lo cortó Chrome (LINEAS_VIVAS). */
+function marcoVivo(t, rx, rw, li, nombre) {
+  if (!li) return { x: rx, ancho: rw, partes: t.partes };
+  const MMPX = 25.4 / 96;
+  const cw = rw - li.pr * MMPX;                           // el ancho del texto, sin el margen de seguridad
+  const usado = Math.max(cw, li.maxR * MMPX);             // un texto que no se corta puede pasar de ese ancho
+  let holgura = HOLGURA_VIVA(cw / MMPX) * MMPX, partes = t.partes;
+  if (li.riesgo && li.cortes.length) {
+    const forzadas = conCortes(t.partes, li.cortes, li.largo);
+    // A una columna, el marco gana un 3 % por seguridad; a dos, no: la segunda columna se correría.
+    if (forzadas) { partes = forzadas; if (!(t.columnas > 1)) holgura = Math.max(holgura, cw * 0.03); VIVOS_FORZADOS++; }
+    else { VIVOS_SIN_CORTES++; console.log(`Atención: no se pudieron repetir los cortes de «${textoDe(t.partes).slice(0, 40)}» (${nombre}).`); }
+  }
+  const ancho = usado + holgura;
+  const al = li.alin === 'center' ? 'CenterAlign' : li.alin === 'right' || li.alin === 'end' ? 'RightAlign' : 'LeftAlign';
+  const x = al === 'CenterAlign' ? rx + cw / 2 - ancho / 2 : al === 'RightAlign' ? rx + cw - ancho : rx;
+  const local = al !== (E[t.estilo].alineacion || 'LeftAlign') ? { Justification: al } : null;
+  return { x, ancho, partes, local };
+}
+/** Repite en el IDML los cortes de línea de Chrome: un salto forzado (U+2028) en cada corte, en lugar del espacio. */
+function conCortes(partes, cortes, largo, cuales = null) {
+  const chars = [];
+  partes.forEach((p, i) => { for (const ch of p.texto.replace(/\u200B/g, '')) chars.push({ ch, i }); });
+  if (chars.map((c) => c.ch).join('').length !== largo) return null;
+  if (cuales) { const plano = chars.map((x) => x.ch).join(''); cortes = cortes.filter((c) => cuales(c, plano)); }
+  // Los desplazamientos de Chrome cuentan unidades UTF-16; aquí, caracteres: deben coincidir para no cortar mal.
+  if (chars.some((c) => c.ch.length > 1)) return null;
+  for (const c of [...cortes].sort((a, b) => b - a)) {
+    if (c <= 0 || c > chars.length) return null;
+    if (chars[c - 1].ch === ' ') chars[c - 1].ch = '\u2028';
+    else chars.splice(c, 0, { ch: '\u2028', i: chars[c - 1].i });
+  }
+  const out = [];
+  for (const c of chars) { const u = out[out.length - 1]; if (u && u.i === c.i) u.texto += c.ch; else out.push({ ...partes[c.i], texto: c.ch, i: c.i }); }
+  return out.map(({ i, ...p }) => p);
+}
+hojas.forEach((hj, iHoja) => {
+  HOJA_VIVA = iHoja + 1;
   const items = [];
   for (const it of hj.items) {
     if (it.tipo === 'imagen') items.push({ tipo: 'imagen', archivo: abs(it.archivo), rect: it.rect, nombre: it.nombre });
     else if (it.tipo === 'pieza') items.push(...itemsPieza(it));
-    else if (it.tipo === 'panel') items.push({ tipo: 'imagen', archivo: it.fondo, rect: [it.x, it.y, COL, it.alto], ajuste: 'contener', nombre: 'Panel' });
+    else if (it.tipo === 'panel') { items.push({ tipo: 'imagen', archivo: it.fondo, rect: [it.x, it.y, COL, it.alto], ajuste: 'contener', nombre: 'Panel' }); if (it.resto) items.push(...marcosDeBloques(it.x, it.y, 25.4 / 96, 0.75 * ESCALA, it.resto, 'Panel')); }
     else { const m = it.marco; items.push({ tipo: 'texto', rect: [m.x, m.y, m.ancho, m.alto], historia: historiaDe.get(m.c), nombre: m.c.titulo }); }
   }
   if (hj.contra) {
@@ -1803,6 +2094,9 @@ hojas.forEach((hj) => {
   doc.pagina(items);
 });
 doc.escribir(SALIDA);
+console.log(`Referencias con dirección que repiten sus cortes en el IDML: ${URL_FORZADAS}.`);
+console.log(`Textos de piezas que repiten los cortes de Chrome con saltos forzados: ${VIVOS_FORZADOS}${VIVOS_SIN_CORTES ? ` (sin poder repetirlos: ${VIVOS_SIN_CORTES})` : ''}.`);
+if (process.env.VIVOS) fs.writeFileSync(process.env.VIVOS, JSON.stringify({ escala: ESCALA, ancho: W, alto: H, palabras: VIVOS }));
 
 // ---------------------------------------------------------------- El mismo reparto, en HTML y en PDF
 

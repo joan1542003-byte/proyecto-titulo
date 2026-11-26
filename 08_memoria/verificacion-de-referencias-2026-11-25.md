@@ -1,6 +1,6 @@
 # Verificación de citas y referencias (25 de noviembre de 2026)
 
-**Estado:** aplicada el mismo día. Las correcciones 1 a 9 de la sección 2 están en la [memoria](borrador-memoria-v8-2026-11-21.md) y en el [Anexo H](anexos/anexo-h-identidad.md), y la memoria y los anexos se compusieron de nuevo. También se aplicaron dos puntos de la sección 4: Semilla Inicia dice que su convocatoria de 2024 fue regional y ya cerró, y la licencia de Lucide se nombra completa. No cambió el costo de las suscripciones de la Tabla 2 (sección 5, punto 2): es el gasto del propio autor, que no necesita una fuente externa. De las cuatro páginas sin PDF de la sección 5, McDaniel y Einstein (2000, p. S138) se comprobó esa noche con el acceso de la biblioteca de la UDP: la página dice que una actividad más absorbente deja menos recursos para los procesos estratégicos del recuerdo. Quedan Guynn et al. (p. 296), Kirsh (p. 38) y Middlebrooks y Green (p. 138). Las líneas citadas son las del archivo antes de aplicar las correcciones.
+**Estado:** aplicada el mismo día. Las correcciones 1 a 9 de la sección 2 están en la [memoria](borrador-memoria-v8-2026-11-21.md) y en el [Anexo H](anexos/anexo-h-identidad.md), y la memoria y los anexos se compusieron de nuevo. También se aplicaron dos puntos de la sección 4: Semilla Inicia dice que su convocatoria de 2024 fue regional y ya cerró, y la licencia de Lucide se nombra completa. No cambió el costo de las suscripciones de la Tabla 2 (sección 5, punto 2): es el gasto del propio autor, que no necesita una fuente externa. De las cuatro páginas sin PDF de la sección 5, McDaniel y Einstein (2000, p. S138) se comprobó esa noche con el acceso de la biblioteca de la UDP: la página dice que una actividad más absorbente deja menos recursos para los procesos estratégicos del recuerdo. Esa misma noche se comprobaron también Guynn et al. (1998, p. 296), en su discusión general: los recordatorios que nombraban solo el evento no mejoraron el recuerdo, y los que nombraban el evento y la acción sí; y Middlebrooks y Green (1991, p. 138): un estímulo de banda ancha permite resolver la ambigüedad de la ubicación que hay en una banda estrecha. Queda Kirsh (1995, p. 38), porque ScienceDirect no abre en el navegador de Claude; su contenido coincide con la copia del autor. Las líneas citadas son las del archivo antes de aplicar las correcciones.
 
 Esta verificación sigue a la del [9 de noviembre](verificacion-de-referencias-2026-11-09.md) y responde al punto “Pulido” de la [pauta escrita de los profesores](../01_contexto_y_fuentes/feedback-pase-2026-11-25/retroalimentacion-memoria-profesores.md): contrastar una muestra de referencias con sus citas.
 
@@ -171,6 +171,12 @@ Uno de los PDF locales de Nielsen es un resumen, no el libro. No se usó.
 6. **Semilla Inicia.** No se revisó si Corfo abrirá una convocatoria nueva.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Guynn et al., p. 296, y Middlebrooks y Green, p. 138
+
+- **Qué cambió:** se comprobaron las dos páginas con los PDF que el autor descargó desde la biblioteca de la UDP.
+- **Cómo estaba antes:** figuraban como no verificadas.
+- **Por qué:** el autor dio acceso a la biblioteca y descargó los artículos.
 
 ### 2026-11-25 — McDaniel y Einstein, p. S138
 

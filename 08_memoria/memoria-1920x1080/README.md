@@ -4,11 +4,13 @@
 
 **Después del 11 de noviembre:** el autor abrió el IDML de esta versión en Affinity y terminó ahí la memoria que entregó para el Pase. Su texto es el [borrador v7](../borrador-memoria-v7-2026-11-11.md).
 
-**Desde el 21 de noviembre (D-186):** el generador compone el [borrador v8](../borrador-memoria-v8-2026-11-21.md), con los comentarios de los profesores y las siete figuras nuevas de [`../figuras/v8/`](../figuras/v8/README.md). Resultado: [memoria-relevo-v8-1920x1080.pdf](memoria-relevo-v8-1920x1080.pdf), de 73 páginas, su [HTML](memoria-relevo-v8-1920x1080.html) y su IDML para Affinity, con los fondos de cada pieza en `figuras/idml-v8/`. Si el autor hizo ajustes de diseño a mano en su Affinity, hay que repetirlos sobre esta versión. La versión del 11 de noviembre queda con sus archivos y se obtiene con `FUENTE=borrador-memoria-v6-2026-10-28.md node construir-idml.js`.
+**Desde el 21 de noviembre (D-186):** el generador compone el [borrador v8](../borrador-memoria-v8-2026-11-21.md), con los comentarios de los profesores y las siete figuras nuevas de [`../figuras/v8/`](../figuras/v8/README.md). Resultado: [memoria-relevo-v8-1920x1080.pdf](memoria-relevo-v8-1920x1080.pdf), de 75 páginas, su [HTML](memoria-relevo-v8-1920x1080.html) y su IDML para Affinity, con los fondos de cada pieza en `figuras/idml-v8/`. Si el autor hizo ajustes de diseño a mano en su Affinity, hay que repetirlos sobre esta versión. La versión del 11 de noviembre queda con sus archivos y se obtiene con `FUENTE=borrador-memoria-v6-2026-10-28.md node construir-idml.js`.
 
 **Para leer (11 de noviembre):** [memoria-relevo-1920x1080.pdf](memoria-relevo-1920x1080.pdf), de 68 páginas de 1920 × 1080 puntos (los píxeles de una pantalla, a 72 ppp). La [versión HTML](memoria-relevo-1920x1080.html) es la misma composición.
 
-**Para editar en Affinity:** `memoria-relevo-1920x1080.idml`, que se abre en Affinity Publisher o InDesign. No se guarda en el repositorio, porque sus imágenes se enlazan con la ruta completa del computador donde se generó: se genera en la carpeta donde se va a trabajar. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
+**Para editar en Affinity (desde el 25 de noviembre):** `memoria-relevo-v8-1920x1080.idml`. Todo su texto es editable: el cuerpo, los títulos de los paneles, y los rótulos, leyendas, números, letras y notas de cada tabla y figura, también los de las siete figuras dibujadas aparte. Cada pieza va como un fondo vectorial sin texto, con sus textos vivos encima, en su lugar y con sus estilos. Exportado desde Affinity 3.2, el IDML da el mismo PDF: las 25 145 palabras quedan en el mismo lugar (ver Verificación; `python3 comparar-pdf-affinity.py <pdf de Chrome> <pdf de Affinity>` repite la comparación). Para trabajar en otro computador, `python3 empaquetar-idml.py <idml> .. <carpeta>` copia los vínculos a `<carpeta>/vinculos` y los enlaza ahí. Antes, instala las tipografías de [`letra/estaticas/`](letra/estaticas/) (ver [letra](letra/LEEME.md)).
+
+**Saltos de línea forzados en el IDML:** para que Affinity corte donde corta el PDF, 43 textos de tablas y figuras y las direcciones de 96 referencias llevan saltos de línea forzados (Mayús + Intro) en los cortes que Chrome hizo al límite. Si se edita uno de esos textos, hay que mover o quitar esos saltos a mano. El resto del texto fluye solo.
 
 **Texto:** el [borrador v6](../borrador-memoria-v6-2026-10-28.md), sin cambios al componer. Sus marcadores «Confirmar» siguen a la vista.
 
@@ -77,6 +79,7 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Verificación
 
+- **El IDML en Affinity, el 25 de noviembre de 2026 (v8):** se abrió en Affinity 3.2, con sus 75 páginas y sus 81 vínculos, y se exportó a PDF. Ese PDF se comparó palabra por palabra con el de Chrome (`pdftotext -bbox`): de 25 145 palabras, 25 143 quedan en el mismo lugar, con 0,02 pt de desvío horizontal típico; las otras dos son una sola palabra que cada programa divide distinto (“tiempo,”). En vertical, el texto de Affinity queda a menos de 1 pt del de Chrome (2 pt en una columna), en una hoja de 1080 pt. La primera exportación tenía 3294 palabras corridas: textos de figuras que Affinity cortaba más tarde, un subtítulo que saltaba al marco siguiente y direcciones que Affinity cortaba tras “https://” o tras un punto. Las 264 palabras sacadas de los fondos (números, letras y títulos de panel) coinciden con el PDF.
 - **Duodécima ronda, el 24 de noviembre de 2026 (v8):** 40 figuras y 4 tablas: 24 quedan en la página de su mención y 20 en la siguiente, todas en orden. Seis imágenes reales rellenan los finales de los capítulos 2, 6, 8, 10, 13 y 14; el glosario ya no termina en una columna diminuta. El capítulo 4 termina en una columna casi llena, que el autor acepta. El índice de tablas y figuras cabe en su página (199,5 de 201,8 mm).
 - **Duodécima ronda, el 25 de noviembre de 2026 (v8):** 73 páginas, PDF de 12,6 MB. De 41 figuras y 4 tablas, todas quedan en la página de su mención o en la siguiente, en orden. La nueva Figura 16, «Dónde actúa Relevo en la tensión de la decisión», es un esquema de tensión: una secuencia con número y flechas, en lila, amarillo, verde y rosa. Las referencias se compusieron con un interlineado de 13,4 y 1,2 de espacio entre ellas, para que terminen en una página llena. El capítulo 4 sigue terminando en una columna casi llena.
 - **Undécima ronda, el 24 de noviembre de 2026 (v8):** 72 páginas, PDF de 11,3 MB. De 38 tablas y figuras, 18 quedan en la página de su mención y 20 en la siguiente; ninguna más lejos ni antes, y todas en orden. Los paneles de apertura conservan su columna entera. Se revisó la vista de todas y, de cerca, las páginas 13, 22, 34, 36 y 37. Una página sin texto con una sola figura chica cuenta como casi vacía. Quedan, para resolver con el contenido, los finales de los capítulos 4 (una columna en la página 14), 10, 13 (la continuación de la Tabla 4) y 14, y del glosario.
@@ -96,12 +99,25 @@ Necesita Node y Google Chrome, y tarda unos cuatro minutos. Escribe el IDML, el 
 
 ## Límites
 
-- El IDML está en el repositorio desde el 29 de octubre de 2026, pero sus imágenes se enlazan con la ruta del computador donde se generó: en otro computador hay que volver a enlazarlas desde `figuras/idml/`, o generar el IDML de nuevo con `node construir-idml.js`.
+- El IDML está en el repositorio desde el 29 de octubre de 2026, pero sus imágenes se enlazan con la ruta del computador donde se generó: en otro computador hay que empaquetarlo con `empaquetar-idml.py`, volver a enlazarlas desde `figuras/idml-v8/` o generar el IDML de nuevo con `node construir-idml.js`.
+- La comparación con el PDF se hizo con la exportación de Affinity 3.2 en este computador. Otra versión de Affinity, o de InDesign, puede cortar distinto alguna línea al límite del cuerpo del texto, que fluye sin saltos forzados.
 - Algunas tablas y láminas altas quedan en páginas propias, con aire debajo, porque no dejan espacio útil para texto.
 - Las capturas de la aplicación son de la versión actual; la prueba usó otra interfaz, con los mismos pasos.
 - La Biblioteca exige los índices de tablas y de figuras para el depósito.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Todo el texto vivo en el IDML, con los cortes del PDF
+
+- **Qué cambió:** el IDML lleva vivo todo el texto que los fondos todavía dibujaban: los textos de las siete figuras dibujadas aparte, los números, letras y leyendas de las piezas y los títulos de los paneles. Cada texto se mide en Chrome, se oculta en el fondo y va encima con su cuerpo, peso, color y alineación. Para que Affinity corte cada línea donde la corta el PDF, el marco de un texto de pieza mide el ancho real del texto (sin el margen de seguridad de 3 %) más una holgura mínima; si una línea quedó al límite, el IDML repite el corte de Chrome con un salto forzado. Un subtítulo que cierra un marco antes de su frase destacada lleva “conservar con el siguiente” en cero, y las direcciones de las referencias cortan en el IDML donde las corta el PDF. En el PDF, una dirección ahora se corta después de una barra, y la raya de un inciso queda pegada a su palabra.
+- **Cómo estaba antes:** los textos de las figuras v8, los números, las letras y los títulos de los paneles venían dibujados en el fondo y no se podían editar. En Affinity, 3294 palabras quedaban en otro lugar que en el PDF: la Figura 21 cortaba “mientras Relevo cuenta / el tiempo”, “Hipótesis y objetivos” saltaba debajo de su tarjeta y corría todo el capítulo, y las referencias se cortaban en otros lugares. En el PDF, una línea de las conclusiones empezaba con la raya de cierre (“— y la convirtió”) y otra terminaba con la de apertura; algunas direcciones se cortaban a mitad de palabra (“bluetoot / h”).
+- **Por qué:** el autor pidió dejar la memoria lista en IDML para editarla, con los textos de las figuras editables sin romper su diseño.
+
+### 2026-11-25 — Títulos de panel, cortes de línea y tablas partidas
+
+- **Qué cambió:** el generador ajusta el tamaño del título de un panel si una palabra no cabe, para dejar el mismo margen a ambos lados. Une con espacios que no se cortan una cifra y su “%”, “p.” o “pp.” y su página, “s. f.” y unas iniciales con su apellido, y un estilo de carácter “Sin corte” (NoBreak en el IDML) mantiene unidas iniciales con guion como “B.-N.”. Antes de partir una tabla, prueba si cabe con filas compactas; si igual hay que partirla y la continuación quedaría con dos filas, la parte en mitades parejas, cada una a página completa.
+- **Cómo estaba antes:** “Agradecimientos” casi tocaba el borde del panel; “%”, “S138”, “f.)” o “Sanders” podían quedar solos al comienzo de una línea, y la Tabla 4 dejaba dos filas en una página casi vacía.
+- **Por qué:** la revisión página por página del 25 de noviembre, pedida por el autor para dejar la memoria lista.
 
 ### 2026-11-25 — Cada figura en la página de su mención
 
