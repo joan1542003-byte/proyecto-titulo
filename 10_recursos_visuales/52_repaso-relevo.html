@@ -16,7 +16,8 @@
 <!-- Repaso Relevo. Funciona de dos formas con el mismo archivo:
      - como página local: se abre con doble clic y guarda el avance en ese navegador;
      - como sitio en GitHub Pages: se abre en el teléfono, se instala como app y funciona sin internet.
-     El avance nunca sale del navegador: no hay servidor ni cuentas. Para pasarlo a otro dispositivo se usa una copia. -->
+     El avance se guarda en el navegador y, si el dispositivo se conecta con la clave del autor, también en un servidor
+     de Supabase (proyecto repaso-relevo) que solo acepta esa clave. No hay cuentas ni contraseñas. -->
 <style>
 /* Diseño: la línea de Relevo. Papel cálido, tinta casi negra y los cuatro colores del logo, uno por parte de la
    presentación (1 amarillo, 2 celeste, 3 verde, 4 rosa). Una columna que se lee como un recorrido por la casa. */
@@ -62,6 +63,8 @@ header.top { position: sticky; top: 0; z-index: 10; background: var(--bg); margi
 .estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted) }
 .estado[data-e="ok"]::before { background: var(--ok) }
 .estado[data-e="error"]::before { background: var(--bad) }
+.estado[data-e="subiendo"]::before { background: var(--muted) }
+.estado[data-e="espera"]::before { background: var(--mid) }
 nav.tabs { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding: 0 16px 2px }
 nav.tabs::-webkit-scrollbar { display: none }
 nav.tabs a { flex: none; white-space: nowrap; text-decoration: none; color: var(--ink); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line);
@@ -100,6 +103,7 @@ ul.lista, ol.lista { margin: 0; padding-left: 1.2em; display: grid; gap: 6px }
 textarea { font: inherit; font-size: .85rem; width: 100%; min-height: 84px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); padding: 10px 12px; word-break: break-all }
 select, input[type="time"] { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); min-height: 40px }
 .campo { display: grid; gap: 4px } .campo > span { font-size: .85rem; color: var(--muted) }
+.campo input[type="text"] { font: inherit; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); max-width: 22em }
 .ajustes { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px }
 .aviso { position: fixed; left: 50%; top: 14px; transform: translateX(-50%); z-index: 40; background: var(--ink); color: var(--bg); padding: 10px 16px;
   border-radius: 12px; font-weight: 550; max-width: calc(100% - 32px); box-shadow: 0 8px 30px rgba(0,0,0,.25) }
@@ -235,7 +239,7 @@ details.preg[open] > summary { border-bottom: 1px solid var(--line) }
         <svg viewBox="0 0 100 100" aria-hidden="true"><path style="fill:var(--p1)" d="M75.261 14.757A29 29 0 1 0 35.757 54.261A35.5 35.5 0 0 1 75.261 14.757Z"/><path style="fill:var(--p2)" d="M85.243 75.261A29 29 0 1 0 45.739 35.757A35.5 35.5 0 0 1 85.243 75.261Z"/><path style="fill:var(--p3)" d="M24.739 85.243A29 29 0 1 0 64.243 45.739A35.5 35.5 0 0 1 24.739 85.243Z"/><path style="fill:var(--p4)" d="M14.757 24.739A29 29 0 1 0 54.261 64.243A35.5 35.5 0 0 1 14.757 24.739Z"/></svg>
         <span>Repaso Relevo</span>
       </div>
-      <span class="estado" id="estado" data-e="ok" title="Tu avance se guarda solo en este navegador.">Guardado</span>
+      <span class="estado" id="estado" data-e="ok" title="Tu avance se guarda en este navegador.">Guardado aquí</span>
     </div>
     <nav class="tabs" aria-label="Secciones">
       <a href="#hoy" data-v="hoy">Hoy</a>
@@ -892,17 +896,24 @@ function leerLocal() {
   // De la primera versión: la estación marcada en Hoy cuenta como estación dicha.
   for (const p of PLAN) if (p.estacion && S.pasos[p.f] && S.pasos[p.f].p2 && !S.estaciones[p.estacion]) S.estaciones[p.estacion] = p.f;
 }
-let ultimoGuardado = 0;
+let ultimoGuardado = 0, localOk = true;
 function guardarLocal() {
-  try { localStorage.setItem(LS, JSON.stringify(S)); ultimoGuardado = Date.now(); estado("ok"); } catch (e) { estado("error"); }
+  try { localStorage.setItem(LS, JSON.stringify(S)); ultimoGuardado = Date.now(); localOk = true; } catch (e) { localOk = false; }
+  estado();
 }
-function cambio() { S.t = Date.now(); guardarLocal(); if (!pedidoPersistir && enApp()) protegerAlmacen(false); }
-const horaDe = (ms) => new Intl.DateTimeFormat("es-CL", { hour: "2-digit", minute: "2-digit" }).format(new Date(ms));
-function estado(e) {
+function cambio() { S.t = Date.now(); guardarLocal(); programarSubida(); if (!pedidoPersistir && enApp()) protegerAlmacen(false); }
+const horaDe = (ms) => new Intl.DateTimeFormat("es-CL", { hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(ms));
+function estado() {
   const el = document.getElementById("estado"); if (!el) return;
-  el.dataset.e = e;
-  el.textContent = e === "error" ? "No se puede guardar" : "Guardado" + (ultimoGuardado ? " · " + horaDe(ultimoGuardado) : "");
-  el.title = e === "error" ? "Este navegador no deja guardar el avance." : "Tu avance se guarda solo en este navegador.";
+  let e = "ok", txt = "Guardado aquí" + (ultimoGuardado ? " · " + horaDe(ultimoGuardado) : ""), tit = "Tu avance se guarda en este navegador. Conéctalo al servidor en Mi avance.";
+  if (nube.clave) {
+    if (nube.estado === "subiendo") { e = "subiendo"; txt = "Guardando…"; tit = "Subiendo tu avance al servidor."; }
+    else if (nube.estado === "offline") { e = "espera"; txt = "Sin internet"; tit = "Tu avance está guardado aquí y se sube al servidor cuando vuelva internet."; }
+    else if (nube.estado === "error") { e = "espera"; txt = nube.error === "clave" ? "Clave no aceptada" : "Servidor sin respuesta"; tit = "Tu avance está guardado aquí. Revisa Mi avance."; }
+    else { txt = "En el servidor" + (nube.ultima ? " · " + horaDe(nube.ultima) : ""); tit = "Tu avance está en el servidor y en este navegador."; }
+  }
+  if (!localOk) { e = "error"; txt = "No se puede guardar"; tit = "Este navegador no deja guardar el avance."; }
+  el.dataset.e = e; el.textContent = txt; el.title = tit;
 }
 
 /* Pedirle al navegador que no borre el avance cuando le falta espacio. */
@@ -959,6 +970,72 @@ function recibirAvance(o) {
   const vistas = Object.keys(S.cards).length;
   aviso(vistas > antes ? `Avance unido: ahora llevas ${vistas} tarjetas vistas.` : "Avance unido. No había nada nuevo.");
   render();
+}
+
+/* ------------------------------------------------------------------ Servidor: el avance en Supabase
+   Un proyecto de Supabase propio, repaso-relevo, aparte del de la app, guarda el avance para que esté en todos los
+   dispositivos. Solo acepta la clave de sincronización del autor y guarda su huella, no la clave (ver
+   52_repaso-relevo-sitio/servidor-supabase.sql). La clave queda en este navegador, aparte del avance: no va en las
+   copias ni en los códigos. La clave publicable es pública por diseño, como la de la app (D-161). */
+const SERVIDOR = { url: "https://vogqmiuhlgcajhhzvrws.supabase.co", publica: "sb_publishable_KOupW-UYx-x0xwxRFABlqw_UfuQyl2m" };
+const LS_NUBE = "repaso-relevo-servidor";
+const nube = { clave: "", ultima: 0, estado: "", error: "" };
+let tSubida = null, tReintento = null, sincronizando = null, pendiente = false;
+const normalizarClave = (s) => String(s || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+const claveVisible = (k) => k.replace(/(.{4})(?=.)/g, "$1-");
+function leerNube() {
+  try { const o = JSON.parse(localStorage.getItem(LS_NUBE) || "{}"); if (/^[A-Z0-9]{20}$/.test(o.clave || "")) nube.clave = o.clave; if (typeof o.ultima === "number") nube.ultima = o.ultima; } catch (e) {}
+}
+function guardarNube() { try { localStorage.setItem(LS_NUBE, JSON.stringify({ clave: nube.clave, ultima: nube.ultima })); } catch (e) {} }
+async function rpc(fn, cuerpo, keepalive) {
+  const r = await fetch(`${SERVIDOR.url}/rest/v1/rpc/${fn}`, { method: "POST", keepalive: !!keepalive, headers: { "Content-Type": "application/json", apikey: SERVIDOR.publica }, body: JSON.stringify(cuerpo) });
+  if (!r.ok) { const e = new Error("servidor " + r.status); e.status = r.status; throw e; }
+  const t = await r.text(); return t ? JSON.parse(t) : null;
+}
+function programarSubida() { if (!nube.clave) return; pendiente = true; clearTimeout(tSubida); tSubida = setTimeout(sincronizar, 3000); }
+/* Trae lo del servidor, lo une con lo de aquí (de cada tarjeta queda la versión más repasada) y sube el resultado. */
+function sincronizar() {
+  if (!nube.clave) return Promise.resolve();
+  if (sincronizando) { pendiente = true; return sincronizando; }
+  clearTimeout(tSubida); clearTimeout(tReintento);
+  if (navigator.onLine === false) { nube.estado = "offline"; estado(); return Promise.resolve(); }
+  pendiente = false; nube.estado = "subiendo"; estado();
+  sincronizando = (async () => {
+    try {
+      const remoto = await rpc("repaso_leer", { clave: nube.clave });
+      const antes = JSON.stringify(S);
+      if (esObj(remoto)) S = unir(S, limpiar(remoto));
+      const trajo = JSON.stringify(S) !== antes;
+      if (trajo) { guardarLocal(); aplicarTema(); }
+      await rpc("repaso_guardar", { clave: nube.clave, datos: S });
+      nube.ultima = Date.now(); nube.estado = "ok"; nube.error = ""; guardarNube();
+      if (trajo) refrescar();
+    } catch (e) {
+      nube.estado = navigator.onLine === false ? "offline" : "error";
+      nube.error = e.status === 403 ? "clave" : "red";
+      if (nube.estado === "error" && nube.error !== "clave") tReintento = setTimeout(sincronizar, 60000);
+    } finally {
+      sincronizando = null; estado();
+      if (pendiente && nube.estado === "ok") programarSubida();
+    }
+  })();
+  return sincronizando;
+}
+function subirAlSalir() { if (!nube.clave || !pendiente) return; pendiente = false; clearTimeout(tSubida); rpc("repaso_guardar", { clave: nube.clave, datos: S }, true).catch(() => {}); }
+function refrescar() { const a = document.activeElement; if (a && a.matches && a.matches("input, textarea, select")) return; render(); }
+async function conectar(texto) {
+  const k = normalizarClave(texto);
+  if (k.length !== 20) { aviso("La clave tiene 20 letras y números."); return; }
+  try { await rpc("repaso_leer", { clave: k }); }
+  catch (e) { aviso(e.status === 403 ? "Esa clave no sirve. Revisa que esté bien escrita." : "No se pudo llegar al servidor. Revisa tu conexión."); return; }
+  nube.clave = k; nube.estado = ""; nube.error = ""; guardarNube();
+  await sincronizar();
+  aviso(nube.estado === "ok" ? "Conectado. Tu avance se guarda en el servidor." : "Conectado, pero el servidor no respondió. Se vuelve a intentar solo.");
+  render();
+}
+function desconectar() {
+  nube.clave = ""; nube.ultima = 0; nube.estado = ""; nube.error = ""; guardarNube(); clearTimeout(tSubida); clearTimeout(tReintento);
+  estado(); render(); aviso("Este dispositivo ya no se conecta al servidor. Tu avance sigue aquí.");
 }
 
 /* ------------------------------------------------------------------ Fechas */
@@ -1326,7 +1403,7 @@ window.addEventListener("appinstalled", () => { instalarApp = null; aviso("Repas
 
 /* ------------------------------------------------------------------ Vistas */
 let vista = "hoy";
-let filtroQuien = "todas", soloTuyas = false, practica = false, simul = null, codigoHecho = "";
+let filtroQuien = "todas", soloTuyas = false, practica = false, simul = null, codigoHecho = "", verClave = false;
 const verFrase = { una: false, tres: false };
 const VISTAS = ["hoy", "casa", "tarjetas", "preguntas", "plan", "avance", "metodo"];
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -1362,10 +1439,13 @@ function vHoy() {
   const intro = S.intro ? "" : `<section class="card"><h3>Cómo funciona</h3><ol class="lista">
       <li>Elige cuánto tiempo tienes y toca Empezar. La sesión se arma sola.</li>
       <li>Responde en voz alta antes de mirar. Equivocarse también sirve: así se fija.</li>
-      <li>Tu avance se guarda en este navegador. En Mi avance puedes guardar una copia o pasarlo a otro dispositivo.</li></ol>
+      <li>Conecta cada dispositivo al servidor en Mi avance: tu avance aparece en el teléfono y en el computador.</li></ol>
       <div class="row"><button class="btn" type="button" data-act="intro-ok">Entendido</button></div></section>`;
   const vistas = Object.keys(S.cards).length, sinCopia = S.copia ? Math.floor((Date.now() - S.copia) / 86400000) : null;
-  const copia = vistas >= 10 && (sinCopia === null || sinCopia >= 4) ? `<section class="card"><p><b>${sinCopia === null ? "Aún no guardas una copia de tu avance." : `Hace ${sinCopia} días que no guardas una copia.`}</b> Toma diez segundos y te protege si el navegador borra sus datos.</p>
+  const servidor = !nube.clave ? `<section class="card"><p><b>Guarda tu avance en el servidor.</b> Conecta este dispositivo una vez con tu clave, y tu avance aparecerá en el teléfono y en el computador.</p>
+      <div class="row"><a class="btn primary" href="#avance">Conectar este dispositivo</a></div></section>`
+    : nube.estado === "error" && nube.error === "clave" ? `<section class="card"><p><b>El servidor no aceptó tu clave.</b> Tu avance está guardado aquí. Revisa Mi avance.</p></section>` : "";
+  const copia = !nube.clave && vistas >= 10 && (sinCopia === null || sinCopia >= 4) ? `<section class="card"><p><b>${sinCopia === null ? "Aún no guardas una copia de tu avance." : `Hace ${sinCopia} días que no guardas una copia.`}</b> Toma diez segundos y te protege si el navegador borra sus datos.</p>
       <div class="row"><button class="btn" type="button" data-act="copia">${ICON.baja}Guardar una copia</button><a class="btn ghost" href="#avance">Más opciones</a></div></section>` : "";
   const local = EN_WEB ? "" : `<p class="small muted">Esta es la copia local. En el teléfono, abre la versión web: <a href="${SITIO}">${esc(SITIO.replace("https://", ""))}</a></p>`;
   const hecho = S.dias[p.f] && cuando !== "despues";
@@ -1377,6 +1457,7 @@ function vHoy() {
       ${p.nota && cuando !== "despues" ? `<p class="muted">${esc(p.nota)}</p>` : ""}
     </section>
     ${intro}
+    ${servidor}
     <section class="card">
       ${tiempos}
       <b>Lo que harás</b>
@@ -1678,7 +1759,16 @@ function vAvance() {
     </section>
     <section class="card"><h2>Lo que más cuesta</h2>${cuesta}</section>
     <section class="card"><h2>Tu avance se guarda</h2>
-      <p>Se guarda solo, en este navegador. No se sube a ninguna parte y nadie más lo ve. Si borras los datos del navegador, se borra también.</p>
+      <h3>En el servidor</h3>
+      ${nube.clave ? `<p>${nube.error === "clave" && nube.estado === "error" ? "El servidor no aceptó la clave de este dispositivo. Tu avance está guardado aquí." : nube.estado === "offline" ? "Sin internet. Tu avance está guardado aquí y se sube cuando vuelva la conexión." : nube.estado === "error" ? "El servidor no responde. Tu avance está guardado aquí y se vuelve a intentar solo." : `Conectado. Tu avance se guarda solo en el servidor${nube.ultima ? `; la última vez, a las ${horaDe(nube.ultima)}` : ""}.`}</p>
+        <p class="small muted">Para sumar otro dispositivo, abre Repaso Relevo allá y escribe la misma clave aquí, en Mi avance.${verClave ? ` Tu clave: <b class="num">${esc(claveVisible(nube.clave))}</b>` : ""}</p>
+        <div class="row"><button class="btn" type="button" data-act="sincronizar">Guardar ahora</button><button class="btn ghost" type="button" data-act="ver-clave">${verClave ? "Ocultar la clave" : "Ver la clave"}</button><button class="btn ghost" type="button" data-act="desconectar">Desconectar este dispositivo</button></div>`
+      : `<p>Conecta este dispositivo para que tu avance se guarde en el servidor y aparezca en el teléfono y en el computador. Se hace una vez en cada dispositivo.</p>
+        <p class="small muted">Tu clave está en tu computador, en Documentos: “Repaso Relevo - clave del servidor”. Los guiones son opcionales.</p>
+        <label class="campo"><span>Clave de sincronización</span><input id="clave-servidor" type="text" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX-XXXX" maxlength="40"></label>
+        <div class="row"><button class="btn primary" type="button" data-act="conectar">Conectar</button></div>`}
+      <h3>En este navegador</h3>
+      <p>Además se guarda aquí, para que funcione sin internet. Si borras los datos del navegador, el servidor lo devuelve al conectarte otra vez.</p>
       <p class="small muted">${ultima}${pers}</p>
       <div class="row"><button class="btn primary" type="button" data-act="copia">${ICON.baja}Guardar una copia</button><button class="btn" type="button" data-act="cargar">${ICON.sube}Cargar una copia</button>${puedePersistir ? '<button class="btn ghost" type="button" data-act="proteger">Pedir que no se borre</button>' : ""}</div>
       <h3>Seguir en otro dispositivo</h3>
@@ -1826,10 +1916,15 @@ document.addEventListener("click", async (ev) => {
     aviso("Ábrelo con tu calendario para agregar los recordatorios.");
   }
   else if (act === "instalar") { if (instalarApp) { instalarApp.prompt(); instalarApp = null; } }
+  else if (act === "conectar") { const i = document.getElementById("clave-servidor"); el.disabled = true; await conectar(i ? i.value : ""); el.disabled = false; }
+  else if (act === "desconectar") desconectar();
+  else if (act === "sincronizar") { await sincronizar(); aviso(nube.estado === "ok" ? "Guardado en el servidor." : "No se pudo llegar al servidor. Tu avance está guardado aquí."); render(); }
+  else if (act === "ver-clave") { verClave = !verClave; render(); }
 });
 document.addEventListener("keydown", (ev) => {
   const t = ev.target;
   if ((ev.key === "Enter" || ev.key === " ") && t.matches && t.matches('[data-act="destapar"], p[data-act="frase"]')) { ev.preventDefault(); t.click(); return; }
+  if (ev.key === "Enter" && t.id === "clave-servidor") { ev.preventDefault(); conectar(t.value); return; }
   if (ev.altKey || ev.ctrlKey || ev.metaKey || (t.closest && t.closest("input, textarea, select, button, summary, a"))) return;
   const enGuia = vista === "hoy" && !!guia;
   if (sesion && sesion.i < sesion.cola.length && (enGuia ? sesion.guia : vista === "tarjetas" && !sesion.guia)) {
@@ -1866,13 +1961,18 @@ document.addEventListener("change", async (ev) => {
 /* ------------------------------------------------------------------ Inicio */
 function alCambiarVoces() { const antes = voces.length; cargarVoces(); if (!antes && voces.length) render(); }
 leerLocal();
+leerNube();
 aplicarTema();
 cargarVoces();
 if (VOZ_OK) speechSynthesis.onvoiceschanged = alCambiarVoces;
 revisarAlmacen();
 mostrarVista(false);
-estado("ok");
-window.addEventListener("pagehide", () => callar(true));
+estado();
+if (nube.clave) sincronizar();
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") sincronizar(); else subirAlSalir(); });
+window.addEventListener("online", () => sincronizar());
+window.addEventListener("offline", () => { if (nube.clave) { nube.estado = "offline"; estado(); } });
+window.addEventListener("pagehide", () => { callar(true); subirAlSalir(); });
 if ("serviceWorker" in navigator && location.protocol === "https:") window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
 </script>
 </body>

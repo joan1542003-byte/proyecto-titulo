@@ -3,7 +3,7 @@
 **Qué es:** un plan diario para aprender todo Relevo y responder a la comisión del examen, pensado para estudiar un poco cada día sin agobio.
 **Examen:** lunes 14 y martes 15 de diciembre de 2026.
 **Fecha:** 26 de noviembre de 2026.
-**Herramienta:** [Repaso Relevo](52_repaso-relevo.html), una página para usar cada día. Está publicada en https://joan1542003-byte.github.io/proyecto-titulo/ para abrirla en el teléfono, instalarla como app y usarla sin internet. En el computador también se abre con doble clic (hay una copia en Documentos, “Repaso Relevo.html”). El avance se guarda solo en el navegador de cada dispositivo: no hay cuentas ni servidor, y nada pasa por la nube de Claude.
+**Herramienta:** [Repaso Relevo](52_repaso-relevo.html), una página para usar cada día. Está publicada en https://joan1542003-byte.github.io/proyecto-titulo/ para abrirla en el teléfono, instalarla como app y usarla sin internet. En el computador también se abre con doble clic (hay una copia en Documentos, “Repaso Relevo.html”). El avance se guarda en un servidor propio de Supabase, que solo acepta la clave del autor, y también en el navegador de cada dispositivo. No hay cuentas ni contraseñas, y nada pasa por la nube de Claude.
 
 Todo el contenido sale de la [memoria v8](../08_memoria/borrador-memoria-v8-2026-11-21.md), el [guion](49_guion-presentacion-examen-2026-12.md), la [ficha de estudio](50_ficha-de-estudio-examen-2026-12.md), el [documento de la comisión](51_comision-del-examen-2026-12.md) y el [Anexo H](../08_memoria/anexos/anexo-h-identidad.md) (H.8, el objeto), al 26 de noviembre de 2026.
 
@@ -26,7 +26,7 @@ Relevo devuelve una intención con una señal en un lugar. El plan usa las misma
 2. **Tarjetas y cifras.** Las tarjetas se responden en voz alta y se marcan Sí, A medias o No. Las cifras son preguntas de cuatro opciones: las opciones falsas son otras cifras del proyecto, para aprender a no confundirlas. Todo lo aprendido vuelve al menos una vez antes del 12 de diciembre.
 3. **Preguntas.** Cada una tiene cronómetro, una pista con tres claves (respuesta, dato y límite) y la respuesta completa. Se puede escuchar la respuesta y grabarse para oírse; la grabación no se guarda.
 4. **Escuchar.** Las tarjetas, la casa y las respuestas se pueden oír con la voz del dispositivo, para repasar en el camino.
-5. **Mi avance.** Muestra cómo vas y lo que más cuesta. Desde ahí se guarda una copia, se pasa el avance a otro dispositivo con un código y se descargan recordatorios para el calendario.
+5. **Mi avance.** Muestra cómo vas y lo que más cuesta. Desde ahí se conecta cada dispositivo al servidor, se guarda una copia y se descargan recordatorios para el calendario.
 
 **Contenido:** 100 tarjetas en once temas, 39 cifras y 39 preguntas. El 26 de noviembre se sumaron tres temas: el objeto (medidas, piezas, material y por qué es más grande que el Tag), las tres personas de la prueba y cómo decir los resultados sin exagerar.
 
@@ -69,14 +69,21 @@ Cada día la herramienta muestra la misión y arma la sesión según el tiempo q
 
 ## Dónde se guarda el avance
 
-- En el navegador de cada dispositivo. No hay cuentas ni servidor: nadie más lo ve.
-- Para no perderlo, en Mi avance se descarga una copia, un archivo .json. Conviene hacerlo cada semana.
-- Para seguir en otro dispositivo, se crea un código en uno y se pega en el otro. El avance se une: de cada tarjeta queda la versión más repasada.
-- En el teléfono conviene instalarla (Agregar a la pantalla principal, o Agregar a inicio en el iPhone): funciona sin internet y el navegador cuida mejor sus datos.
-- La copia que se abre con doble clic y la versión web guardan cada una su propio avance. Para unirlos se usa una copia o un código.
-- La página es pública para quien tenga el enlace, como el repositorio, y pide a los buscadores no mostrarla. El avance no es público.
+- **En el servidor.** Un proyecto propio de Supabase, repaso-relevo, guarda el avance para que esté en el teléfono y en el computador. Cada dispositivo se conecta una vez en Mi avance con la clave de sincronización, que está en Documentos, en “Repaso Relevo - clave del servidor”. El servidor solo acepta esa clave y guarda su huella, no la clave.
+- **En el navegador.** Además queda en cada dispositivo, para que funcione sin internet. Lo que se estudia sin conexión se sube al volver.
+- **Cómo se unen.** Al abrir la página, trae lo del servidor y lo une con lo del dispositivo: de cada tarjeta queda la versión más repasada. Nada se pierde si se estudia en los dos.
+- **Copias.** En Mi avance también se descarga una copia, un archivo .json, o se crea un código. Sirven de respaldo.
+- En el teléfono conviene instalarla (Agregar a la pantalla principal, o Agregar a inicio en el iPhone): funciona sin internet.
+- El servidor gratuito de Supabase se pausa tras una semana sin uso. Estudiando a diario no pasa; si pasara, se reactiva en supabase.com.
+- La página es pública para quien tenga el enlace, como el repositorio, y pide a los buscadores no mostrarla. El avance no es público: sin la clave, el servidor no lo muestra.
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — El avance, en un servidor
+
+- **Qué cambió:** el avance se guarda en un proyecto propio de Supabase, repaso-relevo, que solo acepta la clave de sincronización del autor. Cada dispositivo se conecta una vez en Mi avance, y al abrir la página se une lo del servidor con lo del dispositivo.
+- **Cómo estaba antes:** el avance vivía solo en el navegador de cada dispositivo y se pasaba de uno a otro con una copia o un código.
+- **Por qué:** el autor pidió que se guarde en un servidor, eligió Supabase y pidió crear un proyecto para esto, porque su cuenta no tiene el proyecto de la app.
 
 ### 2026-11-26 — Más fácil de estudiar y en GitHub Pages
 

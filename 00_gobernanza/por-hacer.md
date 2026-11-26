@@ -1048,10 +1048,16 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### E. Estudio
 
-- [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria. Desde el 25 de noviembre hay un [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) diario hasta el examen, con su herramienta, [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html): la historia en siete lugares de la casa, una sesión guiada para cada día, 100 tarjetas de repaso espaciado, 39 cifras, las 39 preguntas con pista y respuesta, voz y simulacros. Desde el 26 de noviembre está en GitHub Pages (https://joan1542003-byte.github.io/proyecto-titulo/) para usarla en el teléfono.
+- [ ] Aprender el problema, la pregunta, la hipótesis, los objetivos y los supuestos, y practicar con las preguntas probables. La [ficha de estudio](../10_recursos_visuales/50_ficha-de-estudio-examen-2026-12.md) los reúne tal como están en la memoria. Desde el 25 de noviembre hay un [plan de estudio](../10_recursos_visuales/52_plan-de-estudio-examen-2026-12.md) diario hasta el examen, con su herramienta, [Repaso Relevo](../10_recursos_visuales/52_repaso-relevo.html): la historia en siete lugares de la casa, una sesión guiada para cada día, 100 tarjetas de repaso espaciado, 39 cifras, las 39 preguntas con pista y respuesta, voz y simulacros. Desde el 26 de noviembre está en GitHub Pages (https://joan1542003-byte.github.io/proyecto-titulo/) para usarla en el teléfono, con el avance en un servidor de Supabase.
 - [ ] Decidir y escribir con palabras propias las cuatro respuestas que dependen del autor: el precio, el sueño, Relevo Go y el producto (en Repaso Relevo, “Revísala y hazla tuya”).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — El avance en un servidor
+
+- **Qué cambió:** la tarea 18, E, dice que el avance de Repaso Relevo se guarda en un servidor de Supabase.
+- **Cómo estaba antes:** solo nombraba GitHub Pages.
+- **Por qué:** el autor pidió guardar el avance en un servidor.
 
 ### 2026-11-26 — Repaso Relevo en GitHub Pages
 
