@@ -214,7 +214,8 @@ function bloques(lineas, estiloTexto = 'Texto') {
         f.filas = [filas[0], ...filas.slice(2)];
       } else if (/^!\[/.test(lineas[i])) {
         // Fotografías: ![pie](ruta relativa a la memoria), varias en una línea.
-        f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])) }));
+        // Una foto puede llevar su encuadre en el título: ![pie](foto.jpg "encuadre 50% 90%") la recorta mostrando la parte de abajo.
+        f.fotos = [...lineas[i].matchAll(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g)].map((m) => ({ pie: m[1], src: path.relative(AQUI, path.join(path.dirname(FUENTE), m[2])), encuadre: ((m[3] || '').match(/^encuadre (.+)$/) || [])[1] }));
         f.descripcion = ''; f.columna = !!f.columna || (f.fotos.length === 1 && /figuras\/fuentes\//.test(f.fotos[0].src)); i++;   // la portada de una fuente va en una columna
         // Una figura de ../figuras/v8 se coloca en su versión vectorial (SVG), al ancho con que se diseñó.
         const v8 = f.fotos.length === 1 && f.fotos[0].src.match(/figuras[\/\\]v8[\/\\]([^\/\\]+)\.png$/);
@@ -784,7 +785,7 @@ function fotos(b, T) {
   const boc = b.fotos.every((f) => /bocetos/.test(f.src));
   return `<div class="fot${natural ? ' nat' : ''}${grande ? ' grande' : ''}${flujo ? ' flujo' : ''}${boc ? ' boc' : ''}${!natural && !b.columna ? ' ancha' : ''}" style="grid-template-columns:${cols}">${b.fotos.map((f, i) => {
     const m = f.pie.match(/^([a-z0-9]+)\. (.*)$/);
-    return `${flujo && i ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="${h(f.src.split(path.sep).join('/'))}" alt="">${f.pie ? `<div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div>` : ''}</div>`;
+    return `${flujo && i ? `<span class="fl">${svgIcono('siguiente')}</span>` : ''}<div><img src="${h(f.src.split(path.sep).join('/'))}" alt=""${f.encuadre ? ` style="object-position:${h(f.encuadre)}"` : ''}>${f.pie ? `<div class="pie">${circulo(m ? m[1] : '')}${T('Celda', m ? m[2] : f.pie)}</div>` : ''}</div>`;
   }).join('')}</div>`;
 }
 

@@ -566,9 +566,9 @@ El recorrido tiene cuatro momentos: preparar, seguir en el teléfono, oír la se
 
 <!-- página -->
 
-![Preparar | a. Elige la actividad](figuras/flujo-a-que-quieres-hacer.png) ![Preparar | b. Elige su primer paso](figuras/flujo-b-como-empiezas.png) ![Seguir en el teléfono | c. Usa el teléfono mientras Relevo cuenta el tiempo](figuras/flujo-c-inicio-contando.png) ![Oír la señal | d. Relevo suena desde el lugar de la actividad](señal:suena) ![Decidir | e. Responde unas preguntas breves](figuras/flujo-e-cuatro-preguntas.png) ![Decidir | f. Responde qué decidió](figuras/flujo-f-que-decidiste.png)
+![Preparar | a. Elige la actividad](figuras/flujo-a-que-quieres-hacer.png) ![Preparar | b. Elige su primer paso](figuras/flujo-b-como-empiezas.png) ![Seguir en el teléfono | c. Usa el teléfono mientras Relevo cuenta el tiempo](figuras/flujo-c-inicio-contando.png) ![Oír la señal | d. Relevo suena desde el lugar de la actividad](figuras/flujo-d-volver-a-elegir.jpg) ![Decidir | e. Responde unas preguntas breves](figuras/flujo-e-cuatro-preguntas.png) ![Decidir | f. Responde qué decidió](figuras/flujo-f-que-decidiste.png)
 
-*Nota.* Capturas de la aplicación, con un perfil de prueba. Preparar un relevo toma seis pantallas; aquí se muestran las dos primeras. La señal suena fuera de la pantalla. Durante la prueba en los hogares, los pasos eran los mismos y la interfaz era otra (Anexo F).
+*Nota.* Capturas de la aplicación, con un perfil de prueba. Preparar un relevo toma seis pantallas; aquí se muestran las dos primeras. La señal suena en el Tag; d muestra la aplicación cuando ya dejó de sonar. Durante la prueba en los hogares, los pasos eran los mismos y la interfaz era otra (Anexo F).
 
 **Preparar.** En la aplicación cada actividad preparada con su condición se llama un *relevo*. Prepararlo es responder unas pocas preguntas. Las respuestas requieren poco esfuerzo: se eligen entre opciones concretas, como “Abrir el libro” o “En el velador”, porque seleccionar cuesta menos que escribir. Cada esfuerzo de más hace menos probable que un recordatorio se prepare (Chiu y Gilbert, 2024). Escribir sigue disponible. El botón para seguir está siempre en el mismo lugar. Antes de activar, la persona hace sonar Relevo desde donde quedó y confirma que lo oye: sabe desde el primer día que la señal la va a escuchar. Cada dato de un relevo activo puede cambiarse en cualquier momento. Esta opción surgió de los comentarios de una persona durante la prueba.
 
@@ -823,7 +823,7 @@ Cada persona preparó su primer relevo y dejó el Tag junto al primer paso de un
 
 <!-- doble -->
 
-![a. Relevo preparado y Tag en la mano](figuras/figura-4a-relevo-preparado.jpg) ![b. Tag sobre un mueble, junto a unos mangas](figuras/figura-4b-tag-en-un-mueble.jpg) ![c. Tag sobre un escritorio](figuras/figura-4c-tag-en-un-escritorio.jpg)
+![a. Relevo preparado y Tag en la mano](figuras/figura-4a-relevo-preparado.jpg) ![b. Tag sobre un mueble, junto a unos mangas](figuras/figura-4b-tag-en-un-mueble.jpg) ![c. Tag sobre un escritorio](figuras/figura-4c-tag-en-un-escritorio.jpg "encuadre 50% 90%")
 
 *Nota.* Fotografías de la prueba en los hogares. En a, la pantalla muestra la actividad, el primer paso y el lugar donde sonará el Tag; se difuminó el nombre de la persona.
 

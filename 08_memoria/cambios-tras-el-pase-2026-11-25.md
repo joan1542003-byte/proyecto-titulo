@@ -130,7 +130,27 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El proyecto usó tres herramientas de inteligencia artificial generativa. Cursor de Anysphere y Codex de OpenAI ayudaron a programar los primeros prototipos de la aplicación. Claude Code de Anthropic la desarrolló a partir de los prototipos, bocetos y *wireframes* del autor. Además, Claude ayudó a modelar el objeto en 3D a partir de los bocetos. Las tres apoyaron la revisión de la redacción y la verificación de citas (Anexo E). Son del autor la formulación, la investigación, las entrevistas, los criterios, la identidad visual y los prototipos y *wireframes* en Figma, a partir de sus bocetos. Lo que propuso una herramienta se revisó, se corrigió o se descartó, y ninguna generó datos, participantes, citas ni resultados.
 
-### 12. 11. Bajada proyectual: decisiones de diseño › Lenguaje visual: Apple como referencia
+### 12. 11. Bajada proyectual: decisiones de diseño › Recorrido del usuario
+
+**Antes:**
+
+> Figura 21, paso 3, “Oír la señal”: un recuadro verde con el ícono del sonido, que no era una pantalla de la aplicación.
+
+**Después:**
+
+> La pantalla de la señal de la aplicación (4.7.2), de la misma serie que las otras cinco capturas, cuando ya dejó de sonar: “Es momento de volver a elegir”. Archivo: `figuras/flujo-d-volver-a-elegir.jpg`. El pie “d. Relevo suena desde el lugar de la actividad” no cambia.
+
+### 13. 11. Bajada proyectual: decisiones de diseño › Recorrido del usuario
+
+**Antes:**
+
+> *Nota.* Capturas de la aplicación, con un perfil de prueba. Preparar un relevo toma seis pantallas; aquí se muestran las dos primeras. La señal suena fuera de la pantalla. Durante la prueba en los hogares, los pasos eran los mismos y la interfaz era otra (Anexo F).
+
+**Después:**
+
+> *Nota.* Capturas de la aplicación, con un perfil de prueba. Preparar un relevo toma seis pantallas; aquí se muestran las dos primeras. La señal suena en el Tag; d muestra la aplicación cuando ya dejó de sonar. Durante la prueba en los hogares, los pasos eran los mismos y la interfaz era otra (Anexo F).
+
+### 14. 11. Bajada proyectual: decisiones de diseño › Lenguaje visual: Apple como referencia
 
 **Antes:**
 
@@ -140,7 +160,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > **Apple frente a Material Design.** La aplicación funciona en Android. Allí lo conocido es Material Design, el sistema de Google. De Apple se tomaron principios y una escala tipográfica, no una apariencia. La tipografía se lee en el cuerpo que usa iOS, un poco mayor que el de Material y con más interlineado, y los títulos en seminegrita marcan la jerarquía sin recurrir a cajas ni líneas (Android Open Source Project, s. f.; Apple, 2025b). Lo que pertenece al sistema —los permisos, las notificaciones y el gesto para volver atrás— se ve como en cualquier Android. Material Design completo se descartó porque su escala tipográfica más pequeña y sus títulos en regular no daban esa jerarquía clara en una aplicación que se abre pocas veces al día.
 
-### 13. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
+### 15. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
 
 **Antes:**
 
@@ -150,7 +170,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Las palabras también son parte de la interfaz. Los textos de Relevo partieron de un estudio de las guías de escritura de interfaces de Apple (2024, 2025c), Google (Hays, 2026) y Microsoft (2021), y de la investigación sobre el lenguaje que presiona y el que deja elegir (Miller et al., 2007; Smit et al., 2019). De ese estudio surgió un tono de comunicación con cuatro rasgos (Figura 25).
 
-### 14. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
+### 16. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
 
 **Antes:**
 
@@ -160,7 +180,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > *Nota.* Elaboración propia a partir de Apple (2024, 2025c), Hays (2026) y Microsoft (2021). Los ejemplos son textos de la aplicación.
 
-### 15. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
+### 17. 11. Bajada proyectual: decisiones de diseño › Tono de comunicación
 
 **Antes:**
 
@@ -170,7 +190,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El tono es el mismo en toda la aplicación, pero se ajusta al momento: acogedor la primera vez, práctico al preparar, sereno mientras cuenta, neutro cuando suena y sobrio al hablar de datos. Relevo habla de tú en frases cortas y con palabras cotidianas —“querer” antes que “desear”, “usar” antes que “utilizar”—, como recomienda la guía de estilo en español de Microsoft (2021). Sigue además la regla del equipo de escritura de Apple que dice tan largo como haga falta y tan corto como se pueda (Apple, 2024). También pregunta en vez de rotular (“¿Cómo empiezas?”). Sus botones empiezan con un verbo que dice qué va a pasar, como “Activar el relevo” (Apple, 2025c).
 
-### 16. 12. Factibilidad y límites › Del prototipo al producto
+### 18. 12. Factibilidad y límites › Del prototipo al producto
 
 **Antes:**
 
@@ -180,7 +200,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El proyecto puede crecer en tres etapas. Cada una empieza solo si la anterior entrega evidencia. Un piloto en seis hogares y con Relevo impreso mostraría si sonar desde el lugar de la actividad aporta. Por último, el producto podría abrirse en las dos variantes ya modeladas. Relevo Home se deja en la casa junto al primer paso de una actividad. Relevo Go, más portátil, sirve a quienes cambian de lugar sus actividades. Ambas podrían funcionar con localizadores de otras marcas que respondan a la orden estándar de alerta que Relevo usa. Así la persona podría usar el que ya tiene. Aprovechar un dispositivo que ya existe evita desarrollar y fabricar electrónica, aunque puede no ofrecer justo las funciones que se necesitan (Gembali, 2023, p. 53).
 
-### 17. 12. Factibilidad y límites › Financiamiento
+### 19. 12. Factibilidad y límites › Financiamiento
 
 **Antes:**
 
@@ -190,7 +210,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > - **Semilla Inicia:** Semilla Inicia de Corfo cofinancia hasta el 75 % de proyectos de negocio innovadores para validarlos técnica y comercialmente, con un tope de 15 millones de pesos. Su convocatoria de 2024 fue para personas mayores de 18 años de cuatro regiones y ya cerró (Corporación de Fomento de la Producción, s. f.). Para formalizar un primer negocio el Capital Semilla Emprende de Sercotec entrega 3,5 millones de pesos a personas sin inicio de actividades, con un aporte propio del 3 % (Servicio de Cooperación Técnica, s. f.).
 
-### 18. 13. Plan de desarrollo y validación › Procedimiento de la prueba
+### 20. 13. Plan de desarrollo y validación › Procedimiento de la prueba
 
 **Antes:**
 
@@ -200,7 +220,17 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Cada persona preparó su primer relevo y dejó el Tag junto al primer paso de una actividad que quería hacer (Figura 32). La prueba comenzó el 7 de octubre de 2026 y tuvo cuatro etapas. Durante dos semanas usaron Relevo a su gusto y cuando quisieron. Cada una fijó su propio límite. Las tres completaron esas dos semanas. Tras cada señal la aplicación preguntó si supieron qué querían hacer antes de leerlo en la pantalla, si recordaron cómo empezar y qué decidieron. Del 21 de octubre al 8 de noviembre no usaron el Tag: la señal llegó solo como una notificación en el teléfono para comparar ambos soportes (Figura 33). La aplicación preguntó además si notaron el aviso. La prueba cerró el 10 de noviembre con un cuestionario y una entrevista a cada persona. Las preguntas de la aplicación están en el Anexo I.
 
-### 19. 13. Plan de desarrollo y validación › Registro y cuidado de los datos
+### 21. 13. Plan de desarrollo y validación › Procedimiento de la prueba
+
+**Antes:**
+
+> Figura 32, foto c: recortada al centro; el Tag quedaba cortado en el borde de abajo.
+
+**Después:**
+
+> El recorte baja hasta el 90 % del alto de la foto y el Tag se ve entero, abajo a la izquierda, como en la foto. En Affinity, mover la foto dentro de su marco hacia arriba hasta que el Tag quede completo.
+
+### 22. 13. Plan de desarrollo y validación › Registro y cuidado de los datos
 
 **Antes:**
 
@@ -210,7 +240,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Las tres personas son mayores de edad y participaron de forma voluntaria y sin pago. Podían omitir preguntas, silenciar la señal o dejar la prueba sin dar razones. Las tres aceptaron el consentimiento en la aplicación antes de empezar (Anexo I). Los datos se guardan con un código en lugar del nombre, aunque no son anónimos. Se tratan según la ley chilena de protección de datos (Ley 19628, 1999; Ley 21719, 2024) y se eliminan cuando la persona lo pide o a más tardar el 30 de diciembre de 2026.
 
-### 20. 13. Plan de desarrollo y validación › Resultados
+### 23. 13. Plan de desarrollo y validación › Resultados
 
 **Antes:**
 
@@ -220,7 +250,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Durante las semanas con el Tag el ciclo completo funcionó con las tres personas. El Tag sonó en todos los relevos que llegaron a su límite, salvo uno que se cumplió fuera de casa y lejos del objeto. Al oír la señal, la persona supo qué quería hacer antes de mirar la pantalla en 19 de 21 respuestas y recordó cómo empezar en las 21. Empezó la actividad en 10 de esas 21 respuestas. Las tres condiciones para dar el ciclo por logrado se cumplieron. Los fallos técnicos del objeto comprado se corrigieron durante la prueba.
 
-### 21. 13. Plan de desarrollo y validación › Iterar con los resultados
+### 24. 13. Plan de desarrollo y validación › Iterar con los resultados
 
 **Antes:**
 
@@ -231,7 +261,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > *Nota.* Elaboración propia a partir de la prueba y de la revisión con los profesores del 28 de octubre de 2026. La frecuencia se cuenta sobre la base que indica cada fila, de preferencia las 21 respuestas a la señal de cada etapa: no ocurre, ninguna vez; no frecuente, hasta un tercio; frecuente, más de un tercio y hasta dos tercios, y muy frecuente, más de dos tercios. Estados al 9 de noviembre de 2026. El rediseño de la aplicación, entre el 5 y el 9 de noviembre, incorporó nueve cambios que surgieron de la prueba; todos están en los Anexos D y G.
 
-### 22. 14. Conclusiones
+### 25. 14. Conclusiones
 
 **Antes:**
 
@@ -241,7 +271,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El prototipo funciona en uso real. Con las tres personas el Tag sonó cuando correspondía, y al oírlo las personas recordaron siempre cómo empezar y casi siempre qué querían hacer antes de mirar la pantalla. Los fallos que reportaron se corrigieron durante la prueba. Lo que la prueba mostró sobre el uso ya cambió la aplicación. Así se cumplieron los dos primeros objetivos: entender el problema y diseñar el sistema. El cuarto era medir en hogares el recuerdo oportuno y se cumplió con tres personas durante cinco semanas. Con el Tag, la persona recordó a tiempo en 19 de 21 respuestas y empezó la actividad en 10. El tercero era la comparación con el teléfono y se cumplió en parte: con la notificación recordaron igual y cerca de la mitad de las veces la notaron tarde o no la notaron, pero esa comparación no permite decir cuál de los dos ayuda más.
 
-### 23. 14. Conclusiones
+### 26. 14. Conclusiones
 
 **Antes:**
 
@@ -251,7 +281,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > El avance se ve en el propio prototipo. Entre septiembre y noviembre la propuesta pasó de un objeto donde dejar el teléfono a un sistema probado por tres personas: un prototipo que cambió con lo que se iba aprendiendo, varias veces a partir de lo que contaron las personas durante la prueba (Anexo G); una identidad completa con logo, paleta cromática, tipografía e íconos; una aplicación rediseñada con lo aprendido, y un objeto propio modelado en dos variantes que responden al usuario.
 
-### 24. 14. Conclusiones › Alcances y proyecciones
+### 27. 14. Conclusiones › Alcances y proyecciones
 
 **Antes:**
 
@@ -262,7 +292,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 > Para validar Relevo, el objeto propio, la etapa siguiente debe probar tres aspectos que el Tag no permitió decidir. El primero es la forma: si la persona lo encuentra, lo silencia y halla su botón sin ayuda. El segundo es el sonido: si se oye bien a través de la carcasa sin molestar a quienes están cerca. Con la placa del Tag el pitido es el mismo, así que un volumen regulable y un tono más suave exigen un hardware propio. El tercero es la ubicación: si sonar junto al primer paso ayuda más que sonar en otro lugar de la casa. Los tres se miden con las mismas preguntas de la aplicación.
 > La comparación con más personas debe evitar dos sesgos de esta prueba. El primero es que la etapa con el teléfono viniera siempre después, cuando las personas ya conocían la señal. El segundo es que pudieran recordar por haber preparado el relevo poco antes y no por la señal. El protocolo de 21 días del Anexo I resuelve el primero. Seis personas pasan por tres semanas en un orden distinto cada una: el objeto junto al primer paso, el mismo objeto en un lugar sin relación con la actividad y una notificación genérica en el teléfono (Figura 39). Para el segundo se pueden sumar algunos relevos en que el tiempo se cumpla sin señal: lo que la persona haga entonces mostrará cuánto se debe solo a haberlo preparado. Con el mismo sonido y las mismas preguntas en todas las condiciones, la diferencia entre ellas podrá atribuirse con más confianza a la señal y al lugar. Más adelante, un hardware propio permitiría diseñar también el sonido y el control.
 
-### 25. Referencias
+### 28. Referencias
 
 **Antes:**
 
@@ -273,7 +303,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 > Apple. (s. f.-a). *Family Controls App and Website Usage*. Apple Developer Documentation. Recuperado el 25 de agosto de 2026, de https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls.app-and-website-usage
 > Apple. (s. f.-b). *Set up Screen Time for yourself on iPhone*. Apple Support. Recuperado el 25 de septiembre de 2026, de https://support.apple.com/en-ie/guide/iphone/iphbfa595995/ios
 
-### 26. Referencias
+### 29. Referencias
 
 **Antes:**
 
@@ -283,7 +313,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Apple. (2025b, 16 de diciembre). *Typography*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/typography
 
-### 27. Referencias
+### 30. Referencias
 
 **Antes:**
 
@@ -295,7 +325,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Apple. (2025c, 16 de diciembre). *Writing*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/writing
 
-### 28. Referencias
+### 31. Referencias
 
 **Antes:**
 
@@ -305,7 +335,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Google. (s. f.). *Manage how you spend time on your Pixel phone or Pixel tablet with Digital Wellbeing*. Pixel Phone Help. Recuperado el 11 de octubre de 2026, de https://support.google.com/pixelphone/answer/9137850?hl=en
 
-### 29. Referencias
+### 32. Referencias
 
 **Antes:**
 
@@ -316,7 +346,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > (se quita)
 
-### 30. Referencias
+### 33. Referencias
 
 **Antes:**
 
@@ -326,7 +356,7 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 
 > Hays, A. (2026, 27 de marzo). *Material’s communication principles: Intro to UX writing* [Codelab]. Google Codelabs. https://codelabs.developers.google.com/codelabs/material-communication-guidance
 
-### 31. Referencias
+### 34. Referencias
 
 **Antes:**
 
@@ -337,6 +367,12 @@ Este documento reúne los cambios que se hicieron al [borrador v8](borrador-memo
 > Lukoff, K., Lyngs, U., Zade, H., Liao, J. V., Choi, J., Fan, K., Munson, S. A. y Hiniker, A. (2021). How the design of YouTube influences user sense of agency. En *Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems* (Artículo 368). Association for Computing Machinery. https://doi.org/10.1145/3411764.3445467
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Figuras 21 y 32
+
+- **Qué cambió:** se sumaron dos cambios: la pantalla real de la señal en la Figura 21 y el encuadre de la foto c de la Figura 32.
+- **Cómo estaba antes:** el paso “Oír la señal” era un recuadro que no venía de la aplicación, y el Tag de la foto c quedaba cortado.
+- **Por qué:** el autor lo pidió al revisar la memoria compuesta.
 
 ### 2026-11-25 — Creación
 

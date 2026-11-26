@@ -416,6 +416,7 @@
 | 25 nov. | Consulta y encargo | Dejó abierta su sesión de la biblioteca de la UDP en el navegador de Claude y preguntó qué faltaba, con una lista detallada, planes e ideas. | Con la biblioteca se comprobaron McDaniel y Einstein (p. S138), Guynn et al. (p. 296) y Middlebrooks y Green (p. 138). Kirsh (p. 38) quedó pendiente porque ScienceDirect bloquea el navegador de Claude. Lo que faltaba quedó en la [tarea 18](por-hacer.md#18-después-del-pase-memoria-final-presentación-montaje-comisión-y-estudio). | — |
 | 25 nov. | Encargo | Autorizó usar su computador como haga falta. Pidió que la memoria quede terminada hoy, con un nivel enorme de detalle, y en IDML para editarla. Pidió separar del borde un título de panel que casi lo tocaba: era “Agradecimientos”. | El título de cada panel se achica si una palabra no cabe, con el mismo margen a ambos lados. Se revisaron las 75 páginas: ninguna cifra, página ni inicial queda sola al comienzo de una línea, y la Tabla 4 ya no deja dos filas en una página casi vacía. El paquete para abrir el IDML en Affinity, con sus vínculos y tipografías, quedó en “Relevo memoria final”, en Documentos. | — |
 | 25 nov. | Encargo | Pidió que en el IDML también se puedan editar los textos de las figuras, sin romper su diseño. | Todo el texto del [IDML](../08_memoria/memoria-1920x1080/README.md) es editable: los textos de las siete figuras dibujadas aparte, los números, letras y leyendas de las piezas y los títulos de los paneles. Exportado desde Affinity, el IDML da el mismo PDF: las 25 145 palabras quedan en su lugar. Para eso, 43 textos de figuras y tablas y las direcciones de 96 referencias repiten con saltos forzados los cortes del PDF. De paso, el PDF ya no empieza una línea con la raya de cierre de un inciso y corta las direcciones después de una barra. | — |
+| 25 nov. | Encargo y corrección | Pidió adjuntar la memoria en PDF y el IDML y subirlos al repositorio. Preguntó qué falta por afinar. Señaló que en la foto c de la Figura 32 el Tag está más abajo que como se ve en la memoria, y que la pantalla de “Oír la señal” del flujo de la aplicación no es de la app y debe serlo. | Se adjuntaron el PDF y el IDML, que ya estaban en `main`. La Figura 21 muestra en “Oír la señal” la pantalla de la señal de la aplicación, de la serie 4.7.2 de las demás capturas, y su nota lo explica. La foto c de la Figura 32 se encuadra más abajo y el Tag se ve entero. Los [cambios tras el Pase](../08_memoria/cambios-tras-el-pase-2026-11-25.md) suman los dos. | — |
 
 ## Lo que muestra el registro
 
@@ -426,6 +427,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-25 — Figuras 21 y 32
+
+- **Qué cambió:** se registró el pedido de adjuntar la memoria y corregir las Figuras 21 y 32.
+- **Cómo estaba antes:** el último registro era el de los textos de las figuras editables.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-25 — La memoria lista y editable en IDML
 
