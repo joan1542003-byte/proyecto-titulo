@@ -22,7 +22,11 @@
   --amarillo-o: #C99A00; --celeste-o: #3E8FBF; --verde-o: #4E9A2E; --rosa-o: #C9558E;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-  --sombra: 0 1px 0 rgba(20,19,18,.04), 0 24px 48px -28px rgba(20,19,18,.22);
+  /* Movimiento: un resorte sin rebote (amortiguación 1), lento y suave */
+  --resorte: linear(0, 0.0196, 0.0684, 0.1344, 0.2093, 0.2872, 0.3643, 0.438, 0.5068, 0.5698, 0.6268, 0.6777, 0.7228, 0.7625, 0.7971, 0.8272, 0.8532, 0.8755, 0.8947, 0.9111, 0.9251, 0.937, 0.9471, 0.9556, 0.9628, 0.9689, 0.974, 0.9783, 0.9819, 0.9849, 0.9874, 0.9895, 0.9913, 0.9928, 0.994, 0.995, 0.9959, 0.9966, 0.9972, 0.9977, 1);
+  --suave: cubic-bezier(0.33, 0, 0.15, 1);
+  --curva: cubic-bezier(0.65, 0, 0.35, 1);
+  --sombra: 0 1px 2px rgba(20,19,18,.05), 0 10px 24px -14px rgba(20,19,18,.12), 0 36px 72px -40px rgba(20,19,18,.22);
   --f: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -33,23 +37,23 @@ body { font-family: var(--f); color: var(--tinta); -webkit-font-smoothing: antia
 
 /* ---------------------------------------------------------------- Láminas */
 .lam { position: absolute; inset: 0; width: 1920px; height: 1080px; background: var(--papel); overflow: hidden;
-  opacity: 0; visibility: hidden; transition: opacity 360ms var(--ease-out), visibility 0s linear 360ms; }
-.lam.activa { opacity: 1; visibility: visible; transition: opacity 420ms var(--ease-out); z-index: 2; }
+  opacity: 0; visibility: hidden; transition: opacity 700ms var(--suave), visibility 0s linear 700ms; }
+.lam.activa { opacity: 1; visibility: visible; transition: opacity 950ms var(--suave); z-index: 2; }
 .lam.sin-anim, .lam.sin-anim * { transition: none !important; animation: none !important; }
 .abs { position: absolute; }
 .cab { position: absolute; left: 96px; top: 46px; font-size: 24px; color: var(--gris); }
 .tema { position: absolute; right: 96px; top: 46px; font-size: 24px; font-weight: 600; }
 .folio { position: absolute; right: 96px; bottom: 40px; font-size: 24px; color: var(--gris); font-variant-numeric: tabular-nums; }
-.t { position: absolute; left: 96px; top: 116px; width: 1728px; font-size: 60px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
-.b { position: absolute; left: 96px; width: 1560px; font-size: 30px; line-height: 1.36; color: var(--gris); margin: 0; text-wrap: pretty; }
+.t { position: absolute; left: 96px; top: 112px; width: 1728px; font-size: 64px; line-height: 1.04; font-weight: 600; letter-spacing: -0.028em; margin: 0; text-wrap: balance; }
+.b { position: absolute; left: 96px; width: 1600px; font-size: 31px; line-height: 1.32; letter-spacing: -0.004em; color: var(--gris); margin: 0; text-wrap: pretty; }
 p { margin: 0; text-wrap: pretty; }
 em { font-style: italic; }
 b, strong { font-weight: 600; }
-.t2 { font-size: 40px; line-height: 1.18; font-weight: 600; letter-spacing: -0.015em; }
-.t3 { font-size: 32px; line-height: 1.22; font-weight: 600; letter-spacing: -0.01em; }
+.t2 { font-size: 40px; line-height: 1.16; font-weight: 600; letter-spacing: -0.02em; }
+.t3 { font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -0.012em; }
 .c1 { font-size: 30px; line-height: 1.38; }
 .c2 { font-size: 26px; line-height: 1.38; color: var(--gris); }
-.c3 { font-size: 21px; line-height: 1.35; color: var(--gris); }
+.c3 { font-size: 22px; line-height: 1.36; letter-spacing: 0.004em; color: var(--gris); }
 .tinta { color: var(--tinta); }
 .blanco { color: #fff; }
 .num { font-variant-numeric: tabular-nums; }
@@ -60,32 +64,35 @@ b, strong { font-weight: 600; }
 .circ { display: grid; place-items: center; border-radius: 50%; }
 .ic { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; display: block; }
 i.icono { display: inline-block; width: 1em; height: 1em; vertical-align: -0.12em; }
-.fuente { font-size: 20px; line-height: 1.35; color: var(--gris2); }
-.nota { position: absolute; left: 96px; bottom: 40px; width: 1500px; font-size: 20px; line-height: 1.35; color: var(--gris2); }
+.fuente { font-size: 20px; line-height: 1.36; letter-spacing: 0.01em; color: var(--gris2); }
+.nota { position: absolute; left: 96px; bottom: 40px; width: 1500px; font-size: 20px; line-height: 1.36; letter-spacing: 0.01em; color: var(--gris2); }
 
 /* Teléfonos: la captura dentro de un marco */
-.fono { position: absolute; border-radius: 46px; background: #111; padding: 9px; box-shadow: 0 40px 70px -40px rgba(20,19,18,.55), 0 2px 0 rgba(255,255,255,.08) inset; }
-.fono img { display: block; width: 100%; height: auto; border-radius: 38px; }
+.fono { position: absolute; border-radius: 52px; background: #0E0E10; padding: 10px;
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.14), inset 0 0 0 4px #1D1D20, 0 2px 4px rgba(20,19,18,.10), 0 28px 56px -26px rgba(20,19,18,.40), 0 70px 120px -60px rgba(20,19,18,.30); }
+.fono::before { content: ""; position: absolute; right: -3px; top: 21%; width: 3px; height: 9%; border-radius: 0 3px 3px 0; background: linear-gradient(#2C2C30, #17171A); }
+.fono::after { content: ""; position: absolute; left: 50%; top: 17px; width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%; background: #070708; box-shadow: inset 0 0 0 2px #1B1B1F, 0 0 0 1px rgba(255,255,255,.04); z-index: 2; }
+.fono img, .fono video { display: block; width: 100%; height: auto; border-radius: 42px; }
 
 /* ---------------------------------------------------------------- Apariciones (pasos)
    Cada elemento con data-p="n" aparece en el paso n de su lámina. Solo se animan opacity, transform y filter. */
-.lam [data-p] { opacity: 0; transform: translateY(18px); filter: blur(6px);
-  transition: opacity 520ms var(--ease-out), transform 640ms var(--ease-out), filter 520ms var(--ease-out); transition-delay: var(--d, 0ms); }
+.lam [data-p] { opacity: 0; transform: translateY(26px); filter: blur(8px);
+  transition: opacity 1000ms var(--suave), transform 1400ms var(--resorte), filter 1000ms var(--suave); transition-delay: calc(var(--d, 0ms) * 1.6); }
 .lam [data-p].ver { opacity: 1; transform: none; filter: none; }
-.lam [data-p].lado { transform: translateX(-28px); }
+.lam [data-p].lado { transform: translateX(-36px); }
 .lam [data-p].lado.ver { transform: none; }
-.lam [data-p].zoom { transform: scale(0.96); }
+.lam [data-p].zoom { transform: scale(0.95); }
 .lam [data-p].zoom.ver { transform: none; }
 /* Líneas que se dibujan */
-.traza { stroke-dasharray: var(--largo, 2000); stroke-dashoffset: var(--largo, 2000); transition: stroke-dashoffset 1100ms var(--ease-in-out); transition-delay: var(--d, 0ms); }
+.traza { stroke-dasharray: var(--largo, 2000); stroke-dashoffset: var(--largo, 2000); transition: stroke-dashoffset 1900ms var(--curva); transition-delay: calc(var(--d, 0ms) * 1.6); }
 .ver .traza, .traza.ver { stroke-dashoffset: 0; }
 /* Puntos que se llenan uno a uno */
-.puntos .pt { opacity: 0; transform: scale(.5); transform-box: fill-box; transform-origin: center; transition: opacity 260ms var(--ease-out), transform 360ms var(--ease-out); transition-delay: calc(var(--d, 0ms) + var(--i, 0) * 24ms); }
+.puntos .pt { opacity: 0; transform: scale(.5); transform-box: fill-box; transform-origin: center; transition: opacity 520ms var(--suave), transform 900ms var(--resorte); transition-delay: calc(var(--d, 0ms) * 1.6 + var(--i, 0) * 34ms); }
 .ver .puntos .pt, .puntos.ver .pt { opacity: 1; transform: none; }
 /* Barras que crecen */
-.crece { transform-origin: left center; transform: scaleX(0); transition: transform 1000ms var(--ease-out); transition-delay: var(--d, 0ms); }
+.crece { transform-origin: left center; transform: scaleX(0); transition: transform 1700ms var(--resorte); transition-delay: calc(var(--d, 0ms) * 1.6); }
 .ver .crece, .crece.ver { transform: none; }
-.crece-v { transform-origin: center bottom; transform: scaleY(0); transition: transform 900ms var(--ease-out); transition-delay: var(--d, 0ms); }
+.crece-v { transform-origin: center bottom; transform: scaleY(0); transition: transform 1600ms var(--resorte); transition-delay: calc(var(--d, 0ms) * 1.6); }
 .ver .crece-v { transform: none; }
 
 /* Aura de marca, para la portada, el cierre y las aperturas */
@@ -124,78 +131,80 @@ body.pdf .aura::before { background-repeat: no-repeat !important; background-siz
   .lam [data-p] { transform: none !important; filter: none !important; transition: opacity 300ms ease !important; }
   .traza { transition: none; stroke-dashoffset: 0; }
   .crece, .crece-v { transform: none; }
+  .puntos .pt { transform: none; transition: opacity 300ms ease; }
+  .lam, .lam.activa { transition-duration: 300ms; }
 }
 </style>
 <style id="estilos-laminas">
 /* ---------------------------------------------------------------- Estilos propios de algunas láminas */
 
 /* Portada: la marca entra pieza por pieza, en el sentido del reloj */
-#portada .marca-p { opacity: 0; transform: scale(.92) rotate(-14deg); transform-box: fill-box; transform-origin: center; transition: opacity 500ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: calc(200ms + var(--i) * 140ms); }
+#portada .marca-p { opacity: 0; transform: scale(.92) rotate(-14deg); transform-box: fill-box; transform-origin: center; transition: opacity 900ms var(--suave), transform 1600ms var(--resorte); transition-delay: calc(350ms + var(--i) * 220ms); }
 #portada .ver .marca-p { opacity: 1; transform: none; }
-#portada .palabra { opacity: 0; transition: opacity 700ms var(--ease-out) 820ms; }
+#portada .palabra { opacity: 0; transition: opacity 1200ms var(--suave) 1300ms; }
 #portada .ver .palabra { opacity: 1; }
 
 /* Definiciones: una rueda que se desliza, como el selector del iPhone */
 #definiciones .riel { position: absolute; left: 96px; top: 455px; width: 820px; height: 170px; border-radius: 85px; background: var(--blanco); box-shadow: var(--sombra); }
 #definiciones .rueda { position: absolute; left: 96px; top: 220px; width: 820px; height: 640px; overflow: hidden;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%); }
-#definiciones .lista { position: absolute; left: 0; top: 0; width: 820px; transition: transform 760ms var(--ease-in-out); }
+#definiciones .lista { position: absolute; left: 0; top: 0; width: 820px; transition: transform 1250ms var(--resorte); }
 #definiciones .term { position: absolute; left: 0; width: 820px; height: 170px; display: flex; align-items: center; justify-content: center; text-align: center;
   font-size: 72px; font-weight: 600; letter-spacing: -0.03em; color: var(--gris2); transform: scale(.62); opacity: .5;
-  transition: transform 760ms var(--ease-in-out), opacity 760ms var(--ease-in-out), color 760ms var(--ease-in-out); }
+  transition: transform 1250ms var(--resorte), opacity 1000ms var(--suave), color 1000ms var(--suave); }
 #definiciones .term.t0 { top: 235px; } #definiciones .term.t1 { top: 405px; } #definiciones .term.t2 { top: 575px; }
 #definiciones[data-paso="0"] .lista { transform: translateY(0); }
 #definiciones[data-paso="1"] .lista { transform: translateY(-170px); }
 #definiciones[data-paso="2"] .lista { transform: translateY(-340px); }
 #definiciones[data-paso="0"] .term.t0, #definiciones[data-paso="1"] .term.t1, #definiciones[data-paso="2"] .term.t2 { color: var(--tinta); transform: none; opacity: 1; }
 #definiciones .def { position: absolute; left: 1010px; top: 220px; height: 640px; display: flex; flex-direction: column; justify-content: center; width: 814px; opacity: 0; transform: translateY(16px); filter: blur(6px);
-  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out), filter 300ms var(--ease-out); }
-#definiciones[data-paso="0"] .def.d0, #definiciones[data-paso="1"] .def.d1, #definiciones[data-paso="2"] .def.d2 { opacity: 1; transform: none; filter: none; transition-duration: 560ms; transition-delay: 220ms; }
+  transition: opacity 450ms var(--suave), transform 450ms var(--suave), filter 450ms var(--suave); }
+#definiciones[data-paso="0"] .def.d0, #definiciones[data-paso="1"] .def.d1, #definiciones[data-paso="2"] .def.d2 { opacity: 1; transform: none; filter: none; transition-duration: 1000ms, 1400ms, 1000ms; transition-timing-function: var(--suave), var(--resorte), var(--suave); transition-delay: 420ms; }
 #definiciones .foto-phy { position: absolute; right: 96px; bottom: 96px; width: 300px; height: 400px; border-radius: 28px; overflow: hidden; box-shadow: var(--sombra);
-  opacity: 0; transform: translateY(24px) rotate(3deg); transition: opacity 400ms var(--ease-out), transform 700ms var(--ease-out); }
-#definiciones[data-paso="2"] .foto-phy { opacity: 1; transform: rotate(3deg); transition-delay: 380ms; }
+  opacity: 0; transform: translateY(30px) rotate(3deg); transition: opacity 800ms var(--suave), transform 1400ms var(--resorte); }
+#definiciones[data-paso="2"] .foto-phy { opacity: 1; transform: rotate(3deg); transition-delay: 700ms; }
 #definiciones .foto-phy img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Cómo funciona Relevo: de la vista general a cada momento */
-#como .mom { position: absolute; width: 240px; text-align: center; transition: transform 820ms var(--ease-in-out), opacity 600ms var(--ease-out); }
-#como .mom .bola { width: 240px; height: 240px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto; transition: transform 820ms var(--ease-in-out), box-shadow 600ms ease; }
+#como .mom { position: absolute; width: 240px; text-align: center; transition: transform 1300ms var(--resorte), opacity 900ms var(--suave); }
+#como .mom .bola { width: 240px; height: 240px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto; transition: transform 1300ms var(--resorte), box-shadow 800ms ease; }
 #como .mom .bola .ic { width: 96px; height: 96px; stroke-width: 1.5; }
-#como .mom .nombre { margin-top: 26px; font-size: 32px; font-weight: 600; line-height: 1.15; transition: opacity 400ms ease; }
+#como .mom .nombre { margin-top: 26px; font-size: 32px; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
 #como .mom .nro { position: absolute; left: 50%; top: -54px; transform: translateX(-50%); font-size: 26px; font-weight: 600; color: var(--gris); }
-#como .flecha-g { transition: opacity 400ms ease; }
+#como .flecha-g { transition: opacity 600ms var(--suave); }
 #como[data-paso="1"] .flecha-g, #como[data-paso="2"] .flecha-g, #como[data-paso="3"] .flecha-g, #como[data-paso="4"] .flecha-g { opacity: 0; }
-#como .general { transition: opacity 400ms var(--ease-out); }
+#como .general { transition: opacity 700ms var(--suave); }
 #como:not([data-paso="0"]) .general { opacity: 0; }
 /* Estado de detalle: las cuatro bolas suben a una fila pequeña */
 #como:not([data-paso="0"]) .mom { opacity: .4; }
 #como:not([data-paso="0"]) .mom .bola { transform: scale(.3); }
 #como:not([data-paso="0"]) .mom .nombre { opacity: 1; transform: translateY(-110px); }
-#como .mom .nombre { transition: opacity 400ms ease, transform 820ms var(--ease-in-out); }
-#como .mom .nro { transition: opacity 300ms ease; }
+#como .mom .nombre { transition: opacity 700ms var(--suave), transform 1300ms var(--resorte); }
+#como .mom .nro { transition: opacity 500ms var(--suave); }
 #como:not([data-paso="0"]) .mom .nro { opacity: 0; }
 #como[data-paso="1"] .m1, #como[data-paso="2"] .m2, #como[data-paso="3"] .m3, #como[data-paso="4"] .m4 { opacity: 1; }
 #como .m1 { left: 260px; top: 380px; } #como .m2 { left: 660px; top: 380px; } #como .m3 { left: 1060px; top: 380px; } #como .m4 { left: 1460px; top: 380px; }
-#como:not([data-paso="0"]) .m1 { transform: translate(-164px, -261px) scale(.8); }
-#como:not([data-paso="0"]) .m2 { transform: translate(-324px, -261px) scale(.8); }
-#como:not([data-paso="0"]) .m3 { transform: translate(-484px, -261px) scale(.8); }
-#como:not([data-paso="0"]) .m4 { transform: translate(-644px, -261px) scale(.8); }
+#como:not([data-paso="0"]) .m1 { transform: translate(-164px, -349px) scale(.8); }
+#como:not([data-paso="0"]) .m2 { transform: translate(-324px, -349px) scale(.8); }
+#como:not([data-paso="0"]) .m3 { transform: translate(-484px, -349px) scale(.8); }
+#como:not([data-paso="0"]) .m4 { transform: translate(-644px, -349px) scale(.8); }
 #como .panel { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; opacity: 0; pointer-events: none; transform: translateX(40px); filter: blur(6px);
-  transition: opacity 260ms var(--ease-out), transform 260ms var(--ease-out), filter 260ms var(--ease-out); }
-#como[data-paso="1"] .p1, #como[data-paso="2"] .p2, #como[data-paso="3"] .p3, #como[data-paso="4"] .p4 { opacity: 1; transform: none; filter: none; transition-duration: 620ms; transition-delay: 320ms; }
-#como .linea-paso { position: absolute; left: 96px; top: 340px; height: 4px; width: 1728px; background: var(--linea); border-radius: 2px; opacity: 0; transition: opacity 400ms ease; }
+  transition: opacity 450ms var(--suave), transform 450ms var(--suave), filter 450ms var(--suave); }
+#como[data-paso="1"] .p1, #como[data-paso="2"] .p2, #como[data-paso="3"] .p3, #como[data-paso="4"] .p4 { opacity: 1; transform: none; filter: none; transition-duration: 1000ms, 1400ms, 1000ms; transition-timing-function: var(--suave), var(--resorte), var(--suave); transition-delay: 600ms; }
+#como .linea-paso { position: absolute; left: 96px; top: 252px; height: 3px; width: 1728px; background: var(--linea); border-radius: 2px; opacity: 0; transition: opacity 700ms var(--suave); }
 #como:not([data-paso="0"]) .linea-paso { opacity: 1; }
 /* Ondas del sonido */
 .ondas circle { fill: none; stroke: var(--verde-o); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; }
-#como[data-paso="3"] .ondas circle { animation: onda 2400ms var(--ease-out) infinite; animation-delay: calc(700ms + var(--i) * 600ms); }
+#como[data-paso="3"] .ondas circle { animation: onda 3000ms var(--suave) infinite; animation-delay: calc(1100ms + var(--i) * 800ms); }
 @keyframes onda { 0% { opacity: .9; transform: scale(.35); } 100% { opacity: 0; transform: scale(1); } }
 
 /* Grabaciones de la app 4.8.2, a 1,2 veces su velocidad */
-.fono video { display: block; width: 100%; height: auto; aspect-ratio: 540 / 1200; border-radius: 38px; background: #F3F1EE; }
+.fono video { aspect-ratio: 540 / 1200; background: #F3F1EE; }
 /* Preparar: las seis preguntas se marcan al ritmo de la grabación */
-.pasos-app { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.pasos-app li { display: grid; grid-template-columns: 52px 440px 1fr; column-gap: 18px; align-items: center; min-height: 52px; opacity: .36; transition: opacity 320ms ease; }
+.pasos-app { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+.pasos-app li { display: grid; grid-template-columns: 52px 440px 1fr; column-gap: 18px; align-items: center; min-height: 52px; opacity: .34; transition: opacity 600ms var(--suave); }
 .pasos-app li.ahora { opacity: 1; }
-.pasos-app .n { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 600; background: var(--linea); transition: background 320ms ease; }
+.pasos-app .n { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 22px; font-weight: 600; background: var(--linea); transition: background 600ms var(--suave); }
 .pasos-app li.ahora .n { background: var(--celeste); }
 .pasos-app .q { font-size: 30px; font-weight: 600; line-height: 1.2; }
 .pasos-app .r { font-size: 26px; line-height: 1.25; color: var(--gris); }
@@ -204,9 +213,17 @@ body.pdf .pasos-app .n { background: var(--celeste); }
 /* Decidir: tres opciones del mismo tamaño */
 #como .opciones { margin-top: 22px; display: grid; gap: 18px; }
 #como .opcion { display: flex; align-items: center; gap: 20px; height: 96px; padding: 0 30px; border-radius: 24px; background: var(--blanco); box-shadow: var(--sombra); font-size: 30px; font-weight: 600;
-  opacity: 0; transform: translateY(14px); transition: opacity 420ms var(--ease-out), transform 520ms var(--ease-out); }
+  opacity: 0; transform: translateY(18px); transition: opacity 900ms var(--suave), transform 1300ms var(--resorte); }
 #como .opcion i { width: 36px; height: 36px; flex: none; }
-#como[data-paso="4"] .opcion { opacity: 1; transform: none; transition-delay: calc(760ms + var(--i) * 110ms); }
+#como[data-paso="4"] .opcion { opacity: 1; transform: none; transition-delay: calc(1300ms + var(--i) * 180ms); }
+
+/* La aplicación: cuatro recorridos grabados */
+#app .muro { position: absolute; left: 176px; top: 236px; width: 1568px; display: grid; grid-template-columns: repeat(4, 290px); justify-content: space-between; }
+#app figure { margin: 0; display: grid; justify-items: center; }
+#app .fono { position: relative; width: 290px; }
+#app figcaption { margin-top: 30px; width: 424px; text-align: center; }
+#app figcaption b { display: block; font-size: 30px; font-weight: 600; letter-spacing: -0.012em; }
+#app figcaption span { display: block; margin-top: 8px; font-size: 24px; line-height: 1.32; color: var(--gris); text-wrap: balance; }
 
 /* Mapa de referentes */
 #referentes .punto { position: absolute; display: flex; align-items: center; gap: 12px; font-size: 24px; white-space: nowrap; }
@@ -219,7 +236,7 @@ body.pdf .pasos-app .n { background: var(--celeste); }
 .tabla td { padding: 12px 24px 12px 0; border-bottom: 1px solid var(--linea2); vertical-align: top; }
 .tabla td:first-child { font-weight: 600; white-space: nowrap; }
 .tabla td.desc { color: var(--gris); }
-.tabla tr { transition: opacity 400ms var(--ease-out), transform 500ms var(--ease-out); }
+.tabla tr { transition: opacity 900ms var(--suave), transform 1300ms var(--resorte); }
 
 @media (prefers-reduced-motion: reduce) {
   #como .mom, #como .mom .bola, #definiciones .lista, #definiciones .term { transition-duration: 1ms !important; }
@@ -565,11 +582,11 @@ body.pdf .pasos-app .n { background: var(--celeste); }
   <div class="mom m4"><span class="nro">4</span><div class="bola" style="background:var(--rosa);"><i class="icono" data-ic="flag" style="width:96px;height:96px"></i></div><p class="nombre">Decidir</p></div>
 
   <div class="panel p1">
-    <div class="abs" style="left:96px; top:392px; width:1180px;">
+    <div class="abs" style="left:96px; top:300px; width:1180px;">
       <p class="t2" style="font-size:52px;">Preparar</p>
-      <p class="c1" style="margin-top:16px;">Una pregunta por pantalla, con opciones para elegir. Por ejemplo, para leer:</p>
+      <p class="c1" style="margin-top:14px;">Una pregunta por pantalla, con opciones para elegir. Por ejemplo, para leer:</p>
     </div>
-    <ol class="abs pasos-app" style="left:96px; top:560px; width:1180px;" data-clip="clip-preparar">
+    <ol class="abs pasos-app" style="left:96px; top:470px; width:1180px;" data-clip="clip-preparar">
       <li data-t="0"><span class="n">1</span><span class="q">¿Qué quieres hacer?</span><span class="r">Leer</span></li>
       <li data-t="7.54"><span class="n">2</span><span class="q">¿Cómo empiezas la actividad?</span><span class="r">Abrir el libro</span></li>
       <li data-t="11.29"><span class="n">3</span><span class="q">¿En qué lugar empieza?</span><span class="r">En el velador</span></li>
@@ -577,18 +594,18 @@ body.pdf .pasos-app .n { background: var(--celeste); }
       <li data-t="30.04"><span class="n">5</span><span class="q">¿Dónde suena?</span><span class="r">El Tag, un parlante o una notificación</span></li>
       <li data-t="37.13"><span class="n">6</span><span class="q">Todo listo</span><span class="r">Activar el relevo</span></li>
     </ol>
-    <p class="abs c1" style="left:96px; top:950px; width:1180px;">Y deja el objeto junto al primer paso: al lado del libro.</p>
-    <div class="fono" style="left:1420px; top:372px; width:300px;"><video class="clip" id="clip-preparar" data-en="1" src="videos/app-preparar.mp4" poster="imagenes/app-preparar-inicio.jpg" data-pdf="imagenes/app-preparar-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: preparar un relevo para leer"></video></div>
+    <p class="abs c1" style="left:96px; top:900px; width:1180px;">Y deja el objeto junto al primer paso: al lado del libro.</p>
+    <div class="fono" style="left:1400px; top:290px; width:340px;"><video class="clip" id="clip-preparar" data-en="1" src="videos/app-preparar.mp4" poster="imagenes/app-preparar-inicio.jpg" data-pdf="imagenes/app-preparar-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: preparar un relevo para leer"></video></div>
   </div>
 
   <div class="panel p2">
-    <div class="abs" style="left:96px; top:420px; width:640px;">
+    <div class="abs" style="left:96px; top:300px; width:600px;">
       <p class="t2" style="font-size:52px;">Seguir en el teléfono</p>
       <p class="c1" style="margin-top:22px;">Usa el teléfono como siempre. La aplicación suma solo el tiempo en las aplicaciones elegidas, con un permiso de Android.</p>
       <p class="c2" style="margin-top:24px;">Nunca ve lo que pasa dentro de ellas.</p>
     </div>
-    <div class="fono" style="left:830px; top:380px; width:282px;"><video class="clip" data-en="2" src="videos/app-seguir.mp4" poster="imagenes/app-seguir-inicio.jpg" data-pdf="imagenes/app-seguir-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: el relevo cuenta el tiempo mientras se usa otra app"></video></div>
-    <div class="abs" style="left:1200px; top:440px; width:624px;">
+    <div class="fono" style="left:770px; top:290px; width:340px;"><video class="clip" data-en="2" src="videos/app-seguir.mp4" poster="imagenes/app-seguir-inicio.jpg" data-pdf="imagenes/app-seguir-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: el relevo cuenta el tiempo mientras se usa otra app"></video></div>
+    <div class="abs" style="left:1230px; top:420px; width:594px;">
       <p class="c2" style="color:var(--tinta); font-weight:600;">Por ejemplo, un relevo de 15 minutos en Chrome</p>
       <div style="margin-top:30px; display:grid; grid-template-columns: 200px 1fr; row-gap:22px; align-items:center;">
         <p class="c2">Chrome</p><div style="height:30px; width:40%; background:var(--amarillo); border-radius:8px;"></div>
@@ -602,27 +619,28 @@ body.pdf .pasos-app .n { background: var(--celeste); }
   </div>
 
   <div class="panel p3">
-    <div class="abs" style="left:96px; top:420px; width:640px;">
+    <div class="abs" style="left:96px; top:300px; width:540px;">
       <p class="t2" style="font-size:52px;">Oír la señal</p>
       <p class="c1" style="margin-top:22px;">Cuando se cumple el tiempo, el objeto suena unos 30 segundos desde el lugar de la actividad.</p>
-      <p class="c2" style="margin-top:24px;">Se puede callar desde la aplicación o con el botón del objeto.</p>
+      <p class="c2" style="margin-top:24px;">Se puede callar con el botón del objeto o desde la aplicación, a la derecha.</p>
       <p class="c2" style="margin-top:14px;">El sonido avisa. El lugar y el primer paso dicen qué hacer (Norman, 1988/2002, p. 73).</p>
     </div>
-    <div class="abs" style="left:900px; top:380px; width:620px; height:640px; border-radius:32px; overflow:hidden; box-shadow:var(--sombra);">
+    <div class="abs" style="left:700px; top:300px; width:620px; height:640px; border-radius:32px; overflow:hidden; box-shadow:var(--sombra);">
       <img src="imagenes/tag-en-un-mueble.jpg" alt="El Tag junto a unos libros, en un hogar de la prueba" style="width:100%; height:100%; object-fit:cover; object-position:50% 60%;">
       <svg class="abs ondas" style="left:0; top:0;" width="620" height="640" viewBox="0 0 620 640"><circle cx="250" cy="372" r="210" style="--i:0"/><circle cx="250" cy="372" r="210" style="--i:1"/><circle cx="250" cy="372" r="210" style="--i:2"/></svg>
     </div>
-    <p class="abs c3" style="left:1560px; top:960px; width:264px;">El Tag en un hogar de la prueba.</p>
+    <p class="abs c3" style="left:700px; top:960px; width:620px;">El Tag en un hogar de la prueba.</p>
+    <div class="fono" style="left:1400px; top:290px; width:340px;"><video class="clip" data-en="3" src="videos/app-oir.mp4" poster="imagenes/app-oir-inicio.jpg" data-pdf="imagenes/app-oir-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: el aviso suena y se puede silenciar"></video></div>
   </div>
 
   <div class="panel p4">
-    <div class="abs" style="left:96px; top:392px; width:600px;">
+    <div class="abs" style="left:96px; top:300px; width:560px;">
       <p class="t2" style="font-size:52px;">Decidir</p>
       <p class="c1" style="margin-top:22px;">Después de la señal vienen unas preguntas breves, que se pueden saltar.</p>
       <p class="c2" style="margin-top:18px;">Registran si notó el aviso, cómo le cayó el sonido y si supo qué hacer antes de mirar la pantalla.</p>
     </div>
-    <div class="fono" style="left:760px; top:372px; width:300px;"><video class="clip" data-en="4" src="videos/app-decidir.mp4" poster="imagenes/app-decidir-inicio.jpg" data-pdf="imagenes/app-decidir-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: después de la señal, las preguntas breves y la decisión"></video></div>
-    <div class="abs" style="left:1160px; top:420px; width:664px;">
+    <div class="fono" style="left:720px; top:290px; width:340px;"><video class="clip" data-en="4" src="videos/app-decidir.mp4" poster="imagenes/app-decidir-inicio.jpg" data-pdf="imagenes/app-decidir-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: después de la señal, las preguntas breves y la decisión"></video></div>
+    <div class="abs" style="left:1170px; top:330px; width:654px;">
       <p class="c1">Al final, elige qué hacer:</p>
       <div class="opciones">
         <div class="opcion" style="--i:0"><i data-ic="circle-play"></i>Comencé la actividad</div>
@@ -633,6 +651,19 @@ body.pdf .pasos-app .n { background: var(--celeste); }
     </div>
   </div>
 </section>
+
+<!-- =========================================================== LA APLICACIÓN: cuatro recorridos grabados -->
+<section class="lam" id="app" data-cab="Parte 3 · La propuesta" data-tema="La aplicación">
+  <h1 class="t">La aplicación, más allá de un relevo</h1>
+  <div class="muro">
+    <figure data-p="0" style="--d:0ms"><div class="fono"><video class="clip" src="videos/app-primera-vez.mp4" poster="imagenes/app-primera-vez-inicio.jpg" data-pdf="imagenes/app-primera-vez-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: la primera vez"></video></div><figcaption><b>La primera vez</b><span>Consentimiento y permisos, claros</span></figcaption></figure>
+    <figure data-p="0" style="--d:160ms"><div class="fono"><video class="clip" src="videos/app-actividades.mp4" poster="imagenes/app-actividades-inicio.jpg" data-pdf="imagenes/app-actividades-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: actividades"></video></div><figcaption><b>Actividades</b><span>Ideas, pasos y actividades propias</span></figcaption></figure>
+    <figure data-p="0" style="--d:320ms"><div class="fono"><video class="clip" src="videos/app-ayuda.mp4" poster="imagenes/app-ayuda-inicio.jpg" data-pdf="imagenes/app-ayuda-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: ayuda y cómo usar el Tag"></video></div><figcaption><b>Ayuda</b><span>Cómo usar el Tag, en ocho pasos</span></figcaption></figure>
+    <figure data-p="0" style="--d:480ms"><div class="fono"><video class="clip" src="videos/app-ajustes.mp4" poster="imagenes/app-ajustes-inicio.jpg" data-pdf="imagenes/app-ajustes-pdf.jpg" muted loop playsinline preload="auto" aria-label="Grabación de la app: ajustes y datos"></video></div><figcaption><b>Ajustes</b><span>Sonido, horas sin sonar y datos</span></figcaption></figure>
+  </div>
+  <p class="nota">Grabaciones de la versión 4.8.2 en un emulador de Android, a 1,2 veces su velocidad.</p>
+</section>
+
 
 <section class="lam" id="sistema" data-cab="Parte 3 · La propuesta" data-tema="Relevo">
   <h1 class="t">El sistema completo</h1>
@@ -1055,35 +1086,36 @@ const NOTAS = {
     "La segunda es intenciones personales. Es lo que uno se propone hacer, como leer o dibujar, y que quiere mantener presente mientras descansa con el celular.",
     "Y la tercera, phygital, una mezcla de físico y digital. En Relevo es una aplicación para Android y un objeto, como el que ven a la derecha."
   ],
-  origen: "¿De dónde nace el problema? A la izquierda, de tres lados. De mi experiencia: me quedo en una aplicación más de lo que quería y se me pasa lo que tenía pensado hacer. De otras personas: en las entrevistas y la encuesta, a muchas les pasaba lo mismo. Y del contexto: en Chile casi todos los hogares conectados tienen celular. [Avanzo] A la derecha, el problema: una actividad que la persona también quería hacer deja de estar presente y vuelve cuando la oportunidad ya pasó. O sea, no importa cuánto se usa el celular, sino lo que se deja de hacer.",
-  ejemplo: "Les doy un ejemplo. Antes, alguien quiere dibujar en la tarde: la intención está presente, es la barra amarilla. Durante, abre una aplicación para descansar, y la intención se va apagando. Después, una hora más tarde, se acuerda, pero ya es tarde para empezar. [Avanzo] Ojo: nunca decidió no dibujar. La intención simplemente no volvió a tiempo.",
-  causas: "¿Y por qué pasa esto? Encontré tres causas. Atención ocupada: la sesión absorbe la atención, y la intención necesita una señal para volver. Continuidad sin final: el contenido sigue solo y un sistema elige qué viene después. Y ocio juzgado: si el descanso se vive como tiempo perdido, se disfruta menos. [Avanzo] De ahí sale el desafío de diseño, abajo: ayudar a recordar a tiempo, sin bloquear, sin decidir por la persona y sin interrumpir cuando el celular sí tiene sentido.",
-  ambito1: "Para entenderlo revisé tres ámbitos. El primero, la experiencia del ocio digital: una aplicación se abre a propósito, pero sigue por costumbre. [Avanzo] A la derecha, un estudio con 45 personas: al abrirla tenían un motivo concreto 2 de cada 3 veces; mientras la usaban, solo 1 de cada 2. O sea, el motivo se pierde mientras se usa. [Avanzo] Por eso hay que mirar cada sesión por su sentido y respetar el descanso.",
-  ambito2: "El segundo ámbito, el diseño de la atención. Cuando una ayuda da órdenes, como bloquear, la motivación se debilita. Cuando deja elegir, se fortalece. [Avanzo] Hay dos herramientas útiles: una fricción, que hace reconsiderar pero puede molestar, y un plan, que sirve si vuelve a la mente a tiempo. [Avanzo] Por eso Relevo tiene que dejar que la persona acepte, ajuste o rechace.",
-  ambito3: "El tercero, recordar con objetos y lugares. Esto lo estudia la memoria prospectiva: recordar algo que uno quiere hacer cuando llega la ocasión. Una intención puede volver por dos caminos. [Avanzo] Arriba, vigilarla todo el rato, que cuesta mucho si otra cosa nos absorbe. [Avanzo] Abajo, que una señal del entorno la traiga de vuelta, aunque la atención esté en otra parte. Relevo usa este segundo camino.",
-  encuesta: "Después pregunté a personas reales. En la encuesta a 53 personas de 19 a 30 años: 39 de 45 siguieron en una aplicación más de lo que querían; 43 de 47 querían hacer otra cosa; y 44 de 47 estaban en la casa. Lo más importante para el diseño está en celeste: 42 de 43 sabían cuál habría sido su primer paso. [Avanzo] El primer paso es la acción breve con que empieza una actividad, como abrir el libro. Eso es lo que Relevo recuerda.",
-  situaciones: "De las entrevistas salieron dos situaciones. El usuario principal quiere hacer otra cosa y la pierde de vista: necesita recordarla a tiempo. El usuario límite está usando el celular con sentido, como en una videollamada: necesita poder ignorar la señal. [Avanzo] Y una misma persona puede estar en una u otra según el día.",
-  referentes: "Revisé qué existe. En este mapa, a la izquierda, lo que limita el uso del celular; a la derecha, lo que recuerda lo que la persona quería hacer. Arriba, lo que funciona fuera de la pantalla; abajo, en la pantalla. Casi todo está a la izquierda o abajo. [Avanzo] Arriba a la derecha queda un espacio casi vacío. Ahí se ubica Relevo.",
-  pregunta: "Con todo esto formulé la pregunta: ¿cuál es el efecto de un sistema phygital que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital? [Avanzo] La hipótesis se lee así: si vinculo la actividad con su lugar, entonces la persona la recordará a tiempo, porque una intención vuelve cuando aparece una señal asociada. [Avanzo] Y supone tres cosas: asociación, decisión y soporte. Abajo está la definición de recuerdo oportuno: al sonar la señal, la persona sabe qué quería hacer y cómo empezar antes de mirar la pantalla.",
-  proceso: "Esto no partió así. En el Seminario, a mitad de año, el objeto era un lugar donde dejar el celular. Después de las entrevistas y del examen de julio vino el giro: en septiembre llegaron la señal sonora, el Tag y la primera aplicación, y en octubre, la prueba. [Avanzo] O sea, pasé de alejar el celular a poner una señal en el lugar donde empieza la actividad.",
+  origen: "¿De dónde nace el problema? A la izquierda, de tres lados. De mi experiencia: me quedo en una aplicación más de lo que quería y se me pasa lo que tenía pensado hacer. De otras personas: en las entrevistas y la encuesta, a muchas les pasaba lo mismo. Y del contexto: en Chile casi todos los hogares conectados tienen celular. A la derecha, el problema: una actividad que la persona también quería hacer deja de estar presente y vuelve cuando la oportunidad ya pasó. O sea, no importa cuánto se usa el celular, sino lo que se deja de hacer.",
+  ejemplo: "Les doy un ejemplo. Antes, alguien quiere dibujar en la tarde: la intención está presente, es la barra amarilla. Durante, abre una aplicación para descansar, y la intención se va apagando. Después, una hora más tarde, se acuerda, pero ya es tarde para empezar. Ojo: nunca decidió no dibujar. La intención simplemente no volvió a tiempo.",
+  causas: "¿Y por qué pasa esto? Encontré tres causas. Atención ocupada: la sesión absorbe la atención, y la intención necesita una señal para volver. Continuidad sin final: el contenido sigue solo y un sistema elige qué viene después. Y ocio juzgado: si el descanso se vive como tiempo perdido, se disfruta menos. De ahí sale el desafío de diseño, abajo: ayudar a recordar a tiempo, sin bloquear, sin decidir por la persona y sin interrumpir cuando el celular sí tiene sentido.",
+  ambito1: "Para entenderlo revisé tres ámbitos. El primero, la experiencia del ocio digital: una aplicación se abre a propósito, pero sigue por costumbre. A la derecha, un estudio con 45 personas: al abrirla tenían un motivo concreto 2 de cada 3 veces; mientras la usaban, solo 1 de cada 2. O sea, el motivo se pierde mientras se usa. Por eso hay que mirar cada sesión por su sentido y respetar el descanso.",
+  ambito2: "El segundo ámbito, el diseño de la atención. Cuando una ayuda da órdenes, como bloquear, la motivación se debilita. Cuando deja elegir, se fortalece. Hay dos herramientas útiles: una fricción, que hace reconsiderar pero puede molestar, y un plan, que sirve si vuelve a la mente a tiempo. Por eso Relevo tiene que dejar que la persona acepte, ajuste o rechace.",
+  ambito3: "El tercero, recordar con objetos y lugares. Esto lo estudia la memoria prospectiva: recordar algo que uno quiere hacer cuando llega la ocasión. Una intención puede volver por dos caminos. Arriba, vigilarla todo el rato, que cuesta mucho si otra cosa nos absorbe. Abajo, que una señal del entorno la traiga de vuelta, aunque la atención esté en otra parte. Relevo usa este segundo camino.",
+  encuesta: "Después pregunté a personas reales. En la encuesta a 53 personas de 19 a 30 años: 39 de 45 siguieron en una aplicación más de lo que querían; 43 de 47 querían hacer otra cosa; y 44 de 47 estaban en la casa. Lo más importante para el diseño está en celeste: 42 de 43 sabían cuál habría sido su primer paso. El primer paso es la acción breve con que empieza una actividad, como abrir el libro. Eso es lo que Relevo recuerda.",
+  situaciones: "De las entrevistas salieron dos situaciones. El usuario principal quiere hacer otra cosa y la pierde de vista: necesita recordarla a tiempo. El usuario límite está usando el celular con sentido, como en una videollamada: necesita poder ignorar la señal. Y una misma persona puede estar en una u otra según el día.",
+  referentes: "Revisé qué existe. En este mapa, a la izquierda, lo que limita el uso del celular; a la derecha, lo que recuerda lo que la persona quería hacer. Arriba, lo que funciona fuera de la pantalla; abajo, en la pantalla. Casi todo está a la izquierda o abajo. Arriba a la derecha queda un espacio casi vacío. Ahí se ubica Relevo.",
+  pregunta: "Con todo esto formulé la pregunta: ¿cuál es el efecto de un sistema phygital que vincula una actividad pendiente con su lugar de inicio sobre el recuerdo oportuno de esa actividad durante el ocio digital? La hipótesis se lee así: si vinculo la actividad con su lugar, entonces la persona la recordará a tiempo, porque una intención vuelve cuando aparece una señal asociada. Y supone tres cosas: asociación, decisión y soporte. Abajo está la definición de recuerdo oportuno: al sonar la señal, la persona sabe qué quería hacer y cómo empezar antes de mirar la pantalla.",
+  proceso: "Esto no partió así. En el Seminario, a mitad de año, el objeto era un lugar donde dejar el celular. Después de las entrevistas y del examen de julio vino el giro: en septiembre llegaron la señal sonora, el Tag y la primera aplicación, y en octubre, la prueba. O sea, pasé de alejar el celular a poner una señal en el lugar donde empieza la actividad.",
   como: [
     "Entonces, ¿cómo funciona Relevo? Es una aplicación para Android y un objeto que suena junto al primer paso. Cada actividad preparada se llama un relevo, y tiene cuatro momentos: preparar, seguir en el celular, oír la señal y decidir.",
     "Primero, preparar. A la derecha, la aplicación funcionando. Es una pregunta por pantalla, y a la izquierda se marca cuál se ve: qué quiere hacer, por ejemplo leer; cómo empieza, abrir el libro; en qué lugar, el velador; cuánto tiempo se da en ciertas aplicaciones; y dónde suena. Todo con opciones, para que cueste poco. Al final deja el objeto al lado del libro.",
     "Segundo, seguir en el celular. Al centro, la persona sale de Relevo y usa su celular como siempre. La aplicación suma solo el tiempo en las aplicaciones que eligió. A la derecha, un ejemplo: si se dio quince minutos en Chrome, solo cuenta lo amarillo. Y nunca ve lo que pasa dentro de esas aplicaciones.",
-    "Tercero, oír la señal. Cuando se cumple el tiempo, el objeto suena unos treinta segundos desde el lugar de la actividad, como este Tag al lado de los libros. El sonido avisa, y el lugar dice qué hacer. Se puede callar desde la aplicación o con el botón.",
+    "Tercero, oír la señal. Cuando se cumple el tiempo, el objeto suena unos treinta segundos desde el lugar de la actividad, como este Tag al lado de los libros. El sonido avisa, y el lugar dice qué hacer. Se puede callar con el botón del objeto o desde la aplicación, como se ve a la derecha.",
     "Y cuarto, decidir. Después de la señal vienen unas preguntas breves, que se pueden saltar; por ejemplo, si supo qué quería hacer antes de mirar la pantalla. Y al final, a la derecha, elige: comencé la actividad, la dejé para después o cambié de idea. Las tres tienen el mismo tamaño y ninguna viene marcada, porque ninguna respuesta es mejor que otra."
   ],
-  sistema: "Este es el sistema completo. Arriba, lo que la persona ve: ella usa la aplicación, y la aplicación hace sonar el Tag por Bluetooth, con solo dos órdenes, sonar y callar. [Avanzo] Abajo, lo que no se ve: la aplicación guarda los relevos y las respuestas en Supabase, una base de datos en internet, con un código en vez del nombre. Y yo los revisaba en un panel en mi computador. [Avanzo] A la izquierda, la privacidad: sin correo ni contraseña, y cada celular ve solo sus datos.",
-  criterios: "¿Por qué la aplicación es así? Cada decisión responde a uno de los ocho criterios que salieron de lo investigado. Miren esta pantalla, que resume un relevo. Qué quieres hacer: la persona elige, criterio uno. Cómo empiezas: un paso concreto, criterio dos. Cuándo suena: ella lo decide, criterio tres. Dónde suena: el objeto suma lo que el celular no da, el lugar, criterio ocho. [Avanzo] Y abajo: lo que escribe es privado, decide qué hacer cuando suena, y Relevo solo interviene si ella preparó un relevo.",
+  app: "Y la aplicación tiene más que un relevo. De izquierda a derecha: la primera vez, que pide el consentimiento y explica el permiso antes de pedirlo; las actividades, con ideas y pasos; la ayuda, que enseña a usar el Tag en ocho pasos; y los ajustes, donde se elige el sonido y las horas sin sonar, y se pueden borrar los datos.",
+  sistema: "Este es el sistema completo. Arriba, lo que la persona ve: usa la aplicación, y la aplicación hace sonar el Tag por Bluetooth, con solo dos órdenes, sonar y callar. Abajo, lo que no se ve: la aplicación guarda los relevos y las respuestas en Supabase, una base de datos en internet, con un código en vez del nombre, y yo los revisaba en un panel. A la izquierda, la privacidad: sin correo ni contraseña, y cada celular ve solo sus datos.",
+  criterios: "¿Por qué la aplicación es así? Cada decisión responde a uno de los ocho criterios que salieron de lo investigado. En esta pantalla, que resume un relevo: la persona elige qué hacer, criterio uno; cada actividad empieza con un paso concreto, criterio dos; ella decide cuándo suena, criterio tres; y el objeto suma lo que el celular no da, el lugar, criterio ocho. Abajo, los demás: lo que escribe es privado, y Relevo solo interviene si ella preparó un relevo.",
   decisiones: "Esta tabla junta cada decisión con su argumento y con lo que descarté. Por ejemplo: una pregunta por pantalla, porque prepararlo debe costar poco; un sonido de unos treinta segundos que termina solo, porque alcanza a quien mira una pantalla; y un código en vez del nombre, porque lo que la persona escribe es privado.",
-  objeto: "Ahora, el objeto. En la prueba usé un Tag comercial, a la izquierda: un llavero Bluetooth que suena cuando la aplicación se lo pide. [Avanzo] La propuesta es Relevo, una carcasa propia para la placa del Tag, en dos variantes. Relevo Home se deja junto al primer paso y mide 52 milímetros. Relevo Go es más portátil, con argolla. [Avanzo] En los dos, toda la cara es el botón. Es más grande que el Tag para encontrarlo, controlarlo y fabricarlo. Está modelado en 3D, todavía no impreso.",
-  identidad: "La identidad sale del nombre: un relevo es pasar algo de una mano a otra, de la pantalla a la actividad. [Avanzo] Por eso el logo son cuatro círculos que se pasan el turno: amarillo el tiempo, celeste el primer paso, verde el lugar y rosa la decisión. [Avanzo] Con una tipografía legible, seis colores pastel de igual peso e íconos de Lucide.",
-  prueba: "Para probarlo, tres personas usaron Relevo cinco semanas en sus casas. Arriba, las etapas: primero con el Tag, del 8 al 19 de octubre, y después solo con una notificación en el celular. [Avanzo] Abajo, cada persona: la primera quería estudiar, ordenar o dibujar; la segunda, tocar guitarra; la tercera, dibujar en su croquera. Cada una dejó el Tag junto a su actividad y eligió su propio límite. [Avanzo] Después de cada señal, la aplicación preguntaba si supo qué quería hacer, si recordó cómo empezar y qué decidió.",
-  "resultados-tag": "¿Qué pasó con el Tag? Cada punto es una respuesta después de una señal. En 19 de 21, supieron qué querían hacer antes de mirar la pantalla. En las 21 recordaron cómo empezar. [Avanzo] Y empezaron la actividad 10 veces: las otras, la dejaron para después o cambiaron de idea. [Avanzo] A la derecha, cada persona: la primera empezó cinco de siete veces, la segunda tres, la tercera dos. [Avanzo] Y el Tag sonó en 23 de 24 relevos: el que faltó se cumplió fuera de la casa.",
-  "resultados-telefono": "Después vino la etapa con el celular. Recordaron igual de bien. Lo que cambió fue el momento de notar el aviso. A la izquierda, los segundos que tardaron en responder: la segunda y la tercera persona tardaron tres o cuatro veces más con el celular. [Avanzo] A la derecha: en 10 de 21 respuestas notaron el aviso tarde o no lo notaron. Una persona lo dijo así: con el celu veía el aviso, decía ya voy y seguía viendo el video.",
-  respuesta: "Entonces, ¿qué respondió el proyecto? A la pregunta: casi siempre recordaron a tiempo. Pero no puedo atribuirlo al Tag, porque con el celular recordaron igual, ni al lugar, porque el Tag nunca estuvo lejos de la actividad. [Avanzo] Por eso la hipótesis, que era la respuesta que yo esperaba, queda compatible con los resultados, pero no probada: fueron tres personas, y el celular vino siempre después. [Avanzo] De los supuestos: la asociación se cumplió casi siempre, la decisión se cumplió, y el soporte, en parte, porque el pitido molestó a otros.",
-  hallazgos: "Me quedo con dos hallazgos. A la izquierda: la señal depende del objeto. El único relevo que no sonó fue fuera de la casa. [Avanzo] A la derecha: recordar no obliga a empezar. Una señal lleva a actuar solo si coincide con las ganas y con lo fácil que es empezar. [Avanzo] Relevo actúa sobre lo fácil: deja la señal junto a un primer paso concreto. Las ganas y la decisión siguen siendo de la persona.",
-  sigue: "¿Qué sigue? A la izquierda, la próxima prueba: seis personas, tres semanas en distinto orden. Una semana con el objeto junto al primer paso, otra con el mismo objeto en otro lugar y otra con una notificación. Así se separa el efecto del objeto, del lugar y del orden. [Avanzo] A la derecha, la factibilidad en tres etapas: el prototipo, que ya existe y costó unos 111 mil pesos más mi trabajo; un piloto en seis hogares; y el producto. Cada etapa parte solo si la anterior da evidencia.",
+  objeto: "Ahora, el objeto. En la prueba usé un Tag comercial, a la izquierda: un llavero Bluetooth que suena cuando la aplicación se lo pide. La propuesta es Relevo, una carcasa propia para la placa del Tag, en dos variantes. Relevo Home se deja junto al primer paso y mide 52 milímetros. Relevo Go es más portátil, con argolla. En los dos, toda la cara es el botón. Es más grande que el Tag para encontrarlo, controlarlo y fabricarlo. Está modelado en 3D, todavía no impreso.",
+  identidad: "La identidad sale del nombre: un relevo es pasar algo de una mano a otra, de la pantalla a la actividad. Por eso el logo son cuatro círculos que se pasan el turno: amarillo el tiempo, celeste el primer paso, verde el lugar y rosa la decisión. Con una tipografía legible, seis colores pastel de igual peso e íconos de Lucide.",
+  prueba: "Para probarlo, tres personas usaron Relevo cinco semanas en sus casas. Arriba, las etapas: primero con el Tag, del 8 al 19 de octubre, y después solo con una notificación en el celular. Abajo, cada persona: la primera quería estudiar, ordenar o dibujar; la segunda, tocar guitarra; la tercera, dibujar en su croquera. Cada una dejó el Tag junto a su actividad y eligió su propio límite. Después de cada señal, la aplicación preguntaba si supo qué quería hacer, si recordó cómo empezar y qué decidió.",
+  "resultados-tag": "¿Qué pasó con el Tag? Cada punto es una respuesta después de una señal. En 19 de 21, supieron qué querían hacer antes de mirar la pantalla. En las 21 recordaron cómo empezar. Y empezaron la actividad 10 veces: las otras, la dejaron para después o cambiaron de idea. A la derecha, cada persona: la primera empezó cinco de siete veces, la segunda tres, la tercera dos. Y el Tag sonó en 23 de 24 relevos: el que faltó se cumplió fuera de la casa.",
+  "resultados-telefono": "Después vino la etapa con el celular. Recordaron igual de bien. Lo que cambió fue el momento de notar el aviso. A la izquierda, los segundos que tardaron en responder: la segunda y la tercera persona tardaron tres o cuatro veces más con el celular. A la derecha: en 10 de 21 respuestas notaron el aviso tarde o no lo notaron. Una persona lo dijo así: con el celu veía el aviso, decía ya voy y seguía viendo el video.",
+  respuesta: "Entonces, ¿qué respondió el proyecto? A la pregunta: casi siempre recordaron a tiempo. Pero no puedo atribuirlo al Tag, porque con el celular recordaron igual, ni al lugar, porque el Tag nunca estuvo lejos de la actividad. Por eso la hipótesis, que era la respuesta que yo esperaba, queda compatible con los resultados, pero no probada: fueron tres personas, y el celular vino siempre después. De los supuestos: la asociación se cumplió casi siempre, la decisión se cumplió, y el soporte, en parte, porque el pitido molestó a otros.",
+  hallazgos: "Me quedo con dos hallazgos. A la izquierda: la señal depende del objeto. El único relevo que no sonó fue fuera de la casa. A la derecha: recordar no obliga a empezar. Una señal lleva a actuar solo si coincide con las ganas y con lo fácil que es empezar. Relevo actúa sobre lo fácil: deja la señal junto a un primer paso concreto. Las ganas y la decisión siguen siendo de la persona.",
+  sigue: "¿Qué sigue? A la izquierda, la próxima prueba: seis personas, tres semanas en distinto orden. Una semana con el objeto junto al primer paso, otra con el mismo objeto en otro lugar y otra con una notificación. Así se separa el efecto del objeto, del lugar y del orden. A la derecha, la factibilidad en tres etapas: el prototipo, que ya existe y costó unos 111 mil pesos más mi trabajo; un piloto en seis hogares; y el producto. Cada etapa parte solo si la anterior da evidencia.",
   aporte: "Para cerrar: este proyecto convirtió algo cotidiano, quedarse en el celular más de lo que uno quería, en decisiones de diseño que se pueden comprobar: qué se recuerda, cuándo, dónde, con qué objeto y con qué opciones.",
   gracias: "Muchas gracias. Quedo atento a sus preguntas.",
   "r-seminario": "Respaldo para la pregunta de apertura: ¿qué cambió desde el Seminario? Recorrer dos o tres puntos de cada integrante, sin leer todo.",
@@ -1200,41 +1232,63 @@ function cabeceras() {
   });
 }
 
-/* ------------------------------------------------------------------ Navegación */
-let i = 0, paso = 0;
-const pasosDe = (l) => { if (l.dataset.estados) return +l.dataset.estados - 1; let m = 0; l.querySelectorAll("[data-p]").forEach((e) => { m = Math.max(m, +e.dataset.p); }); return m; };
-function aplicar(l, p) {
-  l.dataset.paso = p;
-  l.querySelectorAll("[data-p]").forEach((e) => e.classList.toggle("ver", +e.dataset.p <= p));
+/* ------------------------------------------------------------------ Navegación
+   La tecla cambia de lámina. Lo de adentro entra solo, en orden. Solo la rueda de las tres palabras
+   y los cuatro momentos de Relevo cambian con la tecla, porque cada estado es como una lámina.
+   La presentación se detiene en “Gracias”: el respaldo se abre con R y se vuelve con R o Esc. */
+let i = 0, paso = 0, antesDelRespaldo = null;
+const QUIETO = Q.has("quieto");
+const pasosDe = (l) => (l.dataset.estados ? +l.dataset.estados - 1 : 0);
+const ultimoAuto = (l) => { let m = -1; l.querySelectorAll("[data-p]").forEach((e) => { m = Math.max(m, +e.dataset.p); }); return m; };
+let relojes = [];
+function pararRelojes() { relojes.forEach(clearTimeout); relojes = []; }
+function construir(l, k) { l.querySelectorAll("[data-p]").forEach((e) => e.classList.toggle("ver", +e.dataset.p <= k)); }
+function aplicar(l, p) { l.dataset.paso = p; }
+function animarEntrada(l) {
+  pararRelojes();
+  const max = ultimoAuto(l), ritmo = +(l.dataset.ritmo || 1900);
+  for (let k = 0; k <= max; k++) relojes.push(setTimeout(() => construir(l, k), 450 + k * ritmo));
 }
 function ir(n, p, modo) {
   n = Math.max(0, Math.min(lams.length - 1, n));
   const nueva = lams[n];
   p = Math.max(0, Math.min(pasosDe(nueva), p));
   if (n !== i || modo === "inicio") {
+    const completa = modo === "atras" || QUIETO;
     lams[i].classList.remove("activa");
     nueva.classList.add("sin-anim");
-    aplicar(nueva, modo === "adelante" ? -1 : p);
+    aplicar(nueva, p);
+    construir(nueva, completa ? 99 : -1);
     void nueva.offsetWidth;
     nueva.classList.remove("sin-anim");
     nueva.classList.add("activa");
     i = n;
-    if (modo === "adelante") requestAnimationFrame(() => requestAnimationFrame(() => aplicar(nueva, p)));
+    if (completa) pararRelojes(); else animarEntrada(nueva);
   } else aplicar(nueva, p);
   paso = p;
   if (!VISTA) { history.replaceState(null, "", "#" + (i + 1) + (paso ? "." + paso : "")); avisar(); }
   document.getElementById("barra").style.width = (100 * (Math.min(i, principales.length - 1) + 1) / principales.length) + "%";
   medios();
 }
-function siguiente() { const l = lams[i]; if (paso < pasosDe(l)) ir(i, paso + 1, "paso"); else if (i < lams.length - 1) ir(i + 1, 0, "adelante"); }
-function anterior() { if (paso > 0) ir(i, paso - 1, "paso"); else if (i > 0) ir(i - 1, pasosDe(lams[i - 1]), "atras"); }
+const enRespaldo = () => i >= principales.length;
+function siguiente() {
+  if (paso < pasosDe(lams[i])) ir(i, paso + 1, "paso");
+  else if (enRespaldo() ? i < lams.length - 1 : i < principales.length - 1) ir(i + 1, 0, "adelante");
+}
+function anterior() {
+  if (paso > 0) ir(i, paso - 1, "paso");
+  else if (enRespaldo() && i === principales.length) volverDelRespaldo();
+  else if (i > 0) ir(i - 1, pasosDe(lams[i - 1]), "atras");
+}
+function alRespaldo() { if (enRespaldo()) return volverDelRespaldo(); antesDelRespaldo = [i, paso]; ir(principales.length, 0, "salto"); }
+function volverDelRespaldo() { const [n, p] = antesDelRespaldo || [principales.length - 1, 0]; antesDelRespaldo = null; ir(n, p, "atras"); }
 function desdeHash() { const m = /^#(\d+)(?:\.(\d+))?$/.exec(location.hash); return m ? [Math.max(0, +m[1] - 1), +(m[2] || 0)] : [0, 0]; }
 
 /* Grabaciones de la app (4.8.2, a 1,2 veces su velocidad): cada una corre solo en su estado y parte desde el comienzo */
 const clips = [...document.querySelectorAll("video.clip")];
 clips.forEach((v) => { v.muted = true; });
 function medios() {
-  const grilla = document.body.classList.contains("rejilla");
+  const grilla = document.body.classList.contains("rejilla") || QUIETO;
   clips.forEach((v) => {
     const visible = !grilla && v.isConnected && v.closest(".lam") === lams[i] && (!v.dataset.en || +v.dataset.en === paso);
     if (visible && v.paused) { try { v.currentTime = 0; } catch (e) {} const p = v.play(); if (p) p.catch(() => {}); }
@@ -1273,14 +1327,15 @@ function teclas(e) {
   else if (k === "End") ir(principales.length - 1, 0, "salto");
   else if (k === "f" || k === "F") { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); }
   else if (k === "p" || k === "P") { presWin = window.open(location.href.split("#")[0].split("?")[0] + "?presentador#" + (i + 1) + (paso ? "." + paso : ""), "presentador", "width=1400,height=860"); setTimeout(avisar, 800); }
-  else if (k === "r" || k === "R") ir(principales.length, 0, "salto");
+  else if (k === "r" || k === "R") alRespaldo();
+  else if (k === "Escape" && enRespaldo()) volverDelRespaldo();
   else if (k === "b" || k === "B" || k === ".") document.body.classList.toggle("negro");
   else if (k === "g" || k === "G") rejilla();
   else if (k === "h" || k === "?") { document.body.classList.add("muestra-ayuda"); setTimeout(() => document.body.classList.remove("muestra-ayuda"), 3000); }
 }
 function rejilla() {
   const on = document.body.classList.toggle("rejilla");
-  if (on) { lienzo.style.transform = ""; lams.forEach((l) => { l.classList.add("sin-anim"); aplicar(l, pasosDe(l)); }); }
+  if (on) { pararRelojes(); lienzo.style.transform = ""; lams.forEach((l) => { l.classList.add("sin-anim"); construir(l, 99); }); }
   else { lams.forEach((l) => l.classList.remove("sin-anim")); escalar(); ir(i, paso, "inicio"); }
   medios();
 }
@@ -1294,13 +1349,16 @@ medirTrazas(document);
 
 if (PDF) {
   document.body.classList.add("pdf");
+  const soloRespaldo = Q.get("pdf") === "respaldo";
+  lams.forEach((l) => { if (l.hasAttribute("data-respaldo") !== soloRespaldo) l.remove(); });
   document.querySelectorAll("video.clip").forEach((v) => { const im = document.createElement("img"); im.src = v.dataset.pdf || v.getAttribute("poster"); im.alt = v.getAttribute("aria-label") || ""; v.replaceWith(im); });
-  for (const l of [...lams]) {
+  for (const l of [...lienzo.querySelectorAll(".lam")]) {
+    construir(l, 99);
     if (l.dataset.estados) {
       const n = +l.dataset.estados; let ant = l;
       aplicar(l, 0);
       for (let k = 1; k < n; k++) { const c = l.cloneNode(true); aplicar(c, k); ant.after(c); ant = c; }
-    } else aplicar(l, pasosDe(l));
+    }
   }
 } else if (PRESENTADOR) {
   presentador();
@@ -1337,12 +1395,13 @@ function presentador() {
     '.alerta #p-tiempo{color:#F6A3CB}';
   document.head.appendChild(st);
   const base = location.href.split("#")[0].split("?")[0] + "?vista";
+  const baseSig = base + "&quieto";
   const fa = document.getElementById("f-actual"), fs = document.getElementById("f-sig");
-  const mandar = (f, a, b) => { if (!f.dataset.cargado) { f.src = base + "#" + (a + 1) + (b ? "." + b : ""); f.dataset.cargado = "1"; f.onload = () => f.contentWindow.postMessage({ tipo: "ir", i: f._a, paso: f._b }, "*"); } f._a = a; f._b = b; try { f.contentWindow.postMessage({ tipo: "ir", i: a, paso: b }, "*"); } catch (e) {} };
+  const mandar = (f, a, b) => { if (!f.dataset.cargado) { f.src = (f === fs ? baseSig : base) + "#" + (a + 1) + (b ? "." + b : ""); f.dataset.cargado = "1"; f.onload = () => f.contentWindow.postMessage({ tipo: "ir", i: f._a, paso: f._b }, "*"); } f._a = a; f._b = b; try { f.contentWindow.postMessage({ tipo: "ir", i: a, paso: b }, "*"); } catch (e) {} };
   const principal = window.opener;
   let t0 = null, pos = { i: 0, paso: 0, total: lams.length };
   const pasos = lams.map(pasosDe), ids = lams.map((l) => l.id);
-  function siguientePos(a, b) { return b < pasos[a] ? [a, b + 1] : [Math.min(a + 1, lams.length - 1), 0]; }
+  function siguientePos(a, b) { if (b < pasos[a]) return [a, b + 1]; const fin = a < principales.length ? principales.length - 1 : lams.length - 1; return [Math.min(a + 1, fin), 0]; }
   function pintar() {
     mandar(fa, pos.i, pos.paso);
     const [a, b] = siguientePos(pos.i, pos.paso); mandar(fs, a, b);
@@ -1372,7 +1431,7 @@ body.negro #escenario { visibility: hidden; }
 body.pdf .ondas circle:nth-child(1) { opacity: .75; transform: scale(.42); }
 body.pdf .ondas circle:nth-child(2) { opacity: .45; transform: scale(.68); }
 body.pdf .ondas circle:nth-child(3) { opacity: .22; transform: scale(.94); }
-#identidad .marca-i { opacity: 0; transform: scale(.9) rotate(-12deg); transform-box: fill-box; transform-origin: center; transition: opacity 500ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: calc(150ms + var(--i) * 140ms); }
+#identidad .marca-i { opacity: 0; transform: scale(.9) rotate(-12deg); transform-box: fill-box; transform-origin: center; transition: opacity 900ms var(--suave), transform 1600ms var(--resorte); transition-delay: calc(300ms + var(--i) * 220ms); }
 #identidad .ver .marca-i, #identidad svg.ver .marca-i { opacity: 1; transform: none; }
 body.pdf #identidad .marca-i, body.pdf #portada .marca-p, body.pdf #portada .palabra { opacity: 1; transform: none; }
 </style>

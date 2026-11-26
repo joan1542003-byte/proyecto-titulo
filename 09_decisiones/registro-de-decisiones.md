@@ -2651,12 +2651,20 @@ Las decisiones se ordenan por identificador. Cada estado indica si la regla sigu
 - **Consecuencias:**
   - reemplaza a D-189; la versión de trabajo en Figma y su guion (documentos 48 y 49) quedan como registro;
   - la página y el PDF salen del mismo archivo, así que dicen lo mismo;
-  - las grabaciones son de la app 4.8.2 (D-188); la pantalla “Todo listo” de los criterios sigue siendo de la 4.7.2, la versión de la prueba (D-192).
+  - las grabaciones son de la app 4.8.2 (D-188); la pantalla “Todo listo” de los criterios sigue siendo de la 4.7.2, la versión de la prueba (D-192);
+  - lo de cada lámina entra solo; la tecla solo cambia de lámina, de palabra en la rueda de las definiciones o de momento en “Cómo funciona Relevo”;
+  - la presentación termina en “Gracias”: el respaldo se abre con una tecla y va en un PDF aparte.
 - **Fundamento:** una página HTML se ve igual en cualquier computador con Chrome, sin cuenta ni internet, y permite animar y mostrar la app funcionando. El PDF cubre el caso de que en la sala no se pueda abrir.
 - **Alternativas descartadas:** seguir en Figma Slides, donde los GIF solo se mueven en el modo presentación y no en el PDF, y el PDF animado para Acrobat Reader (D-189).
 - **Documentos:** [presentación oficial del examen](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md) y su [carpeta](../10_recursos_visuales/53_presentacion-oficial-examen/README.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — D-195, animaciones solas y respaldo aparte
+
+- **Qué cambió:** D-195 suma dos consecuencias: lo de cada lámina entra solo, y el respaldo va aparte, después de “Gracias” solo con una tecla.
+- **Cómo estaba antes:** cada aparición pedía una pulsación y el respaldo seguía después de “Gracias”.
+- **Por qué:** el autor pidió que las animaciones se reproduzcan solas y preguntó qué era lo que venía después de “Gracias”.
 
 ### 2026-11-26 — D-195
 

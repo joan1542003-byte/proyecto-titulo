@@ -1024,15 +1024,16 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 
 ### B. Presentación del examen
 
-- [x] Variar la diagramación y animar. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial. *Hecho el 26 de noviembre en una página animada, no en Figma (D-195): la [presentación oficial](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md) tiene una figura distinta en cada lámina y un PDF de 42 páginas y unos 4 MB.*
+- [x] Variar la diagramación y animar. El PDF de menos de 15 MB, sin animaciones, queda como respaldo oficial. *Hecho el 26 de noviembre en una página animada, no en Figma (D-195): la [presentación oficial](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md) tiene una figura distinta en cada lámina, todo entra solo y más lento, y un PDF de 34 páginas y unos 5,3 MB, con el respaldo en otro PDF.*
 - [x] Presentar las tres definiciones de la portada con el gesto del deslizador. *Hecho: lámina 2, una rueda que se desliza.*
-- [x] Condensar la primera parte y dar más espacio a cómo funciona Relevo. Mostrar Relevo desde el comienzo: hoy aparece en la lámina 15, cerca del minuto 7, y en el Seminario se pidió mostrarlo primero (documento de la comisión, vacío 1). *Hecho: la parte 1 dura un minuto y medio, y cómo funciona Relevo (lámina 14) tiene cinco estados con la app funcionando. Relevo aparece en la portada y en la definición de phygital, antes del minuto 1.*
+- [x] Condensar la primera parte y dar más espacio a cómo funciona Relevo. Mostrar Relevo desde el comienzo: hoy aparece en la lámina 15, cerca del minuto 7, y en el Seminario se pidió mostrarlo primero (documento de la comisión, vacío 1). *Hecho: la parte 1 dura un minuto y medio, y cómo funciona Relevo (lámina 14) tiene cinco estados con la app funcionando, y la lámina 15 muestra cuatro recorridos más. Relevo aparece en la portada y en la definición de phygital, antes del minuto 1.*
 - [x] Una lámina de respaldo “Del Seminario a hoy”, con cada observación de la comisión y dónde se responde (vacío 2). *Hecho: R1.*
-- [x] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión. *Hecho: láminas 16 y 17.*
+- [x] Mostrar de dónde salen los criterios: primero la interfaz y después una tabla con el argumento de cada decisión. *Hecho: láminas 17 y 18.*
 - [x] Sumar una línea de tiempo corta, del objeto del Seminario a Relevo (prioridad 4). *Hecho: lámina 13.*
-- [x] Sumar los GIF de la app a 1,2 veces su velocidad (pedido del 26 de noviembre). *Hecho: tres grabaciones de la app 4.8.2 en la lámina 14, en Preparar, Seguir en el teléfono y Decidir.*
+- [x] Sumar los GIF de la app a 1,2 veces su velocidad (pedido del 26 de noviembre). *Hecho: ocho grabaciones de la app 4.8.2, una en cada momento de la lámina 14 y cuatro en la lámina 15.*
+- [x] Que todo se reproduzca solo, más suave y lento, con un diseño a nivel de Apple, y que la presentación termine en “Gracias” (pedido del 26 de noviembre). *Hecho: la tecla solo cambia de lámina; el respaldo se abre con R y va en un PDF aparte.*
 - [x] Llevar al guion la lámina 24 nueva, con la pregunta y la hipótesis tal cual y lo que se cumplió y lo que no. *Hecho el 25 de noviembre: el guion dura unos 13 min 59 s.*
-- [ ] Ajustar al tiempo. En el Pase se pasó un minuto y medio. *El guion de la presentación oficial dura unos 14 min 8 s, y el cronómetro del presentador se pone rosado a los 14 minutos. Falta ensayarla completa en voz alta.*
+- [ ] Ajustar al tiempo. En el Pase se pasó un minuto y medio. *El guion de la presentación oficial dura unos 13 min 59 s, y el cronómetro del presentador se pone rosado a los 14 minutos. Falta ensayarla completa en voz alta.*
 
 ### C. Montaje y demostración
 
@@ -1053,6 +1054,12 @@ Cada uno tiene su texto propuesto en la [respuesta a los profesores](../08_memor
 - [ ] Decidir y escribir con palabras propias las cuatro respuestas que dependen del autor: el precio, el sueño, Relevo Go y el producto (en Repaso Relevo, “Revísala y hazla tuya”).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Animaciones solas y más app
+
+- **Qué cambió:** la tarea 18, B, suma el pedido de animaciones automáticas y más suaves, más app y el respaldo aparte, y corrige los números de lámina.
+- **Cómo estaba antes:** había tres grabaciones y cada aparición pedía una pulsación.
+- **Por qué:** nuevo pedido del autor del 26 de noviembre.
 
 ### 2026-11-26 — Presentación oficial del examen
 

@@ -429,6 +429,7 @@
 | 26 nov. | Encargo | Pidió armar la presentación oficial del examen a partir del feedback del Pase, con figuras y esquemas que ayuden a entender lo complejo. | [Presentación oficial del examen](../10_recursos_visuales/53_presentacion-oficial-examen-2026-12.md): 27 láminas con una figura distinta en cada una, las definiciones en una rueda, cómo funciona Relevo en cinco estados, los criterios sobre la interfaz y en una tabla, la línea de tiempo y el respaldo “Del Seminario a hoy”. | D-195 |
 | 26 nov. | Corrección | Aclaró que no tenía que ser en Figma: debía verse bien, con un PDF de 15 MB como máximo, y el otro formato podía ser más animado. | La presentación es una [página HTML animada](../10_recursos_visuales/53_presentacion-oficial-examen/README.md) que funciona sin internet, con vista del presentador, guion y cronómetro, y un PDF de respaldo de 42 páginas y unos 4 MB generado desde la misma página. | D-195 |
 | 26 nov. | Corrección | Pidió seguir y perfeccionarla, y sumar los GIF de la app a 1,2 veces su velocidad. | Tres grabaciones de la app 4.8.2, aceleradas a 1,2 veces, en Preparar, Seguir en el teléfono y Decidir. En Preparar, la lista de preguntas sigue a la grabación. Se corrigió el orden de Decidir según la memoria, se quitaron indicadores y cápsulas, y el guion quedó en unos 14 min 8 s. | D-195 |
+| 26 nov. | Corrección | Preguntó qué era lo que venía después de “Gracias”. Pidió animaciones más suaves y lentas que se reproduzcan solas, salvo las que pasan a otra lámina, ver más de la app en el teléfono a 1,2 veces y un diseño a nivel de Apple. | Lo que venía era el respaldo: ahora la presentación se detiene en “Gracias”, el respaldo se abre con R y va en un PDF aparte. Todo entra solo, con un resorte lento y sin rebote; la tecla solo cambia de lámina. Hay ocho grabaciones: una en cada momento de Relevo y cuatro en una lámina nueva, “La aplicación, más allá de un relevo”. Los teléfonos son más grandes y tienen el marco de un equipo real. Guion de unos 13 min 59 s. | D-195 |
 
 ## Lo que muestra el registro
 
@@ -439,6 +440,12 @@
 Los pedidos anteriores al 23 de septiembre están en el «Registro de prompts existentes» de la [trazabilidad](trazabilidad-uso-ia-2026-09-23.md).
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Animaciones solas y más app
+
+- **Qué cambió:** se suma el pedido de animaciones automáticas, más app y el respaldo después de “Gracias”.
+- **Cómo estaba antes:** el registro llegaba hasta los GIF de la app.
+- **Por qué:** cada pedido del autor se registra el mismo día.
 
 ### 2026-11-26 — Presentación oficial del examen
 

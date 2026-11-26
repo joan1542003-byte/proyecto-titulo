@@ -89,7 +89,7 @@ El desafío visual no consiste en hacer que todas las partes se vean iguales. Co
 52. [Ficha de estudio para el examen](50_ficha-de-estudio-examen-2026-12.md): lo que el autor debe saber de memoria, tal como está en la memoria: los términos, el problema, la pregunta, la hipótesis con sus supuestos, los objetivos, los ocho criterios, la prueba con sus cifras y lo que respondió el proyecto.
 53. [Comisión del examen](51_comision-del-examen-2026-12.md): el perfil profesional público de Aarón Montoya-Moraga y Sofía Suazo, con sus fuentes y su nivel de confianza, su feedback del Seminario y dónde se responde hoy, quince preguntas probables y los vacíos que conviene cerrar antes del examen.
 54. [Plan de estudio para el examen](52_plan-de-estudio-examen-2026-12.md): cómo aprender todo Relevo día a día hasta el 14 de diciembre, con la historia en siete lugares de la casa, la fórmula para responder a la comisión y el calendario. Su herramienta diaria es [Repaso Relevo](52_repaso-relevo.html), publicada en GitHub Pages (https://joan1542003-byte.github.io/proyecto-titulo/) desde [`52_repaso-relevo-sitio`](52_repaso-relevo-sitio/README.md): una sesión guiada para cada día, 100 tarjetas con repaso espaciado, 39 cifras, 39 preguntas con pista y respuesta, voz para escuchar y simulacros. Guarda el avance en un servidor propio de Supabase, que solo acepta la clave del autor, y en el navegador de cada dispositivo.
-55. [Presentación oficial del examen](53_presentacion-oficial-examen-2026-12.md): la presentación del examen hecha a partir del feedback del Pase, en una [página animada](53_presentacion-oficial-examen/README.md) que se proyecta desde Chrome sin internet y en un PDF de respaldo de 42 páginas y unos 4 MB (D-195). Tiene 27 láminas, cada una con su propia figura, y 9 de respaldo. Las definiciones van en una rueda que se desliza, y cómo funciona Relevo tiene cinco estados con tres grabaciones de la app 4.8.2 a 1,2 veces su velocidad. Los criterios van sobre la interfaz y en una tabla, y hay una línea de tiempo del Seminario a Relevo. La vista del presentador muestra el guion, la lámina siguiente y un cronómetro. El guion dura unos 14 min 8 s.
+55. [Presentación oficial del examen](53_presentacion-oficial-examen-2026-12.md): la presentación del examen hecha a partir del feedback del Pase, en una [página animada](53_presentacion-oficial-examen/README.md) que se proyecta desde Chrome sin internet y en un PDF de respaldo de 34 páginas y unos 5,3 MB (D-195). Tiene 28 láminas, cada una con su propia figura, y lo de cada lámina entra solo. Las definiciones van en una rueda que se desliza. Cómo funciona Relevo tiene cinco estados y la lámina siguiente muestra cuatro recorridos de la app, con ocho grabaciones de la 4.8.2 a 1,2 veces su velocidad. Las 9 láminas de respaldo se abren con una tecla y van en otro PDF. Los criterios van sobre la interfaz y en una tabla, y hay una línea de tiempo del Seminario a Relevo. La vista del presentador muestra el guion, la lámina siguiente y un cronómetro. El guion dura unos 13 min 59 s.
 19. [Referencias](referencias.md)
 20. [Registro del reinicio visual](registro-del-reinicio.md)
 
@@ -119,6 +119,12 @@ El estado anterior se puede consultar en la etiqueta Git `pre-reinicio-visual-20
 ---
 
 ## Registro de cambios (disclaimer)
+
+### 2026-11-26 — Presentación oficial: animaciones solas y más app
+
+- **Qué cambió:** la entrada 55 describe la versión con 28 láminas, ocho grabaciones, apariciones automáticas y el respaldo aparte.
+- **Cómo estaba antes:** describía 27 láminas, tres grabaciones y un solo PDF.
+- **Por qué:** nuevo pedido del autor del 26 de noviembre.
 
 ### 2026-11-26 — Presentación oficial del examen
 
